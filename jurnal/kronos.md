@@ -6,3 +6,4 @@
 - 2026-10-20 20:35 — S8 pusă în coadă: `module.toml` pentru modulele Kronos după `standarde/modul-v0.md` (mâine ziua, pe procesor).
 - 2026-10-20 20:45 — rularea reparată a nopții 11 blocată de unealta de pornire (fișier vechi); reparația uneltei aprobată de supraveghetor, apoi pornirea.
 - 2026-10-20 23:15 — noaptea 11 rulează de la 20:46 (pornită de mână, linia `w2_conv_text_v2`, din #401); verdictul mâine la 08:15. Reparația uneltei de pornire mutată în S9, mâine ziua.
+- 2026-10-21 02:15 — noaptea 11 gata fără erori: #407 PARȚIAL, fără regresie (formulări noi 11/15, da/nu 13/15, tipuri noi tot 2/15); azi date cu tipuri noi de întrebări (S11), la noapte noaptea 12 cu poartă. Așteaptă „da”-ul lui Adrian pentru #407 în interfață.
