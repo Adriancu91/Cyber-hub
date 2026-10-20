@@ -1,27 +1,32 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-20 18:25 (ora României) · **de:** centrul de comandă, copiat din `docs/STATE.md` și din commit-urile
-din `cyber-universe` (sesiunile programate ale OS-ului nu au încă acces la hub; au cerut ca altcineva să scrie aici).
+**Actualizat:** 2026-10-20 22:40 (ora României) · **de:** sesiunea programată a OS-ului (20:40), cu acces la hub
 
 ## Acum
-- Fazele 1 și 2 închise: nucleul rezistă 5 minute de stres, mai multe programe rulează în paralel, programe separate în
-  modul utilizator, fișiere în memorie și pe disc FAT32, consolă cu comenzi (`ls`, `cat`, `run`, `mem`, `net`, `reboot` …).
-- Faza 3 (în emulator): discuri SATA și NVMe, USB (tastatură, mouse, stick), placă de rețea, imagine de stick USB care pornește.
-- Faza 4 începută: mouse, desen rapid, font cu diacritice, server grafic cu ferestre și cursor (P4-04),
-  ferestre pentru programe (P4-05). O sesiune programată lucrează chiar acum.
-- 24 de scenarii de test automate trec; CI verde.
+- Fazele 1, 2 și 4 închise; Faza 3 gata în emulator (lipsește doar testul pe un calculator real).
+- Interfață grafică: desktop „Cyber Universe” care pornește singur, ferestre, aplicații (Terminal, Fișiere, Editor,
+  Monitor, Setări, Module), tastatură românească, module instalabile din interfață.
+- Rețea (Faza 5, azi): adresă automată (DHCP), nume → adresă (DNS), conexiuni TCP sigure (pachetele pierdute se
+  retrimit), comenzile `ping`, `host`, `http` în shell; programele pot folosi rețeaua (`fetch`, `udp`) și există
+  aplicația grafică **Rețea** (adresă, rută, DNS, ping).
+- 39 de scenarii de test automate trec; CI verde.
 
 ## Urmează
-- P4-07 scriere pe disc FAT32, P4-12 aranjament de tastatură românesc, apoi restul Fazei 4 (module, aplicații).
+- P5-06: HTTPS (pagini web securizate) — după „da”-ul lui Adrian la întrebarea de mai jos.
+- P3-09 / P3-10: testul pe un calculator real, când Adrian trimite pozele.
+- P5-07 / P5-08: suita office și Kronos ca module în OS — după ce suita își atinge ținta.
 
 ## Ce oferă proiectul celorlalți
-- Infrastructura de test pe scenarii (`tests/scenarios.txt` + `tools/test.sh`) și regulile de lucru în cascadă.
-- Formatul comun de modul (`standarde/modul-v0.md`) e folosit de la Faza 4 pentru `modules/` și `apps/`.
+- Infrastructura de test pe scenarii (`tests/scenarios.txt` + `tools/test.sh`, cu servere de test pornite automat).
+- Formatul comun de modul (`standarde/modul-v0.md`) e folosit în `modules/` și `apps/`.
 
 ## De ce are nevoie de la ceilalți
-- O rezervare a laptopului ThinkPad (al suitei office) pentru testul pe stick, când decide Adrian (vezi `RESURSE.md`).
+- Nimic acum. (Testul pe stick se face pe alt calculator, nu pe ThinkPad-ul suitei.)
 
 ## Blocaje / nevoie de Adrian
-- **B-001 / P3-09:** testul pe calculatoare reale — Adrian scrie imaginea pe un stick, pornește ThinkPad-ul și încă un
-  calculator de pe el și trimite poze cu ecranul (pași în `docs/USB.md`). P3-10 așteaptă după el.
-- Sesiunile programate nu pot scrie în hub până nu primesc acces la `Cyber-hub` (în setările sarcinii programate).
+- **Întrebare (B-002 / P5-06):** criptografia pentru HTTPS o scriem noi, după standardele publice, verificată cu
+  exemplele oficiale (fără audit făcut de specialiști în securitate)? Recomandarea: **da**, e în spiritul deciziei
+  din 19:40 („de la zero, fără alte licențe”). Răspuns „da” sau „nu” ajunge.
+- **B-001 / P3-09:** testul pe un calculator real — imaginea de pe stick (pașii în `docs/USB.md` din repo-ul OS),
+  pornire de pe stick, poze cu ecranul. P3-10 așteaptă după el.
+- **B-003 / P5-07:** suita office ca modul — mai târziu, după ce suita e gata; nu e nevoie de nimic acum.
