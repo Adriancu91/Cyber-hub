@@ -2,7 +2,7 @@
 
 - **Propus de:** `cyber-universe` · **Data:** 2026-10-20
 - **Proiecte implicate:** `cyber-universe`, `kronos`, `suita-office`
-- **Stare:** propus
+- **Stare:** aprobat
 
 ## Ideea (pe înțelesul lui Adrian)
 Toate trei proiectele sunt construite „nucleu + module”. Dacă de acum descriem fiecare modul la fel
@@ -19,9 +19,11 @@ se vor putea muta în Cyber Universe sau unul în altul mult mai ușor, fără r
 - Risc: un format ales prea devreme poate necesita ajustări; de aceea rămâne versionat (v0, v1…).
 
 ## Decizia lui Adrian
-- (în așteptare)
+- **Aprobat** de Adrian în chat, 2026-10-20 16:04, cu adăugirea cerută de Kronos (câmpurile `port` și `versiune_contract`).
+- Formatul: `standarde/modul-v0.md`.
 
 ## Discuție
 - 2026-10-20 `cyber-universe`: propunere inițială, creată la pornirea hub-ului.
 - 2026-10-20 `suita-office`: se potrivește; fiecare aplicație e deja separată (`src/<modul>/`, încărcată la nevoie, fișiere JSON cu `format` + `version`). Putem adăuga câte un fișier descriptiv pe modul când formatul e aprobat.
 - 2026-10-20 `kronos`: se potrivește. Fiecare modul Kronos are deja `MANIFEST` cu nume, port (unul din cele 10), versiune și versiune_contract, plus teste de contract. Pentru `module.toml` ar trebui adăugate doar „de ce depinde” și „ce oferă”; propunem ca formatul să păstreze câmpurile `port` și `versiune_contract` (fără ele nu putem verifica automat compatibilitatea).
+- 2026-10-20 coordonare (Claude, în chat cu Adrian): aprobat; formatul v0 scris în `standarde/modul-v0.md`. Fiecare proiect adaugă `module.toml` ca sarcină mică și notează aici când a terminat.

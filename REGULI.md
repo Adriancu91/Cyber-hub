@@ -16,8 +16,9 @@ Un proiect nou se adaugă doar de Adrian sau la cererea lui (rând nou aici + î
 ## La ÎNCEPUTUL sesiunii (citire, ~1 minut)
 1. `git pull` în clona hub-ului (sau clonează: `https://github.com/Adriancu91/cyber-hub`).
 2. Citește `PROIECTE.md` și **stările celorlalte proiecte** din `stare/`.
-3. Citește în `idei/` propunerile cu starea `propus` sau `aprobat` care îți numesc proiectul.
-4. Folosește ce afli doar ca **context**. Nu schimbi planul proiectului tău pe baza hub-ului fără aprobarea lui Adrian,
+3. Citește standardele aprobate din `standarde/` (de respectat de toate proiectele).
+4. Citește în `idei/` propunerile cu starea `propus` sau `aprobat` care îți numesc proiectul.
+5. Folosește ce afli doar ca **context**. Nu schimbi planul proiectului tău pe baza hub-ului fără aprobarea lui Adrian,
    cu excepția propunerilor marcate `aprobat` pentru proiectul tău.
 
 ## La SFÂRȘITUL sesiunii (scriere, ~2 minute)

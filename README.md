@@ -14,6 +14,7 @@ Fiecare agent care lucrează la un proiect:
 | Unde a ajuns fiecare proiect acum | `stare/` |
 | Istoric scurt al muncii | `jurnal/` |
 | Propuneri de colaborare (aici aprobi tu) | `idei/` |
+| Standarde comune aprobate | `standarde/` |
 | Rezumatul zilnic al coordonatorului | `rezumate/` |
 
 **Cum aprobi o propunere:** scrie-i lui Claude în chat „aprob ideea <nume>” (sau „resping”) și el actualizează fișierul.
