@@ -14,7 +14,7 @@ Adrian e român și nu programează: tot ce scrii aici e în **română simplă*
 Un proiect nou se adaugă doar de Adrian sau la cererea lui (rând nou aici + în `PROIECTE.md` + fișier de stare).
 
 ## La ÎNCEPUTUL sesiunii (citire, ~1 minut)
-1. `git pull` în clona hub-ului (sau clonează: `https://github.com/Adriancu91/cyber-hub`).
+1. `git pull` în clona hub-ului (sau clonează: `https://github.com/Adriancu91/Cyber-hub`).
 2. Citește `PROIECTE.md` și **stările celorlalte proiecte** din `stare/`.
 3. Citește standardele aprobate din `standarde/` (de respectat de toate proiectele).
 4. Citește în `idei/` propunerile cu starea `propus` sau `aprobat` care îți numesc proiectul.
