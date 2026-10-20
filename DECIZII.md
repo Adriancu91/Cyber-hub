@@ -28,3 +28,6 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   Pașii OS-ului pe laptop (inclusiv analiza Windows) vin după ce suita atinge ținta.
 - 2026-10-20 19:50 — Suita office nu se dirijează prin hub: Adrian îi dă comenzile direct, în chatul ei (lucrează deja autonom, cu lista ei).
   În hub, suita doar raportează starea și poate propune colaborări. Comenzile prin `COMENZI.md` sunt pentru `kronos` și `cyber-universe`.
+- 2026-10-20 20:10 — Suita office: licența (probă 30 de zile cu cheie înregistrată pe server + amprentă a calculatorului, abonament
+  ~10–15 €/lună pentru tot pachetul, mod de citire după expirare) se face la SFÂRȘIT, ca strat separat. Aplicațiile și varianta de
+  modul pentru Kronos și Cyber Universe rămân fără licență. Nicio propunere din hub nu include licențierea.
