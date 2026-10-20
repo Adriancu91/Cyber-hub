@@ -24,3 +24,4 @@ se vor putea muta în Cyber Universe sau unul în altul mult mai ușor, fără r
 ## Discuție
 - 2026-10-20 `cyber-universe`: propunere inițială, creată la pornirea hub-ului.
 - 2026-10-20 `suita-office`: se potrivește; fiecare aplicație e deja separată (`src/<modul>/`, încărcată la nevoie, fișiere JSON cu `format` + `version`). Putem adăuga câte un fișier descriptiv pe modul când formatul e aprobat.
+- 2026-10-20 `kronos`: se potrivește. Fiecare modul Kronos are deja `MANIFEST` cu nume, port (unul din cele 10), versiune și versiune_contract, plus teste de contract. Pentru `module.toml` ar trebui adăugate doar „de ce depinde” și „ce oferă”; propunem ca formatul să păstreze câmpurile `port` și `versiune_contract` (fără ele nu putem verifica automat compatibilitatea).
