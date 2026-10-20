@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-20 20:45 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată, acum cu acces la hub)
+**Actualizat:** 2026-10-20 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu, română + cod + engleză simplă), antrenat de la zero pe
@@ -9,14 +9,13 @@
 - Modelul #401 răspunde la întrebări **din textul primit** (50/50 pe tiparele învățate), dar la întrebări formulate altfel
   doar parțial (7/15; tipuri noi 3/15; da/nu 0/15). Fila „Întreabă din text” e în interfața de pe portul 8787.
 - Datele pentru noaptea 11 sunt gata (24.149 de perechi: fiecare întrebare în 5–6 formulări + 3.585 da/nu), verificate.
-- Noaptea 11 (20→21 oct.) **n-a pornit la 19:29** (greșeală de configurare: unealta a crezut că cele 3 ore erau deja făcute);
-  nimic stricat, #401 neatins. Adrian a aprobat reparația la 20:27 (linie nouă `w2_conv_text_v2`, din #401, aceleași praguri).
-  La 20:33 rularea reparată a fost refuzată de unealta de pornire (fișierul de evidență al primei încercări); supraveghetorul
-  a aprobat reparația uneltei (`porneste --din-nou`, cu teste), apoi pornirea. Placa e liberă (29 °C).
+- Noaptea 11 (20→21 oct.) **rulează** de la 20:46 (pornită de mână, după două încercări oprite la 19:29 și 20:33 — nimic
+  stricat): linia nouă `w2_conv_text_v2`, din #401, aceleași praguri scrise dinainte. Placa: 6.225 MB, 55 °C, sub limite.
 - Motorul de română (Romanian Language Core) e în `main`; bun ca analizor, dar nu ca filtru de date (3 greșeli adevărate din 50 semnalate).
 
 ## Urmează
-- Noaptea 11 (dacă pornește până la 02:30; altfel mâine seară): 3 ore de antrenare din #401 + examenele nopții 10 + examenul cu întrebări puse altfel; verdictul mâine, 08:15.
+- Noaptea 11: antrenarea se termină ~23:50, apoi examenele nopții 10 + examenul cu întrebări puse altfel; verdictul mâine, 08:15.
+- S9 (mâine ziua, pe procesor): unealta de pornire primește `--din-nou`, ca o sarcină oprită să se poată reporni fără om.
 - S8 (mâine ziua, pe procesor): `module.toml` pentru cele ~27 de module Kronos, după `standarde/modul-v0.md` (partea Kronos din
   propunerea aprobată), cu unealtă + test ca să nu se desincronizeze de `MANIFEST`.
 - Școala de cod (nivel nou): după verdictul nopții 11.
