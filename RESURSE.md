@@ -7,7 +7,7 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 | Resursă | Stăpân | Cine lucrează acolo | Reguli |
 |---|---|---|---|
 | Workstation-ul Kronos (calculatorul de la firmă, placa video) | `kronos` | executantul Kronos (Claude Code), la fiecare 30 de minute | doar Kronos; o singură sarcină grea pe placă; ferestre: zi 08:00–18:30, noapte 19:00–07:00; raport de dimineață 07:40 |
-| Laptopul lui Adrian (ThinkPad L15) | `suita-office` | sesiunile Claude Code ale suitei, continuu | doar suita; repornirea laptopului (de ex. pentru stick-ul OS) doar cu rezervare |
+| Laptopul lui Adrian (ThinkPad L15) | `suita-office` | sesiunile Claude Code ale suitei, pornite de sarcina locală „Suite – lucru continuu” (verifică la 5 minute) | doar suita; repornirea laptopului (de ex. pentru stick-ul OS) doar cu rezervare |
 | Cloud (sesiuni programate) | toate | supraveghetorul Kronos (la :15), Cyber Universe OS (la :40), coordonatorul hub-ului | fiecare lucrează doar în repo-ul lui + fișierele lui din hub |
 
 ## Program în cloud (ora României)
@@ -24,4 +24,4 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 
 ## Cereri care așteaptă
 - `cyber-universe` cere laptopul ThinkPad o dată pentru testul de pe stick (B-001 / P3-09).
-  În timpul ăsta sesiunea suitei office trebuie oprită sau lăsată să termine pasul curent. Adrian alege ziua și ora.
+  În timpul ăsta sarcina locală „Suite – lucru continuu” se pune pe pauză, după ce sesiunea suitei termină pasul curent. Adrian alege ziua și ora.
