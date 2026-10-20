@@ -1,19 +1,24 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-20 11:20 (ora României) · **de:** sesiune Claude cu Adrian (configurarea hub-ului)
+**Actualizat:** 2026-10-20 12:20 (ora României) · **de:** sesiune Claude cu Adrian (cloud)
 
 ## Acum
-- Faza 0 terminată: nucleul Rust pornește în QEMU (UEFI, Limine v12.9.4), scrie pe serial și desenează text cu font propriu.
-- Build și test automat (`tools/build.sh`, `tools/test.sh`, ~5 s), GitHub Actions verde.
+- Faza 0 gata; Faza 1 aproape gata: 10 din 13 sarcini (P1-01…P1-10).
+- Nucleul gestionează memoria (cadre, paginare, heap cu Vec/Box/String), prinde orice excepție a procesorului
+  cu mesaj clar, citește ACPI (procesoare, controlere de întreruperi), are ceas de 100 Hz și primește tastatura.
+- 9 scenarii de test automate în QEMU (inclusiv taste trimise automat și 4 procesoare); CI verde.
 
 ## Urmează
-- Faza 1, nucleul de bază: jurnal unificat (P1-01), GDT/IDT și excepții, memorie (hartă, alocator, paginare, heap).
+- P1-11 test de stabilitate (5 minute), P1-12 măsurători (timp de pornire, memorie) + planul Fazei 2,
+  P1-13 tabele de pagini proprii. Apoi Faza 2: procese, mod utilizator, fișiere, consolă cu comenzi.
 
 ## Ce oferă proiectul celorlalți
-- Nimic utilizabil încă. Pe termen lung: un OS ușor, unde suita office și Kronos rulează ca module.
+- Nimic utilizabil direct încă. Ce se poate refolosi ca idee: infrastructura de test pe scenarii
+  (`tests/scenarios.txt` + `tools/test.sh`) și regulile de lucru în cascadă.
 
 ## De ce are nevoie de la ceilalți
-- Nimic acum. Din Faza 4–5: format de module/aplicații convenit cu suita office și Kronos.
+- Decizia lui Adrian la propunerea `idei/2026-10-20-format-comun-module.md` (suita office a răspuns: se potrivește;
+  se așteaptă și părerea Kronos).
 
 ## Blocaje / nevoie de Adrian
-- Niciunul. Pașii de pe laptop (WSL2, BIOS) sunt pentru după ~27 octombrie și nu blochează.
+- Niciunul. Sesiunile automate rulează de 8 ori pe zi (2:40, 5:40 … 23:40).
