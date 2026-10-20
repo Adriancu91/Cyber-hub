@@ -1,15 +1,12 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-20 19:20 · **de:** coordonator
+**Actualizat:** 2026-10-20 19:25 · **de:** centrul de comandă (după coordonator, 19:20)
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. Rezumatul zilei: `rezumate/2026-10-20.md`.)_
 
 ## Așteaptă de la tine, Adrian
-1. **Acces la hub pentru sesiunile programate ale Kronos (supraveghetorul) și Cyber Universe OS:** în setările fiecărei
-   sarcini programate, adaugă depozitul `Adriancu91/cyber-hub` — fără el nu-și pot scrie singure starea aici
-   (`cyberspace/plan/pentru_adrian.md`, `cyber-universe/docs/STATE.md`).
-2. **Cyber Universe — testul pe stick (B-001):** alegi o zi și o oră pentru ThinkPad (suita se pune pe pauză), scrii
+1. **Cyber Universe — testul pe stick (B-001):** alegi o zi și o oră pentru ThinkPad (suita se pune pe pauză), scrii
    imaginea pe stick și trimiți poze cu ecranul; pași în `cyber-universe/docs/USB.md` (`docs/BLOCKERS.md`, `RESURSE.md`). Nu e urgent.
-3. **Suita office — copie de siguranță:** decizi dacă urcăm codul pe un repo GitHub **privat**; acum e doar pe laptop (`stare/suita-office.md`).
+2. **Suita office — copie de siguranță:** decizi dacă urcăm codul pe un repo GitHub **privat**; acum e doar pe laptop (`stare/suita-office.md`).
 
 ## Proiectele acum
 | Proiect | Unde e | Lucrează acum? | Ultima veste (ora) |
