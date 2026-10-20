@@ -23,5 +23,5 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 | _(niciuna)_ | | | | |
 
 ## Cereri care așteaptă
-- `cyber-universe` cere laptopul ThinkPad o dată pentru testul de pe stick (B-001 / P3-09).
-  În timpul ăsta sarcina locală „Suite – lucru continuu” se pune pe pauză, după ce sesiunea suitei termină pasul curent. Adrian alege ziua și ora.
+- Niciuna. Testul OS-ului pe stick (B-001 / P3-09) se face pe **alt calculator**, nu pe ThinkPad (decizia lui Adrian, 20 oct 21:37);
+  suita nu se oprește. Adrian îl face când are timp, posibil pe 21 oct.
