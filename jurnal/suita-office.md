@@ -14,3 +14,4 @@
 - 2026-10-20 19:47 — 7 pași: Notițe (mărime, font, aliniere), PDF (proprietățile câmpurilor, fontul și culorile lor, ordinea Tab), Slides (set de culori propriu), Docs (stiluri de tabel), Imagini (Potrivește culoarea, Umplere); Notițe 70%, Acrobat 58%, Photoshop 55%.
 - 2026-10-20 20:31 — 8 pași în Video: imagine în imagine, ecran verde, filmare cu camera web (și ecran + cameră), teleprompter, ecran împărțit, forme peste film, rama filmului, lipire magnetică; Clipchamp 66% → 73%.
 - 2026-10-20 21:21 — 6 pași în Docs: casete de text (cu .docx dus-întors), forme recolorabile, rotire și oglindire, decupare, stiluri de poză, text artistic; Word 64,7% → 67%.
+- 2026-10-20 22:05 — 7 pași: Docs (imagini în fața / în spatele textului, grafice, diagrame), Imagini (umplere și mutare după conținut), Video (tragerea pozelor în bandă, mai multe alese deodată); Word 68%, Photoshop 56%, Clipchamp 74%.
