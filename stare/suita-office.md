@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-20 13:29 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-20 14:16 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere.
-- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 61%, Excel 62%, PowerPoint 60%,
+- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 62%, Excel 64%, PowerPoint 60%,
   Clipchamp 63%, Photoshop 52%, formule de calcul 93%.
-- Ultima sesiune (8 pași): Sheets: filtru și sortare după culoare, sortare după listă (zile, luni, listă proprie), filtrul avansat,
-  butoanele de filtrare (Slicer), Golește filtrele, F9; Docs: rigla (retrageri și tabulatori trase cu mouse-ul), retragerea la dreapta;
-  Imagini: conturul stilului de strat înăuntru / pe margine.
+- Ultima sesiune (11 pași): Imagini: selecția rapidă și lasoul magnetic; Sheets: Mergi la special, calcul manual / automat,
+  calcul iterativ (referințe circulare), toate notele la vedere, zoom pe selecție; Docs: vizualizarea Ciornă, afișarea și filtrarea
+  modificărilor urmărite, blocarea urmăririi (și în .docx).
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Imagini: selecția rapidă; Docs: vizualizarea Schiță; Sheets: calcul manual, Mergi la special).
+- Restul funcțiilor din etapa 2 (Docs: urmărirea modificărilor de formatare, stiluri proprii; Sheets: grafice noi; Imagini: Top 10 lipsă).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
 
