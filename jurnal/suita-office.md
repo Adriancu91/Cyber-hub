@@ -16,3 +16,4 @@
 - 2026-10-20 21:21 — 6 pași în Docs: casete de text (cu .docx dus-întors), forme recolorabile, rotire și oglindire, decupare, stiluri de poză, text artistic; Word 64,7% → 67%.
 - 2026-10-20 22:05 — 7 pași: Docs (imagini în fața / în spatele textului, grafice, diagrame), Imagini (umplere și mutare după conținut), Video (tragerea pozelor în bandă, mai multe alese deodată); Word 68%, Photoshop 56%, Clipchamp 74%.
 - 2026-10-20 22:51 — 7 pași: ecuații în Docs și Slides, minigrafice în Sheets (cu .xlsx și culoare), piste ascunse / fără sunet / blocate în Video, unealta Petic în Imagini; Word 68,5%, Excel 67%, PowerPoint 64%.
+- 2026-10-20 23:37 — 8 pași: Imagini (Lichefiere, Traseu / Pen cu puncte mutabile), Slides (forme cu degrade sau poză, și în .pptx), Sheets (completare automată din coloană, Evaluează formula, Consolidare); Excel 68%, Photoshop 57%, PowerPoint 64%.
