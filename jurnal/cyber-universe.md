@@ -10,3 +10,4 @@
 - 2026-10-20 23:05 — Adrian: „da” la criptografia proprie (D-011); făcute P5-10 (SHA-2, HMAC, HKDF) și P5-11 (X25519), verificate cu vectorii oficiali; 40 de teste trec.
 - 2026-10-21 01:00 — Criptografia pentru HTTPS terminată: P5-12 (ChaCha20-Poly1305), P5-13 (RSA), P5-14 (ECDSA P-256), P5-15 (certificate X.509); 108 verificări oficiale, comparat și cu OpenSSL; 40 de teste trec.
 - 2026-10-21 01:25 — HTTPS în OS cu TLS 1.3 propriu: P5-06 (biblioteca `tls/`, testată față de OpenSSL) și P5-16 (`fetch https://…`, scenariul `https`); 41 de teste trec. Nu mai sunt sarcini libere: întrebare pentru Adrian (închiderea Fazei 5).
+- 2026-10-21 02:50 — Sesiune fără lucru: nicio sarcină liberă, nicio comandă nouă; CI verde. Se așteaptă decizia lui Adrian (închiderea Fazei 5).
