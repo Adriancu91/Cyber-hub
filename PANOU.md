@@ -16,7 +16,7 @@ _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. R
 | **Suita office** | Etapa 2: Word 64%, Excel 66%, PowerPoint 63%, Photoshop 55%, formule 96% | Da, continuu pe ThinkPad | 18:58 |
 
 ## Comenzi
-- **C-1** · suita-office · graficul de comparație, pus în hub — `nou` (19:45)
+- Nicio comandă deschisă. (C-1 retrasă: suita primește comenzi direct de la Adrian, nu prin hub.)
 
 ## Propuneri de colaborare
 - Niciuna în așteptare. Aprobată: formatul comun de modul — suita gata; OS are deja `module.toml` la modulele lui

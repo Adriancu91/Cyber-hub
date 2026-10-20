@@ -13,7 +13,8 @@
 ## Suita office (`suita-office`)
 - **Ce e:** suită proprie de aplicații: foi de calcul cu formule, documente, PDF, prezentări, editare imagini, notițe, video.
 - **Unde e codul:** deocamdată doar local, pe laptopul lui Adrian (nu e încă pe GitHub).
-- **Cum se lucrează:** sesiuni Claude Code în cascadă, continuu, pe laptopul lui Adrian (ThinkPad).
+- **Cum se lucrează:** sesiuni Claude Code în cascadă, continuu, pe laptopul lui Adrian (ThinkPad), cu lista ei de sarcini.
+  Adrian o dirijează direct, în chatul ei. **În hub doar raportează și propune colaborări; nu primește comenzi prin `COMENZI.md`.**
 
 ## Legături cunoscute între proiecte
 | De la | Către | Legătura | Când |
