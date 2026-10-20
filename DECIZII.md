@@ -17,3 +17,9 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
 - 2026-10-20 18:18 — Hub-ul devine centrul de comandă: Claude îl organizează (panou, comenzi, resurse, decizii), Adrian aprobă.
   Regulă: nu se oprește niciun agent care lucrează la ceva important; comenzile se preiau după ce termină ce are în lucru.
 - 2026-10-20 19:25 — Accesul sesiunilor programate la hub e rezolvat (numele exact `Cyber-hub`, clonare directă fără add_repo); coordonatorul a scris primul panou la 19:20.
+- 2026-10-20 19:40 — Direcția Cyber Universe OS (Adrian): OS de la zero, fără cod copiat și fără alte licențe — doar documentație
+  publică și analiză vizuală/funcțională, apoi reconstruim. Citirea codului open-source pentru idei rămâne permisă, copiatul interzis
+  (confirmat). Fiind de la zero, OS-ul trebuie să meargă pe hardware-ul actual de pe piață, cu drivere proprii scrise după specificații
+  publice; se compară cu Windows pe același calculator. Înainte de mutarea pe laptop: analiză a ThinkPad-ului sub Windows (ce hardware și
+  drivere vede, ce performanță are), păstrată ca referință; când OS-ul e funcțional, se compară punct cu punct și diferențele devin
+  sarcini. Comanda pentru scriptul de analiză: amânată de Adrian („nu acum”).
