@@ -23,3 +23,6 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   publice; se compară cu Windows pe același calculator. Înainte de mutarea pe laptop: analiză a ThinkPad-ului sub Windows (ce hardware și
   drivere vede, ce performanță are), păstrată ca referință; când OS-ul e funcțional, se compară punct cu punct și diferențele devin
   sarcini. Comanda pentru scriptul de analiză: amânată de Adrian („nu acum”).
+- 2026-10-20 19:45 — Nu ne mutăm acum cu OS-ul pe laptop: pe ThinkPad se lucrează la suita office, care își atinge ținta în 1–2 săptămâni
+  cel mult. Ținta suitei: o suită office făcută de la zero care să depășească Microsoft Office, Adobe și aplicațiile office Google.
+  Pașii OS-ului pe laptop (inclusiv analiza Windows) vin după ce suita atinge ținta.
