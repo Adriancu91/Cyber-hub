@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-20 15:02 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-20 15:49 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere.
-- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 62%, Excel 64%, PowerPoint 61%,
-  Clipchamp 63%, Photoshop 53%, formule de calcul 95% (98,6% fără cele care cer internet).
-- Ultima sesiune (10 pași): Sheets: opțiunile căutării (toată celula, formule / valori, tot registrul, * și ?), liste proprii la umplere,
-  funcțiile Bessel, TRIMRANGE, INFO, BAHTTEXT și altele; Docs: căutarea avansată (cuvinte întregi, * și ?, după formatare);
-  Slides: ajustările pozelor și vizualizarea Citire; Imagini: Duplică poza și alinierea stratului.
+- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 63%, Excel 64%, PowerPoint 62%,
+  Clipchamp 65%, Photoshop 53%, formule de calcul 96% (99,2% fără cele care cer internet).
+- Ultima sesiune (9 pași): Video: separarea sunetului de clip, oricâte piste de sunet, înlocuirea pozei / clipului cu aceleași setări;
+  Slides: Pagini de notițe; Docs: Modifică stilul pentru tot documentul (și în .docx); Sheets: ODDFPRICE / ODDFYIELD, FILTERXML,
+  ENCODEURL, PHONETIC (toate funcțiile financiare sunt acum gata); Imagini: tabele de culori (.cube) și selecții salvate.
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Video: separarea sunetului de clip; Slides: Pagina de notițe; Docs: urmărirea modificărilor de formatare).
+- Restul funcțiilor din etapa 2 (Docs: panoul Stiluri și stiluri noi; Video: zoom pe bandă; Imagini: selecțiile salvate și în .psd).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
 
