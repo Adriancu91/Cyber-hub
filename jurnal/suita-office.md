@@ -15,3 +15,4 @@
 - 2026-10-20 20:31 — 8 pași în Video: imagine în imagine, ecran verde, filmare cu camera web (și ecran + cameră), teleprompter, ecran împărțit, forme peste film, rama filmului, lipire magnetică; Clipchamp 66% → 73%.
 - 2026-10-20 21:21 — 6 pași în Docs: casete de text (cu .docx dus-întors), forme recolorabile, rotire și oglindire, decupare, stiluri de poză, text artistic; Word 64,7% → 67%.
 - 2026-10-20 22:05 — 7 pași: Docs (imagini în fața / în spatele textului, grafice, diagrame), Imagini (umplere și mutare după conținut), Video (tragerea pozelor în bandă, mai multe alese deodată); Word 68%, Photoshop 56%, Clipchamp 74%.
+- 2026-10-20 22:51 — 7 pași: ecuații în Docs și Slides, minigrafice în Sheets (cu .xlsx și culoare), piste ascunse / fără sunet / blocate în Video, unealta Petic în Imagini; Word 68,5%, Excel 67%, PowerPoint 64%.
