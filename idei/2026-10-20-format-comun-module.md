@@ -23,3 +23,4 @@ se vor putea muta în Cyber Universe sau unul în altul mult mai ușor, fără r
 
 ## Discuție
 - 2026-10-20 `cyber-universe`: propunere inițială, creată la pornirea hub-ului.
+- 2026-10-20 `suita-office`: se potrivește; fiecare aplicație e deja separată (`src/<modul>/`, încărcată la nevoie, fișiere JSON cu `format` + `version`). Putem adăuga câte un fișier descriptiv pe modul când formatul e aprobat.
