@@ -1,0 +1,27 @@
+# Resursele: cine lucrează unde
+
+Ca agenții să nu se calce pe picioare: fiecare calculator și fiecare fereastră orară are un singur stăpân.
+Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
+
+## Calculatoare
+| Resursă | Stăpân | Cine lucrează acolo | Reguli |
+|---|---|---|---|
+| Workstation-ul Kronos (calculatorul de la firmă, placa video) | `kronos` | executantul Kronos (Claude Code), la fiecare 30 de minute | doar Kronos; o singură sarcină grea pe placă; ferestre: zi 08:00–18:30, noapte 19:00–07:00; raport de dimineață 07:40 |
+| Laptopul lui Adrian (ThinkPad L15) | `suita-office` | sesiunile Claude Code ale suitei, continuu | doar suita; repornirea laptopului (de ex. pentru stick-ul OS) doar cu rezervare |
+| Cloud (sesiuni programate) | toate | supraveghetorul Kronos (la :15), Cyber Universe OS (la :40), coordonatorul hub-ului | fiecare lucrează doar în repo-ul lui + fișierele lui din hub |
+
+## Program în cloud (ora României)
+| Sesiune | Când |
+|---|---|
+| Kronos supraveghetor | 02:15, 05:15, 08:15, 11:15, 14:15, 17:15, 20:15, 23:15 |
+| Cyber Universe OS | 02:40, 05:40, 08:40, 11:40, 14:40, 17:40, 20:40, 23:40 |
+| Coordonatorul hub-ului | 08:50 (zilnic) |
+
+## Rezervări (doar cu „da”-ul lui Adrian)
+| Când | Resursă | Pentru | Motiv | Aprobat |
+|---|---|---|---|---|
+| _(niciuna)_ | | | | |
+
+## Cereri care așteaptă
+- `cyber-universe` cere laptopul ThinkPad o dată pentru testul de pe stick (B-001 / P3-09).
+  În timpul ăsta sesiunea suitei office trebuie oprită sau lăsată să termine pasul curent. Adrian alege ziua și ora.
