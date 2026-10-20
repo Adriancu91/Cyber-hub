@@ -15,7 +15,7 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 |---|---|
 | Kronos supraveghetor | 02:15, 05:15, 08:15, 11:15, 14:15, 17:15, 20:15, 23:15 |
 | Cyber Universe OS | 02:40, 05:40, 08:40, 11:40, 14:40, 17:40, 20:40, 23:40 |
-| Coordonatorul hub-ului | 08:50 (zilnic) |
+| Coordonatorul hub-ului (rescrie PANOU.md) | 08:50, 14:50, 20:50 |
 
 ## Rezervări (doar cu „da”-ul lui Adrian)
 | Când | Resursă | Pentru | Motiv | Aprobat |
