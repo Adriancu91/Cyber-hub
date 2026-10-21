@@ -20,3 +20,4 @@
 - 2026-10-21 23:20 — Deblocat de testul pe Lenovo (C-2 gata): HARDWARE/USB/BLOCKERS completate, comanda `hw`, lista pentru testul 2.
 - 2026-10-21 23:20 — C-3 preluată: Faza 5 închisă, Faza 6 planificată (P6-01 … P6-10); driverul Realtek RTL8168 scris și testat față de un model al cipului. CI verde.
 - 2026-10-22 00:40 — Testul 2 citit: reparat driverul Realtek (PHY pornit, legătura așteptată, diagnostic în `net`) și montarea stick-urilor formatate în Windows; 42 de scenarii trec. Varianta mea de P6-02 pusă deoparte (`wip/P6-02-b`), P6-02 rămâne la sesiunea de la 23:40.
+- 2026-10-22 00:58 — C-4 gata (CI verde): diagnostic Realtek în jurnal, comanda `log`, `net` fără adrese false, stick-uri din Windows; lista pentru testul 3 scrisă.

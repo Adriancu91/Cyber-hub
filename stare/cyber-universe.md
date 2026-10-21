@@ -28,8 +28,13 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- **Testul 3 (când e verde CI-ul pentru commit-ul `2f1fd30` sau mai nou):** la fel ca testul 2, cablu băgat. Poze: `net` (linia
-  „legatura: …” — spune dacă placa vede cablul), `ping 1.1.1.1`, `hw` (linia `/usb: …` cu motivul, dacă tot nu merge).
+- **Testul 3 (imaginea din CI-ul verde pentru `f7a455f` sau mai nouă), dintr-o singură pornire, cablul băgat:**
+  1. Copiezi fișierele noi pe stick (îl poți lăsa formatat din Windows), Secure Boot oprit, pornești de pe stick.
+  2. Aștepți ~30 de secunde pe desktop (rețeaua încearcă singură), apoi **Esc** → consola `cyber>`.
+  3. `log rtl` → **poză** (registrele plăcii de rețea — de aici văd ce nu merge, dacă tot nu merge).
+  4. `net` → **poză** (linia „legatura: …” și „primire: …”).
+  5. `ping 1.1.1.1` → poză; `host github.com` → poză.
+  6. `ls /usb` → poză; dacă scrie „nu exista”: `hw` → poză (rândul `/usb:` spune motivul) și `log usb` → poză.
 - **Testul 2 pe laptopul Lenovo (când ai timp; ia ultima imagine `stick-usb` din GitHub Actions, CI verde):**
   1. Copiezi fișierele noi pe stick (ca data trecută), Secure Boot oprit, pornești de pe stick.
   2. **Bagă un cablu de rețea** în laptop (la router) înainte de pornire.
