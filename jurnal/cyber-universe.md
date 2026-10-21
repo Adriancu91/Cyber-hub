@@ -17,3 +17,5 @@
 - 2026-10-21 14:45 — Tot oprit (decizia lui Adrian, 10:05): nicio comandă nouă, niciun rezultat de pe stick; CI și testul de stres verzi. Nu s-a schimbat cod.
 - 2026-10-21 17:45 — Tot oprit (decizia lui Adrian, 10:05): nicio comandă nouă, niciun rezultat de pe stick; CI verde (rularea 94). Nu s-a schimbat cod.
 - 2026-10-21 20:45 — Tot oprit (decizia lui Adrian, 10:05): nicio comandă nouă, niciun rezultat de pe stick; CI verde (rularea 95). Nu s-a schimbat cod.
+- 2026-10-21 23:20 — Deblocat de testul pe Lenovo (C-2 gata): HARDWARE/USB/BLOCKERS completate, comanda `hw`, lista pentru testul 2.
+- 2026-10-21 23:20 — C-3 preluată: Faza 5 închisă, Faza 6 planificată (P6-01 … P6-10); driverul Realtek RTL8168 scris și testat față de un model al cipului. CI verde.

@@ -1,36 +1,38 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-21 20:45 (ora României) · **de:** sesiunea programată a OS-ului (20:41), cu acces la hub
+**Actualizat:** 2026-10-21 23:20 (ora României) · **de:** sesiunea programată a OS-ului (22:46), cu acces la hub
 
 ## Acum
-- Fazele 1, 2 și 4 închise; Faza 3 gata în emulator (lipsește doar testul pe un calculator real).
-- Interfață grafică: desktop „Cyber Universe” care pornește singur, ferestre, aplicații (Terminal, Fișiere, Editor,
-  Monitor, Setări, Module, Rețea), tastatură românească, module instalabile din interfață.
-- Rețea (Faza 5): DHCP, DNS, TCP sigur, `ping`, `host`, `http`, programele `fetch` și `udp`, aplicația **Rețea**.
-- **Nou: HTTPS cu criptografie scrisă integral de noi** (după „da”-ul lui Adrian, D-011): `fetch https://nume/cale`.
-  Certificatul site-ului e verificat (lanțul până la o rădăcină de încredere, numele, data); unul greșit e refuzat.
-  Testat față de un server OpenSSL real (pe gazdă și din OS-ul pornit în emulator: 18 KB în ~1,3 s).
-  Neauditat de specialiști: nu pentru date sensibile până la o verificare separată.
-- 41 de scenarii de test automate trec (nou: `https`); CI verde, testul de stres zilnic verde.
+- **Deblocat** după testul tău pe Lenovo (C-2): rezultatul e trecut în `docs/HARDWARE.md`, ghidul `docs/USB.md` are acum
+  varianta „fișiere copiate pe FAT32” și nota despre Secure Boot. Comanda nouă **`hw`** arată tot hardware-ul pe o pagină.
+- **Faza 5 închisă** (suita și Kronos ca module mutate după suită). **Faza 6 planificată** (C-3): 10 sarcini, P6-01 … P6-10.
+- **P6-01 gata în cod:** driver pentru placa ta de rețea Realtek RTL8168 (`10ec:8168`), testat față de un model al cipului
+  (QEMU nu are acest cip). Merge sau nu pe laptop — afli la testul 2.
+- 41 de scenarii automate trec; CI verde.
 
 ## Urmează
-- **Oprit, conform deciziei tale din 21 oct, 10:05:** nu se închide Faza 5, nu pornește Faza 6. Sesiunile OS doar verifică
-  hub-ul și CI-ul până apar rezultatele testului pe stick sau o comandă nouă în `COMENZI.md`.
-- P3-09 / P3-10: testul pe un calculator real, când Adrian trimite pozele.
-- P5-07 / P5-08: suita office și Kronos ca module în OS — după ce suita își atinge ținta.
+- P6-02: rădăcinile reale de încredere, ca `fetch https://` să meargă cu site-uri adevărate.
+- P6-03 (JSON) → P6-04 … P6-06: aplicația „Claude” (linie de comandă, fereastră de chat, unelte cu confirmare).
+- P6-07/P6-08: actualizare din GitHub; P6-09: trimitere pe GitHub din OS.
 
 ## Ce oferă proiectul celorlalți
-- Biblioteca `crypto/` (Rust, fără dependențe, MIT): SHA-2, HMAC, HKDF, X25519, ChaCha20-Poly1305, RSA, ECDSA P-256, X.509.
-- Biblioteca `tls/`: client TLS 1.3 fără heap, peste orice conexiune.
-- Infrastructura de test pe scenarii (`tests/scenarios.txt` + `tools/test.sh`, cu servere de test pornite automat).
-- Formatul comun de modul (`standarde/modul-v0.md`) e folosit în `modules/` și `apps/`.
+- Bibliotecile `crypto/` și `tls/` (Rust, fără dependențe, MIT); acum și `rtl8168/` (driver de rețea cu model de test).
+- Infrastructura de test pe scenarii (`tests/scenarios.txt` + `tools/test.sh`).
 
 ## De ce are nevoie de la ceilalți
-- Nimic acum. (Testul pe stick se face pe alt calculator, nu pe ThinkPad-ul suitei.)
+- Nimic.
 
 ## Blocaje / nevoie de Adrian
-- **B-001 / P3-09 (singurul lucru care repornește OS-ul):** testul pe un calculator real (nu ThinkPad-ul suitei) — scrii
-  imaginea pe stick (pașii în `docs/USB.md` din repo-ul OS; imaginea e artefactul `stick-usb` din GitHub Actions), pornești
-  calculatorul de pe stick și trimiți poze cu ecranul. P3-10 așteaptă după el.
-- Opțional: o comandă nouă în `COMENZI.md` (ex. rădăcinile reale de încredere, ca HTTPS să meargă cu site-uri adevărate).
-- **B-003 / P5-07:** suita office ca modul — mai târziu, după ce suita e gata.
+- **Testul 2 pe laptopul Lenovo (când ai timp; ia ultima imagine `stick-usb` din GitHub Actions, CI verde):**
+  1. Copiezi fișierele noi pe stick (ca data trecută), Secure Boot oprit, pornești de pe stick.
+  2. **Bagă un cablu de rețea** în laptop (la router) înainte de pornire.
+  3. Pe desktop apasă **Esc** → consola text `cyber>` (poză: arată că merge).
+  4. Scrie `hw` + Enter → **poză** (o singură poză cu tot hardware-ul; dacă nu încape, două).
+  5. Scrie `net` → poză; apoi `ping 1.1.1.1` → poză (aici vedem dacă merge driverul Realtek).
+  6. Scrie `ls /disk` și `ls /usb` → poză.
+  7. Dacă ai o tastatură USB externă: conecteaz-o și scrie `help` cu ea.
+  8. Cronometrează cât durează de la alegerea stick-ului până apare desktopul.
+- **Pentru pașii următori ai Fazei 6 (nu acum, îți spun când):** un fișier `claude.key` pe stick cu o cheie API Claude
+  (ideal cu limită mică de cheltuieli) — pentru P6-04; un token GitHub „fine-grained” pentru un singur depozit, în
+  `github.token` pe stick — pentru P6-09. Cheile nu ajung niciodată în repo sau în hub.
+- P3-10 (închiderea Fazei 3) așteaptă pozele testului 2. B-003 / P5-07 (suita ca modul): mai târziu.

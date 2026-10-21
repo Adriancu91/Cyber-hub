@@ -48,8 +48,8 @@ Format:
   4b. Placa de rețea NU e văzută pe acest laptop (de așteptat: driver doar pentru e1000/e1000e). La testul 2, prima poză cerută
      e `lspci`, ca să ai identificatorul plăcii (8086:xxxx) și să poți planifica driverul după specificația publică Intel; Wi-Fi rămâne mai târziu.
   5. Faza 5 rămâne cum e (P5-07/P5-08 după suită); P3-10 (închiderea Fazei 3) se face după testul 2. Continuă apoi cu sarcinile libere.
-- stare: nou
-- rezultat:
+- stare: gata (preluat 2026-10-21 22:50, sesiunea OS; terminat 23:20) — P3-09 + P3-11 în docs/TASKS.md
+- rezultat: OS deblocat; HARDWARE.md, USB.md (varianta FAT32, Secure Boot) și BLOCKERS.md (B-001 rezolvat) completate; comanda nouă `hw` arată tot hardware-ul pe o pagină; lista pentru testul 2 e în `stare/cyber-universe.md`.
 
 ### C-3 · cyber-universe · Faza 6: OS-ul ca loc de lucru cu Claude înăuntru
 - data: 2026-10-21 22:25 · de la: Adrian (prin centrul de comandă)
@@ -65,5 +65,5 @@ Format:
   autentificare) și rescrie fișierele de pe stick, cu verificare de sumă; (5) trimitere pe GitHub din OS (API `contents`, cu token din fișier).
   Compilarea OS-ului în interiorul OS-ului NU e obiectiv. Wi-Fi: nu acum. Scrie planul, apoi începe cu (1). Raportează lui Adrian ce are de
   pregătit pe laptop pentru fiecare pas (cablu de rețea, fișierul cu cheia, token GitHub).
-- stare: nou
-- rezultat:
+- stare: preluat (2026-10-21 23:00, sesiunea OS) — Faza 6 = P6-01 … P6-10 în docs/TASKS.md, planuri în docs/plans/
+- rezultat: în lucru — Faza 5 închisă, Faza 6 planificată (ROADMAP, TASKS, 10 planuri, D-012); pasul (1) driverul Realtek RTL8168 e scris și testat față de un model al cipului (de confirmat pe laptop); urmează (2) rădăcinile reale de încredere.
