@@ -1,20 +1,20 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-21 23:02 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-21 23:46 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
-- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 23:02).
-- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 77,9%, Clipchamp 77,1%, Notițe 75,2%,
-  PowerPoint 74,4%, Acrobat 70,6%, Photoshop 70,2%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Ultima sesiune (6 pași): în Imagini, masca de text (selecție în forma literelor), panoul de simboluri pentru text (© € → ★ ✓),
-  filtrul Deplasare (după o hartă: poza însăși, nori, valuri, țesătură) și alinierea rândurilor textului; în PDF, comentariul audio
-  (înregistrat la microfon, pus pe pagină) și filigranul din alt PDF (rămâne text, nu poză); reparată data comentariilor din PDF
-  (seara după ora 21 apăreau cu ziua de mâine). Compatibilitate verificată din nou: 529 de fișiere, 0 erori.
+- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 23:46).
+- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 78,0%, Clipchamp 77,1%, Notițe 75,2%,
+  PowerPoint 74,7%, Acrobat 70,8%, Photoshop 70,5%, formule de calcul 97,1% (100% fără cele care cer internet).
+- Ultima sesiune (7 pași): în Sheets, Rezumatul (tabel pivot) are toate cele 11 calcule (și produs, deviație standard, varianță);
+  în PDF, „Combină” cu ordinea fișierelor și paginile alese înainte; în Imagini, „Aplică imaginea” și textul justificat; în Docs,
+  paleta de culori cu culorile temei; în Slides, sunet la trecerea între slide-uri (8 sunete făcute de noi, se păstrează în .pptx).
+  Compatibilitate verificată din nou: 529 de fișiere, 0 erori.
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Imagini: Reveal All, Apply Image, justificarea textului; PDF: ordinea fișierelor la combinare; Sheets: formele scrise ca forme în .xlsx, Produs / deviație standard în Rezumat; Docs: culorile temei în paleta de culori, secțiuni; Video: poziția și mărimea liberă a clipului pe pânză).
+- Restul funcțiilor din etapa 2 (Imagini: poziția proprie a straturilor, harta Deplasării dintr-un fișier; PDF: linearizarea; Sheets: formele scrise ca forme în .xlsx, temele registrului; Docs: secțiuni; Video: poziția și mărimea liberă a clipului pe pânză).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
 
