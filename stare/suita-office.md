@@ -1,18 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-21 12:46 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-21 13:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
-- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 12:00).
-- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Clipchamp 76,3%, Word 75,2%, Notițe 74,4%,
-  Excel 73,8%, PowerPoint 69,6%, Acrobat 67,3%, Photoshop 66,3%, formule de calcul 96%.
-- Ultima sesiune (4 pași): mai multe animații pe aceeași casetă în Slides; fișierele .docx/.xlsx/.pptx cu parolă se deschid
-  (aplicația cere parola); salvarea cu parolă în Docs, Sheets și Slides (AES-256); capitolele Video pe bara de timp și în Ctrl+Z.
+- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 13:05).
+- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Clipchamp 76,3%, Word 75,2%, Excel 74,6%, Notițe 74,4%,
+  PowerPoint 70,0%, Acrobat 67,3%, Photoshop 66,3%, formule de calcul 96%.
+- Ultima sesiune (6 pași): Sheets — parolă la „Protejează foaia” și protejarea structurii registrului (cu .xlsx),
+  numele definite se pot schimba (redenumite și în formule), validarea datelor cu formulă proprie; Slides — mărime proprie
+  a slide-urilor în cm, modul Chioșc (prezentare care merge singură, în buclă).
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Sheets: parolă la protejarea foii; PDF: editarea textului existent; Docs: secțiuni).
+- Restul funcțiilor din etapa 2 (PDF: editarea textului existent; Docs: secțiuni; Sheets: înghețarea la selecție).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
 
@@ -28,7 +29,7 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- De verificat (nu blochează): un fișier salvat cu parolă din Suite, deschis în programul de birou de la serviciu (pe laptop nu e altul instalat).
+- De verificat (nu blochează): un fișier (și o foaie protejată) salvat cu parolă din Suite, deschis în programul de birou de la serviciu (pe laptop nu e altul instalat).
 - Întrebare (nu blochează): marcajul de timp la semnarea PDF are nevoie de un server de timp pe internet (se trimite doar amprenta
   documentului, nu documentul). Îl adăugăm ca opțiune, cu un server ales de Adrian? Până atunci semnăturile au ora calculatorului.
 - Codul e doar local, pe laptop; pus pe GitHub doar dacă Adrian decide.
