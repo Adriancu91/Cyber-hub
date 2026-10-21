@@ -1,13 +1,11 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-21 08:50 · **de:** coordonator
+**Actualizat:** 2026-10-21 10:05 · **de:** centrul de comandă (după coordonator, 08:50)
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. Rezumatul zilei: `rezumate/2026-10-21.md`.)_
 
 ## Așteaptă de la tine, Adrian
-1. **Cyber Universe — OPRIT, are nevoie de răspunsul tău:** „da”/„nu” la închiderea Fazei 5 și pornirea Fazei 6
-   (suita și Kronos ca module se mută mai târziu); recomandarea OS-ului: **da** (`stare/cyber-universe.md`, `cyber-universe/docs/STATE.md`).
-2. **Kronos — „da”/„nu” la S13:** fila „Întreabă din text” să folosească modelul #407 în loc de #401; recomandare: da
-   (`stare/kronos.md`, `cyberspace/plan/pentru_adrian.md`). Nu e urgent.
+1. ~~OS Faza 6~~ — **decis la 10:05: OS-ul rămâne oprit până la testul pe stick** (`DECIZII.md`).
+2. ~~Kronos S13~~ — **aprobat la 10:05**; S8 reaprobat cu standardul copiat în `cyberspace/plan/hub_modul-v0.md`.
 3. **Kronos — verifici cele 20 de răspunsuri** din raportul de dimineață și completezi coloana „e bine? (tu)”
    (`cyberspace/docs/rapoarte/2026-10-21_0752_raport_dimineata.md`).
 4. **Cyber Universe — testul pe stick (B-001):** pe **alt calculator**, nu pe ThinkPad; pornești de pe stick și trimiți poze,

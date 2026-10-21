@@ -34,3 +34,8 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
 - 2026-10-20 22:35 — Cyber Universe OS: criptografia pentru HTTPS (TLS 1.3) se scrie în proiect, după standardele publice, fără
   biblioteci externe (D-011 în repo-ul OS; „da” dat de Adrian direct sesiunii OS, confirmat în centrul de comandă la 23:09).
   Condiție: fiecare funcție trece exemplele oficiale de test; până la o verificare separată, nu se folosește pentru date sensibile.
+- 2026-10-21 10:05 — Cyber Universe OS: **rămâne oprit** (nu se închide Faza 5, nu pornește Faza 6) până la testul pe un
+  calculator real (B-001 / P3-09). Adrian face testul pe alt calculator când are timp; sesiunile OS reiau lucrul abia după
+  rezultatele testului (P3-09, P3-10) sau după o comandă nouă în `COMENZI.md`. Nu e nevoie să mai întrebe.
+- 2026-10-21 10:05 — Kronos: S13 aprobat (#407 în fila „Întreabă din text”); S8 reaprobat, cu standardul copiat în
+  `cyberspace/plan/hub_modul-v0.md`. Regulă: executantul Kronos nu poate citi hub-ul; ce are de citit de acolo ajunge în `plan/`.
