@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-21 11:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-21 14:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu, română + cod + engleză simplă), antrenat de la zero pe
@@ -11,12 +11,14 @@
   scade cu orele (10 → 6 → 3), iar tipurile noi stau pe loc (2 → 1 → 2) — trebuie alte tipuri în date, nu mai multe ore.
 - **Formatul comun de modul aplicat:** 24 de fișiere `module/manifeste/<nume>.toml` după `standarde/modul-v0.md`, ținute
   la zi din `MANIFEST` de o unealtă, cu test. Unealta de pornire a sarcinilor se descurcă acum singură la repornire.
-- Teste: 843 trec, 1 sărit.
+- **Datele pentru noaptea 12 sunt gata și verificate** (30/30 corecte): 3.319 întrebări de tipuri noi (specii, deputați,
+  râuri, raioane, anul fondării), fără niciun tip din examen. Fila „Întreabă din text” din interfață folosește acum #407.
+- Teste: 850 trec, 1 sărit.
 
 ## Urmează
-- Acum (procesor): datele pentru noaptea 12, cu tipuri noi de întrebări (râuri, specii, deputați), altele decât cele din examen.
-- Apoi: fila „Întreabă din text” din interfață trece la #407 (aprobat de Adrian, 21 oct 10:05).
-- La noapte (21→22): noaptea 12, 3 ore din #407 pe datele noi, doar dacă supraveghetorul verifică perechile la 17:15.
+- Acum (procesor): raportul de dimineață își actualizează singur instrucțiunea înainte să ruleze (`git pull`).
+- La noapte (21→22, de la 19:00): noaptea 12, 3 ore din #407 pe datele noi; pragul de „confirmat”: tipuri noi ≥ 5 din 15.
+- Mâine 08:15: verdictul nopții 12.
 
 ## Ce oferă proiectul celorlalți
 - `verifica_text(text)` din motorul de română: acord, „al/a/ai/ale”, numerale cu „de”, diacritice (Python, fără rețea).
