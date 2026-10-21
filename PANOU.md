@@ -1,6 +1,6 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-22 00:15 · **de:** centrul de comandă
+**Actualizat:** 2026-10-22 01:50 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. Rezumatul zilei: `rezumate/2026-10-21.md`.)_
 
 ## Așteaptă de la tine, Adrian
@@ -18,7 +18,7 @@ _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. R
 ## Proiectele acum
 | Proiect | Unde e | Lucrează acum? | Ultima veste (ora) |
 |---|---|---|---|
-| **Kronos** | #407 în interfață; date noi verificate 30/30; 851 teste trec | **Da — noaptea 12 (S12) rulează din 19:00** (3 ore din #407, tipuri noi de întrebări); verdict mâine 08:15 | 19:00 (`cyberspace/plan/coada.md`; starea din hub 17:20) |
+| **Kronos** | S15 gata (00:45): tipurile văzute 30/30, nevăzute 6/50 → „se învață, nu se transferă”. **Direcție nouă aprobată de Adrian (01:42, `DECIZII.md`)**: fără LLM, auto-joc cu verificator + specialiști + memorie; Qwen iese din rolul de judecător | Da — supraveghetorul scrie S16 (verificator propriu, procesor) și S17 (întrebări născute de Kronos, o noapte) la trecerea de 02:15/05:15 | 01:45 (`cyberspace/plan/coada.md`, `docs/rapoarte/2026-10-22_0200_strategie_nucleu_fara_llm.md`) |
 | **Cyber Universe OS** | Faza 5 aproape gata (HTTPS cu criptografie proprie); 41 de teste, CI verde | **Nu — OPRIT** prin decizia ta (10:05), până la testul pe stick | 20:45 (`stare/cyber-universe.md`) |
 | **Suita office** | Etapa 2: Excel 77,5%, Word 77,0%, Clipchamp 76,3%, Notițe 74,4%, PowerPoint 73,3%, Acrobat 69,0%, Photoshop 68,5%, formule 97,1% | Da, continuu pe ThinkPad (529 fișiere de test, 0 erori) | 20:45 (`stare/suita-office.md`) |
 

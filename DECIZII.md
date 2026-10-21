@@ -47,3 +47,11 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   fișiere pe disc și să ruleze comenzi în OS (agent înăuntru); (4) auto-actualizare: OS-ul descarcă ultima versiune construită de CI de pe GitHub
   și o scrie pe stick; (5) trimitere pe GitHub din OS, prin API. Construirea OS-ului rămâne în cloud (CI); compilarea din interiorul OS-ului nu e
   un obiectiv acum. Faza 5 se consideră închisă fără P5-07/P5-08 (mutate după suită). Wi-Fi (Intel AX200, firmware) rămâne pentru mai târziu.
+- 2026-10-22 01:42 — **Direcția nouă a lui Kronos (Adrian, trei „da”)**, după S15 (tipurile văzute 30/30, nevăzute 6/50) și strategia din
+  `cyberspace/docs/rapoarte/2026-10-22_0200_strategie_nucleu_fara_llm.md`: (1) ținta e un AI propriu **fără LLM** (nicio inteligență
+  străină ca nucleu, profesor sau evaluator), cu „performanță de top” măsurată pe **domenii cu verificator** (documente în română, cod cu
+  teste, gramatică), nu pe conversație liberă; metoda: auto-joc cu verificator (H3) + specialiști mici cu ruter (H4) + memorie mare în RAM (H2);
+  autonomia crește pe trepte (L1 date proprii → L2 bucla singură în buget → L3 programe verificate), nu prin permisiuni. (2) **Qwen iese din
+  rolul de judecător** la „răspuns din text”; notarea se face cu verificatoare proprii (E0). Dependențele rămase (Qwen pentru poveștile vechi,
+  TinyStories, Claude în cascadă) se declară și se înlocuiesc pe rând. (3) Supraveghetorul primește E0 → E1 în `plan/coada.md`; nu se mai fac
+  nopți de antrenare cu rețeta veche pentru tipuri nevăzute.
