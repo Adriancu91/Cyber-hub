@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-21 11:45 (ora României) · **de:** sesiunea programată a OS-ului (11:41), cu acces la hub
+**Actualizat:** 2026-10-21 14:45 (ora României) · **de:** sesiunea programată a OS-ului (14:41), cu acces la hub
 
 ## Acum
 - Fazele 1, 2 și 4 închise; Faza 3 gata în emulator (lipsește doar testul pe un calculator real).
@@ -11,7 +11,7 @@
   Certificatul site-ului e verificat (lanțul până la o rădăcină de încredere, numele, data); unul greșit e refuzat.
   Testat față de un server OpenSSL real (pe gazdă și din OS-ul pornit în emulator: 18 KB în ~1,3 s).
   Neauditat de specialiști: nu pentru date sensibile până la o verificare separată.
-- 41 de scenarii de test automate trec (nou: `https`); CI verde.
+- 41 de scenarii de test automate trec (nou: `https`); CI verde, testul de stres zilnic verde.
 
 ## Urmează
 - **Oprit, conform deciziei tale din 21 oct, 10:05:** nu se închide Faza 5, nu pornește Faza 6. Sesiunile OS doar verifică
