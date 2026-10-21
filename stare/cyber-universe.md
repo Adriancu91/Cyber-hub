@@ -1,8 +1,13 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-21 23:20 (ora României) · **de:** sesiunea programată a OS-ului (22:46), cu acces la hub
+**Actualizat:** 2026-10-22 00:40 (ora României) · **de:** sesiunea OS pornită manual de centrul de comandă (23:27)
 
 ## Acum
+- **Testul 2 citit și reparat (00:40):** NVMe merge. Pentru placa Realtek (trimitea, nu primea): driverul pornește acum
+  partea de cablu a plăcii (PHY), așteaptă legătura, iar `net` arată starea legăturii. Pentru `/usb` nemontat: acceptă stick-uri
+  formatate în Windows și „trezește” stick-urile reale; `hw` spune de ce nu s-a montat. Toate testele trec.
+- Atenție: în seara asta au lucrat **două sesiuni OS deodată** (aceasta și cea de la 23:40). Cealaltă face rădăcinile reale (P6-02);
+  varianta mea de P6-02 e păstrată deoparte (`wip/P6-02-b`), ca să nu se ciocnească.
 - **Deblocat** după testul tău pe Lenovo (C-2): rezultatul e trecut în `docs/HARDWARE.md`, ghidul `docs/USB.md` are acum
   varianta „fișiere copiate pe FAT32” și nota despre Secure Boot. Comanda nouă **`hw`** arată tot hardware-ul pe o pagină.
 - **Faza 5 închisă** (suita și Kronos ca module mutate după suită). **Faza 6 planificată** (C-3): 10 sarcini, P6-01 … P6-10.
@@ -23,6 +28,8 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- **Testul 3 (când e verde CI-ul pentru commit-ul `2f1fd30` sau mai nou):** la fel ca testul 2, cablu băgat. Poze: `net` (linia
+  „legatura: …” — spune dacă placa vede cablul), `ping 1.1.1.1`, `hw` (linia `/usb: …` cu motivul, dacă tot nu merge).
 - **Testul 2 pe laptopul Lenovo (când ai timp; ia ultima imagine `stick-usb` din GitHub Actions, CI verde):**
   1. Copiezi fișierele noi pe stick (ca data trecută), Secure Boot oprit, pornești de pe stick.
   2. **Bagă un cablu de rețea** în laptop (la router) înainte de pornire.
