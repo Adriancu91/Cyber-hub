@@ -86,5 +86,5 @@ Format:
      hardware să se vadă ce zice driverul fără port serial. Și `net` să spună „fără adresă (DHCP fără răspuns)” în loc de adresele false din QEMU.
   4. Când 1–3 sunt în CI verde: scrie în `stare/cyber-universe.md` lista pentru **testul 3** (de ex. `log rtl`, `net`, `ping 1.1.1.1`,
      `host github.com`, `ls /usb`), ca Adrian să o facă dintr-o pornire.
-- stare: nou
+- stare: preluat (2026-10-22 00:45, sesiunea OS pornită manual) — P6-01b, P6-01c, P6-01d în docs/TASKS.md; 1 și 2 deja în `1976997`
 - rezultat:
