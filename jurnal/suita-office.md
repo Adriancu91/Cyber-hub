@@ -46,3 +46,5 @@
 - 2026-10-21 17:53 — Sheets: FORECAST.ETS (prognoză cu sezon, și pe luni) și „📉 Foaie de prognoză” cu grafic; formule 97,1%; compatibilitate 529 de fișiere, 0 erori.
 - 2026-10-21 18:40 — Slides: „✏ Desenează” (creion, marker, radieră) și importul .pptx nu mai pierde cerneala / ecuațiile; PowerPoint 71,6%.
 - 2026-10-21 18:40 — Sheets: poze peste celule (🖼 Imagine), în .xlsx și la tipărire / PDF; Excel 77,0%; compatibilitate 529 de fișiere, 0 erori.
+- 2026-10-21 19:20 — Docs și Slides: „Elimină fundalul” la poze; Docs: text artistic cu culori, contur, umbră, strălucire și font; Word 76,8%, PowerPoint 71,8%.
+- 2026-10-21 19:20 — Sheets: „⚡ Analiză rapidă” (Ctrl+Q) și „𝒜 Text artistic”; Excel 77,3%; compatibilitate 529 de fișiere, 0 erori.

@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-21 18:40 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-21 19:20 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
-- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 18:38).
-- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 76,4%, Excel 77,0%, Clipchamp 76,3%, Notițe 74,4%,
-  PowerPoint 71,6%, Acrobat 68,5%, Photoshop 67,2%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Ultima sesiune (6 pași): Slides are „✏ Desenează” (creion, marker, radieră; desenul rămâne o poză care se poate schimba);
-  la .pptx primite nu se mai pierd cerneala și ecuațiile; Sheets are poze peste celule (🖼 Imagine), salvate și citite în .xlsx
-  (34 de poze din fișierele de test se văd acum) și tipărite / puse în PDF; graficele cu bare stivuite ies corect în .pptx.
+- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 19:18).
+- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 76,8%, Excel 77,3%, Clipchamp 76,3%, Notițe 74,4%,
+  PowerPoint 71,8%, Acrobat 68,5%, Photoshop 67,2%, formule de calcul 97,1% (100% fără cele care cer internet).
+- Ultima sesiune (5 pași): „Elimină fundalul” la pozele din Docs și Slides (un click, fundalul devine transparent);
+  în Sheets „⚡ Analiză rapidă” (Ctrl+Q: evidențieri, grafice, totaluri, % din total, tabel, minigrafice) și „𝒜 Text artistic”
+  peste celule; în Docs textul artistic primește culori alese, contur, umbră, strălucire și font.
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Sheets: pozele în .ods și la copiere; PDF: câmp cod de bare care se umple din formular, editarea textului existent; Docs: secțiuni, despărțirea în silabe).
+- Restul funcțiilor din etapa 2 (Sheets: previzualizare în Analiza rapidă, casetă de text, pozele în .ods; PDF: câmp cod de bare care se umple din formular, editarea textului existent; Docs: secțiuni, despărțirea în silabe).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
 
