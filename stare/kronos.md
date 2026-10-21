@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-21 17:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-21 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu, română + cod + engleză simplă), antrenat de la zero pe
@@ -11,14 +11,16 @@
   scade cu orele (10 → 6 → 3), iar tipurile noi stau pe loc (2 → 1 → 2) — trebuie alte tipuri în date, nu mai multe ore.
 - **Formatul comun de modul aplicat:** 24 de fișiere `module/manifeste/<nume>.toml` după `standarde/modul-v0.md`, ținute
   la zi din `MANIFEST` de o unealtă, cu test. Unealta de pornire a sarcinilor se descurcă acum singură la repornire.
-- **Datele pentru noaptea 12 sunt gata și verificate** (30/30 corecte): 3.319 întrebări de tipuri noi (specii, deputați,
-  râuri, raioane, anul fondării), fără niciun tip din examen. Fila „Întreabă din text” din interfață folosește acum #407.
+- **Noaptea 12 (azi): INFIRMAT, fără regresie.** 3.319 întrebări de tipuri noi la antrenare n-au ajutat la tipurile
+  nevăzute (tot 2 din 15). Dar modelul nou (#415) a făcut 50/50 pe examenul „răspuns din text” (cel mai bun până acum)
+  și n-a uitat nimic. Fila „Întreabă din text” din interfață rămâne pe #407.
 - Raportul de dimineață își actualizează singur instrucțiunea înainte să ruleze (`git pull`).
 - Teste: 851 trec, 1 sărit.
 
 ## Urmează
-- La noapte (21→22, de la 19:00): noaptea 12, 3 ore din #407 pe datele noi; pragul de „confirmat”: tipuri noi ≥ 5 din 15.
-- Mâine 08:15: verdictul nopții 12.
+- S15 (noaptea asta sau mâine dimineață, doar examen): 50 de întrebări de tipuri nevăzute în loc de 15, plus 30 din
+  tipurile antrenate pe texte noi, pe #401, #407, #415 — ca să vedem dacă „2 din 15” e chiar zero.
+- Mâine: pasul următor pentru întrebările nevăzute, ales după S15.
 
 ## Ce oferă proiectul celorlalți
 - `verifica_text(text)` din motorul de română: acord, „al/a/ai/ale”, numerale cu „de”, diacritice (Python, fără rețea).

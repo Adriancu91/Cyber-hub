@@ -11,3 +11,4 @@
 - 2026-10-21 11:15 — examenul pe orele 1–2 ale nopții 11: „Da./Nu.” greșit scade cu orele, tipurile noi stau pe loc; datele cu tipuri noi pentru noaptea 12 se fac acum; #407 intră în interfață (aprobat).
 - 2026-10-21 14:20 — datele cu tipuri noi de întrebări (S11) verificate 30/30 → noaptea 12 pornește la 19:00; #407 a intrat în interfață (S13).
 - 2026-10-21 17:20 — raportul de dimineață face singur `git pull` înainte (S14, verificat); noaptea 12 pornește la 19:00.
+- 2026-10-21 23:15 — noaptea 12 gata fără erori: INFIRMAT, fără regresie (tipuri nevăzute tot 2/15; examenul „răspuns din text” 50/50); S15 în coadă: examen mai mare de generalizare.
