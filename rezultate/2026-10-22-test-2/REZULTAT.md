@@ -24,5 +24,10 @@ comanda `hw`), fișierele copiate pe stick FAT32 **formatat în Windows** (nu im
 3. (Nu e defect, doar de știut) configurația de rețea implicită din QEMU rămâne activă când DHCP eșuează; pe hardware real ar fi mai clar
    „fără adresă” decât o adresă falsă.
 
+## Verificări suplimentare (00:09)
+- **Ledul mufei de rețea e aprins** → legătura fizică (link) e stabilită; problema de recepție e în driver / întreruperi, nu în cablu.
+- `help` (poza `06-help.jpg`): comenzile disponibile sunt help, ls, cat, run, desktop, mod, ping, host, http, tastatura, mem, lspci, lsusb,
+  net, hw, uptime, reboot, exit. **Nu există o comandă de jurnal** (mesajele nucleului/driverului nu se pot vedea după pornire).
+
 ## Neverificat
 - Tastatură USB externă; consola după Esc a fost folosită (prima poză e ecranul consolei gol); `help` și ledul mufei de rețea — Adrian le verifică acum.

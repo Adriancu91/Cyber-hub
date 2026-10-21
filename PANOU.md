@@ -1,6 +1,6 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-21 22:20 · **de:** centrul de comandă (după coordonator, 20:50)
+**Actualizat:** 2026-10-22 00:15 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. Rezumatul zilei: `rezumate/2026-10-21.md`.)_
 
 ## Așteaptă de la tine, Adrian
@@ -24,7 +24,8 @@ _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. R
 
 ## Comenzi
 - **C-2** · cyber-universe · rezultatele testului pe hardware real (testul 2 e făcut în mare parte) — `nou` (22:15)
-- **C-3** · cyber-universe · Faza 6: OS-ul ca loc de lucru cu Claude înăuntru (Realtek → certificate → aplicația Claude → auto-actualizare → GitHub) — `nou` (22:25)
+- **C-3** · cyber-universe · Faza 6: OS-ul ca loc de lucru cu Claude înăuntru — `preluat` (P6-01 gata, P6-02 în lucru)
+- **C-4** · cyber-universe · testul 2 făcut: NVMe merge; Realtek trimite dar nu primește; /usb nemontat (stick MBR) + comanda `log` — `nou` (00:15)
 
 ## Propuneri de colaborare
 - Niciuna în așteptare. Aprobată și terminată de toate trei: formatul comun de modul.
