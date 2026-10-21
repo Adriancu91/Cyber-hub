@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-21 23:46 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 00:40 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -8,12 +8,12 @@
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 23:46).
 - Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 78,0%, Clipchamp 77,1%, Notițe 75,2%,
   PowerPoint 74,7%, Acrobat 70,8%, Photoshop 70,5%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Ultima sesiune (7 pași): în Sheets, Rezumatul (tabel pivot) are toate cele 11 calcule (și produs, deviație standard, varianță);
-  în PDF, „Combină” cu ordinea fișierelor și paginile alese înainte; în Imagini, „Aplică imaginea” și textul justificat; în Docs,
-  paleta de culori cu culorile temei; în Slides, sunet la trecerea între slide-uri (8 sunete făcute de noi, se păstrează în .pptx).
-  Compatibilitate verificată din nou: 529 de fișiere, 0 erori.
+- Ultima sesiune: a început cererea lui Adrian de a grupa butoanele în file (ca o panglică): cadrul comun e gata, iar Docs are acum
+  filele Pornire, Inserare, Aspect, Referințe, Corespondență, Revizuire, Vizualizare și fila Tabel (doar în tabel); bara ocupă 2 rânduri în loc de 3–4.
+  Niciun buton nu a dispărut (verificat automat, 136 de controale); Ctrl+K găsește și butoanele de pe filele ascunse.
 
 ## Urmează
+- Prima prioritate: restul Docs (mini-bara, fila Imagine), apoi aceleași file în Imagini, Sheets, PDF, Slides, Video și Notițe.
 - Restul funcțiilor din etapa 2 (Imagini: poziția proprie a straturilor, harta Deplasării dintr-un fișier; PDF: linearizarea; Sheets: formele scrise ca forme în .xlsx, temele registrului; Docs: secțiuni; Video: poziția și mărimea liberă a clipului pe pânză).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
@@ -31,6 +31,7 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
+- De verificat (nu blochează): noile file din Docs (Pornire, Inserare, Revizuire…). Găsești tot ce foloseai? Ce buton folosit des a ajuns prea ascuns?
 - De verificat (nu blochează): un .xlsx cu model de Rezolvitor salvat din Suite, deschis în programul de calcul de la serviciu (Solver): trebuie să arate aceleași condiții.
 - De verificat (nu blochează): un fișier (și o foaie protejată) salvat cu parolă din Suite, deschis în programul de birou de la serviciu (pe laptop nu e altul instalat).
 - De verificat (nu blochează): un .docx protejat din Suite („🔐 Restricționează editarea” cu parolă), deschis la serviciu: trebuie să ceară parola la oprirea protecției.
