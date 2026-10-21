@@ -42,3 +42,5 @@
 - 2026-10-21 16:27 — Slides: corecții pentru poze; Imagini: grila și filtrul Vânt cu Rafală / Sacadat; compatibilitate 529 de fișiere, 0 erori.
 - 2026-10-21 17:11 — Sheets, Analiză: testele t, media mobilă și netezirea exponențială, ANOVA cu doi factori, rang și percentilă.
 - 2026-10-21 17:11 — Coduri QR scrise de la zero (▣ Cod QR în Docs, PDF și Slides); Acrobat 68,5%; compatibilitate 529 de fișiere, 0 erori.
+- 2026-10-21 17:53 — Sheets: „🧮 Rezolvitor” (optimizare cu condiții, exact pentru probleme liniare și cu numere întregi), cu modelul salvat în .xlsx și raport; Excel 76,8%.
+- 2026-10-21 17:53 — Sheets: FORECAST.ETS (prognoză cu sezon, și pe luni) și „📉 Foaie de prognoză” cu grafic; formule 97,1%; compatibilitate 529 de fișiere, 0 erori.
