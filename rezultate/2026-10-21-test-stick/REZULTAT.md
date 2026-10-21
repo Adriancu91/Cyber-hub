@@ -17,7 +17,9 @@ din commit-ul `cf80c3e` (rularea CI 39646110597), pus pe stick ca fișiere pe FA
    cu bara de jos și butonul **Start**.
 3. **Merge:** ecranul (rezoluția nativă, text clar), **touchpad-ul** (cursorul se mișcă), **click-ul** (fereastra „Demo” s-a deschis,
    cu dreptunghiul portocaliu și cursorul desenat în ea), **tastatura internă** (Start → Editor, Adrian a scris text în el).
-4. **Neverificat încă:** `lspci`, `lsusb`, `mem`, `ls /disk` (NVMe), `ls /usb`, `net`, consola text (Esc), tastatura USB externă,
+4. **Nu merge:** **placa de rețea nu e văzută** (Adrian, 22:14) — de așteptat: driverul existent e doar pentru Intel e1000/e1000e,
+   iar laptopul are altă placă Intel (cu fir) plus Wi-Fi. Identificatorul exact (`lspci`, de forma 8086:xxxx) urmează la testul 2.
+5. **Neverificat încă:** `lspci`, `lsusb`, `mem`, `ls /disk` (NVMe), `ls /usb`, `net`, consola text (Esc), tastatura USB externă,
    timpul de pornire. Adrian le face la următorul test, cu poze.
 
 ## Imagini
