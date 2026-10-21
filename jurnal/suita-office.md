@@ -31,3 +31,4 @@
 - 2026-10-21 08:57 — PDF: semnătură digitală cu certificat (ID propriu sau .pfx), verificarea semnăturilor, certificare și semnare prin adăugare; Imagini: Grow / Similar și poligon cu laturi alese; 0 erori în corpus.
 - 2026-10-21 09:41 — Slides: grupare cu Ctrl+G (și în .pptx, cu mărirea grupului din colțuri), ghidaje trase cu mouse-ul, riglă; Imagini: GIF animat din straturi; PowerPoint 68,1%, 0 erori în cele 529 de fișiere de test.
 - 2026-10-21 10:27 — 6 pași: Imagini (modul culorilor, numărătoare pe culori), PDF (butoane în formulare, pagină web → PDF), Slides (WordArt), Sheets (coloane stivuite 100%); Acrobat 66,5%, Photoshop 65,5%, PowerPoint 68,3%, 0 erori în cele 529 de fișiere de test.
+- 2026-10-21 11:14 — 6 pași: 📸 captură de ecran în Docs/Slides/Notițe, ortografie F7 în Sheets și Slides, Imagini ↔ PDF, .rtf → PDF cu culori; Word 74,6%, Excel 72,9%, PowerPoint 68,7%, Photoshop 66,0%, 0 erori în cele 529 de fișiere de test.

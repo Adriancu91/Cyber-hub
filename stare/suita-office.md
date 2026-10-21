@@ -1,20 +1,20 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-21 10:27 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-21 11:14 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
-- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 10:27).
-- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Clipchamp 75,6%, Word 74,3%, Notițe 74,0%,
-  Excel 72,5%, PowerPoint 68,3%, Acrobat 66,5%, Photoshop 65,5%, formule de calcul 96%.
-- Ultima sesiune (6 pași): Imagini — modul culorilor (gri, culori indexate, alb-negru, bicolor) și numărătoare pe grupuri de culori;
-  PDF — butoane în formulare (golește, tipărește, adresă, pagină) și pagină web (.html) → PDF, fără scripturi și fără internet;
-  Slides — WordArt (8 stiluri, păstrate în .pptx); Sheets — grafic „coloane stivuite 100%” (și în .xlsx).
+- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 11:08).
+- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Clipchamp 75,6%, Word 74,6%, Notițe 74,4%,
+  Excel 72,9%, PowerPoint 68,7%, Acrobat 66,7%, Photoshop 66,0%, formule de calcul 96%.
+- Ultima sesiune (6 pași): captură de ecran (o fereastră sau o bucată decupată din ecran) în Docs, Slides și Notițe;
+  verificarea ortografiei cu fereastră (F7) în Sheets și Slides; Imagini deschide o pagină din PDF și salvează ca PDF;
+  PDF face din .rtf un PDF cu formatarea (și culorile textului se citesc acum din .rtf).
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Slides: mai multe animații pe același obiect, taburi pe riglă; PDF: editarea textului
-  existent, marcaj de timp la semnare; Docs: secțiuni, mai multe pagini alăturate).
+- Restul funcțiilor din etapa 2 (Video: capitole; Slides: mai multe animații pe același obiect; PDF: editarea textului
+  existent; Docs: secțiuni; pozele din fișierele .rtf).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
 
