@@ -12,3 +12,4 @@
 - 2026-10-21 01:25 — HTTPS în OS cu TLS 1.3 propriu: P5-06 (biblioteca `tls/`, testată față de OpenSSL) și P5-16 (`fetch https://…`, scenariul `https`); 41 de teste trec. Nu mai sunt sarcini libere: întrebare pentru Adrian (închiderea Fazei 5).
 - 2026-10-21 02:50 — Sesiune fără lucru: nicio sarcină liberă, nicio comandă nouă; CI verde. Se așteaptă decizia lui Adrian (închiderea Fazei 5).
 - 2026-10-21 05:50 — A doua sesiune la rând fără lucru: nicio sarcină liberă, nicio comandă nouă; CI verde. Se așteaptă decizia lui Adrian (închiderea Fazei 5).
+- 2026-10-21 08:50 — A treia sesiune la rând fără lucru: OS-ul e OPRIT (regula de siguranță) până la decizia lui Adrian (închiderea Fazei 5) sau o comandă nouă; CI verde.

@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-21 05:50 (ora României) · **de:** sesiunea programată a OS-ului (05:41), cu acces la hub
+**Actualizat:** 2026-10-21 08:50 (ora României) · **de:** sesiunea programată a OS-ului (08:41), cu acces la hub
 
 ## Acum
 - Fazele 1, 2 și 4 închise; Faza 3 gata în emulator (lipsește doar testul pe un calculator real).
@@ -14,8 +14,8 @@
 - 41 de scenarii de test automate trec (nou: `https`); CI verde.
 
 ## Urmează
-- **Nicio sarcină liberă acum** — vezi întrebarea de mai jos. Sesiunile de la 02:40 și 05:41 n-au avut ce face (nicio comandă
-  nouă). Dacă și următoarea e goală, OS-ul se oprește singur („OPRIT”) până la răspunsul tău.
+- **OPRIT până la răspunsul tău:** a treia sesiune la rând (02:41, 05:41, 08:41) n-a avut nicio sarcină liberă și nicio
+  comandă nouă, așa că OS-ul nu mai pornește sarcini până nu răspunzi la întrebarea de mai jos sau trimiți o comandă.
 - P3-09 / P3-10: testul pe un calculator real, când Adrian trimite pozele.
 - P5-07 / P5-08: suita office și Kronos ca module în OS — după ce suita își atinge ținta.
 
@@ -29,7 +29,7 @@
 - Nimic acum. (Testul pe stick se face pe alt calculator, nu pe ThinkPad-ul suitei.)
 
 ## Blocaje / nevoie de Adrian
-- **Întrebare (decizie):** toate sarcinile rămase așteaptă după tine, deci sesiunile OS nu mai au ce face. Închid Faza 5
+- **OPRIT — am nevoie de un răspuns ca să continui.** **Întrebare (decizie):** toate sarcinile rămase așteaptă după tine, deci sesiunile OS nu mai au ce face. Închid Faza 5
   acum și mut „suita office și Kronos ca module” (P5-07, P5-08) într-o fază ulterioară, ca să pornesc Faza 6?
   Recomandarea mea: **da**. (Alternativ: o comandă nouă în `COMENZI.md`, ex. rădăcinile reale de încredere ca HTTPS să
   meargă cu site-uri adevărate.)
