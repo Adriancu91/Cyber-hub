@@ -66,7 +66,7 @@ Format:
   Compilarea OS-ului în interiorul OS-ului NU e obiectiv. Wi-Fi: nu acum. Scrie planul, apoi începe cu (1). Raportează lui Adrian ce are de
   pregătit pe laptop pentru fiecare pas (cablu de rețea, fișierul cu cheia, token GitHub).
 - stare: preluat (2026-10-21 23:00, sesiunea OS) — Faza 6 = P6-01 … P6-10 în docs/TASKS.md, planuri în docs/plans/
-- rezultat: în lucru — Faza 5 închisă, Faza 6 planificată (ROADMAP, TASKS, 10 planuri, D-012); pasul (1) driverul Realtek RTL8168 e scris și testat față de un model al cipului (de confirmat pe laptop); urmează (2) rădăcinile reale de încredere.
+- rezultat: în lucru — pașii (1), (2), (3) gata în cod și testați în QEMU/CI (Realtek de confirmat pe laptop; rădăcini Mozilla + HTTPS cu site-uri reale; `claude`, chat „claude-app” și unelte cu confirmare — P6-01 … P6-06); din (4) e gata Release-ul automat (P6-07), urmează comanda „Actualizează” (P6-08), apoi (5) P6-09.
 
 ### C-4 · cyber-universe · Testul 2 pe laptopul Lenovo: rezultate + două reparații
 - data: 2026-10-22 00:15 · de la: Adrian (prin centrul de comandă)

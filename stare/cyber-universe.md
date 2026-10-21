@@ -1,50 +1,43 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-22 00:40 (ora României) · **de:** sesiunea OS pornită manual de centrul de comandă (23:27)
+**Actualizat:** 2026-10-22 01:35 (ora României) · **de:** sesiunea OS programată (23:40)
 
 ## Acum
-- **Testul 2 citit și reparat (00:40):** NVMe merge. Pentru placa Realtek (trimitea, nu primea): driverul pornește acum
-  partea de cablu a plăcii (PHY), așteaptă legătura, iar `net` arată starea legăturii. Pentru `/usb` nemontat: acceptă stick-uri
-  formatate în Windows și „trezește” stick-urile reale; `hw` spune de ce nu s-a montat. Toate testele trec.
-- Atenție: în seara asta au lucrat **două sesiuni OS deodată** (aceasta și cea de la 23:40). Cealaltă face rădăcinile reale (P6-02);
-  varianta mea de P6-02 e păstrată deoparte (`wip/P6-02-b`), ca să nu se ciocnească.
-- **Deblocat** după testul tău pe Lenovo (C-2): rezultatul e trecut în `docs/HARDWARE.md`, ghidul `docs/USB.md` are acum
-  varianta „fișiere copiate pe FAT32” și nota despre Secure Boot. Comanda nouă **`hw`** arată tot hardware-ul pe o pagină.
-- **Faza 5 închisă** (suita și Kronos ca module mutate după suită). **Faza 6 planificată** (C-3): 10 sarcini, P6-01 … P6-10.
-- **P6-01 gata în cod:** driver pentru placa ta de rețea Realtek RTL8168 (`10ec:8168`), testat față de un model al cipului
-  (QEMU nu are acest cip). Merge sau nu pe laptop — afli la testul 2.
-- 41 de scenarii automate trec; CI verde.
+- **Claude e în OS (Faza 6, pașii 2–5 din C-3):** `fetch https://` merge cu site-uri adevărate (117 rădăcini de încredere
+  din lista publică Mozilla; verificat în CI cu api.anthropic.com, github.com, google, wikipedia ș.a.). Comanda **`claude`**
+  întreabă Claude din terminal; aplicația **„claude-app”** din meniul Start e un chat în fereastră; Claude poate **citi,
+  lista, scrie fișiere și rula comenzi** — scrierea și rularea doar după ce apeși **„Da”** în caseta de pe ecran.
+- Toate se testează automat față de o imitație a API-ului (fără cheie reală). Pe laptop au nevoie de cheie și de rețea.
+- **CI publică acum un Release** (`os-<număr>`, „Latest”) cu fișierele stick-ului și sumele lor — nu mai cauți în Actions.
+- Sesiunea manuală (C-4) a reparat recepția Realtek și montarea stick-urilor din Windows; codul celor două sesiuni e unit.
+- 45 de scenarii automate trec (+1 care rulează doar în CI, cu internet); CI verde.
 
 ## Urmează
-- P6-02: rădăcinile reale de încredere, ca `fetch https://` să meargă cu site-uri adevărate.
-- P6-03 (JSON) → P6-04 … P6-06: aplicația „Claude” (linie de comandă, fereastră de chat, unelte cu confirmare).
-- P6-07/P6-08: actualizare din GitHub; P6-09: trimitere pe GitHub din OS.
+- P6-08: comanda „Actualizează” (descarcă ultimul Release și rescrie stick-ul).
+- P6-09: trimitere pe GitHub din OS. P6-10: testul mare pe laptop.
 
 ## Ce oferă proiectul celorlalți
-- Bibliotecile `crypto/` și `tls/` (Rust, fără dependențe, MIT); acum și `rtl8168/` (driver de rețea cu model de test).
-- Infrastructura de test pe scenarii (`tests/scenarios.txt` + `tools/test.sh`).
+- Biblioteci Rust fără dependențe (MIT): `crypto/` (acum și ECDSA P-384), `tls/` (TLS 1.3, rădăcini Mozilla), `json/`
+  (cititor/scriitor JSON verificat față de Python), `rtl8168/`.
+- Un client minimal pentru API-ul Claude (`user/src/claude_api.rs`) și o imitație a API-ului pentru teste
+  (`tools/claude-test-server.py`, cu unelte).
 
 ## De ce are nevoie de la ceilalți
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- **Testul 3 (imaginea din CI-ul verde pentru `f7a455f` sau mai nouă), dintr-o singură pornire, cablul băgat:**
+- **Testul 3 (imaginea din ultimul Release `os-…` sau din CI-ul verde), dintr-o singură pornire, cablul băgat:**
   1. Copiezi fișierele noi pe stick (îl poți lăsa formatat din Windows), Secure Boot oprit, pornești de pe stick.
   2. Aștepți ~30 de secunde pe desktop (rețeaua încearcă singură), apoi **Esc** → consola `cyber>`.
   3. `log rtl` → **poză** (registrele plăcii de rețea — de aici văd ce nu merge, dacă tot nu merge).
   4. `net` → **poză** (linia „legatura: …” și „primire: …”).
   5. `ping 1.1.1.1` → poză; `host github.com` → poză.
   6. `ls /usb` → poză; dacă scrie „nu exista”: `hw` → poză (rândul `/usb:` spune motivul) și `log usb` → poză.
-- **Testul 2 pe laptopul Lenovo (când ai timp; ia ultima imagine `stick-usb` din GitHub Actions, CI verde):**
-  1. Copiezi fișierele noi pe stick (ca data trecută), Secure Boot oprit, pornești de pe stick.
-  2. **Bagă un cablu de rețea** în laptop (la router) înainte de pornire.
-  3. Pe desktop apasă **Esc** → consola text `cyber>` (poză: arată că merge).
-  4. Scrie `hw` + Enter → **poză** (o singură poză cu tot hardware-ul; dacă nu încape, două).
-  5. Scrie `net` → poză; apoi `ping 1.1.1.1` → poză (aici vedem dacă merge driverul Realtek).
-  6. Scrie `ls /disk` și `ls /usb` → poză.
-  7. Dacă ai o tastatură USB externă: conecteaz-o și scrie `help` cu ea.
-  8. Cronometrează cât durează de la alegerea stick-ului până apare desktopul.
-- **Pentru pașii următori ai Fazei 6 (nu acum, îți spun când):** un fișier `claude.key` pe stick cu o cheie API Claude
-  (ideal cu limită mică de cheltuieli) — pentru P6-04; un token GitHub „fine-grained” pentru un singur depozit, în
-  `github.token` pe stick — pentru P6-09. Cheile nu ajung niciodată în repo sau în hub.
-- P3-10 (închiderea Fazei 3) așteaptă pozele testului 2. B-003 / P5-07 (suita ca modul): mai târziu.
+  7. **Doar dacă rețeaua merge:** `fetch https://example.com/` → poză (prima pagină HTTPS adevărată pe laptop).
+- **Pentru Claude pe laptop (când rețeaua merge):** pe stick, un fișier **`claude.key`** cu cheia ta API Claude pe un singur
+  rând (ideal o cheie cu limită mică de cheltuieli). Apoi `claude Salut` în consolă, sau „claude-app” din meniul Start.
+  Cheia nu ajunge niciodată în repo sau în hub și nu se afișează pe ecran.
+- **De decis (pentru P6-08, nu urgent):** depozitul `cyber-universe` e **privat**, deci OS-ul poate descărca actualizările doar
+  cu un token GitHub. Variante: (a) un token „fine-grained”, doar citire + scriere pe acest depozit, în `github.token` pe stick
+  (servește și la P6-09) — recomandarea mea; (b) faci depozitul public și actualizarea merge fără token.
+- B-003 / P5-07 (suita ca modul): mai târziu.
