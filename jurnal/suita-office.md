@@ -51,3 +51,5 @@
 - 2026-10-21 20:04 — Imagini: forme pline, straturi de umplere cu gradient, culoare principală / de fundal, măsurare în cm și aria selecției; PDF: drepturi de autor în XMP; Photoshop 68,2%, Acrobat 68,7%; compatibilitate 529 de fișiere, 0 erori.
 - 2026-10-21 20:45 — Sheets: gruparea în Rezumat pe luni / trimestre / ani și intervale; Imagini: strat cu model și margini umplute după conținut; Excel 77,5%, Photoshop 68,5%.
 - 2026-10-21 20:45 — Slides: volum, pe tot ecranul, ascuns, apariție / stingere la clipuri; PDF: linii prea subțiri; Docs: chenar cu laturi, linie, culoare; PowerPoint 73,3%, Acrobat 69,0%, Word 77,0%; compatibilitate 529 de fișiere, 0 erori.
+- 2026-10-21 21:31 — Sheets: forme și casete de text; Docs: teme (fonturi, culori); Imagini: mărimea după conținut; Excel 77,9%, Word 78,1%, Photoshop 68,8%.
+- 2026-10-21 21:31 — Slides: tranziția Transformare; PDF: tonuri de gri; Notițe: video cu camera; Video: efecte de mișcare; PowerPoint 73,6%, Acrobat 69,2%, Notițe 75,2%, Clipchamp 77,1%; compatibilitate 529 de fișiere, 0 erori.

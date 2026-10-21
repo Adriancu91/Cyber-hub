@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-21 20:45 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-21 21:31 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
-- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 20:44).
-- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 77,0%, Excel 77,5%, Clipchamp 76,3%, Notițe 74,4%,
-  PowerPoint 73,3%, Acrobat 69,0%, Photoshop 68,5%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Ultima sesiune (6 pași): în Sheets, gruparea în Rezumat (tabel pivot) pe luni / trimestre / ani și pe intervale; în Imagini, strat de
-  umplere cu model și marginile pânzei umplute după conținut; în Slides, volumul clipurilor, „pe tot ecranul”, ascuns, apariție / stingere
-  treptată (și în .pptx); în PDF, corectarea liniilor prea subțiri pentru tipar; în Docs, chenarul paragrafului cu laturi, linie și culoare.
+- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 21:30).
+- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 77,9%, Clipchamp 77,1%, Notițe 75,2%,
+  PowerPoint 73,6%, Acrobat 69,2%, Photoshop 68,8%, formule de calcul 97,1% (100% fără cele care cer internet).
+- Ultima sesiune (7 pași): în Sheets, forme și casete de text peste celule; în Docs, temele documentului (temă, fonturi, culori);
+  în Imagini, mărimea pozei după conținut (oamenii nu se turtesc); în Slides, tranziția Transformare (și în .pptx); în PDF, trecerea
+  în tonuri de gri; în Notițe, înregistrarea video cu camera; în Video, efectele de mișcare (tremurat, rotire lentă, pulsare).
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Imagini: colțuri rotunjite; Sheets: previzualizare în Analiza rapidă, casetă de text, gruparea manuală în Rezumat; PDF: câmp cod de bare din formular, editarea textului existent; Docs: secțiuni).
+- Restul funcțiilor din etapa 2 (Sheets: formele scrise ca forme în .xlsx, previzualizare în Analiza rapidă, gruparea manuală în Rezumat; Docs: culorile temei în paleta de culori, secțiuni; PDF: câmp cod de bare din formular, editarea textului existent).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
 
@@ -23,7 +23,7 @@
 - Motorul de formule (~500 de funcții, cu nume românești), rezolvitorul de optimizare (simplex + ramificare + Nelder–Mead), prognoza
   cu netezire exponențială și sezon, statisticile și analizele (regresie, ANOVA, teste F / t / z), generatorul de coduri QR,
   criptarea (și a fișierelor .docx/.xlsx/.pptx cu parolă), formularele, semnarea, verificarea și conversia PDF/A, accesibilitatea PDF,
-  compararea PDF-urilor, graficele SVG, citările, îmbinarea de corespondență, cititorul EXIF, cele 66 de filtre de imagine,
+  compararea PDF-urilor, graficele SVG, scalarea pozelor după conținut, trecerea PDF-urilor în tonuri de gri, citările, îmbinarea de corespondență, cititorul EXIF, cele 66 de filtre de imagine,
   cititorii și scriitorii .rtf / .txt / .ods / .gif animat, importul/exportul .docx/.xlsx/.pptx/.pdf/.odt/.psd pot fi refolosite.
 
 ## De ce are nevoie de la ceilalți
