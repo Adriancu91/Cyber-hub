@@ -1,20 +1,20 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-21 22:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-21 23:02 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
-- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 22:14).
+- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 23:02).
 - Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 77,9%, Clipchamp 77,1%, Notițe 75,2%,
-  PowerPoint 74,4%, Acrobat 70,0%, Photoshop 69,3%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Ultima sesiune (9 pași): în Imagini, textul vertical și transformarea liberă a stratului (mărire, rotire, mutare); în PDF, salvarea
-  ca XML, separările de culoare (C, M, Y, K) și portofoliul PDF (mai multe fișiere într-unul); în Slides, muzica de fundal care continuă
-  pe slide-urile următoare și coperta clipului; în Video, 8 treceri noi (12 în total); în Sheets, Maxim și Minim în Rezumat.
-  Compatibilitate verificată din nou: 529 de fișiere, 0 erori.
+  PowerPoint 74,4%, Acrobat 70,6%, Photoshop 70,2%, formule de calcul 97,1% (100% fără cele care cer internet).
+- Ultima sesiune (6 pași): în Imagini, masca de text (selecție în forma literelor), panoul de simboluri pentru text (© € → ★ ✓),
+  filtrul Deplasare (după o hartă: poza însăși, nori, valuri, țesătură) și alinierea rândurilor textului; în PDF, comentariul audio
+  (înregistrat la microfon, pus pe pagină) și filigranul din alt PDF (rămâne text, nu poză); reparată data comentariilor din PDF
+  (seara după ora 21 apăreau cu ziua de mâine). Compatibilitate verificată din nou: 529 de fișiere, 0 erori.
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Sheets: formele scrise ca forme în .xlsx, Produs / deviație standard în Rezumat; Docs: culorile temei în paleta de culori, secțiuni; Video: poziția și mărimea liberă a clipului pe pânză).
+- Restul funcțiilor din etapa 2 (Imagini: Reveal All, Apply Image, justificarea textului; PDF: ordinea fișierelor la combinare; Sheets: formele scrise ca forme în .xlsx, Produs / deviație standard în Rezumat; Docs: culorile temei în paleta de culori, secțiuni; Video: poziția și mărimea liberă a clipului pe pânză).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
 
@@ -24,7 +24,7 @@
 - Motorul de formule (~500 de funcții, cu nume românești), rezolvitorul de optimizare (simplex + ramificare + Nelder–Mead), prognoza
   cu netezire exponențială și sezon, statisticile și analizele (regresie, ANOVA, teste F / t / z), generatorul de coduri QR,
   criptarea (și a fișierelor .docx/.xlsx/.pptx cu parolă), formularele, semnarea, verificarea și conversia PDF/A, accesibilitatea PDF,
-  compararea PDF-urilor, separările de culoare, portofoliile PDF, exportul PDF → XML, graficele SVG, scalarea pozelor după conținut, trecerea PDF-urilor în tonuri de gri, citările, îmbinarea de corespondență, cititorul EXIF, cele 66 de filtre de imagine,
+  compararea PDF-urilor, separările de culoare, portofoliile PDF, exportul PDF → XML, graficele SVG, scalarea pozelor după conținut, trecerea PDF-urilor în tonuri de gri, citările, îmbinarea de corespondență, cititorul EXIF, cele 67 de filtre de imagine,
   cititorii și scriitorii .rtf / .txt / .ods / .gif animat, importul/exportul .docx/.xlsx/.pptx/.pdf/.odt/.psd pot fi refolosite.
 
 ## De ce are nevoie de la ceilalți
