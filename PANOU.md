@@ -23,7 +23,8 @@ _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. R
 | **Suita office** | Etapa 2: Excel 77,5%, Word 77,0%, Clipchamp 76,3%, Notițe 74,4%, PowerPoint 73,3%, Acrobat 69,0%, Photoshop 68,5%, formule 97,1% | Da, continuu pe ThinkPad (529 fișiere de test, 0 erori) | 20:45 (`stare/suita-office.md`) |
 
 ## Comenzi
-- **C-2** · cyber-universe · rezultatele testului pe hardware real + pregătirea testului 2 — `nou` (22:15)
+- **C-2** · cyber-universe · rezultatele testului pe hardware real (testul 2 e făcut în mare parte) — `nou` (22:15)
+- **C-3** · cyber-universe · Faza 6: OS-ul ca loc de lucru cu Claude înăuntru (Realtek → certificate → aplicația Claude → auto-actualizare → GitHub) — `nou` (22:25)
 
 ## Propuneri de colaborare
 - Niciuna în așteptare. Aprobată și terminată de toate trei: formatul comun de modul.

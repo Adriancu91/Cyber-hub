@@ -41,3 +41,9 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   `cyberspace/plan/hub_modul-v0.md`. Regulă: executantul Kronos nu poate citi hub-ul; ce are de citit de acolo ajunge în `plan/`.
 - 2026-10-21 22:15 — Primul test al Cyber Universe OS pe hardware real a reușit (Lenovo ThinkPad, altul decât al suitei): desktop,
   touchpad, tastatură, editor. OS-ul e deblocat (comanda C-2): completează HARDWARE/USB/BLOCKERS, pregătește testul 2, apoi continuă.
+- 2026-10-21 22:25 — **Direcția Fazei 6 a Cyber Universe OS (Adrian): OS-ul devine loc de lucru cu Claude înăuntru**, pe laptopul de test
+  (AMD Ryzen, rețea Realtek 10ec:8168). Ordinea: (1) driver Realtek RTL8168 după documentația publică; (2) rădăcinile reale de încredere,
+  ca HTTPS să meargă cu site-uri adevărate; (3) aplicația „Claude” în OS: chat prin API cu cheia lui Adrian ținută local, cu voie să citească/scrie
+  fișiere pe disc și să ruleze comenzi în OS (agent înăuntru); (4) auto-actualizare: OS-ul descarcă ultima versiune construită de CI de pe GitHub
+  și o scrie pe stick; (5) trimitere pe GitHub din OS, prin API. Construirea OS-ului rămâne în cloud (CI); compilarea din interiorul OS-ului nu e
+  un obiectiv acum. Faza 5 se consideră închisă fără P5-07/P5-08 (mutate după suită). Wi-Fi (Intel AX200, firmware) rămâne pentru mai târziu.
