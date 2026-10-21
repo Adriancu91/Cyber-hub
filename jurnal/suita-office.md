@@ -40,3 +40,5 @@
 - 2026-10-21 15:38 — 5 pași: Repară accesibilitatea în PDF, Tonuri HDR în Imagini, 17 efecte artistice în Slides, corecții și efecte de poză în Docs, Statistici descriptive în Sheets; Acrobat 68,3%, PowerPoint 70,5%, Word 75,9%, Excel 76,1%, 0 erori în cele 529 de fișiere de test.
 - 2026-10-21 16:27 — Sheets: analiza datelor (regresie, corelație, ANOVA, testul F, histogramă) și mutarea celulelor prin tragere; Docs: restricționarea editării (cu parolă, în .docx) și lista / catalogul la îmbinare.
 - 2026-10-21 16:27 — Slides: corecții pentru poze; Imagini: grila și filtrul Vânt cu Rafală / Sacadat; compatibilitate 529 de fișiere, 0 erori.
+- 2026-10-21 17:11 — Sheets, Analiză: testele t, media mobilă și netezirea exponențială, ANOVA cu doi factori, rang și percentilă.
+- 2026-10-21 17:11 — Coduri QR scrise de la zero (▣ Cod QR în Docs, PDF și Slides); Acrobat 68,5%; compatibilitate 529 de fișiere, 0 erori.
