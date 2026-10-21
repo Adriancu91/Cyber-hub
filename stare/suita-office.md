@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-21 13:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-21 14:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
-- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 13:05).
-- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Clipchamp 76,3%, Word 75,2%, Excel 74,6%, Notițe 74,4%,
+- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 13:50).
+- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Clipchamp 76,3%, Excel 75,7%, Word 75,2%, Notițe 74,4%,
   PowerPoint 70,0%, Acrobat 67,3%, Photoshop 66,3%, formule de calcul 96%.
-- Ultima sesiune (6 pași): Sheets — parolă la „Protejează foaia” și protejarea structurii registrului (cu .xlsx),
-  numele definite se pot schimba (redenumite și în formule), validarea datelor cu formulă proprie; Slides — mărime proprie
-  a slide-urilor în cm, modul Chioșc (prezentare care merge singură, în buclă).
+- Ultima sesiune (6 pași, toți în Sheets): înghețarea la selecție (mai multe rânduri și coloane), mai multe rânduri
+  repetate la tipărire, mărimea la tipărire în procente, totul pe o singură pagină, ascunderea titlurilor și a barei
+  de formule, fereastra „Tabel” cu 8 culori și opțiuni de stil (toate păstrate și în .xlsx).
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (PDF: editarea textului existent; Docs: secțiuni; Sheets: înghețarea la selecție).
+- Restul funcțiilor din etapa 2 (Docs: restricționarea editării, secțiuni; PDF: editarea textului existent; Sheets: coloane repetate la tipărire).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
 
