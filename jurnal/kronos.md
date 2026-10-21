@@ -10,3 +10,4 @@
 - 2026-10-21 11:15 — S8 gata: 24 de module Kronos descrise în formatul comun (`module/manifeste/`, cu unealtă și test); unealta de pornire repară singură repornirile (S9).
 - 2026-10-21 11:15 — examenul pe orele 1–2 ale nopții 11: „Da./Nu.” greșit scade cu orele, tipurile noi stau pe loc; datele cu tipuri noi pentru noaptea 12 se fac acum; #407 intră în interfață (aprobat).
 - 2026-10-21 14:20 — datele cu tipuri noi de întrebări (S11) verificate 30/30 → noaptea 12 pornește la 19:00; #407 a intrat în interfață (S13).
+- 2026-10-21 17:20 — raportul de dimineață face singur `git pull` înainte (S14, verificat); noaptea 12 pornește la 19:00.

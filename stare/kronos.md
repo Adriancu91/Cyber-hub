@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-21 14:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-21 17:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu, română + cod + engleză simplă), antrenat de la zero pe
@@ -13,10 +13,10 @@
   la zi din `MANIFEST` de o unealtă, cu test. Unealta de pornire a sarcinilor se descurcă acum singură la repornire.
 - **Datele pentru noaptea 12 sunt gata și verificate** (30/30 corecte): 3.319 întrebări de tipuri noi (specii, deputați,
   râuri, raioane, anul fondării), fără niciun tip din examen. Fila „Întreabă din text” din interfață folosește acum #407.
-- Teste: 850 trec, 1 sărit.
+- Raportul de dimineață își actualizează singur instrucțiunea înainte să ruleze (`git pull`).
+- Teste: 851 trec, 1 sărit.
 
 ## Urmează
-- Acum (procesor): raportul de dimineață își actualizează singur instrucțiunea înainte să ruleze (`git pull`).
 - La noapte (21→22, de la 19:00): noaptea 12, 3 ore din #407 pe datele noi; pragul de „confirmat”: tipuri noi ≥ 5 din 15.
 - Mâine 08:15: verdictul nopții 12.
 
