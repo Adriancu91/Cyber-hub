@@ -48,3 +48,4 @@
 - 2026-10-21 18:40 — Sheets: poze peste celule (🖼 Imagine), în .xlsx și la tipărire / PDF; Excel 77,0%; compatibilitate 529 de fișiere, 0 erori.
 - 2026-10-21 19:20 — Docs și Slides: „Elimină fundalul” la poze; Docs: text artistic cu culori, contur, umbră, strălucire și font; Word 76,8%, PowerPoint 71,8%.
 - 2026-10-21 19:20 — Sheets: „⚡ Analiză rapidă” (Ctrl+Q) și „𝒜 Text artistic”; Excel 77,3%; compatibilitate 529 de fișiere, 0 erori.
+- 2026-10-21 20:04 — Imagini: forme pline, straturi de umplere cu gradient, culoare principală / de fundal, măsurare în cm și aria selecției; PDF: drepturi de autor în XMP; Photoshop 68,2%, Acrobat 68,7%; compatibilitate 529 de fișiere, 0 erori.

@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-21 19:20 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-21 20:04 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
-- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 19:18).
+- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 20:04).
 - Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 76,8%, Excel 77,3%, Clipchamp 76,3%, Notițe 74,4%,
-  PowerPoint 71,8%, Acrobat 68,5%, Photoshop 67,2%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Ultima sesiune (5 pași): „Elimină fundalul” la pozele din Docs și Slides (un click, fundalul devine transparent);
-  în Sheets „⚡ Analiză rapidă” (Ctrl+Q: evidențieri, grafice, totaluri, % din total, tabel, minigrafice) și „𝒜 Text artistic”
-  peste celule; în Docs textul artistic primește culori alese, contur, umbră, strălucire și font.
+  PowerPoint 71,8%, Acrobat 68,7%, Photoshop 68,2%, formule de calcul 97,1% (100% fără cele care cer internet).
+- Ultima sesiune (5 pași): în Imagini, forme pline și linie dreaptă la Adnotează; straturi de umplere (culoare, gradient) care
+  se schimbă oricând; culoarea principală / de fundal (tastele X și D); măsurare în centimetri și aria selecției la Riglă;
+  în PDF, drepturile de autor în Proprietăți (metadate XMP).
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Sheets: previzualizare în Analiza rapidă, casetă de text, pozele în .ods; PDF: câmp cod de bare care se umple din formular, editarea textului existent; Docs: secțiuni, despărțirea în silabe).
+- Restul funcțiilor din etapa 2 (Imagini: umplere cu model, colțuri rotunjite; Sheets: previzualizare în Analiza rapidă, casetă de text; PDF: câmp cod de bare din formular, editarea textului existent; Docs: secțiuni).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
 
