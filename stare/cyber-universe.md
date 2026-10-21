@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-21 02:50 (ora României) · **de:** sesiunea programată a OS-ului (02:40), cu acces la hub
+**Actualizat:** 2026-10-21 05:50 (ora României) · **de:** sesiunea programată a OS-ului (05:41), cu acces la hub
 
 ## Acum
 - Fazele 1, 2 și 4 închise; Faza 3 gata în emulator (lipsește doar testul pe un calculator real).
@@ -14,8 +14,8 @@
 - 41 de scenarii de test automate trec (nou: `https`); CI verde.
 
 ## Urmează
-- **Nicio sarcină liberă acum** — vezi întrebarea de mai jos. Sesiunea de la 02:40 n-a avut ce face (nicio comandă nouă);
-  sesiunile OS rămân în așteptare până la răspunsul tău.
+- **Nicio sarcină liberă acum** — vezi întrebarea de mai jos. Sesiunile de la 02:40 și 05:41 n-au avut ce face (nicio comandă
+  nouă). Dacă și următoarea e goală, OS-ul se oprește singur („OPRIT”) până la răspunsul tău.
 - P3-09 / P3-10: testul pe un calculator real, când Adrian trimite pozele.
 - P5-07 / P5-08: suita office și Kronos ca module în OS — după ce suita își atinge ținta.
 
