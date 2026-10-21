@@ -1,16 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-21 09:41 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-21 10:27 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
-- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 09:40).
+- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 10:27).
 - Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Clipchamp 75,6%, Word 74,3%, Notițe 74,0%,
-  Excel 72,5%, PowerPoint 68,1%, Acrobat 65,9%, Photoshop 65,2%, formule de calcul 96%.
-- Ultima sesiune (6 pași): Slides — gruparea obiectelor (Ctrl+G), care se păstrează și în .pptx, grupul se mărește din colțuri,
-  ghidaje care se trag cu mouse-ul (obiectele se lipesc de ele, păstrate în .pptx), riglă în centimetri;
-  Imagini — GIF animat din straturi (fiecare strat un cadru).
+  Excel 72,5%, PowerPoint 68,3%, Acrobat 66,5%, Photoshop 65,5%, formule de calcul 96%.
+- Ultima sesiune (6 pași): Imagini — modul culorilor (gri, culori indexate, alb-negru, bicolor) și numărătoare pe grupuri de culori;
+  PDF — butoane în formulare (golește, tipărește, adresă, pagină) și pagină web (.html) → PDF, fără scripturi și fără internet;
+  Slides — WordArt (8 stiluri, păstrate în .pptx); Sheets — grafic „coloane stivuite 100%” (și în .xlsx).
 
 ## Urmează
 - Restul funcțiilor din etapa 2 (Slides: mai multe animații pe același obiect, taburi pe riglă; PDF: editarea textului
