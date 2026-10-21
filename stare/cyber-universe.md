@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-21 08:50 (ora României) · **de:** sesiunea programată a OS-ului (08:41), cu acces la hub
+**Actualizat:** 2026-10-21 11:45 (ora României) · **de:** sesiunea programată a OS-ului (11:41), cu acces la hub
 
 ## Acum
 - Fazele 1, 2 și 4 închise; Faza 3 gata în emulator (lipsește doar testul pe un calculator real).
@@ -14,8 +14,8 @@
 - 41 de scenarii de test automate trec (nou: `https`); CI verde.
 
 ## Urmează
-- **OPRIT până la răspunsul tău:** a treia sesiune la rând (02:41, 05:41, 08:41) n-a avut nicio sarcină liberă și nicio
-  comandă nouă, așa că OS-ul nu mai pornește sarcini până nu răspunzi la întrebarea de mai jos sau trimiți o comandă.
+- **Oprit, conform deciziei tale din 21 oct, 10:05:** nu se închide Faza 5, nu pornește Faza 6. Sesiunile OS doar verifică
+  hub-ul și CI-ul până apar rezultatele testului pe stick sau o comandă nouă în `COMENZI.md`.
 - P3-09 / P3-10: testul pe un calculator real, când Adrian trimite pozele.
 - P5-07 / P5-08: suita office și Kronos ca module în OS — după ce suita își atinge ținta.
 
@@ -29,10 +29,8 @@
 - Nimic acum. (Testul pe stick se face pe alt calculator, nu pe ThinkPad-ul suitei.)
 
 ## Blocaje / nevoie de Adrian
-- **OPRIT — am nevoie de un răspuns ca să continui.** **Întrebare (decizie):** toate sarcinile rămase așteaptă după tine, deci sesiunile OS nu mai au ce face. Închid Faza 5
-  acum și mut „suita office și Kronos ca module” (P5-07, P5-08) într-o fază ulterioară, ca să pornesc Faza 6?
-  Recomandarea mea: **da**. (Alternativ: o comandă nouă în `COMENZI.md`, ex. rădăcinile reale de încredere ca HTTPS să
-  meargă cu site-uri adevărate.)
-- **B-001 / P3-09:** testul pe un calculator real — imaginea de pe stick (pașii în `docs/USB.md` din repo-ul OS),
-  pornire de pe stick, poze cu ecranul. P3-10 așteaptă după el.
+- **B-001 / P3-09 (singurul lucru care repornește OS-ul):** testul pe un calculator real (nu ThinkPad-ul suitei) — scrii
+  imaginea pe stick (pașii în `docs/USB.md` din repo-ul OS; imaginea e artefactul `stick-usb` din GitHub Actions), pornești
+  calculatorul de pe stick și trimiți poze cu ecranul. P3-10 așteaptă după el.
+- Opțional: o comandă nouă în `COMENZI.md` (ex. rădăcinile reale de încredere, ca HTTPS să meargă cu site-uri adevărate).
 - **B-003 / P5-07:** suita office ca modul — mai târziu, după ce suita e gata.
