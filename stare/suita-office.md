@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-21 20:04 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-21 20:45 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
-- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 20:04).
-- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 76,8%, Excel 77,3%, Clipchamp 76,3%, Notițe 74,4%,
-  PowerPoint 71,8%, Acrobat 68,7%, Photoshop 68,2%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Ultima sesiune (5 pași): în Imagini, forme pline și linie dreaptă la Adnotează; straturi de umplere (culoare, gradient) care
-  se schimbă oricând; culoarea principală / de fundal (tastele X și D); măsurare în centimetri și aria selecției la Riglă;
-  în PDF, drepturile de autor în Proprietăți (metadate XMP).
+- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 20:44).
+- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 77,0%, Excel 77,5%, Clipchamp 76,3%, Notițe 74,4%,
+  PowerPoint 73,3%, Acrobat 69,0%, Photoshop 68,5%, formule de calcul 97,1% (100% fără cele care cer internet).
+- Ultima sesiune (6 pași): în Sheets, gruparea în Rezumat (tabel pivot) pe luni / trimestre / ani și pe intervale; în Imagini, strat de
+  umplere cu model și marginile pânzei umplute după conținut; în Slides, volumul clipurilor, „pe tot ecranul”, ascuns, apariție / stingere
+  treptată (și în .pptx); în PDF, corectarea liniilor prea subțiri pentru tipar; în Docs, chenarul paragrafului cu laturi, linie și culoare.
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Imagini: umplere cu model, colțuri rotunjite; Sheets: previzualizare în Analiza rapidă, casetă de text; PDF: câmp cod de bare din formular, editarea textului existent; Docs: secțiuni).
+- Restul funcțiilor din etapa 2 (Imagini: colțuri rotunjite; Sheets: previzualizare în Analiza rapidă, casetă de text, gruparea manuală în Rezumat; PDF: câmp cod de bare din formular, editarea textului existent; Docs: secțiuni).
 - Etapa 3, calitate: viteză, stabilitate, memorie pe 8 GB, teste automate pentru fiecare modul.
 - Etapa 5: pachet de instalare pentru Windows și testare cu colegii lui Adrian, cu formular de raportare.
 
