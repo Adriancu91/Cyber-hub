@@ -39,3 +39,5 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   rezultatele testului (P3-09, P3-10) sau după o comandă nouă în `COMENZI.md`. Nu e nevoie să mai întrebe.
 - 2026-10-21 10:05 — Kronos: S13 aprobat (#407 în fila „Întreabă din text”); S8 reaprobat, cu standardul copiat în
   `cyberspace/plan/hub_modul-v0.md`. Regulă: executantul Kronos nu poate citi hub-ul; ce are de citit de acolo ajunge în `plan/`.
+- 2026-10-21 22:15 — Primul test al Cyber Universe OS pe hardware real a reușit (Lenovo ThinkPad, altul decât al suitei): desktop,
+  touchpad, tastatură, editor. OS-ul e deblocat (comanda C-2): completează HARDWARE/USB/BLOCKERS, pregătește testul 2, apoi continuă.

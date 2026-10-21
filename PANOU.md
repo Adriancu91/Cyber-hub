@@ -1,11 +1,11 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-21 20:50 · **de:** coordonator
+**Actualizat:** 2026-10-21 22:20 · **de:** centrul de comandă (după coordonator, 20:50)
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. Rezumatul zilei: `rezumate/2026-10-21.md`.)_
 
 ## Așteaptă de la tine, Adrian
-1. **Cyber Universe — testul pe stick (B-001), singurul lucru care repornește OS-ul:** pe **alt calculator** (nu ThinkPad-ul),
-   pornești de pe stick și trimiți poze; pașii în `cyber-universe/docs/USB.md` (`stare/cyber-universe.md`). Când ai timp.
+1. ~~Cyber Universe — testul pe stick~~ — **FĂCUT la 22:05, a reușit** pe un ThinkPad real: desktop, touchpad, tastatură, editor.
+   Rezultatul: `rezultate/2026-10-21-test-stick/REZULTAT.md`. OS-ul primește comanda **C-2** și reia lucrul la 23:40.
 2. **Suita — de verificat la serviciu (nu blochează):** deschizi acolo fișiere făcute în Suite: unul salvat cu parolă (și o foaie
    protejată), un .docx cu „Restricționează editarea” (să ceară parola) și un .xlsx cu model de Rezolvitor (Solver să arate
    aceleași condiții) (`stare/suita-office.md`). Ultimele două sunt noi.
@@ -23,8 +23,7 @@ _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. R
 | **Suita office** | Etapa 2: Excel 77,5%, Word 77,0%, Clipchamp 76,3%, Notițe 74,4%, PowerPoint 73,3%, Acrobat 69,0%, Photoshop 68,5%, formule 97,1% | Da, continuu pe ThinkPad (529 fișiere de test, 0 erori) | 20:45 (`stare/suita-office.md`) |
 
 ## Comenzi
-- Nicio comandă deschisă. (Opțional, pentru OS: o comandă nouă l-ar putea porni — de ex. rădăcinile reale de încredere,
-  ca HTTPS să meargă cu site-uri adevărate.)
+- **C-2** · cyber-universe · rezultatele testului pe hardware real + pregătirea testului 2 — `nou` (22:15)
 
 ## Propuneri de colaborare
 - Niciuna în așteptare. Aprobată și terminată de toate trei: formatul comun de modul.
