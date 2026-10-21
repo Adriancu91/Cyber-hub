@@ -12,3 +12,4 @@
 - 2026-10-21 14:20 — datele cu tipuri noi de întrebări (S11) verificate 30/30 → noaptea 12 pornește la 19:00; #407 a intrat în interfață (S13).
 - 2026-10-21 17:20 — raportul de dimineață face singur `git pull` înainte (S14, verificat); noaptea 12 pornește la 19:00.
 - 2026-10-21 23:15 — noaptea 12 gata fără erori: INFIRMAT, fără regresie (tipuri nevăzute tot 2/15; examenul „răspuns din text” 50/50); S15 în coadă: examen mai mare de generalizare.
+- 2026-10-22 02:15 — S15 verificat: tipurile văzute 30/30, nevăzute 6/50 (se învață, nu se transferă); după direcția nouă a lui Adrian, în coadă: S16 = verificator fără LLM (aprobat), S17 = „întrebări născute de Kronos” (după S16).
