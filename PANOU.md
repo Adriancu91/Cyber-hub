@@ -1,25 +1,29 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-20 20:55 · **de:** coordonator
-_(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. Rezumatul zilei: `rezumate/2026-10-20.md`.)_
+**Actualizat:** 2026-10-21 08:50 · **de:** coordonator
+_(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. Rezumatul zilei: `rezumate/2026-10-21.md`.)_
 
 ## Așteaptă de la tine, Adrian
-1. **Cyber Universe — testul pe stick (B-001):** alegi o zi și o oră pentru ThinkPad, după ce suita își atinge ținta
-   (decizia ta de la 19:45); pași în `cyber-universe/docs/USB.md` (`docs/BLOCKERS.md`, `RESURSE.md`). Nu e urgent.
-2. **Suita office — copie de siguranță (opțional):** decizi dacă urcăm codul pe un repo GitHub **privat**; acum e doar pe laptop (`stare/suita-office.md`).
+1. **Cyber Universe — OPRIT, are nevoie de răspunsul tău:** „da”/„nu” la închiderea Fazei 5 și pornirea Fazei 6
+   (suita și Kronos ca module se mută mai târziu); recomandarea OS-ului: **da** (`stare/cyber-universe.md`, `cyber-universe/docs/STATE.md`).
+2. **Kronos — „da”/„nu” la S13:** fila „Întreabă din text” să folosească modelul #407 în loc de #401; recomandare: da
+   (`stare/kronos.md`, `cyberspace/plan/pentru_adrian.md`). Nu e urgent.
+3. **Kronos — verifici cele 20 de răspunsuri** din raportul de dimineață și completezi coloana „e bine? (tu)”
+   (`cyberspace/docs/rapoarte/2026-10-21_0752_raport_dimineata.md`).
+4. **Cyber Universe — testul pe stick (B-001):** pe **alt calculator**, nu pe ThinkPad; pornești de pe stick și trimiți poze,
+   pașii în `cyber-universe/docs/USB.md` (`cyber-universe/docs/BLOCKERS.md`, `RESURSE.md`). Când ai timp.
+5. **Suita office — copie de siguranță (opțional):** decizi dacă urcăm codul pe un repo GitHub **privat** (`stare/suita-office.md`).
 
 ## Proiectele acum
 | Proiect | Unde e | Lucrează acum? | Ultima veste (ora) |
 |---|---|---|---|
-| **Kronos** | Noaptea 11 (din #401, linia `w2_conv_text_v2`) a pornit de mână la 20:46, după două opriri fără pagube | Da, antrenează ~3 ore pe workstation; verdict mâine dimineață (08:15) | 20:50 (executant, `cyberspace/docs/rapoarte/2026-10-20_2050_S7_pornire_manuala.md`) |
-| **Cyber Universe OS** | Faza 4 închisă (editor, setări, Module, tastatură RO, terminal); Faza 5: rețea — ping merge (P5-01) | Da, sesiunea de 20:40 lucrează la P5-02 (UDP și DHCP) | 20:41 (commit în `cyber-universe`; `stare/` din hub e de la 18:25, `docs/STATE.md` de la 17:28) |
-| **Suita office** | Etapa 2: Clipchamp 73%, Notițe 70%, Excel 66%, Word 65%, PowerPoint 63%, Acrobat 58%, Photoshop 55%, formule 96% | Da, continuu pe ThinkPad | 20:31 (`stare/suita-office.md`) |
-
-**În curând la OS:** P5-06 (HTTPS) va cere decizia ta: criptografie scrisă de noi sau bibliotecă (`cyber-universe/docs/TASKS.md`). Nu acum.
+| **Kronos** | Noaptea 11 gata: #407 **PARȚIAL, fără regresie** (formulări noi 11/15, da/nu 13/15, tipuri noi tot 2/15) | Da: S10 (examen pe modelele de la ora 1 și 2, ~10 min) pornit la 08:29; azi S11, S9, S8 | 08:29 (`cyberspace/plan/coada.md`; starea din hub e de la 02:15) |
+| **Cyber Universe OS** | Faza 5 aproape închisă: **HTTPS cu criptografie scrisă integral de noi** merge; 41 de teste trec, CI verde | **Nu — OPRIT** după 3 sesiuni fără sarcini libere (02:41, 05:41, 08:41); așteaptă punctul 1 | 08:41 (`stare/cyber-universe.md`) |
+| **Suita office** | Etapa 2: Clipchamp 75,6%, Word 74,3%, Notițe 74%, Excel 72,5%, PowerPoint 67,2%, Photoshop 64,6%, Acrobat 64,3%, formule 96% | Da, continuu pe ThinkPad (529 fișiere de test, 0 erori) | 08:10 (`stare/suita-office.md`) |
 
 ## Comenzi
-- Nicio comandă deschisă. (C-1 retrasă la 19:50: suita primește comenzi direct în chatul ei.)
+- Nicio comandă deschisă. (Pentru OS, o comandă nouă l-ar putea porni și ea — de ex. rădăcinile reale de încredere,
+  ca HTTPS să meargă cu site-uri adevărate.)
 
 ## Propuneri de colaborare
-- Niciuna în așteptare. Aprobată: formatul comun de modul — suita gata; Kronos l-a pus în coadă (S8, mâine ziua);
-  OS are `module.toml` la modulele lui, încă nescris în hub.
+- Niciuna în așteptare. Aprobată: formatul comun de modul — suita și OS gata; Kronos îl face azi (S8 în coadă).
