@@ -144,5 +144,5 @@ Format:
   4. Când CI e verde și e Release nou: lista pentru **testul 5** în `stare/cyber-universe.md` (`net`, `ping 1.1.1.1`, `host github.com`,
      `fetch https://example.com/`, și noul diagnostic). Dacă rețeaua merge la testul 5, în același mesaj spune-i lui Adrian ce să pună pe stick
      pentru pasul următor (`claude.key`, `github.token`) — abia atunci.
-- stare: nou
+- stare: preluat (2026-10-22 11:45 UTC, sesiunea OS) — P6-10c în docs/TASKS.md
 - rezultat:
