@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 21:17 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 22:06 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -23,11 +23,14 @@
     Ștergere, Culoare, Opacitate; literele Alt pe bara rapidă (V, N, U, D, X, G, L).
   - **PDF (20:25–21:00), gata la capitolul acesta**: „Adăugare comentarii” ca bară sub bara de sus (cu ✕ Închide), panourile din dreapta câte unul,
     ecranul de start (Deschide fișier, PDF nou, unelte recomandate, Recente), tastele simple V / S / U / D / X pornite din ☰ Meniu;
-  - **Docs (21:00–21:15), început**: grupul Editare (Găsire ▾, Înlocuire, Selectare ▾), Font și Paragraf pe două rânduri, ca în procesorul de text cunoscut.
+  - **Docs (21:00–22:05)**: Pornire gata (Font și Paragraf pe două rânduri, **galeria Stiluri** cu previzualizare, Editare; toate grupurile la vedere pe un ecran de laptop);
+    **scurtăturile cunoscute** (Ctrl+L / E / R / J aliniere, Ctrl+1 / 2 / 5 spațiere, Ctrl+M, Ctrl+T, Ctrl+Shift+L, Ctrl+Q, Ctrl+Space, Ctrl+Shift+E urmărire, F5, F12),
+    **fereastra Font pe Ctrl+D**, Ctrl+Shift+V lipește doar textul; fila **Inserare** în ordinea cunoscută (Copertă, Pagină necompletată, Sfârșit de pagină, Antet / Subsol / Număr de pagină);
+    fila nouă **Proiectare** (Teme, Seturi de stiluri, Culori, Fonturi; Filigran, Culoarea și Chenarul paginii); Aspect → Întreruperi ▾.
 - Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală (cu taste adevărate).
 
 ## Urmează
-- Punctul 5, mai departe: Docs (galeria Stiluri, Borduri ▾, scurtăturile, filele Inserare / Proiectare / Aspect…), apoi Slides, Imagini, Video, Notițe,
+- Punctul 5, mai departe: Docs (Aranjare în Aspect, Referințe, Corespondență, Revizuire, Vizualizare, filele contextuale, Borduri ▾), apoi Slides, Imagini, Video, Notițe,
   după `INTERFATA-FAMILIARA.md`.
 - Punctul 6: butonul „Trimite o observație” (captură + text salvate local, Adrian le trimite el).
 - Kit de instalare nou doar când îl cere Adrian (întâi testează pe laptop, cu „Porneste Suite.cmd”).
@@ -46,7 +49,7 @@
 - De încercat (nu blochează): Sheets e așezat ca la birou (toate filele, clic dreapta, mini-bara, Ctrl+A de două ori, Alt, H, V = Lipire, Ctrl+ș = data);
   PDF: Ctrl+0 / Ctrl+2 / Ctrl+H; PDF are acum așezarea programului cunoscut (Toate uneltele în stânga, panourile în dreapta).
   Se găsește totul unde te aștepți? Ce lipsește cel mai tare?
-- De încercat (nu blochează): PDF fără fișier deschis → ecranul de start; Toate uneltele → Adăugare comentarii: bara apare sus? Docs → Pornire: Font și Paragraf pe două rânduri.
+- De încercat (nu blochează): PDF fără fișier deschis → ecranul de start; Toate uneltele → Adăugare comentarii: bara apare sus? Docs → Pornire: galeria Stiluri (clic pe „Titlu 1”); Ctrl+E / Ctrl+J / Ctrl+D în Docs; Docs → Proiectare → Teme.
 - De încercat (nu blochează): PDF, pe o copie a unui act: adaugi o pagină, Ctrl+S, îl redeschizi: s-a salvat peste? Clic dreapta pe un comentariu primit → Culoare → Roșu: se vede roșu?
 - De încercat (nu blochează): PDF → Editare → ✎ Editează text pe un act real: schimbi un cuvânt, salvezi; se vede bine la birou?
 - De încercat (nu blochează): un .xlsx cu tabel (Inserare → Tabel) sau cu forme făcut în Suite, deschis la birou: merge fără „reparare”?

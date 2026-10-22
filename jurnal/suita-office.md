@@ -92,3 +92,4 @@
 - 2026-10-22 20:25 — PDF: meniul mic la textul ales, Ctrl+S peste fișier cu copie de siguranță, clic dreapta pe comentariu (Ștergere, Culoare, Opacitate), literele Alt pe bara rapidă.
 - 2026-10-22 21:17 — PDF gata la „ca în programele cunoscute”: bara de comentarii sub bara de sus, ecranul de start cu unelte recomandate și Recente, tastele simple din Meniu.
 - 2026-10-22 21:17 — Docs: grupul Editare (Găsire, Înlocuire, Selectare) și Font / Paragraf pe două rânduri, ca în procesorul de text cunoscut.
+- 2026-10-22 22:06 — Docs: galeria Stiluri, scurtăturile cunoscute (Ctrl+E centrează, Ctrl+D fereastra Font…), fila Inserare în ordinea cunoscută, fila nouă Proiectare și Întreruperi ▾.
