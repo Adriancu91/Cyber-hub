@@ -25,3 +25,4 @@
 - 2026-10-22 03:45 — P6-08 și P6-09 gata: butonul „Actualizeaza” (ultimul Release, verificat cu sume, scris sigur pe stick) și trimiterea de fișiere pe GitHub din OS (comanda `gh-trimite`, unealta `github_push` pentru Claude); 47 de scenarii trec. Rămâne doar testul pe laptop (P6-10).
 - 2026-10-22 05:45 — Sesiune programată fără lucru nou: nicio comandă nouă, nicio sarcină liberă; CI verde; se așteaptă testul 3 pe laptop (P6-10).
 - 2026-10-22 08:45 — Sesiune programată fără lucru nou (a doua la rând): nicio comandă nouă, nicio sarcină liberă; CI verde; se așteaptă testul 3 pe laptop (P6-10).
+- 2026-10-22 10:40 — C-5 gata (Release os-123, CI verde): Realtek cu coadă de primire de 256 și repornire automată după blocare, diagnostic nou în `net`; stick-ul așteaptă acum după ceas (până la 5 s), fiecare pas în `log usb`; lista pentru testul 4 scrisă.

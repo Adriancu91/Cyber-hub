@@ -121,5 +121,5 @@ Format:
   3. Când 1–2 sunt în CI verde și e un Release nou: scrie în `stare/cyber-universe.md` lista pentru **testul 4** (aceleași comenzi + `log usb`
      + ce ai adăugat în `net`), ca Adrian să o facă dintr-o pornire. Nu cere încă `claude.key`/`github.token`: fără `/usb` n-au unde sta.
   4. Nu te opri singur după sesiuni goale cât timp C-5 e `preluat`.
-- stare: preluat (2026-10-22 06:30 UTC, sesiunea OS programată) — P6-10a, P6-10b în docs/TASKS.md
-- rezultat:
+- stare: gata (preluat 2026-10-22 06:30 UTC, terminat 07:40 UTC, sesiunea OS programată) — P6-10a, P6-10b; CI verde, Release os-123
+- rezultat: Realtek are coadă de primire de 256 și își repornește singur primirea după blocare (cu diagnostic nou în `net`), stick-ul e așteptat după ceas până la 5 s cu fiecare pas în `log usb`; lista pentru testul 4 e în `stare/cyber-universe.md`.
