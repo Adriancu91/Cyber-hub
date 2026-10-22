@@ -96,3 +96,5 @@
 - 2026-10-22 22:56 — Docs, interfața familiară: grupul Aranjare în Aspect, filele Revizuire, Vizualizare, Referințe și Corespondență așezate ca în procesorul de text cunoscut (D4 și D5 gata), fila Format imagine; 6 commituri, 4 teste noi, toate trec.
 - 2026-10-22 23:48 — Docs gata la „ca în programele cunoscute”: filele de tabel Proiectare tabel + Aspect, fila Antet și subsol cu editare direct pe pagină la dublu clic, literele Alt cunoscute.
 - 2026-10-22 23:48 — Slides, început: Font și Paragraf pe Pornire, fila Expunere diapozitive (De la început, Din diapozitivul curent), Vizualizare cu numele cunoscute; 7 commituri, 3 teste noi.
+- 2026-10-23 00:42 — Slides ca programul de prezentări cunoscut: Diapozitiv nou ▾ cu Duplicare, galeria Aspect, Reinițializare, „diapozitiv” în locul lui „slide” (L2 gata).
+- 2026-10-23 00:42 — Slides: scurtăturile cunoscute (Ctrl+] / [ font, Ctrl+L/E/R/J, Shift+F3, Ctrl+Space, F12) și exponent / indice nou (Ctrl+Shift+= / Ctrl+=, și în .pptx); L3 gata, Inserare în ordinea cunoscută (L4 început).
