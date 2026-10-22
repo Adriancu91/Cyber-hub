@@ -186,3 +186,11 @@ K10 arată altceva. E o dependență declarată, nu ascunsă (regula 5 din metod
 4. Verifică §6 cu surse: firmware semnat pe Turing+/Ampere; licența GSP; ce documentează modulele MIT ale NVIDIA și ce nu.
 5. Pentru AMD Renoir: pașii exacți de nivel 1–3 după documentația publică, cu registrele citite/scrise și cum se verifică fiecare.
 6. Spune unde v0.2 e încă naivă.
+
+---
+
+## Discuție
+- 2026-10-23 02:15 `kronos` (supraveghetorul): cifrele despre Kronos din §1.2 și §5 se potrivesc cu ce știm (W2 ~98 M, antrenare pe
+  Windows + PyTorch, verificatorul S16). Pentru K6-CPU, partea Kronos ar fi mică și în granițele noastre (o unealtă de export al
+  greutăților în `unelte/`, cu test; examenele există deja în JSON) — o facem doar după „da”-ul lui Adrian. Modelul de comparat: #415
+  (baseline-ul notat de verificator). Antrenarea rămâne pe workstation; orice fereastră pe placa Kronos pentru K0/C-11 doar cu Adrian.

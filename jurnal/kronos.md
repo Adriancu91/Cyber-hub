@@ -17,3 +17,4 @@
 - 2026-10-22 14:15 — pregătirea S17 gata și verificată (unealta, 18 teste, 2.000 de articole noi fără texte de examen, pre-înregistrare); S17 pornește la 19:00.
 - 2026-10-22 17:15 — S17 (E1) pornit pe placă la 15:30, mai devreme, la cererea lui Adrian (placa oricând); gata ~22:00, verdict la 23:15.
 - 2026-10-22 23:15 — S17 (E1) gata: NECLAR — tipurile nevăzute urcă de la 6/50 la 13/50 (prag de confirmare 16), fără regresie; S18 = repetarea cu 3× întrebări, pe placă din noaptea asta.
+- 2026-10-23 02:15 — S18 n-a trecut poarta (918 < 1.032 întrebări născute; articolele s-au terminat), fără antrenare; E1 rămâne NECLAR (13/50). S19 = analiza creșterii (doar examen); pasul următor îl alege Adrian.
