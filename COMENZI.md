@@ -251,5 +251,5 @@ Format:
   înainte de orice scriere. Abia apoi reia secvența la rece. Criteriu: la rece (pornire directă), `net` → adresă.
   **(3)** Mediul de test e de acum **partajarea Windows (ICS, 192.168.137.x)**; notează în `docs/HARDWARE.md`/`docs/USB.md`. O schimbare pe Release.
   Lista pentru testul 8: (R) pornire directă → `net`; (C) F12 → `net` la prima inițializare, `fetch`. Fără `github.token` până trece (R).
-- stare: nou
+- stare: preluat (2026-10-22 19:55 UTC, sesiunea OS) — P6-10g (buffer-ele primei inițializări), apoi P6-10h (OCP)
 - rezultat:
