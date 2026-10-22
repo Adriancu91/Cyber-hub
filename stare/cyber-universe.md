@@ -1,24 +1,20 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-22 17:30 (ora României) · **de:** sesiunea OS programată (16:28) — C-8 făcută (P6-10d), Release `os-138`
+**Actualizat:** 2026-10-22 19:00 (ora României) · **de:** sesiunea OS programată (17:55) — C-9 făcută (P6-10e), Release `os-144`
 
 ## Acum
-- **C-8 (după testul 5) e gata, CI verde, Release `os-138`:**
-  - **Revenire:** placa pornește iar EXACT ca în os-125 (testul 4, ultima versiune care trimitea și primea): nu mai scriem nimic în
-    „Device Control” (os-136 ștergea Relaxed Ordering, 2010 → 2000) și nu mai golim cache-ul. Registrele PCI se scriu doar bit cu bit,
-    fiecare scriere în jurnal.
-  - **RCR 0002c70a vs 0000c70a:** am verificat — driverul scrie aceeași valoare în ambele versiuni și nu atinge bitul 17, deci placa era
-    în altă stare la pornire. Bănuiala mea: testul 5 a pornit „la rece” direct de pe stick; la plăcile 8168G/H firmware-ul poate lăsa
-    închisă „poarta RXDV” (registrul MISC, bitul 19), care oprește orice transfer — exact 0 trimise / 0 primite. Modelul cipului reproduce asta.
-  - **Variante, încercate pe rând din aceeași pornire** (regula „o schimbare odată”): `rtl porneste rxdv` (deschide poarta RXDV, doar
-    dacă e închisă), `rtl porneste bloc` (bufferele de primire într-un singur bloc sub 4 GB), `rtl porneste cache` (golirea de la os-136).
-  - **Diagnostic:** `log rtl` arată registrele, MISC (poarta), Bus Master, adresele pe 64 de biți, RAM-ul; `log rx` arată fiecare din
-    primele 8 pachete cu adresa completă și primii octeți.
-  - **Studiu (clean-room):** driverul FreeBSD (licență BSD) deschide exact această poartă la plăcile 8168G; de acolo varianta `rxdv`.
-- Test nou în emulator cu 6 GB și memoria forțată peste 4 GB: rețeaua merge. 50 de scenarii automate + 27 de teste ale driverului.
+- **C-9 (după testul 6) e gata, CI verde, Release `os-144`:**
+  - **Placa de pe laptop e RTL8168GU/8111GU** (numărul `50800000`, după lista publică din FreeBSD), nu 8168H cum credeam.
+  - **Pornirea la rece, ca variantă** (pornirea obișnuită rămâne exact ca în os-125, regula „o schimbare pe Release”):
+    `rtl porneste rece` face pașii pe care driverele FreeBSD și SerenityOS îi fac și noi nu-i făceam: preia placa de la firmware
+    (`mcu`), trezește PHY-ul (`phy`), setează registrul „C+ Command” (`cplus`), scrie configurarea înainte de pornire (`ordine`).
+    Fiecare pas se poate da și singur. Fiecare registru: citit → un bit → scris, cu valorile în `log rtl` („pas 1 … pas 18”).
+  - **P6-10f (pachetele 2+ citite ca zero):** se diagnostichează la cald cu `log rx` (există din os-138). Golirea cache-ului
+    (`rtl porneste cache`) n-a fost încercată niciodată la cald → o încercăm la testul 7.
+- 32 de teste ale driverului (un model de placă „rece”), 50 de scenarii automate.
 
 ## Urmează
-- Testul 6 pe laptop (lista mai jos) → varianta care merge devine implicită în versiunea următoare → apoi C-7 (bucla automată).
+- Testul 7 pe laptop (lista mai jos). Dacă `rece` merge → devine pornirea obișnuită în versiunea următoare → apoi C-7 (bucla automată).
 
 ## Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3, rădăcini Mozilla), `json/` (și base64), `rtl8168/`.
@@ -28,13 +24,14 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- **Testul 6, dintr-o singură pornire, cablul de rețea băgat** (Release **`os-138`** sau mai nou):
-  1. Copiezi pe stick fișierele din Release (ca la testul 5, inclusiv `cyber.rw`), pornești de pe stick, aștepți ~1 minut, **Esc** → `cyber>`.
-  2. **Pasul A (exact ca os-125):** `net` → poză; `log rtl` → poză.
-     Dacă „pachete trimise” > 0 și „primite” > 0: și `log rx` → poză, `ping 1.1.1.1` → poză, apoi treci la pasul C.
-  3. **Pasul B (doar dacă la A e tot 0 / 0):** `rtl porneste rxdv` → aștepți ~30 s → `net` → poză; `log rtl` → poză.
-  4. **Pasul C:** scrii varianta care a mers la B (sau nimic, dacă A a mers) plus ` bloc`, de ex. `rtl porneste rxdv bloc` sau
-     `rtl porneste bloc` → ~30 s → `net` → poză; `log rx` → poză; `ping 1.1.1.1` → poză; `host github.com` → poză.
-  5. Spune-mi și: la testul 4 (care mergea) ai pornit laptopul din Windows (Restart) sau de la oprit? La testul 5 a fost de la oprit?
+- **Testul 7 (Release `os-144`), cablul de rețea băgat.** Copiezi pe stick fișierele din Release (ca la testul 6, inclusiv `cyber.rw`).
+  **(R) La rece — oprit complet, pornit direct de pe stick (fără F12):** aștepți ~1 minut, **Esc** → `cyber>`.
+  1. `net` → poză (așteptat 0 / 0, ca la testul 6).
+  2. `rtl porneste rece` → aștepți ~30 s → `net` → poză; `log rtl 60` → poză (pot fi două ecrane: pașii 1–18 și registrele).
+  3. Dacă „trimise” > 0 și „primite” > 0: `ping 1.1.1.1` → poză. (Opțional, dacă ai timp: oprit complet, pornit direct, încearcă pe rând
+     `rtl porneste cplus`, apoi `rtl porneste cplus ordine` → `net` după fiecare — ca să aflăm pasul minim.)
+  **(C) La cald — oprit complet, pornit cu F12 → stick:** **Esc** → `cyber>`.
+  4. `net` → poză; `log rx` → poză; `ping 1.1.1.1` → poză.
+  5. `rtl porneste cache` → aștepți ~30 s → `net` → poză; `log rx` → poză.
 - `github.token` / `claude.key`: încă nu — după ce merge rețeaua.
 - B-003 / P5-07 (suita ca modul): mai târziu.
