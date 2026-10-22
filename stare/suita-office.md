@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 19:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 19:40 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -14,20 +14,22 @@
     Vizualizare, Proiectare tabel / diagramă) așezate ca în programul de tabele cunoscut; clic dreapta pe celulă, rând / coloană și fila foii;
     mini-bara pe două rânduri; scurtăturile (Ctrl+Shift+$ / %, F4, Shift+F3, F12, Ctrl+ț, Ctrl+A în doi pași, Backspace, Alt+F1, Shift+F11…);
     literele Alt verificate pe toate filele;
-  - **PDF, început (18:45–19:00)**: scurtăturile cunoscute (Ctrl+0 pagina întreagă, Ctrl+1 mărime reală, Ctrl+2 lățime, Ctrl+H mod citire,
-    Ctrl+L, Ctrl+Shift+N, Ctrl+D, Ctrl+Shift+I / D / R) și Refacere (Ctrl+Y).
+  - **PDF (18:45–19:40)**: scurtăturile cunoscute (Ctrl+0 / 1 / 2, Ctrl+H mod citire, Ctrl+D, Ctrl+Shift+I / D / R, Ctrl+Y);
+    **așezarea programului de PDF cunoscut**: fără panglică, bară globală subțire (☰ Meniu · Toate uneltele · Editare · Conversie · Semnătură),
+    panoul „Toate uneltele” în stânga (22 de unelte cu numele cunoscute), bara rapidă verticală lângă pagini (Selectare, Comentariu,
+    Evidențiere ▾, Desen ▾, Text, Semnare), șina cu panourile în dreapta (Comentarii, Miniaturi, Marcaje, Atașamente), pagina și zoomul jos în dreapta.
 - Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală (cu taste adevărate).
 
 ## Urmează
-- Punctul 5, mai departe: PDF P1–P2 (bara globală Toate uneltele · Editare · Conversie · Semnătură, fără panglică, cu panoul de unelte
-  în stânga), Ctrl+S peste fișier în PDF; apoi Docs, Slides, Imagini, Video, Notițe, după `INTERFATA-FAMILIARA.md`.
+- Punctul 5, mai departe: PDF P6 (meniul mic la selecția de text), Ctrl+S peste fișier în PDF; apoi Docs, Slides, Imagini, Video, Notițe,
+  după `INTERFATA-FAMILIARA.md`.
 - Punctul 6: butonul „Trimite o observație” (captură + text salvate local, Adrian le trimite el).
 - Kit de instalare nou doar când îl cere Adrian (întâi testează pe laptop, cu „Porneste Suite.cmd”).
 
 ## Ce oferă proiectul celorlalți
 - Aplicațiile de birou pentru modulul Cyberspace (Kronos) și pentru setul de aplicații al Cyber Universe (după testarea umană).
 - Fiecare aplicație e separată (`src/<modul>/`) și are `module.toml` după `standarde/modul-v0.md`.
-- Cadrul comun de interfață (panglica cu file, tastele de acces Alt, mini-bara, clic dreapta, panourile andocate), potrivirea scurtăturilor
+- Cadrul comun de interfață (panglica cu file și, nou, modul „unelte”: bară globală + panou de unelte lateral, tastele de acces Alt, mini-bara, clic dreapta, panourile andocate), potrivirea scurtăturilor
   pe tastatura românească (`src/keys.ts`), motorul de formule (~500 de funcții), sinonime și despărțire în silabe în română, OCR în 5 limbi,
   criptarea, formularele și semnarea PDF, PDF/A, 67 de filtre de imagine, cititorii și scriitorii .docx / .xlsx / .pptx / .pdf / .odt / .rtf / .psd.
 
@@ -36,7 +38,8 @@
 
 ## Blocaje / nevoie de Adrian
 - De încercat (nu blochează): Sheets e așezat ca la birou (toate filele, clic dreapta, mini-bara, Ctrl+A de două ori, Alt, H, V = Lipire, Ctrl+ș = data);
-  PDF: Ctrl+0 / Ctrl+2 / Ctrl+H. Se găsește totul unde te aștepți? Ce lipsește cel mai tare?
+  PDF: Ctrl+0 / Ctrl+2 / Ctrl+H; PDF are acum așezarea programului cunoscut (Toate uneltele în stânga, panourile în dreapta).
+  Se găsește totul unde te aștepți? Ce lipsește cel mai tare?
 - De încercat (nu blochează): PDF → Editare → ✎ Editează text pe un act real: schimbi un cuvânt, salvezi; se vede bine la birou?
 - De încercat (nu blochează): un .xlsx cu tabel (Inserare → Tabel) sau cu forme făcut în Suite, deschis la birou: merge fără „reparare”?
 - De verificat (nu blochează): .xlsx cu Rezolvitor, fișiere cu parolă și .docx protejat din Suite, deschise în programele de la serviciu;

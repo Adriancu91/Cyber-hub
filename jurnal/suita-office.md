@@ -87,3 +87,5 @@
 - 2026-10-22 18:09 — Sheets: filele contextuale Proiectare tabel și Proiectare diagramă; clic dreapta pe capul de rând / coloană cu Lățime coloană… / Înălțime rând…, Golire conținut, Reafișare.
 - 2026-10-22 19:00 — Sheets: clic dreapta pe celulă și pe fila foii, mini-bara pe două rânduri, scurtăturile partea 2 și literele Alt verificate; partea Sheets din „ca în programele cunoscute” e gata.
 - 2026-10-22 19:00 — PDF: scurtăturile cunoscute (Ctrl+0 / 1 / 2, Ctrl+H mod citire, Ctrl+D, Ctrl+Shift+I / D / R) și Refacere cu Ctrl+Y.
+- 2026-10-22 19:40 — PDF așezat ca programul de PDF cunoscut: bara globală (☰ Meniu · Toate uneltele · Editare · Conversie · Semnătură) și panoul „Toate uneltele” în stânga, în locul filelor.
+- 2026-10-22 19:40 — PDF: bara rapidă verticală lângă pagini, panourile (miniaturi, marcaje, comentarii, atașamente) mutate în dreapta, pagina și zoomul jos în dreapta.
