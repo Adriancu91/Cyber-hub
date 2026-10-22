@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-23 01:32 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-23 02:32 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -13,17 +13,19 @@
     **nou în seara asta:** filele de tabel **Proiectare tabel + Aspect** (Inserare deasupra / dedesubt, Ștergere ▾, Îmbinare, Dimensiune celulă, Date);
     fila **Antet și subsol** cu editare **direct pe pagină la dublu clic** în marginea de sus / de jos (Dată, Nume fișier, Prima pagină diferită, Esc închide);
     **literele Alt** cunoscute pe Pornire (Alt, H, 1 = aldin; Alt, H, A, C = centrare…);
-  - **Slides (L1–L5 gata):** Pornire cu **Font și Paragraf**, **＋ Diapozitiv nou ▾** (cu Duplicare), galeria **Aspect ▾**, **Reinițializare**;
+  - **Slides (L1–L7 gata):** Pornire cu **Font și Paragraf**, **＋ Diapozitiv nou ▾** (cu Duplicare), galeria **Aspect ▾**, **Reinițializare**;
     fila **Expunere diapozitive**; Vizualizare cu Sortare diapozitive, Pagină de note, Vizualizare citire; „Ștergere / Ascundere diapozitiv”;
     **scurtăturile cunoscute**: Ctrl+] / Ctrl+[ font, Ctrl+L / E / R / J aliniere, Shift+F3 litere, Ctrl+Space golire formatare,
     Ctrl+Shift+= / Ctrl+= **exponent / indice** (nou, păstrate și în .pptx), F12 Salvare ca;
     **Inserare** în ordinea cunoscută (Diapozitive · Tabele · Imagini · Ilustrații · Linkuri · Comentarii · Text · Simboluri · Media);
     **nou acum:** **Proiectare** cu galeria Teme, Variante și panoul **Formatare fundal** în dreapta; **Tranziții** cu Examinare, galerie (▾ toate cele 14),
-    Opțiuni efect, Temporizare și „Se aplică la toate”; **Animații** în 4 grupuri (Examinare, Animație, Animație complexă cu Panou animație, Temporizare cu Reordonare ▲ ▼).
+    Opțiuni efect, Temporizare și „Se aplică la toate”; **Animații** în 4 grupuri (Examinare, Animație, Animație complexă cu Panou animație, Temporizare cu Reordonare ▲ ▼);
+    **nou acum:** filele obiectelor cu numele cunoscute (**Format formă**, **Format imagine**, **Proiectare tabel + Aspect**, **Proiectare diagramă + Format**, **Format video + Redare**)
+    și **literele Alt** (Alt, H, 1 = aldin; Alt, H, AC = centrare; JD / JP / JT / JL la obiecte); 🖌 Format pensulă în Clipboard.
 - Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală (cu taste adevărate).
 
 ## Urmează
-- Punctul 5, mai departe: restul Slides (L6 filele obiectelor cu numele cunoscute, L7 literele Alt), apoi Imagini, Video, Notițe,
+- Punctul 5, mai departe: Imagini (I1 meniurile de sus, uneltele cu tastele lor), apoi Video, Notițe,
   după `INTERFATA-FAMILIARA.md`.
 - Punctul 6: butonul „Trimite o observație” (captură + text salvate local, Adrian le trimite el).
 - Kit de instalare nou doar când îl cere Adrian (întâi testează pe laptop, cu „Porneste Suite.cmd”).
@@ -39,6 +41,7 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
+- De încercat (nu blochează): Slides: clic pe un tabel → sus „Proiectare tabel” și „Aspect”; clic pe titlu → Alt, H, 1 face aldin.
 - De încercat (nu blochează): Slides: Proiectare → clic pe tema „Noapte”; 🎨 Formatare fundal → Umplere degrade; Tranziții → Împingere → Opțiuni efect;
   Animații: clic pe titlu → Animație „Zboară înăuntru” → ▶ Examinare. Se găsesc unde te aștepți?
 - De încercat (nu blochează): Slides: clic pe titlu → Ctrl+] mărește, Ctrl+E centrează; „x2” cu 2 selectat → Ctrl+Shift+= face x²

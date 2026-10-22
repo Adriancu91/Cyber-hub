@@ -100,3 +100,4 @@
 - 2026-10-23 00:42 — Slides: scurtăturile cunoscute (Ctrl+] / [ font, Ctrl+L/E/R/J, Shift+F3, Ctrl+Space, F12) și exponent / indice nou (Ctrl+Shift+= / Ctrl+=, și în .pptx); L3 gata, Inserare în ordinea cunoscută (L4 început).
 - 2026-10-23 01:32 — Slides, fila Proiectare ca în programul cunoscut: galeria Teme, Variante și panoul Formatare fundal în dreapta (L4 gata).
 - 2026-10-23 01:32 — Slides: fila Tranziții (Examinare, galerie, Opțiuni efect, Temporizare) și fila Animații în 4 grupuri cu Panou animație și Reordonare (L5 gata); 3 commituri, testele trec.
+- 2026-10-23 02:32 — Slides: filele obiectelor cu numele cunoscute (Format formă, Format imagine, Proiectare tabel + Aspect, Proiectare diagramă + Format, Format video + Redare) și literele Alt (L6, L7 gata); Slides e gata la capitolul „așezat ca în programele cunoscute”.
