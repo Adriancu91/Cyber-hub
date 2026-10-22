@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-23 00:05 (ora României) · **de:** sesiunea OS programată (23:42) — fără lucru nou; Release `os-155` așteaptă testul 8 (CI verde)
+**Actualizat:** 2026-10-23 02:55 (ora României) · **de:** sesiunea OS programată (02:45) — fără lucru nou; Release `os-155` așteaptă testul 8 (CI verde)
 
 ## Acum
 - **P6-10g gata (Release `os-155`, CI verde):** la pornire, inelele și bufferele plăcii Realtek stau acum într-un **bloc separat, între
