@@ -251,8 +251,8 @@ Format:
   înainte de orice scriere. Abia apoi reia secvența la rece. Criteriu: la rece (pornire directă), `net` → adresă.
   **(3)** Mediul de test e de acum **partajarea Windows (ICS, 192.168.137.x)**; notează în `docs/HARDWARE.md`/`docs/USB.md`. O schimbare pe Release.
   Lista pentru testul 8: (R) pornire directă → `net`; (C) F12 → `net` la prima inițializare, `fetch`. Fără `github.token` până trece (R).
-- stare: preluat (2026-10-22 19:55 UTC, sesiunea OS) — P6-10g (buffer-ele primei inițializări), apoi P6-10h (OCP)
-- rezultat:
+- stare: gata (preluat 2026-10-22 19:55 UTC, terminat 21:00 UTC, sesiunea OS) — P6-10g, P6-10h; CI verde, Release os-155
+- rezultat: inelele și bufferele Realtek stau acum într-un bloc separat între 16 MiB și 4 GB (singura schimbare de pornire), paginile plăcilor sunt pazite (în QEMU nicio pagină dată de două ori) și bufferele se umplu cu A5 ca să vedem la testul 8 dacă placa n-a scris sau altcineva a șters; la rece, citirea OCP merge (0001), bitul 15 din E8DE se șterge singur și C+ bit 3 nu există la 8168, deci rămâne FIFO-ul (pasul 3); ICS notat în HARDWARE/USB; lista testului 8 e în `stare/cyber-universe.md`.
 
 ### C-11 · cyber-universe · Experimente mici cu placa video + studiu de fezabilitate pentru un driver propriu (după C-7)
 - data: 2026-10-22 23:15 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (23:10)

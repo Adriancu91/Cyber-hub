@@ -1,18 +1,24 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-22 21:30 (ora României) · **de:** sesiunea OS programată (20:40) — completările C-9 făcute (P6-10f), Release `os-149`
+**Actualizat:** 2026-10-23 00:00 (ora României) · **de:** sesiunea OS programată (22:45) — C-10 făcută (P6-10g, P6-10h), Release `os-155`
 
 ## Acum
-- **Reper (testul 6 G–L):** OS-ul a ieșit pe internet pe laptop, cu cod propriu: DHCP, ping, DNS, HTTPS cu TLS 1.3 și certificat verificat.
-- **P6-10f gata (Release `os-149`, CI verde):** golirea cache-ului (`rtl porneste cache`, confirmată de tine la testul 6) e acum
-  **pornirea obișnuită**, la primire și la trimitere. Pentru comparație: `rtl porneste faracache` = exact ca os-125.
-  Mici: `fetch https://...` merge și fără `run`; `host github.com` scrie `github.com = 140.82.121.3`.
-- Pornirea la rece rămâne variantă: `rtl porneste rece` (sau pe rând `mcu`, `phy`, `cplus`, `ordine`), pașii în `log rtl`.
-- 32 de teste ale driverului, 50 de scenarii automate (49 trecute + 1 sărit fără internet).
+- **P6-10g gata (Release `os-155`, CI verde):** la pornire, inelele și bufferele plăcii Realtek stau acum într-un **bloc separat, între
+  16 MiB și 4 GB** (ca la repornirea care a mers la testul 7), nu în memoria de jos (3db000). Golirea cache-ului rămâne deocamdată.
+  `rtl porneste pagini` = alocarea veche, pentru comparație.
+- **Paza memoriei:** paginile în care scrie o placă nu mai pot fi date altcuiva (încercarea apare în jurnal, cu locul din cod).
+  Testul din QEMU: nicio pagină dată de două ori. `net` arată „paza memoriei: ok”.
+- **Diagnostic nou (nu schimbă placa):** bufferele se umplu cu `A5` în loc de zero. Dacă un cadru rău începe cu `a5a5…` → placa nu a
+  scris; dacă e `0000…` → altcineva a șters pagina. `net` numără „necitite de placa (model A5)”.
+- **P6-10h gata (doar `rtl porneste rece`):** accesul OCP e verificat înainte de scriere (citirea ta `0001` arată că OCP răspunde);
+  bitul 15 din E8DE e o comandă pe care cipul o șterge singur, iar C+ bit 3 există doar la 8169 — deci pașii 7, 9, 12 nu erau defecte.
+  La rece rămâne un singur semn real: **FIFO-ul de primire nu se golește** (pasul 3).
+- Rețeaua de test prin partajarea Windows (ICS) e notată în `docs/HARDWARE.md` și `docs/USB.md`.
+- 39 de teste ale driverului, 50 de scenarii automate (49 trecute + 1 sărit fără internet).
 
 ## Urmează
-- Testul 7 pe laptop (lista mai jos, **cablul la router**). Dacă `rece` merge la rece → devine pornirea obișnuită în versiunea
-  următoare (o schimbare pe Release) → apoi direct **C-7** (bucla automată) și îți spun cum pui `github.token` pe stick.
+- Testul 8 (lista mai jos). Dacă (C) ia adresă singur → P6-10g confirmată; apoi, ca schimbare separată, scoatem golirea cache-ului.
+- La rece: după (R), sarcina pentru FIFO (pasul 3) sau pentru registrele reviziei GU.
 
 ## Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3, rădăcini Mozilla), `json/` (și base64), `rtl8168/`.
@@ -22,13 +28,15 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- **Testul 7 (Release `os-149`), cablul la router.** Copiezi pe stick fișierele din Release (ca la testul 6, inclusiv `cyber.rw`).
-  **(R) La rece — oprit complet, pornit direct de pe stick (fără F12):** aștepți ~1 minut, **Esc** → `cyber>`.
-  1. `net` → poză (așteptat 0 / 0, ca la testul 6).
-  2. `rtl porneste rece` → aștepți ~30 s → `net` → poză; `log rtl 60` → poză (pot fi două ecrane: pașii și registrele).
-  3. Dacă `net` arată o adresă: `fetch https://example.com/` → poză. (Opțional, ca să aflăm pasul minim: oprit complet, pornit direct,
-     `rtl porneste cplus`, apoi `rtl porneste cplus ordine` → `net` după fiecare.)
-  **(C) La cald — oprit complet, pornit cu F12 → stick:** **Esc** → `cyber>`.
-  4. `net` → poză (acum fără `rtl porneste cache`: trebuie „cadre cu tip 0000: 0” și o adresă); `fetch https://example.com/` → poză.
-- `github.token` / `claude.key`: încă nu — după ce merge rețeaua și la rece.
+- **Testul 8 (Release `os-155`), cablul la laptopul cu Windows (partajarea ICS pornită).** Copiezi pe stick fișierele din Release
+  (ca la testul 7, inclusiv `cyber.rw`).
+  **(C) La cald — oprit complet, pornit cu F12 → stick:** **Esc** → `cyber>`. **Nu scrii nicio comandă `rtl`.**
+  1. Aștepți ~30 s → `net` → poză. Așteptat: o adresă 192.168.137.x, „cadre cu tip 0000: 0”, „necitite de placa (model A5): 0”,
+     „paza memoriei: ok”.
+  2. `log rtl 20` → poză (rândul „memorie DMA: un bloc …”).
+  3. Dacă are adresă: `fetch https://example.com/` → poză. Dacă NU are adresă: `log rx` → poză (primii octeți: `a5…` sau `00…`),
+     apoi `rtl porneste pagini` → ~30 s → `net` → poză.
+  **(R) La rece — oprit complet, pornit direct de pe stick (fără F12):** **Esc** → `cyber>`.
+  4. `net` → poză. 5. `rtl porneste rece` → ~30 s → `net` → poză; `log rtl 60` → poză (pașii; acum cu „OCP proba”).
+- `github.token` / `claude.key`: încă nu — după ce trece (R).
 - B-003 / P5-07 (suita ca modul): mai târziu.
