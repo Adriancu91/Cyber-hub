@@ -170,3 +170,24 @@ Format:
      oprit), și cum pune `github.token` pe stick. Spune-i în raport când e gata de pornit bucla.
 - stare: nou (se preia după C-6; dacă C-6 nu e gata, rămâne `nou`). **14:43: BIOS-ul laptopului e deja setat de Adrian — pornește direct de pe stick la repornire.** Pasul 6 rămâne doar pentru `github.token`.
 - rezultat:
+
+### C-8 · cyber-universe · Testul 5: REGRESIE (0 trimise, 0 primite) — întâi revenire la os-125, apoi diagnosticul adevărat
+- data: 2026-10-22 16:35 · de la: Adrian (prin centrul de comandă)
+- ce: Testul 5 (os-136) e în `rezultate/2026-10-22-test-5/REZULTAT.md` (5 poze). **Placa nu mai transferă nimic:** trimise 0, primite 0, index 0,
+  ISR văzut doar 0020 (LinkChg), în 112 s; la testul 4 (os-125) erau 120 trimise / 32 primite. Și `PCIe No Snoop: oprit (era oprit)` → ipoteza
+  No Snoop e **infirmată** (setarea era deja oprită). Ce să faci, în ordinea asta (P6-10d):
+  1. **Revenire:** scoate din driver scrierile în configurarea PCI făcute la P6-10c (Device Control / No Snoop) și orice altă schimbare care
+     poate opri DMA-ul; păstrează doar jurnalul pe cadru (`log rx`, `log arp`) și contoarele. Regulă de acum: **niciun registru de configurare
+     PCI nu se scrie fără citire-modificare-scriere pe exact un bit, cu valoarea dinainte și de după scrisă în jurnal**; verifică explicit că
+     bitul Bus Master din Command rămâne 1 (scrie-l în `log rtl`). Golirea cache-ului rămâne doar dacă nu atinge descriptorii înainte de re-armare.
+  2. **Diagnosticul pentru cadrele citite ca zero, pe hardware, nu în cod:** în `log rx`, pentru fiecare din primele 8 cadre: index, lungimea
+     din descriptor, **adresa fizică completă (64 de biți) din descriptor** (low + high), adresa virtuală din care citește driverul și adresa
+     fizică corespunzătoare ei, primii 16 octeți. Plus în `log rtl`: adresa fizică a inelului (RDSAR low+high), a primelor 3 buffer-e, și
+     cât RAM vede OS-ul și unde cad alocările (sub sau peste 4 GB).
+  3. **Două ipoteze de testat prin construcție**, nu prin citire: (a) buffer-ele RX într-un singur bloc contiguu, alocat explicit **sub 4 GB**,
+     cu adresa din descriptor derivată din același bloc; (b) scrierea corectă a jumătății de sus a adresei (bits 63:32) în descriptor și în
+     RDSAR/TNPDS. Dacă după (a)+(b) „cadre cu tip 0000” e 0 și DHCP primește Offer, cauza e confirmată.
+  4. În QEMU: rulează scenariul de rețea cu **memorie ≥ 6 GB** (`-m 6G`) și alocările forțate peste 4 GB, ca să reproduci cazul; adaugă-l în CI.
+  5. Când CI e verde și e Release nou: lista pentru **testul 6** în `stare/cyber-universe.md`. Nu cere încă `github.token`.
+- stare: nou
+- rezultat:
