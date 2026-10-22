@@ -204,3 +204,22 @@ Format:
      arată registrele cheie la fiecare versiune; „confirmat” înseamnă confirmat pe laptop. Scrie regula și în `docs/DECISIONS.md` al OS-ului.
 - stare: gata (preluat 2026-10-22 13:40 UTC, terminat 14:30 UTC, sesiunea OS) — P6-10d; CI verde, Release os-138
 - rezultat: pornirea plăcii e iar exact ca în os-125 (fără Device Control, fără golirea cache-ului), PCI scris doar bit cu bit în jurnal, iar schimbările noi (poarta RXDV de la 8168G — din studiul FreeBSD, bufferele într-un bloc sub 4 GB, golirea cache-ului) se încearcă pe rând cu `rtl porneste ...`, cu adrese pe 64 de biți în `log rtl`/`log rx`; lista pentru testul 6 e în `stare/cyber-universe.md`.
+
+### C-9 · cyber-universe · Cauza găsită: driverul nu inițializează cipul la pornirea de la rece; cadrele 2+ tot zero la cald
+- data: 2026-10-22 18:05 · de la: Adrian (prin centrul de comandă)
+- ce: Testul 6, pas cu pas, e în `rezultate/2026-10-22-test-6/REZULTAT.md` (7 poze, tabel). **Concluzia:** os-125 pornit direct de pe stick
+  (de la rece) = 0/0; același os-125 pornit din meniul F12 = 17 trimise / 23 primite. Firmware-ul UEFI, când afișează meniul, pornește placa
+  și o lasă inițializată; direct, nu. Deci **nu a fost regresie** (os-136/138 au fost testate doar la rece), iar toate ipotezele de azi
+  (No Snoop, Relaxed Ordering, RXDV, buffer-e, RCR bit 17, Windows) sunt infirmate pe laptop. Ce să faci (P6-10e, P6-10f), cu regula
+  „o schimbare pe Release, verificată pe laptop”:
+  1. **P6-10e — inițializarea completă la rece.** Compară pornirea noastră cu ce fac driverele open-source la `attach`/`init` pentru 8168G/H
+     (SerenityOS, FreeBSD `re(4)`, Haiku; Linux doar pentru înțelegere): ordinea reset → așteptare → deblocarea configurării → trezirea PHY
+     (ieșirea din power-down, renegociere) și a MAC-ului (PLL/power), pașii specifici reviziei 0x50800000, apoi abia inelele, RCR/TCR, RE/TE.
+     Scrie în `log rtl` fiecare pas cu registrul înainte/după. Scenariul QEMU nu poate valida asta (QEMU pornește „cald”): validarea e pe
+     laptop, în modul **rece** (pornire directă). Criteriu: la rece, `net` arată trimise > 0 și primite > 0.
+  2. **P6-10f — cadrele 2+ citite ca zero** (independent de 1): se diagnostichează **la cald** (meniul F12), cu `log rx` pe cadru din os-138:
+     pentru primele 8 cadre, lungimea, adresa din descriptor, adresa citită, primii 16 octeți. Abia apoi reparația.
+  3. Lista pentru **testul 7** în `stare/cyber-universe.md`, cu două părți: (R) pornire directă — `net`, `log rtl`; (C) pornire din F12 —
+     `net`, `log rx`, `ping 1.1.1.1`. Fără `github.token` încă.
+- stare: nou
+- rezultat:

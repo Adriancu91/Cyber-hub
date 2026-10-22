@@ -1,9 +1,10 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-22 16:40 · **de:** centrul de comandă
+**Actualizat:** 2026-10-22 18:05 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-22.md`.)_
 
 ## Așteaptă de la tine, Adrian
+00. ~~OS — testul 6~~ — **FĂCUT 17:57, CAUZA GĂSITĂ:** driverul nu inițializează placa la pornirea de la rece (direct de pe stick); din meniul F12 (firmware-ul pornește placa) os-125 merge: 17/23. Nicio regresie. Rezultatul: `rezultate/2026-10-22-test-6/REZULTAT.md`; OS-ul primește **C-9**. Nimic de la tine până la testul 7.
 0. ~~OS — testul 5~~ — **FĂCUT la 16:25: REGRESIE** (0 trimise, 0 primite; ipoteza No Snoop infirmată). Rezultatul: `rezultate/2026-10-22-test-5/REZULTAT.md`; OS-ul primește **C-8** (revenire la os-125 + diagnostic pe hardware). Dacă laptopul mai e pornit: `log rtl` → poză.
 1. **Kronos:** completezi coloana „e bine? (tu)” la cele 20 de răspunsuri; dacă vrei să schimbi S17, spui **înainte de 19:00** (`cyberspace/docs/rapoarte/2026-10-22_0744_raport_dimineata.md`).
 2. **OS — acum nimic;** după C-6 vine **testul 5** pe laptop (lista va apărea în `stare/cyber-universe.md`), iar dacă rețeaua merge, pui pe stick `claude.key` și `github.token` (`cyber-universe/docs/USB.md`, secțiunea 7).
@@ -20,6 +21,7 @@ _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-2
 | **Suita office** | Problemele de la birou 1–4 rezolvate (ultima: editare text și imagini în PDF). Word 80,1%, Excel 79,8%, Notițe 76,4%, PowerPoint 76,2%, Acrobat 73,2%, Photoshop 72,0% | Da, continuu pe ThinkPad (urmează: butoanele ca în aplicațiile cunoscute, „Trimite o observație”) | 14:48 (`stare/suita-office.md`) |
 
 ## Comenzi
+- **C-9** · cyber-universe · inițializarea cipului la rece (P6-10e) + cadrele 2+ zero la cald (P6-10f) — `nou` (18:05)
 - **C-8** · cyber-universe · testul 5 regresie: revenire + diagnostic adrese 64 de biți / bloc contiguu sub 4 GB — `nou` (16:35)
 - **C-6** · cyber-universe · cadrele 2+ citite ca zero (DHCP 0) — `preluat` (14:30; completare 14:45 cu pozele 9–11).
 - **C-7** · cyber-universe · bucla de test de la distanță (laptopul se actualizează, testează și raportează singur) — `nou`, se preia după C-6; BIOS deja setat de tine (14:43).
