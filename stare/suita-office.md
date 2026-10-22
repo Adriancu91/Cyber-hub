@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 02:37 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 03:24 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -8,13 +8,13 @@
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 23:46).
 - Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 78,0%, Clipchamp 77,1%, Notițe 75,2%,
   PowerPoint 74,7%, Acrobat 70,8%, Photoshop 70,5%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Ultima sesiune (lucrul cerut de Adrian: butoanele grupate în file): **Imagini e mutat în panglică**: 7 file sus (Editare, Imagine, Ajustări, Filtre,
-  Selecție, Straturi, Vizualizare), o **bară verticală de unelte** în stânga pozei (Selecție, Decupează, Pensulă, Retușează…), cu **◢** pentru uneltele înrudite
-  (Lasou, Baghetă, Decupare în perspectivă…); filtrele se aleg direct din liste pe grupuri. Poza are mai mult loc. Docs era mutat deja.
-- Niciun buton nu a dispărut (verificat automat: 136 de controale în Docs, 83 în Imagini); toate cele 82 de teste ale Imagini trec în aplicația reală.
+- Ultima sesiune (lucrul cerut de Adrian: butoanele grupate în file): **Imagini e gata în panglică.** Panourile din dreapta (Straturi, Istoric, Canale,
+  Histogramă) stau acum într-o singură coloană, cu câte o filă (× închide, » le strânge, marginea se trage); **clic dreapta** pe poză (lipire, selecție,
+  transformare) și pe un strat (copie, mută, mască, șterge). Pentru Sheets e gata lista de bază (117 butoane care nu au voie să dispară).
+- Toate testele Imagini rulate în aplicația reală trec (81 din 83; 2 n-au rulat, au nevoie de altă pornire); toate modulele se deschid fără erori.
 
 ## Urmează
-- Prima prioritate: panourile din dreapta ale Imagini ca file andocate, apoi aceleași file în Sheets, PDF, Slides, Video și Notițe.
+- Prima prioritate: Sheets în panglică (Fișier, Pornire, Inserare, Formule, Date, Revizuire, Vizualizare), apoi PDF, Slides, Video și Notițe.
 - Restul funcțiilor din etapa 2 (Imagini: poziția proprie a straturilor; PDF: linearizarea; Sheets: formele în .xlsx; Docs: secțiuni; Video: clipul liber pe pânză).
 - Etapa 3, calitate; etapa 5: pachet de instalare și testare cu colegii lui Adrian.
 
@@ -31,7 +31,7 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- De verificat (nu blochează): noile file din Docs și din **Imagini** (bara de unelte din stânga, ◢ de lângă Selecție, fila Filtre). Găsești tot ce foloseai? Ce buton folosit des a ajuns prea ascuns?
+- De verificat (nu blochează): noile file din Docs și din **Imagini** (bara de unelte din stânga, ◢ de lângă Selecție, fila Filtre, panourile cu file din dreapta, clic dreapta pe poză și pe strat). Găsești tot ce foloseai? Ce buton folosit des a ajuns prea ascuns?
 - De verificat (nu blochează): un .xlsx cu model de Rezolvitor salvat din Suite, deschis în programul de calcul de la serviciu (Solver): trebuie să arate aceleași condiții.
 - De verificat (nu blochează): un fișier (și o foaie protejată) salvat cu parolă din Suite, deschis în programul de birou de la serviciu (pe laptop nu e altul instalat).
 - De verificat (nu blochează): un .docx protejat din Suite („🔐 Restricționează editarea” cu parolă), deschis la serviciu: trebuie să ceară parola la oprirea protecției.

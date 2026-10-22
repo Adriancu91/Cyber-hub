@@ -59,3 +59,4 @@
 - 2026-10-22 00:40 — Interfață: panglica cu file (cadru comun) și Docs mutat în file (Pornire, Inserare, Aspect, Referințe, Revizuire…), fără să dispară vreun buton; 93 de teste Docs trec.
 - 2026-10-22 01:25 — Interfață: Docs complet în panglică (Aspect cu liste rapide și Paragraf, fila Imagine, mini-bara la selecție, clic dreapta cu comenzile locului, Recente în Fișier); lista de bază pentru Imagini (83 de controale); toate modulele se deschid fără erori.
 - 2026-10-22 02:37 — Interfață: Imagini mutat în panglică (7 file, bara verticală de unelte cu ◢ pentru uneltele înrudite, filtrele în liste pe grupuri), fără să dispară vreun buton; testele Imagini trec în aplicația reală.
+- 2026-10-22 03:24 — Interfață: Imagini gata în panglică (panourile din dreapta ca file andocate, clic dreapta pe poză și pe strat); lista de bază pentru Sheets (117 butoane); testele Imagini trec în aplicația reală.
