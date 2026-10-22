@@ -98,3 +98,5 @@
 - 2026-10-22 23:48 — Slides, început: Font și Paragraf pe Pornire, fila Expunere diapozitive (De la început, Din diapozitivul curent), Vizualizare cu numele cunoscute; 7 commituri, 3 teste noi.
 - 2026-10-23 00:42 — Slides ca programul de prezentări cunoscut: Diapozitiv nou ▾ cu Duplicare, galeria Aspect, Reinițializare, „diapozitiv” în locul lui „slide” (L2 gata).
 - 2026-10-23 00:42 — Slides: scurtăturile cunoscute (Ctrl+] / [ font, Ctrl+L/E/R/J, Shift+F3, Ctrl+Space, F12) și exponent / indice nou (Ctrl+Shift+= / Ctrl+=, și în .pptx); L3 gata, Inserare în ordinea cunoscută (L4 început).
+- 2026-10-23 01:32 — Slides, fila Proiectare ca în programul cunoscut: galeria Teme, Variante și panoul Formatare fundal în dreapta (L4 gata).
+- 2026-10-23 01:32 — Slides: fila Tranziții (Examinare, galerie, Opțiuni efect, Temporizare) și fila Animații în 4 grupuri cu Panou animație și Reordonare (L5 gata); 3 commituri, testele trec.
