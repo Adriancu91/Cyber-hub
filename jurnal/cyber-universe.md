@@ -29,3 +29,4 @@
 - 2026-10-22 11:00 — Completarea C-5 (poza log usb): stick-ul e reîncercat de 10 ori cu REQUEST SENSE (Unit Attention), starea CSW și motivul în `log usb`; Release os-125, CI verde.
 - 2026-10-22 11:45 — Sesiune programată fără lucru nou: nicio comandă nouă, nicio sarcină liberă; CI verde (os-125); se așteaptă testul 4 pe laptop.
 - 2026-10-22 15:35 — C-6 gata (P6-10c, Release os-134, CI verde): Realtek — cache-ul procesorului golit la fiecare pachet primit/trimis și „No Snoop” oprit (cauza probabilă a zerourilor), `log rx` pe pachet, `log arp`; lista pentru testul 5 scrisă. C-7 așteaptă rețeaua pe laptop.
+- 2026-10-22 16:00 — Sesiune paralelă (pornită la 14:40): a făcut tot P6-10c în același timp cu cealaltă; două bucăți (log arp, golirea la trimitere) au intrat în os-134. Nimic nou pentru Adrian.
