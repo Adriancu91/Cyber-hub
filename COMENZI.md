@@ -66,7 +66,7 @@ Format:
   Compilarea OS-ului în interiorul OS-ului NU e obiectiv. Wi-Fi: nu acum. Scrie planul, apoi începe cu (1). Raportează lui Adrian ce are de
   pregătit pe laptop pentru fiecare pas (cablu de rețea, fișierul cu cheia, token GitHub).
 - stare: preluat (2026-10-21 23:00, sesiunea OS) — Faza 6 = P6-01 … P6-10 în docs/TASKS.md, planuri în docs/plans/
-- rezultat: în lucru — pașii (1), (2), (3) gata în cod și testați în QEMU/CI (Realtek de confirmat pe laptop; rădăcini Mozilla + HTTPS cu site-uri reale; `claude`, chat „claude-app” și unelte cu confirmare — P6-01 … P6-06); din (4) e gata Release-ul automat (P6-07), urmează comanda „Actualizează” (P6-08), apoi (5) P6-09.
+- rezultat: toți cei 5 pași sunt scriși și testați în emulator/CI (P6-01 … P6-09: Realtek, rădăcini Mozilla + HTTPS real, chatul Claude cu unelte confirmate, actualizare din Release, trimitere pe GitHub); rămâne P6-10 = testul pe laptop cu Adrian (de pregătit: cablu de rețea, `claude.key`, `github.token`, `cyber.rw` pe stick).
 
 ### C-4 · cyber-universe · Testul 2 pe laptopul Lenovo: rezultate + două reparații
 - data: 2026-10-22 00:15 · de la: Adrian (prin centrul de comandă)

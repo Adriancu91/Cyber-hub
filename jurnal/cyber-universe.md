@@ -22,3 +22,4 @@
 - 2026-10-22 00:40 — Testul 2 citit: reparat driverul Realtek (PHY pornit, legătura așteptată, diagnostic în `net`) și montarea stick-urilor formatate în Windows; 42 de scenarii trec. Varianta mea de P6-02 pusă deoparte (`wip/P6-02-b`), P6-02 rămâne la sesiunea de la 23:40.
 - 2026-10-22 00:58 — C-4 gata (CI verde): diagnostic Realtek în jurnal, comanda `log`, `net` fără adrese false, stick-uri din Windows; lista pentru testul 3 scrisă.
 - 2026-10-22 01:35 — P6-02 … P6-07 gata: HTTPS cu site-uri reale (rădăcini Mozilla, P-384), JSON propriu, comanda `claude`, chat „claude-app” cu unelte confirmate pe ecran, Release automat în CI; 45 de scenarii, CI verde.
+- 2026-10-22 03:45 — P6-08 și P6-09 gata: butonul „Actualizeaza” (ultimul Release, verificat cu sume, scris sigur pe stick) și trimiterea de fișiere pe GitHub din OS (comanda `gh-trimite`, unealta `github_push` pentru Claude); 47 de scenarii trec. Rămâne doar testul pe laptop (P6-10).
