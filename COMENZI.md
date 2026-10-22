@@ -189,5 +189,12 @@ Format:
      RDSAR/TNPDS. Dacă după (a)+(b) „cadre cu tip 0000” e 0 și DHCP primește Offer, cauza e confirmată.
   4. În QEMU: rulează scenariul de rețea cu **memorie ≥ 6 GB** (`-m 6G`) și alocările forțate peste 4 GB, ca să reproduci cazul; adaugă-l în CI.
   5. Când CI e verde și e Release nou: lista pentru **testul 6** în `stare/cyber-universe.md`. Nu cere încă `github.token`.
+  6. **Completare 16:45 (Adrian): studiază driverele open-source pentru RTL8168 înainte să scrii** — permis de `CLAUDE.md` §6 și de decizia
+     din 20 oct (citit pentru idei, niciodată copiat; sursa de inspirație notată în README-ul modulului `rtl8168/`). De preferat cele cu licență
+     permisivă: **SerenityOS** (`Kernel/Net/Realtek/RTL8168NetworkAdapter.cpp`, BSD-2), **FreeBSD `re(4)`** (`sys/dev/re/if_re.c`, BSD),
+     **Haiku** (rtl8169/8168, MIT); Linux `r8169_main.c` (GPL) doar pentru înțelegere, cu grijă. Ce să urmărești acolo: cum scriu adresele pe
+     64 de biți în descriptori și în RDSAR/TNPDS; cum aloc memoria DMA (bloc contiguu, aliniat); **inițializarea specifică reviziilor 8168G/H**
+     (revizia noastră 0x50800000): bitul RXDV_GATED_EN din MISC (trebuie oprit), RX_MULTI_EN / RX_EARLY_OFF în RxConfig, MaxTxPacketSize,
+     scrierile ERI/OCP, oprirea DASH; și ce fac după RDU. Scrie în raport, pe scurt, ce concluzii ai tras și ce ai aplicat în codul nostru.
 - stare: nou
 - rezultat:
