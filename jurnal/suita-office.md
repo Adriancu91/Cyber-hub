@@ -76,3 +76,5 @@
 - 2026-10-22 13:16 — Prima prioritate (problemele de la birou), punctul 1: fișierele deschise din Windows (dublu-click, „Deschide cu”) se deschid acum în Suite, într-o singură fereastră; asocierile de fișiere sunt pregătite pentru următorul kit.
 - 2026-10-22 13:51 — Prima prioritate (birou), punctele 2–4: sugestii de funcții cu nume românești (Enter alege); tabele cu nume în Sheets (Ctrl+L, Proiectare tabel, se lungesc singure, păstrate în .xlsx); PDF: textul înlocuit se scoate de-adevăratelea din pagină (Excel 79,8%).
 - 2026-10-22 14:48 — PDF: unealta „Editează text” (clic pe rând → schimbi / ștergi, cu culorile păstrate) și mutarea / ștergerea imaginilor din pagină (punctul 4 din problemele de la birou).
+- 2026-10-22 15:41 — Interfață familiară (punctul 5 de la birou): Ctrl+K = Legătură, căutarea pe Alt+Q, Ctrl+T = Tabel în Sheets, scurtături pe tastatura românească, tastele de acces Alt pe file și butoane.
+- 2026-10-22 15:41 — Butonul mare Lipire și grupul Clipboard comun (Sheets, Docs, Slides); Sheets → Pornire în ordinea cunoscută, cu grupurile noi Celule și Număr.
