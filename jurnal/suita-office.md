@@ -68,3 +68,4 @@
 - 2026-10-22 08:35 — Interfață: Notițe cu filele Tabel și Poză și mini-bară; Video cu panoul Proprietăți în dreapta și bara verticală de unelte; reparat Ctrl+Z din desenul Notițelor.
 
 - 2026-10-22 09:16 — Interfața pe file terminată în toate aplicațiile (Sheets: fila Grafic și mini-bara; PDF: fila Câmp și clic dreapta pe comentarii); PDF cu ghidaje și două vederi, Imagini cu filtre noi (Acrobat 71,2%, Photoshop 70,8%).
+- 2026-10-22 10:06 — PDF: procesare în lot (⚙ Lot…, cu OCR pentru scanări); Imagini: straturi legate distribuite / aliniate / transformate împreună, Deplasare cu hartă din fișier și filtre extinse (Acrobat 72,2%, Photoshop 71,6%).

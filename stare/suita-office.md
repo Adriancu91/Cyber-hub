@@ -1,22 +1,23 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 09:16 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 10:06 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere.
 - Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 78,0%, Clipchamp 77,1%, Notițe 75,2%,
-  PowerPoint 74,7%, Acrobat 71,2%, Photoshop 70,8%, formule de calcul 97,1% (100% fără cele care cer internet).
+  PowerPoint 74,7%, Acrobat 72,2%, Photoshop 71,6%, formule de calcul 97,1% (100% fără cele care cer internet).
 - **Butoanele grupate în file (cererea lui Adrian) sunt gata în toate cele 7 aplicații.** Ultima sesiune a încheiat-o:
   **Sheets** are fila Grafic (clic pe un grafic) și o mini-bară de formatare la clic dreapta pe celulă; **PDF** are fila Câmp
   (cursorul într-un câmp de formular) și clic dreapta pe comentariile din fișier (Răspunde, Starea, Bifat).
-- Funcții noi: PDF — ghidaje trase din rigle (elementele puse se lipesc de ele și de grilă) și „◫ Două vederi” ale aceluiași PDF;
-  Imagini — Estompare inteligentă cu „Doar margini” / „Suprapunere margini” și Unduire cu sinus / triunghi / pătrat și mai mulți generatori.
+- Funcții noi (sesiunea 09:17–10:06): **PDF → ⚙ Lot…** (aceleași operații pe mai multe PDF-uri deodată: curățare, filigran, numere de pagină,
+  subsol, alb-negru, comprimare și **OCR**, ca scanările să devină căutabile); **Imagini**: distribuirea straturilor legate, alinierea și
+  transformarea lor împreună, Deplasare cu hartă dintr-o poză aleasă, Tilt-Shift cu banda rotită, Mezzotintă cu 7 tipuri, Reflexie cu 4 obiective.
 - Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală.
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (PDF: linearizarea; Imagini: distribuirea straturilor; Sheets: formele în .xlsx; Docs: secțiuni).
+- Restul funcțiilor din etapa 2 (Sheets: formele în .xlsx; Docs: secțiuni; PDF: linearizarea; Imagini: puncte trase pe poză la Tilt-Shift / Iris).
 - Etapa 3, calitate; etapa 5: pachet de instalare și testare cu colegii lui Adrian.
 
 ## Ce oferă proiectul celorlalți
@@ -30,6 +31,7 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
+- De încercat (nu blochează): PDF → ⚙ Lot… pe câteva acte scanate, cu „Fă-l căutabil”: merge căutarea în fișierele „-lot”?
 - De verificat (nu blochează): noile file din toate aplicațiile. Găsești tot ce foloseai? Ce buton folosit des a ajuns prea ascuns?
   Noutăți de încercat: Sheets — clic pe un grafic (fila Grafic) și clic dreapta pe o celulă (mini-bara); PDF — clic într-un câmp de formular (fila Câmp).
 - De verificat (nu blochează): un .xlsx cu model de Rezolvitor salvat din Suite, deschis în programul de calcul de la serviciu: aceleași condiții.
