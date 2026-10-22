@@ -4,7 +4,7 @@
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-22.md`.)_
 
 ## Așteaptă de la tine, Adrian
-1. ~~OS — testul 3~~ — **FĂCUT la 09:20**: Realtek primește acum (16 pachete), dar îngheață după 16; stick-ul nu trece de configurarea USB. Rezultatul: `rezultate/2026-10-22-test-3/REZULTAT.md`; OS-ul primește **C-5**. Dacă laptopul mai e pornit: `log usb` → poză.
+1. ~~OS — testul 3~~ — **FĂCUT la 09:20**: Realtek primește acum (16 pachete), dar îngheață după 16; stick-ul nu trece de configurarea USB. Rezultatul: `rezultate/2026-10-22-test-3/REZULTAT.md`; OS-ul primește **C-5**. `log usb` făcut (poza 5): stick-ul e văzut la USB 2.0 și pică la 180 ms — probabil primele comenzi SCSI (Unit Attention) sau timeout prea scurt.
 2. **OS — pentru pașii cu internet:** pui pe stick `claude.key` (cheia API, cu limită mică) și `github.token` (doar `cyber-universe`, Contents: Read and write) — pașii în `cyber-universe/docs/USB.md`, secțiunea 7 (`stare/cyber-universe.md`).
 3. **Kronos:** completezi coloana „e bine? (tu)” la cele 20 de răspunsuri; dacă vrei să schimbi S17, spui înainte de 19:00 (`cyberspace/docs/rapoarte/2026-10-22_0744_raport_dimineata.md`).
 4. **Suita — de verificat (nou, nu blochează):** noile file (panglica) din toate aplicațiile — găsești tot, e ceva prea ascuns? (`stare/suita-office.md`).

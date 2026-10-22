@@ -12,8 +12,9 @@ formatat în Windows, cu fișierele din `cyber-universe-stick-v3.zip` (Release o
 | 2 | `02-net.jpg` | `net` |
 | 3 | `03-ping.jpg` | `ping 1.1.1.1` |
 | 4 | `04-hw.jpg` | `ls /usb`, `hw` (la 717,88 s de la pornire) |
+| 5 | `05-log-usb.jpg` | `log usb` (făcută la 09:33, laptopul încă pornit) |
 
-`host github.com` și `fetch` nu s-au făcut (fără adresă, n-aveau sens). `log usb` nu s-a făcut (de cerut dacă laptopul mai e pornit).
+`host github.com` și `fetch` nu s-au făcut (fără adresă, n-aveau sens).
 
 ## Ce s-a văzut, cuvânt cu cuvânt
 
@@ -42,6 +43,17 @@ USB: `port 3 04f2:b6be alt dispozitiv` (camera web), `port 4 125f:db8a stocare (
 **`/usb: nemontat (stick-ul nu porneste (configurare USB))`**; rețea: **trimise 160, primite 16**, aceeași linie de stare ca la `net`
 (ISR văzut 40b5, descriptor RX 0 = 80000800), fără adresă.
 
+**`log usb`:**
+```
+[   2.860] INFO  pci: 04:00.3 1022:1639 clasa 0c:03:30 controler USB
+[   3.020] INFO  pci: 04:00.4 1022:1639 clasa 0c:03:30 controler USB
+[   5.400] INFO  boot: pornit de pe disc (hard disk, SSD sau stick USB)
+[   5.970] INFO  usb: port 3: 04f2:b6be alt dispozitiv (clasa ef:02:01, viteza 3)
+[   6.180] INFO  usb: port 4: 125f:db8a stocare (Mass Storage) (clasa 08:06:50, viteza 3)
+[   6.340] INFO  usb: controler XHCI pornit, 6 porturi, 2 dispozitive
+[   6.520] WARN  usb: stick-ul de pe portul 4 nu porneste
+```
+
 ## Ce înseamnă (analiza centrului de comandă; de confirmat de sesiunea OS)
 
 1. **Progres real la Realtek (C-4 a avut efect):** la testul 2 primea 0 pachete; acum **primește** — 16 pachete, cu legătura
@@ -64,6 +76,15 @@ USB: `port 3 04f2:b6be alt dispozitiv` (camera web), `port 4 125f:db8a stocare (
    (configurare USB)”** = cererea SET_CONFIGURATION (sau pasul dinainte: citirea descriptorilor de configurare) eșuează pe xHCI-ul real.
    C-4 (montarea MBR/superfloppy) nu a fost nici măcar ajunsă. Fără `/usb` nu merg: `cyber.rw`, `claude.key`, `github.token`, auto-actualizarea.
    De remarcat: camera web (`04f2:b6be`) e pe portul 3 al aceluiași controler.
+   **Din `log usb` (poza 5):** descriptorul de dispozitiv **se citește** (VID/PID, clasa 08:06:50 = Mass Storage, BOT, SCSI transparent),
+   deci SET_ADDRESS și GET_DESCRIPTOR(device) merg. **„viteza 3”** — în xHCI (PORTSC, câmpul Port Speed) **3 = High-Speed (USB 2.0,
+   480 Mbit/s)**, nu SuperSpeed (acela e 4); deci stick-ul lucrează ca dispozitiv USB 2 și contextul de endpoint SuperSpeed NU e cauza.
+   Eșecul vine la **180 ms** după identificare (6.340 → 6.520) → IPOTEZE, în ordinea probabilității: (1) **primele comenzi SCSI pică cu
+   „Unit Attention”** — după pornire, un stick real răspunde la INQUIRY / TEST UNIT READY / READ CAPACITY cu CSW status 01 (Command
+   Failed) până i se face REQUEST SENSE și se reîncearcă; QEMU nu face asta, hardware-ul real da; (2) **timeout prea scurt** — stick-urile
+   reale au nevoie de până la 1–2 s ca să fie „ready” (Linux reîncearcă TEST UNIT READY secunde întregi); (3) citirea descriptorului de
+   configurare în două cereri (9 octeți, apoi wTotalLength) sau SET_CONFIGURATION; (4) Max Packet Size al endpoint-urilor bulk la High-Speed
+   = 512. Se rezolvă cu jurnal pe fiecare pas (cod de completare TRB, CSW status, datele de la REQUEST SENSE).
 4. **NVMe merge** (`/disk` montat, 2 intrări), ca la testul 2. **Memoria:** OS-ul folosește ~19 MB din 7,4 GB.
 5. **Wi-Fi** `8086:2723` fără driver — rămâne pentru mai târziu, cum a decis Adrian.
 
