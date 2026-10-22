@@ -63,3 +63,8 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
 - 2026-10-22 15:10 — **Kronos: placa video se folosește oricând, ziua și noaptea** (Adrian: workstation-ul e ținut pornit doar pentru
   Kronos; îl folosește foarte rar, pentru o imprimare sau un PDF). S17 pornește imediat, nu la 19:00. Supraveghetorul nu mai lasă placa
   liberă ziua când există o sarcină aprobată. Regulile de siguranță (pre-înregistrare, paznic, un singur lucru pe placă) rămân.
+- 2026-10-22 16:55 — **Cyber Universe OS, regulă permanentă pentru drivere (Adrian, după regresia de la testul 5):** la un driver testat pe
+  hardware real se face **o singură schimbare de comportament pe Release**, verificată pe laptop înainte de următoarea; orice registru de
+  configurare (PCI, ale plăcii) se scrie doar citire → modificarea unui singur bit → scriere, cu valoarea dinainte și de după în jurnal; la
+  fiecare Release, `log rtl` (și echivalentul pentru alte drivere) arată registrele cheie, ca o poză să fie de ajuns pentru comparație cu
+  versiunea anterioară. O ipoteză se declară „confirmată” numai după testul pe hardware, nu după citirea codului sau după QEMU.
