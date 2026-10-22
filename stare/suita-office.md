@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 16:36 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 17:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -11,14 +11,16 @@
   Inserare → Tabel, editarea textului și a imaginilor în PDF). Acum: punctul 5, „totul așezat ca în programele cunoscute”:
   - gata mai devreme: Ctrl+K = Legătură, căutarea de comenzi pe Alt+Q, Ctrl+T = Tabel în Sheets, scurtăturile pe tastatura românească,
     tastele de acces Alt, butonul mare „Lipire” și grupul Clipboard comun;
-  - sesiunea 15:42–16:27: **Sheets → Pornire e așezată toată ca în programul de tabele cunoscut**: Font și Aliniere pe două rânduri
-    (A^ A˅, Borduri ▾ cu 8 variante, Încadrare text, Îmbinare și centrare ▾), Număr, Stiluri (Formatare condiționată ▾, Formatare
-    ca tabel ▾, Stiluri celulă ▾), Celule (Format ▾ cu Lățime coloană… / Înălțime rând…), Editare (Însumare automată, Umplere, Golire,
-    Sortare și filtrare, Găsire și selectare); scurtăturile Ctrl+Shift+$ / % / ! / # / @, Ctrl+1, Shift+Space, Ctrl+Space, F4 (repetă formatarea).
+  - sesiunea 15:42–16:27: Sheets → fila Pornire așezată toată ca în programul de tabele cunoscut (Font, Aliniere, Număr, Stiluri,
+    Celule, Editare) și scurtăturile de format (Ctrl+Shift+$ / % / !, Ctrl+1, F4 repetă formatarea);
+  - sesiunea 16:37–17:25: **Sheets → Inserare, Aspect pagină și Formule** așezate la fel: Inserare (Tabele, Ilustrații, Controale, Diagrame,
+    Minidiagrame, Filtre, Linkuri, Comentarii, Text, Simboluri), Aspect pagină (Margini ▾, Orientare ▾, Dimensiune ▾, Zonă de imprimare ▾,
+    Întreruperi ▾, Scalare, Opțiuni foaie), Formule (Bibliotecă de funcții cu Utilizate recent, Nume definite, Audit formule, Calcul);
+    Shift+F3 = Inserare funcție, F12 = Salvează ca; panglica încape fără derulare și pe ferestre înguste (800 px).
 - Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală (cu taste adevărate).
 
 ## Urmează
-- Punctul 5, mai departe: Sheets, celelalte file (Inserare, Aspect pagină, Formule, Date, Revizuire, Vizualizare), clic dreapta și literele
+- Punctul 5, mai departe: Sheets, filele rămase (Date, Revizuire, Vizualizare), filele contextuale, clic dreapta și literele
   de acces exacte; apoi PDF, Docs, Slides, Imagini, Video, Notițe, după `INTERFATA-FAMILIARA.md`.
 - Punctul 6: butonul „Trimite o observație” (captură + text salvate local, Adrian le trimite el).
 - Kit de instalare nou doar când îl cere Adrian (întâi testează pe laptop, cu „Porneste Suite.cmd”).
@@ -34,8 +36,8 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- De încercat (nu blochează): Sheets → fila Pornire e acum așezată ca în programul de la birou (Font, Aliniere, Număr, Stiluri, Celule,
-  Editare). Se găsește totul unde te aștepți? Ctrl+Shift+4 pune lei, F4 repetă formatarea? Alt, H, V deschide Lipire? Ce lipsește cel mai tare?
+- De încercat (nu blochează): Sheets → filele Pornire, Inserare, Aspect pagină și Formule sunt acum așezate ca în programul de la birou (Font, Aliniere, Număr, Stiluri, Celule,
+  Editare). Se găsește totul unde te aștepți? Ctrl+Shift+4 pune lei, Shift+F3 deschide funcțiile, F4 repetă formatarea? Alt, H, V deschide Lipire? Ce lipsește cel mai tare?
 - De încercat (nu blochează): Ctrl+K pune legătură, Alt+Q caută o comandă, Ctrl+T în Sheets face tabel, Ctrl+ș pune data de azi.
 - De încercat (nu blochează): PDF → Editare → ✎ Editează text pe un act real: schimbi un cuvânt, salvezi; se vede bine la birou?
 - De încercat (nu blochează): un .xlsx cu tabel (Inserare → Tabel) sau cu forme făcut în Suite, deschis la birou: merge fără „reparare”?
