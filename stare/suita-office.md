@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 13:09 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 13:16 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -17,8 +17,10 @@
 - Într-o sesiune separată s-a pregătit programul de instalare Windows 0.9.0 (pentru etapa 5, testarea cu oameni).
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Docs: secțiuni și verificarea compatibilității; Slides: narațiune înregistrată pe slide-uri; PDF: linearizarea).
-- Etapa 3, calitate; etapa 5: pachet de instalare și testare cu colegii lui Adrian.
+- PRIMA PRIORITATE: problemele găsite de Adrian cu versiunea 0.9.0 la birou (lista în PLAN.md). Făcut: 1) dublu-click / „Deschide cu”
+  deschide acum fișierul, într-o singură fereastră Suite. Urmează: 2) sugestii de funcții în Sheets la „=”, 3) Inserare → Tabel (și în .xlsx),
+  4) editarea textului în PDF, 5) butoanele așezate ca în aplicațiile cunoscute, 6) butonul „Trimite o observație”.
+- Kit de instalare nou doar când îl cere Adrian (întâi testează pe laptop).
 
 ## Ce oferă proiectul celorlalți
 - Aplicațiile de birou pentru modulul Cyberspace (Kronos) și pentru setul de aplicații al Cyber Universe (după testarea umană).

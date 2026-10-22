@@ -73,3 +73,4 @@
 - 2026-10-22 11:37 — Docs și Slides: dicționar de sinonime; Docs: despărțire automată în silabe, legături automate și fracții; OCR în 5 limbi; Slides: „Folosește duratele” (Word 79,0%, PowerPoint 76,0%, Acrobat 72,8%).
 - 2026-10-22 12:19 — Docs: completare automată, împarte celula, fundal de paragraf cu orice culoare; Sheets: formele în .xlsx ca forme adevărate, Proprietăți… și meniuri de funcții pe categorii (Word 79,5%, Excel 78,6%).
 - 2026-10-22 13:09 — Docs: verifică compatibilitatea și controlul rândurilor văduve; Sheets: grafic cu bule, ecuații, rezumate recomandate, copiază ca imagine; Slides: alegerea ecranului; Imagini: filtrul Ramă; Video: 4 stiluri de text; Notițe: trimite prin e-mail (Word 80,1%, Excel 79,5%).
+- 2026-10-22 13:16 — Prima prioritate (problemele de la birou), punctul 1: fișierele deschise din Windows (dublu-click, „Deschide cu”) se deschid acum în Suite, într-o singură fereastră; asocierile de fișiere sunt pregătite pentru următorul kit.
