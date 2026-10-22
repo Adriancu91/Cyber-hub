@@ -1,19 +1,20 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 10:06 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 10:51 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere.
-- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 78,0%, Clipchamp 77,1%, Notițe 75,2%,
-  PowerPoint 74,7%, Acrobat 72,2%, Photoshop 71,6%, formule de calcul 97,1% (100% fără cele care cer internet).
+- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 78,0%, Clipchamp 77,1%, Notițe 76,0%,
+  PowerPoint 75,5%, Acrobat 72,6%, Photoshop 71,9%, formule de calcul 97,1% (100% fără cele care cer internet).
 - **Butoanele grupate în file (cererea lui Adrian) sunt gata în toate cele 7 aplicații.** Ultima sesiune a încheiat-o:
   **Sheets** are fila Grafic (clic pe un grafic) și o mini-bară de formatare la clic dreapta pe celulă; **PDF** are fila Câmp
   (cursorul într-un câmp de formular) și clic dreapta pe comentariile din fișier (Răspunde, Starea, Bifat).
-- Funcții noi (sesiunea 09:17–10:06): **PDF → ⚙ Lot…** (aceleași operații pe mai multe PDF-uri deodată: curățare, filigran, numere de pagină,
-  subsol, alb-negru, comprimare și **OCR**, ca scanările să devină căutabile); **Imagini**: distribuirea straturilor legate, alinierea și
-  transformarea lor împreună, Deplasare cu hartă dintr-o poză aleasă, Tilt-Shift cu banda rotită, Mezzotintă cu 7 tipuri, Reflexie cu 4 obiective.
+- Funcții noi (sesiunea 10:07–10:51): **Slides**: Variante ale temelor (4 variante de culori pe temă) și **declanșatoare** pentru animații
+  (o animație pornește doar la click pe o casetă aleasă, de exemplu un buton „Răspuns”; ajung și în .pptx); **PDF**: după OCR, lista
+  cuvintelor nesigure, fiecare cu bucata ei de pagină, de corectat înainte de a intra în PDF; **Imagini**: bara de unelte se poate
+  personaliza (ascunzi uneltele nefolosite); **Notițe**: riglă și raportor în fereastra Desen (linii drepte la orice unghi și arce).
 - Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală.
 
 ## Urmează
@@ -32,6 +33,7 @@
 
 ## Blocaje / nevoie de Adrian
 - De încercat (nu blochează): PDF → ⚙ Lot… pe câteva acte scanate, cu „Fă-l căutabil”: merge căutarea în fișierele „-lot”?
+- De încercat (nu blochează): un .pptx cu declanșator făcut în Suite (Animații → ⚡ Declanșator), deschis în programul de prezentări de la serviciu: animația pornește la click pe caseta aleasă?
 - De verificat (nu blochează): noile file din toate aplicațiile. Găsești tot ce foloseai? Ce buton folosit des a ajuns prea ascuns?
   Noutăți de încercat: Sheets — clic pe un grafic (fila Grafic) și clic dreapta pe o celulă (mini-bara); PDF — clic într-un câmp de formular (fila Câmp).
 - De verificat (nu blochează): un .xlsx cu model de Rezolvitor salvat din Suite, deschis în programul de calcul de la serviciu: aceleași condiții.
