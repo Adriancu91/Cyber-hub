@@ -60,3 +60,6 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   ultimul Release, rulează comenzile din `test/comenzi.txt` (repo-ul OS) și trimite rezultatele înapoi pe GitHub; sesiunea OS le citește și
   repară; Adrian doar ține laptopul pornit, cu cablul băgat și BIOS-ul setat să pornească automat de pe stick. Condiție: C-6 (rețeaua) gata.
   Eu, din cloud, nu intru direct în laptop (e după router): bucla merge prin GitHub, cu token limitat la depozitul OS.
+- 2026-10-22 15:10 — **Kronos: placa video se folosește oricând, ziua și noaptea** (Adrian: workstation-ul e ținut pornit doar pentru
+  Kronos; îl folosește foarte rar, pentru o imprimare sau un PDF). S17 pornește imediat, nu la 19:00. Supraveghetorul nu mai lasă placa
+  liberă ziua când există o sarcină aprobată. Regulile de siguranță (pre-înregistrare, paznic, un singur lucru pe placă) rămân.
