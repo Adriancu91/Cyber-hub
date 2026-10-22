@@ -1,21 +1,22 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 11:37 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 12:19 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere.
-- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 79,0%, Excel 78,0%, Clipchamp 77,1%, PowerPoint 76,0%,
+- Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 79,5%, Excel 78,6%, Clipchamp 77,1%, PowerPoint 76,0%,
   Notițe 76,0%, Acrobat 72,8%, Photoshop 71,9%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Butoanele grupate în file (cererea lui Adrian) sunt gata în toate cele 7 aplicații.
-- Funcții noi (sesiunea 10:52–11:37): **dicționar de sinonime** în Docs și Slides (Shift+F7 și clic dreapta, ~1.000 de cuvinte, scris de noi);
-  **despărțire automată în silabe** în Docs (regulile românești, și în .docx / .odt); **OCR în mai multe limbi** (română, engleză, maghiară,
-  germană, franceză, fără internet); în Docs adresele web devin singure **legături** și 1/2 devine ½; în Slides bifa **„Folosește duratele”**.
-- Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală.
+- Funcții noi (sesiunea 11:37–12:19): în Docs **completare automată** (lunile, zilele, data de azi, cuvintele lungi din document; Enter o acceptă),
+  **împarte celula** în 2 coloane / 2 rânduri, fundal de paragraf cu orice culoare; în Sheets **formele salvate în .xlsx ca forme adevărate**
+  (și citite din fișierele altor programe: 53 de forme noi în corpusul de test), **Proprietăți…** (titlu, autor, subiect, cuvinte cheie, și în .xlsx),
+  **meniuri de funcții pe categorii** în fila Formule.
+- Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală; testul de compatibilitate: 0 erori.
+- Într-o sesiune separată s-a pregătit programul de instalare Windows 0.9.0 (pentru etapa 5, testarea cu oameni).
 
 ## Urmează
-- Restul funcțiilor din etapa 2 (Slides: narațiune înregistrată pe slide-uri; Sheets: formele în .xlsx; Docs: secțiuni; PDF: linearizarea).
+- Restul funcțiilor din etapa 2 (Docs: secțiuni și verificarea compatibilității; Slides: narațiune înregistrată pe slide-uri; PDF: linearizarea).
 - Etapa 3, calitate; etapa 5: pachet de instalare și testare cu colegii lui Adrian.
 
 ## Ce oferă proiectul celorlalți
@@ -29,9 +30,9 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
+- De încercat (nu blochează): un .xlsx cu forme (un balon cu text) făcut în Suite, deschis în programul de la serviciu: se poate edita forma?
 - De încercat (nu blochează): un .docx cu „Despărțire în silabe → Automat” din Suite, deschis în programul de la serviciu: desparte și el cuvintele?
 - De încercat (nu blochează): PDF → Text din scanare… pe un act în engleză sau maghiară, cu limba aleasă: iese textul corect?
-- De încercat (nu blochează): PDF → ⚙ Lot… pe câteva acte scanate, cu „Fă-l căutabil”: merge căutarea în fișierele „-lot”?
 - De încercat (nu blochează): un .pptx cu declanșator făcut în Suite, deschis în programul de prezentări de la serviciu.
 - De verificat (nu blochează): noile file din toate aplicațiile. Găsești tot ce foloseai? Ce buton folosit des a ajuns prea ascuns?
 - De verificat (nu blochează): .xlsx cu Rezolvitor, fișiere cu parolă și .docx protejat din Suite, deschise în programele de la serviciu.
