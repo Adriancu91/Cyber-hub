@@ -123,3 +123,26 @@ Format:
   4. Nu te opri singur după sesiuni goale cât timp C-5 e `preluat`.
 - stare: gata (preluat 2026-10-22 06:30 UTC, terminat 07:40 UTC; completarea de la 09:40 făcută la 08:00 UTC) — P6-10a, P6-10b; CI verde, Release os-125
 - rezultat: Realtek are coadă de primire de 256 și își repornește singur primirea după blocare (cu diagnostic nou în `net`), stick-ul e așteptat după ceas până la 5 s cu fiecare pas în `log usb`, INQUIRY reîncercat de 10 ori cu REQUEST SENSE (Unit Attention) și starea CSW + sense în jurnal; lista pentru testul 4 e în `stare/cyber-universe.md`.
+
+### C-6 · cyber-universe · Testul 4 făcut: stick-ul merge, recepția nu se mai blochează, dar cadrele 2+ sunt citite ca zero (DHCP 0)
+- data: 2026-10-22 14:35 · de la: Adrian (prin centrul de comandă)
+- ce: Testul 4 (Release os-125, cablu băgat) e în `rezultate/2026-10-22-test-4/REZULTAT.md` (8 poze, text transcris). **P6-10b confirmat
+  pe hardware**: stick-ul ADATA e enumerat, configurat, FAT32/MBR montat la `/usb` cu scriere permisă, `ls /usb` arată `cyber.rw`, `VERSIUNE`,
+  `EFI/`, `boot/`. **P6-10a confirmat**: primite 24 → 32 în 6 minute, index 24 → 32, RDU 0, reporniri 0. **Rămâne un singur blocaj, nou și
+  precis:** `primele cadre: 0806 0000 0000 0000 0000 0000 0000 0000` — primul cadru e citit corect (ARP), **cadrele 2–8 au ethertype 0000**,
+  imposibil pe o rețea reală ⇒ driverul citește zerouri din buffer-ele pachetelor de la al doilea încolo; de aceea `raspunsuri DHCP (udp 68) 0`
+  și fără adresă, deși trimise ajung la 120. Ce să faci (P6-10c), înaintea oricărui alt pas:
+  1. Ipoteza principală: **adresele buffer-elor din descriptorii RX 1…255 nu corespund cu adresele din care citește driverul** (stride/bază
+     diferite sau conversia fizic→virtual corectă doar pentru buffer-ul 0). Verifică în cod: cum se calculează `buf_phys[i]` pus în descriptor
+     și `buf_virt[i]` din care se citește; că sunt același bloc, același pas (RMS 2048), aceeași conversie. Apoi: (b) ordinea operațiilor —
+     citești lungimea și datele ÎNAINTE de a re-arma OWN și nu golești buffer-ul înainte de citire; (c) indexul citit = indexul descriptorului
+     cu OWN=0, fără off-by-one între placă și driver.
+  2. Diagnostic pentru testul 5, ca să nu ghicim: în `net` (sau `log rx`), pentru fiecare din primele 8 cadre: index, lungimea din descriptor,
+     adresa fizică din descriptor, adresa din care a citit driverul, primii 16 octeți în hex. Și un contor „cadre cu ethertype 0000”.
+  3. Fă modelul de test al cipului din QEMU să scrie fiecare cadru în buffer-ul propriu al descriptorului (adresa din descriptor, nu un buffer
+     comun) și adaugă un scenariu cu 8+ cadre consecutive, verificând ethertype-ul fiecăruia — ca regresia asta să fie prinsă în CI.
+  4. Când CI e verde și e Release nou: lista pentru **testul 5** în `stare/cyber-universe.md` (`net`, `ping 1.1.1.1`, `host github.com`,
+     `fetch https://example.com/`, și noul diagnostic). Dacă rețeaua merge la testul 5, în același mesaj spune-i lui Adrian ce să pună pe stick
+     pentru pasul următor (`claude.key`, `github.token`) — abia atunci.
+- stare: nou
+- rezultat:
