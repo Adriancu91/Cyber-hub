@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-22 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-22 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”:
@@ -11,12 +11,13 @@
   domenii cu verificator (documente în română, cod cu teste, gramatică); metoda: auto-joc cu verificator + specialiști + memorie.
   Nu mai facem nopți de antrenare cu rețeta veche.
 - **S16 gata:** verificatorul nostru fără niciun model dă aceeași notă ca Qwen la 527/540 răspunsuri (97,6 %) → Qwen nu mai e judecător.
-- Teste: 868 trec, 1 sărit. Interfața „Întreabă din text” rămâne pe #407.
+- Teste: 886 trec, 1 sărit. Interfața „Întreabă din text” rămâne pe #407.
 
 ## Urmează
 - **S17 (E1, aprobat, noaptea 22→23, de la 19:00):** „întrebări născute de Kronos” — își scrie singur întrebări noi, le
   verifică fără niciun model străin și se antrenează 3 ore pe ele. Verdict după praguri scrise dinainte, mâine dimineață.
-- Ziua de 22 oct: doar pregătirea S17 pe procesor; placa liberă.
+- Pregătirea S17 e gata (pe procesor, verificată de supraveghetor): unealta + 18 teste, 2.000 de articole noi puse deoparte
+  (0 texte de examen), pre-înregistrarea cu praguri. Ziua de 22 oct: placa liberă.
 
 ## Ce oferă proiectul celorlalți
 - `verifica_text(text)` din motorul de română: acord, „al/a/ai/ale”, numerale cu „de”, diacritice (Python, fără rețea).

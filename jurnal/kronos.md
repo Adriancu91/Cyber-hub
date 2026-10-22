@@ -14,3 +14,4 @@
 - 2026-10-21 23:15 — noaptea 12 gata fără erori: INFIRMAT, fără regresie (tipuri nevăzute tot 2/15; examenul „răspuns din text” 50/50); S15 în coadă: examen mai mare de generalizare.
 - 2026-10-22 02:15 — S15 verificat: tipurile văzute 30/30, nevăzute 6/50 (se învață, nu se transferă); după direcția nouă a lui Adrian, în coadă: S16 = verificator fără LLM (aprobat), S17 = „întrebări născute de Kronos” (după S16).
 - 2026-10-22 05:15 — S16 verificat: verificatorul fără LLM e de acord cu Qwen la 527/540 (97,6 %) → S17 („întrebări născute de Kronos”) aprobat pentru noaptea 22→23.
+- 2026-10-22 14:15 — pregătirea S17 gata și verificată (unealta, 18 teste, 2.000 de articole noi fără texte de examen, pre-înregistrare); S17 pornește la 19:00.
