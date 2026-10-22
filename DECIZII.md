@@ -55,3 +55,8 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   rolul de judecător** la „răspuns din text”; notarea se face cu verificatoare proprii (E0). Dependențele rămase (Qwen pentru poveștile vechi,
   TinyStories, Claude în cascadă) se declară și se înlocuiesc pe rând. (3) Supraveghetorul primește E0 → E1 în `plan/coada.md`; nu se mai fac
   nopți de antrenare cu rețeta veche pentru tipuri nevăzute.
+
+- 2026-10-22 14:45 — **Cyber Universe OS: bucla de test de la distanță (Adrian, „da” la C-7).** Laptopul de test se actualizează singur din
+  ultimul Release, rulează comenzile din `test/comenzi.txt` (repo-ul OS) și trimite rezultatele înapoi pe GitHub; sesiunea OS le citește și
+  repară; Adrian doar ține laptopul pornit, cu cablul băgat și BIOS-ul setat să pornească automat de pe stick. Condiție: C-6 (rețeaua) gata.
+  Eu, din cloud, nu intru direct în laptop (e după router): bucla merge prin GitHub, cu token limitat la depozitul OS.

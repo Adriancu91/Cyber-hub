@@ -16,6 +16,9 @@ Stick ADATA `125f:db8a` (29.600 MiB), FAT32/MBR din Windows, cu fișierele din `
 | 6 | `06-hw.jpg` | `hw` (la 396,98 s) |
 | 7 | `07-ls-usb.jpg` | `ls usb` (cale invalidă) și `ls /usb` |
 | 8 | `08-net-dupa.jpg` | `net` din nou (la ~7 minute) |
+| 9 | `09-log-dhcp.jpg` | `log dhcp` |
+| 10 | `10-log-arp.jpg` | `log arp` → „(niciun rand)” |
+| 11 | `11-log-net.jpg` | `log net` |
 
 ## Ce s-a văzut, cuvânt cu cuvânt
 
@@ -49,6 +52,10 @@ fara adresa (DHCP fara raspuns; reincearca la 10 s)
 **`net`** (poza 8, ~7 minute): trimise 120, **primite 32**, descriptor RX 32 = 80000800, index 32, RDU 0, reporniri 0; **raspunsuri DHCP 0**;
 primele cadre tot `0806 0000 0000 0000 0000 0000 0000 0000`; fără adresă.
 
+**`log dhcp` / `log net`** (pozele 9 și 11): `[19.520] WARN net: DHCP nu raspunde; fara adresa, reincerc la 10 s`, apoi la fiecare 18 s
+starea inelului: index **18** la 19,5 s, 19 la 37,5 s, 20 la 55,5 s, 21 la 73,5 s, 23 la 91,5 s, 24 la 109,5 s; de fiecare dată
+`raspunsuri DHCP (udp 68) 0` și `primele cadre: 0806 0000 0000 0000 0000 0000 0000 0000`. **`log arp`: niciun rând.**
+
 ## Ce înseamnă (analiza centrului de comandă; de confirmat de sesiunea OS)
 
 1. **Stick-ul: REZOLVAT.** Enumerare completă, SET_CONFIGURATION, endpoint-uri, SCSI (ADATA 29.600 MiB), FAT32 pe MBR montat cu scriere
@@ -66,6 +73,14 @@ primele cadre tot `0806 0000 0000 0000 0000 0000 0000 0000`; fără adresă.
    - (b) driverul **re-armează descriptorul (OWN=1) sau golește buffer-ul înainte să citească** cadrul (ordinea operațiilor).
    - (c) driverul citește lungimea din `opts1` corect, dar **datele din buffer-ul altui index** (off-by-one între indexul plăcii și al driverului).
    - (d) mai puțin probabil: cadrele 2–8 sunt chiar scurte/goale (nu: pe o rețea reală nu există cadre cu ethertype 0).
+   - (a2) o formă concretă a lui (a), foarte plauzibilă: buffer-ele sunt alocate **separat** (256 de alocări) și adresa fizică pusă în
+     descriptor e calculată ca `baza_primului + i × 2048`, presupunând că alocările sunt una după alta. În QEMU ies contigue (harta memoriei e
+     simplă) și totul merge; pe laptopul real, cu altă hartă de memorie, alocările nu mai sunt contigue → placa scrie unde i s-a spus, driverul
+     citește din buffer-ul lui, care e altundeva și e zero. Remediul: un singur bloc contiguu de 256 × 2048 = 512 KiB, aliniat, iar adresa
+     fiecărui buffer derivată din acel bloc (fizic și virtual din aceeași bază).
+   - Cronologia din `log dhcp` întărește ideea: **18 cadre au venit în primele ~8 secunde** după pornirea plăcii (burst-ul tipic: Offer-ul
+     routerului + ARP), apoi ~1 cadru la 18 s (broadcast-uri obișnuite). Offer-ul e aproape sigur printre cele 18, citite ca zero.
+   - `log arp` gol: ARP-ul nu lasă urme în jurnal (nu e neapărat o problemă, dar la testul 5 ar fi util un rând la fiecare ARP primit/trimis).
    Testul care le desparte: scrie în `net` (sau `log rx`) pentru fiecare din primele 8 cadre: index, lungimea din descriptor, adresa fizică
    din descriptor, adresa din care citește driverul, și primii 16 octeți în hex. Dacă adresele diferă → (a). Dacă sunt egale și octeții sunt
    zero → (b). În QEMU nu se vede pentru că modelul minimal al cipului scrie probabil tot la același buffer sau trece prin aceeași cale de adrese.

@@ -133,7 +133,10 @@ Format:
   imposibil pe o rețea reală ⇒ driverul citește zerouri din buffer-ele pachetelor de la al doilea încolo; de aceea `raspunsuri DHCP (udp 68) 0`
   și fără adresă, deși trimise ajung la 120. Ce să faci (P6-10c), înaintea oricărui alt pas:
   1. Ipoteza principală: **adresele buffer-elor din descriptorii RX 1…255 nu corespund cu adresele din care citește driverul** (stride/bază
-     diferite sau conversia fizic→virtual corectă doar pentru buffer-ul 0). Verifică în cod: cum se calculează `buf_phys[i]` pus în descriptor
+     diferite sau conversia fizic→virtual corectă doar pentru buffer-ul 0). **Completare 14:45 (pozele 9–11):** forma cea mai probabilă —
+     buffer-ele alocate separat, iar adresa din descriptor calculată `baza + i × 2048` presupunând alocări contigue (adevărat în QEMU, fals pe
+     laptop). Remediu: un singur bloc contiguu de 256 × 2048 octeți, aliniat, din care derivă și adresa fizică, și cea virtuală. Din `log dhcp`:
+     18 cadre au venit în primele ~8 s (burst-ul cu Offer-ul routerului), apoi ~1 la 18 s; `log arp` nu are niciun rând (adaugă un rând la ARP). Verifică în cod: cum se calculează `buf_phys[i]` pus în descriptor
      și `buf_virt[i]` din care se citește; că sunt același bloc, același pas (RMS 2048), aceeași conversie. Apoi: (b) ordinea operațiilor —
      citești lungimea și datele ÎNAINTE de a re-arma OWN și nu golești buffer-ul înainte de citire; (c) indexul citit = indexul descriptorului
      cu OWN=0, fără off-by-one între placă și driver.
@@ -145,4 +148,25 @@ Format:
      `fetch https://example.com/`, și noul diagnostic). Dacă rețeaua merge la testul 5, în același mesaj spune-i lui Adrian ce să pună pe stick
      pentru pasul următor (`claude.key`, `github.token`) — abia atunci.
 - stare: preluat (2026-10-22 11:45 UTC, sesiunea OS) — P6-10c în docs/TASKS.md
+- rezultat:
+
+### C-7 · cyber-universe · Bucla de test de la distanță: laptopul se actualizează, se testează și raportează singur prin GitHub
+- data: 2026-10-22 14:45 · de la: Adrian (prin centrul de comandă) — „da”, cu mențiunea: pornire automată de pe stick la repornire
+- ce: După C-6 (abia când rețeaua merge pe laptop). Scopul: să nu mai fie nevoie de zip-uri trimise de mână și de poze; laptopul de test
+  (cablu băgat, stick în el, BIOS-ul setat de Adrian să pornească primul de pe stick) devine un banc de test automat. Pași (P6-11 … în TASKS):
+  1. **Auto-actualizare la pornire:** dacă `/usb` e montat și rețeaua are adresă, OS-ul compară `VERSIUNE` de pe stick cu ultimul Release;
+     dacă e mai nou, descarcă, verifică sumele, scrie pe stick (codul „Actualizează” există) și **repornește singur** (comandă `reboot`:
+     ACPI reset sau, ca rezervă, resetarea prin controlerul de tastatură 0xFE). Nimic nu se scrie pe stick dacă vreo sumă nu se potrivește.
+  2. **Comenzi de test din repo:** fișierul `test/comenzi.txt` din `cyber-universe` (ramura `main`), un rând = o comandă din shell-ul OS.
+     La pornire (după eventuala actualizare), OS-ul îl descarcă prin HTTPS, rulează comenzile una după alta cu limită de timp (de ex. 30 s
+     fiecare) și adună ieșirea lor + `VERSIUNE` + `hw` + ultimele 50 de rânduri din jurnal.
+  3. **Raport înapoi pe GitHub:** rezultatul se trimite cu `gh-trimite` la `test/rezultate/<data-ora>_<versiune>.txt` (tokenul din
+     `/usb/github.token`, drepturi doar pe acest depozit). Fără token, rezultatul se scrie măcar pe stick, în `/usb/rezultate/`.
+  4. **Sesiunea OS închide bucla:** la fiecare rulare citește ultimul fișier din `test/rezultate/`, îl tratează ca pe pozele lui Adrian (bug →
+     reparație → Release), și rescrie `test/comenzi.txt` pentru runda următoare. În raportul pentru Adrian spune ce a citit din laptop.
+  5. **Siguranță:** OS-ul rulează doar comenzi din propriul shell (nu cod descărcat), doar de pe `main` al depozitului `Adriancu91/cyber-universe`,
+     numai prin HTTPS cu rădăcinile reale; tokenul și cheia nu apar niciodată în rezultate; un fișier `/usb/fara-auto.txt` oprește bucla.
+  6. Scrie în `docs/USB.md` pașii pentru Adrian: ordinea de boot în BIOS (Lenovo: F1 la pornire → Startup → Boot → stick-ul primul; Secure Boot
+     oprit), și cum pune `github.token` pe stick. Spune-i în raport când e gata de pornit bucla.
+- stare: nou (se preia după C-6; dacă C-6 nu e gata, rămâne `nou`)
 - rezultat:
