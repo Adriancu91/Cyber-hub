@@ -202,5 +202,5 @@ Format:
   7. **Regulă permanentă (Adrian, 16:55; e și în `DECIZII.md`):** de acum, la driverele testate pe hardware, o singură schimbare de comportament
      pe Release, verificată pe laptop înainte de următoarea; registrele se scriu doar citire → un bit → scriere, cu valorile în jurnal; `log rtl`
      arată registrele cheie la fiecare versiune; „confirmat” înseamnă confirmat pe laptop. Scrie regula și în `docs/DECISIONS.md` al OS-ului.
-- stare: nou
+- stare: preluat (2026-10-22 13:40 UTC, sesiunea OS) — P6-10d în docs/TASKS.md, plan în docs/plans/P6-10d.md
 - rezultat:
