@@ -1,31 +1,28 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-22 01:50 · **de:** centrul de comandă
-_(Detalii: `stare/`. Comenzi: `COMENZI.md`. Cine lucrează unde: `RESURSE.md`. Rezumatul zilei: `rezumate/2026-10-21.md`.)_
+**Actualizat:** 2026-10-22 08:55 · **de:** coordonator
+_(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-22.md`.)_
 
 ## Așteaptă de la tine, Adrian
-1. ~~Cyber Universe — testul pe stick~~ — **FĂCUT la 22:05, a reușit** pe un ThinkPad real: desktop, touchpad, tastatură, editor.
-   Rezultatul: `rezultate/2026-10-21-test-stick/REZULTAT.md`. OS-ul primește comanda **C-2** și reia lucrul la 23:40.
-2. **Suita — de verificat la serviciu (nu blochează):** deschizi acolo fișiere făcute în Suite: unul salvat cu parolă (și o foaie
-   protejată), un .docx cu „Restricționează editarea” (să ceară parola) și un .xlsx cu model de Rezolvitor (Solver să arate
-   aceleași condiții) (`stare/suita-office.md`). Ultimele două sunt noi.
-3. **Suita — de verificat (nou, nu blochează):** scanezi cu telefonul un cod QR pus din Suite (Docs → Cod QR) (`stare/suita-office.md`).
-4. **Suita — de verificat (nu blochează):** treci un PDF făcut cu „Fă-l PDF/A” printr-un validator PDF/A oficial (`stare/suita-office.md`).
-5. **Suita — întrebare (nu blochează):** vrei ora exactă de pe un server de timp la semnarea PDF (se trimite doar amprenta)?
-   Dacă da, alegi serverul (`stare/suita-office.md`).
-6. **Suita — opțional:** decizi dacă urcăm codul pe un repo GitHub **privat** (`stare/suita-office.md`).
+1. **OS — testul 3 pe laptopul Lenovo, cu cablul de rețea băgat** (dintr-o pornire: `log rtl`, `net`, `ping 1.1.1.1`, `host github.com`, `ls /usb`, poze); OS-ul nu mai are nimic de făcut până atunci și se oprește singur după sesiunea de 11:40 (`stare/cyber-universe.md`).
+2. **OS — pentru pașii cu internet:** pui pe stick `claude.key` (cheia API, cu limită mică) și `github.token` (doar `cyber-universe`, Contents: Read and write) — pașii în `cyber-universe/docs/USB.md`, secțiunea 7 (`stare/cyber-universe.md`).
+3. **Kronos:** completezi coloana „e bine? (tu)” la cele 20 de răspunsuri; dacă vrei să schimbi S17, spui înainte de 19:00 (`cyberspace/docs/rapoarte/2026-10-22_0744_raport_dimineata.md`).
+4. **Suita — de verificat (nou, nu blochează):** noile file (panglica) din toate aplicațiile — găsești tot, e ceva prea ascuns? (`stare/suita-office.md`).
+5. **Suita — de verificat la serviciu (nu blochează):** fișier + foaie protejată cu parolă, .docx cu „Restricționează editarea”, .xlsx cu model de Rezolvitor (`stare/suita-office.md`).
+6. **Suita — de verificat (nu blochează):** cod QR din Docs scanat cu telefonul; un PDF „Fă-l PDF/A” printr-un validator oficial (`stare/suita-office.md`).
+7. **Suita — întrebare (nu blochează):** vrei server de timp la semnarea PDF? Dacă da, alegi serverul (`stare/suita-office.md`).
+8. **Opțional:** codul suitei pe un repo GitHub privat (`stare/suita-office.md`); depozitul OS public, ca actualizarea să meargă fără token (`stare/cyber-universe.md`).
 
 ## Proiectele acum
 | Proiect | Unde e | Lucrează acum? | Ultima veste (ora) |
 |---|---|---|---|
-| **Kronos** | S15 gata (00:45): tipurile văzute 30/30, nevăzute 6/50 → „se învață, nu se transferă”. **Direcție nouă aprobată de Adrian (01:42, `DECIZII.md`)**: fără LLM, auto-joc cu verificator + specialiști + memorie; Qwen iese din rolul de judecător | Da — supraveghetorul scrie S16 (verificator propriu, procesor) și S17 (întrebări născute de Kronos, o noapte) la trecerea de 02:15/05:15 | 01:45 (`cyberspace/plan/coada.md`, `docs/rapoarte/2026-10-22_0200_strategie_nucleu_fara_llm.md`) |
-| **Cyber Universe OS** | Faza 5 aproape gata (HTTPS cu criptografie proprie); 41 de teste, CI verde | **Nu — OPRIT** prin decizia ta (10:05), până la testul pe stick | 20:45 (`stare/cyber-universe.md`) |
-| **Suita office** | Etapa 2: Excel 77,5%, Word 77,0%, Clipchamp 76,3%, Notițe 74,4%, PowerPoint 73,3%, Acrobat 69,0%, Photoshop 68,5%, formule 97,1% | Da, continuu pe ThinkPad (529 fișiere de test, 0 erori) | 20:45 (`stare/suita-office.md`) |
+| **Kronos** | Noaptea fără erori. S15: văzute 30/30, nevăzute 6/50. **S16 gata: verificatorul propriu = Qwen la 97,6 %** → Qwen nu mai e judecător. 868 teste | Da — ziua doar pregătire pe procesor; **S17** („întrebări născute de Kronos”) pornește la 19:00 | 07:44 (`cyberspace/docs/rapoarte/…0744_raport_dimineata.md`) |
+| **Cyber Universe OS** | **Faza 6 scrisă și testată în emulator**: Realtek, HTTPS real, Claude în OS, „Actualizează”, trimitere pe GitHub; 47 de teste, CI verde | Nu — fără sarcini până la testul 3 (2 sesiuni goale la rând) | 08:45 (`stare/cyber-universe.md`) |
+| **Suita office** | Toate aplicațiile mutate în panglică cu file, niciun buton pierdut. Word 78,1%, Excel 78,0%, Clipchamp 77,1%, Notițe 75,2%, PowerPoint 74,7%, Acrobat 70,8%, Photoshop 70,5% | Da, continuu pe ThinkPad (urmează Sheets: fila Grafic) | 08:35 (`stare/suita-office.md`) |
 
 ## Comenzi
-- **C-2** · cyber-universe · rezultatele testului pe hardware real (testul 2 e făcut în mare parte) — `nou` (22:15)
-- **C-3** · cyber-universe · Faza 6: OS-ul ca loc de lucru cu Claude înăuntru — `preluat` (P6-01 gata, P6-02 în lucru)
-- **C-4** · cyber-universe · testul 2 făcut: NVMe merge; Realtek trimite dar nu primește; /usb nemontat (stick MBR) + comanda `log` — `nou` (00:15)
+- **C-3** · cyber-universe · Faza 6 (Claude în OS) — `preluat`: toți cei 5 pași gata în emulator; rămâne P6-10 = testul pe laptop cu tine.
+- Terminate de la ultima rulare: **C-2** (deblocare după stick, comanda `hw`) — `gata`; **C-4** (recepția Realtek, stick din Windows, `log`) — `gata`.
 
 ## Propuneri de colaborare
-- Niciuna în așteptare. Aprobată și terminată de toate trei: formatul comun de modul.
+- Niciuna în așteptare.
