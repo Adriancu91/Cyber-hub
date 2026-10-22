@@ -202,5 +202,5 @@ Format:
   7. **Regulă permanentă (Adrian, 16:55; e și în `DECIZII.md`):** de acum, la driverele testate pe hardware, o singură schimbare de comportament
      pe Release, verificată pe laptop înainte de următoarea; registrele se scriu doar citire → un bit → scriere, cu valorile în jurnal; `log rtl`
      arată registrele cheie la fiecare versiune; „confirmat” înseamnă confirmat pe laptop. Scrie regula și în `docs/DECISIONS.md` al OS-ului.
-- stare: preluat (2026-10-22 13:40 UTC, sesiunea OS) — P6-10d în docs/TASKS.md, plan în docs/plans/P6-10d.md
-- rezultat:
+- stare: gata (preluat 2026-10-22 13:40 UTC, terminat 14:30 UTC, sesiunea OS) — P6-10d; CI verde, Release os-138
+- rezultat: pornirea plăcii e iar exact ca în os-125 (fără Device Control, fără golirea cache-ului), PCI scris doar bit cu bit în jurnal, iar schimbările noi (poarta RXDV de la 8168G — din studiul FreeBSD, bufferele într-un bloc sub 4 GB, golirea cache-ului) se încearcă pe rând cu `rtl porneste ...`, cu adrese pe 64 de biți în `log rtl`/`log rx`; lista pentru testul 6 e în `stare/cyber-universe.md`.
