@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 07:30 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 08:35 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -8,14 +8,14 @@
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 23:46).
 - Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 78,0%, Clipchamp 77,1%, Notițe 75,2%,
   PowerPoint 74,7%, Acrobat 70,8%, Photoshop 70,5%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Ultima sesiune (lucrul cerut de Adrian: butoanele grupate în file): **toate cele 7 aplicații au acum panglică cu file**.
-  Nou: **Video** (Montaj, Înregistrare, Audio, Suprapuneri, Aspect, Export, Vizualizare; ▶ Redă stă sub imagine, ca în orice player) și
-  **Notițe** (Pornire, Inserare, Revizuire, Vizualizare; Fișier cu importul și exporturile). În **Slides**, o **mini-bară** apare lângă textul ales
-  (font, mărime, B I U S, culori, evidențiere). Niciun buton pierdut (Video 69/69, Notițe 65/65, Slides 291/291).
-- Testele în aplicația reală trec pentru ce s-a mutat; câteva teste vechi cer pornire specială (cameră, fișiere date) și n-au rulat.
+- Ultima sesiune (lucrul cerut de Adrian: butoanele grupate în file): **Notițe** au acum filele care apar singure **Tabel** (cursorul în tabel)
+  și **Poză** (clic pe poză; dublu clic o mărește) și o **mini-bară** la textul ales (B I U S H, culori, mărime, liste). **Video** are panoul
+  **Proprietăți** al cadrului ales în dreapta imaginii și o **bară verticală de unelte** (✂ 🅣 ➚ ⧉ 💬 🔖 📷 ▭) în stânga.
+  Reparat: în Notițe, Ctrl+Z în fereastra de desen anula și caietul (o notiță nouă dispărea, desenul nu mai avea unde ajunge).
+- Testele în aplicația reală trec: toate cele 27 de teste Notițe și 26 de teste Video care pornesc fără cameră sau fișiere date.
 
 ## Urmează
-- Video: panoul Proprietăți în dreapta și bara verticală de unelte; Notițe: filele contextuale Tabel și Poză; Sheets: fila Grafic și mini-bara.
+- Sheets: fila contextuală Grafic și mini-bara (ultimul rest din mutarea în file).
 - Restul funcțiilor din etapa 2 (Imagini: poziția proprie a straturilor; PDF: linearizarea; Sheets: formele în .xlsx; Docs: secțiuni; Video: clipul liber pe pânză).
 - Etapa 3, calitate; etapa 5: pachet de instalare și testare cu colegii lui Adrian.
 

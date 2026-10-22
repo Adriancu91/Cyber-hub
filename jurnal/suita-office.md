@@ -65,3 +65,4 @@
 - 2026-10-22 05:58 — Interfață: PDF gata în panglică (filele Formular și Măsurare, clic dreapta pe pagină); Slides mutat în panglică (8 file + Fișier cu Recente, 291/291 butoane păstrate) și clic dreapta pe slide.
 - 2026-10-22 06:56 — Interfață: Slides are file contextuale pentru obiectul ales (Text, Formă, Tabel, Grafic, Imagine, Media) și clic dreapta pe obiect; niciun buton pierdut (291/291), 71 din 79 de teste Slides trec.
 - 2026-10-22 07:40 — Interfață: Video și Notițe mutate în panglică (Video 69/69, Notițe 65/65 butoane păstrate), mini-bară la textul ales în Slides; găsită o problemă veche la desenul peste poză în Notițe.
+- 2026-10-22 08:35 — Interfață: Notițe cu filele Tabel și Poză și mini-bară; Video cu panoul Proprietăți în dreapta și bara verticală de unelte; reparat Ctrl+Z din desenul Notițelor.
