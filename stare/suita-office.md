@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 06:56 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 07:30 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -8,13 +8,14 @@
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 23:46).
 - Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 78,0%, Clipchamp 77,1%, Notițe 75,2%,
   PowerPoint 74,7%, Acrobat 70,8%, Photoshop 70,5%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Ultima sesiune (lucrul cerut de Adrian: butoanele grupate în file): în **Slides**, bara care apărea sub panglică la obiectul ales a devenit
-  **filă care se deschide singură** (Text, Formă, Tabel, Grafic, Imagine / Desen / Ecuație, Media), cu grupuri cu nume; niciun buton pierdut (291 din 291).
-  Nou și **clic dreapta pe un obiect** de pe slide: Taie, Copiază, Lipește, Adu în față / Trimite în spate, Legătură, Poziție și mărime, Șterge.
-- 71 din 79 de teste Slides trec în aplicația reală (celelalte cer pornire specială sau sunt teste vechi); toate modulele se deschid fără erori.
+- Ultima sesiune (lucrul cerut de Adrian: butoanele grupate în file): **toate cele 7 aplicații au acum panglică cu file**.
+  Nou: **Video** (Montaj, Înregistrare, Audio, Suprapuneri, Aspect, Export, Vizualizare; ▶ Redă stă sub imagine, ca în orice player) și
+  **Notițe** (Pornire, Inserare, Revizuire, Vizualizare; Fișier cu importul și exporturile). În **Slides**, o **mini-bară** apare lângă textul ales
+  (font, mărime, B I U S, culori, evidențiere). Niciun buton pierdut (Video 69/69, Notițe 65/65, Slides 291/291).
+- Testele în aplicația reală trec pentru ce s-a mutat; câteva teste vechi cer pornire specială (cameră, fișiere date) și n-au rulat.
 
 ## Urmează
-- Slides: mini-bara la textul ales; apoi Video și Notițe în panglică; la Sheets mai rămân fila Grafic și mini-bara.
+- Video: panoul Proprietăți în dreapta și bara verticală de unelte; Notițe: filele contextuale Tabel și Poză; Sheets: fila Grafic și mini-bara.
 - Restul funcțiilor din etapa 2 (Imagini: poziția proprie a straturilor; PDF: linearizarea; Sheets: formele în .xlsx; Docs: secțiuni; Video: clipul liber pe pânză).
 - Etapa 3, calitate; etapa 5: pachet de instalare și testare cu colegii lui Adrian.
 
@@ -31,7 +32,7 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- De verificat (nu blochează): noile file din Docs, Sheets, **PDF** (Comentarii, Semnătură, Pagini, clic dreapta pe text ales), **Slides** (toate filele) și din **Imagini** (bara de unelte din stânga, ◢ de lângă Selecție, fila Filtre, panourile cu file din dreapta, clic dreapta pe poză și pe strat). Găsești tot ce foloseai? Ce buton folosit des a ajuns prea ascuns?
+- De verificat (nu blochează): noile file din Docs, Sheets, **PDF** (Comentarii, Semnătură, Pagini, clic dreapta pe text ales), **Slides** (toate filele, mini-bara la textul ales), **Video**, **Notițe** și din **Imagini** (bara de unelte din stânga, ◢ de lângă Selecție, fila Filtre, panourile cu file din dreapta, clic dreapta pe poză și pe strat). Găsești tot ce foloseai? Ce buton folosit des a ajuns prea ascuns?
 - De verificat (nu blochează): un .xlsx cu model de Rezolvitor salvat din Suite, deschis în programul de calcul de la serviciu (Solver): trebuie să arate aceleași condiții.
 - De verificat (nu blochează): un fișier (și o foaie protejată) salvat cu parolă din Suite, deschis în programul de birou de la serviciu (pe laptop nu e altul instalat).
 - De verificat (nu blochează): un .docx protejat din Suite („🔐 Restricționează editarea” cu parolă), deschis la serviciu: trebuie să ceară parola la oprirea protecției.
