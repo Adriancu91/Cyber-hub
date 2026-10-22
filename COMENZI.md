@@ -234,3 +234,22 @@ Format:
      treci direct la C-7 și spune-i lui Adrian cum pune `github.token` pe stick.
 - stare: gata (preluat 2026-10-22 15:05 UTC, terminat 16:00 UTC, sesiunea OS) — P6-10e; CI verde, Release os-144. **Completările 4–5:** preluate 2026-10-22 17:45 UTC, gata 18:25 UTC (sesiunea OS) — P6-10f; CI verde, Release os-149
 - rezultat: pornirea completă la rece e variantă (`rtl porneste rece`, sau pe rând `mcu`/`phy`/`cplus`/`ordine`, idei din FreeBSD și SerenityOS), fiecare pas cu registrul înainte/după în `log rtl`; placa e 8168GU; lista pentru testul 7 (R rece, C cald, cu `rtl porneste cache` încercat la cald) e în `stare/cyber-universe.md`. **Completări:** golirea cache-ului (RX și TX) e acum pornirea obișnuită (`rtl porneste faracache` = os-125), `fetch` merge fără `run`, `host` scrie „github.com = 140.82.121.3”; lista testului 7 e rescrisă.
+
+### C-10 · cyber-universe · Testul 7: buffer-ele de la prima inițializare sunt problema (nu cache-ul); la rece, scrierile OCP nu se aplică
+- data: 2026-10-22 22:50 · de la: Adrian (prin centrul de comandă)
+- ce: Testul 7 e în `rezultate/2026-10-22-test-7/REZULTAT.md` (6 poze). Două fapte verificate pe laptop:
+  **(1) Cald:** prima inițializare din os-150 (cu golirea cache-ului implicită) citește tot zerouri (36 → 41 cadre cu tip 0000, fără adresă);
+  după `rtl porneste cache` SAU `rtl porneste faracache` toate cadrele sunt bune și DHCP ia adresă (192.168.137.88, prin partajarea Windows),
+  apoi `fetch https://example.com/` = TLS 1.3 verificat. Deci **cache-ul nu e cauza**: a doua inițializare repară pentru că alocă buffer-ele în
+  altă parte (150a000 / 1595000) decât prima (3db000). Ipoteza: la prima inițializare paginile buffer-elor sunt **date și altcuiva** sau șterse
+  ulterior (alocator timpuriu / suprapunere cu altă zonă). **P6-10g:** găsește suprapunerea (test în QEMU: nicio pagină alocată de două ori; jurnal
+  cu cine primește paginile 3db000–3fffff), apoi alocă buffer-ele RX/TX pe aceeași cale ca la repornire; scoate golirea cache-ului implicită dacă
+  nu mai e nevoie (măsurat). Criteriu pe laptop: la cald, `net` la prima inițializare → adresă fără nicio comandă.
+  **(2) Rece:** `rtl porneste rece` a rulat 18 pași, tot 0/0. Au eșuat pașii 3 (FIFO RX+TX nu se golesc, `[00d3] 22 -> 22`), 7 și 9 (scrierile
+  OCP în E8DE nu se aplică: `1 -> 1`, trebuia `8001`), 12 (C+ bit 3). **P6-10h:** repară accesul OCP/ERI (registrul de comandă, formatul
+  adresă/date, bitul de „gata”, așteptarea) comparând cu FreeBSD `re(4)` și SerenityOS (clean-room); verifică citirea cu un registru cunoscut
+  înainte de orice scriere. Abia apoi reia secvența la rece. Criteriu: la rece (pornire directă), `net` → adresă.
+  **(3)** Mediul de test e de acum **partajarea Windows (ICS, 192.168.137.x)**; notează în `docs/HARDWARE.md`/`docs/USB.md`. O schimbare pe Release.
+  Lista pentru testul 8: (R) pornire directă → `net`; (C) F12 → `net` la prima inițializare, `fetch`. Fără `github.token` până trece (R).
+- stare: nou
+- rezultat:

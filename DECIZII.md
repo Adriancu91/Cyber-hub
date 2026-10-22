@@ -72,3 +72,5 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   cu golirea cache-ului): DHCP de la routerul lui Adrian, ping, DNS, HTTPS cu TLS 1.3 și certificat verificat (`example.com`), totul cu cod
   propriu. Lecția zilei, notată ca regulă: testele pe hardware se fac cu cablul **la router**, iar fiecare reparație se verifică și la rece
   (pornire directă) și la cald (meniul F12).
+- 2026-10-22 22:50 — **Mediul de test pentru OS: partajarea conexiunii din Windows (ICS)** — cablu între laptopul de test și laptopul cu
+  Windows, care dă adrese 192.168.137.x și internet; echivalent cu routerul (verificat: DHCP, DNS, HTTPS). Wi-Fi în OS rămâne amânat.
