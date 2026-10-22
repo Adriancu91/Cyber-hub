@@ -221,5 +221,5 @@ Format:
      pentru primele 8 cadre, lungimea, adresa din descriptor, adresa citită, primii 16 octeți. Abia apoi reparația.
   3. Lista pentru **testul 7** în `stare/cyber-universe.md`, cu două părți: (R) pornire directă — `net`, `log rtl`; (C) pornire din F12 —
      `net`, `log rx`, `ping 1.1.1.1`. Fără `github.token` încă.
-- stare: nou
+- stare: preluat (2026-10-22 18:20 UTC, sesiunea OS) — P6-10e, P6-10f în docs/TASKS.md
 - rezultat:
