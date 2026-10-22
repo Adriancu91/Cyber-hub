@@ -253,3 +253,19 @@ Format:
   Lista pentru testul 8: (R) pornire directă → `net`; (C) F12 → `net` la prima inițializare, `fetch`. Fără `github.token` până trece (R).
 - stare: preluat (2026-10-22 19:55 UTC, sesiunea OS) — P6-10g (buffer-ele primei inițializări), apoi P6-10h (OCP)
 - rezultat:
+
+### C-11 · cyber-universe · Experimente mici cu placa video + studiu de fezabilitate pentru un driver propriu (după C-7)
+- data: 2026-10-22 23:15 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (23:10)
+- ce: Se preia **după C-7** (bucla de test de la distanță), nu înainte. Două părți, fără să atingă nimic din ce merge:
+  1. **Experimente de nivel 0, pe laptopul de test (AMD Renoir, `1002:1636`)**, fiecare verificabil printr-o poză sau prin raportul automat al
+     buclei: identificarea plăcii prin PCI (BAR-uri, mărimea VRAM/aperturii), maparea registrelor și citirea identității cipului după documentația
+     publică AMD; nimic care scrie în placă încă. Pe **workstation (NVIDIA RTX 3070 Ti)** nu se face nimic fără o fereastră stabilită cu Adrian
+     (workstation-ul e al lui Kronos, `RESURSE.md`); pregătești doar lista pașilor de nivel 0 (identificare, BAR-uri, citirea ID-ului din
+     registrul public de boot) pentru acea fereastră.
+  2. **Studiu de fezabilitate (fără cod):** `docs/research/STUDIU-GPU.md`: ce ar însemna un driver propriu de calcul (a) pentru NVIDIA Ampere
+     (modulele deschise MIT ale NVIDIA, driverul nova în Rust, Mesa/NVK — doar citite; rolul firmware-ului GSP și licența lui; ce NU e
+     documentat: setul de instrucțiuni), (b) pentru AMD (documentație publică ISA/registre, firmware redistribuibil, driverele deschise ca
+     referință). Pentru fiecare: etape, estimări de timp cinstite, riscuri, ce ar rula Kronos pe el (fără CUDA/PyTorch), și o recomandare.
+     Clean-room: `docs/CLEAN_ROOM.md`. Raportul se citește de Adrian înainte de orice decizie.
+- stare: nou (se preia după C-7)
+- rezultat:

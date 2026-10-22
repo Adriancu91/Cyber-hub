@@ -74,3 +74,10 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   (pornire directă) și la cald (meniul F12).
 - 2026-10-22 22:50 — **Mediul de test pentru OS: partajarea conexiunii din Windows (ICS)** — cablu între laptopul de test și laptopul cu
   Windows, care dă adrese 192.168.137.x și internet; echivalent cu routerul (verificat: DHCP, DNS, HTTPS). Wi-Fi în OS rămâne amânat.
+- 2026-10-22 23:10 — **Drumul OS-ului, în ordine (Adrian):** (1) OS funcțional și autonom pentru lucru (pornirea la rece, bucla de test de la distanță
+  C-7); (2) **câteva experimente mici cu placa video** (întâi pe laptopul de test, AMD; pe workstation doar într-o fereastră stabilită cu Adrian,
+  ca să nu oprească Kronos); (3) **documentare**: studiu de fezabilitate pentru un driver propriu, din surse publice (modulele MIT ale NVIDIA,
+  nova, Mesa/NVK, documentația AMD), fără cod copiat; (4) în funcție de ce aflăm, încercăm **driverul propriu de la zero**; (5) după experimente,
+  bune sau rele, **decidem și măsurăm ce e mai bine pentru Kronos** (unde rulează, unde se antrenează). Pas cu pas; nicio etapă nu o ține pe
+  loc pe cealaltă. Driverele originale NVIDIA nu se instalează în OS-ul nostru (ar cere un Linux în interior); Wi-Fi rămâne amânat.
+  Etapa 1 „Kronos în Cyber Universe” (pe procesor și RAM, antrenarea rămâne pe workstation) și etapa 2 (OS obișnuit în jur) merg în paralel.

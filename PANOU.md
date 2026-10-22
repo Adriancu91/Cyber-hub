@@ -19,6 +19,7 @@ _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-2
 | **Suita office** | Sheets gata „ca la birou”; PDF așezat ca programul cunoscut (unelte în stânga, panouri în dreapta, Ctrl+S peste fișier). Word 80,1%, Excel 79,8% | Da, continuu pe ThinkPad (urmează PDF bara de comentarii, apoi Docs, Slides…) | 20:25 (`stare/suita-office.md`) |
 
 ## Comenzi
+- **C-11** · cyber-universe · experimente mici GPU + studiu de fezabilitate driver propriu — `nou`, după C-7 (23:15)
 - **C-10** · cyber-universe · buffer-ele primei inițializări (P6-10g) + accesul OCP la rece (P6-10h) — `nou` (22:50)
 - **C-7** · cyber-universe · bucla de test de la distanță — `nou`; se preia după ce rețeaua merge **la rece** (testul 7).
 - **C-3** · cyber-universe · Faza 6 (Claude în OS) — `preluat`: totul gata în emulator; rămâne P6-10 = testul pe laptop.
