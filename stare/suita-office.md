@@ -1,25 +1,25 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 13:51 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 14:48 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere.
 - Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 80,1%, Excel 79,8%, Clipchamp 77,1%, PowerPoint 76,2%,
-  Notițe 76,4%, Acrobat 72,8%, Photoshop 72,0%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Sesiunea 13:16–13:51, problemele găsite de Adrian la birou (0.9.0): **Sheets** arată sugestiile de funcții și cu nume românești
-  (=med → MEDIE, =dac → DACĂ), Enter alege; **Inserare → Tabel** (Ctrl+L) face tabele cu nume (Tabel1), cu fila „Proiectare tabel”,
-  care se lungesc singure când scrii sub ele și se păstrează în .xlsx (citite și scrise ca tabele adevărate); **PDF**: la înlocuirea unui
-  text, textul vechi se scoate de-adevăratelea din pagină (nu mai apare la căutare), nu doar se acoperă cu alb.
+  Notițe 76,4%, Acrobat 73,2%, Photoshop 72,0%, formule de calcul 97,1% (100% fără cele care cer internet).
+- Sesiunea 13:53–14:50 (problemele găsite de Adrian la birou cu 0.9.0, punctul 4): **PDF → Editare → ✎ Editează text**: clic pe un rând
+  îl deschide într-o casetă, Enter îl schimbă (textul vechi se scoate de-adevăratelea din pagină), Delete îl șterge, Ctrl+Z anulează; culoarea
+  textului și a fundalului se păstrează; **imaginile din pagină** se mută trăgând de ele și se șterg cu Delete. Încercat și pe PDF-uri reale din corpus.
+- Înainte (13:16–13:51): sugestii de funcții cu nume românești în Sheets, Inserare → Tabel (Ctrl+L) cu fila „Proiectare tabel”, păstrat în .xlsx.
 - Reparat: la salvarea în .xlsx unele formule cu nume românești (ACUM, ORA, RÂND…) rămâneau românești și dădeau eroare.
 - Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală; testul de compatibilitate: 0 erori.
 - Într-o sesiune separată s-a pregătit programul de instalare Windows 0.9.0 (pentru etapa 5, testarea cu oameni).
 
 ## Urmează
 - PRIMA PRIORITATE: problemele găsite de Adrian cu versiunea 0.9.0 la birou (lista în PLAN.md). Făcute: 1) deschiderea din Windows,
-  2) sugestiile de funcții, 3) Inserare → Tabel. În lucru: 4) editarea textului în PDF (urmează unealta „Editează text” cu click pe text).
-  Apoi: 5) butoanele așezate ca în aplicațiile cunoscute, 6) butonul „Trimite o observație”.
+  2) sugestiile de funcții, 3) Inserare → Tabel, 4) editarea textului și a imaginilor în PDF (gata, fără fontul original al textului).
+  Urmează: 5) butoanele așezate ca în aplicațiile cunoscute, 6) butonul „Trimite o observație”.
 - Kit de instalare nou doar când îl cere Adrian (întâi testează pe laptop).
 
 ## Ce oferă proiectul celorlalți
@@ -33,6 +33,7 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
+- De încercat (nu blochează): PDF → Editare → ✎ Editează text pe un act real: schimbi un cuvânt, salvezi; se vede bine și în programul de la birou?
 - De încercat (nu blochează): un .xlsx cu un tabel făcut în Suite (Inserare → Tabel), deschis la birou: e tabel (cu nume și filtru), fără „reparare”?
 - De încercat (nu blochează): un .xlsx cu forme (un balon cu text) făcut în Suite, deschis în programul de la serviciu: se poate edita forma?
 - De încercat (nu blochează): un .docx cu „Despărțire în silabe → Automat” din Suite, deschis în programul de la serviciu: desparte și el cuvintele?
