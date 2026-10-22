@@ -12,6 +12,7 @@ Stick cu fișierele din `cyber-universe-stick-v5.zip` (os-136, sume verificate).
 | 3 | `03-log-arp.jpg` | `log arp` → „(niciun rand)” |
 | 4 | `04-ping.jpg` | `ping 1.1.1.1` |
 | 5 | `05-host.jpg` | `host github.com` |
+| 6 | `06-log-rtl.jpg` | `log rtl` (16:29) |
 
 ## Ce s-a văzut, cuvânt cu cuvânt
 **`net`:**
@@ -28,6 +29,13 @@ Rândurile periodice din jurnal (20,08 s … 112,08 s, la 18,4 s): mereu **trimi
 citiri 800 → 2600 → 4400 → 6200 → 8000 → 9800. `log rx`: doar rândurile periodice, **niciun rând pe cadru** (n-a fost niciun cadru).
 `log arp`: niciun rând. `ping`: fără adresă. `host`: fără DNS.
 
+**`log rtl`** (poza 6):
+```
+[  8.010] INFO  net: rtl8168 PCIe Device Control 2010 -> 2000 (No Snoop si Relaxed Ordering oprite)
+[ 11.250] INFO  net: placa Realtek RTL8168 pornita (revizia 50800000), MAC 38:f3:ab:6b:11:34, legatura: da, 1000 Mbit/s, full duplex
+[ 11.420] INFO  net: rtl8168 registre: CR 0c RCR 0000c70a TCR 53900f00 IMR 0000 ISR 0020 RMS 2048 RDSAR 3d8000 TNPDS 3d9000 PHY 93
+```
+
 ## Ce înseamnă (analiza centrului de comandă)
 1. **Regresie față de os-125 (testul 4):** atunci 120 trimise / 32 primite, inelul avansa; acum **0 / 0**, inelul stă la index 0, ISR nu a
    văzut niciodată ROK sau TOK. Placa nu mai face **niciun transfer DMA**, în niciun sens, deși legătura e sus (1000 Mbit/s) și PHY-ul e citit.
@@ -43,6 +51,13 @@ citiri 800 → 2600 → 4400 → 6200 → 8000 → 9800. `log rx`: doar rânduri
    a adresei (sau jumătatea de sus greșit), placa scrie în altă parte, iar driverul citește zero (QEMU, cu puțină memorie, nu atinge
    niciodată cazul); primul cadru corect = primul buffer sub 4 GB, restul deasupra, ceea ce se potrivește cu alocări separate.
 
-## De verificat cât laptopul e pornit
-- `log rtl` → poză (registrele după inițializare: CR, RCR, IMR, și ce a scris P6-10c în configurarea PCI, dacă apare).
-- `log pci` → poză (dacă există).
+5. **Din `log rtl` (poza 6), două diferențe față de os-125 (testul 4, care mergea):**
+   - **PCIe Device Control: `2010` → `2000`.** Bitul 11 (No Snoop) era deja 0; scrierea a șters **bitul 4, Enable Relaxed Ordering**, care
+     înainte era 1. Schimbare inutilă (ipoteza era greșită) și posibil dăunătoare; de scos.
+   - **RCR (RxConfig): `0002c70a` la testul 4 → `0000c70a` acum.** Bitul 17 a dispărut. P6-10c nu declară nicio schimbare la RxConfig, deci ori
+     driverul a schimbat-o fără să-și dea seama (altă valoare scrisă, sau citire înainte/după altă etapă), ori hardware-ul o reflectă diferit.
+     Oricare ar fi, e o diferență reală de configurare a recepției între versiunea care primea și cea care nu primește nimic.
+   - Restul e identic cu testul 4: CR 0c, TCR 53900f00, IMR 0, RMS 2048, RDSAR 3d8000, TNPDS 3d9000 (inelele la aceleași adrese, sub 4 GB; deci
+     ipoteza „inelul peste 4 GB” cade pentru inele, rămâne valabilă doar pentru buffer-ele de date, ale căror adrese nu se văd încă).
+   Concluzie pentru C-8: revenirea trebuie să readucă **exact** registrele din os-125 (`RCR 0002c70a`, fără scrieri în Device Control), apoi o
+   singură schimbare pe versiune, verificată pe laptop.

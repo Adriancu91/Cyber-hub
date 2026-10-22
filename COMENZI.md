@@ -176,6 +176,9 @@ Format:
 - ce: Testul 5 (os-136) e în `rezultate/2026-10-22-test-5/REZULTAT.md` (5 poze). **Placa nu mai transferă nimic:** trimise 0, primite 0, index 0,
   ISR văzut doar 0020 (LinkChg), în 112 s; la testul 4 (os-125) erau 120 trimise / 32 primite. Și `PCIe No Snoop: oprit (era oprit)` → ipoteza
   No Snoop e **infirmată** (setarea era deja oprită). Ce să faci, în ordinea asta (P6-10d):
+  0. **Completare 16:50, din `log rtl` (poza 6):** `PCIe Device Control 2010 -> 2000` = No Snoop era deja 0; scrierea a șters **Relaxed
+     Ordering (bit 4)**. Și **RCR e `0000c70a` acum, față de `0002c70a` în os-125** (bitul 17 lipsă) — P6-10c n-a declarat nicio schimbare la
+     RxConfig: află de ce diferă și readu valoarea exactă din os-125. Inelele sunt la aceleași adrese (RDSAR 3d8000, TNPDS 3d9000), sub 4 GB.
   1. **Revenire:** scoate din driver scrierile în configurarea PCI făcute la P6-10c (Device Control / No Snoop) și orice altă schimbare care
      poate opri DMA-ul; păstrează doar jurnalul pe cadru (`log rx`, `log arp`) și contoarele. Regulă de acum: **niciun registru de configurare
      PCI nu se scrie fără citire-modificare-scriere pe exact un bit, cu valoarea dinainte și de după scrisă în jurnal**; verifică explicit că
