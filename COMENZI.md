@@ -115,5 +115,5 @@ Format:
   3. Când 1–2 sunt în CI verde și e un Release nou: scrie în `stare/cyber-universe.md` lista pentru **testul 4** (aceleași comenzi + `log usb`
      + ce ai adăugat în `net`), ca Adrian să o facă dintr-o pornire. Nu cere încă `claude.key`/`github.token`: fără `/usb` n-au unde sta.
   4. Nu te opri singur după sesiuni goale cât timp C-5 e `preluat`.
-- stare: nou
+- stare: preluat (2026-10-22 06:30 UTC, sesiunea OS programată) — P6-10a, P6-10b în docs/TASKS.md
 - rezultat:
