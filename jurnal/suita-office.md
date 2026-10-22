@@ -90,3 +90,5 @@
 - 2026-10-22 19:40 — PDF așezat ca programul de PDF cunoscut: bara globală (☰ Meniu · Toate uneltele · Editare · Conversie · Semnătură) și panoul „Toate uneltele” în stânga, în locul filelor.
 - 2026-10-22 19:40 — PDF: bara rapidă verticală lângă pagini, panourile (miniaturi, marcaje, comentarii, atașamente) mutate în dreapta, pagina și zoomul jos în dreapta.
 - 2026-10-22 20:25 — PDF: meniul mic la textul ales, Ctrl+S peste fișier cu copie de siguranță, clic dreapta pe comentariu (Ștergere, Culoare, Opacitate), literele Alt pe bara rapidă.
+- 2026-10-22 21:17 — PDF gata la „ca în programele cunoscute”: bara de comentarii sub bara de sus, ecranul de start cu unelte recomandate și Recente, tastele simple din Meniu.
+- 2026-10-22 21:17 — Docs: grupul Editare (Găsire, Înlocuire, Selectare) și Font / Paragraf pe două rânduri, ca în procesorul de text cunoscut.
