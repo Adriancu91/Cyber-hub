@@ -61,3 +61,4 @@
 - 2026-10-22 02:37 — Interfață: Imagini mutat în panglică (7 file, bara verticală de unelte cu ◢ pentru uneltele înrudite, filtrele în liste pe grupuri), fără să dispară vreun buton; testele Imagini trec în aplicația reală.
 - 2026-10-22 03:24 — Interfață: Imagini gata în panglică (panourile din dreapta ca file andocate, clic dreapta pe poză și pe strat); lista de bază pentru Sheets (117 butoane); testele Imagini trec în aplicația reală.
 - 2026-10-22 04:25 — Interfață: Sheets mutat în panglică (7 file, Fișier cu Recente, Formule › Calcul, comenzile rare sub ⋯) și clic dreapta pe celulă; niciun buton pierdut (117/117); toate modulele se deschid fără erori.
+- 2026-10-22 05:15 — Interfață: PDF mutat în panglică (9 file, Fișier cu Creează / Export; bara Semnează împărțită în Comentarii și Semnătură), niciun buton pierdut (135/135); testele PDF trec în aplicația reală.
