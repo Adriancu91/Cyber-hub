@@ -83,3 +83,5 @@
 - 2026-10-22 16:36 — Punctul 1b de la birou: clipurile și sunetele (.mp4, .mov, .mkv, .mp3, .wav…) se deschid acum la dublu-click / „Deschide cu”, într-un proiect Video nou.
 - 2026-10-22 17:25 — Sheets: filele Inserare, Aspect pagină și Formule așezate ca în programul de tabele cunoscut (grupuri, nume, butoane mari, litere de acces); Shift+F3 și F12.
 - 2026-10-22 17:25 — Panglica încape fără derulare și pe ferestre înguste (butoanele mari rămân doar cu pictograma); testele de panglică puse la zi.
+- 2026-10-22 18:09 — Sheets: filele Date, Revizuire și Vizualizare așezate ca în programul de tabele cunoscut (Sortare și filtrare, Validare date ▾, Grupare, Protejare foaie / registru, Înghețare panouri ▾).
+- 2026-10-22 18:09 — Sheets: filele contextuale Proiectare tabel și Proiectare diagramă; clic dreapta pe capul de rând / coloană cu Lățime coloană… / Înălțime rând…, Golire conținut, Reafișare.
