@@ -1,23 +1,24 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-22 15:30 (ora României) · **de:** sesiunea OS programată (14:40) — C-6 făcută (P6-10c); C-7 așteaptă testul 5
+**Actualizat:** 2026-10-22 17:30 (ora României) · **de:** sesiunea OS programată (16:28) — C-8 făcută (P6-10d), Release `os-138`
 
 ## Acum
-- **C-6 (după testul 4) e gata, CI verde, Release `os-134`:**
-  - Am verificat în cod cele trei ipoteze din C-6: adresele bufferelor, ordinea citire → re-armare și indexul sunt corecte.
-  - Cauza cea mai probabilă e alta: **memoria cache a procesorului**. Placa de rețea are voie implicit să scrie pachetele în
-    memorie „fără să anunțe” cache-ul (setarea PCIe „No Snoop”), iar procesorul citea zerourile rămase în cache de la pornire.
-    Acum OS-ul oprește această setare la placă ȘI golește cache-ul înainte să citească fiecare pachet primit și înainte ca placa
-    să citească fiecare pachet trimis (dublă siguranță — poate de aceea routerul nu răspundea la cererile DHCP).
-  - La cererea ta: `log arp` arată acum primele 16 pachete ARP primite.
-  - Diagnostic nou pentru o poză: `log rx` (primele 8 pachete: adrese, primii octeți înainte și după golirea cache-ului);
-    `net` are un rând nou: „cadre cu tip 0000”, „reparate de golirea cache-ului”, „PCIe No Snoop”.
-- 48 de scenarii automate trec (+1 doar în CI, cu internet); driverul Realtek are 23 de teste pe modelul cipului, inclusiv
-  unul care imită exact problema de la testul 4 (12 pachete la rând, fiecare verificat).
+- **C-8 (după testul 5) e gata, CI verde, Release `os-138`:**
+  - **Revenire:** placa pornește iar EXACT ca în os-125 (testul 4, ultima versiune care trimitea și primea): nu mai scriem nimic în
+    „Device Control” (os-136 ștergea Relaxed Ordering, 2010 → 2000) și nu mai golim cache-ul. Registrele PCI se scriu doar bit cu bit,
+    fiecare scriere în jurnal.
+  - **RCR 0002c70a vs 0000c70a:** am verificat — driverul scrie aceeași valoare în ambele versiuni și nu atinge bitul 17, deci placa era
+    în altă stare la pornire. Bănuiala mea: testul 5 a pornit „la rece” direct de pe stick; la plăcile 8168G/H firmware-ul poate lăsa
+    închisă „poarta RXDV” (registrul MISC, bitul 19), care oprește orice transfer — exact 0 trimise / 0 primite. Modelul cipului reproduce asta.
+  - **Variante, încercate pe rând din aceeași pornire** (regula „o schimbare odată”): `rtl porneste rxdv` (deschide poarta RXDV, doar
+    dacă e închisă), `rtl porneste bloc` (bufferele de primire într-un singur bloc sub 4 GB), `rtl porneste cache` (golirea de la os-136).
+  - **Diagnostic:** `log rtl` arată registrele, MISC (poarta), Bus Master, adresele pe 64 de biți, RAM-ul; `log rx` arată fiecare din
+    primele 8 pachete cu adresa completă și primii octeți.
+  - **Studiu (clean-room):** driverul FreeBSD (licență BSD) deschide exact această poartă la plăcile 8168G; de acolo varianta `rxdv`.
+- Test nou în emulator cu 6 GB și memoria forțată peste 4 GB: rețeaua merge. 50 de scenarii automate + 27 de teste ale driverului.
 
 ## Urmează
-- Testul 5 pe laptop (lista mai jos) → dacă rețeaua merge: C-7 (bucla de test automată prin GitHub), `claude.key`, `github.token`,
-  apoi P6-10 (închiderea Fazei 6) și P3-10.
+- Testul 6 pe laptop (lista mai jos) → varianta care merge devine implicită în versiunea următoare → apoi C-7 (bucla automată).
 
 ## Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3, rădăcini Mozilla), `json/` (și base64), `rtl8168/`.
@@ -27,12 +28,13 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- **Testul 5, dintr-o singură pornire, cablul de rețea băgat** (Release **`os-134`** sau mai nou):
-  1. Copiezi pe stick fișierele din Release (ca la testul 4, inclusiv `cyber.rw`); Secure Boot oprit, pornești de pe stick.
-  2. Aștepți ~1 minut pe desktop, apoi **Esc** → consola `cyber>`.
-  3. `net` → poză (rândul nou de jos: „cadre cu tip 0000 … reparate de golirea cache-ului … PCIe No Snoop …”).
-  4. `log rx` → poză (8 rânduri, câte unul pe pachet); `log rtl` → poză; `log arp` → poză.
-  5. `ping 1.1.1.1` → poză; `host github.com` → poză.
-  6. Dacă merg: `fetch https://example.com/` → poză.
-- Dacă rețeaua merge la testul 5, pasul următor e să pui pe stick `claude.key` și `github.token` — îți spun exact cum atunci.
+- **Testul 6, dintr-o singură pornire, cablul de rețea băgat** (Release **`os-138`** sau mai nou):
+  1. Copiezi pe stick fișierele din Release (ca la testul 5, inclusiv `cyber.rw`), pornești de pe stick, aștepți ~1 minut, **Esc** → `cyber>`.
+  2. **Pasul A (exact ca os-125):** `net` → poză; `log rtl` → poză.
+     Dacă „pachete trimise” > 0 și „primite” > 0: și `log rx` → poză, `ping 1.1.1.1` → poză, apoi treci la pasul C.
+  3. **Pasul B (doar dacă la A e tot 0 / 0):** `rtl porneste rxdv` → aștepți ~30 s → `net` → poză; `log rtl` → poză.
+  4. **Pasul C:** scrii varianta care a mers la B (sau nimic, dacă A a mers) plus ` bloc`, de ex. `rtl porneste rxdv bloc` sau
+     `rtl porneste bloc` → ~30 s → `net` → poză; `log rx` → poză; `ping 1.1.1.1` → poză; `host github.com` → poză.
+  5. Spune-mi și: la testul 4 (care mergea) ai pornit laptopul din Windows (Restart) sau de la oprit? La testul 5 a fost de la oprit?
+- `github.token` / `claude.key`: încă nu — după ce merge rețeaua.
 - B-003 / P5-07 (suita ca modul): mai târziu.
