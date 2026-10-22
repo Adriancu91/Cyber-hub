@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-22 05:45 (ora României) · **de:** sesiunea OS programată (05:40) — fără schimbări de cod; așteaptă testul 3
+**Actualizat:** 2026-10-22 08:45 (ora României) · **de:** sesiunea OS programată (08:40) — fără schimbări de cod; așteaptă testul 3
 
 ## Acum
 - **Toată Faza 6 e scrisă și testată în emulator** (C-3, pașii 1–5): rețea Realtek, HTTPS cu site-uri reale, Claude în OS
@@ -15,6 +15,7 @@
 ## Urmează
 - P6-10: testul mare pe laptop (cu Adrian) — apoi reparațiile din poze și închiderea Fazei 6 și a Fazei 3 (P3-10).
 - Nu mai e nicio sarcină care să se poată face fără testul pe laptop.
+- Două sesiuni programate la rând fără lucru; dacă și următoarea nu are ce face, sesiunile se opresc singure („OPRIT”) până la testul 3 sau o comandă nouă.
 
 ## Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3, rădăcini Mozilla), `json/` (acum și base64), `rtl8168/`.

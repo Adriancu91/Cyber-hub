@@ -24,3 +24,4 @@
 - 2026-10-22 01:35 — P6-02 … P6-07 gata: HTTPS cu site-uri reale (rădăcini Mozilla, P-384), JSON propriu, comanda `claude`, chat „claude-app” cu unelte confirmate pe ecran, Release automat în CI; 45 de scenarii, CI verde.
 - 2026-10-22 03:45 — P6-08 și P6-09 gata: butonul „Actualizeaza” (ultimul Release, verificat cu sume, scris sigur pe stick) și trimiterea de fișiere pe GitHub din OS (comanda `gh-trimite`, unealta `github_push` pentru Claude); 47 de scenarii trec. Rămâne doar testul pe laptop (P6-10).
 - 2026-10-22 05:45 — Sesiune programată fără lucru nou: nicio comandă nouă, nicio sarcină liberă; CI verde; se așteaptă testul 3 pe laptop (P6-10).
+- 2026-10-22 08:45 — Sesiune programată fără lucru nou (a doua la rând): nicio comandă nouă, nicio sarcină liberă; CI verde; se așteaptă testul 3 pe laptop (P6-10).
