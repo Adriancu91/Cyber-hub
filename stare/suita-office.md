@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 15:41 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 16:27 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -8,18 +8,18 @@
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere. Etapa 2 (toate funcțiile) e în lucru.
   Scoruri: Word 80,1%, Excel 79,8%, Clipchamp 77,1%, PowerPoint 76,2%, Notițe 76,4%, Acrobat 73,2%, Photoshop 72,0%, formule 97,1%.
 - Prima prioritate: problemele găsite de Adrian la birou cu 0.9.0. Punctele 1–4 făcute (deschiderea din Windows, sugestii de funcții,
-  Inserare → Tabel, editarea textului și a imaginilor în PDF). Sesiunea 14:52–15:41 a lucrat la punctul 5, „totul așezat ca în
-  programele cunoscute”:
-  - scurtăturile: Ctrl+K = Legătură (Docs, Sheets, Slides, Notițe), căutarea de comenzi pe Alt+Q / Ctrl+Shift+P, Ctrl+T = Tabel în Sheets,
-    tab nou pe Ctrl+Alt+T; scurtăturile merg și pe tastatura românească (Ctrl+ș = Ctrl+;); Ctrl+; data și Ctrl+Shift+: ora în Sheets;
-  - tastele de acces: Alt (sau F10) arată litere pe file și butoane, ca în programele cunoscute (Alt, H, V…);
-  - butonul mare „Lipire” și grupul Clipboard comun (Sheets, Docs, Slides); Sheets → Pornire are grupurile în ordinea cunoscută,
-    grupul nou Celule (Inserare / Ștergere / Format) și grupul Număr (stil procent, stil virgulă, zecimale).
+  Inserare → Tabel, editarea textului și a imaginilor în PDF). Acum: punctul 5, „totul așezat ca în programele cunoscute”:
+  - gata mai devreme: Ctrl+K = Legătură, căutarea de comenzi pe Alt+Q, Ctrl+T = Tabel în Sheets, scurtăturile pe tastatura românească,
+    tastele de acces Alt, butonul mare „Lipire” și grupul Clipboard comun;
+  - sesiunea 15:42–16:27: **Sheets → Pornire e așezată toată ca în programul de tabele cunoscut**: Font și Aliniere pe două rânduri
+    (A^ A˅, Borduri ▾ cu 8 variante, Încadrare text, Îmbinare și centrare ▾), Număr, Stiluri (Formatare condiționată ▾, Formatare
+    ca tabel ▾, Stiluri celulă ▾), Celule (Format ▾ cu Lățime coloană… / Înălțime rând…), Editare (Însumare automată, Umplere, Golire,
+    Sortare și filtrare, Găsire și selectare); scurtăturile Ctrl+Shift+$ / % / ! / # / @, Ctrl+1, Shift+Space, Ctrl+Space, F4 (repetă formatarea).
 - Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală (cu taste adevărate).
 
 ## Urmează
-- Punctul 5, mai departe: Sheets (Font și Aliniere pe două rânduri, Stiluri, Editare, celelalte file), apoi PDF, Docs, Slides,
-  Imagini, Video, Notițe, după `INTERFATA-FAMILIARA.md`.
+- Punctul 5, mai departe: Sheets, celelalte file (Inserare, Aspect pagină, Formule, Date, Revizuire, Vizualizare), clic dreapta și literele
+  de acces exacte; apoi PDF, Docs, Slides, Imagini, Video, Notițe, după `INTERFATA-FAMILIARA.md`.
 - Punctul 6: butonul „Trimite o observație” (captură + text salvate local, Adrian le trimite el).
 - Kit de instalare nou doar când îl cere Adrian (întâi testează pe laptop, cu „Porneste Suite.cmd”).
 
@@ -34,8 +34,8 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- De încercat (nu blochează): în Sheets / Docs apasă și lasă Alt: apar literele pe file și butoane? Alt, H, V deschide Lipire? Panglica
-  nouă (Lipire mare în stânga, grupul Celule, grupul Număr) e mai ușor de folosit? Ce lipsește cel mai tare față de programul de la birou?
+- De încercat (nu blochează): Sheets → fila Pornire e acum așezată ca în programul de la birou (Font, Aliniere, Număr, Stiluri, Celule,
+  Editare). Se găsește totul unde te aștepți? Ctrl+Shift+4 pune lei, F4 repetă formatarea? Alt, H, V deschide Lipire? Ce lipsește cel mai tare?
 - De încercat (nu blochează): Ctrl+K pune legătură, Alt+Q caută o comandă, Ctrl+T în Sheets face tabel, Ctrl+ș pune data de azi.
 - De încercat (nu blochează): PDF → Editare → ✎ Editează text pe un act real: schimbi un cuvânt, salvezi; se vede bine la birou?
 - De încercat (nu blochează): un .xlsx cu tabel (Inserare → Tabel) sau cu forme făcut în Suite, deschis la birou: merge fără „reparare”?

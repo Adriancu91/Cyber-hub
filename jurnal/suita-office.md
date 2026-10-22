@@ -78,3 +78,5 @@
 - 2026-10-22 14:48 — PDF: unealta „Editează text” (clic pe rând → schimbi / ștergi, cu culorile păstrate) și mutarea / ștergerea imaginilor din pagină (punctul 4 din problemele de la birou).
 - 2026-10-22 15:41 — Interfață familiară (punctul 5 de la birou): Ctrl+K = Legătură, căutarea pe Alt+Q, Ctrl+T = Tabel în Sheets, scurtături pe tastatura românească, tastele de acces Alt pe file și butoane.
 - 2026-10-22 15:41 — Butonul mare Lipire și grupul Clipboard comun (Sheets, Docs, Slides); Sheets → Pornire în ordinea cunoscută, cu grupurile noi Celule și Număr.
+- 2026-10-22 16:28 — Sheets → fila Pornire așezată ca în programul de tabele cunoscut: Font și Aliniere pe două rânduri, Borduri ▾, Îmbinare și centrare ▾, Stiluri și Editare cu butoane mari, Format ▾ cu Lățime coloană… / Înălțime rând….
+- 2026-10-22 16:28 — Sheets: scurtăturile de format (Ctrl+Shift+$ / % / ! / # / @, Ctrl+1), Shift+Space / Ctrl+Space și F4 care repetă ultima formatare.
