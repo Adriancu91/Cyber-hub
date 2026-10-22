@@ -85,3 +85,5 @@
 - 2026-10-22 17:25 — Panglica încape fără derulare și pe ferestre înguste (butoanele mari rămân doar cu pictograma); testele de panglică puse la zi.
 - 2026-10-22 18:09 — Sheets: filele Date, Revizuire și Vizualizare așezate ca în programul de tabele cunoscut (Sortare și filtrare, Validare date ▾, Grupare, Protejare foaie / registru, Înghețare panouri ▾).
 - 2026-10-22 18:09 — Sheets: filele contextuale Proiectare tabel și Proiectare diagramă; clic dreapta pe capul de rând / coloană cu Lățime coloană… / Înălțime rând…, Golire conținut, Reafișare.
+- 2026-10-22 19:00 — Sheets: clic dreapta pe celulă și pe fila foii, mini-bara pe două rânduri, scurtăturile partea 2 și literele Alt verificate; partea Sheets din „ca în programele cunoscute” e gata.
+- 2026-10-22 19:00 — PDF: scurtăturile cunoscute (Ctrl+0 / 1 / 2, Ctrl+H mod citire, Ctrl+D, Ctrl+Shift+I / D / R) și Refacere cu Ctrl+Y.
