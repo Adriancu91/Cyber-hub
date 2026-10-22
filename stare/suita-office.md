@@ -1,43 +1,42 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 08:35 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 09:20 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
-- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere (verificat din nou azi, la 23:46).
+- Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere.
 - Etapa 2 (toate funcțiile) e în lucru. Scoruri față de aplicațiile de referință: Word 78,1%, Excel 78,0%, Clipchamp 77,1%, Notițe 75,2%,
-  PowerPoint 74,7%, Acrobat 70,8%, Photoshop 70,5%, formule de calcul 97,1% (100% fără cele care cer internet).
-- Ultima sesiune (lucrul cerut de Adrian: butoanele grupate în file): **Notițe** au acum filele care apar singure **Tabel** (cursorul în tabel)
-  și **Poză** (clic pe poză; dublu clic o mărește) și o **mini-bară** la textul ales (B I U S H, culori, mărime, liste). **Video** are panoul
-  **Proprietăți** al cadrului ales în dreapta imaginii și o **bară verticală de unelte** (✂ 🅣 ➚ ⧉ 💬 🔖 📷 ▭) în stânga.
-  Reparat: în Notițe, Ctrl+Z în fereastra de desen anula și caietul (o notiță nouă dispărea, desenul nu mai avea unde ajunge).
-- Testele în aplicația reală trec: toate cele 27 de teste Notițe și 26 de teste Video care pornesc fără cameră sau fișiere date.
+  PowerPoint 74,7%, Acrobat 71,2%, Photoshop 70,8%, formule de calcul 97,1% (100% fără cele care cer internet).
+- **Butoanele grupate în file (cererea lui Adrian) sunt gata în toate cele 7 aplicații.** Ultima sesiune a încheiat-o:
+  **Sheets** are fila Grafic (clic pe un grafic) și o mini-bară de formatare la clic dreapta pe celulă; **PDF** are fila Câmp
+  (cursorul într-un câmp de formular) și clic dreapta pe comentariile din fișier (Răspunde, Starea, Bifat).
+- Funcții noi: PDF — ghidaje trase din rigle (elementele puse se lipesc de ele și de grilă) și „◫ Două vederi” ale aceluiași PDF;
+  Imagini — Estompare inteligentă cu „Doar margini” / „Suprapunere margini” și Unduire cu sinus / triunghi / pătrat și mai mulți generatori.
+- Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală.
 
 ## Urmează
-- Sheets: fila contextuală Grafic și mini-bara (ultimul rest din mutarea în file).
-- Restul funcțiilor din etapa 2 (Imagini: poziția proprie a straturilor; PDF: linearizarea; Sheets: formele în .xlsx; Docs: secțiuni; Video: clipul liber pe pânză).
+- Restul funcțiilor din etapa 2 (PDF: linearizarea; Imagini: distribuirea straturilor; Sheets: formele în .xlsx; Docs: secțiuni).
 - Etapa 3, calitate; etapa 5: pachet de instalare și testare cu colegii lui Adrian.
 
 ## Ce oferă proiectul celorlalți
 - Aplicațiile de birou pentru modulul Cyberspace (Kronos) și pentru setul de aplicații al Cyber Universe (după testarea umană).
 - Fiecare aplicație e separată (`src/<modul>/`) și are `module.toml` după `standarde/modul-v0.md`.
-- Motorul de formule (~500 de funcții, cu nume românești), rezolvitorul de optimizare (simplex + ramificare + Nelder–Mead), prognoza
-  cu netezire exponențială și sezon, statisticile și analizele (regresie, ANOVA, teste F / t / z), generatorul de coduri QR,
-  criptarea (și a fișierelor .docx/.xlsx/.pptx cu parolă), formularele, semnarea, verificarea și conversia PDF/A, accesibilitatea PDF,
-  compararea PDF-urilor, separările de culoare, portofoliile PDF, exportul PDF → XML, graficele SVG, scalarea pozelor după conținut, trecerea PDF-urilor în tonuri de gri, citările, îmbinarea de corespondență, cititorul EXIF, cele 67 de filtre de imagine,
-  cititorii și scriitorii .rtf / .txt / .ods / .gif animat, importul/exportul .docx/.xlsx/.pptx/.pdf/.odt/.psd pot fi refolosite.
+- Cadrul comun de interfață (panglica cu file, mini-bara, clic dreapta, panourile andocate), motorul de formule (~500 de funcții),
+  rezolvitorul de optimizare, statisticile, generatorul de coduri QR, criptarea, formularele și semnarea PDF, PDF/A, cele 67 de filtre de imagine,
+  cititorii și scriitorii .docx / .xlsx / .pptx / .pdf / .odt / .rtf / .psd pot fi refolosite.
 
 ## De ce are nevoie de la ceilalți
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- De verificat (nu blochează): noile file din Docs, Sheets, **PDF** (Comentarii, Semnătură, Pagini, clic dreapta pe text ales), **Slides** (toate filele, mini-bara la textul ales), **Video**, **Notițe** și din **Imagini** (bara de unelte din stânga, ◢ de lângă Selecție, fila Filtre, panourile cu file din dreapta, clic dreapta pe poză și pe strat). Găsești tot ce foloseai? Ce buton folosit des a ajuns prea ascuns?
-- De verificat (nu blochează): un .xlsx cu model de Rezolvitor salvat din Suite, deschis în programul de calcul de la serviciu (Solver): trebuie să arate aceleași condiții.
-- De verificat (nu blochează): un fișier (și o foaie protejată) salvat cu parolă din Suite, deschis în programul de birou de la serviciu (pe laptop nu e altul instalat).
-- De verificat (nu blochează): un .docx protejat din Suite („🔐 Restricționează editarea” cu parolă), deschis la serviciu: trebuie să ceară parola la oprirea protecției.
-- De verificat (nu blochează): un cod QR pus din Suite (Docs → ▣ Cod QR), scanat cu camera telefonului: trebuie să arate textul scris.
-- De verificat (nu blochează): un PDF făcut cu „Fă-l PDF/A”, trecut printr-un validator PDF/A oficial (pe laptop nu e niciunul).
-- Întrebare (nu blochează): marcajul de timp la semnarea PDF are nevoie de un server de timp pe internet (se trimite doar amprenta
-  documentului, nu documentul). Îl adăugăm ca opțiune, cu un server ales de Adrian? Până atunci semnăturile au ora calculatorului.
+- De verificat (nu blochează): noile file din toate aplicațiile. Găsești tot ce foloseai? Ce buton folosit des a ajuns prea ascuns?
+  Noutăți de încercat: Sheets — clic pe un grafic (fila Grafic) și clic dreapta pe o celulă (mini-bara); PDF — clic într-un câmp de formular (fila Câmp).
+- De verificat (nu blochează): un .xlsx cu model de Rezolvitor salvat din Suite, deschis în programul de calcul de la serviciu: aceleași condiții.
+- De verificat (nu blochează): un fișier (și o foaie protejată) salvat cu parolă din Suite, deschis în programul de birou de la serviciu.
+- De verificat (nu blochează): un .docx protejat din Suite („🔐 Restricționează editarea” cu parolă), deschis la serviciu: cere parola la oprire.
+- De verificat (nu blochează): un cod QR pus din Suite (Docs → ▣ Cod QR), scanat cu camera telefonului.
+- De verificat (nu blochează): un PDF făcut cu „Fă-l PDF/A”, trecut printr-un validator PDF/A oficial.
+- Întrebare (nu blochează): marcajul de timp la semnarea PDF cere un server de timp pe internet (se trimite doar amprenta documentului).
+  Îl adăugăm ca opțiune, cu un server ales de Adrian? Până atunci semnăturile au ora calculatorului.
 - Codul e doar local, pe laptop; pus pe GitHub doar dacă Adrian decide.

@@ -66,3 +66,5 @@
 - 2026-10-22 06:56 — Interfață: Slides are file contextuale pentru obiectul ales (Text, Formă, Tabel, Grafic, Imagine, Media) și clic dreapta pe obiect; niciun buton pierdut (291/291), 71 din 79 de teste Slides trec.
 - 2026-10-22 07:40 — Interfață: Video și Notițe mutate în panglică (Video 69/69, Notițe 65/65 butoane păstrate), mini-bară la textul ales în Slides; găsită o problemă veche la desenul peste poză în Notițe.
 - 2026-10-22 08:35 — Interfață: Notițe cu filele Tabel și Poză și mini-bară; Video cu panoul Proprietăți în dreapta și bara verticală de unelte; reparat Ctrl+Z din desenul Notițelor.
+
+- 2026-10-22 09:16 — Interfața pe file terminată în toate aplicațiile (Sheets: fila Grafic și mini-bara; PDF: fila Câmp și clic dreapta pe comentarii); PDF cu ghidaje și două vederi, Imagini cu filtre noi (Acrobat 71,2%, Photoshop 70,8%).
