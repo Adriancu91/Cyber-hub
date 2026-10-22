@@ -18,14 +18,13 @@ _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-2
 | Proiect | Unde e | Lucrează acum? | Ultima veste (ora) |
 |---|---|---|---|
 | **Kronos** | Noaptea fără erori. S15: văzute 30/30, nevăzute 6/50. **S16 gata: verificatorul propriu = Qwen la 97,6 %** → Qwen nu mai e judecător. 868 teste | Da — ziua doar pregătire pe procesor; **S17** („întrebări născute de Kronos”) pornește la 19:00 | 07:44 (`cyberspace/docs/rapoarte/…0744_raport_dimineata.md`) |
-| **Cyber Universe OS** | **Faza 6 scrisă și testată în emulator**: Realtek, HTTPS real, Claude în OS, „Actualizează”, trimitere pe GitHub; 47 de teste, CI verde | Da — **C-5** (recepția după 16 pachete + configurarea stick-ului pe xHCI real), sesiune pornită la 09:35 | 09:35 (`COMENZI.md`, `rezultate/2026-10-22-test-3/`) |
+| **Cyber Universe OS** | **Faza 6 scrisă și testată în emulator**: Realtek, HTTPS real, Claude în OS, „Actualizează”, trimitere pe GitHub; 47 de teste, CI verde | Da — **C-6** (cadrele 2+ citite ca zero → DHCP), sesiune pornită la 14:40; C-5 gata (Release os-125) | 14:40 (`COMENZI.md`, `rezultate/2026-10-22-test-4/`) |
 | **Suita office** | Toate aplicațiile mutate în panglică cu file, niciun buton pierdut. Word 78,1%, Excel 78,0%, Clipchamp 77,1%, Notițe 75,2%, PowerPoint 74,7%, Acrobat 70,8%, Photoshop 70,5% | Da, continuu pe ThinkPad (urmează Sheets: fila Grafic) | 08:35 (`stare/suita-office.md`) |
 
 ## Comenzi
 - **C-6** · cyber-universe · testul 4: stick OK, inel RX OK, cadrele 2+ citite ca zero (DHCP 0) — `nou` (14:35)
 - **C-3** · cyber-universe · Faza 6 (Claude în OS) — `preluat`: toți cei 5 pași gata în emulator; rămâne P6-10 = testul pe laptop cu tine.
-- **C-5** · cyber-universe · testul 3: recepția se oprește după 16 pachete; stick-ul nu trece de configurarea USB — `nou` (09:30)
-- Terminate de la ultima rulare: **C-2** (deblocare după stick, comanda `hw`) — `gata`; **C-4** (recepția Realtek, stick din Windows, `log`) — `gata`.
+- Terminate de la ultima rulare: **C-5** (inel RX 256, stick pe xHCI real) — `gata`; **C-2** (deblocare după stick, comanda `hw`) — `gata`; **C-4** (recepția Realtek, stick din Windows, `log`) — `gata`.
 
 ## Propuneri de colaborare
 - Niciuna în așteptare.
