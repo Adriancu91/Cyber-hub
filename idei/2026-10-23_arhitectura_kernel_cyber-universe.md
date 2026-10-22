@@ -161,8 +161,9 @@ multiple într-un proces, memorie partajată, acces direct la dispozitive din ri
 4. **Fără fire multiple într-un proces** → runtime-ul de calcul va trebui să stea în nucleu (ca fire de sistem) sau să primească fire în ring 3.
 5. **Fără IOMMU** și fără cunoașterea stării lui pe workstation (poate bloca DMA-ul plăcii video).
 6. **Fără AML** (ACPI complet): oprirea/repornirea prin ACPI e limitată (`reboot` există).
-7. **Fără float serios verificat în nucleu** (SSE/AVX în ring 3: de verificat că sunt activate și salvate la comutare — NECUNOSCUT în acest
-   document; obligatoriu de clarificat înainte de backend-ul CPU).
+7. **Fără salvarea stării SSE/AVX la comutarea de context** (FAPT: în `arch/x86_64` și `sched` nu există `fxsave`/`xsave` și nici
+   activarea `CR4.OSFXSR/OSXSAVE`) → calculul în virgulă mobilă cu vectori (AVX2, necesar backend-ului CPU) cere: activarea SSE/AVX,
+   salvarea/restaurarea stării per fir (XSAVE), și verificarea că programele ring 3 pot folosi registrele vectoriale. Obligatoriu înainte de K6-CPU.
 8. Stocare: FAT32 (fișiere < 4 GB) — datele lui Kronos (cache de 2,5 GB e OK; seturi mai mari trebuie împărțite) .
 
 ## 15. Ce există deja pentru interfețele I1–I4 din planul v0.2
