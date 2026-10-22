@@ -232,5 +232,5 @@ Format:
      bucla C-7 (pornire directă din BIOS) să aibă rețea; (c) mici: alias `fetch` în shell pentru `run fetch`; mesajul lui `host`.
      Testul 7 (lista): doar la **rece** (pornire directă): `net` → trebuie adresă; apoi `run fetch https://example.com/`. Dacă merge la rece,
      treci direct la C-7 și spune-i lui Adrian cum pune `github.token` pe stick.
-- stare: preluat (2026-10-22 15:05 UTC, sesiunea OS) — P6-10e, P6-10f în docs/TASKS.md
-- rezultat:
+- stare: gata (preluat 2026-10-22 15:05 UTC, terminat 16:00 UTC, sesiunea OS) — P6-10e (+ P6-10f așteaptă testul 7 C); CI verde, Release os-144
+- rezultat: pornirea completă la rece e variantă (`rtl porneste rece`, sau pe rând `mcu`/`phy`/`cplus`/`ordine`, idei din FreeBSD și SerenityOS), fiecare pas cu registrul înainte/după în `log rtl`; placa e 8168GU; lista pentru testul 7 (R rece, C cald, cu `rtl porneste cache` încercat la cald) e în `stare/cyber-universe.md`.
