@@ -168,5 +168,5 @@ Format:
      numai prin HTTPS cu rădăcinile reale; tokenul și cheia nu apar niciodată în rezultate; un fișier `/usb/fara-auto.txt` oprește bucla.
   6. Scrie în `docs/USB.md` pașii pentru Adrian: ordinea de boot în BIOS (Lenovo: F1 la pornire → Startup → Boot → stick-ul primul; Secure Boot
      oprit), și cum pune `github.token` pe stick. Spune-i în raport când e gata de pornit bucla.
-- stare: nou (se preia după C-6; dacă C-6 nu e gata, rămâne `nou`)
+- stare: nou (se preia după C-6; dacă C-6 nu e gata, rămâne `nou`). **14:43: BIOS-ul laptopului e deja setat de Adrian — pornește direct de pe stick la repornire.** Pasul 6 rămâne doar pentru `github.token`.
 - rezultat:
