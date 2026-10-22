@@ -147,8 +147,8 @@ Format:
   4. Când CI e verde și e Release nou: lista pentru **testul 5** în `stare/cyber-universe.md` (`net`, `ping 1.1.1.1`, `host github.com`,
      `fetch https://example.com/`, și noul diagnostic). Dacă rețeaua merge la testul 5, în același mesaj spune-i lui Adrian ce să pună pe stick
      pentru pasul următor (`claude.key`, `github.token`) — abia atunci.
-- stare: preluat (2026-10-22 11:45 UTC, sesiunea OS) — P6-10c în docs/TASKS.md
-- rezultat:
+- stare: gata (preluat 2026-10-22 11:30 UTC, terminat 12:45 UTC, sesiunea OS) — P6-10c; CI verde, Release os-134
+- rezultat: adresele și ordinea din driver erau corecte; cauza probabilă e cache-ul (placa scria cu „No Snoop”), așa că OS-ul oprește No Snoop și golește cache-ul la fiecare pachet primit/trimis, cu `log rx` pe pachet, `log arp` și test pe model cu 12 pachete la rând; lista pentru testul 5 e în `stare/cyber-universe.md`.
 
 ### C-7 · cyber-universe · Bucla de test de la distanță: laptopul se actualizează, se testează și raportează singur prin GitHub
 - data: 2026-10-22 14:45 · de la: Adrian (prin centrul de comandă) — „da”, cu mențiunea: pornire automată de pe stick la repornire

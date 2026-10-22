@@ -28,3 +28,4 @@
 - 2026-10-22 10:40 — C-5 gata (Release os-123, CI verde): Realtek cu coadă de primire de 256 și repornire automată după blocare, diagnostic nou în `net`; stick-ul așteaptă acum după ceas (până la 5 s), fiecare pas în `log usb`; lista pentru testul 4 scrisă.
 - 2026-10-22 11:00 — Completarea C-5 (poza log usb): stick-ul e reîncercat de 10 ori cu REQUEST SENSE (Unit Attention), starea CSW și motivul în `log usb`; Release os-125, CI verde.
 - 2026-10-22 11:45 — Sesiune programată fără lucru nou: nicio comandă nouă, nicio sarcină liberă; CI verde (os-125); se așteaptă testul 4 pe laptop.
+- 2026-10-22 15:35 — C-6 gata (P6-10c, Release os-134, CI verde): Realtek — cache-ul procesorului golit la fiecare pachet primit/trimis și „No Snoop” oprit (cauza probabilă a zerourilor), `log rx` pe pachet, `log arp`; lista pentru testul 5 scrisă. C-7 așteaptă rețeaua pe laptop.
