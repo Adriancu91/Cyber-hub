@@ -226,5 +226,11 @@ Format:
      ce e mai simplu și sigur) și verifică același lucru la **trimitere** (placa să nu citească o copie veche a cadrului). Și: **lipsa DHCP nu a
      fost niciodată o problemă a OS-ului** — cablul era între două laptopuri, fără router. Nu mai căuta nimic la DHCP până la testul cu cablul la
      router. Rămâne, ca prioritate 1, **P6-10e: inițializarea la rece**.
+  5. **Completare 18:30 (pașii I–L): cu cablul la router, os-138 la cald + `rtl porneste cache` → DHCP 192.168.8.194, ping 1.1.1.1 20 ms,
+     `host github.com` = 140.82.121.3, `run fetch https://example.com/` = TLS 1.3, certificat verificat, 577 octeți.** Tot lanțul merge pe hardware.
+     Deci: (a) P6-10f = fă golirea cache-ului implicită (RX și TX) — gata confirmată; (b) P6-10e inițializarea la rece rămâne singura condiție ca
+     bucla C-7 (pornire directă din BIOS) să aibă rețea; (c) mici: alias `fetch` în shell pentru `run fetch`; mesajul lui `host`.
+     Testul 7 (lista): doar la **rece** (pornire directă): `net` → trebuie adresă; apoi `run fetch https://example.com/`. Dacă merge la rece,
+     treci direct la C-7 și spune-i lui Adrian cum pune `github.token` pe stick.
 - stare: preluat (2026-10-22 15:05 UTC, sesiunea OS) — P6-10e, P6-10f în docs/TASKS.md
 - rezultat:

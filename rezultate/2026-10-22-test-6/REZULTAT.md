@@ -47,3 +47,16 @@ la repornirea cu „rxdv”, MCU alternează 22/32; tot 0/0.
    direct nu există server DHCP; „celălalt aparat” care trimitea Discover și ARP pentru 169.254.125.96 era laptopul cu Windows. Nu e o
    problemă a OS-ului. Greșeala e a centrului de comandă (instrucțiunea de la testul 2 a spus „cablu în laptop”, fără „la router”).
 3. Testul cu cablul la router urmează (`net` → adresă? → `ping`, `host`, `fetch`).
+
+## Completare 18:30 — pașii I–L: cablul mutat la router → PRIMA IEȘIRE PE INTERNET A OS-ULUI (os-138, cald, varianta cache)
+| Pas | Ce | Rezultat | poza |
+|---|---|---|---|
+| I | cablul mutat în routerul de acasă, fără nicio comandă | la 849,5 s: **`DHCP: adresa 192.168.8.194, masca 255.255.255.0, ruta 192.168.8.1, DNS 192.168.8.1, pentru 86400 s`**; ARP-urile celorlalte aparate din casă apar în jurnal | 12 |
+| J | `ping 1.1.1.1` | 4 răspunsuri, 50/20/20/20 ms | 13 |
+| K | `host github.com` | `github.com are adresa 140.82.121.3` (DNS prin router) | 14 |
+| L | `run fetch https://example.com/` (`fetch` e program: se pornește cu `run`) | **`TLS 1.3 cu example.com (certificat verificat)`**, pagina HTML întreagă, 577 de octeți, cod de ieșire 0 | 15 |
+
+**Concluzie:** pe hardware real merg, în lanț: driverul RTL8168 (la cald, cu golirea cache-ului) → DHCP → ARP → ICMP → DNS → TCP → TLS 1.3 cu
+rădăcini reale → HTTPS. Nimic din lanț nu e împrumutat. Rămân două lucruri pentru ca asta să meargă și la pornirea directă din BIOS:
+**P6-10e** (inițializarea cipului la rece) și **golirea cache-ului făcută implicit** (P6-10f, confirmat). Mici: `host` scrie „are adresa”
+(bine ar fi „are adresa” → „are adresa:” sau „github.com = 140.82.121.3”); `fetch` fără `run` dă „comanda necunoscuta” — merită un alias.

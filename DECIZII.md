@@ -68,3 +68,7 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   configurare (PCI, ale plăcii) se scrie doar citire → modificarea unui singur bit → scriere, cu valoarea dinainte și de după în jurnal; la
   fiecare Release, `log rtl` (și echivalentul pentru alte drivere) arată registrele cheie, ca o poză să fie de ajuns pentru comparație cu
   versiunea anterioară. O ipoteză se declară „confirmată” numai după testul pe hardware, nu după citirea codului sau după QEMU.
+- 2026-10-22 18:30 — **Reper: prima ieșire pe internet a Cyber Universe OS pe hardware real** (ThinkPad, Release os-138, pornit din meniul F12,
+  cu golirea cache-ului): DHCP de la routerul lui Adrian, ping, DNS, HTTPS cu TLS 1.3 și certificat verificat (`example.com`), totul cu cod
+  propriu. Lecția zilei, notată ca regulă: testele pe hardware se fac cu cablul **la router**, iar fiecare reparație se verifică și la rece
+  (pornire directă) și la cald (meniul F12).

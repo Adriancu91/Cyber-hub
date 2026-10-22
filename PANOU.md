@@ -1,9 +1,10 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-22 18:05 · **de:** centrul de comandă
+**Actualizat:** 2026-10-22 18:35 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-22.md`.)_
 
 ## Așteaptă de la tine, Adrian
+000. **OS — 18:28: PRIMA IEȘIRE PE INTERNET pe laptop** (cablul la router): DHCP, ping, DNS, HTTPS cu certificat verificat. Rămâne inițializarea la rece (C-9), apoi bucla automată (C-7). Nimic de la tine acum; `github.token` ți-l cere sesiunea OS când e gata.
 00. ~~OS — testul 6~~ — **FĂCUT 17:57, CAUZA GĂSITĂ:** driverul nu inițializează placa la pornirea de la rece (direct de pe stick); din meniul F12 (firmware-ul pornește placa) os-125 merge: 17/23. Nicio regresie. Rezultatul: `rezultate/2026-10-22-test-6/REZULTAT.md`; OS-ul primește **C-9**. Nimic de la tine până la testul 7.
 0. ~~OS — testul 5~~ — **FĂCUT la 16:25: REGRESIE** (0 trimise, 0 primite; ipoteza No Snoop infirmată). Rezultatul: `rezultate/2026-10-22-test-5/REZULTAT.md`; OS-ul primește **C-8** (revenire la os-125 + diagnostic pe hardware). Dacă laptopul mai e pornit: `log rtl` → poză.
 1. **Kronos:** completezi coloana „e bine? (tu)” la cele 20 de răspunsuri; dacă vrei să schimbi S17, spui **înainte de 19:00** (`cyberspace/docs/rapoarte/2026-10-22_0744_raport_dimineata.md`).
