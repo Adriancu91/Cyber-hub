@@ -94,3 +94,5 @@
 - 2026-10-22 21:17 — Docs: grupul Editare (Găsire, Înlocuire, Selectare) și Font / Paragraf pe două rânduri, ca în procesorul de text cunoscut.
 - 2026-10-22 22:06 — Docs: galeria Stiluri, scurtăturile cunoscute (Ctrl+E centrează, Ctrl+D fereastra Font…), fila Inserare în ordinea cunoscută, fila nouă Proiectare și Întreruperi ▾.
 - 2026-10-22 22:56 — Docs, interfața familiară: grupul Aranjare în Aspect, filele Revizuire, Vizualizare, Referințe și Corespondență așezate ca în procesorul de text cunoscut (D4 și D5 gata), fila Format imagine; 6 commituri, 4 teste noi, toate trec.
+- 2026-10-22 23:48 — Docs gata la „ca în programele cunoscute”: filele de tabel Proiectare tabel + Aspect, fila Antet și subsol cu editare direct pe pagină la dublu clic, literele Alt cunoscute.
+- 2026-10-22 23:48 — Slides, început: Font și Paragraf pe Pornire, fila Expunere diapozitive (De la început, Din diapozitivul curent), Vizualizare cu numele cunoscute; 7 commituri, 3 teste noi.
