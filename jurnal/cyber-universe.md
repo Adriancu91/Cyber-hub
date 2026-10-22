@@ -26,3 +26,4 @@
 - 2026-10-22 05:45 — Sesiune programată fără lucru nou: nicio comandă nouă, nicio sarcină liberă; CI verde; se așteaptă testul 3 pe laptop (P6-10).
 - 2026-10-22 08:45 — Sesiune programată fără lucru nou (a doua la rând): nicio comandă nouă, nicio sarcină liberă; CI verde; se așteaptă testul 3 pe laptop (P6-10).
 - 2026-10-22 10:40 — C-5 gata (Release os-123, CI verde): Realtek cu coadă de primire de 256 și repornire automată după blocare, diagnostic nou în `net`; stick-ul așteaptă acum după ceas (până la 5 s), fiecare pas în `log usb`; lista pentru testul 4 scrisă.
+- 2026-10-22 11:00 — Completarea C-5 (poza log usb): stick-ul e reîncercat de 10 ori cu REQUEST SENSE (Unit Attention), starea CSW și motivul în `log usb`; Release os-125, CI verde.

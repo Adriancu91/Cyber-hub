@@ -1,14 +1,16 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-22 10:40 (ora României) · **de:** sesiunea OS programată (09:25) — comanda C-5 gata
+**Actualizat:** 2026-10-22 11:00 (ora României) · **de:** sesiunea OS (pornită din nou de centrul de comandă) — C-5 gata, cu completarea de la 09:40
 
 ## Acum
-- **C-5 (după testul 3) e gata, CI verde, Release `os-123`:**
+- **C-5 (după testul 3) e gata, CI verde, Release `os-125`:**
   - **Rețeaua Realtek:** placa primea exact 16 pachete (cât încăpea în „coada” de primire), apoi se oprea. Coada are acum 256 de
     locuri, iar dacă placa se blochează totuși, OS-ul îi repornește singur primirea. `net` arată acum și starea cozii, de câte ori
     s-a blocat, repornirile, câte răspunsuri DHCP au venit și ce tip aveau primele 8 pachete.
   - **Stick-ul:** OS-ul aștepta răspunsul stick-ului doar câteva milisecunde (în emulator e instant, pe un stick real nu).
     Acum așteaptă până la 5 secunde, reîncearcă, iar fiecare pas apare în `log usb`, cu motivul exact dacă pică.
+    După poza ta cu `log usb`: dacă stick-ul răspunde la început „nu sunt gata” (Unit Attention), OS-ul îl întreabă de ce
+    și reîncearcă de 10 ori; în `log usb` apar acum și codul de stare și motivul dat de stick.
 - 49 de scenarii automate trec (nou: stick USB 2 pe port USB 2), +1 doar în CI, cu internet.
 
 ## Urmează
@@ -22,7 +24,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- **Testul 4, dintr-o singură pornire, cablul de rețea băgat** (Release **`os-123`** sau mai nou):
+- **Testul 4, dintr-o singură pornire, cablul de rețea băgat** (Release **`os-125`** sau mai nou):
   1. Copiezi pe stick fișierele din Release (ca la testul 3, inclusiv `cyber.rw`); Secure Boot oprit, pornești de pe stick.
   2. Aștepți ~1 minut pe desktop, apoi **Esc** → consola `cyber>`.
   3. `net` → poză (acum are 2 rânduri noi: „inel RX 256 …” și „primele cadre …”); `log rtl` → poză.
