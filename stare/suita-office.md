@@ -1,13 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 16:27 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 16:36 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere. Etapa 2 (toate funcțiile) e în lucru.
   Scoruri: Word 80,1%, Excel 79,8%, Clipchamp 77,1%, PowerPoint 76,2%, Notițe 76,4%, Acrobat 73,2%, Photoshop 72,0%, formule 97,1%.
-- Prima prioritate: problemele găsite de Adrian la birou cu 0.9.0. Punctele 1–4 făcute (deschiderea din Windows, sugestii de funcții,
+- Prima prioritate: problemele găsite de Adrian la birou cu 0.9.0. Punctele 1–4 și 1b făcute (deschiderea din Windows, inclusiv clipuri și sunete, sugestii de funcții,
   Inserare → Tabel, editarea textului și a imaginilor în PDF). Acum: punctul 5, „totul așezat ca în programele cunoscute”:
   - gata mai devreme: Ctrl+K = Legătură, căutarea de comenzi pe Alt+Q, Ctrl+T = Tabel în Sheets, scurtăturile pe tastatura românească,
     tastele de acces Alt, butonul mare „Lipire” și grupul Clipboard comun;

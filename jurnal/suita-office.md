@@ -80,3 +80,4 @@
 - 2026-10-22 15:41 — Butonul mare Lipire și grupul Clipboard comun (Sheets, Docs, Slides); Sheets → Pornire în ordinea cunoscută, cu grupurile noi Celule și Număr.
 - 2026-10-22 16:28 — Sheets → fila Pornire așezată ca în programul de tabele cunoscut: Font și Aliniere pe două rânduri, Borduri ▾, Îmbinare și centrare ▾, Stiluri și Editare cu butoane mari, Format ▾ cu Lățime coloană… / Înălțime rând….
 - 2026-10-22 16:28 — Sheets: scurtăturile de format (Ctrl+Shift+$ / % / ! / # / @, Ctrl+1), Shift+Space / Ctrl+Space și F4 care repetă ultima formatare.
+- 2026-10-22 16:36 — Punctul 1b de la birou: clipurile și sunetele (.mp4, .mov, .mkv, .mp3, .wav…) se deschid acum la dublu-click / „Deschide cu”, într-un proiect Video nou.
