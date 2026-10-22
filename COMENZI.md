@@ -221,5 +221,10 @@ Format:
      pentru primele 8 cadre, lungimea, adresa din descriptor, adresa citită, primii 16 octeți. Abia apoi reparația.
   3. Lista pentru **testul 7** în `stare/cyber-universe.md`, cu două părți: (R) pornire directă — `net`, `log rtl`; (C) pornire din F12 —
      `net`, `log rx`, `ping 1.1.1.1`. Fără `github.token` încă.
+  4. **Completare 18:20 (pașii G–H din REZULTAT.md): P6-10f e REZOLVAT pe laptop** — `rtl porneste cache` face ca toate cadrele să fie citite
+     corect („cadre cu tip 0000: 0”, ARP interpretat). Fă golirea cache-ului **implicită** la primire (sau mapează buffer-ele DMA necache-abile,
+     ce e mai simplu și sigur) și verifică același lucru la **trimitere** (placa să nu citească o copie veche a cadrului). Și: **lipsa DHCP nu a
+     fost niciodată o problemă a OS-ului** — cablul era între două laptopuri, fără router. Nu mai căuta nimic la DHCP până la testul cu cablul la
+     router. Rămâne, ca prioritate 1, **P6-10e: inițializarea la rece**.
 - stare: preluat (2026-10-22 15:05 UTC, sesiunea OS) — P6-10e, P6-10f în docs/TASKS.md
 - rezultat:
