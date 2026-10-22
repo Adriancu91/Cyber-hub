@@ -1,6 +1,6 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-22 22:55 · **de:** centrul de comandă
+**Actualizat:** 2026-10-23 02:45 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-22.md`.)_
 
 ## Așteaptă de la tine, Adrian
@@ -16,6 +16,7 @@ _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-2
 |---|---|---|---|
 | **Kronos** | S16 gata (verificator propriu = Qwen la 97,6 %). 886 teste | Da — **S17** pe placă de la 15:30, gata ~22:00, verdict la 23:15 | 17:15 (`cyberspace/plan/pentru_adrian.md`) |
 | **Cyber Universe OS** | **Prima ieșire pe internet** (18:30, la cald, cu cache). C-9 gata: Release os-144 cu pornirea la rece ca variantă (`rtl porneste rece`) | Da — sesiunea de 20:40 face golirea cache-ului implicită (P6-10f) | 20:45 (`cyber-universe` git, `docs/TASKS.md`) |
+| **Cyber-GPU** (nou, 23 oct) | driver propriu de calcul GPU (RTX 3070 Ti), repo `cyber-gpu`; prima sesiune pornită de Adrian la 02:30 pe laptop | Da — audit + structură + cercetare GSP; fără GPU în seara asta | 02:45 (`stare/cyber-gpu.md`) |
 | **Suita office** | Sheets gata „ca la birou”; PDF așezat ca programul cunoscut (unelte în stânga, panouri în dreapta, Ctrl+S peste fișier). Word 80,1%, Excel 79,8% | Da, continuu pe ThinkPad (urmează PDF bara de comentarii, apoi Docs, Slides…) | 20:25 (`stare/suita-office.md`) |
 
 ## Comenzi

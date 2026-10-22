@@ -81,3 +81,8 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   bune sau rele, **decidem și măsurăm ce e mai bine pentru Kronos** (unde rulează, unde se antrenează). Pas cu pas; nicio etapă nu o ține pe
   loc pe cealaltă. Driverele originale NVIDIA nu se instalează în OS-ul nostru (ar cere un Linux în interior); Wi-Fi rămâne amânat.
   Etapa 1 „Kronos în Cyber Universe” (pe procesor și RAM, antrenarea rămâne pe workstation) și etapa 2 (OS obișnuit în jur) merg în paralel.
+- 2026-10-23 02:40 — **Al patrulea proiect: Cyber-GPU (`Adriancu91/cyber-gpu`)**, pornit de Adrian cu „MASTER PROMPT — CYBER-GPU v1.0”:
+  driver propriu de calcul (fără grafică) pentru RTX 3070 Ti, Rust `no_std`, clean-room, ca workspace separat care nu modifică alte repo-uri
+  (schimbările în OS = patch-uri de integrare preluate de sesiunea OS). Testele pe RTX: doar pe workstation, în ferestre aprobate de Adrian.
+  Regula de cinste din prompt se aplică: nimic nu e „executat pe GPU” fără demonstrație pe placa fizică; QEMU/simulările se etichetează ca atare.
+  C-11 (experimentele mici + studiul) rămâne în `cyber-universe`; cele două se completează, nu se dublează.
