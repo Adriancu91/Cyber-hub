@@ -70,3 +70,4 @@
 - 2026-10-22 09:16 — Interfața pe file terminată în toate aplicațiile (Sheets: fila Grafic și mini-bara; PDF: fila Câmp și clic dreapta pe comentarii); PDF cu ghidaje și două vederi, Imagini cu filtre noi (Acrobat 71,2%, Photoshop 70,8%).
 - 2026-10-22 10:06 — PDF: procesare în lot (⚙ Lot…, cu OCR pentru scanări); Imagini: straturi legate distribuite / aliniate / transformate împreună, Deplasare cu hartă din fișier și filtre extinse (Acrobat 72,2%, Photoshop 71,6%).
 - 2026-10-22 10:51 — Slides: variante de teme și declanșatoare de animații (și în .pptx); PDF: corectarea cuvintelor nesigure după OCR; Imagini: bara de unelte personalizată; Notițe: riglă și raportor (PowerPoint 75,5%, Acrobat 72,6%, Photoshop 71,9%, Notițe 76,0%).
+- 2026-10-22 11:37 — Docs și Slides: dicționar de sinonime; Docs: despărțire automată în silabe, legături automate și fracții; OCR în 5 limbi; Slides: „Folosește duratele” (Word 79,0%, PowerPoint 76,0%, Acrobat 72,8%).
