@@ -89,3 +89,4 @@
 - 2026-10-22 19:00 — PDF: scurtăturile cunoscute (Ctrl+0 / 1 / 2, Ctrl+H mod citire, Ctrl+D, Ctrl+Shift+I / D / R) și Refacere cu Ctrl+Y.
 - 2026-10-22 19:40 — PDF așezat ca programul de PDF cunoscut: bara globală (☰ Meniu · Toate uneltele · Editare · Conversie · Semnătură) și panoul „Toate uneltele” în stânga, în locul filelor.
 - 2026-10-22 19:40 — PDF: bara rapidă verticală lângă pagini, panourile (miniaturi, marcaje, comentarii, atașamente) mutate în dreapta, pagina și zoomul jos în dreapta.
+- 2026-10-22 20:25 — PDF: meniul mic la textul ales, Ctrl+S peste fișier cu copie de siguranță, clic dreapta pe comentariu (Ștergere, Culoare, Opacitate), literele Alt pe bara rapidă.

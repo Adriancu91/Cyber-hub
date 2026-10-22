@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-22 19:40 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-22 20:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -17,11 +17,14 @@
   - **PDF (18:45–19:40)**: scurtăturile cunoscute (Ctrl+0 / 1 / 2, Ctrl+H mod citire, Ctrl+D, Ctrl+Shift+I / D / R, Ctrl+Y);
     **așezarea programului de PDF cunoscut**: fără panglică, bară globală subțire (☰ Meniu · Toate uneltele · Editare · Conversie · Semnătură),
     panoul „Toate uneltele” în stânga (22 de unelte cu numele cunoscute), bara rapidă verticală lângă pagini (Selectare, Comentariu,
-    Evidențiere ▾, Desen ▾, Text, Semnare), șina cu panourile în dreapta (Comentarii, Miniaturi, Marcaje, Atașamente), pagina și zoomul jos în dreapta.
+    Evidențiere ▾, Desen ▾, Text, Semnare), șina cu panourile în dreapta (Comentarii, Miniaturi, Marcaje, Atașamente), pagina și zoomul jos în dreapta;
+  - **PDF (19:45–20:22)**: meniul mic deasupra textului ales (Evidențiere, Subliniere, Tăiere, Copiere, Comentariu, Editare text);
+    **Ctrl+S salvează peste fișier** (copia veche păstrată în versiuni), Ctrl+Shift+S = Salvează ca; clic dreapta pe un comentariu:
+    Ștergere, Culoare, Opacitate; literele Alt pe bara rapidă (V, N, U, D, X, G, L).
 - Toate aplicațiile pornesc fără erori; testele noi trec în aplicația reală (cu taste adevărate).
 
 ## Urmează
-- Punctul 5, mai departe: PDF P6 (meniul mic la selecția de text), Ctrl+S peste fișier în PDF; apoi Docs, Slides, Imagini, Video, Notițe,
+- Punctul 5, mai departe: PDF P15 (bara de comentarii sub bara globală); apoi Docs, Slides, Imagini, Video, Notițe,
   după `INTERFATA-FAMILIARA.md`.
 - Punctul 6: butonul „Trimite o observație” (captură + text salvate local, Adrian le trimite el).
 - Kit de instalare nou doar când îl cere Adrian (întâi testează pe laptop, cu „Porneste Suite.cmd”).
@@ -40,6 +43,7 @@
 - De încercat (nu blochează): Sheets e așezat ca la birou (toate filele, clic dreapta, mini-bara, Ctrl+A de două ori, Alt, H, V = Lipire, Ctrl+ș = data);
   PDF: Ctrl+0 / Ctrl+2 / Ctrl+H; PDF are acum așezarea programului cunoscut (Toate uneltele în stânga, panourile în dreapta).
   Se găsește totul unde te aștepți? Ce lipsește cel mai tare?
+- De încercat (nu blochează): PDF, pe o copie a unui act: adaugi o pagină, Ctrl+S, îl redeschizi: s-a salvat peste? Clic dreapta pe un comentariu primit → Culoare → Roșu: se vede roșu?
 - De încercat (nu blochează): PDF → Editare → ✎ Editează text pe un act real: schimbi un cuvânt, salvezi; se vede bine la birou?
 - De încercat (nu blochează): un .xlsx cu tabel (Inserare → Tabel) sau cu forme făcut în Suite, deschis la birou: merge fără „reparare”?
 - De verificat (nu blochează): .xlsx cu Rezolvitor, fișiere cu parolă și .docx protejat din Suite, deschise în programele de la serviciu;
