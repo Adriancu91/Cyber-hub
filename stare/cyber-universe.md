@@ -1,38 +1,37 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-23 13:35 (ora României) · **de:** sesiunea OS programată (11:40) — C-13 gata, C-14: P6-16, K6-01, K6-02 (partea 1)
+**Actualizat:** 2026-10-23 16:10 (ora României) · **de:** sesiunea OS programată (14:40) — C-14: K6-02b, K6-03
 
 ## Acum
-- **C-13 gata.** Ultimul punct, **P6-17 (Release `os-172`):** `reboot` încearcă pe rând 4 metode (ACPI din tabela FADT, portul 0xCF9,
-  controlerul de tastatură, „triple fault”) și scrie pe ecran fiecare încercare. Dacă tot nu repornește, poza arată unde s-a oprit.
-- **C-14 (lucrul cât e Adrian plecat), în ordine:**
-  - **P6-16 (Release `os-174`): rețeaua Intel I219 a workstation-ului.** Driverul Intel e acum o bibliotecă separată (`e1000e/`), testată
-    pe gazdă față de un model al plăcii (12 teste): semaforul pentru PHY, PHY-ul la adresa 2, trezirea PHY-ului adormit (LANPHYPC), pașii în
-    `log e1000`. În QEMU există doar placa înrudită 82574 (merge ca înainte); I219 se verifică doar pe workstation.
-  - **K6-01: SSE/AVX** pornite; registrele vectoriale sunt salvate pentru fiecare fir la fiecare comutare (test: 3 fire × 3000 de runde fără
-    amestec; un program cu AVX2 calculează corect). Primul pas pentru „Kronos pe procesor”.
-  - **K6-02, partea 1: celelalte nuclee ale procesorului pornesc** (în QEMU: 4 din 4, ~10 ms fiecare) și stau „parcate”; doar la comanda
-    `cpu porneste`, deci pornirea obișnuită nu se schimbă. Partea 2 (firele pe toate nucleele) = K6-02b, următoarea sarcină.
-- 62 de scenarii automate trecute (+1 sărit fără internet). CI: limita de timp ridicată la 45 min (două rulări fuseseră oprite la 20 min
-  pentru că instalarea uneltelor a durat 18 min). Release-uri: os-172 (P6-17), os-174 (P6-16), os-175 (K6-01), os-177 (K6-02), toate cu CI verde.
+- **K6-02b: firele rulează pe toate nucleele procesorului** (după `cpu porneste`; pornirea obișnuită rămâne pe un nucleu). Fiecare nucleu
+  are datele lui, încuietorile opresc întreruperile, nicio „trezire” nu se mai pierde între nuclee, iar paginile scoase din memoria nucleului
+  sunt șterse și din memoria rapidă (TLB) a celorlalte nuclee. Test în QEMU pe 4 nuclee: firele merg pe toate 4, 8 programe în paralel,
+  tot testul obișnuit al sistemului și testul de stres trec și pe 4 nuclee.
+- **K6-03: memorie mare pentru programe.** Apeluri noi `mem_map` / `mem_unmap`: un program cere, de exemplu, 1 GiB și îl primește în pagini
+  de 2 MiB (mai rapide), plin de zero; la eliberare memoria revine exact. Test: `/bin/memorie` alocă 1 GiB, scrie, verifică, eliberează.
+- 68 de scenarii automate trecute local (+1 sărit fără internet). **CI-ul GitHub nu mai pornește** (vezi Blocaje) → fără Release nou.
 
 ## Urmează
-- K6-02b (planificatorul pe toate nucleele), apoi K6-03 (memorie mare pentru programe), K6-04 opțional. C-7 și C-11 așteaptă întoarcerea lui Adrian.
+- K6-04 (opțional): fire multiple într-un proces. Apoi, când se întoarce Adrian: listele de mai jos, C-7, C-11.
 
 ## Ce oferă proiectul celorlalți
-- Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, **`e1000e/`** (Intel 8254x/82574/I219).
+- Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/` (Intel 8254x/82574/I219).
 - Pentru `cyber-gpu`: comanda `gpu` (nivel 0, doar citire), pe orice magistrală-rădăcină.
-- Pentru Kronos (etapa „Kronos în OS pe procesor”): SSE/AVX/AVX2 în programe; nucleele suplimentare pornesc (încă fără fire).
+- Pentru Kronos („Kronos în OS pe procesor”): SSE/AVX/AVX2 în programe, **fire pe toate nucleele**, **regiuni de memorie de GiB** (`mem_map`).
 
 ## De ce are nevoie de la ceilalți
 - Nimic nou.
 
-## Blocaje / nevoie de Adrian (când se întoarce — nimic urgent)
+## Blocaje / nevoie de Adrian
+- **Singurul lucru care poate fi făcut de pe telefon (2 minute): GitHub nu mai rulează verificările automate (CI) nici la OS**, din 14:03
+  ora României — aceeași cauză ca la Cyber-GPU (probabil s-au terminat minutele gratuite GitHub Actions ale contului): GitHub →
+  Settings → Billing and plans → Actions. Până atunci nu ies Release-uri noi (ultimul: `os-177`); codul e testat local și e pe GitHub.
+- Restul — când se întoarce, nimic urgent:
 - **Fereastra a doua pe workstation** (cel mai nou Release, ~30 min, Kronos oprit; Secure Boot oprit, apoi repus pe Enabled):
   stick din Release → F12 → **Esc** → `cyber>`, câte o poză după: `lspci` (trebuie să apară `10de:2482` la `b3:00.0`), `gpu identifica`,
   `gpu plan`, `log gpu 40`, `log pci 40`, `hw`, `lsusb` (stick-ul ADATA ca `port X.Y`), `log usb 60`,
   **nou:** `net` și `log e1000 40` (placa I219; cu cablul în router, după ~30 s `net` ar trebui să arate o adresă), `cpu`, apoi
-  `cpu porneste` (câte nuclee pornesc din 36), la final `reboot` (trebuie să repornească; dacă nu, poză). Nimic nu scrie în placa video.
+  `cpu porneste` (câte nuclee pornesc din 36; acum ele chiar rulează fire), apoi `cpu`, la final `reboot` (trebuie să repornească; dacă nu, poză). Nimic nu scrie în placa video.
 - **Testul 8 pe laptop** (cel mai nou Release; rețeaua Realtek e neschimbată față de os-155), cablul la laptopul cu Windows (ICS pornit):
   **(C) La cald — F12 → stick:** **Esc** → `cyber>`, nicio comandă `rtl`. 1. ~30 s → `net` → poză. 2. `log rtl 20` → poză.
   3. Cu adresă: `fetch https://example.com/` → poză; fără adresă: `log rx` → poză, apoi `rtl porneste pagini` → ~30 s → `net` → poză.

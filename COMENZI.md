@@ -331,5 +331,5 @@ Format:
   Fiecare pas: `main` mereu construibil, CI verde, Release la fiecare pas încheiat. Listele de test pe hardware se strâng în `stare/cyber-universe.md`
   pentru întoarcerea lui Adrian. Planul general: `idei/2026-10-23_kronos-bare-metal_v0.2.md` și `idei/2026-10-23_arhitectura_kernel_cyber-universe.md`
   (§14 = golurile). **Nu porni C-7 și C-11** până nu se întoarce Adrian. Lucrul cu `cyber-gpu` se face doar prin hub (`integrare/cyber-gpu/`).
-- stare: preluat (2026-10-23 09:20 UTC, sesiunea OS) — P6-16, K6-01 … K6-04 în docs/TASKS.md
+- stare: preluat (2026-10-23 09:20 UTC, sesiunea OS) — P6-16, K6-01 … K6-04 în docs/TASKS.md; gata: P6-16 (os-174), K6-01 (os-175), K6-02 (os-177), K6-02b și K6-03 (testate local; fără Release: CI-ul GitHub nu pornește din 11:03 UTC); rămâne K6-04 (opțional)
 - rezultat:
