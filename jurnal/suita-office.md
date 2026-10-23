@@ -131,3 +131,4 @@
 - 2026-10-23 14:12 — Ferestrele din Notițe (Desen de mână, Blochează notița) traduse; urmează ferestrele din Docs, Sheets, Slides și PDF.
 - 2026-10-23 14:56 — Meniul în engleză: ferestrele de dialog din Docs, Sheets, Slides și PDF traduse (plus meniul Fișier din fiecare), cu dicționare pe aplicație; 5 commituri, testele trec.
 - 2026-10-23 14:56 — Explicațiile celor 110 funcții din Sheets sunt și în engleză; urmează testul ferestrelor PDF cu un fișier deschis și mesajele de stare.
+- 2026-10-23 15:45 — Meniul în engleză: barele de stare și 290 de mesaje de stare (Docs, Sheets, Notițe, Slides, Video) traduse, cu test automat; ferestrele PDF verificate cu un fișier deschis.
