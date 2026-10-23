@@ -117,3 +117,5 @@
 - 2026-10-23 08:45 — Reparată paleta de comenzi (Enter făcea uneori comanda de sub mouse); 6 commituri, toate testele trec.
 - 2026-10-23 09:24 — Punctele 5b și 6 gata: numele fișierului importat pe tab (Salvează propune același loc) și butonul „Trimite o observație” (text + poză salvate local).
 - 2026-10-23 09:24 — Panglica și bara din stânga mai înguste când nu e loc: Sheets la 1440 px păstrează Stiluri și Celule ca butoane mari; 4 commituri, toate testele trec.
+- 2026-10-23 10:11 — PDF are acum 4 aranjări ale acelorași comenzi (butonul ▦ de lângă numele fișierului): implicită, Aerisit, Panouri laterale și Simplu; capturile așteaptă părerea lui Adrian.
+- 2026-10-23 10:11 — Sheets la 1440 px cu toate grupurile întregi, Panou de selecție în Docs, textul editat în PDF păstrează serifele / aldinul / cursivul; 5 commituri, toate testele trec.
