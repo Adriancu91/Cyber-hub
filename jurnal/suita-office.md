@@ -109,3 +109,4 @@
 - 2026-10-23 04:46 — Video: bara cronologiei (Scindare, Ștergere, Duplicare, Magnet, zoom) și scurtăturile cunoscute (Ctrl+= / − / 0, Ctrl+A, Ctrl+/, X / Z / C + săgeți); 6 commituri, testele trec.
 - 2026-10-23 05:32 — Video: antet cu Exportare în dreapta sus și bara laterală din stânga (Conținutul tău, Înregistrare, Muzică și sunete, Text, Tranziții, Elemente grafice) în locul panglicii (V1).
 - 2026-10-23 05:32 — Video: Conținutul tău arată pozele și clipurile aduse, de pus înapoi pe bandă cu ＋ sau prin tragere (V2); 4 commituri, testele trec.
+- 2026-10-23 06:20 — Video V5 (Proprietăți pe file cu pictograme + bara plutitoare pe imagine) și Notițe N1 (secțiuni | pagini pe două coloane); 3 commituri, testele trec.
