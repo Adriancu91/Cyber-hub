@@ -125,3 +125,5 @@
 - 2026-10-23 11:41 — Meniul în engleză început: butoanele RO | EN, rama, filele și grupurile traduse, Sheets → Pornire complet; 4 commituri, toate testele trec.
 - 2026-10-23 12:35 — Meniul în engleză avansat: toate filele din Docs, Sheets, Slides și Notițe, plus 10 file din PDF, traduse (EN jos în stânga); 13 commituri, testele trec.
 - 2026-10-23 12:35 — Traducătorul alege sensul după loc („Ștergere” = Delete ca buton, Wipe ca tranziție); butonul din Slides „WordArt” se cheamă acum „Text artistic”.
+- 2026-10-23 13:21 — Meniul în engleză: toate filele PDF și listele derulante din panglici traduse, plus pagina Acasă; 7 commituri, testele trec.
+- 2026-10-23 13:21 — Imagini în engleză: meniurile de sus, bara de unelte (și uneltele ascunse), panourile Culoare și Ajustări, cu dicționar propriu.
