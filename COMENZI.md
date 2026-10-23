@@ -345,5 +345,5 @@ Format:
      cache pentru `~/.cargo` și `target/` dacă nu există. Release doar când s-a schimbat codul.
   3. Când CI e verde: Release-ul cu K6-02b, K6-03, K6-04 (și ce mai lipsește din C-14). Închide B-004 în `docs/BLOCKERS.md` cu cauza exactă.
   4. Cu repo-ul public, `actualizeaza` poate merge fără token: verifică și notează în `docs/USB.md`; tokenul rămâne necesar doar pentru `gh-trimite`.
-- stare: nou
+- stare: preluat (2026-10-23 16:15 UTC, sesiunea OS) — P6-18 în docs/TASKS.md
 - rezultat:
