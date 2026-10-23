@@ -127,3 +127,5 @@
 - 2026-10-23 12:35 — Traducătorul alege sensul după loc („Ștergere” = Delete ca buton, Wipe ca tranziție); butonul din Slides „WordArt” se cheamă acum „Text artistic”.
 - 2026-10-23 13:21 — Meniul în engleză: toate filele PDF și listele derulante din panglici traduse, plus pagina Acasă; 7 commituri, testele trec.
 - 2026-10-23 13:21 — Imagini în engleză: meniurile de sus, bara de unelte (și uneltele ascunse), panourile Culoare și Ajustări, cu dicționar propriu.
+- 2026-10-23 14:12 — Meniul în engleză: Imagini complet (panourile din dreapta, barele uneltelor, ferestrele) și toată aplicația Video; 5 commituri, testele trec.
+- 2026-10-23 14:12 — Ferestrele din Notițe (Desen de mână, Blochează notița) traduse; urmează ferestrele din Docs, Sheets, Slides și PDF.
