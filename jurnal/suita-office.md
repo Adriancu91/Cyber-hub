@@ -110,3 +110,5 @@
 - 2026-10-23 05:32 — Video: antet cu Exportare în dreapta sus și bara laterală din stânga (Conținutul tău, Înregistrare, Muzică și sunete, Text, Tranziții, Elemente grafice) în locul panglicii (V1).
 - 2026-10-23 05:32 — Video: Conținutul tău arată pozele și clipurile aduse, de pus înapoi pe bandă cu ＋ sau prin tragere (V2); 4 commituri, testele trec.
 - 2026-10-23 06:20 — Video V5 (Proprietăți pe file cu pictograme + bara plutitoare pe imagine) și Notițe N1 (secțiuni | pagini pe două coloane); 3 commituri, testele trec.
+- 2026-10-23 07:26 — Notițe N2: scurtăturile cunoscute (Ctrl+E căutare, Ctrl+T secțiune nouă, Ctrl+1…6 / Ctrl+0 etichete, Ctrl+PageUp / PageDown între pagini și altele); toate testele Notițe trec.
+- 2026-10-23 07:26 — Notițe N3 partea 1 (fila Pornire în ordinea cunoscută) făcută, dar pusă deoparte: la 1024 px panglica iese cu 19 px; o reia sesiunea următoare.
