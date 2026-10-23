@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-23 15:45 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-23 16:32 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -8,13 +8,13 @@
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere. Etapa 2 (toate funcțiile) e în lucru.
   Scoruri: Word 80,3%, Excel 79,8%, Clipchamp 77,1%, PowerPoint 76,2%, Notițe 76,4%, Acrobat 73,2%, Photoshop 72,0%, formule 97,1%.
 - Problemele găsite de Adrian la birou cu 0.9.0: punctele 1–6 gata. „Finalul cerut” a) și a2) gata.
-- **Sesiunea asta (meniul în engleză, b):** cu butonul **EN** (jos în bara din stânga) sunt acum în engleză și **bara de stare de jos** din Docs, Sheets, PDF,
-  Imagini și Notițe (Page 1 of 3, words, Sum, Average…), plus **mesajele de stare** din Docs, Sheets (cele fixe și ~50 cu numere), Notițe, Slides și Video (cele fixe),
-  în total 290 de mesaje verificate de un test nou. Ferestrele PDF au fost verificate și cu un PDF deschis (0 texte rămase în română).
+- **Sesiunea asta (meniul în engleză, b):** cu butonul **EN** sunt acum în engleză și mesajele cu numere din **Video**, aproape toate mesajele din **Sheets**
+  (analiza datelor, sortare, validare, Rezolvitor, import / export, înghețare…), mesajele din **Imagini** și **ferestrele mici de mesaj** (OK / Anulare) din toată suita.
+  Peste 560 de mesaje verificate de teste automate. Reparat pe loc: fereastra proprie „Închizi fără să salvezi?” rămâne cea a aplicației și în EN.
 - Toate aplicațiile pornesc fără erori; testele panglicilor, cdp-office-profiles, cdp-lang și cdp-all trec.
 
 ## Urmează
-- Engleza pentru ce a mai rămas: mesajele cu numere din Video, analiza datelor / Rezolvitorul / sortarea / validarea din Sheets, mesajele din PDF și Imagini.
+- Engleza pentru ce a mai rămas: mesajele de eroare venite din cititorii de fișiere (PDF, .docx, .psd).
 - Apoi kitul de instalare nou 0.9.x (c, d). Nimic pe stick fără „da”-ul lui Adrian.
 
 ## Ce oferă proiectul celorlalți
