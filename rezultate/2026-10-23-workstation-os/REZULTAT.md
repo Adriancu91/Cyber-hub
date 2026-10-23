@@ -27,3 +27,10 @@
 Ultimul rând: **`pci: 27 dispozitive (ECAM la 0x60000000, magistralele 0-255)`**. MCFG declară toate cele 256 de magistrale, dar enumerarea
 parcurge doar arborele de la magistrala 0 (00:xx și 02:00.0 prin puntea `00:1c.x`). Confirmă cauza din C-13 punctul 1. Clasele notate:
 `00:05.4` 08:00:20 (IOAPIC), `00:08.1` 11:01:00, `00:14.2` 11:80:00 (termal), `00:16.0` 07:80:00 (MEI), `00:1f.2` 05:80:00 (PMC).
+
+## Completare 10:02 — `log usb 30` (poza 05)
+`controler XHCI pornit, 26 porturi, 7 dispozitive`: port 2 `05ac:12a8` (viteza 3), 5 mouse `17ef:608d` (viteza 2), 6 tastatură `413c:2106`
+(viteza 2), 7 `04b8:11c7` (clasa ff, viteza 1), **10 hub `0bda:5411` (clasa 09:00:02, viteza 3)**, 25 `0bda:0328` Mass Storage (viteza 4),
+**26 hub `0bda:0411` (clasa 09:00:03, viteza 4)**. Hub-urile sunt doar identificate, porturile lor nu sunt enumerate → stick-ul ADATA (în spatele
+unui hub) lipsește. Port 25: SET_CONFIGURATION și Configure Endpoint ok, apoi **30 de încercări TEST UNIT READY, toate CSW 1, sense 2/3a/00**
+(„Medium Not Present”, cititor de carduri gol) → „stick-ul de pe portul 25 nu pornește”. Confirmă C-13 punctele 2 și 3. Mouse și tastatură merg.
