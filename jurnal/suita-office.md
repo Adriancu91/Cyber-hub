@@ -101,3 +101,5 @@
 - 2026-10-23 01:32 — Slides, fila Proiectare ca în programul cunoscut: galeria Teme, Variante și panoul Formatare fundal în dreapta (L4 gata).
 - 2026-10-23 01:32 — Slides: fila Tranziții (Examinare, galerie, Opțiuni efect, Temporizare) și fila Animații în 4 grupuri cu Panou animație și Reordonare (L5 gata); 3 commituri, testele trec.
 - 2026-10-23 02:32 — Slides: filele obiectelor cu numele cunoscute (Format formă, Format imagine, Proiectare tabel + Aspect, Proiectare diagramă + Format, Format video + Redare) și literele Alt (L6, L7 gata); Slides e gata la capitolul „așezat ca în programele cunoscute”.
+- 2026-10-23 03:20 — Imagini: meniurile de sus (Fișier … Ajutor) în locul panglicii, cu scurtăturile scrise în dreapta și literele Alt (I1 gata).
+- 2026-10-23 03:20 — Imagini: tastele uneltelor (M, L, W, C, J, I, B, S, E, G, O, T, U) și scurtăturile Ctrl+L / M / U / B / I / T, Ctrl+Shift+U, Alt+Ctrl+I / C, Ctrl+] / [; 4 commituri, testele trec.
