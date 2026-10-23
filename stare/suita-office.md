@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-23 04:04 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-23 04:46 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -8,14 +8,14 @@
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere. Etapa 2 (toate funcțiile) e în lucru.
   Scoruri: Word 80,3%, Excel 79,8%, Clipchamp 77,1%, PowerPoint 76,2%, Notițe 76,4%, Acrobat 73,2%, Photoshop 72,0%, formule 97,1%.
 - Prima prioritate: problemele găsite de Adrian la birou cu 0.9.0. Punctele 1–4 și 1b făcute. Acum: punctul 5, „totul așezat ca în programele cunoscute”:
-  - **gata:** Sheets, PDF, Docs (D1–D7), Slides (L1–L7);
-  - **Imagini (noaptea asta):** I1 meniurile de sus, I2 tastele și **bara de unelte din stânga în ordinea cunoscută** (doar pictograme, ◢ și clic dreapta arată grupul),
-    I3 **toate scurtăturile**: Ctrl+L / M / U / B / I, Ctrl+Shift+U, Ctrl+T, Alt+Ctrl+I / C, Ctrl+] / [, Ctrl+Shift+] / [,
-    **Ctrl+S salvează direct peste poză** (cu copie de siguranță), Ctrl+Shift+S Salvează ca, cifrele 1…0 = opacitatea pensulei, Tab ascunde panourile, Q mască rapidă; Alt+literă deschide direct meniul (Alt+I Imagine).
-- Toate aplicațiile pornesc fără erori; testele noi și cele vechi de Imagini trec în aplicația reală (cu taste adevărate).
+  - **gata:** Sheets, PDF, Docs (D1–D7), Slides (L1–L7), **Imagini (I1–I5)**;
+  - **sesiunea asta:** Imagini I5 (literele subliniate în meniuri, litera pornește comanda), I4 (panourile **Proprietăți** și **Culoare / Mostre** noi,
+    **Ajustări** ca filă în coloana din dreapta); Video V3 (**bara cronologiei**: ↶ ↷ Scindare, Ștergere, Duplicare, Magnet, zoom) și V4
+    (Ctrl+← / →, Ctrl+= / − / 0, Ctrl+A, Ctrl+/, X / Z / C + săgeți pentru mutare și tăiere din tastatură).
+- Toate aplicațiile pornesc fără erori; testele noi și cele vechi de Imagini și Video trec în aplicația reală (cu taste adevărate).
 
 ## Urmează
-- Imagini: I4 (panourile Proprietăți / Ajustări andocate) și I5 (literele subliniate din meniuri); apoi Video și Notițe (după `INTERFATA-FAMILIARA.md`).
+- Video V1: fără panglică, antet cu Exportare și bara laterală din stânga (Conținutul tău, Înregistrare, Muzică, Text, Tranziții); apoi V2 și V5; apoi Notițe.
 - Punctul 6: butonul „Trimite o observație” (captură + text salvate local, Adrian le trimite el).
 - Kit de instalare nou doar când îl cere Adrian (întâi testează pe laptop, cu „Porneste Suite.cmd”).
 
@@ -30,7 +30,7 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- De încercat (nu blochează): Imagini: deschide o copie a unei poze, Ctrl+I, apoi **Ctrl+S** (se salvează direct, jos scrie „Salvat”); clic dreapta pe lasoul din stânga → lista lasourilor; Tab ascunde panourile. E ca la editorul foto cunoscut?
+- De încercat (nu blochează): Imagini: clic pe meniul Imagine → litera subliniată de sub „Rotire” rotește poza; Fereastră → Proprietăți și Fereastră → Culoare (panourile din dreapta). Video: deasupra benzii ⧉ Duplicare / 🗑 Ștergere / 🧲 Magnet; ține X și apasă → (poza se mută). E ca la programele cunoscute?
 - De încercat (nu blochează): Slides: clic pe un tabel → sus „Proiectare tabel” și „Aspect”; Proiectare → tema „Noapte”; Tranziții → Împingere → Opțiuni efect.
 - De încercat (nu blochează): Docs: clic într-un tabel → „Proiectare tabel” și „Aspect”; dublu clic deasupra primului rând → antetul direct pe pagină; Alt, H, 1 face aldin.
 - De încercat (nu blochează): Sheets și PDF așezate ca la birou; PDF → Editare → ✎ Editează text pe un act real; un .xlsx cu tabel făcut în Suite, deschis la birou.
