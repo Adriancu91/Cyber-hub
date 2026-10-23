@@ -129,3 +129,5 @@
 - 2026-10-23 13:21 — Imagini în engleză: meniurile de sus, bara de unelte (și uneltele ascunse), panourile Culoare și Ajustări, cu dicționar propriu.
 - 2026-10-23 14:12 — Meniul în engleză: Imagini complet (panourile din dreapta, barele uneltelor, ferestrele) și toată aplicația Video; 5 commituri, testele trec.
 - 2026-10-23 14:12 — Ferestrele din Notițe (Desen de mână, Blochează notița) traduse; urmează ferestrele din Docs, Sheets, Slides și PDF.
+- 2026-10-23 14:56 — Meniul în engleză: ferestrele de dialog din Docs, Sheets, Slides și PDF traduse (plus meniul Fișier din fiecare), cu dicționare pe aplicație; 5 commituri, testele trec.
+- 2026-10-23 14:56 — Explicațiile celor 110 funcții din Sheets sunt și în engleză; urmează testul ferestrelor PDF cu un fișier deschis și mesajele de stare.
