@@ -308,8 +308,8 @@ Format:
      (valoarea 2, apoi 6), controlerul 8042 (0xFE), triple fault; câte un rând în jurnal. Important pentru bucla automată (C-7).
   6. O schimbare de comportament pe Release (D-013): 1 întâi, cu Release; apoi 2–3. În `stare/cyber-universe.md`, lista pentru **fereastra a doua pe
      workstation**: `lspci` (trebuie să apară `10de:2482` la B3), `gpu identifica`, `gpu plan`, `log gpu 40`, `log pci 40`, `hw`.
-- stare: preluat (2026-10-23 06:53 UTC, sesiunea OS) — P6-13 … P6-17 în docs/TASKS.md. Gata: P6-13 (os-166), P6-14 (os-167), P6-15 (os-169), observațiile (p.5) în `docs/research/OBSERVATII-CYBER-GPU.md`; P6-17 în lucru (altă sesiune OS); P6-16 = C-14 pasul 1
-- rezultat:
+- stare: gata (preluat 2026-10-23 06:53 UTC, terminat 09:20 UTC, sesiunile OS) — P6-13 (os-166), P6-14 (os-167), P6-15 (os-169), P6-17; P6-16 (p.4) = C-14 pasul 1
+- rezultat: PCI caută acum pe toate magistralele-rădăcină, USB vede dispozitivele din spatele hub-urilor, `/usb` alege stick-ul cu `cyber.rw` și `VERSIUNE` (sare cititoarele goale), iar `reboot` încearcă pe rând ACPI, 0xCF9, 8042 și triple fault, cu câte un rând pe ecran; observațiile Cyber-GPU judecate în `docs/research/OBSERVATII-CYBER-GPU.md`; lista pentru fereastra a doua pe workstation e în `stare/cyber-universe.md`.
 
 ### C-14 · cyber-universe · Lucrul automat cât e Adrian plecat: rețeaua workstation-ului (I219) + pregătirea „Kronos în OS pe procesor” (K6-CPU)
 - data: 2026-10-23 10:20 · de la: Adrian (prin centrul de comandă) — ales de Adrian: „C-13 + rețea + K6-CPU”
@@ -331,5 +331,5 @@ Format:
   Fiecare pas: `main` mereu construibil, CI verde, Release la fiecare pas încheiat. Listele de test pe hardware se strâng în `stare/cyber-universe.md`
   pentru întoarcerea lui Adrian. Planul general: `idei/2026-10-23_kronos-bare-metal_v0.2.md` și `idei/2026-10-23_arhitectura_kernel_cyber-universe.md`
   (§14 = golurile). **Nu porni C-7 și C-11** până nu se întoarce Adrian. Lucrul cu `cyber-gpu` se face doar prin hub (`integrare/cyber-gpu/`).
-- stare: nou (după C-13)
+- stare: preluat (2026-10-23 09:20 UTC, sesiunea OS) — P6-16, K6-01 … K6-04 în docs/TASKS.md
 - rezultat:
