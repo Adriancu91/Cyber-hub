@@ -139,3 +139,4 @@
 - 2026-10-23 18:14 — Text din poze și scanări: Imagini → Extrage text (copiat / .txt / Docs), poză → PDF căutabil sau editabil, PDF scanat → text editabil (Acrobat 73,4%).
 - 2026-10-23 19:01 — Scanări → text editabil cu aldin / cursiv păstrate, PDF „Editează text” cu fontul original, poză → PDF pe A4; scurtături noi în Docs (Ctrl+0, Shift+F5, F4, Ctrl+Alt+P/O) și PDF (Ctrl+Shift+T); 6 commituri, testele trec.
 - 2026-10-23 19:43 — Docs: panoul de navigare cu Titluri / Pagini / Rezultate, galeria de antete și subsoluri pe trei locuri (și citite așa din .docx), linia dintre coloane; Slides: Conversie în diagramă; 5 commituri, testele trec (Word 81,0%, PowerPoint 76,6%).
+- 2026-10-23 20:30 — Slides: diagramele au Schimbare culori, Stiluri, Adăugare / Eliminare formă, Mutare, Panou de text, Schimbare aspect, Resetare și Conversie în forme; Sheets: Inserare → Schemă și Captură de ecran; 7 commituri, testele trec (PowerPoint 77,8%, Excel 80,2%).
