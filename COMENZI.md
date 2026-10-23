@@ -379,5 +379,5 @@ Format:
   din hub) sau e **punct de revenire** (os-187) nu se șterge niciodată. Simplu: o listă `docs/RELEASES_PASTRATE.md` (tag + motiv), iar curățarea din CI
   sare peste ele. Dacă poți reface os-150 și os-161 din commit-urile lor (`git log` după mesajele lor de Release), republică-le ca Release-uri
   păstrate; dacă nu, notează doar commit-urile lor în listă. Nu schimba nimic altceva în CI.
-- stare: nou
+- stare: preluat (2026-10-23 20:45 UTC, sesiunea OS) — P6-20 în docs/TASKS.md
 - rezultat:
