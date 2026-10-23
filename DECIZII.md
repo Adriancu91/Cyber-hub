@@ -97,4 +97,5 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
 - 2026-10-23 19:05 — **`cyber-universe` devine public** (Adrian), ca GitHub Actions să fie gratuit: minutele pentru repo-uri private s-au terminat
   (B-004: „recent account payments have failed or your spending limit needs to be increased”). Istoricul a fost verificat înainte: nicio cheie
   reală (doar certificatele și cheile de test din `tls/tests/data/`). Regula rămâne: cheile și tokenurile nu ajung niciodată în repo sau în hub.
-  `cyber-gpu` și `cyberspace` rămân private (atenție: CI-ul lor consumă din aceleași minute).
+  19:10 — **și `cyber-gpu` devine public** (Adrian; istoricul verificat: nicio cheie). `cyberspace` și `Cyber-hub` rămân private (n-au CI pe GitHub).
+  Consecință: sesiunea OS poate citi `cyber-gpu` direct; patch-urile nu mai trebuie copiate prin `integrare/cyber-gpu/` (rămâne ca arhivă).
