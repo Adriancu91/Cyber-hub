@@ -1,6 +1,6 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-23 04:46 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-23 05:32 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
@@ -9,13 +9,13 @@
   Scoruri: Word 80,3%, Excel 79,8%, Clipchamp 77,1%, PowerPoint 76,2%, Notițe 76,4%, Acrobat 73,2%, Photoshop 72,0%, formule 97,1%.
 - Prima prioritate: problemele găsite de Adrian la birou cu 0.9.0. Punctele 1–4 și 1b făcute. Acum: punctul 5, „totul așezat ca în programele cunoscute”:
   - **gata:** Sheets, PDF, Docs (D1–D7), Slides (L1–L7), **Imagini (I1–I5)**;
-  - **sesiunea asta:** Imagini I5 (literele subliniate în meniuri, litera pornește comanda), I4 (panourile **Proprietăți** și **Culoare / Mostre** noi,
-    **Ajustări** ca filă în coloana din dreapta); Video V3 (**bara cronologiei**: ↶ ↷ Scindare, Ștergere, Duplicare, Magnet, zoom) și V4
-    (Ctrl+← / →, Ctrl+= / − / 0, Ctrl+A, Ctrl+/, X / Z / C + săgeți pentru mutare și tăiere din tastatură).
+  - **sesiunea asta:** Video V1 (fără panglică: **antet** cu numele proiectului, formatul și **Exportare** în dreapta sus; **bara laterală din stânga**
+    cu Conținutul tău, Înregistrare, Muzică și sunete, Text, Tranziții, Elemente grafice) și V2 (în Conținutul tău, miniaturile pozelor și clipurilor
+    aduse; rămân și după ce le scoți din bandă, se pun înapoi cu ＋ sau trăgându-le pe bandă). Video V3 și V4 erau gata de dinainte.
 - Toate aplicațiile pornesc fără erori; testele noi și cele vechi de Imagini și Video trec în aplicația reală (cu taste adevărate).
 
 ## Urmează
-- Video V1: fără panglică, antet cu Exportare și bara laterală din stânga (Conținutul tău, Înregistrare, Muzică, Text, Tranziții); apoi V2 și V5; apoi Notițe.
+- Video V5: panoul Proprietăți pe file cu pictograme (Audio, Estompări, Filtre, Efecte, Culori, Viteză, Tranziție); apoi Notițe (N1–N6).
 - Punctul 6: butonul „Trimite o observație” (captură + text salvate local, Adrian le trimite el).
 - Kit de instalare nou doar când îl cere Adrian (întâi testează pe laptop, cu „Porneste Suite.cmd”).
 
@@ -30,7 +30,8 @@
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- De încercat (nu blochează): Imagini: clic pe meniul Imagine → litera subliniată de sub „Rotire” rotește poza; Fereastră → Proprietăți și Fereastră → Culoare (panourile din dreapta). Video: deasupra benzii ⧉ Duplicare / 🗑 Ștergere / 🧲 Magnet; ține X și apasă → (poza se mută). E ca la programele cunoscute?
+- De încercat (nu blochează): Video: sus în dreapta ⤓ Export; în stânga cele 6 secțiuni; adu 2 poze, scoate una din bandă cu 🗑 și trage-o înapoi din Conținutul tău. E ca la editorul video cunoscut?
+- De încercat (nu blochează): Imagini: Fereastră → Proprietăți și Fereastră → Culoare; Video: ține X și apasă → (poza se mută).
 - De încercat (nu blochează): Slides: clic pe un tabel → sus „Proiectare tabel” și „Aspect”; Proiectare → tema „Noapte”; Tranziții → Împingere → Opțiuni efect.
 - De încercat (nu blochează): Docs: clic într-un tabel → „Proiectare tabel” și „Aspect”; dublu clic deasupra primului rând → antetul direct pe pagină; Alt, H, 1 face aldin.
 - De încercat (nu blochează): Sheets și PDF așezate ca la birou; PDF → Editare → ✎ Editează text pe un act real; un .xlsx cu tabel făcut în Suite, deschis la birou.

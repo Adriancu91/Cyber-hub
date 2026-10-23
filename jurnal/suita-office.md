@@ -107,3 +107,5 @@
 - 2026-10-23 04:04 — Imagini: bara de unelte din stânga în ordinea cunoscută (doar pictograme, ◢ și clic dreapta arată grupul) și Alt+literă deschide direct meniul; 4 commituri, toate testele de Imagini trec.
 - 2026-10-23 04:46 — Imagini gata la capitolul „așezat ca în programele cunoscute”: literele subliniate în meniuri, panourile Proprietăți și Culoare / Mostre, Ajustări în coloana din dreapta.
 - 2026-10-23 04:46 — Video: bara cronologiei (Scindare, Ștergere, Duplicare, Magnet, zoom) și scurtăturile cunoscute (Ctrl+= / − / 0, Ctrl+A, Ctrl+/, X / Z / C + săgeți); 6 commituri, testele trec.
+- 2026-10-23 05:32 — Video: antet cu Exportare în dreapta sus și bara laterală din stânga (Conținutul tău, Înregistrare, Muzică și sunete, Text, Tranziții, Elemente grafice) în locul panglicii (V1).
+- 2026-10-23 05:32 — Video: Conținutul tău arată pozele și clipurile aduse, de pus înapoi pe bandă cu ＋ sau prin tragere (V2); 4 commituri, testele trec.
