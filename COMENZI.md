@@ -369,5 +369,5 @@ Format:
      (toleranță declarată), cu timpul măsurat pe 1 și pe N nuclee.
   4. Release din `main` doar după ce `wip/integrare-gpu` e unită și CI e verde. În `stare/cyber-universe.md`: ce s-a integrat, ce e SIMULARE și lista
      pentru fereastra de pe workstation.
-- stare: nou (după C-15)
+- stare: preluat (2026-10-23 17:45 UTC, sesiunea OS) — P6-19 în docs/TASKS.md
 - rezultat:
