@@ -20,3 +20,4 @@
 - 2026-10-23 02:15 — S18 n-a trecut poarta (918 < 1.032 întrebări născute; articolele s-au terminat), fără antrenare; E1 rămâne NECLAR (13/50). S19 = analiza creșterii (doar examen); pasul următor îl alege Adrian.
 - 2026-10-23 05:15 — S19 (analiza E1): creșterea 6 → 13 nu vine din tipurile atinse (+7 pe rest), dar 7/13 sunt răspunsuri lungi; nota strictă 2/50 față de 4/50 → semn slab. S21 = numărătoarea lungimilor pe toate examenele (procesor); E1 rămâne NECLAR, Adrian alege pasul următor.
 - 2026-10-23 08:15 — S21: răspunsurile lungi apar doar pe tipurile nevăzute; pe restul examenelor 117 față de 116 corecte fără lungi → fără regresie reală. Placa liberă; S20 (pasul după E1) așteaptă alegerea lui Adrian.
+- 2026-10-23 10:30 — Adrian a închis E1 (NECLAR) și a aprobat E2 (3 specialiști + ruter din #415); în coadă: S22 (pregătire, procesor) și S23 (antrenarea specialiștilor, placa, ~7 ore).
