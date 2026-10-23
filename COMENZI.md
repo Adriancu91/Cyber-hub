@@ -286,5 +286,5 @@ Format:
      `log gpu 40`, `gpu plan`, `hw`, `net` — placa de rețea a workstation-ului e NECUNOSCUTĂ, notează ce apare) și, separat, **testul 8** pe
      laptop (pornire directă → `net` → adresă; `fetch`), care încă n-a fost făcut.
   4. Testul pe workstation se face doar cu Adrian; Kronos stă în pauză cât durează (placa e liberă azi).
-- stare: nou
+- stare: preluat (2026-10-23 05:42 UTC, sesiunea OS) — P6-11 în docs/TASKS.md
 - rezultat:
