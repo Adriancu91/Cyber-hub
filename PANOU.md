@@ -1,32 +1,32 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-23 08:50 · **de:** centrul de comandă
-_(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-22.md`.)_
+**Actualizat:** 2026-10-23 08:55 · **de:** coordonator
+_(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-23.md`.)_
 
 ## Așteaptă de la tine, Adrian
-0000. ~~OS — testul 7~~ — **FĂCUT 22:41** (rețea prin partajarea Windows: DHCP, HTTPS OK la cald după repornirea plăcii). Găsit: buffer-ele de la prima inițializare sunt problema (nu cache-ul); la rece, scrierile OCP nu se aplică. OS-ul primește **C-10**. Nimic de la tine.
-1. **OS — testul 7 pe laptop, doar la rece** (pornire directă de pe stick, cablul la router): `net`, `rtl porneste rece`, `log rtl 60`, apoi `run fetch https://example.com/` dacă are adresă. Partea „la cald” nu mai e nevoie (rezolvată la 18:30). Sesiunea OS de 20:40 lucrează chiar acum și poate scoate un Release nou → uită-te întâi la lista din `stare/cyber-universe.md`.
-2. **Suita — de încercat (nu blochează):** Sheets și PDF așezate ca programele de la birou (se găsește totul unde te aștepți?); PDF pe o copie de act: adaugi o pagină, Ctrl+S, redeschizi; ✎ Editează text pe un act real; .xlsx cu tabel / forme deschis la birou (`stare/suita-office.md`).
-3. **Suita — de verificat (nu blochează):** Rezolvitor, fișiere cu parolă, .docx protejat, cod QR, PDF/A în validator, Slides pe al doilea monitor (`stare/suita-office.md`).
-4. **Suita — întrebare (nu blochează):** vrei server de timp la semnarea PDF? Dacă da, alegi serverul (`stare/suita-office.md`).
-5. **Opțional:** codul suitei pe un repo GitHub privat (`stare/suita-office.md`); depozitul OS public, ca actualizarea să meargă fără token (`stare/cyber-universe.md`).
+1. **Kronos — alege 1, 2 sau 3 pentru S20** (1 = închidem E1, trecem la specialiști + ruter, recomandat; 2 = antrenare pe cele 918 întrebări; 3 = altă metodă). Placa stă liberă din 00:33 până alegi (`cyberspace/plan/pentru_adrian.md`).
+2. **Fereastra pe workstation pentru Cyber-GPU (~30 min, Kronos oprit)** — acum e momentul bun, placa e liberă. Aștepți întâi Release-ul nou din C-12 (în lucru), apoi: inventarul din Windows, setările BIOS, `gpu identifica` de pe stick (`stare/cyber-gpu.md`, lista în `stare/cyber-universe.md` după C-12).
+3. **OS — testul 8 pe laptop** (Release os-155 sau cel nou din C-12): la cald cu F12 și la rece, fără comenzi `rtl`, poze la `net` (`stare/cyber-universe.md`).
+4. **Cyber-GPU — două decizii:** folosim firmware-ul semnat NVIDIA (licența lui cere sistem OSI, OS-ul e MIT)? și ce compilator pentru programele GPU: Mesa NAK (MIT) sau `ptxas` NVIDIA (restrictiv) (`stare/cyber-gpu.md`).
+5. **Cyber-GPU — CI:** mută `ci/github-actions-ci.yml` în `.github/workflows/` din repo-ul `cyber-gpu` (tokenul lor nu are voie) (`stare/cyber-gpu.md`).
+6. **Propunerea „Kronos bare-metal v0.2”** — da / nu / mai târziu (`idei/2026-10-23_kronos-bare-metal_v0.2.md`).
+7. **Suita — de încercat (nu blochează):** Notițe noi (Desenare, Carduri, clic dreapta, Ctrl+1/2/0), Video, Imagini, Docs/Slides tabele, Sheets și PDF ca la birou (`stare/suita-office.md`).
+8. **Suita — de verificat și o întrebare (nu blochează):** Rezolvitor, parole, .docx protejat, cod QR, PDF/A, al doilea monitor; vrei server de timp la semnarea PDF? Opțional: codul suitei pe GitHub (`stare/suita-office.md`).
 
 ## Proiectele acum
 | Proiect | Unde e | Lucrează acum? | Ultima veste (ora) |
 |---|---|---|---|
-| **Kronos** | S16 gata (verificator propriu = Qwen la 97,6 %). 886 teste | Da — **S17** pe placă de la 15:30, gata ~22:00, verdict la 23:15 | 17:15 (`cyberspace/plan/pentru_adrian.md`) |
-| **Cyber Universe OS** | **Prima ieșire pe internet** (18:30, la cald, cu cache). C-9 gata: Release os-144 cu pornirea la rece ca variantă (`rtl porneste rece`) | Da — sesiunea de 20:40 face golirea cache-ului implicită (P6-10f) | 20:45 (`cyber-universe` git, `docs/TASKS.md`) |
-| **Cyber-GPU** (nou, 23 oct) | driver propriu de calcul GPU (RTX 3070 Ti), repo `cyber-gpu`; prima sesiune pornită de Adrian la 02:30 pe laptop | Da — audit + structură + cercetare GSP; fără GPU în seara asta | 02:45 (`stare/cyber-gpu.md`) |
-| **Suita office** | Sheets gata „ca la birou”; PDF așezat ca programul cunoscut (unelte în stânga, panouri în dreapta, Ctrl+S peste fișier). Word 80,1%, Excel 79,8% | Da, continuu pe ThinkPad (urmează PDF bara de comentarii, apoi Docs, Slides…) | 20:25 (`stare/suita-office.md`) |
+| **Kronos** | E1 NECLAR (13/50, dar multe răspunsuri copiate); S21: fără regresie. 895 teste | Nu — placa liberă, așteaptă alegerea ta (S20) | 08:15 (`cyberspace/plan/pentru_adrian.md`) |
+| **Cyber Universe OS** | C-10 gata (os-155); stătea oprit din 05:50 (aștepta testul 8), repornit de C-12 | Da — sesiunea de 08:40 face C-12 (comanda `gpu`, P6-11) | 08:44 (`cyber-universe` git, `docs/TASKS.md`) |
+| **Cyber-GPU** | 7 piese de cod, 58 teste, doar în simulare; patch `gpu` predat OS-ului | Nu — așteaptă fereastra pe workstation | 03:05 (`stare/cyber-gpu.md`) |
+| **Suita office** | Toate 7 aplicații așezate ca programele cunoscute (punctul 5 gata). Word 80,3%, Excel 79,8% | Da, continuu pe ThinkPad (urmează 5b: nume fișier importat) | 08:45 (`stare/suita-office.md`) |
 
 ## Comenzi
-- **C-12** · cyber-universe · patch-ul `gpu identifica` de la Cyber-GPU + Release pentru fereastra de pe workstation — `nou` (08:45)
-- **C-11** · cyber-universe · experimente mici GPU + studiu de fezabilitate driver propriu — `nou`, după C-7 (23:15)
-- **C-10** · cyber-universe · buffer-ele primei inițializări (P6-10g) + accesul OCP la rece (P6-10h) — `nou` (22:50)
-- **C-7** · cyber-universe · bucla de test de la distanță — `nou`; se preia după ce rețeaua merge **la rece** (testul 7).
-- **C-3** · cyber-universe · Faza 6 (Claude în OS) — `preluat`: totul gata în emulator; rămâne P6-10 = testul pe laptop.
-- Terminate de la rularea de 14:50: **C-6** (os-134), **C-8** (revenire + variante, os-138), **C-9** (pornirea la rece, os-144) — toate `gata`.
-  Completările C-9 de la 18:20/18:30 (cache implicit, alias `fetch`) sunt în lucru acum (P6-10f).
+- **C-12** · cyber-universe · patch-ul `gpu identifica` + Release pentru workstation — `preluat` (08:42, P6-11)
+- **C-11** · cyber-universe · experimente mici GPU + studiu driver propriu — `nou`, după C-7
+- **C-7** · cyber-universe · bucla de test de la distanță — `nou`, după ce trece testul 8 la rece
+- **C-3** · cyber-universe · Faza 6 (Claude în OS) — `preluat`: rămâne testul pe laptop
+- Terminată de la rularea de aseară: **C-10** (buffer-ele primei inițializări + OCP la rece, os-155) — `gata` la 00:00.
 
 ## Propuneri de colaborare
-- Niciuna în așteptare.
+- **Kronos bare-metal v0.2** (`idei/2026-10-23_kronos-bare-metal_v0.2.md`) — recomandare: **mai târziu**; întâi testul 8 și fereastra pe workstation, după care partea cea mai ieftină (Kronos pe procesor în OS, K6-CPU) poate fi aprobată prima.
