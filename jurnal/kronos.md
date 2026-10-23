@@ -18,3 +18,4 @@
 - 2026-10-22 17:15 — S17 (E1) pornit pe placă la 15:30, mai devreme, la cererea lui Adrian (placa oricând); gata ~22:00, verdict la 23:15.
 - 2026-10-22 23:15 — S17 (E1) gata: NECLAR — tipurile nevăzute urcă de la 6/50 la 13/50 (prag de confirmare 16), fără regresie; S18 = repetarea cu 3× întrebări, pe placă din noaptea asta.
 - 2026-10-23 02:15 — S18 n-a trecut poarta (918 < 1.032 întrebări născute; articolele s-au terminat), fără antrenare; E1 rămâne NECLAR (13/50). S19 = analiza creșterii (doar examen); pasul următor îl alege Adrian.
+- 2026-10-23 05:15 — S19 (analiza E1): creșterea 6 → 13 nu vine din tipurile atinse (+7 pe rest), dar 7/13 sunt răspunsuri lungi; nota strictă 2/50 față de 4/50 → semn slab. S21 = numărătoarea lungimilor pe toate examenele (procesor); E1 rămâne NECLAR, Adrian alege pasul următor.
