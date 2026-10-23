@@ -1,8 +1,12 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-23 22:25 (ora României) · **de:** sesiunea OS programată (20:40) — C-16 gata, Release os-189
+**Actualizat:** 2026-10-24 00:10 (ora României) · **de:** sesiunea OS programată (23:35) — C-17 gata, Release os-190
 
 ## Acum
+- **C-17 gata: Release-urile testate pe hardware nu se mai șterg.** Lista e în `docs/RELEASES_PASTRATE.md` din repo-ul OS
+  (os-120, os-125, os-136, os-138, os-150, os-161 + punctul de revenire os-187); curățarea automată sare peste ele.
+  **os-150 și os-161 există din nou** la Releases, cu exact fișierele de atunci (sumele verificate), marcate „(păstrat)”, nu „latest”.
+  Release nou: **`os-190`** (același OS ca os-189, doar regula nouă în CI).
 - **C-16 gata: OS-ul folosește bibliotecile Cyber-GPU** (fixate pe commit-ul lor `41e44ba`), testate automat. **Release nou: `os-189`.**
   - `gpu identifica` trece placa prin `nvidia-ga104` (biblioteca Cyber-GPU); orice scriere cerută de bibliotecă e **refuzată și numărată**
     (rândul final arată „a refuzat 0 scrieri”). În QEMU: „nicio placa NVIDIA”, cum trebuie.
@@ -13,11 +17,9 @@
 - Lucrat pe ramura `wip/integrare-gpu`, unită în `main` doar după CI verde (run 188); `main` verde și după unire (run 189).
 - **Punct de revenire:** ramura `revenire/stabil-2026-10-23` (commit `9f67d7b`) + **Release `os-187` păstrat pentru totdeauna** (= aceeași stare).
   Tag-ul `stabil-2026-10-23` există doar local: sesiunea cloud nu are voie să urce tag-uri (eroare 403). Copia offline (bundle) trimisă lui Adrian.
-- **Corectură la decizia din 19:30:** Release-urile **os-150 și os-161 nu mai există** (regula „păstrează ultimele 5” le-a șters demult).
-  Commit-urile lor există; dacă trebuie, le reconstruiesc la cerere.
 
 ## Urmează
-- Coada OS-ului nu are nimic de făcut fără hardware. Când se întoarce Adrian: listele de mai jos (cu `os-189`), apoi C-7, C-11.
+- Coada OS-ului nu are nimic de făcut fără hardware. Când se întoarce Adrian: listele de mai jos (cu `os-190`), apoi C-7, C-11.
 
 Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/` (Intel 8254x/82574/I219).
@@ -31,7 +33,7 @@ Ce oferă proiectul celorlalți
 - **Tag-ul `stabil-2026-10-23` (2 minute, când ai timp):** pe GitHub → cyber-universe → Releases → „Draft a new release” → „Choose a tag” →
   scrie `stabil-2026-10-23` → „Create new tag” → Target: ramura `revenire/stabil-2026-10-23` → bifează „Set as a pre-release” → Publish.
   Până atunci punctul de revenire e ramura + os-187 (suficient).
-- Totul de mai jos e pentru când se întoarce (Release-ul de folosit: `os-189` sau mai nou):
+- Totul de mai jos e pentru când se întoarce (Release-ul de folosit: `os-190` sau mai nou):
 - **Fereastra a doua pe workstation** (~30 min, Kronos oprit; Secure Boot oprit, apoi repus pe Enabled): stick → F12 → **Esc** → `cyber>`,
   câte o poză după: `lspci` (`10de:2482` la `b3:00.0`), `gpu identifica` (**nou:** rândurile „cyber-gpu 41e44ba nvidia-ga104: GeForce RTX 3070 Ti”,
   BOOT_0/BOOT_42, „a refuzat 0 scrieri”), `log gpu 40`, `log pci 40`, `hw`, `lsusb`, `log usb 60`, `net`, `log e1000 40`, `cpu`, `cpu porneste`,
