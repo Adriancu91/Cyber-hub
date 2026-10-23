@@ -22,3 +22,8 @@
 2. **USB fără hub-uri:** dispozitivele din spatele hub-urilor nu sunt enumerate; și alegerea lui `/usb` ia primul „Mass Storage”, chiar fără mediu.
 3. **Rețeaua workstation-ului:** Intel I219-LM (`8086:15e3`, familia e1000e) — fără driver; `e1000` din QEMU e alt cip.
 4. **Ce merge:** UEFI + Limine pe Dell, procesor, 128 GB, tastatură/mouse USB, AHCI găsit, nimic scris pe disc.
+
+## Completare 10:00 — `log pci 40` (poza 04)
+Ultimul rând: **`pci: 27 dispozitive (ECAM la 0x60000000, magistralele 0-255)`**. MCFG declară toate cele 256 de magistrale, dar enumerarea
+parcurge doar arborele de la magistrala 0 (00:xx și 02:00.0 prin puntea `00:1c.x`). Confirmă cauza din C-13 punctul 1. Clasele notate:
+`00:05.4` 08:00:20 (IOAPIC), `00:08.1` 11:01:00, `00:14.2` 11:80:00 (termal), `00:16.0` 07:80:00 (MEI), `00:1f.2` 05:80:00 (PMC).
