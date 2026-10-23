@@ -306,5 +306,5 @@ Format:
      Judecă fiecare (adevărat/fals în codul nostru), cum cerea C-12 pasul 2.
   6. O schimbare de comportament pe Release (D-013): 1 întâi, cu Release; apoi 2–3. În `stare/cyber-universe.md`, lista pentru **fereastra a doua pe
      workstation**: `lspci` (trebuie să apară `10de:2482` la B3), `gpu identifica`, `gpu plan`, `log gpu 40`, `log pci 40`, `hw`.
-- stare: nou
+- stare: preluat (2026-10-23 06:53 UTC, sesiunea OS) — P6-13 … P6-16 în docs/TASKS.md
 - rezultat:
