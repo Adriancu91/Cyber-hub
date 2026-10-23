@@ -1,22 +1,21 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-23 18:14 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-23 19:01 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
   Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română sau engleză (butoanele RO / EN).
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere. Etapa 2 (toate funcțiile) e în lucru.
   Scoruri: Word 80,3%, Excel 79,8%, Clipchamp 77,1%, PowerPoint 76,2%, Notițe 76,4%, Acrobat 73,4%, Photoshop 72,0%, formule 97,1%.
-- Nou (după kit, în copia de lucru): Imagini → „Extrage text” (textul din poză → copiat / .txt / Docs, cu cuvintele nesigure
-  încadrate), poză → PDF căutabil sau cu text editabil, iar în PDF un document scanat devine text editabil.
+- Nou în această sesiune (în copia de lucru, după kit): textul editabil scos din scanări păstrează aldinul și cursivul;
+  în PDF, „Editează text” scrie textul nou cu fontul original al documentului când se poate; poza → PDF pe foaie A4 / Letter;
+  scurtături noi: Docs (Ctrl+0, Shift+F5, F4, Ctrl+Alt+P / O) și PDF (Ctrl+Shift+T = Decupează). Punctul „text din poze și scanări” e gata.
 - **Kitul de test 0.9.1 „Office Suite Test” e construit și testat:** `Office-Suite-Test-Instalare-0.9.1.exe` (98,9 MB) în workspace,
-  cu licența de test (pagina „Sunt de acord”), limita de 30 de zile, fereastra „Despre”, codul ofuscat, siguranțele Electron, fără depanare.
-- Teste trecute pe kit: toate cele 7 aplicații fără erori, 21 de fișiere reale din toate tipurile deschise ca la dublu-clic,
-  engleza completă (0 texte rămase), „Despre”; pe kitul final portul de depanare și pornirea „ca Node” sunt refuzate.
+  cu licența de test, limita de 30 de zile, fereastra „Despre”, codul ofuscat, fără depanare. Neschimbat în această sesiune.
 
 ## Urmează
 - Kitul așteaptă „da”-ul lui Adrian (instalare pe un PC de test / copiere pe stick). Nimic pe stick fără acordul lui.
-- În paralel: restul etapei 2 (acum: fontul potrivit la textul editabil din scanări, apoi celelalte funcții care lipsesc)
+- În paralel: restul etapei 2 (scurtăturile rămase din Docs și Video, apoi funcțiile care lipsesc din inventar)
   și formularul de raportare pentru testeri.
 
 ## Ce oferă proiectul celorlalți

@@ -137,3 +137,4 @@
 - 2026-10-23 17:20 — Kitul de test pregătit: licențele bibliotecilor, licența de test cu pagină de acceptare, limita de 30 de zile, „Despre”, numele „Office Suite Test”, siguranțe Electron și cod ofuscat; urmează construirea kitului 0.9.1.
 - 2026-10-23 17:37 — kitul de test 0.9.1 „Office Suite Test” construit și testat automat (7 aplicații, 21 de tipuri de fișiere, engleză, protecții); așteaptă „da”-ul lui Adrian.
 - 2026-10-23 18:14 — Text din poze și scanări: Imagini → Extrage text (copiat / .txt / Docs), poză → PDF căutabil sau editabil, PDF scanat → text editabil (Acrobat 73,4%).
+- 2026-10-23 19:01 — Scanări → text editabil cu aldin / cursiv păstrate, PDF „Editează text” cu fontul original, poză → PDF pe A4; scurtături noi în Docs (Ctrl+0, Shift+F5, F4, Ctrl+Alt+P/O) și PDF (Ctrl+Shift+T); 6 commituri, testele trec.
