@@ -41,3 +41,4 @@
 - 2026-10-23 09:30 — C-12: comanda `gpu` (nivel 0, doar citire) scrisă de la zero (repo-ul cyber-gpu e privat, patch-ul n-a putut fi citit), CI verde, Release os-163; observația `map_mmio` → P6-12; se așteaptă fereastra pe workstation și testul 8.
 - 2026-10-23 09:25 — Pornire manuală pentru C-12: comanda era deja gata (os-163); accesul la cyber-gpu tot refuzat (repo privat).
 - 2026-10-23 11:50 — C-13 punctele 1–3: PCI pe toate rădăcinile (os-166), USB în spatele hub-urilor (os-167), `/usb` = stick-ul cu sistemul (os-169); observațiile Cyber-GPU judecate; CI verde. P6-17 (reboot) în lucru în altă sesiune.
+- 2026-10-23 13:35 — C-13 gata (P6-17: `reboot` cu 4 metode, os-172). C-14 preluată: P6-16 rețeaua I219 în biblioteca `e1000e/` (os-174), K6-01 SSE/AVX salvate per fir, K6-02 partea 1 (celelalte nuclee pornesc la `cpu porneste`, parcate); 62 de scenarii trecute; CI: limita 45 min.
