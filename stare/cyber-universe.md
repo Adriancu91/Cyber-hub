@@ -14,7 +14,7 @@
   - **K6-02, partea 1: celelalte nuclee ale procesorului pornesc** (în QEMU: 4 din 4, ~10 ms fiecare) și stau „parcate”; doar la comanda
     `cpu porneste`, deci pornirea obișnuită nu se schimbă. Partea 2 (firele pe toate nucleele) = K6-02b, următoarea sarcină.
 - 62 de scenarii automate trecute (+1 sărit fără internet). CI: limita de timp ridicată la 45 min (două rulări fuseseră oprite la 20 min
-  pentru că instalarea uneltelor a durat 18 min). Release-uri: os-172 (P6-17), os-174 (P6-16); K6-01 și K6-02 în CI acum.
+  pentru că instalarea uneltelor a durat 18 min). Release-uri: os-172 (P6-17), os-174 (P6-16), os-175 (K6-01), os-177 (K6-02), toate cu CI verde.
 
 ## Urmează
 - K6-02b (planificatorul pe toate nucleele), apoi K6-03 (memorie mare pentru programe), K6-04 opțional. C-7 și C-11 așteaptă întoarcerea lui Adrian.
