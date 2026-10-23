@@ -1,23 +1,23 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-23 16:10 (ora României) · **de:** sesiunea OS programată (14:40) — C-14: K6-02b, K6-03
+**Actualizat:** 2026-10-23 18:25 (ora României) · **de:** sesiunea OS programată (17:40) — C-14 gata: K6-04
 
-## Acum
-- **K6-02b: firele rulează pe toate nucleele procesorului** (după `cpu porneste`; pornirea obișnuită rămâne pe un nucleu). Fiecare nucleu
-  are datele lui, încuietorile opresc întreruperile, nicio „trezire” nu se mai pierde între nuclee, iar paginile scoase din memoria nucleului
-  sunt șterse și din memoria rapidă (TLB) a celorlalte nuclee. Test în QEMU pe 4 nuclee: firele merg pe toate 4, 8 programe în paralel,
-  tot testul obișnuit al sistemului și testul de stres trec și pe 4 nuclee.
-- **K6-03: memorie mare pentru programe.** Apeluri noi `mem_map` / `mem_unmap`: un program cere, de exemplu, 1 GiB și îl primește în pagini
-  de 2 MiB (mai rapide), plin de zero; la eliberare memoria revine exact. Test: `/bin/memorie` alocă 1 GiB, scrie, verifică, eliberează.
-- 68 de scenarii automate trecute local (+1 sărit fără internet). **CI-ul GitHub nu mai pornește** (vezi Blocaje) → fără Release nou.
+## ## Acum
+- **C-14 e gata (toți pașii 1–5).** Azi, în ordine: rețeaua I219 (os-174), SSE/AVX (os-175), celelalte nuclee pornite (os-177),
+  firele pe toate nucleele (K6-02b), memorie mare `mem_map` (K6-03) și acum **K6-04: un program poate avea mai multe fire**
+  care lucrează în aceeași memorie, pe toate nucleele. Test: `/bin/fire` — 4 fire adună împreună 64 MiB, suma iese exactă; dacă un fir
+  greșește sau cere ieșirea, se oprește tot programul curat; un program cu 4 fire în buclă e oprit cu `kill`; memoria revine exact.
+- 70 de scenarii automate trecute local (+1 sărit fără internet). **CI-ul GitHub tot nu pornește** → K6-02b, K6-03, K6-04 sunt pe GitHub
+  (cod testat local) dar **fără Release** (ultimul: `os-177`).
+- Coada OS-ului nu mai are nimic de făcut fără Adrian: restul așteaptă testele pe hardware sau decizii.
 
 ## Urmează
-- K6-04 (opțional): fire multiple într-un proces. Apoi, când se întoarce Adrian: listele de mai jos, C-7, C-11.
+- Când revine CI: Release cu K6-02b..K6-04. Când se întoarce Adrian: listele de mai jos, apoi C-7, C-11.
 
-## Ce oferă proiectul celorlalți
+Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/` (Intel 8254x/82574/I219).
 - Pentru `cyber-gpu`: comanda `gpu` (nivel 0, doar citire), pe orice magistrală-rădăcină.
-- Pentru Kronos („Kronos în OS pe procesor”): SSE/AVX/AVX2 în programe, **fire pe toate nucleele**, **regiuni de memorie de GiB** (`mem_map`).
+- Pentru Kronos („Kronos în OS pe procesor”): SSE/AVX/AVX2 în programe, fire pe toate nucleele, regiuni de memorie de GiB (`mem_map`), **fire multiple în același program** (`cyber_user::thread`).
 
 ## De ce are nevoie de la ceilalți
 - Nimic nou.
