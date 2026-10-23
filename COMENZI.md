@@ -348,8 +348,8 @@ Format:
   5. **19:10: și `cyber-gpu` e public.** De acum îl poți citi direct (`git clone https://github.com/Adriancu91/cyber-gpu`, ramura `g0-g2-fundatie`):
      citește patch-ul și cele 6 observații din `integration/cyber-universe/` (punctul din C-12 rămas nefăcut) și propunerile `gpu gfw` / `gpu vbios`.
      Tot doar citire în placă; nu modifici `cyber-gpu`.
-- stare: preluat (2026-10-23 16:15 UTC, sesiunea OS) — P6-18 în docs/TASKS.md
-- rezultat:
+- stare: gata (preluat 2026-10-23 16:10 UTC, terminat 17:00 UTC, sesiunea OS) — P6-18 în docs/TASKS.md; CI verde (run 187), Release os-187
+- rezultat: repo-ul e public și CI-ul merge iar (uneltele se instalează în 22 s), commit-urile doar cu documente nu mai pornesc CI, stresul e săptămânal, Release `os-187` are toată munca din C-14, B-004 e închis, iar `actualizeaza` nu mai cere token (doar `gh-trimite` îl cere).
 
 ### C-16 · cyber-universe · OS + Cyber-GPU integrate și testate automat (CI) — cu punct de revenire înainte
 - data: 2026-10-23 19:30 · de la: Adrian (prin centrul de comandă) — „da, dar dacă se strică ceva ne asigurăm că putem reveni la starea de acum”
