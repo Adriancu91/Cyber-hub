@@ -1,45 +1,36 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-23 05:50 (ora României) · **de:** sesiunea OS programată (05:40) — **OPRIT: necesită analiza lui Adrian** (oprire de siguranță: 3 sesiuni fără sarcină; totul așteaptă testul 8, Release `os-155`, CI verde)
+**Actualizat:** 2026-10-23 09:30 (ora României) · **de:** sesiunea OS programată (08:25) — C-12 făcută (cu o limită), Release `os-163`
 
 ## Acum
-- **P6-10g gata (Release `os-155`, CI verde):** la pornire, inelele și bufferele plăcii Realtek stau acum într-un **bloc separat, între
-  16 MiB și 4 GB** (ca la repornirea care a mers la testul 7), nu în memoria de jos (3db000). Golirea cache-ului rămâne deocamdată.
-  `rtl porneste pagini` = alocarea veche, pentru comparație.
-- **Paza memoriei:** paginile în care scrie o placă nu mai pot fi date altcuiva (încercarea apare în jurnal, cu locul din cod).
-  Testul din QEMU: nicio pagină dată de două ori. `net` arată „paza memoriei: ok”.
-- **Diagnostic nou (nu schimbă placa):** bufferele se umplu cu `A5` în loc de zero. Dacă un cadru rău începe cu `a5a5…` → placa nu a
-  scris; dacă e `0000…` → altcineva a șters pagina. `net` numără „necitite de placa (model A5)”.
-- **P6-10h gata (doar `rtl porneste rece`):** accesul OCP e verificat înainte de scriere (citirea ta `0001` arată că OCP răspunde);
-  bitul 15 din E8DE e o comandă pe care cipul o șterge singur, iar C+ bit 3 există doar la 8169 — deci pașii 7, 9, 12 nu erau defecte.
-  La rece rămâne un singur semn real: **FIFO-ul de primire nu se golește** (pasul 3).
-- Rețeaua de test prin partajarea Windows (ICS) e notată în `docs/HARDWARE.md` și `docs/USB.md`.
-- 39 de teste ale driverului, 50 de scenarii automate (49 trecute + 1 sărit fără internet).
+- **Comanda `gpu` (P6-11, C-12) e în Release `os-163`** (CI verde): `gpu identifica` arată placa video (model, BAR-uri, Resizable BAR)
+  și, la NVIDIA, citește 2 registre publice de identitate → numele cipului (RTX 3070 Ti ar trebui să apară ca GA104, `0x174`).
+  **Zero scrieri în placă:** pagina de registre e mapată fără drept de scriere (testat: o scriere dă eroare în loc să ajungă la placă).
+- **Patch-ul de la Cyber-GPU NU a putut fi citit:** repo-ul `cyber-gpu` e privat și sesiunea OS nu are acces. Comanda a fost scrisă
+  de la zero (C-12 permite „rescrie-l în stilul nostru”), din documentație publică.
+- Din cele 6 observații, doar cea despre `map_mmio` (scrisă în hub) a putut fi verificată: **adevărată ca posibilitate** → sarcina P6-12.
+- 51 de scenarii automate trecute (+1 sărit fără internet). Pornirea și rețeaua sunt neschimbate față de os-155.
 
 ## Urmează
-- Testul 8 (lista mai jos). Dacă (C) ia adresă singur → P6-10g confirmată; apoi, ca schimbare separată, scoatem golirea cache-ului.
-- La rece: după (R), sarcina pentru FIFO (pasul 3) sau pentru registrele reviziei GU.
+- P6-12 pasul 1: jurnal pentru `map_mmio` (doar diagnostic). Testul 8 și fereastra pe workstation (listele mai jos).
+- După testul 8 (R): C-7 (bucla de test de la distanță), apoi C-11.
 
 ## Ce oferă proiectul celorlalți
-- Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3, rădăcini Mozilla), `json/` (și base64), `rtl8168/`.
-- Clienți minimali: API-ul Claude, GitHub Releases + contents, cu imitații pentru teste în `tools/`.
+- Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`.
+- Pentru `cyber-gpu`: comanda `gpu` (nivel 0) pe `main`, cu fereastra de registre doar-citire (`kernel/src/drivers/gpu.rs`).
 
 ## De ce are nevoie de la ceilalți
-- Nimic.
+- De la `cyber-gpu`: acces la patch și la cele 6 observații (repo privat) — prin Adrian.
 
 ## Blocaje / nevoie de Adrian
-- **Sesiunile OS sunt oprite (oprire de siguranță):** nu mai există nimic de făcut fără tine. Pornesc din nou când apar pozele
-  testului 8 în `rezultate/` sau o comandă nouă în `COMENZI.md`.
-- **Decizie, dacă vrei:** patch-ul `gpu` de la Cyber-GPU (doar citire, neaplicat) — îl aplicăm într-un Release sau nu.
-- **Testul 8 (Release `os-155`), cablul la laptopul cu Windows (partajarea ICS pornită).** Copiezi pe stick fișierele din Release
-  (ca la testul 7, inclusiv `cyber.rw`).
-  **(C) La cald — oprit complet, pornit cu F12 → stick:** **Esc** → `cyber>`. **Nu scrii nicio comandă `rtl`.**
-  1. Aștepți ~30 s → `net` → poză. Așteptat: o adresă 192.168.137.x, „cadre cu tip 0000: 0”, „necitite de placa (model A5): 0”,
-     „paza memoriei: ok”.
-  2. `log rtl 20` → poză (rândul „memorie DMA: un bloc …”).
-  3. Dacă are adresă: `fetch https://example.com/` → poză. Dacă NU are adresă: `log rx` → poză (primii octeți: `a5…` sau `00…`),
-     apoi `rtl porneste pagini` → ~30 s → `net` → poză.
-  **(R) La rece — oprit complet, pornit direct de pe stick (fără F12):** **Esc** → `cyber>`.
-  4. `net` → poză. 5. `rtl porneste rece` → ~30 s → `net` → poză; `log rtl 60` → poză (pașii; acum cu „OCP proba”).
-- `github.token` / `claude.key`: încă nu — după ce trece (R).
-- B-003 / P5-07 (suita ca modul): mai târziu.
+- **Acces la `cyber-gpu` pentru sesiunea OS** (ca să citim patch-ul și celelalte 5 observații): pe GitHub, aplicația Claude trebuie să
+  aibă acces la repo-ul `cyber-gpu` (https://github.com/apps/claude/installations/select_target) și repo-ul adăugat la sesiunea programată OS.
+- **Fereastra pe workstation (cu Release `os-163` sau mai nou, ~30 min, Kronos oprit):** copiezi pe stick fișierele din Release,
+  pornești de pe stick → **Esc** → `cyber>`, apoi câte o poză după fiecare: `lspci`, `gpu identifica`, `log gpu 40`, `gpu plan`, `hw`,
+  `net` (placa de rețea a workstation-ului e necunoscută: notăm ce apare). Nimic nu scrie în placa video.
+- **Testul 8 pe laptop (tot `os-163` sau mai nou; conține tot ce avea os-155),** cablul la laptopul cu Windows (ICS pornit):
+  **(C) La cald — F12 → stick:** **Esc** → `cyber>`, **nicio comandă `rtl`**. 1. ~30 s → `net` → poză (așteptat: adresă 192.168.137.x,
+  „necitite de placa (model A5): 0”, „paza memoriei: ok”). 2. `log rtl 20` → poză. 3. Cu adresă: `fetch https://example.com/` → poză;
+  fără adresă: `log rx` → poză, apoi `rtl porneste pagini` → ~30 s → `net` → poză.
+  **(R) La rece — pornit direct de pe stick:** **Esc** → `cyber>`. 4. `net` → poză. 5. `rtl porneste rece` → ~30 s → `net` → poză; `log rtl 60` → poză.
+- `github.token` / `claude.key`: încă nu — după ce trece (R). B-003 / P5-07: mai târziu.

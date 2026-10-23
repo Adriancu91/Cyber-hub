@@ -286,5 +286,5 @@ Format:
      `log gpu 40`, `gpu plan`, `hw`, `net` — placa de rețea a workstation-ului e NECUNOSCUTĂ, notează ce apare) și, separat, **testul 8** pe
      laptop (pornire directă → `net` → adresă; `fetch`), care încă n-a fost făcut.
   4. Testul pe workstation se face doar cu Adrian; Kronos stă în pauză cât durează (placa e liberă azi).
-- stare: preluat (2026-10-23 05:42 UTC, sesiunea OS) — P6-11 în docs/TASKS.md
-- rezultat:
+- stare: gata, cu o limită (preluat 2026-10-23 05:32 UTC, terminat 06:30 UTC, sesiunea OS) — P6-11 (+ P6-12 în coadă); CI verde, Release os-163. **Limită:** repo-ul `cyber-gpu` e privat, sesiunea OS nu are acces → patch-ul și 5 din cele 6 observații n-au fost citite.
+- rezultat: comanda `gpu` (identifica, plan, `log gpu`) e scrisă de la zero, doar citire (fereastra de registre e mapată fără drept de scriere, testat în QEMU), și e în Release os-163 împreună cu testul 8; observația despre `map_mmio` e adevărată ca posibilitate (P6-12), restul așteaptă acces la `cyber-gpu`; listele pentru fereastra de pe workstation și testul 8 sunt în `stare/cyber-universe.md`.
