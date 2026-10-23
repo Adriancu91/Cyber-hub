@@ -350,3 +350,24 @@ Format:
      Tot doar citire în placă; nu modifici `cyber-gpu`.
 - stare: preluat (2026-10-23 16:15 UTC, sesiunea OS) — P6-18 în docs/TASKS.md
 - rezultat:
+
+### C-16 · cyber-universe · OS + Cyber-GPU integrate și testate automat (CI) — cu punct de revenire înainte
+- data: 2026-10-23 19:30 · de la: Adrian (prin centrul de comandă) — „da, dar dacă se strică ceva ne asigurăm că putem reveni la starea de acum”
+- ce: **După C-15.** Pași, în ordine:
+  0. **Punct de revenire, ÎNAINTE de orice:** creează și urcă tag-ul adnotat `stabil-2026-10-23` pe commit-ul `9f67d7b` (main, 23 oct 16:10 UTC,
+     „P6-18: CI mai econom”) — e starea de acum, aleasă de Adrian. Nu muta și nu șterge niciodată acest tag. Scrie în `docs/STATE.md` cum se revine
+     (`git checkout stabil-2026-10-23`; Release-urile testate pe hardware rămân: os-150 internet pe laptop, os-161 pornire pe workstation).
+  1. **Integrarea se face pe ramura `wip/integrare-gpu`**, nu pe `main`. Pe `main` intră doar când **toate** scenariile existente trec și cele noi
+     trec. Dacă ceva nu se poate repara în 3 încercări (regula din CLAUDE.md §3), ramura se abandonează (rămâne în istoric), `main` rămâne neatins,
+     iar problema intră în `docs/BLOCKERS.md`. Fără `push --force`, fără rescrierea istoriei.
+  2. Dependență pe `https://github.com/Adriancu91/cyber-gpu` (public) **fixată pe tag-ul lor `stabil-2026-10-23` / commit `41e44ba`** (nu pe o ramură
+     mobilă), doar crate-urile no_std: `gpu-core`, `gpu-pci`, `nvidia-ga104` (probe, doar citire), `gpu-compute` (backend CPU), și `gpu-sim` doar pentru
+     teste. Verifică licențele (MIT) și că nimic nu scrie în registrele plăcii.
+  3. Scenarii QEMU noi, în CI: (a) `gpu identifica` pe calea reală → „nicio placă NVIDIA” (QEMU n-are); (b) `gpu identifica --sim` pe modelul
+     `gpu-sim` cu datele workstation-ului (`10de:2482`, BAR0 16 MiB, BAR1 256 MiB, BAR3 32 MiB) — **etichetat SIMULARE** în ieșire; (c) `kronos-calcul`
+     (program nou, ring 3): matmul și operațiile lui Kronos din `gpu-compute`, pe toate nucleele (SMP) și cu SSE/AVX, comparate cu referința
+     (toleranță declarată), cu timpul măsurat pe 1 și pe N nuclee.
+  4. Release din `main` doar după ce `wip/integrare-gpu` e unită și CI e verde. În `stare/cyber-universe.md`: ce s-a integrat, ce e SIMULARE și lista
+     pentru fereastra de pe workstation.
+- stare: nou (după C-15)
+- rezultat:

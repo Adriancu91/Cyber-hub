@@ -99,3 +99,7 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   reală (doar certificatele și cheile de test din `tls/tests/data/`). Regula rămâne: cheile și tokenurile nu ajung niciodată în repo sau în hub.
   19:10 — **și `cyber-gpu` devine public** (Adrian; istoricul verificat: nicio cheie). `cyberspace` și `Cyber-hub` rămân private (n-au CI pe GitHub).
   Consecință: sesiunea OS poate citi `cyber-gpu` direct; patch-urile nu mai trebuie copiate prin `integrare/cyber-gpu/` (rămâne ca arhivă).
+- 2026-10-23 19:30 — **Integrarea OS + Cyber-GPU (C-16), cu punct de revenire** (Adrian): înainte de orice, tag-ul `stabil-2026-10-23` pe starea de
+  acum (OS `9f67d7b`, Cyber-GPU `41e44ba`), pus de sesiunile proiectelor (centrul de comandă nu are drept de scriere în ele); integrarea pe ramură
+  separată, unită în `main` doar cu toate testele trecute; copii offline (git bundle) trimise lui Adrian. Commit-urile de pe GitHub nu se pierd
+  (push --force interzis), iar Release-urile testate pe hardware (os-150, os-161) rămân descărcabile.
