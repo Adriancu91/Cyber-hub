@@ -24,3 +24,4 @@
 - 2026-10-23 11:15 — S22 gata: 3 familii de întrebări, ruterul alege corect 189/210 = 90,0 % (trece la limită), #415 = 144/210; S23 (3 specialiști, placa) rulează, sfârșit estimat ~18:10.
 - 2026-10-23 20:15 — S23 (E2) gata: INFIRMAT — sistemul cu 3 specialiști + ruter are 137/210, sub #415 (144); E2 închis. În coadă: S24 = indexul de memorie peste Wikipedia ro, doar pe procesor (pregătirea E3); placa liberă.
 - 2026-10-23 23:15 — S24 (pregătirea E3, procesor) gata: indexul FTS5/BM25 peste Wikipedia ro găsește bucata cu răspunsul în primele 5 la 80,6 % din 160 de întrebări de examen (articolul la 84,4 %), ~65 ms, fără model. În coadă: S25 = căutarea mai bună (procesor); placa liberă, E3 cu antrenare așteaptă „da”-ul lui Adrian.
+- 2026-10-24 02:15 — S25 gata — căutarea mai bună nu e câștig real pe întrebări noi (+0,2 puncte); S26 (examen E3 nou, neatins, procesor) aprobat; S27 (E3 cu antrenare pe placă) așteaptă „da”-ul lui Adrian.
