@@ -133,3 +133,5 @@
 - 2026-10-23 14:56 — Explicațiile celor 110 funcții din Sheets sunt și în engleză; urmează testul ferestrelor PDF cu un fișier deschis și mesajele de stare.
 - 2026-10-23 15:45 — Meniul în engleză: barele de stare și 290 de mesaje de stare (Docs, Sheets, Notițe, Slides, Video) traduse, cu test automat; ferestrele PDF verificate cu un fișier deschis.
 - 2026-10-23 16:32 — Meniul în engleză: mesajele Video cu numere, ~70 de mesaje Sheets (analiza datelor, sortare, validare, Rezolvitor), Imagini și ferestrele mici OK / Anulare traduse; 8 commituri, testele trec.
+- 2026-10-23 17:20 — Meniul în engleză terminat: mesajele de eroare traduse și un test care găsește 0 texte românești rămase în toate aplicațiile.
+- 2026-10-23 17:20 — Kitul de test pregătit: licențele bibliotecilor, licența de test cu pagină de acceptare, limita de 30 de zile, „Despre”, numele „Office Suite Test”, siguranțe Electron și cod ofuscat; urmează construirea kitului 0.9.1.

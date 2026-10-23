@@ -1,39 +1,38 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-23 16:32 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-23 17:20 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
-  Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română (engleza e în lucru).
+  Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română sau engleză (butoanele RO / EN).
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere. Etapa 2 (toate funcțiile) e în lucru.
   Scoruri: Word 80,3%, Excel 79,8%, Clipchamp 77,1%, PowerPoint 76,2%, Notițe 76,4%, Acrobat 73,2%, Photoshop 72,0%, formule 97,1%.
-- Problemele găsite de Adrian la birou cu 0.9.0: punctele 1–6 gata. „Finalul cerut” a) și a2) gata.
-- **Sesiunea asta (meniul în engleză, b):** cu butonul **EN** sunt acum în engleză și mesajele cu numere din **Video**, aproape toate mesajele din **Sheets**
-  (analiza datelor, sortare, validare, Rezolvitor, import / export, înghețare…), mesajele din **Imagini** și **ferestrele mici de mesaj** (OK / Anulare) din toată suita.
-  Peste 560 de mesaje verificate de teste automate. Reparat pe loc: fereastra proprie „Închizi fără să salvezi?” rămâne cea a aplicației și în EN.
-- Toate aplicațiile pornesc fără erori; testele panglicilor, cdp-office-profiles, cdp-lang și cdp-all trec.
+- **Meniul în engleză (b) e gata:** și mesajele de eroare ale cititorilor de fișiere sunt traduse; un test nou trece prin toate aplicațiile și
+  toate filele: 0 texte românești rămase.
+- **Kitul de test (c2) e pregătit:** lista licențelor bibliotecilor (LICENTE-TERTI.txt, 150 de biblioteci, toate cu licențe permise),
+  licența de test (LICENTA.txt, cu pagina „Sunt de acord” în instalare), limita de 30 de zile (anunț cu 5 zile înainte, apoi mesaj cu contactul),
+  fereastra „ⓘ Despre”, numele „Office Suite Test”, siguranțele Electron, fără depanare în kit și codul ofuscat (testat: aplicația merge la fel).
+- Toate aplicațiile pornesc fără erori; testele de limbă, cdp-about, cdp-tabs și cdp-all trec.
 
 ## Urmează
-- Engleza pentru ce a mai rămas: mesajele de eroare venite din cititorii de fișiere (PDF, .docx, .psd).
-- Apoi kitul de instalare nou 0.9.x (c, d). Nimic pe stick fără „da”-ul lui Adrian.
+- c) Construirea kitului 0.9.1 „Office Suite Test” (întâi o variantă internă testată automat, apoi cea finală), d) testarea lui.
+- Nimic pe stick fără „da”-ul lui Adrian.
 
 ## Ce oferă proiectul celorlalți
 - Aplicațiile de birou pentru modulul Cyberspace (Kronos) și pentru setul de aplicații al Cyber Universe (după testarea umană).
 - Fiecare aplicație e separată (`src/<modul>/`) și are `module.toml` după `standarde/modul-v0.md`.
-- Cadrul comun de interfață (panglica cu file, profilurile de meniu, modul „unelte”, modul „meniuri”, tastele Alt, mini-bara, clic dreapta, panourile andocate),
-  traducerea pe loc a interfeței (RO / EN), scurtăturile pe tastatura românească, motorul de formule (~500 de funcții), OCR în 5 limbi, criptarea,
-  formularele și semnarea PDF, PDF/A, 67 de filtre de imagine, cititorii și scriitorii .docx / .xlsx / .pptx / .pdf / .odt / .rtf / .psd.
+- Cadrul comun de interfață (panglica, profilurile de meniu, tastele Alt, clic dreapta), traducerea pe loc RO / EN, motorul de formule (~500 de funcții),
+  OCR în 5 limbi, criptarea, formularele și semnarea PDF, cititorii și scriitorii .docx / .xlsx / .pptx / .pdf / .odt / .rtf / .psd.
+- Rețeta de kit protejat (licență de test cu expirare, ofuscare, siguranțe Electron) poate fi refolosită de alte proiecte cu aplicații desktop.
 
 ## De ce are nevoie de la ceilalți
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- **De privit:** capturile din dosarul workspace: „PDF profil 23.10 1 … 5 ….png”, „Meniuri clasice 23.10 *.png”, „Aerisit 23.10 *.png” și
-  „Simplu 23.10 *.png”. Spune care aranjare îți place; o poți alege din ▦ (sus în dreapta) în fiecare aplicație.
-- De încercat (nu blochează): jos în bara din stânga **EN** → orice aplicație: meniurile și ferestrele (de exemplu Docs → Corespondență → Plicuri) sunt în engleză; **RO** readuce româna.
-- De încercat (nu blochează): 💬 Trimite o observație (jos în stânga): scrie ceva, Salvează observația, apoi Deschide dosarul.
-- De verificat (nu blochează): .xlsx cu Rezolvitor, fișiere cu parolă și .docx protejat din Suite, deschise în programele de la serviciu;
-  un cod QR din Suite scanat cu telefonul; un PDF „Fă-l PDF/A” trecut printr-un validator oficial; Slides pe un al doilea monitor.
-- Întrebare (nu blochează): marcajul de timp la semnarea PDF cere un server de timp pe internet (se trimite doar amprenta documentului).
-  Îl adăugăm ca opțiune, cu un server ales de Adrian? Până atunci semnăturile au ora calculatorului.
+- **De citit:** `suite/release/LICENTA.txt` (licența de test, în română). Spune dacă vrei altă formulare înainte de kit.
+- **De privit:** capturile „PDF profil 23.10 …”, „Meniuri clasice 23.10 …”, „Aerisit 23.10 …”, „Simplu 23.10 …” din workspace: care aranjare îți place.
+- De încercat (nu blochează): jos în stânga **EN** → orice aplicație; **ⓘ Despre** arată versiunea și licențele.
+- De verificat (nu blochează): .xlsx cu Rezolvitor și fișiere cu parolă din Suite, deschise în programele de la serviciu; un cod QR scanat cu telefonul.
+- Întrebare (nu blochează): marcajul de timp la semnarea PDF cere un server de timp pe internet. Îl adăugăm ca opțiune?
+- Semnătura digitală a kitului (fără avertismentul albastru Windows) cere un certificat plătit: nu cumpărăm nimic fără decizia lui Adrian.
 - Codul e doar local, pe laptop; pus pe GitHub doar dacă Adrian decide.
