@@ -269,3 +269,22 @@ Format:
      Clean-room: `docs/CLEAN_ROOM.md`. Raportul se citește de Adrian înainte de orice decizie.
 - stare: nou (se preia după C-7)
 - rezultat:
+
+### C-12 · cyber-universe · Aplică patch-ul `gpu identifica` de la Cyber-GPU și scoate un Release pentru fereastra de pe workstation
+- data: 2026-10-23 08:45 · de la: Adrian (prin centrul de comandă). **Ridică oprirea de siguranță**: e o comandă nouă a lui Adrian.
+- ce: Proiectul nou `cyber-gpu` (`PROIECTE.md`, `stare/cyber-gpu.md`) a lăsat în repo-ul lui, în `integration/cyber-universe/`, un patch
+  care adaugă comanda de shell **`gpu`** (nivel 0: identificare PCI, BAR-uri, citirea a două registre publice **doar citire**, `log gpu`,
+  `gpu plan`) și 6 observații despre nucleu. Se aplică pe `2d038de`. Ce să faci:
+  1. Clonează `https://github.com/Adriancu91/cyber-gpu` (ramura `g0-g2-fundatie`), citește patch-ul **ca pe un cod străin**: verifică că nu
+     scrie în niciun registru al plăcii (regula D-013 și §4.3 din prompt-ul lor), că respectă clean-room, `// SAFETY:`, și că nu atinge
+     driverele existente. Dacă e în regulă, aplică-l pe `main` (sau rescrie-l în stilul nostru, dacă e mai curat), cu scenariu QEMU
+     (`gpu identifica` pe o mașină fără NVIDIA trebuie să spună clar „nicio placă NVIDIA”) și cu testul că nu există nicio scriere MMIO
+     în calea `gpu`. Nu lua operatorii CPU sau alte crate-uri acum: doar comanda `gpu`.
+  2. Citește cele 6 observații despre nucleu (de ex. `map_mmio` și cache-ul registrelor); pentru fiecare: adevărat/fals în codul nostru, și
+     dacă e adevărat, o sarcină în `docs/TASKS.md` (nu le repara acum, în afară de ce e trivial și sigur).
+  3. CI verde → Release nou. În `stare/cyber-universe.md`, lista pentru **fereastra de pe workstation** (stick, pornire, `lspci`, `gpu identifica`,
+     `log gpu 40`, `gpu plan`, `hw`, `net` — placa de rețea a workstation-ului e NECUNOSCUTĂ, notează ce apare) și, separat, **testul 8** pe
+     laptop (pornire directă → `net` → adresă; `fetch`), care încă n-a fost făcut.
+  4. Testul pe workstation se face doar cu Adrian; Kronos stă în pauză cât durează (placa e liberă azi).
+- stare: nou
+- rezultat:

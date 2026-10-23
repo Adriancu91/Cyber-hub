@@ -1,6 +1,6 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-23 02:45 · **de:** centrul de comandă
+**Actualizat:** 2026-10-23 08:50 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-22.md`.)_
 
 ## Așteaptă de la tine, Adrian
@@ -20,6 +20,7 @@ _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-2
 | **Suita office** | Sheets gata „ca la birou”; PDF așezat ca programul cunoscut (unelte în stânga, panouri în dreapta, Ctrl+S peste fișier). Word 80,1%, Excel 79,8% | Da, continuu pe ThinkPad (urmează PDF bara de comentarii, apoi Docs, Slides…) | 20:25 (`stare/suita-office.md`) |
 
 ## Comenzi
+- **C-12** · cyber-universe · patch-ul `gpu identifica` de la Cyber-GPU + Release pentru fereastra de pe workstation — `nou` (08:45)
 - **C-11** · cyber-universe · experimente mici GPU + studiu de fezabilitate driver propriu — `nou`, după C-7 (23:15)
 - **C-10** · cyber-universe · buffer-ele primei inițializări (P6-10g) + accesul OCP la rece (P6-10h) — `nou` (22:50)
 - **C-7** · cyber-universe · bucla de test de la distanță — `nou`; se preia după ce rețeaua merge **la rece** (testul 7).
