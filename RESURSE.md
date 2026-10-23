@@ -6,7 +6,7 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 ## Calculatoare
 | Resursă | Stăpân | Cine lucrează acolo | Reguli |
 |---|---|---|---|
-| Workstation-ul Kronos (calculatorul de la firmă, placa video) | `kronos` | executantul Kronos (Claude Code), la fiecare 30 de minute | doar Kronos; placa oricând, zi și noapte (decizia din 22 oct 15:10); `cyber-gpu` poate rula pe el **doar într-o fereastră aprobată de Adrian** (Kronos oprit cât durează); inventarul K0 din Windows (doar citire) e permis oricând |
+| Workstation-ul Kronos (calculatorul de la firmă, placa video) — **în pauză din 23 oct 10:15 cât e Adrian plecat** | `kronos` | executantul Kronos (Claude Code), la fiecare 30 de minute | doar Kronos; placa oricând, zi și noapte (decizia din 22 oct 15:10); `cyber-gpu` poate rula pe el **doar într-o fereastră aprobată de Adrian** (Kronos oprit cât durează); inventarul K0 din Windows (doar citire) e permis oricând |
 | Laptopul lui Adrian (ThinkPad L15) — rezervat suitei până își atinge ținta (~1–2 săptămâni de la 20 oct) | `suita-office` | sesiunile Claude Code ale suitei, pornite de sarcina locală „Suite – lucru continuu” (verifică la 5 minute) | doar suita; repornirea laptopului (de ex. pentru stick-ul OS) doar cu rezervare |
 | Cloud (sesiuni programate) | toate | supraveghetorul Kronos (la :15), Cyber Universe OS (la :40), coordonatorul hub-ului | fiecare lucrează doar în repo-ul lui + fișierele lui din hub |
 

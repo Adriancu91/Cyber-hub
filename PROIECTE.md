@@ -20,7 +20,7 @@
 - **Ce e:** driverul propriu de calcul pentru placa video (întâi NVIDIA RTX 3070 Ti / GA104), fără grafică, doar putere de calcul pentru
   Kronos în Cyber Universe OS. Rust `no_std`, clean-room (aceleași reguli ca OS-ul: `cyber-universe/docs/CLEAN_ROOM.md`, D-013).
 - **Unde e codul:** repo `Adriancu91/cyber-gpu` (workspace separat; intră mai târziu ca crate în `cyber-universe`, ca `rtl8168/`).
-- **Cum se lucrează:** sesiuni Claude Code pornite de Adrian (pe laptopul lui, „Auto mode”), după prompt-ul „MASTER PROMPT — CYBER-GPU v1.0”
+- **Cum se lucrează:** din 23 oct 10:25, **sesiune programată în cloud de 4 ori pe zi (01:25, 07:25, 13:25, 19:25)**, fără placa reală; înainte: sesiuni pornite de Adrian pe laptop, după prompt-ul „MASTER PROMPT — CYBER-GPU v1.0”
   și documentele din `idei/2026-10-23_*`. **Nu modifică** `cyber-universe` sau alte repo-uri: schimbările necesare în OS se livrează ca
   patch-uri documentate, pe care le preia sesiunea OS. Testele pe RTX se fac **doar pe workstation, într-o fereastră aprobată de Adrian**
   (workstation-ul e al lui Kronos). Raportează în hub: `stare/cyber-gpu.md`, `jurnal/cyber-gpu.md`.

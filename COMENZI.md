@@ -304,7 +304,32 @@ Format:
   4. **P6-16 (mai târziu, după 1–3):** driver pentru Intel I219-LM (`8086:15e3`, e1000e), după documentația publică Intel; util pentru bucla de pe workstation.
   5. **Observațiile de la `cyber-gpu`** (repo privat, de aceea C-12 nu le-a putut citi) sunt copiate în hub: `integrare/cyber-gpu/OBSERVATII_cyber-universe.md`.
      Judecă fiecare (adevărat/fals în codul nostru), cum cerea C-12 pasul 2.
+  5b. **P6-17 — `reboot` pe workstation nu repornește** (rămâne la „repornesc...”, poza 06): încearcă pe rând ACPI RESET_REG (FADT), portul 0xCF9
+     (valoarea 2, apoi 6), controlerul 8042 (0xFE), triple fault; câte un rând în jurnal. Important pentru bucla automată (C-7).
   6. O schimbare de comportament pe Release (D-013): 1 întâi, cu Release; apoi 2–3. În `stare/cyber-universe.md`, lista pentru **fereastra a doua pe
      workstation**: `lspci` (trebuie să apară `10de:2482` la B3), `gpu identifica`, `gpu plan`, `log gpu 40`, `log pci 40`, `hw`.
 - stare: preluat (2026-10-23 06:53 UTC, sesiunea OS) — P6-13 … P6-16 în docs/TASKS.md
+- rezultat:
+
+### C-14 · cyber-universe · Lucrul automat cât e Adrian plecat: rețeaua workstation-ului (I219) + pregătirea „Kronos în OS pe procesor” (K6-CPU)
+- data: 2026-10-23 10:20 · de la: Adrian (prin centrul de comandă) — ales de Adrian: „C-13 + rețea + K6-CPU”
+- ce: Adrian e plecat câteva zile; **niciun test pe hardware până se întoarce** (laptopul de test și workstation-ul stau). Lucrezi doar ce se poate
+  verifica în QEMU și în CI, în ordinea asta, **după C-13**, câte o sarcină pe rând, fiecare cu plan în `docs/plans/`, scenariu QEMU și README:
+  1. **P6-16 — driver Intel I219-LM** (`8086:15e3`, familia e1000e, pe workstation) după documentația publică Intel (datasheet I219 / manualul
+     pentru dezvoltatori 8254x/e1000e), clean-room. QEMU are `-device e1000e` (82574L, nu I219: inițializarea comună se testează acolo, diferențele
+     I219 — PHY prin MDIO, ULP — se notează pentru testul pe hardware). Aceleași lecții ca la Realtek: buffer-e DMA din blocul păzit, adrese 64 de
+     biți, `log` pe registre, variante de pornire (D-013).
+  2. **K6-CPU, pasul 1 — SSE/AVX în nucleu și în programe:** activează SSE/AVX (CR0/CR4, XCR0 prin XSETBV, doar ce raportează CPUID), salvează și
+     restaurează starea vectorială la comutarea firelor (XSAVE/XRSTOR, zonă aliniată la 64 de octeți per fir, mărimea din CPUID 0Dh); test: două
+     fire care calculează în vectori, rezultatul exact după mii de comutări; un program ring 3 cu AVX2.
+  3. **K6-CPU, pasul 2 — SMP:** pornirea celorlalte nuclee (MADT, INIT-SIPI-SIPI, trampolină sub 1 MiB, stivă și APIC per nucleu), încuietori reale
+     (spinlock-uri cu întreruperi oprite unde trebuie), planificator pe mai multe nuclee (cozi per nucleu sau o coadă cu încuietoare). Test: QEMU
+     `-smp 4`: 4 nuclee pornite, fire repartizate, testul de stres trece; nicio regresie la scenariile existente.
+  4. **K6-CPU, pasul 3 — memorie mare pentru programe:** un apel de sistem de alocare de regiuni (mmap anonim, MiB–GiB, pagini mari unde se poate) +
+     eliberare; limita heap-ului nucleului ridicată doar dacă e nevoie. Test: un program care alocă 1 GiB, îl scrie și îl verifică.
+  5. Opțional, dacă timpul permite: **fire multiple într-un proces** (pasul 4 din K6-CPU), cu test.
+  Fiecare pas: `main` mereu construibil, CI verde, Release la fiecare pas încheiat. Listele de test pe hardware se strâng în `stare/cyber-universe.md`
+  pentru întoarcerea lui Adrian. Planul general: `idei/2026-10-23_kronos-bare-metal_v0.2.md` și `idei/2026-10-23_arhitectura_kernel_cyber-universe.md`
+  (§14 = golurile). **Nu porni C-7 și C-11** până nu se întoarce Adrian. Lucrul cu `cyber-gpu` se face doar prin hub (`integrare/cyber-gpu/`).
+- stare: nou (după C-13)
 - rezultat:

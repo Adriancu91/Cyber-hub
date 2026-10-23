@@ -34,3 +34,8 @@ parcurge doar arborele de la magistrala 0 (00:xx și 02:00.0 prin puntea `00:1c.
 **26 hub `0bda:0411` (clasa 09:00:03, viteza 4)**. Hub-urile sunt doar identificate, porturile lor nu sunt enumerate → stick-ul ADATA (în spatele
 unui hub) lipsește. Port 25: SET_CONFIGURATION și Configure Endpoint ok, apoi **30 de încercări TEST UNIT READY, toate CSW 1, sense 2/3a/00**
 („Medium Not Present”, cititor de carduri gol) → „stick-ul de pe portul 25 nu pornește”. Confirmă C-13 punctele 2 și 3. Mouse și tastatură merg.
+
+## Completare 10:08 — `reboot` nu repornește workstation-ul (poza 06)
+`cyber> reboot` → `repornesc...` și calculatorul rămâne așa; Adrian l-a oprit din buton. Pe laptop `reboot` mergea. Pe Dell trebuie încercate,
+în ordine, metodele standard: registrul ACPI RESET_REG din FADT (dacă e declarat), apoi portul 0xCF9 (2, apoi 6), apoi controlerul 8042 (0xFE),
+apoi triple fault — cu un rând în jurnal pentru fiecare.

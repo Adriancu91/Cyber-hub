@@ -86,3 +86,8 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   (schimbările în OS = patch-uri de integrare preluate de sesiunea OS). Testele pe RTX: doar pe workstation, în ferestre aprobate de Adrian.
   Regula de cinste din prompt se aplică: nimic nu e „executat pe GPU” fără demonstrație pe placa fizică; QEMU/simulările se etichetează ca atare.
   C-11 (experimentele mici + studiul) rămâne în `cyber-universe`; cele două se completează, nu se dublează.
+- 2026-10-23 10:20 — **Adrian pleacă câteva zile.** Kronos în **pauză** (nimic pe placă; S20 așteaptă întoarcerea; workstation-ul rămâne în
+  Windows). Lucrează automat, în cloud, fără hardware: **OS-ul** (C-13, apoi C-14: driverul de rețea I219 al workstation-ului și pregătirea
+  „Kronos în OS pe procesor” — SSE/AVX, SMP, memorie mare) și **Cyber-GPU** (sesiune programată nouă, de 4 ori pe zi, cod și teste în simulare,
+  fără placa reală). **Niciun test pe hardware** până la întoarcere; listele se strâng în `stare/`. Integrarea `cyber-gpu` → OS se face prin
+  `integrare/cyber-gpu/` din hub (repo-ul `cyber-gpu` e privat, sesiunea OS nu-l poate citi).
