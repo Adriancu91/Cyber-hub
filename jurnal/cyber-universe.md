@@ -40,3 +40,4 @@
 - 2026-10-23 05:50 — Sesiune programată (05:40): nicio comandă nouă, niciun rezultat de la testul 8 → oprire de siguranță („OPRIT: necesită analiza lui Adrian” în STATE.md); CI verde.
 - 2026-10-23 09:30 — C-12: comanda `gpu` (nivel 0, doar citire) scrisă de la zero (repo-ul cyber-gpu e privat, patch-ul n-a putut fi citit), CI verde, Release os-163; observația `map_mmio` → P6-12; se așteaptă fereastra pe workstation și testul 8.
 - 2026-10-23 09:25 — Pornire manuală pentru C-12: comanda era deja gata (os-163); accesul la cyber-gpu tot refuzat (repo privat).
+- 2026-10-23 11:50 — C-13 punctele 1–3: PCI pe toate rădăcinile (os-166), USB în spatele hub-urilor (os-167), `/usb` = stick-ul cu sistemul (os-169); observațiile Cyber-GPU judecate; CI verde. P6-17 (reboot) în lucru în altă sesiune.

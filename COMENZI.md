@@ -308,7 +308,7 @@ Format:
      (valoarea 2, apoi 6), controlerul 8042 (0xFE), triple fault; câte un rând în jurnal. Important pentru bucla automată (C-7).
   6. O schimbare de comportament pe Release (D-013): 1 întâi, cu Release; apoi 2–3. În `stare/cyber-universe.md`, lista pentru **fereastra a doua pe
      workstation**: `lspci` (trebuie să apară `10de:2482` la B3), `gpu identifica`, `gpu plan`, `log gpu 40`, `log pci 40`, `hw`.
-- stare: preluat (2026-10-23 06:53 UTC, sesiunea OS) — P6-13 … P6-16 în docs/TASKS.md
+- stare: preluat (2026-10-23 06:53 UTC, sesiunea OS) — P6-13 … P6-17 în docs/TASKS.md. Gata: P6-13 (os-166), P6-14 (os-167), P6-15 (os-169), observațiile (p.5) în `docs/research/OBSERVATII-CYBER-GPU.md`; P6-17 în lucru (altă sesiune OS); P6-16 = C-14 pasul 1
 - rezultat:
 
 ### C-14 · cyber-universe · Lucrul automat cât e Adrian plecat: rețeaua workstation-ului (I219) + pregătirea „Kronos în OS pe procesor” (K6-CPU)
