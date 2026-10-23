@@ -91,3 +91,6 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   „Kronos în OS pe procesor” — SSE/AVX, SMP, memorie mare) și **Cyber-GPU** (sesiune programată nouă, de 4 ori pe zi, cod și teste în simulare,
   fără placa reală). **Niciun test pe hardware** până la întoarcere; listele se strâng în `stare/`. Integrarea `cyber-gpu` → OS se face prin
   `integrare/cyber-gpu/` din hub (repo-ul `cyber-gpu` e privat, sesiunea OS nu-l poate citi).
+- 2026-10-23 10:20 — **Kronos lucrează și cât e Adrian plecat** (pauza de la 10:15 ridicată): S20 = varianta 1 (E1 închis cu NECLAR); **E2 aprobat**
+  (3 specialiști + ruter, antrenați pe rând din #415, criteriile din strategia §7); după E2, pregătirea E3 (indexul de memorie) doar pe procesor.
+  Fără date noi descărcate. Când Adrian revine, workstation-ul se eliberează pentru fereastra OS/GPU (~30–60 min) între sarcini.
