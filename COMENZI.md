@@ -288,3 +288,23 @@ Format:
   4. Testul pe workstation se face doar cu Adrian; Kronos stă în pauză cât durează (placa e liberă azi).
 - stare: gata, cu o limită (preluat 2026-10-23 05:32 UTC, terminat 06:30 UTC, sesiunea OS) — P6-11 (+ P6-12 în coadă); CI verde, Release os-163. **Limită:** repo-ul `cyber-gpu` e privat, sesiunea OS nu are acces → patch-ul și 5 din cele 6 observații n-au fost citite.
 - rezultat: comanda `gpu` (identifica, plan, `log gpu`) e scrisă de la zero, doar citire (fereastra de registre e mapată fără drept de scriere, testat în QEMU), și e în Release os-163 împreună cu testul 8; observația despre `map_mmio` e adevărată ca posibilitate (P6-12), restul așteaptă acces la `cyber-gpu`; listele pentru fereastra de pe workstation și testul 8 sunt în `stare/cyber-universe.md`.
+
+### C-13 · cyber-universe · Prima pornire pe workstation: PCI pe toate rădăcinile (GPU invizibil), hub-uri USB, alegerea stick-ului
+- data: 2026-10-23 09:55 · de la: Adrian (prin centrul de comandă)
+- ce: Rezultatul: `rezultate/2026-10-23-workstation-os/REZULTAT.md` (3 poze). OS-ul pornește pe workstation (Dell, i9-10980XE, 128 GB văzuți), dar:
+  1. **P6-13 — PCI pe toate magistralele (prioritar, blochează `gpu identifica`):** pe Cascade Lake-X sunt mai multe magistrale-rădăcină
+     independente; RTX 3070 Ti e la `B3:00.0` și nu apare. Scanează **toate** magistralele din intervalul MCFG (`start_bus..=end_bus`, fiecare
+     device 0–31, funcția 0 și, dacă e multi-function, 1–7; vendor ≠ FFFF), fără dubluri cu parcurgerea punților; ordine stabilă (după bus/dev/fn).
+     Atenție la timp și la memoria mapată (256 de magistrale × 1 MiB ECAM: mapează doar ce citești). Test QEMU: `-device pxb-pcie` (o rădăcină
+     în plus) cu un dispozitiv pe ea → trebuie să apară în `lspci`. Pe laptop: aceeași listă ca înainte (fără regresie).
+  2. **P6-14 — USB: hub-uri** (`0bda:0411` USB 3, `0bda:5411` USB 2 pe workstation): enumerarea porturilor din spatele unui hub (clasa 09, Get Port
+     Status, Set Port Feature RESET, Route String / TT în contextul slotului xHCI). După specificația publică USB 2.0/3.x, cap. 11/10.
+  3. **P6-15 — `/usb` = stick-ul de pe care am pornit:** încearcă toate dispozitivele Mass Storage; sări peste cele cu „Medium Not Present”
+     (sense 2/3A); preferă discul care conține `cyber.rw` și `VERSIUNE`.
+  4. **P6-16 (mai târziu, după 1–3):** driver pentru Intel I219-LM (`8086:15e3`, e1000e), după documentația publică Intel; util pentru bucla de pe workstation.
+  5. **Observațiile de la `cyber-gpu`** (repo privat, de aceea C-12 nu le-a putut citi) sunt copiate în hub: `integrare/cyber-gpu/OBSERVATII_cyber-universe.md`.
+     Judecă fiecare (adevărat/fals în codul nostru), cum cerea C-12 pasul 2.
+  6. O schimbare de comportament pe Release (D-013): 1 întâi, cu Release; apoi 2–3. În `stare/cyber-universe.md`, lista pentru **fereastra a doua pe
+     workstation**: `lspci` (trebuie să apară `10de:2482` la B3), `gpu identifica`, `gpu plan`, `log gpu 40`, `log pci 40`, `hw`.
+- stare: nou
+- rezultat:

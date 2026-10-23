@@ -1,10 +1,10 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-23 09:45 · **de:** centrul de comandă
+**Actualizat:** 2026-10-23 09:55 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-23.md`.)_
 
 ## Așteaptă de la tine, Adrian
-00000. **Fereastra de pe workstation (în curs, 23 oct 09:30):** inventarul K0 din Windows e FĂCUT (`rezultate/2026-10-23-k0-workstation/`): Dell, i9-10980XE 18C/36T, RTX 3070 Ti `10de:2482` pe bus B3, ReBAR oprit. Urmează BIOS + OS de pe stick (os-161), apoi `gpu identifica` după C-12.
+00000. **Fereastra 1 pe workstation (09:30–09:55):** OS-ul PORNEȘTE pe workstation (i9, 128 GB), dar nu vede placa video (PCI pe mai multe rădăcini) → **C-13**; `rezultate/2026-10-23-workstation-os/`. Pune Secure Boot înapoi pe Enabled. Inventarul: inventarul K0 din Windows e FĂCUT (`rezultate/2026-10-23-k0-workstation/`): Dell, i9-10980XE 18C/36T, RTX 3070 Ti `10de:2482` pe bus B3, ReBAR oprit. Urmează BIOS + OS de pe stick (os-161), apoi `gpu identifica` după C-12.
 1. **Kronos — alege 1, 2 sau 3 pentru S20** (1 = închidem E1, trecem la specialiști + ruter, recomandat; 2 = antrenare pe cele 918 întrebări; 3 = altă metodă). Placa stă liberă din 00:33 până alegi (`cyberspace/plan/pentru_adrian.md`).
 2. **Fereastra pe workstation pentru Cyber-GPU (~30 min, Kronos oprit)** — acum e momentul bun, placa e liberă. Aștepți întâi Release-ul nou din C-12 (în lucru), apoi: inventarul din Windows, setările BIOS, `gpu identifica` de pe stick (`stare/cyber-gpu.md`, lista în `stare/cyber-universe.md` după C-12).
 3. **OS — testul 8 pe laptop** (Release os-155 sau cel nou din C-12): la cald cu F12 și la rece, fără comenzi `rtl`, poze la `net` (`stare/cyber-universe.md`).
@@ -23,6 +23,7 @@ _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-2
 | **Suita office** | Toate 7 aplicații așezate ca programele cunoscute (punctul 5 gata). Word 80,3%, Excel 79,8% | Da, continuu pe ThinkPad (urmează 5b: nume fișier importat) | 08:45 (`stare/suita-office.md`) |
 
 ## Comenzi
+- **C-13** · cyber-universe · PCI pe toate rădăcinile (GPU invizibil pe workstation), hub-uri USB, alegerea stick-ului — `nou` (09:55)
 - **C-12** · cyber-universe · patch-ul `gpu identifica` + Release pentru workstation — `preluat` (08:42, P6-11)
 - **C-11** · cyber-universe · experimente mici GPU + studiu driver propriu — `nou`, după C-7
 - **C-7** · cyber-universe · bucla de test de la distanță — `nou`, după ce trece testul 8 la rece
