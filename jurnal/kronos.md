@@ -22,3 +22,4 @@
 - 2026-10-23 08:15 — S21: răspunsurile lungi apar doar pe tipurile nevăzute; pe restul examenelor 117 față de 116 corecte fără lungi → fără regresie reală. Placa liberă; S20 (pasul după E1) așteaptă alegerea lui Adrian.
 - 2026-10-23 10:30 — Adrian a închis E1 (NECLAR) și a aprobat E2 (3 specialiști + ruter din #415); în coadă: S22 (pregătire, procesor) și S23 (antrenarea specialiștilor, placa, ~7 ore).
 - 2026-10-23 11:15 — S22 gata: 3 familii de întrebări, ruterul alege corect 189/210 = 90,0 % (trece la limită), #415 = 144/210; S23 (3 specialiști, placa) rulează, sfârșit estimat ~18:10.
+- 2026-10-23 20:15 — S23 (E2) gata: INFIRMAT — sistemul cu 3 specialiști + ruter are 137/210, sub #415 (144); E2 închis. În coadă: S24 = indexul de memorie peste Wikipedia ro, doar pe procesor (pregătirea E3); placa liberă.
