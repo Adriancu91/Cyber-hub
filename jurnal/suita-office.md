@@ -113,3 +113,5 @@
 - 2026-10-23 07:26 — Notițe N2: scurtăturile cunoscute (Ctrl+E căutare, Ctrl+T secțiune nouă, Ctrl+1…6 / Ctrl+0 etichete, Ctrl+PageUp / PageDown între pagini și altele); toate testele Notițe trec.
 - 2026-10-23 07:26 — Notițe N3 partea 1 (fila Pornire în ordinea cunoscută) făcută, dar pusă deoparte: la 1024 px panglica iese cu 19 px; o reia sesiunea următoare.
 - 2026-10-23 08:14 — Notițe N3: filele Pornire, Inserare (cu Marcaj de timp și Linkuri) și Vizualizare (cu Zoom) în ordinea cunoscută; reparat panoul grupurilor strânse care ieșea din fereastră; toate testele Notițe trec.
+- 2026-10-23 08:45 — Notițe: fila Desenare, clic dreapta pe pagini și secțiuni, vizualizarea Carduri și literele Alt; Notițe e gata la punctul 5, deci toate cele 7 aplicații sunt așezate ca în programele cunoscute.
+- 2026-10-23 08:45 — Reparată paleta de comenzi (Enter făcea uneori comanda de sub mouse); 6 commituri, toate testele trec.
