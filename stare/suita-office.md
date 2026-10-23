@@ -1,38 +1,39 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-23 10:54 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-23 11:41 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - O singură aplicație desktop (Electron + React + TypeScript), scrisă de la zero, totul local, fără cont și fără internet:
-  Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română.
+  Docs, Sheets, PDF, Slides, Imagini, Video, Notițe. Interfața e în română (engleza e în lucru).
 - Etapa 1 (compatibilitate) e gata: 529 de fișiere reale de test, 0 erori la deschidere. Etapa 2 (toate funcțiile) e în lucru.
   Scoruri: Word 80,3%, Excel 79,8%, Clipchamp 77,1%, PowerPoint 76,2%, Notițe 76,4%, Acrobat 73,2%, Photoshop 72,0%, formule 97,1%.
-- Problemele găsite de Adrian la birou cu 0.9.0: punctele 1–6 gata. „Finalul cerut” a) gata.
-- **Sesiunea asta (profilurile de meniu, a2 pasul 4):**
-  - **Sheets, Docs, Slides și Notițe** au acum butonul mic ▦ (sus în dreapta), ca PDF-ul: **Panglică** (cum era) sau **Meniuri clasice**
-    (un rând subțire Fișier / Pornire / Inserare…; fiecare se deschide ca listă cu pictograma, numele și scurtătura; lista prea înaltă se așază pe coloane).
-    Aceleași butoane, aceleași acțiuni; alegerea se ține minte pentru fiecare aplicație și se găsește și în „Caută o comandă” (Alt+Q).
-  - Video păstrează bara laterală (așezarea editorului video cunoscut); Imagini avea deja meniuri sus.
-- Toate aplicațiile pornesc fără erori; testul nou cdp-office-profiles și testele vechi ale panglicilor trec.
+- Problemele găsite de Adrian la birou cu 0.9.0: punctele 1–6 gata. „Finalul cerut” a) și a2) gata.
+- **Sesiunea asta:**
+  - **Profilurile de meniu sunt complete:** Sheets, Docs, Slides și Notițe au în butonul ▦ patru aranjări ale acelorași comenzi:
+    Panglică, Meniuri clasice, **Aerisit** (meniuri sus + o singură bară subțire cu butoanele folosite des; Ctrl+F1 o ascunde) și
+    **Simplu** (moduri de lucru Scrie / Inserează / Calculează…, restul filelor în „Mai mult”). PDF le avea deja.
+  - **Meniul în engleză (b) a început:** butoanele RO | EN jos în bara din stânga. În EN se traduc rama aplicației, numele tuturor
+    filelor și ale celor 182 de grupuri, iar Sheets → Pornire e tradus complet. Textul scris de utilizator nu se traduce niciodată.
+- Toate aplicațiile pornesc fără erori; testele panglicilor, cdp-office-profiles, cdp-lang și cdp-all trec.
 
 ## Urmează
-- Profilul „Aerisit” (și „Simplu”) pentru Sheets / Docs / Slides, după ce Adrian spune ce i-a plăcut la PDF.
-- Apoi meniul în engleză (b) și kitul de instalare nou 0.9.x (c, d). Nimic pe stick fără „da”-ul lui Adrian.
+- Engleza pentru restul butoanelor (Docs, Slides, PDF, Notițe, apoi celelalte file, Acasă și ferestrele de dialog).
+- Apoi kitul de instalare nou 0.9.x (c, d). Nimic pe stick fără „da”-ul lui Adrian.
 
 ## Ce oferă proiectul celorlalți
 - Aplicațiile de birou pentru modulul Cyberspace (Kronos) și pentru setul de aplicații al Cyber Universe (după testarea umană).
 - Fiecare aplicație e separată (`src/<modul>/`) și are `module.toml` după `standarde/modul-v0.md`.
 - Cadrul comun de interfață (panglica cu file, profilurile de meniu, modul „unelte”, modul „meniuri”, tastele Alt, mini-bara, clic dreapta, panourile andocate),
-  scurtăturile pe tastatura românească, motorul de formule (~500 de funcții), OCR în 5 limbi, criptarea, formularele și semnarea PDF, PDF/A,
-  67 de filtre de imagine, cititorii și scriitorii .docx / .xlsx / .pptx / .pdf / .odt / .rtf / .psd.
+  traducerea pe loc a interfeței (RO / EN), scurtăturile pe tastatura românească, motorul de formule (~500 de funcții), OCR în 5 limbi, criptarea,
+  formularele și semnarea PDF, PDF/A, 67 de filtre de imagine, cititorii și scriitorii .docx / .xlsx / .pptx / .pdf / .odt / .rtf / .psd.
 
 ## De ce are nevoie de la ceilalți
 - Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- **De privit:** capturile „PDF profil 23.10 1 … 5 ….png” (cele 4 aranjări ale PDF-ului) și „Meniuri clasice 23.10 Sheets / Docs / Slides / Notite.png”
-  din dosarul workspace. Spune care îți place și ce să schimbăm; după asta facem „Aerisit” și la celelalte aplicații.
-- De încercat (nu blochează): în Sheets ▦ (sus în dreapta) → Meniuri clasice → clic pe Pornire; înapoi cu ▦ → Panglică.
+- **De privit:** capturile din dosarul workspace: „PDF profil 23.10 1 … 5 ….png”, „Meniuri clasice 23.10 *.png”, „Aerisit 23.10 *.png” și
+  „Simplu 23.10 *.png”. Spune care aranjare îți place; o poți alege din ▦ (sus în dreapta) în fiecare aplicație.
+- De încercat (nu blochează): jos în bara din stânga **EN** → Sheets: fila Home e în engleză; **RO** readuce româna.
 - De încercat (nu blochează): 💬 Trimite o observație (jos în stânga): scrie ceva, Salvează observația, apoi Deschide dosarul.
 - De verificat (nu blochează): .xlsx cu Rezolvitor, fișiere cu parolă și .docx protejat din Suite, deschise în programele de la serviciu;
   un cod QR din Suite scanat cu telefonul; un PDF „Fă-l PDF/A” trecut printr-un validator oficial; Slides pe un al doilea monitor.

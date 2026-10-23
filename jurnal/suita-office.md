@@ -121,3 +121,5 @@
 - 2026-10-23 10:11 — Sheets la 1440 px cu toate grupurile întregi, Panou de selecție în Docs, textul editat în PDF păstrează serifele / aldinul / cursivul; 5 commituri, toate testele trec.
 - 2026-10-23 10:54 — Sheets, Docs, Slides și Notițe au acum două aranjări ale acelorași comenzi (butonul ▦): Panglică sau Meniuri clasice (liste sub Fișier / Pornire / Inserare…), alese și din Alt+Q.
 - 2026-10-23 10:54 — 5 commituri, toate testele trec; capturile „Meniuri clasice 23.10 *.png” așteaptă părerea lui Adrian, împreună cu cele ale PDF-ului.
+- 2026-10-23 11:41 — Profilurile de meniu complete: Sheets, Docs, Slides și Notițe au și „Aerisit” (o bară subțire sub meniuri) și „Simplu” (moduri de lucru), lângă Panglică și Meniuri clasice.
+- 2026-10-23 11:41 — Meniul în engleză început: butoanele RO | EN, rama, filele și grupurile traduse, Sheets → Pornire complet; 4 commituri, toate testele trec.
