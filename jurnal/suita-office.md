@@ -123,3 +123,5 @@
 - 2026-10-23 10:54 — 5 commituri, toate testele trec; capturile „Meniuri clasice 23.10 *.png” așteaptă părerea lui Adrian, împreună cu cele ale PDF-ului.
 - 2026-10-23 11:41 — Profilurile de meniu complete: Sheets, Docs, Slides și Notițe au și „Aerisit” (o bară subțire sub meniuri) și „Simplu” (moduri de lucru), lângă Panglică și Meniuri clasice.
 - 2026-10-23 11:41 — Meniul în engleză început: butoanele RO | EN, rama, filele și grupurile traduse, Sheets → Pornire complet; 4 commituri, toate testele trec.
+- 2026-10-23 12:35 — Meniul în engleză avansat: toate filele din Docs, Sheets, Slides și Notițe, plus 10 file din PDF, traduse (EN jos în stânga); 13 commituri, testele trec.
+- 2026-10-23 12:35 — Traducătorul alege sensul după loc („Ștergere” = Delete ca buton, Wipe ca tranziție); butonul din Slides „WordArt” se cheamă acum „Text artistic”.
