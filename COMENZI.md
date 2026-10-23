@@ -333,3 +333,17 @@ Format:
   (§14 = golurile). **Nu porni C-7 și C-11** până nu se întoarce Adrian. Lucrul cu `cyber-gpu` se face doar prin hub (`integrare/cyber-gpu/`).
 - stare: gata (preluat 2026-10-23 09:20 UTC, terminat 15:20 UTC, sesiunile OS) — P6-16 (os-174), K6-01 (os-175), K6-02 (os-177), K6-02b, K6-03, K6-04 (testate local; fără Release: CI-ul GitHub nu pornește din 11:03 UTC)
 - rezultat: toți cei 5 pași sunt făcuți și testați în QEMU (70 de scenarii trecute local); ultimele trei ies în Release la primul push după ce GitHub Actions merge din nou.
+
+### C-15 · cyber-universe · Repo-ul devine public (CI gratuit) + CI mai econom + Release-ul cu munca din C-14
+- data: 2026-10-23 19:10 · de la: Adrian (prin centrul de comandă) — Adrian face `cyber-universe` **public** (decizia 19:05; istoricul verificat de centrul
+  de comandă: nicio cheie reală, doar cheile de test din `tls/tests/data/`)
+- ce: Cauza B-004 era facturarea GitHub („The job was not started because recent account payments have failed or your spending limit needs to be
+  increased”): minutele gratuite pentru repo-uri private s-au terminat. Pe repo public Actions e gratuit. Ce să faci:
+  1. Verifică întâi că repo-ul e public (`gh api repos/Adriancu91/cyber-universe -q .visibility`). Dacă nu e încă, nu forța nimic: notează și treci la 2.
+  2. **CI mai econom** (oricum ar fi vizibilitatea): `paths-ignore` pentru `docs/**`, `**/*.md`, `tests/screens/**` (fără build la commit-urile care
+     schimbă doar documente/STATE.md); `concurrency` cu `cancel-in-progress: true` pe aceeași ramură; testul de stres o dată pe săptămână (nu zilnic);
+     cache pentru `~/.cargo` și `target/` dacă nu există. Release doar când s-a schimbat codul.
+  3. Când CI e verde: Release-ul cu K6-02b, K6-03, K6-04 (și ce mai lipsește din C-14). Închide B-004 în `docs/BLOCKERS.md` cu cauza exactă.
+  4. Cu repo-ul public, `actualizeaza` poate merge fără token: verifică și notează în `docs/USB.md`; tokenul rămâne necesar doar pentru `gh-trimite`.
+- stare: nou
+- rezultat:

@@ -94,3 +94,7 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
 - 2026-10-23 10:20 — **Kronos lucrează și cât e Adrian plecat** (pauza de la 10:15 ridicată): S20 = varianta 1 (E1 închis cu NECLAR); **E2 aprobat**
   (3 specialiști + ruter, antrenați pe rând din #415, criteriile din strategia §7); după E2, pregătirea E3 (indexul de memorie) doar pe procesor.
   Fără date noi descărcate. Când Adrian revine, workstation-ul se eliberează pentru fereastra OS/GPU (~30–60 min) între sarcini.
+- 2026-10-23 19:05 — **`cyber-universe` devine public** (Adrian), ca GitHub Actions să fie gratuit: minutele pentru repo-uri private s-au terminat
+  (B-004: „recent account payments have failed or your spending limit needs to be increased”). Istoricul a fost verificat înainte: nicio cheie
+  reală (doar certificatele și cheile de test din `tls/tests/data/`). Regula rămâne: cheile și tokenurile nu ajung niciodată în repo sau în hub.
+  `cyber-gpu` și `cyberspace` rămân private (atenție: CI-ul lor consumă din aceleași minute).
