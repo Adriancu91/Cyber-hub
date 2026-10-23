@@ -115,3 +115,5 @@
 - 2026-10-23 08:14 — Notițe N3: filele Pornire, Inserare (cu Marcaj de timp și Linkuri) și Vizualizare (cu Zoom) în ordinea cunoscută; reparat panoul grupurilor strânse care ieșea din fereastră; toate testele Notițe trec.
 - 2026-10-23 08:45 — Notițe: fila Desenare, clic dreapta pe pagini și secțiuni, vizualizarea Carduri și literele Alt; Notițe e gata la punctul 5, deci toate cele 7 aplicații sunt așezate ca în programele cunoscute.
 - 2026-10-23 08:45 — Reparată paleta de comenzi (Enter făcea uneori comanda de sub mouse); 6 commituri, toate testele trec.
+- 2026-10-23 09:24 — Punctele 5b și 6 gata: numele fișierului importat pe tab (Salvează propune același loc) și butonul „Trimite o observație” (text + poză salvate local).
+- 2026-10-23 09:24 — Panglica și bara din stânga mai înguste când nu e loc: Sheets la 1440 px păstrează Stiluri și Celule ca butoane mari; 4 commituri, toate testele trec.
