@@ -371,3 +371,13 @@ Format:
      pentru fereastra de pe workstation.
 - stare: gata (preluat 2026-10-23 17:45 UTC, terminat 19:25 UTC, sesiunea OS) — P6-19 în docs/TASKS.md; CI verde pe ramură (run 188) și pe main (run 189), Release os-189. **Limită la pasul 0:** tag-ul nu se poate urca din cloud (403) → ramura `revenire/stabil-2026-10-23` pe `9f67d7b` + os-187 păstrat de CI; os-150/os-161 nu mai existau.
 - rezultat: OS-ul folosește bibliotecile Cyber-GPU fixate pe 41e44ba (identificarea plăcii fără nicio scriere, simularea plăcii de pe workstation marcată SIMULARE, calculul lui Kronos pe toate nucleele identic cu referința), testate în CI, în Release os-189.
+
+### C-17 · cyber-universe · Release-urile testate pe hardware nu se mai șterg
+- data: 2026-10-23 22:50 · de la: Adrian (prin centrul de comandă)
+- ce: CI-ul păstrează doar ultimele 5 Release-uri (`ci.yml`, `tail -n +6 | … gh release delete`), și așa s-au șters os-150 (prima ieșire pe internet,
+  laptop) și os-161 (prima pornire pe workstation). Regula de acum: un Release care a fost **testat pe hardware** (apare într-un `rezultate/…/REZULTAT.md`
+  din hub) sau e **punct de revenire** (os-187) nu se șterge niciodată. Simplu: o listă `docs/RELEASES_PASTRATE.md` (tag + motiv), iar curățarea din CI
+  sare peste ele. Dacă poți reface os-150 și os-161 din commit-urile lor (`git log` după mesajele lor de Release), republică-le ca Release-uri
+  păstrate; dacă nu, notează doar commit-urile lor în listă. Nu schimba nimic altceva în CI.
+- stare: nou
+- rezultat:
