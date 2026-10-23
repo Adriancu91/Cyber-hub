@@ -135,3 +135,4 @@
 - 2026-10-23 16:32 — Meniul în engleză: mesajele Video cu numere, ~70 de mesaje Sheets (analiza datelor, sortare, validare, Rezolvitor), Imagini și ferestrele mici OK / Anulare traduse; 8 commituri, testele trec.
 - 2026-10-23 17:20 — Meniul în engleză terminat: mesajele de eroare traduse și un test care găsește 0 texte românești rămase în toate aplicațiile.
 - 2026-10-23 17:20 — Kitul de test pregătit: licențele bibliotecilor, licența de test cu pagină de acceptare, limita de 30 de zile, „Despre”, numele „Office Suite Test”, siguranțe Electron și cod ofuscat; urmează construirea kitului 0.9.1.
+- 2026-10-23 17:37 — kitul de test 0.9.1 „Office Suite Test” construit și testat automat (7 aplicații, 21 de tipuri de fișiere, engleză, protecții); așteaptă „da”-ul lui Adrian.
