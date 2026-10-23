@@ -10,7 +10,7 @@
   acum cinstit la **I4** (licența firmware-ului NVIDIA), nu la I2.
 - **Calcul pe procesor (pentru Kronos în OS):** înmulțirea de matrice pe blocuri și cu greutăți bf16, identică bit cu bit cu varianta de
   referință, de ~12 ori mai rapidă pe calculator. Conversia bf16 verificată pe toate cele 65 536 de valori.
-- **CI activ pe GitHub** și verde. 82 de teste trec. Totul e pe ramura `g0-g2-fundatie` (`main` nu există).
+- **CI activ pe GitHub** (a fost verde la rulările 2–4). 82 de teste trec local. Totul e pe ramura `g0-g2-fundatie` (`main` nu există).
 
 ## Urmează
 - Fără placă: extragerea descrierii FWSEC din VBIOS (doar citire, pe imagine sintetică) și calculul regiunilor de memorie pentru GSP.
@@ -30,4 +30,6 @@
 - **Compilatorul pentru programele GPU:** Mesa NAK (MIT) sau `ptxas` (NVIDIA). Recomandarea tehnică: NAK pentru primul program (§5.2).
 - **Fereastra pe workstation (~30 min, Kronos oprit):** `gpu identifica`, apoi `gpu gfw` și `gpu vbios` dacă OS-ul le are; lista: `docs/TEST_MATRIX.md` partea B.
   Notează și poza din BIOS cu „Above 4G Decoding”.
+- **CI pe GitHub nu mai pornește** (de la 13:46): joburile nu primesc calculator, probabil limita de minute pentru depozite private.
+  Verifică pe GitHub: Settings → Billing and plans → Actions. Nu e o greșeală în cod (verificările locale trec).
 - „Da” pentru propunerea către OS (comenzile `gpu gfw` / `gpu vbios`).
