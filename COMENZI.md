@@ -369,5 +369,5 @@ Format:
      (toleranță declarată), cu timpul măsurat pe 1 și pe N nuclee.
   4. Release din `main` doar după ce `wip/integrare-gpu` e unită și CI e verde. În `stare/cyber-universe.md`: ce s-a integrat, ce e SIMULARE și lista
      pentru fereastra de pe workstation.
-- stare: preluat (2026-10-23 17:45 UTC, sesiunea OS) — P6-19 în docs/TASKS.md
-- rezultat:
+- stare: gata (preluat 2026-10-23 17:45 UTC, terminat 19:25 UTC, sesiunea OS) — P6-19 în docs/TASKS.md; CI verde pe ramură (run 188) și pe main (run 189), Release os-189. **Limită la pasul 0:** tag-ul nu se poate urca din cloud (403) → ramura `revenire/stabil-2026-10-23` pe `9f67d7b` + os-187 păstrat de CI; os-150/os-161 nu mai existau.
+- rezultat: OS-ul folosește bibliotecile Cyber-GPU fixate pe 41e44ba (identificarea plăcii fără nicio scriere, simularea plăcii de pe workstation marcată SIMULARE, calculul lui Kronos pe toate nucleele identic cu referința), testate în CI, în Release os-189.

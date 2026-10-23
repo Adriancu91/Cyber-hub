@@ -1,36 +1,40 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-23 20:05 (ora României) · **de:** sesiunea OS programată (19:09) — C-15 gata, Release os-187
+**Actualizat:** 2026-10-23 22:25 (ora României) · **de:** sesiunea OS programată (20:40) — C-16 gata, Release os-189
 
-## ## Acum
-- **C-15 gata.** Repo-ul e public → verificările automate (CI) merg din nou, gratuit. **Release nou: `os-187`** = toată munca din C-14
-  (rețeaua I219, SSE/AVX, toate nucleele, memorie mare, fire multiple într-un program).
-- CI-ul e mai econom: nu mai rulează când se schimbă doar documente; o rulare nouă o oprește pe cea veche; testul lung de stabilitate
-  rulează o dată pe săptămână; uneltele se instalează în 22 de secunde (înainte ~20 de minute).
-- Prima rulare a găsit o greșeală într-un test (nu în sistem): pe 4 nuclee testul își amesteca notițele. Reparat; acum verde.
-- `actualizeaza` de pe stick **nu mai are nevoie de token** (doar `gh-trimite` îl mai cere). Se confirmă la primul test pe stick.
+## Acum
+- **C-16 gata: OS-ul folosește bibliotecile Cyber-GPU** (fixate pe commit-ul lor `41e44ba`), testate automat. **Release nou: `os-189`.**
+  - `gpu identifica` trece placa prin `nvidia-ga104` (biblioteca Cyber-GPU); orice scriere cerută de bibliotecă e **refuzată și numărată**
+    (rândul final arată „a refuzat 0 scrieri”). În QEMU: „nicio placa NVIDIA”, cum trebuie.
+  - **SIMULARE** (doar în testele automate, nu pe stick): `gpu identifica --sim` pe modelul plăcii de pe workstation — 10de:2482 la b3:00.0,
+    BAR0 16 MiB, BAR1 256 MiB, BAR3 32 MiB, cipul GA104. Asta nu dovedește nimic despre placa reală.
+  - `/bin/kronos-calcul` (program nou): calculul lui Kronos (un bloc de tip Kronos + matmul) pe toate nucleele și cu SSE/AVX, comparat cu
+    referința bibliotecii: identic bit cu bit pe 4 nuclee; cu AVX2+FMA eroarea maximă 0,0000038 (toleranța 0,00001). Timpii din QEMU nu contează.
+- Lucrat pe ramura `wip/integrare-gpu`, unită în `main` doar după CI verde (run 188); `main` verde și după unire (run 189).
+- **Punct de revenire:** ramura `revenire/stabil-2026-10-23` (commit `9f67d7b`) + **Release `os-187` păstrat pentru totdeauna** (= aceeași stare).
+  Tag-ul `stabil-2026-10-23` există doar local: sesiunea cloud nu are voie să urce tag-uri (eroare 403). Copia offline (bundle) trimisă lui Adrian.
+- **Corectură la decizia din 19:30:** Release-urile **os-150 și os-161 nu mai există** (regula „păstrează ultimele 5” le-a șters demult).
+  Commit-urile lor există; dacă trebuie, le reconstruiesc la cerere.
 
 ## Urmează
-- Când se întoarce Adrian: listele de mai jos (cu `os-187`), apoi C-7, C-11. Până atunci coada OS-ului nu are nimic de făcut fără hardware.
+- Coada OS-ului nu are nimic de făcut fără hardware. Când se întoarce Adrian: listele de mai jos (cu `os-189`), apoi C-7, C-11.
 
 Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/` (Intel 8254x/82574/I219).
-- Pentru `cyber-gpu`: comanda `gpu` (nivel 0, doar citire), pe orice magistrală-rădăcină.
-- Pentru Kronos („Kronos în OS pe procesor”): SSE/AVX/AVX2 în programe, fire pe toate nucleele, regiuni de memorie de GiB (`mem_map`), **fire multiple în același program** (`cyber_user::thread`).
+- Pentru `cyber-gpu`: bibliotecile lor rulează acum în nucleu (adaptor doar-citire) și în programe (`gpu-compute`); scenarii CI `gpu`, `gpu-sim`, `kronos-calcul`.
+- Pentru Kronos: SSE/AVX/AVX2 în programe, fire pe toate nucleele, `mem_map` (GiB), fire multiple într-un program, `/bin/kronos-calcul` ca punct de pornire.
 
 ## De ce are nevoie de la ceilalți
-- Nimic nou.
+- `cyber-gpu`: tag-ul lor `stabil-2026-10-23` nu apare încă pe GitHub (probabil aceeași limită 403); OS-ul folosește direct commit-ul `41e44ba`, deci nu blochează.
 
 ## Blocaje / nevoie de Adrian
-- **Nimic urgent.** Problema cu CI-ul e rezolvată (repo public). Totul de mai jos e pentru când se întoarce (Release-ul de folosit: `os-187` sau mai nou):
-- **Fereastra a doua pe workstation** (cel mai nou Release, ~30 min, Kronos oprit; Secure Boot oprit, apoi repus pe Enabled):
-  stick din Release → F12 → **Esc** → `cyber>`, câte o poză după: `lspci` (trebuie să apară `10de:2482` la `b3:00.0`), `gpu identifica`,
-  `gpu plan`, `log gpu 40`, `log pci 40`, `hw`, `lsusb` (stick-ul ADATA ca `port X.Y`), `log usb 60`,
-  **nou:** `net` și `log e1000 40` (placa I219; cu cablul în router, după ~30 s `net` ar trebui să arate o adresă), `cpu`, apoi
-  `cpu porneste` (câte nuclee pornesc din 36; acum ele chiar rulează fire), apoi `cpu`, la final `reboot` (trebuie să repornească; dacă nu, poză). Nimic nu scrie în placa video.
-- **Testul 8 pe laptop** (cel mai nou Release; rețeaua Realtek e neschimbată față de os-155), cablul la laptopul cu Windows (ICS pornit):
-  **(C) La cald — F12 → stick:** **Esc** → `cyber>`, nicio comandă `rtl`. 1. ~30 s → `net` → poză. 2. `log rtl 20` → poză.
-  3. Cu adresă: `fetch https://example.com/` → poză; fără adresă: `log rx` → poză, apoi `rtl porneste pagini` → ~30 s → `net` → poză.
-  **(R) La rece — pornit direct de pe stick:** **Esc** → `cyber>`. 4. `net` → poză. 5. `rtl porneste rece` → ~30 s → `net` → poză; `log rtl 60` → poză.
-  În plus: `lspci`, `lsusb`, `cpu porneste` → poză, `reboot` (trebuie să repornească).
-- `github.token`: nu mai trebuie pentru `actualizeaza` (repo public); doar pentru `gh-trimite`, mai târziu. `claude.key`: încă nu — după ce trece (R). B-003 / P5-07: mai târziu.
+- **Tag-ul `stabil-2026-10-23` (2 minute, când ai timp):** pe GitHub → cyber-universe → Releases → „Draft a new release” → „Choose a tag” →
+  scrie `stabil-2026-10-23` → „Create new tag” → Target: ramura `revenire/stabil-2026-10-23` → bifează „Set as a pre-release” → Publish.
+  Până atunci punctul de revenire e ramura + os-187 (suficient).
+- Totul de mai jos e pentru când se întoarce (Release-ul de folosit: `os-189` sau mai nou):
+- **Fereastra a doua pe workstation** (~30 min, Kronos oprit; Secure Boot oprit, apoi repus pe Enabled): stick → F12 → **Esc** → `cyber>`,
+  câte o poză după: `lspci` (`10de:2482` la `b3:00.0`), `gpu identifica` (**nou:** rândurile „cyber-gpu 41e44ba nvidia-ga104: GeForce RTX 3070 Ti”,
+  BOOT_0/BOOT_42, „a refuzat 0 scrieri”), `log gpu 40`, `log pci 40`, `hw`, `lsusb`, `log usb 60`, `net`, `log e1000 40`, `cpu`, `cpu porneste`,
+  `cpu`, **nou:** `run kronos-calcul` (timpii reali pe 1 și pe toate nucleele), la final `reboot`. Nimic nu scrie în placa video.
+- **Testul 8 pe laptop** (rețeaua Realtek neschimbată față de os-155): pașii (C) și (R) de data trecută; în plus `run kronos-calcul` → poză.
+- `github.token`: doar pentru `gh-trimite`, mai târziu. `claude.key`: după ce trece (R). B-003 / P5-07: mai târziu.
