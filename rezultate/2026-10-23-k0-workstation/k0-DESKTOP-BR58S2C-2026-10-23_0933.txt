@@ -1,0 +1,23 @@
+# K0 inventar (2026-10-23_0933) - doar citire
+OS: Microsoft Windows 11 Pro 10.0.26200 build 26200
+CPU: Intel(R) Core(TM) i9-10980XE CPU @ 3.00GHz - 18 nuclee, 36 fire
+Placa de baza: Dell Inc. 0X75JG
+BIOS: Dell Inc. 2.44.0 (6/10/2025 3:00:00 AM)
+RAM: 127.7 GiB
+Secure Boot: necunoscut (ruleaza ca administrator sau sistem non-UEFI)
+VBS stare: 2 (0=oprit, 1=configurat, 2=ruleaza)
+Proprietati disponibile: 1,2,5,7,8 (3 = protectie DMA / IOMMU disponibila)
+IOMMU in BIOS (AMD-Vi / VT-d): DE NOTAT MANUAL din setup-ul BIOS
+Above 4G Decoding / Resizable BAR in BIOS: DE NOTAT MANUAL (si vezi BAR1 mai jos)
+
+## Placi video
+- NVIDIA GeForce RTX 3070 Ti [PCI\VEN_10DE&DEV_2482&SUBSYS_88131043&REV_A1\4&1F0B8BAC&0&0000] stare OK
+  locatie: PCI bus 179, device 0, function 0
+  memorie: E0000000 - EFFFFFFF (256 MiB)
+  memorie: F0000000 - F1FFFFFF (32 MiB)
+  memorie: F9000000 - F9FFFFFF (16 MiB)
+  I/O: F000 - F07F
+
+## nvidia-smi
+name, pci.bus_id, pci.device_id, pci.sub_device_id, vbios_version, driver_version, memory.total [MiB]
+NVIDIA GeForce RTX 3070 Ti, 00000000:B3:00.0, 0x248210DE, 0x88131043, 94.04.65.00.3e, 616.56, 8192 MiB
