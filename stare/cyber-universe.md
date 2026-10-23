@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-23 02:55 (ora României) · **de:** sesiunea OS programată (02:45) — fără lucru nou; Release `os-155` așteaptă testul 8 (CI verde)
+**Actualizat:** 2026-10-23 05:50 (ora României) · **de:** sesiunea OS programată (05:40) — **OPRIT: necesită analiza lui Adrian** (oprire de siguranță: 3 sesiuni fără sarcină; totul așteaptă testul 8, Release `os-155`, CI verde)
 
 ## Acum
 - **P6-10g gata (Release `os-155`, CI verde):** la pornire, inelele și bufferele plăcii Realtek stau acum într-un **bloc separat, între
@@ -28,6 +28,9 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- **Sesiunile OS sunt oprite (oprire de siguranță):** nu mai există nimic de făcut fără tine. Pornesc din nou când apar pozele
+  testului 8 în `rezultate/` sau o comandă nouă în `COMENZI.md`.
+- **Decizie, dacă vrei:** patch-ul `gpu` de la Cyber-GPU (doar citire, neaplicat) — îl aplicăm într-un Release sau nu.
 - **Testul 8 (Release `os-155`), cablul la laptopul cu Windows (partajarea ICS pornită).** Copiezi pe stick fișierele din Release
   (ca la testul 7, inclusiv `cyber.rw`).
   **(C) La cald — oprit complet, pornit cu F12 → stick:** **Esc** → `cyber>`. **Nu scrii nicio comandă `rtl`.**

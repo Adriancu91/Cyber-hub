@@ -37,3 +37,4 @@
 - 2026-10-23 00:00 — C-10 gata (P6-10g + P6-10h, Release os-155, CI verde): bufferele Realtek într-un bloc separat peste 16 MiB, paza paginilor DMA (testată în QEMU), buffere umplute cu A5 ca diagnostic; OCP verificat (pașii 7, 9, 12 nu erau defecte, rămâne FIFO-ul la rece); ICS notat; lista pentru testul 8 scrisă.
 - 2026-10-23 00:05 — Sesiune programată (23:42): nicio comandă nouă, nicio sarcină liberă; CI verde pe reparația `modules`; se așteaptă testul 8 (os-155).
 - 2026-10-23 02:55 — Sesiune programată (02:45): nicio comandă nouă, niciun rezultat de la testul 8; luat la cunoștință proiectul Cyber-GPU (încă niciun patch pentru OS). A 3-a sesiune la rând fără lucru: următoarea se oprește dacă testul 8 nu vine.
+- 2026-10-23 05:50 — Sesiune programată (05:40): nicio comandă nouă, niciun rezultat de la testul 8 → oprire de siguranță („OPRIT: necesită analiza lui Adrian” în STATE.md); CI verde.
