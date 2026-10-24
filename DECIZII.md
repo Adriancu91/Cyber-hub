@@ -103,3 +103,6 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   acum (OS `9f67d7b`, Cyber-GPU `41e44ba`), pus de sesiunile proiectelor (centrul de comandă nu are drept de scriere în ele); integrarea pe ramură
   separată, unită în `main` doar cu toate testele trecute; copii offline (git bundle) trimise lui Adrian. Commit-urile de pe GitHub nu se pierd
   (push --force interzis), iar Release-urile testate pe hardware (os-150, os-161) rămân descărcabile.
+- 2026-10-24 04:05 — **Pauză totală până luni 26 oct** (Adrian se întoarce): oprite sesiunile programate OS, Cyber-GPU, coordonatorul și
+  supraveghetorul Kronos (se repornesc la cererea lui Adrian). Kronos: nicio sarcină nouă; S27 așteaptă „da”-ul. Workstation-ul se oprește singur
+  în siguranță (S28: doar dacă nu rulează nimic și după ce totul e urcat pe GitHub). Suita (pe laptop) nu e atinsă de pauză.
