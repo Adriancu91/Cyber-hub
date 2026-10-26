@@ -11,3 +11,5 @@
 - 2026-10-26 17:45 — Mesa NAK pregătit pe gazdă; primul program (adunarea a 64 de f32) compilat pentru GA104 fără placă (240 de octeți, nerulat); lista exactă pentru fereastra pe workstation (0 scrieri în placă).
 - 2026-10-26 19:50 — Sesiunea 6 (C-20): crate `nvidia-rm570` generat din antetele NVIDIA 570.144 (1 419 valori); offset-urile scrise de mână în sesiunea 5 verificate față de ele — toate egale.
 - 2026-10-26 19:50 — Mesajele GSP mari + tabelul SET_REGISTRY, procesorul de comenzi simulat (add64 lansat cap-coadă, identic cu referința, doar SIMULARE); proba tinygrad pregătită, nerulată; 157 de teste, CI verde.
+- 2026-10-27 02:05 — Sesiunea 7 (C-20 gata în SIMULARE): GSP fals pe registre + secvențiatorul; pornirea simulată cap-coadă până la INIT_DONE; scrierile firmware-ului în afara zonelor GSP/SEC2 refuzate. Antetele bootloader/booter_load (I4c), doar pe fișiere sintetice.
+- 2026-10-27 02:05 — Matmul treptele 1–2 compilate cu NAK (816 B fiecare, `ffma.ftz`), lansate în model, identice bit cu bit cu noul calcul de control FMA+FTZ; 176 de teste, CI verde. Nimic rulat pe placă.
