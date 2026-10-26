@@ -1,6 +1,6 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-26 17:15 · **de:** centrul de comandă
+**Actualizat:** 2026-10-26 18:10 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-23.md`.)_
 
 ## Așteaptă de la tine, Adrian
@@ -15,6 +15,9 @@ _Nimic urgent; totul poate aștepta întoarcerea ta. Problema cu verificările a
 7. **Propunerea „Kronos bare-metal v0.2”** — da / nu / mai târziu (`idei/2026-10-23_kronos-bare-metal_v0.2.md`).
 8. **NOU, opțional — Cyber-GPU:** semnul de revenire `stabil-2026-10-23` nu se poate urca din cloud; e la fel de sigur fixat pe commit. Dacă vrei totuși semnul pe GitHub, comanda e în `stare/cyber-gpu.md`.
 9. ~~Kronos: „da” pentru E3 cu antrenare~~ — **dat pe 26 oct 16:10 (S27)**.
+
+## Studiul open-source (26 oct)
+`studiu/2026-10-26_open-source/` — notițe și propuneri pentru Kronos, OS și Cyber-GPU. Cyber-GPU: aprobate (C-20). **Kronos și OS: așteaptă „da”-ul tău** (lista în README-ul studiului, cu recomandarea centrului).
 
 ## Proiectele acum
 | Proiect | Unde e | Lucrează acum? | Ultima veste (ora) |

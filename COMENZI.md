@@ -408,3 +408,16 @@ Format:
   pentru fereastra de pe workstation (mâine sau poimâine). Release-ul os-187 rămâne punctul de revenire. Nu schimba nimic altceva.
 - stare: nou
 - rezultat:
+
+### C-20 · cyber-gpu · Folosește studiul open-source: tinygrad ca hartă pentru I4–I10, antete generate, GSP fals, NAK + matmul
+- data: 2026-10-26 18:10 · de la: Adrian (prin centrul de comandă; recomandări aprobate prin „da”-ul general din 26 oct 17:10)
+- ce: Citește `studiu/2026-10-26_open-source/gpu.md` din hub (secțiunile 2 și 3) și fă, după C-18, în ordinea:
+  B (crate generat din antetele NVIDIA 570.144, MIT, cu notificarea lor și teste de mărime/poziție; unealta de generare doar pe gazdă, versiune fixată),
+  C (secvența tinygrad `support/nv/` ca specificație pentru I4–I10 — cod Rust scris de noi, nu traducere linie cu linie; sursa în PROVENANCE; pasul nou
+  „golden image” după pornirea GSP; valorile „magice” marcate „dovedite empiric, neexplicate”), D (procesor de comenzi + GSP fals în `gpu-sim`),
+  E (NAK pe gazdă + treptele matmul, primul matmul în f32; tratarea FMA în comparația cu referința).
+  Pentru A (proba tinygrad pe placa reală, de pe un stick Linux, cu jurnalul scrierilor): pregătește doar instrucțiunile exacte și scriptul în
+  `docs/TEST_MATRIX.md` + parserul de jurnal testat pe un jurnal scris de mână. **Nu se rulează nimic pe placă fără Adrian de față.**
+  Firmware-ul NVIDIA rămâne în afara repo-ului.
+- stare: nou
+- rezultat:
