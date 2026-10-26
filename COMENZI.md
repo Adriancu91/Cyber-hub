@@ -406,8 +406,8 @@ Format:
   Mută fixarea Cyber-GPU de pe `41e44ba` pe commit-ul lor curent de pe `main` (ei spun că s-a doar adăugat, nimic șters), adaugă `gpu gfw` și
   `gpu vbios` — **doar citire**, cu numărul de scrieri refuzate afișat ca la `gpu identifica` — testate în CI cu `--sim`, și scoate un Release
   pentru fereastra de pe workstation (mâine sau poimâine). Release-ul os-187 rămâne punctul de revenire. Nu schimba nimic altceva.
-- stare: preluat (2026-10-26 15:45 UTC, sesiunea OS) — P6-21 în docs/TASKS.md
-- rezultat:
+- stare: gata (preluat 2026-10-26 15:45 UTC, terminat 16:40 UTC, sesiunea OS) — P6-21; CI verde (run 191), Release os-191
+- rezultat: fixarea Cyber-GPU e pe `dac2e32` (doar adăugări), `gpu gfw` și `gpu vbios` merg doar citire cu numărul de scrieri refuzate afișat, testate în SIMULARE în CI, iar Release-ul os-191 e gata pentru fereastra de pe workstation (lista în `stare/cyber-universe.md`).
 
 ### C-20 · cyber-gpu · Folosește studiul open-source: tinygrad ca hartă pentru I4–I10, antete generate, GSP fals, NAK + matmul
 - data: 2026-10-26 18:10 · de la: Adrian (prin centrul de comandă; recomandări aprobate prin „da”-ul general din 26 oct 17:10)
@@ -448,5 +448,5 @@ Format:
      Fuchsia, scrise de noi); după declarare nu le mai poate depăși. `/usb/claude.key` și `/usb/github.token` devin vizibile doar programelor care le
      cer explicit (aplicația Claude, `gh-trimite`). Teste în QEMU: un program fără permisiune primește eroare la citirea cheii.
   Restul propunerilor (teste mai rapide, găzduirea lui Kronos, tipuri pentru DMA) rămân pentru mai târziu, după aceste două.
-- stare: preluat (2026-10-26 15:45 UTC, sesiunea OS) — P6-22 („cutia neagră”), P6-23 (permisiuni) în docs/TASKS.md; după C-19
-- rezultat:
+- stare: gata (preluat 2026-10-26 15:45 UTC, terminat 16:40 UTC, sesiunea OS) — P6-22, P6-23; CI verde (run 191), Release os-191
+- rezultat: `raport` scrie pe stick `/usb/raport/<data>-<nr>.txt` (și automat la erori noi, fără chei, testat în QEMU cu citirea fișierului din imagine), iar programele au promisiuni + căi vizibile, cu `claude.key`/`github.token` vizibile doar programelor care le cer (scenariul `drepturi`).

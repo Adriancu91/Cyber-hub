@@ -48,3 +48,4 @@
 - 2026-10-23 22:25 — C-16 gata: Cyber-GPU integrat (fixat pe 41e44ba; adaptor care refuză orice scriere, `gpu identifica --sim` = SIMULARE, `/bin/kronos-calcul` pe toate nucleele cu AVX), pe ramură, unit după CI verde → Release os-189; punct de revenire = ramura revenire/stabil-2026-10-23 + os-187 păstrat (tag-ul nu se poate urca din cloud).
 - 2026-10-24 00:10 — C-17 gata: lista Release-urilor păstrate (testate pe hardware + os-187) respectată de CI; os-150 și os-161 republicate din fișierele originale; Release os-190.
 - 2026-10-24 02:42 — sesiune fără lucru nou: nicio comandă nouă, niciun rezultat nou; CI verde (os-190).
+- 2026-10-26 18:45 — C-19 gata: `gpu gfw` și `gpu vbios` doar citire (Cyber-GPU fixat pe dac2e32), testate în SIMULARE; C-22 gata: `raport` pe stick (și automat la erori, fără chei) + permisiuni pe program (cheile vizibile doar programelor care le cer); CI verde, Release os-191.

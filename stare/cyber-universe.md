@@ -1,8 +1,20 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-24 02:42 (ora României) · **de:** sesiunea OS programată — nimic nou (nicio comandă, CI verde, os-190 rămâne ultimul)
+**Actualizat:** 2026-10-26 18:45 (ora României) · **de:** sesiunea OS programată — C-19 și C-22 gata, Release **`os-191`**
 
 ## Acum
+- **C-19 gata (P6-21): `gpu gfw` și `gpu vbios`, doar citire.** Cyber-GPU fixat pe commit-ul lor `dac2e32` (ramura `g0-g2-fundatie`).
+  `gpu gfw` = „a terminat placa pornirea?” (așteaptă max 4 s, gata = 0xff); `gpu vbios` = lista imaginilor din VBIOS (PCI-AT, EFI, FWSEC),
+  tabela BIT cu jetonul 0x70. Primii 4 MiB din registrele plăcii se citesc pagină cu pagină **fără drept de scriere**; orice scriere cerută de
+  bibliotecă e refuzată și numărată („0 scrieri in placa”). Testat doar în **SIMULARE** (`--sim`, în CI) și în QEMU; nimic pe placa reală.
+- **C-22 gata (P6-22, P6-23):**
+  - **„Cutia neagră”:** comanda `raport` scrie pe stick `/usb/raport/<data>-<nr>.txt` cu tot ce trebuie (versiune, `hw`, `lspci`, `net`,
+    jurnalele rețea/USB/PCI/GPU, tot jurnalul). Se scrie și **singur** când apare o eroare nouă în jurnal (max 3 pe pornire). Cheile și
+    tokenurile apar ca `[ascuns]`. La o cădere totală (panică) nu se scrie — ar putea strica stick-ul.
+  - **Permisiuni pe program:** un program poate promite ce apeluri folosește și ce căi vede, apoi nu le mai poate lărgi. `claude.key` și
+    `github.token` se văd doar de programele care le cer (Claude, `gh-trimite`, `actualizeaza`), iar acestea renunță la ele imediat după citire;
+    `cat` nu le mai afișează. Testat în QEMU (scenariul `drepturi`).
+- CI run 191 verde → **Release `os-191`**. os-187 rămâne punctul de revenire.
 - **C-17 gata: Release-urile testate pe hardware nu se mai șterg.** Lista e în `docs/RELEASES_PASTRATE.md` din repo-ul OS
   (os-120, os-125, os-136, os-138, os-150, os-161 + punctul de revenire os-187); curățarea automată sare peste ele.
   **os-150 și os-161 există din nou** la Releases, cu exact fișierele de atunci (sumele verificate), marcate „(păstrat)”, nu „latest”.
@@ -23,19 +35,24 @@
 
 Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/` (Intel 8254x/82574/I219).
-- Pentru `cyber-gpu`: bibliotecile lor rulează acum în nucleu (adaptor doar-citire) și în programe (`gpu-compute`); scenarii CI `gpu`, `gpu-sim`, `kronos-calcul`.
+- Pentru `cyber-gpu`: bibliotecile lor (fixate pe `dac2e32`) rulează în nucleu (adaptoare doar-citire, inclusiv fereastra de 4 MiB pentru I2/I3) și în programe (`gpu-compute`); scenarii CI `gpu`, `gpu-sim`, `kronos-calcul`.
 - Pentru Kronos: SSE/AVX/AVX2 în programe, fire pe toate nucleele, `mem_map` (GiB), fire multiple într-un program, `/bin/kronos-calcul` ca punct de pornire.
 
 ## De ce are nevoie de la ceilalți
-- `cyber-gpu`: tag-ul lor `stabil-2026-10-23` nu apare încă pe GitHub (probabil aceeași limită 403); OS-ul folosește direct commit-ul `41e44ba`, deci nu blochează.
+- `cyber-gpu`: o ramură `main` (sau un tag) ar fi mai clar de fixat decât un commit de pe `g0-g2-fundatie`; nu blochează (OS-ul folosește `dac2e32`).
+  Sesiunea OS nu vede CI-ul lor (repo-ul nu e în lista sesiunii) — am verificat doar că se compilează și merge în testele OS-ului.
 
 ## Blocaje / nevoie de Adrian
 - **Tag-ul `stabil-2026-10-23` (2 minute, când ai timp):** pe GitHub → cyber-universe → Releases → „Draft a new release” → „Choose a tag” →
   scrie `stabil-2026-10-23` → „Create new tag” → Target: ramura `revenire/stabil-2026-10-23` → bifează „Set as a pre-release” → Publish.
   Până atunci punctul de revenire e ramura + os-187 (suficient).
-- Totul de mai jos e pentru când se întoarce (Release-ul de folosit: `os-190` sau mai nou):
+- Totul de mai jos e pentru când se întoarce (Release-ul de folosit: `os-191` sau mai nou):
+- **Release de folosit acum: `os-191`.** Pe orice test: la final scrie **`raport`** → fișierul din `raport/` de pe stick înlocuiește pozele
+  (îl trimiți sau îl pui în hub; cheile sunt ascunse).
 - **Fereastra a doua pe workstation** (~30 min, Kronos oprit; Secure Boot oprit, apoi repus pe Enabled): stick → F12 → **Esc** → `cyber>`,
-  câte o poză după: `lspci` (`10de:2482` la `b3:00.0`), `gpu identifica` (**nou:** rândurile „cyber-gpu 41e44ba nvidia-ga104: GeForce RTX 3070 Ti”,
+  **nou (C-19):** `gpu gfw` (așteptat: „GFW gata (progres 0xff)”, sub 4 s, „0 scrieri”) și `gpu vbios` (așteptat: PCI-AT, EFI, cel puțin o FWSEC,
+  „jetonul 0x70: da”, „complet: da”, „0 scrieri”); apoi `raport`. Restul ca înainte, câte o poză după:
+  `lspci` (`10de:2482` la `b3:00.0`), `gpu identifica` (rândurile „cyber-gpu dac2e32 nvidia-ga104: GeForce RTX 3070 Ti”,
   BOOT_0/BOOT_42, „a refuzat 0 scrieri”), `log gpu 40`, `log pci 40`, `hw`, `lsusb`, `log usb 60`, `net`, `log e1000 40`, `cpu`, `cpu porneste`,
   `cpu`, **nou:** `run kronos-calcul` (timpii reali pe 1 și pe toate nucleele), la final `reboot`. Nimic nu scrie în placa video.
 - **Testul 8 pe laptop** (rețeaua Realtek neschimbată față de os-155): pașii (C) și (R) de data trecută; în plus `run kronos-calcul` → poză.
