@@ -1,13 +1,13 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-26 16:15 · **de:** centrul de comandă
+**Actualizat:** 2026-10-26 16:45 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-23.md`.)_
 
 ## Așteaptă de la tine, Adrian
 **26 OCT 16:10 — Kronos lucrează din nou** (S27 aprobat, supraveghetorul repornit). OS, Cyber-GPU și coordonatorul sunt încă oprite: spune „pornește tot” când vrei.
 _Nimic urgent; totul poate aștepta întoarcerea ta. Problema cu verificările automate (CI) s-a rezolvat: repo-urile OS și GPU sunt publice._
-1. **Fereastra a doua pe workstation (~30 min)** cu stick-ul din Release `os-187` sau mai nou: `lspci`, `gpu identifica`, `net`, `cpu porneste`, `reboot`; la final Secure Boot înapoi pe Enabled. Placa lui Kronos e liberă (`stare/cyber-universe.md`, `stare/cyber-gpu.md`).
-2. **OS — testul 8 pe laptop:** la cald (F12) și la rece (pornire directă), cu poze la `net` (`stare/cyber-universe.md`).
+1. **Fereastra a doua pe workstation (~30 min; Adrian încearcă mâine sau poimâine)** cu stick-ul din Release `os-187` sau mai nou: `lspci`, `gpu identifica`, `net`, `cpu porneste`, `reboot`; la final Secure Boot înapoi pe Enabled. Placa lui Kronos e liberă (`stare/cyber-universe.md`, `stare/cyber-gpu.md`).
+2. **OS — testul 8 pe laptop (PLANIFICAT diseară, 26 oct, pe ThinkPad L15 cu stick `os-190`; ASUS-ul e stricat):** la cald (F12) și la rece (pornire directă), cu poze la `net` (`stare/cyber-universe.md`).
 3. **NOU — Suita: „da” pentru kitul de test 0.9.1:** îl instalezi tu și/sau îl copiem pe stick? (`stare/suita-office.md`).
 4. **Cyber-GPU — firmware-ul semnat NVIDIA:** îl folosim sau nu? Blochează tot de la pasul I4 (`stare/cyber-gpu.md`).
 5. **Cyber-GPU — compilatorul pentru programele GPU:** Mesa NAK (recomandat) sau `ptxas` (`stare/cyber-gpu.md`).
