@@ -1,6 +1,6 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-26 18:10 · **de:** centrul de comandă
+**Actualizat:** 2026-10-26 17:50 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-23.md`.)_
 
 ## Așteaptă de la tine, Adrian
@@ -17,7 +17,7 @@ _Nimic urgent; totul poate aștepta întoarcerea ta. Problema cu verificările a
 9. ~~Kronos: „da” pentru E3 cu antrenare~~ — **dat pe 26 oct 16:10 (S27)**.
 
 ## Studiul open-source (26 oct)
-`studiu/2026-10-26_open-source/` — notițe și propuneri pentru Kronos, OS și Cyber-GPU. Cyber-GPU: aprobate (C-20). **Kronos și OS: așteaptă „da”-ul tău** (lista în README-ul studiului, cu recomandarea centrului).
+`studiu/2026-10-26_open-source/` — notițe și propuneri pentru Kronos, OS și Cyber-GPU. Aprobate (delegarea din 26 oct 17:45): Cyber-GPU C-20, Kronos C-21 (după S27), OS C-22. TinyStories rămâne deocamdată.
 
 ## Proiectele acum
 | Proiect | Unde e | Lucrează acum? | Ultima veste (ora) |

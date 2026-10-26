@@ -21,16 +21,15 @@ Fiecare afirmație din notițe e marcată: citit / din memorie / dedus. Licențe
 - A. „Proba de referință”: tinygrad pe un stick Linux, pe RTX 3070 Ti, cu jurnalul tuturor scrierilor — **se pregătește acum, se face doar cu Adrian de
   față** (scriere în placa reală, cod străin pe placă; ecranul workstation-ului se stinge, comenzile prin SSH de pe laptop).
 
-**Kronos** — așteaptă „da”-ul lui Adrian (recomandarea centrului în paranteză):
+**Kronos** — aprobate 1–3 (C-21, delegarea din 26 oct 17:45); 4–5 mai târziu:
 1. Muon + răcire lungă, din #415 (~5–6 h placă) — **da, după S27**.
 2. Memoria E3: rădăcini românești + reordonare cu #415 + RRF (minute pe placă) — **da, primul**.
 3. Motor de inferență fără PyTorch, Q8 (~104 MB în loc de ~392 MB), țintă pentru OS (0 h placă) — **da**.
 4. Linie nouă „w3” de la zero, arhitectură modernă + mai multă română (o noapte) — mai târziu, după 1 și 2.
 5. Auto-joc doar pe „răspuns din text”, cu verificator — după verdictul S27.
-- **Întrebare pentru Adrian:** TinyStories (folosit deja în date și în examen) a fost generat de GPT-3.5/4 (din memorie, neverificat). Nu e un LLM în buclă,
-  dar vrei și datele curate de text generat de LLM străin?
+- TinyStories: rămâne deocamdată (DECIZII 26 oct 17:45); datele noi nu vin de la un LLM străin.
 
-**Cyber Universe OS** — așteaptă „da”-ul lui Adrian:
+**Cyber Universe OS** — aprobate 1 și 4 (C-22); restul mai târziu:
 1. „Cutia neagră” pe stick: jurnalul + `hw` + registrele driverelor scrise într-un fișier pe stick (gata cu pozele) — **da, primul**.
 2. Teste mai rapide: multe teste într-o pornire + teste pe gazdă cu fuzzing (CI ~18 min azi).
 3. Găzduirea lui Kronos: model încărcat o dată, doar-citire, verificat SHA-256; pagini de 1 GiB; nuclee dedicate (după NIGHTRUN).

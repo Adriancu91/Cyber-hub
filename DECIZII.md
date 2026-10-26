@@ -115,3 +115,12 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   (C-18); `gpu gfw` + `gpu vbios` doar citire în OS (C-19). Recomandările viitoare ale centrului de comandă pentru Cyber-GPU se consideră aprobate,
   **cu limitele care rămân valabile**: nicio scriere în placa reală fără Adrian de față, nimic ireversibil, nimic care costă bani, fără firmware
   sau cod copiat în repo, fără desfacerea firmware-ului NVIDIA. Acestea se întreabă în continuare.
+- 2026-10-26 17:45 — **Delegare generală** (Adrian: „merg pe recomandările tale… orice decizie care coincide cu direcția și punctul final este aprobată
+  automat de mine”). Centrul de comandă poate aproba singur ce se potrivește direcției lui Adrian (totul propriu, ≥ 90 %, modular, rapid pe hardware
+  slab, reversibil; Kronos fără LLM străin; OS + driver GPU proprii care găzduiesc Kronos) și o trece aici, ca să se vadă. **Rămân la Adrian, explicit:**
+  orice test sau scriere pe hardware real (doar cu el de față), orice pas ireversibil (ștergeri, rescrierea istoriei), bani și conturi, chei și parole,
+  schimbarea examenului Kronos sau a paznicului, schimbări în `kronos/` (nucleu) și orice risc juridic real.
+  Aprobate acum: Kronos C-21 (memoria E3, Muon, motorul fără PyTorch — după S27); OS C-22 („cutia neagră” pe stick, permisiuni pe program);
+  Cyber-GPU: pregătirea probei tinygrad (A), rularea ei doar cu Adrian de față.
+  **TinyStories** (generat cu GPT-3.5/4, din memorie, de verificat) rămâne deocamdată: e în examenul oficial, iar scoaterea lui ar strica toate
+  comparațiile; datele NOI nu au voie să vină de la un LLM străin; înlocuirea lui se decide la linia nouă „w3”.

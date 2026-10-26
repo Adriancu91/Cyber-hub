@@ -421,3 +421,32 @@ Format:
   Firmware-ul NVIDIA rămâne în afara repo-ului.
 - stare: nou
 - rezultat:
+
+### C-21 · kronos · Din studiul open-source: memoria E3 mai bună, apoi Muon + răcire lungă, apoi motorul de inferență fără PyTorch
+- data: 2026-10-26 17:45 · de la: Adrian (prin centrul de comandă; recomandările centrului, aprobate de Adrian)
+- ce: Detaliile, pragurile propuse și riscurile sunt în hub, `studiu/2026-10-26_open-source/kronos.md`, secțiunea 3. **După S27** (nu-l întrerupe),
+  ca sarcini separate în `plan/coada.md`, fiecare cu pre-înregistrare înainte de pornire, în ordinea:
+  1. **Propunerea 2 (memoria E3):** (a) stemmer românesc propriu ca a doua coloană în index + unire RRF; (b) reordonarea primelor 20 de bucăți cu
+     log p(întrebare | bucată) calculat de modelul nostru (#415 sau rezultatul S27 dacă e confirmat). Prag: k = 3 urcă ≥ 5 puncte pe un set NOU, neatins,
+     iar k = 20 nu scade. Doc2query (c) doar după (a) și (b).
+  2. **Propunerea 1 (Muon + răcire lungă):** A = AdamW ca acum, B = Muon, câte 2 h din același punct, aceeași sămânță și date, gradient adunat pe 8 loturi,
+     răcire ~25 %; întâi testul unitar pe procesor și proba de 10 min sub 7.000 MB. Prag: B ≤ A − 0,010 val_bpb română, fără regresie > 0,005 în rest.
+  3. **Propunerea 3 (motor de inferență fără PyTorch, fp32 + Q8_0):** fără placă; logits identici (< 1e-4) cu PyTorch pe 3 texte fixe; Q8_0 pierde ≤ 0,005 val_bpb.
+  Toate ca module noi (MANIFEST + teste de contract), reversibile; #415 și linia w2 rămân neatinse. **Examenul nu se schimbă.**
+  Propunerile 4 (w3) și 5 (auto-joc) rămân pentru mai târziu (5 după verdictul S27). Date: TinyStories rămâne deocamdată (vezi DECIZII 26 oct 17:45);
+  orice date NOI nu au voie să fie generate de un LLM străin.
+- stare: nou
+- rezultat:
+
+### C-22 · cyber-universe · Din studiul open-source: „cutia neagră” pe stick + permisiuni pe program
+- data: 2026-10-26 17:45 · de la: Adrian (prin centrul de comandă; recomandările centrului, aprobate de Adrian)
+- ce: Detaliile în hub, `studiu/2026-10-26_open-source/os.md`, propunerile 1 și 4. După C-19:
+  1. **„Cutia neagră”:** la cerere (`raport`) și automat la erori grave, OS-ul scrie pe stick un fișier text (ex. `/usb/raport/<data>-<nr>.txt`) cu versiunea,
+     `hw`, `lspci`, jurnalele `net`/`usb`/`pci`/`gpu` și registrele relevante ale driverelor — ca rezultatele testelor de pe hardware să nu mai vină prin
+     poze. Fără chei sau token-uri în raport (filtrate explicit). Test în QEMU: fișierul apare pe discul virtual și conține secțiunile așteptate.
+  2. **Permisiuni pe program:** un program declară ce apeluri și ce căi folosește („promisiuni” + „căi vizibile”, idei din OpenBSD pledge/unveil și
+     Fuchsia, scrise de noi); după declarare nu le mai poate depăși. `/usb/claude.key` și `/usb/github.token` devin vizibile doar programelor care le
+     cer explicit (aplicația Claude, `gh-trimite`). Teste în QEMU: un program fără permisiune primește eroare la citirea cheii.
+  Restul propunerilor (teste mai rapide, găzduirea lui Kronos, tipuri pentru DMA) rămân pentru mai târziu, după aceste două.
+- stare: nou
+- rezultat:
