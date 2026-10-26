@@ -1,6 +1,6 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-26 16:45 · **de:** centrul de comandă
+**Actualizat:** 2026-10-26 17:15 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-23.md`.)_
 
 ## Așteaptă de la tine, Adrian
@@ -9,9 +9,9 @@ _Nimic urgent; totul poate aștepta întoarcerea ta. Problema cu verificările a
 1. **Fereastra a doua pe workstation (~30 min; Adrian încearcă mâine sau poimâine)** cu stick-ul din Release `os-187` sau mai nou: `lspci`, `gpu identifica`, `net`, `cpu porneste`, `reboot`; la final Secure Boot înapoi pe Enabled. Placa lui Kronos e liberă (`stare/cyber-universe.md`, `stare/cyber-gpu.md`).
 2. **OS — testul 8 pe laptop (PLANIFICAT diseară, 26 oct, pe ThinkPad L15 cu stick `os-190`; ASUS-ul e stricat):** la cald (F12) și la rece (pornire directă), cu poze la `net` (`stare/cyber-universe.md`).
 3. **NOU — Suita: „da” pentru kitul de test 0.9.1:** îl instalezi tu și/sau îl copiem pe stick? (`stare/suita-office.md`).
-4. **Cyber-GPU — firmware-ul semnat NVIDIA:** îl folosim sau nu? Blochează tot de la pasul I4 (`stare/cyber-gpu.md`).
-5. **Cyber-GPU — compilatorul pentru programele GPU:** Mesa NAK (recomandat) sau `ptxas` (`stare/cyber-gpu.md`).
-6. **Propunerea `gpu gfw` + `gpu vbios`** pentru OS — da / nu (`integrare/cyber-gpu/2026-10-23_I2-I3_comenzi-gpu-gfw-vbios.md`).
+4. ~~**Cyber-GPU — firmware-ul semnat NVIDIA:** îl folosim sau nu? Blochează tot de la pasul I4 (`stare/cyber-gpu.md`).~~ **— DA (26 oct 17:10, C-18/C-19)**
+5. ~~**Cyber-GPU — compilatorul pentru programele GPU:** Mesa NAK (recomandat) sau `ptxas` (`stare/cyber-gpu.md`).~~ **— DA (26 oct 17:10, C-18/C-19)**
+6. ~~**Propunerea `gpu gfw` + `gpu vbios`** pentru OS — da / nu (`integrare/cyber-gpu/2026-10-23_I2-I3_comenzi-gpu-gfw-vbios.md`).~~ **— DA (26 oct 17:10, C-18/C-19)**
 7. **Propunerea „Kronos bare-metal v0.2”** — da / nu / mai târziu (`idei/2026-10-23_kronos-bare-metal_v0.2.md`).
 8. **NOU, opțional — Cyber-GPU:** semnul de revenire `stabil-2026-10-23` nu se poate urca din cloud; e la fel de sigur fixat pe commit. Dacă vrei totuși semnul pe GitHub, comanda e în `stare/cyber-gpu.md`.
 9. ~~Kronos: „da” pentru E3 cu antrenare~~ — **dat pe 26 oct 16:10 (S27)**.

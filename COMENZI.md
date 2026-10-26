@@ -381,3 +381,30 @@ Format:
   păstrate; dacă nu, notează doar commit-urile lor în listă. Nu schimba nimic altceva în CI.
 - stare: gata (preluat 2026-10-23 20:45 UTC, terminat 21:05 UTC, sesiunea OS) — P6-20 în docs/TASKS.md; CI verde (run 190), Release os-190
 - rezultat: Lista `docs/RELEASES_PASTRATE.md` (os-120, 125, 136, 138, 150, 161 testate pe hardware + os-187) e respectată de curățarea din CI, iar os-150 și os-161 sunt din nou la Releases, cu fișierele lor originale (sumele verificate, nemarcate „latest”).
+
+### C-18 · cyber-gpu · Deciziile lui Adrian: firmware-ul NVIDIA DA (separat, pe stick), compilator Mesa NAK, tabel de compatibilitate
+- data: 2026-10-26 17:10 · de la: Adrian (prin centrul de comandă)
+- ce: Adrian a răspuns la cele două decizii care blocau pasul I4 (`docs/RESEARCH_I4_I8.md` §5.1 și §5.2) și a spus „da la toate recomandările
+  actuale și viitoare despre cyber-gpu” ale centrului de comandă.
+  1. **Firmware-ul semnat NVIDIA (GSP-RM, Booter): DA**, o singură versiune fixată, **570.144** (ca nova-core). Fișierele firmware **nu intră
+     niciodată în repo** (nici în cyber-universe, nici în hub): driverul le citește dintr-un fișier separat pe care Adrian îl pune pe stick;
+     repo-ul conține doar numele și sumele SHA256 așteptate, plus instrucțiunile de unde le ia Adrian (pachetul oficial `linux-firmware`).
+     Nu desfacem și nu analizăm interiorul firmware-ului (licența NVIDIA o interzice); folosim doar antetele publice (open-gpu-kernel-modules, MIT)
+     și documentația nouveau/nova, ca idei, fără cod copiat — proveniența în `docs/PROVENANCE.md`.
+  2. **Compilatorul pentru programele GPU: Mesa NAK** (rulează pe gazdă la build, nu în OS). `ptxas` doar dacă, mult mai târziu, performanța o cere.
+  3. **Tabelul de compatibilitate** (idee dintr-un studiu adus de Adrian): un singur fișier `docs/COMPATIBILITATE_FIRMWARE.md` cu coloanele:
+     componentă · sursa de referință (fișier + versiune) · comportament observat · ABI/versiune · dependențe · fișierul Rust · testul · stare
+     (confirmat / parțial / necunoscut / SIMULARE). Strânge în el ce e acum împrăștiat în RESEARCH, GA104_INITIALIZATION și IMPLEMENTATION_STATUS.
+  Mai departe: I4–I8 pregătite și testate în SIMULARE, ca până acum. **Nicio scriere în placa reală fără Adrian de față** (fereastra pe
+  workstation, mâine sau poimâine). Fără cod GPL copiat; fără firmware în repo.
+- stare: nou
+- rezultat:
+
+### C-19 · cyber-universe · Comenzile `gpu gfw` și `gpu vbios` (doar citire) în OS
+- data: 2026-10-26 17:10 · de la: Adrian (prin centrul de comandă)
+- ce: Propunerea `integrare/cyber-gpu/2026-10-23_I2-I3_comenzi-gpu-gfw-vbios.md` e aprobată (recomandarea centrului, aprobată în bloc de Adrian).
+  Mută fixarea Cyber-GPU de pe `41e44ba` pe commit-ul lor curent de pe `main` (ei spun că s-a doar adăugat, nimic șters), adaugă `gpu gfw` și
+  `gpu vbios` — **doar citire**, cu numărul de scrieri refuzate afișat ca la `gpu identifica` — testate în CI cu `--sim`, și scoate un Release
+  pentru fereastra de pe workstation (mâine sau poimâine). Release-ul os-187 rămâne punctul de revenire. Nu schimba nimic altceva.
+- stare: nou
+- rezultat:

@@ -110,3 +110,8 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   (8 treceri pe zi). S27 = E3 cu antrenare pe placă, cu pragurile propuse: confirmat la ≥ 60 % răspunsuri corecte fără text dat și cel mult
   2 puncte pierdute pe noaptea 10 / S4 cu textul dat; infirmat sub 45 %. Pre-înregistrarea se scrie înainte de pornire. Sesiunile OS,
   Cyber-GPU și coordonatorul rămân oprite până la „pornește tot”.
+- 2026-10-26 17:10 — **Cyber-GPU deblocat** (Adrian: „da la toate recomandările tale actuale și viitoare despre cyber-gpu”):
+  firmware-ul semnat NVIDIA **da** (versiunea 570.144, ținut separat pe stick, niciodată în repo); compilator **Mesa NAK**; tabel de compatibilitate
+  (C-18); `gpu gfw` + `gpu vbios` doar citire în OS (C-19). Recomandările viitoare ale centrului de comandă pentru Cyber-GPU se consideră aprobate,
+  **cu limitele care rămân valabile**: nicio scriere în placa reală fără Adrian de față, nimic ireversibil, nimic care costă bani, fără firmware
+  sau cod copiat în repo, fără desfacerea firmware-ului NVIDIA. Acestea se întreabă în continuare.
