@@ -1,10 +1,10 @@
 # Panou de comandă
 
-**Actualizat:** 2026-10-24 04:10 · **de:** centrul de comandă
+**Actualizat:** 2026-10-26 16:15 · **de:** centrul de comandă
 _(Detalii: `stare/`. Comenzi: `COMENZI.md`. Rezumatul zilei: `rezumate/2026-10-23.md`.)_
 
 ## Așteaptă de la tine, Adrian
-**PAUZĂ PÂNĂ LUNI 26 OCT:** sesiunile programate (OS, Cyber-GPU, coordonator, supraveghetor Kronos) sunt oprite; workstation-ul se stinge singur (S28). La întoarcere: spune-i centrului de comandă „pornește tot”.
+**26 OCT 16:10 — Kronos lucrează din nou** (S27 aprobat, supraveghetorul repornit). OS, Cyber-GPU și coordonatorul sunt încă oprite: spune „pornește tot” când vrei.
 _Nimic urgent; totul poate aștepta întoarcerea ta. Problema cu verificările automate (CI) s-a rezolvat: repo-urile OS și GPU sunt publice._
 1. **Fereastra a doua pe workstation (~30 min)** cu stick-ul din Release `os-187` sau mai nou: `lspci`, `gpu identifica`, `net`, `cpu porneste`, `reboot`; la final Secure Boot înapoi pe Enabled. Placa lui Kronos e liberă (`stare/cyber-universe.md`, `stare/cyber-gpu.md`).
 2. **OS — testul 8 pe laptop:** la cald (F12) și la rece (pornire directă), cu poze la `net` (`stare/cyber-universe.md`).
@@ -14,7 +14,7 @@ _Nimic urgent; totul poate aștepta întoarcerea ta. Problema cu verificările a
 6. **Propunerea `gpu gfw` + `gpu vbios`** pentru OS — da / nu (`integrare/cyber-gpu/2026-10-23_I2-I3_comenzi-gpu-gfw-vbios.md`).
 7. **Propunerea „Kronos bare-metal v0.2”** — da / nu / mai târziu (`idei/2026-10-23_kronos-bare-metal_v0.2.md`).
 8. **NOU, opțional — Cyber-GPU:** semnul de revenire `stabil-2026-10-23` nu se poate urca din cloud; e la fel de sigur fixat pe commit. Dacă vrei totuși semnul pe GitHub, comanda e în `stare/cyber-gpu.md`.
-9. **Curând — Kronos:** după S24 (raportul vine la noapte), „da”/„nu” pentru E3 cu antrenare pe placă (`stare/kronos.md`).
+9. ~~Kronos: „da” pentru E3 cu antrenare~~ — **dat pe 26 oct 16:10 (S27)**.
 
 ## Proiectele acum
 | Proiect | Unde e | Lucrează acum? | Ultima veste (ora) |

@@ -106,3 +106,7 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
 - 2026-10-24 04:05 — **Pauză totală până luni 26 oct** (Adrian se întoarce): oprite sesiunile programate OS, Cyber-GPU, coordonatorul și
   supraveghetorul Kronos (se repornesc la cererea lui Adrian). Kronos: nicio sarcină nouă; S27 așteaptă „da”-ul. Workstation-ul se oprește singur
   în siguranță (S28: doar dacă nu rulează nimic și după ce totul e urcat pe GitHub). Suita (pe laptop) nu e atinsă de pauză.
+- 2026-10-26 16:10 — **Pauza se ridică pentru Kronos; S27 aprobat** (Adrian: „dacă stă degeaba dai de lucru”): supraveghetorul Kronos repornit
+  (8 treceri pe zi). S27 = E3 cu antrenare pe placă, cu pragurile propuse: confirmat la ≥ 60 % răspunsuri corecte fără text dat și cel mult
+  2 puncte pierdute pe noaptea 10 / S4 cu textul dat; infirmat sub 45 %. Pre-înregistrarea se scrie înainte de pornire. Sesiunile OS,
+  Cyber-GPU și coordonatorul rămân oprite până la „pornește tot”.
