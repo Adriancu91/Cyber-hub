@@ -397,8 +397,8 @@ Format:
      (confirmat / parțial / necunoscut / SIMULARE). Strânge în el ce e acum împrăștiat în RESEARCH, GA104_INITIALIZATION și IMPLEMENTATION_STATUS.
   Mai departe: I4–I8 pregătite și testate în SIMULARE, ca până acum. **Nicio scriere în placa reală fără Adrian de față** (fereastra pe
   workstation, mâine sau poimâine). Fără cod GPL copiat; fără firmware în repo.
-- stare: preluat (2026-10-26 17:16, sesiunea Cyber-GPU) — pașii a–e din prompt-ul sesiunii programate; urmărire în `docs/IMPLEMENTATION_STATUS.md`
-- rezultat:
+- stare: gata (preluat 2026-10-26 17:16, terminat 17:45, sesiunea Cyber-GPU) — commit `dac2e32` pe `g0-g2-fundatie`, CI verde
+- rezultat: Deciziile sunt aplicate: tabelul `docs/COMPATIBILITATE_FIRMWARE.md`, citirea și verificarea (SHA-256) firmware-ului 570.144 de pe stick și pregătirea GSP (I5–I8) sunt scrise și testate doar în SIMULARE, primul program GPU e compilat cu Mesa NAK (nerulat), iar lista pentru fereastra pe workstation e în `docs/TEST_MATRIX.md` B0 — nimic nu scrie în placă.
 
 ### C-19 · cyber-universe · Comenzile `gpu gfw` și `gpu vbios` (doar citire) în OS
 - data: 2026-10-26 17:10 · de la: Adrian (prin centrul de comandă)

@@ -1,32 +1,34 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-10-24 01:35 (ora României) · **de:** sesiunea Cyber-GPU programată (cloud, fără placă)
+**Actualizat:** 2026-10-26 17:45 (ora României) · **de:** sesiunea Cyber-GPU (cloud, fără placă)
 
 ## Acum
-- **Nimic nu s-a testat pe RTX 3070 Ti.** Ce scrie „merge” e verificat doar pe calculator (SIMULARE sau calcul pur). Niciun program pe GPU.
-- **OS-ul folosește deja bibliotecile noastre** (C-16, făcut de sesiunea OS, fixat pe commit-ul `41e44ba`, Release `os-189`).
-- **Nou în noaptea asta:** calculul lui Kronos pe procesor se poate împărți acum pe mai multe nuclee și la atenție, softmax și pierdere
-  (`gpu-compute::rows`), cu rezultat identic bit cu bit cu referința oricum s-ar împărți. Ghid pentru OS: `integration/cyber-universe/UTILIZARE.md`.
-- 106 teste trec; CI verde (rularea 11).
+- **Nimic nu s-a testat pe RTX 3070 Ti.** Tot ce „merge” e verificat doar pe calculator (SIMULARE sau compilare). Niciun program pe GPU. Nicio linie de cod nu scrie în placă.
+- **C-18 făcut:** deciziile tale (firmware NVIDIA 570.144 separat pe stick, compilator Mesa NAK) sunt notate și aplicate.
+  - Tabelul unic `docs/COMPATIBILITATE_FIRMWARE.md`: fiecare pas I0–I10, sursa, versiunea, fișierul de cod, testul și starea (confirmat / parțial / necunoscut / SIMULARE).
+  - **I4:** driverul citește cele 4 fișiere firmware de pe stick și le verifică mărimea și suma SHA-256 (sumele luate din fișierele oficiale; fișierele nu sunt în niciun repo).
+  - **I5–I8, doar în SIMULARE:** tot ce îi dăm GSP-ului la pornire (descrierea memoriei, cozile de mesaje, mesajele RPC cu suma de control), testat cu un „GSP simulat”.
+  - **Primul program GPU** (adunarea a 64 de numere) **compilat** cu Mesa NAK pentru placa ta, fără placă: 240 de octeți. **Nerulat** — rularea vine după I8–I10, pe placă.
+- 134 de teste trec; CI verde (rulările 16–18; o rulare roșie din cauza unei reguli noi din Rust 1.99, reparată).
 
 ## Urmează
-- Fără placă și fără decizia de licență: **nimic util de făcut** — pasul următor (mesajele către GSP) depinde de firmware-ul NVIDIA.
-- Cu placa (când revine Adrian): testul I0–I3 (+ 5c, FWSEC), lista în `docs/TEST_MATRIX.md` partea B.
+- Fereastra pe workstation (27–28 oct, ~30 min, Kronos oprit): citiri I0–I3 + FWSEC + verificarea fișierelor de pe stick. **0 scrieri în placă.** Lista: `docs/TEST_MATRIX.md` partea B0.
+- Fără placă: antetele fișierelor bootloader/booter (lipsesc pentru WPR meta), conținutul mesajelor SetSystemInfo/SetRegistry, registrele falcon pentru I6–I7 (scrise, dar oprite).
 
 ## Ce oferă proiectul celorlalți
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste), MIT, fără dependențe externe.
-  Fixarea pe `41e44ba` rămâne valabilă: **de atunci s-a doar adăugat**, nimic redenumit sau șters (verificat 24 oct).
-  Opțional, la o mutare a fixării: I2/I3/FWSEC doar citire (SIMULARE) și `gpu-compute::rows` (mai multe nuclee). Detalii: `integration/cyber-universe/UTILIZARE.md`.
-- `kronos` / K6-CPU: operatorii lui Kronos pe procesor, matmul rapid cu greutăți bf16, împărțire pe nuclee fără stare globală.
+  **Pentru C-19: nu există ramura `main` la noi** — fixarea se face pe commit-ul `dac2e32` (ramura `g0-g2-fundatie`, CI verde). Față de `41e44ba`
+  s-a doar adăugat; o singură valoare schimbată (`firmware::GSP_VERSION` = "570.144", OS-ul n-o folosește); `gpu plan` va arăta oprirea la I5.
+  Propunere (nu e cerută de C-19): comanda `gpu firmware` (doar citire, verifică fișierele de pe stick) — `integration/cyber-universe/I4_gpu-firmware.md`.
+- `kronos` / K6-CPU: operatorii lui Kronos pe procesor (matmul bf16, împărțire pe nuclee), neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: comenzile `gpu gfw` / `gpu vbios` (doar citire), doar după „da”-ul lui Adrian.
+- De la `cyber-universe`: Release-ul C-19 (`gpu gfw`, `gpu vbios`) pentru fereastră; opțional `gpu firmware`.
 - De la `kronos`: workstation-ul, doar în fereastra aprobată de Adrian.
 
-## Blocaje / nevoie de Adrian (nimic urgent; când se întoarce)
-- **Tag-ul `stabil-2026-10-23`** e făcut corect pe `41e44ba`, dar din cloud nu se poate urca (403). Nu blochează: OS-ul e fixat pe commit.
-  Când ai 2 minute: GitHub → cyber-gpu → Releases → „Draft a new release” → „Choose a tag” → `stabil-2026-10-23` → „Create new tag” →
-  Target: commit-ul `41e44ba` (din „Recent commits”) → bifează „Set as a pre-release” → Publish.
-- **Licența firmware-ului NVIDIA** (blochează tot de la I4): argumentele în `docs/RESEARCH_I4_I8.md` §5.1.
-- **Compilatorul pentru programele GPU:** Mesa NAK sau `ptxas`. Recomandarea tehnică: NAK pentru primul program (§5.2).
-- **Fereastra pe workstation (~30 min, Kronos oprit):** `gpu identifica` (OS-ul o are din `os-189`), apoi `gpu gfw` / `gpu vbios` dacă OS-ul le primește.
+## Blocaje / nevoie de Adrian
+- **Fereastra pe workstation (27 sau 28 oct, ~30 min):** lista în `docs/TEST_MATRIX.md` partea B0.
+- **Înainte de fereastră, fișierele firmware pe stick:** din https://gitlab.com/kernel-firmware/linux-firmware, folderul `nvidia/ga102/gsp/`,
+  cele 4 fișiere `*-570.144.bin` în `firmware\nvidia\ga102\gsp\` pe stick (+ `LICENCE.nvidia` în `firmware\`); sumele de verificat sunt în
+  `docs/COMPATIBILITATE_FIRMWARE.md` (PowerShell: `Get-FileHash *.bin -Algorithm SHA256`). **Nu le urca nicăieri.**
+- Tag-ul `stabil-2026-10-23` (tot 403 din cloud; nu blochează nimic): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target commit `41e44ba` → pre-release → Publish.
