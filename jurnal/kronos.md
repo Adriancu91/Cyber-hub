@@ -27,3 +27,4 @@
 - 2026-10-24 02:15 — S25 gata — căutarea mai bună nu e câștig real pe întrebări noi (+0,2 puncte); S26 (examen E3 nou, neatins, procesor) aprobat; S27 (E3 cu antrenare pe placă) așteaptă „da”-ul lui Adrian.
 - 2026-10-26 16:15 — Pauza încheiată (Adrian, 16:10). S26 verificat: căutarea găsește răspunsul în primele 5 la 80 % (primele 3: 72 %) pe 100 de întrebări neatinse. S27 (E3 cu antrenare pe placă, aprobat de Adrian) scris pas cu pas; pornește la următoarea verificare a executantului.
 - 2026-10-26 17:15 — S27 (E3 cu antrenare pe placă) pornit la 16:52, pre-înregistrarea urcată înainte; în context încap de obicei 2 bucăți, nu 3 (plafon ~64/100). Placa ocupată până ~20:45; verdict diseară.
+- 2026-10-26 20:15 — C-21 preluată: S29 (memoria mai bună), S30–S31 (Muon), S32 (motor fără PyTorch) în coadă, după S27. S27 încă rulează (examenele până ~20:45).

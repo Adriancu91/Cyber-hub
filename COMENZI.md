@@ -435,7 +435,7 @@ Format:
   Toate ca module noi (MANIFEST + teste de contract), reversibile; #415 și linia w2 rămân neatinse. **Examenul nu se schimbă.**
   Propunerile 4 (w3) și 5 (auto-joc) rămân pentru mai târziu (5 după verdictul S27). Date: TinyStories rămâne deocamdată (vezi DECIZII 26 oct 17:45);
   orice date NOI nu au voie să fie generate de un LLM străin.
-- stare: nou
+- stare: preluat (2026-10-26 20:15, supraveghetor) — S29, S30, S31, S32 în `plan/coada.md` din cyberspace, `aprobat`, în ordine, fiecare doar după S27 și după cea dinainte
 - rezultat:
 
 ### C-22 · cyber-universe · Din studiul open-source: „cutia neagră” pe stick + permisiuni pe program

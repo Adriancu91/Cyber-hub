@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-26 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-26 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -14,9 +14,11 @@
 
 ## Urmează
 - **S27 rulează pe placă de la 16:52** (aprobat de Adrian 26 oct 16:10): E3 cu antrenare — din #415, 3 ore pe întrebări cu bucățile găsite
-  de index (de obicei încap 2 bucăți în contextul de 512, nu 3 — scris în pre-înregistrare înainte de pornire); apoi examenul oficial pe cele
-  100 de întrebări S26, modelul primește doar întrebarea. Confirmat la ≥ 60 %, infirmat sub 45 %. Antrenarea se termină ~20:10, examenele ~20:45.
-  Verdict diseară; așteptarea executantului: ~53 % (NECLAR).
+  de index (de obicei încap 2 bucăți în contextul de 512, nu 3); apoi examenul oficial pe cele 100 de întrebări S26, modelul primește doar
+  întrebarea. Confirmat la ≥ 60 %, infirmat sub 45 %. Examenele se termină pe la ~20:45; verdictul îl verific la 23:15.
+- **C-21 (studiul open-source) preluată:** după S27, în ordine: S29 memoria mai bună (rădăcini românești + RRF + reordonare cu modelul
+  propriu; prag +5 puncte la k = 3 pe un set nou), S30–S31 Muon + răcire lungă (AdamW contra Muon, câte 2 h; prag −0,010 val_bpb română),
+  S32 motorul de inferență fără PyTorch (fp32 + Q8_0, doar procesor). Fiecare cu pre-înregistrare.
 
 ## Ce oferă proiectul celorlalți
 - `verifica_text(text)` din motorul de română: acord, „al/a/ai/ale”, numerale cu „de”, diacritice (Python, fără rețea).
@@ -29,7 +31,8 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de **calcul** și **citirea documentelor** (PDF/Word → text). Nimic acum.
 - De la `cyber-universe` și `cyber-gpu`: nimic acum. **Placa workstation-ului e ocupată cu S27 până pe la ~20:45** (26 oct); fereastra
   OS/GPU (~30 min, cu Adrian, mâine/poimâine) se alege între două sarcini, prin centrul de comandă.
-- Pentru K6-CPU („Kronos bare-metal v0.2”), dacă Adrian aprobă: unealta de export al greutăților (#415) și examenele în JSON.
+- Pentru K6-CPU („Kronos bare-metal v0.2”): S32 (C-21) va scrie formatul propriu de greutăți (fp32 + Q8_0) și un motor de referință
+  fără PyTorch — contractul pentru motorul Rust din OS (după S27–S31).
 
 ## Blocaje / nevoie de Adrian
 - Nimic urgent. Mici întrebări: ora raportului de dimineață (06:40 de la ora de iarnă, sau înapoi la 07:40?) și închiderea S28
