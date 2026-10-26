@@ -419,7 +419,7 @@ Format:
   Pentru A (proba tinygrad pe placa reală, de pe un stick Linux, cu jurnalul scrierilor): pregătește doar instrucțiunile exacte și scriptul în
   `docs/TEST_MATRIX.md` + parserul de jurnal testat pe un jurnal scris de mână. **Nu se rulează nimic pe placă fără Adrian de față.**
   Firmware-ul NVIDIA rămâne în afara repo-ului.
-- stare: preluat (2026-10-26 19:27, sesiunea Cyber-GPU) — făcute: B, C (RPC mari, SET_REGISTRY, „golden image” notat), A (doar pregătit, nerulat), D partea 1; rămase: D partea 2 (GSP fals), E (NAK + matmul); urmărit în `docs/IMPLEMENTATION_STATUS.md` (sesiunea 6)
+- stare: preluat (2026-10-26 19:27, sesiunea Cyber-GPU; reluat 2026-10-27 01:28, sesiunea Cyber-GPU 7) — făcute: B, C (RPC mari, SET_REGISTRY, „golden image” notat), A (doar pregătit, nerulat), D partea 1; rămase: D partea 2 (GSP fals), E (NAK + matmul); urmărit în `docs/IMPLEMENTATION_STATUS.md` (sesiunea 6)
 - rezultat:
 
 ### C-21 · kronos · Din studiul open-source: memoria E3 mai bună, apoi Muon + răcire lungă, apoi motorul de inferență fără PyTorch
