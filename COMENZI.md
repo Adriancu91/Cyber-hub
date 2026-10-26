@@ -419,7 +419,7 @@ Format:
   Pentru A (proba tinygrad pe placa reală, de pe un stick Linux, cu jurnalul scrierilor): pregătește doar instrucțiunile exacte și scriptul în
   `docs/TEST_MATRIX.md` + parserul de jurnal testat pe un jurnal scris de mână. **Nu se rulează nimic pe placă fără Adrian de față.**
   Firmware-ul NVIDIA rămâne în afara repo-ului.
-- stare: nou
+- stare: preluat (2026-10-26 19:27, sesiunea Cyber-GPU) — pașii B → C → D → E, pregătirea A; urmărit în `docs/IMPLEMENTATION_STATUS.md` (sesiunea 6)
 - rezultat:
 
 ### C-21 · kronos · Din studiul open-source: memoria E3 mai bună, apoi Muon + răcire lungă, apoi motorul de inferență fără PyTorch
