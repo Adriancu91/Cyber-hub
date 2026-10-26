@@ -12,6 +12,7 @@
 - 134 de teste trec; CI verde (rulările 16–18; o rulare roșie din cauza unei reguli noi din Rust 1.99, reparată).
 
 ## Urmează
+- **C-20** (comanda nouă de la 18:10, după studiul open-source) — văzută, încă nepreluată: o ia sesiunea următoare (B: antete generate, C: tinygrad ca hartă, D: GSP fals în `gpu-sim`, E: matmul cu NAK, A: doar pregătirea probei tinygrad). Primele diferențe față de codul de azi sunt notate în `docs/COMPATIBILITATE_FIRMWARE.md` („De verificat”).
 - Fereastra pe workstation (27–28 oct, ~30 min, Kronos oprit): citiri I0–I3 + FWSEC + verificarea fișierelor de pe stick. **0 scrieri în placă.** Lista: `docs/TEST_MATRIX.md` partea B0.
 - Fără placă: antetele fișierelor bootloader/booter (lipsesc pentru WPR meta), conținutul mesajelor SetSystemInfo/SetRegistry, registrele falcon pentru I6–I7 (scrise, dar oprite).
 
