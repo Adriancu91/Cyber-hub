@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-26 16:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-26 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -13,9 +13,10 @@
   (plafonul pentru E3 cu model). Cifrele vechi de pe 160 de întrebări (86,9 %) erau umflate.
 
 ## Urmează
-- **S27 (placa, ~4–5 ore, aprobat de Adrian 26 oct 16:10):** E3 cu antrenare — din #415, 3 ore pe întrebări cu primele 3 bucăți găsite de index;
-  examen oficial pe cele 100 de întrebări S26, modelul primește doar întrebarea. Confirmat la ≥ 60 % corecte și cel mult 2 puncte pierdute pe
-  „răspuns din text dat”; infirmat sub 45 %. Pre-înregistrarea se urcă înainte de pornire. Verdict probabil diseară.
+- **S27 rulează pe placă de la 16:52** (aprobat de Adrian 26 oct 16:10): E3 cu antrenare — din #415, 3 ore pe întrebări cu bucățile găsite
+  de index (de obicei încap 2 bucăți în contextul de 512, nu 3 — scris în pre-înregistrare înainte de pornire); apoi examenul oficial pe cele
+  100 de întrebări S26, modelul primește doar întrebarea. Confirmat la ≥ 60 %, infirmat sub 45 %. Antrenarea se termină ~20:10, examenele ~20:45.
+  Verdict diseară; așteptarea executantului: ~53 % (NECLAR).
 
 ## Ce oferă proiectul celorlalți
 - `verifica_text(text)` din motorul de română: acord, „al/a/ai/ale”, numerale cu „de”, diacritice (Python, fără rețea).
@@ -26,8 +27,8 @@
 
 ## De ce are nevoie de la ceilalți
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de **calcul** și **citirea documentelor** (PDF/Word → text). Nimic acum.
-- De la `cyber-universe` și `cyber-gpu`: nimic acum. **Placa workstation-ului e ocupată cu S27** în următoarele ~5 ore; fereastra OS/GPU
-  (~30–60 min, cu Adrian) se alege între două sarcini, prin centrul de comandă.
+- De la `cyber-universe` și `cyber-gpu`: nimic acum. **Placa workstation-ului e ocupată cu S27 până pe la ~20:45** (26 oct); fereastra
+  OS/GPU (~30 min, cu Adrian, mâine/poimâine) se alege între două sarcini, prin centrul de comandă.
 - Pentru K6-CPU („Kronos bare-metal v0.2”), dacă Adrian aprobă: unealta de export al greutăților (#415) și examenele în JSON.
 
 ## Blocaje / nevoie de Adrian
