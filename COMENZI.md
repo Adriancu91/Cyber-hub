@@ -397,7 +397,7 @@ Format:
      (confirmat / parțial / necunoscut / SIMULARE). Strânge în el ce e acum împrăștiat în RESEARCH, GA104_INITIALIZATION și IMPLEMENTATION_STATUS.
   Mai departe: I4–I8 pregătite și testate în SIMULARE, ca până acum. **Nicio scriere în placa reală fără Adrian de față** (fereastra pe
   workstation, mâine sau poimâine). Fără cod GPL copiat; fără firmware în repo.
-- stare: nou
+- stare: preluat (2026-10-26 17:16, sesiunea Cyber-GPU) — pașii a–e din prompt-ul sesiunii programate; urmărire în `docs/IMPLEMENTATION_STATUS.md`
 - rezultat:
 
 ### C-19 · cyber-universe · Comenzile `gpu gfw` și `gpu vbios` (doar citire) în OS
