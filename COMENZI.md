@@ -466,8 +466,8 @@ Format:
   **Cauza probabilă (din `log usb 60`):** pe Tiger Lake sunt două xHCI (`00:0d.0 8086:9a13` Thunderbolt și `00:14.0 8086:a0ed`); OS-ul pornește doar
   unul („5 porturi, 0 dispozitive”) — trebuie pornite **toate** controlerele xHCI și căutat stick-ul pe fiecare (test QEMU cu două `qemu-xhci`).
   Pe Intel, `cpu porneste` + `kronos-calcul` cu 8 fire: OK (7× față de 1 fir) — primul calcul Kronos pe toate nucleele, pe hardware real.
-- stare: preluat (2026-10-27 21:45 UTC, sesiunea OS) — P6-24 (#GP pe AMD) + P6-25 (toate controlerele xHCI) în docs/TASKS.md
-- rezultat:
+- stare: gata (preluat 2026-10-27 21:45 UTC, terminat 23:50 UTC, sesiunea OS) — P6-24, P6-25; CI verde (run 192), Release os-192
+- rezultat: căderea #GP pe AMD venea din `sysret` (pe AMD programul rămânea cu SS=0x18 fără RPL 3, iar întoarcerea după întreruperea de ceas cădea), reparată prin baza 0x13 în STAR cu test care pică pe valoarea veche, iar OS-ul pornește acum toate controlerele USB (stick-ul de pe `00:14.0` se va găsi), testat în QEMU cu două controlere; confirmarea pe ambele laptopuri e în `stare/cyber-universe.md`.
 
 ### C-24 · kronos · Kronos adevărat în OS, partea Kronos: specificația KGR1 + vectorii de test în hub, modelul exportat
 - data: 2026-10-27 23:20 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45 — „Kronos în OS-ul propriu” e direcția lui)
@@ -490,7 +490,7 @@ Format:
   (repo public); Adrian le pune pe stick. Scrie-ți codul (nu porta codul Python); nu schimba nimic altceva.
   **Ținta principală pe hardware e workstation-ul** (i9-10980XE, 18 nuclee / 36 fire, AVX-512, 128 GB, rețea I219 cu cablu; Adrian, 27 oct 23:16):
   folosește toate cele 36 de fire și, dacă e simplu, AVX-512 cu fallback la AVX2; laptopul Intel rămâne a doua țintă.
-- stare: nou
+- stare: preluat (2026-10-27 23:50 UTC, sesiunea OS) — P6-27 în docs/TASKS.md; așteaptă C-24 (`integrare/kronos/` în hub)
 - rezultat:
 
 ### C-26 · cyber-universe · O linie în `hw` cu adresa imaginii ecranului (cerere Cyber-GPU, doar citire)
@@ -498,8 +498,8 @@ Format:
 - ce: Propunerea din `cyber-gpu` `integration/cyber-universe/B0_adresa-ecranului.md`: în `hw` (și deci în `raport`), o linie cu adresa fizică și
   mărimea framebuffer-ului primit de la Limine, ca driverul GPU să nu scrie peste ea. Doar citire; test în QEMU. Fă-o împreună cu C-23, ca Release-ul
   pentru fereastra de pe workstation să o conțină.
-- stare: preluat (2026-10-27 21:45 UTC, sesiunea OS) — P6-26 în docs/TASKS.md, în același Release cu C-23
-- rezultat:
+- stare: gata (preluat 2026-10-27 21:45 UTC, terminat 23:50 UTC, sesiunea OS) — P6-26; Release os-192
+- rezultat: `hw` și `raport` au rândul „ecran: framebuffer la adresa fizica 0x…, mărime, LxI, pitch, bpp” (în QEMU 0x80000000, 1280x800), doar citire, testat în CI.
 
 ### C-27 · cyber-universe · Primul pas spre „OS-ul care se reglează singur”: căutare automată a celei mai bune variante de calcul pe fiecare calculator
 - data: 2026-10-27 23:35 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45 — direcția lui: sistemul își găsește singur cea mai
@@ -510,7 +510,7 @@ Format:
   `/usb/kronos/reglaj-<procesor>.txt`; motorul KGR1 (C-25) o folosește la pornire dacă există, altfel valorile implicite. Fără scrieri în hardware
   în afară de acel fișier. Test în QEMU: căutarea alege o configurație validă și o variantă stricată intenționat e respinsă.
   Idee: „autotuning” (tinygrad BEAM, ATLAS) — scrisă de noi.
-- stare: nou
+- stare: preluat (2026-10-27 23:50 UTC, sesiunea OS) — P6-28 în docs/TASKS.md; după P6-27
 - rezultat:
 
 ### C-28 · kronos · E4 „Kronos-Cod”: un model separat, ~150M, doar pe cod, apoi auto-îmbunătățire cu teste care rulează
