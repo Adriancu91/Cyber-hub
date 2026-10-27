@@ -1,14 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 08:30 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 09:17 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea de dimineață (07:47–08:30), 5 commituri, testele trec, toate textele noi traduse:
-  - **Sheets:** **comentarii cu răspunsuri** (fir de discuție cu autor și oră, Rezolvă / Redeschide, și în .xlsx); **Rezumat (tabel pivot) cu mai multe valori** (de ex. Sumă + Medie, fiecare în coloana ei); **sfârșit de pagină și pe coloane** (și în .xlsx, cu linie punctată pe grilă).
-  - **Docs:** pozele din fața / spatele textului au **poziție exactă în cm** și aliniere la marginile paginii.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 08:32–09:17, 5 commituri, testele trec, toate textele noi traduse, toate în **Sheets → Rezumat (tabel pivot)**:
+  - **Reîmprospătare** (Alt+F5, Ctrl+Alt+F5, Date → Reîmprospătare totală): rezumatul prinde orașele / lunile noi adăugate în tabel.
+  - **Grafic pivot** (Inserare → Diagrame): rezumat + grafic, reîmprospătate împreună.
+  - **Câmp calculat** (de exemplu Preț mediu = Suma / Bucăți) și „Arată valorile ca”: **Total cumulat**, **Diferența / % diferență față de cel anterior**, **Indice**.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 82,1%, Excel 82,1%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
+- Scoruri: Word 82,1%, Excel 83,2%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” din inventar (Word și Excel), câte una pe pas.
