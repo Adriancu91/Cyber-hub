@@ -161,3 +161,4 @@
 - 2026-10-27 05:28 — Slides: alinierea și spațierea pe fiecare paragraf (liste, casete, forme; și în .pptx), Selectare date la grafice (ascunderea unei serii) și decuparea clipului pe slide; 4 commituri, testele trec (PowerPoint 82,4%).
 
 - 2026-10-27 06:18 — Slides: decuparea și apariția / stingerea clipurilor scrise în .pptx, semne de carte pe clipuri (și Alt+End / Alt+Home în prezentare), spațierea înainte / după paragraf (pe casetă sau pe paragraf; .pptx și .odp); 5 commituri, testele trec, compatibilitate 530 de fișiere fără erori (PowerPoint 83,2%).
+- 2026-10-27 07:10 — PDF: editarea unui paragraf întreg cu reașezarea textului și păstrarea alinierii; Slides: clipul pornește la clic în ordinea animațiilor (Media: Redare); 3 commituri, testele trec (Acrobat 75,4%, PowerPoint 83,3%).

@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 06:18 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 07:10 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea de dimineață (05:28–06:18), 5 commituri, testele trec, totul în Slides:
-  - **Clipurile decupate și cu apariție / stingere** se păstrează acum și în .pptx (și se citesc înapoi).
-  - **Semne de carte pe clipuri**: „🔖 Semn aici”, clic pe semn ca să sari acolo; în prezentare Alt+End / Alt+Home.
-  - **Spațierea înainte / după paragraf** (Înainte / După, în puncte), pe toată caseta sau doar pe paragraful cu cursorul; și în .pptx și din .odp.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea de dimineață (06:19–07:10), 3 commituri, testele trec:
+  - **PDF, editarea unui paragraf întreg:** clic pe un paragraf → îl schimbi într-o casetă cu mai multe rânduri, iar textul nou se reașază singur pe lățimea lui, cu același pas între rânduri.
+  - **PDF, alinierea păstrată:** paragrafele la centru, la dreapta sau stânga-dreapta rămân așa după editare.
+  - **Slides, „Media: Redare”:** clipul pornește la clic, în ordinea animațiilor (și în .pptx). Am reparat și 11 teste de animații stricate de o schimbare de dimineață.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 81,7%, Excel 81,6%, PowerPoint 83,2%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,2%, Photoshop 72,8%, formule 97,1%.
+- Scoruri: Word 81,7%, Excel 81,6%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
 
 ## Urmează
-- PDF: reașezarea paragrafului la editarea textului.
-- Slides: pornirea clipului „la clic, în ordinea animațiilor”.
+- PDF: aldinul unui cuvânt păstrat la reașezarea paragrafului.
+- Slides: Pauză / Oprire clip ca pași ai animațiilor.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
