@@ -450,3 +450,14 @@ Format:
   Restul propunerilor (teste mai rapide, găzduirea lui Kronos, tipuri pentru DMA) rămân pentru mai târziu, după aceste două.
 - stare: gata (preluat 2026-10-26 15:45 UTC, terminat 16:40 UTC, sesiunea OS) — P6-22, P6-23; CI verde (run 191), Release os-191
 - rezultat: `raport` scrie pe stick `/usb/raport/<data>-<nr>.txt` (și automat la erori noi, fără chei, testat în QEMU cu citirea fișierului din imagine), iar programele au promisiuni + căi vizibile, cu `claude.key`/`github.token` vizibile doar programelor care le cer (scenariul `drepturi`).
+
+### C-23 · cyber-universe · ThinkPad L15 Gen 2: `run kronos-calcul` cade cu #GP (cod 0x18) după `cpu porneste`
+- data: 2026-10-27 23:00 · de la: Adrian (prin centrul de comandă)
+- ce: Primul test pe ThinkPad (i7-1185G7, Tiger Lake), os-191: pornește, 6 nuclee pornite, driverul de rețea rulează (fără cablu), dar
+  `run kronos-calcul` după `cpu porneste` oprește sistemul: `#GP`, `RIP=0xffffffff8001e939`, `RSP=0xffff9000001d0398`, `RFLAGS=0x10082`, `CS=0x8`,
+  `cod eroare=0x18`. Detalii și poză: `rezultate/2026-10-27-thinkpad-os191/`. Găsește cauza (simbolizează RIP pe build-ul os-191, commit `a0834b7`),
+  repar-o, adaugă un test în QEMU care o prinde (de ex. alt număr de nuclee / alt model de procesor `-cpu`, inclusiv unul cu AVX-512 ca Tiger Lake),
+  și scoate un Release nou. Verifică și de ce apar 6 nuclee pe un procesor cu 8 fire. Rapoartele `raport` de la a doua pornire vin în același dosar
+  când le trimite Adrian. Nu schimba nimic altceva.
+- stare: nou
+- rezultat:
