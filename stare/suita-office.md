@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 04:09 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 04:43 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea de noapte (03:32–04:12), 5 commituri, testele trec:
-  - **Slides → Coordonator diapozitive cu aspecte**: ce pui pe un aspect (de exemplu Titlu) apare doar pe slide-urile cu acel aspect.
-  - **PDF → Editează text**: lista de fonturi are și fonturile calculatorului (Arial, Calibri, Georgia…), încorporate în PDF; caseta verifică ortografia în română.
-  - **Sheets → grafice → Formatare axă**: minimul, maximul și pasul axei, păstrate și în .xlsx.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea de noapte (04:09–04:45), 5 commituri, testele trec, totul în Sheets → grafice:
+  - **Stiluri rapide**: 8 stiluri dintr-un clic (umbre, degrade, fundal închis…), păstrate și în .xlsx.
+  - **Serii**: debifezi o serie și dispare din grafic (datele rămân în tabel).
+  - **Comutare rând/coloană**: seriile devin rândurile tabelului; „Selectare date” e acum completă.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 81,7%, Excel 81,3%, PowerPoint 81,9%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,2%, Photoshop 72,8%, formule 97,1%.
+- Scoruri: Word 81,7%, Excel 81,6%, PowerPoint 81,9%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,2%, Photoshop 72,8%, formule 97,1%.
 
 ## Urmează
-- Sheets: stilurile graficelor și alegerea seriilor (Select Data).
-- PDF: reașezarea paragrafului la editarea textului; Slides: alinierea pe fiecare paragraf.
+- Slides: alinierea și spațierea pe fiecare paragraf (acum se aplică pe toată caseta).
+- PDF: reașezarea paragrafului la editarea textului.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
