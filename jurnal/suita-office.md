@@ -178,3 +178,4 @@
 - 2026-10-27 16:50 — Sheets: culorile din temă ale fișierelor .xlsx se văd acum (erau ignorate în 29 din 43 de fișiere de test), paleta de culori la umplere și font, temele registrului (Aspect pagină → Teme); 3 commituri, testele trec (Excel 84,8%).
 - 2026-10-27 17:27 — Sheets: fonturile temei (Titluri / Corp, și în .xlsx); Slides: rotirea 3-D la forme și poze, 5 stiluri de poză noi, textul cu reflexie; 5 commituri, testele trec (PowerPoint 84,6%).
 - 2026-10-27 18:08 — Slides: literele cu gradient (și în .pptx) și galeria Stiluri rapide cu miniaturi; Docs: stiluri de poză noi (chenar întrerupt, relief, perspectivă) și reflexie / relief la forme; 4 commituri, testele trec (Word 84,6%, PowerPoint 85,2%).
+- 2026-10-27 18:53 — PDF: căutare în toate PDF-urile dintr-un dosar, datele formularelor și comentariile și în formatul .fdf, acțiuni gata făcute și salvate în Lot; 4 commituri, testele trec (Acrobat 76,4%).
