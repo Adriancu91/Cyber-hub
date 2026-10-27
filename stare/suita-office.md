@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 04:43 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 05:28 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea de noapte (04:09–04:45), 5 commituri, testele trec, totul în Sheets → grafice:
-  - **Stiluri rapide**: 8 stiluri dintr-un clic (umbre, degrade, fundal închis…), păstrate și în .xlsx.
-  - **Serii**: debifezi o serie și dispare din grafic (datele rămân în tabel).
-  - **Comutare rând/coloană**: seriile devin rândurile tabelului; „Selectare date” e acum completă.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea de dimineață (04:44–05:28), 4 commituri, testele trec, totul în Slides:
+  - **Alinierea și spațierea pe fiecare paragraf** (în liste, casete de text și forme), nu doar pe toată caseta; și în .pptx.
+  - **Selectare date la grafice**: debifezi o serie și dispare din grafic (datele rămân).
+  - **Decuparea clipului pe slide**: „Începe de aici” / „Se oprește aici”.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 81,7%, Excel 81,6%, PowerPoint 81,9%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,2%, Photoshop 72,8%, formule 97,1%.
+- Scoruri: Word 81,7%, Excel 81,6%, PowerPoint 82,4%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,2%, Photoshop 72,8%, formule 97,1%.
 
 ## Urmează
-- Slides: alinierea și spațierea pe fiecare paragraf (acum se aplică pe toată caseta).
 - PDF: reașezarea paragrafului la editarea textului.
+- Slides: decuparea și apariția / stingerea clipurilor scrise și în .pptx; spațierea înainte / după paragraf.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
