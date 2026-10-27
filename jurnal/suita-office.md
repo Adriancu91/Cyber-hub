@@ -159,3 +159,5 @@
 - 2026-10-27 04:09 — Slides: coordonatorul de diapozitive cu aspecte; PDF: fonturile calculatorului și verificarea ortografiei la Editează text; Sheets: Formatare axă la grafice (minim / maxim / pas, și în .xlsx); 5 commituri, testele trec (Excel 81,3%, PowerPoint 81,9%, Acrobat 75,2%).
 - 2026-10-27 04:43 — Sheets, grafice: Stiluri rapide (umbre, degrade, fundal; și în .xlsx), ascunderea unei serii și Comutare rând/coloană (Selectare date completă); 5 commituri, testele trec (Excel 81,6%).
 - 2026-10-27 05:28 — Slides: alinierea și spațierea pe fiecare paragraf (liste, casete, forme; și în .pptx), Selectare date la grafice (ascunderea unei serii) și decuparea clipului pe slide; 4 commituri, testele trec (PowerPoint 82,4%).
+
+- 2026-10-27 06:18 — Slides: decuparea și apariția / stingerea clipurilor scrise în .pptx, semne de carte pe clipuri (și Alt+End / Alt+Home în prezentare), spațierea înainte / după paragraf (pe casetă sau pe paragraf; .pptx și .odp); 5 commituri, testele trec, compatibilitate 530 de fișiere fără erori (PowerPoint 83,2%).
