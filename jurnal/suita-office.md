@@ -169,3 +169,5 @@
 - 2026-10-27 10:49 — Sheets: stilurile proprii și în .xlsx; Docs: Potrivește câmpurile și Verifică erorile la îmbinare, fereastra Proprietăți tabel (indentare, margini, rând nerupt, lățimea coloanei; .docx și .odt); 6 commituri, testele trec (Word 82,4%).
 - 2026-10-27 11:35 — Docs: Proprietăți tabel completă (text alternativ, textul în jurul tabelului) și limba textului ales cu „Nu verifica ortografia” (.docx și .odt); Sheets: 2 stiluri de tabel noi; 5 commituri, testele trec (Word 82,6%).
 - 2026-10-27 12:20 — Docs: borduri pe celule cu Pensula pentru borduri, lista principală de surse, casetă de selectare, fontul filigranului, cuprinsul ca câmp în .docx; Sheets: rang în Rezumat; 6 commituri, testele trec (Word 83,2%).
+
+- 2026-10-27 13:00 — Docs: listă verticală și selector de dată în text (formulare, și în .docx), filigran din imagine, efectul Strălucire; 4 commituri, testele trec (Word 83,5%).
