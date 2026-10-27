@@ -500,3 +500,15 @@ Format:
   pentru fereastra de pe workstation să o conțină.
 - stare: nou
 - rezultat:
+
+### C-27 · cyber-universe · Primul pas spre „OS-ul care se reglează singur”: căutare automată a celei mai bune variante de calcul pe fiecare calculator
+- data: 2026-10-27 23:35 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45 — direcția lui: sistemul își găsește singur cea mai
+  bună folosire a hardware-ului, încearcă, păstrează sau aruncă)
+- ce: **După C-23 și C-25.** `kronos-calcul --cauta`: încearcă automat variante ale operatorilor lui Kronos (mărimea blocurilor la matmul, numărul de
+  fire, AVX2 / AVX-512 unde există, ordinea buclelor), **verifică fiecare variantă față de calculul de control** (o variantă greșită e aruncată, oricât
+  de rapidă), măsoară timpul cu un ceas fin (TSC calibrat, nu tick-ul de 10 ms) și scrie cea mai bună configurație pentru acel calculator în
+  `/usb/kronos/reglaj-<procesor>.txt`; motorul KGR1 (C-25) o folosește la pornire dacă există, altfel valorile implicite. Fără scrieri în hardware
+  în afară de acel fișier. Test în QEMU: căutarea alege o configurație validă și o variantă stricată intenționat e respinsă.
+  Idee: „autotuning” (tinygrad BEAM, ATLAS) — scrisă de noi.
+- stare: nou
+- rezultat:
