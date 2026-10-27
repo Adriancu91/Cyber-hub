@@ -466,7 +466,7 @@ Format:
   **Cauza probabilă (din `log usb 60`):** pe Tiger Lake sunt două xHCI (`00:0d.0 8086:9a13` Thunderbolt și `00:14.0 8086:a0ed`); OS-ul pornește doar
   unul („5 porturi, 0 dispozitive”) — trebuie pornite **toate** controlerele xHCI și căutat stick-ul pe fiecare (test QEMU cu două `qemu-xhci`).
   Pe Intel, `cpu porneste` + `kronos-calcul` cu 8 fire: OK (7× față de 1 fir) — primul calcul Kronos pe toate nucleele, pe hardware real.
-- stare: nou
+- stare: preluat (2026-10-27 21:45 UTC, sesiunea OS) — P6-24 (#GP pe AMD) + P6-25 (toate controlerele xHCI) în docs/TASKS.md
 - rezultat:
 
 ### C-24 · kronos · Kronos adevărat în OS, partea Kronos: specificația KGR1 + vectorii de test în hub, modelul exportat
@@ -498,7 +498,7 @@ Format:
 - ce: Propunerea din `cyber-gpu` `integration/cyber-universe/B0_adresa-ecranului.md`: în `hw` (și deci în `raport`), o linie cu adresa fizică și
   mărimea framebuffer-ului primit de la Limine, ca driverul GPU să nu scrie peste ea. Doar citire; test în QEMU. Fă-o împreună cu C-23, ca Release-ul
   pentru fereastra de pe workstation să o conțină.
-- stare: nou
+- stare: preluat (2026-10-27 21:45 UTC, sesiunea OS) — P6-26 în docs/TASKS.md, în același Release cu C-23
 - rezultat:
 
 ### C-27 · cyber-universe · Primul pas spre „OS-ul care se reglează singur”: căutare automată a celei mai bune variante de calcul pe fiecare calculator
