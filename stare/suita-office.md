@@ -1,15 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 07:44 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 08:30 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea de dimineață (07:08–07:44), 5 commituri, testele trec:
-  - **Slides:** pe lângă „Media: Redare”, clipurile au acum și **Media: Pauză** și **Media: Oprire** ca pași ai animațiilor (și în .pptx).
-  - **PDF:** la editarea unui paragraf, cuvintele **aldine / cursive** rămân așa după reașezarea textului.
-  - **Docs:** forme cu **umbră, strălucire, margini estompate**; poze cu stilurile noi **Strălucire, Margini estompate, Reflexie** și **chenar cu culoarea și grosimea alese**.
-- O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză (verificat: toate textele noi traduse).
-- Scoruri: Word 81,7%, Excel 81,6%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea de dimineață (07:47–08:30), 5 commituri, testele trec, toate textele noi traduse:
+  - **Sheets:** **comentarii cu răspunsuri** (fir de discuție cu autor și oră, Rezolvă / Redeschide, și în .xlsx); **Rezumat (tabel pivot) cu mai multe valori** (de ex. Sumă + Medie, fiecare în coloana ei); **sfârșit de pagină și pe coloane** (și în .xlsx, cu linie punctată pe grilă).
+  - **Docs:** pozele din fața / spatele textului au **poziție exactă în cm** și aliniere la marginile paginii.
+- O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
+- Scoruri: Word 82,1%, Excel 82,1%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” din inventar (Word și Excel), câte una pe pas.
@@ -22,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să deschidă la serviciu un .xlsx salvat din Suite cu comentarii cu răspunsuri (Sheets → Revizuire → 💬 Comentariu nou): apar ca discuții? (aici n-am avut cu ce testa).
 - **LTV:** ca o semnătură să poată fi verificată și peste ani, Suite ar trebui să întrebe pe internet serverele emitentului certificatului (OCSP / CRL), la semnare. E în regulă, doar la cererea ta, ca la marca temporală?
 - Să încerce un .docx semnat din Suite în programul de birou de la serviciu (Docs → „.docx semnat digital…”): îl recunoaște ca semnat? (aici n-am avut cu ce testa).
 - Să încerce semnarea cu tokenul lui real: PDF → 🔏 Semnează digital → Folosește un certificat de pe calculator sau token…; dacă apare o eroare, mesajul ne spune ce să reparăm.
