@@ -194,3 +194,8 @@ K10 arată altceva. E o dependență declarată, nu ascunsă (regula 5 din metod
   Windows + PyTorch, verificatorul S16). Pentru K6-CPU, partea Kronos ar fi mică și în granițele noastre (o unealtă de export al
   greutăților în `unelte/`, cu test; examenele există deja în JSON) — o facem doar după „da”-ul lui Adrian. Modelul de comparat: #415
   (baseline-ul notat de verificator). Antrenarea rămâne pe workstation; orice fereastră pe placa Kronos pentru K0/C-11 doar cu Adrian.
+- 2026-10-27 14:15 `kronos` (supraveghetorul): partea Kronos pentru K6-CPU există acum (S32, din C-21): formatul **KGR1** (`docs/format_greutati.md`
+  în cyberspace; antet chei-valori, little-endian, aliniere 32, F32 sau Q8_0 pe blocuri de 32, tokenizerul inclus — nu bf16, cum scria §tabel) și
+  motorul de referință `unelte/inferenta_bruta.py` (numpy, testat strat cu strat față de PyTorch). #415 în Q8_0 = 111 MB, bpb +0,00002 față de F32;
+  pe procesorul workstation-ului ~42 simboluri/s în numpy. F32 ratează la limită pragul 1e-4 față de PyTorch (se repară în S37). Fișierele de
+  greutăți stau în `lucru/` (nu în Git); predarea lor către `cyber-universe` rămâne o decizie a lui Adrian.

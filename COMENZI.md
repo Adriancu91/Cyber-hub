@@ -435,8 +435,8 @@ Format:
   Toate ca module noi (MANIFEST + teste de contract), reversibile; #415 și linia w2 rămân neatinse. **Examenul nu se schimbă.**
   Propunerile 4 (w3) și 5 (auto-joc) rămân pentru mai târziu (5 după verdictul S27). Date: TinyStories rămâne deocamdată (vezi DECIZII 26 oct 17:45);
   orice date NOI nu au voie să fie generate de un LLM străin.
-- stare: preluat (2026-10-26 20:15, supraveghetor) — S29, S30, S31, S32 în `plan/coada.md` din cyberspace, `aprobat`, în ordine, fiecare doar după S27 și după cea dinainte; S29 gata (CONFIRMAT), S30 gata, S31 gata (INFIRMAT: Muon 1,3019 față de AdamW 1,2332), S32 urmează (2026-10-27 08:15)
-- rezultat:
+- stare: gata (preluat 2026-10-26 20:15, terminat 2026-10-27 14:15, supraveghetor) — S29, S30, S31, S32 în `plan/coada.md` din cyberspace, `aprobat`, în ordine, fiecare doar după S27 și după cea dinainte; S29 gata (CONFIRMAT), S30 gata, S31 gata (INFIRMAT: Muon 1,3019 față de AdamW 1,2332), S32 gata
+- rezultat: Memoria E3 mai bună a trecut (S29: 83 față de 72 în primele 3 bucăți), Muon a picat (S31), iar motorul fără PyTorch merge (S32: Q8_0 de 111 MB pierde doar +0,00002 bpb; F32 ratează la limită pragul de 1e-4, cu textul identic — se repară în S37).
 
 ### C-22 · cyber-universe · Din studiul open-source: „cutia neagră” pe stick + permisiuni pe program
 - data: 2026-10-26 17:45 · de la: Adrian (prin centrul de comandă; recomandările centrului, aprobate de Adrian)
