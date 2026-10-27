@@ -186,3 +186,4 @@
 - 2026-10-27 22:37 — Imagini: aliniere automată a straturilor, îmbinare automată (focalizare) și HDR, Calcule și Gamă de culori; 5 commituri, testele trec (Photoshop 74,2%).
 - 2026-10-27 23:22 — Imagini: Zonă de focalizare (selecția părții clare), poziția și culoarea de sub mouse în bara de jos, presetări de ajustare proprii, 9 fonturi noi + mărime în pixeli + aldin / cursiv la text; 5 commituri, testele trec (Photoshop 74,6%).
 - 2026-10-28 00:07 — Imagini, textul din Adnotează: spațierea literelor și a rândurilor, dublu clic ca să schimbi un text pus, casetă de paragraf cu rânduri care se rup singure, retragerea primului rând și spațiul după paragraf; 4 commituri, testele trec (Photoshop 74,9%).
+- 2026-10-28 00:51 — Imagini, pensula: vârf reglabil (duritate, spațiere, rotunjime, unghi), pensulă de amestec, variații la întâmplare și împrăștiere, pensule gata făcute; 4 commituri, testele trec (Photoshop 75,2%).
