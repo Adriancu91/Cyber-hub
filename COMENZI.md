@@ -468,3 +468,25 @@ Format:
   Pe Intel, `cpu porneste` + `kronos-calcul` cu 8 fire: OK (7× față de 1 fir) — primul calcul Kronos pe toate nucleele, pe hardware real.
 - stare: nou
 - rezultat:
+
+### C-24 · kronos · Kronos adevărat în OS, partea Kronos: specificația KGR1 + vectorii de test în hub, modelul exportat
+- data: 2026-10-27 23:20 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45 — „Kronos în OS-ul propriu” e direcția lui)
+- ce: Fără placă, fără să întrerupi S38 sau altă sarcină de placă. (1) Copiază în hub, `integrare/kronos/`, `docs/format_greutati.md` (KGR1) și un
+  set mic de **vectori de test**: un model KGR1 minuscul cu greutăți aleatoare (≤ 1 MB, Q8_0 și F32), 3 texte fixe tokenizate și logit-urile
+  pe care le dă `unelte/inferenta_bruta.py` pe el — ca sesiunea OS să-și verifice motorul Rust fără să vadă codul Kronos. Fără greutăți
+  reale în hub. (2) Exportă cel mai bun model curent (#441 sau rezultatul S38, dacă e confirmat) în **KGR1 Q8_0** cu `unelte/exporta_greutati.py`
+  și pune fișierul ca **Release** în repo-ul privat `cyberspace` (nu în hub, nu în repo-urile publice), cu suma SHA-256 notată în
+  `integrare/kronos/MODEL.md` (numele modelului, mărimea, suma, 3 texte cu primele 5 simboluri generate greedy, ca test pe hardware).
+- stare: nou
+- rezultat:
+
+### C-25 · cyber-universe · Kronos adevărat în OS: motorul KGR1 în Rust + comanda `kronos`
+- data: 2026-10-27 23:20 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: **După C-23.** Azi `kronos-calcul` rulează doar operațiile lui Kronos pe date de probă; pasul următor e modelul adevărat. Folosind
+  `integrare/kronos/format_greutati.md` și vectorii de test din hub (C-24): un motor no_std care citește un fișier KGR1 (F32 și Q8_0) de pe stick
+  (`/usb/kronos/*.kgr`), verifică suma SHA-256, face forward-ul strat cu strat pe toate nucleele (operatorii din `gpu-compute`) și tokenizerul
+  din fișier. Test în CI: pe modelul minuscul, logit-urile egale cu ale referinței (toleranța declarată în `integrare/kronos/`). Apoi comanda
+  `kronos "<text>"` care continuă textul (greedy, max N simboluri) și afișează simbolurile pe secundă. Greutățile reale nu intră în repo
+  (repo public); Adrian le pune pe stick. Scrie-ți codul (nu porta codul Python); nu schimba nimic altceva.
+- stare: nou
+- rezultat:

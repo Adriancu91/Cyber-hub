@@ -125,3 +125,4 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
   **TinyStories** (generat cu GPT-3.5/4, din memorie, de verificat) rămâne deocamdată: e în examenul oficial, iar scoaterea lui ar strica toate
   comparațiile; datele NOI nu au voie să vină de la un LLM străin; înlocuirea lui se decide la linia nouă „w3”.
 - 2026-10-27 18:00 — **Kronos S38 aprobat** (centrul de comandă, prin delegarea din 26 oct 17:45): o noapte cu rețeta A (sau D, după S36), din #441, cu pre-înregistrare.
+- 2026-10-27 23:20 — **Kronos adevărat în OS** (centrul de comandă, prin delegare): C-24 (Kronos: specificația KGR1 + vectori de test în hub, modelul exportat ca Release privat) și C-25 (OS: motor KGR1 în Rust + comanda `kronos`, după C-23). Greutățile reale nu ajung în repo-uri publice sau în hub.
