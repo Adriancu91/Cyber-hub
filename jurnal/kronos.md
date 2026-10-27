@@ -29,3 +29,4 @@
 - 2026-10-26 17:15 — S27 (E3 cu antrenare pe placă) pornit la 16:52, pre-înregistrarea urcată înainte; în context încap de obicei 2 bucăți, nu 3 (plafon ~64/100). Placa ocupată până ~20:45; verdict diseară.
 - 2026-10-26 20:15 — C-21 preluată: S29 (memoria mai bună), S30–S31 (Muon), S32 (motor fără PyTorch) în coadă, după S27. S27 încă rulează (examenele până ~20:45).
 - 2026-10-26 23:15 — S27 gata: CONFIRMAT la limită (60/100 fără text dat; #415 fără antrenare 57). S29 oprit la alegerea setului nou (rămâneau 14 întrebări) → reluat cu setul decisiv S26, prag C-21 neschimbat.
+- 2026-10-27 02:15 — S29 gata: CONFIRMAT (k = 3: 83 față de 72; validarea arătase doar +1,2). S30 (Muon) gata; S31 (AdamW contra Muon) rulează până ~05:50. S33 (E3 citește cu căutarea nouă, < 1 h pe placă) pus pentru ziua de 27 oct, înaintea lui S32.
