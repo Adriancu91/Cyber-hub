@@ -1,23 +1,21 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-27 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-27 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
   (executantul pe workstation + supraveghetorul în cloud, prin `plan/coada.md`). Direcția (Adrian, 22 oct): fără LLM nicăieri;
   auto-joc cu verificator + specialiști + memorie; notarea o face verificatorul nostru (S16).
-- **S34 gata: CONFIRMAT.** Rețeta A (AdamW + gradient adunat pe 8 loturi + răcire 25 %) câștigă prin rețetă, nu prin ore: aceleași 2 h cu rețeta
-  veche dau 1,2903 pe română curat (nicio îmbunătățire față de #415, 1,2858), rețeta A 1,2332.
-- **S35 gata: NECLAR.** Citirea cu bucățile reordonate pe 500 de întrebări de validare nevăzute: 336 față de 331 (+1 punct; pragul +2).
-  Ajută la definiții (+18), strică la „rest” (−17).
-- **S32 gata (C-21.3):** formatul propriu de greutăți **KGR1** + motor de referință în numpy, fără PyTorch. Q8_0 (111 MB): bpb +0,00002 → TRECE;
-  F32 (392 MB): dif. maximă 1,34e-4 față de pragul 1e-4 → NU TRECE la limită (argmax și textul identice). **C-21 e închisă.** 960 teste trec.
+- **S36 gata: NECLAR.** Rețeta A fără adunarea pe 8 loturi (proba D): 1,2520 pe română curat față de 1,2332 cu A întreagă → ambele părți ajută
+  (răcirea singură păstrează ~67 % din câștig).
+- **S37 gata: NU TRECE.** Motorul KGR1 fără PyTorch, cu LayerNorm/softmax în float64: dif. maximă F32 1,364e-4 (prag 1e-4); textul identic.
+  Executantul propune un prag relativ — decizia e la Adrian. Q8_0 (111 MB) trecuse deja la S32. 961 teste trec.
+- **S38 rulează** (noaptea 27→28): 6 ore cu rețeta A din #441 (aprobat 18:00 de centrul de comandă, prin delegare), pre-înregistrare urcată înainte;
+  sfârșit estimat ~01:55.
 
 ## Urmează
-- **S36** (rulează din ~15:05, sfârșit estimat ~17:15; pre-înregistrarea urcată înainte): proba D — rețeta A fără adunare pe loturi, ca să aflăm
-  dacă răcirea singură aduce câștigul. Verdictul la trecerea de 20:15.
-- **S37** (doar procesor): motorul KGR1 adună în float64 la LayerNorm/softmax; o remăsurare F32 cu același prag 1e-4.
-- **S38** (o noapte cu rețeta A, din #441): propus, așteaptă „da”-ul lui Adrian.
+- Verdictul S38 la trecerea de 02:15 (CONFIRMAT dacă română curat ≤ 1,2232 fără regresie > 0,005 la cod și TinyStories).
+- Ziua de 28 oct se decide după S38 (posibil proba E: fără adunare, cu rată mai mare).
 
 ## Ce oferă proiectul celorlalți
 - **Nou:** contractul fișierului de greutăți KGR1 (`docs/format_greutati.md` din cyberspace: antet chei-valori, little-endian, aliniere 32,
@@ -28,10 +26,10 @@
 
 ## De ce are nevoie de la ceilalți
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de **calcul** și **citirea documentelor**. Nimic acum.
-- De la `cyber-universe` și `cyber-gpu`: nimic acum. Placa workstation-ului: S36 până pe la ~17:30; apoi liberă (S37 e doar procesor), deci
-  bună pentru fereastra OS/GPU (~30 min, cu Adrian, prin centrul de comandă; o sarcină de placă nu pornește cât e anunțată fereastra).
+- De la `cyber-universe` și `cyber-gpu`: nimic acum. Placa workstation-ului e ocupată de S38 până pe la ~02:00; ziua de 28 oct nu e încă
+  programată (fereastra OS/GPU cu Adrian se anunță prin centrul de comandă; o sarcină de placă nu pornește cât e anunțată fereastra).
 
 ## Blocaje / nevoie de Adrian
-- O decizie: vrea o noapte de antrenare cu rețeta A, din #441 (S38)? Fără „da”, placa stă liberă la noapte.
+- Fără grabă: pragul pentru motorul fără PyTorch (F32) — păstrăm 1e-4 fix sau trecem la un prag relativ (propunerea din raportul S37)?
 - Mici întrebări: ora raportului de dimineață (06:40 sau 07:40), închiderea S28 (oprirea workstation-ului), un port nou `cautare` și unul `inferenta`
   în `kronos/` (doar cu „da”-ul lui Adrian).
