@@ -1,19 +1,20 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 02:46 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 03:31 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
-- Lucrul continuu merge pe plusurile alese de Adrian (P1–P4), înaintea funcțiilor care lipsesc. P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**.
-- Sesiunea de noapte (01:58–02:46), 5 commituri, testele trec:
-  - **.docx / .xlsx / .pptx semnate se verifică la deschidere**: „semnătura e validă” sau „NU e validă: documentul s-a schimbat după semnare” (forma canonică a XML-ului scrisă de la zero, verificată pe semnături făcute independent).
-  - **Semnarea lor din Suite**: Docs / Sheets / Slides → Export … semnat digital, și PDF → 🔏 Semnează un fișier; cu ID-ul Suite, .pfx sau certificatul de pe calculator / token; mai multe semnături una după alta.
-  - **Marca temporală și la documente** (XAdES-T, confirmată independent cu openssl) și **certificatul semnatarului legat de semnătură** (XAdES SigningCertificate; un certificat înlocuit e prins).
+- Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
+- Între timp am trecut la ținta „funcțiile care lipsesc”, partea Slides / diagrame. Sesiunea de noapte (02:46–03:31), 5 commituri, testele trec:
+  - **Slides → Vizualizare → Coordonator documente și Coordonator notițe**: antet, subsol, dată și număr de pagină pe pliante și pe paginile de notițe; câte slide-uri pe pagina de pliante.
+  - **Diagrame (SmartArt)**: Promovare / Retrogradare la Ierarhie (organigramă pe până la 3 niveluri), în Slides și în Docs / Sheets (acolo cu rânduri începute cu spații).
+  - **Trei feluri noi de diagramă** în Slides, Docs și Sheets: Proces ascendent (trepte), Matrice (grilă), Venn (cercuri suprapuse).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 81,7%, Excel 81,1%, PowerPoint 80,6%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 74,6%, Photoshop 72,8%, formule 97,1%.
+- Scoruri: Word 81,7%, Excel 81,1%, PowerPoint 81,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 74,6%, Photoshop 72,8%, formule 97,1%.
 
 ## Urmează
-- P4: LTV (lanțul și revocarea păstrate în semnătură), doar după răspunsul lui Adrian (vezi mai jos).
-- Apoi ținta „funcțiile care lipsesc” (Slides: coordonatoarele; PDF: fontul / culoarea textului existent; Sheets: formatarea graficului).
+- Slides: coordonatorul de diapozitive cu aspecte (layout-uri).
+- Apoi PDF: schimbarea fontului / culorii textului existent; Sheets: formatarea fiecărui element al graficului.
+- P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice românești și semnarea / verificarea XML (XML-DSig, scrise de la zero).
