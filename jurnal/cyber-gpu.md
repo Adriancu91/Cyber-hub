@@ -17,3 +17,5 @@
 - 2026-10-27 08:50 — Matmul treapta 3 (plăci în memoria partajată) compilată cu NAK, lansată în model cu QMD-ul pentru memoria partajată, identică bit cu bit cu calculul de control; 184 de teste, CI verde. Nimic rulat pe placă.
 - 2026-10-27 13:55 — Sesiunea 9 (cloud, fără placă): „golden image” (pasul de după pornirea GSP) în cod; structurile generate din antetele NVIDIA 570.144, secvența acceptată cap-coadă de un RM fals scris separat. Doar SIMULARE.
 - 2026-10-27 13:55 — Matmul treapta 4 (8 rezultate pe fir) compilată cu NAK, identică bit cu bit cu calculul de control în model; 196 de teste, CI verde. Nimic rulat pe placă.
+- 2026-10-27 19:55 — Sesiunea 10 (cloud, fără placă): tabelele de pagini ale plăcii (I9a) în cod, după formatul din antetele NVIDIA 570.144; „golden image” cap-coadă cu tabelele reale, verificat de un cititor scris separat. Doar SIMULARE.
+- 2026-10-27 19:55 — Matmul treapta 5 (8×8 rezultate pe fir) compilată cu NAK, identică bit cu bit cu calculul de control în model; 211 teste, CI verde. Nimic rulat pe placă.
