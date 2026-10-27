@@ -1,0 +1,330 @@
+== raport Cyber Universe OS ==
+data (ceasul calculatorului): 2026-10-27 22:48:46
+motiv: manual (comanda raport)
+nucleu: cyber-universe 0.1.0 (cyber-gpu dac2e32)
+/usb/VERSIUNE: commit a0834b708bc37235eda0d700f5f89329b1f8baad
+erori in jurnal de la pornire: 0
+
+== hw ==
+== raport hardware ==
+procesor: AMD Ryzen 5 4500U with Radeon Graphics
+memorie: libera 7377 MiB, folosita 20440 KiB (heap 1514 / 18256 KiB)
+pornit de 51.56 s
+PCI ([driver] = il folosim, [-] = fara driver):
+  00:00.0 1022:1630 punte gazda [-]
+  00:00.2 1022:1631 alt dispozitiv [-]
+  00:01.0 1022:1632 punte gazda [-]
+  00:02.0 1022:1632 punte gazda [-]
+  00:02.2 1022:1634 punte PCI [-]
+  00:02.3 1022:1634 punte PCI [-]
+  00:02.4 1022:1634 punte PCI [-]
+  00:08.0 1022:1632 punte gazda [-]
+  00:08.1 1022:1635 punte PCI [-]
+  00:14.0 1022:790b SMBus [-]
+  00:14.3 1022:790e punte ISA [-]
+  00:18.0 1022:1448 punte gazda [-]
+  00:18.1 1022:1449 punte gazda [-]
+  00:18.2 1022:144a punte gazda [-]
+  00:18.3 1022:144b punte gazda [-]
+  00:18.4 1022:144c punte gazda [-]
+  00:18.5 1022:144d punte gazda [-]
+  00:18.6 1022:144e punte gazda [-]
+  00:18.7 1022:144f punte gazda [-]
+  01:00.0 10ec:8168 placa de retea [rtl8168]
+  02:00.0 8086:2723 placa de retea [-]
+  03:00.0 144d:a809 controler NVMe [nvme]
+  04:00.0 1002:1636 placa video [-]
+  04:00.1 1002:1637 multimedia [-]
+  04:00.2 1022:15df alt dispozitiv [-]
+  04:00.3 1022:1639 controler USB [xhci]
+  04:00.4 1022:1639 controler USB [xhci]
+  04:00.5 1022:15e2 multimedia [-]
+  04:00.6 1022:15e3 multimedia [-]
+USB:
+  port 3  04f2:b6be  alt dispozitiv
+  port 4  125f:db8a  stocare (Mass Storage)
+/disk: montat (2 intrari)
+/usb: montat (7 intrari)
+retea:
+  Realtek RTL8168/8111  MAC 38:f3:ab:6b:11:34
+  pachete trimise 9, primite 0
+  legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 4084, descriptor RX 0 = 80000800, citiri 3781
+  inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+  primele cadre: -
+  cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (144 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (detalii: log rx, log rtl)
+  fara adresa (DHCP fara raspuns; reincearca la 10 s)
+
+== lspci ==
+  00:00.0  1022:1630  punte gazda
+  00:00.2  1022:1631  alt dispozitiv
+  00:01.0  1022:1632  punte gazda
+  00:02.0  1022:1632  punte gazda
+  00:02.2  1022:1634  punte PCI
+  00:02.3  1022:1634  punte PCI
+  00:02.4  1022:1634  punte PCI
+  00:08.0  1022:1632  punte gazda
+  00:08.1  1022:1635  punte PCI
+  00:14.0  1022:790b  SMBus
+  00:14.3  1022:790e  punte ISA
+  00:18.0  1022:1448  punte gazda
+  00:18.1  1022:1449  punte gazda
+  00:18.2  1022:144a  punte gazda
+  00:18.3  1022:144b  punte gazda
+  00:18.4  1022:144c  punte gazda
+  00:18.5  1022:144d  punte gazda
+  00:18.6  1022:144e  punte gazda
+  00:18.7  1022:144f  punte gazda
+  01:00.0  10ec:8168  placa de retea
+  02:00.0  8086:2723  placa de retea
+  03:00.0  144d:a809  controler NVMe
+  04:00.0  1002:1636  placa video
+  04:00.1  1002:1637  multimedia
+  04:00.2  1022:15df  alt dispozitiv
+  04:00.3  1022:1639  controler USB
+  04:00.4  1022:1639  controler USB
+  04:00.5  1022:15e2  multimedia
+  04:00.6  1022:15e3  multimedia
+
+== net ==
+  Realtek RTL8168/8111  MAC 38:f3:ab:6b:11:34
+  pachete trimise 9, primite 0
+  legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 4084, descriptor RX 0 = 80000800, citiri 3781
+  inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+  primele cadre: -
+  cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (144 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (detalii: log rx, log rtl)
+  fara adresa (DHCP fara raspuns; reincearca la 10 s)
+
+== jurnal net (si registrele placilor de retea) ==
+[  12.010] INFO  net: placa Realtek RTL8168 pornita (revizia 50800000), MAC 38:f3:ab:6b:11:34, legatura: nu
+[  12.170] INFO  net: rtl8168 registre: CR 0c RCR 0002c70a TCR 53900f00 IMR 0000 ISR 0000 RMS 2048 MISC 0000003f MCU 32 PHY 90
+[  12.330] INFO  net: rtl8168 inele: RDSAR 00000000_01000000 TNPDS 00000000_01001000 (sub 4 GB, sub 4 GB)
+[  12.480] INFO  net: rtl8168 C+ Command 2021, PMCH f0, revizia 50800000 = 8168GU/8111GU (doar citite)
+[  12.640] INFO  net: rtl8168 buffere RX: 0 la 1003000, 1 la 1003800, 2 la 1004000 (sub 4 GB); RAM 7288 MiB, cea mai mare adresa 20f340000 (are memorie peste 4 GB)
+[  12.960] INFO  net: rtl8168 memorie DMA: un bloc 1000000-108afff (139 pagini); inel RX 1000000 in 100000-9bfffff utilizabila; buffer RX 0 1003000 in 100000-9bfffff utilizabila; paza: ok (144 pagini DMA pazite)
+[  13.280] INFO  net: rtl8168 PCI 01:00.0: Command 0007 (Bus Master da, Memory da), PCIe Device Control 5010 (doar citit); varianta implicita (cache bloc-dma model)
+[  13.590] WARN  net: Realtek: fara legatura dupa 4 s (cablu? PHYstatus 90); DHCP reincearca singur
+[  21.760] WARN  net: DHCP nu raspunde; fara adresa, reincerc la 10 s
+[  21.760] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 4084, descriptor RX 0 = 80000800, citiri 800
+[  21.760] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  21.760] INFO  net: primele cadre: -
+[  21.760] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (144 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[  30.430] INFO  proces: firul 3 a iesit cu codul 0
+[  39.760] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 4084, descriptor RX 0 = 80000800, citiri 2600
+[  39.760] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  39.760] INFO  net: primele cadre: -
+[  39.760] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (144 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det
+
+== jurnal usb ==
+[   4.450] INFO  pci: 04:00.3 1022:1639 clasa 0c:03:30 controler USB
+[   4.600] INFO  pci: 04:00.4 1022:1639 clasa 0c:03:30 controler USB
+[   5.400] INFO  boot: pornit de pe disc (hard disk, SSD sau stick USB)
+[   5.970] INFO  usb: port 3: slot 1, viteza 3, pachet maxim EP0 64, configuratia 1 (512 octeti), endpoint-uri 83/3/32/b0
+[   6.130] INFO  usb: port 3: 04f2:b6be alt dispozitiv (clasa ef:02:01, viteza 3)
+[   6.340] INFO  usb: port 4: slot 2, viteza 3, pachet maxim EP0 64, configuratia 1 (32 octeti), endpoint-uri 01/2/512/b0 82/2/512/b0
+[   6.500] INFO  usb: port 4: 125f:db8a stocare (Mass Storage) (clasa 08:06:50, viteza 3)
+[   6.650] INFO  usb: controler XHCI pornit, 6 porturi, 2 dispozitive
+[   6.810] INFO  usb: port 4: SET_CONFIGURATION 1 ok
+[   6.970] INFO  usb: port 4: Configure Endpoint ok (2 endpoint-uri)
+[   7.510] INFO  usb: stocare ADATA USB Flash Drive (29600 MiB)
+[  13.770] INFO  fs: FAT32 (MBR, 29599 MiB) montat la /usb (scriere permisa)
+
+== jurnal pci ==
+[   -.---] INFO  acpi: 27 tabele (XSDT): FACP SSDT SSDT IVRS SSDT SSDT TPM2 SSDT MSDM BATB HPET APIC MCFG SBST WSMT VFCT SSDT CRAT CDIT FPDT SSDT SSDT SSDT BGRT UEFI SSDT SSDT
+[   -.---] INFO  acpi: FADT rev 6, RESET_REG io 0xb2 <- 0xcd (declarat suportat, 8 biti)
+[   -.---] INFO  acpi: MADT: 6 procesoare, APIC local la 0xfee00000, 2 I/O APIC (primul la 0xfec00000, GSI 0), 2 redirectari IRQ
+[   0.480] INFO  pci: 00:00.0 1022:1630 clasa 06:00:00 punte gazda
+[   0.640] INFO  pci: 00:00.2 1022:1631 clasa 08:06:00 alt dispozitiv
+[   0.800] INFO  pci: 00:01.0 1022:1632 clasa 06:00:00 punte gazda
+[   0.960] INFO  pci: 00:02.0 1022:1632 clasa 06:00:00 punte gazda
+[   1.110] INFO  pci: 00:02.2 1022:1634 clasa 06:04:00 punte PCI
+[   1.270] INFO  pci: 00:02.3 1022:1634 clasa 06:04:00 punte PCI
+[   1.430] INFO  pci: 00:02.4 1022:1634 clasa 06:04:00 punte PCI
+[   1.590] INFO  pci: 00:08.0 1022:1632 clasa 06:00:00 punte gazda
+[   1.750] INFO  pci: 00:08.1 1022:1635 clasa 06:04:00 punte PCI
+[   1.910] INFO  pci: 00:14.0 1022:790b clasa 0c:05:00 SMBus
+[   2.070] INFO  pci: 00:14.3 1022:790e clasa 06:01:00 punte ISA
+[   2.220] INFO  pci: 00:18.0 1022:1448 clasa 06:00:00 punte gazda
+[   2.380] INFO  pci: 00:18.1 1022:1449 clasa 06:00:00 punte gazda
+[   2.540] INFO  pci: 00:18.2 1022:144a clasa 06:00:00 punte gazda
+[   2.700] INFO  pci: 00:18.3 1022:144b clasa 06:00:00 punte gazda
+[   2.860] INFO  pci: 00:18.4 1022:144c clasa 06:00:00 punte gazda
+[   3.020] INFO  pci: 00:18.5 1022:144d clasa 06:00:00 punte gazda
+[   3.180] INFO  pci: 00:18.6 1022:144e clasa 06:00:00 punte gazda
+[   3.330] INFO  pci: 00:18.7 1022:144f clasa 06:00:00 punte gazda
+[   3.490] INFO  pci: 01:00.0 10ec:8168 clasa 02:00:00 placa de retea
+[   3.650] INFO  pci: 02:00.0 8086:2723 clasa 02:80:00 placa de retea
+[   3.810] INFO  pci: 03:00.0 144d:a809 clasa 01:08:02 controler NVMe
+[   3.970] INFO  pci: 04:00.0 1002:1636 clasa 03:00:00 placa video
+[   4.130] INFO  pci: 04:00.1 1002:1637 clasa 04:03:00 multimedia
+[   4.290] INFO  pci: 04:00.2 1022:15df clasa 10:80:00 alt dispozitiv
+[   4.450] INFO  pci: 04:00.3 1022:1639 clasa 0c:03:30 controler USB
+[   4.600] INFO  pci: 04:00.4 1022:1639 clasa 0c:03:30 controler USB
+[   4.760] INFO  pci: 04:00.5 1022:15e2 clasa 04:80:00 multimedia
+[   4.920] INFO  pci: 04:00.6 1022:15e3 clasa 04:03:00 multimedia
+[   5.080] INFO  pci: 29 dispozitive pe 1 radacini (ECAM la 0xf8000000, magistralele 00-3f, cautare 2 ms)
+
+== jurnal gpu ==
+(niciun rand)
+
+== erori si avertismente ==
+[  13.590] WARN  net: Realtek: fara legatura dupa 4 s (cablu? PHYstatus 90); DHCP reincearca singur
+[  21.760] WARN  net: DHCP nu raspunde; fara adresa, reincerc la 10 s
+
+== jurnal complet (156 randuri pastrate in memorie) ==
+[   -.---] INFO  jurnal: pornit (nucleu 0.1.0)
+[   -.---] INFO  fpu: XSAVE: x87, SSE, AVX; zona per fir 832 octeti; AVX2 da
+[   -.---] INFO  cpu: GDT si IDT incarcate (CS=0x08, TR=0x28)
+[   -.---] INFO  mem: 0x000000000000-0x000000087000      540 KiB utilizabila
+[   -.---] INFO  mem: 0x000000087000-0x000000088000        4 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x000000088000-0x00000009f000       92 KiB utilizabila
+[   -.---] INFO  mem: 0x00000009f000-0x0000000a0000        4 KiB rezervata
+[   -.---] INFO  mem: 0x0000000e0000-0x000000100000      128 KiB rezervata
+[   -.---] INFO  mem: 0x000000100000-0x000009c00000   158720 KiB utilizabila
+[   -.---] INFO  mem: 0x000009c00000-0x000009d41000     1284 KiB rezervata
+[   -.---] INFO  mem: 0x000009d41000-0x000009f00000     1788 KiB utilizabila
+[   -.---] INFO  mem: 0x000009f00000-0x000009f0d000       52 KiB ACPI NVS
+[   -.---] INFO  mem: 0x000009f0d000-0x0000a1efe000  2490308 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a1efe000-0x0000a1f7e000      512 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a1f7e000-0x0000a4c8c000    46136 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a4c8c000-0x0000a4cfc000      448 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a4cfc000-0x0000a87d5000    60260 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a87d5000-0x0000a8b05000     3264 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a8b05000-0x0000a8d51000     2352 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a8d51000-0x0000a9052000     3076 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a9052000-0x0000a9065000       76 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a9065000-0x0000a907f000      104 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a907f000-0x0000a90a5000      152 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a90a5000-0x0000a90bf000      104 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a90bf000-0x0000a90e5000      152 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a90e5000-0x0000a90ff000      104 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a90ff000-0x0000a9112000       76 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a9112000-0x0000a912c000      104 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a912c000-0x0000a913f000       76 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a913f000-0x0000a9159000      104 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a9159000-0x0000a91f1000      608 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a91f1000-0x0000a920b000      104 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a920b000-0x0000a921e000       76 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a921e000-0x0000a9238000      104 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a9238000-0x0000a924b000       76 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a924b000-0x0000a9265000      104 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a9265000-0x0000a9272000       52 KiB utilizabila
+[   -.---] INFO  mem: 0x0000a9272000-0x0000a928c000      104 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000a928c000-0x0000b4dd4000   191776 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b4dd4000-0x0000b500a000     2264 KiB nucleu si module
+[   -.---] INFO  mem: 0x0000b500a000-0x0000b54f6000     5040 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000b54f6000-0x0000b91f6000    62464 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b91f6000-0x0000b9287000      580 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000b9287000-0x0000b92d8000      324 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b92d8000-0x0000b9809000     5316 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000b9809000-0x0000b9814000       44 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b9814000-0x0000b9838000      144 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000b9838000-0x0000b9887000      316 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b9887000-0x0000b9d5a000     4940 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000b9d5a000-0x0000b9d5b000        4 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b9d5b000-0x0000b9d5c000        4 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000b9d5c000-0x0000b9d62000       24 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b9d62000-0x0000b9d72000       64 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000b9d72000-0x0000b9d74000        8 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b9d74000-0x0000b9d75000        4 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000b9d75000-0x0000b9d78000       12 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b9d78000-0x0000b9dbc000      272 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000b9dbc000-0x0000b9dc7000       44 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b9dc7000-0x0000b9def000      160 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000b9def000-0x0000b9df0000        4 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b9df0000-0x0000b9e1f000      188 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000b9e1f000-0x0000b9e25000       24 KiB utilizabila
+[   -.---] INFO  mem: 0x0000b9e25000-0x0000bd0c9000    51856 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000bd0c9000-0x0000bd2c9000     2048 KiB utilizabila
+[   -.---] INFO  mem: 0x0000bd2c9000-0x0000bdbde000     9300 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000bdbde000-0x0000bddde000     2048 KiB rezervata
+[   -.---] INFO  mem: 0x0000bddde000-0x0000bfa34000    29016 KiB rezervata
+[   -.---] INFO  mem: 0x0000bfa34000-0x0000ca57e000   175400 KiB rezervata
+[   -.---] INFO  mem: 0x0000ca57e000-0x0000cc57e000    32768 KiB ACPI NVS
+[   -.---] INFO  mem: 0x0000cc57e000-0x0000cc5fe000      512 KiB ACPI (recuperabila)
+[   -.---] INFO  mem: 0x0000cc5fe000-0x0000ccc8e000     6720 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000ccc8e000-0x0000ccd86000      992 KiB utilizabila
+[   -.---] INFO  mem: 0x0000ccd86000-0x0000ce000000    18920 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x0000ce000000-0x0000d0000000    32768 KiB rezervata
+[   -.---] INFO  mem: 0x0000f8000000-0x0000fc000000    65536 KiB rezervata
+[   -.---] INFO  mem: 0x0000fde00000-0x0000fdf00000     1024 KiB rezervata
+[   -.---] INFO  mem: 0x0000fed80000-0x0000fed81000        4 KiB rezervata
+[   -.---] INFO  mem: 0x000100000000-0x00020f340000  4443392 KiB utilizabila
+[   -.---] INFO  mem: 0x00020f340000-0x000230000000   537344 KiB rezervata
+[   -.---] INFO  mem: 0x000260000000-0x0002607e9000     8100 KiB ecran
+[   -.---] INFO  mem: usable: 7288 MiB in 77 regiuni, adresa maxima 0x2607e9000, HHDM la 0xffff800000000000
+[   -.---] INFO  mem: alocator de cadre gata: 1865687 cadre libere (7287 MiB), harta de 263 KiB la 0x0
+[   -.---] INFO  mem: tabele de pagini proprii active (17 tabele copiate de la Limine)
+[   -.---] INFO  mem: heap gata la 0xffff900000000000, 1024 KiB initial
+[   -.---] INFO  smp: pagina pentru trambulina la 0x42000
+[   -.---] INFO  sched: planificator gata (round-robin, felie 10 ms, stiva 16 KiB)
+[   -.---] INFO  acpi: 27 tabele (XSDT): FACP SSDT SSDT IVRS SSDT SSDT TPM2 SSDT MSDM BATB HPET APIC MCFG SBST WSMT VFCT SSDT CRAT CDIT FPDT SSDT SSDT SSDT BGRT UEFI SSDT SSDT
+[   -.---] INFO  acpi: FADT rev 6, RESET_REG io 0xb2 <- 0xcd (declarat suportat, 8 biti)
+[   -.---] INFO  acpi: MADT: 6 procesoare, APIC local la 0xfee00000, 2 I/O APIC (primul la 0xfec00000, GSI 0), 2 redirectari IRQ
+[   -.---] INFO  apic: temporizator 100 Hz pornit (62434 impulsuri APIC pe perioada), 24 linii I/O APIC
+[   0.150] INFO  tastatura: PS/2 gata (aranjament US)
+[   0.310] INFO  mouse: PS/2 gata
+[   0.480] INFO  pci: 00:00.0 1022:1630 clasa 06:00:00 punte gazda
+[   0.640] INFO  pci: 00:00.2 1022:1631 clasa 08:06:00 alt dispozitiv
+[   0.800] INFO  pci: 00:01.0 1022:1632 clasa 06:00:00 punte gazda
+[   0.960] INFO  pci: 00:02.0 1022:1632 clasa 06:00:00 punte gazda
+[   1.110] INFO  pci: 00:02.2 1022:1634 clasa 06:04:00 punte PCI
+[   1.270] INFO  pci: 00:02.3 1022:1634 clasa 06:04:00 punte PCI
+[   1.430] INFO  pci: 00:02.4 1022:1634 clasa 06:04:00 punte PCI
+[   1.590] INFO  pci: 00:08.0 1022:1632 clasa 06:00:00 punte gazda
+[   1.750] INFO  pci: 00:08.1 1022:1635 clasa 06:04:00 punte PCI
+[   1.910] INFO  pci: 00:14.0 1022:790b clasa 0c:05:00 SMBus
+[   2.070] INFO  pci: 00:14.3 1022:790e clasa 06:01:00 punte ISA
+[   2.220] INFO  pci: 00:18.0 1022:1448 clasa 06:00:00 punte gazda
+[   2.380] INFO  pci: 00:18.1 1022:1449 clasa 06:00:00 punte gazda
+[   2.540] INFO  pci: 00:18.2 1022:144a clasa 06:00:00 punte gazda
+[   2.700] INFO  pci: 00:18.3 1022:144b clasa 06:00:00 punte gazda
+[   2.860] INFO  pci: 00:18.4 1022:144c clasa 06:00:00 punte gazda
+[   3.020] INFO  pci: 00:18.5 1022:144d clasa 06:00:00 punte gazda
+[   3.180] INFO  pci: 00:18.6 1022:144e clasa 06:00:00 punte gazda
+[   3.330] INFO  pci: 00:18.7 1022:144f clasa 06:00:00 punte gazda
+[   3.490] INFO  pci: 01:00.0 10ec:8168 clasa 02:00:00 placa de retea
+[   3.650] INFO  pci: 02:00.0 8086:2723 clasa 02:80:00 placa de retea
+[   3.810] INFO  pci: 03:00.0 144d:a809 clasa 01:08:02 controler NVMe
+[   3.970] INFO  pci: 04:00.0 1002:1636 clasa 03:00:00 placa video
+[   4.130] INFO  pci: 04:00.1 1002:1637 clasa 04:03:00 multimedia
+[   4.290] INFO  pci: 04:00.2 1022:15df clasa 10:80:00 alt dispozitiv
+[   4.450] INFO  pci: 04:00.3 1022:1639 clasa 0c:03:30 controler USB
+[   4.600] INFO  pci: 04:00.4 1022:1639 clasa 0c:03:30 controler USB
+[   4.760] INFO  pci: 04:00.5 1022:15e2 clasa 04:80:00 multimedia
+[   4.920] INFO  pci: 04:00.6 1022:15e3 clasa 04:03:00 multimedia
+[   5.080] INFO  pci: 29 dispozitive pe 1 radacini (ECAM la 0xf8000000, magistralele 00-3f, cautare 2 ms)
+[   5.240] INFO  rtc: 2026-10-27 22:47:59
+[   5.400] INFO  boot: pornit de pe disc (hard disk, SSD sau stick USB)
+[   5.560] INFO  boot: 1 fisiere de la Limine
+[   5.710] INFO  fs: radacina din initrd: 142 intrari, 1416 KiB
+[   5.970] INFO  usb: port 3: slot 1, viteza 3, pachet maxim EP0 64, configuratia 1 (512 octeti), endpoint-uri 83/3/32/b0
+[   6.130] INFO  usb: port 3: 04f2:b6be alt dispozitiv (clasa ef:02:01, viteza 3)
+[   6.340] INFO  usb: port 4: slot 2, viteza 3, pachet maxim EP0 64, configuratia 1 (32 octeti), endpoint-uri 01/2/512/b0 82/2/512/b0
+[   6.500] INFO  usb: port 4: 125f:db8a stocare (Mass Storage) (clasa 08:06:50, viteza 3)
+[   6.650] INFO  usb: controler XHCI pornit, 6 porturi, 2 dispozitive
+[   6.810] INFO  usb: port 4: SET_CONFIGURATION 1 ok
+[   6.970] INFO  usb: port 4: Configure Endpoint ok (2 endpoint-uri)
+[   7.510] INFO  usb: stocare ADATA USB Flash Drive (29600 MiB)
+[   7.690] INFO  nvme: disc SAMSUNG MZVLQ256HAJD-000H1 (244198 MiB)
+[   7.850] INFO  fs: FAT32 (GPT, 100 MiB) montat la /disk
+[  12.010] INFO  net: placa Realtek RTL8168 pornita (revizia 50800000), MAC 38:f3:ab:6b:11:34, legatura: nu
+[  12.170] INFO  net: rtl8168 registre: CR 0c RCR 0002c70a TCR 53900f00 IMR 0000 ISR 0000 RMS 2048 MISC 0000003f MCU 32 PHY 90
+[  12.330] INFO  net: rtl8168 inele: RDSAR 00000000_01000000 TNPDS 00000000_01001000 (sub 4 GB, sub 4 GB)
+[  12.480] INFO  net: rtl8168 C+ Command 2021, PMCH f0, revizia 50800000 = 8168GU/8111GU (doar citite)
+[  12.640] INFO  net: rtl8168 buffere RX: 0 la 1003000, 1 la 1003800, 2 la 1004000 (sub 4 GB); RAM 7288 MiB, cea mai mare adresa 20f340000 (are memorie peste 4 GB)
+[  12.960] INFO  net: rtl8168 memorie DMA: un bloc 1000000-108afff (139 pagini); inel RX 1000000 in 100000-9bfffff utilizabila; buffer RX 0 1003000 in 100000-9bfffff utilizabila; paza: ok (144 pagini DMA pazite)
+[  13.280] INFO  net: rtl8168 PCI 01:00.0: Command 0007 (Bus Master da, Memory da), PCIe Device Control 5010 (doar citit); varianta implicita (cache bloc-dma model)
+[  13.590] WARN  net: Realtek: fara legatura dupa 4 s (cablu? PHYstatus 90); DHCP reincearca singur
+[  13.770] INFO  fs: FAT32 (MBR, 29599 MiB) montat la /usb (scriere permisa)
+[  13.920] INFO  mem: recuperat 111748 KiB din memoria bootloader-ului
+[  14.080] INFO  metrici: pornire 21560.135 ms; memorie nucleu 4944 KiB (imagine 744 KiB + cadre 4200 KiB, heap 1495 / 2048 KiB); libera 7393 MiB
+[  21.760] WARN  net: DHCP nu raspunde; fara adresa, reincerc la 10 s
+[  21.760] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 4084, descriptor RX 0 = 80000800, citiri 800
+[  21.760] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  21.760] INFO  net: primele cadre: -
+[  21.760] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (144 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[  30.430] INFO  proces: firul 3 a iesit cu codul 0
+[  39.760] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 4084, descriptor RX 0 = 80000800, citiri 2600
+[  39.760] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  39.760] INFO  net: primele cadre: -
+[  39.760] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (144 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det
+
+== sfarsit ==

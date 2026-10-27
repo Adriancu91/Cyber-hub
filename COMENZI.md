@@ -451,14 +451,14 @@ Format:
 - stare: gata (preluat 2026-10-26 15:45 UTC, terminat 16:40 UTC, sesiunea OS) — P6-22, P6-23; CI verde (run 191), Release os-191
 - rezultat: `raport` scrie pe stick `/usb/raport/<data>-<nr>.txt` (și automat la erori noi, fără chei, testat în QEMU cu citirea fișierului din imagine), iar programele au promisiuni + căi vizibile, cu `claude.key`/`github.token` vizibile doar programelor care le cer (scenariul `drepturi`).
 
-### C-23 · cyber-universe · ThinkPad L15 Gen 2: `run kronos-calcul` cade cu #GP (cod 0x18) după `cpu porneste`
+### C-23 · cyber-universe · Laptop AMD Ryzen 5 4500U: `run kronos-calcul` cade cu #GP (cod 0x18), și pe un nucleu
 - data: 2026-10-27 23:00 · de la: Adrian (prin centrul de comandă)
-- ce: Primul test pe ThinkPad (i7-1185G7, Tiger Lake), os-191: pornește, 6 nuclee pornite, driverul de rețea rulează (fără cablu), dar
+- ce: Test pe ThinkPad-ul lui Adrian (**raportul arată AMD Ryzen 5 4500U, Zen 2**, nu Intel cum crezusem), os-191: pornește, 6 nuclee pornite, driverul de rețea rulează (fără cablu), dar
   `run kronos-calcul` după `cpu porneste` oprește sistemul: `#GP`, `RIP=0xffffffff8001e939`, `RSP=0xffff9000001d0398`, `RFLAGS=0x10082`, `CS=0x8`,
   `cod eroare=0x18`. Detalii și poză: `rezultate/2026-10-27-thinkpad-os191/`. Găsește cauza (simbolizează RIP pe build-ul os-191, commit `a0834b7`),
-  repar-o, adaugă un test în QEMU care o prinde (de ex. alt număr de nuclee / alt model de procesor `-cpu`, inclusiv unul cu AVX-512 ca Tiger Lake),
-  și scoate un Release nou. Verifică și de ce apar 6 nuclee pe un procesor cu 8 fire. Rapoartele `raport` de la a doua pornire vin în același dosar
+  repar-o, adaugă un test în QEMU care o prinde (de ex. `-cpu EPYC-Rome` / Zen 2 în QEMU),
+  și scoate un Release nou. Rapoartele `raport` de la a doua pornire vin în același dosar
   când le trimite Adrian. Nu schimba nimic altceva.
-  **Actualizare 23:05:** pe un singur nucleu (fără `cpu porneste`) cade la fel, același RIP → nu e de la SMP. `raport` a mers pe hardware.
+  **Actualizare 23:05:** pe un singur nucleu (fără `cpu porneste`) cade la fel, același RIP → nu e de la SMP. `raport` a mers pe hardware; raportul complet e în dosar (`raport-20261027-1.txt`).
 - stare: nou
 - rezultat:
