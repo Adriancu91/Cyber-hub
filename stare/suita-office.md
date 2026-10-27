@@ -1,18 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 10:49 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 11:35 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 09:58–10:50, 6 commituri, testele trec, toate textele noi traduse:
-  - **Sheets:** stilurile de celulă proprii se păstrează și în .xlsx (fără „gunoiul” de stiluri copiate din alte fișiere).
-  - **Docs, îmbinare de corespondență:** **Potrivește câmpurile** (alegi coloana din tabel pentru un câmp cu alt nume) și **🔍 Verifică erorile** (câmpuri fără coloană sau goale, pe toți destinatarii).
-  - **Docs, tabele:** fereastra nouă **Proprietăți tabel** (fila Aspect → ⚙ Proprietăți): așezare, lățime, indentare, marginile celulelor, înălțimea rândului, rândul care nu se rupe între pagini, antet repetat, lățimea coloanei în cm, aliniere; păstrate în .docx și .odt.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 10:52–11:35, 5 commituri, testele trec, toate textele noi traduse:
+  - **Docs, Proprietăți tabel:** **Text alternativ** (titlu și descriere, pentru cititoarele de ecran) și **Încadrarea textului** (textul curge pe lângă tabel), păstrate în .docx (și textul alternativ în .odt). Fereastra e acum completă.
+  - **Docs, Revizuire:** lista **Limba textului ales** (de exemplu un pasaj în engleză) cu **Nu verifica ortografia** (pentru nume, coduri, adrese), păstrată în .docx și .odt.
+  - **Sheets:** două stiluri de tabel noi, Galben intens și Turcoaz intens (14 în total), potrivite cu cele din .xlsx.
+- Fișierele reale din colecție (.docx și .odt) se deschid la fel de bine ca înainte (verificat după schimbări).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 82,4%, Excel 83,4%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
+- Scoruri: Word 82,6%, Excel 83,4%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” din inventar (Word și Excel), câte una pe pas; de exemplu textul alternativ al tabelului sau încadrarea textului în jurul lui.
+- Alte funcții „parțial” din inventar (Word și Excel), câte una pe pas; de exemplu „Border Painter” la tabelele din Docs sau mai multe câmpuri pe rânduri în Rezumat (Sheets).
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
