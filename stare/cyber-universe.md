@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-27 14:47 (ora României) · **de:** sesiunea OS programată — nimic nou (fără comenzi noi); ultimul Release **`os-191`**
+**Actualizat:** 2026-10-27 18:00 (ora României) · **de:** sesiunea OS programată — **OPRIT** (coada goală, fără comenzi noi); ultimul Release **`os-191`**
 
 ## Acum
 - **C-19 gata (P6-21): `gpu gfw` și `gpu vbios`, doar citire.** Cyber-GPU fixat pe commit-ul lor `dac2e32` (ramura `g0-g2-fundatie`).
@@ -43,6 +43,9 @@ Ce oferă proiectul celorlalți
   Sesiunea OS nu vede CI-ul lor (repo-ul nu e în lista sesiunii) — am verificat doar că se compilează și merge în testele OS-ului.
 
 ## Blocaje / nevoie de Adrian
+- **OPRIT: necesită analiza lui Adrian (oprirea de siguranță).** 9 sesiuni la rând fără sarcini terminate — nu din eșecuri, ci pentru că
+  nu mai e nimic de făcut fără tine (hardware, C-7, C-11). Ca să repornească lucrul: o comandă nouă în `COMENZI.md` (de ex. „preia C-7”
+  sau „preia C-11 fără C-7”), sau un test pe hardware în `rezultate/`. Altfel poți rări sau opri temporar rutina OS-ului.
 - **Tag-ul `stabil-2026-10-23` (2 minute, când ai timp):** pe GitHub → cyber-universe → Releases → „Draft a new release” → „Choose a tag” →
   scrie `stabil-2026-10-23` → „Create new tag” → Target: ramura `revenire/stabil-2026-10-23` → bifează „Set as a pre-release” → Publish.
   Până atunci punctul de revenire e ramura + os-187 (suficient).

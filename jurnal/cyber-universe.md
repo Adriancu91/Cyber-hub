@@ -56,3 +56,4 @@
 - 2026-10-27 08:41 — sesiune fără lucru nou: nicio comandă nouă, niciun rezultat nou; CI verde (os-191).
 - 2026-10-27 11:41 — sesiune fără lucru nou: nicio comandă nouă, niciun rezultat nou; CI verde (os-191).
 - 2026-10-27 14:47 — sesiune fără lucru nou: nicio comandă nouă, niciun rezultat nou; CI verde (os-191).
+- 2026-10-27 18:00 — OPRIT (oprirea de siguranță): 9 sesiuni fără sarcini, coada goală; aștept comandă nouă sau rezultat hardware. CI verde (os-191).
