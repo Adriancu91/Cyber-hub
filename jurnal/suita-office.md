@@ -174,3 +174,4 @@
 - 2026-10-27 13:44 — Docs: ligaturi și sigla în antet; Sheets: coloane calculate în tabele; Slides: Reflexie, Teșire, Stea cu 4 colțuri, Bulă de dialog, un test reparat; 6 commituri, testele trec (Word 83,9%, Excel 83,6%).
 - 2026-10-27 14:25 — Sheets: stiluri de tabel întunecate și fereastra completă a Foii de prognoză; Slides: limba de verificare a casetelor (și .pptx în română) și 6 teme noi; 4 commituri, testele trec (Excel 83,8%, PowerPoint 83,7%).
 - 2026-10-27 15:20 — Sheets: Cronologie (filtru pe perioade) și filtrul de raport în Rezumat; Docs: Tabel de autorități; Slides: Inimă, Nor, Semilună, Fulger; 4 commituri, testele trec (Word 84,2%, Excel 84,3%).
+- 2026-10-27 15:58 — Sheets: două câmpuri pe rânduri în Rezumat (Compact / Schiță / Tabelar); Slides: Export .odp (cu grafice ca imagini), Împachetează prezentarea, pozele SVG din .odp se deschid; 4 commituri, testele trec (Excel 84,6%, PowerPoint 84,1%).

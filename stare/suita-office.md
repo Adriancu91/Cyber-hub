@@ -1,15 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 15:20 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 15:58 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:26–15:20, 4 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
-  - **Sheets:** **Cronologie** (filtru pe perioade: ani / trimestre / luni / zile, clic pe o lună arată doar rândurile ei; filtrul intră și în .xlsx) și **filtrul de raport în Rezumat** (o listă deasupra tabelului pivot: alegi un an sau un agent și cifrele se refac).
-  - **Docs:** **Tabel de autorități** pentru avocați (marchezi legile, hotărârile și cărțile citate, apoi tabelul lor pe categorii, cu paginile și „passim”).
-  - **Slides:** formele **Inimă, Nor, Semilună, Fulger** (și în .pptx).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 15:18–15:58, 4 commituri, testele trec (și testul mare de compatibilitate: 530 de fișiere, 0 erori), toate textele noi traduse (verificat și pe ecran, în engleză):
+  - **Sheets:** Rezumatul (tabel pivot) are acum **două câmpuri pe rânduri** (de exemplu Oraș, apoi Agent), cu subtotaluri și cele trei aspecte cunoscute: **Compact, Schiță, Tabelar**.
+  - **Slides:** **Export .odp** (prezentarea în formatul deschis; graficele intră ca imagini, doar clipurile rămân pe dinafară) și **Împachetează prezentarea** (într-un dosar, de exemplu pe stick: formatul Suite, .pptx și .odp). Pozele SVG din fișierele .odp se deschid acum.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 84,2%, Excel 84,3%, PowerPoint 83,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
+- Scoruri: Word 84,2%, Excel 84,6%, PowerPoint 84,1%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (Word, Excel, PowerPoint), câte una pe pas.
@@ -23,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Dacă are la serviciu un program de prezentări care deschide .odp: să deschidă o prezentare salvată din Suite cu Slides → Fișier → Export .odp… (titluri, liste, forme, poze, un grafic): arată la fel? (aici n-am avut cu ce testa).
 - Să deschidă la serviciu un .docx salvat din Suite cu formular (Docs → Inserare → ☐ Casetă, ▾ Listă verticală, 📅 Selector de dată), cu filigran din imagine și cu sigla în antet (Aspect → Pagină… → Imagine în antet): merg controalele, se văd sigla și filigranul? (aici n-am avut cu ce testa).
 - Să deschidă la serviciu un .docx cu cuprins salvat din Suite (Docs → Referințe → Cuprins → Salvează ca .docx): programul întreabă de actualizarea câmpurilor și pune numerele paginilor?
 - Să deschidă la serviciu un .xlsx salvat din Suite cu comentarii cu răspunsuri (Sheets → Revizuire → 💬 Comentariu nou): apar ca discuții?
