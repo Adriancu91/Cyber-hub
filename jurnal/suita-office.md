@@ -185,3 +185,4 @@
 - 2026-10-27 21:54 — Imagini: 🖼 Galerie de filtre și filtrul Reducerea tremuratului; Sheets: liniile de pagină se trag cu mouse-ul; 3 commituri, testele trec (Photoshop 73,3%, Excel 85,5%).
 - 2026-10-27 22:37 — Imagini: aliniere automată a straturilor, îmbinare automată (focalizare) și HDR, Calcule și Gamă de culori; 5 commituri, testele trec (Photoshop 74,2%).
 - 2026-10-27 23:22 — Imagini: Zonă de focalizare (selecția părții clare), poziția și culoarea de sub mouse în bara de jos, presetări de ajustare proprii, 9 fonturi noi + mărime în pixeli + aldin / cursiv la text; 5 commituri, testele trec (Photoshop 74,6%).
+- 2026-10-28 00:07 — Imagini, textul din Adnotează: spațierea literelor și a rândurilor, dublu clic ca să schimbi un text pus, casetă de paragraf cu rânduri care se rup singure, retragerea primului rând și spațiul după paragraf; 4 commituri, testele trec (Photoshop 74,9%).

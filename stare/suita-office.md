@@ -1,16 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 23:22 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 00:07 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, acum în Imagini (scorul cel mai mic). Sesiunea 22:38–23:22, 5 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
-  - **◎ Zonă de focalizare…** (în ⬚ Selecție): selectează singur partea clară a pozei, fără fundalul încețoșat.
-  - **Bara de jos** arată poziția X / Y și culoarea pixelului de sub mouse (R G B, cod) și mărimea selecției.
-  - **🎚 Ajustări:** 4 presetări noi și **presetările tale** (le salvezi cu nume și le pui pe altă poză dintr-un clic).
-  - **Text** (Adnotează): 14 fonturi, mărime oricât în pixeli, **B** aldin și ***I*** cursiv.
+- Lucrăm la „funcțiile care lipsesc”, acum în Imagini (scorul cel mai mic). Sesiunea 23:22–00:07, 4 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză), toate la **textul din ✎ Adnotează**:
+  - **↔ Litere** și **↕ Rânduri**: spațiul dintre litere și distanța dintre rânduri.
+  - **Dublu clic** pe un text pus îl deschide din nou ca să-l schimbi (Esc îl lasă cum era).
+  - **Casetă de paragraf**: tragi un dreptunghi cu T Text și rândurile se rup singure ca să încapă.
+  - **⇥ Primul rând** și **¶ După**: retragerea primului rând și spațiul după fiecare paragraf.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 74,6%, formule 97,1%.
+- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 74,9%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (Photoshop, Acrobat, Word, Excel, PowerPoint), câte una pe pas.
