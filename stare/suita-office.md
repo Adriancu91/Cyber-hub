@@ -1,16 +1,17 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 00:51 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 01:42 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, acum în Imagini (scorul cel mai mic). Sesiunea 00:08–00:52, 4 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză), toate la **🖌 Pensulă**:
-  - **Vârful pensulei**: Duritate (margine moale), Spațiere (trăsătură punctată), Rotunjime și Unghi (vârf turtit, ca o peniță).
-  - **🖌 Amestecă**: pensula de amestec, culoarea ei se amestecă cu ce e pe poză, ca vopseaua udă (Umed, Încărcare, Proporție, Debit).
-  - **Variații**: mărime și unghi la întâmplare, Împrăștiere (spray, iarbă, frunziș).
-  - **Pensule gata**: Aerograf, Moale, Caligrafie, Spray, Pensulă uscată, Frunziș.
+- Lucrăm la „funcțiile care lipsesc”, acum în Imagini (scorul cel mai mic). Sesiunea 00:52–01:45, 5 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
+  - **🖌↺ Pensula artistică a istoricului**: pictează din poza de dinainte cu trăsături stilizate (8 stiluri), ca o pictură.
+  - **Estompare pe drum**: mișcare de-a lungul unei curbe alese (o mașină în curbă, apă care curge).
+  - **◠ Curbură** la Traseu: fiecare clic pune un punct, iar traseul trece singur, lin, prin toate.
+  - **Pictură în ulei** cu relieful tușelor; **Reducere zgomot** cu zgomot de culoare și scoaterea pătrățelelor de la JPEG.
+  - Găsit și reparat: filtrele deveniseră de 3–5 ori mai lente când funcția lor comună a crescut prea mult; acum codul nou stă în funcții separate.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 75,2%, formule 97,1%.
+- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 76,3%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (Photoshop, Acrobat, Word, Excel, PowerPoint), câte una pe pas.
