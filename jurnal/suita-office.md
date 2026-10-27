@@ -165,3 +165,4 @@
 - 2026-10-27 07:44 — Slides: Media: Pauză / Oprire ca pași ai animațiilor; PDF: aldinul păstrat la reașezarea paragrafului; Docs: efecte pentru forme, stiluri noi pentru poze și chenar la alegere; 5 commituri, testele trec, toate textele noi traduse.
 - 2026-10-27 08:30 — Sheets: comentarii cu răspunsuri (și în .xlsx), tabel pivot cu mai multe valori, sfârșit de pagină pe coloane; Docs: poziția exactă a pozelor în cm; 5 commituri, testele trec (Word 82,1%, Excel 82,1%).
 - 2026-10-27 09:17 — Sheets, Rezumat (tabel pivot): Reîmprospătare, Grafic pivot, Câmp calculat, Total cumulat / diferențe / Indice; Excel 83,2%.
+- 2026-10-27 09:57 — Sheets: Analiza datelor completă (ANOVA cu replicare, numere aleatoare, Fourier) și stiluri de celulă proprii; 4 commituri, testele trec (Excel 83,4%).

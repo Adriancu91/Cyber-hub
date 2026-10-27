@@ -1,18 +1,17 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 09:17 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 09:57 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 08:32–09:17, 5 commituri, testele trec, toate textele noi traduse, toate în **Sheets → Rezumat (tabel pivot)**:
-  - **Reîmprospătare** (Alt+F5, Ctrl+Alt+F5, Date → Reîmprospătare totală): rezumatul prinde orașele / lunile noi adăugate în tabel.
-  - **Grafic pivot** (Inserare → Diagrame): rezumat + grafic, reîmprospătate împreună.
-  - **Câmp calculat** (de exemplu Preț mediu = Suma / Bucăți) și „Arată valorile ca”: **Total cumulat**, **Diferența / % diferență față de cel anterior**, **Indice**.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 09:17–09:58, 4 commituri, testele trec, toate textele noi traduse, toate în **Sheets**:
+  - **Analiza datelor e completă** (toate cele 19 instrumente): ANOVA cu doi factori **cu replicare**, **Generare numere aleatoare** (uniformă, normală, Bernoulli, binomială, Poisson, după un model, discretă, cu sămânță), **Analiza Fourier** și inversa.
+  - **Stiluri de celulă proprii**: Pornire → Stiluri celulă → Stil nou din celula curentă… (se păstrează în registru, se pot șterge).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 82,1%, Excel 83,2%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
+- Scoruri: Word 82,1%, Excel 83,4%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” din inventar (Word și Excel), câte una pe pas.
+- Alte funcții „parțial” din inventar (Word și Excel), câte una pe pas; de exemplu numele stilurilor de celulă proprii în .xlsx.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
