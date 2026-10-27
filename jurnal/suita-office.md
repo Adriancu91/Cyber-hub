@@ -180,3 +180,4 @@
 - 2026-10-27 18:08 — Slides: literele cu gradient (și în .pptx) și galeria Stiluri rapide cu miniaturi; Docs: stiluri de poză noi (chenar întrerupt, relief, perspectivă) și reflexie / relief la forme; 4 commituri, testele trec (Word 84,6%, PowerPoint 85,2%).
 - 2026-10-27 18:53 — PDF: căutare în toate PDF-urile dintr-un dosar, datele formularelor și comentariile și în formatul .fdf, acțiuni gata făcute și salvate în Lot; 4 commituri, testele trec (Acrobat 76,4%).
 - 2026-10-27 19:48 — Docs / Sheets / Slides: recuperarea documentelor nesalvate (ciorne 7 zile); Docs: previzualizare înaintea imprimării și granițele paginilor pe ecran; 4 commituri, testele trec (Word 85,0%).
+- 2026-10-27 20:32 — Docs: fereastra Opțiuni (cu salvarea automată pornită / oprită); AutoCorect la scris și în Slides și în celulele din Sheets; Opțiuni noi în Slides și Sheets; 4 commituri, testele trec (Word 85,1%, Excel 85,0%, PowerPoint 85,3%).
