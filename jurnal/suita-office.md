@@ -176,3 +176,4 @@
 - 2026-10-27 15:20 — Sheets: Cronologie (filtru pe perioade) și filtrul de raport în Rezumat; Docs: Tabel de autorități; Slides: Inimă, Nor, Semilună, Fulger; 4 commituri, testele trec (Word 84,2%, Excel 84,3%).
 - 2026-10-27 15:58 — Sheets: două câmpuri pe rânduri în Rezumat (Compact / Schiță / Tabelar); Slides: Export .odp (cu grafice ca imagini), Împachetează prezentarea, pozele SVG din .odp se deschid; 4 commituri, testele trec (Excel 84,6%, PowerPoint 84,1%).
 - 2026-10-27 16:50 — Sheets: culorile din temă ale fișierelor .xlsx se văd acum (erau ignorate în 29 din 43 de fișiere de test), paleta de culori la umplere și font, temele registrului (Aspect pagină → Teme); 3 commituri, testele trec (Excel 84,8%).
+- 2026-10-27 17:27 — Sheets: fonturile temei (Titluri / Corp, și în .xlsx); Slides: rotirea 3-D la forme și poze, 5 stiluri de poză noi, textul cu reflexie; 5 commituri, testele trec (PowerPoint 84,6%).
