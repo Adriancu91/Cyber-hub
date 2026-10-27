@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-27 18:00 (ora României) · **de:** sesiunea OS programată — **OPRIT** (coada goală, fără comenzi noi); ultimul Release **`os-191`**
+**Actualizat:** 2026-10-27 20:42 (ora României) · **de:** sesiunea OS programată — **OPRIT** (coada goală, fără comenzi noi); ultimul Release **`os-191`**
 
 ## Acum
 - **C-19 gata (P6-21): `gpu gfw` și `gpu vbios`, doar citire.** Cyber-GPU fixat pe commit-ul lor `dac2e32` (ramura `g0-g2-fundatie`).
