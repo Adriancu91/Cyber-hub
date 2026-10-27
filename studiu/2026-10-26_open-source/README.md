@@ -35,3 +35,15 @@ Fiecare afirmație din notițe e marcată: citit / din memorie / dedus. Licențe
 3. Găzduirea lui Kronos: model încărcat o dată, doar-citire, verificat SHA-256; pagini de 1 GiB; nuclee dedicate (după NIGHTRUN).
 4. Permisiuni pe program: azi orice program poate citi `/usb/claude.key` și `github.token` — **da, înainte de Faza 6**.
 5. Tipuri care previn greșelile din drivere (sincronizarea DMA, ordinea încuietorilor).
+
+## Adăugat 27 oct — familia „Claw” (FemtoClaw, ESP-Claw, PicoClaw, OpenClaw), adusă de Adrian
+- **Ce sunt:** bucle de agent (ReAct: gândește → cheamă o unealtă → citește rezultatul → repetă) care rulează pe microcontrolere ESP32 cu foarte
+  puțină memorie (FemtoClaw: ~46–120 KB RAM, după descrierea primită; ESP-Claw e făcut de Espressif, în C). **Modelul AI NU rulează pe cip:**
+  cipul doar trimite întrebări unui LLM din cloud (OpenAI, Anthropic, Qwen, DeepSeek) sau unui model local de pe alt calculator (Ollama, LM Studio)
+  și execută uneltele: WiFi, căutare web, fișiere, GPIO, sarcini programate, memorie pe flash, chat prin Telegram/Discord; ESP-Claw are și MCP.
+  (Repo-ul FemtoClaw — `manjunathshiva/femtoclaw` — nu l-am putut deschide din sesiune; licențele nu sunt verificate.)
+- **Pentru Kronos:** nu ajută la direcția „fără LLM străin” — e un client de LLM-uri străine, nu un model.
+- **Pentru OS (Faza 6, „Claude în OS”, C-3):** **util ca model de arhitectură.** E exact ce vrem: o buclă de agent mică, bare-metal, care vorbește cu API-ul
+  Claude prin TLS-ul nostru și are unelte (fișiere de pe stick, rețea, `cyber>`), memorie persistentă și sarcini programate. Lecția: bucla încape
+  în ~100 KB; partea grea e TLS-ul și rețeaua, pe care OS-ul le are deja. Unealta „GPIO” devine la noi „comenzile OS-ului”, cu permisiunile din C-22.
+- **Pe termen lung:** aceeași buclă poate chema **Kronos local** în loc de Claude, când Kronos e destul de bun — asta se potrivește cu direcția.
