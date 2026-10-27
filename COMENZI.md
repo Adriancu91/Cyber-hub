@@ -477,7 +477,7 @@ Format:
   reale în hub. (2) Exportă cel mai bun model curent (#441 sau rezultatul S38, dacă e confirmat) în **KGR1 Q8_0** cu `unelte/exporta_greutati.py`
   și pune fișierul ca **Release** în repo-ul privat `cyberspace` (nu în hub, nu în repo-urile publice), cu suma SHA-256 notată în
   `integrare/kronos/MODEL.md` (numele modelului, mărimea, suma, 3 texte cu primele 5 simboluri generate greedy, ca test pe hardware).
-- stare: nou
+- stare: preluat (2026-10-27 23:15, supraveghetor) — S39 în `plan/coada.md` din cyberspace, `aprobat`; partea A (model minuscul + vectori) acum, doar procesor; partea B (exportul + Release privat) după S38. Executantul nu scrie în hub: pregătește `integrare/kronos/` în cyberspace, iar supraveghetorul îl copiază aici.
 - rezultat:
 
 ### C-25 · cyber-universe · Kronos adevărat în OS: motorul KGR1 în Rust + comanda `kronos`
