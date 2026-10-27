@@ -51,3 +51,16 @@ Tastatură US, Secure Boot oprit, pornit prin Windows → „Utilizați un dispo
   `00:0d.2 8086:9a1b` (clasa 0c:03:40 — USB4/Thunderbolt, nu xHCI), `00:14.0 8086:a0ed` (xHCI-ul obișnuit Tiger Lake-LP, unde sunt de regulă porturile
   USB-A). Apoi **un singur** „controler XHCI pornit, 5 porturi, 0 dispozitive”. **Cauza probabilă: OS-ul pornește doar primul xHCI (cel Thunderbolt,
   fără nimic în el) și ignoră `00:14.0`, unde e stick-ul.** (Deci laptopul Intel e chiar ThinkPad L15 Gen 2 cu i7-1185G7, Tiger Lake.)
+- **`cpu porneste` + `run kronos-calcul` pe Intel (`poza-5-intel-8-nuclee-OK.jpg`): OK.** 8 nuclee pornite din 8 (APIC 2,4,6,1,3,5,7, ~10 ms fiecare,
+  71 ms în total). `kronos-calcul` cu **8 fire**: 0 logit-uri diferite din 4096, pierderea identică; matmul 128³: 0 diferențe; kernels pe 8 fire 10 ms
+  față de 70 ms pe 1 fir = **7,0×**; vectori pe 8 fire față de referință **70,0×**; „toate rezultatele în toleranța declarată (OK)”.
+  **Primul calcul Kronos pe toate nucleele, pe hardware real.**
+
+## Pe scurt (27 oct)
+| | Laptop AMD (Ryzen 5 4500U) | Laptop Intel (ThinkPad L15 Gen 2, i7-1185G7) |
+|---|---|---|
+| Pornire, `cyber>` | da | da (prin Windows → „Utilizați un dispozitiv”) |
+| Nuclee | 6 din 6 | 8 din 8 |
+| `kronos-calcul` | **#GP, sistem oprit** (și pe 1 fir) | **OK pe 1 și pe 8 fire, 7× pe 8 fire** |
+| `raport` pe stick | **merge** (23 KB, chei ascunse) | stick nemontat (doar primul din cele 2 xHCI e pornit) |
+| Rețea | Realtek pornit, fără cablu | netestat (fără cablu) |

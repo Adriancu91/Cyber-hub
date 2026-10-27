@@ -465,5 +465,6 @@ Format:
   acel laptop (pozele cu `log usb 60` și `hw` vin în `rezultate/2026-10-27-thinkpad-os191/`); repar-o în aceeași sarcină sau în una separată.
   **Cauza probabilă (din `log usb 60`):** pe Tiger Lake sunt două xHCI (`00:0d.0 8086:9a13` Thunderbolt și `00:14.0 8086:a0ed`); OS-ul pornește doar
   unul („5 porturi, 0 dispozitive”) — trebuie pornite **toate** controlerele xHCI și căutat stick-ul pe fiecare (test QEMU cu două `qemu-xhci`).
+  Pe Intel, `cpu porneste` + `kronos-calcul` cu 8 fire: OK (7× față de 1 fir) — primul calcul Kronos pe toate nucleele, pe hardware real.
 - stare: nou
 - rezultat:
