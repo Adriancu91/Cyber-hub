@@ -38,3 +38,12 @@ Fără cablu de rețea (Adrian nu are acces la router cu cablu; OS-ul nu are WiF
 - **Indiciu pentru C-23:** OS-ul a fost testat până acum în CI doar pe procesoare emulate de tip Intel; aceasta e o mașină **AMD**. Diferențe
   Intel/AMD cunoscute în zona selectorilor/`SYSRET`/`IRETQ` și în XSAVE pot explica un #GP cu cod de selector (0x18). De încercat în QEMU cu
   `-cpu EPYC` / `-cpu EPYC-Rome` (Zen 2) și, dacă se poate, KVM pe AMD.
+
+## Al doilea laptop: ThinkPad cu Intel i7 (~23:07, `poza-3-intel-kronos-calcul-OK.jpg`)
+Tastatură US, Secure Boot oprit, pornit prin Windows → „Utilizați un dispozitiv” (F12 nu mergea). Modelul exact al procesorului: urmează din `hw`.
+- **`run kronos-calcul` pe 1 fir: OK.** Bloc Kronos T=32 C=64 H=4 F=256 V=128 (bf16): pierdere 4,863, 0 logit-uri diferite din 4096; matmul 128³:
+  0 diferențe; vectori AVX2+FMA: 0 în afara toleranței, eroarea maximă 3,814e-6; „toate rezultatele în toleranța declarată (OK)”.
+  (Accelerarea „vectori 0.0x” = timp 0 ms sub rezoluția de 10 ms — cosmetic.)
+- **Concluzie pentru C-23: căderea #GP e specifică AMD (Ryzen 5 4500U / Zen 2).** Pe Intel, același stick, același program merge.
+- **Problemă nouă:** `raport` → „nu s-a scris: stick-ul nu e montat (/usb)” — pe acest laptop OS-ul nu montează stick-ul de pe care a pornit.
+  Cerute lui Adrian: poze la `log usb 60`, `hw`, apoi `cpu porneste` + `run kronos-calcul`.

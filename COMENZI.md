@@ -460,5 +460,8 @@ Format:
   și scoate un Release nou. Rapoartele `raport` de la a doua pornire vin în același dosar
   când le trimite Adrian. Nu schimba nimic altceva.
   **Actualizare 23:05:** pe un singur nucleu (fără `cpu porneste`) cade la fel, același RIP → nu e de la SMP. `raport` a mers pe hardware; raportul complet e în dosar (`raport-20261027-1.txt`).
+  **Actualizare 23:10:** pe un al doilea laptop, ThinkPad cu **Intel i7**, același stick: `run kronos-calcul` merge (OK, 0 diferențe) → căderea e
+  **specifică AMD**. Tot acolo, problemă separată: `raport` spune „stick-ul nu e montat (/usb)” — OS-ul nu găsește stick-ul de pe care a pornit pe
+  acel laptop (pozele cu `log usb 60` și `hw` vin în `rezultate/2026-10-27-thinkpad-os191/`); repar-o în aceeași sarcină sau în una separată.
 - stare: nou
 - rezultat:
