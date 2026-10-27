@@ -47,3 +47,7 @@ Tastatură US, Secure Boot oprit, pornit prin Windows → „Utilizați un dispo
 - **Concluzie pentru C-23: căderea #GP e specifică AMD (Ryzen 5 4500U / Zen 2).** Pe Intel, același stick, același program merge.
 - **Problemă nouă:** `raport` → „nu s-a scris: stick-ul nu e montat (/usb)” — pe acest laptop OS-ul nu montează stick-ul de pe care a pornit.
   Cerute lui Adrian: poze la `log usb 60`, `hw`, apoi `cpu porneste` + `run kronos-calcul`.
+- **`log usb 60` pe laptopul Intel (`poza-4-intel-log-usb.jpg`):** trei controlere USB găsite pe PCI — `00:0d.0 8086:9a13` (xHCI Thunderbolt 4, Tiger Lake),
+  `00:0d.2 8086:9a1b` (clasa 0c:03:40 — USB4/Thunderbolt, nu xHCI), `00:14.0 8086:a0ed` (xHCI-ul obișnuit Tiger Lake-LP, unde sunt de regulă porturile
+  USB-A). Apoi **un singur** „controler XHCI pornit, 5 porturi, 0 dispozitive”. **Cauza probabilă: OS-ul pornește doar primul xHCI (cel Thunderbolt,
+  fără nimic în el) și ignoră `00:14.0`, unde e stick-ul.** (Deci laptopul Intel e chiar ThinkPad L15 Gen 2 cu i7-1185G7, Tiger Lake.)

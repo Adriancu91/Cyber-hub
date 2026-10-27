@@ -463,5 +463,7 @@ Format:
   **Actualizare 23:10:** pe un al doilea laptop, ThinkPad cu **Intel i7**, același stick: `run kronos-calcul` merge (OK, 0 diferențe) → căderea e
   **specifică AMD**. Tot acolo, problemă separată: `raport` spune „stick-ul nu e montat (/usb)” — OS-ul nu găsește stick-ul de pe care a pornit pe
   acel laptop (pozele cu `log usb 60` și `hw` vin în `rezultate/2026-10-27-thinkpad-os191/`); repar-o în aceeași sarcină sau în una separată.
+  **Cauza probabilă (din `log usb 60`):** pe Tiger Lake sunt două xHCI (`00:0d.0 8086:9a13` Thunderbolt și `00:14.0 8086:a0ed`); OS-ul pornește doar
+  unul („5 porturi, 0 dispozitive”) — trebuie pornite **toate** controlerele xHCI și căutat stick-ul pe fiecare (test QEMU cu două `qemu-xhci`).
 - stare: nou
 - rezultat:
