@@ -19,3 +19,5 @@
 - 2026-10-27 13:55 — Matmul treapta 4 (8 rezultate pe fir) compilată cu NAK, identică bit cu bit cu calculul de control în model; 196 de teste, CI verde. Nimic rulat pe placă.
 - 2026-10-27 19:55 — Sesiunea 10 (cloud, fără placă): tabelele de pagini ale plăcii (I9a) în cod, după formatul din antetele NVIDIA 570.144; „golden image” cap-coadă cu tabelele reale, verificat de un cititor scris separat. Doar SIMULARE.
 - 2026-10-27 19:55 — Matmul treapta 5 (8×8 rezultate pe fir) compilată cu NAK, identică bit cu bit cu calculul de control în model; 211 teste, CI verde. Nimic rulat pe placă.
+- 2026-10-28 01:45 — Sesiunea 11 (cloud, fără placă): I9b — tabelele de pagini scrise în memoria plăcii printr-o fereastră BAR0, cu recitire, zone protejate (ecranul, GSP-RM) și golirea TLB; 4 registre, totul în spatele `hw-write`. Doar SIMULARE; 220 de teste, CI verde.
+- 2026-10-28 01:45 — Rândul „ecran:” din os-192 (C-26) e folosit: devine zona din VRAM pe care driverul n-o atinge; B0 trece pe os-192.
