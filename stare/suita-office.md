@@ -1,20 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 13:44 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 14:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 13:02–13:44, 6 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
-  - **Docs:** **ligaturile** (fereastra Font) și **imaginea din antet** (sigla firmei sus în stânga pe fiecare pagină, și în PDF și .docx).
-  - **Sheets:** **coloanele calculate** în tabele (o formulă scrisă într-o coloană a tabelului se completează singură pe toată coloana; rândurile noi o primesc).
-  - **Slides:** efectele **Reflexie** și **Teșire** la forme și poze, formele noi **Stea cu 4 colțuri** și **Bulă de dialog**; un test vechi reparat (toate cele 84 de teste Slides trec).
-- Fișierele .docx reale din colecție se deschid la fel de bine ca înainte (verificat după fiecare schimbare la citire).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 13:47–14:25, 4 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
+  - **Sheets:** **stilurile de tabel întunecate** (tot tabelul închis, litere albe; și în .xlsx) și **fereastra completă a Foii de prognoză** (perioade, interval de încredere, sezon automat / ales / fără, goluri, dubluri, statistici).
+  - **Slides:** **limba de verificare a casetelor** (Revizuire → Limbă; păstrată în .pptx; reparat: textul din .pptx-urile salvate era marcat engleză, acum română) și **6 teme noi** (Birou, Ardezie, Ocean, Vin, Cretă, Retro), fiecare cu 3 variante.
+- Prezentările .pptx din colecție se deschid la fel de bine ca înainte (verificat după schimbarea la citire).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 83,9%, Excel 83,6%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
+- Scoruri: Word 83,9%, Excel 83,8%, PowerPoint 83,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
 
 ## Urmează
-- Docs / Slides: efectele 3-D rămase (rotire 3-D), apoi alte funcții „parțial” din inventar.
-- Alte funcții „parțial” din inventar (Word și Excel), câte una pe pas.
+- Alte funcții „parțial” / „nu” din inventar (Word, Excel, PowerPoint), câte una pe pas.
+- Slides: rotirea 3-D la forme; Excel: stilurile de tabel proprii.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
