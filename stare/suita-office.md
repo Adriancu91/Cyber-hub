@@ -1,18 +1,18 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 21:12 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 21:54 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 20:33–21:12, 3 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
-  - **✏ Desen** în Docs și Sheets (nou): o foaie de desen cu creion, marker, radieră și ◇ În formă; desenul intră ca poză transparentă la cursor / peste celule.
-  - **⬚ Lasou** în desen (Slides, Docs, Sheets): încercuiești liniile, le muți trăgând sau le ștergi cu Delete; Ctrl+Z.
-  - Inventarul corectat: documentele și registrele se mută deja în fereastră nouă (Word / Excel „New Window” = parțial).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 21:12–21:54, 3 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
+  - **Imagini → 🖼 Galerie de filtre** (nou): miniaturi cu 31 de filtre artistice pe poza ta, previzualizare mare, mai multe efecte puse unul peste altul, aplicate deodată.
+  - **Imagini → Reducerea tremuratului** (filtru nou): reface pozele mișcate de mână (unghiul ghicit din poză, lungimea aleasă).
+  - **Sheets → Examinare sfârșit de pagină:** liniile de pagină se trag cu mouse-ul (linia automată devine sfârșit de mână; trasă afară, dispare).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 86,1%, Excel 85,4%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 72,8%, formule 97,1%.
+- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 73,3%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (Acrobat, Word, Excel, PowerPoint), câte una pe pas.
+- Alte funcții „parțial” / „nu” din inventar (Photoshop, Acrobat, Word, Excel, PowerPoint), câte una pe pas.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
