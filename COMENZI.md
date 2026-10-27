@@ -512,3 +512,21 @@ Format:
   Idee: „autotuning” (tinygrad BEAM, ATLAS) — scrisă de noi.
 - stare: nou
 - rezultat:
+
+### C-28 · kronos · E4 „Kronos-Cod”: un model separat, ~150M, doar pe cod, apoi auto-îmbunătățire cu teste care rulează
+- data: 2026-10-27 23:45 · de la: Adrian (ideea lui: „150 M parametri dedicat pe coding și auto-îmbunătățire, fără română”; aprobat prin delegare)
+- ce: Experiment nou, **după S38**, pe etape, fiecare cu pre-înregistrare (praguri scrise înainte) și reversibil. **Linia română (#441 și urmașii)
+  rămâne neatinsă**: Kronos-Cod e un model separat (lecția E2: un model specializat uită restul; nu „recuperăm” româna peste el, le combinăm
+  mai târziu prin module).
+  1. **Date:** doar cod real scris de oameni, cu licențe permisive (MIT/Apache/BSD), Python + Rust (+ puțin C), fără duplicate, **fără nimic generat
+     de un LLM străin**; listă de surse și licențe în `docs/`. Tokenizer BPE propriu antrenat pe cod. Examenul de cod scris înainte de antrenare și
+     ținut deoparte: probleme mici cu teste unitare (din șabloane proprii + un set ascuns), măsurat pass@1 și pass@10.
+  2. **Pre-antrenare:** ~150M parametri, rețeta A (cea confirmată în S34), sub 7.000 MB pe placă, ~2–3 nopți (~3 miliarde de simboluri);
+     proba de 30 min întâi. Prag de pre-înregistrat de supraveghetor (ex. pass@10 pe examenul ascuns peste un nivel minim fixat înainte).
+  3. **Auto-îmbunătățire** (doar dacă 2 trece pragul minim; STaR nu pornește de la zero): modelul scrie soluții la probleme generate din
+     șabloane, **testele le verifică rulându-le**, se păstrează doar cele care trec, se reantrenează din punctul de plecare; 2 iterații, prag de
+     câștig pe examenul ascuns. **Codul generat rulează doar într-o cutie izolată:** proces separat, fără rețea, dosar temporar, limită de timp și
+     memorie, fără `os`/`subprocess`/`shutil`/acces la fișiere în afara dosarului (listă de module permise), paznicul oprește orice depășire.
+  Toate ca module noi; dacă trebuie schimbat ceva în `kronos/` (nucleu) sau în examenul oficial, întreabă-l pe Adrian. Negativele sunt rezultate.
+- stare: nou
+- rezultat:
