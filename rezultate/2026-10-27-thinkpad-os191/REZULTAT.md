@@ -22,3 +22,10 @@ Fără cablu de rețea (Adrian nu are acces la router cu cablu; OS-ul nu are WiF
   `iretq` / comutarea către un fir, nu la calculul vectorial. În CI (QEMU, 4 nuclee) `kronos-calcul` trece. Raportul automat nu s-a scris (panică).
 - Urmează (cerut lui Adrian): repornire, `raport`, `run kronos-calcul` **fără** `cpu porneste` (un nucleu), `raport` — pentru a separa
   „problemă pe mai multe nuclee” de „problemă pe acest procesor”.
+
+## A doua pornire (~22:57, `poza-2-un-nucleu-GP.jpg`)
+- `raport` → **scris `/usb/raport/20261027-1.txt` (23.403 octeți), „cheile și tokenurile sunt ascunse”** — cutia neagră merge pe hardware real.
+- `run kronos-calcul` **fără** `cpu porneste` („1 fir, vectori AVX2+FMA (8 benzi)”) → **aceeași cădere, același RIP**:
+  `#GP RIP=0xffffffff8001e939 RSP=0xffff900000193318 RFLAGS=0x10086 CS=0x8 cod eroare=0x18`.
+- **Concluzie: nu e o problemă de mai multe nuclee**; e determinist, pe un singur nucleu, la același loc din nucleu — ceva specific acestui
+  procesor (Tiger Lake) sau acestei mașini, pe drumul `kronos-calcul` (QEMU în CI trece). Fișierul raportului urmează de la Adrian.

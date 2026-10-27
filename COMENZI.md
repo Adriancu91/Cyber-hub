@@ -459,5 +459,6 @@ Format:
   repar-o, adaugă un test în QEMU care o prinde (de ex. alt număr de nuclee / alt model de procesor `-cpu`, inclusiv unul cu AVX-512 ca Tiger Lake),
   și scoate un Release nou. Verifică și de ce apar 6 nuclee pe un procesor cu 8 fire. Rapoartele `raport` de la a doua pornire vin în același dosar
   când le trimite Adrian. Nu schimba nimic altceva.
+  **Actualizare 23:05:** pe un singur nucleu (fără `cpu porneste`) cade la fel, același RIP → nu e de la SMP. `raport` a mers pe hardware.
 - stare: nou
 - rezultat:
