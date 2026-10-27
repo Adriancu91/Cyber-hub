@@ -488,5 +488,7 @@ Format:
   din fișier. Test în CI: pe modelul minuscul, logit-urile egale cu ale referinței (toleranța declarată în `integrare/kronos/`). Apoi comanda
   `kronos "<text>"` care continuă textul (greedy, max N simboluri) și afișează simbolurile pe secundă. Greutățile reale nu intră în repo
   (repo public); Adrian le pune pe stick. Scrie-ți codul (nu porta codul Python); nu schimba nimic altceva.
+  **Ținta principală pe hardware e workstation-ul** (i9-10980XE, 18 nuclee / 36 fire, AVX-512, 128 GB, rețea I219 cu cablu; Adrian, 27 oct 23:16):
+  folosește toate cele 36 de fire și, dacă e simplu, AVX-512 cu fallback la AVX2; laptopul Intel rămâne a doua țintă.
 - stare: nou
 - rezultat:
