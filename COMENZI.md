@@ -419,7 +419,7 @@ Format:
   Pentru A (proba tinygrad pe placa reală, de pe un stick Linux, cu jurnalul scrierilor): pregătește doar instrucțiunile exacte și scriptul în
   `docs/TEST_MATRIX.md` + parserul de jurnal testat pe un jurnal scris de mână. **Nu se rulează nimic pe placă fără Adrian de față.**
   Firmware-ul NVIDIA rămâne în afara repo-ului.
-- stare: gata (preluat 2026-10-26 19:27, sesiunea 6; reluat 2026-10-27 01:28, terminat 02:05, sesiunea 7) — commit `ea4a2d1` pe `g0-g2-fundatie`, CI verde; A rămâne doar pregătită (se rulează doar cu Adrian de față); treptele matmul 3+ continuă fără comandă nouă
+- stare: gata (preluat 2026-10-26 19:27, sesiunea 6; reluat 2026-10-27 01:28, terminat 02:05, sesiunea 7) — commit `ea4a2d1` pe `g0-g2-fundatie`, CI verde; A rămâne doar pregătită (se rulează doar cu Adrian de față); treptele matmul 3+ continuă fără comandă nouă; sesiunea 8 (27 oct 08:50): treapta 3 + `SET_SYSTEM_INFO`, commit `e895783`, doar SIMULARE
 - rezultat: Antetele NVIDIA generate, mesajele GSP mari, procesorul de comenzi și GSP-ul fals (pornire simulată până la INIT_DONE) și matmul-ul NAK (treptele 1–2, identic bit cu bit cu calculul de control FMA+FTZ) sunt gata și testate doar în SIMULARE; nimic nu a rulat pe placă.
 
 ### C-21 · kronos · Din studiul open-source: memoria E3 mai bună, apoi Muon + răcire lungă, apoi motorul de inferență fără PyTorch

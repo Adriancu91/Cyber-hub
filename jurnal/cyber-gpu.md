@@ -13,3 +13,5 @@
 - 2026-10-26 19:50 — Mesajele GSP mari + tabelul SET_REGISTRY, procesorul de comenzi simulat (add64 lansat cap-coadă, identic cu referința, doar SIMULARE); proba tinygrad pregătită, nerulată; 157 de teste, CI verde.
 - 2026-10-27 02:05 — Sesiunea 7 (C-20 gata în SIMULARE): GSP fals pe registre + secvențiatorul; pornirea simulată cap-coadă până la INIT_DONE; scrierile firmware-ului în afara zonelor GSP/SEC2 refuzate. Antetele bootloader/booter_load (I4c), doar pe fișiere sintetice.
 - 2026-10-27 02:05 — Matmul treptele 1–2 compilate cu NAK (816 B fiecare, `ffma.ftz`), lansate în model, identice bit cu bit cu noul calcul de control FMA+FTZ; 176 de teste, CI verde. Nimic rulat pe placă.
+- 2026-10-27 08:50 — Sesiunea 8 (cloud, fără placă): mesajul `SET_SYSTEM_INFO` către GSP (structura generată din antetul NVIDIA 570.144, valorile ca în driverul NVIDIA); pornirea simulată trimite acum mesajele reale. Doar SIMULARE.
+- 2026-10-27 08:50 — Matmul treapta 3 (plăci în memoria partajată) compilată cu NAK, lansată în model cu QMD-ul pentru memoria partajată, identică bit cu bit cu calculul de control; 184 de teste, CI verde. Nimic rulat pe placă.
