@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-27 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-27 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -14,7 +14,8 @@
   F32 (392 MB): dif. maximă 1,34e-4 față de pragul 1e-4 → NU TRECE la limită (argmax și textul identice). **C-21 e închisă.** 960 teste trec.
 
 ## Urmează
-- **S36** (acum, ~2,2 h pe placă): proba D — rețeta A fără adunare pe loturi, ca să aflăm dacă răcirea singură aduce câștigul.
+- **S36** (rulează din ~15:05, sfârșit estimat ~17:15; pre-înregistrarea urcată înainte): proba D — rețeta A fără adunare pe loturi, ca să aflăm
+  dacă răcirea singură aduce câștigul. Verdictul la trecerea de 20:15.
 - **S37** (doar procesor): motorul KGR1 adună în float64 la LayerNorm/softmax; o remăsurare F32 cu același prag 1e-4.
 - **S38** (o noapte cu rețeta A, din #441): propus, așteaptă „da”-ul lui Adrian.
 
