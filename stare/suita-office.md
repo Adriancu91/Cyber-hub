@@ -1,15 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 21:54 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 22:37 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 21:12–21:54, 3 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
-  - **Imagini → 🖼 Galerie de filtre** (nou): miniaturi cu 31 de filtre artistice pe poza ta, previzualizare mare, mai multe efecte puse unul peste altul, aplicate deodată.
-  - **Imagini → Reducerea tremuratului** (filtru nou): reface pozele mișcate de mână (unghiul ghicit din poză, lungimea aleasă).
-  - **Sheets → Examinare sfârșit de pagină:** liniile de pagină se trag cu mouse-ul (linia automată devine sfârșit de mână; trasă afară, dispare).
+- Lucrăm la „funcțiile care lipsesc”, acum în Imagini (scorul cel mai mic). Sesiunea 21:53–22:37, 5 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
+  - **◫ Straturi → ⧉ Automat:** aliniază singur două poze ale aceleiași scene (mutare + rotire), și la expuneri diferite.
+  - **◫ Straturi → ◩ Îmbină** (poză clară peste tot din mai multe focalizări) și **☀ HDR** (detalii și în umbre, și în lumini, din mai multe expuneri).
+  - **∑ Calcule…** (două canale amestecate → selecție sau strat) și **🎨 Gamă de culori…** (selecție după culoare, lumini, umbre, piele).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 73,3%, formule 97,1%.
+- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 74,2%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (Photoshop, Acrobat, Word, Excel, PowerPoint), câte una pe pas.

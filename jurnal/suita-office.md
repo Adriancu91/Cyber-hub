@@ -183,3 +183,4 @@
 - 2026-10-27 20:32 — Docs: fereastra Opțiuni (cu salvarea automată pornită / oprită); AutoCorect la scris și în Slides și în celulele din Sheets; Opțiuni noi în Slides și Sheets; 4 commituri, testele trec (Word 85,1%, Excel 85,0%, PowerPoint 85,3%).
 - 2026-10-27 21:12 — Docs și Sheets au ✏ Desen (creion, marker, radieră, poza intră în document / peste celule), iar desenul are ⬚ Lasou pentru mutat și șters linii; Word 86,1%, Excel 85,4%, PowerPoint 85,7%.
 - 2026-10-27 21:54 — Imagini: 🖼 Galerie de filtre și filtrul Reducerea tremuratului; Sheets: liniile de pagină se trag cu mouse-ul; 3 commituri, testele trec (Photoshop 73,3%, Excel 85,5%).
+- 2026-10-27 22:37 — Imagini: aliniere automată a straturilor, îmbinare automată (focalizare) și HDR, Calcule și Gamă de culori; 5 commituri, testele trec (Photoshop 74,2%).
