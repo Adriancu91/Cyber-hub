@@ -15,3 +15,5 @@
 - 2026-10-27 02:05 — Matmul treptele 1–2 compilate cu NAK (816 B fiecare, `ffma.ftz`), lansate în model, identice bit cu bit cu noul calcul de control FMA+FTZ; 176 de teste, CI verde. Nimic rulat pe placă.
 - 2026-10-27 08:50 — Sesiunea 8 (cloud, fără placă): mesajul `SET_SYSTEM_INFO` către GSP (structura generată din antetul NVIDIA 570.144, valorile ca în driverul NVIDIA); pornirea simulată trimite acum mesajele reale. Doar SIMULARE.
 - 2026-10-27 08:50 — Matmul treapta 3 (plăci în memoria partajată) compilată cu NAK, lansată în model cu QMD-ul pentru memoria partajată, identică bit cu bit cu calculul de control; 184 de teste, CI verde. Nimic rulat pe placă.
+- 2026-10-27 13:55 — Sesiunea 9 (cloud, fără placă): „golden image” (pasul de după pornirea GSP) în cod; structurile generate din antetele NVIDIA 570.144, secvența acceptată cap-coadă de un RM fals scris separat. Doar SIMULARE.
+- 2026-10-27 13:55 — Matmul treapta 4 (8 rezultate pe fir) compilată cu NAK, identică bit cu bit cu calculul de control în model; 196 de teste, CI verde. Nimic rulat pe placă.
