@@ -1,18 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-27 13:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-27 13:44 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 12:21–13:00, 4 commituri, testele trec, toate textele noi traduse:
-  - **Docs, formulare în text:** **▾ Listă verticală** (alegi dintr-o listă de variante scrise de tine) și **📅 Selector de dată** (calendar), alături de caseta de selectare de dimineață; toate se păstrează în .docx ca controale adevărate.
-  - **Docs:** **filigranul din imagine** (de exemplu sigla firmei, decolorată pe fiecare pagină, și în .docx) și efectul de text **Strălucire**.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 13:02–13:44, 6 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
+  - **Docs:** **ligaturile** (fereastra Font) și **imaginea din antet** (sigla firmei sus în stânga pe fiecare pagină, și în PDF și .docx).
+  - **Sheets:** **coloanele calculate** în tabele (o formulă scrisă într-o coloană a tabelului se completează singură pe toată coloana; rândurile noi o primesc).
+  - **Slides:** efectele **Reflexie** și **Teșire** la forme și poze, formele noi **Stea cu 4 colțuri** și **Bulă de dialog**; un test vechi reparat (toate cele 84 de teste Slides trec).
 - Fișierele .docx reale din colecție se deschid la fel de bine ca înainte (verificat după fiecare schimbare la citire).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 83,5%, Excel 83,4%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
+- Scoruri: Word 83,9%, Excel 83,6%, PowerPoint 83,3%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 75,4%, Photoshop 72,8%, formule 97,1%.
 
 ## Urmează
-- Docs: ligaturile (Font → Avansat).
+- Docs / Slides: efectele 3-D rămase (rotire 3-D), apoi alte funcții „parțial” din inventar.
 - Alte funcții „parțial” din inventar (Word și Excel), câte una pe pas.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
@@ -23,7 +24,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- Să deschidă la serviciu un .docx salvat din Suite cu formular (Docs → Inserare → ☐ Casetă, ▾ Listă verticală, 📅 Selector de dată) și cu filigran din imagine: merg controalele, se vede sigla decolorată? (aici n-am avut cu ce testa).
+- Să deschidă la serviciu un .docx salvat din Suite cu formular (Docs → Inserare → ☐ Casetă, ▾ Listă verticală, 📅 Selector de dată), cu filigran din imagine și cu sigla în antet (Aspect → Pagină… → Imagine în antet): merg controalele, se văd sigla și filigranul? (aici n-am avut cu ce testa).
 - Să deschidă la serviciu un .docx cu cuprins salvat din Suite (Docs → Referințe → Cuprins → Salvează ca .docx): programul întreabă de actualizarea câmpurilor și pune numerele paginilor?
 - Să deschidă la serviciu un .xlsx salvat din Suite cu comentarii cu răspunsuri (Sheets → Revizuire → 💬 Comentariu nou): apar ca discuții?
 - **LTV:** ca o semnătură să poată fi verificată și peste ani, Suite ar trebui să întrebe pe internet serverele emitentului certificatului (OCSP / CRL), la semnare. E în regulă, doar la cererea ta, ca la marca temporală?

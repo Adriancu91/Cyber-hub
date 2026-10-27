@@ -171,3 +171,4 @@
 - 2026-10-27 12:20 — Docs: borduri pe celule cu Pensula pentru borduri, lista principală de surse, casetă de selectare, fontul filigranului, cuprinsul ca câmp în .docx; Sheets: rang în Rezumat; 6 commituri, testele trec (Word 83,2%).
 
 - 2026-10-27 13:00 — Docs: listă verticală și selector de dată în text (formulare, și în .docx), filigran din imagine, efectul Strălucire; 4 commituri, testele trec (Word 83,5%).
+- 2026-10-27 13:44 — Docs: ligaturi și sigla în antet; Sheets: coloane calculate în tabele; Slides: Reflexie, Teșire, Stea cu 4 colțuri, Bulă de dialog, un test reparat; 6 commituri, testele trec (Word 83,9%, Excel 83,6%).
