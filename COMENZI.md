@@ -492,3 +492,11 @@ Format:
   folosește toate cele 36 de fire și, dacă e simplu, AVX-512 cu fallback la AVX2; laptopul Intel rămâne a doua țintă.
 - stare: nou
 - rezultat:
+
+### C-26 · cyber-universe · O linie în `hw` cu adresa imaginii ecranului (cerere Cyber-GPU, doar citire)
+- data: 2026-10-27 23:30 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: Propunerea din `cyber-gpu` `integration/cyber-universe/B0_adresa-ecranului.md`: în `hw` (și deci în `raport`), o linie cu adresa fizică și
+  mărimea framebuffer-ului primit de la Limine, ca driverul GPU să nu scrie peste ea. Doar citire; test în QEMU. Fă-o împreună cu C-23, ca Release-ul
+  pentru fereastra de pe workstation să o conțină.
+- stare: nou
+- rezultat:
