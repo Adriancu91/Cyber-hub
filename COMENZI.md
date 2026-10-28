@@ -557,7 +557,7 @@ Format:
   NVIDIA cunoscute (NVGI / NPDE) dacă documentația publică o susține; test pe o imagine sintetică care reproduce situația. Totul în SIMULARE,
   apoi verificăm la următoarea fereastră. Nicio scriere în placă.
   **Și:** raportul OS arată framebuffer-ul la `0xe0000000` (9 MiB, 1920×1080) = începutul BAR1 al plăcii — de ținut cont la I9/I10 (nu se scrie acolo).
-- stare: nou
+- stare: preluat (2026-10-28 13:35, sesiunea Cyber-GPU 13)
 - rezultat:
 
 ### C-31 · cyber-universe · `gpu vbios --detalii` (după C-30)
