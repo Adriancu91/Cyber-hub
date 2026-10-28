@@ -477,7 +477,7 @@ Format:
   reale în hub. (2) Exportă cel mai bun model curent (#441 sau rezultatul S38, dacă e confirmat) în **KGR1 Q8_0** cu `unelte/exporta_greutati.py`
   și pune fișierul ca **Release** în repo-ul privat `cyberspace` (nu în hub, nu în repo-urile publice), cu suma SHA-256 notată în
   `integrare/kronos/MODEL.md` (numele modelului, mărimea, suma, 3 texte cu primele 5 simboluri generate greedy, ca test pe hardware).
-- stare: preluat (2026-10-27 23:15, supraveghetor) — S39 în `plan/coada.md` din cyberspace, `aprobat`; partea A (model minuscul + vectori) acum, doar procesor; partea B (exportul + Release privat) după S38. Executantul nu scrie în hub: pregătește `integrare/kronos/` în cyberspace, iar supraveghetorul îl copiază aici.
+- stare: preluat (2026-10-27 23:15, supraveghetor) — S39 în `plan/coada.md` din cyberspace, `aprobat`; partea A (model minuscul + vectori) acum, doar procesor; partea B (exportul + Release privat) după S38. Executantul nu scrie în hub: pregătește `integrare/kronos/` în cyberspace, iar supraveghetorul îl copiază aici. 2026-10-28 02:15: `integrare/kronos/format_greutati.md` copiat aici (specificația KGR1); vectorii și `MODEL.md` după S39.
 - rezultat:
 
 ### C-25 · cyber-universe · Kronos adevărat în OS: motorul KGR1 în Rust + comanda `kronos`
@@ -528,5 +528,5 @@ Format:
      câștig pe examenul ascuns. **Codul generat rulează doar într-o cutie izolată:** proces separat, fără rețea, dosar temporar, limită de timp și
      memorie, fără `os`/`subprocess`/`shutil`/acces la fișiere în afara dosarului (listă de module permise), paznicul oprește orice depășire.
   Toate ca module noi; dacă trebuie schimbat ceva în `kronos/` (nucleu) sau în examenul oficial, întreabă-l pe Adrian. Negativele sunt rezultate.
-- stare: nou
+- stare: preluat (2026-10-28 02:15, supraveghetor) — S41 în `plan/coada.md` din cyberspace, `aprobat`: doar etapa 1a (surse + licențe, examenul de cod scris înainte, cutia izolată), doar procesor, fără descărcări; etapele următoare după verificarea listei de surse și cu praguri pre-înregistrate.
 - rezultat:
