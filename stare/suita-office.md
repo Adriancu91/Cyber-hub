@@ -1,18 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 13:06 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 14:34 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 12:15–13:06, 5 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
-  - **PDF: „Elimină informațiile ascunse” scoate și textul ascuns** (invizibil, alb pe alb, transparent, minuscul, comentarii marcate ascunse); textul de peste poze (documente scanate) rămâne. Pe un formular real a scos exact textul alb ascuns lăsat de programul care l-a făcut.
-  - **PDF: 🧹 Optimizează structura** (în Comprimă…): scoate obiectele, fonturile și pozele nefolosite, unește copiile identice, comprimă ce era necomprimat; paginile arată la fel (verificat pe toată colecția de test).
-  - Reparat: raportul de la „Elimină informațiile ascunse” rămânea în română în varianta engleză.
+- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 13:52–14:34, 6 commituri, testele trec, textele noi traduse:
+  - **Slides: conectori.** Capătul unei linii / săgeți tras lângă mijlocul laturii unei forme se lipește de ea; linia urmează forma mutată, mărită sau rotită. Se păstrează și în .pptx (conectori adevărați, citiți și înapoi). Liniile au acum doar 2 mânere, la capete.
+  - **Slides: 7 forme noi** (heptagon, decagon, dodecagon, stele cu 6 și 8 colțuri, săgeată sus-jos, săgeată crestată), cu numele lor în .pptx.
+  - **Imagini: ✂ Felii.** Poza se împarte după ghidaje sau într-o grilă și fiecare bucată se salvează ca fișier separat (PNG / JPG / WEBP); clic pe o bucată o sare.
+  - Verificat: toate cele 36 de .pptx din colecția de test se deschid fără erori după schimbare.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 87%, Excel 85,5%, PowerPoint 88,3%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 78,2%, Photoshop 78,4%, formule 97,1%.
+- Scoruri: Word 87%, Excel 85,5%, PowerPoint 88,3%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (Acrobat, Notițe, Photoshop, Word, Excel, PowerPoint), câte una pe pas (de ex. subseturile de fonturi la optimizare).
+- Alte funcții „parțial” / „nu” din inventar, câte una pe pas (de ex. conectorii frânți în Slides, unealta de desenat felii în Imagini).
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
@@ -22,6 +23,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Slides → o săgeată între două dreptunghiuri (trage capetele pe punctele albastre), apoi Export .pptx și deschiderea la serviciu: săgeata rămâne lipită când muți un dreptunghi?
 - Să încerce PDF → Comprimă… → 🧹 Optimizează structura și ☰ Meniu → Elimină informațiile ascunse… pe PDF-uri reale de-ale lui: după Salvează ca…, fișierul arată la fel?
 - Să încerce PDF → Semnează… → 🔍 Caută și redactează pe un PDF adevărat (o adeverință, un contract): după Salvează ca…, restul textului se poate selecta și nu rămâne nicio literă din ce a fost redactat?
 - Să încerce Docs → Revizuire → ✓ Gramatică pe un document adevărat de-al lui: arată greșeli care nu sunt greșeli?
