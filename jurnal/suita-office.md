@@ -192,3 +192,5 @@
 - 2026-10-28 02:26 — Imagini: Efecte de lumină (tipuri, culoare, a doua lumină, relief), Estompare de obiectiv (forma diafragmei, hartă de adâncime, zgomot), Reducere zgomot pe canale și Clarifică detaliile; 4 commituri, testele trec (Photoshop 76,7%).- 2026-10-28 03:15 — Imagini: filtrele Copac și Flăcări, punctele filtrelor trase pe poză, Înclinare cu curbă, perspectivă la Corecția obiectivului, presetări la pensula de amestec, interval automat la Zona de focalizare; 6 commituri, testele trec (Photoshop 77,7%).
 - 2026-10-28 04:10 — Imagini: Galeria de filtre completă pe cele patru grupe (Schiță, Textură, Artistic, Tușe de pensulă), 25 de filtre noi, de la 72 la 96; 4 commituri, testele trec (Photoshop 77,8%).
 - 2026-10-28 04:52 — Imagini: Amestec HSL pe 8 culori, Compoziții de straturi, Densitate / Estompare la mască, lista Trasee, unealta Notă (5 commituri, teste trecute); Photoshop 78,3%.
+
+- 2026-10-28 05:42 — Notițe: desenul pus în notiță rămâne editabil (și se poate relua linie cu linie), Export .mht, traduceri lipsă în engleză; 3 commituri, testele trec (Notițe 77,2%).

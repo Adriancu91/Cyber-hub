@@ -1,20 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 04:52 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 05:42 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, acum în Imagini (scorul cel mai mic). Sesiunea 04:04–04:52, 5 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
-  - **Amestec HSL**: nuanța, saturația și luminozitatea separat pentru 8 culori (de ex. doar cerul mai închis).
-  - **Compoziții de straturi**: variante salvate ale straturilor (care se văd, opacitate, amestec), schimbate cu un clic.
-  - **Masca în Proprietăți**: Densitate și Estompare, fără să strice masca.
-  - **Lista Trasee**: mai multe trasee salvate, cu nume, redeschise oricând.
-  - **Unealta Notă**: bilețele cu text pe poză, care nu apar în poza salvată.
+- Lucrăm la „funcțiile care lipsesc”, acum în Notițe (scorul cel mai mic, alături de PDF). Sesiunea 04:51–05:45, 3 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
+  - **Desen editabil**: un desen de mână pus în notiță se redeschide cu liniile lui (se mută, se șterg, se adaugă), nu mai e doar poză.
+  - **▶ Reluare** și pe desenele deja puse în notiță (se redesenează linie cu linie).
+  - **Export .mht**: notița ca pagină web într-un singur fișier, cu pozele în el.
+  - Plus: câteva explicații din Notițe care rămâneau în română în varianta English sunt acum traduse.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 78,3%, formule 97,1%.
+- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 77,2%, Acrobat 76,4%, Photoshop 78,3%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (Photoshop, Acrobat, Word, Excel, PowerPoint), câte una pe pas; apoi traseele, notele și compozițiile salvate și în .psd.
+- Alte funcții „parțial” / „nu” din inventar (Notițe, Acrobat, Photoshop, Word, Excel, PowerPoint), câte una pe pas; în Imagini: traseele, notele și compozițiile salvate și în .psd.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
@@ -33,6 +32,7 @@
 - Să deschidă la serviciu un .docx cu cuprins salvat din Suite (Docs → Referințe → Cuprins → Salvează ca .docx): programul întreabă de actualizarea câmpurilor și pune numerele paginilor?
 - Să deschidă la serviciu un .xlsx salvat din Suite cu comentarii cu răspunsuri (Sheets → Revizuire → 💬 Comentariu nou): apar ca discuții?
 - **LTV:** ca o semnătură să poată fi verificată și peste ani, Suite ar trebui să întrebe pe internet serverele emitentului certificatului (OCSP / CRL), la semnare. E în regulă, doar la cererea ta, ca la marca temporală?
+- Dacă are la serviciu un program de birou care deschide .mht: să deschidă o notiță salvată din Suite cu Notițe → Fișier → Export .mht (cu o poză): se vede poza? (aici n-am avut cu ce testa).
 - Să încerce un .docx semnat din Suite în programul de birou de la serviciu (Docs → „.docx semnat digital…”): îl recunoaște ca semnat?
 - Să încerce semnarea cu tokenul lui real: PDF → 🔏 Semnează digital → Folosește un certificat de pe calculator sau token…; dacă apare o eroare, mesajul ne spune ce să reparăm.
 - Dacă are de la furnizorul certificatului adresa unui server de marcă temporală: s-o încerce cu bifa „Adaugă marca temporală”.
