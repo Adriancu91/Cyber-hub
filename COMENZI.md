@@ -556,6 +556,7 @@ Format:
   cel mult câteva sute de rânduri. Fără conținutul imaginilor (firmware NVIDIA/ASUS: nu se distribuie). (2) Fă parserul să treacă de containerele
   NVIDIA cunoscute (NVGI / NPDE) dacă documentația publică o susține; test pe o imagine sintetică care reproduce situația. Totul în SIMULARE,
   apoi verificăm la următoarea fereastră. Nicio scriere în placă.
+  **Și:** raportul OS arată framebuffer-ul la `0xe0000000` (9 MiB, 1920×1080) = începutul BAR1 al plăcii — de ținut cont la I9/I10 (nu se scrie acolo).
 - stare: nou
 - rezultat:
 

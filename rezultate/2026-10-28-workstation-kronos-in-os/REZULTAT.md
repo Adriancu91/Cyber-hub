@@ -50,3 +50,12 @@ Workstation Dell (i9-10980XE, 18 nuclee / 36 fire, 128 GB), pornit de pe stick (
 - `0x4e56` ca octeți = `56 4E` („VN”) — seamănă cu o bucată dintr-un antet „NVGI”/container NVIDIA, nu cu începutul unei imagini PCI. Ipoteză
   (neverificată): lungimea primei imagini (sau saltul NPDE/„NVGI”) e calculată diferit pe acest VBIOS (ASUS, subsistem 1043:8813). Datele de diagnostic
   lipsesc → C-30/C-31.
+
+## Raportul (`raport-20261028-1.txt`) și reglajul (`reglaj-i9-10980XE.txt`)
+- 0 erori în jurnal; 130.602 MiB utilizabili; procesor i9-10980XE.
+- **Rețea pe workstation: MERGE.** I219-LM (8086:15e3) la 00:1f.6, legătura **da, 100 Mb/s full duplex** (de verificat de ce nu 1 Gb/s: cablu/router sau
+  negocierea PHY), **DHCP: adresa 192.168.0.151, ruta și DNS 192.168.0.1** (după o primă încercare fără răspuns). „LAN_INIT_DONE nu a venit” — fără efect vizibil.
+- **Ecranul (C-26): framebuffer la adresa fizică `0xe0000000`, 9 MiB, 1920×1080, pitch 8192, 32 bpp — adică ÎN BAR1 al plăcii (`0xe0000000`, 256 MiB).**
+  Pentru Cyber-GPU: primii ~9 MiB din BAR1 sunt ecranul firmware-ului; driverul nu are voie să scrie acolo cât timp OS-ul folosește ecranul.
+- USB: un cititor de carduri gol pe portul 25 (sense 2/3a/00 = fără card) — inofensiv. Stick-ul montat cu scriere.
+- Reglajul: `vectori = avx2, fire = 1, ordine = t-j`, măsurat pe E = 512, 1 rând / 16 rânduri — prea mic pentru modelul real (C-29).
