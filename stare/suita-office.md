@@ -1,16 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 10:47 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 11:28 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 10:05–10:47, 6 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
-  - **Imagini: ▤ Foaie de contact**: oricâte poze, mici, cu numele lor, pe foi A4 într-un PDF (coloane × rânduri, titlu, foaie culcată).
-  - **Slides: tranzițiile Cub, Cortine și Pagină îndoită**, salvate și citite din .pptx.
-  - **PDF: 📄 Raport PDF…** la „Compară cu PDF…”: raportul diferențelor ca PDF separat (pagina, textul de dinainte și de acum).
-  - **Imagini: notele 🗒 de pe poză** au acum autor și culoare.
+- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 10:48–11:28, 5 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
+  - **Docs: ✓ Gramatică** (Revizuire): verificare gramaticală în română, locală, fără internet: cuvinte repetate, spații și punctuație, literă mare la început de propoziție, scrierea veche cu „î”, forme și exprimări greșite; panou cu Corectează / Ignoră / Corectează tot și linie albastră sub greșeli în text.
+  - **Docs: Desenare tabel** are radieră (unește celulele) și liniile împart doar celula atinsă.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 86,6%, Excel 85,5%, PowerPoint 88,3%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 77,2%, Photoshop 78,4%, formule 97,1%.
+- Scoruri: Word 87%, Excel 85,5%, PowerPoint 88,3%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 77,2%, Photoshop 78,4%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (Acrobat, Notițe, Photoshop, Word, Excel, PowerPoint), câte una pe pas.
@@ -23,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Docs → Revizuire → ✓ Gramatică pe un document adevărat de-al lui: arată greșeli care nu sunt greșeli? (ne spune care, ca să reglăm regulile).
 - Să încerce Slides → Prezentare → 🎙 Înregistrează cu microfonul lui (aici testul folosește un microfon simulat): se aude vocea pe fiecare slide la ▶ De la început? Și apoi Fișier → Fă video din prezentare → Export MP4: are vocea?
 - Să încerce Slides → Inserare → 🖵 Înregistrare ecran pe ecranul lui (aici testul înregistrează doar fereastra lui, nu ecranul adevărat): se aude sunetul calculatorului și vocea?
 - Să salveze din Docs un .docx cu un cuvânt pus aldin cu Revizuire → Urmărește modificările pornit și să-l deschidă la serviciu: apare ca „Formatat: Aldin”?
