@@ -588,7 +588,7 @@ Format:
   (`docs/PROVENANCE.md`). Versiunile până la commit-ul `8313973` inclusiv rămân MIT. Adaugă `LICENSE` proprietar cu aceeași notă istorică,
   actualizează `PROVENANCE.md` și README-urile; crate-ul generat din antetele NVIDIA păstrează notificarea MIT a NVIDIA; notează în §5.1 din
   `RESEARCH_I4_I8.md` că firmware-ul îl descarcă Adrian, noi nu-l distribuim. Nu schimba nimic altceva.
-- stare: nou
+- stare: preluat (2026-10-28 17:30 UTC, sesiunea Cyber-GPU 14)
 - rezultat:
 
 ### C-34 · cyber-gpu · După fiecare push: actualizează copia privată din hub pentru sesiunea OS
@@ -599,5 +599,5 @@ Format:
   verifică-l cu `git bundle verify` și cu o clonare de probă, rescrie `VERSIUNE.txt` (`g0-g2-fundatie <commit scurt> <ora UTC>`), commit în hub
   împreună cu starea ta. Fără firmware, fără date personale. Dacă nu mai poți citi `cyber-universe` (tot privat), e în regulă: e doar context,
   starea lui e în `stare/cyber-universe.md`. Fă și C-33 (licența), dacă n-ai făcut-o.
-- stare: nou
+- stare: preluat (2026-10-28 17:30 UTC, sesiunea Cyber-GPU 14)
 - rezultat:
