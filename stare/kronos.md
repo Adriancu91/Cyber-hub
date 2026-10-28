@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-28 14:25 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-28 20:25 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -11,12 +11,13 @@
 - **S41 gata — Kronos-Cod (C-28), etapa 1a:** lista surselor de cod cu licențe permisive (6 surse fără cont, ~3 mld simboluri estimate),
   examenul de cod cu 200 de probleme ascunse (referințele 200/200, corpul gol 0/200) și cutia izolată pentru codul generat (rețea, fișiere din afară,
   procese, `ctypes` blocate; limite de timp și memorie). Fără descărcări. 999 de teste trec.
-- **S42** (cititorul E3 refăcut din #459 cu rețeta A): a doua reluare a pornit greșit (de la zero) și a fost oprită; se reia **azi la 19:00** ca linie
-  nouă `w2_e3_reteta_A2`, aceleași praguri.
+- **S42** (cititorul E3 refăcut din #459 cu rețeta A) **rulează** din 19:02, ca linia nouă `w2_e3_reteta_A2`, cu pragurile urcate înainte.
+- Kronos-Cod etapa 1b: Adrian a spus „da” pentru pilotul de descărcare (data-limită 29 iunie 2021, fără surse cu cont). Pilotul (S43) s-a oprit
+  corect înainte de pornire: unealta de descărcare nu era încă scrisă. S43a o scrie, cu teste, fără rețea.
 
 ## Urmează
 - Verdictul S42 (CONFIRMAT dacă răspunde corect la ≥ 5 întrebări mai mult din 100 decât cititorul de azi, #438, fără să piardă în altă parte), ~23:15.
-- Kronos-Cod etapa 1b (pilotul de descărcare, apoi datele + tokenizerul pe cod): așteaptă „da”-ul lui Adrian.
+- S43a (unealta pilotului, fără rețea), apoi pilotul S43 (~1 oră, procesor + rețea), apoi descărcarea întreagă după verificarea pilotului.
 
 ## Ce oferă proiectul celorlalți
 - Pachetul KGR1 în `integrare/kronos/` (specificație, tokenizer, vectori, `MODEL.md`) + Release-ul privat cu #459.
@@ -29,6 +30,5 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- Kronos-Cod etapa 1b (S43): „da”/„nu” pentru pilotul de descărcare; data-limită a codului (iunie 2021 recomandat, sau noiembrie 2022);
-  sursele care cer cont (The Stack etc.) — recomandat deocamdată niciuna. Nu blochează nimic azi.
+- Nimic acum. (Tokenizerul nou pe cod va cere un al doilea „da”, după descărcare.)
 - La ferestrele OS/GPU viitoare: antrenarea de pe placă să fie oprită întâi.
