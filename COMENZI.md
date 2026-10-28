@@ -567,3 +567,26 @@ Format:
   Împreună cu C-29 (viteza lui Kronos), ca un singur stick să le testeze pe amândouă.
 - stare: nou
 - rezultat:
+
+### C-32 · cyber-universe · Licența devine proprietară pentru codul nou („toate drepturile rezervate”)
+- data: 2026-10-28 14:30 · de la: Adrian (prin centrul de comandă)
+- ce: Adrian vrea să-și protejeze codul. Versiunile publicate până acum (până la commit-ul `0bf1303` inclusiv) rămân MIT — asta nu se poate retrage.
+  De la următorul commit: (1) `LICENSE` înlocuit cu o licență proprietară scurtă („Copyright (c) 2026 Adrian. Toate drepturile rezervate.
+  Nicio utilizare, copiere, modificare sau distribuire fără acordul scris al autorului.”), cu o notă clară: „Versiunile până la commit-ul 0bf1303 au fost
+  publicate sub licența MIT.”; (2) o decizie nouă în `docs/DECISIONS.md` care o înlocuiește explicit pe cea cu MIT; (3) `CLAUDE.md` §6 și
+  README-urile actualizate (regula clean-room rămâne: nimic GPL copiat; nimic MIT străin fără notificarea lui păstrată); (4) componentele străine
+  păstrează licențele lor (ex. crate-ul generat din antetele NVIDIA MIT, cu notificarea NVIDIA). (5) Firmware-ul NVIDIA: nu-l distribuim noi
+  niciodată (nici în repo, nici în arhivele de stick); Adrian îl descarcă singur — notează asta, pentru că argumentul de redistribuire din
+  `cyber-gpu/docs/RESEARCH_I4_I8.md` §5.1 presupunea un OS cu licență OSI. Nu schimba nimic altceva. (Vizibilitatea repo-ului o decide Adrian
+  separat; dacă devine privat, testele GitHub Actions se pot opri — atunci nu le repara prin plată, doar notează și bazează-te pe testele din sesiune.)
+- stare: nou
+- rezultat:
+
+### C-33 · cyber-gpu · Aceeași schimbare de licență (proprietară pentru codul nou)
+- data: 2026-10-28 14:30 · de la: Adrian (prin centrul de comandă)
+- ce: Ca la C-32, pe ramura `g0-g2-fundatie`: repo-ul n-are încă fișier `LICENSE` (GitHub nu vede nicio licență), dar documentele spun MIT
+  (`docs/PROVENANCE.md`). Versiunile până la commit-ul `8313973` inclusiv rămân MIT. Adaugă `LICENSE` proprietar cu aceeași notă istorică,
+  actualizează `PROVENANCE.md` și README-urile; crate-ul generat din antetele NVIDIA păstrează notificarea MIT a NVIDIA; notează în §5.1 din
+  `RESEARCH_I4_I8.md` că firmware-ul îl descarcă Adrian, noi nu-l distribuim. Nu schimba nimic altceva.
+- stare: nou
+- rezultat:
