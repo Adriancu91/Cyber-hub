@@ -543,7 +543,7 @@ Format:
   probleme de jucărie; citire USB mai rapidă (cereri de mai multe sectoare). Ținte de verificat pe workstation: ≥ 50 simb/s pe 1 fir, ≥ 150 simb/s
   pe toate nucleele, citire < 10 s — aceleași simboluri ca acum (testul cu vectorii oficiali rămâne în CI). Opțional: `--repetitie <p>` (penalizare
   a repetițiilor), implicit oprit, ca rezultatul greedy să rămână neschimbat.
-- stare: nou
+- stare: preluat (2026-10-28 09:42 UTC, sesiunea OS) — P6-29 în docs/TASKS.md
 - rezultat:
 
 ### C-30 · cyber-gpu · I3 pe placa reală: lanțul VBIOS se rupe la 0x24600 („așteptat 0xaa55, citit 0x4e56”)
