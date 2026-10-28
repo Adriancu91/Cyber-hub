@@ -601,3 +601,12 @@ Format:
   starea lui e în `stare/cyber-universe.md`. Fă și C-33 (licența), dacă n-ai făcut-o.
 - stare: gata (preluat 2026-10-28 17:30 UTC, prima actualizare 17:34 UTC, sesiunea Cyber-GPU 14) — se repetă la fiecare sesiune cu push
 - rezultat: `cyber-gpu.bundle` refăcut la vârful `9da10f0` (`git bundle verify` OK, clonare de probă cu toate testele verzi, fără firmware), `VERSIUNE.txt` rescris.
+
+### C-35 · cyber-universe · Stick nou fără GitHub Actions: construiește în sesiune și pune arhiva în hub
+- data: 2026-10-28 22:20 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45 — varianta 3 din `stare/cyber-universe.md`, fără bani, repo-urile rămân private)
+- ce: Construiește în sesiune imaginea stick-ului cu tot ce e gata (C-29 + C-31 + C-32), la fel ca arhiva pe care o făcea Release-ul
+  (`stick-cyber-universe-os-<nr>.zip`, **fără** modelul Kronos și fără firmware NVIDIA), și pune-o în hub în `integrare/cyber-universe/stick/`
+  + `VERSIUNE.txt` (număr, commit, ora UTC, SHA-256 al arhivei) + un `README.md` scurt (ce e nou față de `os-197`). Ține doar ultima arhivă
+  (înlocuiește-o pe cea veche, nu le aduna). Rulează înainte testele QEMU. Centrul de comandă i-o trimite lui Adrian.
+  Repetă la fiecare schimbare care ajunge pe stick, până se rezolvă CI-ul.
+- stare: nou
