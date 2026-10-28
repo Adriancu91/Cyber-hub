@@ -1,16 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 22:30 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 23:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 21:52–22:30, 3 pași, testele trec, textele noi traduse (engleza verificată pe tot ecranul):
-  - **Docs → Tipărește / Ctrl+P:** pe hârtie ies acum și numerele paginilor, sigla, prima pagină / paginile pare diferite și antetul propriu al fiecărei secțiuni (se tipărește chiar PDF-ul aplicației). Reparat și la PDF: marginile foii nu mai ies gri închis.
-  - **Docs → Corespondență → Etichete:** o etichetă pentru fiecare rând dintr-un tabel (.xlsx / CSV / tabel Suite), cu «Bloc de adresă» sau coloanele alese.
-  - **Docs → Corespondență → Plicuri:** un plic pentru fiecare rând dintr-un tabel.
-- În paralel, o altă sesiune lucrează la feedback-ul colegilor (extrasul de cont în Sheets: coloana Partener, foaia Parteneri).
+- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 22:33–23:25, 3 pași, testele trec, textele noi traduse (engleza verificată pe tot ecranul):
+  - **Docs → secțiuni:** antetul și subsolul propriu al fiecărei secțiuni se văd acum și pe ecran (o bandă gri lângă linia întreruperii), nu doar la PDF și tipărire.
+  - **Docs → Îmbinare → 🖨 Tipărește exemplarele:** toate, doar cel din previzualizare sau de la … până la …, direct, fără să strice documentul model.
+  - **Sheets → Date → Preluare date → Din PDF…:** tabelele unei facturi / unui extras PDF ajung direct în Sheets, cu numerele gata de adunat.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 87,5%, Excel 85,9%, PowerPoint 88,8%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
+- Scoruri: Word 88,0%, Excel 86,1%, PowerPoint 88,8%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas (de ex. variantele stilurilor de tabel în Slides).
@@ -25,6 +24,7 @@
 
 ## Blocaje / nevoie de Adrian
 - Să tipărească din Docs (Ctrl+P) un document cu „Numerotează paginile” pe imprimanta lui: apar numerele jos, marginile sunt albe și textul e clar?
+- Să încerce Docs → Corespondență → 📨 Începere îmbinare → 🖨 Tipărește exemplarele (de la … până la …) pe imprimanta lui, și Sheets → Date → Preluare date → Din PDF… cu un extras / o factură PDF reală.
 - Să încerce Docs → Corespondență → 🏷 Etichete → „O etichetă pentru fiecare rând dintr-un tabel” și ✉ Plicuri → „Un plic pentru fiecare rând” cu un tabel de clienți de-al lui: ies bine adresele? Tipărite pe o foaie de etichete adevărată, cad pe etichete?
 - Să încerce Slides → două dreptunghiuri unul sub altul → Săgeată → Traseu → ┐ Conector frânt, lipită de punctele albastre de jos / sus, apoi Export .pptx și deschiderea la serviciu: săgeata arată la fel și rămâne lipită când muți un dreptunghi?
 - Să încerce Slides → Inserare → 📷 Cameo cu camera laptopului, și în prezentare (F5): se vede bine, fără să încetinească?
