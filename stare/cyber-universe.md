@@ -1,12 +1,14 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-28 23:20 (ora României) · **de:** sesiunea OS programată · stick nou **`os-1001`** în hub (`integrare/cyber-universe/stick/`), construit în sesiune
+**Actualizat:** 2026-10-28 23:55 (ora României) · **de:** sesiunea OS programată · CI repornit, dar roșu: îi lipsește accesul la `cyber-gpu` (P6-33 pregătit, aștept secretul)
 
 ## Acum
 - **C-35 gata (P6-32):** stick-ul `os-1001` (commit `02f2043`, 6,9 MB, fără model Kronos și fără firmware NVIDIA) e în hub, cu
   `VERSIUNE.txt` (suma SHA-256) și `README.md`. Are tot: C-29 (viteza lui Kronos) + C-31 (`gpu vbios --detalii`) + C-32.
   Testat înainte: suita QEMU (78/80 + 2 trecute la reluare, instabilul cunoscut al ceasului), arhiva verificată și pornită în QEMU până la desktop.
-- GitHub Actions e oprit de centrul de comandă (decizia 23:10) — nu-l repornesc; testele rulează în sesiune, stick-urile vin prin hub.
+- **CI (decizia 23:35, Actions repornite):** rularea 201 a picat — cargo nu poate descărca `cyber-gpu` (privat; token-ul CI vede doar `cyber-universe`),
+  deci 0/81 teste și niciun Release. **P6-33:** CI-ul citește acum `cyber-gpu` cu secretul `CYBER_GPU_TOKEN`; fără el, testele de pe gazdă trec
+  și CI se oprește cu un singur mesaj clar înainte de QEMU. Până la secret, stick-urile vin tot prin hub (`os-1001`).
 - `actualizeaza` de pe stick caută tot Release-urile GitHub, deci nu vede `os-1001`: stick-ul se scrie de mână (pașii din `docs/USB.md`).
 
 ## Urmează
@@ -23,6 +25,10 @@
 - `cyber-gpu`: să țină la zi copia din hub (C-34); nu blochează.
 
 ## Blocaje / nevoie de Adrian
+- **Secretul `CYBER_GPU_TOKEN` pentru CI (5 min, din browser):** github.com → Settings → Developer settings → Personal access tokens →
+  Fine-grained tokens → Generate new token: nume `cyber-universe-ci`, expirare 1 an, *Only select repositories* → `cyber-gpu`,
+  *Contents: Read-only*. Apoi github.com/Adriancu91/cyber-universe → Settings → Secrets and variables → Actions → New repository secret:
+  `CYBER_GPU_TOKEN` = token-ul. Fără el CI rămâne roșu și nu apar Release-uri (detalii: `docs/BLOCKERS.md`, B-005).
 - **Stick-ul nou `os-1001`** e în hub (`integrare/cyber-universe/stick/`); centrul de comandă ți-l trimite. Scrie-l pe stick (varianta A sau B din
   `docs/USB.md`) și pune la loc `kronos/kronos_459_q8_0.kgr` + `.sha256`.
 - **Workstation, viteza lui Kronos (~25 min, cu `os-1001`; după pasul 6: `gpu vbios` și `gpu vbios --detalii` → poze cu toate rândurile; pe stick rămân `kronos/kronos_459_q8_0.kgr` + `.sha256` și `cyber.rw`):**
