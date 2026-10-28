@@ -38,3 +38,8 @@ Workstation Dell (i9-10980XE, 18 nuclee / 36 fire, 128 GB), pornit de pe stick (
   Față de `docs/GA104_INITIALIZATION.md` I1: `BOOT_0 & 0x1ff00000 = 0x17400000` ✔, `BOOT_42.chip_id = 0x174` ✔.
 - **„zero scrieri în placă (configurație PCI și registre: doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)”.**
 - **Prima confirmare pe hardware real pentru Cyber-GPU (I0 + I1).** Urmează pe loc `gpu gfw` (I2) și `gpu vbios` (I3).
+
+## `gpu gfw` pe placa reală (`poza-6-gpu-gfw.jpg`) — I2, doar citire
+- `bar0 r 0x118128 = 0x00008b8f` (bitul 0 = 1 ✔), `bar0 r 0x118234 = 0x000003ff` (`& 0xff = 0xff` ✔) → „pas I2: GFW_BOOT: ok”;
+  „GFW gata (progres 0xff) după 1 rundă, 3 µs; PRIV_LEVEL_MASK 0x00008b8f”; 1 pagină mapată (doar citire); **0 scrieri**.
+- Exact criteriul I2 din `docs/GA104_INITIALIZATION.md`. **I2 confirmat pe hardware.**
