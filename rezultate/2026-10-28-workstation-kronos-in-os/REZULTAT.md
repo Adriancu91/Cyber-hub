@@ -30,3 +30,11 @@ Workstation Dell (i9-10980XE, 18 nuclee / 36 fire, 128 GB), pornit de pe stick (
   (**parcate: firele rămân pe primul nucleu**)” — de verificat dacă firele programului rulează cu adevărat pe celelalte nuclee.
 - Și pe 1 fir e lent: ~0,1 GB de greutăți pe simbol ar trebui să dea zeci de simb/s pe un nucleu (lățimea de bandă a memoriei), nu 8.
 - Încărcarea modelului: ~31 s pentru 105 MiB (~3,5 MB/s de pe stick).
+
+## `gpu identifica` pe placa reală (`poza-5-gpu-identifica.jpg`) — I0/I1, doar citire
+- `gpu0: b3:00.0 10de:2482 NVIDIA (clasa 03:00:00) subsistem 88131043`; Command 0003 (memorie da, bus master nu), stare D0.
+- BAR0 `0xf9000000` memorie (16 MiB), BAR1 `0xe0000000` 64 biți prefetch (256 MiB), BAR3 `0xf0000000` 64 biți prefetch (32 MiB), BAR5 `0xf000` I/O.
+- `cyber-gpu dac2e32 nvidia-ga104: GeForce RTX 3070 Ti`; **`NV_PMC_BOOT_0 = b74000a1`, `NV_PMC_BOOT_42 = 174a1000` (consecvent true)**; cip 0x174 GA104 (Ampere).
+  Față de `docs/GA104_INITIALIZATION.md` I1: `BOOT_0 & 0x1ff00000 = 0x17400000` ✔, `BOOT_42.chip_id = 0x174` ✔.
+- **„zero scrieri în placă (configurație PCI și registre: doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)”.**
+- **Prima confirmare pe hardware real pentru Cyber-GPU (I0 + I1).** Urmează pe loc `gpu gfw` (I2) și `gpu vbios` (I3).
