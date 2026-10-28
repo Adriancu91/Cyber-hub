@@ -209,3 +209,4 @@
 - 2026-10-28 15:16 — Slides: conectori frânți / curbați (pleacă vertical de pe sus / jos, mâner galben pentru cot, păstrați în .pptx), 📷 Cameo (camera web live pe slide, cu alegerea camerei) și 3 căi de mișcare noi; 6 commituri, testele trec (PowerPoint 88,5%).
 - 2026-10-28 16:05 — Slides: căi de mișcare Buclă / Undă cu lungimea aleasă, 8 forme și 4 teme noi; Imagini: felii desenate de mână; Video: 7 treceri, 4 stiluri de titlu și Proiecte recente; Docs / Sheets: 7 forme noi; 9 commituri, testele trec.
 - 2026-10-28 16:50 — Docs: întreruperi de secțiune (păstrate în .docx) și Compară → Document marcat (modificări urmărite cuvânt cu cuvânt); Video: miniaturi la Proiecte recente; 4 commituri, testele trec (Word 87,1%, Clipchamp 79,8%).
+- 2026-10-28 18:00 — Docs: Compară → 🔀 Combină (modificările altui autor dintr-un .docx, de acceptat / respins, pe numele lui); sesiune oprită devreme, altă sesiune lucra în paralel.

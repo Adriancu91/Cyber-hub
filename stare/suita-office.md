@@ -1,15 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 16:50 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 18:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 16:04–16:50, 4 commituri, testele trec, textele noi traduse:
-  - **Docs:** întreruperi de secțiune (Aspect → Întreruperi → Secțiune: Pagina următoare / Continuu / Pagină pară / impară), păstrate în .docx ca secțiuni adevărate; un .docx primit cu mai multe secțiuni le păstrează acum.
-  - **Docs:** Revizuire → Compară cu un .docx… → 📝 Document marcat: un document nou cu ce s-a schimbat, cuvânt cu cuvânt, ca modificări de acceptat / respins (și în .docx).
-  - **Video:** „Proiecte recente” arată acum o poză mică a fiecărui proiect salvat.
+- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 17:43–18:00, 1 commit, testele trec, textul nou tradus:
+  - **Docs:** Revizuire → Compară cu un .docx… → 🔀 Combină: modificările celuilalt (din fișierul primit) puse peste documentul tău ca modificări de acceptat / respins, pe numele lui.
+  - Sesiunea s-a oprit devreme: altă sesiune lucra în același timp în folder (importul de text în Sheets), ca să nu se încurce.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 87,1%, Excel 85,5%, PowerPoint 88,5%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
+- Scoruri: Word 87,3%, Excel 85,5%, PowerPoint 88,5%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas (de ex. pagină culcată doar pentru o secțiune în Docs, căi de mișcare desenate de mână în Slides, legături / HTML pentru feliile din Imagini).
