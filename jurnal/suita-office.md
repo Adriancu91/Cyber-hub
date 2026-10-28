@@ -194,3 +194,4 @@
 - 2026-10-28 04:52 — Imagini: Amestec HSL pe 8 culori, Compoziții de straturi, Densitate / Estompare la mască, lista Trasee, unealta Notă (5 commituri, teste trecute); Photoshop 78,3%.
 
 - 2026-10-28 05:42 — Notițe: desenul pus în notiță rămâne editabil (și se poate relua linie cu linie), Export .mht, traduceri lipsă în engleză; 3 commituri, testele trec (Notițe 77,2%).
+- 2026-10-28 06:20 — PDF: politici de securitate salvate; Notițe: fereastra lipită pe margine, foaie de calcul ca tabel, Export .docx / .odt; 4 commituri, testele trec (Notițe 78,3%, Acrobat 76,6%).

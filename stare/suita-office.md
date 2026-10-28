@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 05:42 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 06:20 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, acum în Notițe (scorul cel mai mic, alături de PDF). Sesiunea 04:51–05:45, 3 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
-  - **Desen editabil**: un desen de mână pus în notiță se redeschide cu liniile lui (se mută, se șterg, se adaugă), nu mai e doar poză.
-  - **▶ Reluare** și pe desenele deja puse în notiță (se redesenează linie cu linie).
-  - **Export .mht**: notița ca pagină web într-un singur fișier, cu pozele în el.
-  - Plus: câteva explicații din Notițe care rămâneau în română în varianta English sunt acum traduse.
+- Lucrăm la „funcțiile care lipsesc”, acum în Notițe și PDF (scorurile cele mai mici). Sesiunea 05:43–06:20, 4 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
+  - **PDF: politici de securitate salvate**: la „Pune parolă…” restricțiile se țin minte sub un nume și se pun din nou pe alt PDF cu un clic (parola nu se ține minte).
+  - **Notițe: 📌 Lipește pe margine**: fereastra devine o coloană îngustă în dreapta ecranului, mereu deasupra, ca să iei notițe lângă alt program; plus „⬆ Mereu deasupra”.
+  - **Notițe: Inserare → Foaie de calcul**: un .xlsx / .ods / .csv intră în notiță ca tabel, cu formulele calculate.
+  - **Notițe: Export .docx și .odt** direct din meniul Fișier.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 77,2%, Acrobat 76,4%, Photoshop 78,3%, formule 97,1%.
+- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 78,3%, Acrobat 76,6%, Photoshop 78,3%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (Notițe, Acrobat, Photoshop, Word, Excel, PowerPoint), câte una pe pas; în Imagini: traseele, notele și compozițiile salvate și în .psd.
+- Alte funcții „parțial” / „nu” din inventar (Acrobat, Notițe, Photoshop, Word, Excel, PowerPoint), câte una pe pas.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
@@ -23,6 +23,8 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce pe ecranul lui Notițe → Vizualizare → 📌 Lipește pe margine: coloana din dreapta e bine așezată și se citește ușor? (aici fereastra de test e ascunsă).
+- Să deschidă la serviciu un .docx salvat din Notițe (Fișier → Export .docx): arată la fel ca notița? (aici n-am avut cu ce testa).
 - Să deschidă la serviciu un .pptx salvat din Suite cu un titlu cu gradient (Slides → clic în titlu → Umplerea textului → A Gradient: Apus): literele au același gradient? (aici n-am avut cu ce testa).
 - Să deschidă la serviciu un .pptx salvat din Suite cu o formă rotită 3-D (Slides → bara formei → Rotire 3-D → Perspectivă: stânga) și un .xlsx cu fonturile temei schimbate (Sheets → Aspect pagină → Aa Fonturi → Carte): arată la fel? (aici n-am avut cu ce testa).
 - Să deschidă la serviciu un .xlsx colorat (de exemplu un tabel cu rânduri albastru deschis): culorile apar în Sheets ca în original? Și invers: Sheets → Aspect pagină → 🎨 Teme → Pădure → Salvează ca .xlsx: programul de la serviciu arată aceeași paletă?
