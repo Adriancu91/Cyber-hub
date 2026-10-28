@@ -206,3 +206,4 @@
 - 2026-10-28 13:06 — PDF: Elimină informațiile ascunse scoate și textul ascuns (alb pe alb, invizibil, comentarii ascunse) și raportul e tradus; Comprimă are 🧹 Optimizează structura (obiecte / fonturi nefolosite, dubluri unite); 5 commituri, testele trec (Acrobat 78,2%).
 - 2026-10-28 13:52 — PDF: Câmpuri automate vede liniile trase, chenarele goale și pătrățelele desenate; Accesibilitate măsoară contrastul textului; 5 commituri, testele trec (Acrobat 78,4%).
 - 2026-10-28 14:34 — Slides: conectori (liniile rămân lipite de forme, și în .pptx) și 7 forme noi; Imagini: ✂ Felii (poza împărțită în bucăți salvate separat); 6 commituri, testele trec (PowerPoint 88,3%, Photoshop 78,6%).
+- 2026-10-28 15:16 — Slides: conectori frânți / curbați (pleacă vertical de pe sus / jos, mâner galben pentru cot, păstrați în .pptx), 📷 Cameo (camera web live pe slide, cu alegerea camerei) și 3 căi de mișcare noi; 6 commituri, testele trec (PowerPoint 88,5%).
