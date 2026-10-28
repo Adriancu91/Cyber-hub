@@ -195,3 +195,4 @@
 
 - 2026-10-28 05:42 — Notițe: desenul pus în notiță rămâne editabil (și se poate relua linie cu linie), Export .mht, traduceri lipsă în engleză; 3 commituri, testele trec (Notițe 77,2%).
 - 2026-10-28 06:20 — PDF: politici de securitate salvate; Notițe: fereastra lipită pe margine, foaie de calcul ca tabel, Export .docx / .odt; 4 commituri, testele trec (Notițe 78,3%, Acrobat 76,6%).
+- 2026-10-28 07:15 — PDF: fire de articol (Cuprins → Articole) și → Docs / .docx cu poze; Notițe: Export sarcini (.ics); 3 commituri, testele trec (Notițe 78,7%, Acrobat 77,0%).
