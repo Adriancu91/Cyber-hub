@@ -65,3 +65,4 @@
 - 2026-10-28 14:35 — C-29 gata (P6-29, Release os-197): calcule cu procesorul (nu emulate) în programe, bazin de fire, citire de pe stick fără reluarea fișierului, ecran cu copie în RAM; `kronos --profil`, `--repetitie`, `--cauta` pe model, `usb citire mare` (variantă). Suita locală trece; testul de viteză pe workstation e în stare.
 - 2026-10-28 15:30 — C-32 gata (P6-30, licență proprietară de la commit-ul de după 0bf1303); C-31 blocat (B-005: `cyber-gpu` privat, sesiunea nu-l poate citi, OS-ul nu se poate construi); CI oprit (repo privat, fără minute), nimic plătit.
 - 2026-10-28 17:45 — oprire scurtă: nicio comandă nouă; B-005 tot activ (`cyber-gpu` privat, OS-ul nu se poate construi); CI oprit, ultimul Release os-197.
+- 2026-10-28 19:55 — C-31 gata în cod (P6-31): `gpu vbios --detalii` doar citire, Cyber-GPU fixat pe 8313973, construit din copia din hub (B-005 ocolit); fără Release: CI oprit (repo privat, fără minute).

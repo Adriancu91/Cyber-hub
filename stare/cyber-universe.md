@@ -1,18 +1,18 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-28 17:45 (ora României; ultima trecere: oprire scurtă, B-005 încă activ) · **de:** sesiunea OS programată · ultimul Release **`os-197`** (CI oprit de la 14:51)
+**Actualizat:** 2026-10-28 19:55 (ora României) · **de:** sesiunea OS programată · ultimul Release **`os-197`** (CI oprit de la 14:51; `gpu vbios --detalii` NU e încă pe niciun stick)
 
 ## Acum
-- **C-32 gata (P6-30):** licența e proprietară de la commit-ul de după `0bf1303` („toate drepturile rezervate”); versiunile până la
-  `0bf1303` rămân MIT (notat în `LICENSE`). Decizia D-015 o înlocuiește pe cea veche cu MIT; CLAUDE.md, README-urile și regulile
-  clean-room actualizate; firmware-ul NVIDIA nu-l distribuim niciodată (îl descarci tu).
-- **C-31 BLOCAT (B-005):** de când `cyber-gpu` e privat, sesiunea OS nu-l mai poate citi. OS-ul folosește bibliotecile lui, deci acum
-  **nu se poate construi și testa nimic** din OS (nici C-31, nici altă sarcină de cod).
-- **CI oprit:** de când repo-ul e privat, GitHub Actions nu mai pornește („spending limit”), ca pe 23 oct. Nu am plătit nimic.
-  Fără CI nu apar Release-uri noi pentru stick; `os-197` (cu C-29) rămâne cel de testat.
+- **C-31 gata în cod (P6-31):** `gpu vbios --detalii` listează structura VBIOS (imagini, PCIR, NPDE, rupturi, tabela BIT, rezumatul cu
+  „criteriul I3”), doar citire, cu „0 scrieri”; rândurile apar și în `raport`. Testat doar în SIMULARE (modelul plăcii cu imaginile „NV” la `0x24600`).
+  Cyber-GPU fixat pe `8313973`. Suita de teste locală trece (79/80, al 80-lea instabilul cunoscut, trecut la reluare).
+- **B-005 rezolvat pentru sesiuni:** OS-ul se construiește din copia `cyber-gpu` din hub (`integrare/cyber-gpu/snapshot/`), cu `tools/cyber-gpu-local.sh`.
+- **CI / Release încă oprite:** GitHub Actions nu pornește (repo privat, minute terminate; run 199 picat în 6 s). Fără Release nu există
+  stick nou cu C-29 + C-31 împreună; `os-197` are doar C-29. Nu am plătit nimic.
+- C-32 (licența proprietară) gata de la 15:30.
 
 ## Urmează
-- După răspunsul tău la B-005: C-31 (`gpu vbios --detalii`) + Release pentru fereastra de pe workstation. Până atunci, opriri scurte.
+- Coada nu are sarcini libere (hardware / după întoarcerea ta). Opriri scurte până la o comandă nouă sau la răspunsul despre Release.
 
 ## Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (proprietare de la 28 oct; până la `0bf1303` MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/`.
@@ -22,14 +22,13 @@
 
 ## De ce are nevoie de la ceilalți
 - `kronos` / Adrian: Release-ul privat `kronos-kgr1-459` (comanda din `integrare/kronos/MODEL.md`), ca fișierul să ajungă pe stick.
-- `cyber-gpu`: o ramură `main` sau un tag ar fi mai clar de fixat decât `dac2e32`; nu blochează.
+- `cyber-gpu`: să țină la zi copia din hub (C-34); o ramură `main` sau un tag ar fi mai clar de fixat decât un commit; nu blochează.
 
 ## Blocaje / nevoie de Adrian
-- **B-005 — alege una (2 minute):** (a) adaugă repo-ul `cyber-gpu` la sarcina programată a OS-ului (depozitele sesiunii, în aplicația
-  Claude); pentru CI ar trebui și un token doar-citire pus ca secret; (b) „da” ca bibliotecile Cyber-GPU să fie copiate direct în repo-ul
-  OS-ului (același autor, aceeași licență); (c) `cyber-gpu` din nou public. Fără una din ele OS-ul nu se mai poate construi în sesiuni.
-- **CI / Release-uri:** repo privat = GitHub Actions oprit (minute terminate). Decizia ta (public, plată, sau Release-uri făcute din sesiune).
-- **Workstation, viteza lui Kronos (~25 min, `os-197`; pe stick rămân `kronos/kronos_459_q8_0.kgr` + `.sha256` și `cyber.rw`):**
+- **Cum ajunge stick-ul nou la tine (alege una):** (1) repo-urile `cyber-universe` + `cyber-gpu` din nou publice → CI și Release gratuite;
+  (2) minute GitHub plătite + un token doar-citire pentru `cyber-gpu` pus ca secret (doar cu „da”-ul tău); (3) construiesc imaginea în sesiune
+  și o pun într-un loc privat de unde o descarci (spune unde). Până atunci `gpu vbios --detalii` nu se poate testa pe workstation.
+- **Workstation, viteza lui Kronos (~25 min, `os-197` sau stick-ul nou; cu stick-ul nou, după pasul 6: `gpu vbios` și `gpu vbios --detalii` → poze cu toate rândurile; pe stick rămân `kronos/kronos_459_q8_0.kgr` + `.sha256` și `cyber.rw`):**
   1. `cpu porneste`, apoi `run kronos --n 5 Ana are mere.` → poză cu rândul „citit in … ms” (ținta < 10 s) și simbolurile `[2233, 1585, 32, 475, 50]`.
   2. `usb citire mare`, apoi iar `run kronos --n 5 Ana are mere.` → același text, „citit in …” (64 KiB pe comandă; dacă apare vreo eroare USB:
      `usb citire mica` și poză cu `log usb`).
