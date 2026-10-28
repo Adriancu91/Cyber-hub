@@ -529,8 +529,8 @@ Format:
      câștig pe examenul ascuns. **Codul generat rulează doar într-o cutie izolată:** proces separat, fără rețea, dosar temporar, limită de timp și
      memorie, fără `os`/`subprocess`/`shutil`/acces la fișiere în afara dosarului (listă de module permise), paznicul oprește orice depășire.
   Toate ca module noi; dacă trebuie schimbat ceva în `kronos/` (nucleu) sau în examenul oficial, întreabă-l pe Adrian. Negativele sunt rezultate.
-- stare: preluat (2026-10-28 02:15, supraveghetor) — S41 în `plan/coada.md` din cyberspace, `aprobat`: doar etapa 1a (surse + licențe, examenul de cod scris înainte, cutia izolată), doar procesor, fără descărcări; etapele următoare după verificarea listei de surse și cu praguri pre-înregistrate.
-- rezultat:
+- stare: preluat (2026-10-28 02:15, supraveghetor) — S41 în `plan/coada.md` din cyberspace, `aprobat`: doar etapa 1a (surse + licențe, examenul de cod scris înainte, cutia izolată), doar procesor, fără descărcări; etapele următoare după verificarea listei de surse și cu praguri pre-înregistrate. 2026-10-28 14:25: etapa 1a gata (S41); etapa 1b (descărcarea, întâi un pilot) = S43, `propus — necesită Adrian`.
+- rezultat: (parțial, etapa 1a) 6 surse permisive fără cont (~3 mld simboluri estimate), examen de cod 200 de probleme ascunse (referințe 200/200, gol 0/200), cutie izolată testată; 999 teste trec.
 
 ### C-29 · cyber-universe · Kronos în OS e corect pe workstation, dar lent: firele nu ajută, reglajul alege greșit, încărcarea durează 30 s
 - data: 2026-10-28 10:45 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
