@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 23:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 00:08 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 22:33–23:25, 3 pași, testele trec, textele noi traduse (engleza verificată pe tot ecranul):
-  - **Docs → secțiuni:** antetul și subsolul propriu al fiecărei secțiuni se văd acum și pe ecran (o bandă gri lângă linia întreruperii), nu doar la PDF și tipărire.
-  - **Docs → Îmbinare → 🖨 Tipărește exemplarele:** toate, doar cel din previzualizare sau de la … până la …, direct, fără să strice documentul model.
-  - **Sheets → Date → Preluare date → Din PDF…:** tabelele unei facturi / unui extras PDF ajung direct în Sheets, cu numerele gata de adunat.
+- Lucrăm la „funcțiile care lipsesc” și la compatibilitate. Sesiunea 23:25–00:10, 6 pași, testele trec, textele noi traduse (engleza verificată pe tot ecranul):
+  - **Slides → tabele:** fiecare stil de tabel are acum 8 culori pe lângă culoarea temei; tabelele .pptx „Accent 2…6” își păstrează culoarea.
+  - **Sheets → Formatează ca tabel:** încă 3 stiluri întunecate (gri, auriu, turcoaz), ca .xlsx-urile cu ele să arate la fel.
+  - **Deschiderea .pptx:** formele pe care nu le aveam (scheme logice, gogoașă, cilindru, săgeți curbate…), **diagramele SmartArt** și casetele de text „care se măresc singure” nu mai dispar. Pe colecția de test: .pptx fără pierderi de la 17 la **24** din 36; în total 382 din 531 de fișiere reale se deschid fără pierderi.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 88,0%, Excel 86,1%, PowerPoint 88,8%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
+- Scoruri: Word 88,0%, Excel 86,1%, PowerPoint 89,0%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar, câte una pe pas (de ex. variantele stilurilor de tabel în Slides).
-- Lipirea conectorilor de elipse în .pptx: doar după un fișier real care o arată.
+- Citirea pozelor .wmf / .emf (previzualizările obiectelor încorporate din prezentările și documentele vechi).
+- Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
@@ -26,6 +26,7 @@
 - Să tipărească din Docs (Ctrl+P) un document cu „Numerotează paginile” pe imprimanta lui: apar numerele jos, marginile sunt albe și textul e clar?
 - Să încerce Docs → Corespondență → 📨 Începere îmbinare → 🖨 Tipărește exemplarele (de la … până la …) pe imprimanta lui, și Sheets → Date → Preluare date → Din PDF… cu un extras / o factură PDF reală.
 - Să încerce Docs → Corespondență → 🏷 Etichete → „O etichetă pentru fiecare rând dintr-un tabel” și ✉ Plicuri → „Un plic pentru fiecare rând” cu un tabel de clienți de-al lui: ies bine adresele? Tipărite pe o foaie de etichete adevărată, cad pe etichete?
+- Să deschidă în Slides câteva .pptx reale de la serviciu cu diagrame SmartArt și scheme logice: apar toate, cu textul lor? Și Slides → tabel → Proiectare tabel → Culoarea stilului.
 - Să încerce Slides → două dreptunghiuri unul sub altul → Săgeată → Traseu → ┐ Conector frânt, lipită de punctele albastre de jos / sus, apoi Export .pptx și deschiderea la serviciu: săgeata arată la fel și rămâne lipită când muți un dreptunghi?
 - Să încerce Slides → Inserare → 📷 Cameo cu camera laptopului, și în prezentare (F5): se vede bine, fără să încetinească?
 - Să încerce Video → ▭ Carton → stilul „Pastilă colorată” și trecerea „Jaluzele” între două poze: arată bine în filmul exportat?
