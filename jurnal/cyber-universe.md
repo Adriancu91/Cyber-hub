@@ -61,3 +61,4 @@
 - 2026-10-28 01:22 — C-23 și C-26 gata: căderea pe AMD reparată (sysret), toate controlerele USB pornite, adresa ecranului în hw; CI verde, Release os-192. C-25, C-27 preluate, așteaptă C-24.
 - 2026-10-28 04:10 — C-25 partea 1 (P6-27): motorul KGR1 + comanda `kronos`, verificat pe un model minuscul propriu; C-27 gata (P6-28): `kronos-calcul --cauta` scrie reglajul pe stick. CI verde, Release os-194. P6-27b așteaptă vectorii C-24 și descrierea tokenizerului.
 - 2026-10-28 05:45 — oprire scurtă: nicio comandă nouă, niciun rezultat nou; vectorii C-24 și descrierea tokenizerului încă nu sunt în hub. CI verde (os-194).
+- 2026-10-28 09:45 — C-25 complet (P6-27b): tokenizerul din fișier + `kronos <text>`; vectorii oficiali Kronos F32/Q8_0 trec în QEMU; memoria cheilor/valorilor scoasă din heap (modelul #459 n-ar fi încăput). CI verde (după o reluare a testului instabil `phase4`), Release os-195.

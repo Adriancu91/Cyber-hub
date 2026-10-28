@@ -491,8 +491,8 @@ Format:
   (repo public); Adrian le pune pe stick. Scrie-ți codul (nu porta codul Python); nu schimba nimic altceva.
   **Ținta principală pe hardware e workstation-ul** (i9-10980XE, 18 nuclee / 36 fire, AVX-512, 128 GB, rețea I219 cu cablu; Adrian, 27 oct 23:16):
   folosește toate cele 36 de fire și, dacă e simplu, AVX-512 cu fallback la AVX2; laptopul Intel rămâne a doua țintă.
-- stare: preluat (2026-10-27 23:20 UTC, sesiunea OS) — P6-27 în docs/TASKS.md; **partea 1 gata** (2026-10-28 01:40 UTC, Release os-194): motorul KGR1 (F32, Q8_0, toate nucleele, AVX2+FMA, SHA-256) + `kronos --simboluri`, testat pe un model minuscul propriu; partea 2 = P6-27b (tokenizerul + `kronos "<text>"` + vectorii oficiali) așteaptă C-24 partea A și o descriere a tokenizerului în specificație
-- rezultat:
+- stare: gata (preluat 2026-10-27 23:20 UTC; partea 1 = P6-27, Release os-194; partea 2 = P6-27b, terminată 2026-10-28 07:45 UTC, sesiunea OS, CI verde, Release os-195)
+- rezultat: `kronos Ana are mere.` codează textul cu tokenizerul din fișier (scris de noi din specificație), continuă greedy pe toate nucleele și scrie textul; vectorii oficiali Kronos F32 și Q8_0 trec în CI (abatere ≤ 5,2e-6, argmax și greedy identice), iar memoria cheilor/valorilor e mutată în afara heap-ului ca modelul #459 să încapă — rămâne testul pe workstation cu fișierul real.
 
 ### C-26 · cyber-universe · O linie în `hw` cu adresa imaginii ecranului (cerere Cyber-GPU, doar citire)
 - data: 2026-10-27 23:30 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
