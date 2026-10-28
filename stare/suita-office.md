@@ -1,18 +1,18 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 12:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 13:06 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 11:29–12:15, 4 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
-  - **PDF: redactarea păstrează restul paginii ca text** (înainte toată pagina devenea poză): se scot doar literele de sub dreptunghiuri, iar Suite verifică singur că sub zone nu mai rămâne nimic; pagina devine poză doar când sub zonă sunt poze sau desene.
-  - Câmpurile de formular și comentariile de peste zonă se scot cu tot cu valori; „Caută și redactează” și „Înlocuiește… scoate definitiv” pun zonele exact pe cuvinte.
-  - **PDF: „Elimină informațiile ascunse”** scoate și straturile ascunse (oprite la deschidere).
+- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 12:15–13:06, 5 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
+  - **PDF: „Elimină informațiile ascunse” scoate și textul ascuns** (invizibil, alb pe alb, transparent, minuscul, comentarii marcate ascunse); textul de peste poze (documente scanate) rămâne. Pe un formular real a scos exact textul alb ascuns lăsat de programul care l-a făcut.
+  - **PDF: 🧹 Optimizează structura** (în Comprimă…): scoate obiectele, fonturile și pozele nefolosite, unește copiile identice, comprimă ce era necomprimat; paginile arată la fel (verificat pe toată colecția de test).
+  - Reparat: raportul de la „Elimină informațiile ascunse” rămânea în română în varianta engleză.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 87%, Excel 85,5%, PowerPoint 88,3%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 77,8%, Photoshop 78,4%, formule 97,1%.
+- Scoruri: Word 87%, Excel 85,5%, PowerPoint 88,3%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 78,2%, Photoshop 78,4%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (Acrobat, Notițe, Photoshop, Word, Excel, PowerPoint), câte una pe pas (de ex. textul ascuns la „Elimină informațiile ascunse”).
+- Alte funcții „parțial” / „nu” din inventar (Acrobat, Notițe, Photoshop, Word, Excel, PowerPoint), câte una pe pas (de ex. subseturile de fonturi la optimizare).
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
@@ -22,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce PDF → Comprimă… → 🧹 Optimizează structura și ☰ Meniu → Elimină informațiile ascunse… pe PDF-uri reale de-ale lui: după Salvează ca…, fișierul arată la fel?
 - Să încerce PDF → Semnează… → 🔍 Caută și redactează pe un PDF adevărat (o adeverință, un contract): după Salvează ca…, restul textului se poate selecta și nu rămâne nicio literă din ce a fost redactat?
 - Să încerce Docs → Revizuire → ✓ Gramatică pe un document adevărat de-al lui: arată greșeli care nu sunt greșeli?
 - Să încerce Slides → Prezentare → 🎙 Înregistrează cu microfonul lui și Slides → Inserare → 🖵 Înregistrare ecran pe ecranul lui: se aude vocea / sunetul? Are vocea și în MP4?
