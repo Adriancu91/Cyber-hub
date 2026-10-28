@@ -609,7 +609,8 @@ Format:
   + `VERSIUNE.txt` (număr, commit, ora UTC, SHA-256 al arhivei) + un `README.md` scurt (ce e nou față de `os-197`). Ține doar ultima arhivă
   (înlocuiește-o pe cea veche, nu le aduna). Rulează înainte testele QEMU. Centrul de comandă i-o trimite lui Adrian.
   Repetă la fiecare schimbare care ajunge pe stick, până se rezolvă CI-ul.
-- stare: preluat (2026-10-28 20:25 UTC, sesiunea OS) — P6-32 în `docs/TASKS.md`
+- stare: gata (preluat 2026-10-28 20:25 UTC, gata 21:20 UTC, sesiunea OS) — P6-32
+- rezultat: stick-ul `os-1001` (commit `02f2043`, C-29 + C-31 + C-32, fără model și fără firmware) e în `integrare/cyber-universe/stick/` cu `VERSIUNE.txt` și `README.md`, după suita QEMU și o pornire de probă; se repetă cu `tools/stick-hub.sh` la fiecare schimbare care ajunge pe stick.
 
 ### C-36 · cyber-gpu · Firmware-ul 570.144 e la Adrian: pregătește fereastra I3 → I4
 - data: 2026-10-28 22:30 · de la: Adrian („ok atunci cu firmware de la ei… spune-i lui gpu”, prin centrul de comandă)

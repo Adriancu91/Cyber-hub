@@ -68,3 +68,4 @@
 - 2026-10-28 19:55 — C-31 gata în cod (P6-31): `gpu vbios --detalii` doar citire, Cyber-GPU fixat pe 8313973, construit din copia din hub (B-005 ocolit); fără Release: CI oprit (repo privat, fără minute).
 - 2026-10-28 20:00 — trecere extra („reia C-31”): C-31 era deja gata în cod (ba572c6); rămâne doar Release-ul (CI oprit).
 - 2026-10-28 20:42 — oprire scurtă: nicio comandă nouă, coada fără sarcini libere; CI/Release tot oprite, aștept alegerea lui Adrian (1/2/3).
+- 2026-10-28 23:20 — C-35 gata (P6-32): stick-ul `os-1001` (C-29 + C-31 + C-32) construit și testat în sesiune, pus în `integrare/cyber-universe/stick/`, fără model și fără firmware.

@@ -1,0 +1,6 @@
+numar: os-1001
+arhiva: stick-cyber-universe-os-1001.zip
+commit: 02f2043832a9a8e99315da3265898f5607baa2e6
+ora (UTC): 2026-10-28T21:07:39Z
+sha256: ca0bbc5a629ecd7be51e9214c365e3de9e0d7a4657dd7ec7f3fde158cd7d1650
+marime: 6922613 octeti
