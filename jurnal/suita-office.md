@@ -202,3 +202,4 @@
 - 2026-10-28 10:03 — Slides: înregistrare de la slide-ul curent, video din prezentare cu narațiunea, tipărirea directă a pliantelor și a schiței; 6 commituri, testele trec (PowerPoint 88,1%).
 - 2026-10-28 10:47 — Imagini: foaie de contact și note cu autor / culoare; Slides: tranzițiile Cub, Cortine, Pagină îndoită; PDF: raportul comparării ca PDF; 6 commituri, testele trec (PowerPoint 88,3%, Acrobat 77,2%, Photoshop 78,4%).
 - 2026-10-28 11:28 — Docs: verificare gramaticală în română (✓ Gramatică, cu sublinierea greșelilor în text) și Desenare tabel cu radieră și împărțirea doar a celulei atinse; 5 commituri, testele trec (Word 87%).
+- 2026-10-28 12:15 — PDF: redactarea păstrează restul paginii ca text (scoate doar literele, câmpurile și comentariile de sub zone), Înlocuiește definitiv la fel, Elimină informațiile ascunse scoate straturile ascunse; 4 commituri, testele trec (Acrobat 77,8%).

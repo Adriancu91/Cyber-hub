@@ -1,17 +1,18 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 11:28 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 12:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 10:48–11:28, 5 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
-  - **Docs: ✓ Gramatică** (Revizuire): verificare gramaticală în română, locală, fără internet: cuvinte repetate, spații și punctuație, literă mare la început de propoziție, scrierea veche cu „î”, forme și exprimări greșite; panou cu Corectează / Ignoră / Corectează tot și linie albastră sub greșeli în text.
-  - **Docs: Desenare tabel** are radieră (unește celulele) și liniile împart doar celula atinsă.
+- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 11:29–12:15, 4 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
+  - **PDF: redactarea păstrează restul paginii ca text** (înainte toată pagina devenea poză): se scot doar literele de sub dreptunghiuri, iar Suite verifică singur că sub zone nu mai rămâne nimic; pagina devine poză doar când sub zonă sunt poze sau desene.
+  - Câmpurile de formular și comentariile de peste zonă se scot cu tot cu valori; „Caută și redactează” și „Înlocuiește… scoate definitiv” pun zonele exact pe cuvinte.
+  - **PDF: „Elimină informațiile ascunse”** scoate și straturile ascunse (oprite la deschidere).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 87%, Excel 85,5%, PowerPoint 88,3%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 77,2%, Photoshop 78,4%, formule 97,1%.
+- Scoruri: Word 87%, Excel 85,5%, PowerPoint 88,3%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 77,8%, Photoshop 78,4%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (Acrobat, Notițe, Photoshop, Word, Excel, PowerPoint), câte una pe pas.
+- Alte funcții „parțial” / „nu” din inventar (Acrobat, Notițe, Photoshop, Word, Excel, PowerPoint), câte una pe pas (de ex. textul ascuns la „Elimină informațiile ascunse”).
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
@@ -21,16 +22,14 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- Să încerce Docs → Revizuire → ✓ Gramatică pe un document adevărat de-al lui: arată greșeli care nu sunt greșeli? (ne spune care, ca să reglăm regulile).
-- Să încerce Slides → Prezentare → 🎙 Înregistrează cu microfonul lui (aici testul folosește un microfon simulat): se aude vocea pe fiecare slide la ▶ De la început? Și apoi Fișier → Fă video din prezentare → Export MP4: are vocea?
-- Să încerce Slides → Inserare → 🖵 Înregistrare ecran pe ecranul lui (aici testul înregistrează doar fereastra lui, nu ecranul adevărat): se aude sunetul calculatorului și vocea?
-- Să salveze din Docs un .docx cu un cuvânt pus aldin cu Revizuire → Urmărește modificările pornit și să-l deschidă la serviciu: apare ca „Formatat: Aldin”?
-- Să încerce pe ecranul lui Docs → Vizualizare → ⊟ Scindare și Slides → ✏ Desenează → 📏 Riglă: sunt ușor de folosit?
-- Să încerce Notițe → Vizualizare → 📌 Lipește pe margine: coloana din dreapta e bine așezată?
-- Să deschidă la serviciu fișierele salvate din Suite pe care aici nu le-am putut verifica: sarcinile .ics din Notițe, .docx din PDF cu poze, .docx / .mht din Notițe, .pptx cu text în gradient și formă 3-D, .xlsx cu fonturile / culorile temei, .odp din Slides, .fdf din PDF, .docx cu formular, filigran, siglă în antet și cuprins, .xlsx cu comentarii cu răspunsuri: arată la fel?
+- Să încerce PDF → Semnează… → 🔍 Caută și redactează pe un PDF adevărat (o adeverință, un contract): după Salvează ca…, restul textului se poate selecta și nu rămâne nicio literă din ce a fost redactat?
+- Să încerce Docs → Revizuire → ✓ Gramatică pe un document adevărat de-al lui: arată greșeli care nu sunt greșeli?
+- Să încerce Slides → Prezentare → 🎙 Înregistrează cu microfonul lui și Slides → Inserare → 🖵 Înregistrare ecran pe ecranul lui: se aude vocea / sunetul? Are vocea și în MP4?
+- Să salveze din Docs un .docx cu un cuvânt pus aldin cu Urmărește modificările pornit și să-l deschidă la serviciu: apare ca „Formatat: Aldin”?
+- Să încerce Docs → Vizualizare → ⊟ Scindare, Slides → ✏ Desenează → 📏 Riglă și Notițe → Vizualizare → 📌 Lipește pe margine: sunt ușor de folosit?
+- Să deschidă la serviciu fișierele salvate din Suite pe care aici nu le-am putut verifica: .ics din Notițe, .docx din PDF cu poze, .docx / .mht din Notițe, .pptx cu gradient și 3-D, .xlsx cu fonturile temei și comentarii cu răspunsuri, .odp din Slides, .fdf din PDF, .docx cu formular, filigran, siglă și cuprins: arată la fel?
 - **LTV:** ca o semnătură să poată fi verificată și peste ani, Suite ar trebui să întrebe pe internet serverele emitentului certificatului (OCSP / CRL), la semnare. E în regulă, doar la cererea ta, ca la marca temporală?
-- Să încerce un .docx semnat din Suite la serviciu și semnarea cu tokenul lui real (PDF → 🔏 Semnează digital); dacă are adresa unui server de marcă temporală, s-o încerce.
-- Dacă primește un .p7m / .p7s sau un .docx semnat real: ni-l poate da pentru colecția de test.
+- Să încerce un .docx semnat din Suite la serviciu și semnarea cu tokenul lui real (PDF → 🔏 Semnează digital); dacă are un .p7m / .p7s sau un .docx semnat real, ni-l poate da pentru colecția de test.
 - Să încerce o factură reală: Sheets → Șabloane → Factură (e-Factura) → Export e-Factura (XML), apoi încărcarea în SPV.
 - Când vrea kitul 0.9.3 (are licența nouă, în engleză, și plusurile din ultimele zile).
 - Dacă suita se va vinde: o verificare juridică a licenței.
