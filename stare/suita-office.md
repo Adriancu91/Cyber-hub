@@ -1,17 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 03:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 04:10 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, acum în Imagini (scorul cel mai mic). Sesiunea 02:27–03:20, 6 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
-  - **Copac** și **Flăcări**: filtre noi care desenează un copac (stejar, brad, salcie, mesteacăn, toamnă, fără frunze) sau foc (de-a lungul marginii, o flacără, lumânare) peste poză.
-  - **Punctele filtrelor se trag cu mouse-ul direct pe poză** (centrul irisului, luminile, capetele drumului, copacul, flacăra…); irisul are acum centru, formă și rotație.
-  - **Înclinare** cu o curbă în cinci puncte; **Corecție obiectiv** cu perspectivă (clădirile pozate de jos devin drepte), unghi și scară.
-  - **Pensula de amestec**: presetări (Uscat, Umed, Ud…), curățare / încărcare după fiecare trăsătură, din toate straturile.
-  - **Zona de focalizare** își alege singură intervalul.
+- Lucrăm la „funcțiile care lipsesc”, acum în Imagini (scorul cel mai mic). Sesiunea 03:16–04:10, 4 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
+  - **Galeria de filtre e completă pe cele patru grupe**: 25 de filtre noi (de la 72 la 96).
+  - **Schiță**: Basorelief, Cretă și cărbune, Fotocopie, Ștampilă, Margini rupte, Model de semiton, Crom, Pix grafic, Ipsos, în două culori (cerneală / hârtie: negru, sepia, albastru…).
+  - **Textură**: Craquelură, Granulație (9 feluri), Plăci de mozaic, Patchwork, Vitraliu.
+  - **Artistic**: Margini de afiș, Pensulă uscată, Spatulă, Burete, Creion colorat, Neon, Frescă, Pastel; **Tușe de pensulă**: Sumi-e, Tușe oblice.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 77,7%, formule 97,1%.
+- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 77,8%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (Photoshop, Acrobat, Word, Excel, PowerPoint), câte una pe pas.

@@ -190,3 +190,4 @@
 - 2026-10-28 01:42 — Imagini: pensula artistică a istoricului, estompare pe drum, traseu cu Curbură, relief la Pictură în ulei, zgomot de culoare și pătrățele JPEG la Reducere zgomot; filtrele din nou rapide; 5 commituri, testele trec (Photoshop 76,3%).
 
 - 2026-10-28 02:26 — Imagini: Efecte de lumină (tipuri, culoare, a doua lumină, relief), Estompare de obiectiv (forma diafragmei, hartă de adâncime, zgomot), Reducere zgomot pe canale și Clarifică detaliile; 4 commituri, testele trec (Photoshop 76,7%).- 2026-10-28 03:15 — Imagini: filtrele Copac și Flăcări, punctele filtrelor trase pe poză, Înclinare cu curbă, perspectivă la Corecția obiectivului, presetări la pensula de amestec, interval automat la Zona de focalizare; 6 commituri, testele trec (Photoshop 77,7%).
+- 2026-10-28 04:10 — Imagini: Galeria de filtre completă pe cele patru grupe (Schiță, Textură, Artistic, Tușe de pensulă), 25 de filtre noi, de la 72 la 96; 4 commituri, testele trec (Photoshop 77,8%).
