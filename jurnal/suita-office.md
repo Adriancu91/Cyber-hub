@@ -211,3 +211,4 @@
 - 2026-10-28 16:50 — Docs: întreruperi de secțiune (păstrate în .docx) și Compară → Document marcat (modificări urmărite cuvânt cu cuvânt); Video: miniaturi la Proiecte recente; 4 commituri, testele trec (Word 87,1%, Clipchamp 79,8%).
 - 2026-10-28 18:00 — Docs: Compară → 🔀 Combină (modificările altui autor dintr-un .docx, de acceptat / respins, pe numele lui); sesiune oprită devreme, altă sesiune lucra în paralel.
 - 2026-10-28 18:40 — Docs: pagina culcată doar pentru o secțiune (în .docx și la tipărire / PDF); Sheets: Date → Din imagine (tabel din poză, recunoaștere locală); 4 commituri, testele trec.
+- 2026-10-28 19:23 — Imagini: Felii cu pagină web (.html) și legături pe felii, felii desenate mutate / redimensionate; Docs: margini doar pentru o secțiune (în .docx și la tipărire / PDF); 5 commituri, testele trec.
