@@ -213,3 +213,4 @@
 - 2026-10-28 18:40 — Docs: pagina culcată doar pentru o secțiune (în .docx și la tipărire / PDF); Sheets: Date → Din imagine (tabel din poză, recunoaștere locală); 4 commituri, testele trec.
 - 2026-10-28 19:23 — Imagini: Felii cu pagină web (.html) și legături pe felii, felii desenate mutate / redimensionate; Docs: margini doar pentru o secțiune (în .docx și la tipărire / PDF); 5 commituri, testele trec.
 - 2026-10-28 20:07 — Slides: cale de mișcare desenată de mână (și în .pptx), ⇄ Inversează calea și drumul căii arătat punctat pe slide; 3 commituri, testele trec.
+- 2026-10-28 20:54 — Slides: editarea punctelor căii de mișcare, formă liberă desenată cu mâna, galeria de stiluri de tabel cu miniaturi și Zoom de rezumat; 4 commituri, testele trec (PowerPoint 88,6%).
