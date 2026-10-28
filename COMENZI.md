@@ -565,7 +565,7 @@ Format:
 - ce: Când Cyber-GPU (C-30) are funcția de diagnostic VBIOS: mută fixarea pe commit-ul lor nou (doar adăugări), expune-o ca `gpu vbios --detalii`
   (pe ecran și în `raport`), doar citire, cu „0 scrieri” afișat; test în CI cu `--sim`; Release nou pentru următoarea fereastră pe workstation.
   Împreună cu C-29 (viteza lui Kronos), ca un singur stick să le testeze pe amândouă.
-- stare: nou
+- stare: blocat (preluat 2026-10-28 12:50 UTC, sesiunea OS; P6-31) — `cyber-gpu` e privat și sesiunea OS nu are acces la el, deci nu se poate descărca biblioteca nouă și nici construi OS-ul (B-005 în `cyber-universe/docs/BLOCKERS.md`, variantele în `stare/cyber-universe.md`)
 - rezultat:
 
 ### C-32 · cyber-universe · Licența devine proprietară pentru codul nou („toate drepturile rezervate”)
@@ -579,8 +579,8 @@ Format:
   niciodată (nici în repo, nici în arhivele de stick); Adrian îl descarcă singur — notează asta, pentru că argumentul de redistribuire din
   `cyber-gpu/docs/RESEARCH_I4_I8.md` §5.1 presupunea un OS cu licență OSI. Nu schimba nimic altceva. (Vizibilitatea repo-ului o decide Adrian
   separat; dacă devine privat, testele GitHub Actions se pot opri — atunci nu le repara prin plată, doar notează și bazează-te pe testele din sesiune.)
-- stare: nou
-- rezultat:
+- stare: gata (preluat 2026-10-28 12:47 UTC, terminat 12:50 UTC, sesiunea OS) — P6-30, commit `a2c0db3`
+- rezultat: `LICENSE` proprietar („toate drepturile rezervate”) cu nota că versiunile până la `0bf1303` au fost MIT, decizia D-015 înlocuiește D-005, CLAUDE.md §6, README-urile și regulile clean-room actualizate, firmware-ul NVIDIA notat ca nedistribuit de noi; CI nu a rulat (repo privat, fără minute).
 
 ### C-33 · cyber-gpu · Aceeași schimbare de licență (proprietară pentru codul nou)
 - data: 2026-10-28 14:30 · de la: Adrian (prin centrul de comandă)

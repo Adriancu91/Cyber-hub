@@ -1,26 +1,21 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-28 14:35 (ora României) · **de:** sesiunea OS programată · ultimul Release **`os-197`** (CI verde)
+**Actualizat:** 2026-10-28 15:30 (ora României) · **de:** sesiunea OS programată · ultimul Release **`os-197`** (CI oprit de la 14:51)
 
 ## Acum
-- **C-29 gata (P6-29): de ce era Kronos lent în OS și ce s-a schimbat.** Am găsit patru cauze în cod:
-  1. Programele OS-ului făceau calculele cu virgulă **emulat în software** (fără unitatea de calcul a procesorului) — tot ce nu era produs
-     matrice-vector (atenția, LayerNorm, GELU) mergea de zeci de ori mai încet. Acum folosesc procesorul (SSE2), cu aceleași rezultate.
-  2. La fiecare produs (49 pe simbol) se porneau și se opreau fire noi — de aceea 36 de fire erau mai lente decât unul. Acum firele pornesc o
-     dată și așteaptă fără somn; atenția se împarte și ea pe fire.
-  3. Citirea de pe stick parcurgea fișierul de la început la fiecare bucată de 64 KiB → ~31 s. Acum continuă de unde a rămas.
-  4. Derularea textului pe ecran citea memoria plăcii video (lentă) și intra în timpul măsurat. Acum ecranul are o copie în memorie.
-- **Nou:** `kronos --profil` (unde se duce timpul fiecărui simbol), `kronos --repetitie 1.3` (opțional, contra repetițiilor), `kronos-calcul --cauta`
-  măsoară pe dimensiunile modelului de pe stick; `usb citire mare` = citire de 64 KiB pe comandă (variantă nouă, **implicit oprită**, regula
-  „o schimbare pe Release” la drivere).
-- Suita locală și CI trec (CI verde după o reluare a testului instabil `phase4`); vectorii oficiali Kronos identici.
-- Reparată și o blocare rară a nucleului la pornire (un mesaj de eroare scris pe ecran în timp ce alt fir derula textul).
+- **C-32 gata (P6-30):** licența e proprietară de la commit-ul de după `0bf1303` („toate drepturile rezervate”); versiunile până la
+  `0bf1303` rămân MIT (notat în `LICENSE`). Decizia D-015 o înlocuiește pe cea veche cu MIT; CLAUDE.md, README-urile și regulile
+  clean-room actualizate; firmware-ul NVIDIA nu-l distribuim niciodată (îl descarci tu).
+- **C-31 BLOCAT (B-005):** de când `cyber-gpu` e privat, sesiunea OS nu-l mai poate citi. OS-ul folosește bibliotecile lui, deci acum
+  **nu se poate construi și testa nimic** din OS (nici C-31, nici altă sarcină de cod).
+- **CI oprit:** de când repo-ul e privat, GitHub Actions nu mai pornește („spending limit”), ca pe 23 oct. Nu am plătit nimic.
+  Fără CI nu apar Release-uri noi pentru stick; `os-197` (cu C-29) rămâne cel de testat.
 
 ## Urmează
-- C-31 (`gpu vbios --detalii`) după ce Cyber-GPU termină C-30. Testul pe workstation de mai jos. Restul cozii așteaptă hardware.
+- După răspunsul tău la B-005: C-31 (`gpu vbios --detalii`) + Release pentru fereastra de pe workstation. Până atunci, opriri scurte.
 
 ## Ce oferă proiectul celorlalți
-- Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/`.
+- Biblioteci Rust fără dependențe (proprietare de la 28 oct; până la `0bf1303` MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/`.
 - Pentru Kronos: o a doua implementare independentă a KGR1 **și a tokenizerului** (`user/src/kgr.rs`, `user/src/bpe.rs`) — verificare
   încrucișată a specificației; descrierea tokenizerului s-a dovedit completă (nicio întrebare deschisă).
 - Pentru `cyber-gpu`: adresa framebuffer-ului în `hw` (C-26).
@@ -30,6 +25,10 @@
 - `cyber-gpu`: o ramură `main` sau un tag ar fi mai clar de fixat decât `dac2e32`; nu blochează.
 
 ## Blocaje / nevoie de Adrian
+- **B-005 — alege una (2 minute):** (a) adaugă repo-ul `cyber-gpu` la sarcina programată a OS-ului (depozitele sesiunii, în aplicația
+  Claude); pentru CI ar trebui și un token doar-citire pus ca secret; (b) „da” ca bibliotecile Cyber-GPU să fie copiate direct în repo-ul
+  OS-ului (același autor, aceeași licență); (c) `cyber-gpu` din nou public. Fără una din ele OS-ul nu se mai poate construi în sesiuni.
+- **CI / Release-uri:** repo privat = GitHub Actions oprit (minute terminate). Decizia ta (public, plată, sau Release-uri făcute din sesiune).
 - **Workstation, viteza lui Kronos (~25 min, `os-197`; pe stick rămân `kronos/kronos_459_q8_0.kgr` + `.sha256` și `cyber.rw`):**
   1. `cpu porneste`, apoi `run kronos --n 5 Ana are mere.` → poză cu rândul „citit in … ms” (ținta < 10 s) și simbolurile `[2233, 1585, 32, 475, 50]`.
   2. `usb citire mare`, apoi iar `run kronos --n 5 Ana are mere.` → același text, „citit in …” (64 KiB pe comandă; dacă apare vreo eroare USB:
