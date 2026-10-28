@@ -200,3 +200,4 @@
 - 2026-10-28 08:35 — Slides: 🖵 Înregistrare ecran; Docs: urmărirea schimbărilor de format, salvate și citite din .docx; 4 commituri, testele trec (Word 86,6%, PowerPoint 86,3%).
 - 2026-10-28 09:23 — Slides: 🎙 Înregistrează prezentarea cu narațiune, acțiuni cu sunet și la trecerea mouse-ului, Compară cu schimbările de aspect; 3 commituri, testele trec (PowerPoint 87,0%).
 - 2026-10-28 10:03 — Slides: înregistrare de la slide-ul curent, video din prezentare cu narațiunea, tipărirea directă a pliantelor și a schiței; 6 commituri, testele trec (PowerPoint 88,1%).
+- 2026-10-28 10:47 — Imagini: foaie de contact și note cu autor / culoare; Slides: tranzițiile Cub, Cortine, Pagină îndoită; PDF: raportul comparării ca PDF; 6 commituri, testele trec (PowerPoint 88,3%, Acrobat 77,2%, Photoshop 78,4%).

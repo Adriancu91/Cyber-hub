@@ -1,16 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 10:03 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 10:47 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 09:24–10:03, 6 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
-  - **Slides: 🎙 Din slide-ul curent**: înregistrarea narațiunii poate porni de la slide-ul ales; cele de dinainte rămân neschimbate.
-  - **Slides: Fă video din prezentare** ia acum și narațiunea înregistrată, ca voce a filmului, fiecare bucată la începutul slide-ului ei.
-  - **Slides: Tipărește pliante** (2/3/4/6/9 pe pagină) și **Tipărește schița / PDF cu schița**, direct, fără ocolul prin PDF sau Docs.
-  - Testul vechi al ecranului împărțit trece complet; greșelile de ieri veneau din pornirea lui fără fișierele pregătite.
+- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 10:05–10:47, 6 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
+  - **Imagini: ▤ Foaie de contact**: oricâte poze, mici, cu numele lor, pe foi A4 într-un PDF (coloane × rânduri, titlu, foaie culcată).
+  - **Slides: tranzițiile Cub, Cortine și Pagină îndoită**, salvate și citite din .pptx.
+  - **PDF: 📄 Raport PDF…** la „Compară cu PDF…”: raportul diferențelor ca PDF separat (pagina, textul de dinainte și de acum).
+  - **Imagini: notele 🗒 de pe poză** au acum autor și culoare.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 86,6%, Excel 85,5%, PowerPoint 88,1%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 77,0%, Photoshop 78,3%, formule 97,1%.
+- Scoruri: Word 86,6%, Excel 85,5%, PowerPoint 88,3%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 77,2%, Photoshop 78,4%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (Acrobat, Notițe, Photoshop, Word, Excel, PowerPoint), câte una pe pas.
