@@ -565,7 +565,7 @@ Format:
 - ce: Când Cyber-GPU (C-30) are funcția de diagnostic VBIOS: mută fixarea pe commit-ul lor nou (doar adăugări), expune-o ca `gpu vbios --detalii`
   (pe ecran și în `raport`), doar citire, cu „0 scrieri” afișat; test în CI cu `--sim`; Release nou pentru următoarea fereastră pe workstation.
   Împreună cu C-29 (viteza lui Kronos), ca un singur stick să le testeze pe amândouă.
-- stare: blocat (preluat 2026-10-28 12:50 UTC, sesiunea OS; P6-31) — `cyber-gpu` e privat și sesiunea OS nu are acces la el, deci nu se poate descărca biblioteca nouă și nici construi OS-ul (B-005 în `cyber-universe/docs/BLOCKERS.md`, variantele în `stare/cyber-universe.md`)
+- stare: nou (deblocat 2026-10-28 19:00, centrul de comandă) — B-005 rezolvat altfel: copia Git completă a `cyber-gpu` (ramura `g0-g2-fundatie`, vârf `8313973`, conține și `4538f90`) e în hub, `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (instrucțiuni în README-ul de lângă). Construiește din ea; nu mai e nevoie de acces direct la repo-ul privat. Istoric: blocat (preluat 2026-10-28 12:50 UTC, sesiunea OS; P6-31) — `cyber-gpu` e privat și sesiunea OS nu are acces la el, deci nu se poate descărca biblioteca nouă și nici construi OS-ul (B-005 în `cyber-universe/docs/BLOCKERS.md`, variantele în `stare/cyber-universe.md`)
 - rezultat:
 
 ### C-32 · cyber-universe · Licența devine proprietară pentru codul nou („toate drepturile rezervate”)
@@ -588,5 +588,16 @@ Format:
   (`docs/PROVENANCE.md`). Versiunile până la commit-ul `8313973` inclusiv rămân MIT. Adaugă `LICENSE` proprietar cu aceeași notă istorică,
   actualizează `PROVENANCE.md` și README-urile; crate-ul generat din antetele NVIDIA păstrează notificarea MIT a NVIDIA; notează în §5.1 din
   `RESEARCH_I4_I8.md` că firmware-ul îl descarcă Adrian, noi nu-l distribuim. Nu schimba nimic altceva.
+- stare: nou
+- rezultat:
+
+### C-34 · cyber-gpu · După fiecare push: actualizează copia privată din hub pentru sesiunea OS
+- data: 2026-10-28 19:00 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: De când `cyber-gpu` e privat (28 oct 14:33), sesiunea OS nu-l mai poate clona (B-005 în cyber-universe). Centrul de comandă a pus o copie
+  în hub: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` + `VERSIUNE.txt` + `README.md`. **La sfârșitul fiecărei sesiuni în care ai urcat ceva
+  pe `g0-g2-fundatie`:** `git bundle create integrare/cyber-gpu/snapshot/cyber-gpu.bundle g0-g2-fundatie` (ramura locală la zi cu origin),
+  verifică-l cu `git bundle verify` și cu o clonare de probă, rescrie `VERSIUNE.txt` (`g0-g2-fundatie <commit scurt> <ora UTC>`), commit în hub
+  împreună cu starea ta. Fără firmware, fără date personale. Dacă nu mai poți citi `cyber-universe` (tot privat), e în regulă: e doar context,
+  starea lui e în `stare/cyber-universe.md`. Fă și C-33 (licența), dacă n-ai făcut-o.
 - stare: nou
 - rezultat:
