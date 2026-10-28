@@ -25,3 +25,5 @@
 - 2026-10-28 07:50 — Comanda FRTS pusă în FWSEC (zona protejată de 1 MiB); constatare: RM cere programele semnate în RAM → pe placă trebuie Bus Master (doar în fereastra cu Adrian).
 - 2026-10-28 13:50 — Sesiunea 13 (cloud): primele rezultate pe placa reală citite — I0, I1, I2 trec, I3 pică la 0x24600 (imagine „NV”). C-30 gata: diagnosticul VBIOS doar citire + parserul acceptă imaginile „NV” (ca nouveau). Doar SIMULARE; 243 de teste, CI verde.
 - 2026-10-28 13:50 — Pentru OS (C-31): `vbios_diag::diagnose` + `lines()`, nota în `integration/cyber-universe/C-31_gpu-vbios-detalii.md`; OS-ul se construiește cu fixarea pe `4538f90`.
+- 2026-10-28 19:50 — Sesiunea 14 (cloud): C-33 gata — licența proprietară pentru codul nou (`LICENSE`, commit `f440f6f`); versiunile până la `8313973` rămân MIT, antetele NVIDIA generate rămân MIT NVIDIA, firmware-ul nu-l distribuim. Codul driverului neschimbat; 243 de teste verzi în sesiune.
+- 2026-10-28 19:50 — C-34 gata: bundle-ul din hub actualizat la `9da10f0` (verificat, clonare de probă cu teste verzi). CI-ul GitHub nu mai pornește de când repo-ul e privat (fără minute); nereparat prin plată, cum cere C-32.

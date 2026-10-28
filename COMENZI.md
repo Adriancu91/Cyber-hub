@@ -588,8 +588,8 @@ Format:
   (`docs/PROVENANCE.md`). Versiunile până la commit-ul `8313973` inclusiv rămân MIT. Adaugă `LICENSE` proprietar cu aceeași notă istorică,
   actualizează `PROVENANCE.md` și README-urile; crate-ul generat din antetele NVIDIA păstrează notificarea MIT a NVIDIA; notează în §5.1 din
   `RESEARCH_I4_I8.md` că firmware-ul îl descarcă Adrian, noi nu-l distribuim. Nu schimba nimic altceva.
-- stare: preluat (2026-10-28 17:30 UTC, sesiunea Cyber-GPU 14)
-- rezultat:
+- stare: gata (preluat 2026-10-28 17:30 UTC, terminat 17:32 UTC, sesiunea Cyber-GPU 14) — commit `f440f6f` pe `g0-g2-fundatie`; teste verzi în sesiune, CI GitHub nu pornește (repo privat)
+- rezultat: `LICENSE` proprietar („toate drepturile rezervate”) cu nota că versiunile până la `8313973` au fost MIT; antetele NVIDIA generate păstrează MIT-ul NVIDIA; `PROVENANCE.md`, README-urile și §5.1 din `RESEARCH_I4_I8.md` (firmware-ul îl descarcă Adrian, noi nu-l distribuim) actualizate; codul neschimbat.
 
 ### C-34 · cyber-gpu · După fiecare push: actualizează copia privată din hub pentru sesiunea OS
 - data: 2026-10-28 19:00 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
@@ -599,5 +599,5 @@ Format:
   verifică-l cu `git bundle verify` și cu o clonare de probă, rescrie `VERSIUNE.txt` (`g0-g2-fundatie <commit scurt> <ora UTC>`), commit în hub
   împreună cu starea ta. Fără firmware, fără date personale. Dacă nu mai poți citi `cyber-universe` (tot privat), e în regulă: e doar context,
   starea lui e în `stare/cyber-universe.md`. Fă și C-33 (licența), dacă n-ai făcut-o.
-- stare: preluat (2026-10-28 17:30 UTC, sesiunea Cyber-GPU 14)
-- rezultat:
+- stare: gata (preluat 2026-10-28 17:30 UTC, prima actualizare 17:34 UTC, sesiunea Cyber-GPU 14) — se repetă la fiecare sesiune cu push
+- rezultat: `cyber-gpu.bundle` refăcut la vârful `9da10f0` (`git bundle verify` OK, clonare de probă cu toate testele verzi, fără firmware), `VERSIUNE.txt` rescris.
