@@ -1,19 +1,20 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 04:10 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 04:52 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, acum în Imagini (scorul cel mai mic). Sesiunea 03:16–04:10, 4 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
-  - **Galeria de filtre e completă pe cele patru grupe**: 25 de filtre noi (de la 72 la 96).
-  - **Schiță**: Basorelief, Cretă și cărbune, Fotocopie, Ștampilă, Margini rupte, Model de semiton, Crom, Pix grafic, Ipsos, în două culori (cerneală / hârtie: negru, sepia, albastru…).
-  - **Textură**: Craquelură, Granulație (9 feluri), Plăci de mozaic, Patchwork, Vitraliu.
-  - **Artistic**: Margini de afiș, Pensulă uscată, Spatulă, Burete, Creion colorat, Neon, Frescă, Pastel; **Tușe de pensulă**: Sumi-e, Tușe oblice.
+- Lucrăm la „funcțiile care lipsesc”, acum în Imagini (scorul cel mai mic). Sesiunea 04:04–04:52, 5 commituri, testele trec, toate textele noi traduse (verificat și pe ecran, în engleză):
+  - **Amestec HSL**: nuanța, saturația și luminozitatea separat pentru 8 culori (de ex. doar cerul mai închis).
+  - **Compoziții de straturi**: variante salvate ale straturilor (care se văd, opacitate, amestec), schimbate cu un clic.
+  - **Masca în Proprietăți**: Densitate și Estompare, fără să strice masca.
+  - **Lista Trasee**: mai multe trasee salvate, cu nume, redeschise oricând.
+  - **Unealta Notă**: bilețele cu text pe poză, care nu apar în poza salvată.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 77,8%, formule 97,1%.
+- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 76,4%, Acrobat 76,4%, Photoshop 78,3%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (Photoshop, Acrobat, Word, Excel, PowerPoint), câte una pe pas.
+- Alte funcții „parțial” / „nu” din inventar (Photoshop, Acrobat, Word, Excel, PowerPoint), câte una pe pas; apoi traseele, notele și compozițiile salvate și în .psd.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
