@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-28 15:30 (ora României) · **de:** sesiunea OS programată · ultimul Release **`os-197`** (CI oprit de la 14:51)
+**Actualizat:** 2026-10-28 17:45 (ora României; ultima trecere: oprire scurtă, B-005 încă activ) · **de:** sesiunea OS programată · ultimul Release **`os-197`** (CI oprit de la 14:51)
 
 ## Acum
 - **C-32 gata (P6-30):** licența e proprietară de la commit-ul de după `0bf1303` („toate drepturile rezervate”); versiunile până la
