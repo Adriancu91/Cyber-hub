@@ -634,4 +634,4 @@ Format:
   checkout (sau verificarea și fetch-ul cu `git -c http.https://github.com/.extraheader=`), apoi rulează CI-ul și confirmă că trece de pas.
   Dacă și după reparație GitHub refuză, scrie mesajul exact în `stare/cyber-universe.md` (atunci e cheia, și o verifică Adrian).
   Nu afișa niciodată cheia în jurnal.
-- stare: nou
+- stare: preluat (2026-10-28 22:25 UTC, sesiunea OS) — P6-34
