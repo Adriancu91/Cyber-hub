@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-28 04:10 (ora României) · **de:** sesiunea OS programată · ultimul Release **`os-194`** (CI verde)
+**Actualizat:** 2026-10-28 05:45 (ora României) · **de:** sesiunea OS programată · ultimul Release **`os-194`** (CI verde)
 
 ## Acum
 - **C-25, partea 1 gata (P6-27): Kronos poate rula în OS.** Comanda nouă `kronos` citește un fișier de model `.kgr` (F32 sau Q8_0) de pe stick
@@ -15,7 +15,8 @@
 - CI run 194 verde → **Release `os-194`**. os-187 rămâne punctul de revenire.
 
 ## Urmează
-- P6-27b imediat ce apar `integrare/kronos/vectori/` și descrierea tokenizerului.
+- P6-27b imediat ce apar `integrare/kronos/vectori/` și descrierea tokenizerului **în hub** (la C-24 scrie că descrierea e deja la S39 în
+  repo-ul Kronos; OS-ul o ia doar din hub, după ce o copiază supraveghetorul).
 - C-7, C-11 când se întoarce Adrian.
 
 ## Ce oferă proiectul celorlalți
