@@ -1,17 +1,18 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 18:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 18:40 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 17:43–18:00, 1 commit, testele trec, textul nou tradus:
-  - **Docs:** Revizuire → Compară cu un .docx… → 🔀 Combină: modificările celuilalt (din fișierul primit) puse peste documentul tău ca modificări de acceptat / respins, pe numele lui.
-  - Sesiunea s-a oprit devreme: altă sesiune lucra în același timp în folder (importul de text în Sheets), ca să nu se încurce.
+- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 17:58–18:40, 3 pași, testele trec, textele noi traduse:
+  - **Docs:** Aspect → Orientare → Doar secțiunea aceasta: o pagină culcată (de exemplu pentru un tabel lat) în mijlocul unui document în picioare, în .docx și la tipărire / PDF.
+  - **Sheets:** Date → Preluare date → Din imagine…: un tabel fotografiat sau scanat devine foaie (recunoașterea textului pe calculator, fără internet).
+  - Sesiunea s-a oprit puțin mai devreme: sesiunea cu Adrian lucra în același timp la Sheets (săgețile din formule).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 87,3%, Excel 85,5%, PowerPoint 88,5%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
+- Scoruri: Word 87,3%, Excel 85,7%, PowerPoint 88,5%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar, câte una pe pas (de ex. pagină culcată doar pentru o secțiune în Docs, căi de mișcare desenate de mână în Slides, legături / HTML pentru feliile din Imagini).
+- Alte funcții „parțial” / „nu” din inventar, câte una pe pas (de ex. marginile pe secțiune și pagina culcată arătată și pe ecran în Docs, căi de mișcare desenate de mână în Slides, legături / HTML pentru feliile din Imagini).
 - Lipirea conectorilor de elipse în .pptx: doar după un fișier real care o arată (în colecția de test nu e niciunul, iar numerotarea punctelor nu o ghicim).
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
@@ -28,6 +29,7 @@
 - Să încerce PDF → Comprimă… → 🧹 Optimizează structura și ☰ Meniu → Elimină informațiile ascunse… pe PDF-uri reale de-ale lui: după Salvează ca…, fișierul arată la fel?
 - Să încerce PDF → Semnează… → 🔍 Caută și redactează pe un PDF adevărat (o adeverință, un contract): după Salvează ca…, restul textului se poate selecta și nu rămâne nicio literă din ce a fost redactat?
 - Să încerce Docs → Revizuire → Compară cu un .docx… → 📝 Document marcat pe un contract real primit înapoi: se vede bine ce s-a schimbat? Și un .docx cu Aspect → Întreruperi → Secțiune: Pagina următoare, deschis la serviciu: secțiunea nouă începe pe pagina următoare?
+- Să încerce Sheets → Date → Preluare date → Din imagine… cu o poză făcută cu telefonul unui tabel adevărat: ies bine rândurile și coloanele? Și Docs → Aspect → Orientare → Doar secțiunea aceasta: Orizontală, apoi Export .docx deschis la serviciu: doar pagina aceea e culcată?
 - Să încerce Docs → Revizuire → ✓ Gramatică pe un document adevărat de-al lui: arată greșeli care nu sunt greșeli?
 - Să încerce Slides → Prezentare → 🎙 Înregistrează cu microfonul lui și Slides → Inserare → 🖵 Înregistrare ecran pe ecranul lui: se aude vocea / sunetul? Are vocea și în MP4?
 - Să salveze din Docs un .docx cu un cuvânt pus aldin cu Urmărește modificările pornit și să-l deschidă la serviciu: apare ca „Formatat: Aldin”?

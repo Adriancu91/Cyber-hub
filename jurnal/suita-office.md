@@ -210,3 +210,4 @@
 - 2026-10-28 16:05 — Slides: căi de mișcare Buclă / Undă cu lungimea aleasă, 8 forme și 4 teme noi; Imagini: felii desenate de mână; Video: 7 treceri, 4 stiluri de titlu și Proiecte recente; Docs / Sheets: 7 forme noi; 9 commituri, testele trec.
 - 2026-10-28 16:50 — Docs: întreruperi de secțiune (păstrate în .docx) și Compară → Document marcat (modificări urmărite cuvânt cu cuvânt); Video: miniaturi la Proiecte recente; 4 commituri, testele trec (Word 87,1%, Clipchamp 79,8%).
 - 2026-10-28 18:00 — Docs: Compară → 🔀 Combină (modificările altui autor dintr-un .docx, de acceptat / respins, pe numele lui); sesiune oprită devreme, altă sesiune lucra în paralel.
+- 2026-10-28 18:40 — Docs: pagina culcată doar pentru o secțiune (în .docx și la tipărire / PDF); Sheets: Date → Din imagine (tabel din poză, recunoaștere locală); 4 commituri, testele trec.
