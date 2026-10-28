@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 20:54 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 21:28 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 20:07–20:54, 4 pași, testele trec, textele noi traduse:
-  - **Slides → Animații → ✎ Editează punctele:** punctele căii de mișcare se trag cu mouse-ul pe slide (dublu clic scoate / adaugă un punct).
-  - **Slides → Inserare → Formă ▾ → ✍ Formă liberă:** desenezi cu mouse-ul conturul unei forme (păstrată și în .pptx).
-  - **Stiluri tabel cu miniaturi** în locul listei și **▦ Zoom de rezumat** (slide nou cu legături spre fiecare secțiune).
+- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 20:54–21:28, 2 pași, testele trec, textele noi traduse:
+  - **Slides → Inserare → 🔍 Zoom de slide… → § Zoom de secțiune:** miniatura unei secțiuni; în prezentare arată toată secțiunea, apoi revine (și Zoom de rezumat face la fel).
+  - **Docs → Antet și subsol → 🔗 Legat de anterior:** o secțiune poate avea antetul și subsolul ei (în .docx; pe ecran și în PDF încă nu).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 87,3%, Excel 85,7%, PowerPoint 88,6%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
+- Scoruri: Word 87,5%, Excel 85,7%, PowerPoint 88,8%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar, câte una pe pas (de ex. antet diferit pe secțiune și pagina culcată arătată și pe ecran în Docs, Section Zoom și variantele stilurilor de tabel în Slides).
-- Lipirea conectorilor de elipse în .pptx: doar după un fișier real care o arată (în colecția de test nu e niciunul, iar numerotarea punctelor nu o ghicim).
+- Antetul propriu al secțiunii arătat și la tipărire / PDF în Docs.
+- Alte funcții „parțial” / „nu” din inventar, câte una pe pas (de ex. variantele stilurilor de tabel în Slides).
+- Lipirea conectorilor de elipse în .pptx: doar după un fișier real care o arată.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
 ## Ce oferă proiectul celorlalți
@@ -32,6 +32,7 @@
 - Să încerce Sheets → Date → Preluare date → Din imagine… cu o poză făcută cu telefonul unui tabel adevărat: ies bine rândurile și coloanele? Și Docs → Aspect → Orientare → Doar secțiunea aceasta: Orizontală, apoi Export .docx deschis la serviciu: doar pagina aceea e culcată?
 - Să încerce Imagini → Fișier → ✂ Felii… cu „Și o pagină web (.html)” și o legătură pe o felie, apoi să deschidă pagina în browser: poza apare întreagă și legătura merge? Și Docs → Aspect → Margini → Doar secțiunea aceasta: 1 cm, apoi Export .docx deschis la serviciu: doar secțiunea aceea are margini înguste?
 - Să încerce Slides → un titlu → Animații → Cale: Desenată de mână (sau Linie → ✎ Editează punctele, trăgând punctele) → F5: titlul merge pe drumul lui? Și Slides → Inserare → Formă ▾ → ✍ Formă liberă, apoi Export .pptx deschis la serviciu: drumul și forma arată la fel?
+- Să încerce Docs → Aspect → Întreruperi → Secțiune: Pagina următoare → dublu clic sus pe pagina a doua → debifează 🔗 Legat de anterior → scrie un antet → Export .docx deschis la serviciu: doar secțiunea a doua are antetul acela? Și Slides → § Zoom de secțiune în prezentare (F5): e ușor de folosit?
 - Să încerce Docs → Revizuire → ✓ Gramatică pe un document adevărat de-al lui: arată greșeli care nu sunt greșeli?
 - Să încerce Slides → Prezentare → 🎙 Înregistrează cu microfonul lui și Slides → Inserare → 🖵 Înregistrare ecran pe ecranul lui: se aude vocea / sunetul? Are vocea și în MP4?
 - Să salveze din Docs un .docx cu un cuvânt pus aldin cu Urmărește modificările pornit și să-l deschidă la serviciu: apare ca „Formatat: Aldin”?
