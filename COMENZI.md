@@ -490,7 +490,7 @@ Format:
   (repo public); Adrian le pune pe stick. Scrie-ți codul (nu porta codul Python); nu schimba nimic altceva.
   **Ținta principală pe hardware e workstation-ul** (i9-10980XE, 18 nuclee / 36 fire, AVX-512, 128 GB, rețea I219 cu cablu; Adrian, 27 oct 23:16):
   folosește toate cele 36 de fire și, dacă e simplu, AVX-512 cu fallback la AVX2; laptopul Intel rămâne a doua țintă.
-- stare: preluat (2026-10-27 23:20 UTC, sesiunea OS) — P6-27 în docs/TASKS.md; așteaptă C-24 (`integrare/kronos/` în hub)
+- stare: preluat (2026-10-27 23:20 UTC, sesiunea OS) — P6-27 în docs/TASKS.md; **partea 1 gata** (2026-10-28 01:40 UTC, Release os-194): motorul KGR1 (F32, Q8_0, toate nucleele, AVX2+FMA, SHA-256) + `kronos --simboluri`, testat pe un model minuscul propriu; partea 2 = P6-27b (tokenizerul + `kronos "<text>"` + vectorii oficiali) așteaptă C-24 partea A și o descriere a tokenizerului în specificație
 - rezultat:
 
 ### C-26 · cyber-universe · O linie în `hw` cu adresa imaginii ecranului (cerere Cyber-GPU, doar citire)
@@ -510,8 +510,8 @@ Format:
   `/usb/kronos/reglaj-<procesor>.txt`; motorul KGR1 (C-25) o folosește la pornire dacă există, altfel valorile implicite. Fără scrieri în hardware
   în afară de acel fișier. Test în QEMU: căutarea alege o configurație validă și o variantă stricată intenționat e respinsă.
   Idee: „autotuning” (tinygrad BEAM, ATLAS) — scrisă de noi.
-- stare: preluat (2026-10-27 23:20 UTC, sesiunea OS) — P6-28 în docs/TASKS.md; după P6-27
-- rezultat:
+- stare: gata (preluat 2026-10-27 23:20 UTC, terminat 2026-10-28 01:45 UTC, sesiunea OS) — P6-28; CI verde (run 194), Release os-194
+- rezultat: `kronos-calcul --cauta` încearcă variantele (vectori/scalar, fire, ordinea buclelor), le verifică pe fiecare față de un calcul de control (cea stricată intenționat e respinsă în test), le cronometrează cu TSC și scrie cea mai bună în `/usb/kronos/reglaj-<procesor>.txt`, pe care `kronos` îl folosește la pornire; AVX-512 nu e încă printre variante (QEMU nu-l are).
 
 ### C-28 · kronos · E4 „Kronos-Cod”: un model separat, ~150M, doar pe cod, apoi auto-îmbunătățire cu teste care rulează
 - data: 2026-10-27 23:45 · de la: Adrian (ideea lui: „150 M parametri dedicat pe coding și auto-îmbunătățire, fără română”; aprobat prin delegare)

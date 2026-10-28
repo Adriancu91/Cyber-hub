@@ -59,3 +59,4 @@
 - 2026-10-27 18:00 — OPRIT (oprirea de siguranță): 9 sesiuni fără sarcini, coada goală; aștept comandă nouă sau rezultat hardware. CI verde (os-191).
 - 2026-10-27 20:42 — OPRIT în continuare: nicio comandă nouă, niciun rezultat nou; CI verde (os-191).
 - 2026-10-28 01:22 — C-23 și C-26 gata: căderea pe AMD reparată (sysret), toate controlerele USB pornite, adresa ecranului în hw; CI verde, Release os-192. C-25, C-27 preluate, așteaptă C-24.
+- 2026-10-28 04:10 — C-25 partea 1 (P6-27): motorul KGR1 + comanda `kronos`, verificat pe un model minuscul propriu; C-27 gata (P6-28): `kronos-calcul --cauta` scrie reglajul pe stick. CI verde, Release os-194. P6-27b așteaptă vectorii C-24 și descrierea tokenizerului.
