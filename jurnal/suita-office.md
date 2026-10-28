@@ -216,3 +216,4 @@
 - 2026-10-28 20:54 — Slides: editarea punctelor căii de mișcare, formă liberă desenată cu mâna, galeria de stiluri de tabel cu miniaturi și Zoom de rezumat; 4 commituri, testele trec (PowerPoint 88,6%).
 - 2026-10-28 21:28 — Slides: Zoom de secțiune (arată toată secțiunea, apoi revine); Docs: antet și subsol propriu pe secțiune („Legat de anterior”, în .docx); 3 commituri, testele trec (Word 87,5%, PowerPoint 88,8%).
 - 2026-10-28 21:55 — Docs: antetul propriu al secțiunii și în Export PDF; Sheets: Scindare (foaia în două părți derulate separat); 2 commituri, testele trec (Excel 85,9%).
+- 2026-10-28 22:30 — Docs: Ctrl+P tipărește ca PDF-ul (numere, siglă, antet pe secțiuni, margini albe); Etichete și Plicuri din tabel (o adresă pe fiecare); 3 commituri, testele trec.
