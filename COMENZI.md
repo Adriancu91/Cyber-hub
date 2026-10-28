@@ -557,8 +557,8 @@ Format:
   NVIDIA cunoscute (NVGI / NPDE) dacă documentația publică o susține; test pe o imagine sintetică care reproduce situația. Totul în SIMULARE,
   apoi verificăm la următoarea fereastră. Nicio scriere în placă.
   **Și:** raportul OS arată framebuffer-ul la `0xe0000000` (9 MiB, 1920×1080) = începutul BAR1 al plăcii — de ținut cont la I9/I10 (nu se scrie acolo).
-- stare: preluat (2026-10-28 13:35, sesiunea Cyber-GPU 13)
-- rezultat:
+- stare: gata (preluat 2026-10-28 13:35, terminat 13:50, sesiunea Cyber-GPU 13) — commit-uri `d03ce39`, `0e14990`, `4538f90` pe `g0-g2-fundatie`, CI verde; doar SIMULARE
+- rezultat: diagnosticul VBIOS doar citire (`vbios_diag`, pentru `gpu vbios --detalii`) e gata, iar parserul acceptă acum imaginile cu semnătura „NV” (0x4e56), ca nouveau — în simulare lanțul de tip workstation trece I3 și FWSEC e găsit; pe placa reală se verifică la fereastra următoare.
 
 ### C-31 · cyber-universe · `gpu vbios --detalii` (după C-30)
 - data: 2026-10-28 10:50 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)

@@ -1,44 +1,39 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-10-28 07:50 (ora României) · **de:** sesiunea Cyber-GPU 12 (cloud, fără placă)
+**Actualizat:** 2026-10-28 13:50 (ora României) · **de:** sesiunea Cyber-GPU 13 (cloud, fără placă)
 
 ## Acum
-- **Nimic nu s-a testat pe RTX 3070 Ti.** Tot ce „merge” e verificat doar pe calculator (SIMULARE, cu imagini sintetice — niciun fișier
-  firmware NVIDIA real). Codul care ar scrie în placă stă în spatele opțiunii `hw-write`, oprită implicit; nu a rulat pe placă.
-- C-18 și C-20 gata. Azi dimineață, pasul „fără placă” care lipsea la pornirea plăcii:
-  - **Încărcătorul programelor semnate NVIDIA (I6/I7):** driverul pune FWSEC (din VBIOS) și Booter (de pe stick) în micro-procesoarele
-    plăcii prin DMA și îi spune „ROM-ului de pornire” unde e semnătura — după sursa NVIDIA 570.144 (MIT). Totul se verifică înainte de
-    prima scriere; atinge doar registrele GSP/SEC2, toate în jurnal.
-  - **Comanda FRTS pentru FWSEC:** driverul îi spune lui FWSEC unde să facă zona protejată (1 MiB din memoria plăcii).
-  - Verificat pe un model cu un motor DMA și un „ROM” simulate: pornirea FWSEC → Booter merge cap-coadă; 12 greșeli plantate intenționat
-    în driver au fost toate prinse.
-- 229 de teste trec; CI verde.
+- **Prima dată pe placa reală (fereastra de azi, os-195, doar citire): I0, I1, I2 trec pe RTX 3070 Ti** (cipul recunoscut, GFW gata în 3 µs, 0 scrieri).
+  **I3 (VBIOS) a picat** la `0x24600`: acolo imaginea începe cu „NV” (`0x4e56`) în loc de `0xAA55`.
+- **C-30 gata (în SIMULARE):**
+  - **Diagnosticul VBIOS** (doar citire): listează rând cu rând fiecare imagine (offset, semnătură, câmpurile PCIR/NPDE), rupturile cu
+    primii 16 octeți, ce mai e după ultima imagine; fără conținutul imaginilor; rezumat cu „0 scrieri”.
+  - **Parserul acceptă imaginile „NV”**, cum fac nouveau (MIT) și nova-core; orice altă semnătură e tot refuzată. Pe o imagine sintetică
+    făcută după placă, I3 trece și FWSEC e găsit. **Pe placa reală: netestat încă.**
+- Ecranul firmware-ului e la începutul BAR1 (`0xe0000000`) → primii ~8,5 MiB din memoria plăcii sunt protejați în driver (test cu valorile reale).
+- 243 de teste trec; CI verde (o rulare roșie pe drum: format uitat, reparat imediat). Nimic nu scrie în placă.
 
 ## Urmează
-- Fără placă au mai rămas puține: treapta 6 matmul; `SET_PAGE_DIRECTORY` pentru canal. Aproape tot restul (I0–I10 reale) cere placa.
-- Fereastra pe workstation (~30 min, **os-192 sau mai nou**): citiri I0–I3 + FWSEC + fișierele de pe stick + poza rândului „ecran:” din `hw`,
-  **0 scrieri** (`docs/TEST_MATRIX.md` B0).
-- După B0, doar cu Adrian de față: proba tinygrad (partea P).
+- Sesiunea OS: C-31 (`gpu vbios --detalii`), cu fixarea pe `cyber-gpu` `4538f90` sau mai nou — OS-ul se construiește cu ea (verificat).
+- Fereastra următoare pe workstation: `gpu vbios` + `gpu vbios --detalii` (poze). Dacă I3 trece: I3b (FWSEC) și fișierele de pe stick (I4).
+- Fără placă: treapta 6 matmul; `SET_PAGE_DIRECTORY` pentru canal.
 
 ## Ce oferă proiectul celorlalți
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste), MIT. Fixarea pe `dac2e32` rămâne valabilă.
-  După `dac2e32`, **doar adăugări**: `nvidia-rm570`, `qmd`, `gsp::{registry,sysinfo,rmapi,golden,falcon,sequencer}`, **`gsp::hs_load`** (nou; scrie în
-  placă, cere `hw-write` — OS-ul nu-l cheamă), `fw_hdr`, `mmu`, `vram_window`, `Mmio::is_simulation`; în `gpu-compute`: `fma_f32`, `ftz`, `matmul_fma(_ftz)`;
-  în `gpu-sim`: procesorul de comenzi, GSP/RM fals (acum și cu motor DMA + „ROM” simulat), VRAM simulată, fereastra simulată. La o nouă fixare:
-  `nvidia-ga104` depinde și de `gpu-memory` (același repo). Detalii: `integration/cyber-universe/UTILIZARE.md`.
-- Pentru mai târziu (doar în fereastra cu Adrian, nu acum): pornirea reală a GSP va cere de la OS o zonă de RAM contiguă (adresă sub 2^49) și
-  Bus Master pentru placă — RM 570.144 citește programele semnate din RAM, nu din memoria plăcii.
+  După `dac2e32`, **doar adăugări**; nou azi: **`nvidia_ga104::vbios_diag::diagnose` + `VbiosDiag::lines()`** (pentru `gpu vbios --detalii`, C-31),
+  `vbios::read_layout` acceptă imaginile „NV”, `gpu_sim::rom::asus_like_chain()` pentru `--sim`. Instrucțiuni: `integration/cyber-universe/C-31_gpu-vbios-detalii.md`.
+  La o nouă fixare `nvidia-ga104` depinde și de `gpu-memory` și `nvidia-rm570` (același repo). Detalii: `integration/cyber-universe/UTILIZARE.md`.
+- Pentru mai târziu (doar în fereastra cu Adrian): pornirea reală a GSP va cere de la OS o zonă de RAM contiguă (sub 2^49) și Bus Master pentru placă.
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
+- De la `cyber-universe`: C-31 (afișarea diagnosticului în OS + Release pentru fereastră, împreună cu C-29).
 - De la `kronos`: workstation-ul, doar în fereastra aprobată de Adrian.
-- De la `cyber-universe`: nimic nou acum.
 
 ## Blocaje / nevoie de Adrian
-- **Fereastra pe workstation (~30 min), cu os-192 sau mai nou:** lista în `docs/TEST_MATRIX.md` partea B0; 0 scrieri în placă.
+- **Fereastra următoare pe workstation (~15 min, cu Release-ul care are C-31):** `gpu vbios` și `gpu vbios --detalii` → poze cu toate rândurile; 0 scrieri.
 - **Înainte de fereastră, fișierele firmware pe stick:** din https://gitlab.com/kernel-firmware/linux-firmware, folderul `nvidia/ga102/gsp/`,
   cele 4 fișiere `*-570.144.bin` în `firmware\nvidia\ga102\gsp\` pe stick (+ `LICENCE.nvidia` în `firmware\`); sumele în
   `docs/COMPATIBILITATE_FIRMWARE.md`. **Nu le urca nicăieri.**
-- **Opțional, pentru proba tinygrad (partea P, scrie în placă, doar cu tine de față, după B0):** un al doilea stick cu Ubuntu 24.04 live și laptopul pentru SSH.
+- **Opțional, pentru proba tinygrad (scrie în placă, doar cu tine de față, după I3/I4):** un al doilea stick cu Ubuntu 24.04 live și laptopul pentru SSH.
 - Tag-ul `stabil-2026-10-23` (tot 403 din cloud; nu blochează nimic): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target commit `41e44ba` → pre-release → Publish.
-- Fără fereastra pe workstation, pașii „fără placă” sunt aproape terminați.

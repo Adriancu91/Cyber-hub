@@ -23,3 +23,5 @@
 - 2026-10-28 01:45 — Rândul „ecran:” din os-192 (C-26) e folosit: devine zona din VRAM pe care driverul n-o atinge; B0 trece pe os-192.
 - 2026-10-28 07:50 — Sesiunea 12 (cloud, fără placă): încărcătorul DMA al programelor semnate (FWSEC, Booter) + registrele ROM-ului de pornire, după RM 570.144; pornirea FWSEC → Booter cap-coadă pe un motor DMA și un „ROM” simulate. Doar SIMULARE; 229 de teste, CI verde.
 - 2026-10-28 07:50 — Comanda FRTS pusă în FWSEC (zona protejată de 1 MiB); constatare: RM cere programele semnate în RAM → pe placă trebuie Bus Master (doar în fereastra cu Adrian).
+- 2026-10-28 13:50 — Sesiunea 13 (cloud): primele rezultate pe placa reală citite — I0, I1, I2 trec, I3 pică la 0x24600 (imagine „NV”). C-30 gata: diagnosticul VBIOS doar citire + parserul acceptă imaginile „NV” (ca nouveau). Doar SIMULARE; 243 de teste, CI verde.
+- 2026-10-28 13:50 — Pentru OS (C-31): `vbios_diag::diagnose` + `lines()`, nota în `integration/cyber-universe/C-31_gpu-vbios-detalii.md`; OS-ul se construiește cu fixarea pe `4538f90`.
