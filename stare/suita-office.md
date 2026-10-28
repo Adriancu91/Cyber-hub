@@ -1,15 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 07:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 07:50 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, acum în Notițe și PDF (scorurile cele mai mici). Sesiunea 06:22–07:15, 3 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
-  - **PDF: fire de articol**: în Cuprins → Articole, textele care continuă de la o pagină la alta (coloane de revistă) se citesc casetă cu casetă (◀ ▶); se pot face articole noi, adăuga sau scoate casete.
-  - **Notițe: Export sarcini (.ics)**: rândurile de bifat devin sarcini pentru programul de e-mail / calendar (cele bifate terminate, mementoul ca termen).
-  - **PDF → Docs / .docx cu poze**: pozele din PDF intră în document la locul lor, între paragrafe.
+- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 07:13–07:50, 5 commituri, testele trec, textele noi traduse (verificat și pe ecran, în engleză):
+  - **Docs: Scindare** (Vizualizare → Fereastră, sau Ctrl+Alt+S): același document în două părți, derulate separat; ce scrii sus apare imediat și jos.
+  - **Slides: 📏 Riglă** în ✏ Desenează (și în desenele din Docs / Sheets): liniile începute lângă riglă ies drepte; rigla se mută și se rotește.
+  - **Docs: ✎ Desenare tabel** (Inserare → ▦): tragi un dreptunghi = tabel; o linie în el = rând sau coloană nouă.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 86,1%, Excel 85,5%, PowerPoint 85,7%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 77,0%, Photoshop 78,3%, formule 97,1%.
+- Scoruri: Word 86,4%, Excel 85,5%, PowerPoint 86,1%, Clipchamp 79,4%, Notițe 78,7%, Acrobat 77,0%, Photoshop 78,3%, formule 97,1%.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (Acrobat, Notițe, Photoshop, Word, Excel, PowerPoint), câte una pe pas.
@@ -22,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce pe ecranul lui Docs → Vizualizare → ⊟ Scindare și Slides → ✏ Desenează → 📏 Riglă (rotită cu rotița mausului): sunt ușor de folosit?
 - Să încerce pe ecranul lui Notițe → Vizualizare → 📌 Lipește pe margine: coloana din dreapta e bine așezată și se citește ușor? (aici fereastra de test e ascunsă).
 - Să deschidă la serviciu un fișier salvat din Notițe → Fișier → Export sarcini (.ics): programul de e-mail pune sarcinile în lista lui? (aici n-am avut cu ce testa).
 - Să deschidă la serviciu un .docx făcut din PDF → → Docs → Salvează ca .docx, dintr-un PDF cu poze: pozele apar la locul lor?
