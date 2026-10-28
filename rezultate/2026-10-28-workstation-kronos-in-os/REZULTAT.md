@@ -19,3 +19,14 @@ Workstation Dell (i9-10980XE, 18 nuclee / 36 fire, 128 GB), pornit de pe stick (
   Toate cu reglajul „1 fir”. Repetiția e a modelului (greedy), nu a motorului.
 - **Concluzie: motorul KGR1 din OS e corect pe hardware real** (aceleași simboluri ca referința Python). Viteza e mult sub ce poate mașina
   (estimare: sute de simb/s pe 36 de fire), din cauza reglajului pe 1 fir și a împărțirii muncii.
+
+## Proba cu fire (`poza-4-fire-18-36.jpg`) — `run kronos --fire N --n 64 Buna ziua`
+| fire | viteză | text |
+|---|---|---|
+| 1 (din reglaj) | **7,9 simb/s** | identic |
+| 18 | 6,2 simb/s | identic |
+| 36 | 4,8 simb/s | identic |
+- **Mai multe fire = mai lent**, deși ieșirea e identică (bine: determinist). Rândul `cpu:` după `cpu porneste` spune „36 nuclee pornite din 36
+  (**parcate: firele rămân pe primul nucleu**)” — de verificat dacă firele programului rulează cu adevărat pe celelalte nuclee.
+- Și pe 1 fir e lent: ~0,1 GB de greutăți pe simbol ar trebui să dea zeci de simb/s pe un nucleu (lățimea de bandă a memoriei), nu 8.
+- Încărcarea modelului: ~31 s pentru 105 MiB (~3,5 MB/s de pe stick).

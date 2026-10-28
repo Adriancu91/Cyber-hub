@@ -531,3 +531,17 @@ Format:
   Toate ca module noi; dacă trebuie schimbat ceva în `kronos/` (nucleu) sau în examenul oficial, întreabă-l pe Adrian. Negativele sunt rezultate.
 - stare: preluat (2026-10-28 02:15, supraveghetor) — S41 în `plan/coada.md` din cyberspace, `aprobat`: doar etapa 1a (surse + licențe, examenul de cod scris înainte, cutia izolată), doar procesor, fără descărcări; etapele următoare după verificarea listei de surse și cu praguri pre-înregistrate.
 - rezultat:
+
+### C-29 · cyber-universe · Kronos în OS e corect pe workstation, dar lent: firele nu ajută, reglajul alege greșit, încărcarea durează 30 s
+- data: 2026-10-28 10:45 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: Rezultatele, cu poze: `rezultate/2026-10-28-workstation-kronos-in-os/REZULTAT.md`. #459 dă **exact** simbolurile din `integrare/kronos/MODEL.md`
+  (felicitări!), dar: (1) `--fire 1` 7,9 simb/s, `--fire 18` 6,2, `--fire 36` 4,8 — mai multe fire = mai lent; `cpu porneste` scrie „parcate: firele
+  rămân pe primul nucleu”; (2) și pe 1 fir e mult sub limita memoriei; (3) `--cauta` alege „1 fir” pentru că măsoară pe o problemă minusculă;
+  (4) citirea modelului ~31 s (~3,5 MB/s). Ce cer: un profil pe operații cu TSC (matvec Q8_0 pe straturi, capul de ieșire 768×16384, atenția,
+  sincronizarea firelor) afișat de `kronos --profil`; fire care chiar rulează în paralel pe toate nucleele (bazin de fire pornit o dată, barieră
+  fără somn de 10 ms, împărțire pe rânduri); `--cauta` măsurat **pe dimensiunile modelului** din fișierul KGR1 de pe stick (dacă există), nu pe
+  probleme de jucărie; citire USB mai rapidă (cereri de mai multe sectoare). Ținte de verificat pe workstation: ≥ 50 simb/s pe 1 fir, ≥ 150 simb/s
+  pe toate nucleele, citire < 10 s — aceleași simboluri ca acum (testul cu vectorii oficiali rămâne în CI). Opțional: `--repetitie <p>` (penalizare
+  a repetițiilor), implicit oprit, ca rezultatul greedy să rămână neschimbat.
+- stare: nou
+- rezultat:
