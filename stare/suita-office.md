@@ -1,17 +1,17 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-28 19:23 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-28 20:07 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 18:39–19:23, 4 pași, testele trec, textele noi traduse:
-  - **Imagini → Felii:** și o pagină web (.html) care pune feliile la loc, cu o legătură (opțională) pe fiecare felie; feliile desenate se pot muta și mări / micșora din colț.
-  - **Docs:** Aspect → Margini → Doar secțiunea aceasta (1–3 cm): margini diferite doar pentru o secțiune, în .docx și la tipărire / PDF.
+- Lucrăm la „funcțiile care lipsesc”, câte una pe pas. Sesiunea 19:25–20:07, 3 pași, testele trec, textele noi traduse:
+  - **Slides → Animații → Cale: Desenată de mână:** tragi cu mouse-ul pe slide drumul pe care îl face caseta în prezentare (se păstrează și în .pptx; căile desenate în alte programe nu se mai pierd).
+  - **⇄ Inversează calea** (caseta face drumul invers) și drumul căii arătat punctat pe slide (început verde, capăt roșu).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: Word 87,3%, Excel 85,7%, PowerPoint 88,5%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar, câte una pe pas (de ex. căi de mișcare desenate de mână în Slides, antet diferit pe secțiune și pagina culcată arătată și pe ecran în Docs).
+- Alte funcții „parțial” / „nu” din inventar, câte una pe pas (de ex. antet diferit pe secțiune și pagina culcată arătată și pe ecran în Docs, mutarea punctelor unei căi de mișcare în Slides).
 - Lipirea conectorilor de elipse în .pptx: doar după un fișier real care o arată (în colecția de test nu e niciunul, iar numerotarea punctelor nu o ghicim).
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
@@ -30,6 +30,7 @@
 - Să încerce Docs → Revizuire → Compară cu un .docx… → 📝 Document marcat pe un contract real primit înapoi: se vede bine ce s-a schimbat? Și un .docx cu Aspect → Întreruperi → Secțiune: Pagina următoare, deschis la serviciu: secțiunea nouă începe pe pagina următoare?
 - Să încerce Sheets → Date → Preluare date → Din imagine… cu o poză făcută cu telefonul unui tabel adevărat: ies bine rândurile și coloanele? Și Docs → Aspect → Orientare → Doar secțiunea aceasta: Orizontală, apoi Export .docx deschis la serviciu: doar pagina aceea e culcată?
 - Să încerce Imagini → Fișier → ✂ Felii… cu „Și o pagină web (.html)” și o legătură pe o felie, apoi să deschidă pagina în browser: poza apare întreagă și legătura merge? Și Docs → Aspect → Margini → Doar secțiunea aceasta: 1 cm, apoi Export .docx deschis la serviciu: doar secțiunea aceea are margini înguste?
+- Să încerce Slides → un titlu → Animații → Cale: Desenată de mână → trage un drum cu mouse-ul → F5: titlul merge pe drumul lui? Și Export .pptx deschis la serviciu: face același drum?
 - Să încerce Docs → Revizuire → ✓ Gramatică pe un document adevărat de-al lui: arată greșeli care nu sunt greșeli?
 - Să încerce Slides → Prezentare → 🎙 Înregistrează cu microfonul lui și Slides → Inserare → 🖵 Înregistrare ecran pe ecranul lui: se aude vocea / sunetul? Are vocea și în MP4?
 - Să salveze din Docs un .docx cu un cuvânt pus aldin cu Urmărește modificările pornit și să-l deschidă la serviciu: apare ca „Formatat: Aldin”?
