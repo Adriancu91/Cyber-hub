@@ -623,3 +623,15 @@ Format:
   Dacă pasul (2) cere cod nou în OS, scrie o comandă-propunere pentru `cyber-universe` în `idei/` (centrul de comandă o aprobă).
 - stare: gata (preluat 2026-10-28 20:35 UTC, terminat 20:50 UTC, sesiunea Cyber-GPU 15) — commit-uri `2c9c90c`, `51848d6` pe `g0-g2-fundatie`; doar SIMULARE
 - rezultat: pașii ferestrei sunt în `cyber-gpu/docs/FEREASTRA_C-36.md` și pe scurt în `stare/cyber-gpu.md` (verificarea fișierelor de pe stick e scrisă și testată în simulare, iar comenzile din OS sunt propuse în `idei/2026-10-28_cyber-universe_gpu-firmware-fwsec.md`).
+
+### C-37 · cyber-universe · CI: verificarea accesului la cyber-gpu pică din cauza credențialelor lăsate de `actions/checkout`
+- data: 2026-10-29 00:15 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: Adrian a făcut cheia `CYBER_GPU_TOKEN` (fine-grained, doar `cyber-gpu`, Contents: Read-only) și a pus-o ca secret. Pasul
+  `tools/ci-cyber-gpu-acces.sh` tot pică („GitHub refuza cyber-gpu”, run 40774740427, încercarea 3, 22:12 UTC). Cauza probabilă:
+  `actions/checkout@v4` (pasul de la rândul 22 din `ci.yml`) salvează în configul local al depozitului un antet
+  `http.https://github.com/.extraheader` cu `github.token`, iar `git ls-remote` rulat în dosarul de lucru trimite acel antet în locul
+  cheii din URL → GitHub vede doar tokenul workflow-ului, care nu vede `cyber-gpu`. Reparația propusă: `persist-credentials: false` la acel
+  checkout (sau verificarea și fetch-ul cu `git -c http.https://github.com/.extraheader=`), apoi rulează CI-ul și confirmă că trece de pas.
+  Dacă și după reparație GitHub refuză, scrie mesajul exact în `stare/cyber-universe.md` (atunci e cheia, și o verifică Adrian).
+  Nu afișa niciodată cheia în jurnal.
+- stare: nou
