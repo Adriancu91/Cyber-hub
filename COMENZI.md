@@ -609,4 +609,4 @@ Format:
   + `VERSIUNE.txt` (număr, commit, ora UTC, SHA-256 al arhivei) + un `README.md` scurt (ce e nou față de `os-197`). Ține doar ultima arhivă
   (înlocuiește-o pe cea veche, nu le aduna). Rulează înainte testele QEMU. Centrul de comandă i-o trimite lui Adrian.
   Repetă la fiecare schimbare care ajunge pe stick, până se rezolvă CI-ul.
-- stare: nou
+- stare: preluat (2026-10-28 20:25 UTC, sesiunea OS) — P6-32 în `docs/TASKS.md`
