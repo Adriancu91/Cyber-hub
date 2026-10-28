@@ -21,3 +21,5 @@
 - 2026-10-27 19:55 — Matmul treapta 5 (8×8 rezultate pe fir) compilată cu NAK, identică bit cu bit cu calculul de control în model; 211 teste, CI verde. Nimic rulat pe placă.
 - 2026-10-28 01:45 — Sesiunea 11 (cloud, fără placă): I9b — tabelele de pagini scrise în memoria plăcii printr-o fereastră BAR0, cu recitire, zone protejate (ecranul, GSP-RM) și golirea TLB; 4 registre, totul în spatele `hw-write`. Doar SIMULARE; 220 de teste, CI verde.
 - 2026-10-28 01:45 — Rândul „ecran:” din os-192 (C-26) e folosit: devine zona din VRAM pe care driverul n-o atinge; B0 trece pe os-192.
+- 2026-10-28 07:50 — Sesiunea 12 (cloud, fără placă): încărcătorul DMA al programelor semnate (FWSEC, Booter) + registrele ROM-ului de pornire, după RM 570.144; pornirea FWSEC → Booter cap-coadă pe un motor DMA și un „ROM” simulate. Doar SIMULARE; 229 de teste, CI verde.
+- 2026-10-28 07:50 — Comanda FRTS pusă în FWSEC (zona protejată de 1 MiB); constatare: RM cere programele semnate în RAM → pe placă trebuie Bus Master (doar în fereastra cu Adrian).
