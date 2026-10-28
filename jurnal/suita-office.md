@@ -188,3 +188,5 @@
 - 2026-10-28 00:07 — Imagini, textul din Adnotează: spațierea literelor și a rândurilor, dublu clic ca să schimbi un text pus, casetă de paragraf cu rânduri care se rup singure, retragerea primului rând și spațiul după paragraf; 4 commituri, testele trec (Photoshop 74,9%).
 - 2026-10-28 00:51 — Imagini, pensula: vârf reglabil (duritate, spațiere, rotunjime, unghi), pensulă de amestec, variații la întâmplare și împrăștiere, pensule gata făcute; 4 commituri, testele trec (Photoshop 75,2%).
 - 2026-10-28 01:42 — Imagini: pensula artistică a istoricului, estompare pe drum, traseu cu Curbură, relief la Pictură în ulei, zgomot de culoare și pătrățele JPEG la Reducere zgomot; filtrele din nou rapide; 5 commituri, testele trec (Photoshop 76,3%).
+
+- 2026-10-28 02:26 — Imagini: Efecte de lumină (tipuri, culoare, a doua lumină, relief), Estompare de obiectiv (forma diafragmei, hartă de adâncime, zgomot), Reducere zgomot pe canale și Clarifică detaliile; 4 commituri, testele trec (Photoshop 76,7%).
