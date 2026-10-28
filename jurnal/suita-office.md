@@ -222,3 +222,5 @@
 - 2026-10-29 00:08 — Deschiderea .pptx: formele necunoscute, diagramele SmartArt și casetele cu înălțimea 0 nu mai dispar; .pptx fără pierderi 17 → 24 din 36 (382 / 531 în total).
 - 2026-10-29 00:57 — Desenele vechi .wmf / .emf (clipart, sigle, pictograme) se văd acum în Slides, Docs și Sheets; cititorul e scris de la zero.
 - 2026-10-29 00:57 — Obiectele încorporate și pozele TIFF din .pptx nu mai dispar; .pptx fără pierderi 24 → 30 din 36 (388 / 531 în total).
+- 2026-10-29 01:44 — Slides: butoanele de acțiune și pozele cu variantă PDF din .pptx nu mai dispar (.pptx fără pierderi 30 → 33 din 36); Docs: textul din ovalurile vechi și din documentele cu mai multe corpuri se citește.
+- 2026-10-29 01:44 — Sheets: formulele pe mai multe foi (=SUM(Ianuarie:Martie!B5)) se calculează; în total 398 / 531 de fișiere reale fără pierderi (erau 388).

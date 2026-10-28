@@ -1,19 +1,20 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 00:57 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 01:44 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc” și la compatibilitate. Sesiunea 00:10–00:57, 4 pași, testele trec (fără texte noi pe ecran):
-  - **Desenele vechi .wmf / .emf** (clipart, sigle, pictogramele fișierelor încorporate) se văd acum în Slides, Docs și Sheets, la deschiderea .pptx, .docx, .xlsx, .rtf, .odt, .odp. Cititorul e scris de la zero.
-  - **Obiectele încorporate** dintr-un .pptx (o foaie sau un document pus în prezentare, și cele salvate în stilul vechi) apar cu previzualizarea lor, nu mai dispar.
-  - **Pozele TIFF** din .pptx se văd.
-  - Pe colecția de test: .pptx fără pierderi de la 24 la **30** din 36; în total **388** din 531 de fișiere reale se deschid fără pierderi.
+- Lucrăm la „funcțiile care lipsesc” și la compatibilitate. Sesiunea 00:58–01:44, 6 pași, testele trec (fără texte noi pe ecran):
+  - **Slides (.pptx):** butoanele de acțiune (Înainte, Înapoi, Acasă…) apar, cu legătura lor; pozele puse ca PDF își iau poza de rezervă; pozele din substituenți și pozele fără fișier nu mai dispar. .pptx fără pierderi: **33** din 36.
+  - **Docs (.docx):** textul din ovalurile / arcele desenate în stilul vechi nu se mai pierde; documentele stricate cu mai multe „corpuri” de text se citesc întregi.
+  - **Sheets:** formulele pe mai multe foi, de exemplu `=SUM(Ianuarie:Martie!B5)` (totaluri pe lună / trimestru), se calculează și se păstrează la redenumirea foilor.
+  - Testul de compatibilitate măsoară mai corect (textul casetelor numărat o dată, antetele / subsolurile căutate și în setările paginii).
+  - Pe colecția de test: **398** din 531 de fișiere reale se deschid fără pierderi (erau 388 la începutul sesiunii).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: Word 88,0%, Excel 86,1%, PowerPoint 89,0%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
 
 ## Urmează
-- La .pptx mai rămân: poze decupate până la 0, o poză fără fișier, un PDF pus ca poză; la .odp, previzualizările în formatul SVM.
+- Graficele din .docx; formulele necunoscute rămase din .ods / .xlsx; la .odp, previzualizările în formatul SVM.
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
