@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-28 19:55 (ora României) · **de:** sesiunea OS programată · ultimul Release **`os-197`** (CI oprit de la 14:51; `gpu vbios --detalii` NU e încă pe niciun stick)
+**Actualizat:** 2026-10-28 20:42 (ora României) · **de:** sesiunea OS programată (oprire scurtă) · ultimul Release **`os-197`** (CI oprit de la 14:51; `gpu vbios --detalii` NU e încă pe niciun stick)
 
 ## Acum
 - **C-31 gata în cod (P6-31):** `gpu vbios --detalii` listează structura VBIOS (imagini, PCIR, NPDE, rupturi, tabela BIT, rezumatul cu

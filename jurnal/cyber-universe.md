@@ -67,3 +67,4 @@
 - 2026-10-28 17:45 — oprire scurtă: nicio comandă nouă; B-005 tot activ (`cyber-gpu` privat, OS-ul nu se poate construi); CI oprit, ultimul Release os-197.
 - 2026-10-28 19:55 — C-31 gata în cod (P6-31): `gpu vbios --detalii` doar citire, Cyber-GPU fixat pe 8313973, construit din copia din hub (B-005 ocolit); fără Release: CI oprit (repo privat, fără minute).
 - 2026-10-28 20:00 — trecere extra („reia C-31”): C-31 era deja gata în cod (ba572c6); rămâne doar Release-ul (CI oprit).
+- 2026-10-28 20:42 — oprire scurtă: nicio comandă nouă, coada fără sarcini libere; CI/Release tot oprite, aștept alegerea lui Adrian (1/2/3).
