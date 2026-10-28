@@ -545,3 +545,24 @@ Format:
   a repetițiilor), implicit oprit, ca rezultatul greedy să rămână neschimbat.
 - stare: nou
 - rezultat:
+
+### C-30 · cyber-gpu · I3 pe placa reală: lanțul VBIOS se rupe la 0x24600 („așteptat 0xaa55, citit 0x4e56”)
+- data: 2026-10-28 10:50 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: **Fereastra pe workstation de azi: I0, I1 și I2 trec pe placa reală** (`BOOT_0 = b74000a1`, `BOOT_42 = 174a1000`, GFW 0xff în 3 µs, 0 scrieri);
+  **I3 pică**: semnătura `0xAA55` la 0x300000 e bună (`0xeb7faa55`), dar la 0x24600 parserul așteaptă următoarea imagine și citește `0x4e56`.
+  Detalii și poze: `rezultate/2026-10-28-workstation-kronos-in-os/REZULTAT.md`. (1) Fă în `nvidia-ga104` o funcție de diagnostic **doar citire**
+  care listează structura VBIOS-ului fără să-l copieze: pentru fiecare imagine găsită — offsetul, semnătura, câmpurile PCIR (vendor, device,
+  tip cod, lungime, indicatorul „ultima imagine”), NPDE/„NVGI” dacă există, plus primii 16 octeți la fiecare offset unde lanțul se rupe;
+  cel mult câteva sute de rânduri. Fără conținutul imaginilor (firmware NVIDIA/ASUS: nu se distribuie). (2) Fă parserul să treacă de containerele
+  NVIDIA cunoscute (NVGI / NPDE) dacă documentația publică o susține; test pe o imagine sintetică care reproduce situația. Totul în SIMULARE,
+  apoi verificăm la următoarea fereastră. Nicio scriere în placă.
+- stare: nou
+- rezultat:
+
+### C-31 · cyber-universe · `gpu vbios --detalii` (după C-30)
+- data: 2026-10-28 10:50 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: Când Cyber-GPU (C-30) are funcția de diagnostic VBIOS: mută fixarea pe commit-ul lor nou (doar adăugări), expune-o ca `gpu vbios --detalii`
+  (pe ecran și în `raport`), doar citire, cu „0 scrieri” afișat; test în CI cu `--sim`; Release nou pentru următoarea fereastră pe workstation.
+  Împreună cu C-29 (viteza lui Kronos), ca un singur stick să le testeze pe amândouă.
+- stare: nou
+- rezultat:

@@ -43,3 +43,10 @@ Workstation Dell (i9-10980XE, 18 nuclee / 36 fire, 128 GB), pornit de pe stick (
 - `bar0 r 0x118128 = 0x00008b8f` (bitul 0 = 1 ✔), `bar0 r 0x118234 = 0x000003ff` (`& 0xff = 0xff` ✔) → „pas I2: GFW_BOOT: ok”;
   „GFW gata (progres 0xff) după 1 rundă, 3 µs; PRIV_LEVEL_MASK 0x00008b8f”; 1 pagină mapată (doar citire); **0 scrieri**.
 - Exact criteriul I2 din `docs/GA104_INITIALIZATION.md`. **I2 confirmat pe hardware.**
+
+## `gpu vbios` pe placa reală (`poza-7-gpu-vbios.jpg`) — I3, doar citire: **EȘEC la parcurgerea lanțului**
+- `bar0 r 0x300000 = 0xeb7faa55` → semnătura `0xAA55` la începutul ferestrei PROM ✔ („pas I3: VBIOS prin PROM: EȘEC” după aceea).
+- **„VBIOS: verificare eșuată la 0x24600: așteptat 0xaa55, citit 0x4e56”**; 3 pagini mapate (doar citire); **0 scrieri**.
+- `0x4e56` ca octeți = `56 4E` („VN”) — seamănă cu o bucată dintr-un antet „NVGI”/container NVIDIA, nu cu începutul unei imagini PCI. Ipoteză
+  (neverificată): lungimea primei imagini (sau saltul NPDE/„NVGI”) e calculată diferit pe acest VBIOS (ASUS, subsistem 1043:8813). Datele de diagnostic
+  lipsesc → C-30/C-31.
