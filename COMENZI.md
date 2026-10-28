@@ -620,4 +620,4 @@ Format:
   verificarea fișierelor de pe stick (sume, antete; tot fără scrieri în placă); (3) ce urmează doar dacă (1) și (2) trec, cu ce scrie în
   placă marcat clar și cu oprire sigură. Scrie-i în `stare/cyber-gpu.md` la „nevoie de Adrian”, în română simplă.
   Dacă pasul (2) cere cod nou în OS, scrie o comandă-propunere pentru `cyber-universe` în `idei/` (centrul de comandă o aprobă).
-- stare: nou
+- stare: preluat (2026-10-28 20:35 UTC, sesiunea Cyber-GPU 15)
