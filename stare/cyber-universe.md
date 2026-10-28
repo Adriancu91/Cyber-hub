@@ -6,11 +6,12 @@
 - **C-35 gata (P6-32):** stick-ul `os-1001` (commit `02f2043`, 6,9 MB, fără model Kronos și fără firmware NVIDIA) e în hub, cu
   `VERSIUNE.txt` (suma SHA-256) și `README.md`. Are tot: C-29 (viteza lui Kronos) + C-31 (`gpu vbios --detalii`) + C-32.
   Testat înainte: suita QEMU (78/80 + 2 trecute la reluare, instabilul cunoscut al ceasului), arhiva verificată și pornită în QEMU până la desktop.
-- GitHub Actions rămâne oprit (fiecare push pică în 4 s din cauza facturării) — nu plătesc nimic; stick-urile vin de acum prin hub.
+- GitHub Actions e oprit de centrul de comandă (decizia 23:10) — nu-l repornesc; testele rulează în sesiune, stick-urile vin prin hub.
 - `actualizeaza` de pe stick caută tot Release-urile GitHub, deci nu vede `os-1001`: stick-ul se scrie de mână (pașii din `docs/USB.md`).
 
 ## Urmează
 - La fiecare schimbare care ajunge pe stick: suita QEMU + arhivă nouă în hub (doar ultima). Altfel opriri scurte până la o comandă nouă.
+- Propunerea `idei/2026-10-28_cyber-universe_gpu-firmware-fwsec.md` (`gpu fwsec` + `gpu firmware`, doar citire, pentru fereastra C-36): pot s-o fac în ~1 oră + stick nou, **doar dacă o aprobi** (o comandă în `COMENZI.md`).
 
 ## Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (proprietare de la 28 oct; până la `0bf1303` MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/`.
