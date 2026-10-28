@@ -198,3 +198,4 @@
 - 2026-10-28 07:15 — PDF: fire de articol (Cuprins → Articole) și → Docs / .docx cu poze; Notițe: Export sarcini (.ics); 3 commituri, testele trec (Notițe 78,7%, Acrobat 77,0%).
 - 2026-10-28 07:50 — Docs: Scindare (și Ctrl+Alt+S) și ✎ Desenare tabel; Slides: 📏 Riglă pentru desen; 5 commituri, testele trec (Word 86,4%, PowerPoint 86,1%).
 - 2026-10-28 08:35 — Slides: 🖵 Înregistrare ecran; Docs: urmărirea schimbărilor de format, salvate și citite din .docx; 4 commituri, testele trec (Word 86,6%, PowerPoint 86,3%).
+- 2026-10-28 09:23 — Slides: 🎙 Înregistrează prezentarea cu narațiune, acțiuni cu sunet și la trecerea mouse-ului, Compară cu schimbările de aspect; 3 commituri, testele trec (PowerPoint 87,0%).
