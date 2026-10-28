@@ -1,32 +1,29 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-10-28 22:50 (ora României) · **de:** sesiunea Cyber-GPU 15 (cloud, fără placă)
+**Actualizat:** 2026-10-29 01:50 (ora României) · **de:** sesiunea Cyber-GPU 16 (cloud, fără placă)
 
 ## Acum
-- **C-36 gata (pregătirea ferestrei I3 → I4):** pașii exacți sunt în `cyber-gpu/docs/FEREASTRA_C-36.md` (rezumat mai jos, la „nevoie de Adrian”).
-- Cod nou, **doar în SIMULARE**: `fw_check` verifică, fără să atingă placa, toate cele 4 fișiere firmware de pe stick (lipsă / altă mărime /
-  alt conținut / oficial) și spune separat dacă greșeala e în fișier sau în codul nostru; rândurile I3b (unde e FWSEC în VBIOS) pentru ecran.
-  Commit-uri `2c9c90c`, `51848d6` pe `g0-g2-fundatie`. 251 de teste trec în sesiune; nimic nu scrie în placă.
-- Pentru OS: comanda-propunere `idei/2026-10-28_cyber-universe_gpu-firmware-fwsec.md` (`gpu fwsec` + `gpu firmware`, ambele doar citire);
-  schița a fost compilată într-o copie a OS-ului (repo-ul OS neatins).
-- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `0d06f4d` (verificată, clonare de probă cu teste verzi).
-- CI-ul GitHub tot nu pornește (repo privat, fără minute). Testele rulează în fiecare sesiune.
+- Nicio comandă nouă pentru noi; C-36 (pregătirea ferestrei I3 → I4) e gata și așteaptă fereastra cu Adrian.
+- Pas nou, **doar în SIMULARE**: I9c — „clientul de lucru”. După „golden image”, driverul deschide al doilea client și îi spune lui GSP-RM,
+  prin mesajul `SET_PAGE_DIRECTORY`, că spațiul lui de adrese folosește tabelele de pagini făcute de noi (după RM 570.144 și tinygrad, MIT).
+  Structurile mesajului sunt generate din antetele NVIDIA. Commit `695e537` pe `g0-g2-fundatie`; 256 de teste trec în sesiune; nimic nu scrie în placă.
+- Testele automate GitHub merg din nou (Adrian a plătit): rulările 60 și 61 (`695e537`) verzi.
+- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `695e537` (verificată, clonare de probă cu teste verzi).
 
 ## Urmează
-- Fereastra C-36 pe workstation (posibil 29 oct, cu Adrian): pașii 1 → 2 → 3.
-- Sesiunea OS: propunerea din `idei/` (dacă e aprobată) + stick nou prin hub (C-35).
-- Fără placă: treapta 6 matmul (Mesa NAK pe gazdă); `SET_PAGE_DIRECTORY`.
+- Fereastra C-36 pe workstation (cu Adrian): pașii 1 → 2 → 3 (mai jos).
+- Fără placă: restul I9 pentru clientul de lucru (grupul de canale, contextul, canalul GPFIFO, jetonul soneriei); treapta 6 matmul.
 
 ## Ce oferă proiectul celorlalți
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Licență proprietară de la
-  commit-ul de după `8313973` (până atunci MIT). Față de `8313973`: **doar adăugări** — nou: `nvidia_ga104::fw_check`,
-  `fwsec::FwsecLocation::lines()`, `gpu_sim::fw_stick`. Schița pentru OS: `integration/cyber-universe/C-36_gpu-firmware-fwsec.md`;
-  ghid: `integration/cyber-universe/UTILIZARE.md`. Sursa: bundle-ul din hub.
+  commit-ul de după `8313973` (până atunci MIT). Față de `8313973`: **doar adăugări** — nou în sesiunea 16: `nvidia_ga104::gsp::user_space`,
+  `gsp::rmapi::{user_vaspace_params, set_page_directory_rpc, check_root}`, `GoldenImage::next_handle`. OS-ul nu trebuie să schimbe nimic.
+  Schița pentru OS: `integration/cyber-universe/C-36_gpu-firmware-fwsec.md`; ghid: `integration/cyber-universe/UTILIZARE.md`.
 - Pentru mai târziu (doar în fereastra cu Adrian): pornirea reală a GSP va cere de la OS o zonă de RAM contiguă (sub 2^49) și Bus Master.
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: `gpu fwsec` + `gpu firmware` (propunerea din `idei/`) pe stick-ul pentru fereastră, dacă se aprobă; altfel ajunge stick-ul cu C-31.
+- De la `cyber-universe`: `gpu fwsec` + `gpu firmware` (propunerea din `idei/2026-10-28_cyber-universe_gpu-firmware-fwsec.md`) pe stick-ul pentru fereastră, dacă se aprobă; altfel ajunge stick-ul cu C-31.
 - De la `kronos`: workstation-ul, doar în fereastra aprobată de Adrian.
 
 ## Blocaje / nevoie de Adrian
@@ -45,5 +42,4 @@
    cablul scos 30 s. La final, în Windows, `nvidia-smi` trebuie să vadă placa.
    Pornirea plăcii cu driverul nostru **nu** se face acum (vine într-o fereastră separată).
 4. După: pozele (+ folderul `proba-tinygrad/`) în hub `rezultate/2026-10-29-workstation-gpu/`. **Fișierele firmware nu le pui în hub.**
-- **De decis (fără grabă):** testele automate GitHub nu rulează cu repo-ul privat (merge și așa, testele rulează în fiecare sesiune).
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
