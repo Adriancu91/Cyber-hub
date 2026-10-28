@@ -610,3 +610,14 @@ Format:
   (înlocuiește-o pe cea veche, nu le aduna). Rulează înainte testele QEMU. Centrul de comandă i-o trimite lui Adrian.
   Repetă la fiecare schimbare care ajunge pe stick, până se rezolvă CI-ul.
 - stare: preluat (2026-10-28 20:25 UTC, sesiunea OS) — P6-32 în `docs/TASKS.md`
+
+### C-36 · cyber-gpu · Firmware-ul 570.144 e la Adrian: pregătește fereastra I3 → I4
+- data: 2026-10-28 22:30 · de la: Adrian („ok atunci cu firmware de la ei… spune-i lui gpu”, prin centrul de comandă)
+- ce: Centrul de comandă a descărcat cele 4 fișiere `*-570.144.bin` din linux-firmware (commit `050f0a1e3a76`) și i le-a trimis direct lui Adrian,
+  cu `LICENCE.nvidia`; toate cele 4 SHA-256 se potrivesc cu `docs/COMPATIBILITATE_FIRMWARE.md`. **Nu sunt în niciun repo și nici în hub.**
+  Adrian le pune pe stick la `firmware/nvidia/ga102/gsp/`. Fereastra posibilă: 29 oct, cu Adrian de față.
+  Pregătește pașii exacți pentru fereastră, în ordine: (1) `gpu vbios` + `--detalii` (I3, doar citire); (2) dacă I3 trece: citirea și
+  verificarea fișierelor de pe stick (sume, antete; tot fără scrieri în placă); (3) ce urmează doar dacă (1) și (2) trec, cu ce scrie în
+  placă marcat clar și cu oprire sigură. Scrie-i în `stare/cyber-gpu.md` la „nevoie de Adrian”, în română simplă.
+  Dacă pasul (2) cere cod nou în OS, scrie o comandă-propunere pentru `cyber-universe` în `idei/` (centrul de comandă o aprobă).
+- stare: nou
