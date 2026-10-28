@@ -220,3 +220,5 @@
 - 2026-10-28 23:25 — Docs: antetul fiecărei secțiuni vizibil și pe ecran, Îmbinare → Tipărește exemplarele (toate / unul / de la … până la …); Sheets: Date → Preluare date → Din PDF…; 3 commituri, testele trec (Word 88,0%, Excel 86,1%).
 - 2026-10-29 00:08 — Slides: stilurile de tabel în 8 culori (și culoarea „Accent 2…6” din .pptx); Sheets: 3 stiluri de tabel întunecate noi.
 - 2026-10-29 00:08 — Deschiderea .pptx: formele necunoscute, diagramele SmartArt și casetele cu înălțimea 0 nu mai dispar; .pptx fără pierderi 17 → 24 din 36 (382 / 531 în total).
+- 2026-10-29 00:57 — Desenele vechi .wmf / .emf (clipart, sigle, pictograme) se văd acum în Slides, Docs și Sheets; cititorul e scris de la zero.
+- 2026-10-29 00:57 — Obiectele încorporate și pozele TIFF din .pptx nu mai dispar; .pptx fără pierderi 24 → 30 din 36 (388 / 531 în total).
