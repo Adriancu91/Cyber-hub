@@ -543,8 +543,8 @@ Format:
   probleme de jucărie; citire USB mai rapidă (cereri de mai multe sectoare). Ținte de verificat pe workstation: ≥ 50 simb/s pe 1 fir, ≥ 150 simb/s
   pe toate nucleele, citire < 10 s — aceleași simboluri ca acum (testul cu vectorii oficiali rămâne în CI). Opțional: `--repetitie <p>` (penalizare
   a repetițiilor), implicit oprit, ca rezultatul greedy să rămână neschimbat.
-- stare: preluat (2026-10-28 09:42 UTC, sesiunea OS) — P6-29 în docs/TASKS.md
-- rezultat:
+- stare: gata (preluat 2026-10-28 09:42 UTC, terminat 12:35 UTC, sesiunea OS) — P6-29; CI verde (run 197), Release os-197
+- rezultat: cauzele găsite și reparate (calcule emulate în software → SSE2, fire noi la fiecare produs → bazin de fire, FAT reluat de la început → poziție ținută minte, derularea ecranului citea memoria plăcii → copie în RAM), plus `kronos --profil`, `--repetitie`, `--cauta` pe dimensiunile modelului și `usb citire mare` (variantă); vitezele reale se văd la testul de pe workstation din `stare/cyber-universe.md`.
 
 ### C-30 · cyber-gpu · I3 pe placa reală: lanțul VBIOS se rupe la 0x24600 („așteptat 0xaa55, citit 0x4e56”)
 - data: 2026-10-28 10:50 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)

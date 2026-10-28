@@ -1,21 +1,23 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-28 09:45 (ora României) · **de:** sesiunea OS programată · ultimul Release **`os-195`** (CI verde)
+**Actualizat:** 2026-10-28 14:35 (ora României) · **de:** sesiunea OS programată · ultimul Release **`os-197`** (CI verde)
 
 ## Acum
-- **C-25 complet (P6-27 + P6-27b): Kronos vorbește în OS.** `kronos Ana are mere.` transformă textul în simboluri cu tokenizerul din fișierul
-  modelului, continuă textul (greedy) pe toate nucleele și îl scrie pe ecran pe măsură ce vine, cu simbolurile pe secundă. Tokenizerul e scris
-  de noi din descrierea din `integrare/kronos/format_greutati.md` (fără codul Kronos).
-- **Vectorii oficiali Kronos (C-24) trec în CI:** F32 și Q8_0 — simbolurile celor 3 texte, argmax pe fiecare poziție, 5 simboluri greedy (cu și
-  fără memoria cheilor/valorilor) și textul lor identice; logit-urile cu abatere ≤ 5,2e-6 (toleranța declarată 1e-4 / 1e-3). Local, tokenizerul
-  a dat aceleași simboluri ca expresia din specificație pe 23.008 texte.
-- **Reparat înainte de testul pe hardware:** modelul #459 are nevoie de 36 MiB pentru memoria cheilor/valorilor, mai mult decât heap-ul
-  programului (32 MiB) — ar fi căzut pe workstation. Acum stă într-o zonă de memorie separată (verificat cu un model de probă de 48 MiB).
-- C-27 gata (P6-28): `kronos-calcul --cauta` scrie reglajul pe stick; `kronos` îl folosește.
+- **C-29 gata (P6-29): de ce era Kronos lent în OS și ce s-a schimbat.** Am găsit patru cauze în cod:
+  1. Programele OS-ului făceau calculele cu virgulă **emulat în software** (fără unitatea de calcul a procesorului) — tot ce nu era produs
+     matrice-vector (atenția, LayerNorm, GELU) mergea de zeci de ori mai încet. Acum folosesc procesorul (SSE2), cu aceleași rezultate.
+  2. La fiecare produs (49 pe simbol) se porneau și se opreau fire noi — de aceea 36 de fire erau mai lente decât unul. Acum firele pornesc o
+     dată și așteaptă fără somn; atenția se împarte și ea pe fire.
+  3. Citirea de pe stick parcurgea fișierul de la început la fiecare bucată de 64 KiB → ~31 s. Acum continuă de unde a rămas.
+  4. Derularea textului pe ecran citea memoria plăcii video (lentă) și intra în timpul măsurat. Acum ecranul are o copie în memorie.
+- **Nou:** `kronos --profil` (unde se duce timpul fiecărui simbol), `kronos --repetitie 1.3` (opțional, contra repetițiilor), `kronos-calcul --cauta`
+  măsoară pe dimensiunile modelului de pe stick; `usb citire mare` = citire de 64 KiB pe comandă (variantă nouă, **implicit oprită**, regula
+  „o schimbare pe Release” la drivere).
+- Suita locală și CI trec (CI verde după o reluare a testului instabil `phase4`); vectorii oficiali Kronos identici.
+- Reparată și o blocare rară a nucleului la pornire (un mesaj de eroare scris pe ecran în timp ce alt fir derula textul).
 
 ## Urmează
-- Testul pe workstation cu modelul #459 (lista de mai jos), când Adrian are fereastră. Coada OS e goală până atunci (P6-10, P6-12 p.2 așteaptă
-  hardware; C-7, C-11 când se întoarce Adrian).
+- C-31 (`gpu vbios --detalii`) după ce Cyber-GPU termină C-30. Testul pe workstation de mai jos. Restul cozii așteaptă hardware.
 
 ## Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/`.
@@ -28,16 +30,15 @@
 - `cyber-gpu`: o ramură `main` sau un tag ar fi mai clar de fixat decât `dac2e32`; nu blochează.
 
 ## Blocaje / nevoie de Adrian
-- **Kronos #459 pe workstation (~20 min, cu `os-195` sau mai nou, Kronos oprit):**
-  1. Pe workstation, în `C:\Kronos\cyberspace`: comanda `gh release create kronos-kgr1-459 …` din `integrare/kronos/MODEL.md` (sau copiezi
-     direct fișierul `lucru\export\kronos_459_q8_0.kgr`).
-  2. Pe stick, în dosarul `kronos/`: `kronos_459_q8_0.kgr` și un fișier text `kronos_459_q8_0.kgr.sha256` cu rândul
-     `e80618b4ef555983085c3127acb10114e4f4915d939734207aa849ba0f6d382e`. Stick-ul trebuie să aibă `cyber.rw` pentru reglaj și raport.
-  3. În OS: `run kronos-calcul --cauta` (o dată; 36 de fire: vedem dacă firele multe câștigă), apoi `run kronos --n 5 Ana are mere.` →
-     așteptat simbolurile `2233, 1585, 32, 475, 50` și textul „ Acum are 1192”; `run kronos --n 5 Capitala României este` → „ orașul Baia
-     Mare.”; `run kronos --n 5 def suma(a, b):` → „return a + b” pe rândul următor. Apoi `run kronos --n 64 Bună ziua` pentru viteză
-     (simboluri/s), `hw` (rândul „ecran:” pentru Cyber-GPU), `raport`.
-  4. Poze cu ecranul sau `raport/*.txt` și `kronos/reglaj-*.txt` → în `rezultate/` din hub.
+- **Workstation, viteza lui Kronos (~25 min, `os-197`; pe stick rămân `kronos/kronos_459_q8_0.kgr` + `.sha256` și `cyber.rw`):**
+  1. `cpu porneste`, apoi `run kronos --n 5 Ana are mere.` → poză cu rândul „citit in … ms” (ținta < 10 s) și simbolurile `[2233, 1585, 32, 475, 50]`.
+  2. `usb citire mare`, apoi iar `run kronos --n 5 Ana are mere.` → același text, „citit in …” (64 KiB pe comandă; dacă apare vreo eroare USB:
+     `usb citire mica` și poză cu `log usb`).
+  3. `run kronos-calcul --cauta` (măsoară acum pe dimensiunile lui #459; scrie un reglaj nou) → poză cu ultimele rânduri.
+  4. `run kronos --profil --n 64 Buna ziua` → poză cu rândurile „profil:” (ținte: ≥ 150 simb/s pe toate nucleele).
+  5. `run kronos --profil --fire 1 --n 64 Buna ziua` (ținta ≥ 50 simb/s), apoi `--fire 18` și `--fire 36` → câte o poză.
+  6. `run kronos --n 5 def suma(a, b):` → „\n    return a + b” (simbolurile `[1510, 1947, 1358, 1646, 1376]`); opțional
+     `run kronos --repetitie 1.3 --n 64 Buna ziua`. La final `raport`; pozele + `raport/*.txt` + `kronos/reglaj-*.txt` → `rezultate/`.
 - **Test pe cele două laptopuri (~15 min, Secure Boot oprit, `os-194` sau mai nou):**
   - **AMD (Ryzen 5 4500U):** `run kronos-calcul` (așteptat „... (OK)”, fără #GP), `cpu porneste`, `run kronos-calcul`, `hw`, apoi
     `run kronos-calcul --cauta` (scrie `/usb/kronos/reglaj-….txt`; stick-ul trebuie să aibă `cyber.rw`), `raport`.
