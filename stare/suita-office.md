@@ -1,15 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 18:36 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 19:22 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 17:48–18:36, 5 pași, testele trec:
-  - **PDF → ✉ Trimite prin e-mail** (PDF-ul atașat, deschis în programul de e-mail; Suite nu trimite nimic singur).
-  - **PDF → ⧉ Combină** primește acum și documente (.docx, .odt, .rtf, .txt) și tabele (.xlsx, .ods, .csv, cu formulele calculate), lângă PDF-uri și poze.
-  - **PDF → ⚙ Lot** face câte un PDF separat din fiecare document sau tabel ales, cu operațiile bifate.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 18:37–19:22, 4 pași, testele trec:
+  - **PDF → ⧉ Combină / ⚙ Lot** primesc acum și **prezentări** (.pptx, .odp, .ppt: câte o pagină pe slide, desenată ca în Slides), **e-mailuri salvate** (.eml: antet, text, pozele din mesaj, lista atașamentelor) și **pagini web salvate într-un fișier** (.mht, și în Web → PDF).
+  - Tabelele .xlsx / .ods din Combină arată acum **ca în Sheets** (formatul sumelor, culori, chenare, celule îmbinate, zona de tipărire, formule din alte foi).
+  - Reparat: în PDF-urile făcute din documente și pagini web, literele legate („ti”, „fi”) nu se găseau la căutare.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 88,8%, Excel 87,5%, PowerPoint 89,2%, Clipchamp 80,5%, Notițe 79,9%, **Acrobat 80,4%**, Photoshop 79,8%, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
+- Scoruri: Word 88,8%, Excel 87,5%, PowerPoint 89,2%, Clipchamp 80,5%, Notițe 79,9%, **Acrobat 81,2%**, Photoshop 79,8%, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
@@ -21,7 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- Să încerce PDF → ⧉ Combină… cu un .docx, un .xlsx și un PDF de-ale lui, și PDF → ⚙ Lot… cu câteva .docx: paginile arată bine? Și PDF → ☰ Meniu → ✉ Trimite prin e-mail…: se deschide programul de e-mail cu PDF-ul atașat?
+- Să încerce PDF → ⧉ Combină… cu un .docx, un .xlsx colorat, o prezentare .pptx, un e-mail tras din programul de e-mail (.eml) și un PDF de-ale lui, și PDF → ⚙ Lot… cu câteva .docx: paginile arată bine (tabelul ca în Sheets, slide-urile ca în Slides, e-mailul cu antet și poze)? Și PDF → ☰ Meniu → ✉ Trimite prin e-mail…: se deschide programul de e-mail cu PDF-ul atașat?
 - Să încerce Docs → Fișier → ✉ Trimite prin e-mail… și Notițe → Fișier → ✉ Trimite prin e-mail (pe o notiță cu o poză): se deschide programul lui de e-mail cu documentul atașat / notița și poza în mesaj? Și Docs → Corespondență → 📨 Începere îmbinare → ✉ Câte un e-mail (.eml) cu un tabel cu adrese: mesajele se deschid gata de trimis? Și un text cu un cuvânt mare și unul cu alt font, lipit în Notițe: în 📖 Lectură arată la fel?
 - Să încerce Imagini → ⬚ Marcaj peste o semnătură scanată → 🖌 Definește pensulă → 🖌 Pensulă → „Pensulă proprie 1” → clic pe poză (apare semnătura?), și ✒ Traseu → ◇ Definește formă → ✎ Adnotează → Forme proprii: e ușor de folosit?
 - Să copieze dintr-o pagină web sau dintr-un document un text cu aldin, culori și titluri și să-l lipească în Notițe: în 📖 Lectură arată la fel? Și Notițe → Titlu… → Citat / Sursă / Cod.
