@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-29 17:51 (ora României) · **de:** sesiunea OS programată · **oprire scurtă; ultimul: C-40 gata (P6-36), CI verde, Release `os-208`**
+**Actualizat:** 2026-10-29 20:42 (ora României) · **de:** sesiunea OS programată · **OPRIT: necesită analiza lui Adrian** (coada goală; ultimul: C-40 gata, CI verde, Release `os-208`)
 
 ## Acum
 - **C-40 gata (P6-36) — frânele lui Kronos de pe workstation:**
@@ -15,7 +15,8 @@
 - Câștigul real (ținta ≥ 150 simb/s) se vede abia pe workstation.
 
 ## Urmează
-- Opriri scurte până la o comandă nouă (coada: P6-10, P6-12 p.2 așteaptă hardware; P5-07 blocat; C-7, C-11 după întoarcerea lui Adrian).
+- **Sesiunile OS sunt oprite** (regula de siguranță: 3 sesiuni la rând fără sarcină terminată). Nu încep nimic nou până la o comandă nouă în `COMENZI.md`
+  (coada: P6-10, P6-12 p.2 așteaptă hardware; P5-07 blocat; C-7, C-11 după întoarcerea lui Adrian; C-41 amânat).
 - După următoarea fereastră pe workstation: cifrele noi din `rezultate/` → pasul următor pentru viteză, dacă ținta nu e atinsă.
 
 ## Ce oferă proiectul celorlalți
@@ -27,7 +28,8 @@
 - `kronos` / Adrian: Release-ul privat `kronos-kgr1-459` (comanda din `integrare/kronos/MODEL.md`), ca fișierul să ajungă pe stick.
 
 ## Blocaje / nevoie de Adrian
-- Dacă și sesiunea următoare n-are o comandă nouă, regula de siguranță oprește sesiunile OS („OPRIT: necesită analiza lui Adrian”) până la o comandă nouă — e normal, coada e goală.
+- **OPRIT: necesită analiza lui Adrian** — nu e o eroare: tot ce se putea face fără el e gata. Ca să pornească iar, e de ajuns o comandă nouă pentru `cyber-universe`
+  (de ex. reluarea C-7 sau C-11, replanificarea C-41, ori rezultatele unei ferestre pe workstation cu `os-208`). Opțional: oprirea sarcinii programate până atunci.
 - **Pentru următoarea fereastră GPU:** propunerea Cyber-GPU (mutarea fixării după C-39, ca `gpu firmware` să citească corect cele 4 fișiere) e gata de făcut în ~1 oră, dar cere o comandă în `COMENZI.md` (un „da”).
 - **Stick-ul nou = Release `os-208`** (GitHub → cyber-universe → Releases, sau `actualizeaza` pe laptop cu cablu; rezervă: arhiva `os-1003` din hub).
   Dacă scrii stick-ul de la zero, pune la loc `kronos/kronos_459_q8_0.kgr` + `.sha256`, `cyber.rw` și (pentru Cyber-GPU) folderul `firmware\`.
