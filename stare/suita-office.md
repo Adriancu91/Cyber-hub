@@ -1,14 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 00:51 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 01:35 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 00:04–00:51, 4 pași, testele trec:
-  - PDF → Producție pentru imprimare → **🖌 Cerneluri…** (Manager de cerneluri): culorile spot (Pantone) cu paginile lor, trimiterea unui spot pe placa altei cerneli și **trecerea în proces** (CMYK).
-  - Video: **4 feluri noi de apariție a textului** (din stânga, de sus, zoom, dezvăluire; 7 în total) și **3 stiluri noi de titlu** (18 în total).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 00:52–01:35, 4 pași, testele trec:
+  - Slides: **7 forme noi** (explicații cu săgeți duble / în patru direcții, săgeți îndoite, înmulțire; 74 în total), cu numele lor în .pptx.
+  - Imagini: **ghidaje inteligente** la ✥ Mutare: stratul se lipește de marginile / mijlocul pozei și ale celorlalte straturi, cu linii roz (Ctrl = liber).
+  - Notițe: la ▦ Foaie de calcul… **se alege foaia** din fișierele cu mai multe foi. Video: **5 treceri noi** (34 în total).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,3%**, Excel 87,9%, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 79,9%, Acrobat 81,5%, Photoshop 79,8%, formule 97,1%. Colecția de test: 457 / 543 fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,3%**, Excel 87,9%, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 79,9%, Acrobat 81,5%, Photoshop 79,9%, formule 97,1%. Colecția de test: 457 / 543 fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
@@ -20,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Imagini → un logo pe un strat nou → V → trage-l spre mijlocul pozei: se oprește singur la mijloc, cu o linie roz (și cu Ctrl merge liber)? Și Slides → ◼ Formă → Explicație cu săgeți în patru direcții / Săgeată îndoită în sus → Export .pptx deschis la serviciu: forma e aceeași? Și Video → Felul trecerii → Cruce / Despicare orizontală: arată bine?
 - Să încerce PDF → un afiș / pliant cu un Pantone → Producție pentru imprimare → 🖌 Cerneluri… → Toate în proces → Aplică, apoi 🎨 Separări…: culoarea arată la fel? Și Video → un text → Apariția textului → Intră din stânga / Zoom / Dezvăluire și stilurile Etichetă roșie / Chenar / Umbră spre jos: arată bine?
 - Să încerce Docs / Slides / Sheets → Inserare → ☺ Pictograme → caută „telefon”, alege o culoare și 2–3 pictograme → Inserează: arată curat și au mărimea potrivită? Și Video → două poze → Felul trecerii → Ceas / Romb / Despicare → ▶: trecerile arată bine?
 - Să încerce Slides → 🖵 Înregistrare ecran → trage un dreptunghi peste o fereastră → ● Înregistrează zona, apoi lucrează în fereastra aceea: clipul arată doar zona, fluent? Și Docs / Slides → o poză cu logo → Fundal… → Marchează zonele…: e ușor de folosit? Și Slides → Revizuire → ⚖ Compatibilitate pe o prezentare bogată: lista are sens?

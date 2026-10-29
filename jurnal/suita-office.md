@@ -263,3 +263,5 @@
 - 2026-10-30 00:04 — Testul literelor de acces din Sheets adus la zi (trece complet).
 - 2026-10-30 00:51 — PDF: Manager de cerneluri (culorile spot cu paginile lor, alias pe altă placă, trecere în proces CMYK); Acrobat 81,5%.
 - 2026-10-30 00:51 — Video: 4 feluri noi de apariție a textului (7 în total) și 3 stiluri noi de titlu (18 în total).
+- 2026-10-30 01:35 — Slides: 7 forme noi (74 în total); Video: 5 treceri noi (34 în total).
+- 2026-10-30 01:35 — Imagini: ghidaje inteligente la Mutare (Photoshop 79,9%); Notițe: alegerea foii la Foaie de calcul.
