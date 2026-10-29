@@ -678,4 +678,4 @@ Format:
   (3) rezultatele (raportul, cifrele) le urcă înapoi în hub cu un al doilea token, cu drept de scriere **doar pe hub** (`chei/github-hub.txt`), într-un dosar `rezultate/auto/`;
   (4) revenire sigură: dacă Release-ul nou nu pornește sau pică testele, la repornire se întoarce la cel vechi; `os-187` rămâne punctul de revenire.
   Toate testate în QEMU cu un GitHub fals pe gazdă, fără tokenuri reale. Tokenurile le face Adrian când e gata (centrul de comandă îi dă pașii).
-- stare: nou
+- stare: **amânat** (Adrian, 29 oct 13:28: „mai e până acolo; replanificăm când suntem aproape”) — **nu se preia**; rămâne doar ca idee pentru replanificare
