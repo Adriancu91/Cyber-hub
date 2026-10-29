@@ -1,15 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 21:49 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 22:35 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 21:09–21:49, 5 pași, testele trec, toți în Slides (tabele):
-  - Tabelele din **.odp** își păstrează la deschidere și la Export .odp celulele colorate, celulele îmbinate, rândul de antet, lățimile coloanelor și înălțimile rândurilor (până acum se pierdeau).
-  - Proiectare tabel: pe lângă 🪣 Umplere celulă, acum **culoarea textului, aldin / cursiv / subliniat** doar pentru celulă și **⌫** (înapoi la stilul tabelului).
-  - Se pot alege **mai multe celule** deodată (Shift+clic sau tras cu mouse-ul peste ele), iar formatarea se pune pe toate.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 21:51–22:35, 4 pași, testele trec:
+  - Sheets → Vizualizare → **📃 Aspect pagină**: foaia pe paginile de hârtie, exact cum se tipărește; antetul, subsolul, numerotarea, orientarea, hârtia și marginile se schimbă direct deasupra paginilor.
+  - Sheets → Stiluri celulă → **✎ Modifică un stil**: stilul ia formatul celulei curente și toate celulele care îl au se schimbă odată cu el (și la stilurile gata făcute, Bun, Titlu 1…; legătura se păstrează și în .xlsx).
+  - Slides: celulele de tabel se aleg și cu **Shift+săgeți**.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 88,9%, Excel 87,5%, **PowerPoint 89,4%**, Clipchamp 80,5%, Notițe 79,9%, Acrobat 81,3%, Photoshop 79,8%, formule 97,1%. Colecția de test: 457 / 543 fișiere reale fără pierderi, 0 erori.
+- Scoruri: Word 88,9%, **Excel 87,9%**, PowerPoint 89,4%, Clipchamp 80,5%, Notițe 79,9%, Acrobat 81,3%, Photoshop 79,8%, formule 97,1%. Colecția de test: 457 / 543 fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
@@ -21,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Sheets → un tabel lung → Vizualizare → 📃 Aspect pagină (antet scris sus, Peisaj): paginile arată ca la tipărire? Și Stiluri celulă → ✎ Modifică un stil… pe „Bun” sau pe un stil de-al lui: se schimbă toate celulele cu stilul?
 - Să încerce Slides → un tabel → clic într-o celulă și tras peste altele (sau Shift+clic) → Proiectare tabel → 🪣 / A / B: se schimbă toate celulele alese? Și un .odp cu un tabel colorat, cu celule îmbinate: arată la fel în Suite?
 - Să încerce Slides → Inserare → ▦ Foaie de calcul… cu un .xlsx colorat de-al lui, apoi Export .pptx deschis la serviciu: tabelul are aceleași cifre și culori? Și un .pptx de la serviciu cu celule colorate de mână: culorile rămân la deschiderea în Suite?
 - Să încerce PDF → Producție pentru imprimare → ✈ Preflight… pe un afiș sau un pliant pe care îl duce la tipografie (profilul Tipografie, apoi „Ecran și web”): ce apare cu ✗ și ⚠ are sens? Și Docs → Inserare → ▦ Foaie de calcul… cu un .xlsx colorat de-al lui: tabelul din document seamănă cu cel din Sheets?
