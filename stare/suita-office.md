@@ -1,14 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 16:09 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 16:57 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 15:29–16:09, 4 pași (plus 2 rânduri din inventar corectate), testele trec:
-  - Imagini: **scurtături de la tastatură alese de tine** (Ajutor → ⌨ Scurtături…, Ctrl+Alt+Shift+K) și, în ▤ Mai multe poze…, **culorile schimbate doar la pozele de un anumit fel** (de exemplu scanările gri → alb-negru, fotografiile rămân color).
-  - Video: **gruparea pozelor / clipurilor din bandă** (🔗 Grupează / Ctrl+G): se aleg, se mută, se copiază și se scot împreună.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 16:11–16:57, 4 pași, testele trec:
+  - Imagini: **pensule proprii** făcute dintr-o zonă a pozei (⬚ Marcaj → 🖌 Definește pensulă) și **forme proprii** făcute din traseu (✒ Traseu → ◇ Definește formă, apoi ✎ Adnotează → Forme proprii).
+  - Notițe: lipirea din web / documente păstrează **aldinul, cursivul, culorile și titlurile**; stiluri noi de paragraf **Citat, Sursă (citare), Cod**.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 88,0%, Excel 87,5%, PowerPoint 89,2%, **Clipchamp 80,5%**, Notițe 79,1%, **Acrobat 79,8%**, **Photoshop 79,5%**, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
+- Scoruri: Word 88,0%, Excel 87,5%, PowerPoint 89,2%, Clipchamp 80,5%, **Notițe 79,5%**, Acrobat 79,8%, **Photoshop 79,8%**, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
@@ -20,6 +20,8 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Imagini → ⬚ Marcaj peste o semnătură scanată → 🖌 Definește pensulă → 🖌 Pensulă → „Pensulă proprie 1” → clic pe poză (apare semnătura?), și ✒ Traseu → ◇ Definește formă → ✎ Adnotează → Forme proprii: e ușor de folosit?
+- Să copieze dintr-o pagină web sau dintr-un document un text cu aldin, culori și titluri și să-l lipească în Notițe: în 📖 Lectură arată la fel? Și Notițe → Titlu… → Citat / Sursă / Cod.
 - Să încerce Imagini → Ajutor → ⌨ Scurtături de la tastatură… → pune F6 pe o comandă folosită des: e ușor? Și Video → Ctrl+clic pe două poze → 🔗 Grupează → trage-le: se mută împreună?
 - Să încerce Imagini → ▤ Mai multe poze… cu un dosar amestecat (poze + scanări) → Culorile: Alb-negru, bifat doar „în tonuri de gri”: scanările ies alb-negru, pozele rămân color?
 - Să încerce PDF → Semnează… → 🎬 Sunet / video… cu un film de pe telefon, salvat și deschis la serviciu în alt program de PDF: filmul se vede și pornește? Și 📐 → 🌐 Coordonate pe o hartă PDF reală (cadastru, topografică): coordonatele arată locul corect pe o hartă de pe internet?

@@ -248,3 +248,4 @@
 - 2026-10-29 14:47 — Notițe: elementele de bifat se mută trăgând de căsuță (Notițe 79,1%); Imagini: autorul, drepturile, descrierea și cuvintele cheie scrise în .jpg / .png / .webp (EXIF + XMP) și citite din alte programe (Photoshop 78,9%); testele trec.
 - 2026-10-29 15:28 — PDF: sunet și video pe pagină (🎬, redate în pagină, și din PDF-uri străine) și coordonate geospațiale pe hărțile PDF (standard și forma veche, cu UTM); Acrobat 79,6%, testele trec.
 - 2026-10-29 16:09 — Imagini: scurtături de la tastatură alese de utilizator și schimbarea condiționată a culorilor în lot (Photoshop 79,5%); Video: gruparea permanentă în bandă (Clipchamp 80,5%); 2 rânduri din inventar corectate (Acrobat 79,8%); testele trec.
+- 2026-10-29 16:57 — Imagini: pensule proprii din selecție și forme proprii din traseu (Photoshop 79,8%); Notițe: lipirea păstrează aldinul, culorile și titlurile, plus stilurile Citat / Sursă / Cod (Notițe 79,5%).
