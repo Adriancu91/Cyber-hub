@@ -634,4 +634,5 @@ Format:
   checkout (sau verificarea și fetch-ul cu `git -c http.https://github.com/.extraheader=`), apoi rulează CI-ul și confirmă că trece de pas.
   Dacă și după reparație GitHub refuză, scrie mesajul exact în `stare/cyber-universe.md` (atunci e cheia, și o verifică Adrian).
   Nu afișa niciodată cheia în jurnal.
-- stare: preluat (2026-10-28 22:25 UTC, sesiunea OS) — P6-34
+- stare: gata (preluat 2026-10-28 22:15 UTC, terminat 2026-10-29 00:30 UTC, sesiunea OS) — P6-34; CI verde (run 205), Release `os-205`
+- rezultat: cheia `CYBER_GPU_TOKEN` ajunge acum la GitHub (checkout-ul nu mai lasă tokenul lui în urmă), iar testul `phase4`, care pica după ordinea fișierelor de pe mașina CI, e reparat; CI verde și Release nou `os-205`.

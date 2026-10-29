@@ -1,37 +1,32 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-28 23:55 (ora României) · **de:** sesiunea OS programată · CI repornit, dar roșu: îi lipsește accesul la `cyber-gpu` (P6-33 pregătit, aștept secretul)
+**Actualizat:** 2026-10-29 02:35 (ora României) · **de:** sesiunea OS programată · **CI verde, Release `os-205`** (C-37 gata)
 
 ## Acum
-- **C-35 gata (P6-32):** stick-ul `os-1001` (commit `02f2043`, 6,9 MB, fără model Kronos și fără firmware NVIDIA) e în hub, cu
-  `VERSIUNE.txt` (suma SHA-256) și `README.md`. Are tot: C-29 (viteza lui Kronos) + C-31 (`gpu vbios --detalii`) + C-32.
-  Testat înainte: suita QEMU (78/80 + 2 trecute la reluare, instabilul cunoscut al ceasului), arhiva verificată și pornită în QEMU până la desktop.
-- **CI (decizia 23:35, Actions repornite):** rularea 201 a picat — cargo nu poate descărca `cyber-gpu` (privat; token-ul CI vede doar `cyber-universe`),
-  deci 0/81 teste și niciun Release. **P6-33:** CI-ul citește acum `cyber-gpu` cu secretul `CYBER_GPU_TOKEN`; fără el, testele de pe gazdă trec
-  și CI se oprește cu un singur mesaj clar înainte de QEMU. Până la secret, stick-urile vin tot prin hub (`os-1001`).
-- `actualizeaza` de pe stick caută tot Release-urile GitHub, deci nu vede `os-1001`: stick-ul se scrie de mână (pașii din `docs/USB.md`).
+- **C-37 gata (P6-34):** cheia `CYBER_GPU_TOKEN` merge. Cauza era cea bănuită: `actions/checkout` lăsa în urmă tokenul lui GitHub, trimis
+  în locul cheii. Reparat (`persist-credentials: false` + verificare fără antetul rămas), confirmat local și în CI.
+- **`phase4` (testul cu mouse-ul în „Module”, „instabilul” din ultimele zile) — cauza găsită:** ordinea pachetelor pe discul de test depindea
+  de mașina CI. Aplicația Module le sortează acum alfabetic; reprodus și reparat local.
+- **Run 205 verde la prima încercare → Release `os-205`** (primul după `os-197`): C-29 (viteza lui Kronos), C-31 (`gpu vbios --detalii`), C-32 și
+  reparațiile de mai sus. Stick-ul se poate actualiza din nou cu `actualizeaza` sau din Release (`docs/USB.md`). `os-1001` din hub e depășit.
 
 ## Urmează
-- La fiecare schimbare care ajunge pe stick: suita QEMU + arhivă nouă în hub (doar ultima). Altfel opriri scurte până la o comandă nouă.
-- Propunerea `idei/2026-10-28_cyber-universe_gpu-firmware-fwsec.md` (`gpu fwsec` + `gpu firmware`, doar citire, pentru fereastra C-36): pot s-o fac în ~1 oră + stick nou, **doar dacă o aprobi** (o comandă în `COMENZI.md`).
+- Opriri scurte până la o comandă nouă (coada: P6-10, P6-12 p.2 așteaptă hardware; P5-07 blocat; C-7, C-11 după întoarcerea lui Adrian).
+- Propunerea `idei/2026-10-28_cyber-universe_gpu-firmware-fwsec.md` (`gpu fwsec` + `gpu firmware`, doar citire, pentru fereastra C-36): ~1 oră,
+  **doar dacă e aprobată** (o comandă în `COMENZI.md`).
 
 ## Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (proprietare de la 28 oct; până la `0bf1303` MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/`.
-- Pentru Kronos: o a doua implementare independentă a KGR1 și a tokenizerului (`user/src/kgr.rs`, `user/src/bpe.rs`).
-- Pentru `cyber-gpu`: adresa framebuffer-ului în `hw` (C-26); `gpu vbios --detalii` pe stick pentru fereastra de pe workstation.
+- Pentru Kronos: a doua implementare independentă a KGR1 și a tokenizerului (`user/src/kgr.rs`, `user/src/bpe.rs`).
+- Pentru `cyber-gpu`: `gpu vbios --detalii` în `os-205`, pentru fereastra de pe workstation.
 
 ## De ce are nevoie de la ceilalți
 - `kronos` / Adrian: Release-ul privat `kronos-kgr1-459` (comanda din `integrare/kronos/MODEL.md`), ca fișierul să ajungă pe stick.
-- `cyber-gpu`: să țină la zi copia din hub (C-34); nu blochează.
 
 ## Blocaje / nevoie de Adrian
-- **Secretul `CYBER_GPU_TOKEN` pentru CI (5 min, din browser):** github.com → Settings → Developer settings → Personal access tokens →
-  Fine-grained tokens → Generate new token: nume `cyber-universe-ci`, expirare 1 an, *Only select repositories* → `cyber-gpu`,
-  *Contents: Read-only*. Apoi github.com/Adriancu91/cyber-universe → Settings → Secrets and variables → Actions → New repository secret:
-  `CYBER_GPU_TOKEN` = token-ul. Fără el CI rămâne roșu și nu apar Release-uri (detalii: `docs/BLOCKERS.md`, B-005).
-- **Stick-ul nou `os-1001`** e în hub (`integrare/cyber-universe/stick/`); centrul de comandă ți-l trimite. Scrie-l pe stick (varianta A sau B din
-  `docs/USB.md`) și pune la loc `kronos/kronos_459_q8_0.kgr` + `.sha256`.
-- **Workstation, viteza lui Kronos (~25 min, cu `os-1001`; după pasul 6: `gpu vbios` și `gpu vbios --detalii` → poze cu toate rândurile; pe stick rămân `kronos/kronos_459_q8_0.kgr` + `.sha256` și `cyber.rw`):**
+- **Stick-ul nou = Release `os-205`** (GitHub → cyber-universe → Releases, sau `actualizeaza` pe laptop cu cablu). Dacă scrii stick-ul de la zero
+  (varianta A sau B din `docs/USB.md`), pune la loc `kronos/kronos_459_q8_0.kgr` + `.sha256`.
+- **Workstation, viteza lui Kronos (~25 min, cu `os-205`; după pasul 6: `gpu vbios` și `gpu vbios --detalii` → poze cu toate rândurile; pe stick rămân `kronos/kronos_459_q8_0.kgr` + `.sha256` și `cyber.rw`):**
   1. `cpu porneste`, apoi `run kronos --n 5 Ana are mere.` → poză cu rândul „citit in … ms” (ținta < 10 s) și simbolurile `[2233, 1585, 32, 475, 50]`.
   2. `usb citire mare`, apoi iar `run kronos --n 5 Ana are mere.` → același text, „citit in …” (64 KiB pe comandă; dacă apare vreo eroare USB:
      `usb citire mica` și poză cu `log usb`).
