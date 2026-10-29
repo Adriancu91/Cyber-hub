@@ -1,16 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 23:19 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 00:04 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 22:34–23:19, 4 pași, testele trec:
-  - Slides → Revizuire → **⚖ Compatibilitate**: ce se pierde la salvarea ca .pptx / .odp, cu salt la slide-ul cu problema.
-  - Docs și Slides → Fundal… → **Marchează zonele de păstrat / de eliminat**: pensulă ＋ / − peste poză, cu mov peste ce dispare.
-  - Slides → 🖵 Înregistrare ecran → **alegi zona** din ecran (dreptunghi tras peste imaginea lui) sau tot ecranul.
-  - Imagini → Text: retrageri din stânga / dreapta și spațiu înainte de paragraf.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 23:21–00:04, 4 pași, testele trec:
+  - Video: **10 treceri noi** între poze (Ceas, Romb, Despicare, Descoperire, Cortină în diagonală, Jaluzele verticale…), 29 în total.
+  - Docs, Slides și Sheets → Inserare → **☺ Pictograme**: 56 de pictograme desenate de noi, cu căutare, culoare și grosimea liniei.
+  - Testul literelor de acces din Sheets adus la zi (trece complet).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,1%**, Excel 87,9%, **PowerPoint 89,9%**, Clipchamp 80,5%, Notițe 79,9%, Acrobat 81,3%, Photoshop 79,8%, formule 97,1%. Colecția de test: 457 / 543 fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,3%**, Excel 87,9%, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 79,9%, Acrobat 81,3%, Photoshop 79,8%, formule 97,1%. Colecția de test: 457 / 543 fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
@@ -22,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Docs / Slides / Sheets → Inserare → ☺ Pictograme → caută „telefon”, alege o culoare și 2–3 pictograme → Inserează: arată curat și au mărimea potrivită? Și Video → două poze → Felul trecerii → Ceas / Romb / Despicare → ▶: trecerile arată bine?
 - Să încerce Slides → 🖵 Înregistrare ecran → trage un dreptunghi peste o fereastră → ● Înregistrează zona, apoi lucrează în fereastra aceea: clipul arată doar zona, fluent? Și Docs / Slides → o poză cu logo → Fundal… → Marchează zonele…: e ușor de folosit? Și Slides → Revizuire → ⚖ Compatibilitate pe o prezentare bogată: lista are sens?
 - Să încerce Sheets → un tabel lung → Vizualizare → 📃 Aspect pagină (antet scris sus, Peisaj): paginile arată ca la tipărire? Și Stiluri celulă → ✎ Modifică un stil… pe „Bun” sau pe un stil de-al lui: se schimbă toate celulele cu stilul?
 - Să încerce Slides → un tabel → clic într-o celulă și tras peste altele (sau Shift+clic) → Proiectare tabel → 🪣 / A / B: se schimbă toate celulele alese? Și un .odp cu un tabel colorat, cu celule îmbinate: arată la fel în Suite?

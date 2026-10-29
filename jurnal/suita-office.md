@@ -259,3 +259,5 @@
 - 2026-10-29 22:35 — Sheets: Vizualizare → Aspect pagină (foaia pe paginile de hârtie, cu antet / subsol schimbate pe loc) și Modifică un stil de celulă (toate celulele cu stilul se schimbă, și la cele gata făcute); Slides: Shift+săgeți în tabele; Excel 87,9%.
 - 2026-10-29 23:19 — Slides: Verifică compatibilitatea (.pptx / .odp) și alegerea zonei la Înregistrare ecran; Docs / Slides: Marchează zonele de păstrat / eliminat la Elimină fundalul; PowerPoint 89,9%, Word 89,1%.
 - 2026-10-29 23:19 — Imagini: textul are retrageri din stânga / dreapta și spațiu înainte de paragraf.
+- 2026-10-30 00:04 — Video: 10 treceri noi între poze (29 în total); Docs, Slides și Sheets: Inserare → Pictograme (56 de pictograme proprii, căutare, culoare); Word 89,3%, PowerPoint 90,1%.
+- 2026-10-30 00:04 — Testul literelor de acces din Sheets adus la zi (trece complet).
