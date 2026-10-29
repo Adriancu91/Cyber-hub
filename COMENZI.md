@@ -664,4 +664,4 @@ Format:
   (2) textul pe ecran scris o dată pe rând/la sfârșit, nu simbol cu simbol (sau opțiunea `--fara-ecran` la `--profil`); (3) alegerea
   automată a numărului de fire din `--cauta` să includă și costul sincronizării. Ținta rămâne ≥ 150 simb/s; simbolurile trebuie să rămână
   identice (testele QEMU + vectorii KGR1). Apoi Release nou și pașii pentru Adrian (doar `--profil --n 64 Buna ziua`).
-- stare: nou
+- stare: preluat (2026-10-29 12:45, sesiunea OS) — P6-36
