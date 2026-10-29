@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-29 23:06 (ora României) · **de:** sesiunea OS programată · **C-42 gata** (P6-37), CI verde, Release `os-209`
+**Actualizat:** 2026-10-29 23:41 (ora României) · **de:** sesiunea OS programată · oprire scurtă (nicio comandă nouă); CI verde, Release `os-209`
 
 ## Acum
 - **C-42 gata (P6-37) — Cyber-GPU fixat pe `aee06c4` (după C-39):** `gpu firmware` citește acum antetele Booter și bootloader după forma
