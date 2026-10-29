@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-29 17:30 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-29 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -13,9 +13,9 @@
   Lecție: pe Windows „toate firele” e rapid doar la primul răspuns dintr-un motor nou (~40 simb/s), apoi ~20; 1 fir ține ~28–31.
 - Kronos-Cod (C-28): pilotul (S43) și unealta completă (S46a) gata și verificate; descărcarea întreagă (S46) oprită corect — cere „da”-ul lui Adrian scris anume.
 - S44 INFIRMAT (bucăți tăiate 297/500 vs întregi 336/500): memoria E3 rămâne pe #438.
+- **Rulează S45** (de la 19:00): încă o noapte de antrenare din #459; pragurile urcate înainte (CONFIRMAT dacă română ≤ 1,2112, INFIRMAT > 1,2142). Sfârșit ~01:25; verdictul la 02:15.
 
 ## Urmează
-- Diseară de la 19:00: **S45** = încă o noapte de antrenare din #459 (aprobată; pragurile scrise înainte).
 - Mâine după S45: **S50** = bancul CCM măsoară separat primul răspuns și următoarele; alegerea pe procesor după cele următoare (aprobat, doar procesor).
 - **S46** = descărcarea întreagă a codului (~3 nopți, fără placă), doar după „da”-ul lui Adrian; apoi tokenizerul pe cod (al doilea „da”).
 
