@@ -44,3 +44,4 @@
 - 2026-10-28 20:25 — S42 pornită corect la 19:02 (linia w2_e3_reteta_A2), verdict ~23:15. Adrian a spus „da” pilotului Kronos-Cod (data-limită iunie 2021); pilotul s-a oprit corect fără unealta numită → S43a o scrie, fără rețea.
 - 2026-10-28 23:15 — S42 INFIRMAT (#466 66/100 = #438 66; prag +5): modelul de plecare mai bun nu ajută cititorul E3; plafonul e în bucăți. Urmează S43a (unealta pilotului Kronos-Cod), apoi S44 (bucăți tăiate pe propoziții).
 - 2026-10-29 02:15 — S44 INFIRMAT (bucăți tăiate 297/500 vs întregi 336/500): tăierea pe propoziții se închide. S43a gata (unealta pilotului Kronos-Cod, 48 teste fără rețea) → pilotul S43 aprobat. S45 (încă o noapte din #459) propus, așteaptă Adrian.
+- 2026-10-29 05:15 — S43 (pilotul Kronos-Cod) gata și verificat: 688/1.003 pachete, 0,376 GB cod curat, ~107 mil. simboluri. S46a (modul complet al uneltei, fără rețea) aprobat; S46 (descărcarea întreagă) propus, așteaptă Adrian.

@@ -1,20 +1,20 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-29 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-29 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
   (executantul pe workstation + supraveghetorul în cloud). Direcția: fără LLM nicăieri; auto-joc cu verificator + specialiști + memorie;
   pe termen lung: Kronos dedicat pe cod și autodezvoltare.
 - Cel mai bun model: **#459** (română 1,2162; mai mic = mai bine). Rulează în Cyber Universe OS (os-195); Release privat `kronos-kgr1-459`.
-- **S44 gata: INFIRMAT.** Tăierea bucăților de text pe propozițiile cu cuvinte din întrebare: 297/500 corecte față de 336/500 cu bucățile întregi (−7,8 puncte);
-  tăierea scoate des propoziția cu răspunsul. Memoria E3: „alt model”, „altă rețetă” și „tăierea” sunt închise; cititorul rămâne #438.
-- **S43a gata — Kronos-Cod (C-28), etapa 1b, pregătirea:** unealta pilotului de descărcare (doar licențe MIT/Apache/BSD verificate din metadate și din LICENSE,
-  doar cod publicat înainte de 29 iunie 2021, filtre de cod generat/duplicat, oprire sub 40 GB liberi, arhive doar în memorie) + 48 de teste fără rețea. 1058 de teste trec.
+- **S43 gata — Kronos-Cod (C-28), pilotul de descărcare, verificat:** 688 din 1.003 pachete păstrate (licențe MIT/Apache/BSD, cod dinainte de 29 iunie 2021),
+  0,376 GB cod curat, ~107 mil. simboluri, 33 % aruncat de filtre; 22 de minute, doar procesor + internet. Estimare pentru tot: ~10–22 GB, ~3–6 mld simboluri, 15–25 de ore.
+- S44 INFIRMAT (bucăți tăiate 297/500 vs întregi 336/500): memoria E3 rămâne pe #438. 1058 de teste trec.
 
 ## Urmează
-- **S43 = pilotul de descărcare** (aprobat; ~30–45 min, procesor + internet): 500 PyPI + 500 crates + numpy, tokio, libuv. Descărcarea întreagă doar după verificarea pilotului.
-- Placa video liberă: **S45** (încă o noapte de antrenare din #459, rețeta A) e propusă și așteaptă „da”-ul lui Adrian.
+- **S46a** (aprobat, procesor, fără internet): modul „complet” al uneltei de descărcare + teste (reluare, deduplicare între surse, oprire pe ore).
+- **S46** = descărcarea întreagă a codului: propusă, așteaptă „da”-ul lui Adrian. Apoi tokenizerul pe cod (al doilea „da”).
+- Placa video liberă: **S45** (încă o noapte de antrenare din #459) propusă, așteaptă „da”-ul lui Adrian.
 
 ## Ce oferă proiectul celorlalți
 - Pachetul KGR1 în `integrare/kronos/` (specificație, tokenizer, vectori, `MODEL.md`) + Release-ul privat cu #459.
@@ -27,6 +27,6 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- „Da” sau „nu” pentru **S45** (o noapte de antrenare din #459); fără el placa video stă liberă. Nu blochează pilotul de cod.
+- „Da” sau „nu” pentru **S46** (descărcarea întreagă a codului, ~2–3 nopți, fără placă) și pentru **S45** (o noapte de antrenare din #459).
 - Mai târziu: tokenizerul nou pe cod cere un al doilea „da”, după descărcare.
 - La ferestrele OS/GPU viitoare: antrenarea de pe placă să fie oprită întâi.
