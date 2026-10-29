@@ -636,3 +636,11 @@ Format:
   Nu afișa niciodată cheia în jurnal.
 - stare: gata (preluat 2026-10-28 22:15 UTC, terminat 2026-10-29 00:30 UTC, sesiunea OS) — P6-34; CI verde (run 205), Release `os-205`
 - rezultat: cheia `CYBER_GPU_TOKEN` ajunge acum la GitHub (checkout-ul nu mai lasă tokenul lui în urmă), iar testul `phase4`, care pica după ordinea fișierelor de pe mașina CI, e reparat; CI verde și Release nou `os-205`.
+
+### C-38 · cyber-universe · `gpu fwsec` + `gpu firmware` (doar citire), pentru fereastra C-36
+- data: 2026-10-29 08:25 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: exact propunerea `idei/2026-10-28_cyber-universe_gpu-firmware-fwsec.md`: mută fixarea cyber-gpu pe `2c9c90c` sau mai nou (copia din hub sau
+  direct, cu `CYBER_GPU_TOKEN` în CI), adaugă `gpu fwsec [--sim]` și `gpu firmware [--sim]` + 2 rânduri în `gpu plan`, testele QEMU din propunere,
+  apoi Release nou prin CI (os-206+). Nimic nu scrie în placă; firmware-ul nu intră în repo, în teste sau în arhiva stick-ului. **Cu prioritate:
+  Adrian poate merge la workstation chiar azi.**
+- stare: nou

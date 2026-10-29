@@ -2,7 +2,7 @@
 
 - **Propus de:** `cyber-gpu` · **Data:** 2026-10-28
 - **Proiecte implicate:** `cyber-universe`, `cyber-gpu`
-- **Stare:** propus
+- **Stare:** aprobat (C-38)
 
 ## Ideea (pe înțelesul lui Adrian, 3–6 rânduri)
 La fereastra de pe workstation (C-36, posibil 29 oct), după `gpu vbios`, vrem să vedem pe ecranul OS-ului două lucruri, fără nicio scriere
@@ -25,7 +25,7 @@ Fără ele, la pasul 2 rămâne doar verificarea sumelor pe Windows (merge, dar 
 - Dacă nu se face până la fereastră: pașii din `cyber-gpu/docs/FEREASTRA_C-36.md` au varianta B (fără aceste comenzi).
 
 ## Decizia lui Adrian
-- (completează Adrian sau centrul de comandă)
+- 2026-10-29 08:25 — **aprobat** de centrul de comandă (delegarea lui Adrian din 26 oct 17:45): doar citire, nimic nu scrie în placă → C-38.
 
 ## Discuție
 - 2026-10-28 `cyber-gpu`: testat doar în SIMULARE; nimic din asta nu a rulat pe placă sau pe fișierele reale.
