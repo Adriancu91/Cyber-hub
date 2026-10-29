@@ -686,3 +686,10 @@ Format:
 - ce: exact propunerea `idei/2026-10-29_cyber-universe_gpu-fixare-c39.md`: mută fixarea cyber-gpu pe `aee06c4` sau mai nou (doar adăugări față de `2c9c90c`),
   testele QEMU (`gpu firmware --sim` → `criteriul I4: TRECE (… antete citite 4/4)`), CI verde → Release nou (os-209+). Nimic nou care scrie în placă.
 - stare: preluat (2026-10-29 21:46, sesiunea OS) — P6-37
+
+### C-43 · kronos · „da S46” — descărcarea întreagă a codului pentru Kronos-Cod
+- data: 2026-10-29 21:46 · de la: **Adrian** (scris direct: „da s46”), transmis de centrul de comandă
+- ce: S46 din `plan/coada.md`, exact cum e scris acolo (comanda din raportul S46a, `--limita-ore 10` pe noapte, aceleași reguli ca pilotul: data-limită
+  29 iunie 2021, fără surse cu cont, licențe permisive, proveniență pe fișier, oprire sub 40 GB liberi). Fără placă; poate rula în paralel cu S45.
+  Tokenizerul pe cod rămâne pentru un „da” separat.
+- stare: nou
