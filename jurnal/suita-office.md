@@ -236,3 +236,4 @@
 - 2026-10-29 05:42 — Imagini: formele .psd fără pixeli apar cu conturul lor; 437 / 541 fișiere reale fără pierderi (erau 435).
 - 2026-10-29 06:28 — Imagini: măștile vectoriale pe straturile .psd cu pixeli, densitatea / estomparea măștilor, umplerile și efectele cu model din fișier; 450 / 541 fișiere reale fără pierderi (erau 437).
 - 2026-10-29 07:09 — Imagini: relieful în 4 feluri și conturul cu degrade din .psd; Sheets / Slides: graficul radar (și în .xlsx, .ods, .pptx); 453 / 541 fișiere reale fără pierderi (erau 450).
+- 2026-10-29 07:50 — Imagini: grupuri în grupuri (și în .psd), „Degrade peste” în 5 feluri, conturul cu degrade din .psd în toate felurile; 455 / 541 fișiere reale fără pierderi (erau 453).

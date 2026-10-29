@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 07:09 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 07:50 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc” și la compatibilitate. Sesiunea 06:29–07:09, 3 pași, testele trec:
-  - Imagini: relieful are acum 4 feluri (interior, exterior, în relief, pernă), alese din panoul Efecte și citite din .psd.
-  - Imagini: conturul cu degrade din .psd (liniar sau radial, cu transparență) se păstrează.
-  - Sheets / Slides: tip nou de grafic, **Radar** (pânză de păianjen) și Radar umplut, și în .xlsx, .ods și .pptx.
-  - Pe colecția de test: **453** din 541 de fișiere reale se deschid fără pierderi (erau 450).
+- Lucrăm la „funcțiile care lipsesc” și la compatibilitate. Sesiunea 07:10–07:52, 3 pași, testele trec:
+  - Imagini: **grupuri în grupuri** (dosare de straturi pe mai multe niveluri), în panoul Straturi și din / în .psd.
+  - Imagini: „Degrade peste” are acum 5 feluri (liniar, radial, unghiular, oglindit, romb), și din .psd.
+  - Imagini: conturul cu degrade din .psd se păstrează în toate felurile.
+  - Pe colecția de test: **455** din 541 de fișiere reale se deschid fără pierderi (erau 453).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: Word 88,0%, Excel 86,1%, PowerPoint 89,0%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
 
 ## Urmează
-- Imagini: locul exact de pornire al modelelor din .psd; grupurile în grupuri; degradeul „cu zgomot” pe contur.
+- Imagini: textele din .psd ca text editabil (14 fișiere de test); locul exact de pornire al modelelor din .psd.
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
