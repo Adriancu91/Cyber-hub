@@ -257,3 +257,5 @@
 - 2026-10-29 21:08 — Slides: Inserare → Foaie de calcul (foaie din .xlsx / .ods / .csv ca tabel, cu culorile din Sheets); culori pe fiecare celulă, salvate și citite din .pptx, plus Umplere celulă; tabele până la 30 × 12; PowerPoint 89,4%.
 - 2026-10-29 21:49 — Slides: tabelele .odp păstrează culorile celulelor, îmbinările, antetul și lățimile; culoarea textului / aldin pe celulă și alegerea mai multor celule (Shift+clic sau tras cu mouse-ul).
 - 2026-10-29 22:35 — Sheets: Vizualizare → Aspect pagină (foaia pe paginile de hârtie, cu antet / subsol schimbate pe loc) și Modifică un stil de celulă (toate celulele cu stilul se schimbă, și la cele gata făcute); Slides: Shift+săgeți în tabele; Excel 87,9%.
+- 2026-10-29 23:19 — Slides: Verifică compatibilitatea (.pptx / .odp) și alegerea zonei la Înregistrare ecran; Docs / Slides: Marchează zonele de păstrat / eliminat la Elimină fundalul; PowerPoint 89,9%, Word 89,1%.
+- 2026-10-29 23:19 — Imagini: textul are retrageri din stânga / dreapta și spațiu înainte de paragraf.
