@@ -1,14 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 15:28 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 16:09 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:47–15:30, 3 pași, testele trec:
-  - PDF: **sunet și video pe pagină** (🎬 Sunet / video…): filmul sau sunetul intră în PDF după standard și se redă dând click pe el, chiar în pagină; se redau și clipurile din PDF-uri făcute de alte programe.
-  - PDF: **coordonate pe hărțile PDF** (📐 Măsoară → 🌐 Coordonate): latitudinea și longitudinea sub mouse, click copiază; și hărțile vechi (inclusiv UTM).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 15:29–16:09, 4 pași (plus 2 rânduri din inventar corectate), testele trec:
+  - Imagini: **scurtături de la tastatură alese de tine** (Ajutor → ⌨ Scurtături…, Ctrl+Alt+Shift+K) și, în ▤ Mai multe poze…, **culorile schimbate doar la pozele de un anumit fel** (de exemplu scanările gri → alb-negru, fotografiile rămân color).
+  - Video: **gruparea pozelor / clipurilor din bandă** (🔗 Grupează / Ctrl+G): se aleg, se mută, se copiază și se scot împreună.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 88,0%, Excel 87,5%, PowerPoint 89,2%, Clipchamp 79,8%, Notițe 79,1%, **Acrobat 79,6%**, Photoshop 78,9%, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
+- Scoruri: Word 88,0%, Excel 87,5%, PowerPoint 89,2%, **Clipchamp 80,5%**, Notițe 79,1%, **Acrobat 79,8%**, **Photoshop 79,5%**, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
@@ -20,6 +20,8 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Imagini → Ajutor → ⌨ Scurtături de la tastatură… → pune F6 pe o comandă folosită des: e ușor? Și Video → Ctrl+clic pe două poze → 🔗 Grupează → trage-le: se mută împreună?
+- Să încerce Imagini → ▤ Mai multe poze… cu un dosar amestecat (poze + scanări) → Culorile: Alb-negru, bifat doar „în tonuri de gri”: scanările ies alb-negru, pozele rămân color?
 - Să încerce PDF → Semnează… → 🎬 Sunet / video… cu un film de pe telefon, salvat și deschis la serviciu în alt program de PDF: filmul se vede și pornește? Și 📐 → 🌐 Coordonate pe o hartă PDF reală (cadastru, topografică): coordonatele arată locul corect pe o hartă de pe internet?
 - Să încerce Notițe → o listă de bifat → trage un element de căsuța lui pe alt rând: e ușor de prins căsuța? Și Imagini → ⓘ Informații → Autor și Cuvinte cheie pe o poză a lui → Ctrl+S, apoi în Windows clic dreapta pe fișier → Proprietăți → Detalii: apar autorul și etichetele?
 - Să încerce Sheets → Ctrl+Q pe un tabel real, cu mouse-ul pe butoanele din filele Tabele, Minigrafice și Grafice (previzualizarea ajută?), și un Tabel de date (Ce-ar fi dacă) cu rata unui credit, salvat .xlsx și deschis la serviciu: rămâne tabel de date și se recalculează când schimbi suma?

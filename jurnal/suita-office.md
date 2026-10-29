@@ -247,3 +247,4 @@
 - 2026-10-29 14:02 — Sheets: Analiza rapidă (Ctrl+Q) arată pe toate filele ce face înainte de clic (și barele de date nu mai dispar); Tabelul de date se recalculează singur și se păstrează în .xlsx; Excel 87,5%, 455 / 541 fișiere reale fără pierderi.
 - 2026-10-29 14:47 — Notițe: elementele de bifat se mută trăgând de căsuță (Notițe 79,1%); Imagini: autorul, drepturile, descrierea și cuvintele cheie scrise în .jpg / .png / .webp (EXIF + XMP) și citite din alte programe (Photoshop 78,9%); testele trec.
 - 2026-10-29 15:28 — PDF: sunet și video pe pagină (🎬, redate în pagină, și din PDF-uri străine) și coordonate geospațiale pe hărțile PDF (standard și forma veche, cu UTM); Acrobat 79,6%, testele trec.
+- 2026-10-29 16:09 — Imagini: scurtături de la tastatură alese de utilizator și schimbarea condiționată a culorilor în lot (Photoshop 79,5%); Video: gruparea permanentă în bandă (Clipchamp 80,5%); 2 rânduri din inventar corectate (Acrobat 79,8%); testele trec.
