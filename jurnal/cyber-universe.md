@@ -75,3 +75,4 @@
 - 2026-10-29 02:40 — trecere extra („C-37”): C-37 era deja gata; reconfirmat: CI verde (run 205), Release `os-205` publicat (C-29 + C-31 incluse).
 - 2026-10-29 10:25 — C-38 gata (P6-35): `gpu fwsec` (I3b) și `gpu firmware` (I4), doar citire, Cyber-GPU pe `2c9c90c`; CI verde → Release `os-206`; rezervă `os-1002` în hub.
 - 2026-10-29 10:35 — trecere extra („C-38”): C-38 era deja gata; reconfirmat: CI verde, Release `os-206` publicat.
+- 2026-10-29 10:40 — sesiune programată paralelă: C-38 era deja gata în sesiunea de 08:20; reconfirmat CI verde (run 206), Release `os-206`. Nimic nou.
