@@ -667,11 +667,15 @@ Format:
   identice (testele QEMU + vectorii KGR1). Apoi Release nou și pașii pentru Adrian (doar `--profil --n 64 Buna ziua`).
 - stare: preluat (2026-10-29 12:45, sesiunea OS) — P6-36
 
-### C-41 · cyber-universe · „Claude din interior”, etapa 1: clientul-agent în OS, testat cu un server fals (fără cheie, fără cost)
-- data: 2026-10-29 13:25 · de la: Adrian (ținta principală; prin centrul de comandă, delegarea din 26 oct 17:45) — vezi DECIZII 29 oct 13:25
-- ce: după C-40. Plan în `docs/plans/` (fază nouă în ROADMAP), apoi pași mici: (1) clientul HTTPS al OS-ului face cereri POST cu JSON (Messages API: model, mesaje,
-  unelte) și citește răspunsul în flux (SSE); (2) o buclă de agent minimă cu 3 unelte: citește fișier, propune modificare (ca diff), rulează un test local;
-  (3) uneltele GitHub prin REST (citește un fișier, creează o ramură `agent/<data>`, face commit pe ea) — doar pe ramuri, niciodată pe `main`; (4) tot testat în QEMU
-  față de un **server fals** pe gazdă (răspunsuri înregistrate), fără nicio cheie reală. Cheia (când o dă Adrian) se citește doar de pe stick (`chei/claude.txt`),
-  nu se scrie niciodată în jurnal, raport, repo sau hub. Comanda în OS: `agent` (cu `--sim` pentru serverul fals). Fără cost, fără rețea reală în teste.
+### C-41 · cyber-universe · „Claude din interior” fără API: OS-ul legat de sesiunile Claude prin GitHub („cutia poștală”), etapa 1 în simulare
+- data: 2026-10-29 13:35 · de la: Adrian („nu îmi place cu API”; ținta principală) prin centrul de comandă, delegarea din 26 oct 17:45 — înlocuiește varianta cu API din 13:25
+- ce: după C-40. Claude rămâne în sesiunile Claude Code din abonamentul lui Adrian (cum lucrăm deja); OS-ul de pe workstation devine „mâinile și ochii” lor pe hardware,
+  doar prin GitHub, fără cheie API și fără cost în plus. Pași mici, plan în `docs/plans/` (fază nouă în ROADMAP):
+  (1) `actualizeaza` merge și cu repo-ul privat: citește un token doar-citire de pe stick (`chei/github-citire.txt`), nu-l scrie nicăieri;
+  (2) modul `asculta`: la N minute, OS-ul citește din hub un fișier de sarcini pentru hardware (`hardware/sarcini.md`, scris de sesiuni), le rulează **doar dintr-o listă
+  albă de comenzi sigure** (`run kronos …`, `kronos-calcul --cauta`, `gpu vbios/fwsec/firmware`, `raport`, `actualizeaza` + repornire pe Release verificat), niciodată ceva
+  care scrie în placa video (acelea cer în continuare Adrian de față și o tastă apăsată fizic);
+  (3) rezultatele (raportul, cifrele) le urcă înapoi în hub cu un al doilea token, cu drept de scriere **doar pe hub** (`chei/github-hub.txt`), într-un dosar `rezultate/auto/`;
+  (4) revenire sigură: dacă Release-ul nou nu pornește sau pică testele, la repornire se întoarce la cel vechi; `os-187` rămâne punctul de revenire.
+  Toate testate în QEMU cu un GitHub fals pe gazdă, fără tokenuri reale. Tokenurile le face Adrian când e gata (centrul de comandă îi dă pașii).
 - stare: nou
