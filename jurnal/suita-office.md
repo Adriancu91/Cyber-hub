@@ -230,3 +230,5 @@
 - 2026-10-29 03:21 — Sheets: graficele cu datele pe altă foaie și foile care sunt doar un grafic se deschid și se salvează; 413 / 531 fișiere reale fără pierderi (erau 406).
 - 2026-10-29 04:04 — Sheets: graficele de tip nou din .xlsx (cascadă, histogramă, pâlnie…) se deschid; LOOKUP pe liste neordonate, VALUE cu „$”.
 - 2026-10-29 04:04 — Slides: graficele de tip nou din .pptx și mai multe forme .odp (și cele desenate liber); 425 / 541 fișiere reale fără pierderi.
+- 2026-10-29 04:57 — Slides: formele .odp cu formule, liniile, poligoanele și desenele libere din .odp se deschid; cascadă / pâlnie / histogramă direct pe slide.
+- 2026-10-29 04:57 — Imagini: din .psd se păstrează straturile de culoare uniformă și cele de ajustare (niveluri, curbe, nuanță…); 435 / 541 fișiere reale fără pierderi (erau 425).
