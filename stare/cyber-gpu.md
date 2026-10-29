@@ -1,23 +1,23 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-10-29 01:50 (ora României) · **de:** sesiunea Cyber-GPU 16 (cloud, fără placă)
+**Actualizat:** 2026-10-29 07:40 (ora României) · **de:** sesiunea Cyber-GPU 17 (cloud, fără placă)
 
 ## Acum
-- Nicio comandă nouă pentru noi; C-36 (pregătirea ferestrei I3 → I4) e gata și așteaptă fereastra cu Adrian.
-- Pas nou, **doar în SIMULARE**: I9c — „clientul de lucru”. După „golden image”, driverul deschide al doilea client și îi spune lui GSP-RM,
-  prin mesajul `SET_PAGE_DIRECTORY`, că spațiul lui de adrese folosește tabelele de pagini făcute de noi (după RM 570.144 și tinygrad, MIT).
-  Structurile mesajului sunt generate din antetele NVIDIA. Commit `695e537` pe `g0-g2-fundatie`; 256 de teste trec în sesiune; nimic nu scrie în placă.
-- Testele automate GitHub merg din nou (Adrian a plătit): rulările 60 și 61 (`695e537`) verzi.
-- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `695e537` (verificată, clonare de probă cu teste verzi).
+- Nicio comandă nouă pentru noi; C-36 (pregătirea ferestrei I3 → I4) e gata și așteaptă fereastra cu Adrian (în hub nu există încă rezultate de la ea).
+- Pas nou, **doar în SIMULARE**: I9d — „grupul de calcul”. Clientul de lucru primește un grup de canale pentru motorul de calcul (GR0) și un
+  „subcontext” pe spațiul de adrese care folosește tabelele noastre de pagini (după RM 570.144 și tinygrad, MIT; structurile generate din antete).
+  Commit `f6b3476` pe `g0-g2-fundatie`; 260 de teste trec în sesiune; CI GitHub rularea 62 verde; nimic nu scrie în placă.
+- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `f6b3476` (verificată, clonare de probă cu teste verzi).
 
 ## Urmează
 - Fereastra C-36 pe workstation (cu Adrian): pașii 1 → 2 → 3 (mai jos).
-- Fără placă: restul I9 pentru clientul de lucru (grupul de canale, contextul, canalul GPFIFO, jetonul soneriei); treapta 6 matmul.
+- Fără placă: canalul GPFIFO al clientului de lucru în grupul de canale, promovarea contextului GR pentru obiectul de calcul, jetonul soneriei; treapta 6 matmul.
 
 ## Ce oferă proiectul celorlalți
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Licență proprietară de la
-  commit-ul de după `8313973` (până atunci MIT). Față de `8313973`: **doar adăugări** — nou în sesiunea 16: `nvidia_ga104::gsp::user_space`,
-  `gsp::rmapi::{user_vaspace_params, set_page_directory_rpc, check_root}`, `GoldenImage::next_handle`. OS-ul nu trebuie să schimbe nimic.
+  commit-ul de după `8313973` (până atunci MIT). Față de `8313973`: **doar adăugări** — nou în sesiunea 17: `gsp::user_space::{ComputeGroup,
+  open_compute_group}`, `gsp::rmapi::{channel_group_params, ctxshare_params, parse_ctxshare_reply, subcontext, MAX_SUBCONTEXTS}`,
+  `rmapi::class::{CHANNEL_GROUP, CONTEXT_SHARE}` (sesiunea 16: `gsp::user_space`, `set_page_directory_rpc`). OS-ul nu trebuie să schimbe nimic.
   Schița pentru OS: `integration/cyber-universe/C-36_gpu-firmware-fwsec.md`; ghid: `integration/cyber-universe/UTILIZARE.md`.
 - Pentru mai târziu (doar în fereastra cu Adrian): pornirea reală a GSP va cere de la OS o zonă de RAM contiguă (sub 2^49) și Bus Master.
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
