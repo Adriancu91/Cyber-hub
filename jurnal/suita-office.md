@@ -232,3 +232,5 @@
 - 2026-10-29 04:04 — Slides: graficele de tip nou din .pptx și mai multe forme .odp (și cele desenate liber); 425 / 541 fișiere reale fără pierderi.
 - 2026-10-29 04:57 — Slides: formele .odp cu formule, liniile, poligoanele și desenele libere din .odp se deschid; cascadă / pâlnie / histogramă direct pe slide.
 - 2026-10-29 04:57 — Imagini: din .psd se păstrează straturile de culoare uniformă și cele de ajustare (niveluri, curbe, nuanță…); 435 / 541 fișiere reale fără pierderi (erau 425).
+- 2026-10-29 05:42 — Imagini: Nuanța ca în programul de origine; din .psd se păstrează umplerile cu degrade și încă 8 feluri de straturi de ajustare.
+- 2026-10-29 05:42 — Imagini: formele .psd fără pixeli apar cu conturul lor; 437 / 541 fișiere reale fără pierderi (erau 435).

@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 04:57 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 05:42 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc” și la compatibilitate. Sesiunea 04:08–04:57, 5 pași, testele trec:
-  - **Slides:** formele .odp desenate cu formule (cub, cilindru, inel, zâmbet, soare, paranteze, pergamente…), liniile, poligoanele și desenele libere din .odp nu se mai pierd; liniile salvate ca .odp rămân la redeschidere.
-  - **Slides:** pe slide se pot pune acum și cascadă, pâlnie, histogramă, Pareto, cutie, hartă de suprafețe, soare și bursier; graficele de tip nou din .pptx / .docx vin cu felul lor.
-  - **Imagini:** din .psd se păstrează straturile „culoare uniformă” și straturile de ajustare (niveluri, curbe, nuanță, balans, expunere, negativ, prag, posterizare).
-  - Pe colecția de test: **435** din 541 de fișiere reale se deschid fără pierderi (erau 425).
+- Lucrăm la „funcțiile care lipsesc” și la compatibilitate. Sesiunea 04:58–05:42, 5 pași, testele trec, toate în **Imagini**:
+  - Glisorul Nuanță rotește culorile ca în programul de origine (roșu +120° = verde aprins, nu verde închis).
+  - Din .psd se păstrează acum și: umplerile cu degrade (toate cele 5 feluri), alb-negru, filtrul foto, mixerul de canale, harta de gradient, culoarea selectivă, vibranța, luminozitate / contrast.
+  - Formele din .psd fără pixeli proprii (dreptunghiuri, poligoane desenate ca forme) apar acum cu conturul lor.
+  - Pe colecția de test: **437** din 541 de fișiere reale se deschid fără pierderi (erau 435).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: Word 88,0%, Excel 86,1%, PowerPoint 89,0%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
 
 ## Urmează
-- Imagini: Nuanța rotită ca în programul de origine (acum roșu +124° iese verde închis în loc de verde aprins); umplerea cu degrade și restul ajustărilor din .psd.
+- Imagini: măștile vectoriale și pe straturile cu pixeli; filtrul foto calculat exact ca în original; căutarea de culoare din .psd.
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
