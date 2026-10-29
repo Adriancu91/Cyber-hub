@@ -685,4 +685,4 @@ Format:
 - data: 2026-10-29 21:45 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
 - ce: exact propunerea `idei/2026-10-29_cyber-universe_gpu-fixare-c39.md`: mută fixarea cyber-gpu pe `aee06c4` sau mai nou (doar adăugări față de `2c9c90c`),
   testele QEMU (`gpu firmware --sim` → `criteriul I4: TRECE (… antete citite 4/4)`), CI verde → Release nou (os-209+). Nimic nou care scrie în placă.
-- stare: nou
+- stare: preluat (2026-10-29 21:46, sesiunea OS) — P6-37
