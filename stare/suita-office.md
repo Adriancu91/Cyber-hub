@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 06:28 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 07:09 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc” și la compatibilitate. Sesiunea 05:43–06:28, 3 pași, testele trec, toate în **Imagini** (fișiere .psd):
-  - Straturile cu pixeli decupate de un contur (mască vectorială) se deschid acum decupate; traseele se combină ca în fișier (adaugă / scade / intersectează).
-  - Densitatea și estomparea măștilor se aplică (fișierele de test arată identic cu originalul).
-  - Straturile de umplere cu model și efectul „Model peste” folosesc modelul adevărat, păstrat în fișier.
-  - Pe colecția de test: **450** din 541 de fișiere reale se deschid fără pierderi (erau 437).
+- Lucrăm la „funcțiile care lipsesc” și la compatibilitate. Sesiunea 06:29–07:09, 3 pași, testele trec:
+  - Imagini: relieful are acum 4 feluri (interior, exterior, în relief, pernă), alese din panoul Efecte și citite din .psd.
+  - Imagini: conturul cu degrade din .psd (liniar sau radial, cu transparență) se păstrează.
+  - Sheets / Slides: tip nou de grafic, **Radar** (pânză de păianjen) și Radar umplut, și în .xlsx, .ods și .pptx.
+  - Pe colecția de test: **453** din 541 de fișiere reale se deschid fără pierderi (erau 450).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: Word 88,0%, Excel 86,1%, PowerPoint 89,0%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
 
 ## Urmează
-- Imagini: locul exact de pornire al modelelor; relieful „Emboss / Pillow” și conturul cu degrade din .psd; grupurile în grupuri.
+- Imagini: locul exact de pornire al modelelor din .psd; grupurile în grupuri; degradeul „cu zgomot” pe contur.
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
 - P4: LTV, doar după răspunsul lui Adrian (vezi mai jos).
 
@@ -27,6 +27,7 @@
 - Să tipărească din Docs (Ctrl+P) un document cu „Numerotează paginile” pe imprimanta lui: apar numerele jos, marginile sunt albe și textul e clar?
 - Să încerce Docs → Corespondență → 📨 Începere îmbinare → 🖨 Tipărește exemplarele (de la … până la …) pe imprimanta lui, și Sheets → Date → Preluare date → Din PDF… cu un extras / o factură PDF reală.
 - Să încerce Docs → Corespondență → 🏷 Etichete → „O etichetă pentru fiecare rând dintr-un tabel” și ✉ Plicuri → „Un plic pentru fiecare rând” cu un tabel de clienți de-al lui: ies bine adresele? Tipărite pe o foaie de etichete adevărată, cad pe etichete?
+- Să încerce Sheets → Diagramă → tipul „Radar (pânză de păianjen)” și să salveze .xlsx deschis la serviciu: graficul rămâne radar?
 - Să deschidă în Slides câteva .pptx reale de la serviciu cu diagrame SmartArt și scheme logice: apar toate, cu textul lor? Și Slides → tabel → Proiectare tabel → Culoarea stilului.
 - Să încerce Slides → două dreptunghiuri unul sub altul → Săgeată → Traseu → ┐ Conector frânt, lipită de punctele albastre de jos / sus, apoi Export .pptx și deschiderea la serviciu: săgeata arată la fel și rămâne lipită când muți un dreptunghi?
 - Să încerce Slides → Inserare → 📷 Cameo cu camera laptopului, și în prezentare (F5): se vede bine, fără să încetinească?
