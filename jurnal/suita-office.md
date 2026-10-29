@@ -243,3 +243,4 @@
 - 2026-10-29 10:55 — Sheets: Rezumat cu al treilea câmp pe rânduri și „Arată valorile ca” complet (% din părinte, cumulat, față de un element ales; Excel 86,3%); Imagini: Salvează ca și la 0,5× / 2× / 3×, GIF cu mai puține culori.
 - 2026-10-29 11:45 — Sheets: Rezumat cu două câmpuri pe coloane, mai multe valori și câmpuri calculate cu grupare pe coloane, coloane grupate pe luni / intervale (Excel 86,7%); SUMIFS / COUNTIFS cu listă de criterii corectate; tot 455 / 541 fișiere reale fără pierderi.
 - 2026-10-29 12:38 — Sheets: Rezumat cu grupuri alese de mână, elemente calculate și din tabelul cu nume (Excel 87,2%); MATCH / VLOOKUP / ISNUMBER / IFERROR pe zone și liste dau câte un rezultat pe rând; tot 455 / 541 fișiere reale fără pierderi.
+- 2026-10-29 13:21 — Sheets: filtrul de raport din Rezumat cu mai multe elemente, Rezolvitorul cu raport de limite și de sensibilitate; Slides: împachetarea prezentării într-o arhivă .zip; Excel 87,2%, testele trec.

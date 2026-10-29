@@ -1,17 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 12:38 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 13:21 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 11:43–12:38, 5 pași, testele trec:
-  - Sheets (Rezumat / tabel pivot): **grupuri alese de mână** pe rânduri („Nord” = Cluj + Iași), **elemente calculate** („Diferență” = Cluj - Iași; rândul Total nu le mai adună de două ori), rezumatul făcut **din tabelul cu nume** (fără rândul Total adus din .xlsx, urmărit după nume la reîmprospătare).
-  - Sheets (formule): MATCH / VLOOKUP / ISNUMBER pe o zonă și IFERROR / IFNA / ISNA pe liste dau câte un rezultat pe rând (de exemplu `FILTER(…;ISNUMBER(MATCH(…)))`, des întâlnită în tabelele primite, dădea greșit).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 12:38–13:21, 4 pași, testele trec:
+  - Sheets (Rezumat / tabel pivot): **filtrul de deasupra rezumatului cu mai multe elemente bifate** (în B3 apare „(Mai multe elemente)”, cifrele țin cont doar de ele).
+  - Sheets (🧮 Rezolvitor): raportul are acum și **limitele** (cât poate scădea / crește fiecare celulă) și **sensibilitatea** (prețurile umbră ale condițiilor, costurile reduse), la modelele liniare.
+  - Slides: **Împachetează într-o arhivă .zip…** (prezentarea în cele trei formate într-un singur .zip, ușor de trimis).
+  - O încercare nereușită (previzualizarea „Tabel” în Analiză rapidă făcea să dispară barele de date): codul readus, notată pentru altă sesiune.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 88,0%, **Excel 87,2%** (era 86,7%), PowerPoint 89,2%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,7%, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
+- Scoruri: Word 88,0%, **Excel 87,2%**, PowerPoint 89,2%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,7%, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
-- Sheets: filtrul de raport din Rezumat cu mai multe valori alese.
+- Sheets: previzualizarea „Tabel” în Analiză rapidă (după ce aflăm de ce dispar barele de date).
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
 
 ## Ce oferă proiectul celorlalți
@@ -21,6 +23,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Sheets → Tabel Pivot → Filtru deasupra rezumatului cu două-trei elemente bifate, și 🧮 Rezolvitor cu bifa de raport pe o problemă reală (foaia raportului: limitele și prețurile umbră au sens?), plus Slides → Fișier → Împachetează într-o arhivă .zip… deschisă pe alt calculator.
 - Să încerce Sheets → Tabel Pivot pe un tabel real cu „+ Grupează categorii” (de exemplu orașele pe regiuni) și „+ Element calculat” (diferența dintre două categorii): e ușor de folosit și cifrele sunt cele așteptate?
 - Să încerce Sheets → Tabel Pivot pe un tabel real cu Agent pe coloane și „Încă un câmp pe coloane” (de exemplu Produs), sau cu o coloană de date pe coloane grupată pe luni: cifrele și subtotalurile sunt cele așteptate?
 - Să încerce Imagini → Ctrl+Shift+S → PNG cu bifa 2× și GIF cu Culori: 32: fișierele ies bine?
