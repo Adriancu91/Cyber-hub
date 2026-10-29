@@ -1,14 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 14:47 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 15:28 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:03–14:47, 4 pași, testele trec:
-  - Notițe: **un element de bifat se mută trăgând de căsuța lui** cu mouse-ul (cu sub-elementele lui), ca în programele de notițe cunoscute.
-  - Imagini → ⓘ Informații: **Autor, Drepturi de autor, Descriere și Cuvinte cheie** se completează și se scriu în fișier la salvare (.jpg, .png, .webp; în EXIF și XMP), iar o poză primită cu aceste date le arată. Datele aparatului și locul (GPS) tot nu se scriu.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:47–15:30, 3 pași, testele trec:
+  - PDF: **sunet și video pe pagină** (🎬 Sunet / video…): filmul sau sunetul intră în PDF după standard și se redă dând click pe el, chiar în pagină; se redau și clipurile din PDF-uri făcute de alte programe.
+  - PDF: **coordonate pe hărțile PDF** (📐 Măsoară → 🌐 Coordonate): latitudinea și longitudinea sub mouse, click copiază; și hărțile vechi (inclusiv UTM).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 88,0%, **Excel 87,5%**, PowerPoint 89,2%, Clipchamp 79,8%, Notițe 79,1%, Acrobat 78,4%, Photoshop 78,9%, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
+- Scoruri: Word 88,0%, Excel 87,5%, PowerPoint 89,2%, Clipchamp 79,8%, Notițe 79,1%, **Acrobat 79,6%**, Photoshop 78,9%, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
@@ -20,6 +20,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce PDF → Semnează… → 🎬 Sunet / video… cu un film de pe telefon, salvat și deschis la serviciu în alt program de PDF: filmul se vede și pornește? Și 📐 → 🌐 Coordonate pe o hartă PDF reală (cadastru, topografică): coordonatele arată locul corect pe o hartă de pe internet?
 - Să încerce Notițe → o listă de bifat → trage un element de căsuța lui pe alt rând: e ușor de prins căsuța? Și Imagini → ⓘ Informații → Autor și Cuvinte cheie pe o poză a lui → Ctrl+S, apoi în Windows clic dreapta pe fișier → Proprietăți → Detalii: apar autorul și etichetele?
 - Să încerce Sheets → Ctrl+Q pe un tabel real, cu mouse-ul pe butoanele din filele Tabele, Minigrafice și Grafice (previzualizarea ajută?), și un Tabel de date (Ce-ar fi dacă) cu rata unui credit, salvat .xlsx și deschis la serviciu: rămâne tabel de date și se recalculează când schimbi suma?
 - Să încerce Sheets → Tabel Pivot → Filtru deasupra rezumatului cu două-trei elemente bifate, și 🧮 Rezolvitor cu bifa de raport pe o problemă reală (foaia raportului: limitele și prețurile umbră au sens?), plus Slides → Fișier → Împachetează într-o arhivă .zip… deschisă pe alt calculator.
