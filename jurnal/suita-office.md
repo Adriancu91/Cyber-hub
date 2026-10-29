@@ -226,3 +226,5 @@
 - 2026-10-29 01:44 — Sheets: formulele pe mai multe foi (=SUM(Ianuarie:Martie!B5)) se calculează; în total 398 / 531 de fișiere reale fără pierderi (erau 388).
 - 2026-10-29 02:31 — Sheets: graficele din .ods se deschid, iar formulele-matrice și erorile salvate din .ods se citesc corect (398 → 405 / 531 fișiere fără pierderi).
 - 2026-10-29 02:31 — Sheets: XLOOKUP complet, erorile scrise în formule, intersecția implicită și regulile SUM / MAX / AND pentru text; 406 / 531 fișiere reale fără pierderi.
+- 2026-10-29 03:21 — Docs: graficele din .docx se deschid ca grafice cu datele lor; Sheets: formulele .ods cu celule șterse rămân formule.
+- 2026-10-29 03:21 — Sheets: graficele cu datele pe altă foaie și foile care sunt doar un grafic se deschid și se salvează; 413 / 531 fișiere reale fără pierderi (erau 406).
