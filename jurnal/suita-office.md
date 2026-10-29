@@ -238,3 +238,4 @@
 - 2026-10-29 07:09 — Imagini: relieful în 4 feluri și conturul cu degrade din .psd; Sheets / Slides: graficul radar (și în .xlsx, .ods, .pptx); 453 / 541 fișiere reale fără pierderi (erau 450).
 - 2026-10-29 07:50 — Imagini: grupuri în grupuri (și în .psd), „Degrade peste” în 5 feluri, conturul cu degrade din .psd în toate felurile; 455 / 541 fișiere reale fără pierderi (erau 453).
 - 2026-10-29 08:41 — Slides: text artistic pe arc / cerc / val (și în .pptx), conectori lipiți de elipse, romb și scheme, 8 forme noi; Sheets: Analiză rapidă cu previzualizare la trecerea mouse-ului; PowerPoint 89,2%.
+- 2026-10-29 09:24 — Imagini: textele din .psd se citesc și se rescriu (Proprietăți → Text), iar cele neschimbate rămân text la salvare; Slides: conectori lipiți de triunghiuri și 8 forme noi; tot 455 / 541 fișiere reale fără pierderi.
