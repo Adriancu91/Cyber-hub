@@ -80,3 +80,4 @@
 - 2026-10-29 14:50 — C-40 gata (P6-36): nucleele libere trezite imediat (cauza așteptării firelor), 49 de sincronizări pe simbol în loc de 61, textul pe rânduri + `--fara-ecran`, `--cauta` cu media a 5 treceri; simboluri identice; CI verde → Release `os-208`; rezervă `os-1003` în hub.
 - 2026-10-29 15:00 — trecere extra („C-40”): C-40 era deja gata (P6-36); reconfirmat CI verde, Release `os-208`.
 - 2026-10-29 15:00 — sesiune programată, oprire scurtă: nicio comandă nouă (C-41 amânat); CI verde, Release `os-208`. Fixarea Cyber-GPU după C-39 așteaptă o comandă.
+- 2026-10-29 17:51 — sesiune programată, oprire scurtă: nicio comandă nouă; CI verde, Release `os-208`. Fixarea Cyber-GPU după C-39 tot așteaptă o comandă.

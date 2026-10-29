@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-29 15:00 (ora României) · **de:** sesiunea OS programată · **oprire scurtă; ultimul: C-40 gata (P6-36), CI verde, Release `os-208`**
+**Actualizat:** 2026-10-29 17:51 (ora României) · **de:** sesiunea OS programată · **oprire scurtă; ultimul: C-40 gata (P6-36), CI verde, Release `os-208`**
 
 ## Acum
 - **C-40 gata (P6-36) — frânele lui Kronos de pe workstation:**
@@ -27,6 +27,7 @@
 - `kronos` / Adrian: Release-ul privat `kronos-kgr1-459` (comanda din `integrare/kronos/MODEL.md`), ca fișierul să ajungă pe stick.
 
 ## Blocaje / nevoie de Adrian
+- Dacă și sesiunea următoare n-are o comandă nouă, regula de siguranță oprește sesiunile OS („OPRIT: necesită analiza lui Adrian”) până la o comandă nouă — e normal, coada e goală.
 - **Pentru următoarea fereastră GPU:** propunerea Cyber-GPU (mutarea fixării după C-39, ca `gpu firmware` să citească corect cele 4 fișiere) e gata de făcut în ~1 oră, dar cere o comandă în `COMENZI.md` (un „da”).
 - **Stick-ul nou = Release `os-208`** (GitHub → cyber-universe → Releases, sau `actualizeaza` pe laptop cu cablu; rezervă: arhiva `os-1003` din hub).
   Dacă scrii stick-ul de la zero, pune la loc `kronos/kronos_459_q8_0.kgr` + `.sha256`, `cyber.rw` și (pentru Cyber-GPU) folderul `firmware\`.
