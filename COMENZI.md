@@ -654,7 +654,7 @@ Format:
   + semnăturile se adaugă; verifică pe ce se măsoară), cu teste pe fișiere sintetice cu aceeași formă. Nu pune fișierele reale în repo și nu le
   analiza dincolo de antet (licența). Apoi actualizează bundle-ul din hub (C-34) și scrie în `stare/cyber-gpu.md` ce trebuie să vadă Adrian la
   fereastra următoare (`criteriul I4: TRECE`). Pasul următor pe placă (I5+) îl propui separat, cu ce scrie în placă marcat clar.
-- stare: nou
+- stare: preluat (2026-10-29 10:44 UTC, sesiunea Cyber-GPU 18)
 
 ### C-40 · cyber-universe · Kronos în OS: frânele măsurate pe workstation (sincronizarea firelor, afișarea pe ecran)
 - data: 2026-10-29 12:45 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
