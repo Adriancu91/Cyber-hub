@@ -1,19 +1,20 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 09:24 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 10:06 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 08:42–09:26, 6 pași, testele trec:
-  - Imagini: **textele din .psd se pot rescrie** (ⓘ Proprietăți → Text → ✎ Rescrie textul), cu același font, mărime, culoare și loc; în casetă rândurile se rup singure; la salvarea .psd, textele neschimbate rămân text.
-  - Slides: liniile se lipesc corect de **triunghiuri** (6 puncte, și în .pptx); **8 forme noi** (schemă: date, operație manuală, colaționare; explicații cu săgeată; minus).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 09:28–10:06, 7 pași, testele trec:
+  - Imagini: **textul rescris dintr-un .psd rămâne text la salvare** (cuvintele noi intră în blocul de text al fișierului); **◐ Mască din traseu** (unealta ✒ Traseu).
+  - Slides: liniile se lipesc și de **paralelogram, trapez și schemele cu laturi înclinate** (și în .pptx).
+  - Slides → Video: **tranzițiile dintre slide-uri intră în film**; în Video, **„Fără trecere (tăietură)”** pe o singură poză.
   - Colecția de test: tot **455** din 541 de fișiere reale fără pierderi, 0 erori.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 88,0%, Excel 86,1%, PowerPoint 89,2%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,6%, formule 97,1%.
+- Scoruri: Word 88,0%, Excel 86,1%, PowerPoint 89,2%, Clipchamp 79,8%, Notițe 78,7%, Acrobat 78,4%, Photoshop 78,7%, formule 97,1%.
 
 ## Urmează
-- Imagini: textul rescris salvat tot ca text în .psd.
-- Slides: punctele de conexiune ale altor forme (poligoane).
+- Sheets: al treilea câmp pe rânduri în Rezumat (tabel pivot).
+- Slides: punctele de conexiune ale poligoanelor regulate (doar cu un .pptx real care să arate ordinea lor).
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
 
 ## Ce oferă proiectul celorlalți
@@ -23,7 +24,8 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- Să deschidă în Imagini un .psd de-al lui cu text → ⓘ Proprietăți → Text → ✎ Rescrie textul: noul text arată ca originalul (font, mărime, loc)? Și un .psd salvat din Suite, deschis la serviciu: textele neschimbate se pot edita tot ca text?
+- Să deschidă în Imagini un .psd de-al lui cu text → ⓘ Proprietăți → Text → ✎ Rescrie textul, apoi Ctrl+S ca .psd și să-l deschidă la serviciu: noul text arată ca originalul și rămâne text pe care îl poate edita?
+- Să încerce Slides → Fișier → Fă video din prezentare (MP4)… pe o prezentare cu tranziții: trecerile din film seamănă cu cele din prezentare? Și Imagini → ✒ Traseu → ◐ Mască din traseu: e ușor de folosit?
 - Să încerce Slides → Inserare → 𝒜 Text artistic ▾ → „Arc auriu”, apoi Export .pptx deschis la serviciu: textul stă tot pe arc? Și Sheets → Ctrl+Q pe un tabel: previzualizarea la trecerea mouse-ului e utilă sau încurcă?
 - Să tipărească din Docs (Ctrl+P) un document cu „Numerotează paginile” pe imprimanta lui: apar numerele jos, marginile sunt albe și textul e clar?
 - Să încerce Docs → Corespondență → 📨 Începere îmbinare → 🖨 Tipărește exemplarele (de la … până la …) pe imprimanta lui, și Sheets → Date → Preluare date → Din PDF… cu un extras / o factură PDF reală.
