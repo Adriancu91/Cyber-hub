@@ -252,3 +252,5 @@
 - 2026-10-29 17:48 — E-mail din Suite, deschis în programul de e-mail (Suite nu trimite singur): Docs → documentul atașat ca .docx, Notițe → notița cu formatare și poze, îmbinarea → câte un e-mail pe rând (Word 88,8%, Notițe 79,9%); lipirea în Notițe păstrează mărimile și fonturile.
 - 2026-10-29 18:36 — PDF: Trimite prin e-mail (PDF-ul atașat), Combină primește documente .docx/.odt/.rtf/.txt și tabele .xlsx/.ods/.csv, Lot face câte un PDF din fiecare document; Acrobat 80,4%.
 - 2026-10-29 19:22 — PDF: Combină și Lot primesc prezentări (.pptx/.odp/.ppt), e-mailuri .eml și pagini web .mht (și în Web → PDF); tabelele .xlsx ies formatate ca în Sheets; textul din PDF-urile făcute din documente se găsește la căutare; Acrobat 81,2%.
+- 2026-10-29 20:14 — PDF: Preflight (verificarea înainte de tipar / web, cu profile, salt la pagină și raport); Acrobat 81,3%.
+- 2026-10-29 20:14 — Docs: Inserare → Foaie de calcul (foaie din .xlsx / .ods / .csv ca tabel formatat, cu alegerea foii și chenarele); Word 88,9%.

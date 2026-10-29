@@ -1,15 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-29 19:22 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-29 20:14 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 18:37–19:22, 4 pași, testele trec:
-  - **PDF → ⧉ Combină / ⚙ Lot** primesc acum și **prezentări** (.pptx, .odp, .ppt: câte o pagină pe slide, desenată ca în Slides), **e-mailuri salvate** (.eml: antet, text, pozele din mesaj, lista atașamentelor) și **pagini web salvate într-un fișier** (.mht, și în Web → PDF).
-  - Tabelele .xlsx / .ods din Combină arată acum **ca în Sheets** (formatul sumelor, culori, chenare, celule îmbinate, zona de tipărire, formule din alte foi).
-  - Reparat: în PDF-urile făcute din documente și pagini web, literele legate („ti”, „fi”) nu se găseau la căutare.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 19:23–20:14, 4 pași, testele trec:
+  - **PDF → Producție pentru imprimare → ✈ Preflight…**: verifică dacă un PDF e gata de tipografie, de imprimanta de birou sau de web (fonturi, rezoluția pozelor pe hârtie, culori RGB / spot, transparență, linii prea subțiri, caseta de tăiere și sângerarea), cu salt la pagina cu problema, „Repară…” și raport .txt.
+  - **Docs → Inserare → ▦ Foaie de calcul…**: o foaie dintr-un .xlsx / .ods / .csv intră în document ca tabel, cu formulele calculate și aspectul din Sheets (sume, culori, aldin, chenare, celule îmbinate, lățimi); la mai multe foi întreabă care.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: Word 88,8%, Excel 87,5%, PowerPoint 89,2%, Clipchamp 80,5%, Notițe 79,9%, **Acrobat 81,2%**, Photoshop 79,8%, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 88,9%**, Excel 87,5%, PowerPoint 89,2%, Clipchamp 80,5%, Notițe 79,9%, **Acrobat 81,3%**, Photoshop 79,8%, formule 97,1%. Colecția de test: 455 / 541 fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
@@ -21,6 +20,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce PDF → Producție pentru imprimare → ✈ Preflight… pe un afiș sau un pliant pe care îl duce la tipografie (profilul Tipografie, apoi „Ecran și web”): ce apare cu ✗ și ⚠ are sens? Și Docs → Inserare → ▦ Foaie de calcul… cu un .xlsx colorat de-al lui: tabelul din document seamănă cu cel din Sheets?
 - Să încerce PDF → ⧉ Combină… cu un .docx, un .xlsx colorat, o prezentare .pptx, un e-mail tras din programul de e-mail (.eml) și un PDF de-ale lui, și PDF → ⚙ Lot… cu câteva .docx: paginile arată bine (tabelul ca în Sheets, slide-urile ca în Slides, e-mailul cu antet și poze)? Și PDF → ☰ Meniu → ✉ Trimite prin e-mail…: se deschide programul de e-mail cu PDF-ul atașat?
 - Să încerce Docs → Fișier → ✉ Trimite prin e-mail… și Notițe → Fișier → ✉ Trimite prin e-mail (pe o notiță cu o poză): se deschide programul lui de e-mail cu documentul atașat / notița și poza în mesaj? Și Docs → Corespondență → 📨 Începere îmbinare → ✉ Câte un e-mail (.eml) cu un tabel cu adrese: mesajele se deschid gata de trimis? Și un text cu un cuvânt mare și unul cu alt font, lipit în Notițe: în 📖 Lectură arată la fel?
 - Să încerce Imagini → ⬚ Marcaj peste o semnătură scanată → 🖌 Definește pensulă → 🖌 Pensulă → „Pensulă proprie 1” → clic pe poză (apare semnătura?), și ✒ Traseu → ◇ Definește formă → ✎ Adnotează → Forme proprii: e ușor de folosit?
