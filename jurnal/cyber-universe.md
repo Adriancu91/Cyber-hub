@@ -82,3 +82,4 @@
 - 2026-10-29 15:00 — sesiune programată, oprire scurtă: nicio comandă nouă (C-41 amânat); CI verde, Release `os-208`. Fixarea Cyber-GPU după C-39 așteaptă o comandă.
 - 2026-10-29 17:51 — sesiune programată, oprire scurtă: nicio comandă nouă; CI verde, Release `os-208`. Fixarea Cyber-GPU după C-39 tot așteaptă o comandă.
 - 2026-10-29 20:42 — OPRIT: necesită analiza lui Adrian (3 sesiuni fără sarcină; coada goală, nicio comandă nouă). CI verde, Release `os-208`.
+- 2026-10-29 23:06 — C-42 gata (P6-37): Cyber-GPU fixat pe `aee06c4` (antetele firmware după C-39), `gpu firmware --sim` → antete citite 4/4; CI verde, Release `os-209`. Oprirea ridicată de comandă.
