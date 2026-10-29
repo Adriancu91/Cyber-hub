@@ -1,32 +1,35 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-29 05:42 (ora României) · **de:** sesiunea OS programată (oprire scurtă, nimic nou) · **CI verde, Release `os-205`** (C-37 gata)
+**Actualizat:** 2026-10-29 10:30 (ora României) · **de:** sesiunea OS programată · **CI verde, Release `os-206`** (C-38 gata)
 
 ## Acum
-- **C-37 gata (P6-34):** cheia `CYBER_GPU_TOKEN` merge. Cauza era cea bănuită: `actions/checkout` lăsa în urmă tokenul lui GitHub, trimis
-  în locul cheii. Reparat (`persist-credentials: false` + verificare fără antetul rămas), confirmat local și în CI.
-- **`phase4` (testul cu mouse-ul în „Module”, „instabilul” din ultimele zile) — cauza găsită:** ordinea pachetelor pe discul de test depindea
-  de mașina CI. Aplicația Module le sortează acum alfabetic; reprodus și reparat local.
-- **Run 205 verde la prima încercare → Release `os-205`** (primul după `os-197`): C-29 (viteza lui Kronos), C-31 (`gpu vbios --detalii`), C-32 și
-  reparațiile de mai sus. Stick-ul se poate actualiza din nou cu `actualizeaza` sau din Release (`docs/USB.md`). `os-1001` din hub e depășit.
+- **C-38 gata (P6-35):** două comenzi noi pentru fereastra de pe workstation (C-36), ambele doar citire:
+  - `gpu fwsec` — unde e programul FWSEC în VBIOS (pasul I3b); ultimul rând `criteriul I3b: TRECE`/`NU TRECE`, „0 scrieri”.
+  - `gpu firmware` — verifică cele 4 fișiere firmware 570.144 de pe stick (mărime, sumă SHA-256, antet citit de codul nostru); **nu atinge placa**.
+  - `gpu plan` are pașii 5c și 5d. Driverul Cyber-GPU fixat pe `2c9c90c`.
+- Testate în QEMU (simulare + calea reală fără placă) și o dată cu un stick de test cu fișiere false de mărimea oficială (64 MB, fără probleme).
+- **Release `os-206`** pe GitHub (CI verde la reluare; picase doar testul vechi al ceasului cu 4 procesoare). Rezervă în hub: `integrare/cyber-universe/stick/` = `os-1002`, același cod.
 
 ## Urmează
 - Opriri scurte până la o comandă nouă (coada: P6-10, P6-12 p.2 așteaptă hardware; P5-07 blocat; C-7, C-11 după întoarcerea lui Adrian).
-- Propunerea `idei/2026-10-28_cyber-universe_gpu-firmware-fwsec.md` (`gpu fwsec` + `gpu firmware`, doar citire, pentru fereastra C-36): ~1 oră,
-  **doar dacă e aprobată** (o comandă în `COMENZI.md`).
+- După fereastra C-36: rezultatele din `rezultate/` → reparațiile cerute (dacă apar).
 
 ## Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (proprietare de la 28 oct; până la `0bf1303` MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/`.
 - Pentru Kronos: a doua implementare independentă a KGR1 și a tokenizerului (`user/src/kgr.rs`, `user/src/bpe.rs`).
-- Pentru `cyber-gpu`: `gpu vbios --detalii` în `os-205`, pentru fereastra de pe workstation.
+- Pentru `cyber-gpu`: `gpu vbios --detalii`, `gpu fwsec`, `gpu firmware` în `os-206`, pentru fereastra C-36.
 
 ## De ce are nevoie de la ceilalți
 - `kronos` / Adrian: Release-ul privat `kronos-kgr1-459` (comanda din `integrare/kronos/MODEL.md`), ca fișierul să ajungă pe stick.
 
 ## Blocaje / nevoie de Adrian
-- **Stick-ul nou = Release `os-205`** (GitHub → cyber-universe → Releases, sau `actualizeaza` pe laptop cu cablu). Dacă scrii stick-ul de la zero
+- **Fereastra C-36 pe workstation (azi, dacă poți):** stick-ul = Release **`os-206`** (sau arhiva `os-1002` din hub; `os-1001` e depășit).
+  Pune pe stick și fișierele firmware în `firmware\nvidia\ga102\gsp\` + `firmware\LICENCE.nvidia` (pașii exacți: `cyber-gpu/docs/FEREASTRA_C-36.md`).
+  În OS: `gpu vbios`, `gpu vbios --detalii`, **`gpu fwsec`** (pasul 1c), **`gpu firmware`** (pasul 2, varianta A; poate dura până la ~30 s), `log gpu 40`
+  → poze cu toate rândurile; apoi `raport` → `rezultate/2026-10-29-workstation-gpu/`.
+- **Stick-ul nou = Release `os-206`** (GitHub → cyber-universe → Releases, sau `actualizeaza` pe laptop cu cablu). Dacă scrii stick-ul de la zero
   (varianta A sau B din `docs/USB.md`), pune la loc `kronos/kronos_459_q8_0.kgr` + `.sha256`.
-- **Workstation, viteza lui Kronos (~25 min, cu `os-205`; după pasul 6: `gpu vbios` și `gpu vbios --detalii` → poze cu toate rândurile; pe stick rămân `kronos/kronos_459_q8_0.kgr` + `.sha256` și `cyber.rw`):**
+- **Workstation, viteza lui Kronos (~25 min, cu `os-206`; după pasul 6: `gpu vbios` și `gpu vbios --detalii` → poze cu toate rândurile; pe stick rămân `kronos/kronos_459_q8_0.kgr` + `.sha256` și `cyber.rw`):**
   1. `cpu porneste`, apoi `run kronos --n 5 Ana are mere.` → poză cu rândul „citit in … ms” (ținta < 10 s) și simbolurile `[2233, 1585, 32, 475, 50]`.
   2. `usb citire mare`, apoi iar `run kronos --n 5 Ana are mere.` → același text, „citit in …” (64 KiB pe comandă; dacă apare vreo eroare USB:
      `usb citire mica` și poză cu `log usb`).

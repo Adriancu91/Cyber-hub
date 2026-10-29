@@ -643,4 +643,5 @@ Format:
   direct, cu `CYBER_GPU_TOKEN` în CI), adaugă `gpu fwsec [--sim]` și `gpu firmware [--sim]` + 2 rânduri în `gpu plan`, testele QEMU din propunere,
   apoi Release nou prin CI (os-206+). Nimic nu scrie în placă; firmware-ul nu intră în repo, în teste sau în arhiva stick-ului. **Cu prioritate:
   Adrian poate merge la workstation chiar azi.**
-- stare: preluat (2026-10-29 06:23 UTC, sesiunea OS) — P6-35 în docs/TASKS.md
+- stare: gata (2026-10-29 10:25, sesiunea OS) — P6-35
+- rezultat: `gpu fwsec` și `gpu firmware` (doar citire, `--sim` în testele QEMU, rândurile 5c/5d în `gpu plan`, Cyber-GPU pe `2c9c90c`) sunt în Release `os-206` (CI verde) și în arhiva de rezervă `os-1002` din hub; firmware-ul nu e nici în repo, nici în arhivă.

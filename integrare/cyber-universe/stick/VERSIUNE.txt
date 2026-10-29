@@ -1,6 +1,6 @@
-numar: os-1001
-arhiva: stick-cyber-universe-os-1001.zip
-commit: 02f2043832a9a8e99315da3265898f5607baa2e6
-ora (UTC): 2026-10-28T21:07:39Z
-sha256: ca0bbc5a629ecd7be51e9214c365e3de9e0d7a4657dd7ec7f3fde158cd7d1650
-marime: 6922613 octeti
+numar: os-1002
+arhiva: stick-cyber-universe-os-1002.zip
+commit: 2c8584a81489738ccb99ff74f1cb6af912643dc2
+ora (UTC): 2026-10-29T08:20:16Z
+sha256: 557eff33d46083bf3a7bd7f35b1e278617844220cf588755b1365c842360582d
+marime: 7047482 octeti

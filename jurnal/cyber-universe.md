@@ -73,3 +73,4 @@
 - 2026-10-28 23:55 — după repornirea Actions (23:35): CI roșu pentru că nu poate citi `cyber-gpu` privat; P6-33 = CI citește `cyber-gpu` cu secretul `CYBER_GPU_TOKEN` (de pus de Adrian), altfel un singur mesaj clar.
 - 2026-10-29 02:35 — C-37 gata (P6-34): CI citește `cyber-gpu` cu cheia lui Adrian; cauza reală a „instabilului” `phase4` găsită (ordinea fișierelor pe discul de test) și reparată; run 205 verde → Release `os-205`.
 - 2026-10-29 02:40 — trecere extra („C-37”): C-37 era deja gata; reconfirmat: CI verde (run 205), Release `os-205` publicat (C-29 + C-31 incluse).
+- 2026-10-29 10:25 — C-38 gata (P6-35): `gpu fwsec` (I3b) și `gpu firmware` (I4), doar citire, Cyber-GPU pe `2c9c90c`; CI verde → Release `os-206`; rezervă `os-1002` în hub.

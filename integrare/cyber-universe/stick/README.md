@@ -10,13 +10,14 @@ Aceleași fișiere ca într-un Release: `cyber-universe-usb.img` (varianta A, im
 plus `VERSIUNE` și `SHA256SUMS`. Pașii: `docs/USB.md` din `cyber-universe`. **Fără** modelul Kronos și **fără** firmware NVIDIA
 (verificat de `tools/stick-hub.sh` la fiecare arhivă). Modelul se pune pe stick separat, ca până acum.
 
-## Ce e nou față de os-197
-- `gpu vbios --detalii` (C-31): structura VBIOS-ului plăcii video, doar citire, cu „0 scrieri” afișat; intră și în `raport`.
-  Driverul Cyber-GPU e la versiunea `8313973`.
-- Licența proprietară pentru codul nou (C-32) — nu schimbă ce face sistemul.
-- Viteza lui Kronos din C-29 era deja în os-197.
+## Ce e nou (os-1002 = același cod ca Release-ul GitHub `os-206`, commit `2c8584a`)
+- **`gpu fwsec`** (C-38, pasul I3b al ferestrei C-36): unde e programul FWSEC în VBIOS, doar citire, „0 scrieri”.
+- **`gpu firmware`** (C-38, pasul I4): verifică cele 4 fișiere GSP 570.144 din `firmware\nvidia\ga102\gsp\` de pe stick (+ `firmware\LICENCE.nvidia`):
+  pentru fiecare „ok … = oficial” + „antet citit”, la final `criteriul I4: TRECE`/`NU TRECE`. **Nu atinge placa video.** Firmware-ul NU e în arhivă.
+- `gpu plan` are pașii 5c și 5d. Driverul Cyber-GPU e la versiunea `2c9c90c`.
+- De la os-1001: `os-205` (C-29, C-31 `gpu vbios --detalii`, C-32, C-37). Release-urile GitHub merg din nou; arhiva de aici e doar rezervă.
 
-## Teste făcute înainte (os-1001, 28 oct 2026)
-Suita QEMU: 78 din 80 la prima trecere + 1 sărit (internet); cele 2 picate (`fpu-smp`, `kronos-calcul`) = testul vechi al
-ceasului cu 4 procesoare pe calculatorul de test cu 2 nuclee, ambele trec la reluare. Arhiva dezarhivată de probă (sumele OK),
-iar imaginea pornește în QEMU de pe stick USB până la desktop. `actualizeaza` de pe stick caută tot Release-urile GitHub, deci nu vede arhivele de aici.
+## Teste făcute înainte (os-1002, 29 oct 2026)
+Suita QEMU: 80 din 80 + 1 sărit (internet; `appnet` a trecut la reluare). CI GitHub verde (la reluare: `kronos-calcul`, ceasul cu 4 procesoare)
+→ Release `os-206`. `gpu firmware` încercat de mână cu un stick de test de 128 MiB cu fișiere false de mărimea oficială: 4 × „ALT CONTINUT”,
+fără probleme de memorie. Arhiva dezarhivată de probă: toate sumele OK.
