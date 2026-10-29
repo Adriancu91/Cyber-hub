@@ -77,3 +77,4 @@
 - 2026-10-29 10:35 — trecere extra („C-38”): C-38 era deja gata; reconfirmat: CI verde, Release `os-206` publicat.
 - 2026-10-29 10:40 — sesiune programată paralelă: C-38 era deja gata în sesiunea de 08:20; reconfirmat CI verde (run 206), Release `os-206`. Nimic nou.
 - 2026-10-29 11:42 — sesiune programată, oprire scurtă: nicio comandă nouă; CI verde (run 206), Release `os-206`.
+- 2026-10-29 14:50 — C-40 gata (P6-36): nucleele libere trezite imediat (cauza așteptării firelor), 49 de sincronizări pe simbol în loc de 61, textul pe rânduri + `--fara-ecran`, `--cauta` cu media a 5 treceri; simboluri identice; CI verde → Release `os-208`; rezervă `os-1003` în hub.

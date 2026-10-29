@@ -665,7 +665,8 @@ Format:
   (2) textul pe ecran scris o dată pe rând/la sfârșit, nu simbol cu simbol (sau opțiunea `--fara-ecran` la `--profil`); (3) alegerea
   automată a numărului de fire din `--cauta` să includă și costul sincronizării. Ținta rămâne ≥ 150 simb/s; simbolurile trebuie să rămână
   identice (testele QEMU + vectorii KGR1). Apoi Release nou și pașii pentru Adrian (doar `--profil --n 64 Buna ziua`).
-- stare: preluat (2026-10-29 12:45, sesiunea OS) — P6-36
+- stare: gata (2026-10-29 14:45, sesiunea OS) — P6-36
+- rezultat: nucleele libere sunt trezite imediat când un fir are de lucru (înainte așteptau până la 10 ms — cauza principală a așteptării), 49 de sincronizări pe simbol în loc de 61, textul pe ecran pe rânduri (+ `--fara-ecran`), `--cauta` cu media a 5 treceri; simboluri identice, CI verde, Release `os-208` — viteza reală se vede la fereastra următoare (`run kronos --profil --n 64 Buna ziua`).
 
 ### C-41 · cyber-universe · „Claude din interior” fără API: OS-ul legat de sesiunile Claude prin GitHub („cutia poștală”), etapa 1 în simulare
 - data: 2026-10-29 13:35 · de la: Adrian („nu îmi place cu API”; ținta principală) prin centrul de comandă, delegarea din 26 oct 17:45 — înlocuiește varianta cu API din 13:25

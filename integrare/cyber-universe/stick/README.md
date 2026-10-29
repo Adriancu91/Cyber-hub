@@ -10,14 +10,13 @@ Aceleași fișiere ca într-un Release: `cyber-universe-usb.img` (varianta A, im
 plus `VERSIUNE` și `SHA256SUMS`. Pașii: `docs/USB.md` din `cyber-universe`. **Fără** modelul Kronos și **fără** firmware NVIDIA
 (verificat de `tools/stick-hub.sh` la fiecare arhivă). Modelul se pune pe stick separat, ca până acum.
 
-## Ce e nou (os-1002 = același cod ca Release-ul GitHub `os-206`, commit `2c8584a`)
-- **`gpu fwsec`** (C-38, pasul I3b al ferestrei C-36): unde e programul FWSEC în VBIOS, doar citire, „0 scrieri”.
-- **`gpu firmware`** (C-38, pasul I4): verifică cele 4 fișiere GSP 570.144 din `firmware\nvidia\ga102\gsp\` de pe stick (+ `firmware\LICENCE.nvidia`):
-  pentru fiecare „ok … = oficial” + „antet citit”, la final `criteriul I4: TRECE`/`NU TRECE`. **Nu atinge placa video.** Firmware-ul NU e în arhivă.
-- `gpu plan` are pașii 5c și 5d. Driverul Cyber-GPU e la versiunea `2c9c90c`.
-- De la os-1001: `os-205` (C-29, C-31 `gpu vbios --detalii`, C-32, C-37). Release-urile GitHub merg din nou; arhiva de aici e doar rezervă.
+## Ce e nou (os-1003 = commit `aa59e93`, același cod de stick ca Release-ul GitHub `os-208`)
+- **Kronos mai rapid pe multe nuclee** (C-40): un nucleu liber e trezit imediat când un fir are de lucru (înainte aștepta până la 10 ms),
+  mai puține așteptări între fire la fiecare simbol (49 în loc de 61), textul apare pe ecran pe rânduri, nu simbol cu simbol.
+  Simbolurile generate sunt aceleași. Opțiune nouă: `--fara-ecran` (textul doar la sfârșit).
+- `kronos-calcul --cauta` alege numărul de fire după media a 5 treceri (contează și firele care întârzie).
+- Tot ce era în os-1002 (`gpu fwsec`, `gpu firmware`, `gpu vbios --detalii` etc.).
 
-## Teste făcute înainte (os-1002, 29 oct 2026)
-Suita QEMU: 80 din 80 + 1 sărit (internet; `appnet` a trecut la reluare). CI GitHub verde (la reluare: `kronos-calcul`, ceasul cu 4 procesoare)
-→ Release `os-206`. `gpu firmware` încercat de mână cu un stick de test de 128 MiB cu fișiere false de mărimea oficială: 4 × „ALT CONTINUT”,
-fără probleme de memorie. Arhiva dezarhivată de probă: toate sumele OK.
+## Teste făcute înainte (os-1003, 29 oct 2026)
+Suita QEMU: 77 din 80 + 1 sărit la prima trecere; `ghpush` (serverul local de test), `fpu-smp` și `kronos-calcul` (ceasul cu 4 procesoare
+pe gazda cu 2 nuclee) au trecut la reluare. Test nou: un fir nou pornește pe un nucleu liber în ~40 µs. Arhiva dezarhivată de probă: toate sumele OK.

@@ -1,18 +1,22 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-29 11:42 (ora României) · **de:** sesiunea OS programată (oprire scurtă, nimic nou) · **CI verde, Release `os-206`** (C-38 gata)
+**Actualizat:** 2026-10-29 14:50 (ora României) · **de:** sesiunea OS programată · **C-40 gata (P6-36), CI verde, Release `os-208`**
 
 ## Acum
-- **C-38 gata (P6-35):** două comenzi noi pentru fereastra de pe workstation (C-36), ambele doar citire:
-  - `gpu fwsec` — unde e programul FWSEC în VBIOS (pasul I3b); ultimul rând `criteriul I3b: TRECE`/`NU TRECE`, „0 scrieri”.
-  - `gpu firmware` — verifică cele 4 fișiere firmware 570.144 de pe stick (mărime, sumă SHA-256, antet citit de codul nostru); **nu atinge placa**.
-  - `gpu plan` are pașii 5c și 5d. Driverul Cyber-GPU fixat pe `2c9c90c`.
-- Testate în QEMU (simulare + calea reală fără placă) și o dată cu un stick de test cu fișiere false de mărimea oficială (64 MB, fără probleme).
-- **Release `os-206`** pe GitHub (CI verde la reluare; picase doar testul vechi al ceasului cu 4 procesoare). Rezervă în hub: `integrare/cyber-universe/stick/` = `os-1002`, același cod.
+- **C-40 gata (P6-36) — frânele lui Kronos de pe workstation:**
+  - Cauza principală a „așteptării firelor” (62,6 %): un nucleu liber dormea până la următoarea bătaie a ceasului (10 ms), iar un fir de
+    lucru dat la o parte (de terminal/desktop la fiecare simbol afișat) stătea la coadă deși 18 nuclee erau libere. Acum nucleul liber e
+    trezit imediat (în QEMU: un fir nou pornește în ~40 µs).
+  - Motorul: 49 de sincronizări pe simbol în loc de 61 (qkv + atenția împreună la generare), GELU pe toate firele.
+  - Ecranul: textul apare pe rânduri, nu simbol cu simbol; `--fara-ecran` = textul doar la sfârșit.
+  - `kronos-calcul --cauta` alege numărul de fire după media a 5 treceri (contează și firele care întârzie).
+  - Simbolurile generate sunt identice (vectorii oficiali Kronos F32/Q8_0, 1–4 fire). Suita QEMU trece; CI verde → **Release `os-208`**.
+    Rezervă în hub: `integrare/cyber-universe/stick/` = `os-1003` (același cod de stick).
+- Câștigul real (ținta ≥ 150 simb/s) se vede abia pe workstation.
 
 ## Urmează
 - Opriri scurte până la o comandă nouă (coada: P6-10, P6-12 p.2 așteaptă hardware; P5-07 blocat; C-7, C-11 după întoarcerea lui Adrian).
-- După fereastra C-36: rezultatele din `rezultate/` → reparațiile cerute (dacă apar).
+- După următoarea fereastră pe workstation: cifrele noi din `rezultate/` → pasul următor pentru viteză, dacă ținta nu e atinsă.
 
 ## Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (proprietare de la 28 oct; până la `0bf1303` MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/`.
@@ -23,21 +27,11 @@
 - `kronos` / Adrian: Release-ul privat `kronos-kgr1-459` (comanda din `integrare/kronos/MODEL.md`), ca fișierul să ajungă pe stick.
 
 ## Blocaje / nevoie de Adrian
-- **Fereastra C-36 pe workstation (azi, dacă poți):** stick-ul = Release **`os-206`** (sau arhiva `os-1002` din hub; `os-1001` e depășit).
-  Pune pe stick și fișierele firmware în `firmware\nvidia\ga102\gsp\` + `firmware\LICENCE.nvidia` (pașii exacți: `cyber-gpu/docs/FEREASTRA_C-36.md`).
-  În OS: `gpu vbios`, `gpu vbios --detalii`, **`gpu fwsec`** (pasul 1c), **`gpu firmware`** (pasul 2, varianta A; poate dura până la ~30 s), `log gpu 40`
-  → poze cu toate rândurile; apoi `raport` → `rezultate/2026-10-29-workstation-gpu/`.
-- **Stick-ul nou = Release `os-206`** (GitHub → cyber-universe → Releases, sau `actualizeaza` pe laptop cu cablu). Dacă scrii stick-ul de la zero
-  (varianta A sau B din `docs/USB.md`), pune la loc `kronos/kronos_459_q8_0.kgr` + `.sha256`.
-- **Workstation, viteza lui Kronos (~25 min, cu `os-206`; după pasul 6: `gpu vbios` și `gpu vbios --detalii` → poze cu toate rândurile; pe stick rămân `kronos/kronos_459_q8_0.kgr` + `.sha256` și `cyber.rw`):**
-  1. `cpu porneste`, apoi `run kronos --n 5 Ana are mere.` → poză cu rândul „citit in … ms” (ținta < 10 s) și simbolurile `[2233, 1585, 32, 475, 50]`.
-  2. `usb citire mare`, apoi iar `run kronos --n 5 Ana are mere.` → același text, „citit in …” (64 KiB pe comandă; dacă apare vreo eroare USB:
-     `usb citire mica` și poză cu `log usb`).
-  3. `run kronos-calcul --cauta` (măsoară acum pe dimensiunile lui #459; scrie un reglaj nou) → poză cu ultimele rânduri.
-  4. `run kronos --profil --n 64 Buna ziua` → poză cu rândurile „profil:” (ținte: ≥ 150 simb/s pe toate nucleele).
-  5. `run kronos --profil --fire 1 --n 64 Buna ziua` (ținta ≥ 50 simb/s), apoi `--fire 18` și `--fire 36` → câte o poză.
-  6. `run kronos --n 5 def suma(a, b):` → „\n    return a + b” (simbolurile `[1510, 1947, 1358, 1646, 1376]`); opțional
-     `run kronos --repetitie 1.3 --n 64 Buna ziua`. La final `raport`; pozele + `raport/*.txt` + `kronos/reglaj-*.txt` → `rezultate/`.
+- **Stick-ul nou = Release `os-208`** (GitHub → cyber-universe → Releases, sau `actualizeaza` pe laptop cu cablu; rezervă: arhiva `os-1003` din hub).
+  Dacă scrii stick-ul de la zero, pune la loc `kronos/kronos_459_q8_0.kgr` + `.sha256`, `cyber.rw` și (pentru Cyber-GPU) folderul `firmware\`.
+- **Workstation, Kronos (~5 min, cu `os-208`):** `cpu porneste`, apoi `run kronos --profil --n 64 Buna ziua` → poză cu rândurile „profil:”
+  (ținta ≥ 150 simb/s). Opțional: `run kronos-calcul --cauta` înainte (scrie un reglaj nou) și `run kronos --profil --fara-ecran --n 64 Buna ziua`.
+  La final `raport`; pozele + `raport/*.txt` + `kronos/reglaj-*.txt` → `rezultate/`.
 - **Test pe cele două laptopuri (~15 min, Secure Boot oprit, `os-194` sau mai nou):**
   - **AMD (Ryzen 5 4500U):** `run kronos-calcul` (așteptat „... (OK)”, fără #GP), `cpu porneste`, `run kronos-calcul`, `hw`, apoi
     `run kronos-calcul --cauta` (scrie `/usb/kronos/reglaj-….txt`; stick-ul trebuie să aibă `cyber.rw`), `raport`.
