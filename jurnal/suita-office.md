@@ -261,3 +261,5 @@
 - 2026-10-29 23:19 — Imagini: textul are retrageri din stânga / dreapta și spațiu înainte de paragraf.
 - 2026-10-30 00:04 — Video: 10 treceri noi între poze (29 în total); Docs, Slides și Sheets: Inserare → Pictograme (56 de pictograme proprii, căutare, culoare); Word 89,3%, PowerPoint 90,1%.
 - 2026-10-30 00:04 — Testul literelor de acces din Sheets adus la zi (trece complet).
+- 2026-10-30 00:51 — PDF: Manager de cerneluri (culorile spot cu paginile lor, alias pe altă placă, trecere în proces CMYK); Acrobat 81,5%.
+- 2026-10-30 00:51 — Video: 4 feluri noi de apariție a textului (7 în total) și 3 stiluri noi de titlu (18 în total).
