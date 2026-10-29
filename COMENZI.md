@@ -645,3 +645,23 @@ Format:
   Adrian poate merge la workstation chiar azi.**
 - stare: gata (2026-10-29 10:25, sesiunea OS) — P6-35
 - rezultat: `gpu fwsec` și `gpu firmware` (doar citire, `--sim` în testele QEMU, rândurile 5c/5d în `gpu plan`, Cyber-GPU pe `2c9c90c`) sunt în Release `os-206` (CI verde) și în arhiva de rezervă `os-1002` din hub; firmware-ul nu e nici în repo, nici în arhivă.
+
+### C-39 · cyber-gpu · Parserul antetelor firmware greșește pe 3 din 4 fișiere reale (rezultatul de pe workstation, 29 oct)
+- data: 2026-10-29 12:45 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: Pe placa reală, I3 și I3b trec (`rezultate/2026-10-29-workstation-kronos-gpu/REZULTAT.md`). La `gpu firmware`, fișierele sunt oficiale 4/4,
+  dar `booter_load`, `booter_unload` și `bootloader` dau „antet NECITIT: bin_size diferit de mărimea fișierului”; `gsp` (ELF) e citit corect.
+  Repară `fw_hdr` după structurile reale (antetele NVIDIA MIT 570.144: `bin_size` nu e neapărat mărimea întregului fișier — ex. antetul + descrierea
+  + semnăturile se adaugă; verifică pe ce se măsoară), cu teste pe fișiere sintetice cu aceeași formă. Nu pune fișierele reale în repo și nu le
+  analiza dincolo de antet (licența). Apoi actualizează bundle-ul din hub (C-34) și scrie în `stare/cyber-gpu.md` ce trebuie să vadă Adrian la
+  fereastra următoare (`criteriul I4: TRECE`). Pasul următor pe placă (I5+) îl propui separat, cu ce scrie în placă marcat clar.
+- stare: nou
+
+### C-40 · cyber-universe · Kronos în OS: frânele măsurate pe workstation (sincronizarea firelor, afișarea pe ecran)
+- data: 2026-10-29 12:45 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: Cifrele de pe workstation (`rezultate/2026-10-29-workstation-kronos-gpu/`): 69,5 simb/s pe 18 fire, dar **așteptarea firelor = 62,6 %**
+  (78,9 % pe 36 de fire) și **afișarea pe ecran = 14–38 %**. După C-38 (gata), după ce termini ce lucrezi: (1) sincronizare mai ieftină între fire
+  (de ex. o singură împărțire pe strat în loc de una pe produs, așteptare activă scurtă în loc de adormire, sau unirea produselor q/k/v și fc);
+  (2) textul pe ecran scris o dată pe rând/la sfârșit, nu simbol cu simbol (sau opțiunea `--fara-ecran` la `--profil`); (3) alegerea
+  automată a numărului de fire din `--cauta` să includă și costul sincronizării. Ținta rămâne ≥ 150 simb/s; simbolurile trebuie să rămână
+  identice (testele QEMU + vectorii KGR1). Apoi Release nou și pașii pentru Adrian (doar `--profil --n 64 Buna ziua`).
+- stare: nou
