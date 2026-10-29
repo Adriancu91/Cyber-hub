@@ -643,4 +643,4 @@ Format:
   direct, cu `CYBER_GPU_TOKEN` în CI), adaugă `gpu fwsec [--sim]` și `gpu firmware [--sim]` + 2 rânduri în `gpu plan`, testele QEMU din propunere,
   apoi Release nou prin CI (os-206+). Nimic nu scrie în placă; firmware-ul nu intră în repo, în teste sau în arhiva stick-ului. **Cu prioritate:
   Adrian poate merge la workstation chiar azi.**
-- stare: nou
+- stare: preluat (2026-10-29 06:23 UTC, sesiunea OS) — P6-35 în docs/TASKS.md
