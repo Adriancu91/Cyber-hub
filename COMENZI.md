@@ -666,3 +666,12 @@ Format:
   automată a numărului de fire din `--cauta` să includă și costul sincronizării. Ținta rămâne ≥ 150 simb/s; simbolurile trebuie să rămână
   identice (testele QEMU + vectorii KGR1). Apoi Release nou și pașii pentru Adrian (doar `--profil --n 64 Buna ziua`).
 - stare: preluat (2026-10-29 12:45, sesiunea OS) — P6-36
+
+### C-41 · cyber-universe · „Claude din interior”, etapa 1: clientul-agent în OS, testat cu un server fals (fără cheie, fără cost)
+- data: 2026-10-29 13:25 · de la: Adrian (ținta principală; prin centrul de comandă, delegarea din 26 oct 17:45) — vezi DECIZII 29 oct 13:25
+- ce: după C-40. Plan în `docs/plans/` (fază nouă în ROADMAP), apoi pași mici: (1) clientul HTTPS al OS-ului face cereri POST cu JSON (Messages API: model, mesaje,
+  unelte) și citește răspunsul în flux (SSE); (2) o buclă de agent minimă cu 3 unelte: citește fișier, propune modificare (ca diff), rulează un test local;
+  (3) uneltele GitHub prin REST (citește un fișier, creează o ramură `agent/<data>`, face commit pe ea) — doar pe ramuri, niciodată pe `main`; (4) tot testat în QEMU
+  față de un **server fals** pe gazdă (răspunsuri înregistrate), fără nicio cheie reală. Cheia (când o dă Adrian) se citește doar de pe stick (`chei/claude.txt`),
+  nu se scrie niciodată în jurnal, raport, repo sau hub. Comanda în OS: `agent` (cu `--sim` pentru serverul fals). Fără cost, fără rețea reală în teste.
+- stare: nou
