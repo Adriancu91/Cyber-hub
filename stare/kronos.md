@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-29 21:50 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-29 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -11,12 +11,12 @@
   reglaj salvat + rezervă, simboluri identice): **28,3 vs 20,3 simb/s** (1,22× total) la răspunsuri repetate; S49 placa video (PyTorch): doar **fp32** corectă,
   **1,19×** față de procesor (52 vs 41 simb/s), fp16/bf16 respinse; placa 1,7 GB, pornire CUDA +3 s; placa nu se folosește implicit. 1113 teste trec.
   Lecție: pe Windows „toate firele” e rapid doar la primul răspuns dintr-un motor nou (~40 simb/s), apoi ~20; 1 fir ține ~28–31.
-- Kronos-Cod (C-28): pilotul (S43) și unealta completă (S46a) gata și verificate; **descărcarea întreagă (S46) aprobată de Adrian** („da s46”, C-43, 21:46) — pornește la următoarea verificare a executantului, ~10 ore pe noapte, ~3 nopți, fără placă.
+- Kronos-Cod (C-28): pilotul (S43) și unealta completă (S46a) gata și verificate; **descărcarea întreagă (S46) aprobată de Adrian** („da s46”, C-43, 21:46) — pornește după S45 (~02:00; executantul ia sarcinile pe rând), ~10 ore pe bucată, ~3 bucăți, fără placă.
 - S44 INFIRMAT (bucăți tăiate 297/500 vs întregi 336/500): memoria E3 rămâne pe #438.
-- **Rulează S45** (de la 19:00): încă o noapte de antrenare din #459; pragurile urcate înainte (CONFIRMAT dacă română ≤ 1,2112, INFIRMAT > 1,2142). Sfârșit ~01:25; verdictul la 02:15.
+- **Rulează S45** (de la 19:00): încă o noapte de antrenare din #459; pragurile urcate înainte (CONFIRMAT dacă română ≤ 1,2112, INFIRMAT > 1,2142). La ora 3/6 (22:12): cel mai bun punct păstrat (#471), placa 6,1 GB / 64 °C. Sfârșit ~01:25; verdictul la 02:15.
 
 ## Urmează
-- **S46** = descărcarea întreagă a codului (de diseară, în paralel cu S45; raport după fiecare noapte); apoi tokenizerul pe cod (al doilea „da”).
+- **S46** = descărcarea întreagă a codului (prima bucată ~02:00–12:00, după S45; raport după fiecare bucată); apoi tokenizerul pe cod (al doilea „da”).
 - După S45 și după bucata de noapte a S46: **S50** = bancul CCM măsoară separat primul răspuns și următoarele (aprobat, doar procesor).
 
 ## Ce oferă proiectul celorlalți

@@ -694,3 +694,4 @@ Format:
   29 iunie 2021, fără surse cu cont, licențe permisive, proveniență pe fișier, oprire sub 40 GB liberi). Fără placă; poate rula în paralel cu S45.
   Tokenizerul pe cod rămâne pentru un „da” separat.
 - stare: preluat (2026-10-29 21:50, supraveghetor) — S46 în `plan/coada.md` (aprobat de Adrian), pornește la următoarea verificare a executantului, în paralel cu S45
+- notă (2026-10-29 23:15, supraveghetor): executantul ia sarcinile pe rând, deci S46 pornește după S45, pe la 02:00 (nu în paralel). Nimic descărcat încă.
