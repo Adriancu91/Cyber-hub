@@ -228,3 +228,5 @@
 - 2026-10-29 02:31 — Sheets: XLOOKUP complet, erorile scrise în formule, intersecția implicită și regulile SUM / MAX / AND pentru text; 406 / 531 fișiere reale fără pierderi.
 - 2026-10-29 03:21 — Docs: graficele din .docx se deschid ca grafice cu datele lor; Sheets: formulele .ods cu celule șterse rămân formule.
 - 2026-10-29 03:21 — Sheets: graficele cu datele pe altă foaie și foile care sunt doar un grafic se deschid și se salvează; 413 / 531 fișiere reale fără pierderi (erau 406).
+- 2026-10-29 04:04 — Sheets: graficele de tip nou din .xlsx (cascadă, histogramă, pâlnie…) se deschid; LOOKUP pe liste neordonate, VALUE cu „$”.
+- 2026-10-29 04:04 — Slides: graficele de tip nou din .pptx și mai multe forme .odp (și cele desenate liber); 425 / 541 fișiere reale fără pierderi.
