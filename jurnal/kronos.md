@@ -46,3 +46,4 @@
 - 2026-10-29 02:15 — S44 INFIRMAT (bucăți tăiate 297/500 vs întregi 336/500): tăierea pe propoziții se închide. S43a gata (unealta pilotului Kronos-Cod, 48 teste fără rețea) → pilotul S43 aprobat. S45 (încă o noapte din #459) propus, așteaptă Adrian.
 - 2026-10-29 05:15 — S43 (pilotul Kronos-Cod) gata și verificat: 688/1.003 pachete, 0,376 GB cod curat, ~107 mil. simboluri. S46a (modul complet al uneltei, fără rețea) aprobat; S46 (descărcarea întreagă) propus, așteaptă Adrian.
 - 2026-10-29 08:15 — S46a gata și verificat (modul complet al uneltei Kronos-Cod, 13 teste noi fără rețea, 1071 teste trec; nimic descărcat). S46 (descărcarea întreagă, ~3 nopți) și S45 așteaptă „da”-ul lui Adrian; placa video liberă.
+- 2026-10-29 11:15 — S46 (descărcarea codului) oprit corect: descărcările cer „da”-ul lui Adrian scris anume, nu delegarea. S47 (CCM etapa 1, procesor) în lucru, 1080 teste trec; S45 confirmată pentru noaptea asta (granița 1).
