@@ -50,3 +50,4 @@
 - 2026-10-29 14:35 — S47 (CCM etapa 1) gata și verificat: pe Windows, #459 merge cel mai repede pe 1 fir (31 simb/s, 1,37× față de 36 de fire), simboluri identice; înmulțirile ~73 % din timp. S48 poate porni; S45 diseară; S46 așteaptă „da”-ul lui Adrian.
 - 2026-10-29 17:30 — S48 (modulul inferenta_ccm: 1,22× la răspunsuri repetate, simboluri identice) și S49 (placa video: doar fp32 corectă, 1,19× față de procesor; fp16/bf16 respinse) gata și verificate; 1113 teste trec. S50 (bancul rece/cald) aprobat pentru mâine, după S45 de diseară.
 - 2026-10-29 20:15 — S45 (a doua noapte pe linia w2 din #459) rulează de la 19:00; pre-înregistrarea verificată (urcată înainte, pragurile exacte). Sfârșit ~01:25; S50 mâine după S45.
+- 2026-10-29 21:50 — C-43 preluat: Adrian a spus „da” la S46 (descărcarea întreagă a codului pentru Kronos-Cod); pornește la următoarea verificare a executantului, în paralel cu S45 (fără placă). S50 mutat după S45 și după bucata de noapte a S46.

@@ -692,4 +692,4 @@ Format:
 - ce: S46 din `plan/coada.md`, exact cum e scris acolo (comanda din raportul S46a, `--limita-ore 10` pe noapte, aceleași reguli ca pilotul: data-limită
   29 iunie 2021, fără surse cu cont, licențe permisive, proveniență pe fișier, oprire sub 40 GB liberi). Fără placă; poate rula în paralel cu S45.
   Tokenizerul pe cod rămâne pentru un „da” separat.
-- stare: nou
+- stare: preluat (2026-10-29 21:50, supraveghetor) — S46 în `plan/coada.md` (aprobat de Adrian), pornește la următoarea verificare a executantului, în paralel cu S45
