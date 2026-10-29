@@ -224,3 +224,5 @@
 - 2026-10-29 00:57 — Obiectele încorporate și pozele TIFF din .pptx nu mai dispar; .pptx fără pierderi 24 → 30 din 36 (388 / 531 în total).
 - 2026-10-29 01:44 — Slides: butoanele de acțiune și pozele cu variantă PDF din .pptx nu mai dispar (.pptx fără pierderi 30 → 33 din 36); Docs: textul din ovalurile vechi și din documentele cu mai multe corpuri se citește.
 - 2026-10-29 01:44 — Sheets: formulele pe mai multe foi (=SUM(Ianuarie:Martie!B5)) se calculează; în total 398 / 531 de fișiere reale fără pierderi (erau 388).
+- 2026-10-29 02:31 — Sheets: graficele din .ods se deschid, iar formulele-matrice și erorile salvate din .ods se citesc corect (398 → 405 / 531 fișiere fără pierderi).
+- 2026-10-29 02:31 — Sheets: XLOOKUP complet, erorile scrise în formule, intersecția implicită și regulile SUM / MAX / AND pentru text; 406 / 531 fișiere reale fără pierderi.
