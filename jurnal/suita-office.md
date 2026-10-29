@@ -254,3 +254,4 @@
 - 2026-10-29 19:22 — PDF: Combină și Lot primesc prezentări (.pptx/.odp/.ppt), e-mailuri .eml și pagini web .mht (și în Web → PDF); tabelele .xlsx ies formatate ca în Sheets; textul din PDF-urile făcute din documente se găsește la căutare; Acrobat 81,2%.
 - 2026-10-29 20:14 — PDF: Preflight (verificarea înainte de tipar / web, cu profile, salt la pagină și raport); Acrobat 81,3%.
 - 2026-10-29 20:14 — Docs: Inserare → Foaie de calcul (foaie din .xlsx / .ods / .csv ca tabel formatat, cu alegerea foii și chenarele); Word 88,9%.
+- 2026-10-29 21:08 — Slides: Inserare → Foaie de calcul (foaie din .xlsx / .ods / .csv ca tabel, cu culorile din Sheets); culori pe fiecare celulă, salvate și citite din .pptx, plus Umplere celulă; tabele până la 30 × 12; PowerPoint 89,4%.
