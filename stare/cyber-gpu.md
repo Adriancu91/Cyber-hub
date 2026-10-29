@@ -1,24 +1,26 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-10-29 13:55 (ora României) · **de:** sesiunea Cyber-GPU 19 (cloud, fără placă)
+**Actualizat:** 2026-10-29 19:50 (ora României) · **de:** sesiunea Cyber-GPU 20 (cloud, fără placă)
 
 ## Acum
-- **I9e gata (doar SIMULARE):** canalul de lucru al driverului, în grupul de canale din I9d: canalul GPFIFO (inel de 1024 intrări + USERD),
-  obiectul de calcul (compute), contextul GR promovat pentru canal (MAIN/PM/PATCH, întâi partea fizică, apoi cea virtuală, ca tinygrad),
-  „jetonul soneriei” (numărul canalului de la GSP-RM + runlist-ul lui GR0) și programarea grupului. Regulile citite în RM 570.144
-  (`kernel_channel.c`, `kernel_fifo_ga100.c`, `kernel_channel_group_api.c`, MIT); structurile noi generate din antete.
-  Testat cap-coadă prin cozile reale către RM-ul fals; 8 greșeli plantate, toate prinse. **Soneria nu e sunată** (ar fi o scriere în placă).
-  Commit-uri `4fe02f3`, `9d671fd` pe `g0-g2-fundatie`; 268 de teste trec; CI 64 verde.
-- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `9d671fd`.
+- **I10a gata (doar SIMULARE):** primul set de comenzi pe canalul de lucru al driverului: alegerea clasei de calcul și cele două
+  „ferestre” de memorie (locală și partajată), exact cuvintele pe care le trimite tinygrad; comenzile ajung în bufferul de comenzi,
+  intrarea în inel, apoi „pointerul de scriere” (`GPPut`) în USERD; driverul citește înapoi cât a preluat placa și refuză valori imposibile.
+  Modelul de placă din `gpu-sim` citește totul **doar prin tabelele de pagini** date lui GSP-RM. Testul a găsit o problemă reală:
+  USERD-ul trebuie șters de driver **înainte** de a cere canalul (altfel conține „gunoi”) — reparat (`open_work_channel_cleared`).
+  8 greșeli plantate, toate prinse. **Soneria nu e sunată** (ar fi o scriere în placă): driverul doar descrie ce ar scrie.
+  Commit `5366ed3` pe `g0-g2-fundatie`; 280 de teste trec; CI 65 verde.
+- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `5366ed3`.
 
 ## Urmează
 - Sesiunea OS: mutarea fixării cyber-gpu pe `ef97110`+ și un Release (propunere: `idei/2026-10-29_cyber-universe_gpu-fixare-c39.md`); orice vârf mai nou merge la fel.
-- Fără placă: primul pushbuffer pe canalul de lucru (`SET_OBJECT` compute + ferestrele de memorie, ca tinygrad), scris în inel și verificat în modelul de comenzi; treapta 6 matmul.
+- Fără placă: cererea `GR_GET_INFO` către GSP-RM (câte GPC/TPC are placa, pentru memoria locală) și prima lansare de program pe canalul de lucru în model (QMD + lansare + semaforul de terminare); treapta 6 matmul.
 
 ## Ce oferă proiectul celorlalți
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Față de `2c9c90c` (fixarea OS-ului):
   **doar adăugări** în interfața publică; nou în sesiunea 18: `gpu_sim::fw_stick::{booter_570_144, bootloader_570_144}`; în sesiunea 19:
-  `nvidia_ga104::gsp::user_space::{WorkChannel, open_work_channel}` și funcții noi în `gsp::rmapi` (nimic de schimbat în OS). Schimbare de
+  `nvidia_ga104::gsp::user_space::{WorkChannel, open_work_channel}` și funcții noi în `gsp::rmapi`; în sesiunea 20: `gsp::work_queue`,
+  `user_space::open_work_channel_cleared`, în `gpu_sim::cmdproc`: `ComputeState`, `run_channel` (nimic de schimbat în OS). Schimbare de
   comportament intenționată: `fw_hdr` acceptă `bin_size` ≠ mărimea fișierului și citește numărul de semnături prin adresă. Codul OS nu se
   schimbă; doar fixarea (nota `integration/cyber-universe/C-39_gpu-firmware-antete.md`).
 - Pentru mai târziu (doar în fereastra cu Adrian): pornirea reală a GSP va cere de la OS o zonă de RAM contiguă (sub 2^49) și Bus Master.
