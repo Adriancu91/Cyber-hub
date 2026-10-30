@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-30 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-30 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -16,8 +16,10 @@
 - **S45 (a doua noapte de antrenare din #459) a căzut la 23:09, în ora 4/6**, fără eroare: **calculatorul s-a repornit** între 23:09 și 23:12 (confirmat din jurnalele de logare; cauza încă necunoscută, placa în limite). Închisă fără verdict; orele 1–3 (#469–#471) doar informative.
 - S52 (diagnosticul repornirii, doar citire) **oprit**: jurnalele Windows nu se pot citi de executant. Placa a fost normală până în ultima secundă (64 °C, 6.116 MB) → nu supraîncălzire; probabil pană de curent (cum bănuiește Adrian), neconfirmat.
 
+- **Rulează S51** (de la 19:00) = repetarea S45 de la capăt din #459, pre-înregistrată înainte de pornire, aceleași praguri (CONFIRMAT dacă română ≤ 1,2112). Sfârșit ~02:00.
+
 ## Urmează
-- De la 19:00: **S51** = repetarea S45 de la capăt din #459, aceleași praguri (CONFIRMAT dacă română ≤ 1,2112); apoi, ~02:00, **S46 bucata 2** (fără placă).
+- ~02:00: verdictul S51; apoi **S46 bucata 2** (fără placă).
 - După descărcare: tokenizerul pe cod (al doilea „da” al lui Adrian).
 
 ## Ce oferă proiectul celorlalți
