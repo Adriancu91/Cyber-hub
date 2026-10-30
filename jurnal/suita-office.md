@@ -267,3 +267,5 @@
 - 2026-10-30 01:35 — Imagini: ghidaje inteligente la Mutare (Photoshop 79,9%); Notițe: alegerea foii la Foaie de calcul.
 - 2026-10-30 02:08 — Scheme noi Pâlnie și Cronologie (Slides, Docs, Sheets), legătura feliilor în fereastră nouă și traseele salvate în .psd (Imagini), 3 stiluri noi de titlu (Video); Photoshop 80,1%.
 - 2026-10-30 02:52 — Notițe: Schemă și textul din poze / scris de mână pus în notiță (Notițe 80,7%); Imagini: poză în cadru și deschiderea pozelor RAW de aparat foto (Photoshop 80,4%).
+- 2026-10-30 03:33 — Imagini: pozele RAW Olympus .orf; Sheets: listele derulante din nume definite și din alte registre nu se mai pierd la deschiderea .xlsx.
+- 2026-10-30 03:33 — Slides și Docs: formulele din .odp / .odt devin ecuații care se pot schimba; colecția de test 463 / 547 fără pierderi, 0 erori.

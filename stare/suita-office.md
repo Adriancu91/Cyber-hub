@@ -1,17 +1,18 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 02:52 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 03:33 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02:09–02:52, 6 pași, testele trec:
-  - Notițe: **Inserare → ◇ Schemă…** (schemele din Docs puse în notiță) și **↧ Pune în notiță**: textul citit dintr-o poză sau din scrisul de mână ✏ intră în notiță.
-  - Imagini: **poză în cadru** (cu o zonă aleasă, 🖼 Din fișier… o umple, cu mască); se deschid **pozele RAW de aparat foto** (.dng, .cr2, .nef, .arw, .raf, .rw2…), cu poza JPEG din ele; 3 RAW-uri reale în colecția de test.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02:53–03:33, 5 pași, testele trec:
+  - Imagini: se deschid și pozele RAW **Olympus .orf** (poza din notele aparatului); un .orf real în colecția de test.
+  - Sheets: listele derulante din .xlsx care iau valorile dintr-un **nume definit** sau din **alt registru** (cu valorile păstrate în fișier) nu se mai pierd.
+  - Slides / Docs: **formulele din .odp și .odt** devin ecuații Suite, care se pot schimba (✎ Ecuație); pozele .pptx de mărime 0 nu mai sunt numărate ca pierderi.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,3%**, Excel 87,9%, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 81,5%, Photoshop 80,4%, formule 97,1%. Colecția de test: 457 / 543 fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,3%**, Excel 87,9%, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 81,5%, Photoshop 80,4%, formule 97,1%. Colecția de test: **463 / 547** fișiere reale fără pierderi, 0 erori (testul verifică acum și pozele RAW).
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar, câte una pe pas.
+- Ecuațiile din .docx (OMML) ca ecuații care se pot schimba, apoi alte funcții „parțial” / „nu” din inventar.
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice românești și semnarea / verificarea XML (XML-DSig, scrise de la zero).
@@ -20,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce un .xlsx de la serviciu cu o listă derulantă luată dintr-un nume sau din alt fișier: în Sheets apar variantele? Și un .odt / .odp cu o formulă: în Suite se poate schimba cu ✎ Ecuație? Și Imagini → Deschide → un .orf de la un aparat Olympus.
 - Să încerce Imagini → Deschide → un fișier RAW de la aparatul lui (sau un .dng de pe telefon): apare poza, întoarsă corect? Și Notițe → ✎ Desen → scrie de mână un cuvânt → clic pe desen → ↧ Pune în notiță: cuvântul apare în text?
 - Să încerce Slides → Inserare → ◇ Diagramă ▾ → Pâlnie / Cronologie → Export .pptx deschis la serviciu: arată la fel? Și Imagini → ✒ Traseu → 💾 Salvează traseul → salvat .psd și deschis la serviciu: traseul e în panoul de trasee?
 - Să încerce Imagini → un logo pe un strat nou → V → trage-l spre mijlocul pozei: se oprește singur la mijloc, cu o linie roz (și cu Ctrl merge liber)? Și Slides → ◼ Formă → Explicație cu săgeți în patru direcții / Săgeată îndoită în sus → Export .pptx deschis la serviciu: forma e aceeași? Și Video → Felul trecerii → Cruce / Despicare orizontală: arată bine?
