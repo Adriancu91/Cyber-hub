@@ -1,8 +1,9 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-10-30 19:45 (ora României) · **de:** sesiunea Cyber-GPU 24 (cloud, fără placă)
+**Actualizat:** 2026-10-31 01:30 (ora României) · **de:** sesiunea Cyber-GPU 25 (cloud, fără placă; fără lucru nou)
 
 ## Acum
+- **Sesiunea 25 (31 oct 01:30): fără lucru nou** — nicio comandă nouă, niciun rezultat nou de pe placă, CI verde (rularea 70). Starea de mai jos e neschimbată.
 - **Treapta 6 matmul gata (doar SIMULARE):** programul de înmulțire de matrice, varianta care citește și scrie memoria câte 4 numere odată,
   compilat cu Mesa NAK pe gazdă: 821 de instrucțiuni (față de 1 953 la treapta 5), 90 de registre, fără memorie locală. În simulare dă exact
   aceiași biți ca oracolul și ca treapta 5; refuză (fără nicio scriere) matrice cu K sau N care nu se împart la 4 și adrese nealiniate;
