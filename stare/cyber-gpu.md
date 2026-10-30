@@ -1,18 +1,19 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-10-30 13:50 (ora României) · **de:** sesiunea Cyber-GPU 23 (cloud, fără placă)
+**Actualizat:** 2026-10-30 19:45 (ora României) · **de:** sesiunea Cyber-GPU 24 (cloud, fără placă)
 
 ## Acum
-- **I10d gata (doar SIMULARE):** bufferul de comenzi al driverului se refolosește acum: o bucată din el se rescrie doar după ce placa a
-  semnalat (prin semaforul de terminare) că a citit-o. Până atunci, nimic nu se scrie peste ea; o lansare care nu încape e refuzată fără
-  nicio scriere. În simulare: 12 lansări `add64` într-o zonă în care încap doar 2, rezultat identic bit cu bit la fiecare; 7 greșeli plantate,
-  toate prinse. Commit-uri `5d17a2e`, `3222669` pe `g0-g2-fundatie`; 290 de teste trec.
-- Prima lansare (I10b) și forma plăcii (I10c) rămân la fel: totul în model, **soneria nu e sunată**, programul „rulează” pe procesor.
-- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `3222669`.
+- **Treapta 6 matmul gata (doar SIMULARE):** programul de înmulțire de matrice, varianta care citește și scrie memoria câte 4 numere odată,
+  compilat cu Mesa NAK pe gazdă: 821 de instrucțiuni (față de 1 953 la treapta 5), 90 de registre, fără memorie locală. În simulare dă exact
+  aceiași biți ca oracolul și ca treapta 5; refuză (fără nicio scriere) matrice cu K sau N care nu se împart la 4 și adrese nealiniate;
+  8 greșeli plantate, toate prinse. Commit-uri `937fcf4`, `647398c` pe `g0-g2-fundatie`; 294 de teste trec.
+- Totul în model: **soneria nu e sunată**, programele „rulează” pe procesor. Nimic testat pe RTX 3070 Ti.
+- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `647398c`.
 
 ## Urmează
 - Fereastra următoare (cu `os-209`, care are deja fixarea `aee06c4`): `gpu firmware` → `criteriul I4: TRECE`; apoi, opțional, proba tinygrad.
-- Fără placă mai rămâne un singur pas mic: treapta 6 matmul (Mesa NAK pe gazdă). După el, restul (I5+ pe placă) cere fereastra cu Adrian.
+- **Fără placă nu mai e niciun pas mic de făcut.** Tot restul (I5+: FWSEC, Booter, GSP, soneria, lansările reale, viteza treptelor matmul)
+  cere fereastra pe workstation cu Adrian. Sesiunile următoare fără rezultate noi de pe placă se opresc fără lucru nou.
 
 ## Ce oferă proiectul celorlalți
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Față de `2c9c90c` (fixarea OS-ului):
@@ -21,7 +22,7 @@
   `user_space::open_work_channel_cleared`, în `gpu_sim::cmdproc`: `ComputeState`, `run_channel`; în sesiunea 21: `work_queue::{invalidate_caches,
   launch, release, read_semaphore}`, `WorkQueue::launch_and_signal`, `CommandProcessor::cache_invalidations`; în sesiunea 22: `user_space::query_gr_info`,
   `rmapi::{gr_info_request, parse_gr_info, GrInfo, SM_VERSION_SM86}`, în `gpu_sim::fake_rm`: `SIM_GR_INFO`; în sesiunea 23: `WorkQueue::{retire,
-  push_in_flight}` (nimic de schimbat în OS; `WorkQueue` nu e folosit de OS). Schimbare de
+  push_in_flight}`; în sesiunea 24: `gpu_sim::cmdproc::{matmul_vec4_on_cpu, MATMUL_VEC4_NEEDS}` (nimic de schimbat în OS). Schimbare de
   comportament intenționată: `fw_hdr` acceptă `bin_size` ≠ mărimea fișierului și citește numărul de semnături prin adresă. Codul OS nu se
   schimbă; doar fixarea (nota `integration/cyber-universe/C-39_gpu-firmware-antete.md`).
 - Pentru mai târziu (doar în fereastra cu Adrian): pornirea reală a GSP va cere de la OS o zonă de RAM contiguă (sub 2^49) și Bus Master.
