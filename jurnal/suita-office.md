@@ -284,3 +284,4 @@
 - 2026-10-30 10:25 — Docs: modificările urmărite de paragraf (stil de titlu, aliniere, retragere, spațiere, prima linie), în Suite și în .docx dus-întors; Word 89,5%.
 - 2026-10-30 11:07 — Scheme Radial și Țintă (Slides, Docs, Sheets, Notițe); gramatică: greșeli frecvente și pleonasme noi; Sheets: Rezolvitorul cu metoda Evolutivă și intervalele permise în raportul de sensibilitate.
 - 2026-10-30 11:43 — PDF pentru tipografie: aplatizarea transparenței, trecerea culorilor în CMYK, reparări noi în Preflight și alegerile optimizării (4 pași, testele trec).
+- 2026-10-30 12:33 — Imagini: panoramă din mai multe poze (cu proiecție cilindrică și focala din EXIF); PDF: Fă-l PDF/X-1a pentru tipografie (și din Preflight); Video: 4 stiluri noi de titlu; Acrobat 82,7%, Photoshop 81,6%.
