@@ -695,3 +695,4 @@ Format:
   Tokenizerul pe cod rămâne pentru un „da” separat.
 - stare: preluat (2026-10-29 21:50, supraveghetor) — S46 în `plan/coada.md` (aprobat de Adrian), pornește la următoarea verificare a executantului, în paralel cu S45
 - notă (2026-10-29 23:15, supraveghetor): executantul ia sarcinile pe rând, deci S46 pornește după S45, pe la 02:00 (nu în paralel). Nimic descărcat încă.
+- notă (2026-10-30 02:15, supraveghetor): S46 a pornit la 00:30 (bucata 1 din ~3, `--limita-ore 10`).

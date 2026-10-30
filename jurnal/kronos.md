@@ -52,3 +52,4 @@
 - 2026-10-29 20:15 — S45 (a doua noapte pe linia w2 din #459) rulează de la 19:00; pre-înregistrarea verificată (urcată înainte, pragurile exacte). Sfârșit ~01:25; S50 mâine după S45.
 - 2026-10-29 21:50 — C-43 preluat: Adrian a spus „da” la S46 (descărcarea întreagă a codului pentru Kronos-Cod); pornește la următoarea verificare a executantului, în paralel cu S45 (fără placă). S50 mutat după S45 și după bucata de noapte a S46.
 - 2026-10-29 23:15 — S45 la ora 3/6 (#471 păstrat, placa 6,1 GB / 64 °C); S46 (C-43) pornește după S45, ~02:00, fiindcă executantul ia sarcinile pe rând.
+- 2026-10-30 02:15 — S45 a căzut la 23:09 (ora 4/6, fără eroare; probabil repornire), închisă fără verdict; repetată ca S51 din #459 cu aceleași praguri. S46 (descărcarea codului, C-43) rulează de la 00:30.
