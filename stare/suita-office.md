@@ -1,16 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 12:33 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 13:20 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește acum **Cyber Office Studio** și în interfață (titlu, bara din stânga, mesaje, siglă nouă), făcut de o sesiune paralelă la 10:53.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 11:47–12:33, 6 pași, testele trec:
-  - **Imagini → ⟷ Panoramă…**: 2–12 poze ale aceleiași priveliști se lipesc singure într-o poză lată, cu lumina potrivită și fără tăieturi; proiecție cilindrică pentru pozele făcute rotindu-te pe loc, cu focala din datele pozei.
-  - **PDF → 🖨 PDF/X-1a…**: PDF-ul pentru tipografie într-un pas (comentarii și câmpuri pe pagină, transparența aplatizată, culorile în CMYK, caseta de tăiere, condiția de tipar); Preflight duce direct la el.
-  - **Video**: 4 stiluri noi de titlu (bară de știri roșie, chenar dublu, bandă albă, casetă cu umbră tare), 29 în total.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 12:32–13:20, 4 pași, testele trec:
+  - **PDF → Comprimă… → 🌐 Optimizează pentru web**: PDF-ul pus pe un site își arată prima pagină înainte să se descarce tot (fișier „liniarizat”, scris de la zero, verificat pe 45 de PDF-uri reale); și din Preflight și ca bifă în ⚙ Lot….
+  - **Imagini → ◫ Straturi → 📇 Din tabel (.csv)…**: un șablon cu straturi de text + un tabel dau câte o poză pentru fiecare rând (ecusoane, diplome), cu straturi arătate / ascunse și poze din tabel puse în locul unui strat.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,5%**, **Excel 89,1%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 82,7%, Photoshop 81,6%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,5%**, **Excel 89,1%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 83,1%, Photoshop 81,9%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -22,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce PDF → Comprimă… → 🌐 Optimizează pentru web pe un PDF mare, apoi Proprietăți în alt program de PDF: scrie „Vizualizare rapidă: Da”? Și Imagini → un .psd de ecuson cu un text „Nume” → ◫ Straturi → 📇 Din tabel (.csv)… cu o listă de nume: iese câte o poză cu fiecare nume?
 - Să încerce Imagini → ⟷ Panoramă… cu 3–4 poze făcute cu telefonul rotindu-se pe loc: îmbinările se văd? Și PDF → 🖨 PDF/X-1a… pe un afiș dus la tipografie: îl primesc fără observații?
 - Să ducă la tipografie un afiș / pliant trecut prin PDF → Producție pentru imprimare → ◑ În CMYK și ◩ Aplatizează transparența… (300 ppi): tipografia îl primește fără observații și culorile arată bine?
 - Să încerce Sheets → 🧮 Rezolvitor → Metoda: Evolutivă pe un model real cu DACĂ sau prețuri pe praguri, și raportul cu „Creștere / Scădere permisă”: rezultatele au sens? Și Slides → ◇ Diagramă ▾ → Radial / Țintă → Export .pptx deschis la serviciu.
