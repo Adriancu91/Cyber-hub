@@ -265,3 +265,4 @@
 - 2026-10-30 00:51 — Video: 4 feluri noi de apariție a textului (7 în total) și 3 stiluri noi de titlu (18 în total).
 - 2026-10-30 01:35 — Slides: 7 forme noi (74 în total); Video: 5 treceri noi (34 în total).
 - 2026-10-30 01:35 — Imagini: ghidaje inteligente la Mutare (Photoshop 79,9%); Notițe: alegerea foii la Foaie de calcul.
+- 2026-10-30 02:08 — Scheme noi Pâlnie și Cronologie (Slides, Docs, Sheets), legătura feliilor în fereastră nouă și traseele salvate în .psd (Imagini), 3 stiluri noi de titlu (Video); Photoshop 80,1%.
