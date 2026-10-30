@@ -1,18 +1,18 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 03:33 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 04:20 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02:53–03:33, 5 pași, testele trec:
-  - Imagini: se deschid și pozele RAW **Olympus .orf** (poza din notele aparatului); un .orf real în colecția de test.
-  - Sheets: listele derulante din .xlsx care iau valorile dintr-un **nume definit** sau din **alt registru** (cu valorile păstrate în fișier) nu se mai pierd.
-  - Slides / Docs: **formulele din .odp și .odt** devin ecuații Suite, care se pot schimba (✎ Ecuație); pozele .pptx de mărime 0 nu mai sunt numărate ca pierderi.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03:34–04:20, 6 pași, testele trec — toate despre **ecuații (formule)**:
+  - Formulele din **.docx** (făcute cu editorul de ecuații) se deschid acum ca ecuații Suite care se pot schimba (înainte dispăreau); la fel cele din **.pptx**.
+  - La salvare, ecuațiile din Docs și Slides rămân **ecuații adevărate** în .docx, .pptx, .odt și .odp (înainte erau poze), deci se pot schimba și la serviciu.
+  - 5 documente reale cu formule în colecția de test (LibreOffice, MPL-2.0).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,3%**, Excel 87,9%, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 81,5%, Photoshop 80,4%, formule 97,1%. Colecția de test: **463 / 547** fișiere reale fără pierderi, 0 erori (testul verifică acum și pozele RAW).
+- Scoruri: **Word 89,3%**, Excel 87,9%, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 81,5%, Photoshop 80,4%, formule 97,1%. Colecția de test: **468 / 552** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
-- Ecuațiile din .docx (OMML) ca ecuații care se pot schimba, apoi alte funcții „parțial” / „nu” din inventar.
+- Alte funcții „parțial” / „nu” din inventar.
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice românești și semnarea / verificarea XML (XML-DSig, scrise de la zero).
@@ -21,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să deschidă în Suite un .docx / .pptx de la serviciu cu formule: apar și se pot schimba (clic → ✎ Ecuație)? Și invers: o ecuație din Docs / Slides salvată .docx / .pptx și deschisă la serviciu: se poate schimba acolo?
 - Să încerce un .xlsx de la serviciu cu o listă derulantă luată dintr-un nume sau din alt fișier: în Sheets apar variantele? Și un .odt / .odp cu o formulă: în Suite se poate schimba cu ✎ Ecuație? Și Imagini → Deschide → un .orf de la un aparat Olympus.
 - Să încerce Imagini → Deschide → un fișier RAW de la aparatul lui (sau un .dng de pe telefon): apare poza, întoarsă corect? Și Notițe → ✎ Desen → scrie de mână un cuvânt → clic pe desen → ↧ Pune în notiță: cuvântul apare în text?
 - Să încerce Slides → Inserare → ◇ Diagramă ▾ → Pâlnie / Cronologie → Export .pptx deschis la serviciu: arată la fel? Și Imagini → ✒ Traseu → 💾 Salvează traseul → salvat .psd și deschis la serviciu: traseul e în panoul de trasee?

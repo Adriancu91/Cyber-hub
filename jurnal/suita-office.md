@@ -269,3 +269,5 @@
 - 2026-10-30 02:52 — Notițe: Schemă și textul din poze / scris de mână pus în notiță (Notițe 80,7%); Imagini: poză în cadru și deschiderea pozelor RAW de aparat foto (Photoshop 80,4%).
 - 2026-10-30 03:33 — Imagini: pozele RAW Olympus .orf; Sheets: listele derulante din nume definite și din alte registre nu se mai pierd la deschiderea .xlsx.
 - 2026-10-30 03:33 — Slides și Docs: formulele din .odp / .odt devin ecuații care se pot schimba; colecția de test 463 / 547 fără pierderi, 0 erori.
+- 2026-10-30 04:20 — Docs și Slides: formulele din .docx / .pptx se deschid ca ecuații care se pot schimba (înainte se pierdeau la .docx).
+- 2026-10-30 04:20 — Ecuațiile se salvează ca ecuații adevărate în .docx, .pptx, .odt și .odp (nu ca poze); colecția de test 468 / 552 fără pierderi, 0 erori.
