@@ -292,3 +292,5 @@
 - 2026-10-30 16:20 — Sheets: butoane de filtrare (slicer) și cronologie legate de rezumat, plus graficul mutat pe o foaie nouă; Excel 89,5% (3 pași, testele trec).
 - 2026-10-30 17:03 — Sheets: Editorul de interogare (Din tabel / zonă, cu grupare și coloane calculate, refăcut la Reîmprospătare) și buton rotativ / bară de defilare în celulă; Excel 90,2%.
 - 2026-10-30 17:03 — PDF: Fă-l PDF/E (desene tehnice, 3D păstrat); Acrobat 84,1%.
+- 2026-10-30 17:52 — Sheets: Date → Preluare date → Din web… (tabelele unei pagini web pe foi, doar citită, scripturile ei nu rulează); Excel 90,4%.
+- 2026-10-30 17:52 — Notițe: 🔍 Previzualizare legături web (fișă cu site, titlu, descriere, intră în căutare; Notițe 81,1%) și Inserare → 🧊 Modele 3D (.obj / .stl) în Slides, Docs și Notițe (PowerPoint 90,3%).

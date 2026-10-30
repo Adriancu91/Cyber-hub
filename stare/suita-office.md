@@ -1,16 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 17:03 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 17:52 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Programul se numește acum **Cyber Office Studio** și în interfață (titlu, bara din stânga, mesaje, siglă nouă), făcut de o sesiune paralelă la 10:53.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 16:21–17:03, 4 pași, testele trec:
-  - Sheets: **Editorul de interogare** (Date → Preluare date → Din tabel / zonă…): pași aplicați (alege coloane, filtrează, sortează, scoate dublurile, grupează cu sumă / număr / medie, coloană calculată), cu previzualizare; rezultatul pe foaia „Interogare”, refăcut la Reîmprospătare totală;
-  - Sheets: **buton rotativ / bară de defilare** în celulă (Inserare → Controale): ▲ ▼ schimbă numărul între minim și maxim, formulele se schimbă pe loc;
-  - PDF: **📐 Fă-l PDF/E** (standardul pentru desene tehnice), cu modelele 3D și multimedia păstrate.
+- Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 17:07–17:52, 5 pași, testele trec:
+  - Sheets: **Date → Preluare date → Din web…**: scrii adresa unei pagini, tabelele ei vin ca foi (pagina e doar citită, scripturile ei nu rulează); un .csv de la o adresă merge pe importul de text;
+  - Notițe: **🔍 Previzualizare** lângă adresele web din notiță: fișă cu site, titlu și descriere, la cerere; fișele intră și în căutare;
+  - Slides, Docs și Notițe: **Inserare → 🧊 Modele 3D** (.obj, .stl): modelul rotit cu mouse-ul, cu umbre, pus ca poză transparentă (fără placa video).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,5%**, **Excel 90,2%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 84,1%, Photoshop 81,9%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,5%**, **Excel 90,4%**, **PowerPoint 90,3%**, Clipchamp 80,5%, Notițe 81,1%, Acrobat 84,1%, Photoshop 81,9%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -22,8 +22,8 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- Să încerce Sheets → un tabel cu orașe repetate → Date → Preluare date ▾ → Din tabel / zonă… → Grupează după Oraș, Sumă → Închide și încarcă, apoi un rând nou în tabel și Date → Reîmprospătare totală: foaia Interogare se schimbă? Și Inserare → ⇕ Buton rotativ pe o celulă folosită într-o formulă (de exemplu o dobândă): e ușor de folosit?
-- Să încerce PDF → un plan / desen tehnic → 🗄 PDF/A → 📐 Fă-l PDF/E → Salvează ca…, deschis în alt program de PDF: la Standarde apare PDF/E-1?
+- Să încerce Sheets → Date → Preluare date ▾ → Din web… cu o pagină reală cu un tabel (un clasament, un curs valutar): tabelele vin bine pe foi? Și Notițe → o adresă web → 🔍 Previzualizare: fișa are titlul și descrierea corecte? Și Slides → Inserare → 🧊 Modele 3D cu un .stl real: arată bine și se rotește ușor?
+- Să încerce Sheets → un tabel cu orașe repetate → Date → Preluare date ▾ → Din tabel / zonă… → Grupează după Oraș, Sumă → Închide și încarcă, apoi Date → Reîmprospătare totală; Inserare → ⇕ Buton rotativ pe o celulă dintr-o formulă; PDF → un plan → 🗄 PDF/A → 📐 Fă-l PDF/E: la Standarde, în alt program, apare PDF/E-1?
 - Să încerce PDF → un PDF fără etichete (unul vechi sau „Tipărire în PDF”, cu un tabel, titluri îngroșate, eventual pe două coloane) → ♿ Accesibilitate → 🏷 Etichetează automat: în ☰ Ordinea de citire titlurile, paragrafele, listele și tabelul sunt recunoscute, coloanele merg în ordine, iar antetul și „Pagina …” nu apar? Apoi cu Naratorul din Windows.
 - Să încerce PDF → un PDF „accesibil” (cu etichete) de la serviciu → ♿ Accesibilitate → ☰ Ordinea de citire: numerele merg în ordinea firească? Și partea PDF/UA: ce apare cu ✗ are sens?
 - Să încerce PDF → Comprimă… → 🌐 Optimizează pentru web pe un PDF mare, apoi Proprietăți în alt program de PDF: scrie „Vizualizare rapidă: Da”? Și Imagini → un .psd de ecuson cu un text „Nume” → ◫ Straturi → 📇 Din tabel (.csv)… cu o listă de nume: iese câte o poză cu fiecare nume?
@@ -84,5 +84,5 @@
 - **LTV:** ca o semnătură să poată fi verificată și peste ani, Suite ar trebui să întrebe pe internet serverele emitentului certificatului (OCSP / CRL), la semnare. E în regulă, doar la cererea ta, ca la marca temporală?
 - Să încerce un .docx semnat din Suite la serviciu și semnarea cu tokenul lui real (PDF → 🔏 Semnează digital); dacă are un .p7m / .p7s sau un .docx semnat real, ni-l poate da pentru colecția de test.
 - Să încerce o factură reală: Sheets → Șabloane → Factură (e-Factura) → Export e-Factura (XML), apoi încărcarea în SPV.
-- Kitul 0.9.4 e gata (Office-Suite-Test-Instalare-0.9.4.exe, test de 15 zile, cu lista CE-E-NOU-0.9.4.txt); următorul, 0.9.5, se va numi Cyber-Office-Studio-Instalare-0.9.5.exe. Pe acest laptop Smart App Control din Windows blochează kitul nesemnat (JURNAL.md, 28.10, ora 15:00).
+- Kitul 0.9.5 e gata (Cyber-Office-Studio-Instalare-0.9.5.exe, primul cu numele și sigla Cyber Office Studio, lista CE-E-NOU-0.9.5.txt); următorul va fi 0.9.6. Pe acest laptop Smart App Control din Windows blochează kitul nesemnat (JURNAL.md, 28.10, ora 15:00).
 - Dacă suita se va vinde: o verificare juridică a licenței.
