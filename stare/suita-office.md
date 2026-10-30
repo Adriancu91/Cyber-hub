@@ -1,15 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 22:12 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 23:01 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 21:32–22:12, 4 pași, testele trec:
-  - **Docs / Sheets / Notițe → ◇ Diagramă:** încă 3 feluri (acum 16): Proces vertical, Proces șerpuit (pași pe mai multe rânduri), Cerc împărțit (felii);
-  - **Slides → ◇ Diagramă ▾:** Proces șerpuit și Cerc împărțit (acum 15), din forme care se pot muta și ajung la fel în .pptx;
-  - **☺ Pictograme:** încă 26 desenate de noi (acum 83): agrafă, creion, coș, calculator, bancă, camion, factură, ochi, cheie, munte, foc…;
-  - **Slides → ◼ Formă:** semnele Plus, Egal, Împărțire (acum 102 forme), cu numele lor în .pptx.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 22:12–23:01, 6 pași, testele trec:
+  - **◇ Diagramă** (Docs / Sheets / Notițe și Slides): noi **Ecuație** (A + B = Rezultat) și **Ierarhie orizontală**; Slides are și **Proces vertical** (acum 18 feluri peste tot);
+  - **Slides → Proiectare → Teme:** încă 4 (Cer, Cafea, Smarald, Zmeură), acum 24, fiecare cu 3 variante;
+  - **Video:** 3 stiluri de text noi (Ștampilă, Mașină de scris, Bilețel galben; acum 32) și 4 filtre de culoare noi (Vară, Iarnă, Fotografie veche, Ceață; acum 19).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 89,7%**, **Excel 90,6%**, **PowerPoint 90,5%**, Clipchamp 80,5%, Notițe 81,5%, Acrobat 85,5%, Photoshop 83,3%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
@@ -23,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Slides → ◇ Diagramă ▾ → Ecuație / Ierarhie orizontală → Export .pptx deschis la serviciu (arată la fel?), Slides → Teme → Smarald / Cafea (se citesc bine pe proiector?) și Video → Carton → Cum arată textul → Ștampilă / Bilețel galben, Filtru → Fotografie veche.
 - Să încerce Docs → Inserare → ◇ Diagramă → clic pe ea → Felul diagramei → Cerc împărțit / Proces șerpuit (textele încap?), Slides → ◇ Diagramă ▾ → Cerc împărțit → Export .pptx deschis la serviciu (cercul arată la fel?), ☺ Pictograme → caută „factură” / „camion”, și Slides → ◼ Formă → Egal / Împărțire → Export .pptx deschis la serviciu.
 - Să încerce Imagini → o poză cu o clădire făcută de jos → Editare → ▦ Deformare în perspectivă… → colțurile pe fațadă → ② Deformează → ⇕ Verticale → Aplică: clădirea stă dreaptă? Și o selecție pe un obiect → ◐ Selectează și maschează… → Mută marginea −2 → Mască pe stratul ales: marginea fundalului dispare? Și PDF → un manual mare → Panouri și instantaneu → 🗂 Încorporează index → Salvează, apoi 🔎 Căutare în dosar: e mai repede? Și Slides → Cilindru / Cub / Colț îndoit → Export .pptx deschis la serviciu.
 - Să încerce la birou, cu scannerul / multifuncționala: PDF → Creare PDF → 📠 Din scanner… → Color, 300 dpi → Scanează (apare pagina? a doua apăsare adaugă pagina 2?) și Imagini → 📠 Din scanner…. Și Sheets → câteva tabele mutate în ferestre noi (clic dreapta pe tab → ⧉ Mută în fereastră nouă) → Vizualizare → 🗗 Aranjează toate → ◫ Alăturate / 🗗 Cascadă: se așază bine? Și PDF → un formular cu totaluri → Pregătire formular → { } Scripturi JavaScript…: apar scripturile câmpurilor?
