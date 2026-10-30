@@ -55,3 +55,4 @@
 - 2026-10-30 02:15 — S45 a căzut la 23:09 (ora 4/6, fără eroare; probabil repornire), închisă fără verdict; repetată ca S51 din #459 cu aceleași praguri. S46 (descărcarea codului, C-43) rulează de la 00:30.
 - 2026-10-30 08:15 — Raportul de dimineață confirmă: S45 a căzut pentru că workstation-ul s-a repornit (~23:10); CONTINUUM a repornit odată cu el. S46 merge (10.921 pachete păstrate, ~3,2 GB); 1113 teste trec.
 - 2026-10-30 11:15 — S46 (C-43) bucata 1 gata și verificată: 3,73 GB cod curat (~1,07 mld simboluri), 68,9 GB liberi. Diseară S51 (antrenarea din #459) la 19:00, înaintea bucății 2 a descărcării, ca placa să nu stea liberă.
+- 2026-10-30 14:15 — S50 (CCM rece/cald) gata și verificat: pe procesor 1 fir e de 1,36× mai rapid decât toate firele la răspunsuri repetate, placa fp32 1,84×; 1119 teste trec. Diseară S51 la 19:00.
