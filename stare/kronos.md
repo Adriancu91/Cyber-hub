@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-30 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-30 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -14,6 +14,7 @@
 - Kronos-Cod (C-28): pilotul (S43) și unealta completă (S46a) gata și verificate; **descărcarea întreagă (S46, „da” de la Adrian, C-43): bucata 1 gata** (00:29–10:29, oprită curat la 10 ore): **3,73 GB cod curat, ~1,07 mld simboluri**, doar licențe permisive, data-limită 29 iunie 2021; 68,9 GB liberi pe disc. Mai trebuie cel puțin o bucată.
 - S44 INFIRMAT (bucăți tăiate 297/500 vs întregi 336/500): memoria E3 rămâne pe #438.
 - **S45 (a doua noapte de antrenare din #459) a căzut la 23:09, în ora 4/6**, fără eroare: **calculatorul s-a repornit** între 23:09 și 23:12 (confirmat din jurnalele de logare; cauza încă necunoscută, placa în limite). Închisă fără verdict; orele 1–3 (#469–#471) doar informative.
+- S52 (diagnosticul repornirii, doar citire) **oprit**: jurnalele Windows nu se pot citi de executant. Placa a fost normală până în ultima secundă (64 °C, 6.116 MB) → nu supraîncălzire; probabil pană de curent (cum bănuiește Adrian), neconfirmat.
 
 ## Urmează
 - De la 19:00: **S51** = repetarea S45 de la capăt din #459, aceleași praguri (CONFIRMAT dacă română ≤ 1,2112); apoi, ~02:00, **S46 bucata 2** (fără placă).
@@ -32,6 +33,6 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- Cauza repornirii calculatorului de la ~23:10 (actualizare Windows / pană de curent / oprire de mână?) — dacă e de la actualizări, de amânat sau de fixat „ore active” (setare Windows, doar Adrian).
+- Cauza repornirii de la ~23:10 (probabil pană de curent): Adrian rulează comanda de citire din raportul S52 sau aprobă citirea jurnalelor Windows de către executant. Dacă e curent: UPS; dacă e Windows Update: „ore active”.
 - Mai târziu: tokenizerul nou pe cod cere un al doilea „da”, după descărcare.
 - La ferestrele OS/GPU viitoare: antrenarea de pe placă să fie oprită întâi.
