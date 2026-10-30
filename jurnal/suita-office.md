@@ -304,3 +304,4 @@
 - 2026-10-30 22:12 — 4 pași: diagrame noi (Proces vertical / șerpuit, Cerc împărțit) în Docs, Sheets, Notițe și Slides, 26 de pictograme noi (83), semnele Plus / Egal / Împărțire în Slides (102 forme).
 - 2026-10-30 23:01 — Diagrame noi Ecuație și Ierarhie orizontală (Docs și Slides) plus Proces vertical în Slides; 4 teme noi în Slides; 3 stiluri de text și 4 filtre noi în Video.
 - 2026-10-30 23:47 — 5 pași: șabloane noi în Slides (9), Docs (11), Sheets (12: decont, plan de proiect, concedii) și Notițe (12); 4 treceri noi în Video (44).
+- 2026-10-31 00:33 — 4 pași: Gramatica prinde acordul verbului cu pronumele (și la viitor / condițional), ✓ Gramatică și în Notițe și Slides, „de de” prins oriunde în frază.

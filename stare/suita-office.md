@@ -1,18 +1,18 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 23:47 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 00:33 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 22:59–23:47, 5 pași, testele trec:
-  - **Șabloane noi** peste tot: Slides 9 (Ședință de echipă, Plan de proiect, Curs, Lansare de produs), Docs 11 (Scrisoare de intenție, Demisie, Declarație pe propria răspundere, Minută de ședință), Sheets 12 (Decont de deplasare, Plan de proiect cu bara pe săptămâni, Evidență concedii cu zile lucrătoare fără sărbători), Notițe 12 (Apel telefonic, Sarcini pe priorități, Carte citită, Programare la medic);
-  - **Video:** 4 treceri noi (Descoperire în jos, Triunghi, Inimă, Cerc din colț; acum 44).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 23:46–00:33, 4 pași, testele trec:
+  - **Gramatica** prinde acordul verbului cu pronumele („noi este” → „noi suntem”, „voi au” → „voi ați”, „noi vor” → „noi vom”, „eu ar” → „eu aș”), fără să se plângă la „eu și ea suntem” sau „pe el este”;
+  - **✓ Gramatică** acum și în **Notițe** și în **Slides** (Revizuire), nu doar în Docs; plus o reparație: „de de” e prins oriunde în frază.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 89,7%**, **Excel 90,6%**, **PowerPoint 90,5%**, Clipchamp 80,5%, Notițe 81,5%, Acrobat 85,5%, Photoshop 83,3%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar.
+- Alte funcții „parțial” / „nu” din inventar (de exemplu acordul verbului cu substantivele).
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice și despărțirea în silabe românească, semnarea / verificarea XML (XML-DSig, scrise de la zero).
@@ -21,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Docs / Notițe / Slides → Revizuire → ✓ Gramatică pe un text scris de el: greșelile găsite sunt reale (mai ales „Acord”) și nu apar lucruri corecte ca greșeli?
 - Să încerce Sheets → Fișier → Șabloane → Evidență concedii (zilele lucrătoare și sărbătorile 2026 sunt corecte?) și Plan de proiect (bara pe săptămâni e ușor de citit?); Docs → Din șablon… → Demisie / Declarație pe propria răspundere (textul e cel folosit la el la serviciu?); Video → Trecere → Inimă.
 - Să încerce Slides → ◇ Diagramă ▾ → Ecuație / Ierarhie orizontală → Export .pptx deschis la serviciu (arată la fel?), Slides → Teme → Smarald / Cafea (se citesc bine pe proiector?) și Video → Carton → Cum arată textul → Ștampilă / Bilețel galben, Filtru → Fotografie veche.
 - Să încerce Docs → Inserare → ◇ Diagramă → clic pe ea → Felul diagramei → Cerc împărțit / Proces șerpuit (textele încap?), Slides → ◇ Diagramă ▾ → Cerc împărțit → Export .pptx deschis la serviciu (cercul arată la fel?), ☺ Pictograme → caută „factură” / „camion”, și Slides → ◼ Formă → Egal / Împărțire → Export .pptx deschis la serviciu.
