@@ -1,16 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 11:07 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 11:43 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește acum **Cyber Office Studio** și în interfață (titlu, bara din stânga, mesaje, siglă nouă), făcut de o sesiune paralelă la 10:53.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 10:24–11:07, 5 pași, testele trec:
-  - **Scheme noi** Radial și Țintă (13 feluri) în Slides, Docs, Sheets și Notițe.
-  - **Gramatică:** greșeli frecvente noi („vre-un”, „nici-o”, „deaceea”, „propietar”, „complectez”) și pleonasme („a colabora împreună”, „mai superior”, „și etc.”).
-  - **Sheets, Rezolvitor:** metoda **Evolutivă** pentru formule cu salturi (DACĂ, rotunjiri, căutări în tabele) și **intervalele permise** în raportul de sensibilitate.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 11:08–11:43, 4 pași, testele trec, toate pentru tipografie, în PDF:
+  - **◩ Aplatizează transparența…**: paginile cu umbre / opacitate devin o poză la 150–600 ppi, cu textul tot căutabil.
+  - **◑ În CMYK**: culorile RGB ale textului, desenelor și pozelor devin CMYK (negrul doar pe placa neagră).
+  - **Preflight** are „Repară” și pentru culorile RGB și transparență; **Comprimă…** are bife pentru ce face optimizarea structurii.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,5%**, **Excel 89,1%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 82,3%, Photoshop 81,5%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,5%**, **Excel 89,1%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 82,5%, Photoshop 81,5%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -22,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să ducă la tipografie un afiș / pliant trecut prin PDF → Producție pentru imprimare → ◑ În CMYK și ◩ Aplatizează transparența… (300 ppi): tipografia îl primește fără observații și culorile arată bine?
 - Să încerce Sheets → 🧮 Rezolvitor → Metoda: Evolutivă pe un model real cu DACĂ sau prețuri pe praguri, și raportul cu „Creștere / Scădere permisă”: rezultatele au sens? Și Slides → ◇ Diagramă ▾ → Radial / Țintă → Export .pptx deschis la serviciu.
 - Să încerce la serviciu un .docx cu urmărirea modificărilor pornită în care face un rând titlu, centrează altul și schimbă spațierea unui paragraf → Suite → Docs → Import .docx: apar în panou ca „a formatat paragraful”, iar Respinge le face la loc? Și invers: în Suite, cu urmărirea pornită, centrează un rând → Salvează ca .docx → deschis la serviciu: apare ca modificare de format?
 - Să încerce Sheets → un tabel → Proiectare tabel → ＋ Stil de tabel nou… cu culorile firmei → Export .xlsx deschis la serviciu (tabelul are culorile și stilul e în listă?); un .docx de la serviciu cu urmărirea pornită, în care a schimbat culoarea / fontul unui cuvânt → Docs → Import .docx (apare în panou, Respinge îl face la loc?); PDF → 🔎 Căutare în dosar → ⚡ Index pe un dosar mare: a doua căutare e mult mai rapidă?
