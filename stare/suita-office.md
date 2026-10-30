@@ -1,17 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 19:18 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 19:57 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 18:39–19:20, 4 pași, toți în Imagini, testele trec:
-  - **🎞 Cronologie** (Fereastră): animație din cadre (fiecare strat un cadru, cu durata lui), redată în panou, ＋ Cadru nou, 💾 Salvează GIF cu duratele cadrelor;
-  - **▭ Cadru gol**: zona aleasă devine loc pentru o poză; o poză trasă peste el (sau 🖼 Din fișier…) îl umple;
-  - **masca vectorială** rămâne traseu: ⌇ Trasee → Masca vectorială se deschide, se schimbă și se actualizează, ✕ o scoate;
-  - **Mască rapidă (Q)**: ce nu e selectat se vede acoperit cu roșu, plus bifa Margine moale.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 19:19–19:58, 3 pași, toți în PDF, testele trec:
+  - **🔐 Criptează cu certificat** (Protejare PDF): PDF-ul se deschide doar de persoanele alese, fiecare cu ID-ul ei digital, fără parolă comună (felul standard de criptare cu certificat, AES-256, scris de noi; plicul verificat și cu OpenSSL);
+  - un PDF criptat așa se deschide cu ID-ul digital din Suite, cu un .pfx sau cu **certificatul din Windows / de pe token** (Windows cere singur PIN-ul);
+  - **politicile de securitate salvate** merg și pentru criptarea cu certificat (destinatarii și restricțiile, sub un nume).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,7%**, **Excel 90,4%**, **PowerPoint 90,5%**, Clipchamp 80,5%, Notițe 81,5%, Acrobat 84,3%, Photoshop 82,7%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,7%**, **Excel 90,4%**, **PowerPoint 90,5%**, Clipchamp 80,5%, Notițe 81,5%, Acrobat 84,7%, Photoshop 82,7%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -23,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce PDF → Protejare PDF → 🔐 Criptează cu certificat… → ＋ De pe calculator / token… (certificatul lui) → Criptează și salvează…, apoi fișierul salvat deschis în Suite cu „Certificatul de pe acest calculator” (îi cere PIN-ul?) și la serviciu, în alt program de PDF, cu același certificat: se deschide?
 - Să încerce Imagini → câteva straturi cu desene puțin diferite → Fereastră → 🎞 Cronologie → ▶ Redă, apoi 💾 Salvează GIF… deschis în browser: animația merge? Și ⬚ Marcaj → ▭ Cadru gol → o poză trasă din Explorer peste el: îl umple? Și Q → pictat cu Margine moale peste păr: marginea trece lin?
 - Să încerce Slides → Inserare → ▶ Video online cu adresa unui clip real: apare coperta cu ▶, iar în prezentare (F5) clic pe ea pornește clipul? Și Notițe → adresa unui clip → 🔍 Previzualizare: fișa are poza clipului?
 - Să încerce Imagini → o poză de la un aparat setat pe Adobe RGB (sau de pe iPhone) → ↔ Mărime… → 🌈 Profilul de culoare…: profilul e recunoscut și culorile arată ca pe aparat după Convertește în sRGB?

@@ -298,3 +298,4 @@
 - 2026-10-30 18:38 — Imagini: 🌈 Profilul de culoare (Adobe RGB / Display P3 / ProPhoto → sRGB; Photoshop 82,1%); PDF: 🧊 Model 3D pe pagină (Acrobat 84,3%).
 - 2026-10-30 19:18 — Imagini: 🎞 Cronologie (animație din cadre, GIF cu durata fiecărui cadru) și ▭ Cadru gol umplut prin tragerea unei poze.
 - 2026-10-30 19:18 — Imagini: masca vectorială rămâne traseu de schimbat și Mască rapidă cu foaia roșie și margine moale; Photoshop 82,7%.
+- 2026-10-30 19:57 — PDF: criptare cu certificat (destinatari cu ID digital, deschidere cu .pfx sau cu certificatul din Windows / token) și politici salvate cu certificat; Acrobat 84,7%.
