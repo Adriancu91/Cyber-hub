@@ -1,12 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 06:37 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 07:24 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 05:54–06:37, 5 pași, testele trec:
-  - **Sheets:** 58 de stiluri de tabel (înainte 28): cu chenar, cu grilă, cu cap plin și grilă, umplute, negru; toate stilurile din .xlsx se recunosc; galeria din panglică pe trei rânduri.
-  - **Video:** 14 feluri de apariție a textului (noi: din dreapta, săritură, rotire, din neclar, cuvânt cu cuvânt, de jos, lățire), 40 de treceri (noi: stea, dizolvare, bare, din colțuri…), 25 de stiluri de text (noi: bandă în degrade, balon de vorbă, marcator, casetă fumurie).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 06:37–07:24, 4 pași, testele trec:
+  - **Sheets:** scindarea ferestrei și stânga-dreapta (Vizualizare → ◫ Stânga-dreapta), nu doar sus-jos; reparat și un defect la dublu clic în partea a doua.
+  - **Slides:** 14 forme noi (79 în total: stele cu 16 / 24 / 32 de colțuri, explozii, valuri, lacrimă, 5 scheme logice), cu numele lor în .pptx; 4 teme noi (20 în total: Mentă, Corai, Prună, Măslin), fiecare cu 3 variante de culori.
+  - **Imagini:** pensula cu culori care variază (Variație nuanță / luminozitate) și pensulele gata Frunziș colorat și Confetti.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 89,3%**, **Excel 89,0%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 81,5%, Photoshop 80,4%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
@@ -20,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Sheets → un tabel lat → Vizualizare → ◫ Stânga-dreapta (scrie în stânga, derulează dreapta spre capăt), Slides → ◼ Formă ▾ → Explozie 1 / Val / Schemă: Document → Export .pptx deschis la serviciu (forma e aceeași?), Slides → Teme → Prună / Mentă, și Imagini → 🖌 Pensulă → Pensule gata → Confetti: arată bine?
 - Să încerce Sheets → un tabel → Proiectare tabel → Stiluri tabel (derulează galeria) → „Verde umplut” / „Albastru cu grilă”, și un .xlsx de la serviciu cu un tabel cu linii: arată la fel? Și Video → ▭ Carton → Apariția textului → Săritură / Cuvânt cu cuvânt, Cum arată textul → Balon de vorbă, Felul trecerii → Stea / Dizolvare: arată bine?
 - Să deschidă în Sheets un .xlsx de la serviciu cu poze puse în celule (de exemplu o listă de produse cu poze): pozele apar în celule? Apoi Inserare → ▣ În celulă cu o poză de-a lui → Salvează ca .xlsx → deschis la serviciu: poza e tot în celulă?
 - Să deschidă în Sheets un .xlsx de la serviciu care ia cifre din alt fișier (de exemplu un raport legat de o listă de prețuri), cu ambele fișiere în același dosar: formulele rămân și cifrele sunt aceleași? Apoi Date → 🔗 Editare legături → ↻ Actualizează valorile după ce schimbă o cifră în fișierul-sursă.

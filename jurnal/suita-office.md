@@ -277,3 +277,4 @@
 - 2026-10-30 05:53 — Sheets: legăturile spre alte fișiere citite și din .ods, bară la deschidere cu ↻ Actualizează valorile și „Deschide sursa” în Editare legături.
 - 2026-10-30 06:37 — Sheets: 58 de stiluri de tabel (toate cele din .xlsx recunoscute), Excel 89,0%.
 - 2026-10-30 06:37 — Video: 14 apariții de text, 40 de treceri și 25 de stiluri de text.
+- 2026-10-30 07:24 — Sheets: scindare stânga-dreapta; Slides: 14 forme noi (79) și 4 teme noi (20); Imagini: pensula cu nuanțe și lumini care variază (Confetti, Frunziș colorat).
