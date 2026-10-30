@@ -279,3 +279,4 @@
 - 2026-10-30 06:37 — Video: 14 apariții de text, 40 de treceri și 25 de stiluri de text.
 - 2026-10-30 07:24 — Sheets: scindare stânga-dreapta; Slides: 14 forme noi (79) și 4 teme noi (20); Imagini: pensula cu nuanțe și lumini care variază (Confetti, Frunziș colorat).
 - 2026-10-30 08:15 — Imagini: câmpuri X / Y / mărime în Proprietăți, Rasterizează (text, stiluri), Compară 4 variante la salvare, metadate alese și profil sRGB în JPG / PNG; Photoshop 81,0%.
+- 2026-10-30 08:57 — Imagini: panoul Trasee cu miniaturi, Compozițiile de straturi cu poziție si stiluri, despărțirea în silabe în caseta de text; Slides: 6 forme noi (85); Photoshop 81,5%.

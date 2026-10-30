@@ -1,26 +1,28 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 08:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 09:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 07:27–08:15, 4 pași, toți în Imagini, testele trec:
-  - **Proprietăți:** câmpuri X / Y / lățime / înălțime pentru stratul ales (scrii numărul, Enter), cu 🔗 proporții.
-  - **Straturi:** ⬚ Rasterizează textul, ⬚ Stilurile în pixeli și ⬚ Rasterizează tot.
-  - **Salvează:** ⊞ Compară 4 variante la JPG / WebP (originalul și trei calități alăturate, cu mărimea fișierului); Metadate (toate / doar autorul și drepturile / fără) și profilul de culoare sRGB încorporat la JPG / PNG.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 08:12–09:00, 4 pași, testele trec:
+  - **Imagini:** panoul ⌇ Trasee (Fereastră → Trasee), cu miniaturi și Umple / Contur / Selecție / Mască.
+  - **Imagini:** Compozițiile de straturi țin minte și poziția și stilurile (bifele Vizibilitate / Poziție / Aspect).
+  - **Imagini:** despărțirea în silabe în caseta de text (a-b Silabe), cu aceleași reguli românești ca în Docs.
+  - **Slides:** încă 6 forme (Felie de cerc, Coardă, Placă, Dreptunghi cu un colț rotunjit, două de schemă), 85 în total.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,3%**, **Excel 89,0%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 81,5%, Photoshop 81,0%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,3%**, **Excel 89,0%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 81,5%, Photoshop 81,5%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
 
 ## Ce oferă proiectul celorlalți
-- Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice românești și semnarea / verificarea XML (XML-DSig, scrise de la zero).
+- Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice și despărțirea în silabe românească, semnarea / verificarea XML (XML-DSig, scrise de la zero).
 
 ## De ce are nevoie de la ceilalți
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Imagini → ✒ Traseu → un triunghi → Fereastră → ⌇ Trasee (apare „Traseul de lucru” cu forma lui?) → 💾 → ▉ Umple; ◫ Straturi → ＋ Compoziție nouă, mută sigla, încă o compoziție, clic pe prima (sigla revine?); ✎ Adnotează → T Text într-o casetă îngustă → a-b Silabe (cratimele sunt corecte?); Slides → Felie de cerc / Placă → Export .pptx deschis la serviciu.
 - Să încerce Imagini → o fotografie → Salvează → JPG → ⊞ Compară 4 variante (se vede diferența?) și Metadate: Doar autorul și drepturile + profilul sRGB, apoi fișierul deschis la serviciu: culorile și autorul sunt bune? Și Fereastră → ⓘ Proprietăți → scrie 100 la ↔ pe un logo: se micșorează fără să se deformeze?
 - Să încerce Sheets → un tabel lat → Vizualizare → ◫ Stânga-dreapta (scrie în stânga, derulează dreapta spre capăt), Slides → ◼ Formă ▾ → Explozie 1 / Val / Schemă: Document → Export .pptx deschis la serviciu (forma e aceeași?), Slides → Teme → Prună / Mentă, și Imagini → 🖌 Pensulă → Pensule gata → Confetti: arată bine?
 - Să încerce Sheets → un tabel → Proiectare tabel → Stiluri tabel (derulează galeria) → „Verde umplut” / „Albastru cu grilă”, și un .xlsx de la serviciu cu un tabel cu linii: arată la fel? Și Video → ▭ Carton → Apariția textului → Săritură / Cuvânt cu cuvânt, Cum arată textul → Balon de vorbă, Felul trecerii → Stea / Dizolvare: arată bine?
