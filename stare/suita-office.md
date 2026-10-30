@@ -1,15 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 04:20 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 05:10 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03:34–04:20, 6 pași, testele trec — toate despre **ecuații (formule)**:
-  - Formulele din **.docx** (făcute cu editorul de ecuații) se deschid acum ca ecuații Suite care se pot schimba (înainte dispăreau); la fel cele din **.pptx**.
-  - La salvare, ecuațiile din Docs și Slides rămân **ecuații adevărate** în .docx, .pptx, .odt și .odp (înainte erau poze), deci se pot schimba și la serviciu.
-  - 5 documente reale cu formule în colecția de test (LibreOffice, MPL-2.0).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 04:22–05:10, 5 pași, testele trec — mai ales **Sheets: formule care iau cifre din alt fișier**:
+  - O formulă ca `=[Prețuri.xlsx]Lista!B2` merge acum; un .xlsx de la serviciu cu astfel de legături își păstrează formulele (înainte deveneau cifre) și se salvează înapoi la fel (și în .ods).
+  - Nou: **Date → 🔗 Editare legături**: lista fișierelor legate, recitirea cifrelor din fișier (și de lângă tabel), schimbarea fișierului-sursă, ruperea legăturii.
+  - 7 stiluri de tabel noi, „cu linii” (28 în total), recunoscute și în .xlsx.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,3%**, Excel 87,9%, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 81,5%, Photoshop 80,4%, formule 97,1%. Colecția de test: **468 / 552** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,3%**, **Excel 88,6%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 81,5%, Photoshop 80,4%, formule 97,1%. Colecția de test: **468 / 552** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -21,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să deschidă în Sheets un .xlsx de la serviciu care ia cifre din alt fișier (de exemplu un raport legat de o listă de prețuri), cu ambele fișiere în același dosar: formulele rămân și cifrele sunt aceleași? Apoi Date → 🔗 Editare legături → ↻ Actualizează valorile după ce schimbă o cifră în fișierul-sursă.
 - Să deschidă în Suite un .docx / .pptx de la serviciu cu formule: apar și se pot schimba (clic → ✎ Ecuație)? Și invers: o ecuație din Docs / Slides salvată .docx / .pptx și deschisă la serviciu: se poate schimba acolo?
 - Să încerce un .xlsx de la serviciu cu o listă derulantă luată dintr-un nume sau din alt fișier: în Sheets apar variantele? Și un .odt / .odp cu o formulă: în Suite se poate schimba cu ✎ Ecuație? Și Imagini → Deschide → un .orf de la un aparat Olympus.
 - Să încerce Imagini → Deschide → un fișier RAW de la aparatul lui (sau un .dng de pe telefon): apare poza, întoarsă corect? Și Notițe → ✎ Desen → scrie de mână un cuvânt → clic pe desen → ↧ Pune în notiță: cuvântul apare în text?

@@ -271,3 +271,5 @@
 - 2026-10-30 03:33 — Slides și Docs: formulele din .odp / .odt devin ecuații care se pot schimba; colecția de test 463 / 547 fără pierderi, 0 erori.
 - 2026-10-30 04:20 — Docs și Slides: formulele din .docx / .pptx se deschid ca ecuații care se pot schimba (înainte se pierdeau la .docx).
 - 2026-10-30 04:20 — Ecuațiile se salvează ca ecuații adevărate în .docx, .pptx, .odt și .odp (nu ca poze); colecția de test 468 / 552 fără pierderi, 0 erori.
+- 2026-10-30 05:10 — Sheets: formulele care iau valori din alte fișiere ([Buget.xlsx]Foaie1!A1) merg, se păstrează în .xlsx / .ods, plus Date → Editare legături; Excel 88,6%.
+- 2026-10-30 05:10 — Sheets: 7 stiluri de tabel noi cu linii (28 în total); colecția de test 468 / 552 fără pierderi, 0 erori.
