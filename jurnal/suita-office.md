@@ -275,3 +275,5 @@
 - 2026-10-30 05:10 — Sheets: 7 stiluri de tabel noi cu linii (28 în total); colecția de test 468 / 552 fără pierderi, 0 erori.
 - 2026-10-30 05:53 — Sheets: poze în celule (▣ În celulă / ⧉ Peste celule), citite și scrise în .xlsx ca poze în celule; Excel 88,8%, colecția 476 / 560 fără pierderi, 0 erori.
 - 2026-10-30 05:53 — Sheets: legăturile spre alte fișiere citite și din .ods, bară la deschidere cu ↻ Actualizează valorile și „Deschide sursa” în Editare legături.
+- 2026-10-30 06:37 — Sheets: 58 de stiluri de tabel (toate cele din .xlsx recunoscute), Excel 89,0%.
+- 2026-10-30 06:37 — Video: 14 apariții de text, 40 de treceri și 25 de stiluri de text.
