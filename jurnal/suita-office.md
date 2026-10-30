@@ -287,3 +287,4 @@
 - 2026-10-30 12:33 — Imagini: panoramă din mai multe poze (cu proiecție cilindrică și focala din EXIF); PDF: Fă-l PDF/X-1a pentru tipografie (și din Preflight); Video: 4 stiluri noi de titlu; Acrobat 82,7%, Photoshop 81,6%.
 - 2026-10-30 13:20 — PDF: optimizare pentru web (liniarizare, și în Preflight și în Lot); Imagini: seturi de date din tabel .csv (text, vizibilitate, poze); Acrobat 83,1%, Photoshop 81,9%.
 - 2026-10-30 14:09 — PDF → ♿ Accesibilitate: verificarea PDF/UA cu Declară PDF/UA-1, ordinea de citire pe pagini și schimbarea tipului unei etichete; Acrobat 83,7%.
+- 2026-10-30 15:00 — PDF: etichetarea automată pentru accesibilitate (paragrafe, titluri, liste, imagini; antetele și numerele de pagină ca decor) și, în ordinea de citire, mutarea bucăților cu ▲ ▼ și „Decor (nu se citește)”; Acrobat 83,9%.

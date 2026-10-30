@@ -1,15 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 14:09 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 15:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește acum **Cyber Office Studio** și în interfață (titlu, bara din stânga, mesaje, siglă nouă), făcut de o sesiune paralelă la 10:53.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 13:22–14:09, 3 pași, testele trec, toate în PDF → ♿ Accesibilitate:
-  - **PDF/UA**: verificarea după standardul de accesibilitate (declarația, fonturi, etichete cunoscute, titluri fără niveluri sărite, comentarii în structură) și butonul 🏷 Declară PDF/UA-1 când trece tot.
-  - **☰ Ordinea de citire**: cutii numerotate pe pagini, în ordinea în care citește un cititor de ecran, cu lista paginii și o notă când ordinea pare amestecată; din listă se schimbă tipul unei etichete (Paragraf → Titlu 1).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:12–15:00, 5 pași, testele trec, toate în PDF → ♿ Accesibilitate:
+  - **🏷 Etichetează automat**: un PDF fără etichete primește singur structura pentru cititorul de ecran (paragrafe, titluri după mărimea literelor, liste cu buline / numere, imagini), iar antetele și numerele de pagină repetate sunt lăsate deoparte ca „decor”.
+  - **☰ Ordinea de citire**: bucățile se mută cu ▲ ▼, iar o bucată se poate face „Decor (nu se citește)”.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,5%**, **Excel 89,1%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 83,7%, Photoshop 81,9%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,5%**, **Excel 89,1%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 83,9%, Photoshop 81,9%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -21,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce PDF → un PDF fără etichete (unul vechi sau „Tipărire în PDF”) → ♿ Accesibilitate → 🏷 Etichetează automat: în ☰ Ordinea de citire titlurile, paragrafele și listele sunt recunoscute, iar antetul și „Pagina …” nu apar? Apoi cu Naratorul din Windows.
 - Să încerce PDF → un PDF „accesibil” (cu etichete) de la serviciu → ♿ Accesibilitate → ☰ Ordinea de citire: numerele merg în ordinea firească? Și partea PDF/UA: ce apare cu ✗ are sens?
 - Să încerce PDF → Comprimă… → 🌐 Optimizează pentru web pe un PDF mare, apoi Proprietăți în alt program de PDF: scrie „Vizualizare rapidă: Da”? Și Imagini → un .psd de ecuson cu un text „Nume” → ◫ Straturi → 📇 Din tabel (.csv)… cu o listă de nume: iese câte o poză cu fiecare nume?
 - Să încerce Imagini → ⟷ Panoramă… cu 3–4 poze făcute cu telefonul rotindu-se pe loc: îmbinările se văd? Și PDF → 🖨 PDF/X-1a… pe un afiș dus la tipografie: îl primesc fără observații?
