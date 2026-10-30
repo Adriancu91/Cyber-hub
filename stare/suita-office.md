@@ -1,16 +1,17 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 17:52 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 18:38 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 17:07–17:52, 5 pași, testele trec:
-  - Sheets: **Date → Preluare date → Din web…**: scrii adresa unei pagini, tabelele ei vin ca foi (pagina e doar citită, scripturile ei nu rulează); un .csv de la o adresă merge pe importul de text;
-  - Notițe: **🔍 Previzualizare** lângă adresele web din notiță: fișă cu site, titlu și descriere, la cerere; fișele intră și în căutare;
-  - Slides, Docs și Notițe: **Inserare → 🧊 Modele 3D** (.obj, .stl): modelul rotit cu mouse-ul, cu umbre, pus ca poză transparentă (fără placa video).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 17:54–18:40, 4 pași, testele trec:
+  - Notițe: fișele 🔍 Previzualizare au acum și **poza paginii**; adresele de clipuri video primesc fișă cu poza clipului și ▶ (clic = pornește în browser);
+  - Docs și Slides: **Inserare → ▶ Video online**: coperta clipului (poza, ▶, titlul) cu legătura spre clip; în prezentare, clic pe ea pornește clipul;
+  - Imagini: **🌈 Profilul de culoare…**: o poză din Adobe RGB / Display P3 / ProPhoto (care arată ștearsă) se convertește în sRGB; profilul din fișier e recunoscut singur;
+  - PDF: Semnează… → **🧊 Model 3D…** (.obj / .stl) pus pe pagină ca poză.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,5%**, **Excel 90,4%**, **PowerPoint 90,3%**, Clipchamp 80,5%, Notițe 81,1%, Acrobat 84,1%, Photoshop 81,9%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,7%**, **Excel 90,4%**, **PowerPoint 90,5%**, Clipchamp 80,5%, Notițe 81,5%, Acrobat 84,3%, Photoshop 82,1%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -22,6 +23,8 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Slides → Inserare → ▶ Video online cu adresa unui clip real: apare coperta cu ▶, iar în prezentare (F5) clic pe ea pornește clipul? Și Notițe → adresa unui clip → 🔍 Previzualizare: fișa are poza clipului?
+- Să încerce Imagini → o poză de la un aparat setat pe Adobe RGB (sau de pe iPhone) → ↔ Mărime… → 🌈 Profilul de culoare…: profilul e recunoscut și culorile arată ca pe aparat după Convertește în sRGB?
 - Să încerce Sheets → Date → Preluare date ▾ → Din web… cu o pagină reală cu un tabel (un clasament, un curs valutar): tabelele vin bine pe foi? Și Notițe → o adresă web → 🔍 Previzualizare: fișa are titlul și descrierea corecte? Și Slides → Inserare → 🧊 Modele 3D cu un .stl real: arată bine și se rotește ușor?
 - Să încerce Sheets → un tabel cu orașe repetate → Date → Preluare date ▾ → Din tabel / zonă… → Grupează după Oraș, Sumă → Închide și încarcă, apoi Date → Reîmprospătare totală; Inserare → ⇕ Buton rotativ pe o celulă dintr-o formulă; PDF → un plan → 🗄 PDF/A → 📐 Fă-l PDF/E: la Standarde, în alt program, apare PDF/E-1?
 - Să încerce PDF → un PDF fără etichete (unul vechi sau „Tipărire în PDF”, cu un tabel, titluri îngroșate, eventual pe două coloane) → ♿ Accesibilitate → 🏷 Etichetează automat: în ☰ Ordinea de citire titlurile, paragrafele, listele și tabelul sunt recunoscute, coloanele merg în ordine, iar antetul și „Pagina …” nu apar? Apoi cu Naratorul din Windows.
