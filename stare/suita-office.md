@@ -1,15 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 07:24 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 08:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 06:37–07:24, 4 pași, testele trec:
-  - **Sheets:** scindarea ferestrei și stânga-dreapta (Vizualizare → ◫ Stânga-dreapta), nu doar sus-jos; reparat și un defect la dublu clic în partea a doua.
-  - **Slides:** 14 forme noi (79 în total: stele cu 16 / 24 / 32 de colțuri, explozii, valuri, lacrimă, 5 scheme logice), cu numele lor în .pptx; 4 teme noi (20 în total: Mentă, Corai, Prună, Măslin), fiecare cu 3 variante de culori.
-  - **Imagini:** pensula cu culori care variază (Variație nuanță / luminozitate) și pensulele gata Frunziș colorat și Confetti.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 07:27–08:15, 4 pași, toți în Imagini, testele trec:
+  - **Proprietăți:** câmpuri X / Y / lățime / înălțime pentru stratul ales (scrii numărul, Enter), cu 🔗 proporții.
+  - **Straturi:** ⬚ Rasterizează textul, ⬚ Stilurile în pixeli și ⬚ Rasterizează tot.
+  - **Salvează:** ⊞ Compară 4 variante la JPG / WebP (originalul și trei calități alăturate, cu mărimea fișierului); Metadate (toate / doar autorul și drepturile / fără) și profilul de culoare sRGB încorporat la JPG / PNG.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,3%**, **Excel 89,0%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 81,5%, Photoshop 80,4%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,3%**, **Excel 89,0%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 81,5%, Photoshop 81,0%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -21,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Imagini → o fotografie → Salvează → JPG → ⊞ Compară 4 variante (se vede diferența?) și Metadate: Doar autorul și drepturile + profilul sRGB, apoi fișierul deschis la serviciu: culorile și autorul sunt bune? Și Fereastră → ⓘ Proprietăți → scrie 100 la ↔ pe un logo: se micșorează fără să se deformeze?
 - Să încerce Sheets → un tabel lat → Vizualizare → ◫ Stânga-dreapta (scrie în stânga, derulează dreapta spre capăt), Slides → ◼ Formă ▾ → Explozie 1 / Val / Schemă: Document → Export .pptx deschis la serviciu (forma e aceeași?), Slides → Teme → Prună / Mentă, și Imagini → 🖌 Pensulă → Pensule gata → Confetti: arată bine?
 - Să încerce Sheets → un tabel → Proiectare tabel → Stiluri tabel (derulează galeria) → „Verde umplut” / „Albastru cu grilă”, și un .xlsx de la serviciu cu un tabel cu linii: arată la fel? Și Video → ▭ Carton → Apariția textului → Săritură / Cuvânt cu cuvânt, Cum arată textul → Balon de vorbă, Felul trecerii → Stea / Dizolvare: arată bine?
 - Să deschidă în Sheets un .xlsx de la serviciu cu poze puse în celule (de exemplu o listă de produse cu poze): pozele apar în celule? Apoi Inserare → ▣ În celulă cu o poză de-a lui → Salvează ca .xlsx → deschis la serviciu: poza e tot în celulă?
