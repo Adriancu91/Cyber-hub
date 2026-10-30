@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 01:19 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 01:59 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 00:33–01:19, 4 pași, testele trec:
-  - **✓ Gramatică** acum și în **Sheets** (Revizuire), pentru celulele cu text (fără să se plângă de „total” scris cu literă mică);
-  - Gramatica prinde și acordul cu substantivele la plural („mesele este” → „mesele sunt”, „facturile va fi” → „vor fi”), fără alarme false după prepoziții, și articolul uitat înainte de posesiv („prieteni mei” → „prietenii mei”, „cărți tale” → „cărțile tale”);
-  - **PDF → Slides**: textul paginilor devine casete care se pot schimba, pe locul lui și cu culoarea lui (înainte era doar poză); verificat cu ochii pe un PDF real.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 01:22–01:59, 3 pași, testele trec:
+  - **PDF → Slides**: tabelele din PDF devin tabele adevărate pe slide (se scrie în celule), cu fundalul celulelor, liniile și numerele aliniate la dreapta; reparat și textul mic, care apărea mare și tăiat în Slides (și la .pptx-urile cu litere mici);
+  - **Notițe**: schema pusă cu ◇ Schemă se poate schimba din nou după inserare (butonul ◇ pe poză);
+  - un test vechi de e-mail din Notițe, rămas în urmă după schimbarea numelui, reparat.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 89,7%**, **Excel 90,6%**, **PowerPoint 90,5%**, Clipchamp 80,5%, Notițe 81,5%, Acrobat 85,5%, Photoshop 83,3%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (de exemplu tabelele din PDF ca tabele pe slide la PDF → Slides).
+- Alte funcții „parțial” / „nu” din inventar.
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice și despărțirea în silabe românească, semnarea / verificarea XML (XML-DSig, scrise de la zero).
@@ -22,7 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- Să încerce PDF → o prezentare primită ca PDF → → Slides → clic pe un titlu și schimbă-l, apoi Export .pptx deschis la serviciu: textul se poate schimba și arată ca în PDF? Și Sheets → Revizuire → ✓ Gramatică pe un tabel cu texte.
+- Să încerce PDF → o prezentare sau o factură primită ca PDF (cu un tabel) → → Slides → clic pe un titlu și într-o celulă a tabelului și schimbă-le, apoi Export .pptx deschis la serviciu: textul și tabelul se pot schimba și arată ca în PDF? Și Notițe → ◇ Schemă → apoi ◇ pe poză: se schimbă? Și Sheets → Revizuire → ✓ Gramatică pe un tabel cu texte.
 - Să încerce Docs / Notițe / Slides → Revizuire → ✓ Gramatică pe un text scris de el: greșelile găsite sunt reale (mai ales „Acord”) și nu apar lucruri corecte ca greșeli?
 - Să încerce Sheets → Fișier → Șabloane → Evidență concedii (zilele lucrătoare și sărbătorile 2026 sunt corecte?) și Plan de proiect (bara pe săptămâni e ușor de citit?); Docs → Din șablon… → Demisie / Declarație pe propria răspundere (textul e cel folosit la el la serviciu?); Video → Trecere → Inimă.
 - Să încerce Slides → ◇ Diagramă ▾ → Ecuație / Ierarhie orizontală → Export .pptx deschis la serviciu (arată la fel?), Slides → Teme → Smarald / Cafea (se citesc bine pe proiector?) și Video → Carton → Cum arată textul → Ștampilă / Bilețel galben, Filtru → Fotografie veche.
