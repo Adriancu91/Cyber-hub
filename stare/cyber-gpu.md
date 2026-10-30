@@ -1,19 +1,18 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-10-30 07:40 (ora României) · **de:** sesiunea Cyber-GPU 22 (cloud, fără placă)
+**Actualizat:** 2026-10-30 13:50 (ora României) · **de:** sesiunea Cyber-GPU 23 (cloud, fără placă)
 
 ## Acum
-- **I10c gata (doar SIMULARE):** driverul întreabă acum GSP-RM ce formă are motorul de calcul al plăcii (câte grupuri GPC, câte TPC în
-  fiecare, câte SM, câte warp-uri pe SM, ce versiune SM), cu aceeași comandă internă pe care o folosește tinygrad când vorbește direct cu
-  GSP. Din răspuns se calculează memoria locală a programelor; o placă care nu e `sm_86` e refuzată înainte de orice lansare (programele
-  noastre sunt compilate pentru GA104). Modelul din `gpu-sim` răspunde cu **valori SIM** (forma unui GA104 complet: 48 SM). 8 greșeli
-  plantate în răspuns, toate prinse. Commit-uri `d15af17`, `01bc248` pe `g0-g2-fundatie`; 288 de teste trec.
-- Prima lansare (I10b) rămâne la fel: totul în model, **soneria nu e sunată**, programul „rulează” pe procesor.
-- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `01bc248`.
+- **I10d gata (doar SIMULARE):** bufferul de comenzi al driverului se refolosește acum: o bucată din el se rescrie doar după ce placa a
+  semnalat (prin semaforul de terminare) că a citit-o. Până atunci, nimic nu se scrie peste ea; o lansare care nu încape e refuzată fără
+  nicio scriere. În simulare: 12 lansări `add64` într-o zonă în care încap doar 2, rezultat identic bit cu bit la fiecare; 7 greșeli plantate,
+  toate prinse. Commit-uri `5d17a2e`, `3222669` pe `g0-g2-fundatie`; 290 de teste trec.
+- Prima lansare (I10b) și forma plăcii (I10c) rămân la fel: totul în model, **soneria nu e sunată**, programul „rulează” pe procesor.
+- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `3222669`.
 
 ## Urmează
 - Fereastra următoare (cu `os-209`, care are deja fixarea `aee06c4`): `gpu firmware` → `criteriul I4: TRECE`; apoi, opțional, proba tinygrad.
-- Fără placă mai rămân doar pași mici: refolosirea bufferului de comenzi după semafor; treapta 6 matmul. Restul (I5+ pe placă) cere fereastra cu Adrian.
+- Fără placă mai rămâne un singur pas mic: treapta 6 matmul (Mesa NAK pe gazdă). După el, restul (I5+ pe placă) cere fereastra cu Adrian.
 
 ## Ce oferă proiectul celorlalți
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Față de `2c9c90c` (fixarea OS-ului):
@@ -21,7 +20,8 @@
   `nvidia_ga104::gsp::user_space::{WorkChannel, open_work_channel}` și funcții noi în `gsp::rmapi`; în sesiunea 20: `gsp::work_queue`,
   `user_space::open_work_channel_cleared`, în `gpu_sim::cmdproc`: `ComputeState`, `run_channel`; în sesiunea 21: `work_queue::{invalidate_caches,
   launch, release, read_semaphore}`, `WorkQueue::launch_and_signal`, `CommandProcessor::cache_invalidations`; în sesiunea 22: `user_space::query_gr_info`,
-  `rmapi::{gr_info_request, parse_gr_info, GrInfo, SM_VERSION_SM86}`, în `gpu_sim::fake_rm`: `SIM_GR_INFO` (nimic de schimbat în OS). Schimbare de
+  `rmapi::{gr_info_request, parse_gr_info, GrInfo, SM_VERSION_SM86}`, în `gpu_sim::fake_rm`: `SIM_GR_INFO`; în sesiunea 23: `WorkQueue::{retire,
+  push_in_flight}` (nimic de schimbat în OS; `WorkQueue` nu e folosit de OS). Schimbare de
   comportament intenționată: `fw_hdr` acceptă `bin_size` ≠ mărimea fișierului și citește numărul de semnături prin adresă. Codul OS nu se
   schimbă; doar fixarea (nota `integration/cyber-universe/C-39_gpu-firmware-antete.md`).
 - Pentru mai târziu (doar în fereastra cu Adrian): pornirea reală a GSP va cere de la OS o zonă de RAM contiguă (sub 2^49) și Bus Master.
