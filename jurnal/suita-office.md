@@ -280,3 +280,4 @@
 - 2026-10-30 07:24 — Sheets: scindare stânga-dreapta; Slides: 14 forme noi (79) și 4 teme noi (20); Imagini: pensula cu nuanțe și lumini care variază (Confetti, Frunziș colorat).
 - 2026-10-30 08:15 — Imagini: câmpuri X / Y / mărime în Proprietăți, Rasterizează (text, stiluri), Compară 4 variante la salvare, metadate alese și profil sRGB în JPG / PNG; Photoshop 81,0%.
 - 2026-10-30 08:57 — Imagini: panoul Trasee cu miniaturi, Compozițiile de straturi cu poziție si stiluri, despărțirea în silabe în caseta de text; Slides: 6 forme noi (85); Photoshop 81,5%.
+- 2026-10-30 09:45 — Sheets: stiluri de tabel proprii (nou / modifică / șterge, și în .xlsx); Docs: culoarea și fontul urmărite din .docx; PDF: index pentru căutarea în dosar; Excel 89,1%, Acrobat 82,3%.
