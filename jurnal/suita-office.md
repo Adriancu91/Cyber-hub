@@ -290,3 +290,5 @@
 - 2026-10-30 15:00 — PDF: etichetarea automată pentru accesibilitate (paragrafe, titluri, liste, imagini; antetele și numerele de pagină ca decor) și, în ordinea de citire, mutarea bucăților cu ▲ ▼ și „Decor (nu se citește)”; Acrobat 83,9%.
 - 2026-10-30 15:45 — PDF: etichetarea automată recunoaște tabelele, titlurile cu aldin / numerotate și cele două coloane; verificarea de accesibilitate are regula „Ordinea de citire” (4 pași, testele trec).
 - 2026-10-30 16:20 — Sheets: butoane de filtrare (slicer) și cronologie legate de rezumat, plus graficul mutat pe o foaie nouă; Excel 89,5% (3 pași, testele trec).
+- 2026-10-30 17:03 — Sheets: Editorul de interogare (Din tabel / zonă, cu grupare și coloane calculate, refăcut la Reîmprospătare) și buton rotativ / bară de defilare în celulă; Excel 90,2%.
+- 2026-10-30 17:03 — PDF: Fă-l PDF/E (desene tehnice, 3D păstrat); Acrobat 84,1%.

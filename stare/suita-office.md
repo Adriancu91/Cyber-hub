@@ -1,15 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 16:20 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 17:03 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește acum **Cyber Office Studio** și în interfață (titlu, bara din stânga, mesaje, siglă nouă), făcut de o sesiune paralelă la 10:53.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 15:42–16:20, 3 pași în Sheets, testele trec:
-  - pe foaia unui **rezumat (tabel pivot)** cu filtru deasupra: **▤ Slicer** (butoane cu valorile filtrului: clic = una, Ctrl+clic = mai multe, ⊘ = toate) și **🗓 Cronologie** (perioade pe un câmp cu date: clic = luna / anul, Shift+clic = până la ea); filtrul cu mai multe valori merge acum și pe numere (ani, coduri, date);
-  - **Mutare diagramă → Foaie nouă (doar graficul)**: graficul pe foaia lui, mare, cu datele de pe foaia lor.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 16:21–17:03, 4 pași, testele trec:
+  - Sheets: **Editorul de interogare** (Date → Preluare date → Din tabel / zonă…): pași aplicați (alege coloane, filtrează, sortează, scoate dublurile, grupează cu sumă / număr / medie, coloană calculată), cu previzualizare; rezultatul pe foaia „Interogare”, refăcut la Reîmprospătare totală;
+  - Sheets: **buton rotativ / bară de defilare** în celulă (Inserare → Controale): ▲ ▼ schimbă numărul între minim și maxim, formulele se schimbă pe loc;
+  - PDF: **📐 Fă-l PDF/E** (standardul pentru desene tehnice), cu modelele 3D și multimedia păstrate.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,5%**, **Excel 89,5%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 83,9%, Photoshop 81,9%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,5%**, **Excel 90,2%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 84,1%, Photoshop 81,9%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -21,6 +22,8 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Sheets → un tabel cu orașe repetate → Date → Preluare date ▾ → Din tabel / zonă… → Grupează după Oraș, Sumă → Închide și încarcă, apoi un rând nou în tabel și Date → Reîmprospătare totală: foaia Interogare se schimbă? Și Inserare → ⇕ Buton rotativ pe o celulă folosită într-o formulă (de exemplu o dobândă): e ușor de folosit?
+- Să încerce PDF → un plan / desen tehnic → 🗄 PDF/A → 📐 Fă-l PDF/E → Salvează ca…, deschis în alt program de PDF: la Standarde apare PDF/E-1?
 - Să încerce PDF → un PDF fără etichete (unul vechi sau „Tipărire în PDF”, cu un tabel, titluri îngroșate, eventual pe două coloane) → ♿ Accesibilitate → 🏷 Etichetează automat: în ☰ Ordinea de citire titlurile, paragrafele, listele și tabelul sunt recunoscute, coloanele merg în ordine, iar antetul și „Pagina …” nu apar? Apoi cu Naratorul din Windows.
 - Să încerce PDF → un PDF „accesibil” (cu etichete) de la serviciu → ♿ Accesibilitate → ☰ Ordinea de citire: numerele merg în ordinea firească? Și partea PDF/UA: ce apare cu ✗ are sens?
 - Să încerce PDF → Comprimă… → 🌐 Optimizează pentru web pe un PDF mare, apoi Proprietăți în alt program de PDF: scrie „Vizualizare rapidă: Da”? Și Imagini → un .psd de ecuson cu un text „Nume” → ◫ Straturi → 📇 Din tabel (.csv)… cu o listă de nume: iese câte o poză cu fiecare nume?
