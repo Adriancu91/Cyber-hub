@@ -299,3 +299,4 @@
 - 2026-10-30 19:18 — Imagini: 🎞 Cronologie (animație din cadre, GIF cu durata fiecărui cadru) și ▭ Cadru gol umplut prin tragerea unei poze.
 - 2026-10-30 19:18 — Imagini: masca vectorială rămâne traseu de schimbat și Mască rapidă cu foaia roșie și margine moale; Photoshop 82,7%.
 - 2026-10-30 19:57 — PDF: criptare cu certificat (destinatari cu ID digital, deschidere cu .pfx sau cu certificatul din Windows / token) și politici salvate cu certificat; Acrobat 84,7%.
+- 2026-10-30 20:38 — 3 pași: 📠 scanare direct de la scanner (PDF, Imagini), 🗗 Aranjează toate ferestrele (Docs, Sheets, Slides), { } Scripturi JavaScript în PDF; Excel 90,6%, Acrobat 85,1%, Photoshop 83%.

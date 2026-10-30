@@ -1,16 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 19:57 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 20:38 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 19:19–19:58, 3 pași, toți în PDF, testele trec:
-  - **🔐 Criptează cu certificat** (Protejare PDF): PDF-ul se deschide doar de persoanele alese, fiecare cu ID-ul ei digital, fără parolă comună (felul standard de criptare cu certificat, AES-256, scris de noi; plicul verificat și cu OpenSSL);
-  - un PDF criptat așa se deschide cu ID-ul digital din Suite, cu un .pfx sau cu **certificatul din Windows / de pe token** (Windows cere singur PIN-ul);
-  - **politicile de securitate salvate** merg și pentru criptarea cu certificat (destinatarii și restricțiile, sub un nume).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 19:58–20:38, 3 pași, testele trec:
+  - **📠 Din scanner…** (PDF și Imagini): scanare direct de la scanner / multifuncțională, cu fereastra de scanare a Windows-ului; în PDF fiecare scanare e o pagină nouă;
+  - **🗗 Aranjează toate** (Docs, Sheets, Slides → Vizualizare → Fereastră): ferestrele programului în grilă, alăturate, una sub alta sau în cascadă;
+  - **{ } Scripturi JavaScript…** (PDF → Pregătire formular): toate scripturile din PDF, cu locul lor; cele ale documentului se scriu, se schimbă și se șterg (programul nu le rulează).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,7%**, **Excel 90,4%**, **PowerPoint 90,5%**, Clipchamp 80,5%, Notițe 81,5%, Acrobat 84,7%, Photoshop 82,7%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,7%**, **Excel 90,6%**, **PowerPoint 90,5%**, Clipchamp 80,5%, Notițe 81,5%, Acrobat 85,1%, Photoshop 83%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -22,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce la birou, cu scannerul / multifuncționala: PDF → Creare PDF → 📠 Din scanner… → Color, 300 dpi → Scanează (apare pagina? a doua apăsare adaugă pagina 2?) și Imagini → 📠 Din scanner…. Și Sheets → câteva tabele mutate în ferestre noi (clic dreapta pe tab → ⧉ Mută în fereastră nouă) → Vizualizare → 🗗 Aranjează toate → ◫ Alăturate / 🗗 Cascadă: se așază bine? Și PDF → un formular cu totaluri → Pregătire formular → { } Scripturi JavaScript…: apar scripturile câmpurilor?
 - Să încerce PDF → Protejare PDF → 🔐 Criptează cu certificat… → ＋ De pe calculator / token… (certificatul lui) → Criptează și salvează…, apoi fișierul salvat deschis în Suite cu „Certificatul de pe acest calculator” (îi cere PIN-ul?) și la serviciu, în alt program de PDF, cu același certificat: se deschide?
 - Să încerce Imagini → câteva straturi cu desene puțin diferite → Fereastră → 🎞 Cronologie → ▶ Redă, apoi 💾 Salvează GIF… deschis în browser: animația merge? Și ⬚ Marcaj → ▭ Cadru gol → o poză trasă din Explorer peste el: îl umple? Și Q → pictat cu Margine moale peste păr: marginea trece lin?
 - Să încerce Slides → Inserare → ▶ Video online cu adresa unui clip real: apare coperta cu ▶, iar în prezentare (F5) clic pe ea pornește clipul? Și Notițe → adresa unui clip → 🔍 Previzualizare: fișa are poza clipului?
