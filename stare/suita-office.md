@@ -1,14 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 23:01 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 23:47 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 22:12–23:01, 6 pași, testele trec:
-  - **◇ Diagramă** (Docs / Sheets / Notițe și Slides): noi **Ecuație** (A + B = Rezultat) și **Ierarhie orizontală**; Slides are și **Proces vertical** (acum 18 feluri peste tot);
-  - **Slides → Proiectare → Teme:** încă 4 (Cer, Cafea, Smarald, Zmeură), acum 24, fiecare cu 3 variante;
-  - **Video:** 3 stiluri de text noi (Ștampilă, Mașină de scris, Bilețel galben; acum 32) și 4 filtre de culoare noi (Vară, Iarnă, Fotografie veche, Ceață; acum 19).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 22:59–23:47, 5 pași, testele trec:
+  - **Șabloane noi** peste tot: Slides 9 (Ședință de echipă, Plan de proiect, Curs, Lansare de produs), Docs 11 (Scrisoare de intenție, Demisie, Declarație pe propria răspundere, Minută de ședință), Sheets 12 (Decont de deplasare, Plan de proiect cu bara pe săptămâni, Evidență concedii cu zile lucrătoare fără sărbători), Notițe 12 (Apel telefonic, Sarcini pe priorități, Carte citită, Programare la medic);
+  - **Video:** 4 treceri noi (Descoperire în jos, Triunghi, Inimă, Cerc din colț; acum 44).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 89,7%**, **Excel 90,6%**, **PowerPoint 90,5%**, Clipchamp 80,5%, Notițe 81,5%, Acrobat 85,5%, Photoshop 83,3%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
@@ -22,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Sheets → Fișier → Șabloane → Evidență concedii (zilele lucrătoare și sărbătorile 2026 sunt corecte?) și Plan de proiect (bara pe săptămâni e ușor de citit?); Docs → Din șablon… → Demisie / Declarație pe propria răspundere (textul e cel folosit la el la serviciu?); Video → Trecere → Inimă.
 - Să încerce Slides → ◇ Diagramă ▾ → Ecuație / Ierarhie orizontală → Export .pptx deschis la serviciu (arată la fel?), Slides → Teme → Smarald / Cafea (se citesc bine pe proiector?) și Video → Carton → Cum arată textul → Ștampilă / Bilețel galben, Filtru → Fotografie veche.
 - Să încerce Docs → Inserare → ◇ Diagramă → clic pe ea → Felul diagramei → Cerc împărțit / Proces șerpuit (textele încap?), Slides → ◇ Diagramă ▾ → Cerc împărțit → Export .pptx deschis la serviciu (cercul arată la fel?), ☺ Pictograme → caută „factură” / „camion”, și Slides → ◼ Formă → Egal / Împărțire → Export .pptx deschis la serviciu.
 - Să încerce Imagini → o poză cu o clădire făcută de jos → Editare → ▦ Deformare în perspectivă… → colțurile pe fațadă → ② Deformează → ⇕ Verticale → Aplică: clădirea stă dreaptă? Și o selecție pe un obiect → ◐ Selectează și maschează… → Mută marginea −2 → Mască pe stratul ales: marginea fundalului dispare? Și PDF → un manual mare → Panouri și instantaneu → 🗂 Încorporează index → Salvează, apoi 🔎 Căutare în dosar: e mai repede? Și Slides → Cilindru / Cub / Colț îndoit → Export .pptx deschis la serviciu.
