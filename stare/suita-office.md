@@ -1,11 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 10:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 11:07 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 09:44–10:25, 4 pași, testele trec:
-  - **Docs:** urmărirea modificărilor ține acum minte și schimbările de **paragraf**: stil (paragraf / titlu), aliniere, retragere, spațiere și prima linie. Se văd în panou („a formatat paragraful”), Respinge le face la loc, și se citesc / scriu în .docx (deci și cele făcute la serviciu).
+- Programul se numește acum **Cyber Office Studio** și în interfață (titlu, bara din stânga, mesaje, siglă nouă), făcut de o sesiune paralelă la 10:53.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 10:24–11:07, 5 pași, testele trec:
+  - **Scheme noi** Radial și Țintă (13 feluri) în Slides, Docs, Sheets și Notițe.
+  - **Gramatică:** greșeli frecvente noi („vre-un”, „nici-o”, „deaceea”, „propietar”, „complectez”) și pleonasme („a colabora împreună”, „mai superior”, „și etc.”).
+  - **Sheets, Rezolvitor:** metoda **Evolutivă** pentru formule cu salturi (DACĂ, rotunjiri, căutări în tabele) și **intervalele permise** în raportul de sensibilitate.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 89,5%**, **Excel 89,1%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 82,3%, Photoshop 81,5%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
@@ -19,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Sheets → 🧮 Rezolvitor → Metoda: Evolutivă pe un model real cu DACĂ sau prețuri pe praguri, și raportul cu „Creștere / Scădere permisă”: rezultatele au sens? Și Slides → ◇ Diagramă ▾ → Radial / Țintă → Export .pptx deschis la serviciu.
 - Să încerce la serviciu un .docx cu urmărirea modificărilor pornită în care face un rând titlu, centrează altul și schimbă spațierea unui paragraf → Suite → Docs → Import .docx: apar în panou ca „a formatat paragraful”, iar Respinge le face la loc? Și invers: în Suite, cu urmărirea pornită, centrează un rând → Salvează ca .docx → deschis la serviciu: apare ca modificare de format?
 - Să încerce Sheets → un tabel → Proiectare tabel → ＋ Stil de tabel nou… cu culorile firmei → Export .xlsx deschis la serviciu (tabelul are culorile și stilul e în listă?); un .docx de la serviciu cu urmărirea pornită, în care a schimbat culoarea / fontul unui cuvânt → Docs → Import .docx (apare în panou, Respinge îl face la loc?); PDF → 🔎 Căutare în dosar → ⚡ Index pe un dosar mare: a doua căutare e mult mai rapidă?
 - Să încerce Imagini → ✒ Traseu → un triunghi → Fereastră → ⌇ Trasee (apare „Traseul de lucru” cu forma lui?) → 💾 → ▉ Umple; ◫ Straturi → ＋ Compoziție nouă, mută sigla, încă o compoziție, clic pe prima (sigla revine?); ✎ Adnotează → T Text într-o casetă îngustă → a-b Silabe (cratimele sunt corecte?); Slides → Felie de cerc / Placă → Export .pptx deschis la serviciu.
@@ -73,5 +77,5 @@
 - **LTV:** ca o semnătură să poată fi verificată și peste ani, Suite ar trebui să întrebe pe internet serverele emitentului certificatului (OCSP / CRL), la semnare. E în regulă, doar la cererea ta, ca la marca temporală?
 - Să încerce un .docx semnat din Suite la serviciu și semnarea cu tokenul lui real (PDF → 🔏 Semnează digital); dacă are un .p7m / .p7s sau un .docx semnat real, ni-l poate da pentru colecția de test.
 - Să încerce o factură reală: Sheets → Șabloane → Factură (e-Factura) → Export e-Factura (XML), apoi încărcarea în SPV.
-- Kitul 0.9.3 e gata (Office-Suite-Test-Instalare-0.9.3.exe, cu lista CE-E-NOU-0.9.3.txt, din commitul d009e246); noutățile de după el intră în 0.9.4. Pe acest laptop Smart App Control din Windows blochează kitul nesemnat (JURNAL.md, 28.10, ora 15:00).
+- Kitul 0.9.4 e gata (Office-Suite-Test-Instalare-0.9.4.exe, test de 15 zile, cu lista CE-E-NOU-0.9.4.txt); următorul, 0.9.5, se va numi Cyber-Office-Studio-Instalare-0.9.5.exe. Pe acest laptop Smart App Control din Windows blochează kitul nesemnat (JURNAL.md, 28.10, ora 15:00).
 - Dacă suita se va vinde: o verificare juridică a licenței.

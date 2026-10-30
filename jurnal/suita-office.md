@@ -282,3 +282,4 @@
 - 2026-10-30 08:57 — Imagini: panoul Trasee cu miniaturi, Compozițiile de straturi cu poziție si stiluri, despărțirea în silabe în caseta de text; Slides: 6 forme noi (85); Photoshop 81,5%.
 - 2026-10-30 09:45 — Sheets: stiluri de tabel proprii (nou / modifică / șterge, și în .xlsx); Docs: culoarea și fontul urmărite din .docx; PDF: index pentru căutarea în dosar; Excel 89,1%, Acrobat 82,3%.
 - 2026-10-30 10:25 — Docs: modificările urmărite de paragraf (stil de titlu, aliniere, retragere, spațiere, prima linie), în Suite și în .docx dus-întors; Word 89,5%.
+- 2026-10-30 11:07 — Scheme Radial și Țintă (Slides, Docs, Sheets, Notițe); gramatică: greșeli frecvente și pleonasme noi; Sheets: Rezolvitorul cu metoda Evolutivă și intervalele permise în raportul de sensibilitate.
