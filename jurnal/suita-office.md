@@ -296,3 +296,5 @@
 - 2026-10-30 17:52 — Notițe: 🔍 Previzualizare legături web (fișă cu site, titlu, descriere, intră în căutare; Notițe 81,1%) și Inserare → 🧊 Modele 3D (.obj / .stl) în Slides, Docs și Notițe (PowerPoint 90,3%).
 - 2026-10-30 18:38 — Notițe: poza paginii în fișele de legături și fișe de clipuri video (Notițe 81,5%); Docs / Slides: Inserare → ▶ Video online (Word 89,7%, PowerPoint 90,5%).
 - 2026-10-30 18:38 — Imagini: 🌈 Profilul de culoare (Adobe RGB / Display P3 / ProPhoto → sRGB; Photoshop 82,1%); PDF: 🧊 Model 3D pe pagină (Acrobat 84,3%).
+- 2026-10-30 19:18 — Imagini: 🎞 Cronologie (animație din cadre, GIF cu durata fiecărui cadru) și ▭ Cadru gol umplut prin tragerea unei poze.
+- 2026-10-30 19:18 — Imagini: masca vectorială rămâne traseu de schimbat și Mască rapidă cu foaia roșie și margine moale; Photoshop 82,7%.
