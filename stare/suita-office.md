@@ -1,15 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-30 15:45 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-30 16:20 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește acum **Cyber Office Studio** și în interfață (titlu, bara din stânga, mesaje, siglă nouă), făcut de o sesiune paralelă la 10:53.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 15:02–15:45, 4 pași, testele trec, toate în PDF → ♿ Accesibilitate:
-  - **🏷 Etichetează automat** recunoaște acum și **tabelele** (cap de tabel + celule), **titlurile cu aldin** și pe cele numerotate („1. Introducere”), iar paginile pe **două coloane** scrise rând cu rând se citesc întâi stânga, apoi dreapta.
-  - Verificarea de accesibilitate are regula nouă **Ordinea de citire** (paginile unde o bucată e citită în ordine greșită).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 15:42–16:20, 3 pași în Sheets, testele trec:
+  - pe foaia unui **rezumat (tabel pivot)** cu filtru deasupra: **▤ Slicer** (butoane cu valorile filtrului: clic = una, Ctrl+clic = mai multe, ⊘ = toate) și **🗓 Cronologie** (perioade pe un câmp cu date: clic = luna / anul, Shift+clic = până la ea); filtrul cu mai multe valori merge acum și pe numere (ani, coduri, date);
+  - **Mutare diagramă → Foaie nouă (doar graficul)**: graficul pe foaia lui, mare, cu datele de pe foaia lor.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,5%**, **Excel 89,1%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 83,9%, Photoshop 81,9%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,5%**, **Excel 89,5%**, **PowerPoint 90,1%**, Clipchamp 80,5%, Notițe 80,7%, Acrobat 83,9%, Photoshop 81,9%, formule 97,1%. Colecția de test: **476 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.

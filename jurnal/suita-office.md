@@ -289,3 +289,4 @@
 - 2026-10-30 14:09 — PDF → ♿ Accesibilitate: verificarea PDF/UA cu Declară PDF/UA-1, ordinea de citire pe pagini și schimbarea tipului unei etichete; Acrobat 83,7%.
 - 2026-10-30 15:00 — PDF: etichetarea automată pentru accesibilitate (paragrafe, titluri, liste, imagini; antetele și numerele de pagină ca decor) și, în ordinea de citire, mutarea bucăților cu ▲ ▼ și „Decor (nu se citește)”; Acrobat 83,9%.
 - 2026-10-30 15:45 — PDF: etichetarea automată recunoaște tabelele, titlurile cu aldin / numerotate și cele două coloane; verificarea de accesibilitate are regula „Ordinea de citire” (4 pași, testele trec).
+- 2026-10-30 16:20 — Sheets: butoane de filtrare (slicer) și cronologie legate de rezumat, plus graficul mutat pe o foaie nouă; Excel 89,5% (3 pași, testele trec).
