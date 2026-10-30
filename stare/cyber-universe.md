@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-30 02:42 (ora României) · **de:** sesiunea OS programată · oprire scurtă (nicio comandă nouă); CI verde, Release `os-209`
+**Actualizat:** 2026-10-30 05:41 (ora României) · **de:** sesiunea OS programată · **OPRIT: necesită analiza lui Adrian** (3 sesiuni la rând fără sarcină — coada e goală); CI verde, Release `os-209`
 
 ## Acum
 - **C-42 gata (P6-37) — Cyber-GPU fixat pe `aee06c4` (după C-39):** `gpu firmware` citește acum antetele Booter și bootloader după forma
@@ -11,7 +11,8 @@
 
 ## Urmează
 - Coada fără sarcini libere (P6-10, P6-12 p.2 așteaptă hardware; P5-07 blocat; C-7, C-11 după întoarcerea lui Adrian; C-41 amânat) →
-  sesiunile următoare fac oprire scurtă până la o comandă nouă (dacă și următoarea sesiune e fără sarcină: iar „OPRIT”).
+  **OPRIT** din 30 oct 05:41: sesiunile următoare nu încep sarcini noi până la o comandă nouă de la Adrian în `COMENZI.md`
+  (sau un rezultat nou în `rezultate/`). Nu e o defecțiune: pur și simplu nu mai e nimic de făcut fără Adrian sau hardware.
 - După următoarea fereastră pe workstation: cifrele noi din `rezultate/` → pașii următori (viteza Kronos, GPU I5+).
 
 ## Ce oferă proiectul celorlalți
@@ -23,6 +24,7 @@
 - `kronos` / Adrian: Release-ul privat `kronos-kgr1-459` (comanda din `integrare/kronos/MODEL.md`), ca fișierul să ajungă pe stick.
 
 ## Blocaje / nevoie de Adrian
+- **OPRIT (oprire de siguranță, coada goală):** ca lucrul să continue e nevoie de o comandă nouă în `COMENZI.md` sau de rezultatele testelor de mai jos în `rezultate/`.
 - **Stick-ul nou = Release `os-209`** (GitHub → cyber-universe → Releases, sau `actualizeaza` pe laptop cu cablu).
   Dacă scrii stick-ul de la zero, pune la loc `kronos/kronos_459_q8_0.kgr` + `.sha256`, `cyber.rw` și (pentru Cyber-GPU) folderul `firmware\`.
 - **Workstation, GPU (~2 min, cu `os-209`, doar citire):** `gpu firmware` → așteptat „criteriul I4: TRECE (fisiere oficiale 4/4, antete citite 4/4)”; poză.
