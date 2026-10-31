@@ -1,28 +1,28 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-31 11:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-31 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
   (executantul pe workstation + supraveghetorul în cloud). Direcția: fără LLM nicăieri; auto-joc cu verificator + specialiști + memorie;
   pe termen lung: Kronos dedicat pe cod și autodezvoltare.
 - Cel mai bun model: **#477** (română 1,2097; mai mic = mai bine) — **S51 CONFIRMAT** (a doua noapte din #459, fără cădere; cod 0,7270, R2 0,4060, toate validările puțin mai bune).
-  Câștigul scade (−0,0065 față de −0,017 prima noapte), deci nu urmează o a treia noapte la fel. În OS rulează încă **#459** (os-195, Release `kronos-kgr1-459`); #477 îl înlocuiește doar cu „da”-ul lui Adrian.
+  Câștigul scade (−0,0065 față de −0,017 prima noapte), deci nu urmează o a treia noapte la fel. În OS rulează încă **#459** (os-195, Release `kronos-kgr1-459`); #477 îl înlocuiește prin S54 (C-44, „da” dat).
 - **CCM (Cyber-Compute-Module), etapele 1–4 gata și verificate:** S47 profilul (înmulțirile ~73 % din timp); S48 modulul `inferenta_ccm` (portul `inferenta`,
   reglaj salvat + rezervă, simboluri identice); S49 placa video (doar **fp32** corectă; fp16/bf16 respinse); **S50 bancul măsoară „rece” și „cald”
   (în același motor) și alege după cald:** procesor **1 fir 2,30 s vs toate firele 3,14 s (1,36×)**, placa fp32 1,25 s (1,84× față de procesor). Placa nu se
   folosește implicit. Efectul „toate firele rapid la primul răspuns” din S49 nu s-a repetat azi. 1119 teste trec.
-- Kronos-Cod (C-28): **descărcarea întreagă S46 (C-43) gata** în 2 nopți: **3,87 GB cod curat, ~1,10 mld simboluri** (Python + Rust + puțin C), licențe permisive, data-limită 29 iunie 2021, proveniență pe fișier. Sub estimarea de 3–6 mld (multe crates fără fișier de licență; lista PyPI de la sursă = 15.000). Acum: **S53** (doar procesor) verifică dacă examenul de cod ascuns apare în date.
+- Kronos-Cod (C-28): descărcarea S46 gata: **3,87 GB cod curat, ~1,10 mld simboluri** (Python + Rust + puțin C), licențe permisive, data-limită 29 iunie 2021.
+  **S53 (scurgerea examenului de cod): DE CURĂȚAT** — 0/200 probleme cu soluția întreagă în date, 87/200 cu bucăți comune de 13 simboluri (cea mai lungă 26) → se exclud 3.821 fișiere (3,06 %) la tokenizer; setul ascuns rămâne bun. 1126 teste trec.
 - S44 INFIRMAT (bucăți tăiate 297/500 vs întregi 336/500): memoria E3 rămâne pe #438.
-- S45 (căzută la 29 oct 23:09 din cauza unei reporniri a calculatorului, probabil pană de curent) închisă fără verdict; repetată ca S51.
-- **Rulează / urmează azi: S53** (verificarea scurgerii, procesor). Placa e liberă.
+- **Adrian a spus „da” (C-44, C-45, 31 oct 13:50).** Rulează / urmează azi, doar procesor: **S54** (#477 modelul în uz, #459 rezervă, export KGR1 + vectori + MODEL.md), apoi **S55** (tokenizerul pe cod). Placa e liberă.
 
 ## Urmează
-- S53: examenul de cod ascuns curat sau nu în datele descărcate (listă de excludere, nimic șters).
-- Pe placă: nimic până la decizia lui Adrian. Tokenizerul pe cod: al doilea „da”.
+- S54: `integrare/kronos/MODEL.md` trece pe **#477** (îl copiez în hub când e gata) → deblochează C-46 la `cyber-universe`. #459 rămâne acceptat ca rezervă.
+- S55: tokenizerul Kronos-Cod (32.768 simboluri, pre-înregistrat, măsurat pe 1 % ținut deoparte), tokenizarea setului, apoi propunerea primei antrenări pe placă.
 
 ## Ce oferă proiectul celorlalți
-- Pachetul KGR1 în `integrare/kronos/` (specificație, tokenizer, vectori, `MODEL.md`) + Release-ul privat cu #459 (#477 poate urma, după „da”).
+- Pachetul KGR1 în `integrare/kronos/` (specificație, tokenizer, vectori, `MODEL.md`) + Release-ul privat cu #459; #477 urmează (S54, C-44).
 - Motorul de referință `unelte/inferenta_bruta.py` și modulul `inferenta` (logit-uri identice): reper pentru viteza din OS.
 - Bancul CCM rece/cald (S50): pe Windows, 1 fir e cel mai rapid pe procesor la răspunsuri repetate — de măsurat la fel în OS. Profilul S47 pe operații (MLP 37 %, QKV 18 %, ieșirea atenției 16 %, atenția 10 %) și lecția „pe un model mic, mai multe fire = mai lent” — util pentru C-40
   (OS: 69,5 simb/s pe 18 fire, așteptarea firelor 62,6 %).
@@ -34,7 +34,8 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- „da #477” dacă #477 îl înlocuiește pe #459 în interfață și în OS; ce să facă placa de acum.
-- Cauza repornirii de la ~23:10 (probabil pană de curent): Adrian rulează comanda de citire din raportul S52 sau aprobă citirea jurnalelor Windows de către executant. Dacă e curent: UPS; dacă e Windows Update: „ore active”.
-- Descărcarea codului e gata: tokenizerul pe cod cere un al doilea „da”; tot Adrian decide dacă ~1,1 mld simboluri ajung sau vrea surse în plus.
+- Release-ul privat `kronos-kgr1-477`: dacă executantul nu-l poate publica singur (`gh` cere aprobare), pașii exacți vor fi în `integrare/kronos/MODEL.md` după S54.
+- Opțional: excluderea mai îngustă propusă de executant la S53 (doar suprapunerile cu enunțuri/soluții); fără „da”, se exclud toate cele 3.821 fișiere.
+- Cauza repornirii de la 29 oct ~23:10 (probabil pană de curent): Adrian rulează comanda de citire din raportul S52 sau aprobă citirea jurnalelor Windows de către executant. Dacă e curent: UPS; dacă e Windows Update: „ore active”.
+- Prima antrenare Kronos-Cod pe placă: după S55, prin granițele cascadei sau cu „da”-ul lui Adrian.
 - La ferestrele OS/GPU viitoare: antrenarea de pe placă să fie oprită întâi.

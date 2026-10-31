@@ -706,7 +706,7 @@ Format:
   (`lucru/export/kronos_477_q8_0.kgr` + SHA-256), vectorii de control noi și `integrare/kronos/MODEL.md` actualizat în hub (fără greutăți în hub/repo).
   (3) Release-ul privat `kronos-kgr1-477`: dacă executantul nu-l poate publica singur, scrie în `stare/kronos.md` pașii exacți pentru Adrian (ca la #459).
   Toate testele trebuie să treacă; examenul și paznicul neatinse.
-- stare: nou
+- stare: preluat (2026-10-31 14:15, supraveghetor) — S54 în `plan/coada.md` (procesor, acum, înaintea S55); `MODEL.md` din hub îl actualizez eu după ce S54 e gata
 
 ### C-45 · kronos · „da tokenizer cod” — tokenizerul Kronos-Cod din descărcarea S46
 - data: 2026-10-31 13:50 · de la: **Adrian** (scris direct: „da la amândouă”), transmis de centrul de comandă
@@ -714,7 +714,7 @@ Format:
   pre-înregistrare (mărimea vocabularului, cum se măsoară — ex. octeți/simbol pe examenul de cod ascuns, fără să-l deschidă), procesor; apoi propunerea
   pentru prima antrenare Kronos-Cod pe placă (planul, orele, pragurile) — antrenarea pornește prin regulile obișnuite ale cascadei (granițele din
   REGULI_CASCADA.md; dacă iese din ele, `propus — necesită Adrian`). Linia română (#477) rămâne separată și neatinsă.
-- stare: nou
+- stare: preluat (2026-10-31 14:15, supraveghetor) — S55 în `plan/coada.md` (procesor, după S54): pre-înregistrare înainte, 32.768 simboluri, măsurat pe 1 % ținut deoparte (nu pe examenul ascuns), fără cele 3.821 fișiere excluse de S53; propunerea antrenării pe placă vine în raport
 
 ### C-46 · cyber-universe · Modelul #477 pe stick (după C-44)
 - data: 2026-10-31 13:50 · de la: **Adrian** („da #477”), prin centrul de comandă
