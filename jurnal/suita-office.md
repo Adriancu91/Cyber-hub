@@ -323,3 +323,4 @@
 - 2026-10-31 12:25 — 5 pași la ecuații (Docs, Slides, Sheets, Notițe): accente (vector, bară, căciulă), matrice, sisteme cu acoladă, mulțimi cu acolade, chenar și subliniere; se citesc din .docx / .odt (înainte se pierdeau) și se scriu înapoi la fel; testele trec.
 - 2026-10-31 13:01 — 6 pași la ecuații: acolade culcate (underbrace), sisteme aliniate la „=”, ecuații scrise / lipite / copiate cu bară inversă, x² și a₁ lipite devin puteri și indici; testele trec.
 - 2026-10-31 13:47 — 4 pași la Notițe: pânză liberă cu casete de text puse oriunde, poze și desene de mână pe pânză, mutare și cu Alt + săgeți; se caută, se văd în Lectură și se exportă; testele trec.
+- 2026-10-31 14:29 — 4 pași: Notițe (grupuri de casete pe pânza liberă, pozele păstrate la lipirea din web) și PDF (tabelele direct ca .xlsx, PDF-ul direct ca prezentare .pptx); Notițe 82,7%, Acrobat 86,5%; testele trec.

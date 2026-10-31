@@ -1,20 +1,20 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 13:47 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 14:29 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 13:01–13:47, 4 pași la **Notițe**, testele trec:
-  - **Pânză liberă**: Inserare → ▣ Casetă liberă pune sub notiță o pânză pe care casetele de text stau oriunde (dublu clic face una, se mută trăgând de bară sau cu Alt + săgeți, se lățesc de margine).
-  - Pe pânză se pot pune și **poze** (trase din dosar sau lipite) și **desene de mână** (✎ Desen pe pânză, redeschise cu liniile lor).
-  - Casetele se caută, se criptează la notițele cu parolă, se văd în Lectură și intră în → Docs, .html și .md.
-  - Înainte (11:37–13:01): 11 pași la ecuații (accente, matrice, sisteme aliniate, scrise / copiate cu bară inversă).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 13:47–14:33, 4 pași, testele trec:
+  - **Notițe, pânza liberă:** casetele se aleg cu Shift + clic și se leagă cu ⧉ Grupează (se mută împreună, trase sau cu Alt + săgeți; ⛓ desparte grupul).
+  - **Notițe, lipire din web:** pozele nu se mai pierd; cele din text intră îndată, cele de pe internet la 🖼 Adu pozele (nimic nu pleacă pe internet fără clic).
+  - **PDF → Conversie:** **Tabele .xlsx…** și **Prezentare .pptx…** salvează direct foaia de calcul / prezentarea, fără să mai treci prin Sheets / Slides.
+  - Înainte (13:01–13:47): pânza liberă din Notițe (casete, poze, desene de mână); 11:37–13:01: ecuații.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,9%**, **Excel 90,7%**, **PowerPoint 91%**, Clipchamp 80,5%, Notițe 82,3%, Acrobat 86,1%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori (plus 10 .eps noi în colecția de poze).
+- Scoruri: **Word 89,9%**, **Excel 90,7%**, **PowerPoint 91%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (cele rămase la Notițe sunt mari: formatarea văzută direct în câmpul de scris, o notiță singură în fereastră separată).
+- Alte funcții „parțial” / „nu” din inventar (la Notițe rămân cele mari: formatarea văzută direct în câmpul de scris, o notiță singură în fereastră separată, scrisul cu creionul direct pe pânză).
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice și despărțirea în silabe românească, semnarea / verificarea XML (XML-DSig, scrise de la zero).
@@ -23,7 +23,9 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- Să încerce Notițe → Inserare → ▣ Casetă liberă → câteva casete și o poză trasă din Explorer pe pânză, mutate prin pagină → 📖 Lectură: stau unde le-a pus? E ușor de folosit ca pagină liberă?
+- Să încerce Notițe → Inserare → ▣ Casetă liberă → câteva casete și o poză trasă din Explorer pe pânză, apoi Shift + clic pe barele a două casete → ⧉ Grupează → trage una (se mută amândouă?) → 📖 Lectură: stau unde le-a pus? E ușor de folosit ca pagină liberă?
+- Să copieze din browser un paragraf cu o poză dintr-un articol → Notițe → Ctrl+V → 🖼 Adu pozele: poza apare în notiță?
+- Să încerce PDF → o factură / un extras → Conversie → Tabele .xlsx… și o prezentare primită ca PDF → Prezentare .pptx…, deschise la serviciu: tabelul are sumele ca numere, iar slide-urile se pot schimba?
 - Să încerce Docs → Inserare → √x Ecuație → modelele Vector / Matrice / Sistem de ecuații / Mulțime / Rezultat în chenar → Export .docx deschis la serviciu: ecuațiile arată la fel și se pot schimba acolo? Și un .docx de la serviciu cu vectori, matrice sau sisteme: acum apar întregi în Suite?
 - Să încerce Slides → ◼ Formă → Dreptunghi cu steluță și ◇ Diagramă ▾ → Săgeată continuă → Export .pptx deschis la serviciu: arată la fel? Și Slides → Teme → Ghețar / Chihlimbar (se citesc bine pe proiector?), Video → Carton → Cum arată textul → Tablă verde de școală, și Felul trecerii → Cortină în zigzag.
 - Să încerce Slides → ◼ Formă → Acoladă stânga lângă o listă, Buton de acțiune: Ajutor, Săgeată circulară dublă → Export .pptx deschis la serviciu: formele sunt aceleași? Și un .pptx de la serviciu cu acolade / paranteze: acum apar? Și Slides → ◼ Formă → Față zâmbitoare / Bulă de gândire / Explicație cu linie frântă / Buton de acțiune: Informații (peste o poză), și Panglică curbată / Sul orizontal / Semn de interdicție → Export .pptx deschis la serviciu: formele sunt aceleași? Și un .pptx cu butoane „Înainte” / „Înapoi”: în expunere duc la slide-ul potrivit?
