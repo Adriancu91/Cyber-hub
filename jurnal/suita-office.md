@@ -337,3 +337,4 @@
 - 2026-10-31 23:00 — 4 pași în Sheets: Editorul de interogare unește toate fișierele dintr-un dosar (recitit la reîmprospătare), are pașii Îmbină coloanele, Extrage din text, Duplică coloana, Rotunjește și grupează după mai multe coloane cu mai multe calcule; testele trec.
 - 2026-10-31 23:47 — 5 pași în Sheets, Editorul de interogare: Din dată, Calcul pe coloană, Coloană personalizată cu formulă, Mută / Elimină coloanele, dublurile, rândurile cu erori, lista de pași pe grupe; testele trec.
 - 2026-11-01 00:35 — 4 pași în Sheets: Relații între tabele (cu verificare, Găsește singur, Tabel / Rezumat din model), iar Din imagine colorează celulele nesigure și citește și din clipboard; testele trec.
+- 2026-11-01 01:24 — 5 pași în Sheets: macrocomenzi (înregistrare și rulare, scurtături Ctrl+Shift+literă, pentru toate registrele, cu rânduri inserate, în căutarea de comenzi); Excel 91,8%; testele trec.
