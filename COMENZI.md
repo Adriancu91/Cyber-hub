@@ -731,3 +731,4 @@ Format:
   neschimbate), după ce S57 și S59 sunt `gata`. Prima noapte potrivită. **Mâine (1 nov) Adrian poate fi la workstation pentru fereastra OS/GPU:
   dacă e acolo, antrenarea se oprește întâi** (sau pornește după fereastră). Nu atinge #477, linia română, `kronos/`, examenul, paznicul.
 - stare: preluat (2026-10-31 20:56, supraveghetor) — S58 în `plan/coada.md`; întâi S60 (unelte, procesor); proba în noaptea 31 oct, cele 10 ore din 1 nov 19:00 (după fereastra OS/GPU, dacă e cazul)
+  - 2026-10-31 23:15: S60 gata; pre-înregistrarea și proba de 10 minute gata (6.078 MB, 63 °C); cele 10 ore rămân pentru 1 nov 19:00.

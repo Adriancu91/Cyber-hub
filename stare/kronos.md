@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-10-31 20:56 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-10-31 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -11,12 +11,14 @@
 - **Kronos-Cod (C-45 gata):** tokenizerul de cod (32.768 simboluri) BUN — 3,46 octeți/simbol (+22 % față de w2), refacere 100 % identică;
   setul de antrenare tokenizat: 1,08 mld simboluri; validare 5.686 fișiere ținute deoparte; examenul ascuns neatins.
 - **S57 gata:** modulul de date pentru cod, examenul pe validare (biți/octet; pe datele reale = S55 exact), configurarea `cod_c1` (nepornită).
-- **S59 gata:** modelul care citește direct simbolurile de cod + examenul pe ore (biți/octet, 1.000 fișiere fixe); drumul antrenării probat cap-coadă pe un set mic.
-- 1159 teste trec. Placa liberă în seara asta (doar proba de 10 minute a S58, după S60).
+- **S59 gata:** modelul care citește direct simbolurile de cod + examenul pe ore (biți/octet, 1.000 fișiere fixe).
+- **S60 gata:** proba „de la zero” + comanda care scrie răspunsurile pentru pass@k (setul ascuns închis). 1165 teste trec.
+- **S58 pașii 1–2 gata:** pre-înregistrarea (înainte de probă) și proba de 10 minute: placa 6.078 MB, 63 °C, 32.364 simb/s.
+  Observat: pierderea de pornire 474 (inițializarea implicită a încorporărilor).
 
 ## Urmează
-- **S60** (aprobat, doar procesor, acum): proba de 10 minute „de la zero” + comanda care pune modelul să scrie răspunsurile pentru pass@k (teste doar pe setul de probă).
-- **S58** (aprobat de Adrian, C-47): în noaptea 31 oct → 1 nov pre-înregistrarea și proba de 10 minute; **cele 10 ore de antrenare `cod_c1`: 1 nov de la 19:00** (după fereastra OS/GPU, dacă Adrian e la workstation). Praguri scrise dinainte (biți/octet ≤ 1,10 și pass@10 ≥ 10/200).
+- **S61** (aprobat, noaptea 31 oct → 1 nov): aceeași probă de 10 minute cu încorporările pornite la abaterea 0,02, pe o configurare separată, praguri scrise înainte. Nu schimbă S58.
+- **S58** (aprobat de Adrian, C-47): **cele 10 ore de antrenare `cod_c1`: 1 nov de la 19:00** (după fereastra OS/GPU, dacă Adrian e la workstation). Praguri scrise dinainte (biți/octet ≤ 1,10 și pass@10 ≥ 10/200).
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Reper de viteză pe Windows pentru #477: 1 fir ~2,14 s / răspuns de 64 simboluri, placa fp32 ~52 simb/s.
@@ -31,6 +33,7 @@
 ## Blocaje / nevoie de Adrian
 - **Release-ul privat `kronos-kgr1-477`** (executantul n-are voie la `gh`; fără el OS-ul nu are fișierul pentru stick). Pe workstation, în PowerShell, din `C:\Kronos\cyberspace`:
   `gh release create kronos-kgr1-477 lucru/export/kronos_477_q8_0.kgr lucru/export/kronos_477_q8_0.kgr.sha256 --repo Adriancu91/cyberspace --title "Kronos #477 KGR1 Q8_0" --notes "SHA-256 bcbe8187087dbb3e531a8a7b10991cd24ea14a6e067d07c0fcbb8d3edd753963, 110859040 octeți"`
+- Pe 1 nov, înainte de 19:00: dacă S58 pornește cum e aprobată sau cu varianta S61 (fără răspuns = cum e aprobată).
 - Pe 1 nov: dacă Adrian vine la workstation pentru fereastra OS/GPU, să spună când — antrenarea S58 pornește după fereastră.
 - Opțional: excluderea mai îngustă propusă la S53; cauza repornirii din 29 oct (comanda din raportul S52).
 - La ferestrele OS/GPU viitoare: antrenarea de pe placă să fie oprită întâi.
