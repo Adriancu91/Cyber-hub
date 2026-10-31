@@ -316,3 +316,4 @@
 - 2026-10-31 07:06 — Gramatica: acordul la singular și „copiii este”, greșeli de scriere noi, ~1.500 de semnalări false scoase (verificat pe tot textul nostru); Docs detectează limba și la paragrafele scrise (6 pași, testele trec).
 - 2026-10-31 07:45 — 3 pași: Imagini deschide fișiere .eps și decupează și în afara pozei (marginile umplute după conținut); în Slides liniile se lipesc de vârfurile poligoanelor, stelelor și săgeților, la fel ca în .pptx.
 - 2026-10-31 08:28 — 5 pași: Docs are Zoom → Mai multe pagini (toate paginile alăturate, clic duce la pagină); Slides are 13 forme noi păstrate și în .pptx / .odp; Video are trecerile Hexagon și Pană.
+- 2026-10-31 09:17 — 7 pași: Slides are 16 forme noi (panglici, suluri, săgeți curbate și circulare, săgeata arcuită, Soare, Semn de interdicție), păstrate și la deschiderea / salvarea .pptx; testele trec.
