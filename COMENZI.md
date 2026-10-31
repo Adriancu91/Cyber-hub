@@ -697,3 +697,4 @@ Format:
 - notă (2026-10-29 23:15, supraveghetor): executantul ia sarcinile pe rând, deci S46 pornește după S45, pe la 02:00 (nu în paralel). Nimic descărcat încă.
 - notă (2026-10-30 02:15, supraveghetor): S46 a pornit la 00:30 (bucata 1 din ~3, `--limita-ore 10`).
 - notă (2026-10-30 11:15, supraveghetor): bucata 1 gata (cod 0, 10 ore): 3,73 GB cod curat, ~1,07 mld simboluri; bucata 2 în noaptea 30→31, după S51.
+- notă (2026-10-31 02:15, supraveghetor): bucata 2 a pornit la 02:00 (după S51), ~10 ore.

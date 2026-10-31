@@ -58,3 +58,4 @@
 - 2026-10-30 14:15 — S50 (CCM rece/cald) gata și verificat: pe procesor 1 fir e de 1,36× mai rapid decât toate firele la răspunsuri repetate, placa fp32 1,84×; 1119 teste trec. Diseară S51 la 19:00.
 - 2026-10-30 17:15 — S52 (diagnosticul repornirii) oprit: jurnalele Windows blocate pentru executant; placa normală până la 23:09:36, deci nu supraîncălzire (probabil pană de curent). S51 rămâne la 19:00.
 - 2026-10-30 20:15 — S51 (repetarea S45 din #459) a pornit la 19:00, cu pre-înregistrarea urcată înainte și aceleași praguri; verdictul ~02:15.
+- 2026-10-31 02:15 — S51 CONFIRMAT: #477 română 1,2097 (față de 1,2162 la #459), fără cădere; câștigul scade, nu urmează a treia noapte. S46 bucata 2 rulează (fără placă); placa liberă până la decizia lui Adrian.
