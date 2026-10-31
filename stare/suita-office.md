@@ -1,15 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 05:31 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 06:21 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 04:48–05:31, 3 pași, testele trec:
-  - **Notițe**: tabelele puse dintr-un .xlsx / .ods / .csv se aduc la zi din fișier cu **↻ Reîmprospătează foile** (tabelul schimbat de mână rămâne neatins);
-  - **PDF → Articole**: caseta unui articol se **desenează cu mausul** pe orice pagină, iar articolul se **citește pe ecran întreg** (⛶), casetă cu casetă, cu săgețile / Spațiu.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 05:31–06:21, 4 pași, testele trec:
+  - **Imagini**: 📌 **Deformare cu pioneze** (pui pioneze pe poză, tragi de una, restul se îndoaie lin între ele);
+  - **PDF → ✎ Editează text**: și **formele desenate** din pagină (linii, chenare, dreptunghiuri) se aleg cu clic: se mută (și cu săgețile), se măresc, primesc altă culoare și altă grosime a liniei, se șterg.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,7%**, **Excel 90,7%**, **PowerPoint 90,7%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 85,9%, Photoshop 83,3%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,7%**, **Excel 90,7%**, **PowerPoint 90,7%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 86,1%, Photoshop 83,4%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -21,6 +21,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Imagini → o poză cu un om sau un animal → Editare → 📌 Deformare cu pioneze… → pioneze pe umăr, cot și mână → trage de mână → Aplică: se îndoaie natural? Și PDF → o factură cu tabel → Editare → ✎ Editează text → clic pe o linie a tabelului → altă grosime / 🎨 / săgeți / Delete → Salvează ca… deschis în alt program: schimbarea a rămas?
 - Să încerce Notițe → Inserare → ▦ Foaie de calcul… cu un .xlsx de-al lui, apoi schimbă cifre în fișier și ↻ Reîmprospătează foile: apar cifrele noi? Și PDF → un ziar / o revistă în PDF → Cuprins → Articole → ▭ Desenez caseta pe pagină pe coloanele unui articol → ⛶: se citește ușor?
 - Să încerce Slides / Docs → Inserare → 🧊 Modele 3D cu un .glb descărcat de pe un site cu modele 3D (sau un .ply de la o scanare): apare bine? Apoi clic pe poză → 🧊 Rotește modelul → altă poziție → Gata.
 - Să încerce PDF → un formular → ▭ Câmp de completat → ▣ Cod de bare → Salvează ca…, completează, salvează din nou și citește codul cu telefonul (apar numele și valorile?); Slides → Revizuire → ⇄ Compară… cu o prezentare primită înapoi de la un coleg (diferențele sunt cele reale?); Notițe → Export sarcini (.ics) → bifează în calendar → exportă de acolo → Import sarcini (.ics)… (se bifează în notiță?).
