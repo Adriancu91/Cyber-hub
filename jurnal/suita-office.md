@@ -322,3 +322,4 @@
 - 2026-10-31 11:36 — 5 pași: în Slides toate formele standard din .pptx au acum forma lor (ultimele: dreptunghi cu X / plus / steluță); diagrama Săgeată continuă (Slides, Docs, Sheets, Notițe); Video are 2 treceri și 2 stiluri de text noi; Slides are temele Chihlimbar și Ghețar; testele trec.
 - 2026-10-31 12:25 — 5 pași la ecuații (Docs, Slides, Sheets, Notițe): accente (vector, bară, căciulă), matrice, sisteme cu acoladă, mulțimi cu acolade, chenar și subliniere; se citesc din .docx / .odt (înainte se pierdeau) și se scriu înapoi la fel; testele trec.
 - 2026-10-31 13:01 — 6 pași la ecuații: acolade culcate (underbrace), sisteme aliniate la „=”, ecuații scrise / lipite / copiate cu bară inversă, x² și a₁ lipite devin puteri și indici; testele trec.
+- 2026-10-31 13:47 — 4 pași la Notițe: pânză liberă cu casete de text puse oriunde, poze și desene de mână pe pânză, mutare și cu Alt + săgeți; se caută, se văd în Lectură și se exportă; testele trec.

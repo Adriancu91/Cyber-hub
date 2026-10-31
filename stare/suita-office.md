@@ -1,17 +1,17 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 13:01 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 13:47 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Ultimele două sesiuni (11:37–13:01), 11 pași la **ecuații** (Docs, Slides, Sheets, Notițe), testele trec:
-  - Accente (vector, căciulă, bară), matrice, sisteme de ecuații, mulțimi cu acolade, chenar, subliniere și acum **acolade culcate** cu text dedesubt (underbrace).
-  - Sistemele au acum semnele „=” **aliniate unul sub altul**.
-  - Ecuațiile se pot **scrie sau lipi cu bară inversă** (\frac{a}{b}, \alpha, matrice), cum apar în articole și pe site-uri, și se pot **copia înapoi** așa (butonul ⧉ Copiază cu bară inversă); x², a₁ lipite devin puteri și indici adevărați.
-  - Toate se citesc din .docx / .odt (înainte se pierdeau la deschidere) și se scriu înapoi ca ecuații adevărate în .docx / .pptx / .odt.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 13:01–13:47, 4 pași la **Notițe**, testele trec:
+  - **Pânză liberă**: Inserare → ▣ Casetă liberă pune sub notiță o pânză pe care casetele de text stau oriunde (dublu clic face una, se mută trăgând de bară sau cu Alt + săgeți, se lățesc de margine).
+  - Pe pânză se pot pune și **poze** (trase din dosar sau lipite) și **desene de mână** (✎ Desen pe pânză, redeschise cu liniile lor).
+  - Casetele se caută, se criptează la notițele cu parolă, se văd în Lectură și intră în → Docs, .html și .md.
+  - Înainte (11:37–13:01): 11 pași la ecuații (accente, matrice, sisteme aliniate, scrise / copiate cu bară inversă).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,9%**, **Excel 90,7%**, **PowerPoint 91%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 86,1%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori (plus 10 .eps noi în colecția de poze).
+- Scoruri: **Word 89,9%**, **Excel 90,7%**, **PowerPoint 91%**, Clipchamp 80,5%, Notițe 82,3%, Acrobat 86,1%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori (plus 10 .eps noi în colecția de poze).
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (cele rămase la Notițe sunt mari: formatarea văzută direct în câmpul de scris, o notiță singură în fereastră separată).
@@ -23,6 +23,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Notițe → Inserare → ▣ Casetă liberă → câteva casete și o poză trasă din Explorer pe pânză, mutate prin pagină → 📖 Lectură: stau unde le-a pus? E ușor de folosit ca pagină liberă?
 - Să încerce Docs → Inserare → √x Ecuație → modelele Vector / Matrice / Sistem de ecuații / Mulțime / Rezultat în chenar → Export .docx deschis la serviciu: ecuațiile arată la fel și se pot schimba acolo? Și un .docx de la serviciu cu vectori, matrice sau sisteme: acum apar întregi în Suite?
 - Să încerce Slides → ◼ Formă → Dreptunghi cu steluță și ◇ Diagramă ▾ → Săgeată continuă → Export .pptx deschis la serviciu: arată la fel? Și Slides → Teme → Ghețar / Chihlimbar (se citesc bine pe proiector?), Video → Carton → Cum arată textul → Tablă verde de școală, și Felul trecerii → Cortină în zigzag.
 - Să încerce Slides → ◼ Formă → Acoladă stânga lângă o listă, Buton de acțiune: Ajutor, Săgeată circulară dublă → Export .pptx deschis la serviciu: formele sunt aceleași? Și un .pptx de la serviciu cu acolade / paranteze: acum apar? Și Slides → ◼ Formă → Față zâmbitoare / Bulă de gândire / Explicație cu linie frântă / Buton de acțiune: Informații (peste o poză), și Panglică curbată / Sul orizontal / Semn de interdicție → Export .pptx deschis la serviciu: formele sunt aceleași? Și un .pptx cu butoane „Înainte” / „Înapoi”: în expunere duc la slide-ul potrivit?
