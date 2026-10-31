@@ -1,12 +1,12 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 09:17 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 10:08 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 08:29–09:17, 7 pași, testele trec:
-  - **Slides → ◼ Formă**: 16 forme noi, care nu se mai schimbă la deschiderea unui .pptx / .odp: panglici (drepte și curbate, cu capetele în jos / în sus), suluri (orizontal, vertical), săgeți curbate (spre dreapta / stânga / sus / jos), săgeți circulare, săgeata arcuită („creștere”), Soare și Semn de interdicție.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 09:19–10:08, 7 pași, testele trec:
+  - **Slides → ◼ Formă**: 30 de forme noi, care nu se mai schimbă la deschiderea unui .pptx / .odp: Față zâmbitoare, Diferit (≠), Trapez oarecare, Mai multe documente, Pâlnie, colțurile (triunghiulare / pătrate / rotunde), Bulă de gândire, cele 12 explicații cu linie și 9 butoane de acțiune (Înainte, Înapoi, Început, Sfârșit, Gol, Acasă, Informații, Document, Sunet).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 89,9%**, **Excel 90,7%**, **PowerPoint 90,8%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 86,1%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori (plus 10 .eps noi în colecția de poze).
 
@@ -20,7 +20,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- Să încerce Slides → ◼ Formă → Panglică curbată / Sul orizontal / Săgeată circulară / Semn de interdicție (peste o poză) → Export .pptx deschis la serviciu: formele sunt aceleași?
+- Să încerce Slides → ◼ Formă → Față zâmbitoare / Bulă de gândire / Explicație cu linie frântă / Buton de acțiune: Informații (peste o poză), și Panglică curbată / Sul orizontal / Semn de interdicție → Export .pptx deschis la serviciu: formele sunt aceleași? Și un .pptx cu butoane „Înainte” / „Înapoi”: în expunere duc la slide-ul potrivit?
 - Să încerce Docs → un document de câteva pagini → Vizualizare → ▦ Mai multe pagini (clic pe ultima pagină: ajunge acolo?) și Slides → ◼ Formă → Schemă: Proces predefinit / Bulă de dialog ovală / Roată dințată → Export .pptx deschis la serviciu: formele sunt aceleași?
 - Să încerce Imagini → Ctrl+O → un .eps de-al lui (o siglă de la tipografie, un desen): se deschide? Jos scrie dacă e poza întreagă sau doar previzualizarea. Și Imagini → o poză de peisaj → C → ✨ Și în afara pozei → trage un colț în afară → Aplică: marginile noi arată natural?
 - Să încerce Slides → un hexagon și o stea → o săgeată lipită de colțurile lor → Export .pptx deschis la serviciu: săgeata rămâne lipită când muți forma?

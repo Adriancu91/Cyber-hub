@@ -317,3 +317,4 @@
 - 2026-10-31 07:45 — 3 pași: Imagini deschide fișiere .eps și decupează și în afara pozei (marginile umplute după conținut); în Slides liniile se lipesc de vârfurile poligoanelor, stelelor și săgeților, la fel ca în .pptx.
 - 2026-10-31 08:28 — 5 pași: Docs are Zoom → Mai multe pagini (toate paginile alăturate, clic duce la pagină); Slides are 13 forme noi păstrate și în .pptx / .odp; Video are trecerile Hexagon și Pană.
 - 2026-10-31 09:17 — 7 pași: Slides are 16 forme noi (panglici, suluri, săgeți curbate și circulare, săgeata arcuită, Soare, Semn de interdicție), păstrate și la deschiderea / salvarea .pptx; testele trec.
+- 2026-10-31 10:08 — 7 pași: Slides are 30 de forme noi (față zâmbitoare, ≠, pâlnie, bulă de gândire, 12 explicații cu linie, 9 butoane de acțiune și altele), păstrate și la deschiderea / salvarea .pptx; testele trec.
