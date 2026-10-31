@@ -724,3 +724,10 @@ Format:
   `kronos/kronos_477_q8_0.kgr` (+ `.sha256`), cu #459 acceptat în continuare dacă e singurul de pe stick; Release nou. Nu începe înainte de C-44.
 - stare: gata (2026-10-31 16:05, sesiunea OS) — P6-38; istoric: preluat 2026-10-31 14:45
 - rezultat: `kronos` alege din `/usb/kronos/` întâi `kronos_477_q8_0.kgr` (SHA-256 `bcbe8187…3963` în cod), apoi #459 ca rezervă, iar `run kronos --control` verifică cele 3 texte ale lui #477; teste QEMU și CI verzi → Release `os-210` (lipsește doar fișierul #477 pe stick, după Release-ul `kronos-kgr1-477` făcut de Adrian).
+
+### C-47 · kronos · „da S58” — prima antrenare Kronos-Cod (`cod_c1`, o noapte pe placă)
+- data: 2026-10-31 20:53 · de la: **Adrian** (scris direct: „da s58”), transmis de centrul de comandă
+- ce: S58 din `plan/coada.md`, exact cum e scrisă acolo (pre-înregistrarea înainte, proba de 10 minute, 10 ore noaptea, pragurile ÎNVAȚĂ / NU ÎNVAȚĂ / NECLAR
+  neschimbate), după ce S57 și S59 sunt `gata`. Prima noapte potrivită. **Mâine (1 nov) Adrian poate fi la workstation pentru fereastra OS/GPU:
+  dacă e acolo, antrenarea se oprește întâi** (sau pornește după fereastră). Nu atinge #477, linia română, `kronos/`, examenul, paznicul.
+- stare: nou
