@@ -1,12 +1,12 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 23:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 23:50 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 22:18–23:00, 4 pași în Sheets, toate în **Editorul de interogare** (Date → Preluare date), testele trec:
-  - sursa poate fi acum un **dosar întreg**: toate fișierele .csv / .txt / .xlsx / .ods din el, unite într-un tabel cu numele fișierului în față; fișierele noi puse în dosar intră la Reîmprospătare totală (de exemplu exporturile lunare);
-  - pași noi: Îmbină coloanele, Extrage din text (primele / ultimele caractere, înainte / după separator, lungimea), Duplică coloana, Rotunjește; Grupează după merge acum pe mai multe coloane și cu mai multe calcule deodată.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 23:02–23:50, 5 pași în Sheets, toți în **Editorul de interogare** (Date → Preluare date), testele trec:
+  - pași noi: **Din dată** (an, lună, trimestru, ziua săptămânii, săptămâna, început / sfârșit de lună), **Calcul pe coloană** (adună, înmulțește, procent, prefix / sufix…), **Coloană personalizată** cu formulă ([Preț] * [Cantitate] * 1,19), Mută coloana, Elimină coloanele, Păstrează doar dublurile, Elimină rândurile cu erori, primele / ultimele / un interval de rânduri, Inversează;
+  - lista „Pas nou” (35 de pași) e acum împărțită pe grupe: Rânduri, Coloane, Text, Numere și date, Tabel, Combină.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,2%**, **Excel 91,3%**, **PowerPoint 91,2%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
