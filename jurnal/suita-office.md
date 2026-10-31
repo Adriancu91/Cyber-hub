@@ -314,3 +314,4 @@
 - 2026-10-31 05:31 — 3 pași: Notițe aduc la zi din fișier tabelele puse din foi de calcul; în PDF caseta unui articol se desenează cu mausul, iar articolul se citește pe ecran întreg, casetă cu casetă.
 - 2026-10-31 06:21 — 4 pași: Imagini are deformare cu pioneze; în PDF formele desenate din pagină (linii, chenare, dreptunghiuri) se aleg, se mută (și cu săgețile), se recolorează, își schimbă grosimea și se șterg.
 - 2026-10-31 07:06 — Gramatica: acordul la singular și „copiii este”, greșeli de scriere noi, ~1.500 de semnalări false scoase (verificat pe tot textul nostru); Docs detectează limba și la paragrafele scrise (6 pași, testele trec).
+- 2026-10-31 07:45 — 3 pași: Imagini deschide fișiere .eps și decupează și în afara pozei (marginile umplute după conținut); în Slides liniile se lipesc de vârfurile poligoanelor, stelelor și săgeților, la fel ca în .pptx.

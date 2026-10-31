@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 07:06 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 07:45 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 06:21–07:06, 6 pași, testele trec:
-  - **Verificarea gramaticală** (Docs, Notițe, Slides, Sheets) prinde mai multe greșeli de acord („Documentul au fost semnat” → „a fost”, „Factura au fost trimisă”, „Copiii este acasă” → „sunt”) și greșeli de scriere („întradevăr”, „greșală”, „să ști”, „ceia ce”);
-  - am trecut verificarea peste tot textul nostru (jurnal, cercetare, plan) și am scos **~1.500 de semnalări false** (extensii .docx, adrese web, formule, „câinele este”, „fonturile noi sunt”, „pozei tale”): au rămas ~10;
-  - **Docs**: un paragraf scris în engleză / germană… primește singur limba lui la Enter (înainte doar textul lipit), ca să nu fie subliniat cu roșu.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 07:08–07:45, 3 pași, testele trec:
+  - **Imagini** deschide și fișierele **.eps**: cu pixelii din ele (pozele salvate .eps) sau cu poza de previzualizare din ele, iar la un .eps doar cu desen PostScript dă un mesaj clar (verificat pe 10 fișiere .eps reale);
+  - **Imagini → Decupare** are bifa **✨ Și în afara pozei**: chenarul iese din poză, iar marginile noi se umplu cu bucăți din poză;
+  - **Slides**: săgețile și liniile se lipesc și de vârfurile hexagoanelor, stelelor, săgeților etc., cu aceeași numerotare ca în .pptx (rămân lipite și deschise la serviciu).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,7%**, **Excel 90,7%**, **PowerPoint 90,7%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 86,1%, Photoshop 83,4%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,7%**, **Excel 90,7%**, **PowerPoint 90,8%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 86,1%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori (plus 10 .eps noi în colecția de poze).
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar.
+- Alte funcții „parțial” / „nu” din inventar (cele rămase la Notițe sunt mari: formatarea văzută direct în câmpul de scris, o notiță singură în fereastră separată).
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice și despărțirea în silabe românească, semnarea / verificarea XML (XML-DSig, scrise de la zero).
@@ -22,6 +22,8 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Imagini → Ctrl+O → un .eps de-al lui (o siglă de la tipografie, un desen): se deschide? Jos scrie dacă e poza întreagă sau doar previzualizarea. Și Imagini → o poză de peisaj → C → ✨ Și în afara pozei → trage un colț în afară → Aplică: marginile noi arată natural?
+- Să încerce Slides → un hexagon și o stea → o săgeată lipită de colțurile lor → Export .pptx deschis la serviciu: săgeata rămâne lipită când muți forma?
 - Să încerce Docs → Revizuire → ✓ Gramatică pe un document real de la serviciu (o adresă, un contract): mai apar semnalări fără motiv? Și scrie un paragraf în engleză + Enter: dispar sublinierile roșii?
 - Să încerce Imagini → o poză cu un om sau un animal → Editare → 📌 Deformare cu pioneze… → pioneze pe umăr, cot și mână → trage de mână → Aplică: se îndoaie natural? Și PDF → o factură cu tabel → Editare → ✎ Editează text → clic pe o linie a tabelului → altă grosime / 🎨 / săgeți / Delete → Salvează ca… deschis în alt program: schimbarea a rămas?
 - Să încerce Notițe → Inserare → ▦ Foaie de calcul… cu un .xlsx de-al lui, apoi schimbă cifre în fișier și ↻ Reîmprospătează foile: apar cifrele noi? Și PDF → un ziar / o revistă în PDF → Cuprins → Articole → ▭ Desenez caseta pe pagină pe coloanele unui articol → ⛶: se citește ușor?
