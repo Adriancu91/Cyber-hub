@@ -61,3 +61,4 @@
 - 2026-10-31 02:15 — S51 CONFIRMAT: #477 română 1,2097 (față de 1,2162 la #459), fără cădere; câștigul scade, nu urmează a treia noapte. S46 bucata 2 rulează (fără placă); placa liberă până la decizia lui Adrian.
 - 2026-10-31 11:15 — S46 (C-43) gata: descărcarea codului încheiată în 2 nopți, 3,87 GB cod curat (~1,10 mld simboluri, sub estimarea de 3–6 mld). Pus în coadă S53 (procesor): verificarea că examenul de cod ascuns nu e în date.
 - 2026-10-31 14:15 — S53 DE CURĂȚAT: examenul de cod nu e în date întreg (0/200), dar se exclud 3.821 fișiere (3 %) cu bucăți comune. C-44 și C-45 preluate: S54 (#477 în locul lui #459, pachetul pentru OS), apoi S55 (tokenizerul pe cod), doar procesor.
+- 2026-10-31 14:20 — S54 (C-44) gata și verificat: #477 e modelul în uz (KGR1 Q8_0, sha bcbe8187…), #459 rezervă; `integrare/kronos/MODEL.md` trece pe #477, deci C-46 poate porni; Release-ul îl face Adrian. S56 (partea de placă a reglajului CCM pentru #477) pusă după S55.

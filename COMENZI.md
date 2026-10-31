@@ -706,7 +706,8 @@ Format:
   (`lucru/export/kronos_477_q8_0.kgr` + SHA-256), vectorii de control noi și `integrare/kronos/MODEL.md` actualizat în hub (fără greutăți în hub/repo).
   (3) Release-ul privat `kronos-kgr1-477`: dacă executantul nu-l poate publica singur, scrie în `stare/kronos.md` pașii exacți pentru Adrian (ca la #459).
   Toate testele trebuie să treacă; examenul și paznicul neatinse.
-- stare: preluat (2026-10-31 14:15, supraveghetor) — S54 în `plan/coada.md` (procesor, acum, înaintea S55); `MODEL.md` din hub îl actualizez eu după ce S54 e gata
+- stare: gata (2026-10-31 14:20, supraveghetor) — S54 în `plan/coada.md`; istoric: preluat 2026-10-31 14:15
+- rezultat: #477 exportat KGR1 Q8_0 (110.859.040 octeți, SHA-256 `bcbe8187…3963`), modelul implicit al modulelor Kronos, #459 păstrat ca rezervă, `integrare/kronos/MODEL.md` arată #477 (C-46 poate porni); Release-ul `kronos-kgr1-477` îl face Adrian (comanda în `MODEL.md` și în `stare/kronos.md`), 1126 teste trec.
 
 ### C-45 · kronos · „da tokenizer cod” — tokenizerul Kronos-Cod din descărcarea S46
 - data: 2026-10-31 13:50 · de la: **Adrian** (scris direct: „da la amândouă”), transmis de centrul de comandă
