@@ -310,3 +310,4 @@
 - 2026-10-31 02:47 — 3 pași: Sheets are acum toate cele 16.384 de coloane (până la XFD, înainte 128), iar foile late se derulează la fel de repede ca una goală; încă un fișier real se deschide întreg (477 / 560).
 - 2026-10-31 03:32 — Sheets: butoane de opțiune și listă combo în celulă; Docs și Slides: limba textului găsită singură (buton și la lipire), fără internet.
 - 2026-10-31 04:10 — 3 pași: PDF are câmp cod de bare (QR cu datele formularului, refăcut la salvare); Notițe aduc înapoi bifele din calendar (Import sarcini .ics); Slides compară două versiuni cu Acceptă / Respinge.
+- 2026-10-31 04:46 — 4 pași: modelele 3D se deschid și din .glb / .gltf / .ply, iar în Slides, Docs și Notițe modelul pus pe pagină se poate roti din nou oricând.
