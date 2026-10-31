@@ -1,14 +1,17 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 10:47 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 11:37 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 10:09–10:50, 4 pași, testele trec:
-  - **Slides → ◼ Formă**: ultimele trei butoane de acțiune (Ajutor, Întoarcere, Film), parantezele, acoladele și arcul (doar linie, fără umplere), săgeata circulară dublă și panglica stânga-dreapta. Liniile „inverse”, parantezele și acoladele dintr-un .pptx primit **nu se mai pierd** la deschidere. Acum aproape toate formele din .pptx au forma lor (lipsesc doar 3 forme rare).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 10:48–11:37, 5 pași, testele trec:
+  - **Slides → ◼ Formă**: dreptunghi cu X / plus / steluță (ultimele 3 forme rare). Acum **toate formele standard din .pptx au forma lor**; în inventar „Forme” trece la „da”.
+  - **Diagramă → Săgeată continuă** (pașii pe o săgeată mare), în Slides, Docs, Sheets și Notițe: 19 feluri.
+  - **Video**: trecerile Ceas în sens invers și Cortină în zigzag (48), stilurile de text Tablă de școală și Bandă adezivă (34).
+  - **Slides → Teme**: Chihlimbar și Ghețar (26 de teme).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,9%**, **Excel 90,7%**, **PowerPoint 90,8%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 86,1%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori (plus 10 .eps noi în colecția de poze).
+- Scoruri: **Word 89,9%**, **Excel 90,7%**, **PowerPoint 91%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 86,1%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori (plus 10 .eps noi în colecția de poze).
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (cele rămase la Notițe sunt mari: formatarea văzută direct în câmpul de scris, o notiță singură în fereastră separată).
@@ -20,6 +23,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Slides → ◼ Formă → Dreptunghi cu steluță și ◇ Diagramă ▾ → Săgeată continuă → Export .pptx deschis la serviciu: arată la fel? Și Slides → Teme → Ghețar / Chihlimbar (se citesc bine pe proiector?), Video → Carton → Cum arată textul → Tablă verde de școală, și Felul trecerii → Cortină în zigzag.
 - Să încerce Slides → ◼ Formă → Acoladă stânga lângă o listă, Buton de acțiune: Ajutor, Săgeată circulară dublă → Export .pptx deschis la serviciu: formele sunt aceleași? Și un .pptx de la serviciu cu acolade / paranteze: acum apar? Și Slides → ◼ Formă → Față zâmbitoare / Bulă de gândire / Explicație cu linie frântă / Buton de acțiune: Informații (peste o poză), și Panglică curbată / Sul orizontal / Semn de interdicție → Export .pptx deschis la serviciu: formele sunt aceleași? Și un .pptx cu butoane „Înainte” / „Înapoi”: în expunere duc la slide-ul potrivit?
 - Să încerce Docs → un document de câteva pagini → Vizualizare → ▦ Mai multe pagini (clic pe ultima pagină: ajunge acolo?) și Slides → ◼ Formă → Schemă: Proces predefinit / Bulă de dialog ovală / Roată dințată → Export .pptx deschis la serviciu: formele sunt aceleași?
 - Să încerce Imagini → Ctrl+O → un .eps de-al lui (o siglă de la tipografie, un desen): se deschide? Jos scrie dacă e poza întreagă sau doar previzualizarea. Și Imagini → o poză de peisaj → C → ✨ Și în afara pozei → trage un colț în afară → Aplică: marginile noi arată natural?
