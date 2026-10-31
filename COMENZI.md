@@ -693,7 +693,8 @@ Format:
 - ce: S46 din `plan/coada.md`, exact cum e scris acolo (comanda din raportul S46a, `--limita-ore 10` pe noapte, aceleași reguli ca pilotul: data-limită
   29 iunie 2021, fără surse cu cont, licențe permisive, proveniență pe fișier, oprire sub 40 GB liberi). Fără placă; poate rula în paralel cu S45.
   Tokenizerul pe cod rămâne pentru un „da” separat.
-- stare: preluat (2026-10-29 21:50, supraveghetor) — S46 în `plan/coada.md` (aprobat de Adrian), pornește la următoarea verificare a executantului, în paralel cu S45
+- stare: gata (2026-10-31 11:15, supraveghetor) — S46 în `plan/coada.md`; istoric: preluat 2026-10-29 21:50
+- rezultat: descărcarea s-a încheiat în 2 nopți, fără erori: 3,87 GB cod curat (~1,10 mld simboluri, sub estimarea de 3–6 mld), licențe permisive, 61 GB liberi pe disc; tokenizerul pe cod așteaptă un „da” separat.
 - notă (2026-10-29 23:15, supraveghetor): executantul ia sarcinile pe rând, deci S46 pornește după S45, pe la 02:00 (nu în paralel). Nimic descărcat încă.
 - notă (2026-10-30 02:15, supraveghetor): S46 a pornit la 00:30 (bucata 1 din ~3, `--limita-ore 10`).
 - notă (2026-10-30 11:15, supraveghetor): bucata 1 gata (cod 0, 10 ore): 3,73 GB cod curat, ~1,07 mld simboluri; bucata 2 în noaptea 30→31, după S51.
