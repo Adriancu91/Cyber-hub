@@ -715,7 +715,8 @@ Format:
   pre-înregistrare (mărimea vocabularului, cum se măsoară — ex. octeți/simbol pe examenul de cod ascuns, fără să-l deschidă), procesor; apoi propunerea
   pentru prima antrenare Kronos-Cod pe placă (planul, orele, pragurile) — antrenarea pornește prin regulile obișnuite ale cascadei (granițele din
   REGULI_CASCADA.md; dacă iese din ele, `propus — necesită Adrian`). Linia română (#477) rămâne separată și neatinsă.
-- stare: preluat (2026-10-31 14:15, supraveghetor) — S55 în `plan/coada.md` (procesor, după S54): pre-înregistrare înainte, 32.768 simboluri, măsurat pe 1 % ținut deoparte (nu pe examenul ascuns), fără cele 3.821 fișiere excluse de S53; propunerea antrenării pe placă vine în raport
+- stare: gata (2026-10-31 17:15, supraveghetor) — S55 în `plan/coada.md`; istoric: preluat 2026-10-31 14:15
+- rezultat: tokenizerul de cod (32.768 simboluri) BUN: 3,46 octeți/simbol, +22,1 % față de w2, refacere 100 % identică, setul tokenizat (1,08 mld simboluri); prima antrenare pe placă = S58, `propus — necesită Adrian` (linie de model nouă), pregătirea ei S57 aprobată.
 
 ### C-46 · cyber-universe · Modelul #477 pe stick (după C-44)
 - data: 2026-10-31 13:50 · de la: **Adrian** („da #477”), prin centrul de comandă
