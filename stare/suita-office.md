@@ -1,15 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 17:40 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 18:13 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 16:43–17:40, 4 pași, testele trec:
-  - **Docs → ✍ Linie de semnătură:** la „Export .docx semnat digital” linia se completează singură cu „Semnat digital de <numele din certificat>” și data (linia celui care semnează, dacă sunt mai multe).
-  - **Imagini → ▤ Mai multe poze:** lista Acțiune cu 4 acțiuni gata făcute (e-mail, rețele sociale, site, documente scanate) și setări salvate sub un nume.
-  - **PDF → ⚙ Lot și Organizare pagini:** „Elimină paginile goale” (spatele alb al foilor scanate față-verso), cu întrebare și Ctrl+Z la documentul deschis.
-  - Reparat: titlurile grupurilor din liste (21 de liste) apar acum în engleză pe interfața EN.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 17:37–18:15, 4 pași, testele trec:
+  - **PDF și Imagini:** butonul „+” al zoomului nu mai pare că „nu face nimic” (după „Lățime” zoomul era 109,9% și „+” îl ducea doar la 110%).
+  - **Scheme (Docs, Sheets, Notițe, Slides):** două feluri noi, **Proces cu cercuri** și **Listă cu etape** (acum 25 de feluri).
+  - Reparat un test automat (Imagini, tragerea cu mâna la zoom mare).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,0%**, **Excel 90,9%**, **PowerPoint 91,2%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
@@ -23,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Slides → Inserare → ◇ Diagramă ▾ → Proces cu cercuri și Listă cu etape → Export .pptx deschis la serviciu: formele sunt la locul lor? Și PDF → un document → Lățime, apoi „+”: zoomul crește la fiecare clic?
 - Să încerce Docs → ✍ cu numele lui → Export în alt format → .docx semnat digital… cu certificatul lui (token): în fișierul „(semnat)” scrie „Semnat digital de …” și data? Și PDF → o scanare față-verso → Organizare pagini → ⌫ Elimină paginile goale: numerele din întrebare sunt chiar paginile albe?
 - Să încerce Docs → o scrisoare cu «Nume» → Corespondență → 📨 Începere îmbinare → un tabel cu adrese de e-mail → ✉ cu „atașat: documentul lui, ca PDF” → dublu clic pe un .eml: mesajul are PDF-ul potrivit? Și PDF → ⧉ Combină cu un e-mail tras din programul de e-mail (cu un fișier atașat): fișierul apare în 📎 Atașamente?
 - Să încerce Slides → Inserare → ◇ Diagramă ▾ → Radial convergent, Proces în trepte în jos, Fagure, Roți dințate → Export .pptx deschis la serviciu: formele și săgețile sunt la locul lor? Și Video → Carton → Cum arată textul → Benzi desenate / Panglică roșie, și trecerea Ochi între două clipuri; Sheets → Aspect pagină → Teme → Contrast mare: se citește bine tipărit alb-negru?

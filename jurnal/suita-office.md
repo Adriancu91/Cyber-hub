@@ -328,3 +328,4 @@
 - 2026-10-31 15:59 — 5 pași: 4 scheme noi (Radial convergent, Proces în trepte în jos, Fagure, Roți dințate; 23 de feluri), Video (trecerile Ochi și Zigzag de sus, stilurile Benzi desenate și Panglică), Sheets (4 teme și 2 perechi de fonturi noi); testele trec.
 - 2026-10-31 16:41 — 5 pași: Docs (îmbinarea face e-mailuri cu PDF-ul / .docx-ul fiecăruia atașat și câte un PDF pentru fiecare rând), PDF (atașamentele e-mailurilor și ale PDF-urilor păstrate la Combină / Lot, pasul PDF/A în Lot); testele trec.
 - 2026-10-31 17:40 — 4 pași: Docs (linia de semnătură completată la semnarea digitală), Imagini (acțiuni în Mai multe poze), PDF (Elimină paginile goale în Lot și pentru documentul deschis), titlurile grupurilor din liste traduse în engleză; Word 90,0%; testele trec.
+- 2026-10-31 18:13 — 4 pași: zoomul „+” din PDF / Imagini reparat (după Lățime nu se schimba nimic), schemele noi Proces cu cercuri și Listă cu etape (25 de feluri), un test reparat; testele trec.
