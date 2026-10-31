@@ -721,4 +721,4 @@ Format:
 - data: 2026-10-31 13:50 · de la: **Adrian** („da #477”), prin centrul de comandă
 - ce: după ce `integrare/kronos/MODEL.md` arată #477 (C-44): suma SHA-256 nouă și vectorii lui #477 în testele OS, fișierul așteptat pe stick
   `kronos/kronos_477_q8_0.kgr` (+ `.sha256`), cu #459 acceptat în continuare dacă e singurul de pe stick; Release nou. Nu începe înainte de C-44.
-- stare: nou
+- stare: preluat (2026-10-31 14:45, sesiunea OS) — P6-38
