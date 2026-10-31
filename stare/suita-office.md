@@ -1,14 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 23:50 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 00:35 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 23:02–23:50, 5 pași în Sheets, toți în **Editorul de interogare** (Date → Preluare date), testele trec:
-  - pași noi: **Din dată** (an, lună, trimestru, ziua săptămânii, săptămâna, început / sfârșit de lună), **Calcul pe coloană** (adună, înmulțește, procent, prefix / sufix…), **Coloană personalizată** cu formulă ([Preț] * [Cantitate] * 1,19), Mută coloana, Elimină coloanele, Păstrează doar dublurile, Elimină rândurile cu erori, primele / ultimele / un interval de rânduri, Inversează;
-  - lista „Pas nou” (35 de pași) e acum împărțită pe grupe: Rânduri, Coloane, Text, Numere și date, Tabel, Combină.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 23:48–00:35, 4 pași în Sheets, testele trec:
+  - **Date → 🔗 Relații** (nou): tabelele se leagă între ele (Vânzări.Client → Clienți.Cod), relațiile se verifică (chei repetate, cerc) și se pot găsi singure (🔍 Găsește singur); **Tabel din model** / **Rezumat din model** aduce coloane din toate tabelele legate, refăcut la Reîmprospătare;
+  - **Din imagine**: celulele recunoscute nesigur sunt colorate cu portocaliu, iar tabelul se poate lua și direct din clipboard (o captură de ecran).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 90,2%**, **Excel 91,3%**, **PowerPoint 91,2%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 90,2%**, **Excel 91,5%**, **PowerPoint 91,2%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (la Notițe rămân cele mari: formatarea văzută direct în câmpul de scris, o notiță singură în fereastră separată, scrisul cu creionul direct pe pânză).
