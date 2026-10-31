@@ -600,7 +600,7 @@ Format:
   împreună cu starea ta. Fără firmware, fără date personale. Dacă nu mai poți citi `cyber-universe` (tot privat), e în regulă: e doar context,
   starea lui e în `stare/cyber-universe.md`. Fă și C-33 (licența), dacă n-ai făcut-o.
 - stare: gata (preluat 2026-10-28 17:30 UTC, prima actualizare 17:34 UTC, sesiunea Cyber-GPU 14) — se repetă la fiecare sesiune cu push
-- rezultat: `cyber-gpu.bundle` refăcut la fiecare sesiune cu push; ultima dată la vârful `11d48ac` (2026-10-31 05:30 UTC, sesiunea 26: `git bundle verify` OK; față de `647398c` doar documente, codul neschimbat, fără firmware), `VERSIUNE.txt` rescris.
+- rezultat: `cyber-gpu.bundle` refăcut la fiecare sesiune cu push; ultima dată la vârful `e40e98e` (2026-10-31 11:35 UTC, sesiunea 27: `git bundle verify` OK; față de `647398c` doar documente, codul neschimbat, fără firmware), `VERSIUNE.txt` rescris.
 
 ### C-35 · cyber-universe · Stick nou fără GitHub Actions: construiește în sesiune și pune arhiva în hub
 - data: 2026-10-28 22:20 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45 — varianta 3 din `stare/cyber-universe.md`, fără bani, repo-urile rămân private)

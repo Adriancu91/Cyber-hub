@@ -1,16 +1,16 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-10-31 07:30 (ora României) · **de:** sesiunea Cyber-GPU 26 (cloud, fără placă; fără lucru nou)
+**Actualizat:** 2026-10-31 13:35 (ora României) · **de:** sesiunea Cyber-GPU 27 (cloud, fără placă; fără lucru nou)
 
 ## Acum
-- **Sesiunile 25 și 26 (31 oct 01:30, 07:30): fără lucru nou** — nicio comandă nouă, niciun rezultat nou de pe placă, CI verde (rularea 71). Starea de mai jos e neschimbată.
-  Dacă nici sesiunea 27 nu are ceva nou, sesiunea 28 scrie „OPRIT: necesită analiza lui Adrian” (oprirea de siguranță).
+- **Sesiunile 25, 26 și 27 (31 oct 01:30, 07:30, 13:35): fără lucru nou** — nicio comandă nouă, niciun rezultat nou de pe placă, CI verde (rularea 72). Starea de mai jos e neschimbată.
+  **Sesiunea 28 scrie „OPRIT: necesită analiza lui Adrian”** (oprirea de siguranță), dacă până atunci nu apare un rezultat de pe placă sau o comandă nouă.
 - **Treapta 6 matmul gata (doar SIMULARE):** programul de înmulțire de matrice, varianta care citește și scrie memoria câte 4 numere odată,
   compilat cu Mesa NAK pe gazdă: 821 de instrucțiuni (față de 1 953 la treapta 5), 90 de registre, fără memorie locală. În simulare dă exact
   aceiași biți ca oracolul și ca treapta 5; refuză (fără nicio scriere) matrice cu K sau N care nu se împart la 4 și adrese nealiniate;
   8 greșeli plantate, toate prinse. Commit-uri `937fcf4`, `647398c` pe `g0-g2-fundatie`; 294 de teste trec.
 - Totul în model: **soneria nu e sunată**, programele „rulează” pe procesor. Nimic testat pe RTX 3070 Ti.
-- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `11d48ac` (doar documente noi față de `647398c`).
+- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `e40e98e` (doar documente noi față de `647398c`).
 
 ## Urmează
 - Fereastra următoare (cu `os-209`, care are deja fixarea `aee06c4`): `gpu firmware` → `criteriul I4: TRECE`; apoi, opțional, proba tinygrad.
