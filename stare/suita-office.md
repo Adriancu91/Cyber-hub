@@ -1,16 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 20:33 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 21:18 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 19:47–20:33, 6 pași, testele trec:
-  - **Scheme (Docs, Sheets, Slides, Notițe):** felul nou „Listă în piramidă” (28 de feluri).
-  - **Slides și ✏ Desen din Docs / Sheets:** apăsarea creionului de pe o tabletă schimbă grosimea liniei (butonul 🖊 Apăsare).
-  - **Teme „Salvie” și „Oțel”** în Slides (30 de teme), Sheets (15 palete) și Docs (12 teme), ca documentele să se potrivească între ele.
-  - **Video:** trecerile Cortină în zigzag de jos și Romb spre interior (56).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 20:32–21:18, 4 pași în Sheets, testele trec:
+  - **Editorul de interogare** (Date → Preluare date → Din tabel / zonă): Îmbină cu alt tabel (după o coloană-cheie, 3 feluri), Adaugă dedesubt alt tabel, Înlocuiește valorile, Împarte coloana după separator, Formatează textul.
+  - **Revizuire → 🕘 Afișare modificări:** lista celulelor schimbate (ce era, ce e acum, ora, cine), pe registru / foaie / zonă, ținută în fișier.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 90,2%**, **Excel 90,9%**, **PowerPoint 91,2%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 90,2%**, **Excel 91,3%**, **PowerPoint 91,2%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (la Notițe rămân cele mari: formatarea văzută direct în câmpul de scris, o notiță singură în fereastră separată, scrisul cu creionul direct pe pânză).
