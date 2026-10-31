@@ -1,16 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 07:45 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 08:28 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 07:08–07:45, 3 pași, testele trec:
-  - **Imagini** deschide și fișierele **.eps**: cu pixelii din ele (pozele salvate .eps) sau cu poza de previzualizare din ele, iar la un .eps doar cu desen PostScript dă un mesaj clar (verificat pe 10 fișiere .eps reale);
-  - **Imagini → Decupare** are bifa **✨ Și în afara pozei**: chenarul iese din poză, iar marginile noi se umplu cu bucăți din poză;
-  - **Slides**: săgețile și liniile se lipesc și de vârfurile hexagoanelor, stelelor, săgeților etc., cu aceeași numerotare ca în .pptx (rămân lipite și deschise la serviciu).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 07:47–08:28, 5 pași, testele trec:
+  - **Docs → Vizualizare → ▦ Mai multe pagini**: toate paginile documentului, mici, una lângă alta (2–6 pe rând), cum ies la tipărire; clic pe una te duce la ea;
+  - **Slides**: 13 forme noi (scheme logice cu linii în interior, Teșitură, roți dințate cu 6 / 9 dinți, Săgeată în U, bula de dialog rotunjită și cea ovală), care nu se mai schimbă la deschiderea unui .pptx / .odp;
+  - **Video**: trecerile Hexagon și Pană (46 în total).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,7%**, **Excel 90,7%**, **PowerPoint 90,8%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 86,1%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori (plus 10 .eps noi în colecția de poze).
+- Scoruri: **Word 89,9%**, **Excel 90,7%**, **PowerPoint 90,8%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 86,1%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori (plus 10 .eps noi în colecția de poze).
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (cele rămase la Notițe sunt mari: formatarea văzută direct în câmpul de scris, o notiță singură în fereastră separată).
@@ -22,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Docs → un document de câteva pagini → Vizualizare → ▦ Mai multe pagini (clic pe ultima pagină: ajunge acolo?) și Slides → ◼ Formă → Schemă: Proces predefinit / Bulă de dialog ovală / Roată dințată → Export .pptx deschis la serviciu: formele sunt aceleași?
 - Să încerce Imagini → Ctrl+O → un .eps de-al lui (o siglă de la tipografie, un desen): se deschide? Jos scrie dacă e poza întreagă sau doar previzualizarea. Și Imagini → o poză de peisaj → C → ✨ Și în afara pozei → trage un colț în afară → Aplică: marginile noi arată natural?
 - Să încerce Slides → un hexagon și o stea → o săgeată lipită de colțurile lor → Export .pptx deschis la serviciu: săgeata rămâne lipită când muți forma?
 - Să încerce Docs → Revizuire → ✓ Gramatică pe un document real de la serviciu (o adresă, un contract): mai apar semnalări fără motiv? Și scrie un paragraf în engleză + Enter: dispar sublinierile roșii?
