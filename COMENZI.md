@@ -699,3 +699,25 @@ Format:
 - notă (2026-10-30 02:15, supraveghetor): S46 a pornit la 00:30 (bucata 1 din ~3, `--limita-ore 10`).
 - notă (2026-10-30 11:15, supraveghetor): bucata 1 gata (cod 0, 10 ore): 3,73 GB cod curat, ~1,07 mld simboluri; bucata 2 în noaptea 30→31, după S51.
 - notă (2026-10-31 02:15, supraveghetor): bucata 2 a pornit la 02:00 (după S51), ~10 ore.
+
+### C-44 · kronos · „da #477” — #477 îl înlocuiește pe #459 (interfață + pachetul pentru OS)
+- data: 2026-10-31 13:50 · de la: **Adrian** (scris direct: „da la amândouă”), transmis de centrul de comandă
+- ce: (1) #477 devine modelul din interfață (în locul lui #459); #459 rămâne păstrat ca rezervă. (2) Export KGR1 Q8_0 al lui #477
+  (`lucru/export/kronos_477_q8_0.kgr` + SHA-256), vectorii de control noi și `integrare/kronos/MODEL.md` actualizat în hub (fără greutăți în hub/repo).
+  (3) Release-ul privat `kronos-kgr1-477`: dacă executantul nu-l poate publica singur, scrie în `stare/kronos.md` pașii exacți pentru Adrian (ca la #459).
+  Toate testele trebuie să treacă; examenul și paznicul neatinse.
+- stare: nou
+
+### C-45 · kronos · „da tokenizer cod” — tokenizerul Kronos-Cod din descărcarea S46
+- data: 2026-10-31 13:50 · de la: **Adrian** (scris direct: „da la amândouă”), transmis de centrul de comandă
+- ce: etapa următoare din `docs/KRONOS_COD_plan.md`: tokenizerul pe codul curat din `lucru/kronos_cod/complet/` (3,87 GB, ~1,1 mld simboluri), cu
+  pre-înregistrare (mărimea vocabularului, cum se măsoară — ex. octeți/simbol pe examenul de cod ascuns, fără să-l deschidă), procesor; apoi propunerea
+  pentru prima antrenare Kronos-Cod pe placă (planul, orele, pragurile) — antrenarea pornește prin regulile obișnuite ale cascadei (granițele din
+  REGULI_CASCADA.md; dacă iese din ele, `propus — necesită Adrian`). Linia română (#477) rămâne separată și neatinsă.
+- stare: nou
+
+### C-46 · cyber-universe · Modelul #477 pe stick (după C-44)
+- data: 2026-10-31 13:50 · de la: **Adrian** („da #477”), prin centrul de comandă
+- ce: după ce `integrare/kronos/MODEL.md` arată #477 (C-44): suma SHA-256 nouă și vectorii lui #477 în testele OS, fișierul așteptat pe stick
+  `kronos/kronos_477_q8_0.kgr` (+ `.sha256`), cu #459 acceptat în continuare dacă e singurul de pe stick; Release nou. Nu începe înainte de C-44.
+- stare: nou
