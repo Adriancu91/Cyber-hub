@@ -41,3 +41,4 @@
 - 2026-10-31 01:30 — Sesiunea 25 (cloud, fără placă): nicio comandă nouă, niciun rezultat nou de pe placă, CI verde; fără lucru nou (nimic de făcut fără placă). Așteptăm fereastra pe workstation cu Adrian.
 - 2026-10-31 07:30 — Sesiunea 26 (cloud, fără placă): nicio comandă nouă, niciun rezultat nou de pe placă, CI verde; fără lucru nou (a doua sesiune la rând). Bundle la `11d48ac`.
 - 2026-10-31 13:35 — Sesiunea 27 (cloud, fără placă): nicio comandă nouă, niciun rezultat nou de pe placă, CI verde; fără lucru nou (a treia sesiune la rând — sesiunea 28 se oprește de siguranță dacă nu apare nimic nou). Bundle la `e40e98e`.
+- 2026-10-31 19:35 — Sesiunea 28 (cloud, fără placă): **OPRIT: necesită analiza lui Adrian** (a patra sesiune fără nimic nou; oprirea de siguranță). CI verde (rularea 73). Bundle la `2916cb5`. Deblochează: rezultatul ferestrei pe workstation, o comandă nouă sau decizia lui Adrian.
