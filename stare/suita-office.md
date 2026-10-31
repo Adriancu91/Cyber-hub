@@ -1,16 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 03:32 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 04:10 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02:46–03:32, 4 pași, testele trec:
-  - **Sheets** → Inserare → Controale → **◉ Butoane de opțiune**: butoane ○ ◉ sau listă derulantă în celulă; în celulă se scrie numărul variantei alese, bun pentru formule;
-  - **Docs** și **Slides** → Revizuire → **🌐 Detectează limba**: paragrafele / casetele scrise în engleză, franceză, germană, italiană, spaniolă sau maghiară primesc limba lor, ca verificarea în română să nu le sublinieze (recunoașterea e scrisă de noi, fără internet);
-  - în Docs, textul lipit în altă limbă primește singur limba lui (se poate opri din Opțiuni).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03:32–04:10, 3 pași, testele trec:
+  - **PDF** → formular → ▭ Câmp de completat → **▣ Cod de bare**: un cod QR cu datele completate în formular, refăcut singur la fiecare salvare;
+  - **Notițe** → Fișier → **Import sarcini (.ics)…**: sarcinile bifate în calendar se bifează și în notiță (legătura înapoi pentru Export sarcini);
+  - **Slides** → Revizuire → **⇄ Compară…**: altă versiune a prezentării (.pptx / .odp / .sslides), slide cu slide, cu ✓ Acceptă / ✕ Respinge.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,7%**, **Excel 90,7%**, **PowerPoint 90,5%**, Clipchamp 80,5%, Notițe 81,5%, Acrobat 85,5%, Photoshop 83,3%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,7%**, **Excel 90,7%**, **PowerPoint 90,7%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 85,7%, Photoshop 83,3%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar.
@@ -22,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce PDF → un formular → ▭ Câmp de completat → ▣ Cod de bare → Salvează ca…, completează, salvează din nou și citește codul cu telefonul (apar numele și valorile?); Slides → Revizuire → ⇄ Compară… cu o prezentare primită înapoi de la un coleg (diferențele sunt cele reale?); Notițe → Export sarcini (.ics) → bifează în calendar → exportă de acolo → Import sarcini (.ics)… (se bifează în notiță?).
 - Să încerce Docs → lipește un paragraf în engleză dintr-o pagină web: nu mai e subliniat cu roșu? Și Sheets → Inserare → ◉ Butoane de opțiune → „Mic; Mediu; Mare” → clic pe o variantă: e ușor de folosit?
 - Să încerce Sheets → un .xlsx foarte lat de la serviciu (sau caseta de nume → XFD1 → scrie ceva) → derulează în jos și în lateral: merge lin? Și Export .xlsx deschis la serviciu: textul e în ultima coloană?
 - Să încerce PDF → o prezentare sau o factură primită ca PDF (cu un tabel) → → Slides → clic pe un titlu și într-o celulă a tabelului și schimbă-le, apoi Export .pptx deschis la serviciu: textul și tabelul se pot schimba și arată ca în PDF? Și Notițe → ◇ Schemă → apoi ◇ pe poză: se schimbă? Și Sheets → Revizuire → ✓ Gramatică pe un tabel cu texte.
