@@ -1,14 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 02:47 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 03:32 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02:02–02:47, 3 pași, testele trec:
-  - **Sheets** are acum toate cele **16.384 de coloane** (până la XFD), cât un fișier .xlsx; înainte avea doar 128, iar ce era mai la dreapta se tăia;
-  - foile late se derulează la fel de repede ca una goală: se desenează doar coloanele de pe ecran;
-  - încă un fișier real din colecție se deschide întreg (8 foi, 1360 de celule în plus).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02:46–03:32, 4 pași, testele trec:
+  - **Sheets** → Inserare → Controale → **◉ Butoane de opțiune**: butoane ○ ◉ sau listă derulantă în celulă; în celulă se scrie numărul variantei alese, bun pentru formule;
+  - **Docs** și **Slides** → Revizuire → **🌐 Detectează limba**: paragrafele / casetele scrise în engleză, franceză, germană, italiană, spaniolă sau maghiară primesc limba lor, ca verificarea în română să nu le sublinieze (recunoașterea e scrisă de noi, fără internet);
+  - în Docs, textul lipit în altă limbă primește singur limba lui (se poate opri din Opțiuni).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 89,7%**, **Excel 90,7%**, **PowerPoint 90,5%**, Clipchamp 80,5%, Notițe 81,5%, Acrobat 85,5%, Photoshop 83,3%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
@@ -22,6 +22,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Docs → lipește un paragraf în engleză dintr-o pagină web: nu mai e subliniat cu roșu? Și Sheets → Inserare → ◉ Butoane de opțiune → „Mic; Mediu; Mare” → clic pe o variantă: e ușor de folosit?
 - Să încerce Sheets → un .xlsx foarte lat de la serviciu (sau caseta de nume → XFD1 → scrie ceva) → derulează în jos și în lateral: merge lin? Și Export .xlsx deschis la serviciu: textul e în ultima coloană?
 - Să încerce PDF → o prezentare sau o factură primită ca PDF (cu un tabel) → → Slides → clic pe un titlu și într-o celulă a tabelului și schimbă-le, apoi Export .pptx deschis la serviciu: textul și tabelul se pot schimba și arată ca în PDF? Și Notițe → ◇ Schemă → apoi ◇ pe poză: se schimbă? Și Sheets → Revizuire → ✓ Gramatică pe un tabel cu texte.
 - Să încerce Docs / Notițe / Slides → Revizuire → ✓ Gramatică pe un text scris de el: greșelile găsite sunt reale (mai ales „Acord”) și nu apar lucruri corecte ca greșeli?

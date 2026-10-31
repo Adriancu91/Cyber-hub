@@ -308,3 +308,4 @@
 - 2026-10-31 01:19 — 4 pași: ✓ Gramatică și în Sheets; Gramatica prinde acordul cu substantivele la plural („mesele este” → „sunt”) și articolul uitat înainte de posesiv („prieteni mei” → „prietenii mei”); PDF → Slides face textul paginilor editabil, pe locul lui.
 - 2026-10-31 01:59 — 3 pași: PDF → Slides face din tabelele PDF tabele pe slide (și textul mic nu mai apare mare și tăiat); în Notițe schema se poate schimba după inserare; un test vechi reparat.
 - 2026-10-31 02:47 — 3 pași: Sheets are acum toate cele 16.384 de coloane (până la XFD, înainte 128), iar foile late se derulează la fel de repede ca una goală; încă un fișier real se deschide întreg (477 / 560).
+- 2026-10-31 03:32 — Sheets: butoane de opțiune și listă combo în celulă; Docs și Slides: limba textului găsită singură (buton și la lipire), fără internet.
