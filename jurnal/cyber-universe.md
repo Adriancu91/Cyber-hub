@@ -97,3 +97,4 @@
 - 2026-10-31 05:41 — sesiune programată: nicio comandă nouă; rămâne OPRIT (coada goală, necesită analiza lui Adrian). CI verde (run 209), Release `os-209`.
 - 2026-10-31 08:41 — sesiune programată: nicio comandă nouă; rămâne OPRIT (coada goală, necesită analiza lui Adrian). CI verde (run 209), Release `os-209`.
 - 2026-10-31 11:41 — sesiune programată: nicio comandă nouă; rămâne OPRIT (coada goală, necesită analiza lui Adrian). CI verde (run 209), Release `os-209`.
+- 2026-10-31 16:05 — C-46 gata (P6-38): `kronos` știe de #477 (și #459 rezervă), alege 477 > 459, `run kronos --control` pentru testul pe hardware; CI verde, Release `os-210`.

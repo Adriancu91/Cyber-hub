@@ -1,34 +1,36 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-31 11:41 (ora României) · **de:** sesiunea OS programată · **OPRIT: necesită analiza lui Adrian** (3 sesiuni la rând fără sarcină — coada e goală); CI verde, Release `os-209`
+**Actualizat:** 2026-10-31 16:05 (ora României) · **de:** sesiunea OS programată · **C-46 gata (P6-38)**; CI verde, Release `os-210`
 
 ## Acum
-- **C-42 gata (P6-37) — Cyber-GPU fixat pe `aee06c4` (după C-39):** `gpu firmware` citește acum antetele Booter și bootloader după forma
-  fișierelor oficiale 570.144. În simulare: mărimile reale (61.304 / 41.080 / 24.684 octeți), „HS v2: 2 semnaturi” la ambele Booter,
-  „criteriul I4: TRECE (fisiere oficiale 4/4, antete citite 4/4)”. Codul comenzii neschimbat, nimic nou care scrie în placă.
-- Suita QEMU trece (79/80 + 1 sărit; tastatura USB a picat o dată, trece la reluare); CI verde la prima încercare → **Release `os-209`**.
-- Rămâne tot din `os-208`: frânele Kronos reparate (C-40); câștigul real (ținta ≥ 150 simb/s) se vede abia pe workstation.
+- **C-46 gata (P6-38) — modelul Kronos #477 pe stick:** `kronos` știe de #477 (`kronos/kronos_477_q8_0.kgr`, SHA-256 `bcbe8187…3963`)
+  și de #459 (rezerva, folosit doar dacă e singurul de pe stick). Alege singur din `/usb/kronos/`: întâi #477, apoi #459, apoi orice `.kgr`.
+  Fără `.sha256` lângă fișier, verifică suma cunoscută din tabel.
+- Comanda nouă **`run kronos --control`**: cele 3 texte de control din `integrare/kronos/MODEL.md` → „CONTROL: TRECE (#477 …)” dacă motorul
+  OS dă exact simbolurile publicate de Kronos (arată și marja minimă dintre primele două logit-uri).
+- Suita QEMU 80/80 + 1 sărit; CI verde la prima încercare → **Release `os-210`**. Tot ce era în `os-209` (GPU, frânele Kronos) rămâne.
 
 ## Urmează
-- Coada fără sarcini libere (P6-10, P6-12 p.2 așteaptă hardware; P5-07 blocat; C-7, C-11 după întoarcerea lui Adrian; C-41 amânat) →
-  **OPRIT** din 30 oct 05:41: sesiunile următoare nu încep sarcini noi până la o comandă nouă de la Adrian în `COMENZI.md`
-  (sau un rezultat nou în `rezultate/`). Nu e o defecțiune: pur și simplu nu mai e nimic de făcut fără Adrian sau hardware.
+- Coada fără alte sarcini libere (P6-10, P6-12 p.2 așteaptă hardware; P5-07 blocat; C-7, C-11 după întoarcerea lui Adrian; C-41 amânat) →
+  sesiunile următoare se opresc scurt până la o comandă nouă în `COMENZI.md` sau un rezultat nou în `rezultate/`.
 - După următoarea fereastră pe workstation: cifrele noi din `rezultate/` → pașii următori (viteza Kronos, GPU I5+).
 
 ## Ce oferă proiectul celorlalți
 - Biblioteci Rust fără dependențe (proprietare de la 28 oct; până la `0bf1303` MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/`.
 - Pentru Kronos: a doua implementare independentă a KGR1 și a tokenizerului (`user/src/kgr.rs`, `user/src/bpe.rs`).
-- Pentru `cyber-gpu`: `gpu vbios --detalii`, `gpu fwsec`, `gpu firmware` (cu antetele C-39, fixarea `aee06c4`) în `os-209`.
+- Pentru `cyber-gpu`: `gpu vbios --detalii`, `gpu fwsec`, `gpu firmware` (cu antetele C-39, fixarea `aee06c4`) în `os-210`.
 
 ## De ce are nevoie de la ceilalți
-- `kronos` / Adrian: Release-ul privat `kronos-kgr1-459` (comanda din `integrare/kronos/MODEL.md`), ca fișierul să ajungă pe stick.
+- `kronos` / Adrian: Release-ul privat `kronos-kgr1-477` (comanda din `integrare/kronos/MODEL.md`), ca fișierul #477 să ajungă pe stick.
 
 ## Blocaje / nevoie de Adrian
-- **OPRIT (oprire de siguranță, coada goală):** ca lucrul să continue e nevoie de o comandă nouă în `COMENZI.md` sau de rezultatele testelor de mai jos în `rezultate/`.
-- **Stick-ul nou = Release `os-209`** (GitHub → cyber-universe → Releases, sau `actualizeaza` pe laptop cu cablu).
-  Dacă scrii stick-ul de la zero, pune la loc `kronos/kronos_459_q8_0.kgr` + `.sha256`, `cyber.rw` și (pentru Cyber-GPU) folderul `firmware\`.
-- **Workstation, GPU (~2 min, cu `os-209`, doar citire):** `gpu firmware` → așteptat „criteriul I4: TRECE (fisiere oficiale 4/4, antete citite 4/4)”; poză.
-- **Workstation, Kronos (~5 min, cu `os-209`):** `cpu porneste`, apoi `run kronos --profil --n 64 Buna ziua` → poză cu rândurile „profil:”
+- **Release-ul `kronos-kgr1-477`** (Kronos, C-44): îl face Adrian, cu comanda din `integrare/kronos/MODEL.md` (pe workstation, din `C:\Kronos\cyberspace`).
+  Apoi pe stick, în folderul `kronos\`: `kronos_477_q8_0.kgr` + `kronos_477_q8_0.kgr.sha256` (#459 poate rămâne alături, ca rezervă).
+- **Stick-ul nou = Release `os-210`** (GitHub → cyber-universe → Releases, sau `actualizeaza` pe laptop cu cablu).
+  Dacă scrii stick-ul de la zero, pune la loc `kronos/kronos_477_q8_0.kgr` + `.sha256`, `cyber.rw` și (pentru Cyber-GPU) folderul `firmware\`.
+- **Workstation, Kronos #477 (~3 min, cu `os-210`):** `run kronos --control` → așteptat „CONTROL: TRECE (#477 …)”; poză.
+- **Workstation, GPU (~2 min, cu `os-210`, doar citire):** `gpu firmware` → așteptat „criteriul I4: TRECE (fisiere oficiale 4/4, antete citite 4/4)”; poză.
+- **Workstation, Kronos (~5 min, cu `os-210`):** `cpu porneste`, apoi `run kronos --profil --n 64 Buna ziua` → poză cu rândurile „profil:”
   (ținta ≥ 150 simb/s). Opțional: `run kronos-calcul --cauta` înainte (scrie un reglaj nou) și `run kronos --profil --fara-ecran --n 64 Buna ziua`.
   La final `raport`; pozele + `raport/*.txt` + `kronos/reglaj-*.txt` → `rezultate/`.
 - **Test pe cele două laptopuri (~15 min, Secure Boot oprit, `os-194` sau mai nou):**
