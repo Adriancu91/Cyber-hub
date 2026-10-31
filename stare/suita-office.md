@@ -1,14 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 12:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 13:01 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 11:37–12:25, 5 pași, toți la **ecuații** (Docs, Slides, Sheets, Notițe), testele trec:
-  - **Accente** deasupra literelor: vector, căciulă, bară, puncte, tildă (vec(F), hat(x), bar(x)…).
-  - **Matrice** mat(a, b; c, d), cu paranteze care cresc, și **sisteme de ecuații** cu acolada mare în stânga (cases(…)).
-  - **Acolade care se văd** (mulțimi: braces(1, 2, 3)), **chenar** (box(…)) și **subliniere** (underline(…)).
+- Lucrăm la „funcțiile care lipsesc”. Ultimele două sesiuni (11:37–13:01), 11 pași la **ecuații** (Docs, Slides, Sheets, Notițe), testele trec:
+  - Accente (vector, căciulă, bară), matrice, sisteme de ecuații, mulțimi cu acolade, chenar, subliniere și acum **acolade culcate** cu text dedesubt (underbrace).
+  - Sistemele au acum semnele „=” **aliniate unul sub altul**.
+  - Ecuațiile se pot **scrie sau lipi cu bară inversă** (\frac{a}{b}, \alpha, matrice), cum apar în articole și pe site-uri, și se pot **copia înapoi** așa (butonul ⧉ Copiază cu bară inversă); x², a₁ lipite devin puteri și indici adevărați.
   - Toate se citesc din .docx / .odt (înainte se pierdeau la deschidere) și se scriu înapoi ca ecuații adevărate în .docx / .pptx / .odt.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 89,9%**, **Excel 90,7%**, **PowerPoint 91%**, Clipchamp 80,5%, Notițe 81,9%, Acrobat 86,1%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori (plus 10 .eps noi în colecția de poze).
