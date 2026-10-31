@@ -1,17 +1,17 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-10-31 14:29 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-10-31 15:10 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Plusurile alese de Adrian: P1 (diacritice), P2 (e-Factura) și P3 (extrase de cont) sunt gata; **P4 (semnături digitale) e gata în afară de LTV**, care așteaptă răspunsul lui Adrian.
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5).
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 13:47–14:33, 4 pași, testele trec:
-  - **Notițe, pânza liberă:** casetele se aleg cu Shift + clic și se leagă cu ⧉ Grupează (se mută împreună, trase sau cu Alt + săgeți; ⛓ desparte grupul).
-  - **Notițe, lipire din web:** pozele nu se mai pierd; cele din text intră îndată, cele de pe internet la 🖼 Adu pozele (nimic nu pleacă pe internet fără clic).
-  - **PDF → Conversie:** **Tabele .xlsx…** și **Prezentare .pptx…** salvează direct foaia de calcul / prezentarea, fără să mai treci prin Sheets / Slides.
-  - Înainte (13:01–13:47): pânza liberă din Notițe (casete, poze, desene de mână); 11:37–13:01: ecuații.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:32–15:10, 3 pași, testele trec:
+  - **Slides:** desenul de mână pleacă în **.pptx ca cerneală adevărată** (se poate schimba în programul de la serviciu), iar cerneala din .pptx primite vine în Suite ca linii care se pot muta / șterge.
+  - **Sheets → Inserare → 🧊 Modele 3D:** un model .obj / .stl / .glb / .ply rotit cu mouse-ul, pus peste celule; dublu-click îl rotește altfel.
+  - **PDF → Creare PDF → Adresă web → PDF…:** o pagină de pe internet după adresă, cu pozele ei, fără scripturi și fără cookie-uri.
+  - Înainte (13:47–14:29): Notițe (grupuri pe pânza liberă, poze din textul lipit din web), PDF direct ca .xlsx și .pptx.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 89,9%**, **Excel 90,7%**, **PowerPoint 91%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 89,9%**, **Excel 90,9%**, **PowerPoint 91,2%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 83,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (la Notițe rămân cele mari: formatarea văzută direct în câmpul de scris, o notiță singură în fereastră separată, scrisul cu creionul direct pe pânză).
@@ -23,6 +23,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
+- Să încerce Slides → Desenare → ✏ Desenează → câteva linii cu creionul și una cu markerul → Export .pptx deschis la serviciu: desenul se poate alege și schimba ca cerneală? Și Sheets → Inserare → 🧊 Modele 3D cu un .glb descărcat → dublu-click pe poză → altă poziție. Și PDF → Creare PDF → Adresă web → PDF… cu adresa unui articol: textul și pozele apar?
 - Să încerce Notițe → Inserare → ▣ Casetă liberă → câteva casete și o poză trasă din Explorer pe pânză, apoi Shift + clic pe barele a două casete → ⧉ Grupează → trage una (se mută amândouă?) → 📖 Lectură: stau unde le-a pus? E ușor de folosit ca pagină liberă?
 - Să copieze din browser un paragraf cu o poză dintr-un articol → Notițe → Ctrl+V → 🖼 Adu pozele: poza apare în notiță?
 - Să încerce PDF → o factură / un extras → Conversie → Tabele .xlsx… și o prezentare primită ca PDF → Prezentare .pptx…, deschise la serviciu: tabelul are sumele ca numere, iar slide-urile se pot schimba?
