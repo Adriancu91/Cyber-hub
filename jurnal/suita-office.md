@@ -325,3 +325,4 @@
 - 2026-10-31 13:47 — 4 pași la Notițe: pânză liberă cu casete de text puse oriunde, poze și desene de mână pe pânză, mutare și cu Alt + săgeți; se caută, se văd în Lectură și se exportă; testele trec.
 - 2026-10-31 14:29 — 4 pași: Notițe (grupuri de casete pe pânza liberă, pozele păstrate la lipirea din web) și PDF (tabelele direct ca .xlsx, PDF-ul direct ca prezentare .pptx); Notițe 82,7%, Acrobat 86,5%; testele trec.
 - 2026-10-31 15:10 — 3 pași: Slides (desenul de mână ca cerneală adevărată în .pptx și citit înapoi ca linii), Sheets (Modele 3D peste celule), PDF (pagină web direct după adresă, fără scripturi); PowerPoint 91,2%, Excel 90,9%; testele trec.
+- 2026-10-31 15:59 — 5 pași: 4 scheme noi (Radial convergent, Proces în trepte în jos, Fagure, Roți dințate; 23 de feluri), Video (trecerile Ochi și Zigzag de sus, stilurile Benzi desenate și Panglică), Sheets (4 teme și 2 perechi de fonturi noi); testele trec.
