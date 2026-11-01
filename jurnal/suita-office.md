@@ -350,3 +350,4 @@
 - 2026-11-01 09:01 — Imagini: filtrul Unghi larg adaptiv (cu focala din fotografie), rotirea și densitatea plasei la Deformare cu pioneze, alinierea automată cu mărime (Photoshop 84,8%).
 - 2026-11-01 09:40 — 2 diagrame noi în Docs / Sheets / Notițe / Slides: Balanță și Săgeți în sens opus (33 de feluri); testele trec.
 - 2026-11-01 10:26 — Video: 4 stiluri noi de titlu (46) și 4 treceri noi (68); Docs / Sheets / Notițe / Slides: diagramele Proces alternant și Listă pe săgeată (35 de feluri); testele trec.
+- 2026-11-01 11:20 — Video: 4 treceri noi (Pieptene, Cortină în trepte; 72) și 4 stiluri de titlu (Indicator rutier, Pergament, Bon de casă, Nor; 50); diagramele Listă cu trapeze, Blocuri descrescătoare, Bandă înclinată (38 de feluri); 7 pași, testele trec.
