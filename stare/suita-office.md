@@ -1,13 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 12:01 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 12:51 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 11:19–12:01, 5 pași, testele trec:
-  - Video: 4 stiluri noi de titlu (Zid de cărămidă, Plic, Număr de înmatriculare, Insignă de reducere; acum 54) și 4 treceri noi (Cortină în trepte de jos / din dreapta, Trepte din mijloc / de la margini; acum 76);
-  - Docs, Sheets, Notițe, Slides: diagrama nouă **Templu** (acoperiș, ideile în coloane, temelie); acum 39 de feluri.
-- Sesiunea dinainte (10:27–11:20): treceri Pieptene și Cortină în trepte, stilurile Indicator rutier, Pergament, Bon de casă, Nor, diagramele Listă cu trapeze, Blocuri descrescătoare, Bandă înclinată.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 12:02–12:53, 5 pași, testele trec:
+  - Slides: 3 șabloane noi de prezentare (Plan de afaceri, Bun venit în echipă, Eveniment / conferință; acum 12);
+  - Docs, Sheets, Notițe, Slides: diagrama nouă **Arc** (ideile în cercuri pe un semicerc; acum 40 de feluri);
+  - Video: 4 treceri noi (Spirală, Spirală din centru, Pătrățele pe diagonală și din dreapta; acum 80) și 2 stiluri de titlu (Afișaj digital, Panou de plută; acum 56).
+- Sesiunea dinainte (11:19–12:01): titlurile Zid de cărămidă, Plic, Număr de înmatriculare, Insignă de reducere, treceri în trepte, diagrama Templu.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,8%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 

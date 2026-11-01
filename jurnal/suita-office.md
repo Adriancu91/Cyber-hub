@@ -352,3 +352,4 @@
 - 2026-11-01 10:26 — Video: 4 stiluri noi de titlu (46) și 4 treceri noi (68); Docs / Sheets / Notițe / Slides: diagramele Proces alternant și Listă pe săgeată (35 de feluri); testele trec.
 - 2026-11-01 11:20 — Video: 4 treceri noi (Pieptene, Cortină în trepte; 72) și 4 stiluri de titlu (Indicator rutier, Pergament, Bon de casă, Nor; 50); diagramele Listă cu trapeze, Blocuri descrescătoare, Bandă înclinată (38 de feluri); 7 pași, testele trec.
 - 2026-11-01 12:01 — Video: 4 stiluri noi de titlu (54) și 4 treceri noi (76); diagrama Templu în Docs / Sheets / Notițe / Slides (39 de feluri); 5 pași, testele trec.
+- 2026-11-01 12:51 — Slides: 3 șabloane noi (Plan de afaceri, Bun venit în echipă, Eveniment); diagrama Arc (40 de feluri); Video: 4 treceri noi (80) și 2 stiluri de titlu (56); toate testele trec.
