@@ -776,3 +776,26 @@ Format:
   oprit la loc la final. Teste în QEMU/simulare; **nicio rulare pe placa reală fără Adrian de față**. Release nou + pașii ferestrei pentru Adrian,
   în română simplă, cu oprirea sigură (în `stare/cyber-universe.md`). Testul de viteză `os-211` (C-48) poate intra în aceeași fereastră.
 - stare: preluat (2026-11-01 17:24 UTC, sesiunea OS) — P6-40
+
+### C-53 · cyber-universe · Bucla automată, partea OS: modul „test automat” + ceas de siguranță + scriptul pentru Windows
+- data: 2026-11-01 19:45 · de la: **Adrian** („da bucla automată”), prin centrul de comandă — vezi DECIZII 1 nov 19:45
+- ce (după C-52, pași mici, testați în QEMU):
+  (1) la pornire, dacă pe stick există `auto/teste.txt`, OS-ul rulează pe rând comenzile din el **doar dacă sunt în lista albă** (fără nimic care scrie
+      în placa video: `gpu i6 --scrie` și orice scriere sunt refuzate în modul automat), scrie `auto/raport-<data>.txt` + rezultatul pe scurt, apoi **repornește**;
+      după rulare redenumește `teste.txt` în `teste-facut-<data>.txt` (ca să nu se repete la nesfârșit);
+  (2) **ceas de siguranță**: dacă lista nu termină în N minute (din fișier, implicit 10), sau la blocare, repornire forțată (watchdog-ul chipsetului dacă există,
+      altfel repornire prin ACPI/tastatură; testat în QEMU cu un test care se blochează intenționat);
+  (3) **scriptul pentru Windows** în `tools/windows/` (PowerShell, comentat în română): copiază Release-ul nou pe stick (păstrând `kronos/`, `firmware/`, `cyber.rw`),
+      scrie `auto/teste.txt`, setează **pornirea o singură dată** de pe stick (`bcdedit /set {fwbootmgr} bootsequence …`, cere administrator), repornește; și partea a doua:
+      la revenirea în Windows citește `auto/raport-*.txt` de pe stick și îl pregătește pentru hub. Fără parole sau chei în script.
+  (4) documentație pentru pregătirea cu Adrian (pași exacți, în română simplă): BIOS (Secure Boot oprit, Windows primul), intrare automată în Windows,
+      dreptul de administrator doar pentru script. Release nou.
+- stare: nou
+
+### C-54 · cyber-gpu · Pași în lanț + date reale mai multe (emulatorul să semene cu workstation-ul)
+- data: 2026-11-01 19:45 · de la: **Adrian** („da bucla automată”), prin centrul de comandă — vezi DECIZII 1 nov 19:45
+- ce: (1) pentru ferestrele cu Adrian: o comandă OS care încearcă pașii I6 → I7 → … pe rând, cu oprire sigură la primul eșec și jurnal complet (propunere în `idei/`
+  pentru OS, dacă e nevoie de cod nou acolo); (2) pentru bucla automată (doar citire): lista de citiri fără risc care să ruleze la fiecare tur (registre de stare,
+  spațiul PCI, temperaturi, ce mai ajută modelul) și unealta care le compară cu `gpu-sim`; (3) `gpu-sim` primește datele reale din `rezultate/` (fără conținutul
+  firmware-ului/VBIOS NVIDIA în repo), ca simularea să ghicească mai puțin. Nimic nu scrie în placă fără Adrian.
+- stare: nou
