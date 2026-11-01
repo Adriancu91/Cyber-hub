@@ -1,14 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 09:01 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 09:40 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 08:17–09:01, 5 pași în Imagini, testele trec:
-  - filtrul nou **Unghi larg adaptiv** (ochi de pește, perspectivă cu margini mai puțin întinse, panoramă cilindrică), care pornește cu focala scrisă de aparat în poză;
-  - **📌 Deformare cu pioneze**: rotirea pozei în jurul pionezei alese și Densitatea plasei;
-  - **⧉ Alinierea automată** a straturilor potrivește acum și mărimea (zoom atins între poze).
-- Sesiunea dinainte (07:32–08:15): Selectează și maschează complet (Contrast, Decontaminare, pensula Rafinează marginea) și pensulele Zonei de focalizare.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 08:59–09:40, 2 pași la diagrame (Docs, Sheets, Notițe, Slides), testele trec:
+  - diagrama nouă **Balanță** (ideile pe două talere, înclinată spre partea cu mai multe: pro și contra);
+  - diagrama nouă **Săgeți în sens opus** (două săgeți, spre dreapta și spre stânga, cu ideile pe ele); sunt acum 33 de feluri de diagrame.
+- Sesiunea dinainte (08:17–09:01): în Imagini filtrul Unghi larg adaptiv (cu focala din fotografie), rotirea și densitatea plasei la Deformare cu pioneze, alinierea automată cu mărime.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,8%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
