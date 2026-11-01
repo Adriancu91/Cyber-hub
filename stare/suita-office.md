@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 22:07 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 22:58 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 21:26–22:07, 4 pași, testele trec:
-  - Notițe: **formatarea se vede direct în câmpul de scris** (aldin, cursiv, tăiat, subliniat, evidențiat, culori, titluri), cu semnele estompate și literele exact la locul lor; se oprește din Vizualizare → Formatare la vedere;
-  - la fel și în fereastra separată a unei notițe;
-  - Video: două treceri noi (Pătrățele în romb, și de la margini; 88 în total) și stilul de titlu Panou de avertizare (61 de stiluri).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 22:08–22:58, 3 pași, testele trec:
+  - Notițe: **✎ Creion direct pe pânza liberă** (scrisul de mână devine, după o pauză, o casetă cu desen exact unde s-a scris, redeschisă cu liniile ei); reparat câmpul de scris care se strângea sub o pânză înaltă;
+  - diagrama nr. 48, Ovale în cascadă (Docs, Slides, Sheets, Notițe);
+  - Video: stilul de titlu Curcubeu (62 de stiluri).
 - Raportul de testare completă: Raport-testare-01.11.html (în dosarul proiectului).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 83,5%, Acrobat 86,5%, Photoshop 84,8%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 83,9%, Acrobat 86,5%, Photoshop 84,8%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (la Notițe: scrisul cu creionul direct pe pânză, mărimile și fonturile văzute în câmpul de scris; la PDF: certificatele EC de pe token; la Imagini: spațiul de lucru pentru umplerea după conținut).
+- Alte funcții „parțial” / „nu” din inventar (la Notițe: mărimile și fonturile văzute în câmpul de scris; la PDF: certificatele EC de pe token; la Imagini: spațiul de lucru pentru umplerea după conținut).
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice și despărțirea în silabe românească, semnarea / verificarea XML (XML-DSig, scrise de la zero).
