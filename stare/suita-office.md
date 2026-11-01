@@ -1,12 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 02:47 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 03:30 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02:07–02:47, 3 pași, testele trec:
-  - **Acțiuni în Imagini** (Fereastră → ▶ Acțiuni, Alt+F9): pașii făcuți pe poză (ajustări, Inversare, Desaturare, ✨ Automat, filtre, rotiri, oglindiri, mărimea) se înregistrează sub un nume și se repetă pe altă poză cu un clic sau cu o tastă F, într-un singur Ctrl+Z. Acum toate cele 4 aplicații mari au înregistrare de pași (Sheets, Docs, Slides, Imagini).
-  - Aceeași acțiune merge și pe un dosar întreg: ▤ Mai multe poze → „Pașii din ▶ Acțiuni”.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02:48–03:31, 5 pași, testele trec:
+  - **Imagini → 🎞 Cronologie: cadre intermediare** (1–50 cadre între două cadre, sau de la ultimul la primul, ca animația să treacă lin; un singur Ctrl+Z).
+  - **Imagini → Salvează ca pictogramă .ico** (mărimile 16–256 px într-un singur fișier, cu transparență).
+  - **Video:** 4 treceri noi (Stea / Inimă / Hexagon spre interior, Pană de jos; acum 60) și 2 stiluri de titlu noi (Plan tehnic, Plăcuță aurie; acum 40).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,0%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
