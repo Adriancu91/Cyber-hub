@@ -749,4 +749,4 @@ Format:
   Scrie în `stare/cyber-gpu.md` planul ferestrei următoare, în ordine și cu oprire sigură: (a) proba tinygrad (jurnalul de aur; necesită stick Ubuntu + laptop)
   și/sau (b) prima scriere a driverului nostru (I5 Bus Master / I6 FWSEC), cu exact ce se scrie, ce nu se poate strica (VBIOS nu se scrie) și cum se revine
   (oprire completă). Spune care din (a)/(b) recomanzi întâi și de ce. Nimic nu se scrie în placă fără Adrian de față; dacă e nevoie de cod nou în OS, propunere în `idei/`.
-- stare: nou
+- stare: preluat (2026-11-01 11:53, sesiunea Cyber-GPU)
