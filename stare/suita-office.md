@@ -1,16 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 18:36 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 20:01 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc” și la observațiile din testarea completă de azi. Sesiunea 17:32–18:36, 3 pași, testele trec:
-  - observațiile mici de aspect din raport, reparate: Video (cartonașele din bandă, rândul muzicii, durata totală cu zecimea, „00:07,8”), Imagini (Recente fără chenar), Notițe (listele din panglică cu numele întreg), Docs (filele de tabel întregi la 1920 px);
-  - PDF: un film într-un format vechi pus pe pagină se transformă singur în .mp4 (cu FFmpeg) și pornește; fără FFmpeg, întrebare clară înainte;
-  - Docs → Inserare: toate grupurile se văd la 1920 px (înainte 6 erau strânse), butoanele pe trei rânduri.
+- Lucrăm la „funcțiile care lipsesc” și la observațiile din testarea completă de azi. Sesiunea 19:22–20:01, 3 pași, testele trec:
+  - Notițe: o notiță singură într-o fereastră separată (mică, cu Mereu deasupra); ce scrii acolo se salvează în caiet, și invers;
+  - al 47-lea fel de diagramă, Listă cu acoladă (Docs, Sheets, Notițe, Slides); în Slides, la Piramida din triunghiuri, triunghiurile goale nu se mai numără ca idei;
+  - testul ferestrei notiței verifică și salvarea fără Notițe deschis.
 - Raportul de testare completă: Raport-testare-01.11.html (în dosarul proiectului).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,8%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 83,1%, Acrobat 86,5%, Photoshop 84,8%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (la Acțiuni în Imagini: pașii pensulei și ai selecțiilor; la PDF: certificatele EC de pe token; la Notițe: formatarea văzută direct în câmpul de scris, o notiță singură în fereastră separată, scrisul cu creionul direct pe pânză).
