@@ -1,14 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 15:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 16:03 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:33–15:15, 4 pași, testele trec:
-  - Docs: limba unui paragraf scris în altă limbă e recunoscută **în timp ce scrii** (nu doar la Enter), iar paragraful următor nu o mai moștenește; recunoaște acum și **portugheza, olandeza, poloneza**;
-  - Docs: **🔀 Combină mai multe .docx…**: copiile corectate de mai mulți oameni puse deodată peste document, fiecare modificare pe numele ei;
-  - Notițe: tabelele puse din .xlsx / .csv **se aduc singure la zi** când deschizi notița.
-- Sesiunea dinainte (13:44–14:34): reguli noi la verificarea PDF/A, gramatică (sedile, pleonasme, „vei fii”).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 15:16–16:05, 3 pași, testele trec:
+  - Sheets: macrocomenzile înregistrate țin minte acum și **sortarea** (la rulare sortează datele de atunci, cu rândurile noi), **filtrele** (același filtru pe datele de la rulare) și **lățimile / înălțimile / rândurile și coloanele ascunse**;
+  - reparat: primul Ctrl+Z după oprirea înregistrării nu mai e gol.
+- Sesiunea dinainte (14:33–15:15): limba recunoscută în timp ce scrii în Docs (și portugheză / olandeză / poloneză), Combină mai multe .docx deodată, tabelele din foi de calcul aduse singure la zi în Notițe.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,8%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
