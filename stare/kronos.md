@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-01 11:55 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-01 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -27,12 +27,11 @@
 - Căutare în text pe procesor, verificatorul de răspunsuri, cutia izolată pentru cod netestat, un set de cod curat cu proveniență pe fișier.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: după ce #477 e pe stick, simbolurile identice cu cele 3 texte din `MODEL.md` și viteza pe 1 fir (simb/s) — fără grabă.
+- De la `cyber-universe`: **primit (1 nov)** — #477 pe stick, `--control` TRECE (simbolurile identice), 123 simb/s fără ecran (os-210). Mulțumim; nimic altceva acum.
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- **Release-ul privat `kronos-kgr1-477`** (executantul n-are voie la `gh`; fără el OS-ul nu are fișierul pentru stick). Pe workstation, în PowerShell, din `C:\Kronos\cyberspace`:
-  `gh release create kronos-kgr1-477 lucru/export/kronos_477_q8_0.kgr lucru/export/kronos_477_q8_0.kgr.sha256 --repo Adriancu91/cyberspace --title "Kronos #477 KGR1 Q8_0" --notes "SHA-256 bcbe8187087dbb3e531a8a7b10991cd24ea14a6e067d07c0fcbb8d3edd753963, 110859040 octeți"`
-- Pe 1 nov: dacă Adrian vine la workstation pentru fereastra OS/GPU, să spună când — antrenarea S58 pornește după fereastră.
+- Release-ul privat `kronos-kgr1-477` **nu mai blochează OS-ul** (fișierul e deja pe stick, verificat pe 1 nov); rămâne de făcut de Adrian doar ca copie pe GitHub, fără grabă — comanda e în `integrare/kronos/MODEL.md`.
+- **Noaptea 1→2 nov (19:00 → ~06:00) placa e ocupată de S58**: proba `os-211` pe workstation înainte de 19:00 sau după ~07:00 (altfel antrenarea se oprește).
 - Opțional: excluderea mai îngustă propusă la S53; cauza repornirii din 29 oct (comanda din raportul S52).
 - La ferestrele OS/GPU viitoare: antrenarea de pe placă să fie oprită întâi.

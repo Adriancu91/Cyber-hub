@@ -68,3 +68,4 @@
 - 2026-10-31 23:15 — S60 gata (proba de la zero + răspunsurile pentru pass@k, 1165 teste); S58 pașii 1–2 gata (pre-înregistrare, proba 6.078 MB / 63 °C). S61 aprobat: comparația inițializării încorporărilor (pierderea de pornire 474), configurare separată; cele 10 ore S58 rămân 1 nov 19:00.
 - 2026-11-01 02:15 — S61 gata și verificat: AJUTĂ (pornirea 10,7 în loc de 474; după 10 minute 3,77 în loc de 6,82, aceeași memorie). S58 (10 ore) pornește 1 nov 19:00; Adrian alege până atunci `cod_c1` sau `cod_c1_init002`.
 - 2026-11-01 11:55 — C-50 („da init002”) preluat: S58 (10 ore, 1 nov 19:00) pornește cu `cod_c1_init002`; pre-înregistrarea se actualizează înainte, pragurile neschimbate.
+- 2026-11-01 17:15 — Nimic nou la Kronos; S58 pornește la 19:00 cu `cod_c1_init002`. Văzut: #477 trece controlul în Cyber Universe (1 nov) → Release-ul nu mai blochează OS-ul; proba `os-211` să nu cadă în noaptea S58.
