@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-10-31 23:41 (ora României) · **de:** sesiunea OS programată · **OPRIT: necesită analiza lui Adrian** (3 sesiuni fără sarcină, coada goală); ultima: **C-46 gata (P6-38)**; CI verde, Release `os-210`
+**Actualizat:** 2026-11-01 02:41 (ora României) · **de:** sesiunea OS programată · **OPRIT: necesită analiza lui Adrian** (3 sesiuni fără sarcină, coada goală); ultima: **C-46 gata (P6-38)**; CI verde, Release `os-210`
 
 ## Acum
 - **C-46 gata (P6-38) — modelul Kronos #477 pe stick:** `kronos` știe de #477 (`kronos/kronos_477_q8_0.kgr`, SHA-256 `bcbe8187…3963`)
@@ -12,7 +12,7 @@
 
 ## Urmează
 - **OPRIT: necesită analiza lui Adrian** — nu din eșecuri, ci pentru că nu mai sunt sarcini libere. Se ridică la o comandă nouă în `COMENZI.md`
-  sau la un rezultat nou în `rezultate/` (de ex. pozele de la fereastra de mâine pe workstation).
+  sau la un rezultat nou în `rezultate/` (de ex. pozele de la fereastra de azi, 1 nov, pe workstation).
 - Coada fără alte sarcini libere (P6-10, P6-12 p.2 așteaptă hardware; P5-07 blocat; C-7, C-11 după întoarcerea lui Adrian; C-41 amânat) →
   sesiunile următoare se opresc scurt până la o comandă nouă în `COMENZI.md` sau un rezultat nou în `rezultate/`.
 - După următoarea fereastră pe workstation: cifrele noi din `rezultate/` → pașii următori (viteza Kronos, GPU I5+).
