@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-01 12:55 (ora României) · **de:** sesiunea Cyber-GPU 30b (cloud, fără placă) — C-49 + C-51 gata
+**Actualizat:** 2026-11-01 13:35 (ora României) · **de:** sesiunea Cyber-GPU 31 (cloud, fără placă) — fără lucru nou; C-49 + C-51 gata (30/30b)
 
 ## Acum
 - **Pe placa reală, doar citire, 0 scrieri:** I0/I1 identitatea, I2 GFW_BOOT (28 oct), I3 + I3b VBIOS și FWSEC (29 oct), **I4 fișierele
@@ -15,7 +15,8 @@
   - un test care fixează **exact cele 18 registre** pe care le scrie I6;
   - jurnalul fiecărei citiri/scrieri trimis OS-ului **pe loc** (ca să rămână pe stick și dacă placa se blochează), plus verificatorul care
     citește jurnalul de pe stick după fereastră și spune unde s-a abătut, dacă s-a abătut.
-- Commit-uri până la `d879742` pe `g0-g2-fundatie`. Copia pentru sesiunea OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `d879742`).
+- Commit-uri până la `9597863` pe `g0-g2-fundatie` (codul neschimbat de la `d879742`). Copia pentru sesiunea OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `9597863`).
+- Sesiunea 31: nimic nou de făcut fără placă și fără comenzile OS — așteptăm „da” pentru propunerea din `idei/`.
 
 ## Urmează
 1. **Sesiunea OS** (doar cu „da”-ul centrului de comandă; propunerea `idei/2026-11-01_cyber-gpu-i6-in-os.md`): `gpu pregatire-i6` (doar
