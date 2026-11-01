@@ -363,3 +363,4 @@
 - 2026-11-01 20:01 — Notițe: o notiță singură în fereastră separată (sincronizată cu caietul); diagrama nr. 47, Listă cu acoladă; reparat numărarea ideilor la Piramida din triunghiuri în Slides.
 - 2026-11-01 20:41 — Imagini: Acțiunile țin minte și selecțiile, umplerea / conturul selecției și decuparea (în proporții din poză, merg pe orice mărime și în lot); 3 pași, testele trec.
 - 2026-11-01 21:25 — Imagini: Acțiunile țin minte pensula / gradientul / găleata și pașii straturilor, plus condiții (după cum e poza, redă altă acțiune); 3 pași, testele trec.
+- 2026-11-01 22:07 — Notițe: formatarea (aldin, cursiv, culori, titluri) se vede direct în câmpul de scris, și în fereastra separată; Video: 2 treceri noi și un stil de titlu nou; 4 pași, testele trec.
