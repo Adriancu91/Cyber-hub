@@ -1,14 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 12:51 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 13:44 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 12:02–12:53, 5 pași, testele trec:
-  - Slides: 3 șabloane noi de prezentare (Plan de afaceri, Bun venit în echipă, Eveniment / conferință; acum 12);
-  - Docs, Sheets, Notițe, Slides: diagrama nouă **Arc** (ideile în cercuri pe un semicerc; acum 40 de feluri);
-  - Video: 4 treceri noi (Spirală, Spirală din centru, Pătrățele pe diagonală și din dreapta; acum 80) și 2 stiluri de titlu (Afișaj digital, Panou de plută; acum 56).
-- Sesiunea dinainte (11:19–12:01): titlurile Zid de cărămidă, Plic, Număr de înmatriculare, Insignă de reducere, treceri în trepte, diagrama Templu.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 12:52–13:44, 7 pași, testele trec:
+  - Video: 6 treceri noi (Pătrățele din centru / de la margini, rând cu rând / coloană cu coloană, în șerpuire; acum 86) și 4 stiluri de titlu (Carte poștală, Etichetă de blugi, Plăcuță de metal, Balon de gând; acum 60);
+  - Docs, Sheets, Notițe, Slides: diagramele noi **Cercuri crescătoare** și **Radial cu hexagoane** (acum 42 de feluri).
+- Sesiunea dinainte (12:02–12:53): 3 șabloane de prezentare în Slides, diagrama Arc, 4 treceri și 2 stiluri de titlu în Video.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,8%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
