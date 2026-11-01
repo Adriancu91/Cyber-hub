@@ -1,17 +1,17 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-10-31 19:35 (ora României) · **de:** sesiunea Cyber-GPU 28 (cloud, fără placă) — **OPRIT: necesită analiza lui Adrian**
+**Actualizat:** 2026-11-01 07:30 (ora României) · **de:** sesiunea Cyber-GPU 29 (cloud, fără placă) — **OPRIT: necesită analiza lui Adrian**
 
 ## Acum
 - **OPRIT: necesită analiza lui Adrian** (oprirea de siguranță, sesiunea 28): sesiunile 25, 26, 27 n-au terminat niciun pas și n-a apărut
-  nimic nou (nicio comandă, niciun rezultat de pe placă, nicio decizie). CI verde (rularea 73). Sesiunile următoare nu încep lucru nou până la
+  nimic nou (nicio comandă, niciun rezultat de pe placă, nicio decizie). Sesiunea 29 (1 nov) a verificat: tot nimic nou, CI verde; oprirea continuă. Sesiunile următoare nu încep lucru nou până la
   una din: rezultatul ferestrei pe workstation în hub, o comandă nouă pentru `cyber-gpu`, sau decizia lui Adrian despre sesiunea programată.
 - **Treapta 6 matmul gata (doar SIMULARE):** programul de înmulțire de matrice, varianta care citește și scrie memoria câte 4 numere odată,
   compilat cu Mesa NAK pe gazdă: 821 de instrucțiuni (față de 1 953 la treapta 5), 90 de registre, fără memorie locală. În simulare dă exact
   aceiași biți ca oracolul și ca treapta 5; refuză (fără nicio scriere) matrice cu K sau N care nu se împart la 4 și adrese nealiniate;
   8 greșeli plantate, toate prinse. Commit-uri `937fcf4`, `647398c` pe `g0-g2-fundatie`; 294 de teste trec.
 - Totul în model: **soneria nu e sunată**, programele „rulează” pe procesor. Nimic testat pe RTX 3070 Ti.
-- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `2916cb5` (doar documente noi față de `647398c`).
+- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `889cf94` (doar documente noi față de `647398c`; acum cu istoria completă).
 
 ## Urmează
 - Fereastra următoare (cu `os-210` sau `os-209`, ambele au fixarea `aee06c4`): `gpu firmware` → `criteriul I4: TRECE`; apoi, opțional, proba tinygrad.
