@@ -1,12 +1,12 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 05:06 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 06:05 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 04:18–05:06, 4 pași, testele trec:
-  - **Sheets:** Inserare → Controale → ▶ Buton macro: un buton în celulă care rulează o macrocomandă (clic sau Spațiu).
-  - **Docs:** butoane cu macrocomandă în text (câmpul MACROBUTTON): Vizualizare → ▶ Macrocomenzi → ⊞ Buton în text, dublu clic sau Alt+Shift+F9 le rulează; citite și scrise în .docx și .odt (până acum textul lor se pierdea la deschiderea .docx-urilor cu astfel de butoane).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 05:07–06:05, 4 pași, testele trec, toți la **formularele XFA din PDF** (declarațiile ANAF):
+  - fila Formular are acum: ⇩ Datele (.xml) (tot ce s-a completat, ca fișier .xml), ⇧ Importă datele (.xml)… (de exemplu datele de anul trecut într-o declarație nouă), ✓ Verifică câmpurile obligatorii (cele goale încadrate cu roșu, cu numele și pagina) și Golește formularul;
+  - PDF → Adună formulare… adună și declarațiile XFA completate într-un singur tabel .csv.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,0%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 

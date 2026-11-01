@@ -343,3 +343,4 @@
 - 2026-11-01 03:30 — 5 pași: în Imagini cadre intermediare în Cronologie și salvare ca pictogramă .ico; în Video 4 treceri și 2 stiluri de titlu noi; testele trec.
 - 2026-11-01 04:17 — 4 pași: PDF-urile criptate cu certificat se deschid și cu plicuri vechi (3DES / DES / RC2) și merg cu certificate EC; diagrama Piramidă inversată; 2 treceri Video noi; testele trec.
 - 2026-11-01 05:06 — 4 pași: buton cu macrocomandă în celulele din Sheets; butoane MACROBUTTON în textul din Docs (dublu clic / Alt+Shift+F9, în .docx și .odt); testele trec.
+- 2026-11-01 06:05 — 4 pași la formularele XFA din PDF (ANAF): date ca .xml (export / import), verificarea câmpurilor obligatorii, Golește formularul, Adună formulare… și pentru XFA; testele trec.
