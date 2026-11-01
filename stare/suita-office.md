@@ -1,12 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 06:05 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 06:50 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 05:07–06:05, 4 pași, testele trec, toți la **formularele XFA din PDF** (declarațiile ANAF):
-  - fila Formular are acum: ⇩ Datele (.xml) (tot ce s-a completat, ca fișier .xml), ⇧ Importă datele (.xml)… (de exemplu datele de anul trecut într-o declarație nouă), ✓ Verifică câmpurile obligatorii (cele goale încadrate cu roșu, cu numele și pagina) și Golește formularul;
-  - PDF → Adună formulare… adună și declarațiile XFA completate într-un singur tabel .csv.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 06:07–06:50, 4 pași, testele trec:
+  - diagrame noi în Docs / Sheets / Notițe / Slides: **Venn liniar** (cercuri în rând, suprapuse) și **Săgeată ascendentă** (pașii pe o săgeată care urcă); acum 31 de feluri;
+  - Video: două treceri noi (Cruce spre interior, Spre colțuri; acum 64) și două stiluri de titlu noi (Ecran de terminal, Bandă de film; acum 42).
+- Sesiunea dinainte (05:07–06:05): formularele XFA din PDF (declarațiile ANAF): datele ca .xml, verificarea câmpurilor obligatorii, Golește formularul, Adună formulare… și pentru XFA.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,0%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
@@ -23,5 +24,5 @@
 - **Decizie LTV:** ca o semnătură să poată fi verificată și peste ani, Suite ar trebui să întrebe pe internet serverele emitentului certificatului (OCSP / CRL), la semnare. E în regulă, doar la cererea lui, ca la marca temporală?
 - **Kit:** 0.9.5 e gata (Cyber-Office-Studio-Instalare-0.9.5.exe, lista CE-E-NOU-0.9.5.txt); următorul va fi 0.9.6, doar când îl cere. Pe laptop Smart App Control blochează kitul nesemnat (JURNAL.md, 28.10). Dacă suita se va vinde: o verificare juridică a licenței.
 - **Semnături și facturi reale:** semnarea cu tokenul lui (PDF → 🔏 Semnează digital, Docs → .docx semnat digital), un .p7m / .docx semnat real pentru colecția de test, și o factură reală trimisă din Sheets → Factură (e-Factura) → Export XML în SPV.
-- **Fișiere salvate din Suite deschise la serviciu** (aici nu le putem verifica): .pptx cu scheme (Radial divergent, Venn stivuit, Proces cu cercuri, Listă cu etape), teme, cerneală, conectori și text pe arc; .xlsx cu tabele, stiluri, poze în celule, legături, teme (Mentă / Ardezie), forme desenate de mână; .docx cu ecuații, secțiuni, urmăriri, semnătură și forme din desen; .psd cu text și trasee; PDF/X și CMYK duse la tipografie.
-- **Încercări de folosire reală** (pașii exacți sunt la „Cum testezi” în JURNAL.md, pe zile): cu o tabletă grafică sau un laptop cu creion, Imagini → Pensulă și Slides → ✏ Desenează (se îngroașă linia când apeși?); Docs → Diagramă → Listă în piramidă; temele Salvie / Oțel; Docs / Sheets → ✏ Desen → ◇ În formă; Pictograme → Educație / Sănătate (se recunosc?); Video → Ochi vertical; Docs → Gramatică pe documente reale; Notițe → Casetă liberă, lipire din browser, scris de mână → text; PDF → scanner, Combină / Lot cu e-mailuri, Elimină paginile goale, conversie în .xlsx / .pptx, preflight; Sheets → Pivot, Rezolvitor, Din web / PDF / imagine; Imagini → RAW, .eps, panoramă, profiluri de culoare.
+- **Fișiere salvate din Suite deschise la serviciu** (aici nu le putem verifica): .pptx cu scheme (Radial divergent, Venn stivuit, Venn liniar, Săgeată ascendentă, Proces cu cercuri, Listă cu etape), teme, cerneală, conectori și text pe arc; .xlsx cu tabele, stiluri, poze în celule, legături, teme (Mentă / Ardezie), forme desenate de mână; .docx cu ecuații, secțiuni, urmăriri, semnătură și forme din desen; .psd cu text și trasee; PDF/X și CMYK duse la tipografie.
+- **Încercări de folosire reală** (pașii exacți sunt la „Cum testezi” în JURNAL.md, pe zile): o declarație ANAF în PDF → fila Formular (Datele .xml, Verifică câmpurile obligatorii); cu o tabletă grafică sau un laptop cu creion, Imagini → Pensulă și Slides → ✏ Desenează (se îngroașă linia când apeși?); Docs → Diagramă → Listă în piramidă; temele Salvie / Oțel; Docs / Sheets → ✏ Desen → ◇ În formă; Pictograme → Educație / Sănătate (se recunosc?); Video → Ochi vertical; Docs → Gramatică pe documente reale; Notițe → Casetă liberă, lipire din browser, scris de mână → text; PDF → scanner, Combină / Lot cu e-mailuri, Elimină paginile goale, conversie în .xlsx / .pptx, preflight; Sheets → Pivot, Rezolvitor, Din web / PDF / imagine; Imagini → RAW, .eps, panoramă, profiluri de culoare.
