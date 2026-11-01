@@ -357,3 +357,4 @@
 - 2026-11-01 14:34 — PDF: verificarea PDF/A cu reguli noi (și nivelurile „a” / „u”), repetate de „Fă-l PDF/A”; Gramatică: litere cu sedilă, pleonasme noi, „vei fii” → „vei fi” și alte scrieri greșite; 4 pași, testele trec.
 - 2026-11-01 15:15 — Docs: limba recunoscută în timp ce scrii (și portugheză / olandeză / poloneză), Combină mai multe .docx deodată; Notițe: tabelele din foi de calcul se aduc singure la zi; 4 pași, testele trec.
 - 2026-11-01 16:03 — Sheets: macrocomenzile înregistrează și sortarea, filtrele, lățimile și rândurile / coloanele ascunse (la rulare pe datele de atunci); 3 pași, testele trec.
+- 2026-11-01 16:46 — Imagini: Acțiunile au opriri cu mesaj, se salvează / încarcă din fișier .sactions și se grupează pe seturi; 3 pași, testele trec.
