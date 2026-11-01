@@ -742,6 +742,7 @@ Format:
   scrie textul pe rânduri întregi / în bloc, fără redesenare pe fiecare simbol; (3) simboluri identice (vectorii #477 + `--control`).
   Ținta: ≥ 150 simb/s fără ecran și ≥ 120 cu ecran. Apoi Release nou + pașii scurți pentru Adrian.
 - stare: preluat (2026-11-01 12:45, sesiunea OS) — P6-39
+- stare: gata (2026-11-01 13:35) — rezultat: proiecția rulează acum pe firele împărțirii pe capete (numărul ei de fire e căutat de `--cauta`), textul merge pe ecran în bloc și consola mută ecranul o dată pe bloc, simbolurile identice; Release `os-211` (pașii pentru Adrian în `stare/cyber-universe.md`).
 
 ### C-49 · cyber-gpu · I4 TRECE pe placa reală — propune fereastra următoare (primele scrieri)
 - data: 2026-11-01 11:55 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
