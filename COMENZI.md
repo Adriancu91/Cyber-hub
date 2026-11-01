@@ -768,3 +768,11 @@ Format:
   Dacă e nevoie de cod nou în OS (comenzi `gpu …` noi), propunere în `idei/` (centrul de comandă o aprobă).
 - stare: gata (2026-11-01 12:55, sesiunea Cyber-GPU 30b)
 - rezultat: planul fără Ubuntu în `cyber-gpu/docs/FEREASTRA_C-49.md` (6 pași, fiecare cu ce se scrie, ce se recitește, criteriul, oprirea); în SIMULARE: Bus Master cu recitire, FWSEC copiat din VBIOS, jurnal pe loc și verificatorul jurnalului I6; propunerea pentru OS `idei/2026-11-01_cyber-gpu-i6-in-os.md`.
+
+### C-52 · cyber-universe · Primele scrieri în placă din OS (I6): construire + testare în QEMU/simulare
+- data: 2026-11-01 19:25 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45; decizia „fizic doar Universe”)
+- ce: exact propunerea `idei/2026-11-01_cyber-gpu-i6-in-os.md`: fixarea cyber-gpu ≥ `d879742`; (1) `gpu pregatire-i6` (doar citire);
+  (2) jurnalul fiecărei citiri/scrieri pe stick, pe loc, cu ora; (3) `gpu i6 --scrie` cu confirmare „DA” tastată, pe stick-ul de test, Bus Master
+  oprit la loc la final. Teste în QEMU/simulare; **nicio rulare pe placa reală fără Adrian de față**. Release nou + pașii ferestrei pentru Adrian,
+  în română simplă, cu oprirea sigură (în `stare/cyber-universe.md`). Testul de viteză `os-211` (C-48) poate intra în aceeași fereastră.
+- stare: nou

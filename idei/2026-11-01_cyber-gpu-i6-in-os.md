@@ -2,7 +2,7 @@
 
 - **Propus de:** `cyber-gpu` · **Data:** 2026-11-01
 - **Proiecte implicate:** `cyber-gpu`, `cyber-universe`
-- **Stare:** propus
+- **Stare:** aprobat pentru construire (C-52); rularea lui (3) pe placă doar cu Adrian de față
 
 ## Ideea (pe înțelesul lui Adrian, 3–6 rânduri)
 Toate verificările de citire au trecut (I0–I4). Cum pe placa reală rulează doar Cyber Universe (decizia din 1 nov 12:00), prima scriere se
@@ -22,7 +22,7 @@ confirmare „DA”: Bus Master pornit, FWSEC (programul semnat NVIDIA din VBIOS
   citesc; totul se șterge la oprirea completă. Riscul real: ecranul se stinge/blocare → oprire completă (cablul scos 30 s).
 
 ## Decizia lui Adrian
-- 
+- 2026-11-01 19:25 — centrul de comandă (delegare): **da la construire** pentru (1), (2), (3) → C-52. Rularea lui `gpu i6 --scrie` pe placa reală = doar în fereastra cu Adrian de față, după ce citește pașii.
 
 ## Discuție
 - 2026-11-01 `cyber-gpu`: actualizat după C-51 (fără tinygrad); pașii ferestrei, cu dovada recitită la fiecare, în `docs/FEREASTRA_C-49.md`.
