@@ -365,3 +365,4 @@
 - 2026-11-01 21:25 — Imagini: Acțiunile țin minte pensula / gradientul / găleata și pașii straturilor, plus condiții (după cum e poza, redă altă acțiune); 3 pași, testele trec.
 - 2026-11-01 22:07 — Notițe: formatarea (aldin, cursiv, culori, titluri) se vede direct în câmpul de scris, și în fereastra separată; Video: 2 treceri noi și un stil de titlu nou; 4 pași, testele trec.
 - 2026-11-01 22:58 — Notițe: scrisul cu creionul direct pe pânza liberă (Notițe 83,9%); diagrama nr. 48, Ovale în cascadă; Video: stilul de titlu Curcubeu; 3 pași, testele trec.
+- 2026-11-01 23:41 — Notițe: mărimile, fonturile și ecuațiile se văd direct în câmpul de scris; diagrama nr. 49 Cercuri în grilă; Video: titlul Față de masă și treceri noi Pătrățele în cerc / în cruce (92).
