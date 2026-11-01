@@ -741,7 +741,7 @@ Format:
   (1) împarte proiecția pe toate firele ca celelalte produse (și include-o în `--cauta`); (2) afișarea pe ecran: 45,7 % din timp cu ecran —
   scrie textul pe rânduri întregi / în bloc, fără redesenare pe fiecare simbol; (3) simboluri identice (vectorii #477 + `--control`).
   Ținta: ≥ 150 simb/s fără ecran și ≥ 120 cu ecran. Apoi Release nou + pașii scurți pentru Adrian.
-- stare: nou
+- stare: preluat (2026-11-01 12:45, sesiunea OS) — P6-39
 
 ### C-49 · cyber-gpu · I4 TRECE pe placa reală — propune fereastra următoare (primele scrieri)
 - data: 2026-11-01 11:55 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
