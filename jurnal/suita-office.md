@@ -346,3 +346,4 @@
 - 2026-11-01 06:05 — 4 pași la formularele XFA din PDF (ANAF): date ca .xml (export / import), verificarea câmpurilor obligatorii, Golește formularul, Adună formulare… și pentru XFA; testele trec.
 - 2026-11-01 06:49 — 4 pași: diagramele Venn liniar și Săgeată ascendentă (31 de feluri); în Video 2 treceri noi (64) și 2 stiluri de titlu noi (42); testele trec.
 - 2026-11-01 07:32 — 3 pași în Imagini: notele 🗒 se păstrează în .psd, textura pensulei (hârtie, pânză…) și pensula dublă; Photoshop 84,3%; testele trec.
+- 2026-11-01 08:15 — 3 pași în Imagini: Selectează și maschează complet (Contrast, Decontaminare culori, Strat nou cu mască, pensula Rafinează marginea) și pensulele ＋ / − la Zonă de focalizare; Photoshop 84,7%; testele trec.

@@ -1,16 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 07:32 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 08:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 06:52–07:32, 3 pași în Imagini, testele trec:
-  - notele 🗒 de pe poză se salvează în .psd și apar din nou la deschidere (text, autor, culoare, loc);
-  - **textura pensulei** (Hârtie, Pânză, Nisip, Cărămizi, Dungi, Piatră, cu Adâncime și Mărime) și pensulele gata Cretă pe hârtie, Pictură pe pânză;
-  - **pensula dublă** (a doua pensulă pe același drum: margini rupte, pete) și pensula gata Burete.
-- Sesiunea dinainte (06:07–06:50): diagramele Venn liniar și Săgeată ascendentă (31 de feluri); în Video 2 treceri noi (64) și 2 stiluri de titlu noi (42).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 07:32–08:15, 3 pași în Imagini, testele trec:
+  - **Selectează și maschează**: glisorul Contrast, Decontaminare culori (scoate tenta fundalului de pe margine) și rezultatul „Strat nou cu mască”;
+  - tot acolo, pensula **🖌 Rafinează marginea** (pictezi peste păr / blană, selecția se calculează din culori); funcția e acum completă;
+  - **Zonă de focalizare**: pensulele ＋ Adaugă / − Scoate pictate pe previzualizare; și ea e completă.
+- Sesiunea dinainte (06:52–07:32): notele 🗒 păstrate în .psd, textura pensulei și pensula dublă.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,3%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,7%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (la PDF: certificatele EC de pe token; la Notițe rămân cele mari: formatarea văzută direct în câmpul de scris, o notiță singură în fereastră separată, scrisul cu creionul direct pe pânză).
