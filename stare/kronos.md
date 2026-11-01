@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-01 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-01 11:55 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -18,7 +18,7 @@
 - **S61 gata: AJUTĂ** — cu încorporările pornite mici (abaterea 0,02), pierderea de pornire 10,7 (în loc de 474) și după 10 minute 3,77 (în loc de 6,82); aceeași memorie (6.078 MB) și viteză. 1168 teste trec.
 
 ## Urmează
-- **S58** (aprobat de Adrian, C-47): **cele 10 ore de antrenare `cod_c1`: 1 nov de la 19:00** (după fereastra OS/GPU, dacă Adrian e la workstation), cu `cod_c1` sau, dacă alege Adrian, `cod_c1_init002` (varianta S61). Placa liberă ziua. Praguri scrise dinainte (biți/octet ≤ 1,10 și pass@10 ≥ 10/200).
+- **S58** (aprobat de Adrian, C-47; configurarea aleasă de Adrian, C-50): **cele 10 ore de antrenare: 1 nov de la 19:00, cu `cod_c1_init002`** (varianta S61), după fereastra OS/GPU dacă Adrian e la workstation. Pre-înregistrarea se actualizează înainte de pornire. Praguri neschimbate (biți/octet ≤ 1,10 și pass@10 ≥ 10/200).
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Reper de viteză pe Windows pentru #477: 1 fir ~2,14 s / răspuns de 64 simboluri, placa fp32 ~52 simb/s.
@@ -33,7 +33,6 @@
 ## Blocaje / nevoie de Adrian
 - **Release-ul privat `kronos-kgr1-477`** (executantul n-are voie la `gh`; fără el OS-ul nu are fișierul pentru stick). Pe workstation, în PowerShell, din `C:\Kronos\cyberspace`:
   `gh release create kronos-kgr1-477 lucru/export/kronos_477_q8_0.kgr lucru/export/kronos_477_q8_0.kgr.sha256 --repo Adriancu91/cyberspace --title "Kronos #477 KGR1 Q8_0" --notes "SHA-256 bcbe8187087dbb3e531a8a7b10991cd24ea14a6e067d07c0fcbb8d3edd753963, 110859040 octeți"`
-- **Pe 1 nov, înainte de 19:00:** „S58 cu init002” dacă vrea varianta S61 (recomandată după cifre); fără răspuns = cum e aprobată.
 - Pe 1 nov: dacă Adrian vine la workstation pentru fereastra OS/GPU, să spună când — antrenarea S58 pornește după fereastră.
 - Opțional: excluderea mai îngustă propusă la S53; cauza repornirii din 29 oct (comanda din raportul S52).
 - La ferestrele OS/GPU viitoare: antrenarea de pe placă să fie oprită întâi.

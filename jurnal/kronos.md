@@ -67,3 +67,4 @@
 - 2026-10-31 20:56 — S59 gata (modelul citește simbolurile de cod, examen pe ore, 1159 teste). C-47 („da S58”) preluat: întâi S60 (proba de la zero + răspunsurile pentru pass@k, procesor), proba S58 în noaptea asta, cele 10 ore din 1 nov 19:00.
 - 2026-10-31 23:15 — S60 gata (proba de la zero + răspunsurile pentru pass@k, 1165 teste); S58 pașii 1–2 gata (pre-înregistrare, proba 6.078 MB / 63 °C). S61 aprobat: comparația inițializării încorporărilor (pierderea de pornire 474), configurare separată; cele 10 ore S58 rămân 1 nov 19:00.
 - 2026-11-01 02:15 — S61 gata și verificat: AJUTĂ (pornirea 10,7 în loc de 474; după 10 minute 3,77 în loc de 6,82, aceeași memorie). S58 (10 ore) pornește 1 nov 19:00; Adrian alege până atunci `cod_c1` sau `cod_c1_init002`.
+- 2026-11-01 11:55 — C-50 („da init002”) preluat: S58 (10 ore, 1 nov 19:00) pornește cu `cod_c1_init002`; pre-înregistrarea se actualizează înainte, pragurile neschimbate.
