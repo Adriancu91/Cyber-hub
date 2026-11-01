@@ -1,13 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 14:34 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 15:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 13:44–14:34, 4 pași, testele trec:
-  - PDF: verificarea PDF/A are reguli noi din standard (identificatorul fișierului, antetul, aceleași date în Info și XMP, formulare desenate, fără elemente interzise; la nivelurile „a” / „u” textul fonturilor și etichetele), iar „Fă-l PDF/A” repară și ce e nou;
-  - Gramatică (Docs, Sheets, Slides, Notițe): literele vechi cu sedilă (ş, ţ → ș, ț), pleonasme noi (ieși afară, intra înăuntru, repeta din nou…), „vei fii” → „vei fi”, „acelaș” → „același” și alte scrieri greșite.
-- Sesiunea dinainte (12:52–13:44): 6 treceri și 4 stiluri de titlu în Video, diagramele Cercuri crescătoare și Radial cu hexagoane.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:33–15:15, 4 pași, testele trec:
+  - Docs: limba unui paragraf scris în altă limbă e recunoscută **în timp ce scrii** (nu doar la Enter), iar paragraful următor nu o mai moștenește; recunoaște acum și **portugheza, olandeza, poloneza**;
+  - Docs: **🔀 Combină mai multe .docx…**: copiile corectate de mai mulți oameni puse deodată peste document, fiecare modificare pe numele ei;
+  - Notițe: tabelele puse din .xlsx / .csv **se aduc singure la zi** când deschizi notița.
+- Sesiunea dinainte (13:44–14:34): reguli noi la verificarea PDF/A, gramatică (sedile, pleonasme, „vei fii”).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,8%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 

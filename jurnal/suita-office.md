@@ -355,3 +355,4 @@
 - 2026-11-01 12:51 — Slides: 3 șabloane noi (Plan de afaceri, Bun venit în echipă, Eveniment); diagrama Arc (40 de feluri); Video: 4 treceri noi (80) și 2 stiluri de titlu (56); toate testele trec.
 - 2026-11-01 13:44 — Video: 6 treceri noi (86) și 4 stiluri de titlu (60); diagramele Cercuri crescătoare și Radial cu hexagoane în Docs / Sheets / Notițe / Slides (42 de feluri); 7 pași, testele trec.
 - 2026-11-01 14:34 — PDF: verificarea PDF/A cu reguli noi (și nivelurile „a” / „u”), repetate de „Fă-l PDF/A”; Gramatică: litere cu sedilă, pleonasme noi, „vei fii” → „vei fi” și alte scrieri greșite; 4 pași, testele trec.
+- 2026-11-01 15:15 — Docs: limba recunoscută în timp ce scrii (și portugheză / olandeză / poloneză), Combină mai multe .docx deodată; Notițe: tabelele din foi de calcul se aduc singure la zi; 4 pași, testele trec.
