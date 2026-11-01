@@ -367,3 +367,4 @@
 - 2026-11-01 22:58 — Notițe: scrisul cu creionul direct pe pânza liberă (Notițe 83,9%); diagrama nr. 48, Ovale în cascadă; Video: stilul de titlu Curcubeu; 3 pași, testele trec.
 - 2026-11-01 23:41 — Notițe: mărimile, fonturile și ecuațiile se văd direct în câmpul de scris; diagrama nr. 49 Cercuri în grilă; Video: titlul Față de masă și treceri noi Pătrățele în cerc / în cruce (92).
 - 2026-11-02 00:22 — Imagini: fereastra Umplere după conținut… (zona de eșantionare pictată, previzualizare, rezultat pe strat nou, Adaptarea culorilor, Oglindirea); 4 pași, testele trec.
+- 2026-11-02 01:15 — Imagini: Umplere după conținut cu Rotirea și Scalarea bucăților; diagrama nr. 50 Listă cu buline pe linie; Video: titlurile Tablă albă și Etichetă de preț, trecerile Pătrățele în X (94); 6 pași, testele trec.

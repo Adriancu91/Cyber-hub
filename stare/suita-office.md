@@ -1,18 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 00:22 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 01:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 23:42–00:22, 4 pași, testele trec, toate la Imagini:
-  - fereastra nouă **✨ Umplere după conținut…**: zona de unde se iau bucățile (verde) se pictează cu pensula ＋ / −, iar rezultatul se vede în previzualizare înainte de Aplică;
-  - rezultatul poate merge **pe un strat nou**; bifele noi **Adaptarea culorilor** (bucățile primesc lumina locului) și **Oglindirea** (bucăți întoarse stânga-dreapta).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 00:22–01:15, 6 pași, testele trec:
+  - Imagini → **✨ Umplere după conținut…**: bife noi **Rotirea** (bucăți rotite cu 90 / 180 / 270 de grade) și **Scalarea** (bucăți mai mici sau mai mari);
+  - diagrama nr. 50, **Listă cu buline pe linie** (Docs, Sheets, Notițe, Slides);
+  - Video: stilurile de titlu **Tablă albă** și **Etichetă de preț** (65), trecerile **Pătrățele în X** (94).
 - Raportul de testare completă: Raport-testare-01.11.html (în dosarul proiectului).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (la PDF: certificatele EC de pe token; la Imagini: rotirea și scalarea peticelor la umplere).
+- Alte funcții „parțial” / „nu” din inventar (la PDF: certificatele EC de pe token).
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice și despărțirea în silabe românească, semnarea / verificarea XML (XML-DSig, scrise de la zero).
