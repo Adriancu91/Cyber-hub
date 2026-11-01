@@ -775,7 +775,8 @@ Format:
   (2) jurnalul fiecărei citiri/scrieri pe stick, pe loc, cu ora; (3) `gpu i6 --scrie` cu confirmare „DA” tastată, pe stick-ul de test, Bus Master
   oprit la loc la final. Teste în QEMU/simulare; **nicio rulare pe placa reală fără Adrian de față**. Release nou + pașii ferestrei pentru Adrian,
   în română simplă, cu oprirea sigură (în `stare/cyber-universe.md`). Testul de viteză `os-211` (C-48) poate intra în aceeași fereastră.
-- stare: preluat (2026-11-01 17:24 UTC, sesiunea OS) — P6-40
+- stare: gata (2026-11-01 18:37 UTC, sesiunea OS; preluat 17:24 UTC) — P6-40
+- rezultat: `gpu pregatire-i6` (doar citire), jurnalul fiecărui acces pe stick pe loc și `gpu i6 --scrie` (cu „DA”, doar în stick-ul de test `cyber-universe-gpu-scrie-usb.img`) testate în QEMU/simulare; CI verde, Release `os-212`; pașii ferestrei pentru Adrian în `stare/cyber-universe.md`.
 
 ### C-53 · cyber-universe · Bucla automată, partea OS: modul „test automat” + ceas de siguranță + scriptul pentru Windows
 - data: 2026-11-01 19:45 · de la: **Adrian** („da bucla automată”), prin centrul de comandă — vezi DECIZII 1 nov 19:45
@@ -790,7 +791,7 @@ Format:
       la revenirea în Windows citește `auto/raport-*.txt` de pe stick și îl pregătește pentru hub. Fără parole sau chei în script.
   (4) documentație pentru pregătirea cu Adrian (pași exacți, în română simplă): BIOS (Secure Boot oprit, Windows primul), intrare automată în Windows,
       dreptul de administrator doar pentru script. Release nou.
-- stare: nou
+- stare: preluat (2026-11-01 18:55 UTC, sesiunea OS) — P6-41
 
 ### C-54 · cyber-gpu · Pași în lanț + date reale mai multe (emulatorul să semene cu workstation-ul)
 - data: 2026-11-01 19:45 · de la: **Adrian** („da bucla automată”), prin centrul de comandă — vezi DECIZII 1 nov 19:45
