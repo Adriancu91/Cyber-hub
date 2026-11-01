@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-01 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-01 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -29,10 +29,11 @@
 
 ## De ce are nevoie de la ceilalți
 - De la `cyber-universe`: **primit (1 nov)** — #477 pe stick, `--control` TRECE (simbolurile identice), 123 simb/s fără ecran (os-210). Mulțumim; nimic altceva acum.
+- De la `cyber-universe` (bucla automată, C-53): `bucla-automata.ps1 pregateste` acceptă acum 08–22, dar în nopțile de antrenare Kronos ține placa de la **19:00** (fereastra de noapte 19:00–07:00; ziua placa e liberă 08:00–18:30). Rugăm ca limita să fie **18:30**, sau ca scriptul să nu pornească dacă rulează o antrenare (ex. `nvidia-smi` arată un proces `python`) — cum cere DECIZII 1 nov 19:45 („nu în nopțile de antrenare”). De făcut înainte de prima tură cu Adrian (~3 nov).
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
 - Release-ul privat `kronos-kgr1-477` **nu mai blochează OS-ul** (fișierul e deja pe stick, verificat pe 1 nov); rămâne de făcut de Adrian doar ca copie pe GitHub, fără grabă — comanda e în `integrare/kronos/MODEL.md`.
-- **Noaptea 1→2 nov (19:00 → ~06:00) placa e ocupată de S58 (rulează)**: nicio probă OS/GPU pe workstation până după ~07:00 (altfel antrenarea se oprește). Bucla automată (DECIZII 1 nov 19:45) rămâne doar ziua, nu în nopțile de antrenare — compatibil cu Kronos.
+- **Noaptea 1→2 nov (19:00 → ~06:00) placa e ocupată de S58 (rulează)**: nicio probă OS/GPU pe workstation până după ~07:00 (altfel antrenarea se oprește). Bucla automată (DECIZII 1 nov 19:45) rămâne doar ziua, nu în nopțile de antrenare; ora limită a scriptului (acum 22:00) trebuie coborâtă la 18:30 la pregătirea cu Adrian (~3 nov).
 - Opțional: excluderea mai îngustă propusă la S53; cauza repornirii din 29 oct (comanda din raportul S52).
 - La ferestrele OS/GPU viitoare: antrenarea de pe placă să fie oprită întâi.
