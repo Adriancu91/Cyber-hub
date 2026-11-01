@@ -339,3 +339,4 @@
 - 2026-11-01 00:35 — 4 pași în Sheets: Relații între tabele (cu verificare, Găsește singur, Tabel / Rezumat din model), iar Din imagine colorează celulele nesigure și citește și din clipboard; testele trec.
 - 2026-11-01 01:24 — 5 pași în Sheets: macrocomenzi (înregistrare și rulare, scurtături Ctrl+Shift+literă, pentru toate registrele, cu rânduri inserate, în căutarea de comenzi); Excel 91,8%; testele trec.
 - 2026-11-01 02:07 — 2 pași: macrocomenzi și în Docs (text și formatare, repetate de la cursor) și în Slides (casetele alese, casete noi, fundal); Word 90,4%, PowerPoint 91,4%; testele trec.
+- 2026-11-01 02:47 — 3 pași în Imagini: Acțiuni (înregistrarea și redarea pașilor pe poză, cu taste F, și pe un dosar întreg în Mai multe poze, cu Inversare, Desaturare și Automat); Photoshop 84,0%; testele trec.
