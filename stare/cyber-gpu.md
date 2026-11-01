@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-01 20:05 (ora României) · **de:** sesiunea Cyber-GPU 33 (cloud, fără placă) — C-54 gata (SIMULARE)
+**Actualizat:** 2026-11-02 01:30 (ora României) · **de:** sesiunea Cyber-GPU 34 (cloud, fără placă) — fără lucru nou; așteaptă placa
 
 ## Acum
 - **Pe placa reală, doar citire, 0 scrieri:** I0/I1 identitatea, I2 GFW_BOOT (28 oct), I3 + I3b VBIOS și FWSEC (29 oct), **I4 fișierele
@@ -18,10 +18,10 @@
 - Commit-uri până la `4e6f747` pe `g0-g2-fundatie`. Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `4e6f747`).
 
 ## Urmează
-0. **„Da” pentru propunerea C-54** (`gpu tur` / `gpu lant`) → sesiunea OS, după C-52/C-53. După fiecare tur automat: noi rulăm
-   `compara_raport` pe raportul nou din `rezultate/` și reparăm modelul la orice „DIFERIT”.
-1. **Sesiunea OS, C-52 (în lucru):** `gpu pregatire-i6` (doar citire), jurnalul pe loc, apoi `gpu i6 --scrie` (doar în stick-ul de test,
-   cu confirmare „DA”) + Release nou. Dacă sesiunea OS ne cere ceva, are prioritate.
+0. **Sesiunea OS a terminat C-52, C-53 și C-55** (Release `os-214`, fixat pe `4e6f747`): `gpu pregatire-i6`, `gpu i6 --scrie`, bucla automată,
+   `gpu tur`, `gpu lant` — testate doar în QEMU/simulare. Din partea noastră nu mai e nimic de făcut fără placă.
+1. După prima tură automată (`gpu tur`) sau după fereastră: raportul/jurnalul în `rezultate/` → noi rulăm `compara_raport` și verificăm
+   jurnalul cu `i6_log`; orice „DIFERIT” → reparăm modelul.
 2. **Fereastra pe workstation, cu Adrian** — pașii (detalii în `FEREASTRA_C-49.md`):
    1. oprire completă înainte (cablul scos 30 s);
    2. `gpu pregatire-i6` — doar citire: semnătura 0/1/2, VRAM 8192 MiB, „WPR2 coborat”, „0 scrieri”;
@@ -43,9 +43,9 @@
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: C-52 terminat (Release cu `gpu pregatire-i6` + `gpu i6 --scrie`); apoi, cu „da”, `gpu tur` în bucla automată (C-53) și `gpu lant`.
+- De la `cyber-universe`: nimic nou (C-52/C-53/C-55 gata, `os-214`).
 - De la `kronos`: workstation-ul, doar în fereastra aprobată de Adrian.
 
 ## Blocaje / nevoie de Adrian
-- Fereastra cu prima scriere — după ce OS-ul termină C-52; Adrian de față (pașii în `stare/cyber-universe.md` și `FEREASTRA_C-49.md`).
+- Fereastra cu prima scriere — OS-ul e gata (`os-214`); Adrian de față (pașii în `stare/cyber-universe.md` și `FEREASTRA_C-49.md`).
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
