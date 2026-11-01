@@ -359,3 +359,4 @@
 - 2026-11-01 16:03 — Sheets: macrocomenzile înregistrează și sortarea, filtrele, lățimile și rândurile / coloanele ascunse (la rulare pe datele de atunci); 3 pași, testele trec.
 - 2026-11-01 16:46 — Imagini: Acțiunile au opriri cu mesaj, se salvează / încarcă din fișier .sactions și se grupează pe seturi; 3 pași, testele trec.
 - 2026-11-01 17:25 — Docs / Sheets / Notițe / Slides: 4 diagrame noi (Romburi în zigzag, Triunghiuri alternante, Cruce de idei, Piramidă din triunghiuri; 46 de feluri); 4 pași, testele trec.
+- 2026-11-01 18:36 — Observațiile de aspect din testarea completă reparate (Video, Imagini, Notițe, filele de tabel din Docs); PDF: filmele vechi se transformă singure în .mp4; Docs → Inserare întreagă la 1920 px; 3 pași, testele trec.
