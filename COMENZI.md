@@ -791,7 +791,8 @@ Format:
       la revenirea în Windows citește `auto/raport-*.txt` de pe stick și îl pregătește pentru hub. Fără parole sau chei în script.
   (4) documentație pentru pregătirea cu Adrian (pași exacți, în română simplă): BIOS (Secure Boot oprit, Windows primul), intrare automată în Windows,
       dreptul de administrator doar pentru script. Release nou.
-- stare: preluat (2026-11-01 18:55 UTC, sesiunea OS) — P6-41
+- stare: gata (2026-11-01 20:32 UTC, sesiunea OS; preluat 18:55 UTC) — P6-41
+- rezultat: la pornire, `auto/teste.txt` → doar comenzile care citesc (scrierile în placă refuzate), raport pe loc, lista redenumită, repornire; ceas de siguranță (implicit 10 min) testat cu o comandă blocată; scriptul Windows `bucla-automata.ps1` + `docs/BUCLA_AUTOMATA.md`; testat în QEMU, CI verde, Release `os-213` (scriptul nerulat încă pe Windows → prima tură cu Adrian).
 
 ### C-54 · cyber-gpu · Pași în lanț + date reale mai multe (emulatorul să semene cu workstation-ul)
 - data: 2026-11-01 19:45 · de la: **Adrian** („da bucla automată”), prin centrul de comandă — vezi DECIZII 1 nov 19:45

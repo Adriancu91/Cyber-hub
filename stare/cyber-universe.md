@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-01 ~20:45 (ora României) · **de:** sesiunea OS programată · ultima sarcină: **C-52 gata (P6-40)**; CI verde, Release `os-212`
+**Actualizat:** 2026-11-01 22:35 (ora României) · **de:** sesiunea OS programată · ultimele sarcini: **C-52 gata (P6-40, `os-212`)**, **C-53 gata (P6-41, `os-213`)**; C-55 urmează
 
 ## Acum
 - **C-52 gata (P6-40) — primele scrieri în placă din OS (pasul I6), construite și testate DOAR în simulare:**
@@ -12,10 +12,21 @@
   - În simulare TRECE cap-coadă (84 de scrieri în cele 18 registre din plan, WPR2 unde trebuie, jurnalul verificat cu `i6_log` al Cyber-GPU).
 - Cyber-GPU fixat pe `9597863`. Nimic nu a rulat pe placa reală.
 
+- **C-53 gata (P6-41) — bucla automată, partea OS (testată doar în QEMU):**
+  - Dacă pe stick există `auto\teste.txt`, sistemul rulează la pornire comenzile din listă, **doar cele care citesc** (lista albă);
+    `gpu i6 --scrie`, orice `--scrie`, `reboot`, rețeaua = refuzate și notate. Raportul `auto\raport-<data>.txt` se scrie după fiecare comandă
+    (și ce afișează Kronos), cu rândul „REZULTAT: n rulate, m refuzate”; lista devine `teste-facut-<data>.txt`; calculatorul repornește singur.
+  - **Ceasul de siguranță:** repornire dacă lista nu termină în 10 minute (sau `ceas N`); o listă întreruptă nu se reia („INTRERUPT” în raport).
+  - Scriptul pentru Windows `bucla-automata.ps1` (în Release): `pregateste` (pune Release-ul pe stick păstrând `kronos\`, `firmware\`, `cyber.rw`,
+    scrie lista, „pornește o dată de pe stick”, repornește; doar 08–22) și `citeste` (rapoartele, gata de pus în `rezultate/`). Fără parole sau chei.
+    **Nerulat încă** (în cloud nu există PowerShell) → prima tură cu Adrian.
+  - Pregătirea cu Adrian, pas cu pas: `docs/BUCLA_AUTOMATA.md` din repo-ul OS.
+
 ## Urmează
 - Fereastra I6 pe workstation **cu Adrian de față** (pașii mai jos), apoi jurnalul de pe stick → `rezultate/` → Cyber-GPU îl compară cu simularea.
 - Testul Kronos cu `os-211`/`os-212` (C-48) poate intra în aceeași fereastră.
-- C-53 (bucla automată, P6-41) e preluată de o altă sesiune OS, în paralel; ea va actualiza starea la final.
+- **C-55** (`gpu tur` pe lista albă a buclei + `gpu lant` doar cu „DA”) — sesiunea OS următoare.
+- Watchdog-ul chipsetului (ceasul de siguranță „hardware”): după ce vedem placa de bază a workstation-ului.
 
 ## Ce oferă proiectul celorlalți
 - Pentru `cyber-gpu`: `gpu pregatire-i6`, `gpu i6 --scrie` și jurnalul pe loc (formatul `Event`, citibil cu `i6_log::parse_line`).
@@ -38,4 +49,7 @@
   - După: pozele + `raport\*.txt` + `raport\gpu-jurnal-*.txt` de pe stick → `rezultate/<data>-workstation-i6/`.
 - **Kronos pe workstation cu `os-211` (C-48, ~6 min):** `cpu porneste`, `run kronos-calcul --cauta`, `run kronos --control`,
   `run kronos --profil --fara-ecran --n 64 Buna ziua`, `run kronos --profil --n 64 Buna ziua`, `raport` → `rezultate/`.
+- **Bucla automată (la întoarcere, ~3 nov, ~20 min, o singură dată):** pașii din `docs/BUCLA_AUTOMATA.md` (repo OS): în BIOS Secure Boot oprit și
+  Windows primul la pornire; intrarea automată în Windows (o alegi tu); PowerShell ca administrator → `.\bucla-automata.ps1 pregateste -DosarRelease <dosarul Release-ului>`;
+  urmărim împreună prima tură; înapoi în Windows `.\bucla-automata.ps1 citeste`.
 - `github.token`, `claude.key`, tag-ul `stabil-2026-10-23`, P5-07: mai târziu.
