@@ -108,3 +108,4 @@
 - 2026-11-01 13:35 — C-48 gata (P6-39): proiecția Kronos pe firele capetelor (căutată de `--cauta`), textul pe ecran în bloc, consola mută ecranul o dată pe bloc; simboluri identice; CI verde, Release `os-211`.
 - 2026-11-01 14:41 — sesiune programată, oprire scurtă: nicio comandă nouă pentru `cyber-universe`; CI verde, Release `os-211`; așteptăm testul pe workstation cu `os-211`.
 - 2026-11-01 17:41 — sesiune programată, oprire scurtă: nicio comandă nouă pentru `cyber-universe`; CI verde, Release `os-211`; așteptăm testul pe workstation cu `os-211`.
+- 2026-11-01 20:40 — C-52 gata (P6-40): `gpu pregatire-i6`, jurnalul pe loc pe stick, `gpu i6 --scrie` doar pe stick-ul de test (`gpu-scrie`, „DA”); trece în simulare; CI verde, Release `os-212`; fereastra I6 așteaptă pe Adrian.

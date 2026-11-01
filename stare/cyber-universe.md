@@ -1,39 +1,41 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-01 17:41 (ora României) · **de:** sesiunea OS programată (oprire scurtă, nicio comandă nouă) · ultima sarcină: **C-48 gata (P6-39)**; CI verde, Release `os-211`
-(oprirea „OPRIT” ridicată de C-48)
+**Actualizat:** 2026-11-01 ~20:45 (ora României) · **de:** sesiunea OS programată · ultima sarcină: **C-52 gata (P6-40)**; CI verde, Release `os-212`
 
 ## Acum
-- **C-48 gata (P6-39) — proiecția Kronos și ecranul:**
-  - Proiecția **era** pe toate 36 de fire, dar vine imediat după împărțirea qkv + atenție (o parte pe cap: 12 fire lucrează, 24 așteaptă)
-    și pornea și pe firele care stătuseră degeaba. Acum, la generare, rulează pe firele care tocmai au lucrat (`fire_proiectie`,
-    implicit câte capete: 12 la #477). Simbolurile identice (fiecare valoare de un singur fir, același cod).
-  - `kronos-calcul --cauta` măsoară acum ca `kronos` (cu împărțirea pe capete) și caută și firele proiecției (verificate cu controlul),
-    scriind `fire_proiectie` în reglaj. `kronos --fire-proiectie N` pentru probe.
-  - Ecran: textul generat merge în bloc, cel mult o dată pe secundă; consola mută ecranul o singură dată pe bloc (era ~59 ms pe rând).
-- Suita QEMU 80/80 + 1 sărit; CI verde la prima încercare → **Release `os-211`**. Ținta (≥ 150 / ≥ 120 simb/s) se vede doar pe workstation.
+- **C-52 gata (P6-40) — primele scrieri în placă din OS (pasul I6), construite și testate DOAR în simulare:**
+  - `gpu pregatire-i6` (**doar citire**): unde e FWSEC în VBIOS, siguranța → semnătura, VRAM, WPR2, regiunea FRTS, „criteriul I6-citire”.
+  - Jurnalul pe loc: fiecare citire/scriere în placă merge pe stick, cu ora, în `/usb/raport/gpu-jurnal-NNN.txt`, în clipa în care se face.
+  - `gpu i6 --scrie` (cere „DA”): Bus Master pornit → FWSEC (programul semnat NVIDIA din VBIOS) încărcat prin DMA în falcon-ul GSP →
+    Bus Master oprit la loc (și la eroare). Există **doar pe stick-ul de test** (`kernel-gpu-scrie` / `cyber-universe-gpu-scrie-usb.img`);
+    sistemul obișnuit nu poate scrie deloc în placă. Gard în plus în OS: doar bitul Bus Master și doar fereastra GSP.
+  - În simulare TRECE cap-coadă (84 de scrieri în cele 18 registre din plan, WPR2 unde trebuie, jurnalul verificat cu `i6_log` al Cyber-GPU).
+- Cyber-GPU fixat pe `9597863`. Nimic nu a rulat pe placa reală.
 
 ## Urmează
-- Fereastra următoare pe workstation cu `os-211` (pașii mai jos) → cifrele noi în `rezultate/` → pașii următori.
-- Coada fără alte sarcini libere (P6-10, P6-12 p.2 hardware; P5-07 blocat; C-7, C-11 după întoarcerea lui Adrian; C-41 amânat) →
-  sesiunile următoare se opresc scurt până la o comandă nouă în `COMENZI.md` sau un rezultat nou în `rezultate/`.
+- Fereastra I6 pe workstation **cu Adrian de față** (pașii mai jos), apoi jurnalul de pe stick → `rezultate/` → Cyber-GPU îl compară cu simularea.
+- Testul Kronos cu `os-211`/`os-212` (C-48) poate intra în aceeași fereastră.
+- C-53 (bucla automată, P6-41) e preluată de o altă sesiune OS, în paralel; ea va actualiza starea la final.
 
 ## Ce oferă proiectul celorlalți
-- Biblioteci Rust fără dependențe (proprietare de la 28 oct; până la `0bf1303` MIT): `crypto/`, `tls/` (TLS 1.3), `json/`, `rtl8168/`, `e1000e/`.
-- Pentru Kronos: a doua implementare independentă a KGR1 și a tokenizerului (`user/src/kgr.rs`, `user/src/bpe.rs`); `--control` TRECE pe #477 (1 nov).
-- Pentru `cyber-gpu`: `gpu vbios --detalii`, `gpu fwsec`, `gpu firmware` (I4 TRECE pe placa reală, 1 nov) în `os-211`.
+- Pentru `cyber-gpu`: `gpu pregatire-i6`, `gpu i6 --scrie` și jurnalul pe loc (formatul `Event`, citibil cu `i6_log::parse_line`).
+- Biblioteci Rust proprii: `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`; a doua implementare KGR1 pentru Kronos.
 
 ## De ce are nevoie de la ceilalți
-- Nimic acum.
+- `cyber-gpu`: după fereastră, analiza jurnalului `gpu-jurnal-NNN.txt` (din `rezultate/`).
 
 ## Blocaje / nevoie de Adrian
-- **Stick-ul nou = Release `os-211`** (GitHub → cyber-universe → Releases, sau `actualizeaza` pe laptop cu cablu). Dacă scrii stick-ul de la zero,
-  pune la loc folderul `kronos\` (#477 + `.sha256`, #459), `cyber.rw` și `firmware\`. Reglajul vechi `reglaj-*.txt` poate rămâne (se rescrie la pasul 1).
-- **Workstation, Kronos (~6 min, cu `os-211`):** `cpu porneste`, apoi
-  1. `run kronos-calcul --cauta` → rândurile „cauta: proiectia pe … fire” și „cea mai buna pe …” (scrie reglajul nou);
-  2. `run kronos --control` → așteptat „CONTROL: TRECE (#477 …)”;
-  3. `run kronos --profil --fara-ecran --n 64 Buna ziua` (ținta ≥ 150 simb/s) și `run kronos --profil --n 64 Buna ziua` (ținta ≥ 120);
-  4. `raport`; pozele cu rândurile „profil:” + `raport/*.txt` + `kronos/reglaj-*.txt` → `rezultate/`.
-- **Test pe cele două laptopuri (~15 min, Secure Boot oprit, `os-194` sau mai nou):** AMD (Ryzen 5 4500U): `run kronos-calcul`, `cpu porneste`,
-  `run kronos-calcul --cauta`, `hw`, `raport`; Intel (ThinkPad L15 Gen 2): `lsusb`, `ls /usb`, `run kronos-calcul --cauta`, `raport`, `hw`.
-- Tag-ul `stabil-2026-10-23` (opțional); `github.token`, `claude.key`: mai târziu. B-003 / P5-07: mai târziu.
+- **Fereastra I6 (~20 min, DOAR când ai timp să fii de față; nimic nu se face fără tine):**
+  0. Pregătire: un **stick de test separat**, scris (ca de obicei, cu Rufus/balenaEtcher) din `cyber-universe-gpu-scrie-usb.img` din
+     Release `os-212` (are deja `cyber.rw`, deci jurnalul se poate scrie pe el). Workstation: **oprire completă, cablul scos 30 s**.
+  1. Pornești de pe stick, Esc → `cyber>`. Scrii `gpu pregatire-i6` → **poză**. Trebuie: „VRAM 8192 MiB”, „WPR2 coborat”,
+     „criteriul I6-citire: TRECE”, „0 scrieri”. Dacă NU TRECE: **stop**, poză, oprire, nu continua.
+  2. Scrii `gpu i6 --scrie`, citești avertismentul, scrii `DA` + Enter. Poate dura până la ~1 minut (fiecare scriere merge pe stick).
+     **Poză** cu toate rândurile; trebuie „pas I6 FWSEC-FRTS: ok”, „Bus Master oprit la loc”, „verificarea jurnalului … TRECE”, „rezultat I6: TRECE”.
+  3. Scrii `raport` (salvează tot pe stick).
+  4. **Oprire completă** (butonul ținut 10 s, cablul scos 30 s) → Windows → `nvidia-smi` + Kronos, ca de obicei.
+  - Dacă ecranul se stinge sau se blochează: aștepți 1 minut, apoi pasul 4. Jurnalul de până atunci e pe stick. **Nu repeta** în aceeași zi.
+  - După: pozele + `raport\*.txt` + `raport\gpu-jurnal-*.txt` de pe stick → `rezultate/<data>-workstation-i6/`.
+- **Kronos pe workstation cu `os-211` (C-48, ~6 min):** `cpu porneste`, `run kronos-calcul --cauta`, `run kronos --control`,
+  `run kronos --profil --fara-ecran --n 64 Buna ziua`, `run kronos --profil --n 64 Buna ziua`, `raport` → `rezultate/`.
+- `github.token`, `claude.key`, tag-ul `stabil-2026-10-23`, P5-07: mai târziu.
