@@ -358,3 +358,4 @@
 - 2026-11-01 15:15 — Docs: limba recunoscută în timp ce scrii (și portugheză / olandeză / poloneză), Combină mai multe .docx deodată; Notițe: tabelele din foi de calcul se aduc singure la zi; 4 pași, testele trec.
 - 2026-11-01 16:03 — Sheets: macrocomenzile înregistrează și sortarea, filtrele, lățimile și rândurile / coloanele ascunse (la rulare pe datele de atunci); 3 pași, testele trec.
 - 2026-11-01 16:46 — Imagini: Acțiunile au opriri cu mesaj, se salvează / încarcă din fișier .sactions și se grupează pe seturi; 3 pași, testele trec.
+- 2026-11-01 17:25 — Docs / Sheets / Notițe / Slides: 4 diagrame noi (Romburi în zigzag, Triunghiuri alternante, Cruce de idei, Piramidă din triunghiuri; 46 de feluri); 4 pași, testele trec.
