@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-01 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-01 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -18,7 +18,8 @@
 - **S61 gata: AJUTĂ** — cu încorporările pornite mici (abaterea 0,02), pierderea de pornire 10,7 (în loc de 474) și după 10 minute 3,77 (în loc de 6,82); aceeași memorie (6.078 MB) și viteză. 1168 teste trec.
 
 ## Urmează
-- **S58** (aprobat de Adrian, C-47; configurarea aleasă de Adrian, C-50): **cele 10 ore de antrenare: 1 nov de la 19:00, cu `cod_c1_init002`** (varianta S61), după fereastra OS/GPU dacă Adrian e la workstation. Pre-înregistrarea se actualizează înainte de pornire. Praguri neschimbate (biți/octet ≤ 1,10 și pass@10 ≥ 10/200).
+- **S58 RULEAZĂ** (aprobat de Adrian, C-47; configurarea aleasă de Adrian, C-50): 10 ore de antrenare pe cod cu `cod_c1_init002`, pornite 1 nov 19:00 (gata ~05:00–06:00), apoi examenul pass@k. Pre-înregistrarea actualizată la 18:59, înainte de pornire; praguri neschimbate (biți/octet ≤ 1,10 și pass@10 ≥ 10/200).
+- Pasul următor pe placă (2 nov ziua): decis după verdictul S58.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Reper de viteză pe Windows pentru #477: 1 fir ~2,14 s / răspuns de 64 simboluri, placa fp32 ~52 simb/s.
@@ -32,6 +33,6 @@
 
 ## Blocaje / nevoie de Adrian
 - Release-ul privat `kronos-kgr1-477` **nu mai blochează OS-ul** (fișierul e deja pe stick, verificat pe 1 nov); rămâne de făcut de Adrian doar ca copie pe GitHub, fără grabă — comanda e în `integrare/kronos/MODEL.md`.
-- **Noaptea 1→2 nov (19:00 → ~06:00) placa e ocupată de S58**: proba `os-211` pe workstation înainte de 19:00 sau după ~07:00 (altfel antrenarea se oprește).
+- **Noaptea 1→2 nov (19:00 → ~06:00) placa e ocupată de S58 (rulează)**: nicio probă OS/GPU pe workstation până după ~07:00 (altfel antrenarea se oprește). Bucla automată (DECIZII 1 nov 19:45) rămâne doar ziua, nu în nopțile de antrenare — compatibil cu Kronos.
 - Opțional: excluderea mai îngustă propusă la S53; cauza repornirii din 29 oct (comanda din raportul S52).
 - La ferestrele OS/GPU viitoare: antrenarea de pe placă să fie oprită întâi.
