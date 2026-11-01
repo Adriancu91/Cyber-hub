@@ -1,13 +1,12 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 04:17 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 05:06 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03:31–04:17, 4 pași, testele trec:
-  - **PDF criptat cu certificat:** se deschid și PDF-urile de la programe mai vechi (plicuri 3DES / DES / RC2) și se poate cripta / deschide și pentru certificatele cu cheie EC (P-256 / P-384 / P-521, cu .pfx); mesajul real la erorile certificatelor din Windows.
-  - **Diagrame:** felul nou Piramidă inversată în Docs / Sheets / Slides / Notițe (29 de feluri).
-  - **Video:** 2 treceri noi (Triunghi spre interior, Cerc spre colț; acum 62).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 04:18–05:06, 4 pași, testele trec:
+  - **Sheets:** Inserare → Controale → ▶ Buton macro: un buton în celulă care rulează o macrocomandă (clic sau Spațiu).
+  - **Docs:** butoane cu macrocomandă în text (câmpul MACROBUTTON): Vizualizare → ▶ Macrocomenzi → ⊞ Buton în text, dublu clic sau Alt+Shift+F9 le rulează; citite și scrise în .docx și .odt (până acum textul lor se pierdea la deschiderea .docx-urilor cu astfel de butoane).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,0%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
