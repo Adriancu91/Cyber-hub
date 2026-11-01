@@ -361,3 +361,4 @@
 - 2026-11-01 17:25 — Docs / Sheets / Notițe / Slides: 4 diagrame noi (Romburi în zigzag, Triunghiuri alternante, Cruce de idei, Piramidă din triunghiuri; 46 de feluri); 4 pași, testele trec.
 - 2026-11-01 18:36 — Observațiile de aspect din testarea completă reparate (Video, Imagini, Notițe, filele de tabel din Docs); PDF: filmele vechi se transformă singure în .mp4; Docs → Inserare întreagă la 1920 px; 3 pași, testele trec.
 - 2026-11-01 20:01 — Notițe: o notiță singură în fereastră separată (sincronizată cu caietul); diagrama nr. 47, Listă cu acoladă; reparat numărarea ideilor la Piramida din triunghiuri în Slides.
+- 2026-11-01 20:41 — Imagini: Acțiunile țin minte și selecțiile, umplerea / conturul selecției și decuparea (în proporții din poză, merg pe orice mărime și în lot); 3 pași, testele trec.
