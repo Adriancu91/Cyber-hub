@@ -807,4 +807,5 @@ Format:
 - data: 2026-11-01 20:25 · de la: Adrian („da bucla automată”), prin centrul de comandă
 - ce: exact propunerea `idei/2026-11-01_cyber-gpu-tur-si-lant.md`, împreună cu C-52 și C-53 (aceeași fixare cyber-gpu, ≥ `911e6d0`): `gpu tur` (0 scrieri) pe lista
   albă a modului automat; `gpu lant` doar cu „DA” tastat, interzis în modul automat. Teste QEMU/simulare; nimic pe placa reală fără Adrian.
-- stare: preluat (2026-11-01 21:50 UTC, sesiunea OS) — P6-42
+- stare: gata (2026-11-01 23:20 UTC, sesiunea OS; preluat 21:50 UTC) — P6-42
+- rezultat: `gpu tur` (0 scrieri, un rând `fapt …` pe fapt, pe lista albă a buclei) și `gpu lant` (doar cu „DA”, refuzat în buclă; în simulare oprit la I7 cu Bus Master pus la loc, și la eroare) — testate în QEMU, CI verde, Release `os-214`; nimic pe placa reală.
