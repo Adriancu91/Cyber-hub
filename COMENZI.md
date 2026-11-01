@@ -733,3 +733,20 @@ Format:
 - stare: preluat (2026-10-31 20:56, supraveghetor) — S58 în `plan/coada.md`; întâi S60 (unelte, procesor); proba în noaptea 31 oct, cele 10 ore din 1 nov 19:00 (după fereastra OS/GPU, dacă e cazul)
   - 2026-10-31 23:15: S60 gata; pre-înregistrarea și proba de 10 minute gata (6.078 MB, 63 °C); cele 10 ore rămân pentru 1 nov 19:00.
   - 2026-11-01 02:15: S61 (comparația inițializării) AJUTĂ; cele 10 ore pornesc 1 nov 19:00 cu `cod_c1`, sau cu `cod_c1_init002` dacă Adrian alege.
+
+### C-48 · cyber-universe · Kronos în OS: produsul „proiecție” și afișarea pe ecran (rezultatele din 1 nov)
+- data: 2026-11-01 11:55 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: `rezultate/2026-11-01-workstation-477-i4/`: 123 simb/s fără ecran (ținta 150). **Produsul „proiecție” ia 46,6 % din timp la doar 2,1 GB/s**
+  (celelalte 17–52 GB/s) și „așteptarea firelor” e 62 % → probabil proiecția nu e împărțită pe fire (sau e împărțită pe dimensiunea mică).
+  (1) împarte proiecția pe toate firele ca celelalte produse (și include-o în `--cauta`); (2) afișarea pe ecran: 45,7 % din timp cu ecran —
+  scrie textul pe rânduri întregi / în bloc, fără redesenare pe fiecare simbol; (3) simboluri identice (vectorii #477 + `--control`).
+  Ținta: ≥ 150 simb/s fără ecran și ≥ 120 cu ecran. Apoi Release nou + pașii scurți pentru Adrian.
+- stare: nou
+
+### C-49 · cyber-gpu · I4 TRECE pe placa reală — propune fereastra următoare (primele scrieri)
+- data: 2026-11-01 11:55 · de la: Adrian (prin centrul de comandă; delegarea din 26 oct 17:45)
+- ce: `gpu firmware` pe workstation: **criteriul I4: TRECE (4/4, antete 4/4)**, 0 accese la placă. Toate verificările de citire (I0–I4) sunt acum dovedite pe placa reală.
+  Scrie în `stare/cyber-gpu.md` planul ferestrei următoare, în ordine și cu oprire sigură: (a) proba tinygrad (jurnalul de aur; necesită stick Ubuntu + laptop)
+  și/sau (b) prima scriere a driverului nostru (I5 Bus Master / I6 FWSEC), cu exact ce se scrie, ce nu se poate strica (VBIOS nu se scrie) și cum se revine
+  (oprire completă). Spune care din (a)/(b) recomanzi întâi și de ce. Nimic nu se scrie în placă fără Adrian de față; dacă e nevoie de cod nou în OS, propunere în `idei/`.
+- stare: nou
