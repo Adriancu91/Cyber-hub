@@ -798,4 +798,4 @@ Format:
   pentru OS, dacă e nevoie de cod nou acolo); (2) pentru bucla automată (doar citire): lista de citiri fără risc care să ruleze la fiecare tur (registre de stare,
   spațiul PCI, temperaturi, ce mai ajută modelul) și unealta care le compară cu `gpu-sim`; (3) `gpu-sim` primește datele reale din `rezultate/` (fără conținutul
   firmware-ului/VBIOS NVIDIA în repo), ca simularea să ghicească mai puțin. Nimic nu scrie în placă fără Adrian.
-- stare: nou
+- stare: preluat (2026-11-01 20:10, sesiunea Cyber-GPU 33)
