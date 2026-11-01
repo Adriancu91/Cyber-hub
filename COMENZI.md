@@ -775,4 +775,4 @@ Format:
   (2) jurnalul fiecărei citiri/scrieri pe stick, pe loc, cu ora; (3) `gpu i6 --scrie` cu confirmare „DA” tastată, pe stick-ul de test, Bus Master
   oprit la loc la final. Teste în QEMU/simulare; **nicio rulare pe placa reală fără Adrian de față**. Release nou + pașii ferestrei pentru Adrian,
   în română simplă, cu oprirea sigură (în `stare/cyber-universe.md`). Testul de viteză `os-211` (C-48) poate intra în aceeași fereastră.
-- stare: nou
+- stare: preluat (2026-11-01 ~21:45, sesiunea OS) — P6-40
