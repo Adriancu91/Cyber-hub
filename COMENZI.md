@@ -765,4 +765,4 @@ Format:
   Ca să compensezi lipsa „jurnalului de aur” de pe placă: fă înainte, în simulare, secvența de referință cât mai completă (tinygrad și sursele
   deschise ca specificație, deja în `gpu-sim`), și adaugă în OS jurnalul fiecărei scrieri/citiri (registru, valoare, timp) ca să comparăm după fereastră.
   Dacă e nevoie de cod nou în OS (comenzi `gpu …` noi), propunere în `idei/` (centrul de comandă o aprobă).
-- stare: nou
+- stare: preluat (2026-11-01 12:10, sesiunea Cyber-GPU)
