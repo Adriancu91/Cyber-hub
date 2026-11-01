@@ -1,19 +1,19 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 20:41 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 21:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc” și la observațiile din testarea completă de azi. Sesiunea 20:02–20:41, 3 pași, testele trec:
-  - Imagini → ▶ Acțiuni ține minte acum și selecțiile (Selectează tot, Deselectează, Inversează, dreptunghi, elipsă, lasou), în proporții din poză, deci merg pe poze de orice mărime;
-  - tot acolo: umplerea selecției (cu o culoare, cu fundalul, Fă transparent) și conturul ei, de exemplu o acțiune „Ramă” pentru orice poză;
-  - și decuparea (unealta de decupare și Decupează la selecție), tot în proporții; toate merg și pe un dosar întreg de poze.
+- Lucrăm la „funcțiile care lipsesc” și la observațiile din testarea completă de azi. Sesiunea 20:41–21:25, 3 pași, testele trec:
+  - Imagini → ▶ Acțiuni ține minte acum și trăsăturile cu pensula, creionul și radiera, gradientul și găleata, în proporții din poză (cad la fel pe o poză de altă mărime);
+  - tot acolo: pașii straturilor (strat nou, copie, unire, aplatizare, opacitate, mod de amestec), redați pe tot documentul cu un singur Ctrl+Z;
+  - și condiții: „dacă poza e lată / înaltă / pătrată / are straturi / are selecție, redă o acțiune, altfel alta”; toate merg și pe un dosar întreg de poze.
 - Raportul de testare completă: Raport-testare-01.11.html (în dosarul proiectului).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 83,1%, Acrobat 86,5%, Photoshop 84,8%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (la Acțiuni în Imagini: pașii pensulei și ai straturilor; la PDF: certificatele EC de pe token; la Notițe: formatarea văzută direct în câmpul de scris, scrisul cu creionul direct pe pânză).
+- Alte funcții „parțial” / „nu” din inventar (la Notițe: formatarea văzută direct în câmpul de scris, scrisul cu creionul direct pe pânză; la PDF: certificatele EC de pe token; la Imagini: spațiul de lucru pentru umplerea după conținut).
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice și despărțirea în silabe românească, semnarea / verificarea XML (XML-DSig, scrise de la zero).
