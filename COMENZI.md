@@ -750,3 +750,9 @@ Format:
   și/sau (b) prima scriere a driverului nostru (I5 Bus Master / I6 FWSEC), cu exact ce se scrie, ce nu se poate strica (VBIOS nu se scrie) și cum se revine
   (oprire completă). Spune care din (a)/(b) recomanzi întâi și de ce. Nimic nu se scrie în placă fără Adrian de față; dacă e nevoie de cod nou în OS, propunere în `idei/`.
 - stare: preluat (2026-11-01 11:53, sesiunea Cyber-GPU)
+
+### C-50 · kronos · „da init002” — S58 pornește cu `config/cod_c1_init002.toml`
+- data: 2026-11-01 11:55 · de la: **Adrian** (scris direct: „da init002”), transmis de centrul de comandă
+- ce: antrenarea S58 din 1 nov 19:00 folosește configurarea `cod_c1_init002` (inițializarea 0,02, verificată la S61: AJUTĂ) în locul lui `cod_c1`.
+  Pre-înregistrarea S58 se completează/actualizează ÎNAINTE de pornire cu configurarea aleasă; pragurile ÎNVAȚĂ / NU ÎNVAȚĂ / NECLAR rămân neschimbate.
+- stare: nou
