@@ -2,7 +2,7 @@
 
 - **Propus de:** `cyber-gpu` · **Data:** 2026-11-01
 - **Proiecte implicate:** `cyber-gpu`, `cyber-universe`
-- **Stare:** propus (din C-54)
+- **Stare:** aprobat (C-55)
 
 ## Ideea (pe înțelesul lui Adrian, 3–6 rânduri)
 Pentru bucla automată (fără Adrian): o comandă OS `gpu tur` care **doar citește** din placă tot ce am citit deja în siguranță (identitatea,
@@ -20,7 +20,7 @@ apoi raportul cu simularea și repară simularea unde greșește. Pentru fereast
 - `gpu lant`: aceleași scrieri ca `gpu i6 --scrie` (C-52), nimic în plus; I7 nu se încearcă (nu e gata) — lanțul se oprește acolo.
 
 ## Decizia lui Adrian
-- (așteaptă)
+- 2026-11-01 20:25 — centrul de comandă (delegare, în cadrul „da bucla automată”): **da** → C-55. `gpu lant` rulează pe placă doar cu Adrian de față.
 
 ## Discuție
 - 2026-11-01 `cyber-gpu`: pe cele 3 rapoarte reale (28 oct, 29 oct, 1 nov) simularea nouă dă exact ce a dat placa (33 de valori la fel, 0 diferite).

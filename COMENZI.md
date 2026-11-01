@@ -800,3 +800,9 @@ Format:
   firmware-ului/VBIOS NVIDIA în repo), ca simularea să ghicească mai puțin. Nimic nu scrie în placă fără Adrian.
 - stare: gata (2026-11-01 20:05, sesiunea Cyber-GPU 33; preluat 19:47)
 - rezultat: în SIMULARE: `gpu-sim` construit din valorile reale de pe placă (pe cele 3 rapoarte: 33 la fel, 0 diferit), turul de citire fără risc + unealta `compara_raport`, pașii în lanț cu oprire sigură; propunerea pentru OS `idei/2026-11-01_cyber-gpu-tur-si-lant.md`.
+
+### C-55 · cyber-universe · `gpu tur` (lista albă a buclei automate) + `gpu lant` (doar cu „DA”, la fereastră)
+- data: 2026-11-01 20:25 · de la: Adrian („da bucla automată”), prin centrul de comandă
+- ce: exact propunerea `idei/2026-11-01_cyber-gpu-tur-si-lant.md`, împreună cu C-52 și C-53 (aceeași fixare cyber-gpu, ≥ `911e6d0`): `gpu tur` (0 scrieri) pe lista
+  albă a modului automat; `gpu lant` doar cu „DA” tastat, interzis în modul automat. Teste QEMU/simulare; nimic pe placa reală fără Adrian.
+- stare: nou
