@@ -1,13 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-01 09:40 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-01 10:26 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 08:59–09:40, 2 pași la diagrame (Docs, Sheets, Notițe, Slides), testele trec:
-  - diagrama nouă **Balanță** (ideile pe două talere, înclinată spre partea cu mai multe: pro și contra);
-  - diagrama nouă **Săgeți în sens opus** (două săgeți, spre dreapta și spre stânga, cu ideile pe ele); sunt acum 33 de feluri de diagrame.
-- Sesiunea dinainte (08:17–09:01): în Imagini filtrul Unghi larg adaptiv (cu focala din fotografie), rotirea și densitatea plasei la Deformare cu pioneze, alinierea automată cu mărime.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 09:39–10:26, 6 pași, testele trec:
+  - Video: 4 stiluri noi de titlu (Fotografie instant, Joc retro, Plăcuță de lemn, Bilet; acum 46) și 4 treceri noi (Uși care se închid, pe verticală și orizontală, Despicare care se închide, pe verticală și orizontală; acum 68);
+  - Docs, Sheets, Notițe, Slides: diagramele noi **Proces alternant** (pașii pe rând deasupra și dedesubtul unei săgeți) și **Listă pe săgeată** (pașii unul sub altul lângă o săgeată în jos); acum 35 de feluri.
+- Sesiunea dinainte (08:59–09:40): diagramele Balanță și Săgeți în sens opus.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 82,7%, Acrobat 86,5%, Photoshop 84,8%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
