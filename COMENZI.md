@@ -749,7 +749,8 @@ Format:
   Scrie în `stare/cyber-gpu.md` planul ferestrei următoare, în ordine și cu oprire sigură: (a) proba tinygrad (jurnalul de aur; necesită stick Ubuntu + laptop)
   și/sau (b) prima scriere a driverului nostru (I5 Bus Master / I6 FWSEC), cu exact ce se scrie, ce nu se poate strica (VBIOS nu se scrie) și cum se revine
   (oprire completă). Spune care din (a)/(b) recomanzi întâi și de ce. Nimic nu se scrie în placă fără Adrian de față; dacă e nevoie de cod nou în OS, propunere în `idei/`.
-- stare: preluat (2026-11-01 11:53, sesiunea Cyber-GPU)
+- stare: gata (2026-11-01 12:20, sesiunea Cyber-GPU 30)
+- rezultat: planul e în `stare/cyber-gpu.md` și `cyber-gpu/docs/FEREASTRA_C-49.md` — recomand întâi (a) proba tinygrad (jurnalul de aur, nu depinde de codul nostru), apoi (b) Bus Master + I6 FWSEC-FRTS (18 registre GSP, VBIOS-ul nu se poate scrie, revenire prin oprire completă); în plus, verificarea I6 doar citire pentru OS (propunerea `idei/2026-11-01_cyber-gpu-i6-in-os.md`).
 
 ### C-50 · kronos · „da init002” — S58 pornește cu `config/cod_c1_init002.toml`
 - data: 2026-11-01 11:55 · de la: **Adrian** (scris direct: „da init002”), transmis de centrul de comandă

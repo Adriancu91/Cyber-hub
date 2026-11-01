@@ -1,47 +1,47 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-01 07:30 (ora României) · **de:** sesiunea Cyber-GPU 29 (cloud, fără placă) — **OPRIT: necesită analiza lui Adrian**
+**Actualizat:** 2026-11-01 12:20 (ora României) · **de:** sesiunea Cyber-GPU 30 (cloud, fără placă) — **OPRIT ridicat** (C-49)
 
 ## Acum
-- **OPRIT: necesită analiza lui Adrian** (oprirea de siguranță, sesiunea 28): sesiunile 25, 26, 27 n-au terminat niciun pas și n-a apărut
-  nimic nou (nicio comandă, niciun rezultat de pe placă, nicio decizie). Sesiunea 29 (1 nov) a verificat: tot nimic nou, CI verde; oprirea continuă. Sesiunile următoare nu încep lucru nou până la
-  una din: rezultatul ferestrei pe workstation în hub, o comandă nouă pentru `cyber-gpu`, sau decizia lui Adrian despre sesiunea programată.
-- **Treapta 6 matmul gata (doar SIMULARE):** programul de înmulțire de matrice, varianta care citește și scrie memoria câte 4 numere odată,
-  compilat cu Mesa NAK pe gazdă: 821 de instrucțiuni (față de 1 953 la treapta 5), 90 de registre, fără memorie locală. În simulare dă exact
-  aceiași biți ca oracolul și ca treapta 5; refuză (fără nicio scriere) matrice cu K sau N care nu se împart la 4 și adrese nealiniate;
-  8 greșeli plantate, toate prinse. Commit-uri `937fcf4`, `647398c` pe `g0-g2-fundatie`; 294 de teste trec.
-- Totul în model: **soneria nu e sunată**, programele „rulează” pe procesor. Nimic testat pe RTX 3070 Ti.
-- Copia pentru sesiunea OS (C-34) la zi: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `889cf94` (doar documente noi față de `647398c`; acum cu istoria completă).
+- **Pe placa reală, doar citire, 0 scrieri:** I0/I1 identitatea, I2 GFW_BOOT (28 oct), I3 + I3b VBIOS și FWSEC (29 oct), **I4 fișierele
+  firmware 570.144: TRECE** (1 nov, 4/4 oficiale, antete 4/4). Toate verificările de citire sunt dovedite. Următorul pas e prima scriere.
+- **C-49 gata:** planul ferestrei următoare (mai jos și în `cyber-gpu/docs/FEREASTRA_C-49.md`).
+- Nou în cod (doar SIMULARE): **siguranța „ucode version”** — registrul care spune ce semnătură acceptă placa (era necunoscut; acum din
+  sursele NVIDIA MIT 570.144: pentru FWSEC-ul plăcii noastre, `0x8241E0`); **verificarea I6 doar citire** (siguranța + semnătura aleasă,
+  VRAM, zona protejată WPR2, regiunea FRTS); un test care fixează **exact cele 18 registre** pe care le-ar scrie I6. 304 teste trec.
+  Commit-uri `3b47958`, `d6de57e`, `1dfa649` pe `g0-g2-fundatie`.
+- Copia pentru sesiunea OS (C-34): `integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, vârf `1dfa649`.
 
-## Urmează
-- Fereastra următoare (cu `os-210` sau `os-209`, ambele au fixarea `aee06c4`): `gpu firmware` → `criteriul I4: TRECE`; apoi, opțional, proba tinygrad.
-- **Fără placă nu mai e niciun pas mic de făcut.** Tot restul (I5+: FWSEC, Booter, GSP, soneria, lansările reale, viteza treptelor matmul)
-  cere fereastra pe workstation cu Adrian. Sesiunile următoare fără rezultate noi de pe placă se opresc fără lucru nou.
+## Urmează — planul ferestrei următoare (C-49)
+**Recomandare: întâi (a) proba tinygrad, apoi (b) prima scriere a driverului nostru.** De ce: tinygrad e un driver care merge deja pe plăci ca
+a noastră cu același firmware; dacă trece, drumul e liber și primim „jurnalul de aur” (fiecare scriere, în ordine), cu care comparăm lista
+noastră **înainte** de prima noastră scriere; dacă pică, știm că nu e greșeala noastră. În plus, (b) cere cod nou în OS, care nu există încă.
+1. *(dacă OS-ul o adaugă — propunerea `idei/2026-11-01_cyber-gpu-i6-in-os.md`)* `gpu pregatire-i6` — **doar citire**: trebuie semnătura 0/1/2,
+   VRAM 8192 MiB, „WPR2 coborat”, „0 scrieri”. Poză.
+2. **(a) ⚠️ SCRIE ÎN PLACĂ (prin tinygrad):** proba tinygrad, exact ca în `cyber-gpu/docs/FEREASTRA_C-36.md` §3 (stick Ubuntu 24.04 live,
+   laptopul pentru SSH, cablu de rețea, ~30 min). Scrie registre și VRAM; **nu scrie VBIOS-ul**; totul se șterge la oprirea completă.
+3. **(b) — într-o fereastră separată, după (a):** I5g Bus Master = **o scriere** în configurația PCI (`0x04`, bitul 2) + I6 FWSEC-FRTS =
+   **18 registre, toate în fereastra GSP** `0x110000–0x113FFF` (~720 de scrieri, majoritatea copierea programului FWSEC). Programul FWSEC
+   (semnat NVIDIA) ridică apoi zona protejată WPR2 în VRAM — asta e tot ce schimbă în placă.
+   - **Nu se poate strica:** VBIOS-ul (codul nostru nu are nicio cale de scriere spre el), siguranțele (doar citite); cod nesemnat sau o
+     semnătură greșită sunt refuzate de placă; orice scriere în afara GSP e refuzată de cod înainte să ajungă la placă.
+   - **Revenire:** butonul 10 s → cablul scos 30 s → Windows; `nvidia-smi` vede placa, Kronos pornește normal.
+   - Nu în (b): Booter, pornirea GSP, lansările (I7+).
 
 ## Ce oferă proiectul celorlalți
-- `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Față de `2c9c90c` (fixarea OS-ului):
-  **doar adăugări** în interfața publică; nou în sesiunea 18: `gpu_sim::fw_stick::{booter_570_144, bootloader_570_144}`; în sesiunea 19:
-  `nvidia_ga104::gsp::user_space::{WorkChannel, open_work_channel}` și funcții noi în `gsp::rmapi`; în sesiunea 20: `gsp::work_queue`,
-  `user_space::open_work_channel_cleared`, în `gpu_sim::cmdproc`: `ComputeState`, `run_channel`; în sesiunea 21: `work_queue::{invalidate_caches,
-  launch, release, read_semaphore}`, `WorkQueue::launch_and_signal`, `CommandProcessor::cache_invalidations`; în sesiunea 22: `user_space::query_gr_info`,
-  `rmapi::{gr_info_request, parse_gr_info, GrInfo, SM_VERSION_SM86}`, în `gpu_sim::fake_rm`: `SIM_GR_INFO`; în sesiunea 23: `WorkQueue::{retire,
-  push_in_flight}`; în sesiunea 24: `gpu_sim::cmdproc::{matmul_vec4_on_cpu, MATMUL_VEC4_NEEDS}` (nimic de schimbat în OS). Schimbare de
-  comportament intenționată: `fw_hdr` acceptă `bin_size` ≠ mărimea fișierului și citește numărul de semnături prin adresă. Codul OS nu se
-  schimbă; doar fixarea (nota `integration/cyber-universe/C-39_gpu-firmware-antete.md`).
-- Pentru mai târziu (doar în fereastra cu Adrian): pornirea reală a GSP va cere de la OS o zonă de RAM contiguă (sub 2^49) și Bus Master.
+- `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Față de fixarea OS-ului
+  (`aee06c4`): **doar adăugări** în interfața publică (ultimele: `nvidia_ga104::fuse`, `nvidia_ga104::i6_check` în sesiunea 30;
+  `gpu_sim::cmdproc::{matmul_vec4_on_cpu, MATMUL_VEC4_NEEDS}` în 24; lista completă în `docs/IMPLEMENTATION_STATUS.md`). Codul OS nu trebuie
+  schimbat; propunerea opțională `gpu pregatire-i6`: `integration/cyber-universe/C-49_gpu-pregatire-i6.md` (cere fereastra BAR0 doar-citire
+  de 16 MiB).
+- Pentru (b), mai târziu: OS-ul va trebui să dea o zonă de RAM pentru DMA (sub 4 GiB, ~64 KiB pentru FWSEC) și Bus Master.
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: nimic nou (fixarea `aee06c4` e în `os-209`, mulțumim).
+- De la `cyber-universe`: opțional, `gpu pregatire-i6` (doar cu „da”-ul lui Adrian).
 - De la `kronos`: workstation-ul, doar în fereastra aprobată de Adrian.
 
 ## Blocaje / nevoie de Adrian
-**Proiectul e OPRIT până la analiza ta:** fără placă nu mai e nimic de făcut. Variante: (a) fereastra de mai jos, (b) rărești sau oprești sesiunea programată Cyber-GPU până la fereastră.
-**Fereastra următoare (cu `os-210`/`os-209`, gata de la sesiunea OS). Lista: `cyber-gpu/docs/FEREASTRA_C-39.md`.**
-1. **Doar citire, nu atinge placa:** `gpu firmware` → trebuie 4 rânduri „ok … oficial”, sub fiecare „antet citit”, și ultimul rând
-   `criteriul I4: TRECE (fisiere oficiale 4/4, antete citite 4/4)`. Poză. Dacă tot apare „antet NECITIT”: poză și te oprești cu placa.
-2. **Doar dacă 1 trece — ⚠️ SCRIE ÎN PLACA VIDEO:** proba tinygrad, exact ca la C-36 pasul 3 (stick Ubuntu 24.04 live, laptopul pentru
-   SSH, ~30 min; oprire sigură: `Ctrl+C`, `sudo poweroff`, sau butonul 10 s + cablul scos 30 s). Nu scrie în memoria permanentă a plăcii.
-3. **Nu acum:** pornirea plăcii cu driverul nostru (I5+). I6 (FWSEC) ar fi prima scriere a driverului nostru; o propunem separat, după ce
-   jurnalul probei tinygrad e în hub.
+- **Alegerea ta:** fereastra următoare cu proba tinygrad (recomandat; trebuie stick Ubuntu, laptopul, cablu de rețea) și, dacă vrei,
+  „da” pentru `gpu pregatire-i6` în OS. Prima scriere a driverului nostru (b) doar după, cu tine de față.
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
