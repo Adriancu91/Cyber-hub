@@ -756,3 +756,12 @@ Format:
 - ce: antrenarea S58 din 1 nov 19:00 folosește configurarea `cod_c1_init002` (inițializarea 0,02, verificată la S61: AJUTĂ) în locul lui `cod_c1`.
   Pre-înregistrarea S58 se completează/actualizează ÎNAINTE de pornire cu configurarea aleasă; pragurile ÎNVAȚĂ / NU ÎNVAȚĂ / NECLAR rămân neschimbate.
 - stare: preluat (2026-11-01 11:55, supraveghetor) — S58 în `plan/coada.md`: pașii 3–4 cu `config/cod_c1_init002.toml`, pre-înregistrarea actualizată înainte; pornire 1 nov 19:00
+
+### C-51 · cyber-gpu · Fără Ubuntu pe placa reală: primele scrieri direct din Cyber Universe (completează C-49)
+- data: 2026-11-01 12:00 · de la: **Adrian** („fizic doar Universe; în simulare orice”), prin centrul de comandă — vezi DECIZII 1 nov 12:00
+- ce: proba tinygrad pe Ubuntu (C-20 A) se anulează. Planul din C-49 se face doar cu varianta (b): primele scrieri ale driverului nostru, din OS
+  (I5 Bus Master → I6 FWSEC …), pas cu pas, fiecare cu: ce se scrie exact, ce se citește înapoi ca dovadă, criteriul de trecere, oprirea sigură.
+  Ca să compensezi lipsa „jurnalului de aur” de pe placă: fă înainte, în simulare, secvența de referință cât mai completă (tinygrad și sursele
+  deschise ca specificație, deja în `gpu-sim`), și adaugă în OS jurnalul fiecărei scrieri/citiri (registru, valoare, timp) ca să comparăm după fereastră.
+  Dacă e nevoie de cod nou în OS (comenzi `gpu …` noi), propunere în `idei/` (centrul de comandă o aprobă).
+- stare: nou
