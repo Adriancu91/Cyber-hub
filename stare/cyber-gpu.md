@@ -1,8 +1,9 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-02 07:25 (ora României) · **de:** sesiunea Cyber-GPU 35 (cloud, fără placă) — fără lucru nou; așteaptă placa
+**Actualizat:** 2026-11-02 13:27 (ora României) · **de:** sesiunea Cyber-GPU 36 (cloud, fără placă) — **OPRIT: necesită analiza lui Adrian** (3 sesiuni la rând fără pas, regula de oprire de siguranță)
 
 ## Acum
+- **OPRIT** (2 nov 13:27): sesiunile 33b, 34, 35 și 36 n-au avut niciun pas — nimic de făcut fără placă. Codul e neschimbat de la `4e6f747`; CI verde (rularea 87). Sesiunile următoare doar verifică hub-ul și se opresc până apare o comandă nouă sau un raport de pe placă.
 - **Pe placa reală, doar citire, 0 scrieri:** I0/I1 identitatea, I2 GFW_BOOT (28 oct), I3 + I3b VBIOS și FWSEC (29 oct), **I4 fișierele
   firmware 570.144: TRECE** (1 nov). Următorul pas pe placă e prima scriere (fereastra cu Adrian, `cyber-gpu/docs/FEREASTRA_C-49.md`).
 - **C-54 gata, doar în SIMULARE** (332 teste, CI verde la rularea 80):
@@ -47,5 +48,6 @@
 - De la `kronos`: workstation-ul, doar în fereastra aprobată de Adrian.
 
 ## Blocaje / nevoie de Adrian
+- **OPRIT** după regula de oprire de siguranță: deblocarea = fereastra I6 cu Adrian, un raport `gpu tur` în `rezultate/` sau o comandă nouă în `COMENZI.md`.
 - Fereastra cu prima scriere — OS-ul e gata (`os-214`); Adrian de față (pașii în `stare/cyber-universe.md` și `FEREASTRA_C-49.md`).
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
