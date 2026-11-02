@@ -401,3 +401,4 @@
 - 2026-11-02 23:26 — Șabloane noi: Plângere împotriva unei amenzi și Proces-verbal de constatare a pagubei (Docs), Citiri contoare și Medicamente (Sheets), Atelier de gătit (Slides), Început de an școlar și Casa înainte de plecare (Notițe); 7 pași, testele trec.
 - 2026-11-03 00:08 — Șase șabloane noi, cu teste: Garanții și Împrumuturi (Sheets), Notificare de retragere pentru retur online (Docs), Aniversare (Slides), Internare în spital și Accident auto (Notițe).
 - 2026-11-03 00:23 — Două șabloane noi, cu teste: Cerere de restituire a garanției la chirie (Docs) și Mașina: acte și revizii (Notițe).
+- 2026-11-03 01:03 — Șabloane noi pentru nuntă și botez, cu teste: Nuntă (Slides), Bugetul nunții (Sheets), Invitație de nuntă (Docs), Pregătiri de nuntă și Botez (Notițe).
