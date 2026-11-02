@@ -375,3 +375,4 @@
 - 2026-11-02 05:05 — Slides: prezentările vechi .ppt se deschid cu pozele, formele desenate, mărimea și culoarea literelor și fundalul, la locul lor; testul pe colecție verifică și .eps; 4 pași, testele trec.
 - 2026-11-02 05:51 — Slides: prezentările vechi .ppt aduc acum notițele, formatul pe cuvinte și fontul, desenele libere, arcele, ~80 de forme noi, tranzițiile, slide-urile ascunse și nivelurile din liste; 8 pași, testele trec.
 - 2026-11-02 06:39 — Slides: prezentările vechi .ppt iau acum stilurile și desenele slide-ului coordonator (sigle, grile, numerotare), ancorarea textului, legăturile, liniile punctate și umbrele; 8 pași, testele trec.
+- 2026-11-02 07:30 — Slides: marginile interioare ale casetelor (din .ppt / .pptx / .odp, la salvare și alese din bară) și spațierea rândurilor / paragrafelor din .ppt; 4 pași, testele trec.

@@ -1,19 +1,18 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 06:39 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 07:30 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 05:51–06:40, 8 pași, testele trec — prezentările vechi **.ppt** se deschid și mai aproape de original:
-  - mărimea, fontul, culoarea și alinierea textului luate din **slide-ul coordonator** când caseta nu le are; listele fără buline rămân fără buline;
-  - **desenele coordonatorului** (sigle, grile, linii decorative) pe fiecare slide, cu numerotarea slide-urilor;
-  - titlurile lungi nu se mai taie, textul stă **sus / la mijloc / jos** ca în original;
-  - **legăturile și acțiunile la clic** (slide următor / anterior, adrese web), liniile **punctate / întrerupte**, **umbra** formelor și transparența.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 06:42–07:30, 4 pași, testele trec — în Slides:
+  - **marginile interioare** ale casetelor și formelor (spațiul dintre chenar și text): citite din .ppt, .pptx și .odp, păstrate la salvare și alese de mână din bară (fără / înguste / normale / late);
+  - la **.ppt**, spațierea rândurilor și spațiul dinainte / de după paragrafe, ca în original.
+- Înainte (05:51–06:40): la .ppt stilurile și desenele coordonatorului, ancorarea textului, legăturile, liniile punctate, umbrele.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
 ## Urmează
-- La .ppt: marginile interioare ale casetelor, ecuațiile cu fonturi vechi speciale; apoi alte funcții „parțial” / „nu” din inventar.
+- La .ppt: ecuațiile cu fonturi vechi speciale; apoi alte funcții „parțial” / „nu” din inventar.
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice și despărțirea în silabe românească, semnarea / verificarea XML (XML-DSig, scrise de la zero).
