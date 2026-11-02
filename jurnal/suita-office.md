@@ -398,3 +398,4 @@
 - 2026-11-02 21:16 — Diagrama nouă Plus și minus (pro și contra în două coloane), în toate aplicațiile cu diagrame; 66 de feluri.
 - 2026-11-02 22:00 — Șabloane noi: Interviu de angajare și Curățenie (Notițe), Listă de invitați (Sheets), Acord de confidențialitate (Docs), Plan de călătorie (Slides) și titlul Video Claketă de film; 6 pași, testele trec.
 - 2026-11-02 22:38 — Șabloane noi: Revizii și reparații auto și Evidența chiriilor (Sheets), Cerere de reziliere (Docs), Adunarea asociației de proprietari (Slides), Drum lung cu mașina și Comenzi online (Notițe); 6 pași, testele trec.
+- 2026-11-02 23:26 — Șabloane noi: Plângere împotriva unei amenzi și Proces-verbal de constatare a pagubei (Docs), Citiri contoare și Medicamente (Sheets), Atelier de gătit (Slides), Început de an școlar și Casa înainte de plecare (Notițe); 7 pași, testele trec.
