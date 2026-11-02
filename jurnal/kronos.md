@@ -75,3 +75,4 @@
 - 2026-11-02 08:50 — C-56 preluat: S63 (a doua antrenare pe cod, 10 ore + set ascuns nou) pornește imediat după S62 `gata` sub 6.500 MB, chiar ziua; S62 rulează (1174 teste trec).
 - 2026-11-02 11:15 — S62 gata (uneltele de examen de cod sub 6.500 MB, validarea 0,5141 = S58). S63 oprită înainte de pornire (setul nou de 200 nu încape fără repetări) → setul fără suprapunere (~163, praguri pe procente), S63 iar aprobată; placa ocupată până ~22–23.
 - 2026-11-02 14:40 — S63 (a doua antrenare pe cod) rulează din 11:38: set ascuns nou de 163 de probleme fără repetări, pre-înregistrarea urcată înainte (≥ 5/163 / ≤ 2/163); placa 5.974 MB / 62 °C; se termină ~22:00 + examene.
+- 2026-11-02 23:20 — S63 (a doua antrenare pe cod) gata: NECLAR (0,5004 biți/octet, pass@10 3/163) — forma codului mai bună, rezolvarea tot ~2 %. Pus S64 (diagnostic scurt: pass@k cu 200 de încercări pe setul de probă + de ce pică corpurile), noaptea asta.
