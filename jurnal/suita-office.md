@@ -373,3 +373,4 @@
 - 2026-11-02 03:33 — Ecuații: modulul, norma, partea întreagă, combinările, reuniunea / intersecția mare și integrala triplă (în desen, .docx / .pptx / .odt și cu bară inversă); textul pentru cititorul de ecran urmează limba interfeței.
 - 2026-11-02 04:11 — Ecuații: text deasupra / dedesubt și săgeți cu text, indicii în fața literei, parantezele unghiulare, fracția oblică și pe rând (toate păstrate în .docx / .pptx / .odt); 4 pași, testele trec.
 - 2026-11-02 05:05 — Slides: prezentările vechi .ppt se deschid cu pozele, formele desenate, mărimea și culoarea literelor și fundalul, la locul lor; testul pe colecție verifică și .eps; 4 pași, testele trec.
+- 2026-11-02 05:51 — Slides: prezentările vechi .ppt aduc acum notițele, formatul pe cuvinte și fontul, desenele libere, arcele, ~80 de forme noi, tranzițiile, slide-urile ascunse și nivelurile din liste; 8 pași, testele trec.
