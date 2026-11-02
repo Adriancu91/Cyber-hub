@@ -817,3 +817,4 @@ Format:
   deci nicio fereastră OS/GPU nu o întrerupe. Limitele plăcii neschimbate (7.000 MB, 83 °C).
 - stare: preluat (2026-11-02 08:50, supraveghetor) — sarcina S63 în `plan/coada.md` (aprobat, pornește imediat după S62 `gata` sub 6.500 MB)
 - notă (2026-11-02 11:20, supraveghetor): S62 gata sub limită; S63 oprită 09:32 la setul ascuns (200 fără repetări nu încape) → ales setul fără suprapunere (~163, praguri pe procente), S63 din nou `aprobat`. „S63 varianta b” = 200 cu repetări, dacă Adrian preferă.
+- notă (2026-11-02 14:40, supraveghetor): S63 pornită 11:38 (set ascuns nou N = 163, pre-înregistrarea urcată înainte); sfârșit ~22:00 + examene.
