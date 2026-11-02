@@ -1,14 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 17:12 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 17:53 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 16:25–17:12, 6 pași, testele trec:
-  - Video: 10 treceri noi (Cerc din stânga / dreapta / de sus / de jos, Cerc din și spre celelalte trei colțuri; 122 de treceri);
-  - Video: stilurile de titlu **Notificare pe telefon** și **Ecuson cu nume** (79 de stiluri);
-  - diagrama **Listă cu triunghiuri** (64 de feluri, în Docs, Sheets, Notițe, Slides);
-  - înainte (15:43–16:25): diagrama Ciclu continuu, trei șabloane Slides, titlul Mesaj de chat, temele Teracotă și Turcoaz.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 17:13–17:53, 6 pași, testele trec:
+  - șabloane noi: Slides (Studiu de caz, Prezentare imobil, Retrospectiva proiectului; 18), Docs (Cerere de concediu, Notificare de plată, Contract de vânzare-cumpărare auto; 14), Sheets (Calculator de credit cu graficul de rambursare, Consum carburant; 14), Notițe (Antrenament, Idei de cadouri, Reparații și întreținere; 15);
+  - Video: stilul de titlu **Locație pe hartă** (80 de stiluri);
+  - înainte (16:25–17:12): 10 treceri Video cu cerc (122), titlurile Notificare pe telefon și Ecuson cu nume, diagrama Listă cu triunghiuri (64 de feluri).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 

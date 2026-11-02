@@ -390,3 +390,4 @@
 - 2026-11-02 15:45 — Slides: Fă video și Export GIF animat arată animațiile pe click (câte o poză după fiecare click, căile de mișcare la capătul drumului); 3 pași, testele trec.
 - 2026-11-02 16:25 — Diagrama Ciclu continuu (63), trei șabloane Slides (SWOT, prezentare personală, bilanțul anului), titlul Video „Mesaj de chat” (77), temele Teracotă și Turcoaz în Slides / Docs / Sheets; 5 pași, testele trec.
 - 2026-11-02 17:12 — Video: 10 treceri noi cu cerc (122), titlurile Notificare pe telefon și Ecuson cu nume (79); diagrama Listă cu triunghiuri (64 de feluri); 6 pași, testele trec.
+- 2026-11-02 17:53 — Șabloane noi în toate aplicațiile: Slides (Studiu de caz, Prezentare imobil, Retrospectiva; 18), Docs (Cerere de concediu, Notificare de plată, Vânzare auto; 14), Sheets (Calculator de credit, Consum carburant; 14), Notițe (3 noi; 15); titlul Video „Locație pe hartă” (80); 6 pași, testele trec.
