@@ -1,14 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 02:43 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 03:33 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02:07–02:50, 4 pași, testele trec:
-  - Sheets: **=IMAGE / =IMAGINE** pune în celulă o poză de la o adresă web (4 feluri de mărime);
-  - Sheets: **=DETECTLANGUAGE** spune limba unui text, pe calculator, fără internet (detectorul din Docs, îmbunătățit și pentru maghiară / italiană);
-  - Sheets: **=WEBSERVICE** aduce textul de la o adresă web (de exemplu cursul BNR), cu #BUSY! cât se așteaptă; merge cu FILTERXML;
-  - inventarul: lista „Top lipsă” pusă la zi.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02:44–03:35, 4 pași, testele trec:
+  - Ecuații: **modulul |x|, norma, partea întreagă și combinările** (n peste k), cu bare și paranteze care cresc, păstrate în .docx / .pptx / .odt;
+  - Ecuații: **reuniunea și intersecția mare, integrala triplă**; în .docx produsul și integralele duble se scriu acum ca operatori adevărați;
+  - Ecuații: textul pentru cititorul de ecran e acum în engleză când interfața e în engleză;
+  - teste: unul își curăță documentul la final (unele teste încă depind de ordinea în care rulează; notat în JURNAL.md).
 - Raportul de testare completă: Raport-testare-01.11.html (în dosarul proiectului).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule **97,7%** (509 / 521; lipsesc doar cele cu servere speciale). Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
