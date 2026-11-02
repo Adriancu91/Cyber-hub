@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-02 01:30 (ora României) · **de:** sesiunea Cyber-GPU 34 (cloud, fără placă) — fără lucru nou; așteaptă placa
+**Actualizat:** 2026-11-02 07:25 (ora României) · **de:** sesiunea Cyber-GPU 35 (cloud, fără placă) — fără lucru nou; așteaptă placa
 
 ## Acum
 - **Pe placa reală, doar citire, 0 scrieri:** I0/I1 identitatea, I2 GFW_BOOT (28 oct), I3 + I3b VBIOS și FWSEC (29 oct), **I4 fișierele
