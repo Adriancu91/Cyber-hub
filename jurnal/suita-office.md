@@ -384,3 +384,4 @@
 - 2026-11-02 11:56 — 124 de pictograme (Călătorii, Mâncare și băuturi, Tehnologie, Timp liber), 12 teme din Slides aduse și în Docs / Sheets, stilul de titlu Video „Televizor de demult”; 7 commituri, testele trec.
 - 2026-11-02 12:42 — Clasificarea documentului (Public / Uz general / Confidențial / Strict confidențial) în Docs și Sheets, păstrată în .docx / .xlsx / .odt; pictogramele Casă și Unelte (138); temele Corai, Prună, Măslin, Nisip în Docs / Sheets; Word 90,6%, Excel 92%; 5 pași, testele trec.
 - 2026-11-02 13:30 — Slides: fereastra Proprietăți cu Clasificare, păstrată în .pptx; clasificarea scrisă și pe pagină (Docs: subsol / filigran, Sheets: subsolul de tipărire, Slides: subsolul slide-urilor); PowerPoint 91,6%; 5 pași, testele trec.
+- 2026-11-02 14:08 — Ctrl+S salvează înapoi în fișierul deschis (.docx, .odt, .rtf, .txt, .xlsx, .ods, .pptx, .odp), cu întrebarea „Unde salvezi?” o dată și copia veche păstrată; PowerPoint 91,8%; 4 pași, testele trec.

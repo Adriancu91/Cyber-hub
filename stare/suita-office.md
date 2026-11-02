@@ -1,15 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 13:30 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 14:08 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 12:42–13:30, 5 pași, testele trec:
-  - Slides are acum fereastra **Proprietăți** (titlu, subiect, autor, cuvinte cheie, **Clasificare**), păstrată în .pptx;
-  - clasificarea se poate scrie și **pe pagină**: în Docs în subsol și / sau ca filigran („CONFIDENȚIAL”), în Sheets în subsolul de tipărire, în Slides în subsolul slide-urilor;
-  - un test vechi al diagramelor din Slides, care pica, e pus la zi (diagramele mergeau).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 13:29–14:08, 4 pași, testele trec:
+  - **Ctrl+S salvează acum înapoi în fișierul deschis**: un .docx / .odt / .rtf / .txt în Docs, un .xlsx / .ods în Sheets și un .pptx / .odp în Slides; la primul Ctrl+S Suite întreabă „Unde salvezi?” (În fișierul deschis sau Ca format Cyber Office Studio), copia veche se păstrează ca rezervă, apoi Ctrl+S scrie direct;
+  - așa se închide și ce rămăsese din prima problemă găsită de Adrian la birou (22.10): „salvarea înapoi în .xlsx / .docx”.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,6%**, Clipchamp 81,3%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
+- Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 81,3%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (de exemplu șabloane, teme, diagrame); reducerea zgomotului în Video, după ce găsim reglajul bun.
