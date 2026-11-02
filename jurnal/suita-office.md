@@ -368,3 +368,4 @@
 - 2026-11-01 23:41 — Notițe: mărimile, fonturile și ecuațiile se văd direct în câmpul de scris; diagrama nr. 49 Cercuri în grilă; Video: titlul Față de masă și treceri noi Pătrățele în cerc / în cruce (92).
 - 2026-11-02 00:22 — Imagini: fereastra Umplere după conținut… (zona de eșantionare pictată, previzualizare, rezultat pe strat nou, Adaptarea culorilor, Oglindirea); 4 pași, testele trec.
 - 2026-11-02 01:15 — Imagini: Umplere după conținut cu Rotirea și Scalarea bucăților; diagrama nr. 50 Listă cu buline pe linie; Video: titlurile Tablă albă și Etichetă de preț, trecerile Pătrățele în X (94); 6 pași, testele trec.
+- 2026-11-02 02:04 — Diagramele nr. 51 Fișe cu file și nr. 52 Blocuri în grilă; Video: trecerile Pătrățele la întâmplare / în val (96), titlurile Pagină de ziar și Hârtie milimetrică (67); Sheets: numele foii goale urmează limba; 5 pași, testele trec.
