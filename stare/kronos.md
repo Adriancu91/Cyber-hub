@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-01 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-02 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -10,16 +10,13 @@
 - CCM pentru #477: procesor 1 fir 2,14 s/răspuns; **placa fp32 acceptată, 1,226 s (1,75× mai rapid)**, |Δ logit| 0,000155; placa 1,5 GB (S56).
 - **Kronos-Cod (C-45 gata):** tokenizerul de cod (32.768 simboluri) BUN — 3,46 octeți/simbol (+22 % față de w2), refacere 100 % identică;
   setul de antrenare tokenizat: 1,08 mld simboluri; validare 5.686 fișiere ținute deoparte; examenul ascuns neatins.
-- **S57 gata:** modulul de date pentru cod, examenul pe validare (biți/octet; pe datele reale = S55 exact), configurarea `cod_c1` (nepornită).
-- **S59 gata:** modelul care citește direct simbolurile de cod + examenul pe ore (biți/octet, 1.000 fișiere fixe).
-- **S60 gata:** proba „de la zero” + comanda care scrie răspunsurile pentru pass@k (setul ascuns închis). 1165 teste trec.
-- **S58 pașii 1–2 gata:** pre-înregistrarea (înainte de probă) și proba de 10 minute: placa 6.078 MB, 63 °C, 32.364 simb/s.
-  Observat: pierderea de pornire 474 (inițializarea implicită a încorporărilor).
-- **S61 gata: AJUTĂ** — cu încorporările pornite mici (abaterea 0,02), pierderea de pornire 10,7 (în loc de 474) și după 10 minute 3,77 (în loc de 6,82); aceeași memorie (6.078 MB) și viteză. 1168 teste trec.
+- **S57/S59/S60/S61 gata:** datele de cod, modelul care citește simbolurile, examenul pe ore, proba de la zero, comanda pass@k; încorporările pornite mici (S61: AJUTĂ). 1168 teste trec.
+- **S58 terminat (prima antrenare pe cod, 10 ore, `cod_c1_init002`): NECLAR** — validarea întreagă **0,514 biți/octet** (Rust 0,438, Python 0,555, C 0,622; prag ≤ 1,10 ✓), setul ascuns **pass@10 = 3/200** (prag ≥ 10 ✗). Știe forma codului, rezolvă rar.
+  Antrenarea în limite (6.205 MB, 64 °C); **la examenul ascuns placa a trecut de 7.000 MB (~17 min)** → S58 `oprit` până decide Adrian.
 
 ## Urmează
-- **S58 RULEAZĂ** (aprobat de Adrian, C-47; configurarea aleasă de Adrian, C-50): 10 ore de antrenare pe cod cu `cod_c1_init002`, pornite 1 nov 19:00 (gata ~05:00–06:00), apoi examenul pass@k. Pre-înregistrarea actualizată la 18:59, înainte de pornire; praguri neschimbate (biți/octet ≤ 1,10 și pass@10 ≥ 10/200).
-- Pasul următor pe placă (2 nov ziua): decis după verdictul S58.
+- **S62 (azi ziua, aprobată):** uneltele de examen de cod lucrează în loturi mici și se opresc singure peste 6.500 MB; măsurare doar pe setul de probă.
+- **S63 (propusă, așteaptă „da”-ul lui Adrian):** a doua noapte pe linia `cod_c1` + set ascuns nou. Fără „da” până la 18:30, placa e liberă la noapte.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Reper de viteză pe Windows pentru #477: 1 fir ~2,14 s / răspuns de 64 simboluri, placa fp32 ~52 simb/s.
@@ -33,7 +30,7 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- Release-ul privat `kronos-kgr1-477` **nu mai blochează OS-ul** (fișierul e deja pe stick, verificat pe 1 nov); rămâne de făcut de Adrian doar ca copie pe GitHub, fără grabă — comanda e în `integrare/kronos/MODEL.md`.
-- **Noaptea 1→2 nov (19:00 → ~06:00) placa e ocupată de S58 (rulează)**: nicio probă OS/GPU pe workstation până după ~07:00 (altfel antrenarea se oprește). Bucla automată (DECIZII 1 nov 19:45) rămâne doar ziua, nu în nopțile de antrenare; ora limită a scriptului (acum 22:00) trebuie coborâtă la 18:30 la pregătirea cu Adrian (~3 nov).
+- **Nou (2 nov):** dacă cifrele S58 contează (abaterea de memorie la examen); „da S63” pentru a doua noapte; opțional: permisiunea `taskkill` pe workstation (executantul n-a putut opri procesul care depășea limita).
+- Release-ul privat `kronos-kgr1-477` nu mai blochează OS-ul (fișierul e pe stick); doar copie pe GitHub, fără grabă — comanda în `integrare/kronos/MODEL.md`.
+- Bucla automată (DECIZII 1 nov 19:45): doar ziua; ora limită a scriptului (acum 22:00) de coborât la 18:30 la pregătirea cu Adrian (~3 nov). La ferestrele OS/GPU: antrenarea de pe placă oprită întâi.
 - Opțional: excluderea mai îngustă propusă la S53; cauza repornirii din 29 oct (comanda din raportul S52).
-- La ferestrele OS/GPU viitoare: antrenarea de pe placă să fie oprită întâi.
