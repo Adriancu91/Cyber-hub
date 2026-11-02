@@ -1,10 +1,10 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 20:56 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 21:16 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 20:11–20:56, 7 pași, testele trec:
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 20:56–21:16: diagrama **Plus și minus** (avantaje sub un ＋, dezavantaje sub un −; 66 de feluri, în Docs, Sheets, Notițe și Slides), testele trec. Înainte (20:11–20:56, 7 pași):
   - Sheets: șabloanele **Foaie de parcurs** (km de serviciu / personali, cost pe km) și **Note școlare** (mediile, media generală; 19 șabloane);
   - Docs: **Reclamație** și **Contract de împrumut** (19); Slides: **Plan de marketing** (22);
   - Notițe: **Plan de mese** și **Economii pentru un obiectiv** (21);
