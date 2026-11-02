@@ -809,3 +809,10 @@ Format:
   albă a modului automat; `gpu lant` doar cu „DA” tastat, interzis în modul automat. Teste QEMU/simulare; nimic pe placa reală fără Adrian.
 - stare: gata (2026-11-01 23:20 UTC, sesiunea OS; preluat 21:50 UTC) — P6-42
 - rezultat: `gpu tur` (0 scrieri, un rând `fapt …` pe fapt, pe lista albă a buclei) și `gpu lant` (doar cu „DA”, refuzat în buclă; în simulare oprit la I7 cu Bus Master pus la loc, și la eroare) — testate în QEMU, CI verde, Release `os-214`; nimic pe placa reală.
+
+### C-56 · kronos · „Pornește acum sau cât de curând S63” — a doua noapte Kronos-Cod, chiar ziua
+- data: 2026-11-02 08:46 · de la: **Adrian** (scris direct), transmis de centrul de comandă
+- ce: S63 din `plan/coada.md`, exact cum e scrisă (pre-înregistrare înainte, set ascuns NOU, continuare din `lucru/cod_c1/gpt.pt`, examenele cu
+  `--memorie-max 6500`), **imediat după ce S62 e `gata`** cu memoria sub 6.500 MB — fără să aștepte fereastra de noapte. Adrian e plecat până ~3 nov,
+  deci nicio fereastră OS/GPU nu o întrerupe. Limitele plăcii neschimbate (7.000 MB, 83 °C).
+- stare: nou
