@@ -1,15 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 20:11 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 20:56 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 19:28–20:11, 6 pași, testele trec:
-  - Notițe: șabloanele **Petrecere** și **Grădină și plante** (19 șabloane);
-  - Sheets: **Împărțirea cheltuielilor** (cine cât a plătit, partea fiecăruia, cine cui dă; 17);
-  - Docs: **Scrisoare de recomandare** (17); Slides: **Instruire de protecția muncii** (21);
-  - Video: stilul de titlu **Riglă** (82 de stiluri);
-  - înainte (18:39–19:26): șabloanele Ședința cu părinții, Cerere de finanțare, Acte și scadențe, Adeverință de salariat, Animal de companie și tema Muștar.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 20:11–20:56, 7 pași, testele trec:
+  - Sheets: șabloanele **Foaie de parcurs** (km de serviciu / personali, cost pe km) și **Note școlare** (mediile, media generală; 19 șabloane);
+  - Docs: **Reclamație** și **Contract de împrumut** (19); Slides: **Plan de marketing** (22);
+  - Notițe: **Plan de mese** și **Economii pentru un obiectiv** (21);
+  - înainte (19:28–20:11): Petrecere, Grădină și plante, Împărțirea cheltuielilor, Scrisoare de recomandare, Instruire de protecția muncii, stilul de titlu Riglă.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
