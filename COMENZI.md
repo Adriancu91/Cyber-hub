@@ -815,4 +815,4 @@ Format:
 - ce: S63 din `plan/coada.md`, exact cum e scrisă (pre-înregistrare înainte, set ascuns NOU, continuare din `lucru/cod_c1/gpt.pt`, examenele cu
   `--memorie-max 6500`), **imediat după ce S62 e `gata`** cu memoria sub 6.500 MB — fără să aștepte fereastra de noapte. Adrian e plecat până ~3 nov,
   deci nicio fereastră OS/GPU nu o întrerupe. Limitele plăcii neschimbate (7.000 MB, 83 °C).
-- stare: nou
+- stare: preluat (2026-11-02 08:50, supraveghetor) — sarcina S63 în `plan/coada.md` (aprobat, pornește imediat după S62 `gata` sub 6.500 MB)

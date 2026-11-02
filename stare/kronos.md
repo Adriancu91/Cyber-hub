@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-02 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-02 08:50 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -15,8 +15,8 @@
   Antrenarea în limite (6.205 MB, 64 °C); **la examenul ascuns placa a trecut de 7.000 MB (~17 min)** → S58 `oprit` până decide Adrian.
 
 ## Urmează
-- **S62 (azi ziua, aprobată):** uneltele de examen de cod lucrează în loturi mici și se opresc singure peste 6.500 MB; măsurare doar pe setul de probă.
-- **S63 (propusă, așteaptă „da”-ul lui Adrian):** a doua noapte pe linia `cod_c1` + set ascuns nou. Fără „da” până la 18:30, placa e liberă la noapte.
+- **S62 (rulează din 08:30):** uneltele de examen de cod lucrează în loturi mici și se opresc singure peste 6.500 MB; codul scris, 1174 teste trec; urmează măsurarea pe setul de probă.
+- **S63 (aprobată de Adrian, C-56):** a doua antrenare pe `cod_c1` (10 ore, din modelul S58) + examene pe un set ascuns NOU; pornește **imediat după S62 `gata`**, chiar ziua (placa ocupată ~11 ore).
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Reper de viteză pe Windows pentru #477: 1 fir ~2,14 s / răspuns de 64 simboluri, placa fp32 ~52 simb/s.
@@ -30,7 +30,7 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- **Nou (2 nov):** dacă cifrele S58 contează (abaterea de memorie la examen); „da S63” pentru a doua noapte; opțional: permisiunea `taskkill` pe workstation (executantul n-a putut opri procesul care depășea limita).
+- **2 nov:** „da S63” primit (C-56). Rămân: dacă cifrele S58 contează (abaterea de memorie la examen); opțional: permisiunea `taskkill` pe workstation (executantul n-a putut opri procesul care depășea limita).
 - Release-ul privat `kronos-kgr1-477` nu mai blochează OS-ul (fișierul e pe stick); doar copie pe GitHub, fără grabă — comanda în `integrare/kronos/MODEL.md`.
 - Bucla automată (DECIZII 1 nov 19:45): doar ziua; ora limită a scriptului (acum 22:00) de coborât la 18:30 la pregătirea cu Adrian (~3 nov). La ferestrele OS/GPU: antrenarea de pe placă oprită întâi.
 - Opțional: excluderea mai îngustă propusă la S53; cauza repornirii din 29 oct (comanda din raportul S52).
