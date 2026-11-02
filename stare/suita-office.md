@@ -1,14 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 15:13 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 15:45 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:34–15:13, 3 pași, testele trec:
-  - Imagini → Mai multe poze: **⤓ Picătură**, pozele trase peste fereastră se prelucrează singure (acțiunea salvată ține minte și dosarul);
-  - Video: **🔇 Scoate pauzele** dintr-un clip (liniștea găsită pe calculator, fără AI și fără internet);
-  - Video: stilul de titlu **Carte de îmbarcare** (76 de stiluri);
-  - înainte (14:08–14:34): diagramele Listă cu pentagoane / octogoane (62 de feluri), stilul Ecran de telefon.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 15:12–15:45, 3 pași, testele trec:
+  - Slides → **Fă video din prezentare**: un slide cu animații pe click intră în film ca mai multe poze, câte una după fiecare click (casetele apar pe rând, ieșirile dispar), timpul slide-ului împărțit între ele;
+  - la fel în **Export GIF animat**;
+  - în aceste poze casetele cu cale de mișcare stau la capătul drumului, iar Crește rămâne mărită;
+  - înainte (14:34–15:13): Imagini ⤓ Picătură, Video 🔇 Scoate pauzele, stilul de titlu Carte de îmbarcare.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 

@@ -387,3 +387,4 @@
 - 2026-11-02 14:08 — Ctrl+S salvează înapoi în fișierul deschis (.docx, .odt, .rtf, .txt, .xlsx, .ods, .pptx, .odp), cu întrebarea „Unde salvezi?” o dată și copia veche păstrată; PowerPoint 91,8%; 4 pași, testele trec.
 - 2026-11-02 14:34 — Diagramele Listă cu pentagoane și Listă cu octogoane (62 de feluri) și stilul de titlu Video „Ecran de telefon” (75); 2 pași, testele trec.
 - 2026-11-02 15:13 — Imagini: ⤓ Picătură în Mai multe poze; Video: 🔇 Scoate pauzele dintr-un clip (Clipchamp 82,1%) și stilul de titlu Carte de îmbarcare (76); 3 pași, testele trec.
+- 2026-11-02 15:45 — Slides: Fă video și Export GIF animat arată animațiile pe click (câte o poză după fiecare click, căile de mișcare la capătul drumului); 3 pași, testele trec.
