@@ -1,14 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 21:16 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 22:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 20:56–21:16: diagrama **Plus și minus** (avantaje sub un ＋, dezavantaje sub un −; 66 de feluri, în Docs, Sheets, Notițe și Slides), testele trec. Înainte (20:11–20:56, 7 pași):
-  - Sheets: șabloanele **Foaie de parcurs** (km de serviciu / personali, cost pe km) și **Note școlare** (mediile, media generală; 19 șabloane);
-  - Docs: **Reclamație** și **Contract de împrumut** (19); Slides: **Plan de marketing** (22);
-  - Notițe: **Plan de mese** și **Economii pentru un obiectiv** (21);
-  - înainte (19:28–20:11): Petrecere, Grădină și plante, Împărțirea cheltuielilor, Scrisoare de recomandare, Instruire de protecția muncii, stilul de titlu Riglă.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 21:16–22:00 (6 pași, testele trec):
+  - Notițe: șabloanele **Interviu de angajare** și **Curățenie** (23 de șabloane);
+  - Sheets: **Listă de invitați** (confirmați, adulți și copii, costul meselor; 20 de șabloane);
+  - Docs: **Acord de confidențialitate** (20); Slides: **Plan de călătorie** (23); Video: titlul **Claketă de film** (83 de stiluri);
+  - înainte (20:11–21:16): Foaie de parcurs, Note școlare, Reclamație, Contract de împrumut, Plan de marketing, Plan de mese, Economii, diagrama Plus și minus (66 de feluri).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
