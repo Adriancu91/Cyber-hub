@@ -1,15 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-03 01:03 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-03 01:45 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 00:23 – 01:03 (5 pași, testele trec): un set de șabloane pentru **nuntă și botez**:
-  - Slides: **Nuntă** (povestea mirilor, programul zilei, mesele; 27 de șabloane); Sheets: **Bugetul nunții** (restul de plată, darul estimat; 27);
-  - Notițe: **Pregătiri de nuntă** și **Botez** (32); Docs: **Invitație de nuntă** (26);
-  - înainte (02.11 – 03.11 noaptea): Cerere de restituire a garanției (Docs), Mașina: acte și revizii, Accident auto, Internare în spital (Notițe), Garanții, Împrumuturi (Sheets), Aniversare (Slides).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 01:03 – 01:45 (3 pași, testele trec):
+  - Sheets → Aspect pagină: **se scrie direct în celulele de pe pagină** (clic pe celulă, Enter / Tab, Esc);
+  - Sheets → Scindare: se scrie direct și în **a doua parte a foii**;
+  - Slides: graficul își ia datele **dintr-un tabel de pe slide sau dintr-un .xlsx / .ods / .csv** (▦ Date din).
+  - înainte (03.11 noaptea): șabloane pentru nuntă și botez în Slides, Sheets, Docs și Notițe.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
+- Scoruri: **Word 90,6%**, **Excel 92,2%**, **PowerPoint 91,9%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (de exemplu șabloane, teme, diagrame); reducerea zgomotului în Video, după ce găsim reglajul bun.

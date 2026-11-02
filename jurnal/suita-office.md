@@ -402,3 +402,4 @@
 - 2026-11-03 00:08 — Șase șabloane noi, cu teste: Garanții și Împrumuturi (Sheets), Notificare de retragere pentru retur online (Docs), Aniversare (Slides), Internare în spital și Accident auto (Notițe).
 - 2026-11-03 00:23 — Două șabloane noi, cu teste: Cerere de restituire a garanției la chirie (Docs) și Mașina: acte și revizii (Notițe).
 - 2026-11-03 01:03 — Șabloane noi pentru nuntă și botez, cu teste: Nuntă (Slides), Bugetul nunții (Sheets), Invitație de nuntă (Docs), Pregătiri de nuntă și Botez (Notițe).
+- 2026-11-03 01:45 — Scris direct în celule în Sheets (în Aspect pagină și în a doua parte a scindării) și graficul din Slides cu datele luate din alt tabel sau dintr-o foaie de calcul; 3 pași, testele trec.
