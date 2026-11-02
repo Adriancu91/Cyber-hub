@@ -379,3 +379,4 @@
 - 2026-11-02 08:15 — Slides: la .ppt liniile grilei din grafice și animațiile obiectelor; Video: Kit de brand (culori, fonturi, sigle pentru toate filmele); 3 pași, testele trec.
 - 2026-11-02 09:00 — Diagramele Ciclu cu blocuri și Cronologie verticală (54 de feluri); Video: 4 treceri din colțuri (100) și titlul Foaie de calendar (68 de stiluri); 5 pași, testele trec.
 - 2026-11-02 09:41 — Diagramele Venn radial și Matrice cu titlu (56 de feluri); Video: 4 treceri în diagonală (104) și titlul Fereastră de aplicație (69 de stiluri); 5 pași, testele trec.
+- 2026-11-02 10:23 — Diagramele Listă cu hexagoane și Listă cu cercuri (58 de feluri); Video: 4 treceri Descoperire în diagonală (108) și titlurile Cutie de carton, Carte de vizită (71 de stiluri); 6 pași, testele trec.
