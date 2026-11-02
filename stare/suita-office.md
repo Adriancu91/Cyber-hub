@@ -1,14 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 18:38 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 19:26 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 17:53–18:40, 6 pași, testele trec:
-  - diagrama nouă **Săgeți față în față** în Docs, Sheets, Notițe și Slides (65 de feluri);
-  - șabloane noi: Sheets **Abonamente** (următoarea plată calculată singură, cost pe lună și pe an; 15), Docs **Contract de comodat** (15), Notițe **Mutare** (16);
-  - Video: stilul de titlu **Dosar cu filă** (81) și 4 treceri noi „Cerc spre stânga / dreapta / sus / jos” (126);
-  - înainte (17:13–17:53): șabloane noi în Slides, Docs, Sheets și Notițe, titlul Video „Locație pe hartă”.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 18:39–19:26, 5 pași, testele trec:
+  - Slides: șabloanele **Ședința cu părinții** și **Cerere de finanțare** (20 de șabloane);
+  - tema nouă **Muștar** în Slides (33), Docs (31) și Sheets (29);
+  - Sheets: șablonul **Acte și scadențe** (ITP, RCA, rovinietă, buletin: zilele rămase, expiratele în roșu; 16);
+  - Docs: **Adeverință de salariat** (16); Notițe: **Animal de companie** (17);
+  - înainte (17:53–18:38): diagrama Săgeți față în față, șabloanele Abonamente, Contract de comodat, Mutare, titlul Video Dosar cu filă, 4 treceri Cerc spre margine.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
