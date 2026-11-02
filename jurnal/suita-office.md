@@ -389,3 +389,4 @@
 - 2026-11-02 15:13 — Imagini: ⤓ Picătură în Mai multe poze; Video: 🔇 Scoate pauzele dintr-un clip (Clipchamp 82,1%) și stilul de titlu Carte de îmbarcare (76); 3 pași, testele trec.
 - 2026-11-02 15:45 — Slides: Fă video și Export GIF animat arată animațiile pe click (câte o poză după fiecare click, căile de mișcare la capătul drumului); 3 pași, testele trec.
 - 2026-11-02 16:25 — Diagrama Ciclu continuu (63), trei șabloane Slides (SWOT, prezentare personală, bilanțul anului), titlul Video „Mesaj de chat” (77), temele Teracotă și Turcoaz în Slides / Docs / Sheets; 5 pași, testele trec.
+- 2026-11-02 17:12 — Video: 10 treceri noi cu cerc (122), titlurile Notificare pe telefon și Ecuson cu nume (79); diagrama Listă cu triunghiuri (64 de feluri); 6 pași, testele trec.
