@@ -397,3 +397,4 @@
 - 2026-11-02 20:56 — Șabloane noi: Foaie de parcurs și Note școlare (Sheets), Reclamație și Contract de împrumut (Docs), Plan de marketing (Slides), Plan de mese și Economii (Notițe); testele trec.
 - 2026-11-02 21:16 — Diagrama nouă Plus și minus (pro și contra în două coloane), în toate aplicațiile cu diagrame; 66 de feluri.
 - 2026-11-02 22:00 — Șabloane noi: Interviu de angajare și Curățenie (Notițe), Listă de invitați (Sheets), Acord de confidențialitate (Docs), Plan de călătorie (Slides) și titlul Video Claketă de film; 6 pași, testele trec.
+- 2026-11-02 22:38 — Șabloane noi: Revizii și reparații auto și Evidența chiriilor (Sheets), Cerere de reziliere (Docs), Adunarea asociației de proprietari (Slides), Drum lung cu mașina și Comenzi online (Notițe); 6 pași, testele trec.
