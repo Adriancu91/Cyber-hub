@@ -1,8 +1,10 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-02 08:45 (ora României; sesiunea 08:42 = oprire scurtă, nicio comandă nouă) · **de:** sesiunea OS programată · ultimele sarcini: **C-53 gata (P6-41, `os-213`)**, **C-55 gata (P6-42, `os-214`)**
+**Actualizat:** 2026-11-02 11:45 (ora României; **OPRIT** — oprire de siguranță după 3 sesiuni fără sarcină, din lipsă de comenzi) · **de:** sesiunea OS programată · ultimele sarcini: **C-53 gata (P6-41, `os-213`)**, **C-55 gata (P6-42, `os-214`)**
 
 ## Acum
+- **OPRIT: necesită analiza lui Adrian.** Ultimele 3 sesiuni programate nu au avut nicio sarcină de făcut (coada e goală fără tine), așa că regula de siguranță oprește începerea de sarcini noi. Nu e nicio eroare: CI verde, Release `os-214`, codul neschimbat. Se ridică cu o comandă nouă de la Adrian în `COMENZI.md` sau cu fereastra pe workstation.
+
 - **C-55 gata (P6-42) — `gpu tur` și `gpu lant`, testate DOAR în simulare (Release `os-214`):**
   - `gpu tur` (**doar citire**, 0 scrieri): citește din placă tot ce s-a citit deja în siguranță (identitatea, pornirea firmware-ului plăcii,
     VBIOS, FWSEC, pregătirea I6) și scrie un rând `fapt <cheie> = <valoare>` pe fiecare lucru → Cyber-GPU compară raportul cu simularea.
@@ -43,6 +45,7 @@
 - `cyber-gpu`: după fereastră, analiza jurnalului `gpu-jurnal-NNN.txt` (din `rezultate/`).
 
 ## Blocaje / nevoie de Adrian
+- **Oprirea de siguranță (OPRIT):** sesiunile OS nu mai încep sarcini până nu dai o comandă nouă în `COMENZI.md` (orice comandă nouă o ridică, ca la C-12). Dacă vrei ca sesiunile să continue singure și când coada e goală, spune ce să facă (ex. C-41 amânat, sau altă sarcină).
 - **Fereastra I6 (~20 min, DOAR când ai timp să fii de față; nimic nu se face fără tine):**
   0. Pregătire: un **stick de test separat**, scris (ca de obicei, cu Rufus/balenaEtcher) din `cyber-universe-gpu-scrie-usb.img` din
      Release `os-214` (sau `os-212`) (are deja `cyber.rw`, deci jurnalul se poate scrie pe el). Workstation: **oprire completă, cablul scos 30 s**.
