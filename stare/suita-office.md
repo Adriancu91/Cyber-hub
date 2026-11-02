@@ -1,15 +1,16 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 14:34 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 15:13 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:08–14:34, 2 pași, testele trec:
-  - diagramele **Listă cu pentagoane** și **Listă cu octogoane** în Docs, Sheets, Notițe și Slides (62 de feluri);
-  - în Video, stilul de titlu **Ecran de telefon** (75 de stiluri);
-  - înainte (13:29–14:08): Ctrl+S salvează înapoi în fișierul deschis (.docx / .odt / .rtf / .txt, .xlsx / .ods, .pptx / .odp).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:34–15:13, 3 pași, testele trec:
+  - Imagini → Mai multe poze: **⤓ Picătură**, pozele trase peste fereastră se prelucrează singure (acțiunea salvată ține minte și dosarul);
+  - Video: **🔇 Scoate pauzele** dintr-un clip (liniștea găsită pe calculator, fără AI și fără internet);
+  - Video: stilul de titlu **Carte de îmbarcare** (76 de stiluri);
+  - înainte (14:08–14:34): diagramele Listă cu pentagoane / octogoane (62 de feluri), stilul Ecran de telefon.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 81,3%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
+- Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (de exemplu șabloane, teme, diagrame); reducerea zgomotului în Video, după ce găsim reglajul bun.
