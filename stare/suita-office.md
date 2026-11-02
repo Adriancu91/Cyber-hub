@@ -1,14 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-03 00:08 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-03 00:23 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02.11 23:27 – 03.11 00:08 (6 pași, testele trec), șabloane noi gata de completat:
-  - Sheets: **Garanții** (când expiră garanția fiecărui produs) și **Împrumuturi** (bani dați / primiți de la prieteni, restanțe; 26 de șabloane);
-  - Docs: **Notificare de retragere** pentru un retur online în 14 zile (24); Slides: **Aniversare** (26);
-  - Notițe: **Internare în spital** și **Accident auto** (constatare amiabilă, RCA; 29);
-  - înainte (02.11 seara): Plângere împotriva unei amenzi, Proces-verbal de constatare a pagubei, Citiri contoare, Medicamente, Atelier de gătit, Început de an școlar, Casa înainte de plecare.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 00:09 – 00:23 (2 pași, testele trec), șabloane noi gata de completat:
+  - Docs: **Cerere de restituire a garanției** la chirie (predarea cheilor, contorii, contul pentru bani; 25 de șabloane);
+  - Notițe: **Mașina: acte și revizii** (RCA, ITP, rovinietă, anvelope de iarnă; 30);
+  - înainte (02.11 – 03.11 noaptea): Garanții, Împrumuturi (Sheets), Notificare de retragere (Docs), Aniversare (Slides), Internare în spital, Accident auto (Notițe).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
