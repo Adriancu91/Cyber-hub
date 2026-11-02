@@ -371,3 +371,4 @@
 - 2026-11-02 02:04 — Diagramele nr. 51 Fișe cu file și nr. 52 Blocuri în grilă; Video: trecerile Pătrățele la întâmplare / în val (96), titlurile Pagină de ziar și Hârtie milimetrică (67); Sheets: numele foii goale urmează limba; 5 pași, testele trec.
 - 2026-11-02 02:43 — Sheets: funcțiile IMAGE (poză în celulă), DETECTLANGUAGE (limba textului, fără internet) și WEBSERVICE (text de la o adresă web); formule 97,7%; 4 pași, testele trec.
 - 2026-11-02 03:33 — Ecuații: modulul, norma, partea întreagă, combinările, reuniunea / intersecția mare și integrala triplă (în desen, .docx / .pptx / .odt și cu bară inversă); textul pentru cititorul de ecran urmează limba interfeței.
+- 2026-11-02 04:11 — Ecuații: text deasupra / dedesubt și săgeți cu text, indicii în fața literei, parantezele unghiulare, fracția oblică și pe rând (toate păstrate în .docx / .pptx / .odt); 4 pași, testele trec.
