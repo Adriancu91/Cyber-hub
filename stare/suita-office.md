@@ -1,13 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 10:23 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 11:07 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 09:41–10:23, 6 pași, testele trec:
-  - Docs / Sheets / Notițe / Slides: două diagrame noi, **Listă cu hexagoane** și **Listă cu cercuri** (numărul într-un hexagon / cerc, textul într-o bandă alături); acum 58 de feluri;
-  - Video: 4 treceri noi, **Descoperire în diagonală** (cadrul vechi pleacă spre oricare colț); acum 108 treceri;
-  - Video: stilurile de titlu **Cutie de carton** și **Carte de vizită**; acum 71 de stiluri.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 10:24–11:07, 5 pași, testele trec:
+  - Docs / Sheets / Notițe / Slides: două diagrame noi, **Listă cu romburi** și **Listă cu stele**; acum 60 de feluri; în Slides, după „Elimină formă”, numerele listelor se refac și la romburi / stele (test nou);
+  - Video: 4 treceri noi, **Glisare în diagonală în jos** și **Acoperire în diagonală de jos** (spre / din ambele colțuri de jos); acum 112 treceri;
+  - Video: stilurile de titlu **Planșetă cu clemă** și **Pagină de carte**; acum 73 de stiluri.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 81,3%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
