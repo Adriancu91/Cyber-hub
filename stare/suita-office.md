@@ -1,20 +1,20 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 04:11 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 05:05 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03:27–04:15, 4 pași, testele trec:
-  - Ecuații: **text deasupra / dedesubt** și **săgeți cu text** lungite cât textul (ca la reacțiile chimice), păstrate în .docx / .pptx / .odt;
-  - Ecuații: **indicii puși în fața literei** (²³⁸₉₂U, la fizică și chimie);
-  - Ecuații: **parantezele unghiulare ⟨x⟩** și punctele din matrice ⋯ ⋮ ⋱;
-  - Ecuații: **fracția oblică** (½ mic) și **fracția pe rând** (a/b); plus două corecturi la deschiderea formulelor din .docx / .odt (paranteze în plus, litere „s” șterse).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 04:12–05:05, 4 pași, testele trec:
+  - Slides: prezentările vechi **.ppt** se deschid acum cu **pozele** la locul lor (înainte doar textul);
+  - Slides: și cu **formele desenate** din .ppt (dreptunghiuri, elipse, linii, săgeți, 50 de feluri), cu culorile lor;
+  - Slides: la .ppt și **mărimea / culoarea literelor** și **fundalul** slide-ului: o prezentare reală de 30 de slide-uri arată acum ca originalul;
+  - Testul pe colecție verifică și fișierele **.eps**; colecția are acum 14 fișiere .ppt.
 - Raportul de testare completă: Raport-testare-01.11.html (în dosarul proiectului).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule **97,7%** (509 / 521; lipsesc doar cele cu servere speciale). Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule **97,7%** (509 / 521; lipsesc doar cele cu servere speciale). Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
 ## Urmează
-- Alte funcții „parțial” / „nu” din inventar (la PDF: certificatele EC de pe token).
+- La .ppt: formatul pe bucăți de text, fontul și notițele vorbitorului; apoi alte funcții „parțial” / „nu” din inventar.
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice și despărțirea în silabe românească, semnarea / verificarea XML (XML-DSig, scrise de la zero).
