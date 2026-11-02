@@ -1,14 +1,15 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 15:45 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 16:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 15:12–15:45, 3 pași, testele trec:
-  - Slides → **Fă video din prezentare**: un slide cu animații pe click intră în film ca mai multe poze, câte una după fiecare click (casetele apar pe rând, ieșirile dispar), timpul slide-ului împărțit între ele;
-  - la fel în **Export GIF animat**;
-  - în aceste poze casetele cu cale de mișcare stau la capătul drumului, iar Crește rămâne mărită;
-  - înainte (14:34–15:13): Imagini ⤓ Picătură, Video 🔇 Scoate pauzele, stilul de titlu Carte de îmbarcare.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 15:43–16:25, 5 pași, testele trec:
+  - diagrama **Ciclu continuu** (blocuri pe un inel gros; 63 de feluri, în Docs, Sheets, Notițe, Slides);
+  - Slides: trei șabloane noi, **Analiză SWOT**, **Prezentare personală**, **Bilanțul anului** (15 șabloane);
+  - Video: stilul de titlu **Mesaj de chat** (77 de stiluri);
+  - temele **Teracotă** și **Turcoaz** în Slides (32 de teme), Docs (30) și Sheets (28 de palete);
+  - înainte (15:12–15:45): Fă video / Export GIF din prezentare cu animațiile pe click.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
