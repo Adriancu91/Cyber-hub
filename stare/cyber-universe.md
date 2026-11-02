@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-02 11:45 (ora României; **OPRIT** — oprire de siguranță după 3 sesiuni fără sarcină, din lipsă de comenzi) · **de:** sesiunea OS programată · ultimele sarcini: **C-53 gata (P6-41, `os-213`)**, **C-55 gata (P6-42, `os-214`)**
+**Actualizat:** 2026-11-02 14:44 (ora României; **OPRIT** rămâne, verificat din nou — oprire de siguranță după 3 sesiuni fără sarcină, din lipsă de comenzi) · **de:** sesiunea OS programată · ultimele sarcini: **C-53 gata (P6-41, `os-213`)**, **C-55 gata (P6-42, `os-214`)**
 
 ## Acum
 - **OPRIT: necesită analiza lui Adrian.** Ultimele 3 sesiuni programate nu au avut nicio sarcină de făcut (coada e goală fără tine), așa că regula de siguranță oprește începerea de sarcini noi. Nu e nicio eroare: CI verde, Release `os-214`, codul neschimbat. Se ridică cu o comandă nouă de la Adrian în `COMENZI.md` sau cu fereastra pe workstation.
