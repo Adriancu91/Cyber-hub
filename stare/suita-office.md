@@ -1,16 +1,17 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 02:04 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 02:43 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 01:17–02:04, 5 pași, testele trec:
-  - diagramele nr. 51 **Fișe cu file** și nr. 52 **Blocuri în grilă** (Docs, Sheets, Notițe, Slides);
-  - Video: trecerile **Pătrățele la întâmplare** și **Pătrățele în val** (96), stilurile de titlu **Pagină de ziar** și **Hârtie milimetrică** (67);
-  - Sheets: foaia goală a unui registru nou își schimbă numele odată cu limba („Foaia 1” / „Sheet1”); de aici venea textul rămas uneori în română la testul de engleză.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 02:07–02:50, 4 pași, testele trec:
+  - Sheets: **=IMAGE / =IMAGINE** pune în celulă o poză de la o adresă web (4 feluri de mărime);
+  - Sheets: **=DETECTLANGUAGE** spune limba unui text, pe calculator, fără internet (detectorul din Docs, îmbunătățit și pentru maghiară / italiană);
+  - Sheets: **=WEBSERVICE** aduce textul de la o adresă web (de exemplu cursul BNR), cu #BUSY! cât se așteaptă; merge cu FILTERXML;
+  - inventarul: lista „Top lipsă” pusă la zi.
 - Raportul de testare completă: Raport-testare-01.11.html (în dosarul proiectului).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
-- Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule 97,1%. Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
+- Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 80,5%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule **97,7%** (509 / 521; lipsesc doar cele cu servere speciale). Colecția de test: **477 / 560** fișiere reale fără pierderi, 0 erori.
 
 ## Urmează
 - Alte funcții „parțial” / „nu” din inventar (la PDF: certificatele EC de pe token).
