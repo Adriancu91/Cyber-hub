@@ -1,12 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 14:08 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 14:34 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 13:29–14:08, 4 pași, testele trec:
-  - **Ctrl+S salvează acum înapoi în fișierul deschis**: un .docx / .odt / .rtf / .txt în Docs, un .xlsx / .ods în Sheets și un .pptx / .odp în Slides; la primul Ctrl+S Suite întreabă „Unde salvezi?” (În fișierul deschis sau Ca format Cyber Office Studio), copia veche se păstrează ca rezervă, apoi Ctrl+S scrie direct;
-  - așa se închide și ce rămăsese din prima problemă găsită de Adrian la birou (22.10): „salvarea înapoi în .xlsx / .docx”.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 14:08–14:34, 2 pași, testele trec:
+  - diagramele **Listă cu pentagoane** și **Listă cu octogoane** în Docs, Sheets, Notițe și Slides (62 de feluri);
+  - în Video, stilul de titlu **Ecran de telefon** (75 de stiluri);
+  - înainte (13:29–14:08): Ctrl+S salvează înapoi în fișierul deschis (.docx / .odt / .rtf / .txt, .xlsx / .ods, .pptx / .odp).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,6%**, **Excel 92%**, **PowerPoint 91,8%**, Clipchamp 81,3%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
