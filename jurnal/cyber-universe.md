@@ -111,3 +111,4 @@
 - 2026-11-01 20:40 — C-52 gata (P6-40): `gpu pregatire-i6`, jurnalul pe loc pe stick, `gpu i6 --scrie` doar pe stick-ul de test (`gpu-scrie`, „DA”); trece în simulare; CI verde, Release `os-212`; fereastra I6 așteaptă pe Adrian.
 - 2026-11-01 22:35 — C-53 gata (P6-41): bucla automată, partea OS — lista `auto/teste.txt` (doar citire), raport pe loc, ceas de siguranță, repornire; scriptul Windows `bucla-automata.ps1`; testat în QEMU; CI verde, Release `os-213`. C-55 urmează.
 - 2026-11-02 01:20 — C-55 gata (P6-42): `gpu tur` (doar citire, rânduri `fapt …`, pe lista albă a buclei) + `gpu lant` (pașii ferestrei în lanț, doar cu „DA”, oprire la I7, Bus Master pus la loc); testat în simulare/QEMU; CI verde, Release `os-214`.
+- 2026-11-02 02:45 — oprire scurtă: nicio comandă nouă pentru `cyber-universe`; CI verde, Release `os-214`; așteaptă fereastra de pe workstation cu Adrian.
