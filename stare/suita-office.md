@@ -1,19 +1,18 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-02 08:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-02 09:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 07:27–08:15, 3 pași, testele trec:
-  - Slides, la **.ppt**: liniile grilei din grafice desenate de mână se văd; în prezentarea de test elementele pierdute au scăzut de la 22 la 3 (rămân 2 ecuații vechi și o poză de Mac);
-  - Slides, la **.ppt**: **animațiile** obiectelor și grupurilor (apar pe rând la clic, ca în original; 297 într-o prezentare de test);
-  - Video: **🎨 Kit de brand** (culori, fonturi și sigle păstrate pentru toate filmele, puse cu un clic pe texte / ca logo).
-  - Încercată și amânată: reducerea zgomotului din clipuri (filtrul din FFmpeg n-a dat încă rezultate bune la măsurători).
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 08:13–09:00, 5 pași, testele trec:
+  - Docs / Sheets / Notițe / Slides: două diagrame noi, **Ciclu cu blocuri** (dreptunghiuri pe un cerc, cu săgeți) și **Cronologie verticală** (linie în mijloc, momentele pe rând în stânga și în dreapta); acum 54 de feluri;
+  - Video: 4 treceri noi, **Dreptunghi din colț** (stânga sus, dreapta jos, dreapta sus, stânga jos); acum 100 de treceri;
+  - Video: stilul de titlu **Foaie de calendar** (albă, cu bandă roșie și inele); acum 68 de stiluri.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,4%**, **Excel 91,8%**, **PowerPoint 91,4%**, Clipchamp 81,3%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
 ## Urmează
-- Reducerea zgomotului în Video (după ce găsim reglajul bun), apoi alte funcții „parțial” / „nu” din inventar.
+- Alte funcții „parțial” / „nu” din inventar; reducerea zgomotului în Video, după ce găsim reglajul bun.
 
 ## Ce oferă proiectul celorlalți
 - Nimic nou acum. Mai târziu (după testarea de către oameni): motorul de calcul, citirea documentelor (PDF / .docx → text), motorul de diacritice și despărțirea în silabe românească, semnarea / verificarea XML (XML-DSig, scrise de la zero).

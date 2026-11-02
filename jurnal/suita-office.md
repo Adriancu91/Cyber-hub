@@ -377,3 +377,4 @@
 - 2026-11-02 06:39 — Slides: prezentările vechi .ppt iau acum stilurile și desenele slide-ului coordonator (sigle, grile, numerotare), ancorarea textului, legăturile, liniile punctate și umbrele; 8 pași, testele trec.
 - 2026-11-02 07:30 — Slides: marginile interioare ale casetelor (din .ppt / .pptx / .odp, la salvare și alese din bară) și spațierea rândurilor / paragrafelor din .ppt; 4 pași, testele trec.
 - 2026-11-02 08:15 — Slides: la .ppt liniile grilei din grafice și animațiile obiectelor; Video: Kit de brand (culori, fonturi, sigle pentru toate filmele); 3 pași, testele trec.
+- 2026-11-02 09:00 — Diagramele Ciclu cu blocuri și Cronologie verticală (54 de feluri); Video: 4 treceri din colțuri (100) și titlul Foaie de calendar (68 de stiluri); 5 pași, testele trec.
