@@ -25,3 +25,16 @@ Concluzie: echipele singure ajută mult doar dacă vina e la clopoțel (H1); dac
 
 Diferența (sub 3 %) e mai mică decât incertitudinea modelului: simularea nu le poate despărți. Ce nu prinde modelul: 4 fire = 2 nuclee fizice,
 6 fire = 3 nuclee; cum se potrivesc cu memoria rapidă a nucleelor se vede doar pe placă. **Decizie: în testul real `--cauta` le măsoară pe amândouă** (e doar un număr schimbat), iar 6×6 e prima, la egalitate.
+
+## Bucățele (a doua idee a lui Adrian, 13:00) — `simulare_bucatele.py` → `rezultat_bucatele.txt`
+Tot calculul e un bloc; fiecare fir ia o bucățică, iar când termină ia următoarea din ce a rămas (nimeni nu stă după cel lent).
+| varianta | H1 | H2 |
+|---|---|---|
+| azi | 123 | 112 |
+| bucățele 72 / 144 / 288 | 127 / 130 / 132 | 125 / 134 / 139 |
+| bucățele 288 + fire treze | 234 | 153 |
+| bucățele 288 + treji + echipe 9×4 | 260 | 158 |
+| bucățele 288 + treji + echipe 6×6 | 261 | 157 |
+
+Concluzie: bucățelele rezolvă partea „cel mai lent” (H2), echipele + firele treze partea „clopoțel” (H1). **Doar combinația trece de 150 în ambele ipoteze.**
+(„Ajutor la cel lent” din primul tabel era o aproximare optimistă a bucățelelor; cifrele de aici sunt cele cinstite.)

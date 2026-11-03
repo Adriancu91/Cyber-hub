@@ -1,0 +1,9 @@
+varianta                                      H1    H2
+azi (o bucată fixă pe fir)                   123   112
+bucățele: 72 (2 pe fir)                      127   125
+bucățele: 144 (4 pe fir)                     130   134
+bucățele: 288 (8 pe fir)                     132   139
+bucățele 144 + fire treze                    228   148
+bucățele 288 + fire treze                    234   153
+bucățele 288 + treji + echipe 9x4            260   158
+bucățele 288 + treji + echipe 6x6            261   157

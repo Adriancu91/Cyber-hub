@@ -850,6 +850,7 @@ Format:
   independente (Q/K/V, capetele atenției), echipe diferite lucrează la ele deodată, fără clopoțel între ele. Comparat cu varianta de acum; câștigă măsurătoarea.
 - simulare (model, `studiu/2026-11-03_simulare-echipe/`): echipele ajută mult doar dacă vina e la trezire/adunare; dacă e la firul cel mai lent, contează „cine termină ajută la cel lent”. `--profil` să despartă cele două (adunare/trezire vs. așteptat cel mai lent).
 - Adrian (12:57): în `--cauta` se măsoară **ambele** mărimi de echipă, **9×4 și 6×6** (în simulare egale, 6×6 cu ~1–3 % înainte); câștigă cea mai rapidă pe workstation.
+- Adrian (13:00), idee 2 — **bucățele**: fiecare calcul împărțit în multe bucăți mici (ex. 8 pe fir = 288), un contor comun; firul liber ia următoarea bucată. În simulare doar combinația **bucățele + fire treze + echipe** trece de 150 în ambele ipoteze (~157–261). În `--cauta`: bucăți 72/144/288 × echipe 9×4/6×6 × treji.
 
 ### C-60 · kronos · Kronos-Cod: calea A+B+C+D (răspunsul la S66)
 - data: 2026-11-03 11:45 · de la: **Adrian** („mă bazez pe tine cu decizia ABCD”), decizie a centrului de comandă prin delegare — `DECIZII.md` 2026-11-03 11:45
