@@ -1,15 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-03 03:16 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-03 04:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 02:23 – 03:16 (3 pași gata, testele trec):
-  - Sheets → Vizualizare → **⊞ Patru panouri**: foaia în patru părți derulate legat (capul tabelului și prima coloană la vedere oriunde), se scrie în toate;
-  - PDF → 📎 Atașamente: fișierele din PDF / portofoliu (**.docx, .xlsx, .csv, poze**) se deschid direct în aplicația lor, într-un tab nou;
-  - Docs: șablonul **Referat de necesitate** (28 de șabloane);
-  - încercat și lăsat: același „Deschide” în Notițe (testul se bloca; codul readus, de reluat).
-  - înainte (03.11 noaptea): scris direct în a doua parte a scindării (Docs, Sheets) și în Aspect pagină; vizualizator .html pentru prezentări; șabloane de nuntă și botez.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 03:17 – 04:00 (4 pași gata, testele trec):
+  - Notițe: fișierele atașate (**.docx, .xlsx, .csv, .pptx, poze**) se deschid direct în aplicația lor, într-un tab nou (pasul lăsat neterminat data trecută, acum gata);
+  - scheme noi în Docs / Sheets / Notițe / Slides: **Listă cu linii** și **Bule de dialog** (68 de feluri);
+  - Docs: șablonul **Proces-verbal de recepție** (29 de șabloane), pereche cu Referatul de necesitate.
+  - înainte (03.11 noaptea): Sheets → ⊞ Patru panouri; PDF → atașamentele deschise în aplicația lor; scris direct în a doua parte a scindării (Docs, Sheets); vizualizator .html pentru prezentări; șabloane de nuntă, botez, referat.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,8%**, **Excel 92,3%**, **PowerPoint 92,1%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
