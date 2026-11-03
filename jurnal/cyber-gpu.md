@@ -55,3 +55,4 @@
 - 2026-11-02 19:40 — Sesiunea 37 (cloud, fără placă): **OPRIT rămâne** — verificat: nicio comandă, decizie sau raport nou de pe placă de la sesiunea 36; CI verde. Cod neschimbat.
 - 2026-11-03 01:15 — Sesiunea 38 (cloud, fără placă): **OPRIT rămâne** — nicio comandă, decizie sau raport nou de pe placă; CI verde. Cod neschimbat.
 - 2026-11-03 07:28 — sesiunea 39 (cloud): OPRIT rămâne; nimic nou pentru cyber-gpu în hub, CI verde (`ead53f4`). Pentru fereastra de azi (C-57, 09:00–11:30) pașii primei scrieri sunt în `docs/FEREASTRA_C-49.md`.
+- 2026-11-03 12:55 — sesiunea 40 (cloud, fără placă): OPRIT ridicat de C-58. I6 de pe placă a eșuat doar la verificarea capătului WPR2 (începutul era exact); verificarea raportează acum HI și acceptă capătul „ultima pagină de 4 KiB”, la fel `gpu-sim` (SIMULARE, 335 teste, CI verde). Propunere pentru OS: `idei/2026-11-03_cyber-gpu-fixare-c58.md`.

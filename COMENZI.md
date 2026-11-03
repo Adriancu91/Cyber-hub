@@ -834,7 +834,8 @@ Format:
   (așteptat/citit); (2) verifică în documentația publică / nova-core / open-gpu-kernel-modules (doar citit, clean-room) dacă HI e capăt inclusiv (ultima pagină
   de 4 KiB) și potrivește verificarea + `gpu-sim` (`fake_gsp.rs`) cu realitatea; (3) test în simulare cu valorile reale. Propunere în `idei/` pentru noua
   fixare în OS (C-52). Nimic pe placă; la fereastra următoare Adrian copiază `raport/gpu-jurnal-002.txt` (736 rânduri) de pe stick-ul de test → confirmăm HI citit.
-- stare: preluat (2026-11-03 12:40, sesiunea Cyber-GPU)
+- stare: gata (2026-11-03 12:55, sesiunea Cyber-GPU 40; preluat 12:40)
+- rezultat: în SIMULARE: eroarea numește acum registrul care diferă (LO `0x1fa824` sau HI `0x1fa828`, cu așteptat/citit), iar capătul WPR2 e acceptat și ca ultima pagină de 4 KiB (RM 570.144 și nova-core verifică doar începutul), `gpu-sim` face la fel; HI exact se confirmă din `gpu-jurnal-002.txt` cu `i6_log::wpr2_after_i6`; propunerea pentru OS `idei/2026-11-03_cyber-gpu-fixare-c58.md` (fixare ≥ `af02bea`).
 
 ### C-59 · cyber-universe · Kronos 125 simb/s: 63 % din timp firele se așteaptă — mai puține sincronizări pe simbol
 - data: 2026-11-03 11:15 · de la: centrul de comandă (delegare Adrian; ținta lui: peste 150 simb/s)
