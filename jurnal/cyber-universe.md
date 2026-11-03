@@ -122,3 +122,4 @@
 - 2026-11-03 02:42 — OPRIT rămâne: nicio comandă nouă pentru `cyber-universe`; cod neschimbat, `os-214`.
 - 2026-11-03 05:41 — OPRIT rămâne: nicio comandă nouă pentru `cyber-universe` (C-57 e a lui Kronos: fereastra lui Adrian 09:00–11:30 cu testele `os-214`); cod neschimbat.
 - 2026-11-03 08:42 — OPRIT rămâne: nicio comandă nouă pentru `cyber-universe`, niciun rezultat nou; cod neschimbat, `os-214`. Așteptăm fereastra de azi 09:00–11:30.
+- 2026-11-03 11:41–15:45 — C-59 gata (P6-43): Kronos așteaptă doar firele care au lucru (cauza celor 62,9 % „așteptare”), barierele în `--profil`; aceleași simboluri în QEMU. CI: testul temporizatorului cu 4 procesoare făcut mai tolerant (3 măsurători, prag 80). Release-ul vine împreună cu C-61 (altă sesiune OS, P6-44).

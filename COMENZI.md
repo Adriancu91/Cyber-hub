@@ -844,7 +844,8 @@ Format:
   deși `--cauta` arată proiecția pe 32 fire la ~488 simb/s doar produsele. Afișarea pe bucăți (C-48) a mers: cu ecran 70,3 → 125,4. De făcut: află de ce
   proiecția reală e mai lentă decât în `--cauta`; mai puține bariere pe simbol (ex. lucru grupat pe strat, fire care rămân treze, împărțire fixă a rândurilor);
   `--profil` să arate numărul de bariere. Testat în QEMU, CONTROL neschimbat (aceleași simboluri). Release nou; test pe placă la fereastra următoare.
-- stare: preluat (2026-11-03 11:41, sesiunea OS) · sarcina P6-43
+- stare: gata (2026-11-03 15:45, sesiunea OS) · sarcina P6-43
+- rezultat: cauza = motorul aștepta toate cele 35 de fire și pe cele fără lucru (care își cedau procesorul); acum doar firele cu lucru, semnal „gata” pe fir, fire treze, `--profil` arată barierele (număr, µs) și `--cauta` costul unei bariere — aceleași simboluri în QEMU; viteza reală la fereastra următoare, cu Release-ul comun cu C-61.
 - idee Adrian (2026-11-03 12:53), de măsurat ca variantă în `--cauta` (în P6-43 dacă încape, altfel sarcina următoare): **echipe** — 36 fire = 9 echipe × 4
   (fire vecine, aceleași 2 nuclee fizice). (1) sincronizare în 2 trepte: fiecare echipă se așteaptă intern, apoi doar cei 9 șefi între ei (nu 36 deodată);
   (2) fiecare echipă are mereu aceeași felie de rânduri din fiecare strat (greutățile ei rămân în memoria rapidă a nucleelor ei); (3) unde calculele sunt
