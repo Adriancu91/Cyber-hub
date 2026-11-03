@@ -892,4 +892,4 @@ Format:
   și nimic lung pe procesor; după fereastră, coada continuă (S71). `cyber-universe`: dacă se poate, Release-ul cu P6-45 (bucățele + `--profil` despărțit)
   până la **05:30**, ca centrul de comandă să pregătească arhivele pentru stick-uri; altfel testăm `os-219`. Testul: viteza Kronos (`--cauta`, CONTROL,
   `--profil`), I6 repetat cu stick-ul de test (pornire rece), copierea `gpu-jurnal-002.txt`, primul tur al buclei automate.
-- stare: nou (cyber-universe) · kronos: preluat (2026-11-03 17:20, supraveghetor) — `plan/coada.md`: S70 se termină sau se oprește curat până la 06:45; S71 pornește doar după fereastră (~09:30)
+- stare: preluat (cyber-universe, 2026-11-03 17:45, sesiunea OS) — Release-ul cerut există deja: `os-220` (P6-45 pașii 1–2: bucățele + `--profil` despărțit, CI verde); sesiunea OS continuă P6-45 (echipe, un bloc, un fir liber) și, dacă iese verde înainte de 05:30, dă un Release nou și scrie aici care e cel de folosit · kronos: preluat (2026-11-03 17:20, supraveghetor) — `plan/coada.md`: S70 se termină sau se oprește curat până la 06:45; S71 pornește doar după fereastră (~09:30)
