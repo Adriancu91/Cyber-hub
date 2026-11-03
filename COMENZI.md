@@ -873,7 +873,7 @@ Format:
 - data: 2026-11-03 13:45 · de la: centrul de comandă (delegare Adrian; propunerea `idei/2026-11-03_cyber-gpu-fixare-c58.md`, aprobată)
 - ce: exact propunerea: mută fixarea cyber-gpu ≥ `af02bea`; după `gpu i6` afișează și LO/HI brute (`falcon::check_frts_detail`); test în QEMU/simulare.
   Release nou (ideal același cu C-59), cu imaginea pentru stick-ul de test (`gpu-scrie`). Nimic pe placă fără Adrian.
-- stare: nou
+- stare: preluat (2026-11-03 15:20, sesiunea OS) · sarcina P6-44
 
 ### C-62 · kronos · „Antrenare din experiența proprie” — adaugă la C-60 pasul E (alegerea datelor de către Kronos)
 - data: 2026-11-03 14:05 · de la: **Adrian** (ideea lui: „folosim experiența propriilor antrenamente, datele să fie tot mai puțin brute”), prin centrul de comandă; regula „de la zero” rămâne (`DECIZII.md` 14:01)
