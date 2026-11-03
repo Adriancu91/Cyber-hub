@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-03 02:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-03 05:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -9,12 +9,14 @@
 - **Modelul în uz: #477** (română 1,2097), KGR1 Q8_0 110.859.040 octeți, SHA-256 `bcbe8187…3963`; #459 rezervă. `integrare/kronos/MODEL.md` arată #477.
 - **Kronos-Cod:** două nopți (S58, S63) → 0,5004 biți/octet, pass@10 ~2 % (3/163). **Diagnosticul S64 (gata, NECLAR):** cu 200 de încercări
   pe cele 20 de probleme de probă rezolvă doar 2 (pass@100 = 1,25/20; AJUTĂ cerea ≥ 4, NU AJUTĂ ≤ 1). ~6 % din răspunsuri nu se compilează,
-  ~92 % rulează dar dau rezultat greșit: a învățat forma codului, nu logica. Placa max 1.468 MB / 49 °C; 1177 teste trec.
+  ~92 % rulează dar dau rezultat greșit: a învățat forma codului, nu logica. Placa max 1.468 MB / 49 °C.
+- **S65 (gata, DESTUL):** în codul deja descărcat sunt 339.425 de funcții scurte cu explicație care trec cutia (52,9 mil. simboluri; prag 20 mil.);
+  cu exemplu/test 29.040 (7,2 mil.). Scurgere 0 pe seturile ascunse. Cifra e un plafon (explicațiile lungi, ~27 % cu un singur rând). 1183 teste trec.
 
 ## Urmează
-- **S65 (aprobat, doar procesor):** câte funcții scurte cu explicație (și teste) există deja în codul descărcat — cifrele pentru varianta A.
-- **S66 (propus, așteaptă „da”-ul lui Adrian):** A „funcții” (6–10 ore pe același model, pe funcții scurte, apoi set ascuns nou; recomandată),
-  B „școala cu verificator” (auto-joc pe probleme foarte ușoare), C „model mai mare”. Placa stă liberă până la alegere.
+- **S67 (aprobat, doar procesor, până la 08:45):** funcțiile „autonome” — simbolurile doar ale corpului, fără cele banale, care merg singure în cutie.
+- **3 nov 09:00–11:30 (C-57):** workstation-ul e al lui Adrian (teste Cyber Universe); Kronos nu pornește nimic.
+- **S66 (propus, așteaptă „da”-ul lui Adrian):** A „funcții” (recomandată), B „școala cu verificator”, C „model mai mare”. Placa liberă până la alegere.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Reper pe Windows: 1 fir ~2,14 s / răspuns de 64 simboluri, placa fp32 ~52 simb/s.

@@ -825,4 +825,4 @@ Format:
 - ce: între 09:00 și 11:30 nu porni nimic pe placă și nimic lung pe procesor (Adrian repornește în Cyber Universe: viteza Kronos, primele scrieri
   în placă, pregătirea buclei automate). Dacă rulează ceva la 08:45, oprește-l curat (reluabil). După fereastră, coada continuă normal; decizia
   despre Kronos-Cod (exerciții / memorie de cod / școala de cod) vine de la Adrian după teste.
-- stare: nou
+- stare: preluat (2026-11-03 05:20, supraveghetor) — notat sus în `plan/coada.md`; până la 08:45 doar S67 (procesor, scurtă), placa liberă
