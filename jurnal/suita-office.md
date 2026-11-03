@@ -427,3 +427,4 @@
 - 2026-11-03 16:40 — Imagini: poza legată de fișier (🖇, se aduce singură la zi); PDF: 📁 Adaugă un dosar în Combină și Lot, e-mailuri .msg, fișierele trase în fereastră deschid Combină (6 pași, toate testate).
 - 2026-11-03 17:27 — E-mailurile (.eml / .msg) trase în Notițe și Docs devin text / document; .msg doar cu RTF și mesajele redirecționate ca atașament se citesc; în Imagini stratul legat rămâne legat în .psd (6 pași, toate testate).
 - 2026-11-03 18:14 — Docs: Ordin de deplasare; Sheets: Registru de intrări-ieșiri; tema Cupru; diagramele Listă cu picături / plăcuțe; Video: titlurile Circuit și Șah, trecerile Strângere spre dreapta / în jos (8 pași, toate testate).
+- 2026-11-03 19:03 — 9 pași: șabloane pentru contracte (evidența în Sheets, actul adițional în Docs, lista de reînnoire în Notițe), două șabloane Slides (bugetul anului, procedură internă), două stiluri de titlu și patru treceri noi în Video.
