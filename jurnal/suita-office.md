@@ -413,3 +413,4 @@
 - 2026-11-03 08:15 — Schema nouă Listă cu pătrate în Docs / Sheets / Notițe / Slides (73 de feluri); modulul Studio de documente al altei sesiuni lăsat neatins.
 - 2026-11-03 09:15 — Video: treceri noi Răsucire, Întindere, Strângere (și verticale; 132); tema Bleumarin în Slides / Docs / Sheets; set pentru mutarea biroului (Slides: Mutarea biroului, Docs: Anunț de schimbare a sediului, Notițe: Mutarea biroului).
 - 2026-11-03 09:51 — Schema nouă Listă cu bife (74 de feluri); set pentru angajări: Docs → Fișa postului, Notițe → Angajat nou, Sheets → Evidența instruirilor SSM; check-ro se blochează (textele Studio, necomise), traducerile noi verificate direct.
+- 2026-11-03 10:35 — Set pentru angajați: plecarea unui coleg (Docs: Acord de încetare, Notițe: Plecarea unui angajat, Sheets: Echipamente date angajaților) și evaluarea anuală (Slides, Docs: Fișa de evaluare, Sheets: Evaluările anuale ale echipei, Notițe: Discuția de evaluare).
