@@ -428,3 +428,4 @@
 - 2026-11-03 17:27 — E-mailurile (.eml / .msg) trase în Notițe și Docs devin text / document; .msg doar cu RTF și mesajele redirecționate ca atașament se citesc; în Imagini stratul legat rămâne legat în .psd (6 pași, toate testate).
 - 2026-11-03 18:14 — Docs: Ordin de deplasare; Sheets: Registru de intrări-ieșiri; tema Cupru; diagramele Listă cu picături / plăcuțe; Video: titlurile Circuit și Șah, trecerile Strângere spre dreapta / în jos (8 pași, toate testate).
 - 2026-11-03 19:03 — 9 pași: șabloane pentru contracte (evidența în Sheets, actul adițional în Docs, lista de reînnoire în Notițe), două șabloane Slides (bugetul anului, procedură internă), două stiluri de titlu și patru treceri noi în Video.
+- 2026-11-03 19:50 — 8 pași: set de șabloane pentru achiziții (cerere de ofertă și comandă în Docs, compararea ofertelor în Sheets, alegerea furnizorului în Slides, lista de achiziție în Notițe); Video: titlurile Apus și Pădure, trecerile Strângere spre mijloc.
