@@ -126,3 +126,4 @@
 - 2026-11-03 14:41–16:30 — CI roșu reparat: în nucleu, un `try_lock` refuzat elibera lacătul altui fir (blocarea `kronos-calcul`); C-61 gata (P6-44): Cyber-GPU fixat pe `3286a3b`, LO/HI brute după I6, Release `os-219` (cu C-59).
 - 2026-11-03 16:30 — P6-45 început (ideile lui Adrian din C-59): `--profil` desparte trezire / cel mai lent / adunare; „bucățele” (`--bucati`, măsurate în `--cauta`); aceleași simboluri în QEMU.
 - 2026-11-03 16:45 — CI verde și pentru P6-45 (pașii 1–2) → Release `os-220`, cel de folosit la fereastra următoare.
+- 2026-11-03 17:41–19:50 — P6-45 gata (ideile lui Adrian din C-59): echipe (`--echipe`), un singur bloc pe simbol (`--bloc`), un procesor liber, toate în `--cauta`; aceleași simboluri în QEMU. CI verde → Release `os-222` (cel pentru fereastra C-63). C-63 gata pentru OS.

@@ -1,19 +1,20 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-03 16:30 (ora României) · **de:** sesiunea OS programată (14:41, în paralel cu cea de la 13:41) · ultima sarcină: **C-61 gata (P6-44), Release `os-219`**
+**Actualizat:** 2026-11-03 19:50 (ora României) · **de:** sesiunea OS programată (17:41) · ultima sarcină: **P6-45 gata, Release `os-222`**
 
 ## Acum
-- **Release `os-219`** (CI verde) = C-59 (Kronos: se așteaptă doar firele cu lucru) + C-61 (Cyber-GPU fixat pe `3286a3b`: capătul WPR2 acceptat
-  ca „ultima pagină”; după I6 OS-ul scrie și registrele brute: „WPR2 citit dupa I6: LO … HI … (capat: …)”), cu stick-ul de test `gpu-scrie`.
-- **Greșeală reală în nucleu, reparată:** un lacăt putea fi eliberat de firul greșit când alt fir doar „încerca” să-l ia. Pe mai multe nuclee asta
-  strica lista de fire a unui program sau bloca totul (de aici CI-ul roșu la `kronos-calcul`). Reprodusă local de 8 ori din 12, apoi 0 din 10.
-- **P6-45 — ideile tale din C-59, început:** `--profil` desparte acum așteptarea în „trezire / așteptat cel mai lent / adunare” (spune care ipoteză
-  din simulare e adevărată); „bucățele”: `kronos --bucati N` (cine termină ia următoarea bucată), măsurate de `kronos-calcul --cauta` (1/2/4/8 pe fir)
-  și scrise în reglaj doar dacă bat varianta de acum. Aceleași simboluri în QEMU. Implicit oprit. CI verde → **Release `os-220`** (= `os-219` + acestea).
+- **Release `os-222`** (CI verde) = `os-220` + restul ideilor tale din C-59 (P6-45). **Acesta e Release-ul pentru fereastra de mâine (C-63).**
+  Fără fișier de reglaj merge exact ca `os-220`; variantele noi pornesc doar dacă `kronos-calcul --cauta` le găsește mai rapide.
+- **Un singur bloc pe simbol** (`kronos --bloc`): toate calculele unui simbol sunt date firelor deodată; fiecare fir ia bucăți dintr-un contor
+  comun, iar cel care termină ultima bucată a unui calcul pregătește următorul și îl „deschide” — nu mai e un fir principal care adună și
+  republică de ~49 de ori pe simbol. Aceleași simboluri în QEMU.
+- **Un procesor liber:** `--cauta` măsoară blocul și pe toate procesoarele minus unul (35 pe workstation).
+- **Echipe** (`kronos --echipe N`): așteptare în 2 trepte (în echipă, apoi doar șefii); `--cauta` încearcă echipe de 4 (9×4) și 6 (6×6).
+- `--cauta` scrie în reglaj doar varianta câștigătoare (rânduri noi posibile: `planificare = bloc`, `echipe = N`, `bucati = N`).
 
 ## Urmează
-- P6-45 mai departe: echipe 9×4 / 6×6, un singur bloc pe simbol (fără clopoțel), un fir liber — toate în `--cauta`; câștigă măsurătoarea.
-- Fereastra I6 (pasul următor după C-58), testul Kronos pe workstation, prima tură a buclei automate.
+- Fereastra de mâine 07:00 (C-63) cu `os-222`; după rezultate, alegem varianta (sau, dacă procesorul liber ajută mult, fixarea firelor pe procesoare).
+- Altfel coada OS nu are sarcini libere fără placă/Adrian → opriri scurte până la o comandă nouă.
 
 ## Ce oferă proiectul celorlalți
 - Pentru `cyber-gpu`: `gpu tur` (rândurile `fapt …`), `gpu lant`, `gpu pregatire-i6`, `gpu i6 --scrie` (acum cu LO/HI brute după I6), jurnalul pe loc pe stick.
@@ -23,11 +24,11 @@
 - `cyber-gpu`: verificarea lui `raport\gpu-jurnal-002.txt` (de pe stick-ul de test, după ce ajunge în `rezultate/`) cu `i6_log::wpr2_after_i6`.
 
 ## Blocaje / nevoie de Adrian
-- **Kronos pe workstation (~5 min, stick-ul normal, Release-ul `os-220`):** `cpu porneste`, `run kronos-calcul --cauta`,
-  `run kronos --control`, `run kronos --profil --fara-ecran --n 64 Buna ziua`, `run kronos --profil --n 64 Buna ziua` → poze (mai ales rândurile
-  „bariere” și „bariera in medie: trezire / cel mai lent / adunare”), `raport` → `rezultate/`.
+- **Kronos pe workstation (~10 min, stick-ul normal, Release-ul `os-222`):** `cpu porneste`, `run kronos-calcul --cauta` (poză la rândurile
+  „bucati”, „echipe”, „un bloc pe simbol” și la ultimul rând „cea mai buna”), `run kronos --control`, `run kronos --profil --fara-ecran --n 64 Buna ziua`,
+  și pentru comparație directă `run kronos --profil --fara-ecran --n 64 --bloc Buna ziua` → poze, `raport` → `rezultate/`.
 - **I6 (C-58/C-61):** la fereastra următoare copiezi întâi `raport\gpu-jurnal-002.txt` de pe stick-ul de test vechi în `rezultate/`; Cyber-GPU îl
-  verifică. Abia după aceea I6 se repetă cu stick-ul de test nou (`cyber-universe-gpu-scrie-usb.img` din `os-220`): pornire rece (cablul scos 30 s),
+  verifică. Abia după aceea I6 se repetă cu stick-ul de test nou (`cyber-universe-gpu-scrie-usb.img` din `os-222`): pornire rece (cablul scos 30 s),
   `gpu pregatire-i6` → poză (trebuie „WPR2 coborat”, „TRECE”, „0 scrieri”), `gpu i6 --scrie` + `DA` → poză (rândul nou „WPR2 citit dupa I6”), `raport`.
   Pozele + `raport\*.txt` + `raport\gpu-jurnal-*.txt` → `rezultate/<data>-workstation-i6/`. Dacă ecranul se blochează: 1 minut, oprire, nu repeta azi.
 - **Bucla automată:** prima tură (pașii din `docs/BUCLA_AUTOMATA.md` din repo-ul OS) — când ai ~20 min.
