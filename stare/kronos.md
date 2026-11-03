@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-03 05:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-03 08:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -10,12 +10,14 @@
 - **Kronos-Cod:** două nopți (S58, S63) → 0,5004 biți/octet, pass@10 ~2 % (3/163). **Diagnosticul S64 (gata, NECLAR):** cu 200 de încercări
   pe cele 20 de probleme de probă rezolvă doar 2 (pass@100 = 1,25/20; AJUTĂ cerea ≥ 4, NU AJUTĂ ≤ 1). ~6 % din răspunsuri nu se compilează,
   ~92 % rulează dar dau rezultat greșit: a învățat forma codului, nu logica. Placa max 1.468 MB / 49 °C.
-- **S65 (gata, DESTUL):** în codul deja descărcat sunt 339.425 de funcții scurte cu explicație care trec cutia (52,9 mil. simboluri; prag 20 mil.);
-  cu exemplu/test 29.040 (7,2 mil.). Scurgere 0 pe seturile ascunse. Cifra e un plafon (explicațiile lungi, ~27 % cu un singur rând). 1183 teste trec.
+- **S65 (gata, DESTUL):** în codul deja descărcat sunt 339.425 de funcții scurte cu explicație care trec cutia (52,9 mil. simboluri; prag 20 mil.).
+- **S67 (gata, ÎNTRE):** cele care merg cu adevărat singure („autonome”): 83.349 funcții, 3,55 mil. simboluri de corp (prag 3–10 mil.);
+  cu exemplu/test doar 7.182. Scurgere 0 pe seturile ascunse. 1186 teste trec.
 
 ## Urmează
-- **S67 (aprobat, doar procesor, până la 08:45):** funcțiile „autonome” — simbolurile doar ale corpului, fără cele banale, care merg singure în cutie.
 - **3 nov 09:00–11:30 (C-57):** workstation-ul e al lui Adrian (teste Cyber Universe); Kronos nu pornește nimic.
+- **S68 (aprobat, doar procesor, după 11:30, ~1 oră):** numărătoarea cu regula mai blândă la importuri (`os`, `numpy` importate sus în fișier)
+  + câte funcții se pot chema singure (nu metode) — cifra corectă pentru varianta A.
 - **S66 (propus, așteaptă „da”-ul lui Adrian):** A „funcții” (recomandată), B „școala cu verificator”, C „model mai mare”. Placa liberă până la alegere.
 
 ## Ce oferă proiectul celorlalți
