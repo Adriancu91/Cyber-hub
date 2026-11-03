@@ -849,6 +849,7 @@ Format:
   (2) fiecare echipă are mereu aceeași felie de rânduri din fiecare strat (greutățile ei rămân în memoria rapidă a nucleelor ei); (3) unde calculele sunt
   independente (Q/K/V, capetele atenției), echipe diferite lucrează la ele deodată, fără clopoțel între ele. Comparat cu varianta de acum; câștigă măsurătoarea.
 - simulare (model, `studiu/2026-11-03_simulare-echipe/`): echipele ajută mult doar dacă vina e la trezire/adunare; dacă e la firul cel mai lent, contează „cine termină ajută la cel lent”. `--profil` să despartă cele două (adunare/trezire vs. așteptat cel mai lent).
+- Adrian (12:57): în `--cauta` se măsoară **ambele** mărimi de echipă, **9×4 și 6×6** (în simulare egale, 6×6 cu ~1–3 % înainte); câștigă cea mai rapidă pe workstation.
 
 ### C-60 · kronos · Kronos-Cod: calea A+B+C+D (răspunsul la S66)
 - data: 2026-11-03 11:45 · de la: **Adrian** („mă bazez pe tine cu decizia ABCD”), decizie a centrului de comandă prin delegare — `DECIZII.md` 2026-11-03 11:45

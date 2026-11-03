@@ -1,7 +1,9 @@
-varianta                                H1 simb/s  H2 simb/s
-azi (36 deodată, clopoțel)                    123        112
-echipe 9x4                                    184        120
-echipe + fire treze                           228        123
-+ calcule unite (Q/K/V, atenția)              236        134
-+ raft fix pe echipă                          263        145
-+ ajutor la cel lent                          306        300
+azi (36 deodată): H1 123, H2 112 simb/s
+--- 9 echipe x 4 fire ---
+echipe                   H1   184   H2   120
+echipe + fire treze      H1   228   H2   123
+tot pachetul             H1   306   H2   301
+--- 6 echipe x 6 fire ---
+echipe                   H1   189   H2   120
+echipe + fire treze      H1   230   H2   124
+tot pachetul             H1   308   H2   301
