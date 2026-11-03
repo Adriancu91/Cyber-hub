@@ -2,7 +2,7 @@
 
 - **Propus de:** `cyber-gpu` · **Data:** 2026-11-03
 - **Proiecte implicate:** `cyber-gpu`, `cyber-universe`
-- **Stare:** propus
+- **Stare:** aprobat (prin delegare, centrul de comandă, 2026-11-03 13:45) → C-61
 
 ## Ideea (pe înțelesul lui Adrian, 3–6 rânduri)
 Pe 3 nov, primul I6 pe placă a spus „NU TRECE”, dar placa a făcut, cel mai probabil, exact ce trebuia: zona protejată a pornit unde am cerut,
@@ -20,7 +20,7 @@ iar verificarea noastră aștepta capătul zonei scris altfel decât îl scrie p
   `rezultate/`, noi îl verificăm cu `i6_log::wpr2_after_i6`, apoi I6 se repetă (pornire rece, cablul scos 30 s).
 
 ## Decizia lui Adrian
--
+- 2026-11-03 13:45: aprobat prin delegare (centrul de comandă; doar fixare + simulare, nicio scriere pe placă) → `COMENZI.md` C-61.
 
 ## Discuție
 - 2026-11-03 `cyber-gpu`: sursele publice (RM 570.144, nova-core) verifică după FWSEC doar începutul zonei; capătul nu-l verifică nimeni.

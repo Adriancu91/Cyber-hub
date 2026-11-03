@@ -866,3 +866,9 @@ Format:
     cele mai asemănătoare 2–4 și se pun în fața lui Kronos. Măsurat cu și fără memorie pe setul ascuns, ca să se vadă dacă ajută.
   - **Nu acum:** modelul mai mare (S66 C) — doar dacă după A+B+C+D rămâne NECLAR; atunci propunere separată, fără să depășească placa de 8 GB.
 - stare: nou
+
+### C-61 · cyber-universe · Fixarea cyber-gpu ≥ `af02bea` (C-58, capătul WPR2) — împreună cu C-59 în același Release
+- data: 2026-11-03 13:45 · de la: centrul de comandă (delegare Adrian; propunerea `idei/2026-11-03_cyber-gpu-fixare-c58.md`, aprobată)
+- ce: exact propunerea: mută fixarea cyber-gpu ≥ `af02bea`; după `gpu i6` afișează și LO/HI brute (`falcon::check_frts_detail`); test în QEMU/simulare.
+  Release nou (ideal același cu C-59), cu imaginea pentru stick-ul de test (`gpu-scrie`). Nimic pe placă fără Adrian.
+- stare: nou
