@@ -843,6 +843,10 @@ Format:
   proiecția reală e mai lentă decât în `--cauta`; mai puține bariere pe simbol (ex. lucru grupat pe strat, fire care rămân treze, împărțire fixă a rândurilor);
   `--profil` să arate numărul de bariere. Testat în QEMU, CONTROL neschimbat (aceleași simboluri). Release nou; test pe placă la fereastra următoare.
 - stare: preluat (2026-11-03 11:41, sesiunea OS) · sarcina P6-43
+- idee Adrian (2026-11-03 12:53), de măsurat ca variantă în `--cauta` (în P6-43 dacă încape, altfel sarcina următoare): **echipe** — 36 fire = 9 echipe × 4
+  (fire vecine, aceleași 2 nuclee fizice). (1) sincronizare în 2 trepte: fiecare echipă se așteaptă intern, apoi doar cei 9 șefi între ei (nu 36 deodată);
+  (2) fiecare echipă are mereu aceeași felie de rânduri din fiecare strat (greutățile ei rămân în memoria rapidă a nucleelor ei); (3) unde calculele sunt
+  independente (Q/K/V, capetele atenției), echipe diferite lucrează la ele deodată, fără clopoțel între ele. Comparat cu varianta de acum; câștigă măsurătoarea.
 
 ### C-60 · kronos · Kronos-Cod: calea A+B+C+D (răspunsul la S66)
 - data: 2026-11-03 11:45 · de la: **Adrian** („mă bazez pe tine cu decizia ABCD”), decizie a centrului de comandă prin delegare — `DECIZII.md` 2026-11-03 11:45
