@@ -1,14 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-03 07:30 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-03 08:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 06:33 – 07:30 (3 pași gata, testele trec):
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 07:32 – 08:15: schema nouă **Listă cu pătrate** în Docs / Sheets / Notițe / Slides (73 de feluri). Înainte, 03.11 06:33 – 07:30:
   - set pentru mutare: Sheets → **Mutare: cutii și cheltuieli** (30 de șabloane), Docs → **Proces-verbal de predare a locuinței** (33), Notițe → Mutare completată (trimite la tabel);
-  - schema nouă **Clepsidră** în Docs / Sheets / Notițe / Slides (72 de feluri).
+  - schema nouă **Clepsidră** (72 de feluri).
   - înainte (03.11 05:40 – 06:33): set pentru asociații și voluntari, schema Podium, stilul de titlu Medalie în Video.
-- O altă sesiune lucrează acum (neterminat, încă fără commit) la un modul nou, „Studio de documente”; sesiunile automate nu-i ating fișierele.
+- O altă sesiune lucrează acum (neterminat, încă fără commit) la un modul nou, „Studio de documente” (avize, CMR, formulare de deșeuri); sesiunile automate nu-i ating fișierele. Textele lui nu sunt încă traduse în engleză (31 pe ecran), iar verificarea traducerilor se blochează pe ele.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,8%**, **Excel 92,3%**, **PowerPoint 92,1%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
