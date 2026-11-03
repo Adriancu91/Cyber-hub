@@ -1,0 +1,3 @@
+un singur bloc, fără clopoțel, bucăți 288:            H1 276  H2 159
+un singur bloc + ajutor la cel lent (furt de rânduri): H1 292  H2 166
+bloc + ajutor + „copie de rezervă” la bucata blocată:  H1 298  H2 274

@@ -43,3 +43,13 @@ Concluzie: bucățelele rezolvă partea „cel mai lent” (H2), echipele + fire
 Fiecare fir ia bucăți dintr-un singur contor pe tot simbolul; nu există clopoțel, doar verificarea „sunt gata datele calculului de dinainte?” (~0,5 µs).
 Bucăți 288 / 576 pe calcul: **H1 276 / 277, H2 158 / 160** — cea mai bună variantă din model (limita lui). Nu se poate fără deloc așteptare:
 fiecare calcul are nevoie de TOT rezultatul celui de dinainte (ca acoperișul după pereți), deci la capătul fiecărui calcul tot se așteaptă bucata cea mai lentă.
+
+## Ajutor la cel lent (ideea 3 a lui Adrian, 13:10) — `rezultat_ajutor.txt`
+| varianta | H1 | H2 |
+|---|---|---|
+| un singur bloc, fără clopoțel | 276 | 159 |
+| + ajutor: cine termină ia rânduri din bucata celui lent („furt”) | 292 | 166 |
+| + „copie de rezervă”: dacă o bucată stă blocată (fir întrerupt), un ajutor o face din nou, câștigă cine termină primul | **298** | **274** |
+
+Ajutorul simplu câștigă puțin: rândul pe care îl ține în mână un fir întrerupt nu se poate lua. Ce mai lipsea e „copia de rezervă”
+(calculele sunt simple, se pot face de două ori fără risc; rezultatul e același). Cu ea, ambele ipoteze ajung la ~275–300 simb/s.
