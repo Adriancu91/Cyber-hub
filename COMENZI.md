@@ -843,3 +843,16 @@ Format:
   proiecția reală e mai lentă decât în `--cauta`; mai puține bariere pe simbol (ex. lucru grupat pe strat, fire care rămân treze, împărțire fixă a rândurilor);
   `--profil` să arate numărul de bariere. Testat în QEMU, CONTROL neschimbat (aceleași simboluri). Release nou; test pe placă la fereastra următoare.
 - stare: nou
+
+### C-60 · kronos · Kronos-Cod: calea A+B+C+D (răspunsul la S66)
+- data: 2026-11-03 11:45 · de la: **Adrian** („mă bazez pe tine cu decizia ABCD”), decizie a centrului de comandă prin delegare — `DECIZII.md` 2026-11-03 11:45
+- ce, în ordine (fiecare cu pre-înregistrare înainte, set ascuns fără suprapunere, examene cu `--memorie-max 6500`, placa ≤ 7.000 MB / 83 °C, nimic descărcat):
+  - **A — exercițiile:** după S68, setul „explicație + antet → corp” din funcțiile autonome (S67: 83.349) + cele chemabile din S68; pentru cele cu exemplu/test
+    (7.182) verificarea din cutie. Doar procesor.
+  - **B — o noapte pe exerciții:** continuare din `lucru/cod_c1/gpt.pt` (nu de la zero), doar noaptea; măsurat pe același set ascuns de 163 (S63) → comparabil.
+  - **C — școala de cod:** Kronos scrie multe soluții la exercițiile cu test, cutia (`unelte/kronos_cod/cutie.py`) le rulează, se păstrează doar cele corecte,
+    se antrenează pe ele; câteva runde, cu oprire când nu mai crește. Judecătorul (cutia + setul ascuns) rămâne în afara lui Kronos.
+  - **D — memoria de cod** („rege / regat”, ideea lui Adrian): un index al funcțiilor deja descărcate (pe procesor, în paralel cu A/B); la o problemă nouă se caută
+    cele mai asemănătoare 2–4 și se pun în fața lui Kronos. Măsurat cu și fără memorie pe setul ascuns, ca să se vadă dacă ajută.
+  - **Nu acum:** modelul mai mare (S66 C) — doar dacă după A+B+C+D rămâne NECLAR; atunci propunere separată, fără să depășească placa de 8 GB.
+- stare: nou
