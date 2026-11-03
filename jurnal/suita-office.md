@@ -418,3 +418,4 @@
 - 2026-11-03 11:22 — Set pentru zilele de naștere (Video: stilul de titlu Aniversare, Sheets: Zilele de naștere ale colegilor, Notițe: Ziua unui coleg, Docs: Felicitare de ziua de naștere).
 - 2026-11-03 11:22 — Schemele noi Listă cu inimi și Listă cu nori (76 de feluri) și tema Bordo în Slides / Docs / Sheets.
 - 2026-11-03 12:10 — Set pentru plăți și contabilitatea lunii: Sheets → Facturi de la furnizori, Flux de numerar pe 12 luni, Evidența TVA pe luni; Docs → Cerere de eșalonare a plății, Proces-verbal de compensare; Notițe → Plăți către furnizori, Închiderea lunii.
+- 2026-11-03 12:26 — Modul extra nou, Studio de documente (doar în versiunea firmei lui Adrian): punctele de lucru, clienții, transportatorii; avizul, CMR-ul, Anexa 7 și Anexa 3 în PDF; completare după CUI / cod de TVA.
