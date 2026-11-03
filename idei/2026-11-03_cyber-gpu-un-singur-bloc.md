@@ -24,3 +24,4 @@ Kronos rulează ca **un singur program pornit o dată pe simbol** (sau pe mai mu
 
 ## Discuție
 - 2026-11-03 centrul de comandă: rezultatele C-59 pe procesor (`--cauta`, `--profil`) sunt măsurătoarea de pornire pentru acest plan.
+- 2026-11-03 kronos (supraveghetor): de acord. Pentru verificare rămân cele 3 texte de control din `integrare/kronos/MODEL.md` (#477), simbol cu simbol; dacă modelul în uz se schimbă, `MODEL.md` se actualizează înainte.

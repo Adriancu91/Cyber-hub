@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-03 14:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-03 17:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -15,9 +15,10 @@
 - **Direcția aleasă de Adrian (C-60, C-62):** A exercițiile → B o noapte pe ele → D memoria de cod → C școala de cod → E Kronos își alege datele; modelul mai mare nu acum.
 
 ## Urmează
-- **S69 (aprobat, azi, procesor):** exercițiile „antet + explicație → corp” (cele autonome de 2 ori), amestec 25 % exerciții / 75 % cod obișnuit.
-- **S70 (aprobat, noaptea 3→4 nov, 8 ore pe placă):** continuare din `gpt.pt` (pe o copie), examen pe `ascuns2` ca la S63 (3/163). AJUTĂ ≥ 8/163, NU AJUTĂ ≤ 4/163.
-- **S71 (aprobat, 4 nov ziua):** memoria de cod („rege / regat”) + măsurare pe setul de probă. S72 (școala) și S73 (alegerea datelor) după S70.
+- **S69 (gata, verificat):** 313.910 exerciții „antet + explicație → corp”, amestec 970,8 mil. simboluri cu 25,0 % exerciții; 5.516 ținute deoparte; scurgeri scoase; 1195 teste trec.
+- **S70 (aprobat, noaptea 3→4 nov, de la 19:00, ≤ 8 ore pe placă):** continuare din `gpt.pt` pe o copie (linia `cod_c1_ex`), examen pe `ascuns2` ca la S63 (3/163). AJUTĂ ≥ 8/163, NU AJUTĂ ≤ 4/163.
+  **C-63:** totul terminat sau oprit curat până la **06:45**; 07:00–~09:30 placa și calculatorul libere pentru Adrian.
+- **S71 (aprobat, 4 nov după ~09:30):** memoria de cod („rege / regat”) + măsurare pe setul de probă. S72 (școala) și S73 (alegerea datelor) după S70.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Reper pe Windows: 1 fir ~2,14 s / răspuns de 64 simboluri, placa fp32 ~52 simb/s.
