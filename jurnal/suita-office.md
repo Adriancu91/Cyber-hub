@@ -406,3 +406,4 @@
 - 2026-11-03 02:26 — Docs: se scrie direct și în partea de jos a scindării; Slides: prezentarea împachetată are și un vizualizator .html pentru orice browser; Docs: șablonul Invitație la botez (Word 90,8%, PowerPoint 92,1%).
 - 2026-11-03 03:16 — Sheets: scindare în patru panouri; PDF: atașamentele se deschid direct în Docs / Sheets / Imagini; Docs: șablonul Referat de necesitate (Excel 92,3%).
 - 2026-11-03 04:00 — Notițe: atașamentele se deschid direct în Docs / Sheets / Slides / Imagini; scheme noi Listă cu linii și Bule de dialog (68 de feluri); Docs: șablonul Proces-verbal de recepție.
+- 2026-11-03 04:55 — Set pentru sărbători (Notițe: șablonul Crăciun, Slides: Petrecere de Crăciun, Docs: Felicitare de sărbători); Docs: șablonul Decizie internă; tema Piersică în Slides / Docs / Sheets; Video: stilul de titlu Diplomă.

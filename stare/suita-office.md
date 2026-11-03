@@ -1,14 +1,14 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-03 04:00 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-03 04:55 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 03:17 – 04:00 (4 pași gata, testele trec):
-  - Notițe: fișierele atașate (**.docx, .xlsx, .csv, .pptx, poze**) se deschid direct în aplicația lor, într-un tab nou (pasul lăsat neterminat data trecută, acum gata);
-  - scheme noi în Docs / Sheets / Notițe / Slides: **Listă cu linii** și **Bule de dialog** (68 de feluri);
-  - Docs: șablonul **Proces-verbal de recepție** (29 de șabloane), pereche cu Referatul de necesitate.
-  - înainte (03.11 noaptea): Sheets → ⊞ Patru panouri; PDF → atașamentele deschise în aplicația lor; scris direct în a doua parte a scindării (Docs, Sheets); vizualizator .html pentru prezentări; șabloane de nuntă, botez, referat.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 04:00 – 04:55 (6 pași gata, testele trec):
+  - un set pentru sărbători: Notițe → șablonul **🎄 Crăciun** (cadouri, meniu, de pregătit), Slides → șablonul **Petrecere de Crăciun** (28 de șabloane), Docs → șablonul **Felicitare de sărbători**;
+  - Docs: șablonul **Decizie internă** (31 de șabloane în Docs), pereche cu Proces-verbal de recepție; în engleză, numele șablonului apare acum tradus și în mesajul de jos;
+  - tema nouă **Piersică** în Slides / Docs / Sheets (34 / 32 / 30 de teme); Video: stilul de titlu **Diplomă** (84 de stiluri).
+  - înainte (03.11 noaptea): Notițe → atașamentele deschise în aplicația lor; scheme Listă cu linii și Bule de dialog (68 de feluri); Sheets → ⊞ Patru panouri; PDF → atașamentele deschise în aplicația lor; șabloane de nuntă, botez, referat, proces-verbal de recepție.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,8%**, **Excel 92,3%**, **PowerPoint 92,1%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
