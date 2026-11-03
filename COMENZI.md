@@ -872,3 +872,12 @@ Format:
 - ce: exact propunerea: mută fixarea cyber-gpu ≥ `af02bea`; după `gpu i6` afișează și LO/HI brute (`falcon::check_frts_detail`); test în QEMU/simulare.
   Release nou (ideal același cu C-59), cu imaginea pentru stick-ul de test (`gpu-scrie`). Nimic pe placă fără Adrian.
 - stare: nou
+
+### C-62 · kronos · „Antrenare din experiența proprie” — adaugă la C-60 pasul E (alegerea datelor de către Kronos)
+- data: 2026-11-03 14:05 · de la: **Adrian** (ideea lui: „folosim experiența propriilor antrenamente, datele să fie tot mai puțin brute”), prin centrul de comandă; regula „de la zero” rămâne (`DECIZII.md` 14:01)
+- ce: (1) **E — Kronos își alege datele:** cu un model deja antrenat (#477 pentru română, `cod_c1` pentru cod) se dă o notă fiecărei bucăți de date (cât îl mai învață:
+  pierderea lui față de un model mic de referință); se păstrează ce e „de învățat” (nici prea ușor, nici zgomot), se aruncă restul; o noapte pe datele alese vs. o noapte
+  pe date la întâmplare, aceeași lungime, același set ascuns → se vede cât câștigă. Doar date deja descărcate. (2) Pașii C (școala: date proprii verificate) și D (memoria)
+  din C-60 rămân ca atare; împreună formează „experiența”. (3) Raport cu cifre: cât de mare ar trebui să fie un model antrenat pe date brute ca să ajungă la același scor.
+  Ordinea: după A și B din C-60; pre-înregistrare înainte; limitele plăcii neschimbate.
+- stare: nou
