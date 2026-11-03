@@ -834,7 +834,7 @@ Format:
   (așteptat/citit); (2) verifică în documentația publică / nova-core / open-gpu-kernel-modules (doar citit, clean-room) dacă HI e capăt inclusiv (ultima pagină
   de 4 KiB) și potrivește verificarea + `gpu-sim` (`fake_gsp.rs`) cu realitatea; (3) test în simulare cu valorile reale. Propunere în `idei/` pentru noua
   fixare în OS (C-52). Nimic pe placă; la fereastra următoare Adrian copiază `raport/gpu-jurnal-002.txt` (736 rânduri) de pe stick-ul de test → confirmăm HI citit.
-- stare: nou
+- stare: preluat (2026-11-03 12:40, sesiunea Cyber-GPU)
 
 ### C-59 · cyber-universe · Kronos 125 simb/s: 63 % din timp firele se așteaptă — mai puține sincronizări pe simbol
 - data: 2026-11-03 11:15 · de la: centrul de comandă (delegare Adrian; ținta lui: peste 150 simb/s)
