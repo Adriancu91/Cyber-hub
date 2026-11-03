@@ -1,0 +1,7 @@
+Limita teoretică (doar citirea memoriei, fără nicio pierdere): 5790 simb/s
+Pe procesor: azi 125 simb/s; ținta C-59 în model ~265–305
+
+Windows + PyTorch, câte un program pe calcul               502 –   803 simb/s   (clopoțelul ia ~75 % din timp)
+driverul nostru, câte un program pe calcul                1339 –  1988 simb/s   (clopoțelul ia ~41 % din timp)
+driverul nostru, UN SINGUR program (contor)               1962 –  2850 simb/s   (clopoțelul ia ~22 % din timp)
+un singur program + citește din timp calculul următor     2416 –  3410 simb/s   (clopoțelul ia ~27 % din timp)
