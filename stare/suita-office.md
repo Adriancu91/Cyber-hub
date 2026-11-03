@@ -1,14 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-03 05:38 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-03 06:33 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 04:55 – 05:38 (5 pași gata, testele trec):
-  - Sheets → șablonul **Bugetul sărbătorilor** (cadouri, masă, decor, ieșiri pe categorii; cât mai rămâne din buget; 28 de șabloane), care completează setul de sărbători;
-  - Notițe → șablonul **🎯 Obiective pentru anul nou** (34 de șabloane); Video → stilul de titlu **Iarnă** (fulgi de zăpadă, 85 de stiluri);
-  - scheme noi în Docs / Sheets / Notițe / Slides: **Listă tabel** și **Bare în clasament** (70 de feluri).
-  - înainte (03.11 04:00 – 04:55): set pentru sărbători (Notițe 🎄 Crăciun, Slides Petrecere de Crăciun, Docs Felicitare de sărbători), Docs → Decizie internă, tema Piersică, Video → stilul Diplomă.
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 05:40 – 06:33 (6 pași gata, testele trec):
+  - set pentru asociații și voluntari: Docs → **Contract de voluntariat** (32 de șabloane), Slides → **Raportul anual al asociației** (29), Sheets → **Evidența orelor de voluntariat** (29), Notițe → **💚 Acțiune de voluntariat** (35);
+  - schema nouă **Podium** în Docs / Sheets / Notițe / Slides (71 de feluri) și stilul de titlu **Medalie** în Video (86 de stiluri).
+  - înainte (03.11 04:55 – 05:38): Sheets → Bugetul sărbătorilor, Notițe → Obiective pentru anul nou, Video → stilul Iarnă, scheme Listă tabel și Bare în clasament.
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,8%**, **Excel 92,3%**, **PowerPoint 92,1%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
