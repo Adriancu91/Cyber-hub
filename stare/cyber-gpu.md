@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-03 12:55 (ora României) · **de:** sesiunea Cyber-GPU 40 (cloud, fără placă) — **C-58 gata** (OPRIT ridicat: a venit rezultatul de pe placă și o comandă nouă)
+**Actualizat:** 2026-11-03 13:35 (ora României) · **de:** sesiunea Cyber-GPU 41 (cloud, fără placă) — C-58 gata; nou doar planul „un singur program pe simbol” în docs
 
 ## Acum
 - **Pe placa reală (3 nov, os-214):** primul I6 — FWSEC a rulat, ucode încărcat prin DMA, Bus Master pus la loc; rezultat „NU TRECE” la
@@ -13,7 +13,8 @@
     `raport/gpu-jurnal-002.txt` (pe stick-ul de test);
   - `gpu-sim` scrie HI ca pe placă (ultima pagină; opțiunea `wpr2_hi_last_page`); `i6_log::wpr2_after_i6` verifică LO/HI direct din jurnalul de pe stick.
 - Pe placă până acum: I0–I4 doar citire TREC; I6 a scris (2 în configurație + 720 în registrele GSP), toate în ferestrele permise.
-- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `3286a3b`).
+- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `3286a3b`; după el doar docs, cod neschimbat).
+- **Ideea aprobată azi 13:25** (`idei/2026-11-03_cyber-gpu-un-singur-bloc.md`, direcție de plan): păstrată în `cyber-gpu/docs/TINTA_UN_SINGUR_PROGRAM.md` (`772c1e3`) — ce avem deja în simulare, ce lipsește, ordinea măsurătorilor (întâi costul unei lansări pe placă). Doar plan, fără cod; vine după I6–I10 și treptele matmul.
 
 ## Urmează
 1. Sesiunea OS: fixarea cyber-gpu ≥ `af02bea` (propunerea `idei/2026-11-03_cyber-gpu-fixare-c58.md`; doar adăugări, codul OS nu trebuie schimbat).
