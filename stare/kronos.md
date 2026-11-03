@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-03 17:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-03 20:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -16,8 +16,8 @@
 
 ## Urmează
 - **S69 (gata, verificat):** 313.910 exerciții „antet + explicație → corp”, amestec 970,8 mil. simboluri cu 25,0 % exerciții; 5.516 ținute deoparte; scurgeri scoase; 1195 teste trec.
-- **S70 (aprobat, noaptea 3→4 nov, de la 19:00, ≤ 8 ore pe placă):** continuare din `gpt.pt` pe o copie (linia `cod_c1_ex`), examen pe `ascuns2` ca la S63 (3/163). AJUTĂ ≥ 8/163, NU AJUTĂ ≤ 4/163.
-  **C-63:** totul terminat sau oprit curat până la **06:45**; 07:00–~09:30 placa și calculatorul libere pentru Adrian.
+- **S70 (rulează din 3 nov 19:09, 8 ore pe placă):** continuare din `gpt.pt` pe o copie (linia `cod_c1_ex`), examen pe `ascuns2` ca la S63 (3/163). AJUTĂ ≥ 8/163, NU AJUTĂ ≤ 4/163.
+  Pre-înregistrarea urcată și verificată; placa 5.918 MB / 58 °C. **C-63:** totul terminat sau oprit curat până la **06:45**; 07:00–~09:30 placa și calculatorul libere pentru Adrian.
 - **S71 (aprobat, 4 nov după ~09:30):** memoria de cod („rege / regat”) + măsurare pe setul de probă. S72 (școala) și S73 (alegerea datelor) după S70.
 
 ## Ce oferă proiectul celorlalți
