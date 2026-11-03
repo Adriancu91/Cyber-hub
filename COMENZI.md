@@ -819,3 +819,10 @@ Format:
 - notă (2026-11-02 11:20, supraveghetor): S62 gata sub limită; S63 oprită 09:32 la setul ascuns (200 fără repetări nu încape) → ales setul fără suprapunere (~163, praguri pe procente), S63 din nou `aprobat`. „S63 varianta b” = 200 cu repetări, dacă Adrian preferă.
 - notă (2026-11-02 14:40, supraveghetor): S63 pornită 11:38 (set ascuns nou N = 163, pre-înregistrarea urcată înainte); sfârșit ~22:00 + examene.
 - rezultat: S63 a rulat până la capăt (placa max 6.013 MB / 63 °C): NECLAR — validarea 0,5004 biți/octet (S58 0,5141), pass@10 3/163 pe setul ascuns nou; urmează diagnosticul S64 (pass@k cu multe încercări).
+
+### C-57 · kronos · Fereastra lui Adrian pe workstation: 3 nov 09:00–11:30 — placa și calculatorul libere
+- data: 2026-11-03 04:35 · de la: Adrian („la ora 9 mă duc la workstation pentru teste”), prin centrul de comandă
+- ce: între 09:00 și 11:30 nu porni nimic pe placă și nimic lung pe procesor (Adrian repornește în Cyber Universe: viteza Kronos, primele scrieri
+  în placă, pregătirea buclei automate). Dacă rulează ceva la 08:45, oprește-l curat (reluabil). După fereastră, coada continuă normal; decizia
+  despre Kronos-Cod (exerciții / memorie de cod / școala de cod) vine de la Adrian după teste.
+- stare: nou
