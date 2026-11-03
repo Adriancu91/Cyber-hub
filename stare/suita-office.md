@@ -1,20 +1,20 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-03 12:54 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu); Studio: sesiunea cerută de Adrian, 12:26
+**Actualizat:** 2026-11-03 13:43 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 12:12 – 12:54 (6 pași, fiecare cu commit): un set pentru **inventar și salarii**:
-  - Sheets: **Registrul mijloacelor fixe** (amortizarea lunară, cumulată și din anul curent, valoarea rămasă), **Listă de inventariere** (scriptic față de faptic, plusuri și lipsuri), **Stat de plată** (toți angajații: CAS, CASS, impozit, net, rest după avans, CAM) — 40 de șabloane;
-  - Docs: **Proces-verbal de casare** și **Proces-verbal de inventariere** — 42 de șabloane;
-  - Notițe: **📦 Inventarierea anuală** (13 pași de bifat) — 43 de șabloane.
-  - mai devreme, azi: setul pentru plăți și contabilitatea lunii (facturi de la furnizori, flux de numerar, TVA pe luni, eșalonare, compensare, închiderea lunii), seturi pentru angajați, scheme noi, tema Bordo.
+- Sesiunea 03.11 12:52 – 13:43 (4 pași, fiecare cu commit) a continuat **Studio de documente** (modulul extra al firmei lui Adrian):
+  - **📥 Recepție marfă**: Notă de recepție și constatare de diferențe (cantitatea din documentul furnizorului față de cea primită, diferențele în cantitate și lei, comisia, gestionarul), numerotare NIR separată pe punct;
+  - **🧾 Achiziție de la persoane fizice**: Borderou de achiziție (vânzătorul cu actul de identitate, deșeurile, impozitul reținut, restul de plată, declarația), numerotare BA; vânzătorii care revin sunt ținuți minte (căutare după nume / CNP), separat de clienți;
+  - **🧩 Șabloane proprii cu logo**: editor din blocuri (titlu, text cu câmpuri, câmpuri, marfa, tabel gol, semnături), antet, subsol, numerotare proprie, previzualizare pe loc.
+- Mai devreme, azi: seturi de șabloane pentru inventar și salarii, plăți și contabilitatea lunii, angajați (Sheets 40, Docs 42, Notițe 43 de șabloane).
 - **Modul extra nou: Studio de documente** (cerut de Adrian, 03.11; commit e2b829f3). Are profilul firmei cu mai multe puncte de lucru, clienții, transportatorii, mașinile și șoferii, plus completarea după CUI (ANAF) sau cod de TVA (VIES). „Transport nou” scoate avizul, CMR-ul și Anexa 7 într-un singur PDF; „Transport în țară” scoate avizul și Anexa 3. Datele stau doar pe calculator. E modul **extra**: îl are versiunea firmei lui Adrian; în kitul pentru clienți e oprit (se pornește la cerere, cu abonament VIP). Verificarea completă a traducerilor (check-ro) merge din nou (~1 s, 0 lipsă).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.
 - Scoruri: **Word 90,8%**, **Excel 92,3%**, **PowerPoint 92,1%**, Clipchamp 82,1%, Notițe 83,9%, Acrobat 86,5%, Photoshop 85,1%, formule **97,7%**. Colecția de test: **480 / 582** fișiere reale fără pierderi, 3 erori (.eps doar cu desen PostScript, cu mesaj clar).
 
 ## Urmează
-- Studio: șabloane proprii cu logo (editor), borderoul de achiziție a deșeurilor, fișa de recepție. După Studio: gestiunea de stocuri, pas cu pas, cu Adrian.
+- Studio: de verificat cu Adrian formularele pe hârtie (aviz, Anexa 3, nota de recepție, borderoul). După Studio: gestiunea de stocuri, pas cu pas, cu Adrian (nota de recepție e primul pas spre intrări).
 - Alte funcții „parțial” / „nu” din inventar (șabloane, teme, diagrame); reducerea zgomotului în Video, după ce găsim reglajul bun.
 
 ## Ce oferă proiectul celorlalți
@@ -24,7 +24,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- **Studio de documente:** să-l încerce pe documentele lui reale și să spună ce nu se potrivește cu tipizatele lui. Anexa 3 și Anexa 7 sunt refăcute după structura oficială, avizul după tipizatul 14-3-6A, iar CMR-ul are căsuțele 1–24 standard. Tot el confirmă dacă avizele se numerotează separat pe fiecare punct de lucru. Anexa 1 se face doar când îi trebuie.
+- **Studio de documente:** să-l încerce pe documentele lui reale și să spună ce nu se potrivește cu tipizatele lui (acum și nota de recepție, borderoul de achiziție și șabloanele proprii). La borderou: ce procent de impozit se reține azi (câmpul e gol din oficiu, îl scrie el sau contabilul). Anexa 3 și Anexa 7 sunt refăcute după structura oficială, avizul după tipizatul 14-3-6A, iar CMR-ul are căsuțele 1–24 standard. Tot el confirmă dacă avizele se numerotează separat pe fiecare punct de lucru. Anexa 1 se face doar când îi trebuie.
 - **Decizie LTV:** ca o semnătură să poată fi verificată și peste ani, Suite ar trebui să întrebe pe internet serverele emitentului certificatului (OCSP / CRL), la semnare. E în regulă, doar la cererea lui, ca la marca temporală?
 - **Kit:** 0.9.5 e gata (Cyber-Office-Studio-Instalare-0.9.5.exe, lista CE-E-NOU-0.9.5.txt); următorul va fi 0.9.6, doar când îl cere. Pe laptop Smart App Control blochează kitul nesemnat (JURNAL.md, 28.10). Dacă suita se va vinde: o verificare juridică a licenței.
 - **Semnături și facturi reale:** semnarea cu tokenul lui (PDF → 🔏 Semnează digital, Docs → .docx semnat digital), un .p7m / .docx semnat real pentru colecția de test, și o factură reală trimisă din Sheets → Factură (e-Factura) → Export XML în SPV.
