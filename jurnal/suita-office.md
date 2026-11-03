@@ -407,3 +407,4 @@
 - 2026-11-03 03:16 — Sheets: scindare în patru panouri; PDF: atașamentele se deschid direct în Docs / Sheets / Imagini; Docs: șablonul Referat de necesitate (Excel 92,3%).
 - 2026-11-03 04:00 — Notițe: atașamentele se deschid direct în Docs / Sheets / Slides / Imagini; scheme noi Listă cu linii și Bule de dialog (68 de feluri); Docs: șablonul Proces-verbal de recepție.
 - 2026-11-03 04:55 — Set pentru sărbători (Notițe: șablonul Crăciun, Slides: Petrecere de Crăciun, Docs: Felicitare de sărbători); Docs: șablonul Decizie internă; tema Piersică în Slides / Docs / Sheets; Video: stilul de titlu Diplomă.
+- 2026-11-03 05:38 — Sheets: șablonul Bugetul sărbătorilor; Notițe: Obiective pentru anul nou; Video: stilul de titlu Iarnă; scheme noi Listă tabel și Bare în clasament (70 de feluri).
