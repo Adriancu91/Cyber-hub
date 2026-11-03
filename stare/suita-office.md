@@ -1,9 +1,10 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-03 15:13 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-03 15:50 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
+- Sesiunea 03.11 15:11 – 15:50 (6 pași, fiecare cu commit): tabelele legate din Docs, Slides și Notițe **se aduc singure la zi** când fișierul lor e salvat în Sheets; un **.csv** (Sheets) și un **.txt** (Docs) salvate înapoi își **păstrează codificarea** (de exemplu Windows-1250 de la programele vechi de contabilitate); **Export CSV…** are acum fereastră cu separatorul și codificarea, plus „Toate foile” (câte un .csv pe foaie).
 - Sesiunea 03.11 14:25 – 15:13 (4 pași, fiecare cu commit): **✎ Deschide foaia legată** (Docs, Slides, Notițe) deschide în Sheets fișierul unui tabel pus dintr-o foaie de calcul, direct pe foaia lui (tab nou sau cel deja deschis); în Sheets, un **.csv deschis se salvează înapoi tot ca .csv** (Ctrl+S → În .csv, cu separatorul lui și copia veche în Versiuni).
 - Sesiunea 03.11 13:42 – 14:25 (4 pași, fiecare cu commit): **tabelele puse dintr-un .xlsx / .ods / .csv rămân legate de fișier**, în Docs și în Slides.
   - Inserare → **↻ Actualizează foile legate** le citește din nou cu valorile de acum (bordurile, stilul, locul și mărimea alese rămân; fișierele lipsă au mesaj clar);
