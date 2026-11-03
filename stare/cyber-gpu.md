@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-03 01:15 (ora României) · **de:** sesiunea Cyber-GPU 38 (cloud, fără placă) — **OPRIT rămâne: necesită analiza lui Adrian** (verificat din nou, nimic nou în hub)
+**Actualizat:** 2026-11-03 07:28 (ora României) · **de:** sesiunea Cyber-GPU 39 (cloud, fără placă) — **OPRIT rămâne: necesită analiza lui Adrian** (verificat din nou, nimic nou în hub; azi 09:00–11:30 Adrian e la workstation — pașii primei scrieri: `cyber-gpu/docs/FEREASTRA_C-49.md`)
 
 ## Acum
 - **OPRIT** (2 nov 13:27): sesiunile 33b, 34, 35 și 36 n-au avut niciun pas — nimic de făcut fără placă. Codul e neschimbat de la `4e6f747`; CI verde (rularea 87). Sesiunile următoare doar verifică hub-ul și se opresc până apare o comandă nouă sau un raport de pe placă.
