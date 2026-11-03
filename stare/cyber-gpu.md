@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-03 19:35 (ora României) · **de:** sesiunea Cyber-GPU 42 (cloud, fără placă) — pregătire pentru fereastra C-63 (4 nov 07:00)
+**Actualizat:** 2026-11-04 01:30 (ora României) · **de:** sesiunea Cyber-GPU 43 (cloud, fără placă) — fără lucru nou; așteaptă fereastra C-63 (4 nov 07:00)
 
 ## Acum
 - **Pe placa reală (3 nov, os-214):** primul I6 — FWSEC a rulat, ucode încărcat prin DMA, Bus Master pus la loc; rezultat „NU TRECE” la
