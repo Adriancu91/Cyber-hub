@@ -53,3 +53,15 @@ fiecare calcul are nevoie de TOT rezultatul celui de dinainte (ca acoperișul du
 
 Ajutorul simplu câștigă puțin: rândul pe care îl ține în mână un fir întrerupt nu se poate lua. Ce mai lipsea e „copia de rezervă”
 (calculele sunt simple, se pot face de două ori fără risc; rezultatul e același). Cu ea, ambele ipoteze ajung la ~275–300 simb/s.
+
+## Un fir liber pentru calculator (ideea 5 a lui Adrian, 13:18) — `simulare_fir_liber.py` → `rezultat_fir_liber.txt`
+„Cel lent” nu e lent: e un fir oprit de calculator pentru altă treabă (ceas, rețea — mesajele ARP de pe ecran —, ecran, USB). Ideea: 35 lucrători + 1 fir liber
+care primește toate aceste întreruperi (în OS-ul nostru le putem trimite unde vrem). Model: pe lucrători rămân ~15 % din întreruperi.
+| lucrători | fără copie H1 | H2 | cu copie H1 | H2 |
+|---|---|---|---|---|
+| 36 (azi) | 293 | 164 | 320 | 306 |
+| **35 + 1 liber** | **306** | **264** | 312 | 298 |
+| 34 + 2 libere | 300 | 250 | 303 | 290 |
+
+Concluzie: firul liber rezolvă singur aproape tot ce rezolva „copia de rezervă”, fiind mult mai simplu (bloc + ajutor + 1 fir liber ≈ 265–305).
+Împreună nu se adună (fac aceeași treabă). Al doilea fir liber nu mai ajută. De măsurat în `--cauta`: 36 / 35+1, cu și fără copie.
