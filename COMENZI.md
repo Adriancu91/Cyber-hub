@@ -855,6 +855,7 @@ Format:
 - Adrian (13:00), idee 2 — **bucățele**: fiecare calcul împărțit în multe bucăți mici (ex. 8 pe fir = 288), un contor comun; firul liber ia următoarea bucată. În simulare doar combinația **bucățele + fire treze + echipe** trece de 150 în ambele ipoteze (~157–261). În `--cauta`: bucăți 72/144/288 × echipe 9×4/6×6 × treji.
 - Adrian (13:05–13:10), ideile 3–4: **un singur bloc fără clopoțel** (contor comun, firul așteaptă doar datele calculului de dinainte) + **ajutor la cel lent** (cine a terminat ia rânduri din bucata celui lent) + **copie de rezervă** (bucata blocată de o întrerupere e refăcută de un ajutor, câștigă primul; rezultat identic). În model: ~275–300 simb/s în ambele ipoteze — cea mai bună variantă; de implementat ca țintă, celelalte rămân pentru comparație în `--cauta`. CONTROL trebuie să dea exact aceleași simboluri.
 - Adrian (13:18), ideea 5 — **un fir liber**: 35 lucrători + 1 fir care primește toate întreruperile (ceas, rețea, ecran, USB; rutate prin APIC doar spre el). În model: bloc + ajutor + 1 fir liber ≈ 265–305 simb/s, aproape cât cu copia de rezervă, mult mai simplu → **varianta-țintă**; în `--cauta` și 36 fire, și cu/fără copie.
+- P6-45 (sesiunea OS, 2026-11-03 16:30): ideile 1–5 de mai sus = sarcina P6-45 (`docs/plans/P6-45.md`). Gata: `--profil` desparte trezire / cel mai lent / adunare; bucățele (`kronos --bucati N`, măsurate 1/2/4/8 în `--cauta`, scrise în reglaj doar dacă bat varianta de acum). Urmează: echipe 9×4/6×6, un bloc fără clopoțel, un fir liber.
 
 ### C-60 · kronos · Kronos-Cod: calea A+B+C+D (răspunsul la S66)
 - data: 2026-11-03 11:45 · de la: **Adrian** („mă bazez pe tine cu decizia ABCD”), decizie a centrului de comandă prin delegare — `DECIZII.md` 2026-11-03 11:45
@@ -873,7 +874,8 @@ Format:
 - data: 2026-11-03 13:45 · de la: centrul de comandă (delegare Adrian; propunerea `idei/2026-11-03_cyber-gpu-fixare-c58.md`, aprobată)
 - ce: exact propunerea: mută fixarea cyber-gpu ≥ `af02bea`; după `gpu i6` afișează și LO/HI brute (`falcon::check_frts_detail`); test în QEMU/simulare.
   Release nou (ideal același cu C-59), cu imaginea pentru stick-ul de test (`gpu-scrie`). Nimic pe placă fără Adrian.
-- stare: preluat (2026-11-03 15:20, sesiunea OS) · sarcina P6-44
+- stare: gata (2026-11-03 16:15, sesiunea OS) · sarcina P6-44
+- rezultat: Cyber-GPU fixat pe `3286a3b`; după I6 OS-ul scrie și LO/HI brute cu forma capătului (în simulare „capat: ultima pagina”), Release `os-219` (împreună cu C-59, cu stick-ul de test `gpu-scrie`).
 
 ### C-62 · kronos · „Antrenare din experiența proprie” — adaugă la C-60 pasul E (alegerea datelor de către Kronos)
 - data: 2026-11-03 14:05 · de la: **Adrian** (ideea lui: „folosim experiența propriilor antrenamente, datele să fie tot mai puțin brute”), prin centrul de comandă; regula „de la zero” rămâne (`DECIZII.md` 14:01)

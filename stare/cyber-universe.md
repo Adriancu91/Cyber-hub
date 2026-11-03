@@ -1,36 +1,34 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-03 15:45 (ora României) · **de:** sesiunea OS programată · OPRIT ridicat de C-59 · ultima sarcină: **C-59 gata (P6-43)**
+**Actualizat:** 2026-11-03 16:30 (ora României) · **de:** sesiunea OS programată (14:41, în paralel cu cea de la 13:41) · ultima sarcină: **C-61 gata (P6-44), Release `os-219`**
 
 ## Acum
-- **C-59 gata (P6-43) — Kronos: mai puțină așteptare între fire.** Cauza găsită: fiecare din cele 49 de „așteptări ale firelor” pe simbol costa ~105 µs
-  (ar trebui câteva µs). Motorul aștepta **toate** cele 35 de fire, chiar și pe cele fără nimic de făcut (la qkv + atenție și la proiecție lucrează doar 12);
-  acelea, stând degeaba, își cedau procesorul și proiecția aștepta să se întoarcă — de aceea proiecția reală era mult mai lentă decât în `--cauta`.
-  Acum: se așteaptă doar firele care au lucru, fiecare fir are semnalul lui „gata” (fără un contor comun pe care se calcă toate), iar firele rămân treze
-  când sunt destule procesoare. Aceleași simboluri (verificat în QEMU: vectorii oficiali, `--control`). `--profil` arată acum barierele (câte pe simbol,
-  câte µs fiecare), iar `kronos-calcul --cauta` costul unei bariere goale. **Viteza reală se vede doar pe workstation.**
-  Release-ul: împreună cu C-61 (refixarea Cyber-GPU după C-58), pe care o face acum o altă sesiune OS (P6-44), cum cere C-61.
-- CI: testul temporizatorului din QEMU cu 4 procesoare pica des pe mașina CI (84–87 bătăi pe secundă în loc de ~100, fără legătură cu Kronos);
-  acum măsoară de până la 3 ori și, cu mai multe procesoare, acceptă de la 80. Cealaltă sesiune a reparat azi și o greșeală reală în nucleu
-  (un lacăt care putea fi eliberat de firul greșit — blocarea lui `kronos-calcul` din CI).
-- C-58 (verificarea capătului WPR2 la I6) e la Cyber-GPU; după ce o repară, refixarea în OS vine printr-o comandă nouă.
+- **Release `os-219`** (CI verde) = C-59 (Kronos: se așteaptă doar firele cu lucru) + C-61 (Cyber-GPU fixat pe `3286a3b`: capătul WPR2 acceptat
+  ca „ultima pagină”; după I6 OS-ul scrie și registrele brute: „WPR2 citit dupa I6: LO … HI … (capat: …)”), cu stick-ul de test `gpu-scrie`.
+- **Greșeală reală în nucleu, reparată:** un lacăt putea fi eliberat de firul greșit când alt fir doar „încerca” să-l ia. Pe mai multe nuclee asta
+  strica lista de fire a unui program sau bloca totul (de aici CI-ul roșu la `kronos-calcul`). Reprodusă local de 8 ori din 12, apoi 0 din 10.
+- **P6-45 — ideile tale din C-59, început:** `--profil` desparte acum așteptarea în „trezire / așteptat cel mai lent / adunare” (spune care ipoteză
+  din simulare e adevărată); „bucățele”: `kronos --bucati N` (cine termină ia următoarea bucată), măsurate de `kronos-calcul --cauta` (1/2/4/8 pe fir)
+  și scrise în reglaj doar dacă bat varianta de acum. Aceleași simboluri în QEMU. Implicit oprit. Release-ul cu ele vine după CI-ul în curs.
 
 ## Urmează
-- Fereastra I6 pe workstation **cu Adrian de față** (pașii mai jos), apoi jurnalul de pe stick → `rezultate/` → Cyber-GPU îl compară cu simularea.
-- Testul Kronos cu Release-ul nou (C-59) la fereastra următoare.
-- Prima tură a buclei automate (cu `gpu tur`) → raportul în `rezultate/` → Cyber-GPU îl compară cu `compara_raport`.
-- Watchdog-ul chipsetului (ceasul de siguranță „hardware”): după ce vedem placa de bază a workstation-ului.
+- P6-45 mai departe: echipe 9×4 / 6×6, un singur bloc pe simbol (fără clopoțel), un fir liber — toate în `--cauta`; câștigă măsurătoarea.
+- Fereastra I6 (pasul următor după C-58), testul Kronos pe workstation, prima tură a buclei automate.
 
 ## Ce oferă proiectul celorlalți
-- Pentru `cyber-gpu`: `gpu tur` (rândurile `fapt …`), `gpu lant`, `gpu pregatire-i6`, `gpu i6 --scrie` și jurnalul pe loc (formatul `Event`, citibil cu `i6_log::parse_line`).
+- Pentru `cyber-gpu`: `gpu tur` (rândurile `fapt …`), `gpu lant`, `gpu pregatire-i6`, `gpu i6 --scrie` (acum cu LO/HI brute după I6), jurnalul pe loc pe stick.
 - Biblioteci Rust proprii: `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`; a doua implementare KGR1 pentru Kronos.
 
 ## De ce are nevoie de la ceilalți
-- `cyber-gpu`: după fereastră, analiza jurnalului `gpu-jurnal-NNN.txt` (din `rezultate/`).
+- `cyber-gpu`: verificarea lui `raport\gpu-jurnal-002.txt` (de pe stick-ul de test, după ce ajunge în `rezultate/`) cu `i6_log::wpr2_after_i6`.
 
 ## Blocaje / nevoie de Adrian
-- **Kronos pe workstation cu Release-ul nou (C-59, ~5 min, stick-ul normal):** `cpu porneste`, `run kronos-calcul --cauta`, `run kronos --control`,
-  `run kronos --profil --fara-ecran --n 64 Buna ziua`, `run kronos --profil --n 64 Buna ziua` → poze (mai ales rândul „bariere”), `raport` → `rezultate/`.
-- **I6:** așteptăm repararea C-58 la Cyber-GPU; la fereastra următoare copiezi `raport\gpu-jurnal-002.txt` de pe stick-ul de test (cerut în C-58). Nu repeta `gpu i6 --scrie` până atunci.
-- **Bucla automată:** prima tură (pașii din `docs/BUCLA_AUTOMATA.md` din repo-ul OS; autologin e deja pus) — când ai ~20 min.
+- **Kronos pe workstation (~5 min, stick-ul normal, Release-ul cel mai nou — `os-219` sau mai nou):** `cpu porneste`, `run kronos-calcul --cauta`,
+  `run kronos --control`, `run kronos --profil --fara-ecran --n 64 Buna ziua`, `run kronos --profil --n 64 Buna ziua` → poze (mai ales rândurile
+  „bariere” și „bariera in medie: trezire / cel mai lent / adunare”), `raport` → `rezultate/`.
+- **I6 (C-58/C-61):** la fereastra următoare copiezi întâi `raport\gpu-jurnal-002.txt` de pe stick-ul de test vechi în `rezultate/`; Cyber-GPU îl
+  verifică. Abia după aceea I6 se repetă cu stick-ul de test nou (`cyber-universe-gpu-scrie-usb.img` din `os-219`): pornire rece (cablul scos 30 s),
+  `gpu pregatire-i6` → poză (trebuie „WPR2 coborat”, „TRECE”, „0 scrieri”), `gpu i6 --scrie` + `DA` → poză (rândul nou „WPR2 citit dupa I6”), `raport`.
+  Pozele + `raport\*.txt` + `raport\gpu-jurnal-*.txt` → `rezultate/<data>-workstation-i6/`. Dacă ecranul se blochează: 1 minut, oprire, nu repeta azi.
+- **Bucla automată:** prima tură (pașii din `docs/BUCLA_AUTOMATA.md` din repo-ul OS) — când ai ~20 min.
 - `github.token`, `claude.key`, tag-ul `stabil-2026-10-23`, P5-07: mai târziu.
