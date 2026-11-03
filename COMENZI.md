@@ -826,3 +826,20 @@ Format:
   în placă, pregătirea buclei automate). Dacă rulează ceva la 08:45, oprește-l curat (reluabil). După fereastră, coada continuă normal; decizia
   despre Kronos-Cod (exerciții / memorie de cod / școala de cod) vine de la Adrian după teste.
 - stare: preluat (2026-11-03 05:20, supraveghetor) — notat sus în `plan/coada.md`; până la 08:45 doar S67 (procesor, scurtă), placa liberă
+
+### C-58 · cyber-gpu · I6 „NU TRECE” cu start identic — repară `check_frts` (capătul WPR2) înainte de fereastra următoare
+- data: 2026-11-03 11:15 · de la: centrul de comandă (delegare Adrian 26 oct: reparație care urmează direcția lui)
+- ce: pe placa reală (`rezultate/2026-11-03-workstation-os214-i6/`) `gpu i6 --scrie` a dat „verificare eșuată la 0x1fa824: așteptat 0x1ffe00, citit 0x1ffe00”.
+  `gsp/falcon.rs::check_frts` compară (start, end), dar raportează doar start; start-ul e identic, deci diferă HI (0x1fa828). (1) eroarea să raporteze și HI
+  (așteptat/citit); (2) verifică în documentația publică / nova-core / open-gpu-kernel-modules (doar citit, clean-room) dacă HI e capăt inclusiv (ultima pagină
+  de 4 KiB) și potrivește verificarea + `gpu-sim` (`fake_gsp.rs`) cu realitatea; (3) test în simulare cu valorile reale. Propunere în `idei/` pentru noua
+  fixare în OS (C-52). Nimic pe placă; la fereastra următoare Adrian copiază `raport/gpu-jurnal-002.txt` (736 rânduri) de pe stick-ul de test → confirmăm HI citit.
+- stare: nou
+
+### C-59 · cyber-universe · Kronos 125 simb/s: 63 % din timp firele se așteaptă — mai puține sincronizări pe simbol
+- data: 2026-11-03 11:15 · de la: centrul de comandă (delegare Adrian; ținta lui: peste 150 simb/s)
+- ce: profilul os-214 pe i9-10980XE: 8,2 ms/simbol, „așteptarea firelor” 62,9 %, proiecția la generare 46 % (2,09 GB/s, față de ~24 GB/s la fc/MLP),
+  deși `--cauta` arată proiecția pe 32 fire la ~488 simb/s doar produsele. Afișarea pe bucăți (C-48) a mers: cu ecran 70,3 → 125,4. De făcut: află de ce
+  proiecția reală e mai lentă decât în `--cauta`; mai puține bariere pe simbol (ex. lucru grupat pe strat, fire care rămân treze, împărțire fixă a rândurilor);
+  `--profil` să arate numărul de bariere. Testat în QEMU, CONTROL neschimbat (aceleași simboluri). Release nou; test pe placă la fereastra următoare.
+- stare: nou
