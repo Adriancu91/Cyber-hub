@@ -1,10 +1,10 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-03 08:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-03 09:15 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 07:32 – 08:15: schema nouă **Listă cu pătrate** în Docs / Sheets / Notițe / Slides (73 de feluri). Înainte, 03.11 06:33 – 07:30:
+- Lucrăm la „funcțiile care lipsesc”. Sesiunea 03.11 08:22 – 09:15: Video → 6 treceri noi (**Răsucire**, **Întindere**, **Strângere**, fiecare și pe verticală; 132 de treceri); tema nouă **Bleumarin** (Slides / Docs / Sheets); setul pentru mutare completat: Slides → **Mutarea biroului**, Docs → **Anunț de schimbare a sediului**, Notițe → **Mutarea biroului**; un test de diagrame reparat. Înainte, 07:32 – 08:15: schema **Listă cu pătrate** (73 de feluri); 06:33 – 07:30:
   - set pentru mutare: Sheets → **Mutare: cutii și cheltuieli** (30 de șabloane), Docs → **Proces-verbal de predare a locuinței** (33), Notițe → Mutare completată (trimite la tabel);
   - schema nouă **Clepsidră** (72 de feluri).
   - înainte (03.11 05:40 – 06:33): set pentru asociații și voluntari, schema Podium, stilul de titlu Medalie în Video.
