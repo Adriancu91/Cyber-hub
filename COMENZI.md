@@ -885,3 +885,11 @@ Format:
   din C-60 rămân ca atare; împreună formează „experiența”. (3) Raport cu cifre: cât de mare ar trebui să fie un model antrenat pe date brute ca să ajungă la același scor.
   Ordinea: după A și B din C-60; pre-înregistrare înainte; limitele plăcii neschimbate.
 - stare: preluat (2026-11-03 14:20, supraveghetor) — **S73** în `plan/coada.md` (propus; după S70/S72, cum cere ordinea; instrucțiunile și pragurile după verdictul S70)
+
+### C-63 · kronos + cyber-universe · Fereastra lui Adrian pe workstation: 4 nov de la 07:00 (~2,5 h) — placa și calculatorul libere
+- data: 2026-11-03 16:30 · de la: **Adrian** („mâine dimineață la ora 7:00”), prin centrul de comandă
+- ce: `kronos`: S70 (noaptea pe exerciții) trebuie să se termine sau să fie oprită curat (reluabilă) până la **06:45**; între 07:00 și ~09:30 nimic pe placă
+  și nimic lung pe procesor; după fereastră, coada continuă (S71). `cyber-universe`: dacă se poate, Release-ul cu P6-45 (bucățele + `--profil` despărțit)
+  până la **05:30**, ca centrul de comandă să pregătească arhivele pentru stick-uri; altfel testăm `os-219`. Testul: viteza Kronos (`--cauta`, CONTROL,
+  `--profil`), I6 repetat cu stick-ul de test (pornire rece), copierea `gpu-jurnal-002.txt`, primul tur al buclei automate.
+- stare: nou
