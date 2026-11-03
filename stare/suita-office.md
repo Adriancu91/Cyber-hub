@@ -1,13 +1,13 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-03 13:43 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
+**Actualizat:** 2026-11-03 14:25 (ora României) · **de:** sesiunea automată Claude Code de pe laptop (lucru continuu)
 
 ## Acum
 - Programul se numește **Cyber Office Studio** (în interfață și în kitul 0.9.5). Plusurile P1 (diacritice), P2 (e-Factura), P3 (extrase de cont) sunt gata; P4 (semnături digitale) e gata în afară de LTV, care așteaptă răspunsul lui Adrian.
-- Sesiunea 03.11 12:52 – 13:43 (4 pași, fiecare cu commit) a continuat **Studio de documente** (modulul extra al firmei lui Adrian):
-  - **📥 Recepție marfă**: Notă de recepție și constatare de diferențe (cantitatea din documentul furnizorului față de cea primită, diferențele în cantitate și lei, comisia, gestionarul), numerotare NIR separată pe punct;
-  - **🧾 Achiziție de la persoane fizice**: Borderou de achiziție (vânzătorul cu actul de identitate, deșeurile, impozitul reținut, restul de plată, declarația), numerotare BA; vânzătorii care revin sunt ținuți minte (căutare după nume / CNP), separat de clienți;
-  - **🧩 Șabloane proprii cu logo**: editor din blocuri (titlu, text cu câmpuri, câmpuri, marfa, tabel gol, semnături), antet, subsol, numerotare proprie, previzualizare pe loc.
+- Sesiunea 03.11 13:42 – 14:25 (4 pași, fiecare cu commit): **tabelele puse dintr-un .xlsx / .ods / .csv rămân legate de fișier**, în Docs și în Slides.
+  - Inserare → **↻ Actualizează foile legate** le citește din nou cu valorile de acum (bordurile, stilul, locul și mărimea alese rămân; fișierele lipsă au mesaj clar);
+  - la deschiderea unui document sau a unei prezentări cu tabele legate, bara de jos spune dacă fișierele s-au schimbat (nimic nu se schimbă singur).
+- Mai devreme, azi, în **Studio de documente**: Nota de recepție (NIR), Borderoul de achiziție de la persoane fizice (vânzătorii ținuți minte) și editorul de șabloane proprii cu logo.
 - Mai devreme, azi: seturi de șabloane pentru inventar și salarii, plăți și contabilitatea lunii, angajați (Sheets 40, Docs 42, Notițe 43 de șabloane).
 - **Modul extra nou: Studio de documente** (cerut de Adrian, 03.11; commit e2b829f3). Are profilul firmei cu mai multe puncte de lucru, clienții, transportatorii, mașinile și șoferii, plus completarea după CUI (ANAF) sau cod de TVA (VIES). „Transport nou” scoate avizul, CMR-ul și Anexa 7 într-un singur PDF; „Transport în țară” scoate avizul și Anexa 3. Datele stau doar pe calculator. E modul **extra**: îl are versiunea firmei lui Adrian; în kitul pentru clienți e oprit (se pornește la cerere, cu abonament VIP). Verificarea completă a traducerilor (check-ro) merge din nou (~1 s, 0 lipsă).
 - O singură aplicație desktop (Electron + React + TypeScript), de la zero, totul local: Docs, Sheets, PDF, Slides, Imagini, Video, Notițe, în română sau engleză.

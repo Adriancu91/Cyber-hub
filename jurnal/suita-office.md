@@ -421,3 +421,4 @@
 - 2026-11-03 12:26 — Modul extra nou, Studio de documente (doar în versiunea firmei lui Adrian): punctele de lucru, clienții, transportatorii; avizul, CMR-ul, Anexa 7 și Anexa 3 în PDF; completare după CUI / cod de TVA.
 - 2026-11-03 12:54 — Set pentru inventar și salarii: Sheets (Registrul mijloacelor fixe, Listă de inventariere, Stat de plată), Docs (Proces-verbal de casare, de inventariere), Notițe (Inventarierea anuală); 6 pași cu commit, traducerile complete.
 - 2026-11-03 13:43 — Studio de documente: Nota de recepție (intrarea mărfii, diferențele, numerotare NIR), Borderoul de achiziție de la persoane fizice (cu vânzătorii ținuți minte) și editorul de șabloane proprii cu logo.
+- 2026-11-03 14:25 — Docs și Slides: tabelele puse dintr-o foaie de calcul rămân legate de fișier (↻ Actualizează foile legate; la deschidere se spune dacă fișierele s-au schimbat); 4 pași cu commit și teste.
