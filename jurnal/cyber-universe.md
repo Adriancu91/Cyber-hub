@@ -125,3 +125,4 @@
 - 2026-11-03 11:41–15:45 — C-59 gata (P6-43): Kronos așteaptă doar firele care au lucru (cauza celor 62,9 % „așteptare”), barierele în `--profil`; aceleași simboluri în QEMU. CI: testul temporizatorului cu 4 procesoare făcut mai tolerant (3 măsurători, prag 80). Release-ul vine împreună cu C-61 (altă sesiune OS, P6-44).
 - 2026-11-03 14:41–16:30 — CI roșu reparat: în nucleu, un `try_lock` refuzat elibera lacătul altui fir (blocarea `kronos-calcul`); C-61 gata (P6-44): Cyber-GPU fixat pe `3286a3b`, LO/HI brute după I6, Release `os-219` (cu C-59).
 - 2026-11-03 16:30 — P6-45 început (ideile lui Adrian din C-59): `--profil` desparte trezire / cel mai lent / adunare; „bucățele” (`--bucati`, măsurate în `--cauta`); aceleași simboluri în QEMU.
+- 2026-11-03 16:45 — CI verde și pentru P6-45 (pașii 1–2) → Release `os-220`, cel de folosit la fereastra următoare.
