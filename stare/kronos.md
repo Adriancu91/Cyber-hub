@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-03 08:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-03 14:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -10,15 +10,14 @@
 - **Kronos-Cod:** două nopți (S58, S63) → 0,5004 biți/octet, pass@10 ~2 % (3/163). **Diagnosticul S64 (gata, NECLAR):** cu 200 de încercări
   pe cele 20 de probleme de probă rezolvă doar 2 (pass@100 = 1,25/20; AJUTĂ cerea ≥ 4, NU AJUTĂ ≤ 1). ~6 % din răspunsuri nu se compilează,
   ~92 % rulează dar dau rezultat greșit: a învățat forma codului, nu logica. Placa max 1.468 MB / 49 °C.
-- **S65 (gata, DESTUL):** în codul deja descărcat sunt 339.425 de funcții scurte cu explicație care trec cutia (52,9 mil. simboluri; prag 20 mil.).
-- **S67 (gata, ÎNTRE):** cele care merg cu adevărat singure („autonome”): 83.349 funcții, 3,55 mil. simboluri de corp (prag 3–10 mil.);
-  cu exemplu/test doar 7.182. Scurgere 0 pe seturile ascunse. 1186 teste trec.
+- **S65–S68 (numărarea funcțiilor din codul descărcat, doar procesor):** 319.430 funcții cu explicație care trec cutia; „autonome” 83.349
+  (3,55 mil. simboluri de corp); **S68 (gata, PUȚIN):** chemabile ca la examen doar 12.648 (0,77 mil.), 78 % sunt metode. Scurgere 0. 1190 teste trec.
+- **Direcția aleasă de Adrian (C-60, C-62):** A exercițiile → B o noapte pe ele → D memoria de cod → C școala de cod → E Kronos își alege datele; modelul mai mare nu acum.
 
 ## Urmează
-- **3 nov 09:00–11:30 (C-57):** workstation-ul e al lui Adrian (teste Cyber Universe); Kronos nu pornește nimic.
-- **S68 (aprobat, doar procesor, după 11:30, ~1 oră):** numărătoarea cu regula mai blândă la importuri (`os`, `numpy` importate sus în fișier)
-  + câte funcții se pot chema singure (nu metode) — cifra corectă pentru varianta A.
-- **S66 (propus, așteaptă „da”-ul lui Adrian):** A „funcții” (recomandată), B „școala cu verificator”, C „model mai mare”. Placa liberă până la alegere.
+- **S69 (aprobat, azi, procesor):** exercițiile „antet + explicație → corp” (cele autonome de 2 ori), amestec 25 % exerciții / 75 % cod obișnuit.
+- **S70 (aprobat, noaptea 3→4 nov, 8 ore pe placă):** continuare din `gpt.pt` (pe o copie), examen pe `ascuns2` ca la S63 (3/163). AJUTĂ ≥ 8/163, NU AJUTĂ ≤ 4/163.
+- **S71 (aprobat, 4 nov ziua):** memoria de cod („rege / regat”) + măsurare pe setul de probă. S72 (școala) și S73 (alegerea datelor) după S70.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Reper pe Windows: 1 fir ~2,14 s / răspuns de 64 simboluri, placa fp32 ~52 simb/s.
@@ -28,11 +27,10 @@
 
 ## De ce are nevoie de la ceilalți
 - De la `cyber-universe` (bucla automată, C-53): în nopțile de antrenare Kronos ține placa de la **19:00**; rugăm ca scriptul să se oprească la **18:30**
-  sau să nu pornească dacă rulează o antrenare (DECIZII 1 nov 19:45, „nu în nopțile de antrenare”). De făcut la prima tură cu Adrian (~3 nov).
+  sau să nu pornească dacă rulează o antrenare (DECIZII 1 nov 19:45, „nu în nopțile de antrenare”). Important de la noaptea 3→4 nov (S70 pe placă de la 19:00).
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- **Alegerea direcției Kronos-Cod: „da S66 A / B / C”** (placa liberă până atunci).
 - Fără grabă: dacă cifrele S58 contează (abaterea de memorie la examen); permisiunea `taskkill` pe workstation; ora limită 18:30 la bucla automată.
 - Release-ul privat `kronos-kgr1-477`: doar copie pe GitHub, fără grabă — comanda în `integrare/kronos/MODEL.md`.
 - Opțional: excluderea mai îngustă propusă la S53; cauza repornirii din 29 oct (comanda din raportul S52).

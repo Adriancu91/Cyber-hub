@@ -825,7 +825,8 @@ Format:
 - ce: între 09:00 și 11:30 nu porni nimic pe placă și nimic lung pe procesor (Adrian repornește în Cyber Universe: viteza Kronos, primele scrieri
   în placă, pregătirea buclei automate). Dacă rulează ceva la 08:45, oprește-l curat (reluabil). După fereastră, coada continuă normal; decizia
   despre Kronos-Cod (exerciții / memorie de cod / școala de cod) vine de la Adrian după teste.
-- stare: preluat (2026-11-03 05:20, supraveghetor) — notat sus în `plan/coada.md`; până la 08:45 doar S67 (procesor, scurtă), placa liberă
+- stare: gata (2026-11-03 14:20, supraveghetor; preluat 05:20) — fereastra respectată: S67 s-a terminat la 06:35, S68 a pornit abia la 11:39
+- rezultat: între 09:00 și 11:30 Kronos n-a pornit nimic pe placă sau pe procesor; coada a continuat după 11:30 (S68).
 
 ### C-58 · cyber-gpu · I6 „NU TRECE” cu start identic — repară `check_frts` (capătul WPR2) înainte de fereastra următoare
 - data: 2026-11-03 11:15 · de la: centrul de comandă (delegare Adrian 26 oct: reparație care urmează direcția lui)
@@ -865,7 +866,7 @@ Format:
   - **D — memoria de cod** („rege / regat”, ideea lui Adrian): un index al funcțiilor deja descărcate (pe procesor, în paralel cu A/B); la o problemă nouă se caută
     cele mai asemănătoare 2–4 și se pun în fața lui Kronos. Măsurat cu și fără memorie pe setul ascuns, ca să se vadă dacă ajută.
   - **Nu acum:** modelul mai mare (S66 C) — doar dacă după A+B+C+D rămâne NECLAR; atunci propunere separată, fără să depășească placa de 8 GB.
-- stare: nou
+- stare: preluat (2026-11-03 14:20, supraveghetor) — `plan/coada.md`: **S69** (A, exercițiile, procesor, aprobat, azi), **S70** (B, o noapte pe exerciții din `gpt.pt`, aprobat, de la 19:00, `ascuns2` 163 ca la S63), **S71** (D, memoria de cod, aprobat, 4 nov ziua), **S72** (C, școala de cod, propus, detaliat după S70). S68 a ieșit PUȚIN (chemabile 0,77 mil. simboluri), deci exercițiile se fac din toate cele 319.430 funcții bune, cele autonome de 2 ori, amestecate 25 % cu cod obișnuit.
 
 ### C-61 · cyber-universe · Fixarea cyber-gpu ≥ `af02bea` (C-58, capătul WPR2) — împreună cu C-59 în același Release
 - data: 2026-11-03 13:45 · de la: centrul de comandă (delegare Adrian; propunerea `idei/2026-11-03_cyber-gpu-fixare-c58.md`, aprobată)
@@ -880,4 +881,4 @@ Format:
   pe date la întâmplare, aceeași lungime, același set ascuns → se vede cât câștigă. Doar date deja descărcate. (2) Pașii C (școala: date proprii verificate) și D (memoria)
   din C-60 rămân ca atare; împreună formează „experiența”. (3) Raport cu cifre: cât de mare ar trebui să fie un model antrenat pe date brute ca să ajungă la același scor.
   Ordinea: după A și B din C-60; pre-înregistrare înainte; limitele plăcii neschimbate.
-- stare: nou
+- stare: preluat (2026-11-03 14:20, supraveghetor) — **S73** în `plan/coada.md` (propus; după S70/S72, cum cere ordinea; instrucțiunile și pragurile după verdictul S70)
