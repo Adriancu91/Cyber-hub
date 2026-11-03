@@ -424,3 +424,4 @@
 - 2026-11-03 14:25 — Docs și Slides: tabelele puse dintr-o foaie de calcul rămân legate de fișier (↻ Actualizează foile legate; la deschidere se spune dacă fișierele s-au schimbat); 4 pași cu commit și teste.
 - 2026-11-03 15:13 — Docs, Slides și Notițe: ✎ Deschide foaia legată deschide fișierul tabelului în Sheets, pe foaia lui; Sheets salvează un .csv deschis înapoi ca .csv (cu separatorul lui); 4 pași cu commit și teste.
 - 2026-11-03 15:50 — Tabelele legate se aduc singure la zi după salvarea în Sheets; .csv / .txt salvate înapoi în codificarea lor; Export CSV… cu separator, codificare și toate foile (6 pași, toate testate).
+- 2026-11-03 16:40 — Imagini: poza legată de fișier (🖇, se aduce singură la zi); PDF: 📁 Adaugă un dosar în Combină și Lot, e-mailuri .msg, fișierele trase în fereastră deschid Combină (6 pași, toate testate).
