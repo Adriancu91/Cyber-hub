@@ -842,7 +842,7 @@ Format:
   deși `--cauta` arată proiecția pe 32 fire la ~488 simb/s doar produsele. Afișarea pe bucăți (C-48) a mers: cu ecran 70,3 → 125,4. De făcut: află de ce
   proiecția reală e mai lentă decât în `--cauta`; mai puține bariere pe simbol (ex. lucru grupat pe strat, fire care rămân treze, împărțire fixă a rândurilor);
   `--profil` să arate numărul de bariere. Testat în QEMU, CONTROL neschimbat (aceleași simboluri). Release nou; test pe placă la fereastra următoare.
-- stare: nou
+- stare: preluat (2026-11-03 ~12:45, sesiunea OS) · sarcina P6-43
 
 ### C-60 · kronos · Kronos-Cod: calea A+B+C+D (răspunsul la S66)
 - data: 2026-11-03 11:45 · de la: **Adrian** („mă bazez pe tine cu decizia ABCD”), decizie a centrului de comandă prin delegare — `DECIZII.md` 2026-11-03 11:45
