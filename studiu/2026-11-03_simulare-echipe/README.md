@@ -38,3 +38,8 @@ Tot calculul e un bloc; fiecare fir ia o bucățică, iar când termină ia urm�
 
 Concluzie: bucățelele rezolvă partea „cel mai lent” (H2), echipele + firele treze partea „clopoțel” (H1). **Doar combinația trece de 150 în ambele ipoteze.**
 („Ajutor la cel lent” din primul tabel era o aproximare optimistă a bucățelelor; cifrele de aici sunt cele cinstite.)
+
+## Un singur bloc, fără clopoțel (întrebarea lui Adrian, 13:05)
+Fiecare fir ia bucăți dintr-un singur contor pe tot simbolul; nu există clopoțel, doar verificarea „sunt gata datele calculului de dinainte?” (~0,5 µs).
+Bucăți 288 / 576 pe calcul: **H1 276 / 277, H2 158 / 160** — cea mai bună variantă din model (limita lui). Nu se poate fără deloc așteptare:
+fiecare calcul are nevoie de TOT rezultatul celui de dinainte (ca acoperișul după pereți), deci la capătul fiecărui calcul tot se așteaptă bucata cea mai lentă.
