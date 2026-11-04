@@ -944,7 +944,8 @@ Format:
 ### C-69 · cyber-gpu · F5 din planul independenței: I6 TRECE → I7–I10 → primul calcul pe placă → Kronos pe placă în OS
 - data: 2026-11-04 23:00 · de la: **Adrian** („da la tot”), prin centrul de comandă
 - ce: după C-66, pregătește pașii I7–I10 în SIMULARE și lista pentru ferestrele cu Adrian; ținta „un singur program pe simbol” (idee aprobată 3 nov) de la început. Nimic pe placă fără Adrian.
-- stare: preluat (2026-11-04 23:20, sesiunea Cyber-GPU 47)
+- stare: gata, partea fără placă (preluat 2026-11-04 23:02, terminat 23:15, sesiunea Cyber-GPU 47) — partea pe placă continuă fereastră cu fereastră, după `cyber-gpu/docs/FEREASTRA_C-69.md`
+- rezultat: în SIMULARE, I7 e verificat la fel de strict ca I6 (18 registre SEC2, jurnalul I6+I7, citirea după I7 fără permis), costul unei lansări se poate măsura din mărcile de timp ale plăcii (primul pas spre „un singur program”), iar lista ferestrelor 0 (I6) → 1 (I7) → 2 (I8) → 3 (golden + I9) → 4 (primul calcul + costul lansării) e în `docs/FEREASTRA_C-69.md`.
 
 ### C-70 · kronos · Mașina virtuală Cyber Universe pe workstation (F1) — Kronos continuă, împarte procesorul
 - data: 2026-11-04 23:00 · de la: **Adrian** („da la tot”), prin centrul de comandă
