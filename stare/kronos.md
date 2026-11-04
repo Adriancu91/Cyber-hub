@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-04 20:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-04 23:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -10,11 +10,12 @@
   memoria de cod (S71: proba 0/20). S72a: 889 exerciții cu test care trec în cutie (P_verif 200 / P_scoala 689).
 - **Școala de cod (S74 → S75 → S72b, 4 nov):** reper 14/200; 109 soluții corecte scrise de Kronos; după o trecere de învățare: 18/200, dar validarea de cod
   0,513 (> 0,510) → **STRICĂ**. Școala, așa cum e, nu avansează codul. **1212 teste trec.**
-- **Acum rulează (noaptea 4→5 nov): S76a** — exerciții „întrebare/instrucțiune → răspuns” în română, făcute prin reguli din datele avute, set ascuns ≥ 400,
-  notă automată fără alt AI (corect / în temă / limbă curată) și reperul #477. Fără antrenare.
+- **S76a gata (4 nov 20:50): GATA** — 23.251 exerciții „întrebare/instrucțiune → răspuns” în română, făcute prin reguli (50 % instrucțiuni, 8 feluri noi),
+  500 ascunse, scurgeri 0, notă automată fără alt AI (corect / în temă / limbă curată, scorul R1). Reper #477: R1 63,73; felurile vechi 100, **instrucțiunile 37,47**. **1221 teste trec.**
+- **Acum rulează (noaptea 4→5 nov): S76b** — 5 ore din #477 pe o copie (`w2_romana_r1`), pe exercițiile S76a; AJUTĂ = R1 pe instrucțiuni ≥ 47,47 fără regresie. Gata până la 06:45.
 
 ## Urmează
-- **C-64 activ** (S72b nu e AJUTĂ): **S76b** — o noapte din #477 pe o copie pe răspunsurile în română (5→6 nov, cu pre-înregistrare); #477 rămâne în uz până îl bate copia.
+- Verdictul S76b (5 nov dimineața); #477 rămâne în uz până îl bate copia și Adrian spune „da”.
 - **S77** — Kronos mai mare crescut din #477: întâi aceeași ieșire pe vectorii KGR1 + test de memorie/viteză pe placă (ziua de 5 nov), apoi nopți.
 - S73 (alegerea datelor de către Kronos) rămâne în așteptare.
 
@@ -23,11 +24,11 @@
 - Motorul de referință `unelte/inferenta_bruta.py` și modulul `inferenta` (logit-uri identice); tokenizer pentru cod (păstrează indentarea).
 - Căutare în text pe procesor, verificatorul de răspunsuri, cutia izolată pentru cod netestat, un set de cod curat cu proveniență pe fișier.
 - Pentru „super-școala de română” (DECIZII 4 nov 11:33): lecția S72b — învățarea din propriile soluții, repetate de 8 ori, strică ce știa modelul; de folosit cu mai puține repetări și mai multe date obișnuite.
-- Curând: o notă automată pentru răspunsuri în română, fără alt AI (S76a).
+- **Nota automată pentru răspunsuri în română** (`unelte/romana_raspunsuri.py noteaza`, deterministă, fără alt AI) + setul ascuns de 500 — utilă pentru orice test de răspuns în română.
 
 ## De ce are nevoie de la ceilalți
 - De la `cyber-universe` (bucla automată, C-53): în nopțile de antrenare Kronos ține placa de la **19:00**; rugăm ca scriptul să se oprească la **18:30**
-  sau să nu pornească dacă rulează o antrenare. Important din noaptea 5→6 nov (S76b).
+  sau să nu pornească dacă rulează o antrenare (S76b rulează în noaptea 4→5 nov).
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian

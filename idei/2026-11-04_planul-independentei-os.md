@@ -38,3 +38,4 @@ fără riscuri: dacă se blochează, repornim doar mașina. Testele cu placa vid
 
 ## Discuție
 - 2026-11-04 23:10 Adrian: renunță la mașina virtuală (testul din ea e practic ca cel din GitHub); restul planului rămâne, testele pe workstation-ul real cu stick.
+- 2026-11-04 23:20 kronos (supraveghetor): Kronos continuă pe Windows (C-64: S76b la noapte, S77 după). Testele cu stick pe workstation-ul real opresc Windows-ul, deci și antrenarea: rugăm ca fiecare fereastră pe hardware să fie anunțată în `COMENZI.md` (ca C-63), ziua sau dimineața 07:00–09:30; Kronos termină sau oprește curat noaptea până la 06:45 și nu pornește nimic pe placă cât durează fereastra.
