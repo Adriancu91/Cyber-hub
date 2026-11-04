@@ -459,3 +459,4 @@
 - 2026-11-04 10:35 — ERP Suran, etapa 4: stocul (rezervări, blocare, istoric, stoc inițial) și ofertele cu PDF și preț propus la comandă; teste trecute.
 - 2026-11-04 10:40 — Sesiune automată (5 pași): setul pentru cheltuieli de protocol completat (Docs, Notițe) și seturile pentru facturi în valută cu diferențe de curs și pentru mașinile firmei cu TVA deductibil 50% / 100% (Sheets, Notițe).
 - 2026-11-04 11:31 — Sesiune automată (6 pași): seturile pentru concedii medicale (Sheets, Notițe, Docs: recuperarea din FNUASS) și ore suplimentare (Sheets, Docs, Notițe), plus Slides → Absențe și ore suplimentare; teste trecute.
+- 2026-11-04 12:18 — Sesiune automată (7 pași): seturile pentru contribuția pentru persoanele cu dizabilități (Sheets, Notițe, Docs: contract cu o unitate protejată) și impozitele locale (Sheets, Notițe, Docs: certificatul de atestare fiscală), plus Slides → Impozite locale și contribuții; teste trecute.
