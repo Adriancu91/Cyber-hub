@@ -440,3 +440,4 @@
 - 2026-11-04 02:05 — ERP Suran, etapa 1: modul offline cu SQLite (companii, utilizatori, audit, nomenclatoare DEEE), atenționări și lista de pornire din tabelul firmei.
 - 2026-11-04 02:15 — Sesiune automată (4 pași, fiecare cu commit și test): Sheets Repartizarea profitului și dividendele și Registrul asociaților, Docs Convocarea adunării generale a asociaților și Contract de cesiune de părți sociale.
 - 2026-11-04 02:49 — Sesiune automată (3 pași, fiecare cu commit și test): setul pentru sponsorizări: Docs Cerere de sponsorizare și Contract de sponsorizare, Sheets Evidența sponsorizărilor (cât se scade din impozit).
+- 2026-11-04 02:50 — ERP Suran, etapa 2: comenzi (achiziție PF/PJ, vânzare, transfer) cu aprobare, contract PDF și comanda de transport.
