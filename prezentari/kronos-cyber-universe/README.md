@@ -5,4 +5,4 @@
   pagina „Ultimul test în Cyber Universe” (data, ce s-a dovedit, procentele), viteza lui Kronos, tabelul pașilor plăcii video, cronologia OS-ului.
 - Reguli de conținut: pe înțelesul celor care nu știu programare; „dovedit / simulare / de dovedit” marcate cinstit; doar upgrade-uri hardware,
   niciodată închiriere; fără nume de persoane sau firme terțe; cifrele altora = repere publice, rotunjite.
-- Ultima actualizare: 1 nov 2026 (test os-210: CONTROL #477 TRECE, I4 TRECE, 123 simb/s; total 38 %).
+- Ultima actualizare: 4 nov 2026 (test os-222: CONTROL #477 TRECE, 206 simb/s; I6: FWSEC-FRTS reușit pe placă, verificarea de reparat — C-66; total 41 %).

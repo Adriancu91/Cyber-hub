@@ -264,7 +264,7 @@ tr.us td { background: #fff4e6; font-weight: 700; }
     </div>
     <div class="card">
       <h3>Cât de repede a crescut</h3>
-      <p style="font-size:18px">20 oct: prima linie de cod<br>23 oct: primul test pe workstation<br>27 oct: merge pe laptopuri AMD și Intel<br>28 oct: Kronos rulează în el (5 cuvinte/s)<br>29 oct: <b>70 cuvinte/s</b> (×15 într-o zi)<br>30 oct: frânele găsite au fost reparate (versiunea 209)<br>1 nov: <b>123 cuvinte/s</b>, Kronos #477 verificat în OS</p>
+      <p style="font-size:18px">20 oct: prima linie de cod<br>23 oct: primul test pe workstation<br>27 oct: merge pe laptopuri AMD și Intel<br>28 oct: Kronos rulează în el (5 cuvinte/s)<br>29 oct: <b>70 cuvinte/s</b> (×15 într-o zi)<br>30 oct: frânele găsite au fost reparate (versiunea 209)<br>1 nov: <b>123 cuvinte/s</b>, Kronos #477 verificat în OS<br>4 nov: <b>206 cuvinte/s</b>, primul program pornit pe placa video</p>
       <p class="note" style="margin-top:12px">80 de teste automate pe un calculator virtual, la fiecare schimbare; 259 de pași salvați în 11 zile.</p>
     </div>
   </div>
@@ -277,24 +277,24 @@ tr.us td { background: #fff4e6; font-weight: 700; }
   <h2>Kronos: câte cuvinte pe secundă, unde</h2>
   <div class="g2" style="grid-template-columns:1.3fr 1fr;align-items:center">
     <svg viewBox="0 0 640 360" width="640" height="360" font-family="Noto Sans, DejaVu Sans" font-size="16">
-      <!-- scale: 150 -> 420px ; x0=190 -->
+      <!-- scale: 350 -> 420px ; x0=190 -->
       <g font-weight="700" fill="#14213d" text-anchor="end">
         <text x="180" y="45">Windows</text><text x="180" y="65" font-weight="400" fill="#6b665c" font-size="14">procesor</text>
         <text x="180" y="125">Windows</text><text x="180" y="145" font-weight="400" fill="#6b665c" font-size="14">placa video</text>
-        <text x="180" y="205">OS-ul nostru</text><text x="180" y="225" font-weight="400" fill="#6b665c" font-size="14">procesor, 1 nov</text>
-        <text x="180" y="285">Ținta OS</text><text x="180" y="305" font-weight="400" fill="#6b665c" font-size="14">procesor</text></g>
-      <rect x="190" y="30" width="87" height="36" rx="6" fill="#8f9bb3"/><text x="285" y="54" fill="#1d2433" font-weight="700">31</text>
-      <rect x="190" y="110" width="146" height="36" rx="6" fill="#8f9bb3"/><text x="344" y="134" fill="#1d2433" font-weight="700">52</text>
-      <rect x="190" y="190" width="344" height="36" rx="6" fill="#e07a1f"/><text x="542" y="214" fill="#1d2433" font-weight="700">123</text>
-      <rect x="190" y="270" width="420" height="36" rx="6" fill="none" stroke="#e07a1f" stroke-width="3" stroke-dasharray="8 6"/><text x="560" y="294" fill="#e07a1f" font-weight="700">150</text>
+        <text x="180" y="205">OS-ul nostru</text><text x="180" y="225" font-weight="400" fill="#6b665c" font-size="14">procesor, 4 nov</text>
+        <text x="180" y="285">Ținta următoare</text><text x="180" y="305" font-weight="400" fill="#6b665c" font-size="14">procesor</text></g>
+      <rect x="190" y="30" width="37" height="36" rx="6" fill="#8f9bb3"/><text x="235" y="54" fill="#1d2433" font-weight="700">31</text>
+      <rect x="190" y="110" width="62" height="36" rx="6" fill="#8f9bb3"/><text x="260" y="134" fill="#1d2433" font-weight="700">52</text>
+      <rect x="190" y="190" width="247" height="36" rx="6" fill="#e07a1f"/><text x="445" y="214" fill="#1d2433" font-weight="700">206</text>
+      <rect x="190" y="270" width="420" height="36" rx="6" fill="none" stroke="#e07a1f" stroke-width="3" stroke-dasharray="8 6"/><text x="560" y="294" fill="#e07a1f" font-weight="700">~350</text>
     </svg>
     <div>
-      <p><b>Deja azi</b>, pe procesor, Kronos merge mai repede în sistemul nostru (<b>123/s</b>) decât pe Windows: de 4 ori mai repede decât pe procesorul din Windows și de 2,4 ori decât <b>pe placa video din Windows</b> (52/s).</p>
+      <p><b>Deja azi</b>, pe procesor, Kronos merge mult mai repede în sistemul nostru (<b>206/s</b>) decât pe Windows: de 6,6 ori mai repede decât pe procesorul din Windows și de 4 ori decât <b>pe placa video din Windows</b> (52/s).</p>
       <p class="note" style="font-size:16px"><b>Onest:</b> nu e încă o dovadă că OS-ul e mai bun. În OS rulează motorul nostru dedicat, scris special pentru Kronos, iar pe Windows unul general. Dovada corectă vine când comparăm același motor în ambele sisteme. Asta e pe listă.</p>
-      <p><b>1 nov:</b> frânele din 29 oct au fost reparate (69,5 → 123/s). Ce mai frânează acum: o singură etapă de calcul (47% din timp) lucrează pe un singur nucleu. Reparația e în lucru. Estimare: <b>peste 150/s</b>.</p>
+      <p><b>4 nov:</b> ținta de 150 e depășită: <b>206/s</b> (1 nov: 123). Așteptarea dintre nuclee a scăzut de la 63% la 10% din timp. Ce mai frânează: două etape de calcul citesc memoria de 5–10 ori mai încet decât restul. Estimare după reparație: <b>~350/s</b>.</p>
     </div>
   </div>
-  <div class="foot"><span>Măsurători pe același workstation · Windows: #459, 28–30 oct · OS: #477, 1 nov</span><span>11</span></div>
+  <div class="foot"><span>Măsurători pe același workstation · Windows: #459, 28–30 oct · OS: #477, 4 nov</span><span>11</span></div>
 </div>
 
 <!-- 8 -->
@@ -307,7 +307,8 @@ tr.us td { background: #fff4e6; font-weight: 700; }
     <tr><td>I2</td><td>Așteaptă ca placa să fie gata de lucru</td><td><span class="pill p-ok">dovedit pe placa reală</span></td></tr>
     <tr><td>I3 / I3b</td><td>Citește complet memoria internă a plăcii și găsește programul ei de pornire</td><td><span class="pill p-ok">dovedit pe placa reală (29 oct)</span></td></tr>
     <tr><td>I4</td><td>Verifică fișierele de pornire oficiale de pe stick</td><td><span class="pill p-ok">dovedit pe placa reală (1 nov)</span></td></tr>
-    <tr><td>I5–I9</td><td>Pornește „creierul” plăcii și pregătește memoria</td><td><span class="pill p-sim">gata în simulare</span></td></tr>
+    <tr><td>I6</td><td>Pornește primul program oficial pe placă și protejează zona de memorie</td><td><span class="pill p-ok">reușit pe placa reală (3–4 nov)</span> · verificarea de reparat</td></tr>
+    <tr><td>I7–I9</td><td>Pornește „creierul” plăcii și pregătește memoria</td><td><span class="pill p-sim">gata în simulare</span></td></tr>
     <tr><td>I10</td><td>Trimite comenzi de lucru plăcii</td><td><span class="pill p-sim">gata în simulare</span></td></tr>
     <tr><td>Treapta 6</td><td>Înmulțirea de matrice (~3/4 din munca lui Kronos), program de 821 de instrucțiuni</td><td><span class="pill p-sim">rezultate identice în simulare</span></td></tr>
     <tr><td>Final</td><td>Kronos calculează pe placă, în OS-ul nostru</td><td><span class="pill p-todo">de dovedit</span></td></tr>
@@ -324,7 +325,7 @@ tr.us td { background: #fff4e6; font-weight: 700; }
     <div class="card"><h3>Pe Windows</h3><p>Kronos împarte calculatorul cu sute de programe și servicii. Ajunge la placă prin mai multe straturi: Python, PyTorch, CUDA, driverul NVIDIA. Fiecare strat e făcut să servească orice program, nu doar pe el.</p></div>
     <div class="card"><h3>În Cyber Universe</h3><p>Un singur „chiriaș”: Kronos. Motor scris pentru forma exactă a creierului lui, reglat automat pe procesorul respectiv, iar în curând un drum direct până la placa video, fără straturi intermediare.</p></div>
   </div>
-  <p style="margin-top:22px"><b>Primul semn bun:</b> pe procesor, motorul nostru dedicat bate deja varianta de pe Windows (123 față de 31 de cuvinte/s), cu răspunsuri identice.</p>
+  <p style="margin-top:22px"><b>Primul semn bun:</b> pe procesor, motorul nostru dedicat bate deja varianta de pe Windows (206 față de 31 de cuvinte/s), cu răspunsuri identice.</p>
   <p><b>Ce trebuie încă dovedit:</b> că, pe placa video, drumul nostru direct bate driverul NVIDIA de pe Windows. Credem că nu e departe, pentru că pe Windows Kronos folosește doar ~1,7 GB din cei 8 GB ai plăcii și pierde timp în straturile intermediare.</p>
   <div class="foot"><span>Proiectul Kronos / Cyber Universe</span><span>13</span></div>
 </div>
@@ -341,7 +342,7 @@ tr.us td { background: #fff4e6; font-weight: 700; }
     <tr><td>Nouveau</td><td>driver liber pentru plăci NVIDIA</td><td>voluntari, din 2005 până azi; plăcile noi încă nu merg la viteza maximă</td></tr>
     <tr><td>Asahi Linux</td><td>driver propriu pentru placa video Apple M1</td><td>o echipă mică de experți, ~2 ani până la un driver complet</td></tr>
     <tr><td>tinygrad (tiny corp)</td><td>drum propriu până la plăcile NVIDIA, fără CUDA</td><td>firmă finanțată cu milioane de dolari, echipă de ingineri</td></tr>
-    <tr class="us"><td>Cyber Universe + Cyber-GPU (noi)</td><td>kernel de la zero + driver de calcul NVIDIA</td><td>1 om + agenți AI, 12 zile: kernel pe 3 calculatoare, AI-ul rulează în el la 123 cuvinte/s, primii 5 pași pe placa reală</td></tr>
+    <tr class="us"><td>Cyber Universe + Cyber-GPU (noi)</td><td>kernel de la zero + driver de calcul NVIDIA</td><td>1 om + agenți AI, 12 zile: kernel pe 3 calculatoare, AI-ul rulează în el la 206 cuvinte/s, primii 6 pași pe placa reală</td></tr>
   </table>
   <p class="note">Repere publice, aproximative. Nu spunem că am terminat ce au făcut ei: Windows și Linux sunt sisteme complete pentru orice program. Spunem că drumul nostru, dedicat unui singur scop, e real și avansează repede.</p>
   <div class="foot"><span>Proiectul Kronos / Cyber Universe</span><span>14</span></div>
@@ -432,7 +433,7 @@ tr.us td { background: #fff4e6; font-weight: 700; }
 
 <!-- X progres -->
 <div class="s">
-  <div class="tag">Ultimul test în Cyber Universe · 1 noiembrie 2026</div>
+  <div class="tag">Ultimul test în Cyber Universe · 4 noiembrie 2026</div>
   <h2>Cât de aproape suntem de lucrul din interiorul sistemului nostru</h2>
   <div class="g2" style="grid-template-columns:1.25fr 1fr;align-items:start">
     <svg viewBox="0 0 640 430" width="640" height="430" font-family="Noto Sans, DejaVu Sans" font-size="15">
@@ -444,24 +445,24 @@ tr.us td { background: #fff4e6; font-weight: 700; }
       <g>
         <rect x="260" y="14" width="330" height="22" rx="4" fill="#eee9df"/><rect x="260" y="14" width="297" height="22" rx="4" fill="#2a7d4f"/><text x="600" y="31" font-weight="700">90%</text>
         <rect x="260" y="60" width="330" height="22" rx="4" fill="#eee9df"/><rect x="260" y="60" width="248" height="22" rx="4" fill="#2a7d4f"/><text x="600" y="77" font-weight="700">75%</text>
-        <rect x="260" y="106" width="330" height="22" rx="4" fill="#eee9df"/><rect x="260" y="106" width="264" height="22" rx="4" fill="#e07a1f"/><text x="600" y="123" font-weight="700">80%</text>
+        <rect x="260" y="106" width="330" height="22" rx="4" fill="#eee9df"/><rect x="260" y="106" width="290" height="22" rx="4" fill="#e07a1f"/><text x="600" y="123" font-weight="700">88%</text>
         <rect x="260" y="152" width="330" height="22" rx="4" fill="#eee9df"/><rect x="260" y="152" width="165" height="22" rx="4" fill="#b07b12"/><text x="600" y="169" font-weight="700">50%</text>
-        <rect x="260" y="198" width="330" height="22" rx="4" fill="#eee9df"/><rect x="260" y="198" width="125" height="22" rx="4" fill="#e07a1f"/><text x="600" y="215" font-weight="700">38%</text>
+        <rect x="260" y="198" width="330" height="22" rx="4" fill="#eee9df"/><rect x="260" y="198" width="152" height="22" rx="4" fill="#e07a1f"/><text x="600" y="215" font-weight="700">46%</text>
         <rect x="260" y="244" width="330" height="22" rx="4" fill="#eee9df"/><rect x="260" y="244" width="17" height="22" rx="4" fill="#8f9bb3"/><text x="600" y="261" font-weight="700">5%</text>
         <rect x="260" y="290" width="330" height="22" rx="4" fill="#eee9df"/><rect x="260" y="290" width="17" height="22" rx="4" fill="#8f9bb3"/><text x="600" y="307" font-weight="700">5%</text>
         <rect x="260" y="336" width="330" height="22" rx="4" fill="#eee9df"/><rect x="260" y="336" width="10" height="22" rx="4" fill="#8f9bb3"/><text x="600" y="353" font-weight="700">3%</text>
-        <rect x="260" y="388" width="330" height="28" rx="4" fill="#eee9df"/><rect x="260" y="388" width="125" height="28" rx="4" fill="#14213d"/><text x="600" y="408" font-weight="800">38%</text>
+        <rect x="260" y="388" width="330" height="28" rx="4" fill="#eee9df"/><rect x="260" y="388" width="135" height="28" rx="4" fill="#14213d"/><text x="600" y="408" font-weight="800">41%</text>
       </g>
     </svg>
     <div>
       <p style="font-size:19px"><b>Ce a adus testul de azi:</b></p>
       <ul style="font-size:18px">
-        <li><span class="pill p-ok">dovedit</span> Kronos #477 dă în OS exact aceleași răspunsuri ca pe Windows.</li>
-        <li><span class="pill p-ok">dovedit</span> 123 de cuvinte pe secundă (ieri 69,5, acum o săptămână 4,8).</li>
-        <li><span class="pill p-ok">dovedit</span> Driverul plăcii trece și pasul I4: toate verificările de citire sunt gata.</li>
-        <li>Kronos răspunde în OS: 70% → 80%. Driverul plăcii: 30% → 38%. Total: 35% → <b>38%</b>.</li>
+        <li><span class="pill p-ok">dovedit</span> <b>206 cuvinte pe secundă</b>, cu aceleași răspunsuri (1 nov: 123; acum 10 zile: 4,8).</li>
+        <li><span class="pill p-ok">dovedit</span> Primul program pornit pe placa video de driverul nostru: placa a protejat exact zona de memorie cerută (pasul I6).</li>
+        <li><span class="pill p-sim">de reparat</span> Verificarea noastră a pasului I6 aștepta altă formă a capătului zonei; scrie încă „nu trece”.</li>
+        <li>Kronos răspunde în OS: 80% → 88%. Driverul plăcii: 38% → 46%. Total: 38% → <b>41%</b>.</li>
       </ul>
-      <p style="font-size:19px;margin-top:10px"><b>Următorul salt:</b> primele scrieri în placa video, direct din Cyber Universe. Dacă trec, driverul ajunge ~50%, iar totalul 42–45%.</p>
+      <p style="font-size:19px;margin-top:10px"><b>Următorul salt:</b> verificarea I6 reparată și pasul I7 (pornirea procesorului de securitate al plăcii). Apoi Kronos la ~350 cuvinte/s pe procesor.</p>
       <p class="note">Procentele sunt estimări ale centrului de comandă, după ce e dovedit pe placa reală. Se actualizează după fiecare test.</p>
     </div>
   </div>
