@@ -960,4 +960,5 @@ Format:
   în simulare, unul după altul, cu `gpu lant` pregătit să-i ruleze pe toți la fereastra cu Adrian (oprire la primul eșec, placa pusă la loc). `cyber-universe`: planul C-68 fără să aștepte
   testele de pe workstation. Oprirea de siguranță („3 sesiuni fără sarcină”) se aplică doar când chiar nu mai e nimic de făcut fără hardware. Pentru fiecare fereastră: o listă scurtă,
   în ordine, cu ce trebuie testat pe hardware (în `stare/` al fiecăruia).
-- stare: preluat pentru cyber-gpu (2026-11-04 23:18, sesiunea Cyber-GPU 48) — partea cyber-universe rămâne la sesiunea OS
+- stare: gata pentru cyber-gpu (preluat 2026-11-04 23:18, terminat 23:25, sesiunea Cyber-GPU 48) — partea cyber-universe rămâne la sesiunea OS
+- rezultat (cyber-gpu): în SIMULARE, lanțul complet `WINDOW_CHAIN_FULL` (I6 → I7 → I8 → golden → I9 → I10 → costul lansării, 13 pași) trece cap-coadă cu codul real și e gata pentru `gpu lant`; lista scurtă pentru fereastră e în `stare/cyber-gpu.md`; găsit și reparat în simulare: soneria GSP după fiecare mesaj RM.

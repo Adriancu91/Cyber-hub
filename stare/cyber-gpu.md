@@ -1,37 +1,44 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-04 23:15 (ora României) · **de:** sesiunea Cyber-GPU 47 (cloud, fără placă) — C-69, partea fără placă, gata (SIMULARE)
+**Actualizat:** 2026-11-04 23:25 (ora României) · **de:** sesiunea Cyber-GPU 48 (cloud, fără placă) — C-71, partea cyber-gpu (SIMULARE)
 
 ## Acum
-- **C-69 (F5 din planul independenței):** codul pentru I7–I10 exista deja în SIMULARE; azi s-a adăugat ce lipsea pentru ferestre
-  (`677dfbf`, `d5bf45a`, docs `604852b`; 346 teste, CI verde rularea 100). **Nimic testat pe RTX 3070 Ti.**
-  - I7 (Booter pe SEC2) e verificat la fel de strict ca I6: lista exactă a celor 18 registre SEC2 (T72), verificarea jurnalului I6 + I7 de pe
-    stick (`check_i6_i7_journal`, 8 greșeli plantate prinse, T73), rezultatul I7 citit **fără permis** (`read_after_i7`, 3 citiri, T74),
-    unealta `verifica_jurnal_i7`.
-  - Ținta „un singur program pe simbol”, primul pas: **costul unei lansări** măsurat de placă însăși, din mărci de timp (`launch_cost`, T75);
-    în simulare cifrele sunt ale testului, doar metoda e verificată.
-  - Lista ferestrelor cu Adrian: `cyber-gpu/docs/FEREASTRA_C-69.md` — 0: I6 o dată (os-224) → 1: I7 → 2: I8 → 3: golden + I9 → 4: primul calcul
-    (`add64`) + costul lansării → apoi treptele matmul și Kronos pe placă.
-- Pe placă până acum: I0–I4 doar citire TREC; I6 a scris (4 nov), FWSEC-FRTS a reușit; verificarea nouă (C-66) e în os-224.
-- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `604852b`).
+- **C-71 (lucru continuu):** tot drumul de la I6 la primul calcul e acum **un singur lanț** pentru `gpu lant`: `chain::WINDOW_CHAIN_FULL`
+  (13 pași) + `run_chain_ready` — și **trece cap-coadă în SIMULARE** cu codul real (T78; `e77d986`, docs `91816ec`; 349 teste, CI verde rularea 101).
+  **Nimic testat pe RTX 3070 Ti.**
+- **Defect găsit în simulare, înainte de placă:** mesajele către GSP-RM (golden image, I9) nu sunau soneria GSP după fiecare mesaj — pe placă
+  GSP-RM n-ar fi răspuns. Reparat prin adăugare (`QueueTransportBell`); fără sonerie, lanțul se oprește curat la golden (T79).
+- C-69 (sesiunea 47): I7 verificat ca I6, costul unei lansări, lista ferestrelor `cyber-gpu/docs/FEREASTRA_C-69.md`.
+- Pe placă până acum: I0–I4 doar citire TREC; I6 a scris (4 nov), FWSEC-FRTS reușit; verificarea nouă (C-66) e în os-224.
+- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `91816ec`).
+
+## Lista scurtă pentru fereastra pe hardware (în ordine; `gpu lant` + „DA” le rulează pe toate, oprire la primul eșec)
+1. Pornire rece (cablul scos 30 s); `gpu pregatire-i6` → „WPR2 coborat”, 0 scrieri.
+2. Bus Master pornit → I6 FWSEC-FRTS → WPR2 citit: „capat: ultimul bloc de 128 KiB”.
+3. I7 Booter pe SEC2 → citit: cutia SEC2 = 0, GSP RISC-V ACTIV.
+4. I8: SetSystemInfo + SetRegistry, soneria, secvențiatorul → `GSP_INIT_DONE`.
+5. Golden image + I9 (canalul de lucru): fiecare răspuns RM = 0.
+6. I10: `add64` → rezultat identic bit cu bit cu procesorul (abia atunci „executat pe GPU”).
+7. Costul unei lansări: 16 lansări cu marcă de timp → mediana.
+8. Bus Master la loc, tur de citire, oprire completă; jurnalul de pe stick + poze în `rezultate/`.
+(Pașii 3–7 cer întâi partea OS din C-71; până atunci lanțul OS se oprește cinstit la I7.)
 
 ## Urmează
-1. Fereastra 0 cu Adrian (os-224): pornire rece, `gpu pregatire-i6`, `gpu i6 --scrie` o dată → jurnalul în `rezultate/` → `verifica_jurnal_i6`.
-2. Fără placă, între timp: lista exactă a scrierilor I8 (soneria + secvențiatorul) și verificarea ei în jurnal, ca la I6/I7.
-3. Dacă I6 trece: comandă nouă pentru fereastra 1 (I7) — partea OS e descrisă în `cyber-gpu/integration/cyber-universe/C-69_i7-fereastra.md`.
+1. Sesiunea OS: `gpu lant` pe `WINDOW_CHAIN_FULL`, pas cu pas (nota `cyber-gpu/integration/cyber-universe/C-71_gpu-lant-complet.md`).
+2. Noi, fără placă: verificarea jurnalului pentru I8 + golden (doar ferestrele GSP/SEC2, o sonerie pe mesaj) și unealta de jurnal pentru tot lanțul.
+3. Înainte de I10 pe placă: aprobarea soneriei canalului de lucru (`0xBB0090`, dedusă din surse, încă nu e pe lista permisă).
 
 ## Ce oferă proiectul celorlalți
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Față de fixarea OS-ului (`9ac89b8`):
-  **doar adăugări** — `gsp::falcon::{read_after_i7, I7Status, I7_STATUS_READS}`, `i6_log::{check_i7, check_i6_i7_journal, I6I7Journal, SEC2_LO, SEC2_HI,
-  GSP_RISCV_CPUCTL}`, modulul `launch_cost`, câmpurile noi din `gpu_sim::cmdproc::CommandProcessor` (`gpu_time_ns`, `sim_launch_ns`, `sim_method_ns`,
-  `timestamps`). Schimbare de comportament (doar simulare): `gpu-sim` **acceptă** acum eliberarea de semafor cu marcă de timp (înainte o refuza).
-  `check_i6` are același rezultat (rescris pe o funcție comună cu I7). Nota: `integration/cyber-universe/C-69_i7-fereastra.md`.
+  **doar adăugări** — C-69: `falcon::{read_after_i7, I7Status, I7_STATUS_READS}`, `i6_log::{check_i7, check_i6_i7_journal, …}`, `launch_cost`;
+  C-71: `chain::{WINDOW_CHAIN_FULL, READY_FOR_WINDOW, run_chain_ready}`, `golden::QueueTransportBell`. `WINDOW_CHAIN`, `run_chain`, `QueueTransport`,
+  `check_i6` neschimbate. În `gpu-sim`: eliberarea cu marcă de timp e acceptată acum (înainte refuzată).
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la Adrian: fereastra 0 pe workstation (I6 o dată, pornire rece, os-224) și jurnalul de pe stick copiat în `rezultate/`.
-- De la `cyber-universe`: după I6 TRECE și o comandă nouă, comanda `gpu i7 --scrie` (propunerea din nota C-69).
+- De la `cyber-universe`: partea OS din C-71 (`gpu lant` complet, testat în QEMU cu `--sim`).
+- De la Adrian: fereastra pe workstation (lista de mai sus) și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
-- Nimic blocat în cyber-gpu. Pasul următor pe placă cere fereastra cu Adrian.
+- Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
