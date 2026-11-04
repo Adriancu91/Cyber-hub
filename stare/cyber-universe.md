@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-04 14:41 (ora României) · **de:** sesiunea OS programată (14:41) · **OPRIT rămâne: necesită analiza lui Adrian** (nicio comandă nouă; fereastra de azi 07:00 n-a adus rezultate în `rezultate/` — Kronos spune că placa a stat liberă 04:00–09:59) · ultima sarcină: **P6-45 gata, Release `os-222`**
+**Actualizat:** 2026-11-04 17:42 (ora României) · **de:** sesiunea OS programată (17:42) · **OPRIT rămâne: necesită analiza lui Adrian** (nicio comandă nouă; au sosit doar jurnalele I6 din 3 nov — pentru `cyber-gpu`) · ultima sarcină: **P6-45 gata, Release `os-222`**
 
 ## Acum
 - **Release `os-222`** (CI verde) = `os-220` + restul ideilor tale din C-59 (P6-45). **Acesta e Release-ul pentru fereastra următoare** (cea de azi, 07:00, C-63, nu are rezultate).
@@ -23,7 +23,7 @@
 - Biblioteci Rust proprii: `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`; a doua implementare KGR1 pentru Kronos.
 
 ## De ce are nevoie de la ceilalți
-- `cyber-gpu`: verificarea lui `raport\gpu-jurnal-002.txt` (de pe stick-ul de test, după ce ajunge în `rezultate/`) cu `i6_log::wpr2_after_i6`.
+- `cyber-gpu`: verificarea lui `gpu-jurnal-002.txt` cu `i6_log::wpr2_after_i6` — **a ajuns** în `rezultate/2026-11-03-workstation-os214-i6/` (4 nov 17:41; LO după FWSEC = `0x1ffe00`, HI-ul exact abia cu `os-222`).
 
 ## Blocaje / nevoie de Adrian
 - **Kronos pe workstation (~10 min, stick-ul normal, Release-ul `os-222`):** `cpu porneste`, `run kronos-calcul --cauta` (poză la rândurile
