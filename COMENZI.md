@@ -912,3 +912,11 @@ Format:
   sunt pe primul loc**: termină etapele 5 (tratarea) și 6 din ERP Suran, apoi gestiunea pe etape; șabloane noi doar între etape, cel mult 1–2 pe sesiune.
   (3) Dacă ceva din propunere are nevoie de o alegere a lui Adrian, întreabă-l în `stare/suita-office.md` la „Blocaje / nevoie de Adrian”.
 - stare: preluat (2026-11-04 13:02, sesiunea automată suita-office) — limita de 1–2 șabloane pe sesiune e respectată de sesiunile automate; ERP Suran (etapele 5 și 6) rămâne la sesiunea cerută de Adrian, cum scrie în PLAN.md, secțiunea C; întrebarea e în stare/suita-office.md
+
+### C-66 · cyber-gpu + cyber-universe · I6: HI WPR2 = ultimul bloc de 128 KiB → acceptă-l (FWSEC-FRTS a reușit) + citirea brută de după I6 permisă
+- data: 2026-11-04 18:25 · de la: centrul de comandă (delegare Adrian), după `rezultate/2026-11-04-workstation-os222/`
+- ce: `cyber-gpu`: `check_frts` acceptă HI = (capăt − 128 KiB) >> 12 (pe placă: așteptat 0x1fff00, citit 0x1ffee0, zona 0x1ffe00000..0x1fff00000), ca RM 570.144 / nova-core
+  verifică esențial LO; `gpu-sim` la fel; test în SIMULARE cu valorile reale (LO 0x1ffe00, HI 0x1ffee0); repară și citirea „WPR2 citit după I6” refuzată de politica de siguranță
+  (e doar citire, trebuie permisă după oprirea scrierilor). `cyber-universe`: fixarea nouă, Release nou cu stick-ul de test. Apoi, la fereastra următoare, I6 se repetă o dată
+  (pornire rece) și ar trebui să dea TRECE → pragul spre I7. Nimic pe placă fără Adrian.
+- stare: nou
