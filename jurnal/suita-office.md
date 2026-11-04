@@ -453,3 +453,5 @@
 - 2026-11-04 08:01 — Sesiune automată (5 pași, fiecare cu commit și test): setul pentru prețuri (Sheets Calculul prețului de vânzare și Listă de prețuri pentru clienți, Docs proces-verbal de modificare a prețurilor și anunțul către clienți, notița Schimbarea prețurilor, Slides Prețuri și marje).
 - 2026-11-04 08:45 — Sesiune automată (4 pași, fiecare cu commit și test): setul pentru promoții (Sheets, Docs, Notițe, Slides) și setul pentru casa de marcat (Sheets Rapoartele Z, notița Închiderea zilei, Docs proces-verbal de diferență de casă).
 - 2026-11-04 09:02 — Șabloane pentru avansurile de trezorerie: Sheets (Avansuri de trezorerie), Docs (Decont al avansului de trezorerie), Notițe (Decontarea unui avans); teste trecute.
+
+- 2026-11-04 09:50 — Sesiune automată (6 pași): seturile de șabloane pentru bilete la ordin și cecuri și pentru tichete de masă (Sheets, Docs, Notițe) și Sheets → Cheltuieli de protocol, cu limita deductibilă de 2%.
