@@ -1,9 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-04 08:42 (ora României) · **de:** sesiunea OS programată (08:42) · **OPRIT rămâne: necesită analiza lui Adrian** (nicio comandă nouă și niciun rezultat al ferestrei de azi încă; sesiuni la rând fără sarcină terminată — coada n-are nimic liber fără placă/Adrian) · ultima sarcină: **P6-45 gata, Release `os-222`**
+**Actualizat:** 2026-11-04 11:41 (ora României) · **de:** sesiunea OS programată (11:41) · **OPRIT rămâne: necesită analiza lui Adrian** (nicio comandă nouă; fereastra de azi 07:00 n-a adus rezultate în `rezultate/` — Kronos spune că placa a stat liberă 04:00–09:59) · ultima sarcină: **P6-45 gata, Release `os-222`**
 
 ## Acum
-- **Release `os-222`** (CI verde) = `os-220` + restul ideilor tale din C-59 (P6-45). **Acesta e Release-ul pentru fereastra de azi, 07:00 (C-63).**
+- **Release `os-222`** (CI verde) = `os-220` + restul ideilor tale din C-59 (P6-45). **Acesta e Release-ul pentru fereastra următoare** (cea de azi, 07:00, C-63, nu are rezultate).
   Fără fișier de reglaj merge exact ca `os-220`; variantele noi pornesc doar dacă `kronos-calcul --cauta` le găsește mai rapide.
 - **Un singur bloc pe simbol** (`kronos --bloc`): toate calculele unui simbol sunt date firelor deodată; fiecare fir ia bucăți dintr-un contor
   comun, iar cel care termină ultima bucată a unui calcul pregătește următorul și îl „deschide” — nu mai e un fir principal care adună și
@@ -13,8 +13,9 @@
 - `--cauta` scrie în reglaj doar varianta câștigătoare (rânduri noi posibile: `planificare = bloc`, `echipe = N`, `bucati = N`).
 
 ## Urmează
-- **OPRIT** până la o comandă nouă în `COMENZI.md` sau rezultatele ferestrei de azi în `rezultate/` (atunci sesiunea următoare reia lucrul).
-- Fereastra de azi 07:00 (C-63) cu `os-222`; după rezultate, alegem varianta (sau, dacă procesorul liber ajută mult, fixarea firelor pe procesoare).
+- **OPRIT** până la o comandă nouă în `COMENZI.md` sau rezultatele unei ferestre în `rezultate/` (atunci sesiunea următoare reia lucrul).
+- Decizia ta de azi 11:33 (super-școala de română după OS + GPU la viteză maximă) e notată; pentru OS, pasul spre „viteză maximă” e tot măsurătoarea cu `os-222` pe workstation.
+- Fereastra următoare cu `os-222`; după rezultate, alegem varianta (sau, dacă procesorul liber ajută mult, fixarea firelor pe procesoare).
 - Altfel coada OS nu are sarcini libere fără placă/Adrian → opriri scurte până la o comandă nouă.
 
 ## Ce oferă proiectul celorlalți
