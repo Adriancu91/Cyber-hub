@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS — sesiunea paralelă F4 (`cyber-universe`, ramura `wip/P7-F4-hardware`)
 
-**Actualizat:** 2026-11-05 00:00 (ora României) · **de:** sesiunea paralelă F4 (programată, fără Adrian)
+**Actualizat:** 2026-11-04 23:51 (ora României) · **de:** sesiunea paralelă F4 (programată, fără Adrian)
 
 ## Acum
 - Gata pe ramura `wip/P7-F4-hardware` (NU pe `main`; sesiunea OS principală o integrează): comanda **`hw lista`** și **`hw lista --detalii`**.
