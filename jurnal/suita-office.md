@@ -447,3 +447,4 @@
 - 2026-11-04 04:45 — Sesiune automată (8 pași, fiecare cu commit și test): setul pentru gestiunea magaziei (Sheets Fișa de magazie, Bon de consum, Bon de transfer; Notițe, Slides, Docs legate de ele), tema Rodie, Video Rostogolire spre stânga / dreapta.
 - 2026-11-04 05:35 — Sesiune automată (7 pași, fiecare cu commit și test): lipsurile și garanțiile din gestiune (Sheets Perisabilități și Garanțiile gestionarilor, Docs Notă de evaluare a pagubei și Contract de garanție materială, notița Lipsă la inventar), tema Brad, Video Rostogolire în sus / în jos.
 - 2026-11-04 05:52 — Sesiune automată (3 pași, fiecare cu commit și test): setul pentru aprovizionare (Sheets Necesar de aprovizionare, notița Aprovizionarea săptămânală, Docs Contract-cadru de furnizare).
+- 2026-11-04 06:31 — Sesiune automată (7 pași, fiecare cu commit și test): setul pentru evaluarea furnizorilor (Sheets, Docs, Notițe, Slides), tema Ametist, Video Rostogolire din / spre colțuri.
