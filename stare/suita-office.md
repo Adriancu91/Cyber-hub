@@ -1,9 +1,10 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-04 20:37 (ora României) · **de:** sesiunea ERP Suran cerută de Adrian
+**Actualizat:** 2026-11-04 20:52 (ora României) · **de:** sesiunea automată (lucru continuu)
 
 ## Acum
 - **ERP Suran** (modul extra, cerut de Adrian pe 04.11, după specificația lui): etapele 1–5 din 6 sunt gata. Etapa 1: nomenclatoarele DEEE. Etapa 2: comenzile. Etapa 3: recepțiile. Etapa 4: stocul și ofertele. Etapa 5 (commit 971a7d59 + 1a8adf86): tratarea, adică comenzi TRT cu calendar și rezervare din stoc, sesiunea zilei creată la prima operațiune, dezmembrare / retratare / sortare cu bilanț intrat = ieșit, etichete și PV. Totul e offline, cu SQLite. Urmează etapa 6 (expedițiile și rapoartele), după raportul către Adrian.
+- Sesiunea automată 04.11 20:10 – 20:52 (2 pași, fiecare cu commit și test): trei feluri noi de diagrame în Docs, Sheets, Notițe și Slides: **Listă cu trapeze numerotate**, **Listă cu stele în zece colțuri**, **Listă cu stele în șapte colțuri** (135 de feluri). Sesiunea ERP lucra în paralel; testele s-au făcut într-o copie separată, iar primul commit (971a7d59) a prins și fișierele ERP pe care ea le pusese deja în index (nimic pierdut, notat în JURNAL.md).
 - Sesiunea 04.11 19:18 – 20:09 (6 pași, fiecare cu commit și test): șapte feluri noi de diagrame în Docs, Sheets, Notițe și Slides: **Listă cu bule de vorbire**, **cu stele în șase colțuri**, **cu rozete**, **cu sclipiri**, **cu săgeți crestate**, **cu fulgere**, **cu echere** (132 de feluri) și un singur șablon nou (limita C-65): **Docs** **Decizie de detașare a salariatului** (91 de șabloane). ERP Suran nu a fost atins: etapa 5 o face sesiunea cerută de Adrian (PLAN.md). Toate cele 7 aplicații se deschid fără erori.
 - Sesiunea 04.11 18:32 – 19:14: diagramele Bec cu idei, Busolă, Listă cu semilune, Listă cu indicatoare și șablonul Docs Decizie de delegare a salariatului.
 - Sesiunea 04.11 17:53 – 18:33: diagramele Piese de puzzle, Copac, Listă cu dodecagoane și șablonul Docs Decizie de suspendare a contractului de muncă.
