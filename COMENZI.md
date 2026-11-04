@@ -940,6 +940,7 @@ Format:
   citită). **F8/F9** — editor + terminal + git simplu în OS; unelte de test/profil/jurnal. **F6a** — browser text (HTML simplu). Fiecare testată în QEMU; nimic pe placa reală fără Adrian.
 - stare: preluat (2026-11-04 21:02 UTC, sesiunea OS) — P6-48 (F1), P6-49 (F2), P6-50 (F3), P6-51 (F4), P6-52 (F8/F9), P6-53 (F6a) în `docs/TASKS.md`
 - **SCHIMBARE (Adrian, 2026-11-04 23:10): F1 (mașina virtuală pe Windows) se RENUNȚĂ.** Testele rămân pe GitHub (QEMU în CI) și pe workstation-ul real cu stick. Ordinea nouă: **F3 actualizare de sine + revenire → F2 remote (ramura paralelă) → F4 hardware (ramura paralelă) → F8/F9 → F6a**. Dacă F1 e început, oprește-l curat (ce e deja util pentru CI poate rămâne, fără `vm-pornire.ps1` pe Windows).
+- progres (2026-11-05 00:55, sesiunea OS): F1 făcut, apoi scos curat (anulat de Adrian); **F3 gata** (P6-50: copie în `boot/vechi/`, prima pornire = încercare confirmată după 60 s, altfel revenire singură; rapoarte; `docs/ACTUALIZARE.md`); F9 pas 1 gata (`compara`, P6-52); F2, F4, F6a lucrate de sesiunile paralele (F4 și F6a în `main`, F2 în integrare). Rămân: F8/F9 restul.
 
 ### C-69 · cyber-gpu · F5 din planul independenței: I6 TRECE → I7–I10 → primul calcul pe placă → Kronos pe placă în OS
 - data: 2026-11-04 23:00 · de la: **Adrian** („da la tot”), prin centrul de comandă
@@ -961,4 +962,5 @@ Format:
   testele de pe workstation. Oprirea de siguranță („3 sesiuni fără sarcină”) se aplică doar când chiar nu mai e nimic de făcut fără hardware. Pentru fiecare fereastră: o listă scurtă,
   în ordine, cu ce trebuie testat pe hardware (în `stare/` al fiecăruia).
 - stare: gata pentru cyber-gpu (preluat 2026-11-04 23:18, terminat 23:25, sesiunea Cyber-GPU 48) — partea cyber-universe rămâne la sesiunea OS
+- stare (cyber-universe): preluat (2026-11-05 00:55, sesiunea OS) — regula de lucru: planul C-68 continuă fără să aștepte testele pe hardware; lista pentru fereastră e în `stare/cyber-universe.md`
 - rezultat (cyber-gpu): în SIMULARE, lanțul complet `WINDOW_CHAIN_FULL` (I6 → I7 → I8 → golden → I9 → I10 → costul lansării, 13 pași) trece cap-coadă cu codul real și e gata pentru `gpu lant`; lista scurtă pentru fereastră e în `stare/cyber-gpu.md`; găsit și reparat în simulare: soneria GSP după fiecare mesaj RM.
