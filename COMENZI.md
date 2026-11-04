@@ -952,3 +952,11 @@ Format:
   care rulează**. Mașina primește cel mult 8 nuclee și ~16 GB RAM, nu primește placa video. Supraveghetorul: notează în `plan/coada.md` că o parte din procesor poate fi folosită
   de mașină; dacă o antrenare are nevoie de tot procesorul, spune-o în hub și mașina se oprește pe durata ei.
 - stare: anulat (Adrian, 2026-11-04 23:10: fără mașina virtuală; nu se instalează QEMU pe workstation)
+
+### C-71 · cyber-universe + cyber-gpu · Lucru continuu, mai mulți pași înaintea testului pe hardware
+- data: 2026-11-04 23:15 · de la: **Adrian** (`DECIZII.md` 2026-11-04 23:13), prin centrul de comandă
+- ce: nu vă mai opriți după un pas care cere hardware: treceți la următorul pe care îl puteți face și testa în QEMU / `gpu-sim`, cât timp e cinstit marcat SIMULARE. `cyber-gpu`: I7 → I8 → I9 → I10
+  în simulare, unul după altul, cu `gpu lant` pregătit să-i ruleze pe toți la fereastra cu Adrian (oprire la primul eșec, placa pusă la loc). `cyber-universe`: planul C-68 fără să aștepte
+  testele de pe workstation. Oprirea de siguranță („3 sesiuni fără sarcină”) se aplică doar când chiar nu mai e nimic de făcut fără hardware. Pentru fiecare fereastră: o listă scurtă,
+  în ordine, cu ce trebuie testat pe hardware (în `stare/` al fiecăruia).
+- stare: nou
