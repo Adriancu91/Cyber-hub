@@ -930,3 +930,24 @@ Format:
   bucăților/blocului pentru ele?) și adu-le la aceeași formă. `--profil` să le despartă (qkv fără atenție / atenția). CONTROL neschimbat; Release nou; test la fereastra următoare.
 - stare: gata, partea fără placă (preluat 2026-11-04 18:43 UTC, terminat 20:30 UTC, sesiunea OS) — P6-47, Release os-224
 - rezultat: în bloc qkv/proiecția au deja aceeași formă de cod ca fc/MLP (în `--cauta` tot modelul merge la 2088 µs/simbol), deci frâna e la rulare: `--profil` arată acum fiecare etapă din toate firele (fire care au lucrat, întârzierea ultimului, cedări ~520/simbol pe 4 nov), atenția despărțită de qkv, plus `--fara-cedari` de încercat la fereastră.
+
+### C-68 · cyber-universe · Planul independenței OS: F1 (imaginea + scriptul pentru mașina virtuală) → F2 remote → F3 actualizare de sine → F4 hardware → F8/F9 → F6a browser text
+- data: 2026-11-04 23:00 · de la: **Adrian** („da la tot”, `idei/2026-11-04_planul-independentei-os.md`), prin centrul de comandă
+- ce, în ordine, câte o sarcină cu plan în `docs/plans/`: **F1** — o imagine de disc pentru QEMU din fiecare Release + `tools/vm-pornire.ps1` (pornire/oprire/repornire a mașinii pe Windows,
+  rețea, serial în fișier, ceas de siguranță) + `docs/MASINA_VIRTUALA.md`; nucleele mașinii limitate (implicit 8), placa video NU e dată mașinii. **F2** — remote text direct din OS
+  (ecran + tastatură prin rețea, cheie doar pe stick/discul mașinii, lista albă de comenzi). **F3** — actualizare de sine din Release-uri (HTTPS + SHA-256) cu backup și revenire
+  automată, rapoarte urcate în hub (token cu drepturi minime, doar pe stick). **F4** — citirea completă a hardware-ului (PCI/USB/ACPI cu nume și stare; placa Wi-Fi doar identificată și
+  citită). **F8/F9** — editor + terminal + git simplu în OS; unelte de test/profil/jurnal. **F6a** — browser text (HTML simplu). Fiecare testată în QEMU; nimic pe placa reală fără Adrian.
+- stare: nou
+
+### C-69 · cyber-gpu · F5 din planul independenței: I6 TRECE → I7–I10 → primul calcul pe placă → Kronos pe placă în OS
+- data: 2026-11-04 23:00 · de la: **Adrian** („da la tot”), prin centrul de comandă
+- ce: după C-66, pregătește pașii I7–I10 în SIMULARE și lista pentru ferestrele cu Adrian; ținta „un singur program pe simbol” (idee aprobată 3 nov) de la început. Nimic pe placă fără Adrian.
+- stare: nou
+
+### C-70 · kronos · Mașina virtuală Cyber Universe pe workstation (F1) — Kronos continuă, împarte procesorul
+- data: 2026-11-04 23:00 · de la: **Adrian** („da la tot”), prin centrul de comandă
+- ce: centrul de comandă instalează QEMU (descărcare oficială, aprobată) pe workstation și pornește mașina virtuală când e gata imaginea din C-68, **ziua, fără să atingă o antrenare
+  care rulează**. Mașina primește cel mult 8 nuclee și ~16 GB RAM, nu primește placa video. Supraveghetorul: notează în `plan/coada.md` că o parte din procesor poate fi folosită
+  de mașină; dacă o antrenare are nevoie de tot procesorul, spune-o în hub și mașina se oprește pe durata ei.
+- stare: nou
