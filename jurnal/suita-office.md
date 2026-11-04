@@ -451,3 +451,4 @@
 - 2026-11-04 07:14 — Sesiune automată (10 pași, fiecare cu commit și test): setul pentru retururi (Sheets Retururi către furnizori și de la clienți, Docs proces-verbal de retur, două notițe, Slides Situația retururilor), setul pentru ambalaje returnabile (Sheets, Docs, Notițe) și tema Cerneală.
 
 - 2026-11-04 08:01 — Sesiune automată (5 pași, fiecare cu commit și test): setul pentru prețuri (Sheets Calculul prețului de vânzare și Listă de prețuri pentru clienți, Docs proces-verbal de modificare a prețurilor și anunțul către clienți, notița Schimbarea prețurilor, Slides Prețuri și marje).
+- 2026-11-04 08:45 — Sesiune automată (4 pași, fiecare cu commit și test): setul pentru promoții (Sheets, Docs, Notițe, Slides) și setul pentru casa de marcat (Sheets Rapoartele Z, notița Închiderea zilei, Docs proces-verbal de diferență de casă).
