@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-04 05:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-04 08:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -18,7 +18,7 @@
   Concluzia: forma exercițiilor nu aduce rezolvări; linia `cod_c1_ex` nu se continuă, mergem din S63.
 
 ## Urmează
-- **4 nov 07:00–~09:30 (C-63):** placa și calculatorul libere pentru Adrian (S70 s-a terminat la 04:00).
+- **4 nov 07:00–~09:30 (C-63):** placa și calculatorul libere pentru Adrian (S70 s-a terminat la 04:00; raportul de dimineață 06:45, 1195 teste trec, placa 391 MB / 23 °C).
 - **S71 (aprobat, după ~09:30):** memoria de cod („rege / regat”) + măsurare scurtă pe setul de probă, întâi cu S63.
 - **S72a (aprobat, procesor, azi până la 18:30):** exercițiile cu test care rulează în cutie (la S69 doar 13 din 441), împărțite pe pachete: P_verif (200) / P_scoala.
 - **S72b (aprobat, noaptea 4→5 nov, dacă P_scoala ≥ 500):** prima rundă a școlii de cod din S63: 8 încercări pe exercițiu, cutia păstrează doar cele corecte, o trecere de învățare,
@@ -36,6 +36,7 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
+- **URGENT până pe 6 nov:** autentificarea Claude Code de pe workstation expiră între 6 și 9 nov → executantul și raportul de dimineață s-ar opri. Adrian rulează pe workstation `claude setup-token` (sau `claude auth login`). Probabil privește și sarcinile programate ale altor proiecte de pe același calculator.
 - Fără grabă: dacă cifrele S58 contează (abaterea de memorie la examen); permisiunea `taskkill` pe workstation; ora limită 18:30 la bucla automată.
 - Release-ul privat `kronos-kgr1-477`: doar copie pe GitHub, fără grabă — comanda în `integrare/kronos/MODEL.md`.
 - Opțional: excluderea mai îngustă propusă la S53; cauza repornirii din 29 oct (comanda din raportul S52).
