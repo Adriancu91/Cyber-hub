@@ -437,3 +437,4 @@
 - 2026-11-04 00:35 — Sesiune automată (6 pași, fiecare cu commit și test): Docs Răspuns la reclamația unui client, Slides Analiza reclamațiilor, Notițe Verificarea de protecția muncii, Sheets Termenele de protecția muncii, Video titlul Deșert și trecerile Vârtej / Vârtej invers.
 - 2026-11-04 00:58 — Gestiunea de stoc, pasul 1: categorii, nota de recepție intră în stoc pe loturi, stoc pe depozite cu navigare după dată / furnizor / lot.
 - 2026-11-04 01:27 — Sesiune automată (6 pași, fiecare cu commit și test): setul pentru adunarea asociaților (Docs Hotărârea AGA și Decizia asociatului unic, Notițe și Slides Adunarea asociaților), Docs Proces-verbal de instruire în protecția muncii, Video trecerile Rostogolire.
+- 2026-11-04 02:05 — ERP Suran, etapa 1: modul offline cu SQLite (companii, utilizatori, audit, nomenclatoare DEEE), atenționări și lista de pornire din tabelul firmei.
