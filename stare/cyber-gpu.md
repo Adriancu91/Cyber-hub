@@ -1,43 +1,40 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-04 13:30 (ora României) · **de:** sesiunea Cyber-GPU 45 (cloud, fără placă) — fără lucru nou; fereastra C-63 s-a încheiat, dar jurnalele ei nu sunt încă în `rezultate/`
+**Actualizat:** 2026-11-04 19:40 (ora României) · **de:** sesiunea Cyber-GPU 46 (cloud, fără placă) — C-66, partea cyber-gpu, gata (SIMULARE)
 
 ## Acum
-- **Pe placa reală (3 nov, os-214):** primul I6 — FWSEC a rulat, ucode încărcat prin DMA, Bus Master pus la loc; rezultat „NU TRECE” la
-  verificare: „la 0x1fa824: asteptat 0x1ffe00, citit 0x1ffe00”. Începutul zonei protejate (WPR2) era **exact** cel cerut; diferea capătul (HI),
-  dar mesajul numea registrul greșit.
-- **C-58 gata, doar în SIMULARE** (`af02bea` + docs `3286a3b`, 335 teste, CI verde):
-  - eroarea numește acum registrul care diferă: LO `0x1fa824` (început) sau HI `0x1fa828` (capăt), cu valorile așteptat/citit;
-  - capătul e acceptat dacă e sfârșitul exclusiv **sau** ultima pagină de 4 KiB a zonei. Sursele publice (RM 570.144 MIT, nova-core) verifică
-    după FWSEC doar începutul; pe placă capătul nu era sfârșitul exclusiv → cel mai probabil „ultima pagină”. **De confirmat** cu HI brut din
-    `raport/gpu-jurnal-002.txt` (pe stick-ul de test);
-  - `gpu-sim` scrie HI ca pe placă (ultima pagină; opțiunea `wpr2_hi_last_page`); `i6_log::wpr2_after_i6` verifică LO/HI direct din jurnalul de pe stick.
-- Pe placă până acum: I0–I4 doar citire TREC; I6 a scris (2 în configurație + 720 în registrele GSP), toate în ferestrele permise.
-- OS-ul e fixat pe `3286a3b` (C-61 gata, Release `os-219`/`os-220`): după I6 afișează și LO/HI brute.
-- **Nou (sesiunea 42, SIMULARE):** jurnalul de pe stick se verifică dintr-o singură comandă — `verifica_jurnal_i6` (ordinea celor ~720 de scrieri + LO/HI față de FRTS); dă „TRECE” sau „DE ANALIZAT”. Pașii părții GPU pentru 4 nov: `cyber-gpu/docs/FEREASTRA_C-49.md`, secțiunea „Fereastra 4 nov (C-63)”.
-- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `9a6e9e5`; doar adăugări față de `3286a3b`).
-- **Ideea aprobată azi 13:25** (`idei/2026-11-03_cyber-gpu-un-singur-bloc.md`, direcție de plan): păstrată în `cyber-gpu/docs/TINTA_UN_SINGUR_PROGRAM.md` (`772c1e3`) — ce avem deja în simulare, ce lipsește, ordinea măsurătorilor (întâi costul unei lansări pe placă). Doar plan, fără cod; vine după I6–I10 și treptele matmul.
+- **Pe placa reală (4 nov, os-222):** I6 a rulat FWSEC-FRTS; LO = `0x1ffe00` (exact începutul zonei), HI = `0x1ffee0` = începutul ultimului
+  bloc de 128 KiB al zonei de 1 MiB → **FWSEC-FRTS a reușit pe placă**; doar verificarea noastră nu cunoștea această formă și a zis „NU TRECE”.
+- **C-66 (partea cyber-gpu) gata, doar în SIMULARE** (`9ac89b8` + docs `cf8cd92`, 338 teste, verificările locale trec):
+  - `check_frts` (folosit de I6) acceptă acum și „ultimul bloc de 128 KiB”; cu valorile din 4 nov ar da TRECE (T70);
+  - citirea WPR2 de după I6 se face cu o funcție nouă **doar de citire** (`falcon::read_frts_after_i6`): fără permis, 3 registre de stare, fiecare
+    citire intră în jurnal (T71) — repară „nepermis de politica de siguranta”;
+  - `gpu-sim` scrie HI ca placa (128 KiB).
+- Jurnalul real `gpu-jurnal-002.txt` (3 nov) verificat cu `verifica_jurnal_i6`: ordinea celor 720 de scrieri I6 **TRECE**, Bus Master pornit și
+  pus la loc; HI nu era în acel jurnal (codul vechi nu jurnaliza citirile) — de aceea funcția nouă le jurnalizează.
+- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `cf8cd92`).
+- Pe placă până acum: I0–I4 doar citire TREC; I6 a scris (2 în configurație + 720 în registrele GSP), toate în ferestrele permise; FWSEC-FRTS reușit.
 
 ## Urmează
-1. **Fereastra C-63 (4 nov 07:00–~09:30) s-a încheiat, dar în `rezultate/` nu a apărut nimic:** avem nevoie de `raport/gpu-jurnal-002.txt`
-   (stick-ul de test vechi) și, dacă I6 s-a repetat, de jurnalul/raportul lui (stick-ul nou), copiate într-un dosar nou din `rezultate/`.
-2. După fereastră: rulăm `verifica_jurnal_i6` pe fiecare jurnal → confirmăm HI (T68) și ordinea scrierilor.
-3. Dacă I6 trece: I7 (Booter) rămâne blocat în plan până la o comandă separată.
+1. Sesiunea OS: partea ei din C-66 — fixarea ≥ `9ac89b8`, înlocuirea unei funcții în `gpu_i6.rs` (exact cum scrie în
+   `cyber-gpu/integration/cyber-universe/C-66_wpr2-bloc-128k.md`), Release nou.
+2. Fereastra următoare, cu Adrian: pornire rece (cablul scos 30 s), `gpu pregatire-i6`, `gpu i6 --scrie` **o singură dată** → așteptat TRECE și
+   „capat: ultimul bloc de 128 KiB”; jurnalul de pe stick în hub `rezultate/` → noi rulăm `verifica_jurnal_i6`.
+3. Dacă I6 trece: plan pentru I7 (Booter), doar cu o comandă nouă.
 
 ## Ce oferă proiectul celorlalți
-- `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Față de fixarea OS-ului
-  (`aee06c4`): **doar adăugări** — în sesiunea 30/30b: `nvidia_ga104::{fuse, i6_check, i6_log}`, `fwsec::read_ucode_and_signature`,
-  `gpu_pci::bus_master`, `gpu_core::diag::Journal::with_sink`; în sesiunea 33 (C-54): `nvidia_ga104::{read_tour, chain, board_compare}`,
-  `gpu_sim::observed` (lista completă în `docs/IMPLEMENTATION_STATUS.md`). C-58 (3 nov): `gsp::falcon::{compare_frts, check_frts_detail, FrtsCheck, Wpr2End}`, `i6_log::wpr2_after_i6`, `FakeGsp::wpr2_hi_last_page` — doar adăugări; sesiunea 42: `i6_log::{check_stick_journal, StickJournal}` (doar adăugări); `check_frts` păstrat (nota: `integration/cyber-universe/C-58_wpr2-capat.md`). Schița pentru `gpu tur`/`gpu lant`: `integration/cyber-universe/C-54_gpu-tur-si-lant.md`. Codul OS existent nu
-  trebuie schimbat. Schița pentru comenzile noi: `integration/cyber-universe/C-49_gpu-pregatire-i6.md`.
-- Pentru `gpu i6 --scrie`, OS-ul va trebui să dea: o zonă de RAM contiguă sub 4 GiB (~60 KiB), fereastra BAR0 de 16 MiB (cu scriere doar
-  pentru comanda asta) și accesul la configurația PCI a plăcii.
+- `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Față de fixarea OS-ului (`3286a3b`):
+  **doar adăugări** — sesiunea 42: `i6_log::{check_stick_journal, StickJournal}`; sesiunea 46 (C-66): `gsp::falcon::{compare_frts_full, check_frts_full,
+  FrtsCheckFull, Wpr2EndForm (#[non_exhaustive], label()), WPR2_BLOCK_128K, StatusReadBar0, read_frts_after_i6}`, `i6_log::wpr2_after_i6_full`,
+  câmpul `StickJournal::wpr2_full`, `FakeGsp::wpr2_hi_back` (implicit 128 KiB). `check_frts` are același nume și semnătură, dar acceptă și forma plăcii.
+  `check_frts_detail` / `Wpr2End` rămân neschimbate (refuză forma de 128 KiB) → pentru afișare, OS-ul trece pe `read_frts_after_i6`.
+  Nota completă: `integration/cyber-universe/C-66_wpr2-bloc-128k.md`.
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: nimic nou (fixarea `3286a3b` e suficientă pentru fereastra de mâine).
-- De la Adrian / centrul de comandă: jurnalele ferestrei C-63 în `rezultate/` (fără ele nu mai avem lucru fără placă).
+- De la `cyber-universe`: partea OS din C-66 (fixare ≥ `9ac89b8` + Release cu stick-ul de test).
+- De la Adrian: fereastra următoare pe workstation (I6 o dată, pornire rece) și jurnalul de pe stick copiat în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
-- **Din fereastra de azi (4 nov), încă lipsește:** copierea fișierului `raport/gpu-jurnal-002.txt` de pe stick-ul de test **vechi** (736 rânduri) în hub `rezultate/`. Apoi pozele și `raport\gpu-jurnal-*.txt` de la noul I6.
+- Nimic blocat în cyber-gpu. Pentru pasul următor e nevoie de placă (fereastra cu Adrian), după Release-ul OS.
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.

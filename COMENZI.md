@@ -919,7 +919,8 @@ Format:
   verifică esențial LO; `gpu-sim` la fel; test în SIMULARE cu valorile reale (LO 0x1ffe00, HI 0x1ffee0); repară și citirea „WPR2 citit după I6” refuzată de politica de siguranță
   (e doar citire, trebuie permisă după oprirea scrierilor). `cyber-universe`: fixarea nouă, Release nou cu stick-ul de test. Apoi, la fereastra următoare, I6 se repetă o dată
   (pornire rece) și ar trebui să dea TRECE → pragul spre I7. Nimic pe placă fără Adrian.
-- stare: preluat (2026-11-04 19:35, sesiunea Cyber-GPU) — partea cyber-gpu; partea cyber-universe rămâne la sesiunea OS
+- stare: gata pentru cyber-gpu (2026-11-04 19:40, sesiunea Cyber-GPU) — partea cyber-universe rămâne la sesiunea OS
+- rezultat: în SIMULARE, `check_frts` acceptă HI = ultimul bloc de 128 KiB (valorile din 4 nov dau TRECE) și citirea WPR2 de după I6 se face cu o funcție nouă doar-citire, fără permis (`read_frts_after_i6`); pentru OS: fixare ≥ `9ac89b8` + o funcție schimbată, cum scrie în `cyber-gpu/integration/cyber-universe/C-66_wpr2-bloc-128k.md`.
 
 ### C-67 · cyber-universe · Kronos 206 simb/s: `qkv` (12,5 GB/s) și `proiecția` (6,0 GB/s) la viteza fc/MLP (34–60 GB/s)
 - data: 2026-11-04 18:35 · de la: centrul de comandă (delegare Adrian; ținta următoare ~350 simb/s), după `rezultate/2026-11-04-workstation-os222/`

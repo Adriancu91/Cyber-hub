@@ -61,3 +61,4 @@
 - 2026-11-04 01:30 — sesiunea 43 (cloud, fără placă): nimic nou pentru cyber-gpu în hub, CI verde (`9a6e9e5`); fără lucru nou până la jurnalele ferestrei C-63.
 - 2026-11-04 07:30 — sesiunea 44 (cloud, fără placă): nimic nou pentru cyber-gpu în hub (fereastra C-63 abia a început), CI verde (`f180b6a`); fără lucru nou până la jurnalele ferestrei.
 - 2026-11-04 13:30 — sesiunea 45 (cloud, fără placă): fereastra C-63 încheiată, dar niciun jurnal în `rezultate/`; nimic nou pentru cyber-gpu, CI verde (`70fc8e3`); fără lucru nou.
+- 2026-11-04 19:40 — sesiunea 46 (cloud, fără placă): C-66 gata în SIMULARE (`9ac89b8`, `cf8cd92`): HI WPR2 = ultimul bloc de 128 KiB acceptat (FWSEC-FRTS a reușit pe placă), citirea de după I6 doar-citire fără permis; `gpu-jurnal-002.txt` real: ordinea I6 TRECE. Urmează partea OS și I6 repetat la fereastră.
