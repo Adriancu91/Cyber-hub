@@ -905,3 +905,10 @@ Format:
     de memorie și viteză, apoi nopți. Măsurat cu examenul de română (#477 = 1,2097) și cu R1. Paznicul și examenul neschimbate; `kronos/` neatins.
   - Pre-înregistrare înainte de fiecare noapte; placa ≤ 7.000 MB / 83 °C; nimic descărcat.
 - stare: nou (așteaptă verdictul S72b)
+
+### C-65 · suita-office · „Da” la propunerea de gestiune + ERP Suran pe primul loc
+- data: 2026-11-04 11:45 · de la: **Adrian** (scris în chatul centrului de comandă: „pot să îi dai tu da? că nu am acces” — legătura „remote control” cu sesiunea suitei e oprită)
+- ce: (1) **Da** la „Propunere gestiune stoc.md” (stocurile întâi, apoi banii și contabilitatea primară), exact cum e scrisă; (2) de acum **ERP Suran și gestiunea
+  sunt pe primul loc**: termină etapele 5 (tratarea) și 6 din ERP Suran, apoi gestiunea pe etape; șabloane noi doar între etape, cel mult 1–2 pe sesiune.
+  (3) Dacă ceva din propunere are nevoie de o alegere a lui Adrian, întreabă-l în `stare/suita-office.md` la „Blocaje / nevoie de Adrian”.
+- stare: nou
