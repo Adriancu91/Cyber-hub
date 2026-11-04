@@ -138,3 +138,4 @@
 - 2026-11-04 22:30 — OPRIT ridicat de C-66 și C-67: P6-46 (cyber-gpu `9ac89b8`, capătul WPR2 de 128 KiB acceptat, citirea de după I6 permisă) și P6-47 (profilul blocului văzut din toate firele, `--fara-cedari`); CI verde după ajustarea testului ceasului (B-006) → **Release `os-224`** pentru fereastra următoare.
 - 2026-11-05 00:55 — C-68 preluat; F1 (mașina virtuală) făcut și scos curat după anularea lui Adrian; F3 gata: actualizare cu copie în boot/vechi/, prima pornire = încercare, revenire singură la versiunea veche, rapoarte (P6-50).
 - 2026-11-05 00:55 — F9 pas 1: `compara` pentru rapoarte (P6-52); CI roșu de după `/bin/web` (P6-53, altă sesiune) reparat; F2/F4/F6a lucrate de sesiunile paralele.
+- 2026-11-05 01:40 — P6-53 gata: browserul text `web` (pagini simple ca text, legături numerotate); F4 (`hw lista`) și F2 (remote text, fără criptare) integrate în `main`; CI verde → **Release `os-238`**.
