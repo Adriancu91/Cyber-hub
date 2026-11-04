@@ -2,7 +2,7 @@
 
 - **Propus de:** centrul de comandă, din ideea lui Adrian (4 nov 21:52–22:00) · **Data:** 2026-11-04
 - **Proiecte implicate:** `cyber-universe`, `cyber-gpu`, `kronos`
-- **Stare:** propus — Adrian citește și dă „da” (a ales deja varianta A: pauză la antrenări)
+- **Stare:** înlocuit (4 nov 22:50) de `idei/2026-11-04_planul-independentei-os.md` (mașină virtuală pe Windows, Kronos continuă)
 
 ## Ideea (pe înțelesul lui Adrian)
 Workstation-ul stă pornit non-stop în Cyber Universe, „ca și cum Windows n-ar exista”. Claude (sesiunile din cloud, din abonament, fără API) scrie codul pe GitHub;
