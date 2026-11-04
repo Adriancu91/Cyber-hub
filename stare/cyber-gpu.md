@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-04 07:30 (ora României) · **de:** sesiunea Cyber-GPU 44 (cloud, fără placă) — fără lucru nou; fereastra C-63 în desfășurare (de la 07:00), așteptăm jurnalele
+**Actualizat:** 2026-11-04 13:30 (ora României) · **de:** sesiunea Cyber-GPU 45 (cloud, fără placă) — fără lucru nou; fereastra C-63 s-a încheiat, dar jurnalele ei nu sunt încă în `rezultate/`
 
 ## Acum
 - **Pe placa reală (3 nov, os-214):** primul I6 — FWSEC a rulat, ucode încărcat prin DMA, Bus Master pus la loc; rezultat „NU TRECE” la
@@ -19,8 +19,8 @@
 - **Ideea aprobată azi 13:25** (`idei/2026-11-03_cyber-gpu-un-singur-bloc.md`, direcție de plan): păstrată în `cyber-gpu/docs/TINTA_UN_SINGUR_PROGRAM.md` (`772c1e3`) — ce avem deja în simulare, ce lipsește, ordinea măsurătorilor (întâi costul unei lansări pe placă). Doar plan, fără cod; vine după I6–I10 și treptele matmul.
 
 ## Urmează
-1. **Fereastra 4 nov 07:00 (C-63), cu Adrian:** întâi copiază `raport/gpu-jurnal-002.txt` de pe stick-ul de test vechi în `rezultate/`
-   → apoi I6 din nou cu stick-ul de test nou (`os-220`), pornire rece (cablul scos 30 s).
+1. **Fereastra C-63 (4 nov 07:00–~09:30) s-a încheiat, dar în `rezultate/` nu a apărut nimic:** avem nevoie de `raport/gpu-jurnal-002.txt`
+   (stick-ul de test vechi) și, dacă I6 s-a repetat, de jurnalul/raportul lui (stick-ul nou), copiate într-un dosar nou din `rezultate/`.
 2. După fereastră: rulăm `verifica_jurnal_i6` pe fiecare jurnal → confirmăm HI (T68) și ordinea scrierilor.
 3. Dacă I6 trece: I7 (Booter) rămâne blocat în plan până la o comandă separată.
 
@@ -36,8 +36,8 @@
 
 ## De ce are nevoie de la ceilalți
 - De la `cyber-universe`: nimic nou (fixarea `3286a3b` e suficientă pentru fereastra de mâine).
-- De la `kronos`: workstation-ul liber în fereastra C-63 (4 nov 07:00–~09:30).
+- De la Adrian / centrul de comandă: jurnalele ferestrei C-63 în `rezultate/` (fără ele nu mai avem lucru fără placă).
 
 ## Blocaje / nevoie de Adrian
-- **Mâine, 4 nov 07:00, înainte de orice pe placă:** copierea fișierului `raport/gpu-jurnal-002.txt` de pe stick-ul de test **vechi** (736 rânduri) în hub `rezultate/`. Apoi pozele și `raport\gpu-jurnal-*.txt` de la noul I6.
+- **Din fereastra de azi (4 nov), încă lipsește:** copierea fișierului `raport/gpu-jurnal-002.txt` de pe stick-ul de test **vechi** (736 rânduri) în hub `rezultate/`. Apoi pozele și `raport\gpu-jurnal-*.txt` de la noul I6.
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
