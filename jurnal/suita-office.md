@@ -475,3 +475,4 @@
 - 2026-11-04 20:52 — Sesiunea automată 20:10–20:52: trei diagrame noi (liste cu trapeze numerotate, stele în zece colțuri, stele în șapte colțuri; 135 de feluri); ERP Suran neatins (doar commitul 971a7d59 a prins și fișierele ERP deja puse în index de sesiunea ERP).
 - 2026-11-04 21:23 — Sesiunea automată 20:53–21:23: trei diagrame noi (liste cu stele în 16, 24 și 32 de colțuri; 138 de feluri); ERP Suran neatins (îl face sesiunea cerută de Adrian).
 - 2026-11-04 21:59 — Sesiune automată: trei feluri noi de diagrame (Listă cu ecusoane, cu plăcuțe teșite, cu plăcuțe rotunjite; 141 de feluri), fiecare cu commit și test; ERP Suran neatins.
+- 2026-11-04 22:30 — ERP Suran, etapa 6: expedițiile, rapoartele lunii (organizații, contabilitate, colectori, SIATD) în Excel și importul de parteneri din Excel; toate testele TOATE OK (commit face4e8a). Cele 6 etape din pachet sunt gata.
