@@ -24,3 +24,8 @@ Dell Precision 5820, i9-10980XE (36 fire), RTX 3070 Ti. Adrian de față, 10:45�
 ## Altele
 - Intrarea fixă „Cyber Universe” în BIOS există; stick-ul de test a pornit din „UEFI: VendorCoProductCode 2.00”.
 - Autologin pus de Adrian (netplwiz, cu parola). Bucla automată: primul tur rămâne pentru fereastra următoare.
+
+## Jurnalul I6 copiat (4 nov 17:40, citire brută a stick-ului de test, fără nicio schimbare pe el)
+- `gpu-jurnal-001.txt` (pregătirea, 9 rânduri) și `gpu-jurnal-002.txt` (I6, 737 rânduri) sunt aici.
+- Jurnalul păstrează scrierile și citirile de pregătire; citirile de după FWSEC (LO/HI WPR2) nu sunt în el. Înainte: HI `0x1fa828` = 0 (WPR2 coborât).
+  După FWSEC, verificarea a citit LO = `0x1ffe00` = exact începutul FRTS cerut (0x1ffe00000) → FWSEC-FRTS a ridicat WPR2 unde trebuia. HI-ul exact îl arată `os-222` (C-61).
