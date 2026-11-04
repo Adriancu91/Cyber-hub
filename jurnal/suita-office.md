@@ -457,3 +457,4 @@
 - 2026-11-04 09:50 — Sesiune automată (6 pași): seturile de șabloane pentru bilete la ordin și cecuri și pentru tichete de masă (Sheets, Docs, Notițe) și Sheets → Cheltuieli de protocol, cu limita deductibilă de 2%.
 
 - 2026-11-04 10:35 — ERP Suran, etapa 4: stocul (rezervări, blocare, istoric, stoc inițial) și ofertele cu PDF și preț propus la comandă; teste trecute.
+- 2026-11-04 10:40 — Sesiune automată (5 pași): setul pentru cheltuieli de protocol completat (Docs, Notițe) și seturile pentru facturi în valută cu diferențe de curs și pentru mașinile firmei cu TVA deductibil 50% / 100% (Sheets, Notițe).
