@@ -479,3 +479,4 @@
 - 2026-11-04 22:37 — Sesiune automată: 4 feluri noi de diagrame-listă cu plăcuțe (colțuri opuse tăiate / rotunjite, un colț tăiat și unul rotunjit, sferturi de cerc; 145 de feluri), plus o corectură la lista de traduceri; ERP neatins.
 - 2026-11-04 23:14 — Sesiune automată: șase feluri noi de diagrame (bule ovale și rotunjite, segmente de cerc, ecrane, triunghiuri întoarse, colțare; 151 de feluri), testate în aplicația reală.
 - 2026-11-05 00:10 — ERP Suran, banii: facturi (XML / ZIP SPV / PDF), extrase cu potrivirea plată ↔ factură confirmată de om, casa și contabilitatea primară; toate testele TOATE OK (commit 222ceb68). Urmează cele două variante ale aplicației.
+- 2026-11-05 00:12 — Sesiune automată: zece feluri noi de diagrame-listă (pupitre, benzi oblice, jumătăți de cadru, date stocate, cinci feluri de casete cu săgeți, explozii mari; 161 de feluri), fiecare pas testat în aplicația reală; ERP neatins.
