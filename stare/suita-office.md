@@ -1,10 +1,11 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-04 17:50 (ora României) · **de:** sesiunea automată Claude Code (lucru continuu)
+**Actualizat:** 2026-11-04 18:33 (ora României) · **de:** sesiunea automată Claude Code (lucru continuu)
 
 ## Acum
 - **ERP Suran** (modul extra, cerut de Adrian pe 04.11, după specificația lui): etapele 1–4 din 6 sunt gata (commituri ce7ff8e6, 1f413ddf, 98bef4a4, db22f79a). Etapa 1: nomenclatoarele DEEE. Etapa 2: comenzile cu aprobare și contract PDF. Etapa 3: recepțiile (cântărire, recipiente HU cu QR, loturi, borderou PF, NIR). Etapa 4: stocul (poziții grupate, rezervări pe recipient întreg pentru livrare / tratare, blocare, istoric, stoc inițial SI) și ofertele (PDF, propuse la comandă cu prețul). Totul e offline, cu SQLite într-un fișier. Urmează etapa 5 (tratarea).
-- Sesiunea 04.11 17:15 – 17:50 (4 pași, fiecare cu commit și test): trei feluri noi de diagrame în Docs, Sheets, Notițe și Slides: **Munte cu etape** (etapele urcă pe o potecă până pe vârf, cu steag), **Termometru** (nivelurile de jos în sus), **Pod** (de unde pornim și unde ajungem, pe cele două maluri, pașii pe pod; 118 feluri; desenele verificate și cu ochii) și un singur șablon nou (limita C-65): **Docs** **Act adițional pentru telemuncă** (Legea 81/2018; 88 de șabloane). ERP Suran nu a fost atins: etapa 5 o face sesiunea cerută de Adrian (PLAN.md). Toate cele 7 aplicații se deschid fără erori.
+- Sesiunea 04.11 17:53 – 18:33 (4 pași, fiecare cu commit și test): trei feluri noi de diagrame în Docs, Sheets, Notițe și Slides: **Piese de puzzle** (ideile pe piese care se îmbină), **Copac** (rădăcina jos, ideile în frunzele coroanei), **Listă cu dodecagoane** (121 de feluri; desenele verificate și cu ochii) și un singur șablon nou (limita C-65): **Docs** **Decizie de suspendare a contractului de muncă** (89 de șabloane). ERP Suran nu a fost atins: etapa 5 o face sesiunea cerută de Adrian (PLAN.md). Toate cele 7 aplicații se deschid fără erori.
+- Sesiunea 04.11 17:15 – 17:50: diagramele Munte cu etape, Termometru, Pod și șablonul Docs Act adițional pentru telemuncă.
 - Sesiunea 04.11 16:39 – 17:15: diagramele Aisberg, Listă cu paralelograme, Listă cu heptagoane, Drum cu borne și șablonul Docs Decizie de constatare a radierii sancțiunii disciplinare.
 - Sesiunile 04.11 15:55 – 16:38: diagramele Os de pește, Hartă mentală, Curbă de creștere și șablonul Docs Decizie de sancționare disciplinară.
 - Sesiunile 04.11 14:44 – 15:54: diagramele Plăcintă, Țintă cu dreptunghiuri, Radial cu blocuri, Grilă cu axe, Blocuri în zigzag, Piramidă din blocuri, Scară cu trepte, Coloane pe o bază, Săgeți crescătoare, Bară cu etape, Listă cu plusuri și șabloanele Docs Convocare și Proces-verbal al cercetării disciplinare prealabile.
