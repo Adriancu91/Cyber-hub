@@ -960,4 +960,4 @@ Format:
   în simulare, unul după altul, cu `gpu lant` pregătit să-i ruleze pe toți la fereastra cu Adrian (oprire la primul eșec, placa pusă la loc). `cyber-universe`: planul C-68 fără să aștepte
   testele de pe workstation. Oprirea de siguranță („3 sesiuni fără sarcină”) se aplică doar când chiar nu mai e nimic de făcut fără hardware. Pentru fiecare fereastră: o listă scurtă,
   în ordine, cu ce trebuie testat pe hardware (în `stare/` al fiecăruia).
-- stare: nou
+- stare: preluat pentru cyber-gpu (2026-11-04 23:18, sesiunea Cyber-GPU 48) — partea cyber-universe rămâne la sesiunea OS
