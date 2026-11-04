@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-04 14:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-04 17:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -8,11 +8,11 @@
 - **Modelul în uz: #477** (română 1,2097), KGR1 Q8_0 110.859.040 octeți, SHA-256 `bcbe8187…3963`; #459 rezervă. `integrare/kronos/MODEL.md` arată #477.
 - **Kronos-Cod (linia `cod_c1`, model S63):** 0,5004 biți/octet, `ascuns2` 3/163. Încercat fără câștig: multe încercări (S64), o noapte pe exerciții (S70: 2/163),
   memoria de cod (S71: proba 0/20). S72a: 889 exerciții cu test care trec în cutie (P_verif 200 / P_scoala 689).
-- **S74 (gata, 4 nov 12:11):** reperul S63 pe P_verif = **14/200** cu 10 încercări (13 fără un `return <valoare fixă>`); ≥ 10 → școala de cod poate porni. Placa max 2.032 MB. **1207 teste trec.**
+- **S74 (gata):** reperul S63 pe P_verif = **14/200** cu 10 încercări → școala de cod poate porni.
+- **S75 (gata, 4 nov 16:18):** S63 a scris 8 soluții la cele 689 de exerciții ale școlii; **109 corecte diferite** (≥ 100 → DESTULE), doar 12,8 % copiate din original. Placa max 2.032 MB. **1209 teste trec.**
 
 ## Urmează
-- **S75 (aprobat, azi după-amiază, ~1,5 h):** S63 scrie 8 soluții la cele 689 de exerciții ale școlii, cutia le verifică → DESTULE (≥ 100 corecte diferite) sau PREA PUȚINE.
-- **S72b (aprobat, noaptea 4→5 nov, de la 19:00):** dacă DESTULE, o trecere de învățare din soluțiile corecte, apoi examen pe P_verif + `ascuns2`.
+- **S72b (aprobat, noaptea 4→5 nov, de la 19:00):** o trecere de învățare din cele 109 soluții corecte (copie a S63), apoi examen pe P_verif + `ascuns2`.
   AJUTĂ = R ≥ 24/200 și validarea ≤ 0,505; NU AJUTĂ = R ≤ 17. Verdictul mâine dimineață.
 - **C-64 (preluat):** dacă S72b nu e AJUTĂ → S76 răspunsuri în română (o noapte din #477 pe o copie), apoi S77 Kronos mai mare crescut din #477. Dacă AJUTĂ → runda 2 a școlii; S73 (alegerea datelor) după.
 
@@ -24,7 +24,7 @@
 
 ## De ce are nevoie de la ceilalți
 - De la `cyber-universe` (bucla automată, C-53): în nopțile de antrenare Kronos ține placa de la **19:00**; rugăm ca scriptul să se oprească la **18:30**
-  sau să nu pornească dacă rulează o antrenare. Important în noaptea 4→5 nov (S72b) și azi după-amiază (S75 pe placă până cel târziu 18:30).
+  sau să nu pornească dacă rulează o antrenare. Important în noaptea 4→5 nov (S72b, de la 19:00).
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
