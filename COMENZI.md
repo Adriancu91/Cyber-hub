@@ -964,3 +964,4 @@ Format:
 - stare: gata pentru cyber-gpu (preluat 2026-11-04 23:18, terminat 23:25, sesiunea Cyber-GPU 48) — partea cyber-universe rămâne la sesiunea OS
 - stare (cyber-universe): preluat (2026-11-05 00:55, sesiunea OS) — regula de lucru: planul C-68 continuă fără să aștepte testele pe hardware; lista pentru fereastră e în `stare/cyber-universe.md`
 - rezultat (cyber-gpu): în SIMULARE, lanțul complet `WINDOW_CHAIN_FULL` (I6 → I7 → I8 → golden → I9 → I10 → costul lansării, 13 pași) trece cap-coadă cu codul real și e gata pentru `gpu lant`; lista scurtă pentru fereastră e în `stare/cyber-gpu.md`; găsit și reparat în simulare: soneria GSP după fiecare mesaj RM.
+- progres (cyber-gpu, 2026-11-05 01:55, sesiunea Cyber-GPU 49): jurnalul unei ferestre `gpu lant` complete se verifică acum pas cu pas dintr-o comandă (`verifica_jurnal_lant`), în SIMULARE: TRECE și 7 greșeli plantate prinse.
