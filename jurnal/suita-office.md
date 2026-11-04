@@ -482,3 +482,4 @@
 - 2026-11-05 00:12 — Sesiune automată: zece feluri noi de diagrame-listă (pupitre, benzi oblice, jumătăți de cadru, date stocate, cinci feluri de casete cu săgeți, explozii mari; 161 de feluri), fiecare pas testat în aplicația reală; ERP neatins.
 - 2026-11-05 00:45 — Kitul 0.9.6 în două variante (cerut de Adrian): simplu (fără ERP / Studio, 15 zile) și ERP (cu ERP Suran și Studio, fără limită), testate (cdp-all, cdp-erp, engleza); commit dcf69911.
 - 2026-11-05 00:55 — Sesiune automată: pictogramele se recolorează după inserare în Docs, Sheets și Slides, Notițe are ☺ Pictograme, iar macrocomenzile din Slides pot pune slide-uri noi; 6 pași, toți testați în aplicația reală; ERP și kitul neatinse.
+- 2026-11-05 01:37 — Sesiune automată: 27 de pictograme noi (mediu și industrie, depozit și transport, bani și acte; 165 în total, verificate și în engleză) și șabloanele pentru echipamentul de protecție în Docs și Sheets; 6 pași testați în aplicația reală, ERP neatins.
