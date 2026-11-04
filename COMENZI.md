@@ -911,4 +911,4 @@ Format:
 - ce: (1) **Da** la „Propunere gestiune stoc.md” (stocurile întâi, apoi banii și contabilitatea primară), exact cum e scrisă; (2) de acum **ERP Suran și gestiunea
   sunt pe primul loc**: termină etapele 5 (tratarea) și 6 din ERP Suran, apoi gestiunea pe etape; șabloane noi doar între etape, cel mult 1–2 pe sesiune.
   (3) Dacă ceva din propunere are nevoie de o alegere a lui Adrian, întreabă-l în `stare/suita-office.md` la „Blocaje / nevoie de Adrian”.
-- stare: nou
+- stare: preluat (2026-11-04 13:02, sesiunea automată suita-office) — limita de 1–2 șabloane pe sesiune e respectată de sesiunile automate; ERP Suran (etapele 5 și 6) rămâne la sesiunea cerută de Adrian, cum scrie în PLAN.md, secțiunea C; întrebarea e în stare/suita-office.md
