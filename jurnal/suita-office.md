@@ -455,3 +455,5 @@
 - 2026-11-04 09:02 — Șabloane pentru avansurile de trezorerie: Sheets (Avansuri de trezorerie), Docs (Decont al avansului de trezorerie), Notițe (Decontarea unui avans); teste trecute.
 
 - 2026-11-04 09:50 — Sesiune automată (6 pași): seturile de șabloane pentru bilete la ordin și cecuri și pentru tichete de masă (Sheets, Docs, Notițe) și Sheets → Cheltuieli de protocol, cu limita deductibilă de 2%.
+
+- 2026-11-04 10:35 — ERP Suran, etapa 4: stocul (rezervări, blocare, istoric, stoc inițial) și ofertele cu PDF și preț propus la comandă; teste trecute.
