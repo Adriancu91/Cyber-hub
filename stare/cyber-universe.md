@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-04 02:42 (ora României) · **de:** sesiunea OS programată (02:42, oprire scurtă — nicio comandă nouă) · ultima sarcină: **P6-45 gata, Release `os-222`**
+**Actualizat:** 2026-11-04 05:41 (ora României) · **de:** sesiunea OS programată (05:41) · **OPRIT: necesită analiza lui Adrian** (3 sesiuni la rând fără sarcină terminată — coada n-are nimic liber fără placă/Adrian) · ultima sarcină: **P6-45 gata, Release `os-222`**
 
 ## Acum
 - **Release `os-222`** (CI verde) = `os-220` + restul ideilor tale din C-59 (P6-45). **Acesta e Release-ul pentru fereastra de azi, 07:00 (C-63).**
@@ -13,6 +13,7 @@
 - `--cauta` scrie în reglaj doar varianta câștigătoare (rânduri noi posibile: `planificare = bloc`, `echipe = N`, `bucati = N`).
 
 ## Urmează
+- **OPRIT** până la o comandă nouă în `COMENZI.md` sau rezultatele ferestrei de azi în `rezultate/` (atunci sesiunea următoare reia lucrul).
 - Fereastra de azi 07:00 (C-63) cu `os-222`; după rezultate, alegem varianta (sau, dacă procesorul liber ajută mult, fixarea firelor pe procesoare).
 - Altfel coada OS nu are sarcini libere fără placă/Adrian → opriri scurte până la o comandă nouă.
 
