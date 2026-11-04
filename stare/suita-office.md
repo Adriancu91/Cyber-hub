@@ -1,9 +1,9 @@
 # Stare: Suita office (`suita-office`)
 
-**Actualizat:** 2026-11-04 20:09 (ora României) · **de:** sesiunea automată Claude Code (lucru continuu)
+**Actualizat:** 2026-11-04 20:37 (ora României) · **de:** sesiunea ERP Suran cerută de Adrian
 
 ## Acum
-- **ERP Suran** (modul extra, cerut de Adrian pe 04.11, după specificația lui): etapele 1–4 din 6 sunt gata (commituri ce7ff8e6, 1f413ddf, 98bef4a4, db22f79a). Etapa 1: nomenclatoarele DEEE. Etapa 2: comenzile cu aprobare și contract PDF. Etapa 3: recepțiile (cântărire, recipiente HU cu QR, loturi, borderou PF, NIR). Etapa 4: stocul (poziții grupate, rezervări pe recipient întreg pentru livrare / tratare, blocare, istoric, stoc inițial SI) și ofertele (PDF, propuse la comandă cu prețul). Totul e offline, cu SQLite într-un fișier. Urmează etapa 5 (tratarea).
+- **ERP Suran** (modul extra, cerut de Adrian pe 04.11, după specificația lui): etapele 1–5 din 6 sunt gata. Etapa 1: nomenclatoarele DEEE. Etapa 2: comenzile. Etapa 3: recepțiile. Etapa 4: stocul și ofertele. Etapa 5 (commit 971a7d59 + 1a8adf86): tratarea, adică comenzi TRT cu calendar și rezervare din stoc, sesiunea zilei creată la prima operațiune, dezmembrare / retratare / sortare cu bilanț intrat = ieșit, etichete și PV. Totul e offline, cu SQLite. Urmează etapa 6 (expedițiile și rapoartele), după raportul către Adrian.
 - Sesiunea 04.11 19:18 – 20:09 (6 pași, fiecare cu commit și test): șapte feluri noi de diagrame în Docs, Sheets, Notițe și Slides: **Listă cu bule de vorbire**, **cu stele în șase colțuri**, **cu rozete**, **cu sclipiri**, **cu săgeți crestate**, **cu fulgere**, **cu echere** (132 de feluri) și un singur șablon nou (limita C-65): **Docs** **Decizie de detașare a salariatului** (91 de șabloane). ERP Suran nu a fost atins: etapa 5 o face sesiunea cerută de Adrian (PLAN.md). Toate cele 7 aplicații se deschid fără erori.
 - Sesiunea 04.11 18:32 – 19:14: diagramele Bec cu idei, Busolă, Listă cu semilune, Listă cu indicatoare și șablonul Docs Decizie de delegare a salariatului.
 - Sesiunea 04.11 17:53 – 18:33: diagramele Piese de puzzle, Copac, Listă cu dodecagoane și șablonul Docs Decizie de suspendare a contractului de muncă.
@@ -31,7 +31,7 @@
 - Nimic.
 
 ## Blocaje / nevoie de Adrian
-- **C-65 (ERP Suran pe primul loc):** sesiunile automate respectă limita de 1–2 șabloane pe sesiune, dar nu lucrează la ERP Suran: în PLAN.md scrie că ERP-ul îl face doar sesiunea cerută de tine (cu raport după fiecare etapă). Etapa 5 (tratarea) așteaptă acea sesiune. Dacă vrei ca și sesiunile automate să lucreze la ERP, spune-o (ar avea nevoie și de pachetul cu SPEC.md din Descărcări).
+- **C-65 (ERP Suran pe primul loc):** sesiunile automate respectă limita de 1–2 șabloane pe sesiune, dar nu lucrează la ERP Suran: în PLAN.md scrie că ERP-ul îl face doar sesiunea cerută de tine (cu raport după fiecare etapă). Etapa 5 e gata; etapa 6 o face tot sesiunea cerută de Adrian. Dacă vrei ca și sesiunile automate să lucreze la ERP, spune-o (ar avea nevoie și de pachetul cu SPEC.md din Descărcări).
 - **Studio de documente:** să-l încerce pe documentele lui reale și să spună ce nu se potrivește cu tipizatele lui (acum și nota de recepție, borderoul de achiziție și șabloanele proprii). La borderou: ce procent de impozit se reține azi (câmpul e gol din oficiu, îl scrie el sau contabilul). Anexa 3 și Anexa 7 sunt refăcute după structura oficială, avizul după tipizatul 14-3-6A, iar CMR-ul are căsuțele 1–24 standard. Tot el confirmă dacă avizele se numerotează separat pe fiecare punct de lucru. Anexa 1 se face doar când îi trebuie.
 - **Decizie LTV:** ca o semnătură să poată fi verificată și peste ani, Suite ar trebui să întrebe pe internet serverele emitentului certificatului (OCSP / CRL), la semnare. E în regulă, doar la cererea lui, ca la marca temporală?
 - **Kit:** 0.9.5 e gata (Cyber-Office-Studio-Instalare-0.9.5.exe, lista CE-E-NOU-0.9.5.txt); următorul va fi 0.9.6, doar când îl cere. Pe laptop Smart App Control blochează kitul nesemnat (JURNAL.md, 28.10). Dacă suita se va vinde: o verificare juridică a licenței.
