@@ -894,3 +894,14 @@ Format:
   până la **05:30**, ca centrul de comandă să pregătească arhivele pentru stick-uri; altfel testăm `os-219`. Testul: viteza Kronos (`--cauta`, CONTROL,
   `--profil`), I6 repetat cu stick-ul de test (pornire rece), copierea `gpu-jurnal-002.txt`, primul tur al buclei automate.
 - stare: gata (cyber-universe, 2026-11-03 19:50, sesiunea OS; preluat 17:45) — rezultat: Release-ul de folosit la fereastră e **`os-222`** (P6-45 întreg: `--profil` despărțit, bucățele, echipe, un bloc pe simbol, un procesor liber, toate măsurate de `--cauta`; fără reglaj merge ca `os-220`), CI verde · kronos: preluat (2026-11-03 17:20, supraveghetor) — `plan/coada.md`: S70 se termină sau se oprește curat până la 06:45; S71 pornește doar după fereastră (~09:30); 2026-11-04 05:20: S70 terminat la 04:00:51, nimic pe placă de atunci → fereastra 07:00–09:30 e liberă; `gata` pentru kronos după fereastră · kronos: **gata** (2026-11-04 11:20, supraveghetor) — rezultat: nimic pe placă între 04:00 și 09:59; S71 a pornit abia după fereastră
+
+### C-64 · kronos · Dacă S72b (școala de cod) e NU AJUTĂ: română + răspunsuri în română + Kronos mai mare crescut din #477
+- data: 2026-11-04 11:30 · de la: **Adrian** („dacă nu avansăm pe cod, îmbunătățim româna și răspunsurile în română și mărim parametrii”), prin centrul de comandă
+- ce (doar după verdictul S72b; dacă S72b AJUTĂ, se continuă școala și C-64 așteaptă):
+  - **R1 — răspunsuri în română:** un set de exerciții „întrebare/instrucțiune → răspuns” scrise din datele românești deja avute (fără alt AI, fără descărcări),
+    cu un set ascuns și o notă automată (corect / în temă / limbă curată); o noapte din #477 pe o copie; #477 rămâne în uz până când copia îl bate la examen.
+  - **R2 — Kronos mai mare, crescut din #477:** se lărgește/adâncește modelul păstrând ce știe (straturi noi pornite „neutre”, aceeași ieșire la început,
+    verificat pe vectorii KGR1), la cea mai mare mărime care se antrenează în ≤ 7.000 MB pe placă (estimare ~200–350M; bf16, recalcul activări); întâi un test scurt
+    de memorie și viteză, apoi nopți. Măsurat cu examenul de română (#477 = 1,2097) și cu R1. Paznicul și examenul neschimbate; `kronos/` neatins.
+  - Pre-înregistrare înainte de fiecare noapte; placa ≤ 7.000 MB / 83 °C; nimic descărcat.
+- stare: nou (așteaptă verdictul S72b)
