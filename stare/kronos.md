@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-04 08:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-04 11:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -13,16 +13,16 @@
 - **S65–S68 (numărarea funcțiilor din codul descărcat, doar procesor):** 319.430 funcții cu explicație care trec cutia; „autonome” 83.349
   (3,55 mil. simboluri de corp); **S68 (gata, PUȚIN):** chemabile ca la examen doar 12.648 (0,77 mil.), 78 % sunt metode. Scurgere 0. 1190 teste trec.
 - **Direcția aleasă de Adrian (C-60, C-62):** A exercițiile → B o noapte pe ele → D memoria de cod → C școala de cod → E Kronos își alege datele; modelul mai mare nu acum.
-- **S69 (gata):** 313.910 exerciții „antet + explicație → corp”, amestec cu 25 % exerciții. **S70 (gata, 4 nov 04:00, NU AJUTĂ):** 8 ore pe exerciții din S63 →
-  `ascuns2` pass@10 **2/163** (S63: 3/163; AJUTĂ cerea ≥ 8), validarea 0,5074 (S63: 0,5004, mai bun). Placa max 5.922 MB / 62 °C, 1195 teste trec.
-  Concluzia: forma exercițiilor nu aduce rezolvări; linia `cod_c1_ex` nu se continuă, mergem din S63.
+- **S69 (gata):** 313.910 exerciții „antet + explicație → corp”. **S70 (gata, NU AJUTĂ):** 8 ore pe exerciții din S63 → `ascuns2` **2/163** (S63: 3/163),
+  validarea 0,5074 (S63: 0,5004). Mergem din S63.
+- **S71 (gata, 4 nov 10:34, NU AJUTĂ):** memoria de cod (2–4 funcții asemănătoare în față, index FTS5 pe 313.910 exerciții) → proba **0/20** cu memorie (fără: S63 0/20, S70 1/20);
+  funcțiile găsite seamănă la nume, nu la soluție. Placa max 1.506 MB / 55 °C.
+- **S72a (gata, 4 nov 11:13):** **889 exerciții cu test** care trec în cutie (și pică cu `return None`); P_verif 200 / P_scoala 689 (≥ 500). Scurgere 0. **1207 teste trec.**
 
 ## Urmează
-- **4 nov 07:00–~09:30 (C-63):** placa și calculatorul libere pentru Adrian (S70 s-a terminat la 04:00; raportul de dimineață 06:45, 1195 teste trec, placa 391 MB / 23 °C).
-- **S71 (aprobat, după ~09:30):** memoria de cod („rege / regat”) + măsurare scurtă pe setul de probă, întâi cu S63.
-- **S72a (aprobat, procesor, azi până la 18:30):** exercițiile cu test care rulează în cutie (la S69 doar 13 din 441), împărțite pe pachete: P_verif (200) / P_scoala.
-- **S72b (aprobat, noaptea 4→5 nov, dacă P_scoala ≥ 500):** prima rundă a școlii de cod din S63: 8 încercări pe exercițiu, cutia păstrează doar cele corecte, o trecere de învățare,
-  apoi examen pe P_verif + `ascuns2`. AJUTĂ = cel puțin +10/200 față de S63 și validarea ≤ 0,505. S73 (alegerea datelor) după verdictul S72b.
+- **S74 (aprobat, azi ziua, ~30 min pe placă):** reperul S63 pe P_verif (200 × 10) — aflăm înainte de noapte dacă școala are din ce învăța (B ≥ 10).
+- **S72b (aprobat, noaptea 4→5 nov, de la 19:00):** prima rundă a școlii de cod din S63: 8 încercări pe exercițiu, cutia păstrează doar corpurile corecte (fără `return <valoare fixă>`),
+  o trecere de învățare, apoi examen pe P_verif + `ascuns2`. AJUTĂ = cel puțin +10/200 față de S63 și validarea ≤ 0,505. S73 (alegerea datelor) după verdictul S72b.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Reper pe Windows: 1 fir ~2,14 s / răspuns de 64 simboluri, placa fp32 ~52 simb/s.
