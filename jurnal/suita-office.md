@@ -438,3 +438,4 @@
 - 2026-11-04 00:58 — Gestiunea de stoc, pasul 1: categorii, nota de recepție intră în stoc pe loturi, stoc pe depozite cu navigare după dată / furnizor / lot.
 - 2026-11-04 01:27 — Sesiune automată (6 pași, fiecare cu commit și test): setul pentru adunarea asociaților (Docs Hotărârea AGA și Decizia asociatului unic, Notițe și Slides Adunarea asociaților), Docs Proces-verbal de instruire în protecția muncii, Video trecerile Rostogolire.
 - 2026-11-04 02:05 — ERP Suran, etapa 1: modul offline cu SQLite (companii, utilizatori, audit, nomenclatoare DEEE), atenționări și lista de pornire din tabelul firmei.
+- 2026-11-04 02:15 — Sesiune automată (4 pași, fiecare cu commit și test): Sheets Repartizarea profitului și dividendele și Registrul asociaților, Docs Convocarea adunării generale a asociaților și Contract de cesiune de părți sociale.
