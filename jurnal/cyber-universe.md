@@ -135,3 +135,4 @@
 - 2026-11-04 11:41 — OPRIT rămâne: nicio comandă nouă, niciun rezultat de la fereastra de azi; `os-222` valabil pentru fereastra următoare.
 - 2026-11-04 14:41 — OPRIT rămâne: nicio comandă nouă, niciun rezultat al vreunei ferestre; `os-222` valabil.
 - 2026-11-04 17:42 — OPRIT rămâne: nicio comandă nouă; jurnalele I6 din 3 nov au sosit în `rezultate/` (de verificat de `cyber-gpu`); `os-222` valabil.
+- 2026-11-04 22:30 — OPRIT ridicat de C-66 și C-67: P6-46 (cyber-gpu `9ac89b8`, capătul WPR2 de 128 KiB acceptat, citirea de după I6 permisă) și P6-47 (profilul blocului văzut din toate firele, `--fara-cedari`); CI verde după ajustarea testului ceasului (B-006) → **Release `os-224`** pentru fereastra următoare.

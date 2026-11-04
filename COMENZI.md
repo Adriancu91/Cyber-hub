@@ -919,7 +919,8 @@ Format:
   verifică esențial LO; `gpu-sim` la fel; test în SIMULARE cu valorile reale (LO 0x1ffe00, HI 0x1ffee0); repară și citirea „WPR2 citit după I6” refuzată de politica de siguranță
   (e doar citire, trebuie permisă după oprirea scrierilor). `cyber-universe`: fixarea nouă, Release nou cu stick-ul de test. Apoi, la fereastra următoare, I6 se repetă o dată
   (pornire rece) și ar trebui să dea TRECE → pragul spre I7. Nimic pe placă fără Adrian.
-- stare: gata pentru cyber-gpu (2026-11-04 19:40, sesiunea Cyber-GPU) — partea cyber-universe rămâne la sesiunea OS; partea cyber-universe: preluat (2026-11-04 18:43 UTC, sesiunea OS) — P6-46 în docs/TASKS.md
+- stare: gata pentru cyber-gpu (2026-11-04 19:40, sesiunea Cyber-GPU) — partea cyber-universe rămâne la sesiunea OS; partea cyber-universe: gata (preluat 2026-11-04 18:43 UTC, terminat 20:30 UTC, sesiunea OS) — P6-46, Release os-224
+- rezultat (cyber-universe): fixare pe `9ac89b8`, rândul „WPR2 citit dupa I6” prin `read_frts_after_i6` (doar citire, fără permis, cu forma capătului), în simulare „rezultat I6: TRECE”; stick-ul de test e în Release `os-224`.
 - rezultat: în SIMULARE, `check_frts` acceptă HI = ultimul bloc de 128 KiB (valorile din 4 nov dau TRECE) și citirea WPR2 de după I6 se face cu o funcție nouă doar-citire, fără permis (`read_frts_after_i6`); pentru OS: fixare ≥ `9ac89b8` + o funcție schimbată, cum scrie în `cyber-gpu/integration/cyber-universe/C-66_wpr2-bloc-128k.md`.
 
 ### C-67 · cyber-universe · Kronos 206 simb/s: `qkv` (12,5 GB/s) și `proiecția` (6,0 GB/s) la viteza fc/MLP (34–60 GB/s)
@@ -927,4 +928,5 @@ Format:
 - ce: profilul os-222 (5,01 ms/simbol): `qkv (+atenția, la generare)` 38,2 % la 12,5 GB/s, `proiecția` 26,4 % la 6,0 GB/s, așteptarea firelor doar 9,6 %. Află de ce aceste două
   citesc memoria de 5–10× mai încet decât fc 4E (60 GB/s) / MLP (34 GB/s) în același bloc pe simbol (mărimea matricei 768×2304 / 768×768? împărțirea pe 12 capete? lipsa
   bucăților/blocului pentru ele?) și adu-le la aceeași formă. `--profil` să le despartă (qkv fără atenție / atenția). CONTROL neschimbat; Release nou; test la fereastra următoare.
-- stare: preluat (2026-11-04 18:43 UTC, sesiunea OS) — P6-47 în docs/TASKS.md (după P6-46)
+- stare: gata, partea fără placă (preluat 2026-11-04 18:43 UTC, terminat 20:30 UTC, sesiunea OS) — P6-47, Release os-224
+- rezultat: în bloc qkv/proiecția au deja aceeași formă de cod ca fc/MLP (în `--cauta` tot modelul merge la 2088 µs/simbol), deci frâna e la rulare: `--profil` arată acum fiecare etapă din toate firele (fire care au lucrat, întârzierea ultimului, cedări ~520/simbol pe 4 nov), atenția despărțită de qkv, plus `--fara-cedari` de încercat la fereastră.
