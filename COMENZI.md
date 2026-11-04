@@ -904,7 +904,7 @@ Format:
     verificat pe vectorii KGR1), la cea mai mare mărime care se antrenează în ≤ 7.000 MB pe placă (estimare ~200–350M; bf16, recalcul activări); întâi un test scurt
     de memorie și viteză, apoi nopți. Măsurat cu examenul de română (#477 = 1,2097) și cu R1. Paznicul și examenul neschimbate; `kronos/` neatins.
   - Pre-înregistrare înainte de fiecare noapte; placa ≤ 7.000 MB / 83 °C; nimic descărcat.
-- stare: preluat (2026-11-04 14:20, supraveghetor) — **S76** (R1) și **S77** (R2) în `plan/coada.md`, aprobate cu condiția ca S72b să nu fie AJUTĂ (NU AJUTĂ, STRICĂ sau NECLAR); instrucțiunile și pragurile după verdictul S72b (dimineața de 5 nov)
+- stare: preluat (2026-11-04 14:20, supraveghetor) — **S76** (R1) și **S77** (R2) în `plan/coada.md`, aprobate cu condiția ca S72b să nu fie AJUTĂ (NU AJUTĂ, STRICĂ sau NECLAR); instrucțiunile și pragurile după verdictul S72b (dimineața de 5 nov) · 2026-11-04 20:20: S72b = **STRICĂ** (nu AJUTĂ) → condiția îndeplinită; **S76a** (exercițiile, setul ascuns, nota automată, reperul #477) aprobat și pornește la noapte; S76b și S77 după cifrele S76a
 
 ### C-65 · suita-office · „Da” la propunerea de gestiune + ERP Suran pe primul loc
 - data: 2026-11-04 11:45 · de la: **Adrian** (scris în chatul centrului de comandă: „pot să îi dai tu da? că nu am acces” — legătura „remote control” cu sesiunea suitei e oprită)
