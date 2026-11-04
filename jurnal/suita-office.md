@@ -477,3 +477,4 @@
 - 2026-11-04 21:59 — Sesiune automată: trei feluri noi de diagrame (Listă cu ecusoane, cu plăcuțe teșite, cu plăcuțe rotunjite; 141 de feluri), fiecare cu commit și test; ERP Suran neatins.
 - 2026-11-04 22:30 — ERP Suran, etapa 6: expedițiile, rapoartele lunii (organizații, contabilitate, colectori, SIATD) în Excel și importul de parteneri din Excel; toate testele TOATE OK (commit face4e8a). Cele 6 etape din pachet sunt gata.
 - 2026-11-04 22:37 — Sesiune automată: 4 feluri noi de diagrame-listă cu plăcuțe (colțuri opuse tăiate / rotunjite, un colț tăiat și unul rotunjit, sferturi de cerc; 145 de feluri), plus o corectură la lista de traduceri; ERP neatins.
+- 2026-11-04 23:14 — Sesiune automată: șase feluri noi de diagrame (bule ovale și rotunjite, segmente de cerc, ecrane, triunghiuri întoarse, colțare; 151 de feluri), testate în aplicația reală.
