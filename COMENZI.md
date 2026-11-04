@@ -920,3 +920,10 @@ Format:
   (e doar citire, trebuie permisă după oprirea scrierilor). `cyber-universe`: fixarea nouă, Release nou cu stick-ul de test. Apoi, la fereastra următoare, I6 se repetă o dată
   (pornire rece) și ar trebui să dea TRECE → pragul spre I7. Nimic pe placă fără Adrian.
 - stare: nou
+
+### C-67 · cyber-universe · Kronos 206 simb/s: `qkv` (12,5 GB/s) și `proiecția` (6,0 GB/s) la viteza fc/MLP (34–60 GB/s)
+- data: 2026-11-04 18:35 · de la: centrul de comandă (delegare Adrian; ținta următoare ~350 simb/s), după `rezultate/2026-11-04-workstation-os222/`
+- ce: profilul os-222 (5,01 ms/simbol): `qkv (+atenția, la generare)` 38,2 % la 12,5 GB/s, `proiecția` 26,4 % la 6,0 GB/s, așteptarea firelor doar 9,6 %. Află de ce aceste două
+  citesc memoria de 5–10× mai încet decât fc 4E (60 GB/s) / MLP (34 GB/s) în același bloc pe simbol (mărimea matricei 768×2304 / 768×768? împărțirea pe 12 capete? lipsa
+  bucăților/blocului pentru ele?) și adu-le la aceeași formă. `--profil` să le despartă (qkv fără atenție / atenția). CONTROL neschimbat; Release nou; test la fereastra următoare.
+- stare: nou
