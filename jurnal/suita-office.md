@@ -449,3 +449,5 @@
 - 2026-11-04 05:52 — Sesiune automată (3 pași, fiecare cu commit și test): setul pentru aprovizionare (Sheets Necesar de aprovizionare, notița Aprovizionarea săptămânală, Docs Contract-cadru de furnizare).
 - 2026-11-04 06:31 — Sesiune automată (7 pași, fiecare cu commit și test): setul pentru evaluarea furnizorilor (Sheets, Docs, Notițe, Slides), tema Ametist, Video Rostogolire din / spre colțuri.
 - 2026-11-04 07:14 — Sesiune automată (10 pași, fiecare cu commit și test): setul pentru retururi (Sheets Retururi către furnizori și de la clienți, Docs proces-verbal de retur, două notițe, Slides Situația retururilor), setul pentru ambalaje returnabile (Sheets, Docs, Notițe) și tema Cerneală.
+
+- 2026-11-04 08:01 — Sesiune automată (5 pași, fiecare cu commit și test): setul pentru prețuri (Sheets Calculul prețului de vânzare și Listă de prețuri pentru clienți, Docs proces-verbal de modificare a prețurilor și anunțul către clienți, notița Schimbarea prețurilor, Slides Prețuri și marje).
