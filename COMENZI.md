@@ -938,7 +938,7 @@ Format:
   (ecran + tastatură prin rețea, cheie doar pe stick/discul mașinii, lista albă de comenzi). **F3** — actualizare de sine din Release-uri (HTTPS + SHA-256) cu backup și revenire
   automată, rapoarte urcate în hub (token cu drepturi minime, doar pe stick). **F4** — citirea completă a hardware-ului (PCI/USB/ACPI cu nume și stare; placa Wi-Fi doar identificată și
   citită). **F8/F9** — editor + terminal + git simplu în OS; unelte de test/profil/jurnal. **F6a** — browser text (HTML simplu). Fiecare testată în QEMU; nimic pe placa reală fără Adrian.
-- stare: nou
+- stare: preluat (2026-11-04 21:02 UTC, sesiunea OS) — P6-48 (F1), P6-49 (F2), P6-50 (F3), P6-51 (F4), P6-52 (F8/F9), P6-53 (F6a) în `docs/TASKS.md`
 
 ### C-69 · cyber-gpu · F5 din planul independenței: I6 TRECE → I7–I10 → primul calcul pe placă → Kronos pe placă în OS
 - data: 2026-11-04 23:00 · de la: **Adrian** („da la tot”), prin centrul de comandă
