@@ -481,3 +481,4 @@
 - 2026-11-05 00:10 — ERP Suran, banii: facturi (XML / ZIP SPV / PDF), extrase cu potrivirea plată ↔ factură confirmată de om, casa și contabilitatea primară; toate testele TOATE OK (commit 222ceb68). Urmează cele două variante ale aplicației.
 - 2026-11-05 00:12 — Sesiune automată: zece feluri noi de diagrame-listă (pupitre, benzi oblice, jumătăți de cadru, date stocate, cinci feluri de casete cu săgeți, explozii mari; 161 de feluri), fiecare pas testat în aplicația reală; ERP neatins.
 - 2026-11-05 00:45 — Kitul 0.9.6 în două variante (cerut de Adrian): simplu (fără ERP / Studio, 15 zile) și ERP (cu ERP Suran și Studio, fără limită), testate (cdp-all, cdp-erp, engleza); commit dcf69911.
+- 2026-11-05 00:55 — Sesiune automată: pictogramele se recolorează după inserare în Docs, Sheets și Slides, Notițe are ☺ Pictograme, iar macrocomenzile din Slides pot pune slide-uri noi; 6 pași, toți testați în aplicația reală; ERP și kitul neatinse.
