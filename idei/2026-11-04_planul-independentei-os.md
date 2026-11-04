@@ -2,7 +2,7 @@
 
 - **Propus de:** centrul de comandă, după ideile lui Adrian (4 nov 22:50) · **Data:** 2026-11-04
 - **Proiecte implicate:** `cyber-universe`, `cyber-gpu`, `kronos`
-- **Stare:** aprobat (Adrian, „da la tot”, 2026-11-04 22:54) → C-68, C-69, C-70
+- **Stare:** aprobat (Adrian, „da la tot”, 2026-11-04 22:54) → C-68, C-69; **modificat 23:10: fără F1 (mașina virtuală), C-70 anulat**
 
 ## Ideea (pe înțelesul lui Adrian)
 Workstation-ul rămâne în Windows: **Kronos se antrenează în continuare**. Cyber Universe rulează într-o **mașină virtuală (QEMU) pe Windows**, unde îl dezvoltăm de la distanță,
@@ -37,3 +37,4 @@ fără riscuri: dacă se blochează, repornim doar mașina. Testele cu placa vid
 - 2026-11-04 22:50: alege mașina virtuală pe Windows + Kronos continuă + fără KVM. 2026-11-04 22:54: **„da la tot”** — toate fazele, inclusiv descărcarea QEMU (oficială) pentru F1. Tokenul GitHub pentru stick: îl face Adrian când ajungem la F3.
 
 ## Discuție
+- 2026-11-04 23:10 Adrian: renunță la mașina virtuală (testul din ea e practic ca cel din GitHub); restul planului rămâne, testele pe workstation-ul real cu stick.

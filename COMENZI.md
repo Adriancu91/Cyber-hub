@@ -939,6 +939,7 @@ Format:
   automată, rapoarte urcate în hub (token cu drepturi minime, doar pe stick). **F4** — citirea completă a hardware-ului (PCI/USB/ACPI cu nume și stare; placa Wi-Fi doar identificată și
   citită). **F8/F9** — editor + terminal + git simplu în OS; unelte de test/profil/jurnal. **F6a** — browser text (HTML simplu). Fiecare testată în QEMU; nimic pe placa reală fără Adrian.
 - stare: preluat (2026-11-04 21:02 UTC, sesiunea OS) — P6-48 (F1), P6-49 (F2), P6-50 (F3), P6-51 (F4), P6-52 (F8/F9), P6-53 (F6a) în `docs/TASKS.md`
+- **SCHIMBARE (Adrian, 2026-11-04 23:10): F1 (mașina virtuală pe Windows) se RENUNȚĂ.** Testele rămân pe GitHub (QEMU în CI) și pe workstation-ul real cu stick. Ordinea nouă: **F3 actualizare de sine + revenire → F2 remote (ramura paralelă) → F4 hardware (ramura paralelă) → F8/F9 → F6a**. Dacă F1 e început, oprește-l curat (ce e deja util pentru CI poate rămâne, fără `vm-pornire.ps1` pe Windows).
 
 ### C-69 · cyber-gpu · F5 din planul independenței: I6 TRECE → I7–I10 → primul calcul pe placă → Kronos pe placă în OS
 - data: 2026-11-04 23:00 · de la: **Adrian** („da la tot”), prin centrul de comandă
@@ -950,4 +951,4 @@ Format:
 - ce: centrul de comandă instalează QEMU (descărcare oficială, aprobată) pe workstation și pornește mașina virtuală când e gata imaginea din C-68, **ziua, fără să atingă o antrenare
   care rulează**. Mașina primește cel mult 8 nuclee și ~16 GB RAM, nu primește placa video. Supraveghetorul: notează în `plan/coada.md` că o parte din procesor poate fi folosită
   de mașină; dacă o antrenare are nevoie de tot procesorul, spune-o în hub și mașina se oprește pe durata ei.
-- stare: nou
+- stare: anulat (Adrian, 2026-11-04 23:10: fără mașina virtuală; nu se instalează QEMU pe workstation)
