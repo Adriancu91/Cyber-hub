@@ -443,3 +443,4 @@
 - 2026-11-04 02:50 — ERP Suran, etapa 2: comenzi (achiziție PF/PJ, vânzare, transfer) cu aprobare, contract PDF și comanda de transport.
 - 2026-11-04 03:34 — Sesiune automată (6 pași, fiecare cu commit și test): Docs Somație de plată și Cerere de ordonanță de plată, Sheets Penalități de întârziere, legate în Notițe și Slides; Video Rostogolire de sus / de jos; tema Safir.
 - 2026-11-04 03:56 — Sesiune automată (2 pași, fiecare cu commit și test): Docs Proces-verbal de predare-primire a gestiunii și notița Predarea gestiunii.
+- 2026-11-04 03:59 — ERP Suran, etapa 3: recepțiile cu recipiente HU (QR), loturi, borderou PF cu reținerile 2% / 10%, tichet cântar, Anexa 3, NIR și stoc la finalizare.
