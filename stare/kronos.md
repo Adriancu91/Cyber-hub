@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-05 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-05 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -12,12 +12,13 @@
 - **S80 gata (17:37):** `cascada.py` nu mai confundă un număr de proces refolosit de Windows cu o sarcină a noastră (cascada a stat blocată 14:00–17:30).
 - **S77a gata (17:58): GATA** — Kronos crescut din #477 de la 12 la **24 de straturi (183M parametri)**, ieșire **identică** (dif. 0 în PyTorch și pe vectorii KGR1).
   Pe placă: 24 de straturi încap doar cu recalculul activărilor (**6.010 MB, 2,80 pași/s**; #477: 6,45); 30–42 de straturi nu încap în 6.500 MB. **1232 teste trec.**
+- **S77b oprit (20:42): NEMĂSURAT** — prima noapte a modelului de 24 de straturi a căzut după ~1 minut cu „out of memory” (limita noastră PyTorch 5.800 MB, lot 12); placa max 4.755 MB, nimic stricat, **1238 teste trec**.
 - **#477 în OS (os-242, 5 nov, `rezultate/2026-11-05-workstation-os242/`):** CONTROL TRECE, **256,0 simb/s** (4 nov 206,4; 3 nov 125,4) — mulțumiri `cyber-universe`.
 
 ## Urmează
-- **S77b** (acum, noaptea 5→6 nov, aprobat): prima noapte a modelului de 24 de straturi, 5 ore pe aceleași date ca #513 → la timp egal pe placă, cel mare e mai bun la română
-  (prag −0,005 față de #513), fără să strice instrucțiunile/codul? Pre-înregistrare înainte de pornire; verdictul 6 nov ~08:15. #477 rămâne în uz până îl bate un model nou și Adrian spune „da”.
-- **S78** (C-77, la noapte, procesor): salvarea „Mini Brain” — a stat pe loc la 18:30 pentru că executantul nu poate citi hub-ul de pe workstation; textul C-77/C-76 e acum copiat în `cyberspace/plan/`. Nimic șters.
+- **S77c** (acum, noaptea 5→6 nov, aprobat): reluarea S77b cu lot 6 × 16 (același lot efectiv, mai puțină memorie), linie nouă `w2_mare_24b`, 5 ore față de #513
+  (prag −0,005 la română, fără să strice instrucțiunile/codul). Pornire până la 00:30, altfel 6 nov de la 19:00. Verdictul 6 nov ~08:15. #477 rămâne în uz.
+- **S78** (C-77, la noapte, procesor, după pornirea S77c): salvarea „Mini Brain” (textul C-77/C-76 copiat în `cyberspace/plan/`). Nimic șters.
 - **S79** (C-76, după S78): raport de spațiu + propunere de curățenie pe grupuri, nimic șters.
 - **S76c** (procesor, 6 nov de la 08:00): instrucțiuni formulate altfel → #513 urmează instrucțiuni sau doar șabloanele?
 
