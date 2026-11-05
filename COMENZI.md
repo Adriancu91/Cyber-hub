@@ -1015,3 +1015,23 @@ Format:
   intermediare care se pot regenera), cu GB eliberați, păstrând obligatoriu #459, #477, #513, `cod_c1/gpt.pt`, examenele, jurnalul, datele brute. Raport în `docs/rapoarte/`,
   rezumat în `plan/pentru_adrian.md`. **Nimic șters** — Adrian aprobă pe grupuri.
 - stare: nou
+
+### C-77 · kronos · Salvează și organizează ce e util din vechiul proiect „Mini Brain” (Desktop) înainte ca Adrian să-l șteargă
+- data: 2026-11-05 13:40 · de la: centrul de comandă, la cererea lui Adrian („copiază și organizează ce ai nevoie de acolo, apoi șterg tot”)
+- surse (pe workstation, doar CITIRE): `C:\Users\Computer\Desktop\test ai brain v13 clean` (68 GB, versiunea nouă, 101 commit-uri) și
+  `C:\Users\Computer\Desktop\test ai brain` (4,4 GB, copie veche). Analiza completă: `C:\Users\Computer\Desktop\raport-test-ai-brain.md` (citește-o întâi).
+- ce: copiază (NU muta) în `C:\Kronos\arhiva\mini-brain\` (în afara repo-ului git):
+  1. istoria git a ambelor foldere ca `git bundle create <nume>.bundle --all` (doar obiectele folosite, câțiva zeci de MB — NU pachetul de 19,5 GB);
+  2. din v13: `mini_ai_brain\`, `docs\` (cu `knowledge_phase1\`), cele 9 `.md` + scripturile din rădăcină (unele NU sunt în git!), `tests\`, `scripts\`, `config\`,
+     `demo\`, `manual_exploratory\`, `examples\`, `integrity\`, `experiments\**\*.py` + rezultatele, toate `results*.json/csv` + `*_REPORT.md` din `benchmarks\`;
+  3. datele create de Adrian: seturile `sealed\` și NONPROTECTED, indexul lexical `rlx01…`, `bnl01…\final_state.json`;
+  4. baza de cunoștințe geografică ACTIVĂ (build `f8547edc…` din `derived` + `authoritative`) și `raw\`;
+  5. cele 17 fișiere unice din folderul vechi (commit `864c70e`): `benchmarks\standard_v0_1\v1b_prime_env_qualification_v13\` + `docs\V1B_PRIME_RUN_V13_HARDWARE_QUALIFICATION.md`.
+  NU copia: `*.pt`, `.venv*`, `.standard05-cache`, `__pycache__`, pachetul `.git` mare, cele 4 build-uri geografice vechi.
+- după copiere: `MANIFEST.txt` (fiecare fișier + SHA-256) și verifică sursă = copie; scrie `C:\Kronos\arhiva\mini-brain\CITESTE-MA.md` (ce e unde, ce s-a lăsat).
+- în repo `cyberspace`: un singur document `docs/studiu/2026-11-05_lectii-mini-brain.md` cu lecțiile pentru Kronos (test mic de format înaintea rulărilor lungi —
+  greșeala „NONE”/null; păstrarea doar a câștigătorului și `*.pt` în `.gitignore`; maxim 2–3 încercări pe întrebare; ideea de modul „fapte verificate” — doar PROPUNERE,
+  nu cod). Fără date mari în git. NU atinge `kronos/`, examenul sau paznicul. Commit + push.
+- final: raport în `docs/rapoarte/` + rând în `plan/pentru_adrian.md`: „Mini Brain salvat (X GB în arhivă) — Adrian poate șterge ambele foldere”. **Nimic șters de agent.**
+- prioritate: înaintea lui C-76 (eliberează ~72 GB). Nu oprește antrenarea în curs.
+- stare: nou
