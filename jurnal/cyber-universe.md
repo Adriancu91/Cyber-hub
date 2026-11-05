@@ -140,3 +140,5 @@
 - 2026-11-05 00:55 — F9 pas 1: `compara` pentru rapoarte (P6-52); CI roșu de după `/bin/web` (P6-53, altă sesiune) reparat; F2/F4/F6a lucrate de sesiunile paralele.
 - 2026-11-05 01:40 — P6-53 gata: browserul text `web` (pagini simple ca text, legături numerotate); F4 (`hw lista`) și F2 (remote text, fără criptare) integrate în `main`; CI verde → **Release `os-238`**.
 - 2026-11-05 02:25 — P6-52 pas 2: git simplu `gh-ia` (ia fișiere de pe GitHub); CI verde, Release os-239. F1 rămâne anulat (mesajul de pornire era dinainte de schimbarea lui Adrian).
+- 2026-11-05 03:45 — P6-52 încheiat: `log --sumar`, `log --avertismente`, `timp <comanda>` (profil/jurnal pe lista albă, F9).
+- 2026-11-05 03:45 — P6-54: remote criptat (X25519 + ChaCha20-Poly1305, cheia nu mai circulă; client Python fără biblioteci); CI verde → **Release `os-241`**.

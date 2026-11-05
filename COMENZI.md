@@ -942,6 +942,7 @@ Format:
 - **SCHIMBARE (Adrian, 2026-11-04 23:10): F1 (mașina virtuală pe Windows) se RENUNȚĂ.** Testele rămân pe GitHub (QEMU în CI) și pe workstation-ul real cu stick. Ordinea nouă: **F3 actualizare de sine + revenire → F2 remote (ramura paralelă) → F4 hardware (ramura paralelă) → F8/F9 → F6a**. Dacă F1 e început, oprește-l curat (ce e deja util pentru CI poate rămâne, fără `vm-pornire.ps1` pe Windows).
 - progres (2026-11-05 00:55, sesiunea OS): F1 făcut, apoi scos curat (anulat de Adrian); **F3 gata** (P6-50: copie în `boot/vechi/`, prima pornire = încercare confirmată după 60 s, altfel revenire singură; rapoarte; `docs/ACTUALIZARE.md`); F9 pas 1 gata (`compara`, P6-52); F2, F4, F6a lucrate de sesiunile paralele (F4 și F6a în `main`, F2 în integrare). Rămân: F8/F9 restul.
 - progres (2026-11-05 02:25, sesiunea OS): F2 și F4 integrate în `main` de sesiunile paralele; F8 „git simplu” gata (`gh-ia`, P6-52 pas 2); Release `os-239`. Rămân: F9 restul (unelte de profil/jurnal pe lista albă a remote-ului).
+- progres (2026-11-05 03:45, sesiunea OS): F9 restul gata (`log --sumar`, `log --avertismente`, `timp`, P6-52 încheiat) și F2 criptat (P6-54, D-016); Release `os-241`. **Partea OS a C-68 e făcută în QEMU**; rămâne verificarea pe workstation la fereastră.
 
 ### C-69 · cyber-gpu · F5 din planul independenței: I6 TRECE → I7–I10 → primul calcul pe placă → Kronos pe placă în OS
 - data: 2026-11-04 23:00 · de la: **Adrian** („da la tot”), prin centrul de comandă
