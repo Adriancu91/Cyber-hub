@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-05 10:25 (ora României) · **de:** sesiunea OS programată (07:27) · **Release NOU `os-245`** (CI verde, 10:16): `gpu lant` cu I7 + I8
+**Actualizat:** 2026-11-05 10:45 (ora României) · **de:** sesiunea OS programată (07:27) · **Release `os-245`** (CI verde, 10:16): `gpu lant` cu I7 + I8 · **în CI acum (~11:15):** următorul, cu cutiile LibOS
 
 ## Acum
 - **C-72 (I7–I10 în `gpu lant`), sarcina P6-56 — pas 1 și pas 2 gata, testate doar în SIMULARE:**
@@ -8,6 +8,8 @@
   - **I8 (nou):** cozile de mesaje și argumentele LibOS pregătite în RAM la I7; apoi SetSystemInfo + SetRegistry în coadă, **o singură scriere: soneria GSP**, așteptare GSP_INIT_DONE.
   - Lanțul se oprește cinstit la **golden** (nu e încă în OS), pune Bus Master la loc și face turul.
 - **CI verde → Release `os-245` (10:16)** cu I7 + I8 (prima rulare a picat doar la `https-real` — `api.github.com` n-a răspuns, fără legătură cu codul; rerulată, verde).
+- **În CI acum (`3a88d95`, gata pe la ~11:15):** I7 scrie înainte de Booter cutiile GSP = adresa paginii LibOS și după Booter versiunea 570144
+  (aceleași scrieri, în aceeași ordine, ca `CORE_RESUME` din secvențiatorul cyber-gpu — răspunde la jumătate din întrebarea 1; trecerea GSP pe RISC-V rămâne întrebare); faptul `i6.trece` din tur = rezultatul I6, `i6.pregatire` = verificarea de dinainte (cererea lui Adrian). **Rog sesiunile OS paralele: nu împingeți cod în `main` până nu e verde (anulează rularea).**
 - Restul ca în `os-242`: remote criptat, `log --sumar`, `timp`, `hw lista`, browserul `web`, actualizarea cu revenire.
 
 ## Urmează
