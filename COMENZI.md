@@ -979,6 +979,7 @@ Format:
 - **NOTĂ (Adrian, 2026-11-05 09:23): rămâne la workstation până la ~14:00 și vrea să testeze direct până la I10.** Ținta: Release verde cu I7–I10 în `gpu lant` până la ~13:15. Dacă nu ajunge I10, un Release cu ce e gata (I7, I8…) până la ~13:15, ca să se testeze cât mai departe. I6 a TRECUT azi pe placă cu `os-242` (`rezultate/2026-11-05-workstation-os242/`). Corectează și faptul `i6.trece` din turul de citire (încă criteriul vechi).
 - stare: preluat (2026-11-05 05:30 UTC, sesiunea OS) · sarcina P6-56
 - progres (2026-11-05 10:48 UTC, sesiunea OS): I7 + I8 (`os-245`, `os-246`), **golden + I9 în `os-247`** (CI verde); I10 așteaptă soneria canalului `0xBB0090` de la cyber-gpu — testat doar în SIMULARE
+- progres (2026-11-05 15:50, sesiunea OS): I7 reparat după C-75 în **`os-248`** (CI verde); I10 rămâne de făcut în OS (programul `add64` e în cyber-gpu doar în teste) — testat doar în SIMULARE
 
 ### C-73 · kronos · Fereastra lui Adrian pe workstation: 5 nov de la ~08:30 (~1 h) — placa și calculatorul libere
 - data: 2026-11-05 07:27 · de la: **Adrian** („într-o oră ajung la workstation”), prin centrul de comandă
@@ -993,7 +994,8 @@ Format:
   Windows nu dă literă partiției ESP de pe stick. Azi se încearcă manual (diskpart `set id` → literă → copiere → id ESP la loc). Soluția durabilă, aleasă de voi: de ex. o imagine mai
   mare pentru stick-ul de test + un script `tools/pune-firmware.ps1` care copiază `firmware\` de pe stick-ul normal pe cel de test (fără firmware în repo), sau citirea firmware-ului de
   pe al doilea stick dacă sunt băgate amândouă. Verifică și că firmware-ul încape. Documentează în pașii ferestrei.
-- stare: nou
+- stare: gata (preluat 2026-11-05 14:55, terminat 15:50, sesiunea OS) — P6-57, Release `os-248`
+- rezultat: firmware-ul nu încape pe stick-ul de test (`gsp-570.144.bin` ~64 MB > ~62 MB), așa că OS-ul îl citește acum de pe al doilea stick: cu ambele băgate, stick-ul normal cu `firmware\nvidia\ga102\gsp\` se montează la `/usb2` doar citire și `gpu firmware`/I7 îl găsesc singure (test `usb-fw`; pașii în `docs/USB.md` §8).
 
 ### C-75 · cyber-gpu (+ cyber-universe) · I7 TRECE pe placă, I8 oprit la „antetul cozii de stare nu are forma 570.144” — analizează jurnalul real
 - data: 2026-11-05 12:50 · de la: centrul de comandă (delegare Adrian), după `rezultate/2026-11-05-workstation-os242/` (`os246-gpu-jurnal-002.txt`, 1519 rânduri; poza 06)
@@ -1005,6 +1007,8 @@ Format:
   din turul de după (după I7 WPR2 e normal lărgit). Nimic pe placă fără Adrian. **Adrian mai e la workstation până la ~14:00** — dacă găsești o reparație sigură și mică până la ~13:30,
   scrie-o în stare; altfel fereastra următoare.
 - stare: gata pentru cyber-gpu (preluat 2026-11-05 12:52, terminat 13:05, sesiunea Cyber-GPU 51) — partea cyber-universe (apelul nou la I7) rămâne la sesiunea OS
+- stare (cyber-universe): gata (preluat 2026-11-05 14:50, terminat 15:50, sesiunea OS) — în P6-56, Release `os-248`
+- rezultat (cyber-universe): I7 din OS cheamă acum `booter_load_dma_libos` (cyber-gpu `20b4a3b`: GSP resetat în RISC-V, cutiile LibOS recitite cu oprire înainte de Booter, versiunea după), verificat în SIMULARE pe modelul care reproduce placa; `i6.trece` = „da” și după I7 (WPR2 lărgit).
 - rezultat: cauza e în jurnal — cutia GSP `0x110040` n-a păstrat adresa LibOS (scris `0x09c71000`, citit 0), deci GSP-RM (RISC-V activ, `0xa0` = bitul 7) a pornit fără cozi; în SIMULARE, `booter_load_dma_libos` resetează GSP în RISC-V după FWSEC, recitește cutiile (oprire înainte de Booter dacă nu se păstrează) și scrie `FALCON_OS` după Booter — pentru OS: `cyber-gpu/integration/cyber-universe/C-75_i7-reset-gsp-libos.md` (fixare ≥ `a701cb9`).
 
 ### C-76 · kronos · Workstation-ul are doar ~40 GB liberi din 475 — raport de spațiu + propunere de curățenie (fără ștergeri)
