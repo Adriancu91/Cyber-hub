@@ -980,4 +980,5 @@ Format:
 ### C-73 · kronos · Fereastra lui Adrian pe workstation: 5 nov de la ~08:30 (~1 h) — placa și calculatorul libere
 - data: 2026-11-05 07:27 · de la: **Adrian** („într-o oră ajung la workstation”), prin centrul de comandă
 - ce: între ~08:30 și ~09:45 nimic pe placă și nimic lung pe procesor (S76b s-a terminat peste noapte; S77 — testul pe placă — după fereastră). Dacă rulează ceva, oprește-l curat.
+- **PRELUNGIRE (Adrian, 2026-11-05 08:59): rămâne ~5 ore → fereastra până la ~14:00.** S77a și S76c (procesor lung) după 14:00; S77b noaptea rămâne cum e.
 - stare: preluat (2026-11-05 07:40, supraveghetor) — S76b s-a terminat la 04:56, nimic nu rulează pe placă; în `plan/coada.md` **S77a** (testul pe placă) și **S76c** (procesor) pornesc doar după 09:45
