@@ -984,3 +984,11 @@ Format:
 - **PRELUNGIRE (Adrian, 2026-11-05 08:59): rămâne ~5 ore → fereastra până la ~14:00.** S77a și S76c (procesor lung) după 14:00; S77b noaptea rămâne cum e.
 - stare: preluat (2026-11-05 07:40, supraveghetor) — S76b s-a terminat la 04:56, nimic nu rulează pe placă; în `plan/coada.md` **S77a** (testul pe placă) și **S76c** (procesor) pornesc doar după 09:45
 - stare: preluat (prelungirea, 2026-11-05 09:05, supraveghetor) — în `plan/coada.md` (cfdb015): **S77a** pornește doar după **14:00**; **S76c** după S77a dacă S77a e gata până la ~15:30, altfel pe 6 nov de la 08:00; S77b noaptea rămâne
+
+### C-74 · cyber-universe · Stick-ul de test nu are firmware-ul NVIDIA după Rufus → I7 nu-l găsește
+- data: 2026-11-05 11:45 · de la: centrul de comandă (delegare Adrian), la fereastra din 5 nov
+- ce: I7 citește `/usb/firmware/nvidia/ga102/gsp/` (4 fișiere 570.144), dar `cyber-universe-gpu-scrie-usb.img` (64 MiB, ESP ~62 MB, ~48 MB liberi) se scrie cu Rufus fără ele, iar
+  Windows nu dă literă partiției ESP de pe stick. Azi se încearcă manual (diskpart `set id` → literă → copiere → id ESP la loc). Soluția durabilă, aleasă de voi: de ex. o imagine mai
+  mare pentru stick-ul de test + un script `tools/pune-firmware.ps1` care copiază `firmware\` de pe stick-ul normal pe cel de test (fără firmware în repo), sau citirea firmware-ului de
+  pe al doilea stick dacă sunt băgate amândouă. Verifică și că firmware-ul încape. Documentează în pașii ferestrei.
+- stare: nou
