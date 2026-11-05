@@ -33,11 +33,12 @@
 (Pașii 3–7 cer întâi partea OS din C-71; până atunci lanțul OS se oprește cinstit la I7.)
 
 ## Urmează
-0. Așteptăm: răspunsul lui Adrian la întrebarea OS-ului (I7–I10 în `gpu lant`), fereastra pe workstation, aprobarea soneriei `0xBB0090`.
-   Până atunci sesiunile Cyber-GPU fără comandă nouă sau jurnal nou se opresc scurt.
+0. Adrian a spus „da I7–I10” (C-72, 07:27): sesiunea OS pune I7–I10 în `gpu lant` (P6-56). De la noi: nimic nou de cod; nota
+   `C-71_fereastra-vram.md` (fereastra VRAM pusă la loc și la eșec). Soneria canalului de lucru `0xBB0090` (I10) e DEDUSĂ din surse —
+   prima ei probă reală e la fereastră; driverul nostru doar o descrie, scrierea o face OS-ul, în lanț, după „DA”.
+   După fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`. Fără comandă nouă sau jurnal nou: oprire scurtă.
 1. Sesiunea OS: `gpu lant` pe `WINDOW_CHAIN_FULL`, pas cu pas (nota `cyber-gpu/integration/cyber-universe/C-71_gpu-lant-complet.md`).
 2. Sesiunea OS (opțional): în jurnalul de pe stick, liniile `pas …` ale lanțului + numărul apelurilor RM (nota `cyber-gpu/integration/cyber-universe/C-71_jurnal-lant.md`).
-3. Înainte de I10 pe placă: aprobarea soneriei canalului de lucru (`0xBB0090`, dedusă din surse, încă nu e pe lista permisă).
 
 ## Ce oferă proiectul celorlalți
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Față de fixarea OS-ului (`9ac89b8`):
