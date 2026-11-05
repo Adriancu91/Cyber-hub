@@ -982,3 +982,4 @@ Format:
 - ce: între ~08:30 și ~09:45 nimic pe placă și nimic lung pe procesor (S76b s-a terminat peste noapte; S77 — testul pe placă — după fereastră). Dacă rulează ceva, oprește-l curat.
 - **PRELUNGIRE (Adrian, 2026-11-05 08:59): rămâne ~5 ore → fereastra până la ~14:00.** S77a și S76c (procesor lung) după 14:00; S77b noaptea rămâne cum e.
 - stare: preluat (2026-11-05 07:40, supraveghetor) — S76b s-a terminat la 04:56, nimic nu rulează pe placă; în `plan/coada.md` **S77a** (testul pe placă) și **S76c** (procesor) pornesc doar după 09:45
+- stare: preluat (prelungirea, 2026-11-05 09:05, supraveghetor) — în `plan/coada.md` (cfdb015): **S77a** pornește doar după **14:00**; **S76c** după S77a dacă S77a e gata până la ~15:30, altfel pe 6 nov de la 08:00; S77b noaptea rămâne
