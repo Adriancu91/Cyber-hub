@@ -1,8 +1,11 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-05 03:45 (ora României) · **de:** sesiunea OS programată (02:42) · **Release `os-241`** (CI verde): remote criptat + unelte de profil/jurnal
+**Actualizat:** 2026-11-05 07:40 (ora României) · **de:** sesiunea OS programată (05:42) · **Release `os-242`** (CI verde): `gpu lant` pe lanțul complet al ferestrei (C-71)
 
 ## Acum
+- **Nou în `os-242` — `gpu lant` pe lanțul complet (P6-55, partea OS din C-71, pas 1):** OS-ul folosește lanțul de 13 pași al cyber-gpu
+  (`a2f9736`, I6 → primul calcul). Are pașii până la I6 + „WPR2 citit după I6” (doar citire); I7–I10 nu sunt încă în OS, așa că lanțul se
+  oprește cinstit la I7, pune Bus Master la loc și face turul. **Nicio scriere nouă în placă** față de `os-241`. Testat doar în SIMULARE.
 - **Nou în `os-241` — remote criptat (P6-54, F2 pas 2):** consola prin rețea (`remote porneste`) e acum criptată și semnată cu cheia de pe stick
   (X25519 + ChaCha20-Poly1305, protocol propriu mic, decizia D-016). Cheia nu mai trece prin rețea; cine nu are cheia nu poate citi și nici schimba nimic.
   Clientul `tools/remote-client.py` merge tot fără nimic instalat pe Windows; **trebuie folosit clientul din `os-241`** (`py tools\remote-client.py --test` → „criptografia OK”).
@@ -12,7 +15,7 @@
   `compara`, profil/jurnal), F6a (browserul text `web`). F1 anulat de Adrian. Restul se verifică pe workstation la fereastră.
 
 ## Urmează
-- Nicio sarcină liberă fără hardware: P6-10, P6-12 p.2 (workstation/laptop); P3-10 (Adrian); P5-07 BLOCAT; C-7, C-11 după întoarcerea lui Adrian.
+- I7–I10 în OS doar după „da”-ul lui Adrian (vezi mai jos). Altfel nicio sarcină liberă fără hardware: P6-10, P6-12 p.2 (workstation/laptop); P3-10 (Adrian); P5-07 BLOCAT; C-7, C-11 după întoarcerea lui Adrian.
 - Sesiunile următoare: oprire scurtă dacă nu e comandă nouă.
 
 ## Ce oferă proiectul celorlalți
@@ -20,11 +23,15 @@
 - Biblioteci Rust proprii: `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`; a doua implementare KGR1 pentru Kronos.
 
 ## De ce are nevoie de la ceilalți
-- `cyber-gpu`: după fereastră, `verifica_jurnal_i6` pe jurnalele I6 noi din `rezultate/`.
+- `cyber-gpu`: după fereastră, `verifica_jurnal_i6` / `verifica_jurnal_lant` pe jurnalele noi din `rezultate/`.
+- `cyber-gpu`: pasul 1 din „Urmează” al vostru e făcut (`gpu lant` pe `WINDOW_CHAIN_FULL`, `os-242`); I7–I10 în OS așteaptă răspunsul lui Adrian.
 
 ## Blocaje / nevoie de Adrian
-- **Fereastra următoare pe workstation (~25 min), Release `os-241`** (I6 pe stick-ul de test din `os-241`):
-  1. **I6, stick-ul de test** (`cyber-universe-gpu-scrie-usb.img`): pornire rece (cablul scos 30 s), `gpu pregatire-i6` → poză, `gpu i6 --scrie` + `DA` **o singură dată** → poză, `raport`.
+- **Întrebare (C-71):** cyber-gpu a pregătit în simulare pașii I7–I10 (pornirea GSP, canalul de lucru, primul calcul pe placă). Ca să-i pun în
+  `gpu lant`, OS-ul ar face **scrieri noi în placa video** (doar pe stick-ul de test, doar cu tine de față și „DA”), cu firmware-ul NVIDIA
+  descărcat de tine pe stick. **Vrei să încep I7–I10 în OS (da / nu / mai târziu)?** Până la răspuns nu le fac.
+- **Fereastra următoare pe workstation (~25 min), Release `os-242`** (I6 pe stick-ul de test din `os-242`):
+  1. **I6, stick-ul de test** (`cyber-universe-gpu-scrie-usb.img`): pornire rece (cablul scos 30 s), `gpu pregatire-i6` → poză, `gpu i6 --scrie` + `DA` **o singură dată** → poză, `raport`. (Sau, în locul lui `gpu i6 --scrie`, `gpu lant` + `DA`: aceleași scrieri, plus „WPR2 citit”, oprire la I7.)
   2. **Kronos, stick-ul normal:** `run kronos --control`; `run kronos --profil --fara-ecran --n 64 Buna ziua`; același cu `--fara-cedari` → poze.
   3. **Nou — actualizarea cu revenire (F3), cu Release-ul nou:** pe stick-ul normal `actualizeaza`, repornire → pe ecran „prima pornire a versiunii …”; după 1 minut
      `log actualizare` → poză (trebuie „confirmata”).
