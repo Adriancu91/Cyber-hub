@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-05 10:45 (ora României) · **de:** sesiunea OS programată (07:27) · **Release `os-245`** (CI verde, 10:16): `gpu lant` cu I7 + I8 · **în CI acum (~11:15):** următorul, cu cutiile LibOS
+**Actualizat:** 2026-11-05 11:20 (ora României) · **de:** sesiunea OS programată (07:27) · **Release NOU `os-246`** (CI verde, 11:15): `gpu lant` cu I7 (+ cutiile LibOS) + I8
 
 ## Acum
 - **C-72 (I7–I10 în `gpu lant`), sarcina P6-56 — pas 1 și pas 2 gata, testate doar în SIMULARE:**
@@ -8,8 +8,8 @@
   - **I8 (nou):** cozile de mesaje și argumentele LibOS pregătite în RAM la I7; apoi SetSystemInfo + SetRegistry în coadă, **o singură scriere: soneria GSP**, așteptare GSP_INIT_DONE.
   - Lanțul se oprește cinstit la **golden** (nu e încă în OS), pune Bus Master la loc și face turul.
 - **CI verde → Release `os-245` (10:16)** cu I7 + I8 (prima rulare a picat doar la `https-real` — `api.github.com` n-a răspuns, fără legătură cu codul; rerulată, verde).
-- **În CI acum (`3a88d95`, gata pe la ~11:15):** I7 scrie înainte de Booter cutiile GSP = adresa paginii LibOS și după Booter versiunea 570144
-  (aceleași scrieri, în aceeași ordine, ca `CORE_RESUME` din secvențiatorul cyber-gpu — răspunde la jumătate din întrebarea 1; trecerea GSP pe RISC-V rămâne întrebare); faptul `i6.trece` din tur = rezultatul I6, `i6.pregatire` = verificarea de dinainte (cererea lui Adrian). **Rog sesiunile OS paralele: nu împingeți cod în `main` până nu e verde (anulează rularea).**
+- **`os-246` (CI verde, 11:15; `3a88d95`):** I7 scrie înainte de Booter cutiile GSP = adresa paginii LibOS și după Booter versiunea 570144
+  (aceleași scrieri, în aceeași ordine, ca `CORE_RESUME` din secvențiatorul cyber-gpu — răspunde la jumătate din întrebarea 1; trecerea GSP pe RISC-V rămâne întrebare); faptul `i6.trece` din tur = rezultatul I6, `i6.pregatire` = verificarea de dinainte (cererea lui Adrian).
 - Restul ca în `os-242`: remote criptat, `log --sumar`, `timp`, `hw lista`, browserul `web`, actualizarea cu revenire.
 
 ## Urmează
@@ -34,10 +34,10 @@
 - După fereastră: `verifica_jurnal_lant` pe jurnalele noi din `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
-- **ACUM, la fereastra de azi (până la ~14:00): `os-245` pe stick-ul de test** (`cyber-universe-gpu-scrie-usb.img` din Release-ul `os-245`;
+- **ACUM, la fereastra de azi (până la ~14:00): `os-246` pe stick-ul de test** (mai nou decât `os-245`: scrie și cutiile LibOS la I7; `cyber-universe-gpu-scrie-usb.img` din Release-ul `os-246`;
   fișierele GSP 570.144 copiate din nou în `firmware\` pe stick, ca la I4): pornire rece (cablul scos 30 s), `gpu pregatire-i6` → poză,
   `gpu lant` + `DA` **o singură dată** → poze la toate rândurile (durează mai mult: ~750 de scrieri noi la I7, fiecare pe stick), `raport`, jurnalele
-  `/usb/raport/gpu-jurnal-*.txt` în `rezultate/2026-11-05-workstation-os245/`. Așteptat: I6 TRECE; **I7 — prima probă reală** (rândul „I7: cutia SEC2 0 = …,
+  `/usb/raport/gpu-jurnal-*.txt` în `rezultate/2026-11-05-workstation-os246/`. Poză și la `gpu tur` (faptul nou `i6.trece`). Așteptat: I6 TRECE; **I7 — prima probă reală** (rândul „I7: cutia SEC2 0 = …,
   GSP RISC-V ACTIV/NU”); I8 probabil oprit curat (timeout, întrebarea 1 de mai sus). Apoi oprire completă (cablul scos 30 s).
   Golden/I9/I10 nu sunt încă în OS; dacă apare un Release cu ei înainte de 13:15, îl scriu aici.
 - **Lista pentru `os-242`:** (1) stick-ul de test: pornire rece, `gpu pregatire-i6` → poză, `gpu lant` + `DA` o dată → poze, `raport`;
