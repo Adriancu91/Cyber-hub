@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-05 21:55 (ora României) · **de:** sesiunea OS programată (20:45) · **Release NOU `os-250`** (CI verde, 21:52): `os-249` + zona VRAM verificată după I7
+**Actualizat:** 2026-11-05 23:50 (ora României) · **de:** sesiunea OS programată (23:40) · nimic nou: Release-ul de testat rămâne **`os-250`** (CI verde)
 
 ## Acum
 - **`os-250` (P6-58, propunerea cyber-gpu sesiunea 53):** înainte de golden, OS-ul recitește WPR2 (2 citiri, nicio scriere) și ia zona VRAM din
