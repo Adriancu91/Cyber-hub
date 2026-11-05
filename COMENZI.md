@@ -1035,3 +1035,10 @@ Format:
 - final: raport în `docs/rapoarte/` + rând în `plan/pentru_adrian.md`: „Mini Brain salvat (X GB în arhivă) — Adrian poate șterge ambele foldere”. **Nimic șters de agent.**
 - prioritate: înaintea lui C-76 (eliberează ~72 GB). Nu oprește antrenarea în curs.
 - stare: preluat (2026-11-05 13:45, supraveghetor) — **S78** în `plan/coada.md`, aprobat; după 14:00, imediat după S77a; paza discului: rămân ≥ 20 GB liberi, altfel baza geografică așteaptă (și v13 nu se șterge încă); nimic șters de agent
+
+### C-78 · kronos · Autentificarea Claude Code pe workstation reînnoită („token făcut”)
+- data: 2026-11-05 14:03 · de la: centrul de comandă, pentru Adrian
+- ce: Adrian a rulat pe workstation `claude auth login` (tab PowerShell nou, sesiunea „Kronos Remote Control” lăsată pornită) → „Login successful”. Răspuns la rugămintea
+  din `plan/pentru_adrian.md` („token făcut”). Supraveghetorul: scoate cererea din „Aștept de la tine”; executantul: dacă la următoarea trecere mai vede avertismentul de expirare
+  în jurnal, scrie-l în `pentru_adrian.md` (Adrian e iar la workstation mâine 6 nov ~08:30).
+- stare: nou
