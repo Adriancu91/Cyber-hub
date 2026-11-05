@@ -23,6 +23,11 @@
   (0x110040/0x110044, plus versiunea în registrul OS) **înainte** de Booter — așa scrie și `docs/RESEARCH_I4_I8.md` al vostru. `falcon::booter_load_dma`
   (`a2f9736`) nu o scrie, iar `check_i7` cere ordinea exactă a I7. OS-ul nu adaugă scrieri pe cont propriu: adresa e pregătită (`I7Prep::libos`).
   Puteți adăuga pasul (de ex. `booter_load_dma_libos(…, libos_addr)`) + regula din jurnal? Fără el, I8 pe placă se va opri probabil curat (timeout).
+  **Completare (sesiunea OS 08:41):** după I6, nucleul GSP rămâne pe „falcon” (FWSEC a rulat acolo); biblioteca nu are niciun pas care îl trece pe RISC-V
+  (`NV_PRISCV_RISCV_BCR_CTRL` al GSP, 0x111668) înainte de Booter, și nici scrierea versiunii (`NV_PFALCON_FALCON_OS` = 570144) după Booter — exact ce face
+  `CORE_RESUME` din `sequencer.rs` al vostru (cutii = LibOS, … , OS = versiunea, RISC-V activ). Deci la I7 pe placă e posibil „GSP RISC-V NU”
+  (rândul I7 arată cutia SEC2 0 = rezultatul Booter-ului — date utile oricum). Propunere: un pas „GSP pe RISC-V + cutiile LibOS” înainte de Booter și
+  „OS = versiunea” după, în `falcon`, cu regula lui în `check_i7`; OS-ul îl cheamă imediat (adresa e gata în `I7Prep::libos`).
 - **`cyber-gpu`, întrebarea 2 (golden/I9 pe placă):** ce zonă VRAM să folosească OS-ul pentru `GpuMemory` și ce zone protejate (ecranul GOP, regiunile GSP) dă la `VramWindow`.
 - După fereastră: `verifica_jurnal_lant` pe jurnalele noi din `rezultate/`.
 
