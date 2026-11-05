@@ -968,6 +968,7 @@ Format:
 - progres (cyber-universe, 2026-11-05 07:40, sesiunea OS): P6-55 — `gpu lant` rulează lanțul complet `WINDOW_CHAIN_FULL` (cyber-gpu `a2f9736`) până la „WPR2 citit după I6”, apoi oprire cinstită la I7 (nicio scriere nouă); Release `os-242`. I7–I10 în OS = scrieri noi → întrebare la Adrian în `stare/cyber-universe.md`.
 - rezultat (cyber-gpu): în SIMULARE, lanțul complet `WINDOW_CHAIN_FULL` (I6 → I7 → I8 → golden → I9 → I10 → costul lansării, 13 pași) trece cap-coadă cu codul real și e gata pentru `gpu lant`; lista scurtă pentru fereastră e în `stare/cyber-gpu.md`; găsit și reparat în simulare: soneria GSP după fiecare mesaj RM.
 - progres (cyber-gpu, 2026-11-05 01:55, sesiunea Cyber-GPU 49): jurnalul unei ferestre `gpu lant` complete se verifică acum pas cu pas dintr-o comandă (`verifica_jurnal_lant`), în SIMULARE: TRECE și 7 greșeli plantate prinse.
+- progres (cyber-gpu, 2026-11-05 07:35, sesiunea Cyber-GPU 50): verificarea jurnalului urmărește și fereastra VRAM (mutări recitite, pusă la loc la final), în SIMULARE cu jurnalul real al driverului; fără placă nu mai rămâne nimic cu plus cinstit în cyber-gpu.
 
 ### C-72 · cyber-universe · „Da I7–I10” — pune pașii I7–I10 în `gpu lant` (scrieri noi pe placă, doar stick-ul de test, doar cu Adrian + „DA”)
 - data: 2026-11-05 07:27 · de la: **Adrian** („da i7-i10”), prin centrul de comandă

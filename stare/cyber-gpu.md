@@ -1,8 +1,12 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-05 01:55 (ora României) · **de:** sesiunea Cyber-GPU 49 (cloud, fără placă) — C-71, lucru continuu (SIMULARE)
+**Actualizat:** 2026-11-05 07:35 (ora României) · **de:** sesiunea Cyber-GPU 50 (cloud, fără placă) — C-71, lucru continuu (SIMULARE)
 
 ## Acum
+- **Sesiunea 50 (C-71):** verificarea jurnalului lanțului urmărește acum și **fereastra VRAM** (`0x1700`, prin care I9 scrie tabelele de pagini):
+  fiecare mutare recitită egal, iar la final fereastra pusă la loc, ca Bus Master. Testat cu jurnalul real al driverului pe modelul din
+  `gpu-sim` (T85): lanțul tot TRECE, 2 greșeli plantate prinse. `8f83ce1`, 352 teste, CI verde. **Nimic testat pe RTX 3070 Ti.**
+- **Fără placă nu mai rămâne nimic cu plus cinstit în cyber-gpu:** I6–I10 sunt în SIMULARE, în lanț, cu jurnalul verificat pas cu pas.
 - **Sesiunea 49 (C-71):** jurnalul unei ferestre `gpu lant` complete se verifică acum **pas cu pas, dintr-o comandă**: `verifica_jurnal_lant`
   (`chain_log::check_chain_journal`; `a2f9736`; 352 teste). Reguli: pașii doar-citire fără scrieri; I6/I7 în ordinea exactă; I8 doar ferestrele
   GSP/SEC2 cu soneria întâi; golden + I9 doar sonerii (una pe apel RM) și fereastra VRAM; Bus Master pus exact la loc. Verdict: TRECE /
@@ -14,7 +18,7 @@
   GSP-RM n-ar fi răspuns. Reparat prin adăugare (`QueueTransportBell`); fără sonerie, lanțul se oprește curat la golden (T79).
 - C-69 (sesiunea 47): I7 verificat ca I6, costul unei lansări, lista ferestrelor `cyber-gpu/docs/FEREASTRA_C-69.md`.
 - Pe placă până acum: I0–I4 doar citire TREC; I6 a scris (4 nov), FWSEC-FRTS reușit; verificarea nouă (C-66) e în os-224.
-- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `a2f9736`).
+- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `8f83ce1`).
 
 ## Lista scurtă pentru fereastra pe hardware (în ordine; `gpu lant` + „DA” le rulează pe toate, oprire la primul eșec)
 1. Pornire rece (cablul scos 30 s); `gpu pregatire-i6` → „WPR2 coborat”, 0 scrieri.
@@ -29,6 +33,8 @@
 (Pașii 3–7 cer întâi partea OS din C-71; până atunci lanțul OS se oprește cinstit la I7.)
 
 ## Urmează
+0. Așteptăm: răspunsul lui Adrian la întrebarea OS-ului (I7–I10 în `gpu lant`), fereastra pe workstation, aprobarea soneriei `0xBB0090`.
+   Până atunci sesiunile Cyber-GPU fără comandă nouă sau jurnal nou se opresc scurt.
 1. Sesiunea OS: `gpu lant` pe `WINDOW_CHAIN_FULL`, pas cu pas (nota `cyber-gpu/integration/cyber-universe/C-71_gpu-lant-complet.md`).
 2. Sesiunea OS (opțional): în jurnalul de pe stick, liniile `pas …` ale lanțului + numărul apelurilor RM (nota `cyber-gpu/integration/cyber-universe/C-71_jurnal-lant.md`).
 3. Înainte de I10 pe placă: aprobarea soneriei canalului de lucru (`0xBB0090`, dedusă din surse, încă nu e pe lista permisă).
@@ -37,7 +43,8 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Față de fixarea OS-ului (`9ac89b8`):
   **doar adăugări** — C-69: `falcon::{read_after_i7, I7Status, I7_STATUS_READS}`, `i6_log::{check_i7, check_i6_i7_journal, …}`, `launch_cost`;
   C-71: `chain::{WINDOW_CHAIN_FULL, READY_FOR_WINDOW, run_chain_ready}`, `golden::QueueTransportBell`; sesiunea 49: modulul nou `chain_log`
-  (verificarea jurnalului, doar text) + unealta de gazdă `verifica_jurnal_lant`. `WINDOW_CHAIN`, `run_chain`, `QueueTransport`,
+  (verificarea jurnalului, doar text) + unealta de gazdă `verifica_jurnal_lant`; sesiunea 50: constanta `chain_log::VRAM_WINDOW`
+  (nota `cyber-gpu/integration/cyber-universe/C-71_fereastra-vram.md`: `VramWindow::restore()` și pe drumul de eroare). `WINDOW_CHAIN`, `run_chain`, `QueueTransport`,
   `check_i6` neschimbate. În `gpu-sim`: eliberarea cu marcă de timp e acceptată acum (înainte refuzată).
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
