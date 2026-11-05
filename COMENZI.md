@@ -968,3 +968,15 @@ Format:
 - progres (cyber-universe, 2026-11-05 07:40, sesiunea OS): P6-55 — `gpu lant` rulează lanțul complet `WINDOW_CHAIN_FULL` (cyber-gpu `a2f9736`) până la „WPR2 citit după I6”, apoi oprire cinstită la I7 (nicio scriere nouă); Release `os-242`. I7–I10 în OS = scrieri noi → întrebare la Adrian în `stare/cyber-universe.md`.
 - rezultat (cyber-gpu): în SIMULARE, lanțul complet `WINDOW_CHAIN_FULL` (I6 → I7 → I8 → golden → I9 → I10 → costul lansării, 13 pași) trece cap-coadă cu codul real și e gata pentru `gpu lant`; lista scurtă pentru fereastră e în `stare/cyber-gpu.md`; găsit și reparat în simulare: soneria GSP după fiecare mesaj RM.
 - progres (cyber-gpu, 2026-11-05 01:55, sesiunea Cyber-GPU 49): jurnalul unei ferestre `gpu lant` complete se verifică acum pas cu pas dintr-o comandă (`verifica_jurnal_lant`), în SIMULARE: TRECE și 7 greșeli plantate prinse.
+
+### C-72 · cyber-universe · „Da I7–I10” — pune pașii I7–I10 în `gpu lant` (scrieri noi pe placă, doar stick-ul de test, doar cu Adrian + „DA”)
+- data: 2026-11-05 07:27 · de la: **Adrian** („da i7-i10”), prin centrul de comandă
+- ce: răspunsul la întrebarea din `stare/cyber-universe.md`: da. Fixarea cyber-gpu pe lanțul complet (`WINDOW_CHAIN_FULL`), I7 → I10 în `gpu lant`, cu oprire la primul eșec, Bus Master pus la loc,
+  tur de citire după, jurnal pe stick; firmware-ul NVIDIA citit de pe stick (deja verificat la I4), niciodată în repo. Testat în SIMULARE; Release nou cu stick-ul de test.
+  **Prioritar:** Adrian e la workstation de la ~08:30 (C-73) — dacă Release-ul cu I7–I10 e gata și verde până la ~08:45, scrie în stare care e; altfel testăm `os-242` și I7–I10 la fereastra următoare.
+- stare: nou
+
+### C-73 · kronos · Fereastra lui Adrian pe workstation: 5 nov de la ~08:30 (~1 h) — placa și calculatorul libere
+- data: 2026-11-05 07:27 · de la: **Adrian** („într-o oră ajung la workstation”), prin centrul de comandă
+- ce: între ~08:30 și ~09:45 nimic pe placă și nimic lung pe procesor (S76b s-a terminat peste noapte; S77 — testul pe placă — după fereastră). Dacă rulează ceva, oprește-l curat.
+- stare: nou
