@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-04 23:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-05 02:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -12,7 +12,8 @@
   0,513 (> 0,510) → **STRICĂ**. Școala, așa cum e, nu avansează codul. **1212 teste trec.**
 - **S76a gata (4 nov 20:50): GATA** — 23.251 exerciții „întrebare/instrucțiune → răspuns” în română, făcute prin reguli (50 % instrucțiuni, 8 feluri noi),
   500 ascunse, scurgeri 0, notă automată fără alt AI (corect / în temă / limbă curată, scorul R1). Reper #477: R1 63,73; felurile vechi 100, **instrucțiunile 37,47**. **1221 teste trec.**
-- **Acum rulează (noaptea 4→5 nov): S76b** — 5 ore din #477 pe o copie (`w2_romana_r1`), pe exercițiile S76a; AJUTĂ = R1 pe instrucțiuni ≥ 47,47 fără regresie. Gata până la 06:45.
+- **Acum rulează (noaptea 4→5 nov, pornit ~23:30): S76b** — 5 ore din #477 pe o copie (`w2_romana_r1`), pe exercițiile S76a; pre-înregistrarea urcată înainte și verificată.
+  AJUTĂ = R1 pe instrucțiuni ≥ 47,47 fără regresie. Sfârșit estimat ~05:45, oricum până la 06:45.
 
 ## Urmează
 - Verdictul S76b (5 nov dimineața); #477 rămâne în uz până îl bate copia și Adrian spune „da”.
