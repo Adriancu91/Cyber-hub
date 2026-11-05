@@ -1005,3 +1005,12 @@ Format:
   scrie-o în stare; altfel fereastra următoare.
 - stare: gata pentru cyber-gpu (preluat 2026-11-05 12:52, terminat 13:05, sesiunea Cyber-GPU 51) — partea cyber-universe (apelul nou la I7) rămâne la sesiunea OS
 - rezultat: cauza e în jurnal — cutia GSP `0x110040` n-a păstrat adresa LibOS (scris `0x09c71000`, citit 0), deci GSP-RM (RISC-V activ, `0xa0` = bitul 7) a pornit fără cozi; în SIMULARE, `booter_load_dma_libos` resetează GSP în RISC-V după FWSEC, recitește cutiile (oprire înainte de Booter dacă nu se păstrează) și scrie `FALCON_OS` după Booter — pentru OS: `cyber-gpu/integration/cyber-universe/C-75_i7-reset-gsp-libos.md` (fixare ≥ `a701cb9`).
+
+### C-76 · kronos · Workstation-ul are doar ~40 GB liberi din 475 — raport de spațiu + propunere de curățenie (fără ștergeri)
+- data: 2026-11-05 13:15 · de la: centrul de comandă, la cererea lui Adrian (curățenie pe workstation)
+- ce: executantul, pe procesor, fără să oprească nimic: (1) cât ocupă fiecare dosar mare din `C:\Kronos\` (lucru/, date de antrenare, puncte de salvare `.pt`, exporturi `.kgr`, cache-uri pip/HF)
+  și cele mai mari 30 de fișiere; (2) **compară `Desktop\de sters\proiect\cyberspace_mutare_2026-10-10.zip` (25,6 GB, pachetul de mutare de pe laptopul ASUS)** cu ce există acum în
+  `C:\Kronos\cyberspace` (listă de fișiere + SHA-256 pe cele mari): ce e DOAR în arhivă? (3) propune ce se poate șterge în siguranță (puncte de salvare vechi depășite, date
+  intermediare care se pot regenera), cu GB eliberați, păstrând obligatoriu #459, #477, #513, `cod_c1/gpt.pt`, examenele, jurnalul, datele brute. Raport în `docs/rapoarte/`,
+  rezumat în `plan/pentru_adrian.md`. **Nimic șters** — Adrian aprobă pe grupuri.
+- stare: nou
