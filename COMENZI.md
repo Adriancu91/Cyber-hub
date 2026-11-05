@@ -977,7 +977,8 @@ Format:
   tur de citire după, jurnal pe stick; firmware-ul NVIDIA citit de pe stick (deja verificat la I4), niciodată în repo. Testat în SIMULARE; Release nou cu stick-ul de test.
   **Prioritar:** Adrian e la workstation de la ~08:30 (C-73) — dacă Release-ul cu I7–I10 e gata și verde până la ~08:45, scrie în stare care e; altfel testăm `os-242` și I7–I10 la fereastra următoare.
 - **NOTĂ (Adrian, 2026-11-05 09:23): rămâne la workstation până la ~14:00 și vrea să testeze direct până la I10.** Ținta: Release verde cu I7–I10 în `gpu lant` până la ~13:15. Dacă nu ajunge I10, un Release cu ce e gata (I7, I8…) până la ~13:15, ca să se testeze cât mai departe. I6 a TRECUT azi pe placă cu `os-242` (`rezultate/2026-11-05-workstation-os242/`). Corectează și faptul `i6.trece` din turul de citire (încă criteriul vechi).
-- stare: preluat (2026-11-05 05:30 UTC, sesiunea OS) · sarcina P6-56
+- stare: gata (2026-11-05 16:50 UTC, sesiunea OS; preluat 05:30 UTC) · sarcina P6-56
+- rezultat: I7, I8, golden, I9 și I10 (`add64` + costul lansării) sunt în `gpu lant` din **`os-249`** (CI verde), testate doar în SIMULARE, unde tot lanțul trece; pe placă se încearcă la fereastra următoare cu Adrian + „DA”.
 - progres (2026-11-05 10:48 UTC, sesiunea OS): I7 + I8 (`os-245`, `os-246`), **golden + I9 în `os-247`** (CI verde); I10 așteaptă soneria canalului `0xBB0090` de la cyber-gpu — testat doar în SIMULARE
 - progres (2026-11-05 15:50, sesiunea OS): I7 reparat după C-75 în **`os-248`** (CI verde); I10 rămâne de făcut în OS (programul `add64` e în cyber-gpu doar în teste) — testat doar în SIMULARE
 
