@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-05 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-05 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -9,20 +9,21 @@
 - **Kronos-Cod (linia `cod_c1`, S63):** 0,5004 biți/octet; școala de cod (S72b) a ieșit STRICĂ → pauză pe cod, trecem pe română (C-64).
 - **S76b gata (5 nov 05:05): AJUTĂ** — copia **#513** (5 ore din #477 pe exercițiile de română S76a) urmează instrucțiunile din setul ascuns:
   R1 **98,97** (#477: 37,47); română 1,2060, cod și R2 puțin mai bine, nicio regresie. Același tip de instrucțiuni ca în antrenare → generalizarea se măsoară azi (S76c). **1221 teste trec.**
-- **14:00–17:30 cascada a stat blocată:** o înregistrare veche (S42) avea un număr de proces refolosit de Windows (`dllhost.exe`), deci scriptul credea că placa e ocupată. Executantul n-a ocolit regula; supraveghetorul a aprobat reparația **S80** (`unelte/cascada.py`, cu teste).
+- **S80 gata (17:37):** `cascada.py` nu mai confundă un număr de proces refolosit de Windows cu o sarcină a noastră (cascada a stat blocată 14:00–17:30).
+- **S77a gata (17:58): GATA** — Kronos crescut din #477 de la 12 la **24 de straturi (183M parametri)**, ieșire **identică** (dif. 0 în PyTorch și pe vectorii KGR1).
+  Pe placă: 24 de straturi încap doar cu recalculul activărilor (**6.010 MB, 2,80 pași/s**; #477: 6,45); 30–42 de straturi nu încap în 6.500 MB. **1232 teste trec.**
 - **#477 în OS (os-242, 5 nov, `rezultate/2026-11-05-workstation-os242/`):** CONTROL TRECE, **256,0 simb/s** (4 nov 206,4; 3 nov 125,4) — mulțumiri `cyber-universe`.
 
 ## Urmează
-- **S80** (acum, ~45 min): reparația de mai sus. Apoi **S77a** (gata până la 23:30): Kronos crescut din #477 în adâncime (24–42 de straturi, ~180–310M), straturi noi „neutre” → aceeași ieșire, verificată în PyTorch
-  și pe vectorii KGR1; test de memorie/viteză pe placă, fără antrenare. Alegerea: cel mai mare sub 6.500 MB și ≥ 2 pași/s.
-- **S78** (C-77, după S77a): salvarea părții utile din „Mini Brain” în `C:\Kronos\arhiva\mini-brain\` (copie + SHA-256 + lecții), nimic șters.
-- **S79** (C-76, după S78): raport de spațiu pe workstation + ce e doar în arhiva de mutare + propunere de curățenie pe grupuri, nimic șters.
-- **S76c** (procesor; probabil 6 nov de la 08:00): instrucțiuni formulate altfel → #513 urmează instrucțiuni sau doar șabloanele?
-- **S77b** (noaptea 5→6 nov dacă S77a e gata până la 23:30, altfel 6→7 nov): prima noapte a modelului crescut, cu pre-înregistrare. #477 rămâne în uz până îl bate un model nou și Adrian spune „da”.
+- **S77b** (acum, noaptea 5→6 nov, aprobat): prima noapte a modelului de 24 de straturi, 5 ore pe aceleași date ca #513 → la timp egal pe placă, cel mare e mai bun la română
+  (prag −0,005 față de #513), fără să strice instrucțiunile/codul? Pre-înregistrare înainte de pornire; verdictul 6 nov ~08:15. #477 rămâne în uz până îl bate un model nou și Adrian spune „da”.
+- **S78** (C-77, la noapte, procesor): salvarea „Mini Brain” — a stat pe loc la 18:30 pentru că executantul nu poate citi hub-ul de pe workstation; textul C-77/C-76 e acum copiat în `cyberspace/plan/`. Nimic șters.
+- **S79** (C-76, după S78): raport de spațiu + propunere de curățenie pe grupuri, nimic șters.
+- **S76c** (procesor, 6 nov de la 08:00): instrucțiuni formulate altfel → #513 urmează instrucțiuni sau doar șabloanele?
 
 ## Ce oferă proiectul celorlalți
-- **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Un model mai mare (S77) va avea aceeași arhitectură,
-  doar mai multe straturi — de știut pentru motorul din OS (memorie și viteză ~2–3× mai mari); nimic nu se schimbă în pachet fără „da”-ul lui Adrian.
+- **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Modelul mai mare (S77) are aceeași arhitectură,
+  doar 24 de straturi în loc de 12 (183M parametri; KGR1 F32 ~733 MB) — de știut pentru motorul din OS (memorie ~2× și viteză ~½); nimic nu se schimbă în pachet fără „da”-ul lui Adrian.
 - Motorul de referință `unelte/inferenta_bruta.py` și modulul `inferenta` (logit-uri identice); tokenizer pentru cod.
 - **Nota automată pentru răspunsuri în română** (`unelte/romana_raspunsuri.py noteaza`, deterministă, fără alt AI) + setul ascuns de 500.
 - Lecția S76b: 5 ore pe exerciții la imperativ învață un model mic să urmeze tipare de instrucțiuni fără să strice limba.

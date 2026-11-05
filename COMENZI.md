@@ -1020,7 +1020,7 @@ Format:
   `C:\Kronos\cyberspace` (listă de fișiere + SHA-256 pe cele mari): ce e DOAR în arhivă? (3) propune ce se poate șterge în siguranță (puncte de salvare vechi depășite, date
   intermediare care se pot regenera), cu GB eliberați, păstrând obligatoriu #459, #477, #513, `cod_c1/gpt.pt`, examenele, jurnalul, datele brute. Raport în `docs/rapoarte/`,
   rezumat în `plan/pentru_adrian.md`. **Nimic șters** — Adrian aprobă pe grupuri.
-- stare: preluat (2026-11-05 13:45, supraveghetor) — **S79** în `plan/coada.md`, aprobat; după S78 (C-77 are prioritate); doar procesor și disc, nimic șters
+- stare: preluat (2026-11-05 13:45, supraveghetor) — **S79** în `plan/coada.md`, aprobat; după S78 (C-77 are prioritate); doar procesor și disc, nimic șters · 2026-11-05 20:15: textul C-76 copiat în `cyberspace/plan/comenzi_hub_C76_C77.md` (executantul nu poate citi hub-ul); urmează după S78
 
 ### C-77 · kronos · Salvează și organizează ce e util din vechiul proiect „Mini Brain” (Desktop) înainte ca Adrian să-l șteargă
 - data: 2026-11-05 13:40 · de la: centrul de comandă, la cererea lui Adrian („copiază și organizează ce ai nevoie de acolo, apoi șterg tot”)
@@ -1040,7 +1040,7 @@ Format:
   nu cod). Fără date mari în git. NU atinge `kronos/`, examenul sau paznicul. Commit + push.
 - final: raport în `docs/rapoarte/` + rând în `plan/pentru_adrian.md`: „Mini Brain salvat (X GB în arhivă) — Adrian poate șterge ambele foldere”. **Nimic șters de agent.**
 - prioritate: înaintea lui C-76 (eliberează ~72 GB). Nu oprește antrenarea în curs.
-- stare: preluat (2026-11-05 13:45, supraveghetor) — **S78** în `plan/coada.md`, aprobat; după 14:00, imediat după S77a; paza discului: rămân ≥ 20 GB liberi, altfel baza geografică așteaptă (și v13 nu se șterge încă); nimic șters de agent
+- stare: preluat (2026-11-05 13:45, supraveghetor) — **S78** în `plan/coada.md`, aprobat; după 14:00, imediat după S77a; paza discului: rămân ≥ 20 GB liberi, altfel baza geografică așteaptă (și v13 nu se șterge încă); nimic șters de agent · 2026-11-05 20:15: oprit de executant la 18:30 (nu putea citi hub-ul de pe workstation) → textul C-77 copiat întocmai în `cyberspace/plan/comenzi_hub_C76_C77.md`, S78 iar aprobat, la noapte după pornirea S77b
 
 ### C-78 · kronos · Autentificarea Claude Code pe workstation reînnoită („token făcut”)
 - data: 2026-11-05 14:03 · de la: centrul de comandă, pentru Adrian
