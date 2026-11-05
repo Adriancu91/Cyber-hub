@@ -1,24 +1,21 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-05 07:35 (ora României) · **de:** sesiunea Cyber-GPU 50 (cloud, fără placă) — C-71, lucru continuu (SIMULARE)
+**Actualizat:** 2026-11-05 13:05 (ora României) · **de:** sesiunea Cyber-GPU 51 (cloud, fără placă) — C-75: cauza opririi I8 găsită în jurnalul real
 
 ## Acum
-- **Sesiunea 50 (C-71):** verificarea jurnalului lanțului urmărește acum și **fereastra VRAM** (`0x1700`, prin care I9 scrie tabelele de pagini):
-  fiecare mutare recitită egal, iar la final fereastra pusă la loc, ca Bus Master. Testat cu jurnalul real al driverului pe modelul din
-  `gpu-sim` (T85): lanțul tot TRECE, 2 greșeli plantate prinse. `8f83ce1`, 352 teste, CI verde. **Nimic testat pe RTX 3070 Ti.**
-- **Fără placă nu mai rămâne nimic cu plus cinstit în cyber-gpu:** I6–I10 sunt în SIMULARE, în lanț, cu jurnalul verificat pas cu pas.
-- **Sesiunea 49 (C-71):** jurnalul unei ferestre `gpu lant` complete se verifică acum **pas cu pas, dintr-o comandă**: `verifica_jurnal_lant`
-  (`chain_log::check_chain_journal`; `a2f9736`; 352 teste). Reguli: pașii doar-citire fără scrieri; I6/I7 în ordinea exactă; I8 doar ferestrele
-  GSP/SEC2 cu soneria întâi; golden + I9 doar sonerii (una pe apel RM) și fereastra VRAM; Bus Master pus exact la loc. Verdict: TRECE /
-  OPRIT CURAT la pas / DE ANALIZAT. În simulare: TRECE, 7 greșeli plantate prinse. Lanțul simulat încarcă acum I6/I7 prin DMA, ca pe placă.
-- **C-71 (lucru continuu):** tot drumul de la I6 la primul calcul e acum **un singur lanț** pentru `gpu lant`: `chain::WINDOW_CHAIN_FULL`
-  (13 pași) + `run_chain_ready` — și **trece cap-coadă în SIMULARE** cu codul real (T78; `e77d986`, docs `91816ec`; 349 teste, CI verde rularea 101).
+- **C-75 — de ce I8 s-a oprit pe placă (os-246):** jurnalul real arată `bar0 w 0x110040: 0x00000000 <- 0x09c71000 => 0x00000000` — **cutia GSP nu a
+  păstrat adresa LibOS**. Booter a mers (cutia SEC2 = 0, WPR2 lărgit, RISC-V activ), dar GSP-RM a pornit fără adresa argumentelor LibOS, deci nu și-a
+  făcut cozile. Cauza (DEDUS, ordinea nouveau / RM 570.144): după FWSEC, GSP trebuie **resetat în modul RISC-V** înainte de cutii.
+- **Reparația, în SIMULARE** (`8ed3993`, `a701cb9`; 356 teste, toate verificările trec): `falcon::booter_load_dma_libos` = resetare GSP + BCR_CTRL = 0x111 →
+  cutiile LibOS **recitite** (dacă nu se păstrează: oprire înainte de Booter) → Booter → `FALCON_OS` = 570144 → RISC-V activ. Simulatorul reproduce
+  placa (ordinea veche: I7 TRECE, I8 oprit), iar în ordinea nouă trece tot lanțul. `verifica_jurnal_lant` numește cauza pe jurnalul real.
   **Nimic testat pe RTX 3070 Ti.**
-- **Defect găsit în simulare, înainte de placă:** mesajele către GSP-RM (golden image, I9) nu sunau soneria GSP după fiecare mesaj — pe placă
-  GSP-RM n-ar fi răspuns. Reparat prin adăugare (`QueueTransportBell`); fără sonerie, lanțul se oprește curat la golden (T79).
-- C-69 (sesiunea 47): I7 verificat ca I6, costul unei lansări, lista ferestrelor `cyber-gpu/docs/FEREASTRA_C-69.md`.
-- Pe placă până acum: I0–I4 doar citire TREC; I6 a scris (4 nov), FWSEC-FRTS reușit; verificarea nouă (C-66) e în os-224.
-- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `8f83ce1`).
+- Răspunsuri C-75: (1) `0xa0` la `0x111388` = RISC-V **activ** (bitul 7), nu oprit; (2) cele ~2 s nu sunt cauza; (3) formatul cozii se vede abia când
+  există coada. Turul de după: fapt nou `i6.wpr2.etapa` („lărgit pentru GSP-RM (după I7)” e normal).
+- Pentru OS: `cyber-gpu/integration/cyber-universe/C-75_i7-reset-gsp-libos.md` — la I7 un singur apel `booter_load_dma_libos(…, I7Prep::libos)`
+  în locul scrierilor proprii; 3 scrieri noi, toate în fereastra GSP. Răspunde și la întrebarea 1 a sesiunii OS.
+- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `a701cb9`).
+- Pe placă până acum: I0–I4 doar citire TREC; **I6 TRECE** (os-242); **I7 TRECE** (os-246, Booter); I8 oprit — cauza de mai sus.
 
 ## Lista scurtă pentru fereastra pe hardware (în ordine; `gpu lant` + „DA” le rulează pe toate, oprire la primul eșec)
 1. Pornire rece (cablul scos 30 s); `gpu pregatire-i6` → „WPR2 coborat”, 0 scrieri.
@@ -33,14 +30,17 @@
 (Pașii 3–7 cer întâi partea OS din C-71; până atunci lanțul OS se oprește cinstit la I7.)
 
 ## Urmează
-0. Adrian a spus „da I7–I10” (C-72, 07:27): sesiunea OS pune I7–I10 în `gpu lant` (P6-56). De la noi: nimic nou de cod; nota
-   `C-71_fereastra-vram.md` (fereastra VRAM pusă la loc și la eșec). Soneria canalului de lucru `0xBB0090` (I10) e DEDUSĂ din surse —
-   prima ei probă reală e la fereastră; driverul nostru doar o descrie, scrierea o face OS-ul, în lanț, după „DA”.
-   După fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`. Fără comandă nouă sau jurnal nou: oprire scurtă.
-1. Sesiunea OS: `gpu lant` pe `WINDOW_CHAIN_FULL`, pas cu pas (nota `cyber-gpu/integration/cyber-universe/C-71_gpu-lant-complet.md`).
-2. Sesiunea OS (opțional): în jurnalul de pe stick, liniile `pas …` ale lanțului + numărul apelurilor RM (nota `cyber-gpu/integration/cyber-universe/C-71_jurnal-lant.md`).
+0. Sesiunea OS: I7 cu `booter_load_dma_libos` (nota C-75) → Release nou → fereastra următoare (pornire rece, `gpu lant` + DA o dată).
+   Așteptat: rândul `0x110040 … => 0x09c71000` (adresa păstrată) și I8 TRECE; dacă tot 0 → oprire curată înainte de Booter (date noi, fără risc).
+1. După fereastră: `verifica_jurnal_lant <jurnal> <adresa GspFwWprMeta>` pe jurnalul din `rezultate/`.
+2. Întrebarea 3 a OS (I10, soneria `0xBB0090`, DEDUSĂ): citirile VRAM ale I10 prin `VramWindow::read_u32`, invalidarea TLB prin `invalidate_tlb`
+   înainte de prima lansare; soneria doar după I8 + golden + I9 TREC pe placă. Întrebarea 2 (zona VRAM peste 256 MiB, sub GSP-RM): alegerea prudentă e
+   compatibilă cu codul nostru; nu o putem confirma fără placă.
 
 ## Ce oferă proiectul celorlalți
+- **Nou (sesiunea 51, doar adăugări):** `falcon::{booter_load_dma_libos, gsp_reset_into_riscv, write_libos_mailboxes, GSP_RM_APP_VERSION_570_144, GSP_BCR_RISCV}`,
+  `i6_log::{check_i7_libos, I7LibosSummary}`, câmpul `ChainJournal::i7_libos`, `I6Check::wpr2_stage` + faptul de tur `i6.wpr2.etapa`; în `gpu-sim`:
+  `FakeGsp::{gsp_mailbox_locked, libos_at_booter}`. `booter_load_dma`, `check_i7`, `i6.trece` neschimbate.
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). Față de fixarea OS-ului (`9ac89b8`):
   **doar adăugări** — C-69: `falcon::{read_after_i7, I7Status, I7_STATUS_READS}`, `i6_log::{check_i7, check_i6_i7_journal, …}`, `launch_cost`;
   C-71: `chain::{WINDOW_CHAIN_FULL, READY_FOR_WINDOW, run_chain_ready}`, `golden::QueueTransportBell`; sesiunea 49: modulul nou `chain_log`
@@ -50,8 +50,8 @@
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: partea OS din C-71 (`gpu lant` complet, testat în QEMU cu `--sim`).
-- De la Adrian: fereastra pe workstation (lista de mai sus) și jurnalul de pe stick în `rezultate/`.
+- De la `cyber-universe`: I7 cu `booter_load_dma_libos` (nota C-75), Release nou.
+- De la Adrian: fereastra următoare pe workstation și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.

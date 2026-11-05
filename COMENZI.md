@@ -1003,4 +1003,5 @@ Format:
   RM 570.144 și nova-core; clean-room). Repară în SIMULARE cu valorile reale din jurnal (fapte noi în `gpu_sim::observed`), propune fixarea pentru OS. Ajustează și faptul `i6.trece`
   din turul de după (după I7 WPR2 e normal lărgit). Nimic pe placă fără Adrian. **Adrian mai e la workstation până la ~14:00** — dacă găsești o reparație sigură și mică până la ~13:30,
   scrie-o în stare; altfel fereastra următoare.
-- stare: nou
+- stare: gata pentru cyber-gpu (preluat 2026-11-05 12:52, terminat 13:05, sesiunea Cyber-GPU 51) — partea cyber-universe (apelul nou la I7) rămâne la sesiunea OS
+- rezultat: cauza e în jurnal — cutia GSP `0x110040` n-a păstrat adresa LibOS (scris `0x09c71000`, citit 0), deci GSP-RM (RISC-V activ, `0xa0` = bitul 7) a pornit fără cozi; în SIMULARE, `booter_load_dma_libos` resetează GSP în RISC-V după FWSEC, recitește cutiile (oprire înainte de Booter dacă nu se păstrează) și scrie `FALCON_OS` după Booter — pentru OS: `cyber-gpu/integration/cyber-universe/C-75_i7-reset-gsp-libos.md` (fixare ≥ `a701cb9`).
