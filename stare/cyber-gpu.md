@@ -1,8 +1,13 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-05 13:45 (ora României) · **de:** sesiunea Cyber-GPU 52 (cloud, fără placă) — soneria I10 din antetele MIT (după C-75 din sesiunea 51)
+**Actualizat:** 2026-11-05 19:30 (ora României) · **de:** sesiunea Cyber-GPU 53 (cloud, fără placă) — zona VRAM după I7 (răspuns pentru OS)
 
 ## Acum
+- **Sesiunea 53 — zona VRAM pentru golden/I9/I10 (cererea OS din `stare/cyber-universe.md`):** pe WPR2 citit pe placă după I7 (5 nov,
+  `0x1f4100000..0x1ffee0000`), aranjamentul nostru dă același început; zona OS (`max(ecran, 256 MiB)` … `free_below()`) se termină la `0x1f4000000`,
+  sub heap-ul non-WPR și sub WPR2 → **zona e bună**. Verificare nouă, doar aritmetică: `FbLayout::free_after_i7(wpr2_citit)` (eroare înainte de orice
+  scriere în VRAM dacă WPR2 nu e unde a cerut `GspFwWprMeta`), T91; `60740a3`, 358 teste. Nota: `cyber-gpu/integration/cyber-universe/C-71_zona-vram-dupa-i7.md`.
+  **Nimic testat pe RTX 3070 Ti.**
 - **Sesiunea 52 — întrebarea 3 a OS (I10):** soneria canalului de lucru `0xBB0090` e acum **DOCUMENTATĂ** (antetul MIT 570.144 `tu102/dev_vm.h`:
   `NV_VIRTUAL_FUNCTION_DOORBELL = 0x30090` la baza `0xB80000`; calea RM 570.144 pentru GA104 citită ca specificație), nu doar dedusă. Constanta nouă
   `push::DOORBELL` (= `DOORBELL_INFERRED`, verificat la compilare, T90; `20b4a3b`, 357 teste). Pe placă: încă neobservată; prima scriere = I10 în lanț.
@@ -18,7 +23,7 @@
   există coada. Turul de după: fapt nou `i6.wpr2.etapa` („lărgit pentru GSP-RM (după I7)” e normal).
 - Pentru OS: `cyber-gpu/integration/cyber-universe/C-75_i7-reset-gsp-libos.md` — la I7 un singur apel `booter_load_dma_libos(…, I7Prep::libos)`
   în locul scrierilor proprii; 3 scrieri noi, toate în fereastra GSP. Răspunde și la întrebarea 1 a sesiunii OS.
-- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `20b4a3b`).
+- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `60740a3`).
 - Pe placă până acum: I0–I4 doar citire TREC; **I6 TRECE** (os-242); **I7 TRECE** (os-246, Booter); I8 oprit — cauza de mai sus.
 
 ## Lista scurtă pentru fereastra pe hardware (în ordine; `gpu lant` + „DA” le rulează pe toate, oprire la primul eșec)
@@ -31,17 +36,17 @@
 7. Costul unei lansări: 16 lansări cu marcă de timp → mediana.
 8. Bus Master la loc, tur de citire, oprire completă; jurnalul de pe stick + poze în `rezultate/`.
 9. Noi, după: `verifica_jurnal_lant <jurnal> <adresa GspFwWprMeta> [apeluri RM]` → TRECE / OPRIT CURAT / DE ANALIZAT.
-(Pașii 3–7 cer întâi partea OS din C-71; până atunci lanțul OS se oprește cinstit la I7.)
+(Toți pașii sunt în OS din `os-249`, testați doar în SIMULARE.)
 
 ## Urmează
-0. Sesiunea OS: I7 cu `booter_load_dma_libos` (nota C-75) → Release nou → fereastra următoare (pornire rece, `gpu lant` + DA o dată).
-   Așteptat: rândul `0x110040 … => 0x09c71000` (adresa păstrată) și I8 TRECE; dacă tot 0 → oprire curată înainte de Booter (date noi, fără risc).
+0. Fereastra următoare pe workstation cu `os-249` (tot lanțul I6 → I10 e în OS): pornire rece, `gpu lant` + DA o dată. Așteptat: rândul
+   `0x110040 … => 0x09c71000` (adresa LibOS păstrată) și I8 TRECE; apoi golden, I9, I10 (`add64` bit cu bit).
 1. După fereastră: `verifica_jurnal_lant <jurnal> <adresa GspFwWprMeta>` pe jurnalul din `rezultate/`.
-2. Întrebarea 3 a OS (I10, soneria `0xBB0090`, acum din antetul MIT — nota C-72_soneria-i10.md): citirile VRAM ale I10 prin `VramWindow::read_u32`, invalidarea TLB prin `invalidate_tlb`
-   înainte de prima lansare; soneria doar după I8 + golden + I9 TREC pe placă. Întrebarea 2 (zona VRAM peste 256 MiB, sub GSP-RM): alegerea prudentă e
-   compatibilă cu codul nostru; nu o putem confirma fără placă.
+2. Dacă I8 trece pe placă: compararea zonei VRAM cu regiunile FB raportate de GSP-RM (`GET_GSP_STATIC_INFO`, DEDUS).
+3. Fără comandă nouă sau jurnal nou: sesiunile cyber-gpu se opresc scurt (nimic cu plus cinstit fără placă).
 
 ## Ce oferă proiectul celorlalți
+- **Nou (sesiunea 53, doar adăugare):** `FbLayout::free_after_i7` (zona VRAM verificată pe WPR2 recitit după I7); `free_below` neschimbat.
 - **Nou (sesiunea 52, doar adăugare):** `push::DOORBELL` (soneria canalului de lucru, din antetul MIT); `DOORBELL_INFERRED`, `chain_log::WORK_DOORBELL` neschimbate.
 - **Nou (sesiunea 51, doar adăugări):** `falcon::{booter_load_dma_libos, gsp_reset_into_riscv, write_libos_mailboxes, GSP_RM_APP_VERSION_570_144, GSP_BCR_RISCV}`,
   `i6_log::{check_i7_libos, I7LibosSummary}`, câmpul `ChainJournal::i7_libos`, `I6Check::wpr2_stage` + faptul de tur `i6.wpr2.etapa`; în `gpu-sim`:
@@ -55,7 +60,7 @@
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: I7 cu `booter_load_dma_libos` (nota C-75) și I10 (nota C-72_soneria-i10), Release nou.
+- De la `cyber-universe`: opțional, `free_after_i7` în loc de `free_below` la zona golden (nota C-71_zona-vram-dupa-i7); jurnalele `gpu lant` cu `os-249`.
 - De la Adrian: fereastra următoare pe workstation și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
