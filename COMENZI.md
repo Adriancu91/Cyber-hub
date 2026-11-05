@@ -971,6 +971,7 @@ Format:
 - progres (cyber-gpu, 2026-11-05 07:35, sesiunea Cyber-GPU 50): verificarea jurnalului urmărește și fereastra VRAM (mutări recitite, pusă la loc la final), în SIMULARE cu jurnalul real al driverului; fără placă nu mai rămâne nimic cu plus cinstit în cyber-gpu.
 - progres (cyber-gpu, 2026-11-05 13:45, sesiunea Cyber-GPU 52): soneria canalului de lucru `0xBB0090` (I10) confirmată din antetul MIT 570.144 (`NV_VIRTUAL_FUNCTION_DOORBELL`), constanta `push::DOORBELL`; răspunsul la întrebarea 3 a OS în `cyber-gpu/integration/cyber-universe/C-72_soneria-i10.md`.
 - progres (cyber-gpu, 2026-11-05 19:30, sesiunea Cyber-GPU 53): zona VRAM pentru golden/I9/I10 cerută de OS confirmată pe WPR2 real după I7 (capătul `0x1f4000000`, sub GSP-RM); verificare nouă `FbLayout::free_after_i7` (T91), nota `cyber-gpu/integration/cyber-universe/C-71_zona-vram-dupa-i7.md`.
+- progres (cyber-gpu, 2026-11-06 01:35, sesiunea Cyber-GPU 54): observația OS rezolvată în SIMULARE: Booter-ul simulat lărgește WPR2 din `GspFwWprMeta` ca placa (`FakeGsp::wpr_meta_mem`, T92); nota `cyber-gpu/integration/cyber-universe/C-71_wpr2-largit-in-sim.md`.
 
 ### C-72 · cyber-universe · „Da I7–I10” — pune pașii I7–I10 în `gpu lant` (scrieri noi pe placă, doar stick-ul de test, doar cu Adrian + „DA”)
 - data: 2026-11-05 07:27 · de la: **Adrian** („da i7-i10”), prin centrul de comandă
