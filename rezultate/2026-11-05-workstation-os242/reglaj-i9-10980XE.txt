@@ -1,0 +1,16 @@
+# Reglajul motorului KGR1 pentru acest procesor (kronos-calcul --cauta, P6-28).
+# Il citeste `kronos` la pornire. Se poate sterge: atunci se folosesc valorile implicite.
+procesor = Intel-R-Core-TM-i9-10980XE-CPU-3-00GHz
+vectori = avx2
+fire = 35
+ordine = t-j
+fire_proiectie = 18
+planificare = bloc
+# masurat: 1 rand 251 us, 16 randuri 298 us (scalar pe 1 fir: 1796 us, 29436 us), E = 512, TSC 3110470 cicluri/ms
+# pe model (/usb/kronos/kronos_459_q8_0.kgr, 104.6 MiB pe simbol): 2040 us/simbol (scalar pe 1 fir: 166703 us)
+# proiectia: 18 fire, 2198 us/simbol pe model
+# bariera goala pe 35 fire: 1.18 us
+# bariera goala pe 12 fire: 0.92 us
+# bucati: 4 pe fir, 2212 us/simbol pe model
+# echipe: cele mai bune de 4, 2237 us/simbol pe model
+# un bloc pe simbol: cel mai bun 35 fire, 1 bucati pe fir, 2040 us/simbol pe model
