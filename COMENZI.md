@@ -977,6 +977,7 @@ Format:
   **Prioritar:** Adrian e la workstation de la ~08:30 (C-73) — dacă Release-ul cu I7–I10 e gata și verde până la ~08:45, scrie în stare care e; altfel testăm `os-242` și I7–I10 la fereastra următoare.
 - **NOTĂ (Adrian, 2026-11-05 09:23): rămâne la workstation până la ~14:00 și vrea să testeze direct până la I10.** Ținta: Release verde cu I7–I10 în `gpu lant` până la ~13:15. Dacă nu ajunge I10, un Release cu ce e gata (I7, I8…) până la ~13:15, ca să se testeze cât mai departe. I6 a TRECUT azi pe placă cu `os-242` (`rezultate/2026-11-05-workstation-os242/`). Corectează și faptul `i6.trece` din turul de citire (încă criteriul vechi).
 - stare: preluat (2026-11-05 05:30 UTC, sesiunea OS) · sarcina P6-56
+- progres (2026-11-05 10:48 UTC, sesiunea OS): I7 + I8 (`os-245`, `os-246`), **golden + I9 în `os-247`** (CI verde); I10 așteaptă soneria canalului `0xBB0090` de la cyber-gpu — testat doar în SIMULARE
 
 ### C-73 · kronos · Fereastra lui Adrian pe workstation: 5 nov de la ~08:30 (~1 h) — placa și calculatorul libere
 - data: 2026-11-05 07:27 · de la: **Adrian** („într-o oră ajung la workstation”), prin centrul de comandă

@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-05 12:15 (ora României) · **de:** sesiunea OS programată (11:43) · **în CI: golden + I9** (`ab45118`, Release `os-247` așteptat ~12:50) · ultimul Release: `os-246` (I7 + cutiile LibOS + I8)
+**Actualizat:** 2026-11-05 12:50 (ora României) · **de:** sesiunea OS programată (11:43) · **Release NOU `os-247`** (CI verde, 12:44): `gpu lant` cu I7 + I8 + **golden + I9**
 
 ## Acum
 - **C-72 (I7–I10 în `gpu lant`), sarcina P6-56 — pas 1 și pas 2 gata, testate doar în SIMULARE:**
@@ -10,7 +10,7 @@
 - **CI verde → Release `os-245` (10:16)** cu I7 + I8 (prima rulare a picat doar la `https-real` — `api.github.com` n-a răspuns, fără legătură cu codul; rerulată, verde).
 - **`os-246` (CI verde, 11:15; `3a88d95`):** I7 scrie înainte de Booter cutiile GSP = adresa paginii LibOS și după Booter versiunea 570144
   (aceleași scrieri, în aceeași ordine, ca `CORE_RESUME` din secvențiatorul cyber-gpu — răspunde la jumătate din întrebarea 1; trecerea GSP pe RISC-V rămâne întrebare); faptul `i6.trece` din tur = rezultatul I6, `i6.pregatire` = verificarea de dinainte (cererea lui Adrian).
-- **NOU, P6-56 pas 2b (`ab45118`, în CI): golden + I9 în `gpu lant`**, testate doar în SIMULARE: mesajele RM către GSP-RM (fiecare cu o sonerie GSP `0x110C00`),
+- **NOU, P6-56 pas 2b (`ab45118`, CI verde → Release `os-247`): golden + I9 în `gpu lant`**, testate doar în SIMULARE: mesajele RM către GSP-RM (fiecare cu o sonerie GSP `0x110C00`),
   tabelele de pagini în VRAM prin fereastra VRAM (`0x1700` + `0x700000-0x7FFFFF`, gard nou în OS care nu lasă altceva), fiecare cuvânt recitit, fereastra pusă la loc.
   Zona VRAM a OS-ului (aleasă prudent, DEDUS): **peste 256 MiB** (tot BAR1 = tot ce poate arăta ecranul UEFI) și **sub zonele GSP-RM** (`FbLayout::free_below`, aceeași hartă ca la I6/I7); restul protejat.
   Dacă framebuffer-ul ecranului nu e în BAR1 → oprire înainte de orice scriere VRAM. În simulare: golden 11 mesaje RM, I9 14 mesaje, SM 8.6; lanțul se oprește cinstit la **I10**.
@@ -45,7 +45,7 @@
   `gpu lant` + `DA` **o singură dată** → poze la toate rândurile (durează mai mult: ~750 de scrieri noi la I7, fiecare pe stick), `raport`, jurnalele
   `/usb/raport/gpu-jurnal-*.txt` în `rezultate/2026-11-05-workstation-os246/`. Poză și la `gpu tur` (faptul nou `i6.trece`). Așteptat: I6 TRECE; **I7 — prima probă reală** (rândul „I7: cutia SEC2 0 = …,
   GSP RISC-V ACTIV/NU”); I8 probabil oprit curat (timeout, întrebarea 1 de mai sus). Apoi oprire completă (cablul scos 30 s).
-  **Dacă apare Release-ul `os-247` (golden + I9; ~12:50, îl scriu aici când e verde) folosește-l pe acela în locul lui `os-246`:** aceiași pași; în plus, dacă I8 trece,
+  **Release-ul `os-247` e GATA (golden + I9, CI verde 12:44) — folosește-l pe acela în locul lui `os-246`** (`cyber-universe-gpu-scrie-usb.img` din `os-247`): aceiași pași, jurnalele în `rezultate/2026-11-05-workstation-os247/`; în plus, dacă I8 trece,
   lanțul merge la golden și I9 (scrieri noi: sonerii GSP + tabele în VRAM peste 256 MiB) și se oprește cinstit la I10. Poze și la rândurile „golden: ecranul in VRAM …” și „pas golden / pas I9”.
 - **Lista pentru `os-242`:** (1) stick-ul de test: pornire rece, `gpu pregatire-i6` → poză, `gpu lant` + `DA` o dată → poze, `raport`;
   (2) stick-ul normal: `run kronos --control`, `run kronos --profil --fara-ecran --n 64 Buna ziua` (și cu `--fara-cedari`) → poze;

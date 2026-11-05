@@ -148,3 +148,4 @@
 - 2026-11-05 10:35 — Completare la întrebarea pentru cyber-gpu: înainte de Booter lipsesc trecerea GSP pe RISC-V și cutiile LibOS (după: versiunea în OS) — la I7 pe placă e posibil „GSP RISC-V NU”.
 - 2026-11-05 11:20 (sesiunea OS 05:27 UTC): `3a88d95` — I7 scrie cutiile GSP (pagina LibOS) înainte de Booter și versiunea după (ca CORE_RESUME din cyber-gpu); `i6.trece` din tur = rezultatul I6; CI verde → **Release `os-246`**, de testat azi în locul lui `os-245`.
 - 2026-11-05 12:15 (sesiunea OS 09:43 UTC): P6-56 pas 2b — golden + I9 în `gpu lant` (`ab45118`): mesaje RM cu soneria GSP, tabelele în VRAM prin fereastra VRAM (gard nou), zona VRAM peste 256 MiB și sub GSP-RM; testat în simulare, oprire cinstită la I10. În CI → `os-247`.
+- 2026-11-05 12:50: CI verde → **Release `os-247`** (golden + I9 în `gpu lant`), de testat azi în locul lui `os-246`; anunțat pe telefon.
