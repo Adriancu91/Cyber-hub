@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-05 13:45 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-05 14:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -9,11 +9,11 @@
 - **Kronos-Cod (linia `cod_c1`, S63):** 0,5004 biți/octet; școala de cod (S72b) a ieșit STRICĂ → pauză pe cod, trecem pe română (C-64).
 - **S76b gata (5 nov 05:05): AJUTĂ** — copia **#513** (5 ore din #477 pe exercițiile de română S76a) urmează instrucțiunile din setul ascuns:
   R1 **98,97** (#477: 37,47); română 1,2060, cod și R2 puțin mai bine, nicio regresie. Același tip de instrucțiuni ca în antrenare → generalizarea se măsoară azi (S76c). **1221 teste trec.**
-- **Fereastra lui Adrian pe workstation (C-73, prelungită: ~08:30–~14:00):** nimic pe placă și nimic lung pe procesor.
+- **Fereastra lui Adrian pe workstation (C-73) s-a terminat la ~14:00**; autentificarea Claude Code reînnoită (C-78). Executantul pornește S77a.
 - **#477 în OS (os-242, 5 nov, `rezultate/2026-11-05-workstation-os242/`):** CONTROL TRECE, **256,0 simb/s** (4 nov 206,4; 3 nov 125,4) — mulțumiri `cyber-universe`.
 
 ## Urmează
-- **S77a** (azi după 14:00, gata până la 18:30): Kronos crescut din #477 în adâncime (24–42 de straturi, ~180–310M), straturi noi „neutre” → aceeași ieșire, verificată în PyTorch
+- **S77a** (acum, gata până la 18:30): Kronos crescut din #477 în adâncime (24–42 de straturi, ~180–310M), straturi noi „neutre” → aceeași ieșire, verificată în PyTorch
   și pe vectorii KGR1; test de memorie/viteză pe placă, fără antrenare. Alegerea: cel mai mare sub 6.500 MB și ≥ 2 pași/s.
 - **S78** (C-77, după S77a): salvarea părții utile din „Mini Brain” în `C:\Kronos\arhiva\mini-brain\` (copie + SHA-256 + lecții), nimic șters.
 - **S79** (C-76, după S78): raport de spațiu pe workstation + ce e doar în arhiva de mutare + propunere de curățenie pe grupuri, nimic șters.
@@ -32,8 +32,7 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- **URGENT, AZI ÎNAINTE DE 14:00 (cât e la workstation):** autentificarea Claude Code expiră de mâine, 6 nov → executantul și raportul de dimineață s-ar opri.
-  Pe workstation: `claude setup-token` (sau `claude auth login`). Probabil privește și sarcinile programate ale altor proiecte de pe același calculator.
+- Autentificarea Claude Code pe workstation: reînnoită (C-78). Dacă avertismentul de expirare reapare, executantul îl semnalează; Adrian e la workstation 6 nov ~08:30.
 - După S78: confirmarea că poate șterge folderele „test ai brain”; după S79: ce grupuri de fișiere se șterg (agentul nu șterge nimic).
 - Decizia: #513 îl înlocuiește pe #477? (recomandat după S76c).
 - Fără grabă: dacă cifrele S58 contează; permisiunea `taskkill`; ora limită 18:30 la bucla automată; Release-ul privat `kronos-kgr1-477`.

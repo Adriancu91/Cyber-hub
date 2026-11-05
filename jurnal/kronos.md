@@ -94,3 +94,4 @@
 - 2026-11-05 09:05 — C-73 prelungit de Adrian până la ~14:00: S77a mutat după 14:00, S76c după S77a sau pe 6 nov dimineața. Nimic nu rulează; noaptea S76b curată, 1221 teste trec.
 - 2026-11-05 11:15 — Fereastra C-73 continuă până la ~14:00, nimic nu rulează; #477 în OS: CONTROL trece, 256 simb/s (os-242). S77a după 14:00. Nicio comandă nouă pentru kronos.
 - 2026-11-05 13:45 — C-77 preluat → S78 (salvarea Mini Brain, copie + SHA-256, nimic șters, paza discului ≥ 20 GB) și C-76 → S79 (raport de spațiu, nimic șters). Ordinea după 14:00: S77a → S78 → S79.
+- 2026-11-05 14:20 — C-78 (token făcut) preluat și închis: cererea scoasă din Blocaje. Fereastra lui Adrian s-a terminat; urmează S77a → S78 → S79.

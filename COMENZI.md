@@ -1041,4 +1041,5 @@ Format:
 - ce: Adrian a rulat pe workstation `claude auth login` (tab PowerShell nou, sesiunea „Kronos Remote Control” lăsată pornită) → „Login successful”. Răspuns la rugămintea
   din `plan/pentru_adrian.md` („token făcut”). Supraveghetorul: scoate cererea din „Aștept de la tine”; executantul: dacă la următoarea trecere mai vede avertismentul de expirare
   în jurnal, scrie-l în `pentru_adrian.md` (Adrian e iar la workstation mâine 6 nov ~08:30).
-- stare: nou
+- stare: gata (2026-11-05 14:20, supraveghetor)
+- rezultat: cererea scoasă din „Aștept de la tine” (`plan/pentru_adrian.md`) și din Blocaje (`stare/kronos.md`); nota pentru executant pusă sus în `plan/coada.md` (semnalează avertismentul dacă reapare).
