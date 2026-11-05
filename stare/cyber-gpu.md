@@ -1,8 +1,12 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-05 13:05 (ora României) · **de:** sesiunea Cyber-GPU 51 (cloud, fără placă) — C-75: cauza opririi I8 găsită în jurnalul real
+**Actualizat:** 2026-11-05 13:45 (ora României) · **de:** sesiunea Cyber-GPU 52 (cloud, fără placă) — soneria I10 din antetele MIT (după C-75 din sesiunea 51)
 
 ## Acum
+- **Sesiunea 52 — întrebarea 3 a OS (I10):** soneria canalului de lucru `0xBB0090` e acum **DOCUMENTATĂ** (antetul MIT 570.144 `tu102/dev_vm.h`:
+  `NV_VIRTUAL_FUNCTION_DOORBELL = 0x30090` la baza `0xB80000`; calea RM 570.144 pentru GA104 citită ca specificație), nu doar dedusă. Constanta nouă
+  `push::DOORBELL` (= `DOORBELL_INFERRED`, verificat la compilare, T90; `20b4a3b`, 357 teste). Pe placă: încă neobservată; prima scriere = I10 în lanț.
+  Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-72_soneria-i10.md` (doar în pasul I10, citiri prin `VramWindow::read_u32`, `invalidate_tlb` înainte).
 - **C-75 — de ce I8 s-a oprit pe placă (os-246):** jurnalul real arată `bar0 w 0x110040: 0x00000000 <- 0x09c71000 => 0x00000000` — **cutia GSP nu a
   păstrat adresa LibOS**. Booter a mers (cutia SEC2 = 0, WPR2 lărgit, RISC-V activ), dar GSP-RM a pornit fără adresa argumentelor LibOS, deci nu și-a
   făcut cozile. Cauza (DEDUS, ordinea nouveau / RM 570.144): după FWSEC, GSP trebuie **resetat în modul RISC-V** înainte de cutii.
@@ -14,7 +18,7 @@
   există coada. Turul de după: fapt nou `i6.wpr2.etapa` („lărgit pentru GSP-RM (după I7)” e normal).
 - Pentru OS: `cyber-gpu/integration/cyber-universe/C-75_i7-reset-gsp-libos.md` — la I7 un singur apel `booter_load_dma_libos(…, I7Prep::libos)`
   în locul scrierilor proprii; 3 scrieri noi, toate în fereastra GSP. Răspunde și la întrebarea 1 a sesiunii OS.
-- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `a701cb9`).
+- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `20b4a3b`).
 - Pe placă până acum: I0–I4 doar citire TREC; **I6 TRECE** (os-242); **I7 TRECE** (os-246, Booter); I8 oprit — cauza de mai sus.
 
 ## Lista scurtă pentru fereastra pe hardware (în ordine; `gpu lant` + „DA” le rulează pe toate, oprire la primul eșec)
@@ -33,11 +37,12 @@
 0. Sesiunea OS: I7 cu `booter_load_dma_libos` (nota C-75) → Release nou → fereastra următoare (pornire rece, `gpu lant` + DA o dată).
    Așteptat: rândul `0x110040 … => 0x09c71000` (adresa păstrată) și I8 TRECE; dacă tot 0 → oprire curată înainte de Booter (date noi, fără risc).
 1. După fereastră: `verifica_jurnal_lant <jurnal> <adresa GspFwWprMeta>` pe jurnalul din `rezultate/`.
-2. Întrebarea 3 a OS (I10, soneria `0xBB0090`, DEDUSĂ): citirile VRAM ale I10 prin `VramWindow::read_u32`, invalidarea TLB prin `invalidate_tlb`
+2. Întrebarea 3 a OS (I10, soneria `0xBB0090`, acum din antetul MIT — nota C-72_soneria-i10.md): citirile VRAM ale I10 prin `VramWindow::read_u32`, invalidarea TLB prin `invalidate_tlb`
    înainte de prima lansare; soneria doar după I8 + golden + I9 TREC pe placă. Întrebarea 2 (zona VRAM peste 256 MiB, sub GSP-RM): alegerea prudentă e
    compatibilă cu codul nostru; nu o putem confirma fără placă.
 
 ## Ce oferă proiectul celorlalți
+- **Nou (sesiunea 52, doar adăugare):** `push::DOORBELL` (soneria canalului de lucru, din antetul MIT); `DOORBELL_INFERRED`, `chain_log::WORK_DOORBELL` neschimbate.
 - **Nou (sesiunea 51, doar adăugări):** `falcon::{booter_load_dma_libos, gsp_reset_into_riscv, write_libos_mailboxes, GSP_RM_APP_VERSION_570_144, GSP_BCR_RISCV}`,
   `i6_log::{check_i7_libos, I7LibosSummary}`, câmpul `ChainJournal::i7_libos`, `I6Check::wpr2_stage` + faptul de tur `i6.wpr2.etapa`; în `gpu-sim`:
   `FakeGsp::{gsp_mailbox_locked, libos_at_booter}`. `booter_load_dma`, `check_i7`, `i6.trece` neschimbate.
@@ -50,7 +55,7 @@
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: I7 cu `booter_load_dma_libos` (nota C-75), Release nou.
+- De la `cyber-universe`: I7 cu `booter_load_dma_libos` (nota C-75) și I10 (nota C-72_soneria-i10), Release nou.
 - De la Adrian: fereastra următoare pe workstation și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
