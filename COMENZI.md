@@ -993,3 +993,14 @@ Format:
   mare pentru stick-ul de test + un script `tools/pune-firmware.ps1` care copiază `firmware\` de pe stick-ul normal pe cel de test (fără firmware în repo), sau citirea firmware-ului de
   pe al doilea stick dacă sunt băgate amândouă. Verifică și că firmware-ul încape. Documentează în pașii ferestrei.
 - stare: nou
+
+### C-75 · cyber-gpu (+ cyber-universe) · I7 TRECE pe placă, I8 oprit la „antetul cozii de stare nu are forma 570.144” — analizează jurnalul real
+- data: 2026-11-05 12:50 · de la: centrul de comandă (delegare Adrian), după `rezultate/2026-11-05-workstation-os242/` (`os246-gpu-jurnal-002.txt`, 1519 rânduri; poza 06)
+- ce: pe RTX 3070 Ti reală, cu os-246: I6 TRECE; **I7 TRECE** (Booter pe SEC2 încărcat prin DMA, cutia SEC2 `0x840040/44` = 0 după, `0x111388` = `0xa0`; WPR2 după I7 =
+  `0x1f4100000..0x1ffee0000`, adică lărgit de Booter pentru GSP-RM); **I8 EȘUAT** la ~2 s după soneria (`bar0 w 0x110c00 = 0`): „cozi GSP: antetul cozii de stare nu are forma
+  570.144 (GSP nu a pornit sau altă versiune)”. Întrebări: (1) `0xa0` la `0x111388` = RISC-V activ sau oprit? (2) așteptarea de ~2 s e prea scurtă pentru GSP-RM (RM/nova așteaptă
+  mai mult și citesc întâi alt registru de stare, ex. MAILBOX/`GSP_INIT_DONE` în SCRATCH)? (3) adresa/formatul cozii de stare față de ce scrie GSP-RM 570.144 (citește ca specificație
+  RM 570.144 și nova-core; clean-room). Repară în SIMULARE cu valorile reale din jurnal (fapte noi în `gpu_sim::observed`), propune fixarea pentru OS. Ajustează și faptul `i6.trece`
+  din turul de după (după I7 WPR2 e normal lărgit). Nimic pe placă fără Adrian. **Adrian mai e la workstation până la ~14:00** — dacă găsești o reparație sigură și mică până la ~13:30,
+  scrie-o în stare; altfel fereastra următoare.
+- stare: nou
