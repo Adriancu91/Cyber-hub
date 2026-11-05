@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-05 11:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-05 13:45 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -15,7 +15,9 @@
 ## Urmează
 - **S77a** (azi după 14:00, gata până la 18:30): Kronos crescut din #477 în adâncime (24–42 de straturi, ~180–310M), straturi noi „neutre” → aceeași ieșire, verificată în PyTorch
   și pe vectorii KGR1; test de memorie/viteză pe placă, fără antrenare. Alegerea: cel mai mare sub 6.500 MB și ≥ 2 pași/s.
-- **S76c** (procesor; azi după S77a dacă e gata până la ~15:30, altfel 6 nov de la 08:00): instrucțiuni formulate altfel → #513 urmează instrucțiuni sau doar șabloanele?
+- **S78** (C-77, după S77a): salvarea părții utile din „Mini Brain” în `C:\Kronos\arhiva\mini-brain\` (copie + SHA-256 + lecții), nimic șters.
+- **S79** (C-76, după S78): raport de spațiu pe workstation + ce e doar în arhiva de mutare + propunere de curățenie pe grupuri, nimic șters.
+- **S76c** (procesor; probabil 6 nov de la 08:00): instrucțiuni formulate altfel → #513 urmează instrucțiuni sau doar șabloanele?
 - **S77b** (noaptea 5→6 nov): prima noapte a modelului crescut, cu pre-înregistrare. #477 rămâne în uz până îl bate un model nou și Adrian spune „da”.
 
 ## Ce oferă proiectul celorlalți
@@ -32,5 +34,6 @@
 ## Blocaje / nevoie de Adrian
 - **URGENT, AZI ÎNAINTE DE 14:00 (cât e la workstation):** autentificarea Claude Code expiră de mâine, 6 nov → executantul și raportul de dimineață s-ar opri.
   Pe workstation: `claude setup-token` (sau `claude auth login`). Probabil privește și sarcinile programate ale altor proiecte de pe același calculator.
+- După S78: confirmarea că poate șterge folderele „test ai brain”; după S79: ce grupuri de fișiere se șterg (agentul nu șterge nimic).
 - Decizia: #513 îl înlocuiește pe #477? (recomandat după S76c).
 - Fără grabă: dacă cifrele S58 contează; permisiunea `taskkill`; ora limită 18:30 la bucla automată; Release-ul privat `kronos-kgr1-477`.
