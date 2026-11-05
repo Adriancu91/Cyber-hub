@@ -95,3 +95,4 @@
 - 2026-11-05 11:15 — Fereastra C-73 continuă până la ~14:00, nimic nu rulează; #477 în OS: CONTROL trece, 256 simb/s (os-242). S77a după 14:00. Nicio comandă nouă pentru kronos.
 - 2026-11-05 13:45 — C-77 preluat → S78 (salvarea Mini Brain, copie + SHA-256, nimic șters, paza discului ≥ 20 GB) și C-76 → S79 (raport de spațiu, nimic șters). Ordinea după 14:00: S77a → S78 → S79.
 - 2026-11-05 14:20 — C-78 (token făcut) preluat și închis: cererea scoasă din Blocaje. Fereastra lui Adrian s-a terminat; urmează S77a → S78 → S79.
+- 2026-11-05 17:15: cascada blocată 14:00–17:30 de un PID vechi (S42) refolosit de Windows; S80 (reparația `cascada.py`) aprobat; S77a mutată, gata până la 23:30; S77b după cifre.

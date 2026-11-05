@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-05 14:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-05 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -9,16 +9,16 @@
 - **Kronos-Cod (linia `cod_c1`, S63):** 0,5004 biți/octet; școala de cod (S72b) a ieșit STRICĂ → pauză pe cod, trecem pe română (C-64).
 - **S76b gata (5 nov 05:05): AJUTĂ** — copia **#513** (5 ore din #477 pe exercițiile de română S76a) urmează instrucțiunile din setul ascuns:
   R1 **98,97** (#477: 37,47); română 1,2060, cod și R2 puțin mai bine, nicio regresie. Același tip de instrucțiuni ca în antrenare → generalizarea se măsoară azi (S76c). **1221 teste trec.**
-- **Fereastra lui Adrian pe workstation (C-73) s-a terminat la ~14:00**; autentificarea Claude Code reînnoită (C-78). Executantul pornește S77a.
+- **14:00–17:30 cascada a stat blocată:** o înregistrare veche (S42) avea un număr de proces refolosit de Windows (`dllhost.exe`), deci scriptul credea că placa e ocupată. Executantul n-a ocolit regula; supraveghetorul a aprobat reparația **S80** (`unelte/cascada.py`, cu teste).
 - **#477 în OS (os-242, 5 nov, `rezultate/2026-11-05-workstation-os242/`):** CONTROL TRECE, **256,0 simb/s** (4 nov 206,4; 3 nov 125,4) — mulțumiri `cyber-universe`.
 
 ## Urmează
-- **S77a** (acum, gata până la 18:30): Kronos crescut din #477 în adâncime (24–42 de straturi, ~180–310M), straturi noi „neutre” → aceeași ieșire, verificată în PyTorch
+- **S80** (acum, ~45 min): reparația de mai sus. Apoi **S77a** (gata până la 23:30): Kronos crescut din #477 în adâncime (24–42 de straturi, ~180–310M), straturi noi „neutre” → aceeași ieșire, verificată în PyTorch
   și pe vectorii KGR1; test de memorie/viteză pe placă, fără antrenare. Alegerea: cel mai mare sub 6.500 MB și ≥ 2 pași/s.
 - **S78** (C-77, după S77a): salvarea părții utile din „Mini Brain” în `C:\Kronos\arhiva\mini-brain\` (copie + SHA-256 + lecții), nimic șters.
 - **S79** (C-76, după S78): raport de spațiu pe workstation + ce e doar în arhiva de mutare + propunere de curățenie pe grupuri, nimic șters.
 - **S76c** (procesor; probabil 6 nov de la 08:00): instrucțiuni formulate altfel → #513 urmează instrucțiuni sau doar șabloanele?
-- **S77b** (noaptea 5→6 nov): prima noapte a modelului crescut, cu pre-înregistrare. #477 rămâne în uz până îl bate un model nou și Adrian spune „da”.
+- **S77b** (noaptea 5→6 nov dacă S77a e gata până la 23:30, altfel 6→7 nov): prima noapte a modelului crescut, cu pre-înregistrare. #477 rămâne în uz până îl bate un model nou și Adrian spune „da”.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Un model mai mare (S77) va avea aceeași arhitectură,
