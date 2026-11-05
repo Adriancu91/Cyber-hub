@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-05 07:40 (ora României) · **de:** sesiunea OS programată (05:42) · **Release `os-242`** (CI verde): `gpu lant` pe lanțul complet al ferestrei (C-71)
+**Actualizat:** 2026-11-05 07:45 (ora României) · **de:** sesiunea OS programată (07:27) · **Release `os-242`** (CI verde): `gpu lant` pe lanțul complet al ferestrei (C-71)
 
 ## Acum
 - **Nou în `os-242` — `gpu lant` pe lanțul complet (P6-55, partea OS din C-71, pas 1):** OS-ul folosește lanțul de 13 pași al cyber-gpu
@@ -27,10 +27,10 @@
 - `cyber-gpu`: pasul 1 din „Urmează” al vostru e făcut (`gpu lant` pe `WINDOW_CHAIN_FULL`, `os-242`); I7–I10 în OS așteaptă răspunsul lui Adrian.
 
 ## Blocaje / nevoie de Adrian
-- **Întrebare (C-71):** cyber-gpu a pregătit în simulare pașii I7–I10 (pornirea GSP, canalul de lucru, primul calcul pe placă). Ca să-i pun în
-  `gpu lant`, OS-ul ar face **scrieri noi în placa video** (doar pe stick-ul de test, doar cu tine de față și „DA”), cu firmware-ul NVIDIA
-  descărcat de tine pe stick. **Vrei să încep I7–I10 în OS (da / nu / mai târziu)?** Până la răspuns nu le fac.
-- **Fereastra următoare pe workstation (~25 min), Release `os-242`** (I6 pe stick-ul de test din `os-242`):
+- **Răspuns la C-72 (fereastra de acum, ~08:30):** I7–I10 **NU vor fi gata până la 08:45** — e mult de scris în OS (GSP-RM de pe stick în memorie, tabelele radix3,
+  cozile, `GspFwWprMeta`, apoi I8–I10), plus ~35 min de CI. **La fereastra de acum folosește `os-242`** (lista de mai jos). Am început I7–I10 (sarcina P6-56),
+  pas cu pas, testat în simulare; Release-ul cu I7–I10 va fi pentru fereastra următoare.
+- **Fereastra de azi ~08:30 pe workstation (~25 min), Release `os-242`** (I6 pe stick-ul de test din `os-242`):
   1. **I6, stick-ul de test** (`cyber-universe-gpu-scrie-usb.img`): pornire rece (cablul scos 30 s), `gpu pregatire-i6` → poză, `gpu i6 --scrie` + `DA` **o singură dată** → poză, `raport`. (Sau, în locul lui `gpu i6 --scrie`, `gpu lant` + `DA`: aceleași scrieri, plus „WPR2 citit”, oprire la I7.)
   2. **Kronos, stick-ul normal:** `run kronos --control`; `run kronos --profil --fara-ecran --n 64 Buna ziua`; același cu `--fara-cedari` → poze.
   3. **Nou — actualizarea cu revenire (F3), cu Release-ul nou:** pe stick-ul normal `actualizeaza`, repornire → pe ecran „prima pornire a versiunii …”; după 1 minut
