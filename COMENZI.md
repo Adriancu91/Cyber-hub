@@ -1100,3 +1100,21 @@ Format:
   repo/hub; clean-room, fără GPL; nicio funcție cu succes fictiv. Împărțirea: cyber-gpu face pașii în crate-uri + `gpu-sim`, OS-ul îi integrează și îi pune în lanț
   (fiecare în repo-ul lui). **Duminică seara (8 nov):** în `stare/` fiecare scrie lista exactă pentru fereastra de luni (pașii noi, ce scrieri noi pe placă, ce așteptăm să vedem).
 - stare: nou
+
+### C-84 · cyber-universe · Până luni (9 nov): cât mai multe unelte spre independența de Windows (fără hardware nou, testate în QEMU/CI)
+- data: 2026-11-06 17:44 · de la: **Adrian** („la OS la fel, fă cât de mulți pași să avem unelte care ne duc spre independența de Windows”)
+- context: planul independenței (`idei/2026-11-04_planul-independentei-os.md`, fără F1). Deja există: F2 remote criptat, F3 actualizare cu revenire, F4 `hw lista`,
+  F6a `web`, F8/F9 editor, terminal, `gh-ia`/`gh-trimite`, `compara`, `log --sumar`, `timp`. C-83 (pașii GPU după I10) și C-82 (#513 în OS) au prioritate când apar.
+- ce, în ordinea folosului (fiecare: plan în `docs/plans/`, test automat în QEMU, README; oprire cinstită dacă ceva cere hardware sau „da” de la Adrian):
+  1. **Rapoartele pleacă singure din OS:** după `gpu lant`, `profil`, `control`, jurnalele de pe stick se trimit direct în hub (`rezultate/…`) prin GitHub, ca Adrian să nu mai
+     copieze fișiere în Windows. Doar dacă există token pe stick (drepturi minime, făcut de Adrian); fără token: comanda spune clar ce lipsește și jurnalul rămâne pe stick.
+  2. **Comenzile și starea proiectelor citite din OS:** `hub` (citește `COMENZI.md`, `stare/*.md`, `DECIZII.md` cu browserul/clientul existent, doar citire).
+  3. **Kronos ca asistent în OS:** o fereastră/comandă de conversație în română cu modelul în uz (#513 după C-82; #477 până atunci), cu istoric salvat pe stick.
+  4. **F8 — git simplu în OS** prin API-ul GitHub: listă fișiere, citire, modificare + commit pe o ramură `os/…` (niciodată `main`, niciodată force-push), cu token-ul de mai sus.
+  5. **F9 — `test tot`:** autotestul OS-ului pe hardware-ul real (rețea, stick, ceas, procesor, citirea plăcii) cu raport unic `PASS/FAIL` pe stick.
+  6. **F6b — browser în treapta b:** formulare simple, imagini, CSS de bază (cât se poate testa în QEMU).
+  7. **Mici, dar utile:** ora din rețea (NTP), setări care rămân pe stick, tastatură românească (diacritice), manager de fișiere pentru stick.
+- reguli: **nicio scriere pe discurile interne ale calculatorului** (Windows rămâne neatins; discurile se pot doar citi), Wi-Fi doar identificat; cheile/token-urile doar pe stick,
+  niciodată în repo sau hub; clean-room, fără GPL; `main` mereu construibil; „SIMULARE/QEMU” marcat cinstit. **Duminică seara (8 nov):** în `stare/cyber-universe.md`, lista
+  pentru fereastra de luni (ce e nou de încercat pe workstation și ce trebuie să facă Adrian, de ex. token-ul).
+- stare: nou
