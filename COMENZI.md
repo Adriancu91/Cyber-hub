@@ -1118,3 +1118,20 @@ Format:
   niciodată în repo sau hub; clean-room, fără GPL; `main` mereu construibil; „SIMULARE/QEMU” marcat cinstit. **Duminică seara (8 nov):** în `stare/cyber-universe.md`, lista
   pentru fereastra de luni (ce e nou de încercat pe workstation și ce trebuie să facă Adrian, de ex. token-ul).
 - stare: nou
+
+### C-85 · kronos · „Da” — modulele lui Kronos cresc odată cu modelul (`idei/2026-11-06_kronos-module-care-trebuie-sa-creasca.md`)
+- data: 2026-11-06 17:56 · de la: **Adrian** („Da” la toată propunerea)
+- ce, în ordine, câte o sarcină în coadă (fiecare cu teste, raport, `python -m pytest` verde; nu întrerupe S77e de la noapte):
+  1. **Disc:** regulă automată pentru puncte de salvare `.pt` — după verdict se păstrează doar câștigătorul + rezervele numite (#459, #477, #513, `cod_c1/gpt.pt`, modelul în uz)
+     și ce e în pre-înregistrarea activă; restul se șterge DOAR după ce numele, SHA-256 și scorul sunt în jurnal. Prima rulare: doar listă (fără ștergere) în raport → Adrian vede totalul.
+  2. **Memoria plăcii la modelul mare:** optimizator cu o singură stare (Muon, `model_muon` există) sau stări pe 8 biți + paza de memorie la fiecare oră; măsurat pe placă, fără antrenare lungă.
+  3. **Examenul de română:** modul nou `module/examen_romana.py` (MANIFEST, trece `teste_contracte/`), pe setul ascuns de 500 + română curat; `examen_bpb` NU se schimbă.
+     Dacă protejarea lui de către paznic cere o schimbare în `kronos/`: scrie exact ce se schimbă în `plan/pentru_adrian.md` și aștepți „da”-ul lui Adrian înainte de a atinge `kronos/`.
+  4. **Cercetătorul:** încercările pe un model mic trimis în avans, doar câștigătorul pe cel mare.
+  5. **Date pe bucăți:** date pre-tokenizate, citite pe rând (pregătire pentru super-școala de română).
+  6. **Asistent:** `memorie_ierarhica` + un modul de fapte verificate (lecția Mini Brain), folosite la conversație, nu la antrenare (legătură cu C-84 punctul 3).
+  7. **Context mai lung** (512 → 1024): doar planul și măsurarea memoriei; antrenarea când încape.
+  8. **Arhivă:** mută `model_plasa*`, `model_ngram`, `model_continuu`, `model_racit`, `date_tinystories`, `cercetator_aleator` în `module/arhiva/` cu testele lor (nimic șters);
+     `profesor_qwen` rămâne oprit. Configurările vechi care le folosesc: actualizează căile sau marchează-le „arhivă”.
+- reguli: `kronos/`, examenul vechi și paznicul doar cu aprobarea lui Adrian; nimic pe placă peste ferestrele lui Adrian; commit + push după fiecare pas.
+- stare: nou

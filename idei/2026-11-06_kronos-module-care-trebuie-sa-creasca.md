@@ -1,7 +1,7 @@
 # Kronos: modulele care trebuie să crească odată cu modelul (ca să nu devină frâne)
 
 - **Propus de:** centrul de comandă, la cererea lui Adrian (6 nov 2026, 17:51) · **Pentru:** kronos (+ cyber-universe la punctul 7)
-- **Stare:** propus — așteaptă „da” de la Adrian (punctul 1 atinge examenul → doar cu aprobarea lui; restul intră în granițele obișnuite)
+- **Stare:** aprobat (Adrian, „Da”, 2026-11-06 17:56) → C-85
 
 ## Ce frânează deja sau va frâna (în ordinea importanței)
 1. **Examenul oficial măsoară altceva decât ținta.** `examen_bpb` (protejat de paznic) se dă pe primele 100.000 de caractere din validarea TinyStories (engleză, povești
@@ -24,3 +24,4 @@
 3 (disc) → 2 (memorie) → 1 (examen română, cu „da”) → 6 → 5 → 8 → 4 → 9. Punctul 7 îl face C-83.
 
 ## Discuție
+- 2026-11-06 17:56 Adrian: „Da” la toată propunerea (inclusiv examenul de română și arhiva modulelor nefolosite) → C-85.
