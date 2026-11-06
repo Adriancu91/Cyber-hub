@@ -1064,11 +1064,12 @@ Format:
 - data: 2026-11-06 15:20 · de la: centrul de comandă, pentru Adrian
 - ce: Adrian a plecat fără să facă testul OS; calculatorul n-a fost repornit, a rămas în Windows. **S76c și S77d pot rula normal** (placa e liberă de acum).
   Grupurile de ștergere din S79 NU sunt încă aprobate (nimic șters). Testul OS os-250 (I8–I10) se mută la următoarea fereastră a lui Adrian.
-- stare: nou
+- stare: gata (2026-11-06 17:15, supraveghetor) — notat sus în `plan/coada.md`; S76c era deja gata (09:10); reluarea S77d = **S77e** rămâne la noapte de la 19:00 (~2,5 h nu mai încăpeau până la 18:30)
+- rezultat: fereastra lui Adrian închisă în coadă; placa liberă, S77e programată în noaptea 6→7.
 
 ### C-81 · kronos · Corectură la C-80: Adrian a ȘTERS înainte să plece (grupurile din S79) — verifică spațiul
 - data: 2026-11-06 15:51 · de la: centrul de comandă, pentru Adrian
 - ce: Adrian spune că a șters înainte să plece (cele două foldere „test ai brain” și, probabil, arhiva `cyberspace_mutare`). Executantul: verifică doar prin citire ce
   mai există din grupurile A și B din S79, cât spațiu e liber pe C: și dacă Coșul de reciclare mai ține spațiul; scrie rezultatul (3 rânduri) sus în `plan/pentru_adrian.md`.
   Nu șterge nimic (nici Coșul). Dacă spațiul e > 40 GB, rulează din nou testul de disc.
-- stare: nou
+- stare: preluat (2026-11-06 17:15, supraveghetor) — sarcina **S82** în `plan/coada.md` (aprobat de Adrian prin C-81), doar citire, se face acum, înainte de S77e

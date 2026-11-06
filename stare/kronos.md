@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-06 11:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-06 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -10,11 +10,11 @@
   formulate altfel**, la limită (R1 83,22 vs 61,38; prag +20); slab la „județ și țară” spus altfel (7,5 % corect).
 - **Kronos mare (24 de straturi, 183M):** S77c oprit după 2 ore din 5 (memorie), mai slab decât #477 din prima oră. Diagnoza S77d (rată mai mică)
   a fost închisă din afară după 20 min (repornirea workstation-ului pentru testul OS, C-79) → NEMĂSURAT, nimic stricat.
-- **1247 teste trec, 0 pică.** Discul C: ~106 GB liberi (problema de spațiu rezolvată).
+- **1247 teste trec, 0 pică.** Discul C: ~106 GB liberi la 11:15; Adrian a mai șters (C-81), S82 verifică.
 
 ## Urmează
-- **Ziua de 6 nov:** placa liberă pentru testul OS al lui Adrian (C-79). **Noaptea 6→7, de la 19:00:** S77e = reluarea S77d pe linii noi
-  (24 de straturi, rate 1e-5 / 2e-5, 2 × 1 oră). #477 rămâne în uz.
+- **Acum (6 nov, după-amiază):** S82 — verificare doar prin citire a spațiului după ștergerea lui Adrian (C-81). Adrian a plecat fără testul OS (C-80), placa e liberă.
+- **Noaptea 6→7, de la 19:00:** S77e = reluarea S77d pe linii noi (24 de straturi, rate 1e-5 / 2e-5, 2 × 1 oră). #477 rămâne în uz.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu #477 (suma, cele 3 texte de control, marjele). Modelul de 24 de straturi e încă în probă
@@ -30,5 +30,6 @@
 
 ## Blocaje / nevoie de Adrian
 - Decizia: #513 îl înlocuiește pe #477? (ambele verdicte gata: S76b AJUTĂ, S76c URMEAZĂ).
-- Opțional: restul grupurilor din raportul S79 (de exemplu arhiva de mutare, 26 GB fără pierdere). Agentul nu șterge nimic.
+- Opțional: după S82, golirea Coșului de reciclare și restul grupurilor din S79 (le face Adrian; agentul nu șterge nimic).
+- Următoarea fereastră a lui Adrian pentru testul OS (os-250) — Kronos ține placa liberă atunci.
 - Fără grabă: dacă cifrele S58 contează; permisiunea `taskkill`; ora limită 18:30 la bucla automată; Release-ul privat `kronos-kgr1-477`.
