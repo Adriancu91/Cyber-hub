@@ -1083,3 +1083,19 @@ Format:
 - ce (cyber-universe): după ce apare Release-ul `kronos-kgr1-513`, OS-ul trece pe #513 (fișierul de pe stick, suma și textele de control noi; `COPIAZA-KRONOS-…bat`),
   păstrând posibilitatea de a porni #477. Testul pe workstation (CONTROL TRECE + viteza) la fereastra următoare a lui Adrian, odată cu I8–I10.
 - stare: nou
+
+### C-83 · cyber-gpu + cyber-universe · Până luni (9 nov): cât mai mulți pași în SIMULARE, și DUPĂ I10 — spre Kronos pe placă în OS
+- data: 2026-11-06 17:41 · de la: **Adrian** („până atunci avansează OS și GPU cât de mulți pași în simulări, poate treci mai departe de I10”)
+- context: următoarea fereastră pe workstation e **luni 9 nov** (sau mai devreme, anunță Adrian). Atunci se testează în grup, cu un singur `gpu lant` + „DA”: I8–I10 (os-250) +
+  tot ce adăugați până atunci + #513 în OS (C-82). Regula din DECIZII 4 nov 23:13: mulți pași între teste, fiecare cu test automat, „SIMULARE” marcat cinstit.
+- ce, în ordine (fiecare pas ≥ 1 test automat; oprire cinstită în lanț la primul pas care nu e încă gata):
+  1. **I11 — copiere mare și sigură** RAM ↔ VRAM prin canalul de lucru (nu doar prin fereastră), verificată bit cu bit; viteza măsurată cu ceasul plăcii.
+  2. **I12 — înmulțirea matrice × vector Q8_0** (operația de bază a lui Kronos) pe placă: rezultat comparat cu procesorul (identic sau în marja scrisă dinainte); programul compilat
+     cu Mesa NAK pe gazdă (DECIZII 26 oct); în `gpu-sim` model funcțional.
+  3. **I13 — un strat întreg al lui Kronos** (atenție + MLP) pe placă, aceeași comparație cu motorul KGR1 de pe procesor.
+  4. **I14 — un simbol întreg al lui #513** (toate straturile) pe placă: logit-urile comparate cu procesorul, textele de control; apoi „un singur program pe simbol” (idee aprobată 3 nov).
+  5. **OS:** `kronos --gpu` (sau echivalent) cu **întoarcere automată pe procesor** la orice eroare; în `gpu lant` pașii noi după I10; jurnal pe stick pentru fiecare.
+- reguli: nimic pe placă fără Adrian; scrierile noi pe placă doar în spatele lanțului cu „DA”, prin gărzi care permit doar registrele/zonele necesare; firmware-ul NVIDIA nu intră în
+  repo/hub; clean-room, fără GPL; nicio funcție cu succes fictiv. Împărțirea: cyber-gpu face pașii în crate-uri + `gpu-sim`, OS-ul îi integrează și îi pune în lanț
+  (fiecare în repo-ul lui). **Duminică seara (8 nov):** în `stare/` fiecare scrie lista exactă pentru fereastra de luni (pașii noi, ce scrieri noi pe placă, ce așteptăm să vedem).
+- stare: nou
