@@ -1,9 +1,15 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-06 19:00 (ora României) · **de:** sesiunea Cyber-GPU 57 (cloud, fără placă) — C-83: I11 și I12 gata în SIMULARE
+**Actualizat:** 2026-11-06 19:30 (ora României) · **de:** sesiunea Cyber-GPU 58 (cloud, fără placă) — C-83: I11–I14 gata în SIMULARE
 
 ## Acum
-- **C-83 (Adrian: „cât mai mulți pași în simulare, și după I10”) — I11 și I12 scrise și testate, doar SIMULARE, nimic pe RTX 3070 Ti.**
+- **C-83 (Adrian: „cât mai mulți pași în simulare, și după I10”) — I11, I12, I13 și I14 scrise și testate, doar SIMULARE, nimic pe RTX 3070 Ti.**
+- **I13 (sesiunea 58) — un strat Kronos întreg:** 16 lansări pe poziție (programe NAK noi: `vadd`, `layernorm`, `attention`, `gelu`), cache-urile
+  cheie/valoare cresc în VRAM; comparat cu motorul procesorului în toleranța scrisă dinainte (1e-4 + 1e-4·|x|). Strat 768/12 capete: abatere < 1e-5
+  în simulare; greșelile plantate (rezidual lipsă, atenție scurtată, GELU sărit) nu trec (T100–T103).
+- **I14 (sesiunea 58) — un simbol întreg:** `embed` (NAK) + toate straturile + LayerNorm final + logit-uri = `16·straturi + 3` lansări (195 pentru
+  #513); generarea greedy pe un model mic sintetic dă **aceleași simboluri** ca procesorul, logit-urile în 1e-3 (T104–T105). #513 însuși se încearcă
+  doar pe placă, citit de OS de pe stick. `WorkQueue::submit_fenced` refolosește zona de pushbuffer după fiecare simbol.
 - **I11 — copiere mare RAM ↔ VRAM prin canalul de lucru:** un program de copiere compilat cu NAK (`copy_b128`, 288 B) pe același canal și obiect ca
   I10; nou pentru placă doar PTE-uri care arată spre paginile RAM ale OS-ului (DEDUS: aperture coerent, `VOL`). O intrare GPFIFO: marcă → RAM→VRAM →
   marcă → VRAM→RAM → marcă; verificare bit cu bit (model fără fișier) + viteza din ceasul plăcii. Test cap-coadă pe tot lanțul golden → canal, cu
@@ -11,9 +17,10 @@
 - **I12 — y = W·x, W în Q8_0 (operația de bază a lui Kronos):** program NAK `q8_matvec` (8 KiB, 32 fire pe rând, 128 B partajată, fără barieră
   hardware). Oracolul urmează exact operațiile din fișa NAK; verdict scris dinainte: identic / în marjă față de motorul OS / nu trece. În
   simulare, 3072 × 768 (forma `mlp.0`), W și x urcate din RAM cu I11: **identic** bit cu bit (T96–T98).
-- **Lanțul:** `WINDOW_CHAIN_C83` = lanțul complet de până acum + `i11-copiere` + `i12-q8-matvec`, înainte de punerea la loc a Bus Master (T99).
-- CI: verde după reparația pentru clippy 1.99 (`4ac1646`); vârful `24d9aac`, 380 teste.
-- Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-83_i11-i12.md`.
+- **Lanțul:** `WINDOW_CHAIN_C83` = lanțul complet de până acum + `i11-copiere` + `i12-q8-matvec` + `i13-strat` + `i14-simbol`, înainte de punerea
+  la loc a Bus Master.
+- CI verde; vârful `e681bea`, 393 teste.
+- Notele pentru OS: `cyber-gpu/integration/cyber-universe/C-83_i11-i12.md`, `C-83_i13.md`, `C-83_i14.md`.
 - Pe placă până acum: I0–I4 doar citire TREC; I6 TRECE (os-242); I7 TRECE (os-246); I8–I10 încă neîncercate (fereastra din 6 nov s-a închis fără test).
 
 ## Lista scurtă pentru fereastra de luni 9 nov (provizorie; lista finală duminică seara)
@@ -21,14 +28,20 @@
 2. **I11:** 8 MiB RAM → VRAM → RAM. Scrieri noi pe placă: **niciun registru nou** (soneria de lucru + fereastra VRAM, ca la I10); nou: GPU-ul citește și
    scrie prin DMA paginile RAM date de OS. Așteptat: `i11: 8388608 octeti; RAM->VRAM … MB/s; VRAM->RAM … MB/s`, întoarcerea identică cu modelul.
 3. **I12:** 3072 × 768 Q8_0 (urcare, înmulțire, coborâre). Aceleași scrieri. Așteptat: `i12: TRECE - identic bit cu bit…`.
-4. Bus Master la loc, tur de citire; jurnalul de pe stick în `rezultate/`; noi: `verifica_jurnal_lant`.
+4. **I13:** un strat sintetic 768/12 pe 4 poziții. Aceleași scrieri, ~12 MB VRAM. Așteptat: `i13: pozitia 0..3: TRECE …`.
+5. **I14:** #513 de pe stick, textele de control, 5 simboluri greedy fiecare (195 de lansări pe simbol). Aceleași scrieri, ~150 MB VRAM. Așteptat:
+   `i14: … TRECE - simbolul … ca procesorul` și simbolurile din `MODEL.md` pentru #513. Durata fiecărei lansări în jurnal.
+6. Bus Master la loc, tur de citire; jurnalul de pe stick în `rezultate/`; noi: `verifica_jurnal_lant`.
 
 ## Urmează
-1. **I13** — un strat întreg al lui Kronos (LayerNorm, qkv, atenție + softmax, proiecție, GELU erf, MLP), fiecare program NAK cu oracolul lui, comparat cu
-   motorul KGR1 din OS. 2. **I14** — un simbol întreg #513, apoi „un singur program pe simbol”. 3. Duminică seara: lista exactă pentru luni.
-4. După fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
+1. Duminică seara: lista exactă pentru luni (după ce OS-ul integrează I11–I14).
+2. „Un singur program pe simbol” — doar după ce placa ne spune cât costă cele 195 de lansări (I14 le măsoară).
+3. După fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
 
 ## Ce oferă proiectul celorlalți
+- **Nou (sesiunea 58, C-83, doar adăugări):** `kronos_layer` (I13: `Prog`, `PROGRAMS`, `Launch::qmd`, `LayerVas`, `WeightVas`, `token_launches`,
+  `test_layer`, `judge`), `kronos_model` (I14: `ModelVas`, `token_launches`, `launches_per_token`, `test_model`, `judge`), `WorkQueue::submit_fenced`,
+  `gpu_compute::{layer, model}`; în `gpu-sim`: `vadd/layernorm/attention/gelu/embed_on_cpu`; lanțul: `i13-strat`, `i14-simbol`.
 - **Nou (sesiunea 57, C-83, doar adăugări):** `mmu::{encode_pte_sys, SysMapping, map_sys, alloc_sys_mapped, lookup_sys}`; modulul `transfer` (I11:
   `COPY_B128`, `copy_cbuf`, `copy_qmd`, `encode_round_trip`, `analyze_round_trip`, `encode_sequence`, `analyze_sequence`, modelul de test); modulul
   `q8_matvec` (I12: `Q8_MATVEC`, `q8_cbuf`, `q8_qmd`, `test_matrix`, `judge`/`Verdict`); `chain::{WINDOW_CHAIN_C83, READY_FOR_WINDOW_C83}`;
@@ -49,7 +62,8 @@
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: I11 și I12 în `gpu lant` (nota `C-83_i11-i12.md`), cu paginile DMA ale OS-ului; atenție: programul `q8_matvec` are 8 KiB.
+- De la `cyber-universe`: I11–I14 în `gpu lant` și `kronos --gpu` (notele `C-83_*.md`), cu paginile DMA ale OS-ului; atenție: programele
+  `q8_matvec`, `layernorm`, `attention` au peste 4 KiB, iar zona de pushbuffer pentru I14 trebuie să aibă ≥ 8 KiB.
 - De la Adrian: fereastra de luni și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
