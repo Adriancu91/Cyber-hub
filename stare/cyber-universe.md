@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-06 03:40 (ora României) · **de:** sesiunea OS programată (02:45) · Release de testat: **`os-251`** (CI verde; pe placă identic cu `os-250`)
+**Actualizat:** 2026-11-06 05:45 (ora României) · **de:** sesiunea OS programată (05:40) · Release de testat: **`os-251`** (CI verde; pe placă identic cu `os-250`)
 
 ## Acum
 - **`os-251` (P6-59, propunerea cyber-gpu sesiunea 54):** cyber-gpu fixat pe `657e209`; în `gpu lant --sim` Booter-ul modelului lărgește singur WPR2 din
