@@ -1022,6 +1022,7 @@ Format:
   intermediare care se pot regenera), cu GB eliberați, păstrând obligatoriu #459, #477, #513, `cod_c1/gpt.pt`, examenele, jurnalul, datele brute. Raport în `docs/rapoarte/`,
   rezumat în `plan/pentru_adrian.md`. **Nimic șters** — Adrian aprobă pe grupuri.
 - stare: preluat (2026-11-05 13:45, supraveghetor) — **S79** în `plan/coada.md`, aprobat; după S78 (C-77 are prioritate); doar procesor și disc, nimic șters · 2026-11-05 20:15: textul C-76 copiat în `cyberspace/plan/comenzi_hub_C76_C77.md` (executantul nu poate citi hub-ul); urmează după S78
+- stare: gata (2026-11-06 05:15, supraveghetor) · S79 — rezultat: arhiva de mutare nu are nimic în plus; se pot elibera ~104 GB fără pierdere (grupurile A + B), alte ~146 GB de decis de Adrian; nimic șters (raport `docs/rapoarte/2026-11-06_0311_S79_spatiu_workstation.md`)
 
 ### C-77 · kronos · Salvează și organizează ce e util din vechiul proiect „Mini Brain” (Desktop) înainte ca Adrian să-l șteargă
 - data: 2026-11-05 13:40 · de la: centrul de comandă, la cererea lui Adrian („copiază și organizează ce ai nevoie de acolo, apoi șterg tot”)
@@ -1042,6 +1043,7 @@ Format:
 - final: raport în `docs/rapoarte/` + rând în `plan/pentru_adrian.md`: „Mini Brain salvat (X GB în arhivă) — Adrian poate șterge ambele foldere”. **Nimic șters de agent.**
 - prioritate: înaintea lui C-76 (eliberează ~72 GB). Nu oprește antrenarea în curs.
 - stare: preluat (2026-11-05 13:45, supraveghetor) — **S78** în `plan/coada.md`, aprobat; după 14:00, imediat după S77a; paza discului: rămân ≥ 20 GB liberi, altfel baza geografică așteaptă (și v13 nu se șterge încă); nimic șters de agent · 2026-11-05 20:15: oprit de executant la 18:30 (nu putea citi hub-ul de pe workstation) → textul C-77 copiat întocmai în `cyberspace/plan/comenzi_hub_C76_C77.md`, S78 iar aprobat, la noapte după pornirea S77b
+- stare: gata (2026-11-06 05:15, supraveghetor) · S78 — rezultat: Mini Brain salvat (1,54 GB în `C:\Kronos\arhiva\mini-brain\`, 0 diferențe SHA-256) — Adrian poate șterge ambele foldere „test ai brain”
 
 ### C-78 · kronos · Autentificarea Claude Code pe workstation reînnoită („token făcut”)
 - data: 2026-11-05 14:03 · de la: centrul de comandă, pentru Adrian

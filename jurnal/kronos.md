@@ -99,3 +99,4 @@
 - 2026-11-05 20:15 — S80 și S77a gata: Kronos crescut la 24 de straturi (183M), ieșire identică, 6.010 MB cu recalcul; S77b (prima noapte, 5 ore, față de #513) aprobat pentru noaptea asta. S78 deblocat: textul C-76/C-77 copiat în `cyberspace/plan/` (executantul nu poate citi hub-ul).
 - 2026-11-05 23:15 — S77b (prima noapte, 24 de straturi) a căzut după ~1 minut din lipsă de memorie (limita PyTorch 5.800 MB, lot 12), nimic stricat; S77c aprobat: reluarea în aceeași noapte cu lot 6 × 16, linia `w2_mare_24b`.
 - 2026-11-06 02:15 — S77c (prima noapte, 24 de straturi) oprit după 2 ore din 5 din lipsă de memorie, mai slab decât #477 la ora 2; S81 (cod de ieșire) și S77d (rată mai mică, 2 × 1 oră) aprobate pentru ziua de 6 nov; discul C: are 34 GB liberi.
+- 2026-11-06 05:15 — S78 (Mini Brain salvat), S79 (raport de spațiu: ~104 GB fără pierdere) și S81 (cod 1 la oră anulată) gata și verificate; C-76 și C-77 închise; azi S76c apoi S77d.
