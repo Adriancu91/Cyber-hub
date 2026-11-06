@@ -1058,4 +1058,4 @@ Format:
 - ce: Adrian repornește workstation-ul în Cyber Universe pentru `gpu lant` (os-250). **S76c (procesor), pornit la 08:00, va fi întrerupt de repornire** — nu e o eroare:
   după ce Windows revine, executantul reia S76c de la capăt (sau din ultimul punct salvat), fără să-l marcheze `oprit`. **S77d (placa) NU pornește cât Adrian e la workstation**
   (până scrie el că a plecat / ~12:00). Nimic altceva nu se schimbă.
-- stare: nou
+- stare: preluat (2026-11-06 11:15, supraveghetor) — nota pusă sus în `plan/coada.md`; S76c terminat înainte de repornire (09:10, URMEAZĂ); S77d pornise la 10:00 (executantul nu vedea C-79) și a fost închis la 10:22 de repornire, fără pagube → reluarea **S77e** programată la noapte, de la 19:00; nimic pe placă cât Adrian e la workstation
