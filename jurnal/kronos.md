@@ -104,3 +104,4 @@
 - 2026-11-06 11:15 — S76c gata: #513 urmează și cereri formulate altfel (R1 83,22 vs 61,38, la limită; slab la „județ și țară”); S77d închis din afară de repornirea pentru testul OS (C-79), NEMĂSURAT; reluarea S77e la noapte; discul C: ~106 GB liberi.
 - 2026-11-06 17:15 — C-80 (Adrian a plecat fără testul OS, placa liberă) și C-81 (a șters grupurile A/B) preluate: S82 verifică doar prin citire spațiul și Coșul; S77e rămâne la noapte de la 19:00.
 - 2026-11-06 20:15 — S82 gata (C-81 închis: 112,4 GB liberi, arhiva de mutare încă există); C-82 („Da 513”) → S83 și C-85 pasul 1 → S84 preluate, după S77e care rulează de la 19:00.
+- 2026-11-06 23:15 — S77e gata (24 de straturi cu rata 1e-5 ȚINE după o oră), S84 gata (lista .pt, nimic șters), S83 oprit corect la mărime (−32 octeți din antet) → S83b; la noapte S85 (5 ore pe modelul mare), mâine S86 (C-85 pasul 2).

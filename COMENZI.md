@@ -1083,7 +1083,7 @@ Format:
   exportul e doar pe procesor). Raport + rând în `plan/pentru_adrian.md`.
 - ce (cyber-universe): după ce apare Release-ul `kronos-kgr1-513`, OS-ul trece pe #513 (fișierul de pe stick, suma și textele de control noi; `COPIAZA-KRONOS-…bat`),
   păstrând posibilitatea de a porni #477. Testul pe workstation (CONTROL TRECE + viteza) la fereastra următoare a lui Adrian, odată cu I8–I10.
-- stare: preluat (2026-11-06 20:15, supraveghetor) — sarcina **S83** în `plan/coada.md` (doar procesor), după S77e de la noapte
+- stare: preluat (2026-11-06 20:15, supraveghetor) — sarcina **S83** în `plan/coada.md` (doar procesor), după S77e de la noapte; 23:15: S83 oprit corect la pasul 1 (exportul are 110.859.008 octeți, −32 doar din textul din antet, aceeași arhitectură) → reluarea **S83b** de la pasul 2, la noapte pe procesor
 - stare (cyber-universe): preluat (2026-11-06 17:42, sesiunea OS) — sarcina **P6-60** în `docs/TASKS.md`; așteaptă Release-ul `kronos-kgr1-513` + `MODEL.md` cu #513 (nu există încă)
 
 ### C-83 · cyber-gpu + cyber-universe · Până luni (9 nov): cât mai mulți pași în SIMULARE, și DUPĂ I10 — spre Kronos pe placă în OS
@@ -1137,4 +1137,4 @@ Format:
   8. **Arhivă:** mută `model_plasa*`, `model_ngram`, `model_continuu`, `model_racit`, `date_tinystories`, `cercetator_aleator` în `module/arhiva/` cu testele lor (nimic șters);
      `profesor_qwen` rămâne oprit. Configurările vechi care le folosesc: actualizează căile sau marchează-le „arhivă”.
 - reguli: **regula nucleului** — `kronos/` nu se schimbă pentru module; modulele se adaptează la nucleu. Examenul vechi și paznicul doar cu aprobarea lui Adrian; nimic pe placă peste ferestrele lui Adrian; commit + push după fiecare pas.
-- stare: preluat (2026-11-06 20:15, supraveghetor) — pasul 1 = sarcina **S84** (doar listă, nimic șters), după S83; pașii 2–8 câte unul, după S84
+- stare: preluat (2026-11-06 20:15, supraveghetor) — pasul 1 = sarcina **S84** (doar listă, nimic șters), după S83; pașii 2–8 câte unul, după S84; 23:15: pasul 1 **gata** (S84: 592 `.pt` / 107,6 GB, „se pot șterge” 71,5 GB, nimic șters — Adrian decide); pasul 2 = **S86** (memoria plăcii, Muon vs AdamW), ziua de 7 nov
