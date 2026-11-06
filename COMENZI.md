@@ -1127,12 +1127,13 @@ Format:
      și ce e în pre-înregistrarea activă; restul se șterge DOAR după ce numele, SHA-256 și scorul sunt în jurnal. Prima rulare: doar listă (fără ștergere) în raport → Adrian vede totalul.
   2. **Memoria plăcii la modelul mare:** optimizator cu o singură stare (Muon, `model_muon` există) sau stări pe 8 biți + paza de memorie la fiecare oră; măsurat pe placă, fără antrenare lungă.
   3. **Examenul de română:** modul nou `module/examen_romana.py` (MANIFEST, trece `teste_contracte/`), pe setul ascuns de 500 + română curat; `examen_bpb` NU se schimbă.
-     Dacă protejarea lui de către paznic cere o schimbare în `kronos/`: scrie exact ce se schimbă în `plan/pentru_adrian.md` și aștepți „da”-ul lui Adrian înainte de a atinge `kronos/`.
+     **NU se schimbă `kronos/` pentru asta** (regula nucleului, DECIZII 6 nov 17:59): protecția examenului de română se face din modul/configurare/teste (amprentă SHA-256 a setului
+     ascuns verificată de modul și de teste) sau cu ce oferă deja paznicul prin configurare. Dacă nu se poate fără nucleu, scrii în `plan/pentru_adrian.md` de ce și aștepți.
   4. **Cercetătorul:** încercările pe un model mic trimis în avans, doar câștigătorul pe cel mare.
   5. **Date pe bucăți:** date pre-tokenizate, citite pe rând (pregătire pentru super-școala de română).
   6. **Asistent:** `memorie_ierarhica` + un modul de fapte verificate (lecția Mini Brain), folosite la conversație, nu la antrenare (legătură cu C-84 punctul 3).
   7. **Context mai lung** (512 → 1024): doar planul și măsurarea memoriei; antrenarea când încape.
   8. **Arhivă:** mută `model_plasa*`, `model_ngram`, `model_continuu`, `model_racit`, `date_tinystories`, `cercetator_aleator` în `module/arhiva/` cu testele lor (nimic șters);
      `profesor_qwen` rămâne oprit. Configurările vechi care le folosesc: actualizează căile sau marchează-le „arhivă”.
-- reguli: `kronos/`, examenul vechi și paznicul doar cu aprobarea lui Adrian; nimic pe placă peste ferestrele lui Adrian; commit + push după fiecare pas.
+- reguli: **regula nucleului** — `kronos/` nu se schimbă pentru module; modulele se adaptează la nucleu. Examenul vechi și paznicul doar cu aprobarea lui Adrian; nimic pe placă peste ferestrele lui Adrian; commit + push după fiecare pas.
 - stare: nou
