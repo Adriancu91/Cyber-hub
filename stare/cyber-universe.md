@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-07 00:45 (ora României) · **de:** sesiunea OS programată (23:40) · Release de testat: **`os-259`** (CI verde; pe placă identic cu `os-251`); Release nou **`os-261`** (CI verde) = `os-259` + I11–I13 în lanț (doar SIMULARE); `146b4a2` (+ I14, CI în curs) dă următorul Release
+**Actualizat:** 2026-11-07 00:45 (ora României) · **de:** sesiunea OS programată (23:40) · Release de testat: **`os-259`** (CI verde; pe placă identic cu `os-251`); Release nou **`os-261`** (CI verde) = `os-259` + I11–I13 în lanț (doar SIMULARE); `146b4a2` (+ I14 doar în SIMULARE) — CI verde, Release `os-262`
 
 ## Acum
 - **C-84 (unelte spre independența de Windows) → sarcina P6-61, gata în QEMU** (nimic încercat încă pe hardware):
