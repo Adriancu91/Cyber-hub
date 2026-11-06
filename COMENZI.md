@@ -1059,3 +1059,9 @@ Format:
   după ce Windows revine, executantul reia S76c de la capăt (sau din ultimul punct salvat), fără să-l marcheze `oprit`. **S77d (placa) NU pornește cât Adrian e la workstation**
   (până scrie el că a plecat / ~12:00). Nimic altceva nu se schimbă.
 - stare: preluat (2026-11-06 11:15, supraveghetor) — nota pusă sus în `plan/coada.md`; S76c terminat înainte de repornire (09:10, URMEAZĂ); S77d pornise la 10:00 (executantul nu vedea C-79) și a fost închis la 10:22 de repornire, fără pagube → reluarea **S77e** programată la noapte, de la 19:00; nimic pe placă cât Adrian e la workstation
+
+### C-80 · kronos · Fereastra C-79 s-a ÎNCHIS fără test (6 nov, ~15:20) — workstation-ul a rămas în Windows, placa e liberă
+- data: 2026-11-06 15:20 · de la: centrul de comandă, pentru Adrian
+- ce: Adrian a plecat fără să facă testul OS; calculatorul n-a fost repornit, a rămas în Windows. **S76c și S77d pot rula normal** (placa e liberă de acum).
+  Grupurile de ștergere din S79 NU sunt încă aprobate (nimic șters). Testul OS os-250 (I8–I10) se mută la următoarea fereastră a lui Adrian.
+- stare: nou
