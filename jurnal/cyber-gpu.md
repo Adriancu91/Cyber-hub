@@ -72,3 +72,4 @@
 - 2026-11-06 01:35 — sesiunea 54 (cloud, fără placă): Booter-ul simulat lărgește acum WPR2 din `GspFwWprMeta` ca placa din 5 nov (`FakeGsp::wpr_meta_mem`, T92, SIMULARE); 359 teste, CI verde, `657e209`. Răspuns la observația OS; restul așteaptă fereastra cu `os-250`.
 - 2026-11-06 09:00 — sesiunea 55 (cloud, fără placă): oprire scurtă, nimic nou fără placă; CI verde pe `657e209`; așteptăm fereastra cu `os-251`.
 - 2026-11-06 13:30 — sesiunea 56 (cloud, fără placă): oprire scurtă; nicio comandă nouă, jurnalele ferestrei din 6 nov încă nu sunt în hub; CI verde.
+- 2026-11-06 19:00 — sesiunea 57 (cloud, fără placă): C-83 — I11 (copiere mare RAM ↔ VRAM prin canalul de lucru, `copy_b128` NAK, viteza din ceasul plăcii) și I12 (matrice × vector Q8_0, `q8_matvec` NAK, identic bit cu bit cu oracolul) scrise și testate în SIMULARE, puse în `WINDOW_CHAIN_C83`; 380 teste, CI verde; nota pentru OS. Urmează I13.

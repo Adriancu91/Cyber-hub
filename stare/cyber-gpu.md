@@ -1,58 +1,39 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-06 13:30 (ora României) · **de:** sesiunea Cyber-GPU 56 (cloud, fără placă) — oprire scurtă: nicio comandă nouă, jurnalele ferestrei din 6 nov încă lipsesc
-
-- **Sesiunea 56:** nimic nou de făcut fără placă; CI verde (`24c0304`); jurnalele ferestrei de azi (C-79) nu sunt încă în `rezultate/` — când apar, `verifica_jurnal_lant` pe ele.
-- **Sesiunea 55:** nimic nou de făcut fără placă; CI verde pe `657e209`; se așteaptă fereastra cu `os-251`.
+**Actualizat:** 2026-11-06 19:00 (ora României) · **de:** sesiunea Cyber-GPU 57 (cloud, fără placă) — C-83: I11 și I12 gata în SIMULARE
 
 ## Acum
-- **Sesiunea 54 — observația OS „`FakeGsp` nu lărgește WPR2 după Booter”:** rezolvată în `gpu-sim`. Câmp nou `FakeGsp::wpr_meta_mem` (memoria de
-  sistem simulată cu `GspFwWprMeta`); Booter-ul simulat coboară WPR2 LO la `gspFwWprStart` din meta, HI rămâne cel de la I6 — ca placa la 5 nov
-  (`0x1f4100000..0x1ffee0000`); meta greșit → refuz (cod SIM `0xbad2`). T92, `657e209`, 359 teste, CI verde. Nota (opțională):
-  `cyber-gpu/integration/cyber-universe/C-71_wpr2-largit-in-sim.md`. **SIMULARE, nimic testat pe RTX 3070 Ti.**
-- **Sesiunea 53 — zona VRAM pentru golden/I9/I10 (cererea OS din `stare/cyber-universe.md`):** pe WPR2 citit pe placă după I7 (5 nov,
-  `0x1f4100000..0x1ffee0000`), aranjamentul nostru dă același început; zona OS (`max(ecran, 256 MiB)` … `free_below()`) se termină la `0x1f4000000`,
-  sub heap-ul non-WPR și sub WPR2 → **zona e bună**. Verificare nouă, doar aritmetică: `FbLayout::free_after_i7(wpr2_citit)` (eroare înainte de orice
-  scriere în VRAM dacă WPR2 nu e unde a cerut `GspFwWprMeta`), T91; `60740a3`, 358 teste. Nota: `cyber-gpu/integration/cyber-universe/C-71_zona-vram-dupa-i7.md`.
-  **Nimic testat pe RTX 3070 Ti.**
-- **Sesiunea 52 — întrebarea 3 a OS (I10):** soneria canalului de lucru `0xBB0090` e acum **DOCUMENTATĂ** (antetul MIT 570.144 `tu102/dev_vm.h`:
-  `NV_VIRTUAL_FUNCTION_DOORBELL = 0x30090` la baza `0xB80000`; calea RM 570.144 pentru GA104 citită ca specificație), nu doar dedusă. Constanta nouă
-  `push::DOORBELL` (= `DOORBELL_INFERRED`, verificat la compilare, T90; `20b4a3b`, 357 teste). Pe placă: încă neobservată; prima scriere = I10 în lanț.
-  Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-72_soneria-i10.md` (doar în pasul I10, citiri prin `VramWindow::read_u32`, `invalidate_tlb` înainte).
-- **C-75 — de ce I8 s-a oprit pe placă (os-246):** jurnalul real arată `bar0 w 0x110040: 0x00000000 <- 0x09c71000 => 0x00000000` — **cutia GSP nu a
-  păstrat adresa LibOS**. Booter a mers (cutia SEC2 = 0, WPR2 lărgit, RISC-V activ), dar GSP-RM a pornit fără adresa argumentelor LibOS, deci nu și-a
-  făcut cozile. Cauza (DEDUS, ordinea nouveau / RM 570.144): după FWSEC, GSP trebuie **resetat în modul RISC-V** înainte de cutii.
-- **Reparația, în SIMULARE** (`8ed3993`, `a701cb9`; 356 teste, toate verificările trec): `falcon::booter_load_dma_libos` = resetare GSP + BCR_CTRL = 0x111 →
-  cutiile LibOS **recitite** (dacă nu se păstrează: oprire înainte de Booter) → Booter → `FALCON_OS` = 570144 → RISC-V activ. Simulatorul reproduce
-  placa (ordinea veche: I7 TRECE, I8 oprit), iar în ordinea nouă trece tot lanțul. `verifica_jurnal_lant` numește cauza pe jurnalul real.
-  **Nimic testat pe RTX 3070 Ti.**
-- Răspunsuri C-75: (1) `0xa0` la `0x111388` = RISC-V **activ** (bitul 7), nu oprit; (2) cele ~2 s nu sunt cauza; (3) formatul cozii se vede abia când
-  există coada. Turul de după: fapt nou `i6.wpr2.etapa` („lărgit pentru GSP-RM (după I7)” e normal).
-- Pentru OS: `cyber-gpu/integration/cyber-universe/C-75_i7-reset-gsp-libos.md` — la I7 un singur apel `booter_load_dma_libos(…, I7Prep::libos)`
-  în locul scrierilor proprii; 3 scrieri noi, toate în fereastra GSP. Răspunde și la întrebarea 1 a sesiunii OS.
-- Copia pentru OS: `integrare/cyber-gpu/snapshot/cyber-gpu.bundle` (vârf `657e209`).
-- Pe placă până acum: I0–I4 doar citire TREC; **I6 TRECE** (os-242); **I7 TRECE** (os-246, Booter); I8 oprit — cauza de mai sus.
+- **C-83 (Adrian: „cât mai mulți pași în simulare, și după I10”) — I11 și I12 scrise și testate, doar SIMULARE, nimic pe RTX 3070 Ti.**
+- **I11 — copiere mare RAM ↔ VRAM prin canalul de lucru:** un program de copiere compilat cu NAK (`copy_b128`, 288 B) pe același canal și obiect ca
+  I10; nou pentru placă doar PTE-uri care arată spre paginile RAM ale OS-ului (DEDUS: aperture coerent, `VOL`). O intrare GPFIFO: marcă → RAM→VRAM →
+  marcă → VRAM→RAM → marcă; verificare bit cu bit (model fără fișier) + viteza din ceasul plăcii. Test cap-coadă pe tot lanțul golden → canal, cu
+  greșeli plantate prinse (T93–T95).
+- **I12 — y = W·x, W în Q8_0 (operația de bază a lui Kronos):** program NAK `q8_matvec` (8 KiB, 32 fire pe rând, 128 B partajată, fără barieră
+  hardware). Oracolul urmează exact operațiile din fișa NAK; verdict scris dinainte: identic / în marjă față de motorul OS / nu trece. În
+  simulare, 3072 × 768 (forma `mlp.0`), W și x urcate din RAM cu I11: **identic** bit cu bit (T96–T98).
+- **Lanțul:** `WINDOW_CHAIN_C83` = lanțul complet de până acum + `i11-copiere` + `i12-q8-matvec`, înainte de punerea la loc a Bus Master (T99).
+- CI: verde după reparația pentru clippy 1.99 (`4ac1646`); vârful `24d9aac`, 380 teste.
+- Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-83_i11-i12.md`.
+- Pe placă până acum: I0–I4 doar citire TREC; I6 TRECE (os-242); I7 TRECE (os-246); I8–I10 încă neîncercate (fereastra din 6 nov s-a închis fără test).
 
-## Lista scurtă pentru fereastra pe hardware (în ordine; `gpu lant` + „DA” le rulează pe toate, oprire la primul eșec)
-1. Pornire rece (cablul scos 30 s); `gpu pregatire-i6` → „WPR2 coborat”, 0 scrieri.
-2. Bus Master pornit → I6 FWSEC-FRTS → WPR2 citit: „capat: ultimul bloc de 128 KiB”.
-3. I7 Booter pe SEC2 → citit: cutia SEC2 = 0, GSP RISC-V ACTIV.
-4. I8: SetSystemInfo + SetRegistry, soneria, secvențiatorul → `GSP_INIT_DONE`.
-5. Golden image + I9 (canalul de lucru): fiecare răspuns RM = 0.
-6. I10: `add64` → rezultat identic bit cu bit cu procesorul (abia atunci „executat pe GPU”).
-7. Costul unei lansări: 16 lansări cu marcă de timp → mediana.
-8. Bus Master la loc, tur de citire, oprire completă; jurnalul de pe stick + poze în `rezultate/`.
-9. Noi, după: `verifica_jurnal_lant <jurnal> <adresa GspFwWprMeta> [apeluri RM]` → TRECE / OPRIT CURAT / DE ANALIZAT.
-(Toți pașii sunt în OS din `os-249`, testați doar în SIMULARE.)
+## Lista scurtă pentru fereastra de luni 9 nov (provizorie; lista finală duminică seara)
+1. Pornire rece; `gpu lant` + „DA” o dată, cu `WINDOW_CHAIN_C83` (după ce OS-ul îl integrează): I6 → I7 → I8 → golden → I9 → I10.
+2. **I11:** 8 MiB RAM → VRAM → RAM. Scrieri noi pe placă: **niciun registru nou** (soneria de lucru + fereastra VRAM, ca la I10); nou: GPU-ul citește și
+   scrie prin DMA paginile RAM date de OS. Așteptat: `i11: 8388608 octeti; RAM->VRAM … MB/s; VRAM->RAM … MB/s`, întoarcerea identică cu modelul.
+3. **I12:** 3072 × 768 Q8_0 (urcare, înmulțire, coborâre). Aceleași scrieri. Așteptat: `i12: TRECE - identic bit cu bit…`.
+4. Bus Master la loc, tur de citire; jurnalul de pe stick în `rezultate/`; noi: `verifica_jurnal_lant`.
 
 ## Urmează
-0. Fereastra următoare pe workstation cu `os-251` (sau `os-250`) (tot lanțul I6 → I10 e în OS): pornire rece, `gpu lant` + DA o dată. Așteptat: rândul
-   `0x110040 … => 0x09c71000` (adresa LibOS păstrată) și I8 TRECE; apoi golden, I9, I10 (`add64` bit cu bit).
-1. După fereastră: `verifica_jurnal_lant <jurnal> <adresa GspFwWprMeta>` pe jurnalul din `rezultate/`.
-2. Dacă I8 trece pe placă: compararea zonei VRAM cu regiunile FB raportate de GSP-RM (`GET_GSP_STATIC_INFO`, DEDUS).
-3. Fără comandă nouă sau jurnal nou: sesiunile cyber-gpu se opresc scurt (nimic cu plus cinstit fără placă).
+1. **I13** — un strat întreg al lui Kronos (LayerNorm, qkv, atenție + softmax, proiecție, GELU erf, MLP), fiecare program NAK cu oracolul lui, comparat cu
+   motorul KGR1 din OS. 2. **I14** — un simbol întreg #513, apoi „un singur program pe simbol”. 3. Duminică seara: lista exactă pentru luni.
+4. După fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
 
 ## Ce oferă proiectul celorlalți
+- **Nou (sesiunea 57, C-83, doar adăugări):** `mmu::{encode_pte_sys, SysMapping, map_sys, alloc_sys_mapped, lookup_sys}`; modulul `transfer` (I11:
+  `COPY_B128`, `copy_cbuf`, `copy_qmd`, `encode_round_trip`, `analyze_round_trip`, `encode_sequence`, `analyze_sequence`, modelul de test); modulul
+  `q8_matvec` (I12: `Q8_MATVEC`, `q8_cbuf`, `q8_qmd`, `test_matrix`, `judge`/`Verdict`); `chain::{WINDOW_CHAIN_C83, READY_FOR_WINDOW_C83}`;
+  `gpu_compute::q8`; în `gpu-sim`: `translate_any`, `GpuMem::{load_from, store_to}`, `copy_b128_on_cpu`, `q8_matvec_on_cpu`. `nvidia-ga104` depinde
+  acum normal de `gpu-compute`. Nimic redenumit sau șters.
 - **Nou (sesiunea 54, doar adăugare):** `gpu_sim::fake_gsp::FakeGsp::wpr_meta_mem` (Booter-ul simulat lărgește WPR2 din `GspFwWprMeta`); implicit `None` = ca înainte.
 - **Nou (sesiunea 53, doar adăugare):** `FbLayout::free_after_i7` (zona VRAM verificată pe WPR2 recitit după I7); `free_below` neschimbat.
 - **Nou (sesiunea 52, doar adăugare):** `push::DOORBELL` (soneria canalului de lucru, din antetul MIT); `DOORBELL_INFERRED`, `chain_log::WORK_DOORBELL` neschimbate.
@@ -68,11 +49,9 @@
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: jurnalele `gpu lant` cu `os-251` (meta-ul în model e deja folosit din `os-251`, mulțumim).
-- De la Adrian: fereastra următoare pe workstation și jurnalul de pe stick în `rezultate/`.
+- De la `cyber-universe`: I11 și I12 în `gpu lant` (nota `C-83_i11-i12.md`), cu paginile DMA ale OS-ului; atenție: programul `q8_matvec` are 8 KiB.
+- De la Adrian: fereastra de luni și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
-- 2026-11-06 01:35 — sesiunea 54 (cloud, fără placă): observația OS rezolvată în SIMULARE — Booter-ul simulat lărgește WPR2 din `GspFwWprMeta` ca placa (`FakeGsp::wpr_meta_mem`, T92); 359 teste, CI verde, `657e209`; nota pentru OS.
-- 2026-11-06 09:00 — sesiunea 55 (cloud, fără placă): oprire scurtă — nicio comandă nouă, niciun jurnal nou; CI verde; se așteaptă fereastra cu `os-251`.
