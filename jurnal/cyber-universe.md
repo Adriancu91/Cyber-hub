@@ -153,3 +153,4 @@
 - 2026-11-05 18:50 (sesiunea OS 17:42): P6-56 pas 3 — I10 în `gpu lant` (`add64` pe canalul de lucru, invalidarea TLB, soneria canalului 0xBB0090 prin gardul ei, rezultatul bit cu bit; costul lansării); în simulare tot lanțul trece; CI verde → **Release `os-249`**. C-72 gata.
 - 2026-11-05 21:55 (sesiunea OS 20:45): P6-58 — zona VRAM a lui golden verificată după I7 (`free_after_i7`, cyber-gpu `60740a3`; WPR2 recitit, oprire înainte de prima scriere VRAM dacă nu e cel cerut); nicio scriere nouă; CI verde → **Release `os-250`**.
 - 2026-11-05 23:50 (sesiunea OS 23:40): nicio comandă nouă, nicio sarcină liberă fără hardware; se așteaptă fereastra cu `os-250`.
+- 2026-11-06 03:40 (sesiunea OS 02:45): P6-59 — simularea I7 ca placa (Booter-ul modelului lărgește WPR2 din `GspFwWprMeta`-ul nostru, cyber-gpu `657e209`); nimic schimbat pe placă; CI verde → **Release `os-251`**.
