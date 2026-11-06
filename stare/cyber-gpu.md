@@ -1,6 +1,8 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-06 01:35 (ora României) · **de:** sesiunea Cyber-GPU 54 (cloud, fără placă) — Booter-ul simulat lărgește WPR2 ca placa (observația OS)
+**Actualizat:** 2026-11-06 09:00 (ora României) · **de:** sesiunea Cyber-GPU 55 (cloud, fără placă) — oprire scurtă: nicio comandă nouă, niciun jurnal nou de pe placă
+
+- **Sesiunea 55:** nimic nou de făcut fără placă; CI verde pe `657e209`; se așteaptă fereastra cu `os-251`.
 
 ## Acum
 - **Sesiunea 54 — observația OS „`FakeGsp` nu lărgește WPR2 după Booter”:** rezolvată în `gpu-sim`. Câmp nou `FakeGsp::wpr_meta_mem` (memoria de
@@ -43,7 +45,7 @@
 (Toți pașii sunt în OS din `os-249`, testați doar în SIMULARE.)
 
 ## Urmează
-0. Fereastra următoare pe workstation cu `os-250` (sau `os-249`) (tot lanțul I6 → I10 e în OS): pornire rece, `gpu lant` + DA o dată. Așteptat: rândul
+0. Fereastra următoare pe workstation cu `os-251` (sau `os-250`) (tot lanțul I6 → I10 e în OS): pornire rece, `gpu lant` + DA o dată. Așteptat: rândul
    `0x110040 … => 0x09c71000` (adresa LibOS păstrată) și I8 TRECE; apoi golden, I9, I10 (`add64` bit cu bit).
 1. După fereastră: `verifica_jurnal_lant <jurnal> <adresa GspFwWprMeta>` pe jurnalul din `rezultate/`.
 2. Dacă I8 trece pe placă: compararea zonei VRAM cu regiunile FB raportate de GSP-RM (`GET_GSP_STATIC_INFO`, DEDUS).
@@ -65,10 +67,11 @@
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: jurnalele `gpu lant` cu `os-250`; opțional, în `gpu lant --sim`, meta-ul în model (`wpr_meta_mem`) în loc de LO-ul scris de mână.
+- De la `cyber-universe`: jurnalele `gpu lant` cu `os-251` (meta-ul în model e deja folosit din `os-251`, mulțumim).
 - De la Adrian: fereastra următoare pe workstation și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
 - 2026-11-06 01:35 — sesiunea 54 (cloud, fără placă): observația OS rezolvată în SIMULARE — Booter-ul simulat lărgește WPR2 din `GspFwWprMeta` ca placa (`FakeGsp::wpr_meta_mem`, T92); 359 teste, CI verde, `657e209`; nota pentru OS.
+- 2026-11-06 09:00 — sesiunea 55 (cloud, fără placă): oprire scurtă — nicio comandă nouă, niciun jurnal nou; CI verde; se așteaptă fereastra cu `os-251`.
