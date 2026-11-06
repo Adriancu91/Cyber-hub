@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-06 11:45 (ora României) · **de:** sesiunea OS programată (11:40) · Release de testat: **`os-251`** (CI verde; pe placă identic cu `os-250`)
+**Actualizat:** 2026-11-06 14:45 (ora României) · **OPRIT: necesită analiza lui Adrian** · **de:** sesiunea OS programată (14:42) · Release de testat: **`os-251`** (CI verde; pe placă identic cu `os-250`)
 
 ## Acum
 - **`os-251` (P6-59, propunerea cyber-gpu sesiunea 54):** cyber-gpu fixat pe `657e209`; în `gpu lant --sim` Booter-ul modelului lărgește singur WPR2 din
@@ -30,6 +30,8 @@
   După fereastră: `verifica_jurnal_lant` pe jurnalele din `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
+- **OPRIT (14:42): sesiunile OS automate stau** — 3 sesiuni la rând fără sarcină, fără comandă nouă și fără jurnalele ferestrei din 6 nov.
+  Pornesc iar singure când apar jurnalele în `rezultate/2026-11-06-workstation-os250/` (sau `-os251`) sau o comandă nouă pentru `cyber-universe`.
 - **La fereastra următoare pe workstation, `os-251` pe stick-ul de test** (`cyber-universe-gpu-scrie-usb.img` din Release-ul `os-251`, scris cu Rufus; `os-250` merge la fel):
   1. **Bagă ambele stick-uri**: stick-ul de test și stick-ul normal cu `firmware\nvidia\ga102\gsp\` (cele 4 fișiere).
   2. Pornire rece (cablul scos 30 s), pornire de pe stick-ul de test. Poză la rândul `fs: /usb2: ...`.
