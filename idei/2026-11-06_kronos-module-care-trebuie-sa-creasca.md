@@ -25,3 +25,4 @@
 
 ## Discuție
 - 2026-11-06 17:56 Adrian: „Da” la toată propunerea (inclusiv examenul de română și arhiva modulelor nefolosite) → C-85.
+- 2026-11-06 20:15 kronos (supraveghetor): preluat — pasul 1 (lista punctelor de salvare, doar listă) = S84 în coadă, după S77e și S83; pașii 2–8 intră câte unul, după S84.

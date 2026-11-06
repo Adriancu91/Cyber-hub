@@ -1072,7 +1072,8 @@ Format:
 - ce: Adrian spune că a șters înainte să plece (cele două foldere „test ai brain” și, probabil, arhiva `cyberspace_mutare`). Executantul: verifică doar prin citire ce
   mai există din grupurile A și B din S79, cât spațiu e liber pe C: și dacă Coșul de reciclare mai ține spațiul; scrie rezultatul (3 rânduri) sus în `plan/pentru_adrian.md`.
   Nu șterge nimic (nici Coșul). Dacă spațiul e > 40 GB, rulează din nou testul de disc.
-- stare: preluat (2026-11-06 17:15, supraveghetor) — sarcina **S82** în `plan/coada.md` (aprobat de Adrian prin C-81), doar citire, se face acum, înainte de S77e
+- stare: gata (2026-11-06 20:15, supraveghetor) — S82
+- rezultat: grupul A (cele două foldere „test ai brain”) nu mai există; arhiva `cyberspace_mutare` (26,2 GB) e încă în `Desktop\proiect\`; C: 112,4 GB liberi; Coșul gol; 1247 teste trec.
 
 ### C-82 · kronos (+ cyber-universe) · „Da 513” — #513 înlocuiește #477 ca model principal
 - data: 2026-11-06 17:39 · de la: Adrian (în conversația cu centrul de comandă), după S76b + S76c
@@ -1082,7 +1083,7 @@ Format:
   exportul e doar pe procesor). Raport + rând în `plan/pentru_adrian.md`.
 - ce (cyber-universe): după ce apare Release-ul `kronos-kgr1-513`, OS-ul trece pe #513 (fișierul de pe stick, suma și textele de control noi; `COPIAZA-KRONOS-…bat`),
   păstrând posibilitatea de a porni #477. Testul pe workstation (CONTROL TRECE + viteza) la fereastra următoare a lui Adrian, odată cu I8–I10.
-- stare: nou
+- stare: preluat (2026-11-06 20:15, supraveghetor) — sarcina **S83** în `plan/coada.md` (doar procesor), după S77e de la noapte
 - stare (cyber-universe): preluat (2026-11-06 17:42, sesiunea OS) — sarcina **P6-60** în `docs/TASKS.md`; așteaptă Release-ul `kronos-kgr1-513` + `MODEL.md` cu #513 (nu există încă)
 
 ### C-83 · cyber-gpu + cyber-universe · Până luni (9 nov): cât mai mulți pași în SIMULARE, și DUPĂ I10 — spre Kronos pe placă în OS
@@ -1136,4 +1137,4 @@ Format:
   8. **Arhivă:** mută `model_plasa*`, `model_ngram`, `model_continuu`, `model_racit`, `date_tinystories`, `cercetator_aleator` în `module/arhiva/` cu testele lor (nimic șters);
      `profesor_qwen` rămâne oprit. Configurările vechi care le folosesc: actualizează căile sau marchează-le „arhivă”.
 - reguli: **regula nucleului** — `kronos/` nu se schimbă pentru module; modulele se adaptează la nucleu. Examenul vechi și paznicul doar cu aprobarea lui Adrian; nimic pe placă peste ferestrele lui Adrian; commit + push după fiecare pas.
-- stare: nou
+- stare: preluat (2026-11-06 20:15, supraveghetor) — pasul 1 = sarcina **S84** (doar listă, nimic șters), după S83; pașii 2–8 câte unul, după S84
