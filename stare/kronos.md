@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-06 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-06 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -9,7 +9,7 @@
 - **#513** (S76b, 5 nov): urmează instrucțiunile din setul ascuns (R1 98,97 vs 37,47 la #477), fără regresii. Generalizarea se măsoară azi (S76c).
 - **Kronos mare (24 de straturi, 183M):** S77c (noaptea 5→6) oprit după 2 ore din 5 (memorie), mai slab decât #477 încă din prima oră; azi diagnoza (S77d).
 - **Noaptea 5→6, gata:** S78 (C-77, Mini Brain salvat, 1,54 GB, 0 diferențe), S79 (C-76, raport de spațiu: ~104 GB se pot elibera fără pierdere),
-  S81 (o oră anulată oprește acum lanțul cu cod 1). **1242 teste trec**; 1 pică doar din cauza discului (C: 33 GB liberi, sub pragul de 40 GB).
+  S81 (o oră anulată oprește acum lanțul cu cod 1). **1242 teste trec**; 1 pică doar din cauza discului (C: 31 GB liberi la 06:46, sub pragul de 40 GB).
 
 ## Urmează
 - **6 nov ziua:** S76c (procesor, de la 08:00): #513 urmează și instrucțiuni formulate altfel? → S77d (placa, ~2,5 h, când Adrian nu e la workstation):
@@ -28,7 +28,7 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- **Discul C: (33 GB liberi):** Adrian alege ce grupuri din raportul S79 se șterg (A + B = 104 GB fără pierdere; C–H de decis). Agentul nu șterge nimic.
+- **Discul C: (31 GB liberi, scade):** Adrian alege ce grupuri din raportul S79 se șterg (A + B = 104 GB fără pierdere; C–H de decis). Agentul nu șterge nimic.
 - Folderele „test ai brain” se pot șterge (Mini Brain salvat).
 - Decizia: #513 îl înlocuiește pe #477? (recomandat după S76c).
 - Fără grabă: dacă cifrele S58 contează; permisiunea `taskkill`; ora limită 18:30 la bucla automată; Release-ul privat `kronos-kgr1-477`.
