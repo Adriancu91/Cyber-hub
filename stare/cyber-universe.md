@@ -1,44 +1,37 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-06 17:45 (ora României) · **activ (OPRIT ridicat de C-82)** · **de:** sesiunea OS programată (17:42) · Release de testat: **`os-251`** (CI verde; pe placă identic cu `os-250`)
+**Actualizat:** 2026-11-06 19:25 (ora României) · **de:** sesiunea OS programată (17:45) · Release de testat: **`os-259`** (CI verde; pe placă identic cu `os-251`)
 
 ## Acum
-- **C-82 („da 513”) preluat → sarcina P6-60** (plan `docs/plans/P6-60.md`): OS-ul va alege implicit #513 (suma + textele de control noi), cu #477/#459 păstrate.
-  **Așteaptă** Release-ul `kronos-kgr1-513` și `integrare/kronos/MODEL.md` cu #513 — la 17:42 nu există încă.
-- **`os-251` (P6-59, propunerea cyber-gpu sesiunea 54):** cyber-gpu fixat pe `657e209`; în `gpu lant --sim` Booter-ul modelului lărgește singur WPR2 din
-  `GspFwWprMeta`-ul pregătit de OS (recitit din RAM), ca placa (`0x1f4100000`) — OS-ul nu mai pune valoarea de mână. Pe placă: nimic schimbat față de `os-250`.
-- **`os-250` (P6-58, propunerea cyber-gpu sesiunea 53):** înainte de golden, OS-ul recitește WPR2 (2 citiri, nicio scriere) și ia zona VRAM din
-  `FbLayout::free_after_i7` (cyber-gpu fixat pe `60740a3`). Dacă Booter a pus WPR2 altundeva decât a cerut `GspFwWprMeta`, golden se oprește **înainte de
-  prima scriere în VRAM**. Pe valorile plăcii din 5 nov zona e aceeași (`0x10000000-0x1f4000000`). Nicio scriere nouă față de `os-249`.
-- **`os-249` (P6-56 pas 3, C-72):** `gpu lant` are și I10, ultimul pas: programul `add64` (64 de adunări) rulat pe placă prin canalul de lucru deschis la I9,
-  rezultatul citit înapoi din memoria plăcii și comparat **bit cu bit** cu procesorul; apoi costul unei lansări (16 lansări, ceasul plăcii).
-  Scrieri NOI față de `os-248` (niciodată încercate pe placă): invalidarea TLB (3 registre) și **soneria canalului `0xBB0090`**, o dată pe pas, printr-un gard
-  care permite doar acel registru și doar jetonul primit de la GSP-RM. Dacă placa nu răspunde în 2 s → oprire curată, Bus Master la loc.
-- În SIMULARE tot lanțul trece (13 pași). Pe placă: neîncercat de la I8 încolo cu reparația C-75.
-- C-72 (I7–I10) e acum **gata** în OS. `os-248` rămâne valabil, dar `os-249` îl cuprinde.
+- **C-84 (unelte spre independența de Windows) → sarcina P6-61, gata în QEMU** (nimic încercat încă pe hardware):
+  - **Rapoartele pleacă singure în hub:** după `raport`, `gpu lant`, `test tot` (și la comanda `trimite`) rapoartele noi din `/usb/raport` merg în
+    `rezultate/os-automat/<data>/` — **doar dacă pe stick e `github.token`**; fără token: mesaj clar, rămân pe stick. Fiecare pleacă o singură dată (`trimise.txt`).
+  - `hub` / `hub stare kronos` / `hub decizii` — comenzile, stările și deciziile citite din OS (doar citire).
+  - `kronos --intreaba <întrebare>` — Kronos (#477) răspunde pe un rând, cu istoric pe stick (modelul doar continuă text; spus cinstit).
+  - Git simplu: `gh-trimite --ramura os/<nume> …` (niciodată `main`), `gh-ia --lista <depozit> [dosar]`.
+  - `test tot` — autotestul pe calculatorul real (procesor, ceas, stick, rețea, placa video doar prin ID-ul PCI): PASS/FAIL + raport pe stick.
+  - `web --formular F camp=valoare` — formulare simple (GET/POST) în browserul text; `ora` — ora din internet (SNTP), fără să schimbe ceasul;
+    setările (fus orar, tastatură) se salvează pe stick (`config/settings.toml`).
+- **C-83 → sarcina P6-62:** partea OS (pașii I11–I14 în `gpu lant`, `kronos --gpu` cu întoarcere pe procesor) se face când cyber-gpu publică I11+.
+- **C-82 → P6-60:** așteaptă în continuare Release-ul `kronos-kgr1-513`.
+- Pe placă nimic schimbat față de `os-251` (lanțul I6–I10 neîncercat de la I8 cu reparația C-75).
 
 ## Urmează
-- P6-60 imediat ce Kronos publică Release-ul `kronos-kgr1-513` + MODEL.md (testul #513 pe workstation la fereastra următoare, odată cu I8–I10).
-- Fereastra de azi s-a închis fără test (C-80) → `os-251` rămâne de încercat la fereastra următoare; apoi `verifica_jurnal_lant` pe jurnale.
-- Coada OS nu are alte sarcini libere fără hardware.
+- P6-62 imediat ce cyber-gpu publică I11 (copierea mare RAM↔VRAM) și următorii; P6-60 când apare `kronos-kgr1-513`.
+- P6-61 rest: imagini + CSS de bază în browser (6b). Duminică seara (8 nov): lista exactă pentru fereastra de luni.
 
 ## Ce oferă proiectul celorlalți
-- `gpu lant` I6 → I10 pe stick-ul de test; jurnalul fiecărui pas pe stick (`/usb/raport/gpu-jurnal-NNN.txt`) pentru `verifica_jurnal_lant`.
-- Al doilea stick la `/usb2` (doar citire) pentru firmware.
-- Actualizarea cu revenire, `compara`, `log --sumar`, `timp`, `hw lista`, `web`, remote criptat; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
+- `gpu lant` I6 → I10 pe stick-ul de test, jurnal pe stick; rapoartele pot ajunge acum singure în `rezultate/os-automat/` (cu token).
+- `hub` (citire din OS a `COMENZI.md`/`stare/`/`DECIZII.md`), `test tot`, `ora`, git pe ramuri `os/…`, `web` cu formulare.
+- Bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
 
 ## De ce are nevoie de la ceilalți
-- **`kronos`:** Release-ul `kronos-kgr1-513` + secțiunea #513 în `integrare/kronos/MODEL.md` (SHA-256, mărime, cele 3 texte de control, marjele) — pentru P6-60.
-- **`cyber-gpu`:** mulțumim — `wpr_meta_mem` e folosit din `os-251` (simularea trece fără valoare pusă de mână; `add64.sm86.sass` identic și în `657e209`).
-  După fereastră: `verifica_jurnal_lant` pe jurnalele din `rezultate/`.
+- **`kronos`:** Release-ul `kronos-kgr1-513` + secțiunea #513 în `integrare/kronos/MODEL.md` (SHA-256, mărime, 3 texte de control) — pentru P6-60.
+- **`cyber-gpu`:** pașii I11–I14 în bibliotecă + `gpu-sim` (C-83), cu commit-ul de fixat — pentru P6-62.
 
 ## Blocaje / nevoie de Adrian
-- **La fereastra următoare pe workstation, `os-251` pe stick-ul de test** (`cyber-universe-gpu-scrie-usb.img` din Release-ul `os-251`, scris cu Rufus; `os-250` merge la fel):
-  1. **Bagă ambele stick-uri**: stick-ul de test și stick-ul normal cu `firmware\nvidia\ga102\gsp\` (cele 4 fișiere).
-  2. Pornire rece (cablul scos 30 s), pornire de pe stick-ul de test. Poză la rândul `fs: /usb2: ...`.
-  3. `gpu firmware` → poză („fisiere oficiale 4/4”). `gpu pregatire-i6` → poză.
-  4. `gpu lant` + `DA` **o singură dată** → poze la toate rândurile. Așteptat: I6 și I7 TREC (cutia GSP `0x110040` păstrează adresa LibOS);
-     apoi I8, golden, I9, I10. La I10 rândul important: „pas I10 add64: ok (64 rezultate identice bit cu bit…)” sau ESEC cu motivul.
-  5. `raport`, jurnalele `/usb/raport/gpu-jurnal-*.txt` în `rezultate/<data>-workstation-os251/`. Oprire completă (cablul scos 30 s).
-- Token GitHub „fine-grained” doar pentru `Adriancu91/Cyber-hub` (Contents: Read and write) ca `github.token` pe stick — când vrei.
-- 2026-11-06 17:45 (sesiunea OS 17:42): comanda C-82 ridică „OPRIT”; P6-60 (#513) adăugat, așteaptă Release-ul Kronos. Nicio schimbare de cod.
+- **Tokenul GitHub pe stick (acum chiar folosește):** pe GitHub → Settings → Developer settings → Fine-grained tokens → doar depozitul **`Cyber-hub`**,
+  *Contents: Read and write*; salvat ca `github.token` (un rând) în rădăcina stick-ului. Cu el, jurnalele ferestrei ajung singure în hub (nu mai copiezi în Windows).
+- **La fereastra următoare pe workstation (luni 9 nov sau mai devreme):** stick-ul de test cu `os-259` (`cyber-universe-gpu-scrie-usb.img`; `os-251` e identic pe placă) + stick-ul cu firmware:
+  pornire rece, `gpu firmware`, `gpu pregatire-i6`, `gpu lant` + `DA` o dată, poze la rânduri; apoi `raport` și **`test tot`** (nou, doar citiri).
+  Dacă e tokenul pe stick: `trimite` (rapoartele pleacă singure); altfel jurnalele `/usb/raport/*` în `rezultate/<data>-workstation-os259/`.
