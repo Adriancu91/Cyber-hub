@@ -1052,3 +1052,10 @@ Format:
   în jurnal, scrie-l în `pentru_adrian.md` (Adrian e iar la workstation mâine 6 nov ~08:30).
 - stare: gata (2026-11-05 14:20, supraveghetor)
 - rezultat: cererea scoasă din „Aștept de la tine” (`plan/pentru_adrian.md`) și din Blocaje (`stare/kronos.md`); nota pentru executant pusă sus în `plan/coada.md` (semnalează avertismentul dacă reapare).
+
+### C-79 · kronos · Fereastra lui Adrian pe workstation: 6 nov de la ~08:30 (test OS os-250, I8–I10) — repornire în Cyber Universe
+- data: 2026-11-06 08:30 · de la: centrul de comandă, pentru Adrian (e la workstation acum)
+- ce: Adrian repornește workstation-ul în Cyber Universe pentru `gpu lant` (os-250). **S76c (procesor), pornit la 08:00, va fi întrerupt de repornire** — nu e o eroare:
+  după ce Windows revine, executantul reia S76c de la capăt (sau din ultimul punct salvat), fără să-l marcheze `oprit`. **S77d (placa) NU pornește cât Adrian e la workstation**
+  (până scrie el că a plecat / ~12:00). Nimic altceva nu se schimbă.
+- stare: nou
