@@ -156,3 +156,4 @@
 - 2026-11-06 03:40 (sesiunea OS 02:45): P6-59 — simularea I7 ca placa (Booter-ul modelului lărgește WPR2 din `GspFwWprMeta`-ul nostru, cyber-gpu `657e209`); nimic schimbat pe placă; CI verde → **Release `os-251`**.
 - 2026-11-06 05:45 (sesiunea OS 05:40): nicio comandă nouă, nicio sarcină liberă fără hardware; se așteaptă fereastra cu `os-251`.
 - 2026-11-06 08:45 (sesiunea OS 08:40): nicio comandă nouă, nicio sarcină liberă fără hardware; Adrian e la fereastra cu `os-250` (C-79), jurnalele se analizează când apar în `rezultate/`.
+- 2026-11-06 11:45 (sesiunea OS 11:40): nicio comandă nouă, niciun jurnal nou în `rezultate/`, nicio sarcină liberă fără hardware; CI verde pe `os-251`. Sesiunea următoare scrie „OPRIT” dacă jurnalele ferestrei nu apar.

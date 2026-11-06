@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-06 08:45 (ora României) · **de:** sesiunea OS programată (08:40) · Release de testat: **`os-251`** (CI verde; pe placă identic cu `os-250`)
+**Actualizat:** 2026-11-06 11:45 (ora României) · **de:** sesiunea OS programată (11:40) · Release de testat: **`os-251`** (CI verde; pe placă identic cu `os-250`)
 
 ## Acum
 - **`os-251` (P6-59, propunerea cyber-gpu sesiunea 54):** cyber-gpu fixat pe `657e209`; în `gpu lant --sim` Booter-ul modelului lărgește singur WPR2 din
@@ -17,6 +17,7 @@
 
 ## Urmează
 - Fereastra de azi (6 nov, C-79) pe workstation cu `os-250` sau `os-251` (identice pe placă; pașii mai jos); când apar jurnalele în `rezultate/`, `verifica_jurnal_lant` și analiza I6–I10 în sesiunea OS următoare.
+- La 11:40 jurnalele ferestrei de azi nu sunt încă în `rezultate/`. Dacă nici sesiunea următoare nu le găsește (și nu e comandă nouă), sesiunile OS se opresc cu „OPRIT” până se uită Adrian (3 sesiuni la rând fără sarcină).
 - Coada OS nu mai are sarcini libere fără hardware.
 
 ## Ce oferă proiectul celorlalți
@@ -36,4 +37,5 @@
   4. `gpu lant` + `DA` **o singură dată** → poze la toate rândurile. Așteptat: I6 și I7 TREC (cutia GSP `0x110040` păstrează adresa LibOS);
      apoi I8, golden, I9, I10. La I10 rândul important: „pas I10 add64: ok (64 rezultate identice bit cu bit…)” sau ESEC cu motivul.
   5. `raport`, jurnalele `/usb/raport/gpu-jurnal-*.txt` în `rezultate/<data>-workstation-os251/`. Oprire completă (cablul scos 30 s).
+- **Jurnalele de la fereastra de azi (6 nov):** pune `/usb/raport/gpu-jurnal-*.txt` și pozele în `rezultate/2026-11-06-workstation-os250/` (sau `-os251`); fără ele OS-ul nu are ce lucra și se oprește singur după sesiunea următoare.
 - Token GitHub „fine-grained” doar pentru `Adriancu91/Cyber-hub` (Contents: Read and write) ca `github.token` pe stick — când vrei.
