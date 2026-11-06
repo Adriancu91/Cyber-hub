@@ -98,3 +98,4 @@
 - 2026-11-05 17:15: cascada blocată 14:00–17:30 de un PID vechi (S42) refolosit de Windows; S80 (reparația `cascada.py`) aprobat; S77a mutată, gata până la 23:30; S77b după cifre.
 - 2026-11-05 20:15 — S80 și S77a gata: Kronos crescut la 24 de straturi (183M), ieșire identică, 6.010 MB cu recalcul; S77b (prima noapte, 5 ore, față de #513) aprobat pentru noaptea asta. S78 deblocat: textul C-76/C-77 copiat în `cyberspace/plan/` (executantul nu poate citi hub-ul).
 - 2026-11-05 23:15 — S77b (prima noapte, 24 de straturi) a căzut după ~1 minut din lipsă de memorie (limita PyTorch 5.800 MB, lot 12), nimic stricat; S77c aprobat: reluarea în aceeași noapte cu lot 6 × 16, linia `w2_mare_24b`.
+- 2026-11-06 02:15 — S77c (prima noapte, 24 de straturi) oprit după 2 ore din 5 din lipsă de memorie, mai slab decât #477 la ora 2; S81 (cod de ieșire) și S77d (rată mai mică, 2 × 1 oră) aprobate pentru ziua de 6 nov; discul C: are 34 GB liberi.
