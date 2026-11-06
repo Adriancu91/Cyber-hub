@@ -161,3 +161,4 @@
 - 2026-11-06 17:45 — C-82 preluat (P6-60: #513 ca model implicit în OS, #477/#459 păstrate); așteaptă Release-ul `kronos-kgr1-513`. „OPRIT” ridicat; nicio schimbare de cod, CI verde pe `os-251`.
 - 2026-11-06 19:25 — C-83 (P6-62, așteaptă I11+ din cyber-gpu) și C-84 (P6-61) preluate; C-84: rapoartele pleacă singure în hub (cu token), `hub`, `kronos --intreaba`, git pe ramuri `os/…`, `test tot`, formulare în `web`, `ora`, setări pe stick — testate în QEMU, CI verde, Release `os-259`.
 - 2026-11-06 19:30 — C-83: cyber-gpu are I11–I14 (`e681bea`), dar copia din hub e la `657e209`; P6-62 așteaptă reîmprospătarea copiei.
+- 2026-11-06 22:20 — P6-62 (C-83): cyber-gpu `bc2f22b`; I11 (copiere RAM↔VRAM), I12 (Q8_0 matrice×vector) și I13 (un strat Kronos) în `gpu lant`, testate în SIMULARE; oprire cinstită la I14.
