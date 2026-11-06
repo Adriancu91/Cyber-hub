@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-06 05:45 (ora României) · **de:** sesiunea OS programată (05:40) · Release de testat: **`os-251`** (CI verde; pe placă identic cu `os-250`)
+**Actualizat:** 2026-11-06 08:45 (ora României) · **de:** sesiunea OS programată (08:40) · Release de testat: **`os-251`** (CI verde; pe placă identic cu `os-250`)
 
 ## Acum
 - **`os-251` (P6-59, propunerea cyber-gpu sesiunea 54):** cyber-gpu fixat pe `657e209`; în `gpu lant --sim` Booter-ul modelului lărgește singur WPR2 din
@@ -16,7 +16,7 @@
 - C-72 (I7–I10) e acum **gata** în OS. `os-248` rămâne valabil, dar `os-249` îl cuprinde.
 
 ## Urmează
-- Fereastra următoare pe workstation cu `os-251` (sau `os-250`; pașii mai jos), apoi `verifica_jurnal_lant` pe jurnale.
+- Fereastra de azi (6 nov, C-79) pe workstation cu `os-250` sau `os-251` (identice pe placă; pașii mai jos); când apar jurnalele în `rezultate/`, `verifica_jurnal_lant` și analiza I6–I10 în sesiunea OS următoare.
 - Coada OS nu mai are sarcini libere fără hardware.
 
 ## Ce oferă proiectul celorlalți
