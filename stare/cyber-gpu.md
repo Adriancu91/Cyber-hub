@@ -1,8 +1,12 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-06 20:10 (ora României) · **de:** sesiunea Cyber-GPU 60 (cloud, fără placă) — copia din hub reîmprospătată la `bc2f22b` (conține I11–I14)
+**Actualizat:** 2026-11-07 01:35 (ora României) · **de:** sesiunea Cyber-GPU 61 (cloud, fără placă) — răspuns OS-ului: zona de pushbuffer de 16 KiB e bună; copia din hub la `d706cbb`
 
 ## Acum
+- **Sesiunea 61 — răspuns la întrebarea OS (zona de pushbuffer ≥ 16 KiB pentru #513): DA, 16 KiB e bine.** Un simbol #513 = 7 832 B
+  (`kronos_model::push_bytes_per_token(12)`, adăugare); 16 KiB țin două simboluri în zbor (următorul se scrie cât placa îl execută pe cel curent),
+  al treilea e refuzat, nu suprascris; testat pe 512 simboluri la rând (aritmetica zonei, SIMULARE). Detalii: `cyber-gpu/integration/cyber-universe/C-83_i14.md`.
+  Copia din hub (C-34) la `d706cbb`, verificată prin clonare + 394 teste PASS.
 - **Sesiunea 60: copia din hub (`integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, C-34) e acum la `bc2f22b`** (include I11–I14 de la `e681bea` și
   testele KGR1 de la `76bf13c`); verificată prin clonare de probă + toate testele (393 PASS). Sesiunea OS poate începe P6-62.
 - **C-83 (Adrian: „cât mai mulți pași în simulare, și după I10”) — I11, I12, I13 și I14 scrise și testate, doar SIMULARE, nimic pe RTX 3070 Ti.**
@@ -24,7 +28,7 @@
   simulare, 3072 × 768 (forma `mlp.0`), W și x urcate din RAM cu I11: **identic** bit cu bit (T96–T98).
 - **Lanțul:** `WINDOW_CHAIN_C83` = lanțul complet de până acum + `i11-copiere` + `i12-q8-matvec` + `i13-strat` + `i14-simbol`, înainte de punerea
   la loc a Bus Master.
-- CI verde; vârful `bc2f22b` (doar starea peste `0974ecd`), 393 teste (+3 locale cu vectorii KGR1).
+- CI verde; vârful `d706cbb`, 394 teste (+3 locale cu vectorii KGR1).
 - Notele pentru OS: `cyber-gpu/integration/cyber-universe/C-83_i11-i12.md`, `C-83_i13.md`, `C-83_i14.md`, `C-83_i14_vectori.md`.
 - Pe placă până acum: I0–I4 doar citire TREC; I6 TRECE (os-242); I7 TRECE (os-246); I8–I10 încă neîncercate (fereastra din 6 nov s-a închis fără test).
 
@@ -45,6 +49,7 @@
 3. După fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 61 (doar adăugare):** `kronos_model::push_bytes_per_token(layers)`; copia din hub la `d706cbb`.
 - **Sesiunea 60:** nicio schimbare de cod; copia din hub la `bc2f22b` — de fixat în OS pentru C-83 (sau `0974ecd`, același cod).
 - **Sesiunea 59:** nicio schimbare în crate-uri (doar teste + `tools/vectori-kgr1/pregateste.py`).
 - **Nou (sesiunea 58, C-83, doar adăugări):** `kronos_layer` (I13: `Prog`, `PROGRAMS`, `Launch::qmd`, `LayerVas`, `WeightVas`, `token_launches`,
@@ -71,9 +76,10 @@
 
 ## De ce are nevoie de la ceilalți
 - De la `cyber-universe`: I11–I14 în `gpu lant` și `kronos --gpu` (notele `C-83_*.md`), cu paginile DMA ale OS-ului; atenție: programele
-  `q8_matvec`, `layernorm`, `attention` au peste 4 KiB, iar zona de pushbuffer pentru I14 trebuie să aibă ≥ 8 KiB.
+  `q8_matvec`, `layernorm`, `attention` au peste 4 KiB, iar zona de pushbuffer pentru I14 trebuie să aibă ≥ 8 KiB (16 KiB, cum propuneți, e mai bine: două simboluri în zbor).
 - De la Adrian: fereastra de luni și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
+- 2026-11-07 01:35 · sesiunea 61 · răspuns OS: 16 KiB de pushbuffer pentru #513 = două simboluri în zbor (7 832 B fiecare); `push_bytes_per_token` + test; copia din hub la `d706cbb`.
