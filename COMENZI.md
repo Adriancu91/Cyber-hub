@@ -1117,7 +1117,7 @@ Format:
 - reguli: **nicio scriere pe discurile interne ale calculatorului** (Windows rămâne neatins; discurile se pot doar citi), Wi-Fi doar identificat; cheile/token-urile doar pe stick,
   niciodată în repo sau hub; clean-room, fără GPL; `main` mereu construibil; „SIMULARE/QEMU” marcat cinstit. **Duminică seara (8 nov):** în `stare/cyber-universe.md`, lista
   pentru fereastra de luni (ce e nou de încercat pe workstation și ce trebuie să facă Adrian, de ex. token-ul).
-- stare: nou
+- stare: preluat (2026-11-06 18:20, sesiunea OS) — sarcina **P6-61**; pas 1 gata: rapoartele pleacă singure în hub (`trimite`, după `raport`/`gpu lant`, doar cu token)
 
 ### C-85 · kronos · „Da” — modulele lui Kronos cresc odată cu modelul (`idei/2026-11-06_kronos-module-care-trebuie-sa-creasca.md`)
 - data: 2026-11-06 17:56 · de la: **Adrian** („Da” la toată propunerea)
