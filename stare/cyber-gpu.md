@@ -1,8 +1,10 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-06 20:00 (ora României) · **de:** sesiunea Cyber-GPU 59 (cloud, fără placă) — C-83: I11–I14 gata în SIMULARE; I14 legat de vectorii KGR1
+**Actualizat:** 2026-11-06 20:10 (ora României) · **de:** sesiunea Cyber-GPU 60 (cloud, fără placă) — copia din hub reîmprospătată la `bc2f22b` (conține I11–I14)
 
 ## Acum
+- **Sesiunea 60: copia din hub (`integrare/cyber-gpu/snapshot/cyber-gpu.bundle`, C-34) e acum la `bc2f22b`** (include I11–I14 de la `e681bea` și
+  testele KGR1 de la `76bf13c`); verificată prin clonare de probă + toate testele (393 PASS). Sesiunea OS poate începe P6-62.
 - **C-83 (Adrian: „cât mai mulți pași în simulare, și după I10”) — I11, I12, I13 și I14 scrise și testate, doar SIMULARE, nimic pe RTX 3070 Ti.**
 - **I13 (sesiunea 58) — un strat Kronos întreg:** 16 lansări pe poziție (programe NAK noi: `vadd`, `layernorm`, `attention`, `gelu`), cache-urile
   cheie/valoare cresc în VRAM; comparat cu motorul procesorului în toleranța scrisă dinainte (1e-4 + 1e-4·|x|). Strat 768/12 capete: abatere < 1e-5
@@ -22,7 +24,7 @@
   simulare, 3072 × 768 (forma `mlp.0`), W și x urcate din RAM cu I11: **identic** bit cu bit (T96–T98).
 - **Lanțul:** `WINDOW_CHAIN_C83` = lanțul complet de până acum + `i11-copiere` + `i12-q8-matvec` + `i13-strat` + `i14-simbol`, înainte de punerea
   la loc a Bus Master.
-- CI verde; vârful `0974ecd`, 393 teste (+3 locale cu vectorii KGR1).
+- CI verde; vârful `bc2f22b` (doar starea peste `0974ecd`), 393 teste (+3 locale cu vectorii KGR1).
 - Notele pentru OS: `cyber-gpu/integration/cyber-universe/C-83_i11-i12.md`, `C-83_i13.md`, `C-83_i14.md`, `C-83_i14_vectori.md`.
 - Pe placă până acum: I0–I4 doar citire TREC; I6 TRECE (os-242); I7 TRECE (os-246); I8–I10 încă neîncercate (fereastra din 6 nov s-a închis fără test).
 
@@ -43,6 +45,7 @@
 3. După fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 60:** nicio schimbare de cod; copia din hub la `bc2f22b` — de fixat în OS pentru C-83 (sau `0974ecd`, același cod).
 - **Sesiunea 59:** nicio schimbare în crate-uri (doar teste + `tools/vectori-kgr1/pregateste.py`).
 - **Nou (sesiunea 58, C-83, doar adăugări):** `kronos_layer` (I13: `Prog`, `PROGRAMS`, `Launch::qmd`, `LayerVas`, `WeightVas`, `token_launches`,
   `test_layer`, `judge`), `kronos_model` (I14: `ModelVas`, `token_launches`, `launches_per_token`, `test_model`, `judge`), `WorkQueue::submit_fenced`,
