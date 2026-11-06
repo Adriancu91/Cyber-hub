@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-06 19:30 (ora României) · **de:** sesiunea Cyber-GPU 58 (cloud, fără placă) — C-83: I11–I14 gata în SIMULARE
+**Actualizat:** 2026-11-06 20:00 (ora României) · **de:** sesiunea Cyber-GPU 59 (cloud, fără placă) — C-83: I11–I14 gata în SIMULARE; I14 legat de vectorii KGR1
 
 ## Acum
 - **C-83 (Adrian: „cât mai mulți pași în simulare, și după I10”) — I11, I12, I13 și I14 scrise și testate, doar SIMULARE, nimic pe RTX 3070 Ti.**
@@ -10,6 +10,9 @@
 - **I14 (sesiunea 58) — un simbol întreg:** `embed` (NAK) + toate straturile + LayerNorm final + logit-uri = `16·straturi + 3` lansări (195 pentru
   #513); generarea greedy pe un model mic sintetic dă **aceleași simboluri** ca procesorul, logit-urile în 1e-3 (T104–T105). #513 însuși se încearcă
   doar pe placă, citit de OS de pe stick. `WorkQueue::submit_fenced` refolosește zona de pushbuffer după fiecare simbol.
+- **I14 față de Kronos (sesiunea 59):** vectorii de control KGR1 din hub (`integrare/kronos/vectori`, model minuscul cu greutăți la întâmplare)
+  dau, prin oracolul nostru pe procesor și prin canalul de lucru SIMULAT, exact simbolurile motorului de referință al lui Kronos (argmax pe fiecare
+  poziție, 5 greedy), logit-urile la ≤ 4,6e-6 (pragul 1e-3). Vectorii rămân în hub (privat): testele (T106) rulează doar local, nu în CI.
 - **I11 — copiere mare RAM ↔ VRAM prin canalul de lucru:** un program de copiere compilat cu NAK (`copy_b128`, 288 B) pe același canal și obiect ca
   I10; nou pentru placă doar PTE-uri care arată spre paginile RAM ale OS-ului (DEDUS: aperture coerent, `VOL`). O intrare GPFIFO: marcă → RAM→VRAM →
   marcă → VRAM→RAM → marcă; verificare bit cu bit (model fără fișier) + viteza din ceasul plăcii. Test cap-coadă pe tot lanțul golden → canal, cu
@@ -19,8 +22,8 @@
   simulare, 3072 × 768 (forma `mlp.0`), W și x urcate din RAM cu I11: **identic** bit cu bit (T96–T98).
 - **Lanțul:** `WINDOW_CHAIN_C83` = lanțul complet de până acum + `i11-copiere` + `i12-q8-matvec` + `i13-strat` + `i14-simbol`, înainte de punerea
   la loc a Bus Master.
-- CI verde; vârful `e681bea`, 393 teste.
-- Notele pentru OS: `cyber-gpu/integration/cyber-universe/C-83_i11-i12.md`, `C-83_i13.md`, `C-83_i14.md`.
+- CI verde; vârful `0974ecd`, 393 teste (+3 locale cu vectorii KGR1).
+- Notele pentru OS: `cyber-gpu/integration/cyber-universe/C-83_i11-i12.md`, `C-83_i13.md`, `C-83_i14.md`, `C-83_i14_vectori.md`.
 - Pe placă până acum: I0–I4 doar citire TREC; I6 TRECE (os-242); I7 TRECE (os-246); I8–I10 încă neîncercate (fereastra din 6 nov s-a închis fără test).
 
 ## Lista scurtă pentru fereastra de luni 9 nov (provizorie; lista finală duminică seara)
@@ -29,9 +32,10 @@
    scrie prin DMA paginile RAM date de OS. Așteptat: `i11: 8388608 octeti; RAM->VRAM … MB/s; VRAM->RAM … MB/s`, întoarcerea identică cu modelul.
 3. **I12:** 3072 × 768 Q8_0 (urcare, înmulțire, coborâre). Aceleași scrieri. Așteptat: `i12: TRECE - identic bit cu bit…`.
 4. **I13:** un strat sintetic 768/12 pe 4 poziții. Aceleași scrieri, ~12 MB VRAM. Așteptat: `i13: pozitia 0..3: TRECE …`.
-5. **I14:** #513 de pe stick, textele de control, 5 simboluri greedy fiecare (195 de lansări pe simbol). Aceleași scrieri, ~150 MB VRAM. Așteptat:
+5. **I14a (propunere):** întâi modelul minuscul `mic_q8_0.kgr` (hub `integrare/kronos/vectori`), 35 de lansări pe simbol, comparat cu `vectori.json` — răspunsul exact e cunoscut. Aceleași scrieri.
+6. **I14:** #513 de pe stick, textele de control, 5 simboluri greedy fiecare (195 de lansări pe simbol). Aceleași scrieri, ~150 MB VRAM. Așteptat:
    `i14: … TRECE - simbolul … ca procesorul` și simbolurile din `MODEL.md` pentru #513. Durata fiecărei lansări în jurnal.
-6. Bus Master la loc, tur de citire; jurnalul de pe stick în `rezultate/`; noi: `verifica_jurnal_lant`.
+7. Bus Master la loc, tur de citire; jurnalul de pe stick în `rezultate/`; noi: `verifica_jurnal_lant`.
 
 ## Urmează
 1. Duminică seara: lista exactă pentru luni (după ce OS-ul integrează I11–I14).
@@ -39,6 +43,7 @@
 3. După fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 59:** nicio schimbare în crate-uri (doar teste + `tools/vectori-kgr1/pregateste.py`).
 - **Nou (sesiunea 58, C-83, doar adăugări):** `kronos_layer` (I13: `Prog`, `PROGRAMS`, `Launch::qmd`, `LayerVas`, `WeightVas`, `token_launches`,
   `test_layer`, `judge`), `kronos_model` (I14: `ModelVas`, `token_launches`, `launches_per_token`, `test_model`, `judge`), `WorkQueue::submit_fenced`,
   `gpu_compute::{layer, model}`; în `gpu-sim`: `vadd/layernorm/attention/gelu/embed_on_cpu`; lanțul: `i13-strat`, `i14-simbol`.
