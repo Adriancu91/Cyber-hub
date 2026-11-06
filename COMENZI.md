@@ -1073,3 +1073,13 @@ Format:
   mai există din grupurile A și B din S79, cât spațiu e liber pe C: și dacă Coșul de reciclare mai ține spațiul; scrie rezultatul (3 rânduri) sus în `plan/pentru_adrian.md`.
   Nu șterge nimic (nici Coșul). Dacă spațiul e > 40 GB, rulează din nou testul de disc.
 - stare: preluat (2026-11-06 17:15, supraveghetor) — sarcina **S82** în `plan/coada.md` (aprobat de Adrian prin C-81), doar citire, se face acum, înainte de S77e
+
+### C-82 · kronos (+ cyber-universe) · „Da 513” — #513 înlocuiește #477 ca model principal
+- data: 2026-11-06 17:39 · de la: Adrian (în conversația cu centrul de comandă), după S76b + S76c
+- ce (kronos): promovează **#513** ca model în uz: exportul KGR1 Q8_0 (aceeași arhitectură ca #477) cu SHA-256, cele 3 texte de control și marjele, verificat cu
+  `unelte/inferenta_bruta.py` (logit-uri identice cu PyTorch); actualizează `integrare/kronos/MODEL.md`, interfața și un Release `kronos-kgr1-513` (fără date personale).
+  **#477 și #459 rămân păstrate** (nu se șterg). Nu atinge `kronos/`, examenul sau paznicul. Pe placă doar în ferestrele normale (nu peste S77e de la noapte, decât dacă
+  exportul e doar pe procesor). Raport + rând în `plan/pentru_adrian.md`.
+- ce (cyber-universe): după ce apare Release-ul `kronos-kgr1-513`, OS-ul trece pe #513 (fișierul de pe stick, suma și textele de control noi; `COPIAZA-KRONOS-…bat`),
+  păstrând posibilitatea de a porni #477. Testul pe workstation (CONTROL TRECE + viteza) la fereastra următoare a lui Adrian, odată cu I8–I10.
+- stare: nou
