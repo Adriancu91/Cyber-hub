@@ -1,8 +1,10 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-06 14:45 (ora României) · **OPRIT: necesită analiza lui Adrian** · **de:** sesiunea OS programată (14:42) · Release de testat: **`os-251`** (CI verde; pe placă identic cu `os-250`)
+**Actualizat:** 2026-11-06 17:45 (ora României) · **activ (OPRIT ridicat de C-82)** · **de:** sesiunea OS programată (17:42) · Release de testat: **`os-251`** (CI verde; pe placă identic cu `os-250`)
 
 ## Acum
+- **C-82 („da 513”) preluat → sarcina P6-60** (plan `docs/plans/P6-60.md`): OS-ul va alege implicit #513 (suma + textele de control noi), cu #477/#459 păstrate.
+  **Așteaptă** Release-ul `kronos-kgr1-513` și `integrare/kronos/MODEL.md` cu #513 — la 17:42 nu există încă.
 - **`os-251` (P6-59, propunerea cyber-gpu sesiunea 54):** cyber-gpu fixat pe `657e209`; în `gpu lant --sim` Booter-ul modelului lărgește singur WPR2 din
   `GspFwWprMeta`-ul pregătit de OS (recitit din RAM), ca placa (`0x1f4100000`) — OS-ul nu mai pune valoarea de mână. Pe placă: nimic schimbat față de `os-250`.
 - **`os-250` (P6-58, propunerea cyber-gpu sesiunea 53):** înainte de golden, OS-ul recitește WPR2 (2 citiri, nicio scriere) și ia zona VRAM din
@@ -16,9 +18,9 @@
 - C-72 (I7–I10) e acum **gata** în OS. `os-248` rămâne valabil, dar `os-249` îl cuprinde.
 
 ## Urmează
-- Fereastra de azi (6 nov, C-79) pe workstation cu `os-250` sau `os-251` (identice pe placă; pașii mai jos); când apar jurnalele în `rezultate/`, `verifica_jurnal_lant` și analiza I6–I10 în sesiunea OS următoare.
-- La 11:40 jurnalele ferestrei de azi nu sunt încă în `rezultate/`. Dacă nici sesiunea următoare nu le găsește (și nu e comandă nouă), sesiunile OS se opresc cu „OPRIT” până se uită Adrian (3 sesiuni la rând fără sarcină).
-- Coada OS nu mai are sarcini libere fără hardware.
+- P6-60 imediat ce Kronos publică Release-ul `kronos-kgr1-513` + MODEL.md (testul #513 pe workstation la fereastra următoare, odată cu I8–I10).
+- Fereastra de azi s-a închis fără test (C-80) → `os-251` rămâne de încercat la fereastra următoare; apoi `verifica_jurnal_lant` pe jurnale.
+- Coada OS nu are alte sarcini libere fără hardware.
 
 ## Ce oferă proiectul celorlalți
 - `gpu lant` I6 → I10 pe stick-ul de test; jurnalul fiecărui pas pe stick (`/usb/raport/gpu-jurnal-NNN.txt`) pentru `verifica_jurnal_lant`.
@@ -26,12 +28,11 @@
 - Actualizarea cu revenire, `compara`, `log --sumar`, `timp`, `hw lista`, `web`, remote criptat; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
 
 ## De ce are nevoie de la ceilalți
+- **`kronos`:** Release-ul `kronos-kgr1-513` + secțiunea #513 în `integrare/kronos/MODEL.md` (SHA-256, mărime, cele 3 texte de control, marjele) — pentru P6-60.
 - **`cyber-gpu`:** mulțumim — `wpr_meta_mem` e folosit din `os-251` (simularea trece fără valoare pusă de mână; `add64.sm86.sass` identic și în `657e209`).
   După fereastră: `verifica_jurnal_lant` pe jurnalele din `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
-- **OPRIT (14:42): sesiunile OS automate stau** — 3 sesiuni la rând fără sarcină, fără comandă nouă și fără jurnalele ferestrei din 6 nov.
-  Pornesc iar singure când apar jurnalele în `rezultate/2026-11-06-workstation-os250/` (sau `-os251`) sau o comandă nouă pentru `cyber-universe`.
 - **La fereastra următoare pe workstation, `os-251` pe stick-ul de test** (`cyber-universe-gpu-scrie-usb.img` din Release-ul `os-251`, scris cu Rufus; `os-250` merge la fel):
   1. **Bagă ambele stick-uri**: stick-ul de test și stick-ul normal cu `firmware\nvidia\ga102\gsp\` (cele 4 fișiere).
   2. Pornire rece (cablul scos 30 s), pornire de pe stick-ul de test. Poză la rândul `fs: /usb2: ...`.
@@ -39,5 +40,5 @@
   4. `gpu lant` + `DA` **o singură dată** → poze la toate rândurile. Așteptat: I6 și I7 TREC (cutia GSP `0x110040` păstrează adresa LibOS);
      apoi I8, golden, I9, I10. La I10 rândul important: „pas I10 add64: ok (64 rezultate identice bit cu bit…)” sau ESEC cu motivul.
   5. `raport`, jurnalele `/usb/raport/gpu-jurnal-*.txt` în `rezultate/<data>-workstation-os251/`. Oprire completă (cablul scos 30 s).
-- **Jurnalele de la fereastra de azi (6 nov):** pune `/usb/raport/gpu-jurnal-*.txt` și pozele în `rezultate/2026-11-06-workstation-os250/` (sau `-os251`); fără ele OS-ul nu are ce lucra și se oprește singur după sesiunea următoare.
 - Token GitHub „fine-grained” doar pentru `Adriancu91/Cyber-hub` (Contents: Read and write) ca `github.token` pe stick — când vrei.
+- 2026-11-06 17:45 (sesiunea OS 17:42): comanda C-82 ridică „OPRIT”; P6-60 (#513) adăugat, așteaptă Release-ul Kronos. Nicio schimbare de cod.

@@ -158,3 +158,4 @@
 - 2026-11-06 08:45 (sesiunea OS 08:40): nicio comandă nouă, nicio sarcină liberă fără hardware; Adrian e la fereastra cu `os-250` (C-79), jurnalele se analizează când apar în `rezultate/`.
 - 2026-11-06 11:45 (sesiunea OS 11:40): nicio comandă nouă, niciun jurnal nou în `rezultate/`, nicio sarcină liberă fără hardware; CI verde pe `os-251`. Sesiunea următoare scrie „OPRIT” dacă jurnalele ferestrei nu apar.
 - 2026-11-06 14:45 (sesiunea OS 14:42): OPRIT — 3 sesiuni la rând fără sarcină, nicio comandă nouă, niciun jurnal al ferestrei din 6 nov în `rezultate/`; se așteaptă Adrian.
+- 2026-11-06 17:45 — C-82 preluat (P6-60: #513 ca model implicit în OS, #477/#459 păstrate); așteaptă Release-ul `kronos-kgr1-513`. „OPRIT” ridicat; nicio schimbare de cod, CI verde pe `os-251`.
