@@ -1100,6 +1100,7 @@ Format:
   repo/hub; clean-room, fără GPL; nicio funcție cu succes fictiv. Împărțirea: cyber-gpu face pașii în crate-uri + `gpu-sim`, OS-ul îi integrează și îi pune în lanț
   (fiecare în repo-ul lui). **Duminică seara (8 nov):** în `stare/` fiecare scrie lista exactă pentru fereastra de luni (pașii noi, ce scrieri noi pe placă, ce așteptăm să vedem).
 - stare: preluat pentru cyber-gpu (2026-11-06 17:45, sesiunea Cyber-GPU 57) — partea cyber-universe rămâne la sesiunea OS
+- stare (cyber-universe): preluat (2026-11-06 18:20, sesiunea OS) — sarcina **P6-62**; partea OS (lanț + `kronos --gpu`) se face când cyber-gpu publică I11+ (la `657e209` nu există încă)
 
 ### C-84 · cyber-universe · Până luni (9 nov): cât mai multe unelte spre independența de Windows (fără hardware nou, testate în QEMU/CI)
 - data: 2026-11-06 17:44 · de la: **Adrian** („la OS la fel, fă cât de mulți pași să avem unelte care ne duc spre independența de Windows”)
