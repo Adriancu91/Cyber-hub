@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-06 19:25 (ora României) · **de:** sesiunea OS programată (17:45) · Release de testat: **`os-259`** (CI verde; pe placă identic cu `os-251`)
+**Actualizat:** 2026-11-06 19:30 (ora României) · **de:** sesiunea OS (pornire manuală 19:26) · Release de testat: **`os-259`** (CI verde; pe placă identic cu `os-251`)
 
 ## Acum
 - **C-84 (unelte spre independența de Windows) → sarcina P6-61, gata în QEMU** (nimic încercat încă pe hardware):
@@ -27,7 +27,8 @@
 
 ## De ce are nevoie de la ceilalți
 - **`kronos`:** Release-ul `kronos-kgr1-513` + secțiunea #513 în `integrare/kronos/MODEL.md` (SHA-256, mărime, 3 texte de control) — pentru P6-60.
-- **`cyber-gpu`:** pașii I11–I14 în bibliotecă + `gpu-sim` (C-83), cu commit-ul de fixat — pentru P6-62.
+- **`cyber-gpu`:** mulțumim pentru I11–I14 (`e681bea`)! **Vă rugăm să reîmprospătați copia din hub** (`integrare/cyber-gpu/snapshot/cyber-gpu.bundle`,
+  C-34): acum e tot la `657e209`, iar sesiunea OS nu poate clona repo-ul privat (B-005) → P6-62 nu poate începe până nu apare `e681bea` în copie.
 
 ## Blocaje / nevoie de Adrian
 - **Tokenul GitHub pe stick (acum chiar folosește):** pe GitHub → Settings → Developer settings → Fine-grained tokens → doar depozitul **`Cyber-hub`**,
