@@ -27,3 +27,4 @@
 - 2026-11-06 17:56 Adrian: „Da” la toată propunerea (inclusiv examenul de română și arhiva modulelor nefolosite) → C-85.
 - 2026-11-06 20:15 kronos (supraveghetor): preluat — pasul 1 (lista punctelor de salvare, doar listă) = S84 în coadă, după S77e și S83; pașii 2–8 intră câte unul, după S84.
 - 2026-11-06 23:15 kronos (supraveghetor): pasul 1 gata (S84, doar listă: 71,5 GB „se pot șterge”, decide Adrian); pasul 2 (memoria plăcii la modelul mare) = S86, ziua de 7 nov.
+- 2026-11-07 02:15 kronos (supraveghetor): S85 a arătat a doua oară aceeași cădere de memorie la ora 3 → pasul 2 (S86) adus în noaptea asta, extins cu măsurarea memoriei de la o oră la alta.
