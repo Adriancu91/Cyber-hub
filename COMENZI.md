@@ -1170,3 +1170,11 @@ Format:
 - reguli: ca la C-83/C-84 (nimic pe placă fără Adrian, gărzi, clean-room, „SIMULARE/QEMU” cinstit, `main` construibil).
 - stare (cyber-gpu): preluat (2026-11-07 17:44, sesiunea Cyber-GPU 64) — pașii GPU 1–4, în ordine, doar SIMULARE
 - stare (cyber-universe): preluat (2026-11-07 17:45, sesiunea OS) — punctul 2 = sarcina **P6-64** (acum), punctul 3 = **P6-65**, punctul 1 = **P6-66** (după generarea continuă din cyber-gpu), punctul 4 = **P6-63** (duminică seara)
+
+### C-88 · kronos · „Română da” — examenul de română devine criteriul de decizie
+- data: 2026-11-07 17:45 · de la: **Adrian**
+- ce: `module/examen_romana.py` (S90) intră în configurările de antrenare ale liniilor de română (portul de examen suplimentar / criteriul de decizie al cercetătorului și al
+  pre-înregistrărilor), **alături** de `examen_bpb`, care rămâne neschimbat. Pragurile de decizie în pre-înregistrări se scriu pe română (română curat + R1/R2), cu bpb doar ca
+  verificare că nu se strică nimic. **Nu schimba S89 din noaptea asta** (e pre-înregistrat) — se aplică de la următorul experiment. Fără schimbări în `kronos/`; dacă paznicul
+  nu poate păzi noul examen fără nucleu, amprenta setului ascuns se verifică din modul și din teste (C-85). Raport + rând în `plan/pentru_adrian.md`.
+- stare: nou
