@@ -1,8 +1,19 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-07 12:00 (ora României) · **de:** sesiunea Cyber-GPU 63 (cloud, fără placă) — oprire scurtă: nimic nou de făcut fără placă; CI verde
+**Actualizat:** 2026-11-07 18:15 (ora României) · **de:** sesiunea Cyber-GPU 64 (cloud, fără placă) — C-87 pașii 1, 3, 4 gata în SIMULARE; pasul 2 urmează; CI verde
 
 ## Acum
+- **Sesiunea 64 — C-87 (pașii 1, 3, 4 gata, doar SIMULARE; nimic pe RTX 3070 Ti).** Vârful `34a9793`, 410 teste PASS, CI verde; copia din hub (C-34) la `34a9793`.
+  - **1. Generare continuă:** `kronos_gen::Generation` — N simboluri la rând, o trimitere `submit_fenced` pe poziție, cache-urile cresc; **oprire la prima
+    eroare** (nimic trimis după, simbolurile făcute păstrate); viteza doar din ceasul plăcii (cu și fără pauzele driverului). Testat: 40 de simboluri ca
+    procesorul; defect plantat la poziția 5 → oprire exact acolo; context plin → oprire curată.
+  - **3. Recuperare fără repornire:** `recovery::recover` — ping GSP (doar citire) → grupul de canale scos de pe listă prin RM (`stop_compute_group`, niciun
+    registru scris de noi) → GPGet/GPPut → **Bus Master oprit mereu**. Paginile RAM ale plăcii se eliberează doar dacă e dovedit că nimic nu le mai scrie;
+    altfel carantină până la repornire, placa oprită, calculatorul merge mai departe (Kronos pe procesor).
+  - **4. Modelul mare (24 straturi, 183M):** 387 lansări/poziție, testat pe canal (E 128) ca procesorul; `VramBudget` calculează VRAM-ul înainte de urcare:
+    183M ≈ 270 MiB, #513 ≈ 142 MiB. **Pentru 24 de straturi zona de pushbuffer trebuie să fie 32 KiB** (16 KiB țin o singură poziție).
+  - **2. „Un singur program pe simbol”:** neînceput (program NAK nou, „megakernel”) — următorul pas.
+  - Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-87_generare.md` (ce să lege OS-ul la P6-66).
 - **Sesiunea 63 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă (C-84 la OS și C-85/C-86 la Kronos nu ne privesc); 394 teste PASS local,
   CI verde. Codul neschimbat față de `d706cbb` (copia din hub rămâne bună).
 - **Sesiunea 62 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă; OS-ul are I11–I14, `kronos --gpu` și pushbuffer-ul de 16 KiB (P6-60, P6-62 gata),
@@ -48,11 +59,15 @@
 7. Bus Master la loc, tur de citire; jurnalul de pe stick în `rezultate/`; noi: `verifica_jurnal_lant`.
 
 ## Urmează
+0. C-87 pasul 2: „un singur program pe simbol” (program NAK persistent + modelul lui în `gpu-sim`, comparat cu cele 195 de lansări).
 1. Duminică seara: lista exactă pentru luni (după ce OS-ul integrează I11–I14).
 2. „Un singur program pe simbol” — doar după ce placa ne spune cât costă cele 195 de lansări (I14 le măsoară).
 3. După fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 64 (C-87, doar adăugări):** `kronos_gen` (`Generation`, `GenPlan`, `TokenRunner`, `TokenCheck`, `Stop`, `GenStats`, `TokenOutput`, `VramBudget`,
+  `push_bytes_with_copy`), `recovery` (`recover`, `RecoveryOps`, `Recovered`, `RamPages`, `NextChain`, `classify`, `Hang`), `user_space::stop_compute_group`,
+  `transfer::records_seen`, `GpuMemory::vram_free`, `RangeAllocator::largest_free`. Copia din hub la `34a9793`.
 - **Sesiunea 61 (doar adăugare):** `kronos_model::push_bytes_per_token(layers)`; copia din hub la `d706cbb`.
 - **Sesiunea 60:** nicio schimbare de cod; copia din hub la `bc2f22b` — de fixat în OS pentru C-83 (sau `0974ecd`, același cod).
 - **Sesiunea 59:** nicio schimbare în crate-uri (doar teste + `tools/vectori-kgr1/pregateste.py`).
@@ -79,6 +94,7 @@
 - `kronos` / K6-CPU: operatorii lui Kronos pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
+- De la `cyber-universe` (P6-66): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erorile de după I10; 32 KiB de pushbuffer pentru 24 de straturi.
 - De la `cyber-universe`: I11–I14 în `gpu lant` și `kronos --gpu` (notele `C-83_*.md`), cu paginile DMA ale OS-ului; atenție: programele
   `q8_matvec`, `layernorm`, `attention` au peste 4 KiB, iar zona de pushbuffer pentru I14 trebuie să aibă ≥ 8 KiB (16 KiB, cum propuneți, e mai bine: două simboluri în zbor).
 - De la Adrian: fereastra de luni și jurnalul de pe stick în `rezultate/`.

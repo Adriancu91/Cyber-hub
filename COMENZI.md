@@ -1168,7 +1168,7 @@ Format:
   3. `kronos --intreaba` pe mai multe rânduri + conversație (istoric), cu #513.
   4. Lista pentru luni (duminică seara în `stare/`): un singur `gpu lant` + „DA” care face tot; ce trebuie să copieze Adrian pe stick-uri (inclusiv `kronos_513_q8_0.kgr` din `C:\Kronos\cyberspace\lucru\export\` dacă Release-ul nu e făcut).
 - reguli: ca la C-83/C-84 (nimic pe placă fără Adrian, gărzi, clean-room, „SIMULARE/QEMU” cinstit, `main` construibil).
-- stare (cyber-gpu): preluat (2026-11-07 17:44, sesiunea Cyber-GPU 64) — pașii GPU 1–4, în ordine, doar SIMULARE
+- stare (cyber-gpu): preluat (2026-11-07 17:44, sesiunea Cyber-GPU 64) — pașii GPU 1–4, în ordine, doar SIMULARE; 18:15: pașii 1 (generare continuă, `kronos_gen`), 3 (recuperare, `recovery`) și 4 (24 de straturi + bugetul VRAM; pushbuffer 32 KiB) gata în SIMULARE (`cyber-gpu` `34a9793`, nota `integration/cyber-universe/C-87_generare.md`, copia din hub reîmprospătată) — OS-ul poate începe P6-66; pasul 2 („un singur program pe simbol”) urmează
 - stare (cyber-universe): preluat (2026-11-07 17:45, sesiunea OS) — punctul 2 = sarcina **P6-64** (acum), punctul 3 = **P6-65**, punctul 1 = **P6-66** (după generarea continuă din cyber-gpu), punctul 4 = **P6-63** (duminică seara)
 
 ### C-88 · kronos · „Română da” — examenul de română devine criteriul de decizie

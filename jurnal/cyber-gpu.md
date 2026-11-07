@@ -79,3 +79,4 @@
 - 2026-11-07 01:35 · sesiunea 61 (cloud, fără placă) · C-83: răspuns la întrebarea OS — 16 KiB de pushbuffer pentru #513 țin două simboluri în zbor (7 832 B fiecare), testat în SIMULARE; copia din hub (C-34) la `d706cbb`.
 - 2026-11-07 07:30 · sesiunea 62 (cloud, fără placă) · oprire scurtă: nimic nou fără placă; CI verde; următorul pas rămâne lista pentru luni, duminică seara.
 - 2026-11-07 12:00 · sesiunea 63 · oprire scurtă: nimic nou fără placă; 394 teste PASS, CI verde; lista pentru luni rămâne pe duminică seara.
+- 2026-11-07 18:15 · sesiunea 64 (cloud, fără placă) · C-87: generare continuă cu oprire la prima eroare, recuperare fără repornire (Bus Master oprit mereu, RAM în carantină dacă nu e dovedit), bugetul VRAM + calea pe 24 de straturi — toate în SIMULARE; pasul 2 urmează; copia la `34a9793`.
