@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-07 20:15 (ora României) · **de:** sesiunea OS programată (17:40) · Release de testat: **`os-273`** (CI verde) = `os-268` + comenzi din hub + conversație cu Kronos + `kronos --gpu` cu generare continuă (pe placă: doar SIMULARE)
+**Actualizat:** 2026-11-07 21:55 (ora României) · **de:** sesiunea OS programată (20:40) · Release de testat: **`os-275`** (CI verde) = `os-273` (comenzi din hub + conversație cu Kronos + `kronos --gpu` cu generare continuă; pe placă: doar SIMULARE) + CI mai rapid
 
 ## Acum
+- **P6-67 GATA (CI mai rapid):** testele automate rulau ~55 min din limita de 60 a GitHub; acum rulează în trei părți în același timp (97/97 scenarii, ~30–35 min). Release nou **`os-275`** (sistemul e același ca `os-273`).
 - **C-87 (partea OS) → P6-64, P6-65, P6-66 GATA** (testate în QEMU / SIMULARE, nimic încă pe hardware):
   - **Comenzi din hub (P6-64):** Adrian scrie în `integrare/cyber-universe/os-comenzi.md` rânduri `- [ ] K-1: test tot`; în OS `hub ruleaza` le ia,
     rulează **doar lista albă** (citiri, `test tot`, `raport`, `trimite`, `run kronos --control/--profil`), fiecare o singură dată, și trimite raportul
