@@ -164,3 +164,4 @@
 - 2026-11-06 22:20 — P6-62 (C-83): cyber-gpu `bc2f22b`; I11 (copiere RAM↔VRAM), I12 (Q8_0 matrice×vector) și I13 (un strat Kronos) în `gpu lant`, testate în SIMULARE; oprire cinstită la I14.
 - 2026-11-07 00:45 — P6-62 (C-83): I14 în `gpu lant` cu modelul de control `mic_q8_0.kgr` (3 texte, 29 simboluri identice cu vectorii lui Kronos), doar SIMULARE; lanțul trece până la capăt; rămâne `kronos --gpu`.
 - 2026-11-07 03:15 — P6-62 (C-83) bifat: `kronos --gpu` (după `DA`, lanțul întreg + textul la I14, fiecare simbol comparat cu procesorul, întoarcere pe procesor la orice eroare), zona de comenzi 16 KiB, cyber-gpu `d706cbb`; doar SIMULARE. Lista pentru luni = P6-63 (duminică seara).
+- 2026-11-07 04:05 — CI verde pe `kronos --gpu` → Release `os-263`.

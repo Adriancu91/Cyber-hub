@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-07 03:15 (ora României) · **de:** sesiunea OS programată (02:40) · Release de testat: **`os-262`** (CI verde: I11–I14 în lanț, doar SIMULARE); `801da0a` (+ `kronos --gpu`, zona de comenzi 16 KiB) — în CI, Release-ul următor (`os-263`) după ce trece
+**Actualizat:** 2026-11-07 03:15 (ora României) · **de:** sesiunea OS programată (02:40) · Release de testat: **`os-262`** (CI verde: I11–I14 în lanț, doar SIMULARE); Release nou **`os-263`** (CI verde) = `os-262` + `kronos --gpu` + zona de comenzi 16 KiB (doar SIMULARE)
 
 ## Acum
 - **C-84 (unelte spre independența de Windows) → sarcina P6-61, gata în QEMU** (nimic încercat încă pe hardware):
@@ -38,7 +38,7 @@
 ## Blocaje / nevoie de Adrian
 - **Tokenul GitHub pe stick (acum chiar folosește):** pe GitHub → Settings → Developer settings → Fine-grained tokens → doar depozitul **`Cyber-hub`**,
   *Contents: Read and write*; salvat ca `github.token` (un rând) în rădăcina stick-ului. Cu el, jurnalele ferestrei ajung singure în hub (nu mai copiezi în Windows).
-- **La fereastra următoare pe workstation (luni 9 nov sau mai devreme):** stick-ul de test cu cel mai nou Release verde (acum `os-262`; `cyber-universe-gpu-scrie-usb.img`) + stick-ul cu firmware (lista exactă duminică seara):
+- **La fereastra următoare pe workstation (luni 9 nov sau mai devreme):** stick-ul de test cu cel mai nou Release verde (acum `os-263`; `cyber-universe-gpu-scrie-usb.img`) + stick-ul cu firmware (lista exactă duminică seara):
   pornire rece, `gpu firmware`, `gpu pregatire-i6`, `gpu lant` + `DA` o dată, poze la rânduri; apoi `raport` și **`test tot`** (nou, doar citiri).
   Dacă e tokenul pe stick: `trimite` (rapoartele pleacă singure); altfel jurnalele `/usb/raport/*` în `rezultate/<data>-workstation-os26x/`.
 - 2026-11-06 22:20 — C-83 (P6-62): I11, I12, I13 integrate în `gpu lant`, trec în SIMULARE (I13 verificat și la mărimea plăcii, E 768); lanțul se oprește cinstit la I14. Pe placă nimic nou de încercat până la Release-ul următor.
