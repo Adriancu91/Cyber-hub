@@ -1,8 +1,10 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-07 18:20 (ora României) · **de:** sesiunea Cyber-GPU 65 (cloud, fără placă) — C-87 (partea GPU) gata în SIMULARE, toți cei 4 pași; CI de verificat
+**Actualizat:** 2026-11-07 19:30 (ora României) · **de:** sesiunea Cyber-GPU 66 (cloud, fără placă) — oprire scurtă; C-87 (partea GPU) gata în SIMULARE; CI verde
 
 ## Acum
+- **Sesiunea 66 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă (C-88 e la Kronos); CI verde pe `ed75615`, 415 teste PASS local.
+  Codul neschimbat față de `ed75615` (`25566e5` schimbă doar starea), copia din hub rămâne bună. Următorul pas: lista pentru luni, duminică seara.
 - **Sesiunea 65 — C-87 pasul 2 gata (SIMULARE + compilat, NU rulat): „un singur program pe simbol”.** `token.comp` (Mesa NAK: 43 232 B, 35 registre, 0 memorie
   locală) rulează toată lista unui simbol într-o lansare (G grupuri × 32 fire, barieră pe toată placa între operații). În `gpu-sim` logit-urile ies **bit cu bit**
   ca la lansările separate (E 64 și E 768). Bariera pe placă NU e dovedită — propunerea noastră: luni doar lansările separate; acest program după ce ele trec.
