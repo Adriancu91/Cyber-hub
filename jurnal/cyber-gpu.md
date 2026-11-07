@@ -80,3 +80,4 @@
 - 2026-11-07 07:30 · sesiunea 62 (cloud, fără placă) · oprire scurtă: nimic nou fără placă; CI verde; următorul pas rămâne lista pentru luni, duminică seara.
 - 2026-11-07 12:00 · sesiunea 63 · oprire scurtă: nimic nou fără placă; 394 teste PASS, CI verde; lista pentru luni rămâne pe duminică seara.
 - 2026-11-07 18:15 · sesiunea 64 (cloud, fără placă) · C-87: generare continuă cu oprire la prima eroare, recuperare fără repornire (Bus Master oprit mereu, RAM în carantină dacă nu e dovedit), bugetul VRAM + calea pe 24 de straturi — toate în SIMULARE; pasul 2 urmează; copia la `34a9793`.
+- 2026-11-07 18:20 · sesiunea 65 (cloud, fără placă) · C-87 pasul 2: `token.comp` (un singur program pe simbol) compilat cu NAK, în simulare bit cu bit ca lansările separate; C-87 partea GPU gata; copia la `ed75615`.

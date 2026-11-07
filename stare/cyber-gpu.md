@@ -1,8 +1,12 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-07 18:15 (ora României) · **de:** sesiunea Cyber-GPU 64 (cloud, fără placă) — C-87 pașii 1, 3, 4 gata în SIMULARE; pasul 2 urmează; CI verde
+**Actualizat:** 2026-11-07 18:20 (ora României) · **de:** sesiunea Cyber-GPU 65 (cloud, fără placă) — C-87 (partea GPU) gata în SIMULARE, toți cei 4 pași; CI de verificat
 
 ## Acum
+- **Sesiunea 65 — C-87 pasul 2 gata (SIMULARE + compilat, NU rulat): „un singur program pe simbol”.** `token.comp` (Mesa NAK: 43 232 B, 35 registre, 0 memorie
+  locală) rulează toată lista unui simbol într-o lansare (G grupuri × 32 fire, barieră pe toată placa între operații). În `gpu-sim` logit-urile ies **bit cu bit**
+  ca la lansările separate (E 64 și E 768). Bariera pe placă NU e dovedită — propunerea noastră: luni doar lansările separate; acest program după ce ele trec.
+  Vârful `ed75615`, 415 teste PASS; copia din hub (C-34) la `ed75615`. Cu asta, **partea GPU din C-87 e toată gata în simulare**.
 - **Sesiunea 64 — C-87 (pașii 1, 3, 4 gata, doar SIMULARE; nimic pe RTX 3070 Ti).** Vârful `34a9793`, 410 teste PASS, CI verde; copia din hub (C-34) la `34a9793`.
   - **1. Generare continuă:** `kronos_gen::Generation` — N simboluri la rând, o trimitere `submit_fenced` pe poziție, cache-urile cresc; **oprire la prima
     eroare** (nimic trimis după, simbolurile făcute păstrate); viteza doar din ceasul plăcii (cu și fără pauzele driverului). Testat: 40 de simboluri ca
@@ -12,7 +16,7 @@
     altfel carantină până la repornire, placa oprită, calculatorul merge mai departe (Kronos pe procesor).
   - **4. Modelul mare (24 straturi, 183M):** 387 lansări/poziție, testat pe canal (E 128) ca procesorul; `VramBudget` calculează VRAM-ul înainte de urcare:
     183M ≈ 270 MiB, #513 ≈ 142 MiB. **Pentru 24 de straturi zona de pushbuffer trebuie să fie 32 KiB** (16 KiB țin o singură poziție).
-  - **2. „Un singur program pe simbol”:** neînceput (program NAK nou, „megakernel”) — următorul pas.
+  - **2. „Un singur program pe simbol”:** gata în sesiunea 65 (vezi mai sus).
   - Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-87_generare.md` (ce să lege OS-ul la P6-66).
 - **Sesiunea 63 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă (C-84 la OS și C-85/C-86 la Kronos nu ne privesc); 394 teste PASS local,
   CI verde. Codul neschimbat față de `d706cbb` (copia din hub rămâne bună).
@@ -59,12 +63,12 @@
 7. Bus Master la loc, tur de citire; jurnalul de pe stick în `rezultate/`; noi: `verifica_jurnal_lant`.
 
 ## Urmează
-0. C-87 pasul 2: „un singur program pe simbol” (program NAK persistent + modelul lui în `gpu-sim`, comparat cu cele 195 de lansări).
 1. Duminică seara: lista exactă pentru luni (după ce OS-ul integrează I11–I14).
 2. „Un singur program pe simbol” — doar după ce placa ne spune cât costă cele 195 de lansări (I14 le măsoară).
 3. După fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 65 (doar adăugări):** `kronos_token` (`TOKEN`, `TOKEN_REGISTERS`, `work_list`, `token_cbuf`, `token_qmd`, `groups_for`, `op_number`); `gpu-sim` `token_on_cpu`, `TOKEN_NEEDS`. Copia la `ed75615`.
 - **Sesiunea 64 (C-87, doar adăugări):** `kronos_gen` (`Generation`, `GenPlan`, `TokenRunner`, `TokenCheck`, `Stop`, `GenStats`, `TokenOutput`, `VramBudget`,
   `push_bytes_with_copy`), `recovery` (`recover`, `RecoveryOps`, `Recovered`, `RamPages`, `NextChain`, `classify`, `Hang`), `user_space::stop_compute_group`,
   `transfer::records_seen`, `GpuMemory::vram_free`, `RangeAllocator::largest_free`. Copia din hub la `34a9793`.
