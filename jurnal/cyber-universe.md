@@ -170,3 +170,5 @@
 - 2026-11-07 10:55 — P6-61 (C-84) bifat: `files` pentru stick (dosare întregi, dosar nou, redenumire, ștergere cu confirmare; FAT32 mută dosare), CSS de bază și imagini PNG (decodor propriu) în `web`; CI verde → Release `os-268`.
 - 2026-11-07 11:55 — sesiune scurtă: nicio comandă nouă, nicio sarcină liberă până la P6-63 (duminică seara); CI `os-268` verde, mediul complet.
 - 2026-11-07 14:45 — sesiune scurtă: nicio comandă nouă, niciun jurnal nou; aștept P6-63 (duminică seara). CI `os-268` verde.
+- 2026-11-07 17:45 — C-87 preluat (partea OS): pct. 2 = P6-64, pct. 3 = P6-65, pct. 1 = P6-66, pct. 4 = P6-63 (duminică).
+- 2026-11-07 20:15 — P6-64 (`hub ruleaza`: comenzi din `integrare/cyber-universe/os-comenzi.md`, doar lista albă), P6-65 (`kronos --conversatie`), P6-66 (`kronos --gpu` cu generarea continuă cyber-gpu `34a9793` + comparația cu procesorul) bifate; CI reparat (disc plin), verde → Release `os-273`.
