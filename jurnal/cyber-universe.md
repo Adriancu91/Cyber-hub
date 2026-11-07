@@ -167,3 +167,4 @@
 - 2026-11-07 04:05 — CI verde pe `kronos --gpu` → Release `os-263`.
 - 2026-11-07 06:30 — P6-60 (C-82) bifat: #513 model implicit în `kronos` (513 > 477 > 459, suma și textele din MODEL.md); reparată depășirea de stivă a lanțului GPU la `kronos --gpu` (fir cu 256 KiB + canar pe stive); Release-ul `kronos-kgr1-513` lipsește încă.
 - 2026-11-07 07:10 — CI verde pe #513 implicit + reparația stivei → Release `os-264`.
+- 2026-11-07 10:55 — P6-61 (C-84) bifat: `files` pentru stick (dosare întregi, dosar nou, redenumire, ștergere cu confirmare; FAT32 mută dosare), CSS de bază și imagini PNG (decodor propriu) în `web`; CI verde → Release `os-268`.

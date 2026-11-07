@@ -1121,6 +1121,8 @@ Format:
   niciodată în repo sau hub; clean-room, fără GPL; `main` mereu construibil; „SIMULARE/QEMU” marcat cinstit. **Duminică seara (8 nov):** în `stare/cyber-universe.md`, lista
   pentru fereastra de luni (ce e nou de încercat pe workstation și ce trebuie să facă Adrian, de ex. token-ul).
 - stare: preluat (2026-11-06 18:20, sesiunea OS) — sarcina **P6-61**; gata în QEMU (19:25, `os-259`): punctele 1–5, 7 (NTP, setări pe stick; tastatura RO exista) și formularele din 6; rămân imaginile + CSS (6b). Lista pentru luni: duminică seara în `stare/`.
+- stare: gata (2026-11-07 10:55, sesiunea OS) — sarcina **P6-61** bifată, Release `os-268` (CI verde)
+- rezultat: toate cele 7 puncte sunt în OS, testate în QEMU (nimic încă pe hardware): ultimele adăugate = managerul de fișiere pentru stick (`files`), CSS de bază și imagini PNG în `web` (`web --imagine N`); lista pentru luni rămâne duminică seara (P6-63).
 
 ### C-85 · kronos · „Da” — modulele lui Kronos cresc odată cu modelul (`idei/2026-11-06_kronos-module-care-trebuie-sa-creasca.md`)
 - data: 2026-11-06 17:56 · de la: **Adrian** („Da” la toată propunerea)
