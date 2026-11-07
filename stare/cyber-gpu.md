@@ -1,8 +1,10 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-07 01:35 (ora României) · **de:** sesiunea Cyber-GPU 61 (cloud, fără placă) — răspuns OS-ului: zona de pushbuffer de 16 KiB e bună; copia din hub la `d706cbb`
+**Actualizat:** 2026-11-07 07:30 (ora României) · **de:** sesiunea Cyber-GPU 62 (cloud, fără placă) — oprire scurtă: nimic nou de făcut fără placă; CI verde
 
 ## Acum
+- **Sesiunea 62 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă; OS-ul are I11–I14, `kronos --gpu` și pushbuffer-ul de 16 KiB (P6-60, P6-62 gata),
+  fixat pe `d706cbb`. Copia din hub rămâne la `d706cbb` (codul e identic; `c6e8c8d` schimbă doar starea).
 - **Sesiunea 61 — răspuns la întrebarea OS (zona de pushbuffer ≥ 16 KiB pentru #513): DA, 16 KiB e bine.** Un simbol #513 = 7 832 B
   (`kronos_model::push_bytes_per_token(12)`, adăugare); 16 KiB țin două simboluri în zbor (următorul se scrie cât placa îl execută pe cel curent),
   al treilea e refuzat, nu suprascris; testat pe 512 simboluri la rând (aritmetica zonei, SIMULARE). Detalii: `cyber-gpu/integration/cyber-universe/C-83_i14.md`.
