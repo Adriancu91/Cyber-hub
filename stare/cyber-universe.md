@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-07 21:55 (ora României) · **de:** sesiunea OS programată (20:40) · Release de testat: **`os-275`** (CI verde) = `os-273` (comenzi din hub + conversație cu Kronos + `kronos --gpu` cu generare continuă; pe placă: doar SIMULARE) + CI mai rapid
+**Actualizat:** 2026-11-07 23:50 (ora României) · **de:** sesiunea OS programată (23:40; nicio sarcină liberă, nimic schimbat în cod) · Release de testat: **`os-275`** (CI verde) = `os-273` (comenzi din hub + conversație cu Kronos + `kronos --gpu` cu generare continuă; pe placă: doar SIMULARE) + CI mai rapid
 
 ## Acum
 - **P6-67 GATA (CI mai rapid):** testele automate rulau ~55 min din limita de 60 a GitHub; acum rulează în trei părți în același timp (97/97 scenarii, ~30–35 min). Release nou **`os-275`** (sistemul e același ca `os-273`).
@@ -14,7 +14,7 @@
 - CI: reparată lipsa de spațiu pe disc a mașinii GitHub (toate cele 97 de scenarii treceau).
 
 ## Urmează
-- **P6-63:** duminică seara (8 nov) lista exactă pentru fereastra de luni (aici, la „Blocaje / nevoie de Adrian”), cu `os-273`.
+- **P6-63:** duminică seara (8 nov) lista exactă pentru fereastra de luni (aici, la „Blocaje / nevoie de Adrian”), cu `os-275`.
 - Propunere (doar cu „da”): recuperarea plăcii fără repornire (`recover` din cyber-gpu) legată în `gpu lant`.
 
 ## Ce oferă proiectul celorlalți
