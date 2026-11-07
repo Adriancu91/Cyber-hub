@@ -111,3 +111,4 @@
 - 2026-11-07 11:15 — S87 gata: cauza căderilor de la ora 3 găsită (memorie ținută între ore, eliberată de gc.collect) și reparată în unealtă; S88 oprit (ștergerea cere mâna lui Adrian); S90 (C-85 pasul 3, examenul de română) azi, S89 (reluarea nopții de 5 ore) la noapte.
 - 2026-11-07 14:15 — S90 gata (C-85 pasul 3): examenul de română e modul separat, aceleași cifre (±0,001), neactivat; S91 (C-85 pasul 4a, unealta cercetătorului cu model în avans) azi pe procesor; S89 la noapte.
 - 2026-11-07 17:15 — S91 gata (C-85 pasul 4a): unealta cercetătorului cu model mic trimis în avans merge, kronos/ neschimbat; S92 (pasul 4b, schimbări relative + model mic de 6 straturi) pus pe procesor; S89 la noapte.
+- 2026-11-07 20:15 — S89 (5 ore pe modelul de 24 de straturi, cu paza nouă) a pornit la 19:31; C-88 „Română da” preluat ca S93 (examenul de română decide de la următorul experiment, doar procesor, `kronos/` neschimbat); testul Spearman devine S94.

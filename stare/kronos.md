@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-07 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-07 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -17,9 +17,10 @@
 - **1318 teste trec, 0 pică.** Placa liberă ziua.
 
 ## Urmează
-- **Noaptea 7→8 (de la 19:00): S89** — reluarea nopții de 5 ore pe modelul de 24 de straturi (rețeta e1, acum cu paza nouă): bate #513 la timp egal?
-- **S92 (procesor, după pornirea S89 sau 8 nov de la 08:00):** C-85 pasul 4b, unealta — schimbări relative + modelul mic de 6 straturi tăiat din cel de 24.
-- Apoi S93 pe placă (prezice modelul mic clasamentul celui mare? Spearman pe 5 rețete, cu pre-înregistrare) și pașii 5–8 din C-85, câte unul.
+- **Acum, noaptea 7→8: S89 rulează** (pornit 19:31) — 5 ore pe modelul de 24 de straturi (rețeta e1, cu paza nouă): bate #513 la timp egal? Verdict dimineață.
+- **S92 (procesor, după verificarea de 15 min a S89 sau 8 nov de la 08:00):** C-85 pasul 4b — schimbări relative + modelul mic de 6 straturi.
+- **S93 (C-88 „Română da”, procesor):** examenul de română devine criteriul de decizie de la următorul experiment (configurare nouă `conv_w2_mare_24r`); `examen_bpb` neschimbat, doar verificare; `kronos/` neschimbat.
+- Apoi S94 pe placă (prezice modelul mic clasamentul celui mare? Spearman pe 5 rețete, cu pre-înregistrare) și pașii 5–8 din C-85, câte unul.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu **#513** (suma, 3 texte de control). Rezervele #477 și #459 rămân pornibile.
@@ -35,7 +36,6 @@
 
 ## Blocaje / nevoie de Adrian
 - **S88:** ștergerea celor 82 de modele intermediare (33,4 GB) + `lucru/memorie_mare` (10,5 GB) — Adrian rulează comanda din raportul S88 sau dă executantului o excepție pentru ștergeri aprobate.
-- Opțional: „da examen română” — modulul `examen_romana` folosit în configurări (paznicul îi memorează amprenta).
 - Release-ul `kronos-kgr1-513` — luni 9 nov, cu Adrian la workstation.
 - Fereastra lui Adrian pentru testul OS (luni 9 nov, C-83) — Kronos ține placa liberă atunci.
 - Opțional: arhiva de mutare (26,2 GB) + Coșul. Fără grabă: S58, `taskkill`, ora 18:30 la bucla automată, Release-ul `kronos-kgr1-477`.
