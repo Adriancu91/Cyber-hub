@@ -1139,3 +1139,15 @@ Format:
      `profesor_qwen` rămâne oprit. Configurările vechi care le folosesc: actualizează căile sau marchează-le „arhivă”.
 - reguli: **regula nucleului** — `kronos/` nu se schimbă pentru module; modulele se adaptează la nucleu. Examenul vechi și paznicul doar cu aprobarea lui Adrian; nimic pe placă peste ferestrele lui Adrian; commit + push după fiecare pas.
 - stare: preluat (2026-11-06 20:15, supraveghetor) — pasul 1 = sarcina **S84** (doar listă, nimic șters), după S83; pașii 2–8 câte unul, după S84; 23:15: pasul 1 **gata** (S84: 592 `.pt` / 107,6 GB, „se pot șterge” 71,5 GB, nimic șters — Adrian decide); pasul 2 = **S86** (memoria plăcii, Muon vs AdamW), ziua de 7 nov; 2026-11-07 02:15: S86 adus în noaptea 6→7 (S85 oprit la ora 3, placa liberă), cu întrebarea în plus de ce crește memoria de la o oră la alta; 05:15: pasul 2 **gata** (S86: Muon −649 MB la modelul de 24 de straturi, DA); întrebarea memoriei între ore → **S87**, ziua de 7 nov; pasul 3 după S87
+
+### C-86 · kronos · Răspunsurile lui Adrian la întrebările din `plan/pentru_adrian.md` (7 nov 05:15)
+- data: 2026-11-07 08:14 · de la: **Adrian** („1 da fără gpt” + „tot ce ai mai recomandat”)
+- ce:
+  1. **S84 — „da, fără gpt.pt de linie”:** se șterg DOAR cele **82 de modele intermediare din `lucru/stocare/modele/` (~33,4 GB)** din clasa „SE POATE ȘTERGE” a listei
+     `lucru/puncte_salvare/lista_2026-11-06_2238.json`; înainte: numele + SHA-256 + scorul fiecăruia în jurnal; după: lista recitită și raport cu GB eliberați.
+     **Cele 31 de `gpt.pt` de linie (~38 GB) rămân.** PĂSTREAZĂ și NECUNOSCUT rămân. Nimic din rezervele numite (#459, #477, #513, `cod_c1/gpt.pt`, modelul în uz).
+  2. **Stări pe 8 biți (`bitsandbytes`): NU deocamdată** — Muon (S86) rezolvă memoria; nu se descarcă nimic.
+  3. **`lucru/memorie_mare/` (9,8 GB, copii de lucru): DA, se șterge** — după ce raportul confirmă că nu e acolo nimic unic (niciun model numit / câștigător).
+  4. **Release #513:** rămâne pentru luni, cu Adrian la workstation (comanda din `docs/integrare_kronos/MODEL.md`); până atunci fișierul `.kgr` + `.sha256` rămân în `lucru/export/`.
+- reguli: ștergerile doar pe procesor/disc, fără să încurce S87; raport + rând în `plan/pentru_adrian.md`; nu atinge `kronos/`.
+- stare: nou
