@@ -1153,3 +1153,19 @@ Format:
   4. **Release #513:** rămâne pentru luni, cu Adrian la workstation (comanda din `docs/integrare_kronos/MODEL.md`); până atunci fișierul `.kgr` + `.sha256` rămân în `lucru/export/`.
 - reguli: ștergerile doar pe procesor/disc, fără să încurce S87; raport + rând în `plan/pentru_adrian.md`; nu atinge `kronos/`.
 - stare: preluat (2026-11-07 08:15, supraveghetor) — punctele 1 și 3 = sarcina **S88** în `plan/coada.md` (procesor + disc, după S87; `memorie_mare/` doar după ce S87 e gata); punctele 2 și 4 notate (fără 8 biți; Release #513 luni, cu Adrian); 11:15: S88 **oprit** de executant — unealta și proba gata (exact 82 fișiere / 33,4 GB), dar regula lui interzice ștergerea; Adrian rulează comanda din raportul S88 sau îi dă o excepție
+
+### C-87 · cyber-gpu + cyber-universe · Continuare până luni: mai mulți pași (ambele sesiuni scriu „nicio sarcină liberă”)
+- data: 2026-11-07 17:15 · de la: centrul de comandă, prin delegarea lui Adrian (6 nov 17:41/17:44: „avansează OS și GPU cât de mulți pași în simulări”)
+- ce (cyber-gpu, în SIMULARE, fiecare cu test):
+  1. **Generare continuă:** N simboluri la rând pe placă (cache cheie/valoare care crește, `submit_fenced`), oprire curată la oricare eroare; măsurarea simbolurilor/secundă din ceasul plăcii.
+  2. **„Un singur program pe simbol”** (idee aprobată 3 nov): varianta persistentă în `gpu-sim`, comparată cu cele 195 de lansări (aceleași simboluri), ca să fie gata de măsurat pe placă.
+  3. **Recuperare fără repornire:** dacă placa nu răspunde (canal blocat, GSP tăcut), ieșire curată: oprire canal, Bus Master la loc, jurnal — ca un test ratat să nu ceară repornirea calculatorului.
+  4. **Modelul mare:** calea I13/I14 pentru 24 de straturi (183M), memoria VRAM calculată și verificată înainte de încărcare.
+- ce (cyber-universe, testat în QEMU):
+  1. `kronos --gpu` cu generare continuă (după pasul 1 GPU) + comparația de viteză cu procesorul în același raport; întoarcere automată pe procesor.
+  2. **Comenzi din hub executate în OS, doar dintr-o listă albă** (ex. `test tot`, `raport`, `profil`, `control`, `trimite`): Adrian scrie în hub, OS-ul le rulează la pornire/la cerere
+     și trimite raportul. **Niciodată scrieri pe placă, ștergeri sau actualizări fără „DA” tastat de Adrian.**
+  3. `kronos --intreaba` pe mai multe rânduri + conversație (istoric), cu #513.
+  4. Lista pentru luni (duminică seara în `stare/`): un singur `gpu lant` + „DA” care face tot; ce trebuie să copieze Adrian pe stick-uri (inclusiv `kronos_513_q8_0.kgr` din `C:\Kronos\cyberspace\lucru\export\` dacă Release-ul nu e făcut).
+- reguli: ca la C-83/C-84 (nimic pe placă fără Adrian, gărzi, clean-room, „SIMULARE/QEMU” cinstit, `main` construibil).
+- stare: nou
