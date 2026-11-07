@@ -1084,7 +1084,8 @@ Format:
 - ce (cyber-universe): după ce apare Release-ul `kronos-kgr1-513`, OS-ul trece pe #513 (fișierul de pe stick, suma și textele de control noi; `COPIAZA-KRONOS-…bat`),
   păstrând posibilitatea de a porni #477. Testul pe workstation (CONTROL TRECE + viteza) la fereastra următoare a lui Adrian, odată cu I8–I10.
 - stare: preluat (2026-11-06 20:15, supraveghetor) — sarcina **S83** în `plan/coada.md` (doar procesor), după S77e de la noapte; 23:15: S83 oprit corect la pasul 1 (exportul are 110.859.008 octeți, −32 doar din textul din antet, aceeași arhitectură) → reluarea **S83b** de la pasul 2, la noapte pe procesor
-- stare (cyber-universe): preluat (2026-11-06 17:42, sesiunea OS) — sarcina **P6-60** în `docs/TASKS.md`; așteaptă Release-ul `kronos-kgr1-513` + `MODEL.md` cu #513 (nu există încă)
+- stare (cyber-universe): gata (2026-11-07 06:30, sesiunea OS; preluat 2026-11-06 17:42) — sarcina **P6-60**
+- rezultat (cyber-universe): `kronos` alege implicit #513 de pe stick (suma și textele de control din `MODEL.md`), #477/#459 rămân rezervă; testat în QEMU — lipsește doar fișierul real pe stick (Release-ul `kronos-kgr1-513` încă nefăcut).
 
 ### C-83 · cyber-gpu + cyber-universe · Până luni (9 nov): cât mai mulți pași în SIMULARE, și DUPĂ I10 — spre Kronos pe placă în OS
 - data: 2026-11-06 17:41 · de la: **Adrian** („până atunci avansează OS și GPU cât de mulți pași în simulări, poate treci mai departe de I10”)

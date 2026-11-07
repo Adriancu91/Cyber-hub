@@ -165,3 +165,5 @@
 - 2026-11-07 00:45 — P6-62 (C-83): I14 în `gpu lant` cu modelul de control `mic_q8_0.kgr` (3 texte, 29 simboluri identice cu vectorii lui Kronos), doar SIMULARE; lanțul trece până la capăt; rămâne `kronos --gpu`.
 - 2026-11-07 03:15 — P6-62 (C-83) bifat: `kronos --gpu` (după `DA`, lanțul întreg + textul la I14, fiecare simbol comparat cu procesorul, întoarcere pe procesor la orice eroare), zona de comenzi 16 KiB, cyber-gpu `d706cbb`; doar SIMULARE. Lista pentru luni = P6-63 (duminică seara).
 - 2026-11-07 04:05 — CI verde pe `kronos --gpu` → Release `os-263`.
+- 2026-11-07 06:30 — P6-60 (C-82) bifat: #513 model implicit în `kronos` (513 > 477 > 459, suma și textele din MODEL.md); reparată depășirea de stivă a lanțului GPU la `kronos --gpu` (fir cu 256 KiB + canar pe stive); Release-ul `kronos-kgr1-513` lipsește încă.
+- 2026-11-07 07:10 — CI verde pe #513 implicit + reparația stivei → Release `os-264`.
