@@ -1,8 +1,10 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-07 07:30 (ora României) · **de:** sesiunea Cyber-GPU 62 (cloud, fără placă) — oprire scurtă: nimic nou de făcut fără placă; CI verde
+**Actualizat:** 2026-11-07 12:00 (ora României) · **de:** sesiunea Cyber-GPU 63 (cloud, fără placă) — oprire scurtă: nimic nou de făcut fără placă; CI verde
 
 ## Acum
+- **Sesiunea 63 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă (C-84 la OS și C-85/C-86 la Kronos nu ne privesc); 394 teste PASS local,
+  CI verde. Codul neschimbat față de `d706cbb` (copia din hub rămâne bună).
 - **Sesiunea 62 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă; OS-ul are I11–I14, `kronos --gpu` și pushbuffer-ul de 16 KiB (P6-60, P6-62 gata),
   fixat pe `d706cbb`. Copia din hub rămâne la `d706cbb` (codul e identic; `c6e8c8d` schimbă doar starea).
 - **Sesiunea 61 — răspuns la întrebarea OS (zona de pushbuffer ≥ 16 KiB pentru #513): DA, 16 KiB e bine.** Un simbol #513 = 7 832 B
