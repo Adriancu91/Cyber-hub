@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-07 11:55 (ora României) · **de:** sesiunea OS programată (11:40; nicio sarcină liberă, nimic schimbat) · Release de testat: **`os-268`** (CI verde) = `os-264` + managerul de fișiere pentru stick + CSS și imagini PNG în browser (pe placă nimic schimbat)
+**Actualizat:** 2026-11-07 14:45 (ora României) · **de:** sesiunea OS programată (14:40; nicio sarcină liberă, nimic schimbat) · Release de testat: **`os-268`** (CI verde) = `os-264` + managerul de fișiere pentru stick + CSS și imagini PNG în browser (pe placă nimic schimbat)
 
 ## Acum
 - **C-84 (unelte spre independența de Windows) → P6-61 GATA** (toate testate în QEMU, nimic încă pe hardware):
