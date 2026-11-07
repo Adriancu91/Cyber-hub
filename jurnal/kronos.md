@@ -110,3 +110,4 @@
 - 2026-11-07 08:15 — Raportul de dimineață verificat (1278 teste trec). C-86 preluat: S88 șterge cele 82 de modele intermediare (33,4 GB, `gpt.pt` de linie rămân) și, după S87, `lucru/memorie_mare/`; fără 8 biți; Release #513 luni.
 - 2026-11-07 11:15 — S87 gata: cauza căderilor de la ora 3 găsită (memorie ținută între ore, eliberată de gc.collect) și reparată în unealtă; S88 oprit (ștergerea cere mâna lui Adrian); S90 (C-85 pasul 3, examenul de română) azi, S89 (reluarea nopții de 5 ore) la noapte.
 - 2026-11-07 14:15 — S90 gata (C-85 pasul 3): examenul de română e modul separat, aceleași cifre (±0,001), neactivat; S91 (C-85 pasul 4a, unealta cercetătorului cu model în avans) azi pe procesor; S89 la noapte.
+- 2026-11-07 17:15 — S91 gata (C-85 pasul 4a): unealta cercetătorului cu model mic trimis în avans merge, kronos/ neschimbat; S92 (pasul 4b, schimbări relative + model mic de 6 straturi) pus pe procesor; S89 la noapte.

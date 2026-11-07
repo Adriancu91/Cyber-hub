@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-07 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-07 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -11,13 +11,15 @@
   (vârf 6.399 MB). Leacul e în unealta de antrenare; nucleul `kronos/` nu se schimbă.
 - **S90 (C-85 pasul 3, gata 12:26): examenul de română e modul separat** (`examen_romana`): aceleași cifre ca înainte
   (#513 1,2060, #477 1,2096, ± 0,001; R1 99,27), setul păzit cu amprente SHA-256; neactivat în nicio configurare fără Adrian.
+- **S91 (C-85 pasul 4a, gata 14:40): unealta „cercetător cu model trimis în avans”** (`unelte/cercetator_avans.py`): rețetele încercate pe un model mic,
+  pe cel mare doar o propunere nerulată; `kronos/` neschimbat. Lecția: valorile se mută relativ (rata × 2), nu absolut (rata mică ar fi ×300).
 - **S88 (C-86): oprit** — unealta de ștergere și proba sunt gata (exact 82 fișiere / 33,4 GB), dar regula executantului interzice ștergerea; decide Adrian.
-- **1306 teste trec, 0 pică.** Placa liberă ziua.
+- **1318 teste trec, 0 pică.** Placa liberă ziua.
 
 ## Urmează
-- **Azi, procesor: S91** — C-85 pasul 4a: unealta „cercetător cu model trimis în avans” (rețetele încercate pe un model mic, pe cel mare doar câștigătorul); doar unealtă + teste.
 - **Noaptea 7→8 (de la 19:00): S89** — reluarea nopții de 5 ore pe modelul de 24 de straturi (rețeta e1, acum cu paza nouă): bate #513 la timp egal?
-- Apoi C-85 pasul 4b (pe placă: prezice modelul mic clasamentul celui mare?) și pașii 5–8, câte unul.
+- **S92 (procesor, după pornirea S89 sau 8 nov de la 08:00):** C-85 pasul 4b, unealta — schimbări relative + modelul mic de 6 straturi tăiat din cel de 24.
+- Apoi S93 pe placă (prezice modelul mic clasamentul celui mare? Spearman pe 5 rețete, cu pre-înregistrare) și pașii 5–8 din C-85, câte unul.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu **#513** (suma, 3 texte de control). Rezervele #477 și #459 rămân pornibile.
