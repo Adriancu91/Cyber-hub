@@ -107,3 +107,4 @@
 - 2026-11-06 23:15 — S77e gata (24 de straturi cu rata 1e-5 ȚINE după o oră), S84 gata (lista .pt, nimic șters), S83 oprit corect la mărime (−32 octeți din antet) → S83b; la noapte S85 (5 ore pe modelul mare), mâine S86 (C-85 pasul 2).
 - 2026-11-07 02:15 — S85 (5 ore pe modelul de 24 de straturi) oprit după 2 ore: iar lipsă de memorie la testul rapid de la ora 3, ca la S77c → NEMĂSURAT; S83b (#513 în uz) pornește acum, iar S86 (C-85 pasul 2, memoria plăcii) e adus în noaptea asta.
 - 2026-11-07 05:15 — S83b gata: #513 e modelul în uz (MODEL.md copiat în `integrare/kronos/`); S86 (C-85 pasul 2) gata: Muon −649 MB la modelul de 24 de straturi (DA); S87 azi ziua: de ce crește memoria de la o oră la alta.
+- 2026-11-07 08:15 — Raportul de dimineață verificat (1278 teste trec). C-86 preluat: S88 șterge cele 82 de modele intermediare (33,4 GB, `gpt.pt` de linie rămân) și, după S87, `lucru/memorie_mare/`; fără 8 biți; Release #513 luni.

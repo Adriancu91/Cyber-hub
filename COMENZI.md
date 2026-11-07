@@ -1150,4 +1150,4 @@ Format:
   3. **`lucru/memorie_mare/` (9,8 GB, copii de lucru): DA, se șterge** — după ce raportul confirmă că nu e acolo nimic unic (niciun model numit / câștigător).
   4. **Release #513:** rămâne pentru luni, cu Adrian la workstation (comanda din `docs/integrare_kronos/MODEL.md`); până atunci fișierul `.kgr` + `.sha256` rămân în `lucru/export/`.
 - reguli: ștergerile doar pe procesor/disc, fără să încurce S87; raport + rând în `plan/pentru_adrian.md`; nu atinge `kronos/`.
-- stare: nou
+- stare: preluat (2026-11-07 08:15, supraveghetor) — punctele 1 și 3 = sarcina **S88** în `plan/coada.md` (procesor + disc, după S87; `memorie_mare/` doar după ce S87 e gata); punctele 2 și 4 notate (fără 8 biți; Release #513 luni, cu Adrian)

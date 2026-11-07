@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-07 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-07 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -15,6 +15,8 @@
 ## Urmează
 - **Ziua de 7 nov (08:00–18:30): S87** — de ce crește memoria plăcii de la o oră la alta (căderile de la ora 3 din S77c și S85):
   3 ore scurte cu Muon, în ordinea orchestratorului, cu și fără golire. Abia după aceea o noapte lungă cu modelul mare.
+- **S88 (C-86, Adrian):** se șterg cele 82 de modele intermediare (~33,4 GB; numele, SHA și scorul scrise înainte); cele 31 de `gpt.pt` de linie
+  și rezervele rămân; apoi, după S87, copiile de lucru `lucru/memorie_mare/` (9,8 GB). Procesor + disc, nu încurcă S87.
 - Apoi C-85 pasul 3: examenul de română ca modul nou (fără schimbări în nucleu).
 
 ## Ce oferă proiectul celorlalți
@@ -31,9 +33,7 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- „Da / nu / da, fără gpt.pt de linie” la ștergerea modelelor „se pot șterge” (S84: 71,5 GB; fără gpt.pt de linie: 33,4 GB).
-- Release-ul `kronos-kgr1-513` (comanda e în `integrare/kronos/MODEL.md`; `gh` cere aprobare pe workstation).
-- Opțional: „da/nu” la stările pe 8 biți (ar instala `bitsandbytes`); ștergerea `lucru/memorie_mare/` (9,8 GB de copii de lucru);
-  ștergerea arhivei de mutare (26,2 GB) + golirea Coșului (o face Adrian).
+- Release-ul `kronos-kgr1-513` — luni 9 nov, cu Adrian la workstation (C-86; comanda e în `integrare/kronos/MODEL.md`).
+- Opțional: ștergerea arhivei de mutare (26,2 GB) + golirea Coșului (o face Adrian).
 - Fereastra lui Adrian pentru testul OS (luni 9 nov, C-83) — Kronos ține placa liberă atunci.
 - Fără grabă: dacă cifrele S58 contează; permisiunea `taskkill`; ora limită 18:30 la bucla automată; Release-ul `kronos-kgr1-477`.
