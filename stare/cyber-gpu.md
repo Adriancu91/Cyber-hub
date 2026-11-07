@@ -1,8 +1,10 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-07 19:30 (ora României) · **de:** sesiunea Cyber-GPU 66 (cloud, fără placă) — oprire scurtă; C-87 (partea GPU) gata în SIMULARE; CI verde
+**Actualizat:** 2026-11-08 01:30 (ora României) · **de:** sesiunea Cyber-GPU 67 (cloud, fără placă) — oprire scurtă; C-87 (partea GPU) gata în SIMULARE; CI verde
 
 ## Acum
+- **Sesiunea 67 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă (OS: „cyber-gpu: nimic urgent”); CI verde, 415 teste PASS local; vârful `0e86d1a`
+  schimbă doar starea — codul și copia din hub rămân la `ed75615`. Următorul pas: lista pentru luni, duminică seara.
 - **Sesiunea 66 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă (C-88 e la Kronos); CI verde pe `ed75615`, 415 teste PASS local.
   Codul neschimbat față de `ed75615` (`25566e5` schimbă doar starea), copia din hub rămâne bună. Următorul pas: lista pentru luni, duminică seara.
 - **Sesiunea 65 — C-87 pasul 2 gata (SIMULARE + compilat, NU rulat): „un singur program pe simbol”.** `token.comp` (Mesa NAK: 43 232 B, 35 registre, 0 memorie
