@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-08 11:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-08 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -13,13 +13,13 @@
 - **S93 (C-88, gata 02:36):** examenul de română decide de acum pe linia nouă `w2_mare_24r`; paznicul îi păzește amprenta, `kronos/` neschimbat.
 - S90/S91 (7 nov): examenul de română e modul separat; unealta „model mic trimis în avans” merge; `kronos/` neschimbat.
 - **S88 (C-86): oprit** — ștergerea celor 82 de modele intermediare (33,4 GB) așteaptă mâna lui Adrian.
-- **S94a (8 nov 08:52): oprit, motiv bun** — paznicul a anulat repararea modelului mic la 600 s (simbolurile se refăceau într-un cache gol);
-  nimic antrenat, placa n-a lucrat. Reparație aleasă: citire din cache-ul comun `lucru/cache` (doar citit). S94 din nou `aprobat`.
-- **1336 teste trec, 0 pică.**
+- **S94a (gata 8 nov 14:05, verificat):** modelul mic de 6 straturi, reparat (română 2,78 → 1,66), a clasat cele 5 rețete în 15 min fiecare:
+  rata ×4 1,589 < ×2 1,612 < bază ≈ încălzire ×2 1,631 < ×0,5 1,644 (exact ordinea ghicită). Vârf 4.970 MB / 62 °C; cache-ul comun doar citit.
+- **1337 teste trec, 0 pică.**
 
 ## Urmează
-- **8 nov ziua (placa, repornire cel târziu 15:30): S94a** — modelul mic: reparare 45 min + 5 rețete × 15 min. **Noaptea 8→9: S94b** — aceleași 5 rețete × 1 oră pe modelul de 24.
-  Verdict Spearman (ρ ≥ 0,7 și câștigătorul mic în primele 2 = DA). Totul gata până **luni 07:00**; luni placa e liberă pentru testul OS (C-83).
+- **Noaptea 8→9 (placa, de la 19:00): S94b** — aceleași 5 rețete × 1 oră pe modelul de 24. Verdict Spearman (ρ ≥ 0,7 și câștigătorul mic în primele 2 = DA).
+  Gata până **luni 07:00**; luni placa e liberă pentru testul OS (C-83).
 - Apoi: continuarea liniei de 24 de straturi (curba încă scade) și pașii 5–8 din C-85, câte unul.
 
 ## Ce oferă proiectul celorlalți

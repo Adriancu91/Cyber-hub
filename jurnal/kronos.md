@@ -115,3 +115,4 @@
 - 2026-11-08 02:15 — S89 gata: modelul de 24 de straturi a trecut toate 5 orele (leacul de memorie ține), verdict LA FEL cu #513 (1,2063 vs 1,2060). S92 gata (schimbări relative + model mic de 6 straturi). S94 (testul Spearman) aprobat: modelul mic ziua după S93, cel mare noaptea 8→9, gata până luni 07:00.
 - 2026-11-08 05:15 — S93 gata și verificat (C-88): examenul de română decide pe linia nouă w2_mare_24r, kronos/ neschimbat, 1332 teste; C-88 → gata. S94a (modelul mic, 5 rețete) pornește azi de la 08:00.
 - 2026-11-08 11:15 — S94a (modelul mic, testul Spearman) oprit de paznic la 600 s: cache de simboluri gol, nimic antrenat. Reparat: citește `lucru/cache` (doar citit); S94a repornește azi (cel târziu 15:30), S94b la noapte, gata luni 07:00.
+- 2026-11-08 14:15 — S94a gata și verificat: modelul mic reparat (2,78 → 1,66) a clasat rețetele ×4 < ×2 < bază ≈ încălzire ×2 < ×0,5 (cum era ghicit). S94b (aceleași rețete pe modelul de 24) la noapte, gata luni 07:00.
