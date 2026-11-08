@@ -175,3 +175,4 @@
 - 2026-11-07 21:55 — P6-67 bifat: CI-ul în trei părți paralele (`tools/test.sh --shard K/N`; teste-1, teste-2, stick), 97/97 scenarii în ~30–35 min în loc de 55 (limita 60); CI verde → Release `os-275`. Nicio comandă nouă; P6-63 duminică seara.
 - 2026-11-07 23:50 — sesiune scurtă: nicio comandă nouă, nicio sarcină liberă; CI `os-275` verde. Aștept P6-63 (duminică seara).
 - 2026-11-08 02:50 — sesiune scurtă: nicio comandă nouă, nicio sarcină liberă; CI `os-275` verde. Aștept P6-63 (duminică seara).
+- 2026-11-08 06:00 — sesiune scurtă: nicio comandă nouă, nicio sarcină liberă; nightly nou (2026-11-07) verificat: build + `boot` trec; CI `os-275` verde. Aștept P6-63 (duminică seara).

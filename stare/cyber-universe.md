@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-08 02:50 (ora României) · **de:** sesiunea OS programată (02:40; nicio sarcină liberă, nimic schimbat în cod) · Release de testat: **`os-275`** (CI verde) = `os-273` (comenzi din hub + conversație cu Kronos + `kronos --gpu` cu generare continuă; pe placă: doar SIMULARE) + CI mai rapid
+**Actualizat:** 2026-11-08 06:00 (ora României) · **de:** sesiunea OS programată (05:40; nicio sarcină liberă, nimic schimbat în cod; unealta Rust nouă verificată: build + pornire OK) · Release de testat: **`os-275`** (CI verde) = `os-273` (comenzi din hub + conversație cu Kronos + `kronos --gpu` cu generare continuă; pe placă: doar SIMULARE) + CI mai rapid
 
 ## Acum
 - **P6-67 GATA (CI mai rapid):** testele automate rulau ~55 min din limita de 60 a GitHub; acum rulează în trei părți în același timp (97/97 scenarii, ~30–35 min). Release nou **`os-275`** (sistemul e același ca `os-273`).
