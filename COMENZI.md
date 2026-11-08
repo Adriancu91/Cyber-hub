@@ -1195,4 +1195,4 @@ Format:
      tokenizer nou = Kronos antrenat de la zero (#513 nu se poate refolosi), ore estimate pe placă.
 - reguli: **nicio antrenare de model, nicio schimbare în `kronos/` sau în configurările în uz**; reducerea de 15–30% e ipoteză. Dacă rezultatele sunt bune, abia atunci
   Adrian decide un Kronos experimental mic (33–50M) cu tokenizerul nou. Raport + rând în `plan/pentru_adrian.md`.
-- stare: nou
+- stare: **PARCAT** (Adrian, 8 nov 16:20: „pune-o deoparte și o încercăm când ajungem la peste 1 miliard de parametri”) — NU se pune în coadă acum; se reactivează când Kronos depășește 1 miliard de parametri.
