@@ -1181,3 +1181,18 @@ Format:
   nu poate păzi noul examen fără nucleu, amprenta setului ascuns se verifică din modul și din teste (C-85). Raport + rând în `plan/pentru_adrian.md`.
 - stare: gata (2026-11-08 05:15, supraveghetor; preluat 2026-11-07 20:15) — sarcina **S93** în `plan/coada.md` (doar procesor, după S92 sau 8 nov de la 08:00): configurare nouă `conv_w2_mare_24r` cu portul `examen` = `examen_romana` pentru următorul experiment; `examen_bpb` neschimbat, măsurat mai departe ca verificare; paznicul memorează amprenta fără schimbări în `kronos/`; S89 neatins
 - rezultat: S93 gata (8 nov 02:36, verificat): configurarea nouă `conv_w2_mare_24r` e judecată după `romana_bpb`; paznicul memorează și păzește singur amprenta examenului de română (proba: copia schimbată e refuzată); `kronos/` și `examen_bpb` neschimbate; 1332 teste trec. Regula pentru pre-înregistrări (verdict pe română curat + R1/R2; povești doar „nu se strică”, plafon +0,005) se aplică de la S94.
+
+### C-89 · kronos · Simulare: tokenizer românesc fără pierdere (doar măsurători, fără antrenare)
+- data: 2026-11-08 16:17 · de la: centrul de comandă, cu acordul lui Adrian („decizia rămâne a ta”) și al lui Gepeto („simulare da”)
+- când: **după fereastra de luni 9 nov** (testul OS); doar procesor + disc, nu încurcă antrenările de pe placă. ~1–2 ore.
+- ce (pre-înregistrare scrisă înainte, cu praguri):
+  1. Tokenizerul actual (`date/ws/bpe_16384.json`): simboluri pe cuvânt și pe octet pe texte **românești** (română curat, setul ascuns R1/R2 — doar numărat, nu folosit la antrenare)
+     și **englezești** + cod, separat pe categorii (conversații, texte lungi, instrucțiuni, numere, cod).
+  2. Aceleași texte **cu și fără diacritice**.
+  3. Tokenizere de probă antrenate doar pe textele de antrenare (niciodată pe seturile ascunse): BPE românesc 16k și 32k + variantă cu expresii întregi (stil SuperBPE).
+     **Reversibilitate verificată caracter cu caracter** pe toate textele.
+  4. Rezultat: tabel simboluri/categorie, mărimea vocabularului, cât text românesc încape în contextul de **512** simboluri (înainte/după), și **costul migrării**:
+     tokenizer nou = Kronos antrenat de la zero (#513 nu se poate refolosi), ore estimate pe placă.
+- reguli: **nicio antrenare de model, nicio schimbare în `kronos/` sau în configurările în uz**; reducerea de 15–30% e ipoteză. Dacă rezultatele sunt bune, abia atunci
+  Adrian decide un Kronos experimental mic (33–50M) cu tokenizerul nou. Raport + rând în `plan/pentru_adrian.md`.
+- stare: nou
