@@ -1,8 +1,13 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-08 01:30 (ora României) · **de:** sesiunea Cyber-GPU 67 (cloud, fără placă) — oprire scurtă; C-87 (partea GPU) gata în SIMULARE; CI verde
+**Actualizat:** 2026-11-08 07:50 (ora României) · **de:** sesiunea Cyber-GPU 68 (cloud, fără placă) — C-83: unealta de verificare a jurnalului știe lanțul de luni (17 pași); lista GPU pentru 9 nov; CI GitHub pică în 2 s fără jurnal (nu codul)
 
 ## Acum
+- **Sesiunea 68 — pregătire pentru luni (C-83).** Unealta `verifica_jurnal_lant` știa doar lanțul până la I10 (13 pași); jurnalul de luni (17 pași, cu I11–I14)
+  ar fi ieșit „de analizat” fără motiv. Acum recunoaște singură lanțul C-83 și verifică și I11–I14 (doar fereastra VRAM + soneria de lucru; orice altă
+  scriere e numită cu pasul ei) — test T107, doar SIMULARE pe text. Lista GPU pentru luni: `cyber-gpu/docs/FEREASTRA_C-83.md`. Vârful `84d3685`, 416 teste PASS
+  local (doar adăugări; OS-ul nu are nimic de schimbat, `34a9793` rămâne bun). **CI GitHub:** din 7 nov 23:28 ambele joburi pică în ~2 s, fără jurnal
+  (repornit o dată, la fel) — mașina GitHub nu pornește, nu e o eroare de cod.
 - **Sesiunea 67 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă (OS: „cyber-gpu: nimic urgent”); CI verde, 415 teste PASS local; vârful `0e86d1a`
   schimbă doar starea — codul și copia din hub rămân la `ed75615`. Următorul pas: lista pentru luni, duminică seara.
 - **Sesiunea 66 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă (C-88 e la Kronos); CI verde pe `ed75615`, 415 teste PASS local.
@@ -55,23 +60,22 @@
 - Notele pentru OS: `cyber-gpu/integration/cyber-universe/C-83_i11-i12.md`, `C-83_i13.md`, `C-83_i14.md`, `C-83_i14_vectori.md`.
 - Pe placă până acum: I0–I4 doar citire TREC; I6 TRECE (os-242); I7 TRECE (os-246); I8–I10 încă neîncercate (fereastra din 6 nov s-a închis fără test).
 
-## Lista scurtă pentru fereastra de luni 9 nov (provizorie; lista finală duminică seara)
-1. Pornire rece; `gpu lant` + „DA” o dată, cu `WINDOW_CHAIN_C83` (după ce OS-ul îl integrează): I6 → I7 → I8 → golden → I9 → I10.
-2. **I11:** 8 MiB RAM → VRAM → RAM. Scrieri noi pe placă: **niciun registru nou** (soneria de lucru + fereastra VRAM, ca la I10); nou: GPU-ul citește și
-   scrie prin DMA paginile RAM date de OS. Așteptat: `i11: 8388608 octeti; RAM->VRAM … MB/s; VRAM->RAM … MB/s`, întoarcerea identică cu modelul.
-3. **I12:** 3072 × 768 Q8_0 (urcare, înmulțire, coborâre). Aceleași scrieri. Așteptat: `i12: TRECE - identic bit cu bit…`.
-4. **I13:** un strat sintetic 768/12 pe 4 poziții. Aceleași scrieri, ~12 MB VRAM. Așteptat: `i13: pozitia 0..3: TRECE …`.
-5. **I14a (propunere):** întâi modelul minuscul `mic_q8_0.kgr` (hub `integrare/kronos/vectori`), 35 de lansări pe simbol, comparat cu `vectori.json` — răspunsul exact e cunoscut. Aceleași scrieri.
-6. **I14:** #513 de pe stick, textele de control, 5 simboluri greedy fiecare (195 de lansări pe simbol). Aceleași scrieri, ~150 MB VRAM. Așteptat:
-   `i14: … TRECE - simbolul … ca procesorul` și simbolurile din `MODEL.md` pentru #513. Durata fiecărei lansări în jurnal.
-7. Bus Master la loc, tur de citire; jurnalul de pe stick în `rezultate/`; noi: `verifica_jurnal_lant`.
+## Lista pentru fereastra de luni 9 nov (partea GPU; detaliile în `cyber-gpu/docs/FEREASTRA_C-83.md`)
+1. Pornire rece; stick-ul de test cu Release-ul OS cel mai nou (`os-275`) + stick-ul cu firmware 570.144; în `kronos\` pe stick: `mic_q8_0.kgr` și #513.
+2. `gpu lant` + „DA” o dată: I6 → I7 → I8 → golden → I9 → I10 → cost lansare → I11 → I12 → I13 → I14 → Bus Master la loc → tur.
+3. Scrieri noi față de 5 nov: la I7 **3** (resetul GSP în RISC-V, C-75); la I8 soneria GSP + secvențiatorul (doar ferestrele GSP/SEC2); golden/I9: soneria GSP
+   pe mesaj + fereastra VRAM; de la I10 soneria de lucru `0xbb0090`; I11–I14: **niciun registru nou** (nou: placa citește/scrie prin DMA paginile RAM ale OS-ului).
+4. Cel mai probabil punct de oprire: I7 (ordinea nouă, prima dată pe placă) sau I8 (prima dată). O oprire curată acolo e un rezultat bun.
+5. Dacă tot lanțul trece: `kronos --gpu` cu #513 (generare continuă, oprire la prima eroare). „Un singur program pe simbol” NU luni.
+6. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant` (recunoaște singur lanțul C-83).
 
 ## Urmează
-1. Duminică seara: lista exactă pentru luni (după ce OS-ul integrează I11–I14).
-2. „Un singur program pe simbol” — doar după ce placa ne spune cât costă cele 195 de lansări (I14 le măsoară).
-3. După fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
+1. Duminică seara: recitesc lista OS-ului (P6-63) și potrivesc lista de mai sus dacă s-a schimbat ceva.
+2. Luni, după fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
+3. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 68 (doar adăugări, unelte de gazdă):** `chain_log::{check_chain_journal_for, chain_for_journal, step_ids_for}`, `ChainJournal::verdict_for`; nimic de schimbat în OS.
 - **Sesiunea 65 (doar adăugări):** `kronos_token` (`TOKEN`, `TOKEN_REGISTERS`, `work_list`, `token_cbuf`, `token_qmd`, `groups_for`, `op_number`); `gpu-sim` `token_on_cpu`, `TOKEN_NEEDS`. Copia la `ed75615`.
 - **Sesiunea 64 (C-87, doar adăugări):** `kronos_gen` (`Generation`, `GenPlan`, `TokenRunner`, `TokenCheck`, `Stop`, `GenStats`, `TokenOutput`, `VramBudget`,
   `push_bytes_with_copy`), `recovery` (`recover`, `RecoveryOps`, `Recovered`, `RamPages`, `NextChain`, `classify`, `Hang`), `user_space::stop_compute_group`,
@@ -109,5 +113,5 @@
 
 ## Blocaje / nevoie de Adrian
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
+- CI-ul GitHub al `cyber-gpu` nu pornește (pică în 2 s, fără jurnal, din 7 nov 23:28). Dacă ține: GitHub → Settings → Billing and plans / Actions — de văzut dacă e vreo limită sau oprire pe cont. Testele locale trec (416).
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
-- 2026-11-07 01:35 · sesiunea 61 · răspuns OS: 16 KiB de pushbuffer pentru #513 = două simboluri în zbor (7 832 B fiecare); `push_bytes_per_token` + test; copia din hub la `d706cbb`.
