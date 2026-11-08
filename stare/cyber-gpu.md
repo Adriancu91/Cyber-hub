@@ -1,8 +1,11 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-08 13:30 (ora României) · **de:** sesiunea Cyber-GPU 69 (cloud, fără placă) — oprire scurtă; lista finală pentru luni diseară, după P6-63; CI GitHub tot nu pornește joburile (local 416 PASS)
+**Actualizat:** 2026-11-08 19:35 (ora României) · **de:** sesiunea Cyber-GPU 70 (cloud, fără placă) — oprire scurtă; lista OS (P6-63) încă nescrisă, lista GPU rămâne `docs/FEREASTRA_C-83.md`; CI GitHub din nou verde (local 416 PASS)
 
 ## Acum
+- **Sesiunea 70 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă; P6-63 (lista OS de luni) încă nescrisă la 19:30. **CI GitHub din nou VERDE**
+  (rularea pe `bf2a00d` a trecut). Verificat în OS (`c86281c`, doar citire): fixat pe cyber-gpu `34a9793`, rulează `WINDOW_CHAIN_C83` — aceiași 17 pași
+  pe care îi verifică `verifica_jurnal_lant`; lista GPU de mai jos rămâne valabilă. Vârful `f6d9f57` schimbă doar starea. 416 teste PASS local.
 - **Sesiunea 69 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă; lista OS pentru luni (P6-63) vine diseară, abia apoi lista finală GPU.
   CI GitHub repornit pe `c186f79` → pică iar în 3 s: joburile nu primesc nicio mașină (`runner_id 0`), deci nu rulează niciun pas — problemă a
   contului/GitHub, nu a codului. Local: 416 teste PASS. Vârful `bf2a00d` schimbă doar starea; codul pentru OS rămâne `34a9793`/`84d3685`.
@@ -73,7 +76,7 @@
 6. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant` (recunoaște singur lanțul C-83).
 
 ## Urmează
-1. Duminică seara: recitesc lista OS-ului (P6-63) și potrivesc lista de mai sus dacă s-a schimbat ceva.
+1. Când OS-ul scrie P6-63 (duminică seara): recitesc lista OS-ului și potrivesc lista de mai sus dacă s-a schimbat ceva.
 2. Luni, după fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
 3. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
@@ -116,5 +119,5 @@
 
 ## Blocaje / nevoie de Adrian
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
-- CI-ul GitHub al `cyber-gpu` nu pornește (din 7 nov 23:28; repornit și pe 8 nov 13:26 — la fel, joburile nu primesc mașină). Ca să vezi motivul: deschide github.com/Adriancu91/cyber-gpu/actions, ultima rulare roșie — sus apare de obicei un mesaj galben (ex. limită de cheltuieli / cont blocat). Apoi GitHub → Settings → Billing and plans. Testele locale trec (416); nu blochează fereastra de luni.
+- CI-ul GitHub al `cyber-gpu` merge din nou (verde pe `bf2a00d`, 8 nov 15:08) — nu mai e nimic de făcut aici.
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
