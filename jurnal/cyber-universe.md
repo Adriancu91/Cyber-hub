@@ -179,3 +179,4 @@
 - 2026-11-08 08:55 — sesiune scurtă: OPRIT după regula 5 (3 sesiuni fără sarcină bifată, din cauza așteptării P6-63); nicio comandă nouă; CI `os-275` verde. P6-63 rămâne permisă diseară.
 - 2026-11-08 11:50 — sesiune scurtă: tot OPRIT (regula 5); nicio comandă nouă; CI `os-275` verde. P6-63 rămâne permisă diseară (după ~19:00 ora României).
 - 2026-11-08 14:50 — sesiune programată: tot OPRIT (regula 5), nicio comandă nouă, CI verde (`os-275`); P6-63 (lista de luni) diseară după 19:00 ora României.
+- 2026-11-08 17:50 — sesiune programată: tot OPRIT (regula 5), nicio comandă nouă, CI verde (`os-275`); P6-63 (lista de luni) la sesiunea de după 19:00 ora României.
