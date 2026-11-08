@@ -177,3 +177,4 @@
 - 2026-11-08 02:50 — sesiune scurtă: nicio comandă nouă, nicio sarcină liberă; CI `os-275` verde. Aștept P6-63 (duminică seara).
 - 2026-11-08 06:00 — sesiune scurtă: nicio comandă nouă, nicio sarcină liberă; nightly nou (2026-11-07) verificat: build + `boot` trec; CI `os-275` verde. Aștept P6-63 (duminică seara).
 - 2026-11-08 08:55 — sesiune scurtă: OPRIT după regula 5 (3 sesiuni fără sarcină bifată, din cauza așteptării P6-63); nicio comandă nouă; CI `os-275` verde. P6-63 rămâne permisă diseară.
+- 2026-11-08 11:50 — sesiune scurtă: tot OPRIT (regula 5); nicio comandă nouă; CI `os-275` verde. P6-63 rămâne permisă diseară (după ~19:00 ora României).
