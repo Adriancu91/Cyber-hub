@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-08 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-08 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -10,13 +10,13 @@
   Verdict **LA FEL** cu #513: română curat 1,2063 vs 1,2060; nimic stricat (R1 instrucțiuni 99,20). A văzut doar 237 M simboluri față de 707 M la #513.
 - **S92 (C-85 pasul 4b, gata 02:11):** cercetătorul în avans mută schimbări relative (rata × 2), iar modelul mic de 6 straturi e tăiat din cel de 24
   (pornește slab: română 2,78, trebuie „reparat” scurt).
+- **S93 (C-88, gata 02:36):** examenul de română decide de acum pe linia nouă `w2_mare_24r`; paznicul îi păzește amprenta, `kronos/` neschimbat.
 - S90/S91 (7 nov): examenul de română e modul separat; unealta „model mic trimis în avans” merge; `kronos/` neschimbat.
 - **S88 (C-86): oprit** — ștergerea celor 82 de modele intermediare (33,4 GB) așteaptă mâna lui Adrian.
-- **1328 teste trec, 0 pică.**
+- **1332 teste trec, 0 pică.**
 
 ## Urmează
-- **Acum (procesor): S93** — C-88 „Română da”: examenul de română devine criteriul de decizie de la următorul experiment (`kronos/` neschimbat).
-- **8 nov ziua (placa, după S93): S94a** — modelul mic: reparare 45 min + 5 rețete × 15 min. **Noaptea 8→9: S94b** — aceleași 5 rețete × 1 oră pe modelul de 24.
+- **8 nov ziua (placa, de la 08:00): S94a** — modelul mic: reparare 45 min + 5 rețete × 15 min. **Noaptea 8→9: S94b** — aceleași 5 rețete × 1 oră pe modelul de 24.
   Verdict Spearman (ρ ≥ 0,7 și câștigătorul mic în primele 2 = DA). Totul gata până **luni 07:00**; luni placa e liberă pentru testul OS (C-83).
 - Apoi: continuarea liniei de 24 de straturi (curba încă scade) și pașii 5–8 din C-85, câte unul.
 
