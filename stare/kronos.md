@@ -1,26 +1,24 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-07 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-08 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
   (executantul pe workstation + supraveghetorul în cloud). Fără LLM străin; auto-joc cu verificator + memorie.
 - **Modelul în uz: #513** (KGR1 Q8_0, 110.859.008 octeți, SHA `66f734b3…5859`); #477 și #459 rezerve. Release `kronos-kgr1-513` nefăcut (luni, Adrian).
-- **S87 (C-85 pasul 2, gata 10:04): găsită cauza căderilor de la ora 3** la modelul de 24 de straturi: de la o oră la alta rămâneau
-  ținuți ~1.340 MB pe placă (cicluri de obiecte). Cu `gc.collect()` + golire la începutul fiecărei ore rămân 16 MB și trec toate orele
-  (vârf 6.399 MB). Leacul e în unealta de antrenare; nucleul `kronos/` nu se schimbă.
-- **S90 (C-85 pasul 3, gata 12:26): examenul de română e modul separat** (`examen_romana`): aceleași cifre ca înainte
-  (#513 1,2060, #477 1,2096, ± 0,001; R1 99,27), setul păzit cu amprente SHA-256; neactivat în nicio configurare fără Adrian.
-- **S91 (C-85 pasul 4a, gata 14:40): unealta „cercetător cu model trimis în avans”** (`unelte/cercetator_avans.py`): rețetele încercate pe un model mic,
-  pe cel mare doar o propunere nerulată; `kronos/` neschimbat. Lecția: valorile se mută relativ (rata × 2), nu absolut (rata mică ar fi ×300).
-- **S88 (C-86): oprit** — unealta de ștergere și proba sunt gata (exact 82 fișiere / 33,4 GB), dar regula executantului interzice ștergerea; decide Adrian.
-- **1318 teste trec, 0 pică.** Placa liberă ziua.
+- **S89 (gata 8 nov 01:30): modelul de 24 de straturi (183M) a mers 5 ore fără să cadă** (leacul de memorie din S87 ține: vârf 6.465 MB, 62 °C).
+  Verdict **LA FEL** cu #513: română curat 1,2063 vs 1,2060; nimic stricat (R1 instrucțiuni 99,20). A văzut doar 237 M simboluri față de 707 M la #513.
+- **S92 (C-85 pasul 4b, gata 02:11):** cercetătorul în avans mută schimbări relative (rata × 2), iar modelul mic de 6 straturi e tăiat din cel de 24
+  (pornește slab: română 2,78, trebuie „reparat” scurt).
+- S90/S91 (7 nov): examenul de română e modul separat; unealta „model mic trimis în avans” merge; `kronos/` neschimbat.
+- **S88 (C-86): oprit** — ștergerea celor 82 de modele intermediare (33,4 GB) așteaptă mâna lui Adrian.
+- **1328 teste trec, 0 pică.**
 
 ## Urmează
-- **Acum, noaptea 7→8: S89 rulează** (pornit 19:31) — 5 ore pe modelul de 24 de straturi (rețeta e1, cu paza nouă): bate #513 la timp egal? Verdict dimineață.
-- **S92 (procesor, după verificarea de 15 min a S89 sau 8 nov de la 08:00):** C-85 pasul 4b — schimbări relative + modelul mic de 6 straturi.
-- **S93 (C-88 „Română da”, procesor):** examenul de română devine criteriul de decizie de la următorul experiment (configurare nouă `conv_w2_mare_24r`); `examen_bpb` neschimbat, doar verificare; `kronos/` neschimbat.
-- Apoi S94 pe placă (prezice modelul mic clasamentul celui mare? Spearman pe 5 rețete, cu pre-înregistrare) și pașii 5–8 din C-85, câte unul.
+- **Acum (procesor): S93** — C-88 „Română da”: examenul de română devine criteriul de decizie de la următorul experiment (`kronos/` neschimbat).
+- **8 nov ziua (placa, după S93): S94a** — modelul mic: reparare 45 min + 5 rețete × 15 min. **Noaptea 8→9: S94b** — aceleași 5 rețete × 1 oră pe modelul de 24.
+  Verdict Spearman (ρ ≥ 0,7 și câștigătorul mic în primele 2 = DA). Totul gata până **luni 07:00**; luni placa e liberă pentru testul OS (C-83).
+- Apoi: continuarea liniei de 24 de straturi (curba încă scade) și pașii 5–8 din C-85, câte unul.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu **#513** (suma, 3 texte de control). Rezervele #477 și #459 rămân pornibile.
