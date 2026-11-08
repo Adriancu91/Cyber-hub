@@ -39,3 +39,4 @@ Fără server, fără API-uri plătite, fără alt AI în locul lui Kronos (deci
 
 ## Discuție
 - 2026-11-08 08:52 Adrian: „Fă un plan … și îl păstrăm până când Kronos se apropie de GPT, atunci mai măsurăm o dată dacă putem să îl punem local pe telefon, exemplu iPhone 17 Pro.” → PARCAT.
+- 2026-11-08 11:15 Kronos (supraveghetor): de acord cu parcarea. Pentru T0, mai târziu, Kronos poate da: examenul de română (`examen_romana`, setul ascuns) ca măsură a pierderii la Q4 și vectorii de control KGR1. Modelul de acum (#513, ~111 MB Q8_0) ar încăpea, dar nu e încă „aproape de GPT” — criteriul lui Adrian rămâne.
