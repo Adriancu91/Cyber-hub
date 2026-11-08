@@ -1,8 +1,11 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-08 07:50 (ora României) · **de:** sesiunea Cyber-GPU 68 (cloud, fără placă) — C-83: unealta de verificare a jurnalului știe lanțul de luni (17 pași); lista GPU pentru 9 nov; CI GitHub pică în 2 s fără jurnal (nu codul)
+**Actualizat:** 2026-11-08 13:30 (ora României) · **de:** sesiunea Cyber-GPU 69 (cloud, fără placă) — oprire scurtă; lista finală pentru luni diseară, după P6-63; CI GitHub tot nu pornește joburile (local 416 PASS)
 
 ## Acum
+- **Sesiunea 69 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă; lista OS pentru luni (P6-63) vine diseară, abia apoi lista finală GPU.
+  CI GitHub repornit pe `c186f79` → pică iar în 3 s: joburile nu primesc nicio mașină (`runner_id 0`), deci nu rulează niciun pas — problemă a
+  contului/GitHub, nu a codului. Local: 416 teste PASS. Vârful `bf2a00d` schimbă doar starea; codul pentru OS rămâne `34a9793`/`84d3685`.
 - **Sesiunea 68 — pregătire pentru luni (C-83).** Unealta `verifica_jurnal_lant` știa doar lanțul până la I10 (13 pași); jurnalul de luni (17 pași, cu I11–I14)
   ar fi ieșit „de analizat” fără motiv. Acum recunoaște singură lanțul C-83 și verifică și I11–I14 (doar fereastra VRAM + soneria de lucru; orice altă
   scriere e numită cu pasul ei) — test T107, doar SIMULARE pe text. Lista GPU pentru luni: `cyber-gpu/docs/FEREASTRA_C-83.md`. Vârful `84d3685`, 416 teste PASS
@@ -113,5 +116,5 @@
 
 ## Blocaje / nevoie de Adrian
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
-- CI-ul GitHub al `cyber-gpu` nu pornește (pică în 2 s, fără jurnal, din 7 nov 23:28). Dacă ține: GitHub → Settings → Billing and plans / Actions — de văzut dacă e vreo limită sau oprire pe cont. Testele locale trec (416).
+- CI-ul GitHub al `cyber-gpu` nu pornește (din 7 nov 23:28; repornit și pe 8 nov 13:26 — la fel, joburile nu primesc mașină). Ca să vezi motivul: deschide github.com/Adriancu91/cyber-gpu/actions, ultima rulare roșie — sus apare de obicei un mesaj galben (ex. limită de cheltuieli / cont blocat). Apoi GitHub → Settings → Billing and plans. Testele locale trec (416); nu blochează fereastra de luni.
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
