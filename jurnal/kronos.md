@@ -117,3 +117,4 @@
 - 2026-11-08 11:15 — S94a (modelul mic, testul Spearman) oprit de paznic la 600 s: cache de simboluri gol, nimic antrenat. Reparat: citește `lucru/cache` (doar citit); S94a repornește azi (cel târziu 15:30), S94b la noapte, gata luni 07:00.
 - 2026-11-08 14:15 — S94a gata și verificat: modelul mic reparat (2,78 → 1,66) a clasat rețetele ×4 < ×2 < bază ≈ încălzire ×2 < ×0,5 (cum era ghicit). S94b (aceleași rețete pe modelul de 24) la noapte, gata luni 07:00.
 - 2026-11-08 17:15 — Nimic terminat de la 14:15 (placa liberă după-amiază, normal). S94b rămâne la noapte, gata luni 07:00. C-89 (tokenizer românesc) văzută: parcată de Adrian până la >1 miliard de parametri, nepusă în coadă.
+- 2026-11-08 20:15 — S94b (testul Spearman pe modelul de 24) a pornit la 19:33, pornire curată; gata până luni 07:00.

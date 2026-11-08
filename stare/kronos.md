@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-08 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-08 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -15,10 +15,10 @@
 - **S88 (C-86): oprit** — ștergerea celor 82 de modele intermediare (33,4 GB) așteaptă mâna lui Adrian.
 - **S94a (gata 8 nov 14:05, verificat):** modelul mic de 6 straturi, reparat (română 2,78 → 1,66), a clasat cele 5 rețete în 15 min fiecare:
   rata ×4 1,589 < ×2 1,612 < bază ≈ încălzire ×2 1,631 < ×0,5 1,644 (exact ordinea ghicită). Vârf 4.970 MB / 62 °C; cache-ul comun doar citit.
-- **1337 teste trec, 0 pică.**
+- **S94b rulează** de la 19:33 (5 rețete × 1 oră pe modelul de 24; pornire curată, română 1,2096). **1337 teste trec, 0 pică.**
 
 ## Urmează
-- **Noaptea 8→9 (placa, de la 19:00): S94b** — aceleași 5 rețete × 1 oră pe modelul de 24. Verdict Spearman (ρ ≥ 0,7 și câștigătorul mic în primele 2 = DA).
+- **Noaptea 8→9 (placa, în curs): S94b** — aceleași 5 rețete × 1 oră pe modelul de 24. Verdict Spearman (ρ ≥ 0,7 și câștigătorul mic în primele 2 = DA).
   Gata până **luni 07:00**; luni placa e liberă pentru testul OS (C-83).
 - **C-89 (tokenizer românesc, doar măsurători): PARCAT** de Adrian până când Kronos trece de 1 miliard de parametri — nu e în coadă.
 - Apoi: continuarea liniei de 24 de straturi (curba încă scade) și pașii 5–8 din C-85, câte unul.
