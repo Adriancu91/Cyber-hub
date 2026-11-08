@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-08 06:00 (ora României) · **de:** sesiunea OS programată (05:40; nicio sarcină liberă, nimic schimbat în cod; unealta Rust nouă verificată: build + pornire OK) · Release de testat: **`os-275`** (CI verde) = `os-273` (comenzi din hub + conversație cu Kronos + `kronos --gpu` cu generare continuă; pe placă: doar SIMULARE) + CI mai rapid
+**Actualizat:** 2026-11-08 08:55 (ora României) · **de:** sesiunea OS programată (08:40; **OPRIT** după regula 5 — 3 sesiuni fără sarcină bifată, doar din cauza așteptării lui P6-63; nimic schimbat în cod) · Release de testat: **`os-275`** (CI verde) = `os-273` (comenzi din hub + conversație cu Kronos + `kronos --gpu` cu generare continuă; pe placă: doar SIMULARE) + CI mai rapid
 
 ## Acum
 - **P6-67 GATA (CI mai rapid):** testele automate rulau ~55 min din limita de 60 a GitHub; acum rulează în trei părți în același timp (97/97 scenarii, ~30–35 min). Release nou **`os-275`** (sistemul e același ca `os-273`).
@@ -27,6 +27,7 @@
 - **`cyber-gpu`:** nimic urgent; `34a9793` e în OS. Pentru modelul de 24 de straturi, zona de comenzi de 32 KiB (o facem când vine modelul).
 
 ## Blocaje / nevoie de Adrian
+- **OPRIT (regula 5, 8 nov 08:40):** 3 sesiuni la rând fără sarcină bifată — doar pentru că P6-63 (lista de luni) se face abia diseară. Sesiunea de diseară face **doar P6-63** (sarcină deja aprobată în C-87). Dacă vrei altceva (sau vrei să oprești și asta), scrie în `COMENZI.md`.
 - **Release-ul modelului #513 (luni, pe workstation, în `C:\Kronos\cyberspace`):** comanda e în `integrare/kronos/MODEL.md` (`gh release create kronos-kgr1-513 …`).
   Apoi pe stick, în dosarul `kronos`: `kronos_513_q8_0.kgr` + `kronos_513_q8_0.kgr.sha256` (sau copiate din `lucru\export\`). Fără ele OS-ul folosește #477.
 - **Tokenul GitHub pe stick** (pentru rapoarte și `hub ruleaza`): GitHub → Settings → Developer settings → Fine-grained tokens → doar **`Cyber-hub`**,
