@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-08 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-08 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -20,6 +20,7 @@
 ## Urmează
 - **Noaptea 8→9 (placa, de la 19:00): S94b** — aceleași 5 rețete × 1 oră pe modelul de 24. Verdict Spearman (ρ ≥ 0,7 și câștigătorul mic în primele 2 = DA).
   Gata până **luni 07:00**; luni placa e liberă pentru testul OS (C-83).
+- **C-89 (tokenizer românesc, doar măsurători): PARCAT** de Adrian până când Kronos trece de 1 miliard de parametri — nu e în coadă.
 - Apoi: continuarea liniei de 24 de straturi (curba încă scade) și pașii 5–8 din C-85, câte unul.
 
 ## Ce oferă proiectul celorlalți
