@@ -1,8 +1,13 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-08 19:35 (ora României) · **de:** sesiunea Cyber-GPU 70 (cloud, fără placă) — oprire scurtă; lista OS (P6-63) încă nescrisă, lista GPU rămâne `docs/FEREASTRA_C-83.md`; CI GitHub din nou verde (local 416 PASS)
+**Actualizat:** 2026-11-09 00:00 (ora României) · **de:** sesiunea Cyber-GPU 71 (cloud, fără placă) — lista GPU de luni potrivită cu lista OS (P6-63, `os-275`); cod neschimbat, CI verde, 416 teste PASS local
 
 ## Acum
+- **Sesiunea 71 — lista de luni potrivită cu lista OS (P6-63, `os-275`).** Aceiași pași, aceeași ordine. Potrivit în `cyber-gpu/docs/FEREASTRA_C-83.md`:
+  cele 4 fișiere de firmware (și `booter_unload`), #513 pe al doilea stick (`/usb2/kronos/`), pornire rece separată înainte de `kronos --gpu`.
+  Citit în codul OS (doar citire): #513 rulează în pasul `i14-simbol` cu aceleași accese ca modelul de control (fereastra VRAM + soneria de lucru, fără
+  apeluri RM), deci `verifica_jurnal_lant` îl judecă corect; un eșec #513 nu face I14 „ESEC”, așa că după fereastră citim și rândul `kronos --gpu:`.
+  Cod neschimbat (`34a9793` în OS rămâne bun); vârful `d2223d0` schimbă doar documente. **Nimic testat pe RTX 3070 Ti.**
 - **Sesiunea 70 — oprire scurtă.** Nicio comandă, jurnal sau întrebare nouă; P6-63 (lista OS de luni) încă nescrisă la 19:30. **CI GitHub din nou VERDE**
   (rularea pe `bf2a00d` a trecut). Verificat în OS (`c86281c`, doar citire): fixat pe cyber-gpu `34a9793`, rulează `WINDOW_CHAIN_C83` — aceiași 17 pași
   pe care îi verifică `verifica_jurnal_lant`; lista GPU de mai jos rămâne valabilă. Vârful `f6d9f57` schimbă doar starea. 416 teste PASS local.
@@ -72,12 +77,12 @@
 3. Scrieri noi față de 5 nov: la I7 **3** (resetul GSP în RISC-V, C-75); la I8 soneria GSP + secvențiatorul (doar ferestrele GSP/SEC2); golden/I9: soneria GSP
    pe mesaj + fereastra VRAM; de la I10 soneria de lucru `0xbb0090`; I11–I14: **niciun registru nou** (nou: placa citește/scrie prin DMA paginile RAM ale OS-ului).
 4. Cel mai probabil punct de oprire: I7 (ordinea nouă, prima dată pe placă) sau I8 (prima dată). O oprire curată acolo e un rezultat bun.
-5. Dacă tot lanțul trece: `kronos --gpu` cu #513 (generare continuă, oprire la prima eroare). „Un singur program pe simbol” NU luni.
+5. Dacă tot lanțul trece: oprire completă + cablu scos 30 s, apoi `run kronos --gpu --model /usb2/kronos/kronos_513_q8_0.kgr --n 32 Ana are mere.` cu #513 (generare continuă, oprire la prima eroare). „Un singur program pe simbol” NU luni.
 6. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant` (recunoaște singur lanțul C-83).
 
 ## Urmează
-1. Când OS-ul scrie P6-63 (duminică seara): recitesc lista OS-ului și potrivesc lista de mai sus dacă s-a schimbat ceva.
-2. Luni, după fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/`.
+1. Luni, după fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/` + rândul `kronos --gpu:`; repararea primului pas care se oprește.
+2. Lista OS (P6-63) recitită și potrivită — gata în sesiunea 71.
 3. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
 ## Ce oferă proiectul celorlalți
@@ -121,3 +126,4 @@
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
 - CI-ul GitHub al `cyber-gpu` merge din nou (verde pe `bf2a00d`, 8 nov 15:08) — nu mai e nimic de făcut aici.
 - Tag-ul `stabil-2026-10-23` (opțional; tot 403 din cloud): GitHub → cyber-gpu → Releases → „Draft a new release” → tag `stabil-2026-10-23`, Target `41e44ba` → pre-release → Publish.
+- 2026-11-09 00:00 · sesiunea 71 (cloud, fără placă) · lista GPU de luni potrivită cu P6-63 (`os-275`); jurnalul `kronos --gpu` se verifică cu aceeași unealtă (citire de cod); 416 teste PASS, CI verde.
