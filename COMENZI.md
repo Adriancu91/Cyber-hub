@@ -1231,3 +1231,11 @@ Format:
 - **NU**: nicio repornire, nimic pe placa video, nicio ștergere, nimic în afara E:\ și D:\ pentru copiere. Dacă literele E:/D: nu corespund etichetelor TESTGPU/CYBER-UNIV: oprește și raportează.
 - excepție scrisă pentru regula executantului: descărcarea acestui release și copierea pe stick-uri sunt **aprobate de Adrian** (această comandă, 9 nov 08:14).
 - stare: preluat (2026-11-09 08:15, supraveghetor) — sarcina **S97** în `plan/coada.md`, aprobat (Adrian, C-92); executantul verifică la fiecare trecere; la 08:15 încă nu există release mai nou decât `os-275` · 2026-11-09 11:15: S97 **oprit** de executant (08:35) — `gh api` cere aprobare în rularea programată și e refuzat; nimic descărcat, stick-urile neatinse. `os-276` există (CI verde) → stick-urile le face Adrian cu executantul de față (sesiune interactivă) sau manual
+
+### C-93 · kronos · Placa în seara asta: Adrian poate veni la 20:00 SAU mâine la 08:30 (test os-276)
+- data: 2026-11-09 11:43 · de la: centrul de comandă, pentru Adrian („revin diseară la 20 sau dimineață la 8:30, nu sunt sigur”)
+- ce: C-90 se încheie acum (Adrian a plecat; workstation-ul rămâne în Windows, stick-urile băgate — nu le atinge, C-92/S97 rămâne oprit: arhivele os-276 i le dă centrul de comandă).
+  **Placa e liberă până la 19:30.** În seara asta **nicio sarcină pe placă nu pornește între 19:30 și 21:00**. Dacă până la 21:00 Adrian n-a repornit calculatorul în Cyber Universe,
+  antrenarea de noapte poate porni la 21:00, dar **se termină și eliberează placa până la 07:45** (testul de mâine la 08:30). Orice sarcină pornită trebuie să suporte o repornire
+  (salvare la fiecare oră).
+- stare: nou
