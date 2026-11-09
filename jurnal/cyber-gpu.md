@@ -90,3 +90,4 @@
 - 2026-11-09 07:30 · sesiunea 72 (cloud, fără placă) · oprire scurtă înainte de fereastra de luni (C-90): nimic nou fără placă; lista GPU neschimbată, CI verde, 416 teste PASS local.
 - 2026-11-09 08:30 · sesiunea 73 (cloud, fără placă) · C-91: I8 oprit pe placă pentru că `decode_sequencer` lua capacitatea bufferului GSP drept număr de comenzi; acum citește `cmdIndex` (`bbbdb2f`), 417 teste PASS doar în SIMULARE; primul mesaj real GSP-RM a trecut de toate verificările de antet.
 - 2026-11-09 13:30 · sesiunea 74 (cloud, fără placă) · oprire scurtă: nimic nou fără placă; reparația C-91 e în `os-276`, testul diseară sau mâine (C-93); CI verde, 417 teste PASS local.
+- 2026-11-09 21:30 · sesiunea 75 (cloud, fără placă) · oprire scurtă: nicio comandă nouă; testul os-276 mutat mâine 07:15 (C-94); 417 teste PASS, CI verde, codul neschimbat (`bbbdb2f`).
