@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-09 09:05 (ora României) · **de:** sesiunea OS programată (08:40) — **C-91 GATA: Release `os-276` = reparația lui I8 (cyber-gpu `bbbdb2f`), CI verde (run 42573262247, toate 4 părțile). Stick-urile se fac cu `os-276`.**
+**Actualizat:** 2026-11-09 11:45 (ora României) · **de:** sesiunea OS programată (11:40) — oprire scurtă; **`os-276` (reparația C-91, CI verde) așteaptă testul. Pregătirea automată a stick-urilor (C-92) s-a oprit → stick-urile se fac de mână (pașii 1–2 de mai jos).**
 
 ## Acum
 - **C-91 (P6-68) — GATA: Release `os-276` e REPARAȚIA C-91 (CI verde).** Testul de azi s-a oprit la I8 fiindcă codul cyber-gpu citea greșit lista de comenzi a secvențiatorului GSP (lua capacitatea cutiei drept numărul de comenzi). cyber-gpu a reparat (`bbbdb2f`); OS-ul e fixat pe el (`2701483`), 9/9 scenarii GPU în QEMU (SIMULARE), CI pe `main` verde (run 42573262247: teste-1, teste-2, stick, release) → **Release `os-276`** (publicat 08:54, commit `2701483`, cu `SHA256SUMS` și `VERSIUNE`). Pentru C-92: acesta e release-ul de pus pe stick-uri. Pe placă e netestat — după I8 pot apărea alte diferențe; lanțul se oprește cinstit la primul pas greșit.
@@ -28,6 +28,8 @@
 - **`cyber-gpu`:** nimic urgent; `34a9793` e în OS. Pentru modelul de 24 de straturi, zona de comenzi de 32 KiB (o facem când vine modelul).
 
 ## Blocaje / nevoie de Adrian
+
+**ATENȚIE (11:45):** executantul Kronos NU a pregătit singur stick-urile (C-92/S97 oprit: descărcarea din GitHub i-a fost refuzată în rularea programată). Stick-urile sunt încă cu `os-275` → înainte de test faci pașii 1–2 de mai jos cu **`os-276`** (Rufus), sau îl rogi pe executant în sesiune interactivă.
 
 ### LISTA PENTRU REÎNCERCAREA DE AZI 9 NOV (workstation, P6-63 → P6-68) — Release **`os-276`** (înlocuiește `os-275`)
 Ce e nou față de 5 nov: lanțul merge acum **I6 → I7 → I8 → golden → I9 → I10 → I11 → I12 → I13 → I14** (I8–I14 n-au rulat niciodată pe placă;
