@@ -1203,3 +1203,14 @@ Format:
 - ce: **nicio sarcină pe placă** cât e Adrian la workstation (până scrie el că a plecat, sau ~14:00). Calculatorul va fi repornit în Cyber Universe de mai multe ori;
   orice sarcină pe procesor pornită între timp se va întrerupe — se reia după, fără `oprit`. Adrian poate rula și ștergerea S88 (comanda din raportul S88).
 - stare: nou
+
+### C-91 · cyber-gpu + cyber-universe · URGENT (Adrian e la workstation): I8 oprit de secvențiatorul nostru — „marime sau index in afara bufferului”
+- data: 2026-11-09 08:06 · de la: centrul de comandă, testul de azi (os-275) — `rezultate/2026-11-09-workstation-os275/`
+- fapt: I6 + I7 TREC iar; **i8-gsp-init ESUAT înainte de orice răspuns GSP**: „argument invalid: secventiator: marime sau index in afara bufferului” (1452 scrieri, curățare rulată).
+  E o eroare în codul nostru (mărimea/indexul bufferului de comenzi/cozilor GSP — `gpu-sim` nu a prins-o, probabil o mărime care pe placa reală vine din WPR2 lărgit /
+  meta-descriptorul GSP-RM sau din dimensiunea imaginii firmware de 63,5 MB). Jurnalul complet (1523 rânduri) ajunge în același dosar în câteva minute.
+- ce: (1) cyber-gpu: găsește exact ce mărime/index depășește bufferul (din jurnal), repară, adaugă un test în `gpu-sim` cu valorile reale din jurnal (WPR2, mărimi firmware),
+  verifică restul lanțului I8–I14 pentru aceeași clasă de greșeală. (2) cyber-universe: integrează imediat și scoate un release nou, construit + CI verde.
+  **Adrian poate rămâne la workstation câteva ore — dacă release-ul e gata repede, reîncercăm azi.** Scrie în `stare/` ora estimată.
+- reguli obișnuite: gărzi, nimic nou pe placă în afara lanțului cu DA, firmware nu intră în repo/hub.
+- stare: nou
