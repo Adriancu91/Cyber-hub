@@ -186,3 +186,4 @@
 - 2026-11-09 05:50 — sesiune programată: oprire scurtă, nicio comandă nouă, cod neschimbat; aștept jurnalul ferestrei de luni (`os-275`). De la sesiunea următoare regula 5 („OPRIT”) se aplică până vine jurnalul sau o comandă nouă.
 - 2026-11-09 09:05 · sesiunea OS programată · **C-91 gata (P6-68)**: CI verde pe `2701483` (cyber-gpu `bbbdb2f`, secvențiatorul citește până la `cmdIndex`) → Release **`os-276`** = reparația lui I8; stick-urile (C-92) se fac cu el.
 - 2026-11-09 11:45 — oprire scurtă: nicio comandă nouă; `os-276` (C-91) așteaptă testul; notat că C-92 s-a oprit, deci stick-urile se fac de mână.
+- 2026-11-09 14:45 · sesiunea OS programată · oprire scurtă; nicio comandă nouă; `os-276` așteaptă testul (C-93).
