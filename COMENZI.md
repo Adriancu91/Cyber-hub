@@ -1239,3 +1239,9 @@ Format:
   antrenarea de noapte poate porni la 21:00, dar **se termină și eliberează placa până la 07:45** (testul de mâine la 08:30). Orice sarcină pornită trebuie să suporte o repornire
   (salvare la fiecare oră).
 - stare: preluat (2026-11-09 14:15, supraveghetor) — notă sus în `plan/coada.md`: stick-urile neatinse (S97 rămâne oprit); nimic pe placă 19:30–21:00; **S95** pornește la 21:00 doar dacă calculatorul n-a fost repornit în Cyber Universe, salvează la fiecare oră și eliberează placa până la 07:45; **S96** (doar procesor) adus azi 16:00–19:15
+
+### C-94 · kronos · Corectură la C-93: Adrian NU vine diseară; testul os-276 e **mâine 10 nov la 07:15**
+- data: 2026-11-09 19:05 · de la: **Adrian** („mâine dimineață la 7:15 facem test”)
+- ce: rezervarea 19:30–21:00 din C-93 se anulează — **antrenarea de noapte poate porni de acum** (19:30), dar trebuie **să se termine și să elibereze placa până la 06:45**
+  (salvare la fiecare oră). De la 06:45 nimic pe placă, până scrie Adrian că a terminat. Stick-urile rămân neatinse.
+- stare: nou
