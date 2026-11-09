@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-09 14:45 (ora României) · **de:** sesiunea OS programată (14:40) — oprire scurtă; **`os-276` (reparația C-91, CI verde) așteaptă testul de diseară (~20:00) sau de mâine 08:30 (C-93). Stick-urile le face Adrian cu arhivele de la centrul de comandă.**
+**Actualizat:** 2026-11-09 17:45 (ora României) · **de:** sesiunea OS programată (17:40) — oprire scurtă; **`os-276` (reparația C-91, CI verde) așteaptă testul de diseară (~20:00) sau de mâine 08:30 (C-93). Stick-urile le face Adrian cu arhivele de la centrul de comandă.** Notă: sesiunea OS următoare va scrie „OPRIT” (regula 5: 3 sesiuni fără sarcină) — doar așteptarea testului; un jurnal nou în `rezultate/` sau o comandă nouă o ridică.
 
 ## Acum
 - **C-91 (P6-68) — GATA: Release `os-276` e REPARAȚIA C-91 (CI verde).** Testul de azi s-a oprit la I8 fiindcă codul cyber-gpu citea greșit lista de comenzi a secvențiatorului GSP (lua capacitatea cutiei drept numărul de comenzi). cyber-gpu a reparat (`bbbdb2f`); OS-ul e fixat pe el (`2701483`), 9/9 scenarii GPU în QEMU (SIMULARE), CI pe `main` verde (run 42573262247: teste-1, teste-2, stick, release) → **Release `os-276`** (publicat 08:54, commit `2701483`, cu `SHA256SUMS` și `VERSIUNE`). Pentru C-92: acesta e release-ul de pus pe stick-uri. Pe placă e netestat — după I8 pot apărea alte diferențe; lanțul se oprește cinstit la primul pas greșit.
