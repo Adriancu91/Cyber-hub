@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-08 23:50 (ora României) · **de:** sesiunea OS programată (23:40) — oprire scurtă: nicio comandă nouă, nicio sarcină liberă până la fereastra de luni. Cod neschimbat. Release de testat: **`os-275`** (CI verde, run 42405596803)
+**Actualizat:** 2026-11-09 02:50 (ora României) · **de:** sesiunea OS programată (02:40) — oprire scurtă: nicio comandă nouă, nicio sarcină liberă până la fereastra de luni. Cod neschimbat. Release de testat: **`os-275`** (CI verde, run 42405596803)
 
 ## Acum
 - **P6-67 GATA (CI mai rapid):** testele automate rulau ~55 min din limita de 60 a GitHub; acum rulează în trei părți în același timp (97/97 scenarii, ~30–35 min). Release nou **`os-275`** (sistemul e același ca `os-273`).
@@ -78,3 +78,4 @@ Ce e nou față de 5 nov: lanțul merge acum **I6 → I7 → I8 → golden → I
   *Contents: Read and write*; salvat ca `github.token` (un rând) în rădăcina stick-ului.
 - **Coada OS e goală până la fereastră:** după luni, sarcinile noi vin din rezultatele ei sau din comenzile tale în `COMENZI.md`.
 - 2026-11-08 23:50 — sesiune scurtă: nicio comandă nouă, CI `os-275` verde; lista pentru luni rămâne cea de la 20:50 (mai sus).
+- 2026-11-09 02:50 · sesiunea OS programată · oprire scurtă: nicio comandă nouă; aștept fereastra de luni cu `os-275` (lista de pași e mai sus) și jurnalul în `rezultate/2026-11-09-workstation-os275/`.
