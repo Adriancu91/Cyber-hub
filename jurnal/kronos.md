@@ -119,3 +119,4 @@
 - 2026-11-08 17:15 — Nimic terminat de la 14:15 (placa liberă după-amiază, normal). S94b rămâne la noapte, gata luni 07:00. C-89 (tokenizer românesc) văzută: parcată de Adrian până la >1 miliard de parametri, nepusă în coadă.
 - 2026-11-08 20:15 — S94b (testul Spearman pe modelul de 24) a pornit la 19:33, pornire curată; gata până luni 07:00.
 - 2026-11-09 02:15 — S94 gata și verificat: NU (ρ = −0,92), modelul mic tăiat nu alege rata pentru modelul de 24; la cel mare rata ×0,5 strică cel mai puțin. Luni placa liberă pentru testul OS; la noapte S95 (5 ore din #536, rata ×0,5, pe română); marți S96 (C-85 pasul 5).
+- 2026-11-09 08:15 — Raportul de dimineață verificat (1337 teste, placa liberă). C-90 preluat (nimic pe placă cât Adrian e la workstation); C-92 preluat ca S97: executantul pregătește singur stick-urile când apare release-ul OS cu reparația I8.

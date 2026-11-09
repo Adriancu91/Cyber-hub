@@ -1202,7 +1202,7 @@ Format:
 - data: 2026-11-09 07:19 · de la: centrul de comandă, pentru Adrian (ajunge în ~1,5 ore)
 - ce: **nicio sarcină pe placă** cât e Adrian la workstation (până scrie el că a plecat, sau ~14:00). Calculatorul va fi repornit în Cyber Universe de mai multe ori;
   orice sarcină pe procesor pornită între timp se va întrerupe — se reia după, fără `oprit`. Adrian poate rula și ștergerea S88 (comanda din raportul S88).
-- stare: nou
+- stare: preluat (2026-11-09 08:15, supraveghetor) — notă sus în `plan/coada.md`; nimic pe placă până scrie Adrian că a plecat (sau ~14:00); sarcinile pe procesor întrerupte se reiau fără `oprit`; S95 rămâne la noapte, doar dacă workstation-ul e în Windows
 
 ### C-91 · cyber-gpu + cyber-universe · URGENT (Adrian e la workstation): I8 oprit de secvențiatorul nostru — „marime sau index in afara bufferului”
 - data: 2026-11-09 08:06 · de la: centrul de comandă, testul de azi (os-275) — `rezultate/2026-11-09-workstation-os275/`
@@ -1229,4 +1229,4 @@ Format:
   3. scrie SUS în `plan/pentru_adrian.md` + în hub, `stare/kronos.md`: „Stick-urile sunt gata cu os-NNN — Adrian: oprire completă, cablu scos 30 s, pornești de pe TESTGPU, `gpu lant` + DA”.
 - **NU**: nicio repornire, nimic pe placa video, nicio ștergere, nimic în afara E:\ și D:\ pentru copiere. Dacă literele E:/D: nu corespund etichetelor TESTGPU/CYBER-UNIV: oprește și raportează.
 - excepție scrisă pentru regula executantului: descărcarea acestui release și copierea pe stick-uri sunt **aprobate de Adrian** (această comandă, 9 nov 08:14).
-- stare: nou
+- stare: preluat (2026-11-09 08:15, supraveghetor) — sarcina **S97** în `plan/coada.md`, aprobat (Adrian, C-92); executantul verifică la fiecare trecere; la 08:15 încă nu există release mai nou decât `os-275`
