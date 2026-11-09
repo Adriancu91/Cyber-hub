@@ -1197,3 +1197,9 @@ Format:
 - reguli: **nicio antrenare de model, nicio schimbare în `kronos/` sau în configurările în uz**; reducerea de 15–30% e ipoteză. Dacă rezultatele sunt bune, abia atunci
   Adrian decide un Kronos experimental mic (33–50M) cu tokenizerul nou. Raport + rând în `plan/pentru_adrian.md`.
 - stare: **PARCAT** (Adrian, 8 nov 16:20: „pune-o deoparte și o încercăm când ajungem la peste 1 miliard de parametri”) — NU se pune în coadă acum; se reactivează când Kronos depășește 1 miliard de parametri.
+
+### C-90 · kronos · Fereastra lui Adrian pe workstation: luni 9 nov de la ~08:50 (test OS os-275, I6–I14 + kronos --gpu)
+- data: 2026-11-09 07:19 · de la: centrul de comandă, pentru Adrian (ajunge în ~1,5 ore)
+- ce: **nicio sarcină pe placă** cât e Adrian la workstation (până scrie el că a plecat, sau ~14:00). Calculatorul va fi repornit în Cyber Universe de mai multe ori;
+  orice sarcină pe procesor pornită între timp se va întrerupe — se reia după, fără `oprit`. Adrian poate rula și ștergerea S88 (comanda din raportul S88).
+- stare: nou
