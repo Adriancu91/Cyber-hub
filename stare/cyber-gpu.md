@@ -1,8 +1,11 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-09 08:30 (ora României) · **de:** sesiunea Cyber-GPU 73 (cloud, fără placă) — C-91: reparația secvențiatorului gata (`bbbdb2f`), 417 teste PASS în SIMULARE; OS-ul o leagă (P6-68)
+**Actualizat:** 2026-11-09 13:30 (ora României) · **de:** sesiunea Cyber-GPU 74 (cloud, fără placă) — oprire scurtă: reparația C-91 e în `os-276`, care așteaptă testul (diseară 20:00 sau mâine 08:30, C-93)
 
 ## Acum
+- **Sesiunea 74 — oprire scurtă.** Nicio comandă nouă pentru noi (C-92/C-93 sunt la Kronos), niciun jurnal nou de pe placă. OS-ul e fixat pe `bbbdb2f`
+  și a scos **`os-276`** (reparația C-91, CI verde); testul e diseară la 20:00 sau mâine la 08:30. CI verde pe `7f162a5`, 417 teste PASS local; vârful `8f2af33`
+  schimbă doar starea — codul și copia din hub rămân la `bbbdb2f`. **Nimic testat pe RTX 3070 Ti.**
 - **Sesiunea 73 — C-91 URGENT gata pentru cyber-gpu (doar SIMULARE; pe RTX 3070 Ti se vede la reîncercare).** La testul de azi (os-275) I8 s-a oprit la
   primul mesaj trimis de GSP-RM: lista de comenzi a secvențiatorului. Cauza: codul nostru lua **capacitatea** bufferului GSP (`bufferSizeDWord`) drept
   numărul de comenzi; GSP trimite doar partea umplută (`cmdIndex`). Reparat în `decode_sequencer` (commit **`bbbdb2f`**, ramura `g0-g2-fundatie`; doar
@@ -80,19 +83,17 @@
 - Notele pentru OS: `cyber-gpu/integration/cyber-universe/C-83_i11-i12.md`, `C-83_i13.md`, `C-83_i14.md`, `C-83_i14_vectori.md`.
 - Pe placă până acum: I0–I4 doar citire TREC; I6 TRECE (os-242); I7 TRECE (os-246); I8–I10 încă neîncercate (fereastra din 6 nov s-a închis fără test).
 
-## Lista pentru fereastra de luni 9 nov (partea GPU; detaliile în `cyber-gpu/docs/FEREASTRA_C-83.md`)
-1. Pornire rece; stick-ul de test cu Release-ul OS cel mai nou (`os-275`) + stick-ul cu firmware 570.144; în `kronos\` pe stick: `mic_q8_0.kgr` și #513.
+## Lista pentru reîncercarea `os-276` (diseară 20:00 sau mâine 08:30; detaliile în `cyber-gpu/docs/FEREASTRA_C-83.md` și lista OS din `stare/cyber-universe.md`)
+1. Pornire rece; stick-ul de test cu **`os-276`** (nu `os-275`) + stick-ul cu firmware 570.144 și #513 în `kronos\`.
 2. `gpu lant` + „DA” o dată: I6 → I7 → I8 → golden → I9 → I10 → cost lansare → I11 → I12 → I13 → I14 → Bus Master la loc → tur.
-3. Scrieri noi față de 5 nov: la I7 **3** (resetul GSP în RISC-V, C-75); la I8 soneria GSP + secvențiatorul (doar ferestrele GSP/SEC2); golden/I9: soneria GSP
-   pe mesaj + fereastra VRAM; de la I10 soneria de lucru `0xbb0090`; I11–I14: **niciun registru nou** (nou: placa citește/scrie prin DMA paginile RAM ale OS-ului).
-4. Cel mai probabil punct de oprire: I7 (ordinea nouă, prima dată pe placă) sau I8 (prima dată). O oprire curată acolo e un rezultat bun.
-5. Dacă tot lanțul trece: oprire completă + cablu scos 30 s, apoi `run kronos --gpu --model /usb2/kronos/kronos_513_q8_0.kgr --n 32 Ana are mere.` cu #513 (generare continuă, oprire la prima eroare). „Un singur program pe simbol” NU luni.
-6. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant` (recunoaște singur lanțul C-83).
+3. Pe 9 nov dimineața I6 și I7 au TRECUT; I8 s-a oprit la secvențiator (reparat). De urmărit acum: I8 ajunge la `GSP_INIT_DONE`? E prima dată când
+   secvențiatorul chiar execută comenzi (doar în ferestrele GSP/SEC2). O oprire curată la orice pas de după e un rezultat bun.
+4. Dacă tot lanțul trece: oprire completă + cablu scos 30 s, apoi `run kronos --gpu --model /usb2/kronos/kronos_513_q8_0.kgr --n 32 Ana are mere.`
+5. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant` și reparăm primul pas care se oprește.
 
 ## Urmează
-1. OS-ul (P6-68) mută `rev` pe `bbbdb2f` și scoate Release-ul; Adrian reîncearcă `gpu lant` (~13:00). De urmărit: I8 ajunge la `GSP_INIT_DONE`?
-2. Când `gpu-jurnal-003.txt` (azi) și jurnalul reîncercării ajung în `rezultate/`: `verifica_jurnal_lant` pe ele; repararea primului pas care se oprește.
-3. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
+1. Testul `os-276` (C-93): jurnalul în `rezultate/` → `verifica_jurnal_lant`; repararea primului pas care se oprește după I8.
+2. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
 ## Ce oferă proiectul celorlalți
 - **Sesiunea 68 (doar adăugări, unelte de gazdă):** `chain_log::{check_chain_journal_for, chain_for_journal, step_ids_for}`, `ChainJournal::verdict_for`; nimic de schimbat în OS.
