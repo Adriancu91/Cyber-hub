@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-09 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-09 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -8,8 +8,8 @@
 - **Modelul în uz: #513** (KGR1 Q8_0, 110.859.008 octeți, SHA `66f734b3…5859`); #477 și #459 rezerve. Release `kronos-kgr1-513` nefăcut (luni, Adrian).
 - **S89 (gata 8 nov 01:30): modelul de 24 de straturi (183M) a mers 5 ore fără să cadă** (leacul de memorie din S87 ține: vârf 6.465 MB, 62 °C).
   Verdict **LA FEL** cu #513: română curat 1,2063 vs 1,2060; nimic stricat (R1 instrucțiuni 99,20). A văzut doar 237 M simboluri față de 707 M la #513.
-- **S92 (C-85 pasul 4b, gata 02:11):** cercetătorul în avans mută schimbări relative (rata × 2), iar modelul mic de 6 straturi e tăiat din cel de 24
-  (pornește slab: română 2,78, trebuie „reparat” scurt).
+- **S96 (C-85 pasul 5, gata 9 nov 14:40, verificat): DA.** Datele de antrenare pe bucăți (27 × 50 M simboluri) dau exact același șir
+  (SHA-256 identic pe 1,34 mld simboluri), cu 125 MB RAM în loc de 3 GB. Pornirea liniei ia 41,7 GB RAM din cauza textului brut citit pentru amprentă.
 - **S93 (C-88, gata 02:36):** examenul de română decide de acum pe linia nouă `w2_mare_24r`; paznicul îi păzește amprenta, `kronos/` neschimbat.
 - S90/S91 (7 nov): examenul de română e modul separat; unealta „model mic trimis în avans” merge; `kronos/` neschimbat.
 - **S88 (C-86): oprit** — ștergerea celor 82 de modele intermediare (33,4 GB) așteaptă mâna lui Adrian.
@@ -19,7 +19,7 @@
 
 ## Urmează
 - **C-93 (Adrian a plecat, revine diseară ~20:00 sau mâine 08:30):** stick-urile băgate nu le atinge Kronos (S97 rămâne oprit; arhivele `os-276` le dă centrul de comandă).
-- **Azi după-amiază (procesor, fără placă): S96** — C-85 pasul 5, date pe bucăți (unealtă + proba de identitate, nimic activat), 16:00–19:15.
+- **S98 (procesor, după testul lui Adrian de mâine):** legarea datelor pe bucăți în antrenare printr-un modul nou, neactivat; proba: aceleași 1.000 de loturi.
 - **Între 19:30 și 21:00 placa e liberă pentru Adrian.** **De la 21:00: S95** — 5 ore din #536 cu rata ×0,5, judecat pe română (MAI BUN = ≤ 1,2010),
   doar dacă workstation-ul n-a fost repornit în Cyber Universe; salvare la fiecare oră; **placa liberă până la 07:45** (testul `os-276` de la 08:30).
 - **C-89 (tokenizer românesc): PARCAT** de Adrian până la >1 miliard de parametri.
@@ -28,6 +28,7 @@
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu **#513** (suma, 3 texte de control). Rezervele #477 și #459 rămân pornibile.
 - Motorul de referință `unelte/inferenta_bruta.py` și modulul `inferenta` (logit-uri identice); tokenizer pentru cod.
 - Nota automată pentru răspunsuri în română (fără alt AI) + setul ascuns de 500; acum și ca modul de examen `examen_romana` (amprente pe set).
+- Unealta `unelte/date_bucati.py` (date pre-tokenizate pe bucăți, citite prin mmap, cu SHA pe fiecare bucată).
 - Unealta `unelte/puncte_salvare.py` (listă + ștergere cu probă implicită, jurnal SHA înainte de ștergere).
 - Lecții: rata mică ține ce știa un model crescut (confirmat de S94: un model mic tăiat dă ordinea inversă a ratelor); Muon câștigă ~0,65 GB la 183M; **memoria plăcii se poate aduna de la o oră la alta
   din cicluri de obiecte Python — `gc.collect()` înainte de `empty_cache()` o eliberează.**
@@ -41,5 +42,5 @@
 - **S97 / C-92: stick-urile pentru `os-276` NU sunt pregătite de Kronos** — după C-93 le pregătește centrul de comandă / Adrian (lista din `stare/cyber-universe.md`).
 - **S88:** ștergerea celor 82 de modele intermediare (33,4 GB) + `lucru/memorie_mare` (10,5 GB) — Adrian rulează comanda din raportul S88 sau dă executantului o excepție pentru ștergeri aprobate.
 - Release-ul `kronos-kgr1-513` — luni 9 nov, cu Adrian la workstation.
-- Testul `os-276` (C-93): diseară 19:30–21:00 sau mâine de la 07:45 — Kronos ține placa liberă atunci.
+- Testul `os-276` (C-93): diseară 19:30–21:00 sau mâine de la 07:45 — Kronos ține placa liberă atunci. După test: o notă că workstation-ul e liber (pornește S98).
 - Opțional: arhiva de mutare (26,2 GB) + Coșul. Fără grabă: S58, `taskkill`, ora 18:30 la bucla automată, Release-ul `kronos-kgr1-477`.
