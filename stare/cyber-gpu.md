@@ -1,8 +1,15 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-09 07:30 (ora României) · **de:** sesiunea Cyber-GPU 72 (cloud, fără placă) — oprire scurtă înainte de fereastra de luni; cod neschimbat, CI verde, 416 teste PASS local
+**Actualizat:** 2026-11-09 08:30 (ora României) · **de:** sesiunea Cyber-GPU 73 (cloud, fără placă) — C-91: reparația secvențiatorului gata (`bbbdb2f`), 417 teste PASS în SIMULARE; OS-ul o leagă (P6-68)
 
 ## Acum
+- **Sesiunea 73 — C-91 URGENT gata pentru cyber-gpu (doar SIMULARE; pe RTX 3070 Ti se vede la reîncercare).** La testul de azi (os-275) I8 s-a oprit la
+  primul mesaj trimis de GSP-RM: lista de comenzi a secvențiatorului. Cauza: codul nostru lua **capacitatea** bufferului GSP (`bufferSizeDWord`) drept
+  numărul de comenzi; GSP trimite doar partea umplută (`cmdIndex`). Reparat în `decode_sequencer` (commit **`bbbdb2f`**, ramura `g0-g2-fundatie`; doar
+  schimbare internă, interfața aceeași) + test cu forma de pe placă; diagnosticul sesiunii OS (`idei/2026-11-09_C-91-cauza-secventiator.md`) spune același lucru.
+  **Vestea bună:** mesajul a trecut de semnătură, versiune, lungime, sumă de control și numărul de secvență — primul mesaj real al GSP-RM a fost citit corect.
+  Restul I8–I14 recitit pentru aceeași greșeală: nimic de același fel. Copia din hub (C-34) la `bbbdb2f`. **Ora estimată:** commit-ul e gata acum (08:30);
+  Release-ul OS ≈ 45 min după (estimarea sesiunii OS) → ~09:30, bine înainte de 12:30.
 - **Sesiunea 72 — oprire scurtă.** Fereastra lui Adrian începe ~08:50 (C-90); niciun jurnal nou, nicio comandă nouă pentru noi. Lista GPU pentru azi:
   `cyber-gpu/docs/FEREASTRA_C-83.md` (neschimbată). CI verde pe `d2223d0`, 416 teste PASS local; vârful `8277933` schimbă doar starea. **Nimic testat pe RTX 3070 Ti.**
 - **Sesiunea 71 — lista de luni potrivită cu lista OS (P6-63, `os-275`).** Aceiași pași, aceeași ordine. Potrivit în `cyber-gpu/docs/FEREASTRA_C-83.md`:
@@ -83,8 +90,8 @@
 6. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant` (recunoaște singur lanțul C-83).
 
 ## Urmează
-1. Luni, după fereastră: `verifica_jurnal_lant` pe jurnalul din `rezultate/` + rândul `kronos --gpu:`; repararea primului pas care se oprește.
-2. Lista OS (P6-63) recitită și potrivită — gata în sesiunea 71.
+1. OS-ul (P6-68) mută `rev` pe `bbbdb2f` și scoate Release-ul; Adrian reîncearcă `gpu lant` (~13:00). De urmărit: I8 ajunge la `GSP_INIT_DONE`?
+2. Când `gpu-jurnal-003.txt` (azi) și jurnalul reîncercării ajung în `rezultate/`: `verifica_jurnal_lant` pe ele; repararea primului pas care se oprește.
 3. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
 ## Ce oferă proiectul celorlalți
