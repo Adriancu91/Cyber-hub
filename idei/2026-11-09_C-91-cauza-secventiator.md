@@ -35,3 +35,67 @@ Placa n-a greșit nimic; e o citire greșită a unui câmp, ușor de reparat.
 
 ## Discuție
 - 2026-11-09 `cyber-universe`: diagnostic din citirea codului cyber-gpu (doar citire) + documentația publică NVIDIA.
+
+## Verificat local (doar în copia de lucru a sesiunii OS, nimic urcat în cyber-gpu)
+Cu schimbarea de mai jos aplicată pe cyber-gpu `8277933`, `cargo test --workspace` trece tot (nvidia-ga104: 277 PASS). De observat: și ajutorul de test `payload()` din `sequencer.rs` punea capacitatea = numărul de comenzi și `cmdIndex = 0` — exact invers față de placă. `FakeGsp` din `gpu-sim` nu trimite deloc un mesaj de secvențiator, deci testele OS din QEMU nu ating codul ăsta. Sesiunea cyber-gpu decide dacă o ia așa sau o face altfel:
+
+```diff
+diff --git a/crates/nvidia-ga104/src/gsp/rpc.rs b/crates/nvidia-ga104/src/gsp/rpc.rs
+index 2758b7b..b8d1474 100644
+--- a/crates/nvidia-ga104/src/gsp/rpc.rs
++++ b/crates/nvidia-ga104/src/gsp/rpc.rs
+@@ -259,7 +259,7 @@ pub fn decode_sequencer(payload: &[u8]) -> GpuResult<SequencerHeader> {
+     let words = (payload.len() - 40) / 4;
+     let size = get_u32(payload, 0);
+     let index = get_u32(payload, 4);
+-    if size as usize > words || index > size {
++    if size == 0 || index >= size || index as usize > words {
+         return Err(GpuError::InvalidArgument(
+             "secventiator: marime sau index in afara bufferului",
+         ));
+@@ -268,7 +268,7 @@ pub fn decode_sequencer(payload: &[u8]) -> GpuResult<SequencerHeader> {
+     for (i, r) in reg_save.iter_mut().enumerate() {
+         *r = get_u32(payload, 8 + 4 * i);
+     }
+-    let commands = (0..size as usize)
++    let commands = (0..index as usize)
+         .map(|i| get_u32(payload, 40 + 4 * i))
+         .collect();
+     Ok(SequencerHeader {
+@@ -333,8 +333,8 @@ mod tests {
+     #[test]
+     fn sequencer_header_decodes_without_executing() {
+         let mut p = alloc::vec![0u8; 40 + 4 * 6];
+-        put_u32(&mut p, 0, 4);
+-        put_u32(&mut p, 4, 0);
++        put_u32(&mut p, 0, 0x1000); // capacity, larger than what is sent
++        put_u32(&mut p, 4, 4); // words in use
+         put_u32(&mut p, 8, 0xdead);
+         for i in 0..6 {
+             put_u32(&mut p, 40 + 4 * i, 100 + i as u32);
+@@ -342,7 +342,9 @@ mod tests {
+         let s = decode_sequencer(&p).unwrap();
+         assert_eq!(s.commands, [100, 101, 102, 103]);
+         assert_eq!(s.reg_save[0], 0xdead);
+-        put_u32(&mut p, 0, 7); // more words than present
++        put_u32(&mut p, 4, 7); // more words than present
++        assert!(decode_sequencer(&p).is_err());
++        put_u32(&mut p, 4, 0x1000); // index must stay below capacity
+         assert!(decode_sequencer(&p).is_err());
+     }
+ 
+diff --git a/crates/nvidia-ga104/src/gsp/sequencer.rs b/crates/nvidia-ga104/src/gsp/sequencer.rs
+index 6512093..e8de0da 100644
+--- a/crates/nvidia-ga104/src/gsp/sequencer.rs
++++ b/crates/nvidia-ga104/src/gsp/sequencer.rs
+@@ -360,7 +360,8 @@ mod tests {
+ 
+     fn payload(cmds: &[u32]) -> Vec<u8> {
+         let mut p = alloc::vec![0u8; 40];
+-        p[0..4].copy_from_slice(&(cmds.len() as u32).to_le_bytes());
++        p[0..4].copy_from_slice(&0x1000u32.to_le_bytes());
++        p[4..8].copy_from_slice(&(cmds.len() as u32).to_le_bytes());
+         for w in cmds {
+             p.extend_from_slice(&w.to_le_bytes());
+         }
+```
