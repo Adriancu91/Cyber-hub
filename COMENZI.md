@@ -1244,4 +1244,4 @@ Format:
 - data: 2026-11-09 19:05 · de la: **Adrian** („mâine dimineață la 7:15 facem test”)
 - ce: rezervarea 19:30–21:00 din C-93 se anulează — **antrenarea de noapte poate porni de acum** (19:30), dar trebuie **să se termine și să elibereze placa până la 06:45**
   (salvare la fiecare oră). De la 06:45 nimic pe placă, până scrie Adrian că a terminat. Stick-urile rămân neatinse.
-- stare: nou
+- stare: preluat (2026-11-09 19:10, supraveghetor) — S95 în `plan/coada.md`: pornire de la 19:30, cel târziu 00:00, placa liberă până la 06:45 (la 05:30 oprire curată dacă nu încap examenele); de la 06:45 nimic pe placă până la nota lui Adrian; stick-urile neatinse; S98 după test
