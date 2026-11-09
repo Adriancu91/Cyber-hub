@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-09 21:30 (ora României) · **de:** sesiunea Cyber-GPU 75 (cloud, fără placă) — oprire scurtă: testul `os-276` e **mâine, 10 nov, la 07:15** (C-94)
+**Actualizat:** 2026-11-09 19:30 (ora României) · **de:** sesiunea Cyber-GPU 75 (cloud, fără placă) — oprire scurtă: testul `os-276` e **mâine, 10 nov, la 07:15** (C-94)
 
 ## Acum
 - **Sesiunea 75 — oprire scurtă.** Nicio comandă nouă pentru noi (C-94 e la Kronos), niciun jurnal nou de pe placă. Testul `os-276` (reparația C-91)
