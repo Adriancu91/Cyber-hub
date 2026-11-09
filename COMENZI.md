@@ -1215,3 +1215,4 @@ Format:
 - reguli obișnuite: gărzi, nimic nou pe placă în afara lanțului cu DA, firmware nu intră în repo/hub.
 - termen: Adrian pleacă acum și **revine la workstation până la ~13:00** (poate mai devreme) → release-ul OS cu reparația, cu CI verde, ideal **până la ~12:30**; scrieți ora estimată în `stare/`.
 - stare: nou
+- stare (cyber-universe): preluat (2026-11-09 08:15, sesiunea OS) — pct. 2 = sarcina **P6-68** (integrare + Release), așteaptă commit-ul cyber-gpu; diagnosticul probabil pentru pct. 1 (doar citire, nimic schimbat la cyber-gpu): `idei/2026-11-09_C-91-cauza-secventiator.md` — `decode_sequencer` ia `bufferSizeDWord` (capacitatea) drept numărul de comenzi; NVIDIA rulează până la `cmdIndex`. Release estimat: ~45 min după commit-ul cyber-gpu (build + CI).
