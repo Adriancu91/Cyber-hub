@@ -1217,3 +1217,16 @@ Format:
 - stare: nou
 - stare (cyber-universe): preluat (2026-11-09 08:15, sesiunea OS) — pct. 2 = sarcina **P6-68** (integrare + Release), așteaptă commit-ul cyber-gpu; diagnosticul probabil pentru pct. 1 (doar citire, nimic schimbat la cyber-gpu): `idei/2026-11-09_C-91-cauza-secventiator.md` — `decode_sequencer` ia `bufferSizeDWord` (capacitatea) drept numărul de comenzi; NVIDIA rulează până la `cmdIndex`. Release estimat: ~45 min după commit-ul cyber-gpu (build + CI).
 - stare (cyber-gpu): gata (preluat 2026-11-09 08:10, terminat 08:30, sesiunea Cyber-GPU 73) — rezultat: `decode_sequencer` citește acum comenzile până la `cmdIndex` (capacitatea `bufferSizeDWord` nu mai e luată drept lungime), test nou cu forma de pe placă, 417 teste PASS doar în SIMULARE; commit `bbbdb2f` pe `g0-g2-fundatie` (doar adăugări, interfața neschimbată), nota `cyber-gpu/integration/cyber-universe/C-91_secventiator.md`; OS-ul are doar de mutat `rev` pe `bbbdb2f`.
+
+### C-92 · kronos (executantul de pe workstation) · Pregătește singur stick-urile cu release-ul care repară I8 (C-91) — Adrian le lasă băgate
+- data: 2026-11-09 08:14 · de la: **Adrian** („dacă las stick-urile în PC, pregătești tu tot când e gata?”) — acordul lui pentru descărcarea release-ului OS și copierea pe stick-uri
+- context: stick-urile rămân în workstation: **TESTGPU = E:** (stick de test, FAT32, cu `firmware\`) și **CYBER-UNIV = D:** (stick normal, cu `firmware\` și `kronos\` + #513).
+- ce: la fiecare trecere, verifică `gh api repos/Adriancu91/cyber-universe/releases` (doar REST). Când apare un release **mai nou decât `os-275`** care în `stare/cyber-universe.md`
+  e marcat ca reparația C-91 (CI verde):
+  1. descarcă din el `cyber-universe-gpu-scrie-usb.img`, `cyber-universe-usb.img`, `SHA256SUMS`, `VERSIUNE`; **verifică SHA-256** (dacă nu se potrivește: oprește, raport);
+  2. extrage fișierele din partiția FAT a fiecărei imagini (doar citire) și **copiază peste**: imaginea `gpu-scrie` → **E:\** (BOOT, EFI, KRONOS, CYBER.RW), imaginea normală → **D:\**
+     (BOOT, EFI, CYBER.RW) + `VERSIUNE`. **Nu șterge și nu atinge** `firmware\`, `kronos\` (de pe D:), `raport\`, `de pastrat\` sau alte fișiere. Verifică după copiere (SHA fiecărui fișier).
+  3. scrie SUS în `plan/pentru_adrian.md` + în hub, `stare/kronos.md`: „Stick-urile sunt gata cu os-NNN — Adrian: oprire completă, cablu scos 30 s, pornești de pe TESTGPU, `gpu lant` + DA”.
+- **NU**: nicio repornire, nimic pe placa video, nicio ștergere, nimic în afara E:\ și D:\ pentru copiere. Dacă literele E:/D: nu corespund etichetelor TESTGPU/CYBER-UNIV: oprește și raportează.
+- excepție scrisă pentru regula executantului: descărcarea acestui release și copierea pe stick-uri sunt **aprobate de Adrian** (această comandă, 9 nov 08:14).
+- stare: nou
