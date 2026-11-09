@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-08 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-09 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -13,22 +13,22 @@
 - **S93 (C-88, gata 02:36):** examenul de română decide de acum pe linia nouă `w2_mare_24r`; paznicul îi păzește amprenta, `kronos/` neschimbat.
 - S90/S91 (7 nov): examenul de română e modul separat; unealta „model mic trimis în avans” merge; `kronos/` neschimbat.
 - **S88 (C-86): oprit** — ștergerea celor 82 de modele intermediare (33,4 GB) așteaptă mâna lui Adrian.
-- **S94a (gata 8 nov 14:05, verificat):** modelul mic de 6 straturi, reparat (română 2,78 → 1,66), a clasat cele 5 rețete în 15 min fiecare:
-  rata ×4 1,589 < ×2 1,612 < bază ≈ încălzire ×2 1,631 < ×0,5 1,644 (exact ordinea ghicită). Vârf 4.970 MB / 62 °C; cache-ul comun doar citit.
-- **S94b rulează** de la 19:33 (5 rețete × 1 oră pe modelul de 24; pornire curată, română 1,2096). **1337 teste trec, 0 pică.**
+- **S94 (C-85 pasul 4, gata 9 nov 01:05, verificat): NU.** Modelul mic de 6 straturi a clasat rețetele ×4 < ×2 < bază ≈ încălzire ×2 < ×0,5;
+  pe modelul de 24 (câte 1 oră) ordinea a ieșit inversă: ×0,5 1,2102 < bază ≈ încălzire ×2 1,2118 < ×2 1,2158 < ×4 1,2232 (ρ = −0,92).
+  Lecție: rata nu se alege pe un model mic tăiat; la modelul bun, rata mică strică cel mai puțin. Vârf 6.426 MB / 61 °C. **1337 teste trec, 0 pică.**
 
 ## Urmează
-- **Noaptea 8→9 (placa, în curs): S94b** — aceleași 5 rețete × 1 oră pe modelul de 24. Verdict Spearman (ρ ≥ 0,7 și câștigătorul mic în primele 2 = DA).
-  Gata până **luni 07:00**; luni placa e liberă pentru testul OS (C-83).
-- **C-89 (tokenizer românesc, doar măsurători): PARCAT** de Adrian până când Kronos trece de 1 miliard de parametri — nu e în coadă.
-- Apoi: continuarea liniei de 24 de straturi (curba încă scade) și pașii 5–8 din C-85, câte unul.
+- **Luni 9 nov, ziua:** placa și calculatorul libere pentru testul OS al lui Adrian (C-83).
+- **Noaptea 9→10 (placa): S95** — 5 ore din #536 cu rata ×0,5, judecat pe română (MAI BUN = ≤ 1,2010, sub #513 1,2060), doar dacă workstation-ul e înapoi în Windows.
+- **Marți 10 nov (procesor): S96** — C-85 pasul 5, date pe bucăți (unealtă + proba de identitate, nimic activat).
+- **C-89 (tokenizer românesc): PARCAT** de Adrian până la >1 miliard de parametri.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu **#513** (suma, 3 texte de control). Rezervele #477 și #459 rămân pornibile.
 - Motorul de referință `unelte/inferenta_bruta.py` și modulul `inferenta` (logit-uri identice); tokenizer pentru cod.
 - Nota automată pentru răspunsuri în română (fără alt AI) + setul ascuns de 500; acum și ca modul de examen `examen_romana` (amprente pe set).
 - Unealta `unelte/puncte_salvare.py` (listă + ștergere cu probă implicită, jurnal SHA înainte de ștergere).
-- Lecții: rata mică ține ce știa un model crescut; Muon câștigă ~0,65 GB la 183M; **memoria plăcii se poate aduna de la o oră la alta
+- Lecții: rata mică ține ce știa un model crescut (confirmat de S94: un model mic tăiat dă ordinea inversă a ratelor); Muon câștigă ~0,65 GB la 183M; **memoria plăcii se poate aduna de la o oră la alta
   din cicluri de obiecte Python — `gc.collect()` înainte de `empty_cache()` o eliberează.**
 
 ## De ce are nevoie de la ceilalți
