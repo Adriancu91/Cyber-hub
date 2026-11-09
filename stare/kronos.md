@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-09 19:10 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-09 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -19,8 +19,9 @@
 
 ## Urmează
 - **C-94 (Adrian nu mai vine diseară; testul `os-276` mâine 10 nov la 07:15):** stick-urile nu le atinge Kronos (S97 rămâne oprit).
-- **De la 19:30: S95** — 5 ore din #536 cu rata ×0,5, judecat pe română (MAI BUN = ≤ 1,2010); pornire cel târziu 00:00; salvare la fiecare oră;
-  **placa liberă până la 06:45**; de la 06:45 nimic pe placă până scrie Adrian că a terminat testul.
+- **S95 la noapte** (oprit corect de executant la 19:36: copia lui #536 ar fi avut rata 0 toată noaptea, programul ratei fiind „deja terminat” în fișier;
+  reaprobat 20:15 cu copia cu `minute = 0` + verificarea ratei în primele 10 min) — 5 ore cu rata ×0,5, judecat pe română (MAI BUN = ≤ 1,2010);
+  pornire cel târziu 00:00; **placa liberă până la 06:45**; de la 06:45 nimic pe placă până scrie Adrian că a terminat testul.
 - **S98 (procesor, după testul lui Adrian de mâine):** legarea datelor pe bucăți în antrenare printr-un modul nou, neactivat; proba: aceleași 1.000 de loturi.
 - **C-89 (tokenizer românesc): PARCAT** de Adrian până la >1 miliard de parametri.
 
