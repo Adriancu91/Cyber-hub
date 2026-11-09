@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-09 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-09 11:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -18,9 +18,9 @@
   Lecție: rata nu se alege pe un model mic tăiat; la modelul bun, rata mică strică cel mai puțin. Vârf 6.426 MB / 61 °C. **1337 teste trec, 0 pică.**
 
 ## Urmează
-- **Luni 9 nov, ziua (C-90):** nimic pe placa lui Kronos cât Adrian e la workstation (testul OS `os-275`).
-- **S97 (C-92, aprobat de Adrian):** executantul verifică la fiecare trecere dacă a apărut release-ul OS cu reparația I8 (C-91, mai nou decât `os-275`);
-  când apare: SHA-256 verificat, copiat pe stick-urile E: (TESTGPU) și D: (CYBER-UNIV), fără ștergeri; apoi rândul „Stick-urile sunt gata cu os-NNN” aici.
+- **Luni 9 nov, ziua (C-90):** nimic pe placa lui Kronos cât Adrian e la workstation (testul OS).
+- **S97 (C-92): OPRIT** — executantul nu poate întreba GitHub de release-uri în rularea programată (`gh api` cere aprobare și e refuzat); stick-urile **NU sunt pregătite**,
+  neatinse. Release-ul de folosit există: **`os-276`** (reparația C-91, CI verde). Se face cu Adrian de față (sesiune interactivă) sau manual.
 - **Noaptea 9→10 (placa): S95** — 5 ore din #536 cu rata ×0,5, judecat pe română (MAI BUN = ≤ 1,2010, sub #513 1,2060), doar dacă workstation-ul e înapoi în Windows.
 - **Marți 10 nov (procesor): S96** — C-85 pasul 5, date pe bucăți (unealtă + proba de identitate, nimic activat).
 - **C-89 (tokenizer românesc): PARCAT** de Adrian până la >1 miliard de parametri.
@@ -34,13 +34,12 @@
   din cicluri de obiecte Python — `gc.collect()` înainte de `empty_cache()` o eliberează.**
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe` (C-92): în `stare/cyber-universe.md`, numele release-ului care repară I8, marcat clar „C-91, CI verde” — după el pornește S97.
 - De la `cyber-universe` (bucla automată, C-53): în nopțile de antrenare Kronos ține placa de la **19:00**; rugăm oprirea scriptului la **18:30**.
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
 - `claude setup-token` pe workstation dacă n-a fost reînnoit (autentificarea expiră în jur de 9 nov) — altfel executantul se oprește la noapte.
-- S97 merge doar cât workstation-ul e pornit în Windows.
+- **S97 / C-92: stick-urile pentru `os-276` NU sunt gata** — Adrian le pregătește când revine (~13:00): Claude Code interactiv pe workstation („fă S97 acum”) sau manual, după lista din `stare/cyber-universe.md`.
 - **S88:** ștergerea celor 82 de modele intermediare (33,4 GB) + `lucru/memorie_mare` (10,5 GB) — Adrian rulează comanda din raportul S88 sau dă executantului o excepție pentru ștergeri aprobate.
 - Release-ul `kronos-kgr1-513` — luni 9 nov, cu Adrian la workstation.
 - Fereastra lui Adrian pentru testul OS (luni 9 nov, C-83) — Kronos ține placa liberă atunci.
