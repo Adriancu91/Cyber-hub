@@ -1,8 +1,10 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-09 00:00 (ora României) · **de:** sesiunea Cyber-GPU 71 (cloud, fără placă) — lista GPU de luni potrivită cu lista OS (P6-63, `os-275`); cod neschimbat, CI verde, 416 teste PASS local
+**Actualizat:** 2026-11-09 07:30 (ora României) · **de:** sesiunea Cyber-GPU 72 (cloud, fără placă) — oprire scurtă înainte de fereastra de luni; cod neschimbat, CI verde, 416 teste PASS local
 
 ## Acum
+- **Sesiunea 72 — oprire scurtă.** Fereastra lui Adrian începe ~08:50 (C-90); niciun jurnal nou, nicio comandă nouă pentru noi. Lista GPU pentru azi:
+  `cyber-gpu/docs/FEREASTRA_C-83.md` (neschimbată). CI verde pe `d2223d0`, 416 teste PASS local; vârful `8277933` schimbă doar starea. **Nimic testat pe RTX 3070 Ti.**
 - **Sesiunea 71 — lista de luni potrivită cu lista OS (P6-63, `os-275`).** Aceiași pași, aceeași ordine. Potrivit în `cyber-gpu/docs/FEREASTRA_C-83.md`:
   cele 4 fișiere de firmware (și `booter_unload`), #513 pe al doilea stick (`/usb2/kronos/`), pornire rece separată înainte de `kronos --gpu`.
   Citit în codul OS (doar citire): #513 rulează în pasul `i14-simbol` cu aceleași accese ca modelul de control (fereastra VRAM + soneria de lucru, fără

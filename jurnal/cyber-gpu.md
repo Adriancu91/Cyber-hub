@@ -87,3 +87,4 @@
 - 2026-11-08 13:30 · sesiunea 69 (cloud, fără placă) · oprire scurtă: nimic nou fără placă și fără lista OS de diseară; CI GitHub tot nu pornește joburile (fără mașină, nu codul), 416 teste PASS local.
 - 2026-11-08 19:35 · sesiunea 70 (cloud, fără placă) · oprire scurtă: P6-63 încă nescrisă; OS-ul rulează `WINDOW_CHAIN_C83` pe `34a9793` (= lanțul verificat de unealtă); CI GitHub din nou verde, 416 teste PASS local.
 - 2026-11-09 00:00 · sesiunea 71 (cloud, fără placă) · lista GPU de luni potrivită cu lista OS (P6-63, `os-275`): 4 fișiere firmware, #513 pe `/usb2`, pornire rece înainte de `kronos --gpu`; jurnalul #513 trece prin aceeași verificare (citire de cod). Nimic pe placă.
+- 2026-11-09 07:30 · sesiunea 72 (cloud, fără placă) · oprire scurtă înainte de fereastra de luni (C-90): nimic nou fără placă; lista GPU neschimbată, CI verde, 416 teste PASS local.
