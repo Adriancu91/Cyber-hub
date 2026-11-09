@@ -1213,4 +1213,5 @@ Format:
   verifică restul lanțului I8–I14 pentru aceeași clasă de greșeală. (2) cyber-universe: integrează imediat și scoate un release nou, construit + CI verde.
   **Adrian poate rămâne la workstation câteva ore — dacă release-ul e gata repede, reîncercăm azi.** Scrie în `stare/` ora estimată.
 - reguli obișnuite: gărzi, nimic nou pe placă în afara lanțului cu DA, firmware nu intră în repo/hub.
+- termen: Adrian pleacă acum și **revine la workstation până la ~13:00** (poate mai devreme) → release-ul OS cu reparația, cu CI verde, ideal **până la ~12:30**; scrieți ora estimată în `stare/`.
 - stare: nou
