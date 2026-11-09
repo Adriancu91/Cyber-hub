@@ -1,9 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-09 08:45 (ora României) · **de:** sesiunea OS programată (08:07) — **C-91: reparația lui I8 legată în OS (P6-68, cyber-gpu `bbbdb2f`), CI pornit; Release nou estimat ~09:20.** Până atunci, ultimul Release verde rămâne `os-275` (cu greșeala la I8).
+**Actualizat:** 2026-11-09 09:05 (ora României) · **de:** sesiunea OS programată (08:40) — **C-91 GATA: Release `os-276` = reparația lui I8 (cyber-gpu `bbbdb2f`), CI verde (run 42573262247, toate 4 părțile). Stick-urile se fac cu `os-276`.**
 
 ## Acum
-- **C-91 (P6-68) — în lucru:** testul de azi s-a oprit la I8 fiindcă codul cyber-gpu citea greșit lista de comenzi a secvențiatorului GSP (lua capacitatea cutiei drept numărul de comenzi). cyber-gpu a reparat (`bbbdb2f`); OS-ul e fixat pe el (`2701483`), 9/9 scenarii GPU trec în QEMU (SIMULARE). CI pe `main` rulează (~35 min) → Release nou; aici se scrie numele lui când e verde (pentru C-92).
+- **C-91 (P6-68) — GATA: Release `os-276` e REPARAȚIA C-91 (CI verde).** Testul de azi s-a oprit la I8 fiindcă codul cyber-gpu citea greșit lista de comenzi a secvențiatorului GSP (lua capacitatea cutiei drept numărul de comenzi). cyber-gpu a reparat (`bbbdb2f`); OS-ul e fixat pe el (`2701483`), 9/9 scenarii GPU în QEMU (SIMULARE), CI pe `main` verde (run 42573262247: teste-1, teste-2, stick, release) → **Release `os-276`** (publicat 08:54, commit `2701483`, cu `SHA256SUMS` și `VERSIUNE`). Pentru C-92: acesta e release-ul de pus pe stick-uri. Pe placă e netestat — după I8 pot apărea alte diferențe; lanțul se oprește cinstit la primul pas greșit.
 - **P6-67 GATA (CI mai rapid):** testele automate rulau ~55 min din limita de 60 a GitHub; acum rulează în trei părți în același timp (97/97 scenarii, ~30–35 min). Release nou **`os-275`** (sistemul e același ca `os-273`).
 - **C-87 (partea OS) → P6-64, P6-65, P6-66 GATA** (testate în QEMU / SIMULARE, nimic încă pe hardware):
   - **Comenzi din hub (P6-64):** Adrian scrie în `integrare/cyber-universe/os-comenzi.md` rânduri `- [ ] K-1: test tot`; în OS `hub ruleaza` le ia,
@@ -29,12 +29,12 @@
 
 ## Blocaje / nevoie de Adrian
 
-### LISTA PENTRU FEREASTRA DE LUNI 9 NOV (workstation, P6-63) — Release **`os-275`**
+### LISTA PENTRU REÎNCERCAREA DE AZI 9 NOV (workstation, P6-63 → P6-68) — Release **`os-276`** (înlocuiește `os-275`)
 Ce e nou față de 5 nov: lanțul merge acum **I6 → I7 → I8 → golden → I9 → I10 → I11 → I12 → I13 → I14** (I8–I14 n-au rulat niciodată pe placă;
 în teste trec doar în SIMULARE). Orice oprire curată (un pas „ESUAT”, Bus Master pus la loc, jurnal scris) e un rezultat bun.
 
 **Înainte (în Windows, ~10 min):**
-1. Din Release-ul **`os-275`** (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu Rufus pe
+1. Din Release-ul **`os-276`** (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu Rufus pe
    **stick-ul de test** (ca pe 5 nov; dacă îl refaci ca „TESTGPU” FAT32, copiază și `github.token` în rădăcina lui — atunci jurnalul pleacă singur în hub).
    Modelul mic de control (`kronos\mic_q8_0.kgr`) e deja în imagine.
 2. Pe **stick-ul normal** (cel cu `firmware\nvidia\ga102\gsp\`, cele 4 fișiere 570.144) pui în dosarul `kronos\` modelul **#513**:
