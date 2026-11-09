@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-09 05:50 (ora României) · **de:** sesiunea OS programată (05:40) — oprire scurtă: nicio comandă nouă, nicio sarcină liberă până la fereastra de luni. Cod neschimbat. Release de testat: **`os-275`** (CI verde, run 42405596803)
+**Actualizat:** 2026-11-09 08:45 (ora României) · **de:** sesiunea OS programată (08:07) — **C-91: reparația lui I8 legată în OS (P6-68, cyber-gpu `bbbdb2f`), CI pornit; Release nou estimat ~09:20.** Până atunci, ultimul Release verde rămâne `os-275` (cu greșeala la I8).
 
 ## Acum
+- **C-91 (P6-68) — în lucru:** testul de azi s-a oprit la I8 fiindcă codul cyber-gpu citea greșit lista de comenzi a secvențiatorului GSP (lua capacitatea cutiei drept numărul de comenzi). cyber-gpu a reparat (`bbbdb2f`); OS-ul e fixat pe el (`2701483`), 9/9 scenarii GPU trec în QEMU (SIMULARE). CI pe `main` rulează (~35 min) → Release nou; aici se scrie numele lui când e verde (pentru C-92).
 - **P6-67 GATA (CI mai rapid):** testele automate rulau ~55 min din limita de 60 a GitHub; acum rulează în trei părți în același timp (97/97 scenarii, ~30–35 min). Release nou **`os-275`** (sistemul e același ca `os-273`).
 - **C-87 (partea OS) → P6-64, P6-65, P6-66 GATA** (testate în QEMU / SIMULARE, nimic încă pe hardware):
   - **Comenzi din hub (P6-64):** Adrian scrie în `integrare/cyber-universe/os-comenzi.md` rânduri `- [ ] K-1: test tot`; în OS `hub ruleaza` le ia,
