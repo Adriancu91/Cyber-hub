@@ -1238,4 +1238,4 @@ Format:
   **Placa e liberă până la 19:30.** În seara asta **nicio sarcină pe placă nu pornește între 19:30 și 21:00**. Dacă până la 21:00 Adrian n-a repornit calculatorul în Cyber Universe,
   antrenarea de noapte poate porni la 21:00, dar **se termină și eliberează placa până la 07:45** (testul de mâine la 08:30). Orice sarcină pornită trebuie să suporte o repornire
   (salvare la fiecare oră).
-- stare: nou
+- stare: preluat (2026-11-09 14:15, supraveghetor) — notă sus în `plan/coada.md`: stick-urile neatinse (S97 rămâne oprit); nimic pe placă 19:30–21:00; **S95** pornește la 21:00 doar dacă calculatorul n-a fost repornit în Cyber Universe, salvează la fiecare oră și eliberează placa până la 07:45; **S96** (doar procesor) adus azi 16:00–19:15

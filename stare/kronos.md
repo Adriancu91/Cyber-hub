@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-09 11:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-09 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
@@ -18,11 +18,10 @@
   Lecție: rata nu se alege pe un model mic tăiat; la modelul bun, rata mică strică cel mai puțin. Vârf 6.426 MB / 61 °C. **1337 teste trec, 0 pică.**
 
 ## Urmează
-- **Luni 9 nov, ziua (C-90):** nimic pe placa lui Kronos cât Adrian e la workstation (testul OS).
-- **S97 (C-92): OPRIT** — executantul nu poate întreba GitHub de release-uri în rularea programată (`gh api` cere aprobare și e refuzat); stick-urile **NU sunt pregătite**,
-  neatinse. Release-ul de folosit există: **`os-276`** (reparația C-91, CI verde). Se face cu Adrian de față (sesiune interactivă) sau manual.
-- **Noaptea 9→10 (placa): S95** — 5 ore din #536 cu rata ×0,5, judecat pe română (MAI BUN = ≤ 1,2010, sub #513 1,2060), doar dacă workstation-ul e înapoi în Windows.
-- **Marți 10 nov (procesor): S96** — C-85 pasul 5, date pe bucăți (unealtă + proba de identitate, nimic activat).
+- **C-93 (Adrian a plecat, revine diseară ~20:00 sau mâine 08:30):** stick-urile băgate nu le atinge Kronos (S97 rămâne oprit; arhivele `os-276` le dă centrul de comandă).
+- **Azi după-amiază (procesor, fără placă): S96** — C-85 pasul 5, date pe bucăți (unealtă + proba de identitate, nimic activat), 16:00–19:15.
+- **Între 19:30 și 21:00 placa e liberă pentru Adrian.** **De la 21:00: S95** — 5 ore din #536 cu rata ×0,5, judecat pe română (MAI BUN = ≤ 1,2010),
+  doar dacă workstation-ul n-a fost repornit în Cyber Universe; salvare la fiecare oră; **placa liberă până la 07:45** (testul `os-276` de la 08:30).
 - **C-89 (tokenizer românesc): PARCAT** de Adrian până la >1 miliard de parametri.
 
 ## Ce oferă proiectul celorlalți
@@ -39,8 +38,8 @@
 
 ## Blocaje / nevoie de Adrian
 - `claude setup-token` pe workstation dacă n-a fost reînnoit (autentificarea expiră în jur de 9 nov) — altfel executantul se oprește la noapte.
-- **S97 / C-92: stick-urile pentru `os-276` NU sunt gata** — Adrian le pregătește când revine (~13:00): Claude Code interactiv pe workstation („fă S97 acum”) sau manual, după lista din `stare/cyber-universe.md`.
+- **S97 / C-92: stick-urile pentru `os-276` NU sunt pregătite de Kronos** — după C-93 le pregătește centrul de comandă / Adrian (lista din `stare/cyber-universe.md`).
 - **S88:** ștergerea celor 82 de modele intermediare (33,4 GB) + `lucru/memorie_mare` (10,5 GB) — Adrian rulează comanda din raportul S88 sau dă executantului o excepție pentru ștergeri aprobate.
 - Release-ul `kronos-kgr1-513` — luni 9 nov, cu Adrian la workstation.
-- Fereastra lui Adrian pentru testul OS (luni 9 nov, C-83) — Kronos ține placa liberă atunci.
+- Testul `os-276` (C-93): diseară 19:30–21:00 sau mâine de la 07:45 — Kronos ține placa liberă atunci.
 - Opțional: arhiva de mutare (26,2 GB) + Coșul. Fără grabă: S58, `taskkill`, ora 18:30 la bucla automată, Release-ul `kronos-kgr1-477`.
