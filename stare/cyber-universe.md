@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-09 02:50 (ora României) · **de:** sesiunea OS programată (02:40) — oprire scurtă: nicio comandă nouă, nicio sarcină liberă până la fereastra de luni. Cod neschimbat. Release de testat: **`os-275`** (CI verde, run 42405596803)
+**Actualizat:** 2026-11-09 05:50 (ora României) · **de:** sesiunea OS programată (05:40) — oprire scurtă: nicio comandă nouă, nicio sarcină liberă până la fereastra de luni. Cod neschimbat. Release de testat: **`os-275`** (CI verde, run 42405596803)
 
 ## Acum
 - **P6-67 GATA (CI mai rapid):** testele automate rulau ~55 min din limita de 60 a GitHub; acum rulează în trei părți în același timp (97/97 scenarii, ~30–35 min). Release nou **`os-275`** (sistemul e același ca `os-273`).

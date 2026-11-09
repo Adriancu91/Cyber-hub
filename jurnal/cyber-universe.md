@@ -183,3 +183,4 @@
 - 2026-11-08 20:50 · sesiunea OS programată · **P6-63 gata**: lista pentru fereastra de luni (`os-275`) în `stare/cyber-universe.md` — `gpu lant` + DA, apoi (după oprire rece) `run kronos --gpu --model /usb2/kronos/kronos_513_q8_0.kgr`; #513 stă pe stick-ul cu firmware (nu încape pe cel de test). Comenzile verificate în cod și în scenariile `gpu-tur`/`kronos-gpu`. „OPRIT” ridicat; C-87 gata și pentru OS.
 - 2026-11-08 23:50 · sesiunea OS programată · oprire scurtă: nicio comandă nouă, coada așteaptă fereastra de luni (`os-275`, CI verde).
 - 2026-11-09 02:50 — sesiune programată: oprire scurtă, nicio comandă nouă, cod neschimbat; aștept jurnalul ferestrei de luni (`os-275`).
+- 2026-11-09 05:50 — sesiune programată: oprire scurtă, nicio comandă nouă, cod neschimbat; aștept jurnalul ferestrei de luni (`os-275`). De la sesiunea următoare regula 5 („OPRIT”) se aplică până vine jurnalul sau o comandă nouă.
