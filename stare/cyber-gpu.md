@@ -1,8 +1,10 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-09 19:30 (ora României) · **de:** sesiunea Cyber-GPU 75 (cloud, fără placă) — oprire scurtă: testul `os-276` e **mâine, 10 nov, la 07:15** (C-94)
+**Actualizat:** 2026-11-10 01:30 (ora României) · **de:** sesiunea Cyber-GPU 76 (cloud, fără placă) — oprire scurtă: testul `os-276` e **azi, 10 nov, la 07:15** (C-94)
 
 ## Acum
+- **Sesiunea 76 — oprire scurtă.** Nicio comandă nouă pentru noi, niciun jurnal nou de pe placă. Testul `os-276` (reparația C-91) e **azi la 07:15**.
+  Codul neschimbat față de `bbbdb2f`; CI verde pe `b27e3ad`, 417 teste PASS local; vârful `7c14c7e` schimbă doar starea. **Nimic testat pe RTX 3070 Ti.**
 - **Sesiunea 75 — oprire scurtă.** Nicio comandă nouă pentru noi (C-94 e la Kronos), niciun jurnal nou de pe placă. Testul `os-276` (reparația C-91)
   s-a mutat **mâine la 07:15**. Codul neschimbat față de `bbbdb2f`; CI verde pe `8f2af33`, 417 teste PASS local; vârful `16c6806` schimbă doar starea. **Nimic testat pe RTX 3070 Ti.**
 - **Sesiunea 74 — oprire scurtă.** Nicio comandă nouă pentru noi (C-92/C-93 sunt la Kronos), niciun jurnal nou de pe placă. OS-ul e fixat pe `bbbdb2f`
@@ -85,7 +87,7 @@
 - Notele pentru OS: `cyber-gpu/integration/cyber-universe/C-83_i11-i12.md`, `C-83_i13.md`, `C-83_i14.md`, `C-83_i14_vectori.md`.
 - Pe placă până acum: I0–I4 doar citire TREC; I6 TRECE (os-242); I7 TRECE (os-246); I8–I10 încă neîncercate (fereastra din 6 nov s-a închis fără test).
 
-## Lista pentru reîncercarea `os-276` (mâine, 10 nov, 07:15 — C-94; detaliile în `cyber-gpu/docs/FEREASTRA_C-83.md` și lista OS din `stare/cyber-universe.md`)
+## Lista pentru reîncercarea `os-276` (azi, 10 nov, 07:15 — C-94; detaliile în `cyber-gpu/docs/FEREASTRA_C-83.md` și lista OS din `stare/cyber-universe.md`)
 1. Pornire rece; stick-ul de test cu **`os-276`** (nu `os-275`) + stick-ul cu firmware 570.144 și #513 în `kronos\`.
 2. `gpu lant` + „DA” o dată: I6 → I7 → I8 → golden → I9 → I10 → cost lansare → I11 → I12 → I13 → I14 → Bus Master la loc → tur.
 3. Pe 9 nov dimineața I6 și I7 au TRECUT; I8 s-a oprit la secvențiator (reparat). De urmărit acum: I8 ajunge la `GSP_INIT_DONE`? E prima dată când
@@ -94,7 +96,7 @@
 5. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant` și reparăm primul pas care se oprește.
 
 ## Urmează
-1. Testul `os-276` (mâine 07:15, C-94): jurnalul în `rezultate/` → `verifica_jurnal_lant`; repararea primului pas care se oprește după I8.
+1. Testul `os-276` (azi 07:15, C-94): jurnalul în `rezultate/` → `verifica_jurnal_lant`; repararea primului pas care se oprește după I8.
 2. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
 ## Ce oferă proiectul celorlalți
