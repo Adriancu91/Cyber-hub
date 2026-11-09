@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-09 17:45 (ora României) · **de:** sesiunea OS programată (17:40) — oprire scurtă; **`os-276` (reparația C-91, CI verde) așteaptă testul de diseară (~20:00) sau de mâine 08:30 (C-93). Stick-urile le face Adrian cu arhivele de la centrul de comandă.** Notă: sesiunea OS următoare va scrie „OPRIT” (regula 5: 3 sesiuni fără sarcină) — doar așteptarea testului; un jurnal nou în `rezultate/` sau o comandă nouă o ridică.
+**Actualizat:** 2026-11-09 20:45 (ora României) · **de:** sesiunea OS programată (20:40) — **OPRIT: necesită analiza lui Adrian** (regula 5: 3 sesiuni la rând fără sarcină bifată). Nu e o problemă: coada așteaptă doar testul cu **`os-276`**, care după C-94 e **mâine 10 nov la 07:15**. Jurnalul testului în `rezultate/` (sau o comandă nouă) ridică oprirea. Stick-urile le face Adrian cu arhivele `os-276`.
 
 ## Acum
 - **C-91 (P6-68) — GATA: Release `os-276` e REPARAȚIA C-91 (CI verde).** Testul de azi s-a oprit la I8 fiindcă codul cyber-gpu citea greșit lista de comenzi a secvențiatorului GSP (lua capacitatea cutiei drept numărul de comenzi). cyber-gpu a reparat (`bbbdb2f`); OS-ul e fixat pe el (`2701483`), 9/9 scenarii GPU în QEMU (SIMULARE), CI pe `main` verde (run 42573262247: teste-1, teste-2, stick, release) → **Release `os-276`** (publicat 08:54, commit `2701483`, cu `SHA256SUMS` și `VERSIUNE`). Pentru C-92: acesta e release-ul de pus pe stick-uri. Pe placă e netestat — după I8 pot apărea alte diferențe; lanțul se oprește cinstit la primul pas greșit.
@@ -15,7 +15,7 @@
 - CI: reparată lipsa de spațiu pe disc a mașinii GitHub (toate cele 97 de scenarii treceau).
 
 ## Urmează
-- Luni, după fereastră: citim jurnalul (`verifica_jurnal_lant` la cyber-gpu, analiza la noi) și reparăm primul pas care se oprește.
+- După testul de mâine 10 nov 07:15: citim jurnalul (`verifica_jurnal_lant` la cyber-gpu, analiza la noi) și reparăm primul pas care se oprește.
 - Propunere (doar cu „da”): recuperarea plăcii fără repornire (`recover` din cyber-gpu) legată în `gpu lant`.
 
 ## Ce oferă proiectul celorlalți
@@ -31,7 +31,7 @@
 
 **ATENȚIE (11:45):** executantul Kronos NU a pregătit singur stick-urile (C-92/S97 oprit: descărcarea din GitHub i-a fost refuzată în rularea programată). Stick-urile sunt încă cu `os-275` → înainte de test faci pașii 1–2 de mai jos cu **`os-276`** (Rufus), sau îl rogi pe executant în sesiune interactivă.
 
-### LISTA PENTRU REÎNCERCAREA DE AZI 9 NOV (workstation, P6-63 → P6-68) — Release **`os-276`** (înlocuiește `os-275`)
+### LISTA PENTRU REÎNCERCAREA DE MÂINE 10 NOV, 07:15 (workstation, P6-63 → P6-68) — Release **`os-276`** (înlocuiește `os-275`)
 Ce e nou față de 5 nov: lanțul merge acum **I6 → I7 → I8 → golden → I9 → I10 → I11 → I12 → I13 → I14** (I8–I14 n-au rulat niciodată pe placă;
 în teste trec doar în SIMULARE). Orice oprire curată (un pas „ESUAT”, Bus Master pus la loc, jurnal scris) e un rezultat bun.
 

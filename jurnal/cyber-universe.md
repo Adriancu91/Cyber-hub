@@ -188,3 +188,4 @@
 - 2026-11-09 11:45 — oprire scurtă: nicio comandă nouă; `os-276` (C-91) așteaptă testul; notat că C-92 s-a oprit, deci stick-urile se fac de mână.
 - 2026-11-09 14:45 · sesiunea OS programată · oprire scurtă; nicio comandă nouă; `os-276` așteaptă testul (C-93).
 - 2026-11-09 17:45 · sesiunea OS programată · oprire scurtă; nicio comandă nouă; `os-276` așteaptă testul (C-93); următoarea sesiune intră în „OPRIT” (regula 5) până la jurnal/comandă nouă.
+- 2026-11-09 20:45 · sesiunea OS programată · **OPRIT** (regula 5: 3 sesiuni fără sarcină) — doar așteptarea testului cu `os-276`, mutat mâine 07:15 (C-94); nicio comandă nouă pentru noi; CI verde.
