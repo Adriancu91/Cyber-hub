@@ -1257,4 +1257,4 @@ Format:
      Testul în QEMU + gpu-sim cu un profil GA106 marcat SIMULARE.
   3. Abia după ce Adrian aduce jurnalul de citire de pe laptop și după „DA”-ul lui separat: profilul GA106 în lanțul I6+ (scrierile pe placa laptopului = risc pentru laptop; se discută înainte).
 - reguli: nicio scriere pe placa laptopului în pașii 1–2; workstation-ul (GA104) rămâne prioritatea; firmware-ul NVIDIA nu intră în repo/hub; clean-room.
-- stare: nou
+- stare: preluat (2026-11-10 07:30, sesiunea Cyber-GPU) — pasul 1 (cercetarea GA106) + partea gpu-sim/recunoaștere doar citire; pasul 2 în OS rămâne la sesiunea OS
