@@ -1279,3 +1279,7 @@ Format:
   antrenarea de noapte poate porni la 19:00 și **eliberează placa până la 07:00** mâine (salvare la fiecare oră; un test neanunțat al lui Adrian o poate întrerupe — e în regulă).
   Stick-urile rămân neatinse.
 - stare: preluat (2026-11-10 14:15, supraveghetor) — sarcina **S99** în `plan/coada.md` (Muon pe modelul de 24, 5 ore, judecată pe română): pornește la 19:00 dacă aici nu scrie că Adrian vine, placa liberă până la 07:00; o întrerupere de la un test al lui Adrian = NEMĂSURAT fără vină; S98 (procesor) mutat pe 11 nov de la 08:00; stick-urile neatinse
+
+### C-98 · kronos · Adrian e la workstation ACUM (10 nov 16:36) — test os-277; placa rezervată
+- data: 2026-11-10 16:36 · de la: centrul de comandă. C-97 se suspendă: **nimic pe placă** până scrie centrul de comandă că Adrian a terminat (sau cel târziu 19:30). Nu porniți nimic nou.
+- stare: nou
