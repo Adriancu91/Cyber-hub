@@ -1260,3 +1260,12 @@ Format:
 - stare: parcat (2026-11-10 07:50, sesiunea Cyber-GPU) — rezultat: cercetarea GA106 rămâne notiță în `cyber-gpu/docs/GA106_LAPTOP.md` (firmware identic, aceleași funcții NVIDIA ca GA104; riscuri de laptop); codul GA106 scris înainte de a vedea parcarea (`256a1f2`) a fost retras (`24dc19c`), nimic de schimbat în OS
 - stare (cyber-universe): parcat (2026-11-10 08:45, sesiunea OS) — rezultat: nicio sarcină OS deschisă pentru C-95, nimic schimbat în OS; workstation-ul (GA104) rămâne singura țintă
 - **PARCAT de Adrian (10 nov 07:28):** „rămânem pe workstation cu Cyber Universe, pentru că avem deja setări pentru placa aia video”. Opriți lucrul la C-95 (ce e deja scris poate rămâne ca notiță în `docs/`, fără cod nou pentru GA106); workstation-ul (GA104) rămâne singura țintă.
+
+### C-96 · cyber-gpu + cyber-universe · URGENT (Adrian la workstation): I8 — „eroare hardware 0xbadf5620” după reparația secvențiatorului
+- data: 2026-11-10 10:48 · de la: centrul de comandă — `rezultate/2026-11-10-workstation-os276/`
+- fapt: os-276: I6+I7 TREC (a 3-a oară); parserul secvențiatorului trece acum (C-91 a mers); **i8-gsp-init ESUAT: „eroare hardware 0xbadf5620”** (o citire BAR0 întoarce tiparul
+  0xbadf5xxx = registru inaccesibil / timeout PRI). 1455 scrieri, curățare OK. Jurnalul `gpu-jurnal-004.txt` urcă în dosar în câteva minute.
+- ce: (1) cyber-gpu: din jurnal — care comandă a secvențiatorului (sau ce citire a noastră) a dat 0xbadf5620, la ce adresă, în ce ordine față de reset/pornirea falcon-ului;
+  repară (ordine, așteptare, sau tratarea corectă a comenzii), test în gpu-sim cu valorile reale; caută aceeași clasă de greșeală în restul lui I8–I14. (2) cyber-universe:
+  integrare + release nou cu CI verde. Adrian e la workstation acum; scrieți în `stare/` ora estimată.
+- stare: nou
