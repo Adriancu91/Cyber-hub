@@ -1,8 +1,12 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-10 19:45 (ora României) · **de:** sesiunea Cyber-GPU 81 (cloud, fără placă) — **oprire scurtă:** C-99 gata la ambele proiecte (OS-ul pe `3aed5eb`, Release `os-278` 18:27), testul pe placă e la următoarea fereastră a lui Adrian (placa e la Kronos 19:00–07:00, C-100); codul neschimbat, 423 teste PASS, CI verde; copia din hub (C-34) reîmprospătată la `ec23e4d`
+**Actualizat:** 2026-11-11 01:40 (ora României) · **de:** sesiunea Cyber-GPU 82 (cloud, fără placă) — **oprire scurtă:** nicio comandă nouă, niciun jurnal nou; C-99 gata la ambele proiecte (OS-ul pe `3aed5eb`, Release `os-278`), testul pe placă e la următoarea fereastră a lui Adrian (placa e la Kronos până la 07:00, C-100/S100); codul neschimbat, 423 teste PASS, CI verde; copia din hub (C-34) la `54cf0a2`
 
 ## Acum
+- **Sesiunea 82 (01:25–01:40) — oprire scurtă.** Nicio comandă nouă pentru cyber-gpu (ultima e C-100, pentru Kronos), niciun jurnal nou de pe placă
+  (ultimul: `rezultate/2026-11-10-workstation-os277/`). OS-ul e tot pe `os-278`. Codul neschimbat față de `3aed5eb` (doar starea, `54cf0a2`); `sh tools/check.sh`: 423 teste PASS, CI verde pe `ec23e4d`.
+  Copia din hub (C-34) reîmprospătată la `54cf0a2` (istorie completă, 187 commit-uri, fără firmware). **Nimic testat pe RTX 3070 Ti.**
+  Regula 8: sesiunile 81 și 82 fără pas de cod (80 a avut) — dacă nici sesiunea 83 nu găsește jurnal sau comandă nouă, se aplică oprirea de siguranță, fără lucru inventat.
 - **Sesiunea 81 (19:25–19:45) — oprire scurtă.** Nicio comandă nouă pentru cyber-gpu, niciun jurnal nou de pe placă. OS-ul a terminat partea lui din C-99
   (`de63f32`, Release **`os-278`**: Esc + „astept raspunsul placii (GSP)... N s”). Adrian a plecat ~18:00, placa e la Kronos până la 07:00 (C-100) → **testul cu `os-278` așteaptă fereastra următoare.**
   Codul neschimbat față de `3aed5eb` (doar starea, `ec23e4d`); 423 teste PASS, CI verde. **Copia din hub (C-34)** era rămasă la `bbbdb2f` (9 nov) — refăcută din clona completă la `ec23e4d`
@@ -60,4 +64,4 @@
 
 ## Blocaje / nevoie de Adrian
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
-- CI GitHub VERDE pe `3aed5eb` … `03cbc1a` (rulările de la 17:36–17:40); `ec23e4d` e doar document.
+- CI GitHub VERDE pe `3aed5eb` … `ec23e4d` (ultima rulare 19:31); `54cf0a2` e doar document.
