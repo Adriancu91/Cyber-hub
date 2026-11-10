@@ -1,8 +1,9 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-10 11:10 (ora României) · **de:** sesiunea Cyber-GPU 78 (cloud, fără placă) — **C-96 URGENT: partea GPU gata în SIMULARE**, commit **`2d66deb`** pe `g0-g2-fundatie`; OS-ul (partea 2) poate lega commit-ul acum
+**Actualizat:** 2026-11-10 13:35 (ora României) · **de:** sesiunea Cyber-GPU 79 (cloud, fără placă) — **oprire scurtă:** C-96 e gata la ambele proiecte (OS-ul pe `2d66deb`, Release **`os-277`**); așteptăm testul pe placă; codul neschimbat, 420 teste PASS, CI verde (`9959b94`)
 
 ## Acum
+- **Sesiunea 79 (13:30) — oprire scurtă.** Nicio comandă nouă pentru cyber-gpu (C-97 e pentru Kronos: placa liberă pentru antrenare de la 19:00 dacă Adrian nu revine). Niciun jurnal nou de pe placă. Verificat: `verifica_jurnal_lant` pe jurnalul real din `os-276` dă „OPRIT CURAT la i8-gsp-init” (Bus Master pus la loc), aceeași citire ca în sesiunea 78. **Nimic testat pe RTX 3070 Ti**; următorul pas e doar după jurnalul testului cu `os-277`.
 - **Sesiunea 78 — C-96 (I8 „eroare hardware 0xbadf5620”): cauza găsită, reparată, testată în simulare.** Preluat 10:52, jurnalul `gpu-jurnal-004.txt` citit 10:55, commit **`2d66deb`** la 11:15.
   - **Ce s-a întâmplat pe placă:** prima cerere a secvențiatorului GSP-RM a fost `WRITE 0x110040 ← 0`, apoi `CORE_RESET` = resetul falcon-ului GSP
     (`0x1103c0 ← 1`, `← 0`). **Prima citire a registrului HWCFG2 după eliberarea resetului a întors `0xbadf5620`** (cod PRI „client error”): falcon-ul care
@@ -25,13 +26,13 @@
 - **Pe placă până acum:** I0–I4 doar citire TREC; I6 TRECE (os-242, os-275, os-276); I7 TRECE (os-246, os-275, os-276); I8: mesajul GSP-RM citit corect,
   secvențiatorul a pornit și s-a oprit la primul reset (reparat acum, în simulare); I9–I14 neîncercate.
 
-## Lista pentru următoarea rulare `gpu lant` (după Release-ul OS cu `2d66deb`)
+## Lista pentru următoarea rulare `gpu lant` (Release-ul OS **`os-277`**, cu `2d66deb`)
 1. Pornire rece; stick-ul de test cu noul Release + stick-ul cu firmware 570.144 și #513 în `kronos\`.
 2. `gpu lant` + „DA” o dată. De urmărit la I8: rândurile `secv #…`, nota de dinaintea resetului, `GSP_INIT_DONE`. O oprire curată la orice pas de după e un rezultat bun.
 3. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant` și reparăm primul pas care se oprește.
 
 ## Urmează
-1. OS-ul leagă `2d66deb` și scoate Release-ul (C-96 partea 2); apoi testul pe placă și analiza jurnalului.
+1. Testul pe placă cu `os-277` (pașii exacți în `stare/cyber-universe.md`), apoi `verifica_jurnal_lant` pe jurnal și repararea primului pas oprit.
 2. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
 ## Ce oferă proiectul celorlalți
@@ -45,10 +46,10 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe` (C-96 partea 2): `kernel/Cargo.toml` pe `2d66deb` + Release nou cu CI verde; nimic altceva de schimbat.
+- De la `cyber-universe`: nimic acum (C-96 partea 2 e gata: `os-277` pe `2d66deb`).
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
-- De la Adrian: rularea `gpu lant` cu noul Release și jurnalul de pe stick în `rezultate/`.
+- De la Adrian: rularea `gpu lant` cu `os-277` (când poate) și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
-- CI GitHub VERDE pe `2d66deb` (rularea 149, 11:11).
+- CI GitHub VERDE pe `9959b94` (rularea de la 13:33).
