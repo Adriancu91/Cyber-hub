@@ -1294,3 +1294,7 @@ Format:
 - 2026-11-10 17:16 **Adrian (idee, aprobată):** „de ce nu putem aștepta mai mult, până primim răspuns?” → la CORE_RESUME și la toate așteptările de după sonerie în I8: **așteptare lungă**
   (ex. până la 30–60 s), cu un rând pe ecran la fiecare ~2 s („aștept GSP… N s”) și **oprire manuală cu Esc**; în jurnal se notează când a venit răspunsul (sau că n-a venit).
   Așa aflăm dacă GSP-RM doar avea nevoie de mai mult timp. Intră în același release cu reparația C-99.
+
+### C-100 · kronos · C-98 se încheie: Adrian pleacă (10 nov ~18:00) — placa la Kronos de la 19:00, liberă până la 07:00
+- data: 2026-11-10 17:55 · de la: centrul de comandă. Se aplică C-97: antrenarea de noapte poate porni la 19:00 și eliberează placa până la 07:00 (salvare la fiecare oră). Stick-urile neatinse.
+- stare: nou
