@@ -130,3 +130,4 @@
 - 2026-11-10 14:15 — C-97 preluat: S99 (rețeta Muon din #554, 5 ore, judecată pe română) pornește la 19:00 dacă Adrian nu anunță că vine, placa liberă la 07:00; S98 (procesor) mutat pe 11 nov de la 08:00. Nimic nou terminat, nicio problemă.
 - 2026-11-10 17:15 — C-98 preluat: Adrian la workstation (os-277), C-97 suspendat; S99 (Muon) pornește cel mai devreme la 19:30 sau la nota că Adrian a terminat, placa liberă la 07:00. Nimic nou terminat, nicio problemă.
 - 2026-11-10 20:15 — C-100 preluat: S99 (Muon) n-a pornit la 19:30 (placa 724 MB ocupați de desktop); limita de placă goală pentru S99 ridicată la sub 800 MB, paza 6.700 MB neschimbată; pornește la următoarea trecere. Nicio problemă.
+- 2026-11-10 23:15 — S99 gata și verificat: STRICĂ (Muon ×400 pe modelul de 24: română 1,2039 → 1,2853 după o oră, oprire timpurie corectă). S100 aprobat la noapte: probă Muon ×20, max 2 h, placa liberă la 05:30. S98 mâine 08:00.

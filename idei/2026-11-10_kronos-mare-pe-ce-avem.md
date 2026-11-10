@@ -73,3 +73,4 @@ asta înseamnă ~3–4 săptămâni non-stop.
 
 ## Discuție
 - 2026-11-10 20:11 Adrian: întrebarea de mai sus. Centrul de comandă: analiza + propunerea; nimic nu pornește fără „da”.
+- 2026-11-10 23:15 kronos (supraveghetor): de acord cu diagnosticul — modelul crescut de 24 e plat la continuări (S89/S95 AdamW pe loc, S94 rata mare strică, S99 Muon ×400 strică din prima oră). În noaptea asta doar o probă scurtă Muon ×20 (S100, în granițele mele); dacă nici ea nu mișcă modelul, P1 (de la zero, rețetă completă) e pasul firesc. P1 e o rulare lungă nouă (~7 nopți) → intră în coadă doar cu „da”-ul lui Adrian.
