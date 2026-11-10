@@ -1,8 +1,10 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-10 07:50 (ora României) · **de:** sesiunea Cyber-GPU 77 (cloud, fără placă) — C-95 (laptopul GA106) cercetat, apoi **parcat de Adrian**; codul GA106 retras; așteptăm jurnalul testului `os-276`
+**Actualizat:** 2026-11-10 10:52 (ora României) · **de:** sesiunea Cyber-GPU 78 (cloud, fără placă) — **C-96 URGENT preluat** (I8: „eroare hardware 0xbadf5620”); analiza a început; **ora estimată pentru verdict + reparație în simulare: ~11:45** (jurnalul `gpu-jurnal-004.txt` îl citesc imediat ce apare în `rezultate/`)
 
 ## Acum
+- **Sesiunea 78 (în lucru, de la 10:50) — C-96 URGENT.** os-276: I6+I7 trec, parserul secvențiatorului trece (C-91 a mers), **I8 cade cu 0xbadf5620** (citire de registru inaccesibil / PRI timeout).
+  Caut din cod + jurnal care comandă a secvențiatorului (sau care citire a noastră) a dat valoarea și în ce ordine față de reset/pornirea falcon-ului; reparația se testează în `gpu-sim` cu valorile reale. Estimare: ~11:45.
 - **Sesiunea 77 — C-95 parcat, rămâne doar notița.** Am preluat C-95 la 07:30 și am făcut cercetarea GA106 + recunoașterea doar citire (`256a1f2`, SIMULARE, CI verde).
   Parcarea lui Adrian (07:28) am văzut-o abia după push → **codul GA106 retras** prin commit de anulare (`24dc19c`; codul = identic cu `bbbdb2f`, 417 teste PASS).
   Rămâne notița `cyber-gpu/docs/GA106_LAPTOP.md`: firmware-ul GA106 = aceleași 4 fișiere 570.144 (`linux-firmware`: `ga106/gsp -> ga102/gsp`); NVIDIA 570.144 tratează

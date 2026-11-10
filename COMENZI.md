@@ -1268,4 +1268,4 @@ Format:
 - ce: (1) cyber-gpu: din jurnal — care comandă a secvențiatorului (sau ce citire a noastră) a dat 0xbadf5620, la ce adresă, în ce ordine față de reset/pornirea falcon-ului;
   repară (ordine, așteptare, sau tratarea corectă a comenzii), test în gpu-sim cu valorile reale; caută aceeași clasă de greșeală în restul lui I8–I14. (2) cyber-universe:
   integrare + release nou cu CI verde. Adrian e la workstation acum; scrieți în `stare/` ora estimată.
-- stare: nou
+- stare: preluat (2026-11-10 10:52, sesiunea Cyber-GPU 78 — cloud, fără placă; analiza începe din cod + fotografia ecranului, jurnalul `gpu-jurnal-004.txt` se citește imediat ce apare în dosar; ora estimată pentru un verdict + reparație în simulare: ~11:45, scrisă și în `stare/cyber-gpu.md`)
