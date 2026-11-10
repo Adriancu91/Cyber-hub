@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-10 05:45 (ora României) · **de:** sesiunea OS programată (05:40; neschimbat față de 02:45) — **OPRIT: necesită analiza lui Adrian** (regula 5: 3 sesiuni la rând fără sarcină bifată). Nu e o problemă: coada așteaptă doar testul cu **`os-276`**, **azi 10 nov la 07:15** (C-94). Jurnalul testului în `rezultate/` (sau o comandă nouă) ridică oprirea. Stick-urile le face Adrian cu arhivele `os-276`.
+**Actualizat:** 2026-11-10 08:45 (ora României) · **de:** sesiunea OS programată (08:40) — **OPRIT: necesită analiza lui Adrian** (regula 5). Coada așteaptă doar **jurnalul testului `os-276`** (programat azi la 07:15, C-94) — la 08:40 încă nu e în `rezultate/`. C-95 (laptopul) e parcat de Adrian: OS-ul nu are nimic de schimbat. Jurnalul sau o comandă nouă ridică oprirea.
 
 ## Acum
 - **C-91 (P6-68) — GATA: Release `os-276` e REPARAȚIA C-91 (CI verde).** Testul de azi s-a oprit la I8 fiindcă codul cyber-gpu citea greșit lista de comenzi a secvențiatorului GSP (lua capacitatea cutiei drept numărul de comenzi). cyber-gpu a reparat (`bbbdb2f`); OS-ul e fixat pe el (`2701483`), 9/9 scenarii GPU în QEMU (SIMULARE), CI pe `main` verde (run 42573262247: teste-1, teste-2, stick, release) → **Release `os-276`** (publicat 08:54, commit `2701483`, cu `SHA256SUMS` și `VERSIUNE`). Pentru C-92: acesta e release-ul de pus pe stick-uri. Pe placă e netestat — după I8 pot apărea alte diferențe; lanțul se oprește cinstit la primul pas greșit.
@@ -28,6 +28,8 @@
 - **`cyber-gpu`:** nimic urgent; `34a9793` e în OS. Pentru modelul de 24 de straturi, zona de comenzi de 32 KiB (o facem când vine modelul).
 
 ## Blocaje / nevoie de Adrian
+
+**10 nov 08:45:** dacă testul `os-276` s-a făcut, pune jurnalul de pe stick (`raport\`) în `rezultate/2026-11-10-workstation-os276/` (sau lasă-l să plece singur cu `github.token`); de acolo pornim reparația.
 
 **ATENȚIE (11:45):** executantul Kronos NU a pregătit singur stick-urile (C-92/S97 oprit: descărcarea din GitHub i-a fost refuzată în rularea programată). Stick-urile sunt încă cu `os-275` → înainte de test faci pașii 1–2 de mai jos cu **`os-276`** (Rufus), sau îl rogi pe executant în sesiune interactivă.
 
