@@ -1,10 +1,11 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-09 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-10 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **S95 rulează din 20:40** (5 ore din #536, rata ×0,5 = 5e-6 verificată la primul pas / 10 min / ora 1; copia cu `minute = 0` dă la română 1,2062 = #536).
-  Judecat pe română (MAI BUN = ≤ 1,2010); gata estimat ~02:15 + examene ~03:00; **placa liberă înainte de 06:45** pentru testul `os-276`.
+- **S95 (gata 10 nov 02:13, verificat): LA FEL.** Modelul de 24 de straturi, 5 ore din #536 cu rata 5e-6: română curat **1,2040**
+  (cel mai bun scor de până acum) vs #513 1,2060 — sub pragul MAI BUN (≤ 1,2010); nimic stricat (R1 instrucțiuni 99,20). Câștigul vine tot din răcire.
+  Placa liberă de la 02:13 (max 6.496 MB / 62 °C) pentru testul `os-276` de la 07:15.
 - Model propriu de limbaj (98M parametri, tokenizer propriu), antrenat de la zero pe workstation-ul RTX 3070 Ti, în „cascadă”
   (executantul pe workstation + supraveghetorul în cloud). Fără LLM străin; auto-joc cu verificator + memorie.
 - **Modelul în uz: #513** (KGR1 Q8_0, 110.859.008 octeți, SHA `66f734b3…5859`); #477 și #459 rezerve. Release `kronos-kgr1-513` nefăcut (luni, Adrian).
@@ -13,15 +14,15 @@
 - **S96 (C-85 pasul 5, gata 9 nov 14:40, verificat): DA.** Datele de antrenare pe bucăți (27 × 50 M simboluri) dau exact același șir
   (SHA-256 identic pe 1,34 mld simboluri), cu 125 MB RAM în loc de 3 GB. Pornirea liniei ia 41,7 GB RAM din cauza textului brut citit pentru amprentă.
 - **S93 (C-88, gata 02:36):** examenul de română decide de acum pe linia nouă `w2_mare_24r`; paznicul îi păzește amprenta, `kronos/` neschimbat.
-- S90/S91 (7 nov): examenul de română e modul separat; unealta „model mic trimis în avans” merge; `kronos/` neschimbat.
 - **S88 (C-86): oprit** — ștergerea celor 82 de modele intermediare (33,4 GB) așteaptă mâna lui Adrian.
 - **S94 (C-85 pasul 4, gata 9 nov 01:05, verificat): NU.** Modelul mic de 6 straturi a clasat rețetele ×4 < ×2 < bază ≈ încălzire ×2 < ×0,5;
   pe modelul de 24 (câte 1 oră) ordinea a ieșit inversă: ×0,5 1,2102 < bază ≈ încălzire ×2 1,2118 < ×2 1,2158 < ×4 1,2232 (ρ = −0,92).
   Lecție: rata nu se alege pe un model mic tăiat; la modelul bun, rata mică strică cel mai puțin. Vârf 6.426 MB / 61 °C. **1337 teste trec, 0 pică.**
 
 ## Urmează
-- **C-94 (Adrian nu mai vine diseară; testul `os-276` mâine 10 nov la 07:15):** stick-urile nu le atinge Kronos (S97 rămâne oprit).
-- **S98 (procesor, după testul lui Adrian de mâine):** legarea datelor pe bucăți în antrenare printr-un modul nou, neactivat; proba: aceleași 1.000 de loturi.
+- **Azi dimineață (C-94):** nimic pe placă și nimic greu pe procesor până la nota lui Adrian că a terminat testul `os-276`.
+- **S98 (procesor, după notă):** legarea datelor pe bucăți în antrenare printr-un modul nou, neactivat; proba: aceleași 1.000 de loturi.
+- **S99 (placa, noaptea 10→11, de la 19:00):** rețeta Muon pe modelul de 24, 5 ore din #554, judecată pe română (praguri scrise dinainte); nu pornește cât rulează S98.
 - **C-89 (tokenizer românesc): PARCAT** de Adrian până la >1 miliard de parametri.
 
 ## Ce oferă proiectul celorlalți
@@ -42,5 +43,5 @@
 - **S97 / C-92: stick-urile pentru `os-276` NU sunt pregătite de Kronos** — după C-93 le pregătește centrul de comandă / Adrian (lista din `stare/cyber-universe.md`).
 - **S88:** ștergerea celor 82 de modele intermediare (33,4 GB) + `lucru/memorie_mare` (10,5 GB) — Adrian rulează comanda din raportul S88 sau dă executantului o excepție pentru ștergeri aprobate.
 - Release-ul `kronos-kgr1-513` — luni 9 nov, cu Adrian la workstation.
-- Testul `os-276` (C-94): mâine 10 nov la 07:15 — Kronos ține placa liberă de la 06:45. După test: o notă că workstation-ul e liber (pornește S98).
+- Testul `os-276` (C-94): azi 10 nov la 07:15 — placa e liberă. După test: o notă că workstation-ul e liber (pornește S98, apoi S99 la noapte).
 - Opțional: arhiva de mutare (26,2 GB) + Coșul. Fără grabă: S58, `taskkill`, ora 18:30 la bucla automată, Release-ul `kronos-kgr1-477`.
