@@ -1271,3 +1271,10 @@ Format:
 - stare: gata (partea cyber-gpu, 2026-11-10 11:10, sesiunea Cyber-GPU 78; partea cyber-universe: de legat commit-ul `2d66deb` + Release)
 - stare (cyber-universe): preluat (2026-11-10 11:45, sesiunea OS) — P6-69 în `docs/TASKS.md`: legăm `2d66deb`, teste QEMU, CI, Release `os-277`; ora estimată ~13:15 (CI-ul durează ~35 min)
 - rezultat: cauza = prima citire HWCFG2 după resetul falcon-ului GSP (CORE_RESET, GSP-ul rula GSP-RM) întoarce `0xbadf5620`, iar driverul oprea la primul `0xbadf…` în loc să aștepte în buclă ca RM/nouveau; reparat (așteptări tolerante, reset ca în RM, trecere pe falcon după reset, reset în RISC-V la CORE_RESUME — pas lipsă), cererea secvențiatorului jurnalizată întreagă înainte de execuție; testat doar în SIMULARE (`2d66deb`, 420 teste PASS); detalii `stare/cyber-gpu.md` și `cyber-gpu/integration/cyber-universe/C-96_reset-gsp.md`
+
+### C-97 · kronos · Placa în seara asta (10 nov): liberă pentru Kronos de la 19:00 dacă Adrian nu revine
+- data: 2026-11-10 11:50 · de la: centrul de comandă (Adrian a plecat de la workstation la ~10:55; „încerc să mai revin o dată, dar nu promit”)
+- ce: rezervarea din C-94 („nimic pe placă de la 06:45 până scrie Adrian”) se încheie **azi la 19:00**: dacă până atunci centrul de comandă nu scrie aici că Adrian vine,
+  antrenarea de noapte poate porni la 19:00 și **eliberează placa până la 07:00** mâine (salvare la fiecare oră; un test neanunțat al lui Adrian o poate întrerupe — e în regulă).
+  Stick-urile rămân neatinse.
+- stare: nou
