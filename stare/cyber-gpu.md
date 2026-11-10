@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-10 11:20 (ora României) · **de:** sesiunea Cyber-GPU 78 (cloud, fără placă) — **C-96 URGENT: partea GPU gata în SIMULARE**, commit **`2d66deb`** pe `g0-g2-fundatie`; OS-ul (partea 2) poate lega commit-ul acum
+**Actualizat:** 2026-11-10 11:10 (ora României) · **de:** sesiunea Cyber-GPU 78 (cloud, fără placă) — **C-96 URGENT: partea GPU gata în SIMULARE**, commit **`2d66deb`** pe `g0-g2-fundatie`; OS-ul (partea 2) poate lega commit-ul acum
 
 ## Acum
 - **Sesiunea 78 — C-96 (I8 „eroare hardware 0xbadf5620”): cauza găsită, reparată, testată în simulare.** Preluat 10:52, jurnalul `gpu-jurnal-004.txt` citit 10:55, commit **`2d66deb`** la 11:15.
