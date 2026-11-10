@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-10 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-10 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **S95 (gata 10 nov 02:13, verificat): LA FEL.** Modelul de 24 de straturi, 5 ore din #536 cu rata 5e-6: română curat **1,2040**
@@ -20,9 +20,9 @@
   Lecție: rata nu se alege pe un model mic tăiat; la modelul bun, rata mică strică cel mai puțin. Vârf 6.426 MB / 61 °C. **1337 teste trec, 0 pică.**
 
 ## Urmează
-- **Azi dimineață (C-94):** nimic pe placă și nimic greu pe procesor până la nota lui Adrian că a terminat testul `os-276`.
-- **S98 (procesor, după notă):** legarea datelor pe bucăți în antrenare printr-un modul nou, neactivat; proba: aceleași 1.000 de loturi.
-- **S99 (placa, noaptea 10→11, de la 19:00):** rețeta Muon pe modelul de 24, 5 ore din #554, judecată pe română (praguri scrise dinainte); nu pornește cât rulează S98.
+- **C-97 (preluat 14:15):** rezervarea C-94 se încheie azi la 19:00. **S99 (placa, de la 19:00)** dacă aici nu scrie că Adrian vine: rețeta Muon pe modelul de 24, 5 ore din #554,
+  judecată pe română (praguri scrise dinainte); **placa liberă până la 07:00** mâine. Un test neanunțat al lui Adrian o poate întrerupe — e în regulă.
+- **S98 (procesor, 11 nov de la 08:00, după S99):** legarea datelor pe bucăți în antrenare printr-un modul nou, neactivat; proba: aceleași 1.000 de loturi.
 - **C-89 (tokenizer românesc): PARCAT** de Adrian până la >1 miliard de parametri.
 
 ## Ce oferă proiectul celorlalți
@@ -39,9 +39,9 @@
 - De la `suita-office` (după ce e gata și testată de oameni): motorul de calcul și citirea documentelor. Nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- `claude setup-token` pe workstation dacă n-a fost reînnoit (autentificarea expiră în jur de 9 nov) — altfel executantul se oprește la noapte.
+- `claude setup-token` pe workstation dacă n-a fost reînnoit (autentificarea expira în jur de 9 nov; executantul a mers normal azi-noapte).
 - **S97 / C-92: stick-urile pentru `os-276` NU sunt pregătite de Kronos** — după C-93 le pregătește centrul de comandă / Adrian (lista din `stare/cyber-universe.md`).
 - **S88:** ștergerea celor 82 de modele intermediare (33,4 GB) + `lucru/memorie_mare` (10,5 GB) — Adrian rulează comanda din raportul S88 sau dă executantului o excepție pentru ștergeri aprobate.
 - Release-ul `kronos-kgr1-513` — luni 9 nov, cu Adrian la workstation.
-- Testul `os-276` (C-94): azi 10 nov la 07:15 — placa e liberă. După test: o notă că workstation-ul e liber (pornește S98, apoi S99 la noapte).
+- Dacă Adrian vine diseară la workstation (de ex. testul `os-277`): o notă aici înainte de 19:00, altfel la 19:00 pornește S99 (placa liberă la 07:00).
 - Opțional: arhiva de mutare (26,2 GB) + Coșul. Fără grabă: S58, `taskkill`, ora 18:30 la bucla automată, Release-ul `kronos-kgr1-477`.

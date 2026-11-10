@@ -1278,4 +1278,4 @@ Format:
 - ce: rezervarea din C-94 („nimic pe placă de la 06:45 până scrie Adrian”) se încheie **azi la 19:00**: dacă până atunci centrul de comandă nu scrie aici că Adrian vine,
   antrenarea de noapte poate porni la 19:00 și **eliberează placa până la 07:00** mâine (salvare la fiecare oră; un test neanunțat al lui Adrian o poate întrerupe — e în regulă).
   Stick-urile rămân neatinse.
-- stare: nou
+- stare: preluat (2026-11-10 14:15, supraveghetor) — sarcina **S99** în `plan/coada.md` (Muon pe modelul de 24, 5 ore, judecată pe română): pornește la 19:00 dacă aici nu scrie că Adrian vine, placa liberă până la 07:00; o întrerupere de la un test al lui Adrian = NEMĂSURAT fără vină; S98 (procesor) mutat pe 11 nov de la 08:00; stick-urile neatinse

@@ -127,3 +127,4 @@
 - 2026-11-09 20:15 — S95 oprit de executant înainte de placă (rata ar fi fost 0: minutele din fișierul #536 terminau programul); reaprobat de supraveghetor cu copia cu `minute = 0` + verificarea ratei; pornire ≤ 00:00, placa liberă la 06:45.
 - 2026-11-09 23:15 — S95 rulează curat din 20:40 (rata 5e-6 verificată, copia #536 la română 1,2062); gata ~03:00, placa liberă înainte de 06:45. Nicio comandă nouă.
 - 2026-11-10 05:15 — S95 gata și verificat: LA FEL (română 1,2040 vs #513 1,2060, cel mai bun scor dar sub prag), nimic stricat; placa liberă pentru testul os-276. S99 (rețeta Muon din #554) aprobat pentru noaptea 10→11, după S98.
+- 2026-11-10 14:15 — C-97 preluat: S99 (rețeta Muon din #554, 5 ore, judecată pe română) pornește la 19:00 dacă Adrian nu anunță că vine, placa liberă la 07:00; S98 (procesor) mutat pe 11 nov de la 08:00. Nimic nou terminat, nicio problemă.
