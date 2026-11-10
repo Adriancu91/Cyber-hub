@@ -1288,7 +1288,7 @@ Format:
 - data: 2026-11-10 16:44 · `rezultate/2026-11-10-workstation-os277/` (jurnalul `gpu-jurnal-005.txt` cu toate comenzile secvențiatorului vine în câteva minute)
 - ce: din jurnal — ce așteptăm 2 s și nu vine (răspunsul GSP-RM după secvențiator? un bit de stare? o coadă?); dacă e doar prea puțin timp (GSP-RM poate dura mai mult la prima pornire)
   sau un pas lipsă (ex. confirmarea că secvențiatorul s-a terminat, trimisă înapoi la GSP). Reparație + test gpu-sim + release. Adrian e la workstation acum.
-- stare: nou
+- stare: preluat (2026-11-10 17:16, sesiunea Cyber-GPU 80) — citesc `gpu-jurnal-005.txt`
 - 2026-11-10 17:16 **Adrian (idee, aprobată):** „de ce nu putem aștepta mai mult, până primim răspuns?” → la CORE_RESUME și la toate așteptările de după sonerie în I8: **așteptare lungă**
   (ex. până la 30–60 s), cu un rând pe ecran la fiecare ~2 s („aștept GSP… N s”) și **oprire manuală cu Esc**; în jurnal se notează când a venit răspunsul (sau că n-a venit).
   Așa aflăm dacă GSP-RM doar avea nevoie de mai mult timp. Intră în același release cu reparația C-99.
