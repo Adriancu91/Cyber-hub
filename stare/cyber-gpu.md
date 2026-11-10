@@ -51,4 +51,4 @@
 
 ## Blocaje / nevoie de Adrian
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
-- CI GitHub pe `2d66deb`: de verificat (local toate verificările trec).
+- CI GitHub VERDE pe `2d66deb` (rularea 149, 11:11).
