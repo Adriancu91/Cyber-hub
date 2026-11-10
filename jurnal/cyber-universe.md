@@ -196,3 +196,4 @@
 - 2026-11-10 12:25 · sesiunea OS programată · C-96 pct. 2 GATA (P6-69): cyber-gpu `2d66deb` (resetul GSP, I8 0xbadf5620) în OS, 9/9 teste GPU în simulare, CI verde → Release `os-277`; OPRIT ridicat.
 - 2026-11-10 13:50 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-277` încă; nicio sarcină liberă fără placă; CI verde.
 - 2026-11-10 14:45 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-277` încă; nicio sarcină liberă fără placă; CI verde.
+- 2026-11-10 18:35 · sesiunea OS programată · C-99 GATA (P6-70): cyber-gpu `3aed5eb` (CORE_RESUME prin CPUCTL_ALIAS) în OS + Esc și rândul „aștept placa… N s” (ideea lui Adrian), antetul cozii I8 60 s; 9/9 teste GPU în simulare, CI verde → Release `os-278`.

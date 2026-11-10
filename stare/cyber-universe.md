@@ -1,14 +1,14 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-10 14:45 (ora României) · **de:** sesiunea OS programată (14:40) — nicio comandă nouă, nicio sarcină liberă; **`os-277` așteaptă testul pe placă** (CI verde).
+**Actualizat:** 2026-11-10 18:35 (ora României) · **de:** sesiunea OS programată (17:40) — **C-99 gata: Release `os-278`** (CI verde), așteaptă testul pe placă.
 
 ## Acum
-- **C-96 (P6-69) — GATA: Release `os-277` = reparația lui I8 („eroare hardware 0xbadf5620”).** Testul de azi cu `os-276`: I6 și I7 trec, secvențiatorul pornește (C-91 a mers), dar I8 se oprea la prima citire după resetul GSP-ului. cyber-gpu a reparat (`2d66deb`: așteaptă ca driverul NVIDIA în loc să se oprească, resetul în RISC-V care lipsea, jurnal cu fiecare comandă `secv #…`). OS-ul e pe `2d66deb` (`fb4743d`), 9/9 scenarii GPU în QEMU (SIMULARE), CI verde (run 42794463811) → **`os-277`** publicat la 12:20.
-- Pe placă e netestat: după resetul GSP pot apărea alte diferențe la I8 (`CORE_WAIT_FOR_HALT`, `CORE_RESUME`); lanțul se oprește cinstit, iar jurnalul arată acum comanda vinovată.
-- Rămân din sesiunile trecute: `hub ruleaza` (comenzi din hub), `kronos --conversatie`, `kronos --gpu` cu comparația placă/procesor, CI în 3 părți (~27 min).
+- **C-99 (P6-70) — GATA: Release `os-278`.** Testul cu `os-277`: 0xbadf5620 a dispărut, secvențiatorul merge până la `secv #419 CORE_RESUME`, unde placa ignora pornirea SEC2 (registrul în spatele aliasului) → „timeout după 2 s”. cyber-gpu a reparat (`3aed5eb`: pornire prin `CPUCTL_ALIAS`, așteptările I8 de după sonerie 60 s). OS-ul: commit `de63f32`; **ideea lui Adrian**: la fiecare 2 s apare „gpu0: astept raspunsul placii (GSP)... N s (Esc opreste)”, **Esc** oprește așteptarea cinstit („oprit manual dupa N us”), iar jurnalul scrie „asteptat …: raspuns dupa N us”. 9/9 scenarii GPU în QEMU (SIMULARE), CI verde (run 42850183459) → **`os-278`** publicat la 18:27.
+- Pe placă e netestat. Esc merge în consola `cyber>` (nu într-o fereastră de terminal din desktop).
+- Rămân din sesiunile trecute: `hub ruleaza`, `kronos --conversatie`, `kronos --gpu` cu comparația placă/procesor, CI în 3 părți (~28 min).
 
 ## Urmează
-- Jurnalul testului cu `os-277` din `rezultate/` → analiza primului pas oprit (cu `verifica_jurnal_lant` la cyber-gpu).
+- Jurnalul testului cu `os-278` din `rezultate/` → la `secv #419 CORE_RESUME`: `bar0 w 0x840130`, rândurile `asteptat …`, apoi `GSP_INIT_DONE` sau prima eroare.
 - Propunere (doar cu „da”): recuperarea plăcii fără repornire (`recover`) legată în `gpu lant`.
 
 ## Ce oferă proiectul celorlalți
@@ -16,17 +16,17 @@
 - `hub ruleaza`, `test tot`, `kronos --conversatie`, git pe ramuri `os/…`, `web`, `files`; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
 
 ## De ce are nevoie de la ceilalți
-- **`cyber-gpu`:** nimic urgent; `2d66deb` e în OS. Mai târziu: zona de comenzi de 32 KiB pentru modelul de 24 de straturi.
+- **`cyber-gpu`:** nimic urgent; `3aed5eb` e în OS. Mai târziu: zona de comenzi de 32 KiB pentru modelul de 24 de straturi.
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional; modelul poate sta și doar pe al doilea stick).
 
 ## Blocaje / nevoie de Adrian
 
-**Testul cu `os-277` (workstation), aceiași pași ca azi dimineață, doar alt Release:**
-1. Din Release-ul **`os-277`** (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu Rufus pe **stick-ul de test**.
+**Testul cu `os-278` (workstation), aceiași pași ca până acum, doar alt Release:**
+1. Din Release-ul **`os-278`** (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu Rufus pe **stick-ul de test**.
 2. Stick-ul normal rămâne cum e (firmware 570.144 în `firmware\nvidia\ga102\gsp\`, #513 în `kronos\`).
 3. **Oprire completă**, cablul scos **30 s**; pornești de pe stick-ul de test (F8), cu ambele stick-uri.
-4. `gpu lant` → `DA` + Enter. **Poze** la tot, mai ales rândurile `secv #…` de la I8 și ultimul rând `rezultat lant: …`.
+4. `gpu lant` → `DA` + Enter. Dacă apare „astept raspunsul placii (GSP)... N s”, lasă-l să aștepte (până la 60 s); **Esc** îl oprește dacă vrei. **Poze** la tot, mai ales rândurile `secv #419 CORE_RESUME`, `asteptat … raspuns dupa N us` și ultimul rând `rezultat lant: …`.
 5. `raport` (+ `trimite` dacă ai token). Dacă scrie „toti pasii au trecut”: oprire rece și `run kronos --gpu --model /usb2/kronos/kronos_513_q8_0.kgr --n 32 Ana are mere.` + `DA`.
-6. Pozele + `raport\gpu-jurnal-*.txt` în `rezultate/2026-11-10-workstation-os277/` (sau le pune centrul de comandă).
+6. Pozele + `raport\gpu-jurnal-*.txt` în `rezultate/2026-11-10-workstation-os278/` (sau le pune centrul de comandă).
 
 Orice oprire curată (un pas „ESUAT”, Bus Master pus la loc, jurnal scris) e un rezultat bun — analiza o facem noi.
