@@ -1,8 +1,13 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-10 01:30 (ora României) · **de:** sesiunea Cyber-GPU 76 (cloud, fără placă) — oprire scurtă: testul `os-276` e **azi, 10 nov, la 07:15** (C-94)
+**Actualizat:** 2026-11-10 07:50 (ora României) · **de:** sesiunea Cyber-GPU 77 (cloud, fără placă) — C-95 (laptopul GA106) cercetat, apoi **parcat de Adrian**; codul GA106 retras; așteptăm jurnalul testului `os-276`
 
 ## Acum
+- **Sesiunea 77 — C-95 parcat, rămâne doar notița.** Am preluat C-95 la 07:30 și am făcut cercetarea GA106 + recunoașterea doar citire (`256a1f2`, SIMULARE, CI verde).
+  Parcarea lui Adrian (07:28) am văzut-o abia după push → **codul GA106 retras** prin commit de anulare (`24dc19c`; codul = identic cu `bbbdb2f`, 417 teste PASS).
+  Rămâne notița `cyber-gpu/docs/GA106_LAPTOP.md`: firmware-ul GA106 = aceleași 4 fișiere 570.144 (`linux-firmware`: `ga106/gsp -> ga102/gsp`); NVIDIA 570.144 tratează
+  GA106 ca GA104 la FWSEC/Booter/GSP; diferă cipul (`0x176`), ID-ul PCI, VBIOS-ul, 6 GB; riscuri de laptop: modul „Eco” ASUS (placa dispare de pe PCI), alimentare ACPI,
+  VBIOS posibil prin ACPI. Dacă se reia: pornim de la `256a1f2`. OS-ul nu are nimic de schimbat. **Nimic testat pe RTX 3070 Ti.** Testul `os-276` (07:15): niciun jurnal încă la 07:50.
 - **Sesiunea 76 — oprire scurtă.** Nicio comandă nouă pentru noi, niciun jurnal nou de pe placă. Testul `os-276` (reparația C-91) e **azi la 07:15**.
   Codul neschimbat față de `bbbdb2f`; CI verde pe `b27e3ad`, 417 teste PASS local; vârful `7c14c7e` schimbă doar starea. **Nimic testat pe RTX 3070 Ti.**
 - **Sesiunea 75 — oprire scurtă.** Nicio comandă nouă pentru noi (C-94 e la Kronos), niciun jurnal nou de pe placă. Testul `os-276` (reparația C-91)

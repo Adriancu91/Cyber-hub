@@ -1257,5 +1257,5 @@ Format:
      Testul în QEMU + gpu-sim cu un profil GA106 marcat SIMULARE.
   3. Abia după ce Adrian aduce jurnalul de citire de pe laptop și după „DA”-ul lui separat: profilul GA106 în lanțul I6+ (scrierile pe placa laptopului = risc pentru laptop; se discută înainte).
 - reguli: nicio scriere pe placa laptopului în pașii 1–2; workstation-ul (GA104) rămâne prioritatea; firmware-ul NVIDIA nu intră în repo/hub; clean-room.
-- stare: preluat (2026-11-10 07:30, sesiunea Cyber-GPU) — pasul 1 (cercetarea GA106) + partea gpu-sim/recunoaștere doar citire; pasul 2 în OS rămâne la sesiunea OS
+- stare: parcat (2026-11-10 07:50, sesiunea Cyber-GPU) — rezultat: cercetarea GA106 rămâne notiță în `cyber-gpu/docs/GA106_LAPTOP.md` (firmware identic, aceleași funcții NVIDIA ca GA104; riscuri de laptop); codul GA106 scris înainte de a vedea parcarea (`256a1f2`) a fost retras (`24dc19c`), nimic de schimbat în OS
 - **PARCAT de Adrian (10 nov 07:28):** „rămânem pe workstation cu Cyber Universe, pentru că avem deja setări pentru placa aia video”. Opriți lucrul la C-95 (ce e deja scris poate rămâne ca notiță în `docs/`, fără cod nou pentru GA106); workstation-ul (GA104) rămâne singura țintă.
