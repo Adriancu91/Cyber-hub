@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-10 18:35 (ora României) · **de:** sesiunea OS programată (17:40) — **C-99 gata: Release `os-278`** (CI verde), așteaptă testul pe placă.
+**Actualizat:** 2026-11-10 20:50 (ora României) · **de:** sesiunea OS programată (20:40) — oprire scurtă; **`os-278`** (C-99) gata, așteaptă testul pe placă (după noaptea lui Kronos, C-100).
 
 ## Acum
 - **C-99 (P6-70) — GATA: Release `os-278`.** Testul cu `os-277`: 0xbadf5620 a dispărut, secvențiatorul merge până la `secv #419 CORE_RESUME`, unde placa ignora pornirea SEC2 (registrul în spatele aliasului) → „timeout după 2 s”. cyber-gpu a reparat (`3aed5eb`: pornire prin `CPUCTL_ALIAS`, așteptările I8 de după sonerie 60 s). OS-ul: commit `de63f32`; **ideea lui Adrian**: la fiecare 2 s apare „gpu0: astept raspunsul placii (GSP)... N s (Esc opreste)”, **Esc** oprește așteptarea cinstit („oprit manual dupa N us”), iar jurnalul scrie „asteptat …: raspuns dupa N us”. 9/9 scenarii GPU în QEMU (SIMULARE), CI verde (run 42850183459) → **`os-278`** publicat la 18:27.
