@@ -1283,3 +1283,9 @@ Format:
 ### C-98 · kronos · Adrian e la workstation ACUM (10 nov 16:36) — test os-277; placa rezervată
 - data: 2026-11-10 16:36 · de la: centrul de comandă. C-97 se suspendă: **nimic pe placă** până scrie centrul de comandă că Adrian a terminat (sau cel târziu 19:30). Nu porniți nimic nou.
 - stare: nou
+
+### C-99 · cyber-gpu + cyber-universe · URGENT: os-277 — 0xbadf5620 a dispărut, acum I8 „timeout după 2 s” (1776 scrieri)
+- data: 2026-11-10 16:44 · `rezultate/2026-11-10-workstation-os277/` (jurnalul `gpu-jurnal-005.txt` cu toate comenzile secvențiatorului vine în câteva minute)
+- ce: din jurnal — ce așteptăm 2 s și nu vine (răspunsul GSP-RM după secvențiator? un bit de stare? o coadă?); dacă e doar prea puțin timp (GSP-RM poate dura mai mult la prima pornire)
+  sau un pas lipsă (ex. confirmarea că secvențiatorul s-a terminat, trimisă înapoi la GSP). Reparație + test gpu-sim + release. Adrian e la workstation acum.
+- stare: nou
