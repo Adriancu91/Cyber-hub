@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-10 13:50 (ora României) · **de:** sesiunea OS programată (13:40) — nicio comandă nouă, nicio sarcină liberă; **`os-277` așteaptă testul pe placă** (CI verde).
+**Actualizat:** 2026-11-10 14:45 (ora României) · **de:** sesiunea OS programată (14:40) — nicio comandă nouă, nicio sarcină liberă; **`os-277` așteaptă testul pe placă** (CI verde).
 
 ## Acum
 - **C-96 (P6-69) — GATA: Release `os-277` = reparația lui I8 („eroare hardware 0xbadf5620”).** Testul de azi cu `os-276`: I6 și I7 trec, secvențiatorul pornește (C-91 a mers), dar I8 se oprea la prima citire după resetul GSP-ului. cyber-gpu a reparat (`2d66deb`: așteaptă ca driverul NVIDIA în loc să se oprească, resetul în RISC-V care lipsea, jurnal cu fiecare comandă `secv #…`). OS-ul e pe `2d66deb` (`fb4743d`), 9/9 scenarii GPU în QEMU (SIMULARE), CI verde (run 42794463811) → **`os-277`** publicat la 12:20.
