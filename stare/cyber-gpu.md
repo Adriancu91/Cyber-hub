@@ -1,8 +1,12 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-10 17:40 (ora României) · **de:** sesiunea Cyber-GPU 80 (cloud, fără placă) — **C-99 gata (partea GPU, SIMULARE):** cauza timeout-ului de 2 s la `CORE_RESUME` găsită în jurnalul `os-277` și reparată (`3fe11f9`), plus ideea lui Adrian — așteptări lungi cu oprire manuală (`3aed5eb`); 423 teste PASS, CI verde; OS-ul are de legat `3aed5eb` + Esc în `TscClock`
+**Actualizat:** 2026-11-10 19:45 (ora României) · **de:** sesiunea Cyber-GPU 81 (cloud, fără placă) — **oprire scurtă:** C-99 gata la ambele proiecte (OS-ul pe `3aed5eb`, Release `os-278` 18:27), testul pe placă e la următoarea fereastră a lui Adrian (placa e la Kronos 19:00–07:00, C-100); codul neschimbat, 423 teste PASS, CI verde; copia din hub (C-34) reîmprospătată la `ec23e4d`
 
 ## Acum
+- **Sesiunea 81 (19:25–19:45) — oprire scurtă.** Nicio comandă nouă pentru cyber-gpu, niciun jurnal nou de pe placă. OS-ul a terminat partea lui din C-99
+  (`de63f32`, Release **`os-278`**: Esc + „astept raspunsul placii (GSP)... N s”). Adrian a plecat ~18:00, placa e la Kronos până la 07:00 (C-100) → **testul cu `os-278` așteaptă fereastra următoare.**
+  Codul neschimbat față de `3aed5eb` (doar starea, `ec23e4d`); 423 teste PASS, CI verde. **Copia din hub (C-34)** era rămasă la `bbbdb2f` (9 nov) — refăcută din clona completă la `ec23e4d`
+  (verificată: istorie completă, clonă de probă cu același arbore, fără firmware). **Nimic testat pe RTX 3070 Ti.**
 - **Sesiunea 80 (17:16–17:40) — C-99 (I8 „timeout după 2 s”): cauza găsită, reparată, testată în simulare.** Preluat 17:16, jurnalul `gpu-jurnal-005.txt` citit 17:20, reparația `3fe11f9` la 17:28, așteptarea lungă `3aed5eb` la 17:36.
   - **Vestea bună din jurnal:** după reparația C-96, **toate cele 420 de comenzi ale secvențiatorului GSP-RM au mers** (POLL/WRITE pe falcon-ul GSP, `CORE_RESET`, copierea DMA, configurarea) până la ultima, `secv #419 CORE_RESUME`.
   - **Ce s-a întâmplat pe placă la `CORE_RESUME`:** după resetul GSP-ului în RISC-V și cutiile LibOS, driverul a scris pornirea SEC2 (Booter) în `0x840100` (`CPUCTL`):
@@ -24,14 +28,15 @@
 - **Pe placă până acum:** I0–I4 doar citire TREC; I6 TRECE (os-242, os-275, os-276, os-277); I7 TRECE (os-246, os-275, os-276, os-277); I8: mesajul GSP-RM citit corect,
   **419 din 420 de comenzi ale secvențiatorului executate**, oprit la `CORE_RESUME` (reparat acum, în simulare); I9–I14 neîncercate.
 
-## Lista pentru următoarea rulare `gpu lant` (Release-ul OS următor, cu `3aed5eb`)
+## Lista pentru următoarea rulare `gpu lant` (Release `os-278`, cu `3aed5eb`)
 1. Pornire rece; stick-ul de test cu noul Release + stick-ul cu firmware 570.144 și #513 în `kronos\`.
 2. `gpu lant` + „DA” o dată. De urmărit la I8, după `secv #419 CORE_RESUME`: `bar0 w 0x840130` (pornirea prin alias), rândurile `asteptat …` (cât a durat),
    apoi `GSP_INIT_DONE` sau prima eroare după el. Dacă ecranul arată „aștept GSP…” mai mult de ~1 minut, Esc oprește curat (Bus Master pus la loc).
 3. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant` și reparăm primul pas care se oprește.
 
 ## Urmează
-1. OS-ul (C-99 partea 2): `kernel/Cargo.toml` pe `3aed5eb`, Esc + rândul de pe ecran în `TscClock`, Release. Apoi testul pe placă și `verifica_jurnal_lant` pe jurnal.
+1. Testul pe placă cu `os-278` (fereastra următoare a lui Adrian; pașii sunt în `stare/cyber-universe.md`), apoi `verifica_jurnal_lant` pe jurnalul din `rezultate/`
+   și repararea primului pas care se oprește. Fără jurnal nou, sesiunile următoare: oprire scurtă.
 2. După `GSP_INIT_DONE` pe placă: primele apeluri RM (`GSP_GET_GSP_STATIC_INFO`), golden (I8e), I9, I10 — toate scrise, testate doar în simulare.
 3. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
@@ -49,11 +54,10 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe` (C-99 partea 2): `kernel/Cargo.toml` pe `3aed5eb`; `TscClock::abort_requested` (Esc) + rândul „aștept GSP… N s” la ~2 s; opțional
-  `STAT_HEADER_US` 2 s → `sequencer::LONG_WAIT_US`. Detalii în `cyber-gpu/integration/cyber-universe/C-99_core-resume-alias.md`.
+- De la `cyber-universe`: nimic acum — C-99 partea 2 e gata (`de63f32`, `os-278`, cu Esc și antetul cozii de stare tot 60 s).
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
-- De la Adrian: rularea `gpu lant` cu noul Release (când e gata) și jurnalul de pe stick în `rezultate/`.
+- De la Adrian: rularea `gpu lant` cu Release-ul `os-278` la următoarea fereastră și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
 - Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
-- CI GitHub VERDE pe `3fe11f9` și `3aed5eb` (rulările de la 17:29 și 17:36).
+- CI GitHub VERDE pe `3aed5eb` … `03cbc1a` (rulările de la 17:36–17:40); `ec23e4d` e doar document.

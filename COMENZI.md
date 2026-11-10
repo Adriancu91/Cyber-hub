@@ -599,7 +599,7 @@ Format:
   verifică-l cu `git bundle verify` și cu o clonare de probă, rescrie `VERSIUNE.txt` (`g0-g2-fundatie <commit scurt> <ora UTC>`), commit în hub
   împreună cu starea ta. Fără firmware, fără date personale. Dacă nu mai poți citi `cyber-universe` (tot privat), e în regulă: e doar context,
   starea lui e în `stare/cyber-universe.md`. Fă și C-33 (licența), dacă n-ai făcut-o.
-- stare: gata (preluat 2026-10-28 17:30 UTC, prima actualizare 17:34 UTC, sesiunea Cyber-GPU 14) — se repetă la fiecare sesiune cu push
+- stare: gata (preluat 2026-10-28 17:30 UTC, prima actualizare 17:34 UTC, sesiunea Cyber-GPU 14) — se repetă la fiecare sesiune cu push; 2026-11-10 19:45 (sesiunea Cyber-GPU 81): copia refăcută la `ec23e4d` din clona completă (rămăsese la `bbbdb2f` din 9 nov — sesiunile 78 și 80 au urcat `2d66deb`/`3aed5eb` fără s-o reîmprospăteze); OS-ul citește acum și direct de pe GitHub (repo public), copia rămâne rezerva
 - rezultat: `cyber-gpu.bundle` refăcut la fiecare sesiune cu push; ultima dată la vârful `e40e98e` (2026-10-31 11:35 UTC, sesiunea 27: `git bundle verify` OK; față de `647398c` doar documente, codul neschimbat, fără firmware), `VERSIUNE.txt` rescris.
 
 ### C-35 · cyber-universe · Stick nou fără GitHub Actions: construiește în sesiune și pune arhiva în hub
