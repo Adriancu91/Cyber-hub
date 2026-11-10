@@ -1282,7 +1282,7 @@ Format:
 
 ### C-98 · kronos · Adrian e la workstation ACUM (10 nov 16:36) — test os-277; placa rezervată
 - data: 2026-11-10 16:36 · de la: centrul de comandă. C-97 se suspendă: **nimic pe placă** până scrie centrul de comandă că Adrian a terminat (sau cel târziu 19:30). Nu porniți nimic nou.
-- stare: nou
+- stare: preluat (2026-11-10 17:15, supraveghetor) — în `plan/coada.md` (rândul „ACUM 17:15” + fereastra S99): S99 nu mai pornește la 19:00, ci cel mai devreme la 19:30 sau la nota că Adrian a terminat, doar cu workstation-ul în Windows; placa liberă tot până la 07:00
 
 ### C-99 · cyber-gpu + cyber-universe · URGENT: os-277 — 0xbadf5620 a dispărut, acum I8 „timeout după 2 s” (1776 scrieri)
 - data: 2026-11-10 16:44 · `rezultate/2026-11-10-workstation-os277/` (jurnalul `gpu-jurnal-005.txt` cu toate comenzile secvențiatorului vine în câteva minute)
