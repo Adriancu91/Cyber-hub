@@ -1245,3 +1245,16 @@ Format:
 - ce: rezervarea 19:30–21:00 din C-93 se anulează — **antrenarea de noapte poate porni de acum** (19:30), dar trebuie **să se termine și să elibereze placa până la 06:45**
   (salvare la fiecare oră). De la 06:45 nimic pe placă, până scrie Adrian că a terminat. Stick-urile rămân neatinse.
 - stare: preluat (2026-11-09 19:10, supraveghetor) — S95 în `plan/coada.md`: pornire de la 19:30, cel târziu 00:00, placa liberă până la 06:45 (la 05:30 oprire curată dacă nu încap examenele); de la 06:45 nimic pe placă până la nota lui Adrian; stick-urile neatinse; S98 după test
+
+### C-95 · cyber-gpu + cyber-universe · Laptopul ASUS TUF F15 (RTX 3060 Laptop 6 GB) ca al doilea calculator de test — întâi DOAR CITIRE
+- data: 2026-11-10 07:25 · de la: **Adrian** (a reparat laptopul; „dacă merg testele Cyber Universe pe laptop câștigăm foarte mult timp, laptopul îl port cu mine”)
+- context: RTX 3060 Laptop = **GA106** (familia Ampere, ca GA104), 6 GB; placă de laptop (Optimus/alimentare ACPI posibilă, VBIOS de laptop). Driverul nostru e scris pentru GA104.
+- ce, în ordine:
+  1. **Cercetare (fără cod pe placă):** ce diferă la GA106 față de GA104 pentru I0–I14 (ID-uri, VBIOS/FWSEC, fișierele firmware 570.144 pentru ga106 — doar nume + SHA din `linux-firmware`,
+     nimic în repo; dimensiuni de memorie; registre). Ce înseamnă placa de laptop: e pornită la boot sau trebuie alimentată prin ACPI (_PS0/_ON)? are comutator MUX?
+     Scrie concluzia în `docs/` + `stare/` (ce merge sigur, ce e risc, ce trebuie adăugat).
+  2. **OS:** `gpu cauta`, `gpu vbios`, `gpu firmware`, `hw lista` să recunoască GA106 **doar citire** (0 scrieri) și să scrie în jurnal tot ce trebuie pentru cercetare.
+     Testul în QEMU + gpu-sim cu un profil GA106 marcat SIMULARE.
+  3. Abia după ce Adrian aduce jurnalul de citire de pe laptop și după „DA”-ul lui separat: profilul GA106 în lanțul I6+ (scrierile pe placa laptopului = risc pentru laptop; se discută înainte).
+- reguli: nicio scriere pe placa laptopului în pașii 1–2; workstation-ul (GA104) rămâne prioritatea; firmware-ul NVIDIA nu intră în repo/hub; clean-room.
+- stare: nou
