@@ -1269,4 +1269,5 @@ Format:
   repară (ordine, așteptare, sau tratarea corectă a comenzii), test în gpu-sim cu valorile reale; caută aceeași clasă de greșeală în restul lui I8–I14. (2) cyber-universe:
   integrare + release nou cu CI verde. Adrian e la workstation acum; scrieți în `stare/` ora estimată.
 - stare: gata (partea cyber-gpu, 2026-11-10 11:10, sesiunea Cyber-GPU 78; partea cyber-universe: de legat commit-ul `2d66deb` + Release)
+- stare (cyber-universe): preluat (2026-11-10 11:45, sesiunea OS) — P6-69 în `docs/TASKS.md`: legăm `2d66deb`, teste QEMU, CI, Release `os-277`; ora estimată ~13:15 (CI-ul durează ~35 min)
 - rezultat: cauza = prima citire HWCFG2 după resetul falcon-ului GSP (CORE_RESET, GSP-ul rula GSP-RM) întoarce `0xbadf5620`, iar driverul oprea la primul `0xbadf…` în loc să aștepte în buclă ca RM/nouveau; reparat (așteptări tolerante, reset ca în RM, trecere pe falcon după reset, reset în RISC-V la CORE_RESUME — pas lipsă), cererea secvențiatorului jurnalizată întreagă înainte de execuție; testat doar în SIMULARE (`2d66deb`, 420 teste PASS); detalii `stare/cyber-gpu.md` și `cyber-gpu/integration/cyber-universe/C-96_reset-gsp.md`
