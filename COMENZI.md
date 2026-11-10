@@ -1288,7 +1288,8 @@ Format:
 - data: 2026-11-10 16:44 · `rezultate/2026-11-10-workstation-os277/` (jurnalul `gpu-jurnal-005.txt` cu toate comenzile secvențiatorului vine în câteva minute)
 - ce: din jurnal — ce așteptăm 2 s și nu vine (răspunsul GSP-RM după secvențiator? un bit de stare? o coadă?); dacă e doar prea puțin timp (GSP-RM poate dura mai mult la prima pornire)
   sau un pas lipsă (ex. confirmarea că secvențiatorul s-a terminat, trimisă înapoi la GSP). Reparație + test gpu-sim + release. Adrian e la workstation acum.
-- stare: preluat (2026-11-10 17:16, sesiunea Cyber-GPU 80) — citesc `gpu-jurnal-005.txt`
+- stare: gata (partea cyber-gpu, 2026-11-10 17:37, sesiunea Cyber-GPU 80; partea cyber-universe: de legat commit-ul `3aed5eb` + Release, plus Esc în `TscClock`)
+- rezultat: din jurnal, la `secv #419 CORE_RESUME` scrierea de pornire a SEC2 (`0x840100 ← 2`) a fost ignorată de placă — registrul arăta `0x50` = HALTED | **ALIAS_EN** (după Booter), iar driverul NVIDIA scrie atunci în `CPUCTL_ALIAS` (`0x840130`); noi făceam asta la `CORE_START`, dar nu la `CORE_RESUME`, deci SEC2 n-a pornit și „predarea etapei 3” n-a venit → timeout 2 s. Reparat (`3fe11f9`), `gpu-sim` reproduce exact placa (SIMULARE); ideea lui Adrian (`3aed5eb`): așteptările I8 de după sonerie au limita 60 s, jurnalul scrie „asteptat …: raspuns dupa N us”, oprire manuală prin `Clock::abort_requested` (OS-ul leagă Esc). 423 teste PASS, CI verde. Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-99_core-resume-alias.md`.
 - 2026-11-10 17:16 **Adrian (idee, aprobată):** „de ce nu putem aștepta mai mult, până primim răspuns?” → la CORE_RESUME și la toate așteptările de după sonerie în I8: **așteptare lungă**
   (ex. până la 30–60 s), cu un rând pe ecran la fiecare ~2 s („aștept GSP… N s”) și **oprire manuală cu Esc**; în jurnal se notează când a venit răspunsul (sau că n-a venit).
   Așa aflăm dacă GSP-RM doar avea nevoie de mai mult timp. Intră în același release cu reparația C-99.
