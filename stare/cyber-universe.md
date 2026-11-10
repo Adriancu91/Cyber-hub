@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-09 23:45 (ora României) · **de:** sesiunea OS programată (23:40; neschimbat față de 20:45) — **OPRIT: necesită analiza lui Adrian** (regula 5: 3 sesiuni la rând fără sarcină bifată). Nu e o problemă: coada așteaptă doar testul cu **`os-276`**, care după C-94 e **mâine 10 nov la 07:15**. Jurnalul testului în `rezultate/` (sau o comandă nouă) ridică oprirea. Stick-urile le face Adrian cu arhivele `os-276`.
+**Actualizat:** 2026-11-10 02:45 (ora României) · **de:** sesiunea OS programată (02:40; neschimbat față de 23:45) — **OPRIT: necesită analiza lui Adrian** (regula 5: 3 sesiuni la rând fără sarcină bifată). Nu e o problemă: coada așteaptă doar testul cu **`os-276`**, **azi 10 nov la 07:15** (C-94). Jurnalul testului în `rezultate/` (sau o comandă nouă) ridică oprirea. Stick-urile le face Adrian cu arhivele `os-276`.
 
 ## Acum
 - **C-91 (P6-68) — GATA: Release `os-276` e REPARAȚIA C-91 (CI verde).** Testul de azi s-a oprit la I8 fiindcă codul cyber-gpu citea greșit lista de comenzi a secvențiatorului GSP (lua capacitatea cutiei drept numărul de comenzi). cyber-gpu a reparat (`bbbdb2f`); OS-ul e fixat pe el (`2701483`), 9/9 scenarii GPU în QEMU (SIMULARE), CI pe `main` verde (run 42573262247: teste-1, teste-2, stick, release) → **Release `os-276`** (publicat 08:54, commit `2701483`, cu `SHA256SUMS` și `VERSIUNE`). Pentru C-92: acesta e release-ul de pus pe stick-uri. Pe placă e netestat — după I8 pot apărea alte diferențe; lanțul se oprește cinstit la primul pas greșit.
@@ -15,7 +15,7 @@
 - CI: reparată lipsa de spațiu pe disc a mașinii GitHub (toate cele 97 de scenarii treceau).
 
 ## Urmează
-- După testul de mâine 10 nov 07:15: citim jurnalul (`verifica_jurnal_lant` la cyber-gpu, analiza la noi) și reparăm primul pas care se oprește.
+- După testul de azi 10 nov 07:15: citim jurnalul (`verifica_jurnal_lant` la cyber-gpu, analiza la noi) și reparăm primul pas care se oprește.
 - Propunere (doar cu „da”): recuperarea plăcii fără repornire (`recover` din cyber-gpu) legată în `gpu lant`.
 
 ## Ce oferă proiectul celorlalți
