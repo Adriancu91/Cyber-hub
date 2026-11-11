@@ -1,130 +1,64 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-11 15:20 (ora României) · **de:** sesiunea Cyber-GPU 87 (cloud, fără placă) — **jurnalul `os-280` citit; comparația „trei surse” (C-107) găsește o singură diferență față de toți cei patru driveri care pornesc GSP-RM 570: `bDmemStack` (noi 0, ei 1) → pus 1** (`cyber-gpu` `b3ac503`, un octet, 440 teste PASS, CI verde; `d3c5351` adaugă conținutul brut al celor 2 jurnale PMU în jurnal). Candidatul pentru `0x59`, **DEDUS, neprobat** — se vede la `gpu lant` cu Release-ul **`os-282`** (os-281 are codul vechi). **Nimic testat pe RTX 3070 Ti.**
+**Actualizat:** 2026-11-11 18:20 (ora României) · **de:** sesiunea Cyber-GPU 88 (cloud, fără placă) — **os-283: `bDmemStack` nu era cauza; cauza probabilă a lui `0x59` e ORDINEA (RPC-urile de pornire ajungeau la GSP-RM după ce pornise); C-108: 10 variante numerotate gata pentru joi (`20830f5`/`6611c27`, 445 PASS, CI verde).**
 
 ## Acum
-- **Sesiunea 87 (14:25–15:05) — după os-280: ce spun cele 844 de asserturi și ce îi lipsea lui GSP-RM.** Jurnalul `gpu-jurnal-008.txt` (trimis singur de OS):
-  I6, I7, cele 420 de comenzi trec; `GSP_INIT_DONE` cu `0x59` ca la os-279; **844 de înregistrări NOCAT, toate ASSERT, toate ÎNAINTE de secvențiator, toate cu adrese
-  diferite** (crescătoare, `0x019ef3c6 … 0x019f0060` la primele 16), fără linie și fără stivă. Din codul RM: pe GSP asserturile se raportează așa (fără linie, cu adresa
-  de întoarcere) → sunt locuri de apel diferite, nu o buclă; **nouveau r570 ignoră implicit înregistrările NOCAT** → apar și pe porniri bune → probabil zgomot, nu cauza.
-  - **Comparația câmp cu câmp** (`cyber-gpu/docs/os-280_ANALIZA_0x59.md` §3) cu RM 570.144, nouveau r570, tinygrad și nova-core: `GspSystemInfo`, registru, regiuni LibOS,
-    `GspFwWprMeta`, `GSP_ARGUMENTS_CACHED` — **o singură diferență față de toate patru: `bDmemStack`** (stiva sarcinii RM de pe GSP: ei în DMEM = 1, noi 0 = „stiva LibOS”,
-    varianta pe care RM o alege doar la cerere). `NV_ERR_OPERATING_SYSTEM` e codul generic al stratului LibOS. **Reparat: `b3ac503`** (octetul 48 al structurii, verificat cu
-    bindgen; nimic altceva nu se schimbă pe placă: aceleași scrieri, aceeași așezare VRAM). Tot ce diferă în alt loc e la fel ca cel puțin un driver care merge.
-  - Nota pentru OS: `cyber-gpu/integration/cyber-universe/os-280_bdmemstack.md` — **nimic de schimbat în codul OS**, doar legarea + Release `os-282`.
-  - **15:20, „C-102 continuare 2”:** conținutul celor 2 `UCODE_LIBOS_PRINT` (PMU, 16 și 24 B la os-280) ajunge în jurnal **ca atare** (cuvinte LE, ≤ 64 B, nedecodat; `d3c5351`);
-    `verifica_jurnal_lant` îl tipărește. Nimic de schimbat în OS.
-  - 440 teste PASS, CI verde (`b3ac503`, `2bbd0b3`; `d3c5351` în curs). Copia din hub (C-34) la `d3c5351` (202 commit-uri, `git bundle verify` OK, fără firmware). C-107 `gata`.
-- **Sesiunea 86 (13:26–13:45) — pregătirea analizei `os-280`.** Nimic nou în hub pentru cyber-gpu (C-103 `gata` partea GPU; C-104 e pentru OS); Release-ul `os-280` nu există încă
-  (sesiunea OS n-a mai trecut de la 11:58). Un pas mic pe calea critică: jurnalul `os-280` va avea până la 20 de blocuri NOCAT printre ~3000 de rânduri; modulul nou `gsp::nocat_log`
-  (doar text) le adună într-un rezumat de câteva rânduri — înregistrări primite / feluri / jurnale LibOS; felurile jurnalizate ordonate după cât de des apar (asserturi cu adresă + linie
-  + stivă + `count`; erori cu codul și numele `NV_STATUS`, sursă, subsistem, motor); câte au venit **înainte** și câte **după** cererea secvențiatorului; `GSP_INIT_DONE` cu numele
-  codului și „eroarea vine din …”. Citește și formatul vechi (os-279: „843 mesaje 0x1020 numite, dar nedecodate”), ca cele două rulări să se compare. Nu spune nimic ce nu e în jurnal.
-  T120 (SIMULARE: jurnalul produs de driver, tipărit cu prefixul OS-ului, citit înapoi — toate cifrele regăsite), T120b; pe `gpu-jurnal-007.txt` același verdict ca înainte + rezumatul.
-  440 teste PASS, CI (vezi mai jos). OS-ul nu are nimic de legat pentru asta (unealtă pe gazdă). Copia din hub (C-34) la `a669387` (clonă completă, 198 commit-uri, `git bundle verify` OK).
-- **Sesiunea 85 (13:20–13:30) — C-103 (placa readusă la starea de pornire fără repornire), partea GPU, SIMULARE.** Preluat 13:20 (după C-102, cum cere comanda).
-  - **Studiul (`cyber-gpu/docs/C-103_RESET_PLACA.md`):** calea publică de a coborî WPR2 fără reset PCIe e **Booter Unload** — exact ce face driverul NVIDIA la descărcare
-    (`kgspExecuteBooterUnloadIfNeeded_TU102`, 570.144 MIT): reset SEC2, programul semnat `booter_unload` cu cutiile poștale `0xFF`/`0xFF`, mailbox0 trebuie 0, apoi
-    `WPR2_ADDR_HI` trebuie să citească 0. **Fișierul e deja pe stick-ul lui Adrian** (al 4-lea din I4). FLR: plăcile GeForce de regulă nu-l anunță — se citește din
-    spațiul de configurare; Secondary Bus Reset pe root-port (`b2:xx.0` → `b3`) = rezervă, decizia OS-ului; D3hot nu resetează dacă `No_Soft_Reset` = 1; D3cold nu există pe desktop
-    fără S5 + „Power On By RTC” (varianta (b) a lui Adrian) sau priză inteligentă (c).
-  - **Implementat (`364ece2`, doar adăugări):** `falcon::booter_unload[_dma]` (reset GSP → reset SEC2 → Booter Unload → verificări), modelul în `gpu-sim`; test T118: după I6 + I7,
-    unload → WPR2 = 0 → **I6 rulează din nou în aceeași „pornire”**. `gpu_pci::caps::reset_capabilities` (doar citiri: FLR, `No_Soft_Reset`, D-state) pentru `raport` (T119).
-    Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-103_gpu-recupereaza.md`. Nicio scriere nouă în afara ferestrelor GSP/SEC2; registrele WPR2 nu le scriem noi.
-  - Pe placă: `gpu recupereaza` (OS) după un lanț oprit la I8; dacă WPR2 citește 0, a doua încercare nu mai cere cablul scos. Dacă Booter dă eroare: codul se notează, varianta cu
-    FWSEC-SB înainte. 437 teste PASS, CI verde (`364ece2`, `bcc314e`). Copia din hub (C-34) la `bcc314e`.
-- **Sesiunea 85 (12:28–13:05) — jurnalul `os-279` (`gpu-jurnal-007.txt`, 12:20) citit și răspuns la întrebarea sesiunii 84.** Nicio comandă nouă în hub; e pasul următor scris de C-102.
-  - **Vestea bună:** lanțul de pornire merge **până la capăt**: I6, I7, toate cele 420 de comenzi ale secvențiatorului; la `#419 CORE_RESUME` Booter-ul a rulat
-    de-adevăratelea (SCRATCH_14 `0x13100000` → `0x17100000`, bitul 26 pus abia după `0x840130 ← 2`, nu era bit vechi; SEC2 MAILBOX0 = 0), GSP RISC-V activ (`0x80`).
-    **GSP-RM a pornit și a răspuns.**
-  - **Vestea proastă:** răspunsul lui e `GSP_INIT_DONE` cu `rpc_result = 0x59` = **`NV_ERR_OPERATING_SYSTEM`** — GSP-RM însuși spune că inițializarea lui a eșuat
-    (driverul NVIDIA citește același câmp la fel). Varianta „pointer stricat în coadă” e **exclusă**. Înainte de asta GSP-RM trimisese **843 de mesaje `0x1020`**
-    și 2 × `0x100c`, pe care jurnalul le număra, dar nu le citea.
-  - **Ce sunt (antetele MIT 570.144):** `0x1020` = `GSP_POST_NOCAT_RECORD` — o înregistrare de diagnostic (NOCAT) pe care RM-ul de pe GSP o trimite driverului:
-    tip (BUGCHECK/ENGINE/TDR/RC/ASSERT), sursă (text), subsistem, cod de eroare, motorul vinovat; la ASSERT, adresa + linia din sursă și stiva de apeluri.
-    **843 de astfel de înregistrări = RM-ul de pe GSP s-a plâns de 843 de ori în timpul propriei inițializări** — pe o pornire sănătoasă nu apare niciuna.
-    `0x100c` = `UCODE_LIBOS_PRINT`, jurnalul PMU-ului în format binar LibOS (nu-l decodăm: ar cere simbolurile firmware-ului).
-  - **Cauza lui `0x59` nu se poate spune încă** — e în conținutul celor 843 de înregistrări, pe care jurnalul vechi nu l-a scris. O „reparație” a parametrilor acum ar fi inventată.
-  - **Ce am făcut (`5cfe523`, doar adăugări, doar citiri din mesaje primite):** jurnalul **decodează** fiecare înregistrare NOCAT (primele 4 și fiecare fel nou în
-    întregime — `text NOCAT: source = "..."`, `recType`, codul cu numele `NV_STATUS` sau adresa + linia assertului, `subsystem`, stiva —, restul numărate),
-    scrie descriptorul și mărimea jurnalelor PMU, numește orice mesaj sărit și orice cod `NV_STATUS` (tabel generat din antetele NVIDIA: 143 coduri, 228 funcții,
-    36 evenimente), și pune un **rezumat** la orice sfârșit al așteptării (total, NOCAT, feluri, LibOS). Tip nou de rând: `text <nume> = "..."`. Teste T116–T117
-    (SIMULARE); `verifica_jurnal_lant` pe `gpu-jurnal-007.txt`: „OPRIT CURAT la i8-gsp-init”, rândurile noi ignorate (verificat).
-  - 433 teste PASS, clippy, format, build no_std PASS, CI verde (`93d530c`, `d84e331`, `5cfe523`). Nota pentru OS: `cyber-gpu/integration/cyber-universe/os-279_nocat-decodat.md`.
-    Copia din hub (C-34) reîmprospătată la `f781428` (clonă completă, 195 commit-uri, `git bundle verify` OK, fără firmware).
-- **Sesiunea 84 (10:28–10:52) — C-102 URGENT: ce e `0x59` și de unde vine.** Preluat 10:30; jurnalul `gpu-jurnal-006.txt` citit 10:35; commit `d31ad8d` 10:46, CI verde 10:48.
-  - **Vestea bună din jurnal:** reparația C-99 a mers: `#419 CORE_RESUME` a pornit SEC2 prin alias (`0x840130 ← 2`), „SEC2 (Booter) gata: răspuns după 2 µs”, `FALCON_OS` scris, „GSP RISC-V activ: răspuns după 2 µs”. **Toate cele 420 de comenzi ale secvențiatorului au trecut.** Eroarea a venit ~150 ms **după** secvențiator (nu există rândul „comanda de mai jos s-a oprit”).
-  - **Ce e `0x59`:** în codul nostru, după secvențiator, `0x59` poate veni din exact două locuri: (1) `GSP_INIT_DONE` sosit de la GSP-RM cu `rpc_result = 0x59` — în antetele publice NVIDIA 570.144 (`nvstatuscodes.h`, MIT) `0x59` = **`NV_ERR_OPERATING_SYSTEM`** („eroare generică de sistem de operare” — pe GSP-RM, un apel către sistemul lui LibOS care a dat greș); (2) pointerul de scriere al cozii de stare citit **89** (= 0x59), în afara cozii de 63 (memoria cozii stricată după resume). **Jurnalul vechi nu scria nicio citire în I8, așa că nu se poate spune care din două** — o „reparație” fără acest răspuns ar fi inventată, deci nu am făcut-o.
-  - **Observația (a) din REZULTAT stă:** 2 µs e prea puțin ca Booter să fi rulat; bitul 26 din `NV_PGC6_BSI_SECURE_SCRATCH_14` putea fi deja pus de la I7. Am citit driverul NVIDIA (`kernel_gsp_ga102.c`, CORE_RESUME): face exact pașii noștri și **nu scrie și nu șterge** acest registru → nu scriem nici noi în el (regula: nicio scriere nouă în registre).
-  - **Ce am făcut (`d31ad8d`, doar adăugări, doar citiri):** jurnalul numește acum sursa oricărei erori din I8: rânduri `valoare <nume> = 0x…` cu 7 registre (SCRATCH_14, SEC2 CPUCTL/MAILBOX0/1, GSP RISCV_CPUCTL, GSP MAILBOX0/1) **înainte de pornirea SEC2** și **după predarea etapei 3** la `CORE_RESUME`; fiecare mesaj GSP-RM sărit (funcția, `rpc_result`); la `GSP_INIT_DONE` → `rpc_result` + „I8: eroarea vine din GSP_INIT_DONE”; la coadă → „pointer in afara cozii (0..62)” + „eroarea vine din coada de stare”; la timp expirat / Esc → aceleași registre. Teste T113–T115 (SIMULARE). `verifica_jurnal_lant` pe `gpu-jurnal-006.txt`: „OPRIT CURAT la i8-gsp-init”, I8 326 scrieri + 1 sonerie; rândurile noi sunt ignorate de parser (verificat).
-  - 426 teste PASS, clippy, format, build no_std PASS, CI verde (rularea 160 pe `d31ad8d`). Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-102_i8-0x59-diagnostic.md`. Copia din hub (C-34) rămâne la `6290eee` (OS-ul citește direct de pe GitHub; se reîmprospătează la sesiunea următoare).
-- **Sesiunea 80 (17:16–17:40) — C-99 (I8 „timeout după 2 s”): cauza găsită, reparată, testată în simulare.** Preluat 17:16, jurnalul `gpu-jurnal-005.txt` citit 17:20, reparația `3fe11f9` la 17:28, așteptarea lungă `3aed5eb` la 17:36.
-  - **Vestea bună din jurnal:** după reparația C-96, **toate cele 420 de comenzi ale secvențiatorului GSP-RM au mers** (POLL/WRITE pe falcon-ul GSP, `CORE_RESET`, copierea DMA, configurarea) până la ultima, `secv #419 CORE_RESUME`.
-  - **Ce s-a întâmplat pe placă la `CORE_RESUME`:** după resetul GSP-ului în RISC-V și cutiile LibOS, driverul a scris pornirea SEC2 (Booter) în `0x840100` (`CPUCTL`):
-    **`0x840100: 0x50 <- 0x2 => 0x50`** — registrul arăta `0x50` = HALTED | **ALIAS_EN** și scrierea nu s-a prins (citit înapoi neschimbat). SEC2 n-a pornit niciodată,
-    deci „predarea etapei 3” pe care o așteptam n-a venit: timeout după 2 s. La I7 același registru arăta `0x10` (ALIAS_EN = 0) și pornirea mersese; după ce rulează
-    Booter (program semnat), `CPUCTL` rămâne în spatele aliasului. Driverul NVIDIA 570.144 (public, MIT, `kflcnStartCpu_TU102`) și nouveau verifică bitul `ALIAS_EN`
-    și scriu atunci în `CPUCTL_ALIAS` (`0x840130`). **Noi făceam asta la `CORE_START`, dar nu la `CORE_RESUME`.** Nu era „prea puțin timp”: oricât am fi așteptat, SEC2 nu pornise.
-  - **Reparația (`3fe11f9`, doar adăugări):** `falcon::start_cpu` — pornirea prin `CPUCTL_ALIAS` când `ALIAS_EN` e pus; folosit acum și de `CORE_RESUME`.
-    **Dovada în simulare:** `gpu-sim` modelează placa (după Booter, `CPUCTL` al SEC2 citește `0x50`, scrierea în `CPUCTL` e ignorată — OBSERVAT); driverul vechi
-    pe acest model dă exact `Timeout { waited_us: 2000000 }` (placa: 2 000 003 µs); cel nou pornește prin `0x840130` și ajunge la `GSP_INIT_DONE` (T111).
-  - **Ideea lui Adrian (aprobată 17:16, `3aed5eb`):** așteptările I8 de după sonerie care depind de GSP-RM (`CORE_WAIT_FOR_HALT`, `CORE_RESUME`, `GSP_INIT_DONE`)
-    au acum limita **60 s** (`sequencer::LONG_WAIT_US`; `INIT_DONE_US` 10 s → 60 s); când răspunsul vine, jurnalul scrie **după cât timp**
-    (`asteptat CORE_RESUME: SEC2 (Booter) gata: raspuns dupa N us`, …); **oprirea manuală**: metodă nouă `Clock::abort_requested` (implicit `false`) întrebată
-    în toate buclele de așteptare → eroarea nouă „oprit manual dupa N us”. Tasta Esc și rândul „aștept GSP… N s” de pe ecran le leagă OS-ul în `TscClock` (T112).
-  - 423 teste PASS, clippy, format, build no_std PASS, CI verde pe `3fe11f9` și `3aed5eb`. **Nimic testat pe RTX 3070 Ti.**
-  - Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-99_core-resume-alias.md`.
-- **Sesiunea 78 — C-96 (`0xbadf5620` la `CORE_RESET`)** a mers pe placă azi (os-277): secvențiatorul a trecut de reset. Detalii în `cyber-gpu/docs/IMPLEMENTATION_STATUS.md`.
-- **Sesiunea 77 — C-95 (laptopul GA106) parcat de Adrian;** rămâne notița `cyber-gpu/docs/GA106_LAPTOP.md`.
-- **Pe placă până acum:** I0–I4 doar citire TREC; I6 TRECE (os-242, os-275, os-276, os-277); I7 TRECE (os-246, os-275, os-276, os-277); I8: mesajul GSP-RM citit corect,
-  **419 din 420 de comenzi ale secvențiatorului executate**, oprit la `CORE_RESUME` (reparat acum, în simulare); I9–I14 neîncercate.
+- **Sesiunea 88 (17:30–18:20) — după os-283 + C-108.**
+  - **Jurnalul `gpu-jurnal-009.txt` (os-283, `bDmemStack = 1`) e identic cu `gpu-jurnal-008.txt` (os-280)** — rând cu rând, în afara marcajelor de timp: aceleași 844 de asserturi,
+    aceleași adrese, `GSP_INIT_DONE 0x59`. Deci `bDmemStack` nu era cauza (OBSERVAT).
+  - **Ce diferă față de toți cei patru driveri e ORDINEA, nu conținutul:** RM 570.144, tinygrad, nouveau și nova-core pun `SetSystemInfo` + `SetRegistry` (și soneria) în coada de
+    comenzi **înainte** ca Booter să pornească GSP-RM. Noi le puneam la I8, după I7 — în jurnal, soneria vine la ≈ 0,3–0,4 s după pornirea GSP-RM. NVIDIA scrie chiar de ce contează
+    (570.144, MIT): GSP-RM le rulează „*in early boot before OBJGPU is created*” și „*GSP-RM may skip these RPCs if not sent in time*”. **DEDUS:** GSP-RM citește coada o dată, la
+    pornire; fără `SetSystemInfo` își face OBJGPU fără BAR-uri și ID-uri PCI → asserturile în lanț, apoi `NV_ERR_OPERATING_SYSTEM`. Se potrivește cu jurnalul identic de la os-278
+    la os-283, orice am schimbat în conținut. Studiul: `cyber-gpu/docs/os-283_ANALIZA_ORDINE_RPC.md`.
+  - **C-108 gata (partea GPU, SIMULARE):** modulul nou `nvidia_ga104::gsp::variants` — **10 variante numerotate**, fiecare cu nume, „ce schimbă” (ro) și sursa:
+    **1 `rpc-inainte`** (doar ordinea: RPC-urile + soneria la I7, înainte de Booter — cea mai probabilă), 2 +setul nova-core (hostPageSize 0, bIsPrimary 0, RMDevidCheckIgnore),
+    3 +setul tinygrad (bIsPassthru 1, bIsPrimary 0, hostPageSize 0), 4 +setul nouveau, 5 +CLOCK_BOOST (RM), 6 +doar bIsPassthru, 7 +doar RMDevidCheckIgnore, 8 +stiva LibOS
+    (bDmemStack 0), 9–10 ordinea veche + seturile tinygrad/nova (dacă ordinea nu era cauza). Toate valorile din surse publice; niciun registru nou. Valorile trimise ajung în jurnal
+    (`valoare varianta I8 (C-108): numarul = …`, `text varianta I8: numele = "…"`, câte un rând pe setare).
+  - **SIMULARE (T122):** modelul GSP-RM consumă la „pornire” ce e în coadă și răspunde `0x59` dacă lipsesc cele două RPC-uri — ordinea os-283 dă exact `0x59`, varianta 1 dă `0`
+    (modelul e scris după comentariile RM, nu după placă — dovada e joi). `verifica_jurnal_lant` acceptă noua ordine a I7 (soneria înainte de resetul GSP).
+  - Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-108_variante-i8.md` (funcțiile, schimbările în `gpu_i7`/`gpu_i8`, `gpu variante`, procedura).
+  - 445 teste PASS, clippy, format, build no_std; CI verde pe `20830f5` (rularea 174, 57 s); `6611c27` (doc) în curs. Copia din hub (C-34) la `6611c27`.
+- **Sesiunea 87 (14:25–15:20):** comparația câmp cu câmp cu patru drivere (C-107) → `bDmemStack = 1` (`b3ac503`); conținutul jurnalelor PMU în jurnal (`d3c5351`). Infirmat de os-283 ca
+  fiind cauza; rămâne valoarea corectă (toți o au 1).
+- **Sesiunile 84–86:** jurnalul I8 numește sursa erorii (`d31ad8d`), decodează NOCAT (`5cfe523`), rezumatul NOCAT în `verifica_jurnal_lant` (`a669387`); C-103 partea GPU în SIMULARE
+  (`364ece2`: Booter Unload → WPR2 = 0 → I6 din nou fără pornire rece; `gpu_pci::caps`).
+- **Pe placă până acum:** I0–I4 doar citire TREC; I6 TRECE (os-242…os-283); I7 TRECE (os-246…os-283); I8: toate cele 420 de comenzi ale secvențiatorului trec, GSP-RM pornește și
+  răspunde `GSP_INIT_DONE 0x59` (os-278, os-279, os-280, os-283 — identic); I9–I14 neîncercate.
 
-## Lista pentru următoarea rulare `gpu lant` (Release `os-282`, cu `b3ac503` sau mai nou)
-1. Pornire rece; stick-ul de test cu noul Release + stick-ul cu firmware 570.144 și #513 în `kronos\`.
-2. `gpu lant` + „DA” o dată. **Dacă `bDmemStack` era cauza:** după `secv #419 CORE_RESUME`, rândul `valoare GSP_INIT_DONE: rpc_result … = 0x00000000` și lanțul
-   intră în **I8e (golden)** — primul apel RM pe placă. **Dacă nu:** același `0x59`; se compară numărul de înregistrări NOCAT (844?) și primele 16 adrese cu os-280.
-3. După un lanț oprit: `gpu recupereaza` + „DA” (C-103, prima probă pe placă) — dacă WPR2 citește 0, a doua încercare se face fără cablul scos.
-4. După: jurnalul în `rezultate/` (sau `trimite`); noi rulăm `verifica_jurnal_lant <jurnal> 0x9c66000`.
+## Lista pentru joi 12 nov ~07:00 (C-108; Release-ul îl face sesiunea OS, P6-78)
+1. Fiecare variantă = o pornire rece: oprire → cablu 30 s → F8 stick de test → `gpu lant --varianta N` → `DA` → `trimite` (sau jurnalul în `rezultate/`) → `N+1`. **Începe cu 1.**
+2. **Reușita:** după `secv #419 CORE_RESUME`, rândul `valoare GSP_INIT_DONE: rpc_result … = 0x00000000` și lanțul intră în **I8e (golden)**. Se oprește la prima variantă care trece.
+3. Dacă varianta 1 dă tot `0x59`: de văzut câte înregistrări NOCAT (844 iar?) și dacă rândul `varianta I8 … numarul = 0x00000001` e în jurnal (altfel Release-ul nu are variantele).
+4. Opțional, după un lanț oprit: `gpu recupereaza` + `DA` (C-103, prima probă) — dacă WPR2 citește 0, următoarea variantă merge fără cablul scos.
 
 ## Urmează
-0. **C-103 pe placă (OS):** `gpu recupereaza` după un lanț oprit — Booter Unload → WPR2 = 0? Dacă da, I6–I8 se reiau fără pornire rece (`cyber-gpu/integration/cyber-universe/C-103_gpu-recupereaza.md`).
-1. OS-ul leagă `b3ac503` (sau mai nou) → Release `os-282` → `gpu lant` (pornire rece; cu Adrian de față, sau prin bucla C-104/C-105 când o aprobă). Dacă `rpc_result = 0`:
-   I8e (golden) pe placă — se citește jurnalul. Dacă `0x59` rămâne: conținutul mesajelor nu mai diferă de nova/nouveau → se caută ordinea/momentul lor și starea plăcii;
-   rezerve, câte una pe rulare: `bIsPassthru = 1` (tinygrad), `CLOCK_BOOST` (RM pe GA104), `RMDevidCheckIgnore` (nouveau/nova). Fără jurnal nou, niciun pas nou.
-2. După `GSP_INIT_DONE` pe placă: primele apeluri RM (`GSP_GET_GSP_STATIC_INFO`), golden (I8e), I9, I10 — toate scrise, testate doar în simulare.
-3. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
+1. **OS-ul (P6-78):** leagă `20830f5` (sau `6611c27`), `gpu variante`, `gpu lant --varianta N`, jurnalul și raportul cu numărul variantei → Release înainte de joi 06:00.
+2. **Joi:** jurnalele variantelor în hub; noi rulăm `verifica_jurnal_lant <jurnal> 0x9c66000` pe fiecare. Dacă varianta 1 trece → I8e (golden) pe placă = primul apel RM; se citește jurnalul.
+   Dacă nu trece niciuna din cele 10: următoarea comparație e starea plăcii/memoriei (adresele DMA reale, ce vede GSP-RM în RAM), nu conținutul mesajelor.
+3. După `GSP_INIT_DONE = 0` pe placă: I8e, I9, I10 — scrise, testate doar în simulare.
 
 ## Ce oferă proiectul celorlalți
-- **Sesiunea 87 (după os-280):** `gsp::libos::encode_gsp_args` pune `bDmemStack = 1` (aceeași semnătură; constanta nouă `libos::B_DMEM_STACK_OFF`). Nimic redenumit sau șters;
-  OS-ul compilează neschimbat și ia reparația la legarea commit-ului nou.
-- **Sesiunea 85 (C-103, doar adăugări):** `nvidia_ga104::gsp::falcon::{booter_unload, booter_unload_dma, BOOTER_UNLOAD_MAILBOX, Unloaded}`; `gpu_pci::caps::{reset_capabilities,
-  ResetCapabilities}` (doar citiri); `gpu-sim`: `SimUcode::BooterUnload`, `SimFault::Wpr2Stuck`.
-- **Sesiunea 85 (după os-279, doar adăugări):** `gpu_core::diag::Event::Text { what, len, bytes }` (afișat `text <nume> = "..."`) + `Event::text(...)`, `TEXT_LEN`;
-  `nvidia_rm570::names` (tabele generate) + `status_name`, `status_text`, `rpc_name`; `nvidia_ga104::gsp::nocat` (`NocatRecord`, `LibosPrint`); `rpc::name`,
-  `rpc::event::GSP_POST_NOCAT_RECORD`; câmpuri noi în `sequencer::InitLog`. Nicio scriere nouă în registre. OS-ul folosește `_ =>` și `Display` → compilează neschimbat.
-- **Sesiunea 84 (C-102, doar adăugări):** `gpu_core::diag::Event::Value { what, value }` (afișat `valoare <nume> = 0x........`), `falcon::{RESUME_STATE_READS, journal_resume_state}`.
-  Nicio scriere nouă în registre. OS-ul folosește `_ =>` la evenimente și `Display`, deci compilează neschimbat.
-- **Sesiunea 80 (C-99, doar adăugări):** `falcon::{start_cpu, wait_riscv_active_for}`, `sequencer::LONG_WAIT_US`, `gpu_core::hal::Clock::abort_requested`
-  (metodă cu implementare implicită — implementările existente compilează neschimbate), `gpu_core::error::GpuError::Aborted { waited_us }`,
-  `gpu_core::diag::Event::Waited { what, waited_us }`, `gpu-sim`: `SimClock::abort_at`, modelul `ALIAS_EN` după Booter. `sequencer::INIT_DONE_US` 10 s → 60 s
-  (aceeași constantă, altă valoare). Nimic redenumit sau șters. OS-ul folosește `_ =>` la potrivirea evenimentelor și `Display` la erori, deci compilează neschimbat.
-- **Sesiunea 78 (C-96, doar adăugări):** `falcon::{switch_to_falcon, RESET_PROPAGATION_READS}`, `SeqCmd::event`, `Event::SeqCmd`, `gpu-sim`
-  `fake_gsp::{PRIV_ERROR_AFTER_RESET, PRIV_ERROR_READS, SimFault::PrivErrorStuck}`; `falcon::SCRUB_US` 20 ms → 4 s.
-- **Mai vechi (toate doar adăugări):** sesiunea 68 `chain_log::{check_chain_journal_for, chain_for_journal, step_ids_for}`; sesiunea 65 `kronos_token`; sesiunea 64
-  `kronos_gen`, `recovery`, `user_space::stop_compute_group`, `GpuMemory::vram_free`; sesiunile 57–61 I11–I14 (`transfer`, `q8_matvec`, `kronos_layer`,
-  `kronos_model`, `WINDOW_CHAIN_C83`, `push_bytes_per_token`); sesiunea 51 `falcon::{booter_load_dma_libos, gsp_reset_into_riscv, …}`. Lista completă:
-  `cyber-gpu/docs/IMPLEMENTATION_STATUS.md` și notele din `cyber-gpu/integration/cyber-universe/`.
+- **Sesiunea 88 (C-108, doar adăugări):** `nvidia_ga104::gsp::variants::{Settings, Variant, VARIANTS, OS_283, list, get, settings}`; `Settings::{encode_sysinfo, encode_registry,
+  encode_wpr_meta, encode_gsp_args, queue_init_rpcs, init_rpcs_ready_for_i8, journal}`; `sysinfo::{Options, encode_with, off::B_IS_PASSTHRU}`, `registry::{boot_entries_with,
+  devid_check_ignore}`, `wpr_meta::{encode_with_flags, FLAG_CLOCK_BOOST}`, `libos::encode_gsp_args_with`, `msgq::CpuQueues::rpcs_sent`; `sim_peer::SimGsp::{start_early_boot,
+  init_done_result, early_boot}`. **Funcțiile vechi (`sysinfo::encode`, `registry::boot_entries`, `wpr_meta::encode`, `libos::encode_gsp_args`) dau exact ce dădeau** — OS-ul
+  compilează neschimbat; variantele intră doar prin schimbările din nota C-108.
+- **Sesiunea 87:** `libos::encode_gsp_args` cu `bDmemStack = 1`; `nocat::LibosPrint::buf` (conținutul jurnalelor PMU).
+- **Sesiunile 84–86:** `Event::Value`, `Event::Text`, `nvidia_rm570::names`, `gsp::nocat`, `gsp::nocat_log`, `falcon::{booter_unload, booter_unload_dma}`, `gpu_pci::caps::reset_capabilities`.
+- **Mai vechi (toate doar adăugări):** C-99 `falcon::start_cpu` + `Clock::abort_requested`; C-96 `falcon::switch_to_falcon`; sesiunea 68 `chain_log`; sesiunile 57–65 I11–I14, `kronos_gen`,
+  `recovery`; sesiunea 51 `falcon::booter_load_dma_libos`. Lista completă: `cyber-gpu/docs/IMPLEMENTATION_STATUS.md` și `cyber-gpu/integration/cyber-universe/`.
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: legarea `cyber-gpu` la `d3c5351` (sau mai nou), **Release `os-282`** cu CI verde — nimic de schimbat în codul OS (nota `os-280_bdmemstack.md`).
-- De la Adrian: `gpu lant` cu os-282 (pornire rece), apoi `gpu recupereaza` (C-103, prima probă); jurnalul ajunge singur în hub dacă e tokenul pe stick.
+- De la `cyber-universe` (P6-78, **până joi 06:00**): legarea `cyber-gpu` ≥ `20830f5`, `gpu variante`, `gpu lant --varianta N`, numărul variantei în jurnal și raport — după nota
+  `C-108_variante-i8.md` (schimbări mici în `gpu_i7.rs` / `gpu_i8.rs`: RPC-urile + soneria înainte de Booter când varianta o cere).
+- De la Adrian (joi): variantele în ordine, de la 1, câte o pornire rece; pozele/jurnalele în hub.
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
 
 ## Blocaje / nevoie de Adrian
-- **15:05 — răspuns la C-107 / „trei surse”:** comparația e făcută (patru drivere), diferența unică e reparată (`bDmemStack`), **Release-ul `os-282` îl face sesiunea OS**
-  (legarea `cyber-gpu` ≥ `d3c5351`, nimic de schimbat în codul OS; ~15 min de la prima ei trecere). Testul se poate face și fără Adrian la butoane, prin bucla C-104/C-105,
-  când o activează el (regula „scrieri pe placă doar cu Adrian de față” e neschimbată).
-- **Nu e blocat, dar depinde de placă:** reparația `bDmemStack` e DEDUSĂ din ce fac cele patru drivere, nu probată; doar `gpu lant` cu os-282 spune dacă `0x59` dispare.
-  Numele funcțiilor din care vin cele 844 de asserturi nu se pot afla fără simbolurile GSP-RM — nu deschidem firmware-ul (regula proiectului); decizia ar fi a lui Adrian.
-- CI GitHub VERDE pe `a669387`, `b3ac503` (sesiunea 87, 12:52 UTC, 54 s); `2bbd0b3` în curs la ora scrierii.
+- **Nu e blocat, dar depinde de placă:** că ordinea e cauza lui `0x59` e DEDUS din sursele RM (comentariile citate în studiu), nu probat; doar joi, cu varianta 1, se vede.
+  Fiecare variantă e „prima încercare” pe placă; toate valorile vin din surse publice și niciuna nu scrie un registru pe care os-283 nu-l scria deja; „DA” la fiecare.
+- Numele funcțiilor din care vin cele 844 de asserturi nu se pot afla fără simbolurile GSP-RM — nu deschidem firmware-ul (regula proiectului); decizia ar fi a lui Adrian.
+- CI GitHub VERDE pe `20830f5` (rularea 174, 16:01 UTC, 57 s); `6611c27` (doar documente) în curs la ora scrierii.
