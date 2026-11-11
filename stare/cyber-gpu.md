@@ -1,8 +1,15 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-11 13:30 (ora României) · **de:** sesiunea Cyber-GPU 85 (cloud, fără placă) — **(1) jurnalul os-279 analizat: GSP-RM pornește, dar refuză inițializarea (`GSP_INIT_DONE` cu `0x59` = `NV_ERR_OPERATING_SYSTEM`) după 843 de înregistrări de diagnostic pe care jurnalul nu le citea; acum le decodează** (continuarea C-102). **(2) C-103 partea GPU gata în SIMULARE: WPR2 coborât fără repornire prin Booter Unload** (programul semnat NVIDIA deja pe stick), ca driverul NVIDIA. Commit `bcc314e` (cod: `5cfe523`, `364ece2`), 437 teste PASS, CI verde. **Nimic testat pe RTX 3070 Ti.**
+**Actualizat:** 2026-11-11 13:45 (ora României) · **de:** sesiunea Cyber-GPU 86 (cloud, fără placă) — **pregătirea analizei jurnalului `os-280`:** unealta `verifica_jurnal_lant` tipărește acum un **rezumat NOCAT** (ce a spus GSP-RM înainte de `0x59`: câte înregistrări, ce feluri, asserturile cu adresă + linie, înainte/după secvențiator, rezultatul cu nume). Commit `a669387` (doar adăugări, doar unealtă pe gazdă + modul de text), 440 teste PASS. Nicio comandă nouă, niciun jurnal nou, Release-ul `os-280` încă nu există. **Nimic testat pe RTX 3070 Ti.**
 
 ## Acum
+- **Sesiunea 86 (13:26–13:45) — pregătirea analizei `os-280`.** Nimic nou în hub pentru cyber-gpu (C-103 `gata` partea GPU; C-104 e pentru OS); Release-ul `os-280` nu există încă
+  (sesiunea OS n-a mai trecut de la 11:58). Un pas mic pe calea critică: jurnalul `os-280` va avea până la 20 de blocuri NOCAT printre ~3000 de rânduri; modulul nou `gsp::nocat_log`
+  (doar text) le adună într-un rezumat de câteva rânduri — înregistrări primite / feluri / jurnale LibOS; felurile jurnalizate ordonate după cât de des apar (asserturi cu adresă + linie
+  + stivă + `count`; erori cu codul și numele `NV_STATUS`, sursă, subsistem, motor); câte au venit **înainte** și câte **după** cererea secvențiatorului; `GSP_INIT_DONE` cu numele
+  codului și „eroarea vine din …”. Citește și formatul vechi (os-279: „843 mesaje 0x1020 numite, dar nedecodate”), ca cele două rulări să se compare. Nu spune nimic ce nu e în jurnal.
+  T120 (SIMULARE: jurnalul produs de driver, tipărit cu prefixul OS-ului, citit înapoi — toate cifrele regăsite), T120b; pe `gpu-jurnal-007.txt` același verdict ca înainte + rezumatul.
+  440 teste PASS, CI (vezi mai jos). OS-ul nu are nimic de legat pentru asta (unealtă pe gazdă). Copia din hub (C-34) la `a669387` (clonă completă, 198 commit-uri, `git bundle verify` OK).
 - **Sesiunea 85 (13:20–13:30) — C-103 (placa readusă la starea de pornire fără repornire), partea GPU, SIMULARE.** Preluat 13:20 (după C-102, cum cere comanda).
   - **Studiul (`cyber-gpu/docs/C-103_RESET_PLACA.md`):** calea publică de a coborî WPR2 fără reset PCIe e **Booter Unload** — exact ce face driverul NVIDIA la descărcare
     (`kgspExecuteBooterUnloadIfNeeded_TU102`, 570.144 MIT): reset SEC2, programul semnat `booter_unload` cu cutiile poștale `0xFF`/`0xFF`, mailbox0 trebuie 0, apoi
@@ -65,7 +72,7 @@
 2. `gpu lant` + „DA” o dată. **I8 se va opri probabil tot la `0x59`** — important e ce scrie înainte: rândurile `NOCAT` (mai ales `text NOCAT: source = "..."`,
    `text NOCAT: recType = "..."`, `NOCAT ASSERT: adresa …` + `linia …` sau `errorCode (nume NV_STATUS)`, `subsystem`) și rezumatul de la final
    (`I8 NOCAT (0x1020): inregistrari … primite`, `feluri distincte`). Poze la ele; jurnalul de pe stick e cel care contează. Esc oprește curat.
-3. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant`, citim înregistrările și **abia atunci** reparăm ce îi lipsește lui GSP-RM.
+3. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant <jurnal> 0x9c66000` — tipărește direct **rezumatul NOCAT** (sesiunea 86) — și **abia atunci** reparăm ce îi lipsește lui GSP-RM.
 
 ## Urmează
 0. **C-103 pe placă (OS):** `gpu recupereaza` după un lanț oprit — Booter Unload → WPR2 = 0? Dacă da, I6–I8 se reiau fără pornire rece (`cyber-gpu/integration/cyber-universe/C-103_gpu-recupereaza.md`).
@@ -110,4 +117,4 @@
   aștepta azi, testul cu `os-280` se face la fereastra următoare — jurnalul va spune cauza.
 - **Nu e blocat, dar depinde de placă:** `0x59` vine de la GSP-RM însuși, iar motivul e în cele 843 de înregistrări de diagnostic pe care jurnalul nou le citește.
   Următoarea rulare `gpu lant` (os-280) le aduce; fără ea nu se poate repara nimic „la sigur”.
-- CI GitHub VERDE pe `5cfe523`, `364ece2` (cod) și `bcc314e` (document).
+- CI GitHub VERDE pe `5cfe523`, `364ece2`, `bcc314e`; `a669387` (sesiunea 86, rularea 169, 13:40).
