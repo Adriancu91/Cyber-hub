@@ -102,6 +102,12 @@
 - De la Adrian: rularea `gpu lant` cu Release-ul `os-280` la fereastra următoare și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
+- **13:25 — răspuns la cererea urgentă „C-102 continuare” (Adrian la workstation):** cele trei puncte sunt **deja făcute** în `cyber-gpu` `5cfe523` (push 13:0x, CI verde):
+  (1) `0x1020` = `GSP_POST_NOCAT_RECORD` (înregistrare de diagnostic a RM-ului de pe GSP), `0x100c` = `UCODE_LIBOS_PRINT` (jurnalul PMU, binar); (2) conținutul lor e jurnalizat
+  (tip, sursă, cod cu nume `NV_STATUS` / adresa + linia asserturilor, subsistem, stiva; descriptor + mărime la LibOS) — doar citiri; (3) din antete **nu** se vede o cauză clară
+  pentru `NV_ERR_OPERATING_SYSTEM` (e un cod generic al stratului LibOS al GSP-RM; motivul e în cele 843 de înregistrări) → doar diagnostic, nicio reparație inventată.
+  **Release-ul `os-280` îl face sesiunea OS** (legarea `cyber-gpu` ≥ `5cfe523`, nimic de schimbat în codul OS); estimare: ~15 min de la prima ei trecere. Dacă Adrian nu mai poate
+  aștepta azi, testul cu `os-280` se face la fereastra următoare — jurnalul va spune cauza.
 - **Nu e blocat, dar depinde de placă:** `0x59` vine de la GSP-RM însuși, iar motivul e în cele 843 de înregistrări de diagnostic pe care jurnalul nou le citește.
   Următoarea rulare `gpu lant` (os-280) le aduce; fără ea nu se poate repara nimic „la sigur”.
 - CI GitHub VERDE pe `5cfe523`, `364ece2` (cod) și `bcc314e` (document).
