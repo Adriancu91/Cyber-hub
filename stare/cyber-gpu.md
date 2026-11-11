@@ -1,8 +1,12 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-11 01:40 (ora României) · **de:** sesiunea Cyber-GPU 82 (cloud, fără placă) — **oprire scurtă:** nicio comandă nouă, niciun jurnal nou; C-99 gata la ambele proiecte (OS-ul pe `3aed5eb`, Release `os-278`), testul pe placă e la următoarea fereastră a lui Adrian (placa e la Kronos până la 07:00, C-100/S100); codul neschimbat, 423 teste PASS, CI verde; copia din hub (C-34) la `54cf0a2`
+**Actualizat:** 2026-11-11 07:35 (ora României) · **de:** sesiunea Cyber-GPU 83 (cloud, fără placă) — **OPRIT: necesită analiza lui Adrian** (regula 8 din programare: sesiunile 81–83 fără pas nou, pentru că tot ce se poate face fără placă e făcut; se ridică singur la jurnalul testului cu `os-278` sau la o comandă nouă pentru `cyber-gpu`). Codul neschimbat (`3aed5eb`), 423 teste PASS, CI verde; copia din hub (C-34) la `6290eee`.
 
 ## Acum
+- **Sesiunea 83 (07:20–07:40) — OPRIT (regula 8).** Nicio comandă nouă pentru cyber-gpu (C-100, pentru Kronos, s-a închis la 02:15: placa a fost la Kronos noaptea, liberă de la 01:59),
+  niciun jurnal nou de pe placă (ultimul: `rezultate/2026-11-10-workstation-os277/`; dosarul `…-os278/` nu există). OS-ul e pe `os-278` și s-a oprit la fel la 05:45.
+  Nu e nimic stricat: I8 e reparat de două ori în simulare (C-96, C-99), I9–I14 sunt scrise și testate în simulare — **următorul pas depinde doar de un jurnal real de pe placă.**
+  Nu se începe lucru nou și nu se inventează. `sh tools/check.sh`: 423 teste PASS, CI verde pe `54cf0a2`; copia din hub (C-34) reîmprospătată la `6290eee` (istorie completă, 188 commit-uri, fără firmware). **Nimic testat pe RTX 3070 Ti.**
 - **Sesiunea 82 (01:25–01:40) — oprire scurtă.** Nicio comandă nouă pentru cyber-gpu (ultima e C-100, pentru Kronos), niciun jurnal nou de pe placă
   (ultimul: `rezultate/2026-11-10-workstation-os277/`). OS-ul e tot pe `os-278`. Codul neschimbat față de `3aed5eb` (doar starea, `54cf0a2`); `sh tools/check.sh`: 423 teste PASS, CI verde pe `ec23e4d`.
   Copia din hub (C-34) reîmprospătată la `54cf0a2` (istorie completă, 187 commit-uri, fără firmware). **Nimic testat pe RTX 3070 Ti.**
@@ -40,7 +44,7 @@
 
 ## Urmează
 1. Testul pe placă cu `os-278` (fereastra următoare a lui Adrian; pașii sunt în `stare/cyber-universe.md`), apoi `verifica_jurnal_lant` pe jurnalul din `rezultate/`
-   și repararea primului pas care se oprește. Fără jurnal nou, sesiunile următoare: oprire scurtă.
+   și repararea primului pas care se oprește. Fără jurnal nou și fără comandă nouă, sesiunile următoare rămân OPRITE (doar verificarea CI și a copiei C-34).
 2. După `GSP_INIT_DONE` pe placă: primele apeluri RM (`GSP_GET_GSP_STATIC_INFO`), golden (I8e), I9, I10 — toate scrise, testate doar în simulare.
 3. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
@@ -63,5 +67,5 @@
 - De la Adrian: rularea `gpu lant` cu Release-ul `os-278` la următoarea fereastră și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
-- Nimic blocat în cyber-gpu. Pașii pe placă cer fereastra cu Adrian.
-- CI GitHub VERDE pe `3aed5eb` … `ec23e4d` (ultima rulare 19:31); `54cf0a2` e doar document.
+- **OPRIT (regula 8), nu blocat:** cyber-gpu așteaptă testul `gpu lant` cu `os-278` pe workstation (pașii: `stare/cyber-universe.md`) și jurnalul `raport\gpu-jurnal-*.txt` în `rezultate/`. Orice oprire curată e un rezultat bun — analiza o facem noi.
+- CI GitHub VERDE pe `3aed5eb` … `54cf0a2` (rularea 158, 01:30); `6290eee` e doar document.
