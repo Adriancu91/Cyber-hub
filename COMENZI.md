@@ -1319,3 +1319,15 @@ Format:
 - stare: gata (partea cyber-gpu, 2026-11-11 10:52, sesiunea Cyber-GPU 84; CI verde pe `d31ad8d` la 10:48; partea cyber-universe: de legat `d31ad8d` sau `f96c0ee` + Release `os-279`, nimic de schimbat în codul OS)
 - stare (istoric): preluat (2026-11-11 10:30, sesiunea Cyber-GPU 84)
 - rezultat: din jurnal, C-99 a mers (SEC2 pornit prin `0x840130`, toate cele 420 de comenzi trec, FALCON_OS scris, RISC-V activ) și `0x59` a venit ~150 ms **după** secvențiator; în codul nostru poate fi doar (1) `GSP_INIT_DONE` cu `rpc_result = 0x59` = `NV_ERR_OPERATING_SYSTEM` (antetele 570.144) sau (2) pointerul de scriere al cozii de stare citit 89 — jurnalul vechi nu scria nicio citire în I8, deci **nu se poate spune care; o reparație acum ar fi inventată**. `d31ad8d` (doar citiri, doar adăugări): jurnalul numește sursa (`valoare …`: 7 registre înainte de pornirea SEC2, după predarea etapei 3 și la orice eșec; `rpc_result` al fiecărui mesaj; „I8: eroarea vine din GSP_INIT_DONE / coada de stare”) — răspunde și la întrebarea „2 µs = bit vechi de la I7?” (SCRATCH_14 citit înainte de start). Driverul NVIDIA (`kernel_gsp_ga102.c`) nu scrie SCRATCH_14 → nici noi. 426 teste PASS, CI verde. Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-102_i8-0x59-diagnostic.md`.
+
+### C-103 · cyber-gpu + cyber-universe · DUPĂ C-102: placa readusă la starea de pornire FĂRĂ repornirea calculatorului (pasul spre testare complet automată)
+- data: 2026-11-11 12:35 · decizia lui Adrian (idei/2026-11-11_reparare-din-interior.md, varianta 1): vrea teste complet automate, fără el la butoane; prima cale = prin program.
+- ce: azi, după un I8 eșuat, placa cere pornire rece („I6: WPR2 deja ridicat… trebuie pornire rece”) → Adrian scoate cablul 30 s. Scopul: un pas `gpu recupereaza`
+  (legat la nevoie în `gpu lant`) care readuce placa într-o stare din care I6–I8 se pot relua **în aceeași pornire**: oprirea curată a GSP/SEC2, resetul plăcii prin căi documentate public
+  (reset PCIe: Function Level Reset / Secondary Bus Reset pe puntea-părinte, dacă placa le suportă — de citit capabilitățile din spațiul de configurare; ce face driverul NVIDIA 570.144 MIT
+  și nova/nouveau ca specificație), apoi verificare prin citire că WPR2 a coborât.
+  Ordine: (1) **studiu + doar citiri**: ce reset suportă placa (FLR? SBR? PM D3cold?), ce scrie în antetele publice despre WPR2 după reset — rezultatul în `docs/` și în hub;
+  (2) implementare în SIMULARE (`gpu-sim`) + teste; (3) pașii pentru fereastra pe workstation. Cyber-GPU: logica de reset; OS: comanda + legarea în `gpu lant`.
+- siguranță: orice scriere pe placa reală rămâne în spatele „DA”-ului lui Adrian, cu el de față (regula nu se schimbă prin această comandă). Fără firmware propriu, clean-room.
+- prioritate: **după C-102** (reparația 0x59 are întâietate).
+- stare: nou
