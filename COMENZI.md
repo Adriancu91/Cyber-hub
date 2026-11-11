@@ -1408,4 +1408,4 @@ Format:
   Test QEMU: `-cpu ...,+x2apic` cu x2APIC pornit de firmware; mesaje noi de jurnal înainte/după fiecare pas din apic::init.
 - confirmat (18:00): și stick-ul de test TESTGPU se blochează în același loc, după MADT (`foto-2-stick-test-acelasi-loc.jpg`) → problema e reproductibilă.
 - prioritate: după C-108 (variantele pentru joi 07:00 au întâietate).
-- stare: preluat (2026-11-11 19:35, sesiunea OS programată) · **P6-79** (plan `docs/plans/P6-79.md`): după C-108; așteptarea PIT cu limită + ceas de rezervă (ACPI PM / CPUID) + x2APIC prin MSR + rânduri de jurnal în `apic::init`
+- stare: gata (2026-11-11 20:55, sesiunea OS programată) · **P6-79** · rezultat: **Release `os-290`**: așteptarea PIT are limită, calibrarea trece singură pe temporizatorul ACPI PM sau pe frecvența din CPUID dacă PIT-ul nu numără, APIC-ul merge și în modul x2APIC (prin MSR), iar pe ecran apar rândurile `apic: mod …` / `apic: calibrez ceasul …` / `apic: ceasul de referinta: …`; testat în QEMU cu PIT-ul oprit (x2APIC nu se poate încerca în QEMU); pe ASUS neîncercat.

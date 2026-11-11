@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-11 20:05 (ora României) · **de:** sesiunea OS programată (17:40) — CI reparat, P6-77 (os-288), **C-108 gata (os-289)**, C-109 în lucru.
+**Actualizat:** 2026-11-11 20:55 (ora României) · **de:** sesiunea OS programată (17:40) — CI reparat, P6-77 (os-288), **C-108 gata (os-289)**, **C-109 gata (os-290)**.
 
 ## Acum
 - **Release `os-289` (≈19:58, CI verde) — pe acesta îl folosește Adrian joi la 07:00 (C-108).** Are cele 10 variante de setări I8 de la
@@ -9,13 +9,13 @@
 - `os-288` = os-283 + conținutul celor 2 mesaje PMU în jurnal (P6-77). `os-289` le are pe toate.
 - **CI reparat:** serverele de pachete Ubuntu (`azure.archive.ubuntu.com`, `archive.ubuntu.com`) nu răspundeau; CI-ul ia acum pachetele
   de la oglinda kernel.org când primul încercat nu merge (4 rulări până la verde).
-- **C-109 (ASUS TUF blocat după `acpi: MADT`) — P6-79 în lucru:** cauza cea mai probabilă = ceasul PIT oprit de firmware (bucla de
-  așteptare fără limită din `apic::init`); reparația (limită + ceas de rezervă ACPI PM / CPUID + x2APIC + rânduri noi pe ecran) e scrisă
-  și trece în QEMU cu PIT-ul oprit; intră într-un Release după CI. **Nu e în os-289.**
+- **Release `os-290` (≈20:54) = os-289 + C-109 (P6-79):** pe ASUS TUF pornirea stătea după `acpi: MADT` — cel mai probabil ceasul PIT
+  oprit de firmware (o buclă de așteptare fără limită). Acum așteptarea are limită, calibrarea trece pe temporizatorul ACPI PM sau pe CPUID,
+  APIC-ul merge și în modul x2APIC, iar pe ecran apar rânduri noi. Testat în QEMU cu PIT-ul oprit; pe ASUS neîncercat.
 - C-105 (`ciclu-test`) rămâne oprit până la cele două chei ale lui Adrian.
 
 ## Urmează
-- P6-79 → Release nou (după os-289, fără să-l înlocuiască pentru testul GPU de joi — conține aceleași variante).
+- Poza de pe ASUS cu `os-290`: dacă pornește → C-109 închis; dacă nu, ultimul rând `apic: …` arată pasul.
 - Jurnalele de joi: prima variantă care trece de I8 → Cyber-GPU (unealta `compara_variante`) → pasul următor.
 
 ## Ce oferă proiectul celorlalți
@@ -38,8 +38,11 @@
 4. `trimite` (sau `raport`, apoi pozele + `raport\gpu-jurnal-*.txt` în `rezultate/2026-11-12-workstation-os289/`).
 5. Repeți de la pasul 2 cu varianta următoare (2, 3, … 10). **Te oprești la prima variantă care trece.** Lista completă: `gpu variante`.
 
-**Pe ASUS TUF (C-109):** nimic de făcut până la Release-ul cu P6-79; atunci, stick-ul normal → poză la rândurile noi `apic: mod …`,
-`apic: calibrez ceasul …`, `apic: ceasul de referinta: …` (sau la ultima linie, dacă tot se oprește).
+(Merge la fel și cu `os-290`, care are aceleași variante plus reparația pentru ASUS.)
+
+**Pe ASUS TUF (C-109), când ai 5 minute:** scrii `cyber-universe-usb.img` din Release-ul **`os-290`** pe stick-ul normal (Rufus), pornești
+ASUS-ul de pe el și faci **o poză** la rândurile `apic: mod …`, `apic: calibrez ceasul …`, `apic: ceasul de referinta: …` — sau la ultima
+linie, dacă tot se oprește. Dacă ajunge la desktop: `hw` + `test tot`, poze în `rezultate/<data>-laptop-asus-tuf/`.
 
 **Opțional (C-104, ~5 min):** tokenul pentru `hub asculta` — `docs/USB.md` punctul 15.
 
