@@ -1,20 +1,14 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-11 07:35 (ora României) · **de:** sesiunea Cyber-GPU 83 (cloud, fără placă) — **OPRIT: necesită analiza lui Adrian** (regula 8 din programare: sesiunile 81–83 fără pas nou, pentru că tot ce se poate face fără placă e făcut; se ridică singur la jurnalul testului cu `os-278` sau la o comandă nouă pentru `cyber-gpu`). Codul neschimbat (`3aed5eb`), 423 teste PASS, CI verde; copia din hub (C-34) la `6290eee`.
+**Actualizat:** 2026-11-11 11:10 (ora României) · **de:** sesiunea Cyber-GPU 84 (cloud, fără placă) — **C-102 (I8 „eroare hardware 0x59” la os-278): partea GPU gata, în SIMULARE** — oprirea de siguranță s-a ridicat (jurnal nou + comandă nouă). Commit `f96c0ee` (cod: `d31ad8d`), 426 teste PASS, CI verde (rularea 160). **Nimic testat pe RTX 3070 Ti.**
 
 ## Acum
-- **Sesiunea 83 (07:20–07:40) — OPRIT (regula 8).** Nicio comandă nouă pentru cyber-gpu (C-100, pentru Kronos, s-a închis la 02:15: placa a fost la Kronos noaptea, liberă de la 01:59),
-  niciun jurnal nou de pe placă (ultimul: `rezultate/2026-11-10-workstation-os277/`; dosarul `…-os278/` nu există). OS-ul e pe `os-278` și s-a oprit la fel la 05:45.
-  Nu e nimic stricat: I8 e reparat de două ori în simulare (C-96, C-99), I9–I14 sunt scrise și testate în simulare — **următorul pas depinde doar de un jurnal real de pe placă.**
-  Nu se începe lucru nou și nu se inventează. `sh tools/check.sh`: 423 teste PASS, CI verde pe `54cf0a2`; copia din hub (C-34) reîmprospătată la `6290eee` (istorie completă, 188 commit-uri, fără firmware). **Nimic testat pe RTX 3070 Ti.**
-- **Sesiunea 82 (01:25–01:40) — oprire scurtă.** Nicio comandă nouă pentru cyber-gpu (ultima e C-100, pentru Kronos), niciun jurnal nou de pe placă
-  (ultimul: `rezultate/2026-11-10-workstation-os277/`). OS-ul e tot pe `os-278`. Codul neschimbat față de `3aed5eb` (doar starea, `54cf0a2`); `sh tools/check.sh`: 423 teste PASS, CI verde pe `ec23e4d`.
-  Copia din hub (C-34) reîmprospătată la `54cf0a2` (istorie completă, 187 commit-uri, fără firmware). **Nimic testat pe RTX 3070 Ti.**
-  Regula 8: sesiunile 81 și 82 fără pas de cod (80 a avut) — dacă nici sesiunea 83 nu găsește jurnal sau comandă nouă, se aplică oprirea de siguranță, fără lucru inventat.
-- **Sesiunea 81 (19:25–19:45) — oprire scurtă.** Nicio comandă nouă pentru cyber-gpu, niciun jurnal nou de pe placă. OS-ul a terminat partea lui din C-99
-  (`de63f32`, Release **`os-278`**: Esc + „astept raspunsul placii (GSP)... N s”). Adrian a plecat ~18:00, placa e la Kronos până la 07:00 (C-100) → **testul cu `os-278` așteaptă fereastra următoare.**
-  Codul neschimbat față de `3aed5eb` (doar starea, `ec23e4d`); 423 teste PASS, CI verde. **Copia din hub (C-34)** era rămasă la `bbbdb2f` (9 nov) — refăcută din clona completă la `ec23e4d`
-  (verificată: istorie completă, clonă de probă cu același arbore, fără firmware). **Nimic testat pe RTX 3070 Ti.**
+- **Sesiunea 84 (10:28–11:10) — C-102 URGENT: ce e `0x59` și de unde vine.** Preluat 10:30; jurnalul `gpu-jurnal-006.txt` citit 10:35; commit `d31ad8d` 10:46, CI verde 10:48.
+  - **Vestea bună din jurnal:** reparația C-99 a mers: `#419 CORE_RESUME` a pornit SEC2 prin alias (`0x840130 ← 2`), „SEC2 (Booter) gata: răspuns după 2 µs”, `FALCON_OS` scris, „GSP RISC-V activ: răspuns după 2 µs”. **Toate cele 420 de comenzi ale secvențiatorului au trecut.** Eroarea a venit ~150 ms **după** secvențiator (nu există rândul „comanda de mai jos s-a oprit”).
+  - **Ce e `0x59`:** în codul nostru, după secvențiator, `0x59` poate veni din exact două locuri: (1) `GSP_INIT_DONE` sosit de la GSP-RM cu `rpc_result = 0x59` — în antetele publice NVIDIA 570.144 (`nvstatuscodes.h`, MIT) `0x59` = **`NV_ERR_OPERATING_SYSTEM`** („eroare generică de sistem de operare” — pe GSP-RM, un apel către sistemul lui LibOS care a dat greș); (2) pointerul de scriere al cozii de stare citit **89** (= 0x59), în afara cozii de 63 (memoria cozii stricată după resume). **Jurnalul vechi nu scria nicio citire în I8, așa că nu se poate spune care din două** — o „reparație” fără acest răspuns ar fi inventată, deci nu am făcut-o.
+  - **Observația (a) din REZULTAT stă:** 2 µs e prea puțin ca Booter să fi rulat; bitul 26 din `NV_PGC6_BSI_SECURE_SCRATCH_14` putea fi deja pus de la I7. Am citit driverul NVIDIA (`kernel_gsp_ga102.c`, CORE_RESUME): face exact pașii noștri și **nu scrie și nu șterge** acest registru → nu scriem nici noi în el (regula: nicio scriere nouă în registre).
+  - **Ce am făcut (`d31ad8d`, doar adăugări, doar citiri):** jurnalul numește acum sursa oricărei erori din I8: rânduri `valoare <nume> = 0x…` cu 7 registre (SCRATCH_14, SEC2 CPUCTL/MAILBOX0/1, GSP RISCV_CPUCTL, GSP MAILBOX0/1) **înainte de pornirea SEC2** și **după predarea etapei 3** la `CORE_RESUME`; fiecare mesaj GSP-RM sărit (funcția, `rpc_result`); la `GSP_INIT_DONE` → `rpc_result` + „I8: eroarea vine din GSP_INIT_DONE”; la coadă → „pointer in afara cozii (0..62)” + „eroarea vine din coada de stare”; la timp expirat / Esc → aceleași registre. Teste T113–T115 (SIMULARE). `verifica_jurnal_lant` pe `gpu-jurnal-006.txt`: „OPRIT CURAT la i8-gsp-init”, I8 326 scrieri + 1 sonerie; rândurile noi sunt ignorate de parser (verificat).
+  - 426 teste PASS, clippy, format, build no_std PASS, CI verde (rularea 160 pe `d31ad8d`). Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-102_i8-0x59-diagnostic.md`. Copia din hub (C-34) rămâne la `6290eee` (OS-ul citește direct de pe GitHub; se reîmprospătează la sesiunea următoare).
 - **Sesiunea 80 (17:16–17:40) — C-99 (I8 „timeout după 2 s”): cauza găsită, reparată, testată în simulare.** Preluat 17:16, jurnalul `gpu-jurnal-005.txt` citit 17:20, reparația `3fe11f9` la 17:28, așteptarea lungă `3aed5eb` la 17:36.
   - **Vestea bună din jurnal:** după reparația C-96, **toate cele 420 de comenzi ale secvențiatorului GSP-RM au mers** (POLL/WRITE pe falcon-ul GSP, `CORE_RESET`, copierea DMA, configurarea) până la ultima, `secv #419 CORE_RESUME`.
   - **Ce s-a întâmplat pe placă la `CORE_RESUME`:** după resetul GSP-ului în RISC-V și cutiile LibOS, driverul a scris pornirea SEC2 (Booter) în `0x840100` (`CPUCTL`):
@@ -36,19 +30,21 @@
 - **Pe placă până acum:** I0–I4 doar citire TREC; I6 TRECE (os-242, os-275, os-276, os-277); I7 TRECE (os-246, os-275, os-276, os-277); I8: mesajul GSP-RM citit corect,
   **419 din 420 de comenzi ale secvențiatorului executate**, oprit la `CORE_RESUME` (reparat acum, în simulare); I9–I14 neîncercate.
 
-## Lista pentru următoarea rulare `gpu lant` (Release `os-278`, cu `3aed5eb`)
+## Lista pentru următoarea rulare `gpu lant` (Release `os-279`, cu `d31ad8d` sau mai nou)
 1. Pornire rece; stick-ul de test cu noul Release + stick-ul cu firmware 570.144 și #513 în `kronos\`.
-2. `gpu lant` + „DA” o dată. De urmărit la I8, după `secv #419 CORE_RESUME`: `bar0 w 0x840130` (pornirea prin alias), rândurile `asteptat …` (cât a durat),
-   apoi `GSP_INIT_DONE` sau prima eroare după el. Dacă ecranul arată „aștept GSP…” mai mult de ~1 minut, Esc oprește curat (Bus Master pus la loc).
+2. `gpu lant` + „DA” o dată. De urmărit la I8, după `secv #419 CORE_RESUME`: rândurile `valoare …` dinainte de `bar0 w 0x840130` (dacă `PGC6 SCRATCH_14` are deja
+   bitul 26 = `0x04000000`, „2 µs” era bitul vechi de la I7), apoi `GSP_INIT_DONE` sau rândul „I8: eroarea vine din …” cu valorile de lângă el. Esc oprește curat după ~1 minut.
 3. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant` și reparăm primul pas care se oprește.
 
 ## Urmează
-1. Testul pe placă cu `os-278` (fereastra următoare a lui Adrian; pașii sunt în `stare/cyber-universe.md`), apoi `verifica_jurnal_lant` pe jurnalul din `rezultate/`
-   și repararea primului pas care se oprește. Fără jurnal nou și fără comandă nouă, sesiunile următoare rămân OPRITE (doar verificarea CI și a copiei C-34).
+1. OS-ul leagă `d31ad8d` (sau mai nou) → Release `os-279` → `gpu lant` cu Adrian de față; apoi `verifica_jurnal_lant` pe jurnalul din `rezultate/` și **repararea lui `0x59`
+   acum că jurnalul spune de unde vine** (GSP_INIT_DONE cu cod NV_STATUS → ce i-a lipsit GSP-RM la resume; pointer stricat → ce a scris peste coadă). Fără jurnal nou, niciun pas nou.
 2. După `GSP_INIT_DONE` pe placă: primele apeluri RM (`GSP_GET_GSP_STATIC_INFO`), golden (I8e), I9, I10 — toate scrise, testate doar în simulare.
 3. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 84 (C-102, doar adăugări):** `gpu_core::diag::Event::Value { what, value }` (afișat `valoare <nume> = 0x........`), `falcon::{RESUME_STATE_READS, journal_resume_state}`.
+  Nicio scriere nouă în registre. OS-ul folosește `_ =>` la evenimente și `Display`, deci compilează neschimbat.
 - **Sesiunea 80 (C-99, doar adăugări):** `falcon::{start_cpu, wait_riscv_active_for}`, `sequencer::LONG_WAIT_US`, `gpu_core::hal::Clock::abort_requested`
   (metodă cu implementare implicită — implementările existente compilează neschimbate), `gpu_core::error::GpuError::Aborted { waited_us }`,
   `gpu_core::diag::Event::Waited { what, waited_us }`, `gpu-sim`: `SimClock::abort_at`, modelul `ALIAS_EN` după Booter. `sequencer::INIT_DONE_US` 10 s → 60 s
@@ -62,10 +58,10 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: nimic acum — C-99 partea 2 e gata (`de63f32`, `os-278`, cu Esc și antetul cozii de stare tot 60 s).
+- De la `cyber-universe` (C-102 partea 2): legarea `cyber-gpu` la `d31ad8d` (sau `f96c0ee`), Release `os-279` cu CI verde — nimic de schimbat în codul OS (`Event::Value` e doar o variantă nouă).
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
-- De la Adrian: rularea `gpu lant` cu Release-ul `os-278` la următoarea fereastră și jurnalul de pe stick în `rezultate/`.
+- De la Adrian: rularea `gpu lant` cu Release-ul `os-279` (azi, dacă OS-ul îl scoate până ~12:15) și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
-- **OPRIT (regula 8), nu blocat:** cyber-gpu așteaptă testul `gpu lant` cu `os-278` pe workstation (pașii: `stare/cyber-universe.md`) și jurnalul `raport\gpu-jurnal-*.txt` în `rezultate/`. Orice oprire curată e un rezultat bun — analiza o facem noi.
-- CI GitHub VERDE pe `3aed5eb` … `54cf0a2` (rularea 158, 01:30); `6290eee` e doar document.
+- **Nu e blocat:** `0x59` nu se poate repara „la sigur” fără să știm din care din cele două locuri vine — Release-ul `os-279` cu jurnalul nou răspunde la asta la prima rulare. Orice oprire curată e un rezultat bun — analiza o facem noi.
+- CI GitHub VERDE pe `d31ad8d` (rularea 160, 10:47) și `f96c0ee` (document).
