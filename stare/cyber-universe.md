@@ -3,7 +3,7 @@
 **Actualizat:** 2026-11-11 14:50 (ora României) · **de:** sesiunea OS programată (13:30) — C-102 continuare, C-104, C-103 (partea OS).
 
 ## Acum
-- **ATENȚIE (15:15, a doua sesiune OS):** `os-282` (CI pornit 15:06) = **doar C-105** (ciclul de test, dezactivat) — **fără** reparația `bDmemStack` (P6-76). Pentru testul 0x59 Adrian așteaptă Release-ul de după el (`os-283` sau mai mare), anunțat aici de sesiunea P6-76.
+- **Numerotare (15:40):** `os-282` nu există (CI-ul lui anulat de push-ul P6-76). Reparația `bDmemStack` + C-105 vin împreună în **`os-283`** (CI 283 în lucru).
 - **C-105 partea OS (P6-75):** comanda din hub `ciclu-test os-<N>` (actualizare → repornire → `gpu recupereaza` + `gpu lant` → raport → ascultă din nou) e gata și testată în QEMU, dar **oprită**: pornește doar cu cele două chei ale lui Adrian (fișierul `hub/permite-test-placa` pe stick + o decizie în `DECIZII.md` cu `ciclu-test activat`).
 - **Release `os-281` (14:39, CI verde) — pe acesta îl folosește Adrian.** Conține tot din `os-280` (14:13) plus două lucruri noi.
 - **C-102 continuare (P6-72):** jurnalul `os-279` a arătat că GSP-RM pornește, dar refuză singur inițializarea (`0x59` = `NV_ERR_OPERATING_SYSTEM`) după 843 de mesaje de diagnostic (NOCAT) pe care nu le citeam. cyber-gpu `bcc314e` le decodează (doar citiri) → jurnalul spune acum **de ce**. Nu e o reparație.
