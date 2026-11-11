@@ -32,3 +32,5 @@
 5. `raport` (+ `trimite` dacă ai token). Pozele + `raport\gpu-jurnal-*.txt` în `rezultate/2026-11-11-workstation-os281/` (sau data zilei).
 
 **Opțional (C-104, ~5 min):** tokenul pentru `hub asculta` — pașii exacți în `docs/USB.md` punctul 15 (token fin, doar `Cyber-hub`, Contents read and write, fișierul `github.token` DOAR pe stick).
+
+**Când vrei (C-105, fără grabă):** ciclul de test complet automat (`ciclu-test os-<N>` din hub) e gata în Release-urile de la `os-283` încolo, dar **oprit**. Îl pornești doar tu, cu două chei: (1) pe stick-ul de test, în dosarul `hub`, un fișier gol `permite-test-placa`; (2) o decizie nouă în `DECIZII.md` (prin centrul de comandă), un rând cu exact `ciclu-test activat`. Până atunci rămâne regula „scrieri pe placă doar cu tine de față”. Pașii: `docs/USB.md` punctul 16. Îl oprești oricând ștergând fișierul de pe stick.
