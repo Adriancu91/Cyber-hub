@@ -1,0 +1,862 @@
+== raport Cyber Universe OS ==
+data (ceasul calculatorului): 2026-10-28 10:48:48
+motiv: manual (comanda raport)
+nucleu: cyber-universe 0.1.0 (cyber-gpu dac2e32)
+/usb/VERSIUNE: commit 3fc437c5703c944f6b25aced9658fe8f8812ebe6
+erori in jurnal de la pornire: 0
+
+== hw ==
+== raport hardware ==
+procesor: Intel(R) Core(TM) i9-10980XE CPU @ 3.00GHz
+ecran: framebuffer la adresa fizica 0xe0000000, 8847360 octeti (9 MiB), 1920x1080, pitch 8192 B, 32 bpp
+memorie: libera 130751 MiB, folosita 24540 KiB (heap 3527 / 18256 KiB)
+pornit de 1618.18 s
+PCI ([driver] = il folosim, [-] = fara driver):
+  00:00.0 8086:2020 punte gazda [-]
+  00:04.0 8086:2021 alt dispozitiv [-]
+  00:04.1 8086:2021 alt dispozitiv [-]
+  00:04.2 8086:2021 alt dispozitiv [-]
+  00:04.3 8086:2021 alt dispozitiv [-]
+  00:04.4 8086:2021 alt dispozitiv [-]
+  00:04.5 8086:2021 alt dispozitiv [-]
+  00:04.6 8086:2021 alt dispozitiv [-]
+  00:04.7 8086:2021 alt dispozitiv [-]
+  00:05.0 8086:2024 alt dispozitiv [-]
+  00:05.2 8086:2025 alt dispozitiv [-]
+  00:05.4 8086:2026 alt dispozitiv [-]
+  00:08.0 8086:2014 alt dispozitiv [-]
+  00:08.1 8086:2015 alt dispozitiv [-]
+  00:08.2 8086:2016 alt dispozitiv [-]
+  00:14.0 8086:a2af controler USB [xhci]
+  00:14.2 8086:a2b1 alt dispozitiv [-]
+  00:16.0 8086:a2ba alt dispozitiv [-]
+  00:17.0 8086:a282 controler SATA (AHCI) [ahci]
+  00:1c.0 8086:a290 punte PCI [-]
+  00:1c.6 8086:a296 punte PCI [-]
+  00:1f.0 8086:a2d2 punte ISA [-]
+  00:1f.2 8086:a2a1 alt dispozitiv [-]
+  00:1f.3 8086:a2f0 multimedia [-]
+  00:1f.4 8086:a2a3 SMBus [-]
+  00:1f.6 8086:15e3 placa de retea [e1000]
+  02:00.0 104c:8240 punte PCI [-]
+  16:05.0 8086:2034 alt dispozitiv [-]
+  16:05.2 8086:2035 alt dispozitiv [-]
+  16:05.4 8086:2036 alt dispozitiv [-]
+  16:08.0 8086:208d alt dispozitiv [-]
+  16:08.1 8086:208d alt dispozitiv [-]
+  16:08.2 8086:208d alt dispozitiv [-]
+  16:08.3 8086:208d alt dispozitiv [-]
+  16:08.4 8086:208d alt dispozitiv [-]
+  16:08.5 8086:208d alt dispozitiv [-]
+  16:08.6 8086:208d alt dispozitiv [-]
+  16:08.7 8086:208d alt dispozitiv [-]
+  16:09.0 8086:208d alt dispozitiv [-]
+  16:09.1 8086:208d alt dispozitiv [-]
+  16:09.2 8086:208d alt dispozitiv [-]
+  16:09.3 8086:208d alt dispozitiv [-]
+  16:09.4 8086:208d alt dispozitiv [-]
+  16:09.5 8086:208d alt dispozitiv [-]
+  16:09.6 8086:208d alt dispozitiv [-]
+  16:09.7 8086:208d alt dispozitiv [-]
+  16:0a.0 8086:208d alt dispozitiv [-]
+  16:0a.1 8086:208d alt dispozitiv [-]
+  16:0e.0 8086:208e alt dispozitiv [-]
+  16:0e.1 8086:208e alt dispozitiv [-]
+  16:0e.2 8086:208e alt dispozitiv [-]
+  16:0e.3 8086:208e alt dispozitiv [-]
+  16:0e.4 8086:208e alt dispozitiv [-]
+  16:0e.5 8086:208e alt dispozitiv [-]
+  16:0e.6 8086:208e alt dispozitiv [-]
+  16:0e.7 8086:208e alt dispozitiv [-]
+  16:0f.0 8086:208e alt dispozitiv [-]
+  16:0f.1 8086:208e alt dispozitiv [-]
+  16:0f.2 8086:208e alt dispozitiv [-]
+  16:0f.3 8086:208e alt dispozitiv [-]
+  16:0f.4 8086:208e alt dispozitiv [-]
+  16:0f.5 8086:208e alt dispozitiv [-]
+  16:0f.6 8086:208e alt dispozitiv [-]
+  16:0f.7 8086:208e alt dispozitiv [-]
+  16:10.0 8086:208e alt dispozitiv [-]
+  16:10.1 8086:208e alt dispozitiv [-]
+  16:1d.0 8086:2054 alt dispozitiv [-]
+  16:1d.1 8086:2055 alt dispozitiv [-]
+  16:1d.2 8086:2056 alt dispozitiv [-]
+  16:1d.3 8086:2057 alt dispozitiv [-]
+  16:1e.0 8086:2080 alt dispozitiv [-]
+  16:1e.1 8086:2081 alt dispozitiv [-]
+  16:1e.2 8086:2082 alt dispozitiv [-]
+  16:1e.3 8086:2083 alt dispozitiv [-]
+  16:1e.4 8086:2084 alt dispozitiv [-]
+  16:1e.5 8086:2085 alt dispozitiv [-]
+  16:1e.6 8086:2086 alt dispozitiv [-]
+  64:05.0 8086:2034 alt dispozitiv [-]
+  64:05.2 8086:2035 alt dispozitiv [-]
+  64:05.4 8086:2036 alt dispozitiv [-]
+  64:08.0 8086:2066 alt dispozitiv [-]
+  64:09.0 8086:2066 alt dispozitiv [-]
+  64:0a.0 8086:2040 alt dispozitiv [-]
+  64:0a.1 8086:2041 alt dispozitiv [-]
+  64:0a.2 8086:2042 alt dispozitiv [-]
+  64:0a.3 8086:2043 alt dispozitiv [-]
+  64:0a.4 8086:2044 alt dispozitiv [-]
+  64:0a.5 8086:2045 alt dispozitiv [-]
+  64:0a.6 8086:2046 alt dispozitiv [-]
+  64:0a.7 8086:2047 alt dispozitiv [-]
+  64:0b.0 8086:2048 alt dispozitiv [-]
+  64:0b.1 8086:2049 alt dispozitiv [-]
+  64:0b.2 8086:204a alt dispozitiv [-]
+  64:0b.3 8086:204b alt dispozitiv [-]
+  64:0c.0 8086:2040 alt dispozitiv [-]
+  64:0c.1 8086:2041 alt dispozitiv [-]
+  64:0c.2 8086:2042 alt dispozitiv [-]
+  64:0c.3 8086:2043 alt dispozitiv [-]
+  64:0c.4 8086:2044 alt dispozitiv [-]
+  64:0c.5 8086:2045 alt dispozitiv [-]
+  64:0c.6 8086:2046 alt dispozitiv [-]
+  64:0c.7 8086:2047 alt dispozitiv [-]
+  64:0d.0 8086:2048 alt dispozitiv [-]
+  64:0d.1 8086:2049 alt dispozitiv [-]
+  64:0d.2 8086:204a alt dispozitiv [-]
+  64:0d.3 8086:204b alt dispozitiv [-]
+  b2:00.0 8086:2030 punte PCI [-]
+  b2:02.0 8086:2032 punte PCI [-]
+  b2:03.0 8086:2033 punte PCI [-]
+  b2:05.0 8086:2034 alt dispozitiv [-]
+  b2:05.2 8086:2035 alt dispozitiv [-]
+  b2:05.4 8086:2036 alt dispozitiv [-]
+  b2:12.0 8086:204c alt dispozitiv [-]
+  b2:12.1 8086:204d alt dispozitiv [-]
+  b2:12.2 8086:204e alt dispozitiv [-]
+  b2:15.0 8086:2018 alt dispozitiv [-]
+  b2:15.1 8086:2088 alt dispozitiv [-]
+  b2:16.0 8086:2018 alt dispozitiv [-]
+  b2:16.1 8086:2088 alt dispozitiv [-]
+  b2:16.4 8086:2018 alt dispozitiv [-]
+  b2:16.5 8086:2088 alt dispozitiv [-]
+  b2:17.0 8086:2018 alt dispozitiv [-]
+  b2:17.1 8086:2088 alt dispozitiv [-]
+  b3:00.0 10de:2482 placa video [-]
+  b3:00.1 10de:228b multimedia [-]
+  b4:00.0 1c5c:1959 controler NVMe [nvme]
+USB:
+  port 5  17ef:608d  mouse (HID)
+  port 6  413c:2106  tastatura (HID)
+  port 10  0bda:5411  hub
+  port 25  0bda:0328  stocare (Mass Storage)
+  port 26  0bda:0411  hub
+  port 26.2  125f:db8a  stocare (Mass Storage)
+/disk: montat (2 intrari)
+/usb: montat (8 intrari)
+retea:
+  I219-LM  MAC cc:96:e5:08:b7:b5
+  pachete trimise 6, primite 1008
+  legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x1000000
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 01000000, RDBAH 00000000, RDH 00000010, RDT 0000000f, TDH 00000006, TDT 00000006 (pasii de pornire: log e1000)
+  IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
+
+== lspci ==
+  00:00.0  8086:2020  punte gazda
+  00:04.0  8086:2021  alt dispozitiv
+  00:04.1  8086:2021  alt dispozitiv
+  00:04.2  8086:2021  alt dispozitiv
+  00:04.3  8086:2021  alt dispozitiv
+  00:04.4  8086:2021  alt dispozitiv
+  00:04.5  8086:2021  alt dispozitiv
+  00:04.6  8086:2021  alt dispozitiv
+  00:04.7  8086:2021  alt dispozitiv
+  00:05.0  8086:2024  alt dispozitiv
+  00:05.2  8086:2025  alt dispozitiv
+  00:05.4  8086:2026  alt dispozitiv
+  00:08.0  8086:2014  alt dispozitiv
+  00:08.1  8086:2015  alt dispozitiv
+  00:08.2  8086:2016  alt dispozitiv
+  00:14.0  8086:a2af  controler USB
+  00:14.2  8086:a2b1  alt dispozitiv
+  00:16.0  8086:a2ba  alt dispozitiv
+  00:17.0  8086:a282  controler SATA (AHCI)
+  00:1c.0  8086:a290  punte PCI
+  00:1c.6  8086:a296  punte PCI
+  00:1f.0  8086:a2d2  punte ISA
+  00:1f.2  8086:a2a1  alt dispozitiv
+  00:1f.3  8086:a2f0  multimedia
+  00:1f.4  8086:a2a3  SMBus
+  00:1f.6  8086:15e3  placa de retea
+  02:00.0  104c:8240  punte PCI
+  16:05.0  8086:2034  alt dispozitiv
+  16:05.2  8086:2035  alt dispozitiv
+  16:05.4  8086:2036  alt dispozitiv
+  16:08.0  8086:208d  alt dispozitiv
+  16:08.1  8086:208d  alt dispozitiv
+  16:08.2  8086:208d  alt dispozitiv
+  16:08.3  8086:208d  alt dispozitiv
+  16:08.4  8086:208d  alt dispozitiv
+  16:08.5  8086:208d  alt dispozitiv
+  16:08.6  8086:208d  alt dispozitiv
+  16:08.7  8086:208d  alt dispozitiv
+  16:09.0  8086:208d  alt dispozitiv
+  16:09.1  8086:208d  alt dispozitiv
+  16:09.2  8086:208d  alt dispozitiv
+  16:09.3  8086:208d  alt dispozitiv
+  16:09.4  8086:208d  alt dispozitiv
+  16:09.5  8086:208d  alt dispozitiv
+  16:09.6  8086:208d  alt dispozitiv
+  16:09.7  8086:208d  alt dispozitiv
+  16:0a.0  8086:208d  alt dispozitiv
+  16:0a.1  8086:208d  alt dispozitiv
+  16:0e.0  8086:208e  alt dispozitiv
+  16:0e.1  8086:208e  alt dispozitiv
+  16:0e.2  8086:208e  alt dispozitiv
+  16:0e.3  8086:208e  alt dispozitiv
+  16:0e.4  8086:208e  alt dispozitiv
+  16:0e.5  8086:208e  alt dispozitiv
+  16:0e.6  8086:208e  alt dispozitiv
+  16:0e.7  8086:208e  alt dispozitiv
+  16:0f.0  8086:208e  alt dispozitiv
+  16:0f.1  8086:208e  alt dispozitiv
+  16:0f.2  8086:208e  alt dispozitiv
+  16:0f.3  8086:208e  alt dispozitiv
+  16:0f.4  8086:208e  alt dispozitiv
+  16:0f.5  8086:208e  alt dispozitiv
+  16:0f.6  8086:208e  alt dispozitiv
+  16:0f.7  8086:208e  alt dispozitiv
+  16:10.0  8086:208e  alt dispozitiv
+  16:10.1  8086:208e  alt dispozitiv
+  16:1d.0  8086:2054  alt dispozitiv
+  16:1d.1  8086:2055  alt dispozitiv
+  16:1d.2  8086:2056  alt dispozitiv
+  16:1d.3  8086:2057  alt dispozitiv
+  16:1e.0  8086:2080  alt dispozitiv
+  16:1e.1  8086:2081  alt dispozitiv
+  16:1e.2  8086:2082  alt dispozitiv
+  16:1e.3  8086:2083  alt dispozitiv
+  16:1e.4  8086:2084  alt dispozitiv
+  16:1e.5  8086:2085  alt dispozitiv
+  16:1e.6  8086:2086  alt dispozitiv
+  64:05.0  8086:2034  alt dispozitiv
+  64:05.2  8086:2035  alt dispozitiv
+  64:05.4  8086:2036  alt dispozitiv
+  64:08.0  8086:2066  alt dispozitiv
+  64:09.0  8086:2066  alt dispozitiv
+  64:0a.0  8086:2040  alt dispozitiv
+  64:0a.1  8086:2041  alt dispozitiv
+  64:0a.2  8086:2042  alt dispozitiv
+  64:0a.3  8086:2043  alt dispozitiv
+  64:0a.4  8086:2044  alt dispozitiv
+  64:0a.5  8086:2045  alt dispozitiv
+  64:0a.6  8086:2046  alt dispozitiv
+  64:0a.7  8086:2047  alt dispozitiv
+  64:0b.0  8086:2048  alt dispozitiv
+  64:0b.1  8086:2049  alt dispozitiv
+  64:0b.2  8086:204a  alt dispozitiv
+  64:0b.3  8086:204b  alt dispozitiv
+  64:0c.0  8086:2040  alt dispozitiv
+  64:0c.1  8086:2041  alt dispozitiv
+  64:0c.2  8086:2042  alt dispozitiv
+  64:0c.3  8086:2043  alt dispozitiv
+  64:0c.4  8086:2044  alt dispozitiv
+  64:0c.5  8086:2045  alt dispozitiv
+  64:0c.6  8086:2046  alt dispozitiv
+  64:0c.7  8086:2047  alt dispozitiv
+  64:0d.0  8086:2048  alt dispozitiv
+  64:0d.1  8086:2049  alt dispozitiv
+  64:0d.2  8086:204a  alt dispozitiv
+  64:0d.3  8086:204b  alt dispozitiv
+  b2:00.0  8086:2030  punte PCI
+  b2:02.0  8086:2032  punte PCI
+  b2:03.0  8086:2033  punte PCI
+  b2:05.0  8086:2034  alt dispozitiv
+  b2:05.2  8086:2035  alt dispozitiv
+  b2:05.4  8086:2036  alt dispozitiv
+  b2:12.0  8086:204c  alt dispozitiv
+  b2:12.1  8086:204d  alt dispozitiv
+  b2:12.2  8086:204e  alt dispozitiv
+  b2:15.0  8086:2018  alt dispozitiv
+  b2:15.1  8086:2088  alt dispozitiv
+  b2:16.0  8086:2018  alt dispozitiv
+  b2:16.1  8086:2088  alt dispozitiv
+  b2:16.4  8086:2018  alt dispozitiv
+  b2:16.5  8086:2088  alt dispozitiv
+  b2:17.0  8086:2018  alt dispozitiv
+  b2:17.1  8086:2088  alt dispozitiv
+  b3:00.0  10de:2482  placa video
+  b3:00.1  10de:228b  multimedia
+  b4:00.0  1c5c:1959  controler NVMe
+
+== net ==
+  I219-LM  MAC cc:96:e5:08:b7:b5
+  pachete trimise 6, primite 1008
+  legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x1000000
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 01000000, RDBAH 00000000, RDH 00000010, RDT 0000000f, TDH 00000006, TDT 00000006 (pasii de pornire: log e1000)
+  IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
+
+== jurnal net (si registrele placilor de retea) ==
+[ 131.950] INFO  e1000: I219-LM (8086:15e3) la 00:1f.6, familia Pch, registre la 0x92f00000
+[ 132.890] INFO  e1000: firmware ME (FWSM): reg 0x5b54 60000040 -> 60000040
+[ 133.660] INFO  e1000: semafor PHY luat: reg 0xf00 002c0089 -> 002c00a9
+[ 134.420] INFO  e1000: PHY raspunde? (ID1): reg 0x2 00000000 -> 00000154
+[ 135.190] INFO  e1000: reset MAC (CTRL.RST): reg 0x0 18180240 -> 00100240
+[ 135.960] INFO  e1000: NVM: LAN_INIT_DONE nu a venit: reg 0x8 00000000 -> 40080443
+[ 136.730] INFO  e1000: legatura pornita (CTRL.SLU): reg 0x0 00100240 -> 00100240
+[ 137.500] INFO  e1000: PHY 015400a6 (adresa 2), bloc DMA de 34 pagini la 0x1000000 (intre 16 MiB si 4 GB), primul buffer RX 0x1002000
+[ 138.270] INFO  net: placa I219-LM pornita, MAC cc:96:e5:08:b7:b5
+[ 139.030] INFO  e1000: I219-LM: pasii PCH sunt testati doar pe model (e1000e/); pe hardware: workstation
+[ 139.800] INFO  e1000: legatura da (100 Mb/s)
+[ 140.580] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 146.710] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 148.250] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 148.750] WARN  net: DHCP nu raspunde; fara adresa, reincerc la 10 s
+[ 150.320] INFO  net: arp primit: raspuns de la 192.168.0.242 (b4:4c:3b:16:6a:ea) pentru 192.168.0.242
+[ 152.630] INFO  net: arp primit: cerere de la 0.0.0.0 (ac:1c:26:9a:ca:3d) pentru 192.168.0.15
+[ 154.940] INFO  net: arp primit: cerere de la 192.168.0.15 (ac:1c:26:9a:ca:3d) pentru 192.168.0.1
+[ 157.220] INFO  net: arp primit: cerere de la 192.168.0.1 (10:27:f5:74:fe:93) pentru 192.168.0.238
+[ 159.530] INFO  net: arp primit: cerere de la 192.168.0.1 (10:27:f5:74:fe:93) pentru 192.168.0.238
+[ 161.840] INFO  net: arp primit: cerere de la 192.168.0.1 (10:27:f5:74:fe:93) pentru 192.168.0.238
+[ 164.150] INFO  net: arp primit: cerere de la 0.0.0.0 (ac:1c:26:9a:ca:3d) pentru 192.168.0.15
+[ 166.460] INFO  net: arp primit: cerere de la 192.168.0.15 (ac:1c:26:9a:ca:3d) pentru 192.168.0.1
+[ 168.770] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 171.050] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 173.360] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 175.670] INFO  net: arp primit: cerere de la 0.0.0.0 (ac:1c:26:9a:ca:3d) pentru 192.168.0.15
+[ 177.980] INFO  net: arp primit: cerere de la 192.168.0.15 (ac:1c:26:9a:ca:3d) pentru 192.168.0.1
+[ 180.290] INFO  net: legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x1000000
+[ 180.290] INFO  net: registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 01000000, RDBAH 00000000, RDH 00000002, RDT [ 185.270] INFO  usb: prima tasta de la tastatura USB
+[ 190.310] INFO  net: DHCP: adresa 192.168.0.151, masca 255.255.255.0, ruta 192.168.0.1, DNS 192.168.0.1, pentru 7200 s
+
+== jurnal usb ==
+[  15.350] INFO  pci: 00:14.0 8086:a2af clasa 0c:03:30 controler USB
+[ 102.120] INFO  boot: pornit de pe disc (hard disk, SSD sau stick USB)
+[ 104.530] INFO  usb: port 5: slot 1, viteza 2, pachet maxim EP0 8, configuratia 1 (34 octeti), endpoint-uri 81/3/8/b0
+[ 105.300] INFO  usb: port 5: 17ef:608d mouse (HID) (clasa 03:01:02, viteza 2)
+[ 106.120] INFO  usb: port 6: slot 2, viteza 2, pachet maxim EP0 8, configuratia 1 (34 octeti), endpoint-uri 81/3/8/b0
+[ 106.890] INFO  usb: port 6: 413c:2106 tastatura (HID) (clasa 03:01:01, viteza 2)
+[ 107.720] INFO  usb: port 10: slot 3, viteza 3, pachet maxim EP0 64, configuratia 1 (41 octeti), endpoint-uri 81/3/1/b0
+[ 108.490] INFO  usb: port 10: 0bda:5411 hub (clasa 09:00:02, viteza 3)
+[ 109.260] INFO  usb: port 25: slot 4, viteza 4, pachet maxim EP0 512, configuratia 1 (44 octeti), endpoint-uri 01/2/1024/b15 82/2/1024/b15
+[ 110.030] INFO  usb: port 25: 0bda:0328 stocare (Mass Storage) (clasa 08:06:50, viteza 4)
+[ 110.800] INFO  usb: port 26: slot 5, viteza 4, pachet maxim EP0 512, configuratia 1 (31 octeti), endpoint-uri 81/3/2/b0
+[ 111.570] INFO  usb: port 26: 0bda:0411 hub (clasa 09:00:03, viteza 4)
+[ 112.340] INFO  usb: port 10: Configure Endpoint ok (1 endpoint-uri)
+[ 113.110] INFO  usb: hub 10: 0bda:5411, viteza 3, 2 porturi, alimentare 20 ms
+[ 113.990] INFO  usb: port 26: Configure Endpoint ok (1 endpoint-uri)
+[ 114.760] INFO  usb: hub 26: 0bda:0411, viteza 4, 2 porturi, alimentare 20 ms
+[ 115.660] INFO  usb: hub 26 port 2: dispozitiv conectat, viteza 4 (stare 0203)
+[ 116.420] INFO  usb: port 26.2: slot 6, viteza 4, pachet maxim EP0 512, configuratia 1 (44 octeti), endpoint-uri 01/2/1024/b8 82/2/1024/b8
+[ 117.190] INFO  usb: port 26.2: 125f:db8a stocare (Mass Storage) (clasa 08:06:50, viteza 4)
+[ 117.960] INFO  usb: controler XHCI pornit, 26 porturi, 6 dispozitive (00:14.0)
+[ 118.730] INFO  usb: port 5: Configure Endpoint ok (1 endpoint-uri)
+[ 119.500] INFO  usb: mouse (HID) de pe portul 5 pornit(a)
+[ 120.260] INFO  usb: port 6: Configure Endpoint ok (1 endpoint-uri)
+[ 121.030] INFO  usb: tastatura (HID) de pe portul 6 pornit(a)
+[ 121.800] INFO  usb: port 25: SET_CONFIGURATION 1 ok
+[ 122.570] INFO  usb: port 25: Configure Endpoint ok (2 endpoint-uri)
+[ 123.340] WARN  usb: port 25: incercarea 1, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[ 124.130] WARN  usb: port 25: incercarea 2, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[ 124.910] WARN  usb: port 25: incercarea 3, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[ 125.710] INFO  usb: port 25: Generic- SD/MMC CRW fara mediu (sense 2/3a, de ex. cititor de carduri gol): sar peste
+[ 126.470] WARN  usb: stick-ul de pe portul 25 nu porneste
+[ 127.240] INFO  usb: port 26: SET_CONFIGURATION 1 ok
+[ 128.010] INFO  usb: port 26.2: Configure Endpoint ok (2 endpoint-uri)
+[ 128.870] INFO  usb: stocare ADATA USB Flash Drive (29600 MiB)
+[ 140.570] INFO  fs: FAT32 (MBR, 29599 MiB) montat la /usb (scriere permisa)
+[ 180.290] INFO  net: registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 01000000, RDBAH 00000000, RDH 00000002, RDT [ 185.270] INFO  usb: prima tasta de la tastatura USB
+
+== jurnal pci ==
+[   -.---] INFO  acpi: 29 tabele (XSDT): FACP BOOT FIDT UEFI MCFG HPET APIC MIGT MSCT PCAT PCCT RASF SLIT SRAT SVOS WDDT OEM4 OEM1 OEM2 SSDT NITR SSDT MSDM LPIT SSDT DBGP DBG2 TPM2 BGRT
+[   -.---] INFO  acpi: FADT rev 6, RESET_REG io 0xb2 <- 0x73 (declarat suportat, 8 biti)
+[   -.---] INFO  acpi: MADT: 36 procesoare, APIC local la 0xfee00000, 5 I/O APIC (primul la 0xfec00000, GSI 0), 2 redirectari IRQ
+[   1.530] INFO  pci: radacina in plus: magistrala 16 (50 dispozitive, cu puntile ei)
+[   2.300] INFO  pci: radacina in plus: magistrala 64 (29 dispozitive, cu puntile ei)
+[   3.070] INFO  pci: radacina in plus: magistrala b2 (20 dispozitive, cu puntile ei)
+[   3.830] INFO  pci: 00:00.0 8086:2020 clasa 06:00:00 punte gazda
+[   4.600] INFO  pci: 00:04.0 8086:2021 clasa 08:80:00 alt dispozitiv
+[   5.370] INFO  pci: 00:04.1 8086:2021 clasa 08:80:00 alt dispozitiv
+[   6.140] INFO  pci: 00:04.2 8086:2021 clasa 08:80:00 alt dispozitiv
+[   6.910] INFO  pci: 00:04.3 8086:2021 clasa 08:80:00 alt dispozitiv
+[   7.680] INFO  pci: 00:04.4 8086:2021 clasa 08:80:00 alt dispozitiv
+[   8.440] INFO  pci: 00:04.5 8086:2021 clasa 08:80:00 alt dispozitiv
+[   9.210] INFO  pci: 00:04.6 8086:2021 clasa 08:80:00 alt dispozitiv
+[   9.980] INFO  pci: 00:04.7 8086:2021 clasa 08:80:00 alt dispozitiv
+[  10.750] INFO  pci: 00:05.0 8086:2024 clasa 08:80:00 alt dispozitiv
+[  11.510] INFO  pci: 00:05.2 8086:2025 clasa 08:80:00 alt dispozitiv
+[  12.280] INFO  pci: 00:05.4 8086:2026 clasa 08:00:20 alt dispozitiv
+[  13.050] INFO  pci: 00:08.0 8086:2014 clasa 08:80:00 alt dispozitiv
+[  13.820] INFO  pci: 00:08.1 8086:2015 clasa 11:01:00 alt dispozitiv
+[  14.580] INFO  pci: 00:08.2 8086:2016 clasa 08:80:00 alt dispozitiv
+[  15.350] INFO  pci: 00:14.0 8086:a2af clasa 0c:03:30 controler USB
+[  16.120] INFO  pci: 00:14.2 8086:a2b1 clasa 11:80:00 alt dispozitiv
+[  16.890] INFO  pci: 00:16.0 8086:a2ba clasa 07:80:00 alt dispozitiv
+[  17.660] INFO  pci: 00:17.0 8086:a282 clasa 01:06:01 controler SATA (AHCI)
+[  18.420] INFO  pci: 00:1c.0 8086:a290 clasa 06:04:00 punte PCI
+[  19.190] INFO  pci: 00:1c.6 8086:a296 clasa 06:04:00 punte PCI
+[  19.960] INFO  pci: 00:1f.0 8086:a2d2 clasa 06:01:00 punte ISA
+[  20.730] INFO  pci: 00:1f.2 8086:a2a1 clasa 05:80:00 alt dispozitiv
+[  21.500] INFO  pci: 00:1f.3 8086:a2f0 clasa 04:03:00 multimedia
+[  22.260] INFO  pci: 00:1f.4 8086:a2a3 clasa 0c:05:00 SMBus
+[  23.030] INFO  pci: 00:1f.6 8086:15e3 clasa 02:00:00 placa de retea
+[  23.800] INFO  pci: 02:00.0 104c:8240 clasa 06:04:00 punte PCI
+[  24.570] INFO  pci: 16:05.0 8086:2034 clasa 08:80:00 alt dispozitiv
+[  25.340] INFO  pci: 16:05.2 8086:2035 clasa 08:80:00 alt dispozitiv
+[  26.100] INFO  pci: 16:05.4 8086:2036 clasa 08:00:20 alt dispozitiv
+[  26.870] INFO  pci: 16:08.0 8086:208d clasa 08:80:00 alt dispozitiv
+[  27.640] INFO  pci: 16:08.1 8086:208d clasa 08:80:00 alt dispozitiv
+[  28.410] INFO  pci: 16:08.2 8086:208d clasa 08:80:00 alt dispozitiv
+[  29.180] INFO  pci: 16:08.3 8086:208d clasa 08:80:00 alt dispozitiv
+[  29.950] INFO  pci: 16:08.4 8086:208d clasa 08:80:00 alt dispozitiv
+[  30.710] INFO  pci: 16:08.5 8086:208d clasa 08:80:00 alt dispozitiv
+[  31.480] INFO  pci: 16:08.6 8086:208d clasa 08:80:00 alt dispozitiv
+[  32.250] INFO  pci: 16:08.7 8086:208d clasa 08:80:00 alt dispozitiv
+[  33.020] INFO  pci: 16:09.0 8086:208d clasa 08:80:00 alt dispozitiv
+[  33.780] INFO  pci: 16:09.1 8086:208d clasa 08:80:00 alt dispozitiv
+[  34.550] INFO  pci: 16:09.2 8086:208d clasa 08:80:00 alt dispozitiv
+[  35.320] INFO  pci: 16:09.3 8086:208d clasa 08:80:00 alt dispozitiv
+[  36.090] INFO  pci: 16:09.4 8086:208d clasa 08:80:00 alt dispozitiv
+[  36.860] INFO  pci: 16:09.5 8086:208d clasa 08:80:00 alt dispozitiv
+[  37.620] INFO  pci: 16:09.6 8086:208d clasa 08:80:00 alt dispozitiv
+[  38.390] INFO  pci: 16:09.7 8086:208d clasa 08:80:00 alt dispozitiv
+[  39.160] INFO  pci: 16:0a.0 8086:208d clasa 08:80:00 alt dispozitiv
+[  39.930] INFO  pci: 16:0a.1 8086:208d clasa 08:80:00 alt dispozitiv
+[  40.700] INFO  pci: 16:0e.0 8086:208e clasa 08:80:00 alt dispozitiv
+[  41.460] INFO  pci: 16:0e.1 8086:208e clasa 08:80:00 alt dispozitiv
+[  42.230] INFO  pci: 16:0e.2 8086:208e clasa 08:80:00 alt dispozitiv
+[  43.000] INFO  pci: 16:0e.3 8086:208e clasa 08:80:00 alt dispozitiv
+[  43.770] INFO  pci: 16:0e.4 8086:208e clasa 08:80:00 alt dispozitiv
+[  44.540] INFO  pci: 16:0e.5 8086:208e clasa 08:80:00 alt dispozitiv
+[  45.300] INFO  pci: 16:0e.6 8086:208e clasa 08:80:00 alt dispozitiv
+[  46.070] INFO  pci: 16:0e.7 8086:208e clasa 08:80:00 alt dispozitiv
+[  46.840] INFO  pci: 16:0f.0 8086:208e clasa 08:80:00 alt dispozitiv
+[  47.610] INFO  pci: 16:0f.1 8086:208e clasa 08:80:00 alt dispozitiv
+[  48.370] INFO  pci: 16:0f.2 8086:208e clasa 08:80:00 alt dispozitiv
+[  49.140] INFO  pci: 16:0f.3 8086:208e clasa 08:80:00 alt dispozitiv
+[  49.910] INFO  pci: 16:0f.4 8086:208e clasa 08:80:00 alt dispozitiv
+[  50.680] INFO  pci: 16:0f.5 8086:208e clasa 08:80:00 alt dispozitiv
+[  51.450] INFO  pci: 16:0f.6 8086:208e clasa 08:80:00 alt dispozitiv
+[  52.210] INFO  pci: 16:0f.7 8086:208e clasa 08:80:00 alt dispozitiv
+[  52.980] INFO  pci: 16:10.0 8086:208e clasa 08:80:00 alt dispozitiv
+[  53.750] INFO  pci: 16:10.1 8086:208e clasa 08:80:00 alt dispozitiv
+[  54.520] INFO  pci: 16:1d.0 8086:2054 clasa 08:80:00 alt dispozitiv
+[  55.290] INFO  pci: 16:1d.1 8086:2055 clasa 08:80:00 alt dispozitiv
+[  56.050] INFO  pci: 16:1d.2 8086:2056 clasa 08:80:00 alt dispozitiv
+[  56.820] INFO  pci: 16:1d.3 8086:2057 clasa 08:80:00 alt dispozitiv
+[  57.590] INFO  pci: 16:1e.0 8086:2080 clasa 08:80:00 alt dispozitiv
+[  58.360] INFO  pci: 16:1e.1 8086:2081 clasa 08:80:00 alt dispozitiv
+[  59.130] INFO  pci: 16:1e.2 8086:2082 clasa 08:80:00 alt dispozitiv
+[  59.890] INFO  pci: 16:1e.3 8086:2083 clasa 08:80:00 alt dispozitiv
+[  60.660] INFO  pci: 16:1e.4 8086:2084 clasa 08:80:00 alt dispozitiv
+[  61.430] INFO  pci: 16:1e.5 8086:2085 clasa 08:80:00 alt dispozitiv
+[  62.200] INFO  pci: 16:1e.6 8086:2086 clasa 08:80:00 alt dispozitiv
+[  62.970] INFO  pci: 64:05.0 8086:2034 clasa 08:80:00 alt dispozitiv
+[  63.730] INFO  pci: 64:05.2 8086:2035 clasa 08:80:00 alt dispozitiv
+[  64.500] INFO  pci: 64:05.4 8086:2036 clasa 08:00:20 alt dispozitiv
+[  65.270] INFO  pci: 64:08.0 8086:2066 clasa 08:80:00 alt dispozitiv
+[  66.040] INFO  pci: 64:09.0 8086:2066 clasa 08:80:00 alt dispozitiv
+[  66.810] INFO  pci: 64:0a.0 8086:2040 clasa 08:80:00 alt dispozitiv
+[  67.570] INFO  pci: 64:0a.1 8086:2041 clasa 08:80:00 alt dispozitiv
+[  68.340] INFO  pci: 64:0a.2 8086:2042 clasa 08:80:00 alt dispozitiv
+[  69.110] INFO  pci: 64:0a.3 8086:2043 clasa 08:80:00 alt dispozitiv
+[  69.880] INFO  pci: 64:0a.4 8086:2044 clasa 08:80:00 alt dispozitiv
+[  70.640] INFO  pci: 64:0a.5 8086:2045 clasa 08:80:00 alt dispozitiv
+[  71.410] INFO  pci: 64:0a.6 8086:2046 clasa 08:80:00 alt dispozitiv
+[  72.180] INFO  pci: 64:0a.7 8086:2047 clasa 08:80:00 alt dispozitiv
+[  72.950] INFO  pci: 64:0b.0 8086:2048 clasa 08:80:00 alt dispozitiv
+[  73.710] INFO  pci: 64:0b.1 8086:2049 clasa 08:80:00 alt dispozitiv
+[  74.480] INFO  pci: 64:0b.2 8086:204a clasa 08:80:00 alt dispozitiv
+[  75.250] INFO  pci: 64:0b.3 8086:204b clasa 08:80:00 alt dispozitiv
+[  76.020] INFO  pci: 64:0c.0 8086:2040 clasa 08:80:00 alt dispozitiv
+[  76.780] INFO  pci: 64:0c.1 8086:2041 clasa 08:80:00 alt dispozitiv
+[  77.550] INFO  pci: 64:0c.2 8086:2042 clasa 08:80:00 alt dispozitiv
+[  78.320] INFO  pci: 64:0c.3 8086:2043 clasa 08:80:00 alt dispozitiv
+[  79.090] INFO  pci: 64:0c.4 8086:2044 clasa 08:80:00 alt dispozitiv
+[  79.860] INFO  pci: 64:0c.5 8086:2045 clasa 08:80:00 alt dispozitiv
+[  80.620] INFO  pci: 64:0c.6 8086:2046 clasa 08:80:00 alt dispozitiv
+[  81.390] INFO  pci: 64:0c.7 8086:2047 clasa 08:80:00 alt dispozitiv
+[  82.160] INFO  pci: 64:0d.0 8086:2048 clasa 08:80:00 alt dispozitiv
+[  82.930] INFO  pci: 64:0d.1 8086:2049 clasa 08:80:00 alt dispozitiv
+[  83.690] INFO  pci: 64:0d.2 8086:204a clasa 08:80:00 alt dispozitiv
+[  84.460] INFO  pci: 64:0d.3 8086:204b clasa 08:80:00 alt dispozitiv
+[  85.230] INFO  pci: b2:00.0 8086:2030 clasa 06:04:00 punte PCI
+[  86.000] INFO  pci: b2:02.0 8086:2032 clasa 06:04:00 punte PCI
+[  86.770] INFO  pci: b2:03.0 8086:2033 clasa 06:04:00 punte PCI
+[  87.540] INFO  pci: b2:05.0 8086:2034 clasa 08:80:00 alt dispozitiv
+[  88.300] INFO  pci: b2:05.2 8086:2035 clasa 08:80:00 alt dispozitiv
+[  89.070] INFO  pci: b2:05.4 8086:2036 clasa 08:00:20 alt dispozitiv
+[  89.840] INFO  pci: b2:12.0 8086:204c clasa 11:01:00 alt dispozitiv
+[  90.610] INFO  pci: b2:12.1 8086:204d clasa 11:01:00 alt dispozitiv
+[  91.370] INFO  pci: b2:12.2 8086:204e clasa 08:80:00 alt dispozitiv
+[  92.140] INFO  pci: b2:15.0 8086:2018 clasa 08:80:00 alt dispozitiv
+[  92.910] INFO  pci: b2:15.1 8086:2088 clasa 11:01:00 alt dispozitiv
+[  93.680] INFO  pci: b2:16.0 8086:2018 clasa 08:80:00 alt dispozitiv
+[  94.440] INFO  pci: b2:16.1 8086:2088 clasa 11:01:00 alt dispozitiv
+[  95.210] INFO  pci: b2:16.4 8086:2018 clasa 08:80:00 alt dispozitiv
+[  95.980] INFO  pci: b2:16.5 8086:2088 clasa 11:01:00 alt dispozitiv
+[  96.750] INFO  pci: b2:17.0 8086:2018 clasa 08:80:00 alt dispozitiv
+[  97.520] INFO  pci: b2:17.1 8086:2088 clasa 11:01:00 alt dispozitiv
+[  98.290] INFO  pci: b3:00.0 10de:2482 clasa 03:00:00 placa video
+[  99.050] INFO  pci: b3:00.1 10de:228b clasa 04:03:00 multimedia
+[  99.820] INFO  pci: b4:00.0 1c5c:1959 clasa 01:08:02 controler NVMe
+[ 100.590] INFO  pci: 126 dispozitive pe 4 radacini (ECAM la 0x60000000, magistralele 00-ff, cautare 2309 ms)
+
+== jurnal gpu ==
+[1313.390] INFO  gpu: gpu0: b3:00.0 10de:2482 NVIDIA (clasa 03:00:00) subsistem 88131043
+[1315.060] INFO  gpu: gpu0: Command 0003 (memorie da, bus master nu), stare D0
+[1316.730] INFO  gpu: gpu0: BAR0 0xf9000000 memorie
+[1318.400] INFO  gpu: gpu0: BAR1 0xe0000000 memorie, 64 biti, prefetch
+[1320.070] INFO  gpu: gpu0: BAR3 0xf0000000 memorie, 64 biti, prefetch
+[1321.740] INFO  gpu: gpu0: BAR5 0xf000 I/O
+[1323.400] INFO  gpu: gpu0: Resizable BAR: BAR0 = 16 MiB acum
+[1325.070] INFO  gpu: gpu0: Resizable BAR: BAR1 = 256 MiB acum
+[1326.740] INFO  gpu: gpu0: Resizable BAR: BAR3 = 32 MiB acum
+[1328.410] INFO  gpu: gpu0: cyber-gpu dac2e32 nvidia-ga104: GeForce RTX 3070 Ti (BAR0 0xf9000000)
+[1330.080] INFO  gpu: gpu0: NV_PMC_BOOT_0 = b74000a1, NV_PMC_BOOT_42 = 174a1000 (cyber-gpu, consecvent true)
+[1331.750] INFO  gpu: gpu0: cip 0x174 GA104 (arhitectura Ampere)
+[1333.410] INFO  gpu: zero scrieri in placa (configuratie PCI si registre: doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+[1434.160] INFO  gpu: gpu0: jurnal cyber-gpu: bar0 r 0x118128 = 0x00008b8f
+[1435.240] INFO  gpu: gpu0: jurnal cyber-gpu: bar0 r 0x118234 = 0x000003ff
+[1436.900] INFO  gpu: gpu0: jurnal cyber-gpu: pas I2: GFW_BOOT: ok
+[1438.560] INFO  gpu: gpu0: b3:00.0 GeForce RTX 3070 Ti (BAR0 0xf9000000), cyber-gpu dac2e32
+[1440.220] INFO  gpu: gpu0: GFW gata (progres 0xff) dupa 1 runde, 3 us; PRIV_LEVEL_MASK 0x00008b8f
+[1441.890] INFO  gpu: gpu0: 1 pagini mapate pe rand (doar citire)
+[1443.550] INFO  gpu: 0 scrieri in placa (doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+[1510.540] INFO  gpu: gpu0: jurnal cyber-gpu: bar0 r 0x300000 = 0xeb7faa55
+[1511.310] INFO  gpu: gpu0: jurnal cyber-gpu: pas I3: VBIOS prin PROM: ESEC
+[1512.080] INFO  gpu: gpu0: b3:00.0 GeForce RTX 3070 Ti (BAR0 0xf9000000), cyber-gpu dac2e32
+[1512.990] INFO  gpu: gpu0: VBIOS: verificare esuata la 0x24600: asteptat 0xaa55, citit 0x4e56
+[1514.660] INFO  gpu: gpu0: 3 pagini mapate pe rand (doar citire)
+[1516.330] INFO  gpu: 0 scrieri in placa (doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+
+== erori si avertismente ==
+[ 123.340] WARN  usb: port 25: incercarea 1, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[ 124.130] WARN  usb: port 25: incercarea 2, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[ 124.910] WARN  usb: port 25: incercarea 3, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[ 126.470] WARN  usb: stick-ul de pe portul 25 nu porneste
+[ 148.750] WARN  net: DHCP nu raspunde; fara adresa, reincerc la 10 s
+
+== jurnal complet (327 randuri pastrate in memorie) ==
+[   -.---] INFO  jurnal: pornit (nucleu 0.1.0)
+[   -.---] INFO  fpu: XSAVE: x87, SSE, AVX; zona per fir 832 octeti; AVX2 da
+[   -.---] INFO  cpu: GDT si IDT incarcate (CS=0x08, TR=0x28)
+[   -.---] INFO  mem: 0x000000000000-0x00000003f000      252 KiB utilizabila
+[   -.---] INFO  mem: 0x00000003f000-0x000000040000        4 KiB rezervata
+[   -.---] INFO  mem: 0x000000040000-0x0000000a0000      384 KiB utilizabila
+[   -.---] INFO  mem: 0x0000000a0000-0x000000100000      384 KiB rezervata
+[   -.---] INFO  mem: 0x000000100000-0x000036a28000   894112 KiB utilizabila
+[   -.---] INFO  mem: 0x000036a28000-0x000036b28000     1024 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x000036b28000-0x00003ec4c000   132240 KiB utilizabila
+[   -.---] INFO  mem: 0x00003ec4c000-0x00003ec79000      180 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x00003ec79000-0x00003ee3b000     1800 KiB nucleu si module
+[   -.---] INFO  mem: 0x00003ee3b000-0x00003ee3c000        4 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x00003ee3c000-0x00003eef7000      748 KiB nucleu si module
+[   -.---] INFO  mem: 0x00003eef7000-0x00003f60a000     7244 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x00003f60a000-0x0000435f5000    65452 KiB utilizabila
+[   -.---] INFO  mem: 0x0000435f5000-0x00004c10f000   142440 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x00004c10f000-0x00004c51f000     4160 KiB rezervata
+[   -.---] INFO  mem: 0x00004c51f000-0x00004c6a8000     1572 KiB ACPI (recuperabila)
+[   -.---] INFO  mem: 0x00004c6a8000-0x00004d7ce000    17560 KiB ACPI NVS
+[   -.---] INFO  mem: 0x00004d7ce000-0x00004e427000    12644 KiB rezervata
+[   -.---] INFO  mem: 0x00004e427000-0x00004e6e7000     2816 KiB rezervata
+[   -.---] INFO  mem: 0x00004e6e7000-0x000050000000    25700 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x000050000000-0x000057c00000   126976 KiB rezervata
+[   -.---] INFO  mem: 0x000057c00000-0x000060000000   135168 KiB rezervata
+[   -.---] INFO  mem: 0x000060000000-0x000070000000   262144 KiB rezervata
+[   -.---] INFO  mem: 0x0000e0000000-0x0000e0870000     8640 KiB ecran
+[   -.---] INFO  mem: 0x0000fd000000-0x0000fe011000    16452 KiB rezervata
+[   -.---] INFO  mem: 0x0000fec00000-0x0000fec01000        4 KiB rezervata
+[   -.---] INFO  mem: 0x0000fed00000-0x0000fed01000        4 KiB rezervata
+[   -.---] INFO  mem: 0x0000fee00000-0x0000fee01000        4 KiB rezervata
+[   -.---] INFO  mem: 0x0000ff000000-0x000100000000    16384 KiB rezervata
+[   -.---] INFO  mem: 0x000100000000-0x0020a0000000 132644864 KiB utilizabila
+[   -.---] INFO  mem: usable: 130602 MiB in 30 regiuni, adresa maxima 0x20a0000000, HHDM la 0xffff800000000000
+[   -.---] INFO  mem: alocator de cadre gata: 33433280 cadre libere (130598 MiB), harta de 4176 KiB la 0x100000
+[   -.---] INFO  mem: tabele de pagini proprii active (13 tabele copiate de la Limine)
+[   -.---] INFO  mem: heap gata la 0xffff900000000000, 1024 KiB initial
+[   -.---] INFO  smp: pagina pentru trambulina la 0x1000
+[   -.---] INFO  sched: planificator gata (round-robin, felie 10 ms, stiva 16 KiB)
+[   -.---] INFO  acpi: 29 tabele (XSDT): FACP BOOT FIDT UEFI MCFG HPET APIC MIGT MSCT PCAT PCCT RASF SLIT SRAT SVOS WDDT OEM4 OEM1 OEM2 SSDT NITR SSDT MSDM LPIT SSDT DBGP DBG2 TPM2 BGRT
+[   -.---] INFO  acpi: FADT rev 6, RESET_REG io 0xb2 <- 0x73 (declarat suportat, 8 biti)
+[   -.---] INFO  acpi: MADT: 36 procesoare, APIC local la 0xfee00000, 5 I/O APIC (primul la 0xfec00000, GSI 0), 2 redirectari IRQ
+[   -.---] INFO  apic: temporizator 100 Hz pornit (15580 impulsuri APIC pe perioada), 24 linii I/O APIC
+[   0.750] INFO  tastatura: PS/2 gata (aranjament US)
+[   1.520] INFO  mouse: niciun mouse PS/2
+[   1.530] INFO  pci: radacina in plus: magistrala 16 (50 dispozitive, cu puntile ei)
+[   2.300] INFO  pci: radacina in plus: magistrala 64 (29 dispozitive, cu puntile ei)
+[   3.070] INFO  pci: radacina in plus: magistrala b2 (20 dispozitive, cu puntile ei)
+[   3.830] INFO  pci: 00:00.0 8086:2020 clasa 06:00:00 punte gazda
+[   4.600] INFO  pci: 00:04.0 8086:2021 clasa 08:80:00 alt dispozitiv
+[   5.370] INFO  pci: 00:04.1 8086:2021 clasa 08:80:00 alt dispozitiv
+[   6.140] INFO  pci: 00:04.2 8086:2021 clasa 08:80:00 alt dispozitiv
+[   6.910] INFO  pci: 00:04.3 8086:2021 clasa 08:80:00 alt dispozitiv
+[   7.680] INFO  pci: 00:04.4 8086:2021 clasa 08:80:00 alt dispozitiv
+[   8.440] INFO  pci: 00:04.5 8086:2021 clasa 08:80:00 alt dispozitiv
+[   9.210] INFO  pci: 00:04.6 8086:2021 clasa 08:80:00 alt dispozitiv
+[   9.980] INFO  pci: 00:04.7 8086:2021 clasa 08:80:00 alt dispozitiv
+[  10.750] INFO  pci: 00:05.0 8086:2024 clasa 08:80:00 alt dispozitiv
+[  11.510] INFO  pci: 00:05.2 8086:2025 clasa 08:80:00 alt dispozitiv
+[  12.280] INFO  pci: 00:05.4 8086:2026 clasa 08:00:20 alt dispozitiv
+[  13.050] INFO  pci: 00:08.0 8086:2014 clasa 08:80:00 alt dispozitiv
+[  13.820] INFO  pci: 00:08.1 8086:2015 clasa 11:01:00 alt dispozitiv
+[  14.580] INFO  pci: 00:08.2 8086:2016 clasa 08:80:00 alt dispozitiv
+[  15.350] INFO  pci: 00:14.0 8086:a2af clasa 0c:03:30 controler USB
+[  16.120] INFO  pci: 00:14.2 8086:a2b1 clasa 11:80:00 alt dispozitiv
+[  16.890] INFO  pci: 00:16.0 8086:a2ba clasa 07:80:00 alt dispozitiv
+[  17.660] INFO  pci: 00:17.0 8086:a282 clasa 01:06:01 controler SATA (AHCI)
+[  18.420] INFO  pci: 00:1c.0 8086:a290 clasa 06:04:00 punte PCI
+[  19.190] INFO  pci: 00:1c.6 8086:a296 clasa 06:04:00 punte PCI
+[  19.960] INFO  pci: 00:1f.0 8086:a2d2 clasa 06:01:00 punte ISA
+[  20.730] INFO  pci: 00:1f.2 8086:a2a1 clasa 05:80:00 alt dispozitiv
+[  21.500] INFO  pci: 00:1f.3 8086:a2f0 clasa 04:03:00 multimedia
+[  22.260] INFO  pci: 00:1f.4 8086:a2a3 clasa 0c:05:00 SMBus
+[  23.030] INFO  pci: 00:1f.6 8086:15e3 clasa 02:00:00 placa de retea
+[  23.800] INFO  pci: 02:00.0 104c:8240 clasa 06:04:00 punte PCI
+[  24.570] INFO  pci: 16:05.0 8086:2034 clasa 08:80:00 alt dispozitiv
+[  25.340] INFO  pci: 16:05.2 8086:2035 clasa 08:80:00 alt dispozitiv
+[  26.100] INFO  pci: 16:05.4 8086:2036 clasa 08:00:20 alt dispozitiv
+[  26.870] INFO  pci: 16:08.0 8086:208d clasa 08:80:00 alt dispozitiv
+[  27.640] INFO  pci: 16:08.1 8086:208d clasa 08:80:00 alt dispozitiv
+[  28.410] INFO  pci: 16:08.2 8086:208d clasa 08:80:00 alt dispozitiv
+[  29.180] INFO  pci: 16:08.3 8086:208d clasa 08:80:00 alt dispozitiv
+[  29.950] INFO  pci: 16:08.4 8086:208d clasa 08:80:00 alt dispozitiv
+[  30.710] INFO  pci: 16:08.5 8086:208d clasa 08:80:00 alt dispozitiv
+[  31.480] INFO  pci: 16:08.6 8086:208d clasa 08:80:00 alt dispozitiv
+[  32.250] INFO  pci: 16:08.7 8086:208d clasa 08:80:00 alt dispozitiv
+[  33.020] INFO  pci: 16:09.0 8086:208d clasa 08:80:00 alt dispozitiv
+[  33.780] INFO  pci: 16:09.1 8086:208d clasa 08:80:00 alt dispozitiv
+[  34.550] INFO  pci: 16:09.2 8086:208d clasa 08:80:00 alt dispozitiv
+[  35.320] INFO  pci: 16:09.3 8086:208d clasa 08:80:00 alt dispozitiv
+[  36.090] INFO  pci: 16:09.4 8086:208d clasa 08:80:00 alt dispozitiv
+[  36.860] INFO  pci: 16:09.5 8086:208d clasa 08:80:00 alt dispozitiv
+[  37.620] INFO  pci: 16:09.6 8086:208d clasa 08:80:00 alt dispozitiv
+[  38.390] INFO  pci: 16:09.7 8086:208d clasa 08:80:00 alt dispozitiv
+[  39.160] INFO  pci: 16:0a.0 8086:208d clasa 08:80:00 alt dispozitiv
+[  39.930] INFO  pci: 16:0a.1 8086:208d clasa 08:80:00 alt dispozitiv
+[  40.700] INFO  pci: 16:0e.0 8086:208e clasa 08:80:00 alt dispozitiv
+[  41.460] INFO  pci: 16:0e.1 8086:208e clasa 08:80:00 alt dispozitiv
+[  42.230] INFO  pci: 16:0e.2 8086:208e clasa 08:80:00 alt dispozitiv
+[  43.000] INFO  pci: 16:0e.3 8086:208e clasa 08:80:00 alt dispozitiv
+[  43.770] INFO  pci: 16:0e.4 8086:208e clasa 08:80:00 alt dispozitiv
+[  44.540] INFO  pci: 16:0e.5 8086:208e clasa 08:80:00 alt dispozitiv
+[  45.300] INFO  pci: 16:0e.6 8086:208e clasa 08:80:00 alt dispozitiv
+[  46.070] INFO  pci: 16:0e.7 8086:208e clasa 08:80:00 alt dispozitiv
+[  46.840] INFO  pci: 16:0f.0 8086:208e clasa 08:80:00 alt dispozitiv
+[  47.610] INFO  pci: 16:0f.1 8086:208e clasa 08:80:00 alt dispozitiv
+[  48.370] INFO  pci: 16:0f.2 8086:208e clasa 08:80:00 alt dispozitiv
+[  49.140] INFO  pci: 16:0f.3 8086:208e clasa 08:80:00 alt dispozitiv
+[  49.910] INFO  pci: 16:0f.4 8086:208e clasa 08:80:00 alt dispozitiv
+[  50.680] INFO  pci: 16:0f.5 8086:208e clasa 08:80:00 alt dispozitiv
+[  51.450] INFO  pci: 16:0f.6 8086:208e clasa 08:80:00 alt dispozitiv
+[  52.210] INFO  pci: 16:0f.7 8086:208e clasa 08:80:00 alt dispozitiv
+[  52.980] INFO  pci: 16:10.0 8086:208e clasa 08:80:00 alt dispozitiv
+[  53.750] INFO  pci: 16:10.1 8086:208e clasa 08:80:00 alt dispozitiv
+[  54.520] INFO  pci: 16:1d.0 8086:2054 clasa 08:80:00 alt dispozitiv
+[  55.290] INFO  pci: 16:1d.1 8086:2055 clasa 08:80:00 alt dispozitiv
+[  56.050] INFO  pci: 16:1d.2 8086:2056 clasa 08:80:00 alt dispozitiv
+[  56.820] INFO  pci: 16:1d.3 8086:2057 clasa 08:80:00 alt dispozitiv
+[  57.590] INFO  pci: 16:1e.0 8086:2080 clasa 08:80:00 alt dispozitiv
+[  58.360] INFO  pci: 16:1e.1 8086:2081 clasa 08:80:00 alt dispozitiv
+[  59.130] INFO  pci: 16:1e.2 8086:2082 clasa 08:80:00 alt dispozitiv
+[  59.890] INFO  pci: 16:1e.3 8086:2083 clasa 08:80:00 alt dispozitiv
+[  60.660] INFO  pci: 16:1e.4 8086:2084 clasa 08:80:00 alt dispozitiv
+[  61.430] INFO  pci: 16:1e.5 8086:2085 clasa 08:80:00 alt dispozitiv
+[  62.200] INFO  pci: 16:1e.6 8086:2086 clasa 08:80:00 alt dispozitiv
+[  62.970] INFO  pci: 64:05.0 8086:2034 clasa 08:80:00 alt dispozitiv
+[  63.730] INFO  pci: 64:05.2 8086:2035 clasa 08:80:00 alt dispozitiv
+[  64.500] INFO  pci: 64:05.4 8086:2036 clasa 08:00:20 alt dispozitiv
+[  65.270] INFO  pci: 64:08.0 8086:2066 clasa 08:80:00 alt dispozitiv
+[  66.040] INFO  pci: 64:09.0 8086:2066 clasa 08:80:00 alt dispozitiv
+[  66.810] INFO  pci: 64:0a.0 8086:2040 clasa 08:80:00 alt dispozitiv
+[  67.570] INFO  pci: 64:0a.1 8086:2041 clasa 08:80:00 alt dispozitiv
+[  68.340] INFO  pci: 64:0a.2 8086:2042 clasa 08:80:00 alt dispozitiv
+[  69.110] INFO  pci: 64:0a.3 8086:2043 clasa 08:80:00 alt dispozitiv
+[  69.880] INFO  pci: 64:0a.4 8086:2044 clasa 08:80:00 alt dispozitiv
+[  70.640] INFO  pci: 64:0a.5 8086:2045 clasa 08:80:00 alt dispozitiv
+[  71.410] INFO  pci: 64:0a.6 8086:2046 clasa 08:80:00 alt dispozitiv
+[  72.180] INFO  pci: 64:0a.7 8086:2047 clasa 08:80:00 alt dispozitiv
+[  72.950] INFO  pci: 64:0b.0 8086:2048 clasa 08:80:00 alt dispozitiv
+[  73.710] INFO  pci: 64:0b.1 8086:2049 clasa 08:80:00 alt dispozitiv
+[  74.480] INFO  pci: 64:0b.2 8086:204a clasa 08:80:00 alt dispozitiv
+[  75.250] INFO  pci: 64:0b.3 8086:204b clasa 08:80:00 alt dispozitiv
+[  76.020] INFO  pci: 64:0c.0 8086:2040 clasa 08:80:00 alt dispozitiv
+[  76.780] INFO  pci: 64:0c.1 8086:2041 clasa 08:80:00 alt dispozitiv
+[  77.550] INFO  pci: 64:0c.2 8086:2042 clasa 08:80:00 alt dispozitiv
+[  78.320] INFO  pci: 64:0c.3 8086:2043 clasa 08:80:00 alt dispozitiv
+[  79.090] INFO  pci: 64:0c.4 8086:2044 clasa 08:80:00 alt dispozitiv
+[  79.860] INFO  pci: 64:0c.5 8086:2045 clasa 08:80:00 alt dispozitiv
+[  80.620] INFO  pci: 64:0c.6 8086:2046 clasa 08:80:00 alt dispozitiv
+[  81.390] INFO  pci: 64:0c.7 8086:2047 clasa 08:80:00 alt dispozitiv
+[  82.160] INFO  pci: 64:0d.0 8086:2048 clasa 08:80:00 alt dispozitiv
+[  82.930] INFO  pci: 64:0d.1 8086:2049 clasa 08:80:00 alt dispozitiv
+[  83.690] INFO  pci: 64:0d.2 8086:204a clasa 08:80:00 alt dispozitiv
+[  84.460] INFO  pci: 64:0d.3 8086:204b clasa 08:80:00 alt dispozitiv
+[  85.230] INFO  pci: b2:00.0 8086:2030 clasa 06:04:00 punte PCI
+[  86.000] INFO  pci: b2:02.0 8086:2032 clasa 06:04:00 punte PCI
+[  86.770] INFO  pci: b2:03.0 8086:2033 clasa 06:04:00 punte PCI
+[  87.540] INFO  pci: b2:05.0 8086:2034 clasa 08:80:00 alt dispozitiv
+[  88.300] INFO  pci: b2:05.2 8086:2035 clasa 08:80:00 alt dispozitiv
+[  89.070] INFO  pci: b2:05.4 8086:2036 clasa 08:00:20 alt dispozitiv
+[  89.840] INFO  pci: b2:12.0 8086:204c clasa 11:01:00 alt dispozitiv
+[  90.610] INFO  pci: b2:12.1 8086:204d clasa 11:01:00 alt dispozitiv
+[  91.370] INFO  pci: b2:12.2 8086:204e clasa 08:80:00 alt dispozitiv
+[  92.140] INFO  pci: b2:15.0 8086:2018 clasa 08:80:00 alt dispozitiv
+[  92.910] INFO  pci: b2:15.1 8086:2088 clasa 11:01:00 alt dispozitiv
+[  93.680] INFO  pci: b2:16.0 8086:2018 clasa 08:80:00 alt dispozitiv
+[  94.440] INFO  pci: b2:16.1 8086:2088 clasa 11:01:00 alt dispozitiv
+[  95.210] INFO  pci: b2:16.4 8086:2018 clasa 08:80:00 alt dispozitiv
+[  95.980] INFO  pci: b2:16.5 8086:2088 clasa 11:01:00 alt dispozitiv
+[  96.750] INFO  pci: b2:17.0 8086:2018 clasa 08:80:00 alt dispozitiv
+[  97.520] INFO  pci: b2:17.1 8086:2088 clasa 11:01:00 alt dispozitiv
+[  98.290] INFO  pci: b3:00.0 10de:2482 clasa 03:00:00 placa video
+[  99.050] INFO  pci: b3:00.1 10de:228b clasa 04:03:00 multimedia
+[  99.820] INFO  pci: b4:00.0 1c5c:1959 clasa 01:08:02 controler NVMe
+[ 100.590] INFO  pci: 126 dispozitive pe 4 radacini (ECAM la 0x60000000, magistralele 00-ff, cautare 2309 ms)
+[ 101.360] INFO  rtc: 2026-10-28 10:22:32
+[ 102.120] INFO  boot: pornit de pe disc (hard disk, SSD sau stick USB)
+[ 102.890] INFO  boot: 1 fisiere de la Limine
+[ 103.660] INFO  fs: radacina din initrd: 143 intrari, 1689 KiB
+[ 104.530] INFO  usb: port 5: slot 1, viteza 2, pachet maxim EP0 8, configuratia 1 (34 octeti), endpoint-uri 81/3/8/b0
+[ 105.300] INFO  usb: port 5: 17ef:608d mouse (HID) (clasa 03:01:02, viteza 2)
+[ 106.120] INFO  usb: port 6: slot 2, viteza 2, pachet maxim EP0 8, configuratia 1 (34 octeti), endpoint-uri 81/3/8/b0
+[ 106.890] INFO  usb: port 6: 413c:2106 tastatura (HID) (clasa 03:01:01, viteza 2)
+[ 107.720] INFO  usb: port 10: slot 3, viteza 3, pachet maxim EP0 64, configuratia 1 (41 octeti), endpoint-uri 81/3/1/b0
+[ 108.490] INFO  usb: port 10: 0bda:5411 hub (clasa 09:00:02, viteza 3)
+[ 109.260] INFO  usb: port 25: slot 4, viteza 4, pachet maxim EP0 512, configuratia 1 (44 octeti), endpoint-uri 01/2/1024/b15 82/2/1024/b15
+[ 110.030] INFO  usb: port 25: 0bda:0328 stocare (Mass Storage) (clasa 08:06:50, viteza 4)
+[ 110.800] INFO  usb: port 26: slot 5, viteza 4, pachet maxim EP0 512, configuratia 1 (31 octeti), endpoint-uri 81/3/2/b0
+[ 111.570] INFO  usb: port 26: 0bda:0411 hub (clasa 09:00:03, viteza 4)
+[ 112.340] INFO  usb: port 10: Configure Endpoint ok (1 endpoint-uri)
+[ 113.110] INFO  usb: hub 10: 0bda:5411, viteza 3, 2 porturi, alimentare 20 ms
+[ 113.990] INFO  usb: port 26: Configure Endpoint ok (1 endpoint-uri)
+[ 114.760] INFO  usb: hub 26: 0bda:0411, viteza 4, 2 porturi, alimentare 20 ms
+[ 115.660] INFO  usb: hub 26 port 2: dispozitiv conectat, viteza 4 (stare 0203)
+[ 116.420] INFO  usb: port 26.2: slot 6, viteza 4, pachet maxim EP0 512, configuratia 1 (44 octeti), endpoint-uri 01/2/1024/b8 82/2/1024/b8
+[ 117.190] INFO  usb: port 26.2: 125f:db8a stocare (Mass Storage) (clasa 08:06:50, viteza 4)
+[ 117.960] INFO  usb: controler XHCI pornit, 26 porturi, 6 dispozitive (00:14.0)
+[ 118.730] INFO  usb: port 5: Configure Endpoint ok (1 endpoint-uri)
+[ 119.500] INFO  usb: mouse (HID) de pe portul 5 pornit(a)
+[ 120.260] INFO  usb: port 6: Configure Endpoint ok (1 endpoint-uri)
+[ 121.030] INFO  usb: tastatura (HID) de pe portul 6 pornit(a)
+[ 121.800] INFO  usb: port 25: SET_CONFIGURATION 1 ok
+[ 122.570] INFO  usb: port 25: Configure Endpoint ok (2 endpoint-uri)
+[ 123.340] WARN  usb: port 25: incercarea 1, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[ 124.130] WARN  usb: port 25: incercarea 2, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[ 124.910] WARN  usb: port 25: incercarea 3, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[ 125.710] INFO  usb: port 25: Generic- SD/MMC CRW fara mediu (sense 2/3a, de ex. cititor de carduri gol): sar peste
+[ 126.470] WARN  usb: stick-ul de pe portul 25 nu porneste
+[ 127.240] INFO  usb: port 26: SET_CONFIGURATION 1 ok
+[ 128.010] INFO  usb: port 26.2: Configure Endpoint ok (2 endpoint-uri)
+[ 128.870] INFO  usb: stocare ADATA USB Flash Drive (29600 MiB)
+[ 129.640] INFO  nvme: disc PC801 NVMe SK hynix 512GB (488386 MiB)
+[ 130.410] INFO  ahci: niciun disc SATA
+[ 131.180] INFO  fs: FAT32 (GPT, 499 MiB) montat la /disk
+[ 131.950] INFO  e1000: I219-LM (8086:15e3) la 00:1f.6, familia Pch, registre la 0x92f00000
+[ 132.890] INFO  e1000: firmware ME (FWSM): reg 0x5b54 60000040 -> 60000040
+[ 133.660] INFO  e1000: semafor PHY luat: reg 0xf00 002c0089 -> 002c00a9
+[ 134.420] INFO  e1000: PHY raspunde? (ID1): reg 0x2 00000000 -> 00000154
+[ 135.190] INFO  e1000: reset MAC (CTRL.RST): reg 0x0 18180240 -> 00100240
+[ 135.960] INFO  e1000: NVM: LAN_INIT_DONE nu a venit: reg 0x8 00000000 -> 40080443
+[ 136.730] INFO  e1000: legatura pornita (CTRL.SLU): reg 0x0 00100240 -> 00100240
+[ 137.500] INFO  e1000: PHY 015400a6 (adresa 2), bloc DMA de 34 pagini la 0x1000000 (intre 16 MiB si 4 GB), primul buffer RX 0x1002000
+[ 138.270] INFO  net: placa I219-LM pornita, MAC cc:96:e5:08:b7:b5
+[ 139.030] INFO  e1000: I219-LM: pasii PCH sunt testati doar pe model (e1000e/); pe hardware: workstation
+[ 139.800] INFO  e1000: legatura da (100 Mb/s)
+[ 140.570] INFO  fs: FAT32 (MBR, 29599 MiB) montat la /usb (scriere permisa)
+[ 140.580] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 142.110] INFO  mem: recuperat 176592 KiB din memoria bootloader-ului
+[ 143.650] INFO  metrici: pornire 144991.914 ms; memorie nucleu 9024 KiB (imagine 748 KiB + cadre 8276 KiB, heap 1790 / 2048 KiB); libera 130767 MiB
+[ 146.710] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 148.250] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 148.750] WARN  net: DHCP nu raspunde; fara adresa, reincerc la 10 s
+[ 150.320] INFO  net: arp primit: raspuns de la 192.168.0.242 (b4:4c:3b:16:6a:ea) pentru 192.168.0.242
+[ 152.630] INFO  net: arp primit: cerere de la 0.0.0.0 (ac:1c:26:9a:ca:3d) pentru 192.168.0.15
+[ 154.940] INFO  net: arp primit: cerere de la 192.168.0.15 (ac:1c:26:9a:ca:3d) pentru 192.168.0.1
+[ 157.220] INFO  net: arp primit: cerere de la 192.168.0.1 (10:27:f5:74:fe:93) pentru 192.168.0.238
+[ 159.530] INFO  net: arp primit: cerere de la 192.168.0.1 (10:27:f5:74:fe:93) pentru 192.168.0.238
+[ 161.840] INFO  net: arp primit: cerere de la 192.168.0.1 (10:27:f5:74:fe:93) pentru 192.168.0.238
+[ 164.150] INFO  net: arp primit: cerere de la 0.0.0.0 (ac:1c:26:9a:ca:3d) pentru 192.168.0.15
+[ 166.460] INFO  net: arp primit: cerere de la 192.168.0.15 (ac:1c:26:9a:ca:3d) pentru 192.168.0.1
+[ 168.770] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 171.050] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 173.360] INFO  net: arp primit: cerere de la 192.168.0.240 (24:52:6a:30:ac:33) pentru 192.168.0.245
+[ 175.670] INFO  net: arp primit: cerere de la 0.0.0.0 (ac:1c:26:9a:ca:3d) pentru 192.168.0.15
+[ 177.980] INFO  net: arp primit: cerere de la 192.168.0.15 (ac:1c:26:9a:ca:3d) pentru 192.168.0.1
+[ 180.290] INFO  net: legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x1000000
+[ 180.290] INFO  net: registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 01000000, RDBAH 00000000, RDH 00000002, RDT [ 185.270] INFO  usb: prima tasta de la tastatura USB
+[ 185.270] INFO  proces: firul 4 a iesit cu codul 0
+[ 190.310] INFO  net: DHCP: adresa 192.168.0.151, masca 255.255.255.0, ruta 192.168.0.1, DNS 192.168.0.1, pentru 7200 s
+[ 229.070] INFO  smp: nucleul 1 (APIC 2) pornit in 11 ms
+[ 229.080] INFO  smp: nucleul 2 (APIC 4) pornit in 11 ms
+[ 229.090] INFO  smp: nucleul 3 (APIC 6) pornit in 10 ms
+[ 229.100] INFO  smp: nucleul 4 (APIC 8) pornit in 11 ms
+[ 229.120] INFO  smp: nucleul 5 (APIC 16) pornit in 11 ms
+[ 229.130] INFO  smp: nucleul 6 (APIC 18) pornit in 11 ms
+[ 229.140] INFO  smp: nucleul 7 (APIC 20) pornit in 10 ms
+[ 229.150] INFO  smp: nucleul 8 (APIC 22) pornit in 11 ms
+[ 229.170] INFO  smp: nucleul 9 (APIC 32) pornit in 11 ms
+[ 229.180] INFO  smp: nucleul 10 (APIC 34) pornit in 11 ms
+[ 229.190] INFO  smp: nucleul 11 (APIC 36) pornit in 10 ms
+[ 229.210] INFO  smp: nucleul 12 (APIC 38) pornit in 11 ms
+[ 229.220] INFO  smp: nucleul 13 (APIC 40) pornit in 11 ms
+[ 229.230] INFO  smp: nucleul 14 (APIC 48) pornit in 11 ms
+[ 229.240] INFO  smp: nucleul 15 (APIC 50) pornit in 10 ms
+[ 229.260] INFO  smp: nucleul 16 (APIC 52) pornit in 10 ms
+[ 229.270] INFO  smp: nucleul 17 (APIC 54) pornit in 11 ms
+[ 229.280] INFO  smp: nucleul 18 (APIC 1) pornit in 11 ms
+[ 229.290] INFO  smp: nucleul 19 (APIC 3) pornit in 10 ms
+[ 229.310] INFO  smp: nucleul 20 (APIC 5) pornit in 11 ms
+[ 229.320] INFO  smp: nucleul 21 (APIC 7) pornit in 11 ms
+[ 229.330] INFO  smp: nucleul 22 (APIC 9) pornit in 11 ms
+[ 229.340] INFO  smp: nucleul 23 (APIC 17) pornit in 10 ms
+[ 229.360] INFO  smp: nucleul 24 (APIC 19) pornit in 11 ms
+[ 229.370] INFO  smp: nucleul 25 (APIC 21) pornit in 11 ms
+[ 229.380] INFO  smp: nucleul 26 (APIC 23) pornit in 11 ms
+[ 229.400] INFO  smp: nucleul 27 (APIC 33) pornit in 10 ms
+[ 229.410] INFO  smp: nucleul 28 (APIC 35) pornit in 10 ms
+[ 229.420] INFO  smp: nucleul 29 (APIC 37) pornit in 11 ms
+[ 229.430] INFO  smp: nucleul 30 (APIC 39) pornit in 11 ms
+[ 229.450] INFO  smp: nucleul 31 (APIC 41) pornit in 10 ms
+[ 229.460] INFO  smp: nucleul 32 (APIC 49) pornit in 10 ms
+[ 229.470] INFO  smp: nucleul 33 (APIC 51) pornit in 11 ms
+[ 229.480] INFO  smp: nucleul 34 (APIC 53) pornit in 11 ms
+[ 229.500] INFO  smp: nucleul 35 (APIC 55) pornit in 10 ms
+[ 229.500] INFO  smp: 36 nuclee pornite din 36 (in 442 ms); planificatorul ruleaza fire pe 36 nuclee
+[ 284.060] INFO  proces: firul 6 a iesit cu codul 2
+[ 504.790] INFO  mem_map: 108261 KiB la 0x100000000000 (52 pagini de 2 MiB, 442 de 4 KiB)
+[ 538.040] INFO  mem_map: 36864 KiB la 0x100007000000 (18 pagini de 2 MiB, 0 de 4 KiB)
+[ 556.860] INFO  proces: firul 7 a iesit cu codul 0
+[ 662.290] INFO  mem_map: 108261 KiB la 0x100000000000 (52 pagini de 2 MiB, 442 de 4 KiB)
+[ 694.940] INFO  mem_map: 36864 KiB la 0x100007000000 (18 pagini de 2 MiB, 0 de 4 KiB)
+[ 715.570] INFO  proces: firul 8 a iesit cu codul 0
+[ 749.180] INFO  mem_map: 108261 KiB la 0x100000000000 (52 pagini de 2 MiB, 442 de 4 KiB)
+[ 781.890] INFO  mem_map: 36864 KiB la 0x100007000000 (18 pagini de 2 MiB, 0 de 4 KiB)
+[ 813.450] INFO  proces: firul 9 a iesit cu codul 0
+[ 946.630] INFO  mem_map: 108261 KiB la 0x100000000000 (52 pagini de 2 MiB, 442 de 4 KiB)
+[ 979.990] INFO  mem_map: 36864 KiB la 0x100007000000 (18 pagini de 2 MiB, 0 de 4 KiB)
+[1013.780] INFO  proces: firul 10 a iesit cu codul 0
+[1103.890] INFO  mem_map: 108261 KiB la 0x100000000000 (52 pagini de 2 MiB, 442 de 4 KiB)
+[1137.510] INFO  mem_map: 36864 KiB la 0x100007000000 (18 pagini de 2 MiB, 0 de 4 KiB)
+[1174.240] INFO  proces: firul 53323 a iesit cu codul 0
+[1313.390] INFO  gpu: gpu0: b3:00.0 10de:2482 NVIDIA (clasa 03:00:00) subsistem 88131043
+[1315.060] INFO  gpu: gpu0: Command 0003 (memorie da, bus master nu), stare D0
+[1316.730] INFO  gpu: gpu0: BAR0 0xf9000000 memorie
+[1318.400] INFO  gpu: gpu0: BAR1 0xe0000000 memorie, 64 biti, prefetch
+[1320.070] INFO  gpu: gpu0: BAR3 0xf0000000 memorie, 64 biti, prefetch
+[1321.740] INFO  gpu: gpu0: BAR5 0xf000 I/O
+[1323.400] INFO  gpu: gpu0: Resizable BAR: BAR0 = 16 MiB acum
+[1325.070] INFO  gpu: gpu0: Resizable BAR: BAR1 = 256 MiB acum
+[1326.740] INFO  gpu: gpu0: Resizable BAR: BAR3 = 32 MiB acum
+[1328.410] INFO  gpu: gpu0: cyber-gpu dac2e32 nvidia-ga104: GeForce RTX 3070 Ti (BAR0 0xf9000000)
+[1330.080] INFO  gpu: gpu0: NV_PMC_BOOT_0 = b74000a1, NV_PMC_BOOT_42 = 174a1000 (cyber-gpu, consecvent true)
+[1331.750] INFO  gpu: gpu0: cip 0x174 GA104 (arhitectura Ampere)
+[1333.410] INFO  gpu: zero scrieri in placa (configuratie PCI si registre: doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+[1434.160] INFO  gpu: gpu0: jurnal cyber-gpu: bar0 r 0x118128 = 0x00008b8f
+[1435.240] INFO  gpu: gpu0: jurnal cyber-gpu: bar0 r 0x118234 = 0x000003ff
+[1436.900] INFO  gpu: gpu0: jurnal cyber-gpu: pas I2: GFW_BOOT: ok
+[1438.560] INFO  gpu: gpu0: b3:00.0 GeForce RTX 3070 Ti (BAR0 0xf9000000), cyber-gpu dac2e32
+[1440.220] INFO  gpu: gpu0: GFW gata (progres 0xff) dupa 1 runde, 3 us; PRIV_LEVEL_MASK 0x00008b8f
+[1441.890] INFO  gpu: gpu0: 1 pagini mapate pe rand (doar citire)
+[1443.550] INFO  gpu: 0 scrieri in placa (doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+[1510.540] INFO  gpu: gpu0: jurnal cyber-gpu: bar0 r 0x300000 = 0xeb7faa55
+[1511.310] INFO  gpu: gpu0: jurnal cyber-gpu: pas I3: VBIOS prin PROM: ESEC
+[1512.080] INFO  gpu: gpu0: b3:00.0 GeForce RTX 3070 Ti (BAR0 0xf9000000), cyber-gpu dac2e32
+[1512.990] INFO  gpu: gpu0: VBIOS: verificare esuata la 0x24600: asteptat 0xaa55, citit 0x4e56
+[1514.660] INFO  gpu: gpu0: 3 pagini mapate pe rand (doar citire)
+[1516.330] INFO  gpu: 0 scrieri in placa (doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+
+== sfarsit ==
