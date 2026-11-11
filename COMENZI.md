@@ -1369,7 +1369,7 @@ Format:
 - ce: Adrian repornește workstation-ul în Windows acum; **placa e liberă pentru Kronos de acum**. Stick-urile rămân în calculator, neatinse (pe CYBER-UNIV e acum și `github.token` — nu se citește, nu se copiază, nu se șterge).
 - notă (15:30): Adrian probabil nu mai vine azi, iar mâine (12 nov) e plecat → placa rămâne la Kronos cel puțin până joi 13 nov; testul os-281 se face la următoarea venire, anunțată prin centrul de comandă.
 - notă (17:05): Adrian încearcă să vină **în seara asta** pentru testul os-283 (ora nesigură). Ce rulează pe placă atunci va fi întrerupt de repornire — se reia după, fără `oprit`; centrul de comandă anunță când a terminat.
-- stare: nou
+- stare: preluat (2026-11-11 17:15, supraveghetor) — notat sus în `plan/coada.md` (fără număr de sarcină nou): placa liberă pentru Kronos, dar nicio sarcină de placă la noapte (continuările închise, S101 „nu deocamdată”, legarea datelor pe bucăți așteaptă „da”-ul lui Adrian); dacă Adrian vine pentru `os-283`, nu întrerupe nimic de la Kronos. S102 (procesor) s-a terminat la 15:36 (DA).
 
 ### C-107 · cyber-gpu · Cerut de Adrian (14:39): caută setările de pornire GSP și în proiectele care au făcut deja asta
 - data: 2026-11-11 14:39 · legat de C-102 (0x59 NV_ERR_OPERATING_SYSTEM, 844 ASSERT înainte de secvențiator).
