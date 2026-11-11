@@ -21,6 +21,7 @@ Să fim deja în OS: facem o copie, o modificăm/reparăm, o încercăm; dacă m
 
 ## Decizia lui Adrian (11 nov 2026, 12:34)
 „Nu încă — nu vreau să depinzi de prezența mea; când se poate face tot automat, da (adică restart singur, fără mine la butoane).”
+→ Adrian a ales (12:35) calea (a) prin program → C-103.
 → Condiția: **repornirea rece fără om**. Căi de verificat (doar studiu, fără scrieri pe placă):
   (a) recuperarea plăcii fără repornire (`recover` legat în `gpu lant`, propunerea OS);
   (b) oprire completă S5 + pornire automată din BIOS („Resume by RTC Alarm”/„Power On By RTC”) — de verificat dacă placa pierde curentul în S5 la fel ca la cablul scos;
