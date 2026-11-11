@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-11 21:05 (ora României) · **de:** sesiunile OS programate (17:40, 20:40) — CI reparat, P6-77 (os-288), **C-108 gata (os-289)**, **C-109 gata (os-290)**.
+**Actualizat:** 2026-11-12 01:20 (ora României) · **de:** sesiunea OS programată (23:40) — P6-80 (mouse USB băgat după pornire) gata pe ramura `wip/P6-80`, CI verde; Release-urile neschimbate (`os-289`/`os-290` rămân pentru joi).
 
 ## Acum
 - **Release `os-289` (≈19:58, CI verde) — pe acesta îl folosește Adrian joi la 07:00 (C-108).** Are cele 10 variante de setări I8 de la
@@ -14,8 +14,10 @@
   APIC-ul merge și în modul x2APIC, iar pe ecran apar rânduri noi. Testat în QEMU cu PIT-ul oprit; pe ASUS neîncercat.
 - Dacă apare `os-291` (CI pornit 20:55): **același cod ca `os-290`**, doar reparația pentru rularea CI săptămânală — oricare din ele e bun.
 - C-105 (`ciclu-test`) rămâne oprit până la cele două chei ale lui Adrian.
+- **P6-80 (din testul Lenovo, mouse USB „nu merge”):** OS-ul vedea un mouse USB doar dacă era băgat înainte de pornire și doar dacă prima lui interfață e mouse. Reparat pe ramura `wip/P6-80` (mouse/tastatură băgate oricând, receptoare tastatură+mouse), testat în QEMU (mouse băgat și scos după pornire), CI verde. **Intră în Release abia după testul GPU de joi**, ca stick-ul de test să nu se schimbe.
 
 ## Urmează
+- După testul de joi: P6-80 pe `main` → Release nou (mouse USB pe Lenovo); apoi P6-12.
 - Poza de pe ASUS cu `os-290`: dacă pornește → C-109 închis; dacă nu, ultimul rând `apic: …` arată pasul.
 - Jurnalele de joi: prima variantă care trece de I8 → Cyber-GPU (unealta `compara_variante`) → pasul următor.
 
@@ -28,6 +30,10 @@
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
+
+**Mic, când ai Lenovo-ul la îndemână (nu grăbește nimic):** ca să știm sigur de ce nu mergea mouse-ul USB — pornește Lenovo-ul cu stick-ul normal
+**cu mouse-ul deja băgat**, scrie `lsusb` și fă o poză. Dacă mouse-ul apare în listă și tot nu merge → altă cauză; dacă nu apare → era cauza
+reparată în P6-80 (mouse băgat după pornire). Poza în `rezultate/2026-11-11-laptop-lenovo-i5/`.
 
 **Joi 12 nov, ~07:00, la workstation — testul cu variante (C-108), Release `os-289`:**
 1. Din Release-ul **`os-289`** (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu
