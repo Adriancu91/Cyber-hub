@@ -1359,3 +1359,11 @@ Format:
 - data: 2026-11-11 14:36 · de la: centrul de comandă, pentru Adrian (rezervarea din C-101 se încheie acum).
 - ce: Adrian repornește workstation-ul în Windows acum; **placa e liberă pentru Kronos de acum**. Stick-urile rămân în calculator, neatinse (pe CYBER-UNIV e acum și `github.token` — nu se citește, nu se copiază, nu se șterge).
 - stare: nou
+
+### C-107 · cyber-gpu · Cerut de Adrian (14:39): caută setările de pornire GSP și în proiectele care au făcut deja asta
+- data: 2026-11-11 14:39 · legat de C-102 (0x59 NV_ERR_OPERATING_SYSTEM, 844 ASSERT înainte de secvențiator).
+- ce: la comparația câmp cu câmp (GspSystemInfo, registry, argumente/WPR meta, PCI/BAR, PMU), pe lângă driverul NVIDIA 570.144 (MIT), folosește ca specificație și:
+  (1) **tinygrad** — driverul lor NV din spațiul utilizator pornește GSP singur, fără driverul NVIDIA (MIT) — cel mai apropiat de ce facem noi;
+  (2) **nouveau** — ~20 de ani de driver NVIDIA independent, cu pornire GSP-RM pentru Ampere; (3) **nova** (Rust, Linux).
+  nouveau/nova: doar citite pentru idei (clean-room), cod copiat niciodată (GPL interzis). Fiecare diferență găsită → în `docs/` + hub, cu sursa; reparația doar unde e clar.
+- stare: nou
