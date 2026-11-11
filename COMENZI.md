@@ -1395,3 +1395,14 @@ Format:
 - siguranță: neschimbată — scrierile pe placă doar cu Adrian de față, după „DA” la fiecare variantă.
 - ordinea: Cyber-GPU **la rularea de 19:25** (sau mai devreme dacă sesiunea curentă vede comanda), OS la **20:40** (sau imediat după Cyber-GPU, pornit de centrul de comandă); rezervă: GPU 01:25, OS 02:40/05:40.
 - stare: nou (partea cyber-gpu) · preluat (partea OS, 2026-11-11 18:05, sesiunea OS programată) · **P6-78** — planul e gata (`docs/plans/P6-78.md`); legarea + `gpu variante` / `gpu lant --varianta N` imediat ce apare commit-ul Cyber-GPU cu variantele; Release țintă înainte de 06:00
+
+### C-109 · cyber-universe · OS blocat la pornire pe laptopul ASUS TUF F15 (RTX 3060 Laptop, 16 fire, 64 GB) — după `acpi: MADT`
+- data: 2026-11-11 17:56 · Adrian, stick-ul normal CYBER-UNIV (os-283), poză: `rezultate/2026-11-11-laptop-asus-tuf/foto-1-blocat-dupa-madt.jpg`.
+- ce s-a văzut: memoria (64893 MiB, 41 regiuni), alocator, tabele de pagini, heap, trambulina SMP, ecran, planificator, ACPI 31 tabele (XSDT), FADT rev 6,
+  **ultima linie: `acpi: MADT: 16 procesoare, APIC local la 0xfee00000, 1 I/O APIC (primul la 0xfec00000, GSI 0), 2 redirectari IRQ`** — apoi nimic (timpul încă `-.---`).
+  Deci se blochează în `arch::x86_64::apic::init()` (înainte de mesajul lui de la apic.rs:322) sau imediat după, la `time::start()`.
+- ipoteze de verificat (doar cod, în QEMU): (1) firmware-ul a lăsat procesorul în **modul x2APIC** (Tiger Lake, 16 fire) și noi folosim APIC-ul prin memorie (xAPIC, 0xfee00000) → citirile nu răspund, calibrarea ceasului se învârte la nesfârșit;
+  (2) calibrarea APIC prin PIT/HPET fără limită de timp; (3) I/O APIC / redirectări IRQ. Reparația: detectarea x2APIC (CPUID + IA32_APIC_BASE bit 10) și folosirea MSR-urilor; orice buclă de așteptare cu limită + mesaj.
+  Test QEMU: `-cpu ...,+x2apic` cu x2APIC pornit de firmware; mesaje noi de jurnal înainte/după fiecare pas din apic::init.
+- prioritate: după C-108 (variantele pentru joi 07:00 au întâietate).
+- stare: nou
