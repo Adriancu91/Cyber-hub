@@ -1395,7 +1395,7 @@ Format:
 - siguranță: neschimbată — scrierile pe placă doar cu Adrian de față, după „DA” la fiecare variantă.
 - ordinea: Cyber-GPU **la rularea de 19:25** (sau mai devreme dacă sesiunea curentă vede comanda), OS la **20:40** (sau imediat după Cyber-GPU, pornit de centrul de comandă); rezervă: GPU 01:25, OS 02:40/05:40.
 - stare cyber-gpu: gata (2026-11-11 18:20, sesiunea Cyber-GPU 88; preluat 17:45, la rularea de 17:30) · rezultat: `cyber-gpu` `20830f5` (cod) / `6611c27` (docs), 445 PASS, CI verde — modulul `nvidia_ga104::gsp::variants` cu **10 variante numerotate** (nume, „ce schimbă”, sursa): **1 `rpc-inainte`** = `SetSystemInfo` + `SetRegistry` + soneria în coadă la I7, ÎNAINTE de Booter (ce fac RM/tinygrad/nouveau/nova; cea mai probabilă — vezi C-107 continuare), 2 +set nova, 3 +set tinygrad, 4 +set nouveau, 5 +CLOCK_BOOST, 6 +bIsPassthru, 7 +RMDevidCheckIgnore, 8 +stiva LibOS, 9–10 ordinea veche + seturile tinygrad/nova; valorile trimise ajung în jurnal (`valoare varianta I8 (C-108): numarul = …`); în SIMULARE (T122) ordinea os-283 dă exact 0x59, varianta 1 dă 0; conținutul celor 2 `UCODE_LIBOS_PRINT` e în jurnal din `d3c5351`. **Pentru OS:** nota `cyber-gpu/integration/cyber-universe/C-108_variante-i8.md` (funcțiile `variants::{list, get, settings}`, `Settings::{queue_init_rpcs, init_rpcs_ready_for_i8, encode_*, journal}`; schimbările în `gpu_i7`/`gpu_i8`; `verifica_jurnal_lant` acceptă soneria înainte de resetul GSP).
-- stare: preluat (partea OS, 2026-11-11 18:05, sesiunea OS programată) · **P6-78** — planul e gata (`docs/plans/P6-78.md`); legarea + `gpu variante` / `gpu lant --varianta N` imediat ce apare commit-ul Cyber-GPU cu variantele; Release țintă înainte de 06:00
+- stare: preluat (partea OS, 2026-11-11 18:05, sesiunea OS programată) · **P6-78** — cod gata la 19:26 (`028369a`: cyber-gpu `49e6685`, `gpu variante`, `gpu lant --varianta N`, varianta pe ecran înainte de DA și în jurnal; 13/13 scenarii local, inclusiv noul `gpu-var`); CI 289 rulează → Release `os-289`
 
 ### C-109 · cyber-universe · OS blocat la pornire pe laptopul ASUS TUF F15 (RTX 3060 Laptop, 16 fire, 64 GB) — după `acpi: MADT`
 - data: 2026-11-11 17:56 · Adrian, stick-ul normal CYBER-UNIV (os-283), poză: `rezultate/2026-11-11-laptop-asus-tuf/foto-1-blocat-dupa-madt.jpg`.
@@ -1407,4 +1407,4 @@ Format:
   Test QEMU: `-cpu ...,+x2apic` cu x2APIC pornit de firmware; mesaje noi de jurnal înainte/după fiecare pas din apic::init.
 - confirmat (18:00): și stick-ul de test TESTGPU se blochează în același loc, după MADT (`foto-2-stick-test-acelasi-loc.jpg`) → problema e reproductibilă.
 - prioritate: după C-108 (variantele pentru joi 07:00 au întâietate).
-- stare: nou
+- stare: preluat (2026-11-11 19:35, sesiunea OS programată) · **P6-79** (plan `docs/plans/P6-79.md`): după C-108; așteptarea PIT cu limită + ceas de rezervă (ACPI PM / CPUID) + x2APIC prin MSR + rânduri de jurnal în `apic::init`
