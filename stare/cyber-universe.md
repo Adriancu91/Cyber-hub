@@ -1,35 +1,34 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-11 14:50 (ora României) · **de:** sesiunea OS programată (13:30) — C-102 continuare, C-104, C-103 (partea OS).
+**Actualizat:** 2026-11-11 17:10 (ora României) · **de:** sesiunea OS programată (15:00) — P6-76 (os-283), P6-77 (cod gata, CI blocat extern).
 
 ## Acum
-- **Numerotare (15:40):** `os-282` nu există (CI-ul lui anulat de push-ul P6-76). Reparația `bDmemStack` + C-105 vin împreună în **`os-283`** (CI 283 în lucru).
-- **C-105 partea OS (P6-75):** comanda din hub `ciclu-test os-<N>` (actualizare → repornire → `gpu recupereaza` + `gpu lant` → raport → ascultă din nou) e gata și testată în QEMU, dar **oprită**: pornește doar cu cele două chei ale lui Adrian (fișierul `hub/permite-test-placa` pe stick + o decizie în `DECIZII.md` cu `ciclu-test activat`).
-- **Release `os-281` (14:39, CI verde) — pe acesta îl folosește Adrian.** Conține tot din `os-280` (14:13) plus două lucruri noi.
-- **C-102 continuare (P6-72):** jurnalul `os-279` a arătat că GSP-RM pornește, dar refuză singur inițializarea (`0x59` = `NV_ERR_OPERATING_SYSTEM`) după 843 de mesaje de diagnostic (NOCAT) pe care nu le citeam. cyber-gpu `bcc314e` le decodează (doar citiri) → jurnalul spune acum **de ce**. Nu e o reparație.
-- **C-104 (P6-73):** „agentul de comenzi” — `hub asculta` (la fiecare 2 min, Esc oprește; pornit singur dacă pe stick e `hub/asculta`) ia comenzile noi din `integrare/cyber-universe/os-comenzi.md`, doar lista albă, fiecare o dată; răspunsul fiecăreia în `integrare/cyber-universe/raspunsuri/K-<nr>.txt`. Test QEMU trece.
-- **C-103 partea OS (P6-74):** `gpu recupereaza` (cere DA, doar stick-ul de test) — Booter Unload coboară WPR2 fără repornire, apoi verifică că I6 poate rula din nou. `gpu identifica` arată ce reset suportă placa (doar citire). Test QEMU (SIMULARE) trece; pe placă neîncercat.
+- **Release `os-283` (15:44, CI verde) — pe acesta îl folosește Adrian la testul următor.** Conține reparația candidat pentru `0x59` (cyber-gpu `2bbd0b3`: `bDmemStack = 1`, singura diferență față de RM, tinygrad, nouveau, nova — C-107) + C-105 (ciclu-test, oprit). `os-282` nu există (CI anulat).
+- **P6-77 (C-102 continuare 2):** cyber-gpu `d3c5351` (conținutul celor 2 mesaje PMU în jurnal, doar citiri) legat în `main` (`61a308d`, 10/10 scenarii GPU local). **CI 284 atârnă la instalarea pachetelor pe mașinile GitHub** (pasul „Unelte sistem”, nu codul nostru): prima rulare oprită la 60 min, re-rulată la 16:57. Când trece → `os-284` (= os-283 + jurnalul PMU).
+- **C-105 partea OS (P6-75):** `ciclu-test os-<N>` din hub e gata și testat în QEMU, dar **oprit** până la cele două chei ale lui Adrian.
+- Din azi, tot în os-283: `hub asculta` (C-104), `gpu recupereaza` (C-103, pe placă neîncercat), jurnalul NOCAT decodat (C-102).
 
 ## Urmează
-- Jurnalul testului cu `os-281` → rândurile `text NOCAT …` + rezumatul de la final → cyber-gpu face reparația 0x59.
-- Prima probă `gpu recupereaza` pe placă (după lanțul oprit la I8); dacă merge, propun legarea în `gpu lant` (a doua încercare fără cablu) — doar cu „da”.
+- CI 284 verde → Release `os-284`. Dacă tot atârnă, re-rulare; la a doua oprire, propun ca pasul de instalare să pice repede (limită de timp + reîncercări).
+- Jurnalul testului cu `os-283`/`os-284`: reușită = `rpc_result … = 0x00000000` și începe I8e; eșec = tot `0x59` → cyber-gpu încearcă rezervele (`bIsPassthru`, `CLOCK_BOOST`, `RMDevidCheckIgnore`), câte una pe rulare.
+- Prima probă `gpu recupereaza` pe placă (după un lanț oprit); dacă merge, propun legarea în `gpu lant` — doar cu „da”.
 
 ## Ce oferă proiectul celorlalți
 - `gpu lant` I6 → I14, `gpu recupereaza`, `kronos --gpu` pe stick-ul de test (I8–I14 doar în SIMULARE); jurnale + rapoarte trimise singure în hub (cu token).
 - `hub ruleaza` / `hub asculta` (comenzi din hub, răspuns pe comandă), `test tot`, `kronos --conversatie`, git pe ramuri `os/…`, `web`, `files`; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
 
 ## De ce are nevoie de la ceilalți
-- **`cyber-gpu`:** după jurnalul cu `os-281`, reparația pentru 0x59. Mai târziu: zona de comenzi de 32 KiB pentru modelul de 24 de straturi.
+- **`cyber-gpu`:** după jurnalul cu `os-283`/`os-284`, pasul următor pentru 0x59 (dacă `bDmemStack` nu a fost cauza). Mai târziu: zona de comenzi de 32 KiB pentru modelul de 24 de straturi.
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
 
-**Testul cu `os-281` (workstation), când poți:**
-1. Din Release-ul **`os-281`** (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu Rufus pe **stick-ul de test**. Stick-ul normal rămâne cum e.
+**Testul cu `os-283` (sau `os-284`, dacă apare până atunci) pe workstation, la următoarea venire (C-106: nu înainte de joi 13 nov):**
+1. Din Release-ul **`os-283`** (sau `os-284`) (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu Rufus pe **stick-ul de test**. Stick-ul normal rămâne cum e.
 2. **Oprire completă**, cablul scos **30 s**; pornești de pe stick-ul de test (F8), cu ambele stick-uri.
-3. `gpu lant` → `DA` + Enter. Probabil se oprește iar la I8 cu 0x59 — e de așteptat. **Poze** la rândurile `text NOCAT …` și la rezumatul de la final.
+3. `gpu lant` → `DA` + Enter. Ce contează: rândul `valoare GSP_INIT_DONE: rpc_result … = 0x…` — `0x00000000` înseamnă că reparația a mers; tot `0x59` = nu încă. **Poze** la rândul acesta, la rândurile `text NOCAT …` și la rezumatul de la final.
 4. **Nou (C-103):** imediat după, `gpu recupereaza` → `DA`. Poză la rândul „pas C-103 Booter Unload …” și la „pregatirea I6 trece din nou” / „NU trece”. Dacă trece, poți rula `gpu lant` încă o dată **fără** să scoți cablul.
-5. `raport` (+ `trimite` dacă ai token). Pozele + `raport\gpu-jurnal-*.txt` în `rezultate/2026-11-11-workstation-os281/` (sau data zilei).
+5. `raport` (+ `trimite` dacă ai token). Pozele + `raport\gpu-jurnal-*.txt` în `rezultate/<data>-workstation-os283/` (sau os-284).
 
 **Opțional (C-104, ~5 min):** tokenul pentru `hub asculta` — pașii exacți în `docs/USB.md` punctul 15 (token fin, doar `Cyber-hub`, Contents read and write, fișierul `github.token` DOAR pe stick).
 
