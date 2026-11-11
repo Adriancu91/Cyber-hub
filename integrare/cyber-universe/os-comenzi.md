@@ -15,3 +15,5 @@ Exemplu: un rând `K-1: test tot` și unul `K-2: run kronos --control`, fiecare 
 pătrate cu spațiu între ele, spațiu). Blocurile de cod (între ```) sunt ignorate de OS.
 
 ## Comenzi
+- [ ] K-1: uptime
+- [ ] K-2: gpu identifica
