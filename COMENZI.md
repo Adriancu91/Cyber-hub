@@ -1307,7 +1307,7 @@ Format:
 - ce: (1) **S101 (Kronos de 24 de straturi de la zero) NU pornește** — Adrian își face propriul plan pentru Kronos mare; propunerea rămâne în `idei/` fără „da”.
   (2) **Placa rezervată pentru Adrian de acum (09:15) până scrie centrul de comandă că a terminat** (cel târziu 15:00). Nimic pe placă; S98 (procesor) poate continua,
   dar va fi întrerupt de repornire — se reia după, fără `oprit`. Stick-urile neatinse.
-- stare: nou
+- stare: preluat (2026-11-11 11:15, supraveghetor) — (1) S101 trecut în `plan/coada.md` ca `oprit — nu deocamdată`; nimic de la Kronos pe placă la noapte. (2) Rezervarea scrisă în coadă: nimic pe placă până la nota „Adrian a terminat” (cel târziu 15:00); S98 s-a terminat la 08:15; S102 (doar procesor) pornește după notă sau de la 15:00
 
 ### C-102 · cyber-gpu + cyber-universe · URGENT (Adrian la workstation): os-278 — I8 acum „eroare hardware 0x59” la CORE_RESUME (nu mai e timeout)
 - data: 2026-11-11 10:22 · `rezultate/2026-11-11-workstation-os278/` (jurnalul `gpu-jurnal-006.txt` vine în câteva minute)
