@@ -207,4 +207,4 @@
 - 2026-11-11 11:58 · sesiunea OS programată (11:40) · oprire scurtă: `os-279` publicat de sesiunea precedentă, nicio comandă nouă; aștept jurnalul testului cu `os-279`.
 - 2026-11-11 14:13 · sesiunea OS programată (13:30) · C-102 continuare (P6-72): cyber-gpu `bcc314e` (NOCAT decodat) legat, 9/9 scenarii GPU, CI verde → Release `os-280`.
 - 2026-11-11 14:45 · sesiunea OS programată (13:30) · C-104 gata (P6-73: `hub asculta`, răspuns pe comandă în `integrare/cyber-universe/raspunsuri/`), C-103 partea OS gata (P6-74: `gpu recupereaza`, SIMULARE); 14/14 scenarii, CI verde → Release `os-281`; aștept testul pe workstation.
-- 2026-11-11 15:40 · a doua sesiune OS programată (14:40) · C-105 partea OS (P6-75): `ciclu-test os-<N>` + `actualizeaza --versiune`, dezactivat fără cheile lui Adrian; 17/17 scenarii local, CI run 282 → `os-282` (fără reparația bDmemStack, aceea vine în următorul).
+- 2026-11-11 15:12 · a doua sesiune OS programată (14:40) · C-105 partea OS (P6-75): `ciclu-test os-<N>` + `actualizeaza --versiune`, dezactivat fără cheile lui Adrian; 17/17 scenarii local, CI run 282 → `os-282` (fără reparația bDmemStack, aceea vine în următorul).

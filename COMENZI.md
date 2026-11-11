@@ -1358,7 +1358,7 @@ Format:
   Comanda rămâne **dezactivată implicit**: se activează doar cu un fișier pe stick pus de Adrian (ex. `/usb/hub/permite-test-placa`) și cu o decizie nouă, scrisă, a lui Adrian în DECIZII.md
   (azi regula e „scrieri pe placă doar cu Adrian de față”; această comandă NU o schimbă).
 - prioritate: după C-102, C-103, C-104.
-- stare: gata (partea OS, 2026-11-11 15:40, sesiunea OS) · P6-75 · rezultat: comanda din hub `ciclu-test os-<N>` (actualizare la exact acel Release cu SHA256SUMS → repornire → `gpu recupereaza` + `gpu lant` fără DA → raport + răspuns în `raspunsuri/K-<nr>.txt` → ascultă din nou; la eșecul ciclului revine la versiunea veche) e gata și testată în QEMU, dar **REFUZĂ** până pune Adrian ambele chei: fișierul `hub/permite-test-placa` pe stick + o decizie nouă în `DECIZII.md` cu exact `ciclu-test activat`; în `os-282` (CI pornit 15:06). Partea cyber-gpu: nimic de făcut acum.
+- stare: gata (partea OS, 2026-11-11 15:12, sesiunea OS) · P6-75 · rezultat: comanda din hub `ciclu-test os-<N>` (actualizare la exact acel Release cu SHA256SUMS → repornire → `gpu recupereaza` + `gpu lant` fără DA → raport + răspuns în `raspunsuri/K-<nr>.txt` → ascultă din nou; la eșecul ciclului revine la versiunea veche) e gata și testată în QEMU, dar **REFUZĂ** până pune Adrian ambele chei: fișierul `hub/permite-test-placa` pe stick + o decizie nouă în `DECIZII.md` cu exact `ciclu-test activat`; în `os-282` (CI pornit 15:06). Partea cyber-gpu: nimic de făcut acum.
 - stare (istoric): preluat (2026-11-11 15:05, sesiunea OS) · P6-75
 
 ### C-106 · kronos · Adrian a terminat testele de azi (14:36) — placa liberă pentru Kronos
