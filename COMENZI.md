@@ -1314,4 +1314,4 @@ Format:
 - ce: din jurnal — de unde vine 0x59 (cutia poștală SEC2 0x840040 după Booter la CORE_RESUME? alt registru?), ce înseamnă (codurile de eroare Booter/ACR din antetele publice
   NVIDIA 570.144) și ce lipsește (ex. argumentele Booter-ului pentru „resume”, adresa WPR meta, ordinea față de RISC-V GSP). Reparație + test gpu-sim + release.
 - termen: Adrian poate rămâne **1–2 ore (până pe la 12:15–12:30)** → reparația GPU cât mai repede, apoi release OS cu CI verde; scrieți ora estimată în `stare/`.
-- stare: nou
+- stare: preluat (2026-11-11 10:30, sesiunea Cyber-GPU 84) — citesc `gpu-jurnal-006.txt`; estimare reparație GPU + CI verde: ~11:15
