@@ -1331,3 +1331,14 @@ Format:
 - siguranță: orice scriere pe placa reală rămâne în spatele „DA”-ului lui Adrian, cu el de față (regula nu se schimbă prin această comandă). Fără firmware propriu, clean-room.
 - prioritate: **după C-102** (reparația 0x59 are întâietate).
 - stare: nou
+
+### C-104 · cyber-universe · „agentul de comenzi” din OS: `hub ruleaza` în buclă (ia singur comenzile centrului de comandă din git)
+- data: 2026-11-11 12:40 · cerut de Adrian: „un agent în OS care operează comenzi de la Claude prin GitHub; nu trebuie să fie inteligent”.
+- există deja (P6-64): `hub ruleaza` + `/usb/hub/la-pornire` (o dată la pornire), lista albă, raport + `trimite`. Neîncercat pe workstation; pe stick lipsește `github.token`.
+- ce: (1) mod **buclă**: `hub asculta [--la N min]` (implicit 2 min) — verifică `integrare/cyber-universe/os-comenzi.md` la fiecare N minute, rulează rândurile noi din lista albă,
+  trimite raportul; oprire cu Esc; pornit automat dacă există `/usb/hub/asculta`. (2) răspunsul fiecărei comenzi = un fișier separat în hub (`integrare/cyber-universe/raspunsuri/K-N.txt`)
+  ca centrul de comandă să-l citească ușor. (3) lista albă rămâne cum e (`gpu lant`, `--scrie`, `DA`, `reboot`, ștergeri = REFUZATE; doar Adrian la tastatură).
+  (4) în `docs/USB.md`: pașii pentru Adrian (token fin, doar pe repo-ul Cyber-hub, „Contents: read and write”, pus DOAR pe stick, niciodată în repo/hub/chat).
+- test: QEMU (`ghpush`) — două comenzi venite la minute diferite, ambele rulate o singură dată, răspunsurile ajung în hub.
+- prioritate: după C-102; înainte sau în paralel cu C-103 (independente).
+- stare: nou
