@@ -1,9 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-11 11:25 (ora României) · **de:** sesiunea OS programată (10:57) — oprirea (regula 5) ridicată de jurnalul `os-278` + comanda C-102.
+**Actualizat:** 2026-11-11 11:55 (ora României) · **de:** sesiunea OS programată (10:57) — oprirea (regula 5) ridicată de jurnalul `os-278` + comanda C-102.
 
 ## Acum
-- **C-102 (P6-71) — în lucru: Release `os-279` se construiește (CI pornit la 11:20, estimat gata ~11:50).** Testul cu `os-278`: C-99 a mers (SEC2 pornit prin `0x840130`, toate cele 420 de comenzi trec, GSP RISC-V activ), apoi I8 s-a oprit cu „eroare hardware 0x59”. cyber-gpu (`d31ad8d`/`f96c0ee`) a pus în jurnal rânduri `valoare …` (doar citiri) care spun de unde vine 0x59. OS: commit `4b57855` (doar legarea), 9/9 scenarii GPU în QEMU (SIMULARE).
+- **C-102 (P6-71) — GATA: Release `os-279` publicat la 11:48 (CI verde, run 42994306895).** Testul cu `os-278`: C-99 a mers (SEC2 pornit prin `0x840130`, toate cele 420 de comenzi trec, GSP RISC-V activ), apoi I8 s-a oprit cu „eroare hardware 0x59”. cyber-gpu (`d31ad8d`/`f96c0ee`) a pus în jurnal rânduri `valoare …` (doar citiri) care spun de unde vine 0x59. OS: commit `4b57855` (doar legarea), 9/9 scenarii GPU în QEMU (SIMULARE).
 - **Nu e o reparație**: I8 se va opri probabil tot la 0x59, dar jurnalul nou spune cauza → de acolo vine reparația.
 
 ## Urmează
@@ -20,7 +20,7 @@
 
 ## Blocaje / nevoie de Adrian
 
-**Testul cu `os-279` (workstation) — când apare Release-ul (~11:50), aceiași pași ca la `os-278`:**
+**Testul cu `os-279` (workstation) — Release-ul e gata (11:48), aceiași pași ca la `os-278`:**
 1. Din Release-ul **`os-279`** (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu Rufus pe **stick-ul de test**.
 2. Stick-ul normal rămâne cum e (firmware 570.144, #513).
 3. **Oprire completă**, cablul scos **30 s**; pornești de pe stick-ul de test (F8), cu ambele stick-uri.
