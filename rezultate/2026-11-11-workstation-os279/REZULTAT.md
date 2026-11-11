@@ -16,3 +16,7 @@ Fișiere: `gpu-jurnal-007.txt` (3145 rânduri), `raport-20261111-2.txt`, `foto-1
 ## Concluzie
 Lanțul de pornire (FWSEC → Booter → GSP RISC-V → GSP-RM) **merge până la capăt**; GSP-RM însuși refuză inițializarea (NV_ERR_OPERATING_SYSTEM).
 Pas următor: jurnalizarea conținutului mesajelor 0x100c/0x1020 (text/cod), apoi corectarea parametrilor trimiși (ex. GspSystemInfo / registry / argumentele de boot).
+
+## După test
+- Adrian a pus `github.token` (fin, doar Cyber-hub, Contents R/W) pe stick-ul CYBER-UNIV la 12:55. Verificarea (`trimite`, `hub ruleaza --arata`) se face la testul următor.
+- Cyber-GPU (sesiunea C-102 continuare) a început decodarea mesajelor 0x1020 (NOCAT) / 0x100c (jurnale microcod): `93d530c`, `d84e331` — la testul următor jurnalul spune motivul lui 0x59.
