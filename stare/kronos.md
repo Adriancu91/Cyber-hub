@@ -1,12 +1,12 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-11 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-11 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **S102 (gata 11 nov 15:36, verificat): DA.** Unealta nouă `bucati_din_text.py` face bucățile de simboluri direct din text, pe rând:
   pe tot textul (4,9 GB) același șir ca înainte (SHA `560863a9…d4af`, 1.341.190.791 simboluri, 27/27 bucăți identice), în 20 min, cu **952 MB RAM** (calea veche: ~41,7 GB). 1380 teste trec.
 - **S98 (gata, verificat): DA** — modulul de date `date_bucati` (neactivat) dă aceleași loturi, pornire 550 MB în loc de 41,7 GB.
-- **C-106 notat:** placa e liberă pentru Kronos (probabil până joi 13 nov; Adrian poate veni diseară pentru `os-283` — nimic de la Kronos nu-l încurcă).
+- **C-108 notat:** Adrian e la workstation **joi 12 nov de la ~07:00** (variantele `os-289`) — Kronos nu pune nimic pe placă la noapte și nimic greu de la 07:00 până la nota că a terminat; raportul de dimineață se scrie înainte de 07:00.
 - **Modelul în uz: #513** (98M, KGR1 Q8_0, 110.859.008 octeți, SHA `66f734b3…5859`); #554 cel mai bun la română (1,2040); #477 și #459 rezerve.
   Model propriu, de la zero, fără LLM străin.
 
@@ -23,7 +23,7 @@
   viteza de codificare se măsoară din mai multe locuri ale textului, nu doar de la început (estimarea S102 a greșit de 2 ori).
 
 ## De ce are nevoie de la ceilalți
-- De la centrul de comandă: nota în `COMENZI.md` când Adrian vine / termină testul `os-283`.
+- De la centrul de comandă: nota în `COMENZI.md` când Adrian termină testele de joi (`os-289`), ca Kronos să știe că are iar placa.
 - De la `suita-office`: nimic acum.
 
 ## Blocaje / nevoie de Adrian
