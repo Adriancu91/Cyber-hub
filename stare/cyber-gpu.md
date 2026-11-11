@@ -1,7 +1,11 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-11 19:50 (ora României) · **de:** sesiunea Cyber-GPU 89 (cloud, fără placă) — **rularea „GPU 19:25” din C-108: partea GPU era gata din sesiunea 88; OS-ul a legat variantele (P6-78, `028369a`, CI 289 în curs → Release `os-289`); pregătită citirea jurnalelor de joi: unealta `compara_variante` (`b1d91a0`, 451 PASS, CI verde).**
+**Actualizat:** 2026-11-12 01:45 (ora României) · **de:** sesiunea Cyber-GPU 90 (cloud, fără placă) — **rularea de rezervă „GPU 01:25” din C-108: oprire scurtă — nicio comandă nouă, niciun jurnal nou; totul e pregătit pentru testul de la 07:00 (Release `os-289`/`os-290` are cele 10 variante; `compara_variante` verificată pe jurnalele reale; 451 PASS, CI verde pe `b1d91a0`).**
 ## Acum
+- **Sesiunea 90 (01:25–01:45) — oprire scurtă, fără pas nou pe driver (fără jurnal nou de pe placă nu se inventează lucru).** Verificat: `tools/check.sh` pe `b1d91a0` → 451 PASS, CI verde (rularea 177);
+  OS-ul leagă `49e6685` (toate cele 5 crate-uri, `kernel/Cargo.toml`), care conține variantele (`20830f5`) → **Release `os-289` și `os-290` au cele 10 variante** (`gpu variante`, `gpu lant --varianta N`);
+  `compara_variante` rulată dintr-un checkout proaspăt pe 009/008/007 → aceleași cifre ca în sesiunea 89, cod de ieșire 0. Doar documentul de stare (`fbc70e7`); copia C-34 la `fbc70e7`.
+  **Pentru joi:** lista de mai jos rămâne valabilă; stick-ul de test = `os-289` sau `os-290` (același cod GPU).
 - **Sesiunea 89 (19:25–19:55) — nicio comandă nouă pentru cyber-gpu; pregătirea pentru joi.**
   - **OS-ul a legat variantele:** `cyber-universe` `028369a` (P6-78: cyber-gpu `49e6685`, `gpu variante`, `gpu lant --varianta N`, varianta pe ecran înainte de DA și în jurnal;
     13/13 scenarii). Am citit codul OS față de nota noastră: `gpu_i7::prepare` pune RPC-urile în coadă după `CpuQueues::init`, `booter` sună soneria înainte de Booter,
@@ -48,7 +52,7 @@
 5. **Pentru sesiunea Cyber-GPU, după jurnale:** `compara_variante 0x9c66000 gpu-jurnal-009.txt <jurnalele noi>` → tabelul variantelor, ce diferă, care a trecut.
 
 ## Urmează
-1. **OS-ul (P6-78):** CI 289 verde → Release `os-289` (variantele + `gpu variante`); procedura pentru Adrian în `stare/cyber-universe.md`. Dacă CI-ul atârnă, re-rularea e a sesiunii OS.
+1. **OS-ul (P6-78): făcut** — Release `os-289`/`os-290` (variantele + `gpu variante`); procedura pentru Adrian în `stare/cyber-universe.md`.
 2. **Joi ~07:00:** Adrian încearcă variantele de la 1, câte o pornire rece, `trimite` după fiecare. Noi: `compara_variante` pe toate jurnalele → care a trecut / ce diferă.
    Dacă varianta 1 trece → I8e (golden) pe placă = primul apel RM; se citește jurnalul lui. Dacă nu trece niciuna din cele 10: următoarea comparație e **starea plăcii** (adresele DMA
    reale, citirile `SEC2 CPUCTL` / `GSP MAILBOX0` de mai sus), nu conținutul mesajelor.
@@ -68,7 +72,7 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe` (P6-78): CI 289 verde → Release `os-289` **până joi 06:00** (codul e legat: `028369a`). Nimic de schimbat în legare.
+- De la `cyber-universe` (P6-78): **făcut** — Release `os-289` (și `os-290`, același cod GPU) există; nimic de schimbat în legare până la jurnalele de joi.
 - De la Adrian (joi): variantele în ordine, de la 1, câte o pornire rece; `trimite` după fiecare (sau jurnalele în `rezultate/`).
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
 
@@ -76,4 +80,4 @@
 - **Nu e blocat, dar depinde de placă:** că ordinea e cauza lui `0x59` e DEDUS din sursele RM (comentariile citate în studiu), nu probat; doar joi, cu varianta 1, se vede.
   Fiecare variantă e „prima încercare” pe placă; toate valorile vin din surse publice și niciuna nu scrie un registru pe care os-283 nu-l scria deja; „DA” la fiecare.
 - Numele funcțiilor din care vin cele 844 de asserturi nu se pot afla fără simbolurile GSP-RM — nu deschidem firmware-ul (regula proiectului); decizia ar fi a lui Adrian.
-- CI GitHub VERDE pe `b1d91a0` (rularea 43071432423, 17:46 UTC, 50 s).
+- CI GitHub VERDE pe `b1d91a0` (rularea 43071432423, 17:46 UTC, 50 s); `fbc70e7` (doar documentul de stare) în curs la 01:45.
