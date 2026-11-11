@@ -11,3 +11,9 @@
 - 2 × UCODE_LIBOS_PRINT de la **ENG_PMU** (0xf3d72200), 0x10 și 0x18 octeți, nedecodați — chiar înainte de GSP_INIT_DONE.
 - Interpretare (ipoteză): GSP-RM primește încă de la pornire ceva ce nu-i convine (GspSystemInfo / registry / PCI / BAR / WPR meta), aserțiile curg, iar la final
   inițializarea (posibil partea PMU) eșuează cu NV_ERR_OPERATING_SYSTEM. De comparat câmp cu câmp ce trimitem față de ce trimite driverul NVIDIA 570.144 MIT.
+
+## Agentul de comenzi din OS — prima probă reală (14:31) ✅
+- `trimite` cu `github.token`: 20 de rapoarte urcate singure în `rezultate/os-automat/2026-11-11/`.
+- `hub ruleaza --arata`: a citit `os-comenzi.md` din hub („nicio comandă nouă”).
+- Centrul de comandă a scris K-1 `uptime` + K-2 `gpu identifica` → `hub ruleaza`: 2 rulate, 0 refuzate, raportul `hub-20261111-1431.txt` ajuns singur în hub.
+  → **drumul complet centru de comandă → GitHub → OS pe workstation → GitHub → centru de comandă merge.** Lipsește doar bucla automată (C-104).
