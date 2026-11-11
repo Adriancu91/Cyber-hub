@@ -199,3 +199,4 @@
 - 2026-11-10 18:35 · sesiunea OS programată · C-99 GATA (P6-70): cyber-gpu `3aed5eb` (CORE_RESUME prin CPUCTL_ALIAS) în OS + Esc și rândul „aștept placa… N s” (ideea lui Adrian), antetul cozii I8 60 s; 9/9 teste GPU în simulare, CI verde → Release `os-278`.
 - 2026-11-10 20:50 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-278` încă (placa la Kronos până la 07:00, C-100); nicio sarcină liberă fără placă; CI verde.
 - 2026-11-10 23:45 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-278` încă (placa la Kronos până la 07:00); nicio sarcină liberă fără placă; CI verde.
+- 2026-11-11 02:45 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-278` încă (placa la Kronos până la 07:00); nicio sarcină liberă fără placă; CI verde.
