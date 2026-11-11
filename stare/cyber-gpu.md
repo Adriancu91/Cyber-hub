@@ -1,8 +1,21 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-11 18:20 (ora României) · **de:** sesiunea Cyber-GPU 88 (cloud, fără placă) — **os-283: `bDmemStack` nu era cauza; cauza probabilă a lui `0x59` e ORDINEA (RPC-urile de pornire ajungeau la GSP-RM după ce pornise); C-108: 10 variante numerotate gata pentru joi (`20830f5`/`6611c27`, 445 PASS, CI verde).**
-
+**Actualizat:** 2026-11-11 19:50 (ora României) · **de:** sesiunea Cyber-GPU 89 (cloud, fără placă) — **rularea „GPU 19:25” din C-108: partea GPU era gata din sesiunea 88; OS-ul a legat variantele (P6-78, `028369a`, CI 289 în curs → Release `os-289`); pregătită citirea jurnalelor de joi: unealta `compara_variante` (`b1d91a0`, 451 PASS, CI verde).**
 ## Acum
+- **Sesiunea 89 (19:25–19:55) — nicio comandă nouă pentru cyber-gpu; pregătirea pentru joi.**
+  - **OS-ul a legat variantele:** `cyber-universe` `028369a` (P6-78: cyber-gpu `49e6685`, `gpu variante`, `gpu lant --varianta N`, varianta pe ecran înainte de DA și în jurnal;
+    13/13 scenarii). Am citit codul OS față de nota noastră: `gpu_i7::prepare` pune RPC-urile în coadă după `CpuQueues::init`, `booter` sună soneria înainte de Booter,
+    `gpu_i8::init` întreabă `init_rpcs_ready_for_i8`, rândurile variantei sunt **primele** din `gpu-jurnal-NNN.txt` — totul ca în notă, nimic de trimis OS-ului.
+    CI-ul OS (289) pornit 19:26, încă în lucru la 19:45 (pasul apt pe mașinile GitHub e lent azi); Release-ul `os-289` vine din el (sesiunea OS îl urmărește).
+  - **Nou (doar adăugări, text, fără placă):** `nvidia_ga104::variant_log` + unealta de pe gazdă **`compara_variante`** — joi vin 5–10 jurnale de ~2500 de rânduri; unealta le pune
+    într-un singur tabel față de referința os-283 (`gpu-jurnal-009.txt`): varianta (numărul + numele din jurnal), commit-ul, rezultatul I8 (`I8 TRECUT` **doar** cu
+    `pas i8-gsp-init: ok`; altfel `rpc_result` + numele), NOCAT primite / adrese de assert, setările, și **rândurile care diferă de referință** fără zgomot (prefixul `[ timp]`,
+    antetul, marcajele de timp NOCAT, `asteptat …`, rândurile variantei). Concluzia numește varianta care a trecut sau „nicio varianta nu a trecut de I8”.
+    `cargo run --release -p nvidia-ga104 --example compara_variante -- 0x9c66000 gpu-jurnal-009.txt <jurnalele de joi>...`
+  - **Pe jurnalele reale** (os-279/280/283): cifrele sesiunilor 85–88 regăsite; în plus, os-280 față de os-283 diferă în **2 rânduri** pe care diff-ul de mână din sesiunea 88 le
+    omisese: `SEC2 CPUCTL` 0x10 vs 0x20 și `GSP MAILBOX0` 0xcb vs 0 (citiri ale stării plăcii la același moment; nu schimbă concluzia — același 0x59, aceleași 844/16).
+  - T123 a–e (inclusiv jurnalul ferestrei complete SIMULATE cu varianta 1, cu prefixul OS-ului, citit înapoi). **451 teste PASS**, clippy, format, build no_std; CI verde pe
+    `b1d91a0` (rularea 43071432423, 50 s). Copia din hub (C-34) la `b1d91a0`.
 - **Sesiunea 88 (17:30–18:20) — după os-283 + C-108.**
   - **Jurnalul `gpu-jurnal-009.txt` (os-283, `bDmemStack = 1`) e identic cu `gpu-jurnal-008.txt` (os-280)** — rând cu rând, în afara marcajelor de timp: aceleași 844 de asserturi,
     aceleași adrese, `GSP_INIT_DONE 0x59`. Deci `bDmemStack` nu era cauza (OBSERVAT).
@@ -32,14 +45,17 @@
 2. **Reușita:** după `secv #419 CORE_RESUME`, rândul `valoare GSP_INIT_DONE: rpc_result … = 0x00000000` și lanțul intră în **I8e (golden)**. Se oprește la prima variantă care trece.
 3. Dacă varianta 1 dă tot `0x59`: de văzut câte înregistrări NOCAT (844 iar?) și dacă rândul `varianta I8 … numarul = 0x00000001` e în jurnal (altfel Release-ul nu are variantele).
 4. Opțional, după un lanț oprit: `gpu recupereaza` + `DA` (C-103, prima probă) — dacă WPR2 citește 0, următoarea variantă merge fără cablul scos.
+5. **Pentru sesiunea Cyber-GPU, după jurnale:** `compara_variante 0x9c66000 gpu-jurnal-009.txt <jurnalele noi>` → tabelul variantelor, ce diferă, care a trecut.
 
 ## Urmează
-1. **OS-ul (P6-78):** leagă `20830f5` (sau `6611c27`), `gpu variante`, `gpu lant --varianta N`, jurnalul și raportul cu numărul variantei → Release înainte de joi 06:00.
-2. **Joi:** jurnalele variantelor în hub; noi rulăm `verifica_jurnal_lant <jurnal> 0x9c66000` pe fiecare. Dacă varianta 1 trece → I8e (golden) pe placă = primul apel RM; se citește jurnalul.
-   Dacă nu trece niciuna din cele 10: următoarea comparație e starea plăcii/memoriei (adresele DMA reale, ce vede GSP-RM în RAM), nu conținutul mesajelor.
+1. **OS-ul (P6-78):** CI 289 verde → Release `os-289` (variantele + `gpu variante`); procedura pentru Adrian în `stare/cyber-universe.md`. Dacă CI-ul atârnă, re-rularea e a sesiunii OS.
+2. **Joi ~07:00:** Adrian încearcă variantele de la 1, câte o pornire rece, `trimite` după fiecare. Noi: `compara_variante` pe toate jurnalele → care a trecut / ce diferă.
+   Dacă varianta 1 trece → I8e (golden) pe placă = primul apel RM; se citește jurnalul lui. Dacă nu trece niciuna din cele 10: următoarea comparație e **starea plăcii** (adresele DMA
+   reale, citirile `SEC2 CPUCTL` / `GSP MAILBOX0` de mai sus), nu conținutul mesajelor.
 3. După `GSP_INIT_DONE = 0` pe placă: I8e, I9, I10 — scrise, testate doar în simulare.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 89 (doar adăugări, text):** `nvidia_ga104::variant_log::{read, compare, strip_prefix, is_noise, VariantRun, Outcome, Difference, Table, TableRow}` + exemplul `compara_variante`. Codul driverului neschimbat.
 - **Sesiunea 88 (C-108, doar adăugări):** `nvidia_ga104::gsp::variants::{Settings, Variant, VARIANTS, OS_283, list, get, settings}`; `Settings::{encode_sysinfo, encode_registry,
   encode_wpr_meta, encode_gsp_args, queue_init_rpcs, init_rpcs_ready_for_i8, journal}`; `sysinfo::{Options, encode_with, off::B_IS_PASSTHRU}`, `registry::{boot_entries_with,
   devid_check_ignore}`, `wpr_meta::{encode_with_flags, FLAG_CLOCK_BOOST}`, `libos::encode_gsp_args_with`, `msgq::CpuQueues::rpcs_sent`; `sim_peer::SimGsp::{start_early_boot,
@@ -52,13 +68,12 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe` (P6-78, **până joi 06:00**): legarea `cyber-gpu` ≥ `20830f5`, `gpu variante`, `gpu lant --varianta N`, numărul variantei în jurnal și raport — după nota
-  `C-108_variante-i8.md` (schimbări mici în `gpu_i7.rs` / `gpu_i8.rs`: RPC-urile + soneria înainte de Booter când varianta o cere).
-- De la Adrian (joi): variantele în ordine, de la 1, câte o pornire rece; pozele/jurnalele în hub.
+- De la `cyber-universe` (P6-78): CI 289 verde → Release `os-289` **până joi 06:00** (codul e legat: `028369a`). Nimic de schimbat în legare.
+- De la Adrian (joi): variantele în ordine, de la 1, câte o pornire rece; `trimite` după fiecare (sau jurnalele în `rezultate/`).
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
 
 ## Blocaje / nevoie de Adrian
 - **Nu e blocat, dar depinde de placă:** că ordinea e cauza lui `0x59` e DEDUS din sursele RM (comentariile citate în studiu), nu probat; doar joi, cu varianta 1, se vede.
   Fiecare variantă e „prima încercare” pe placă; toate valorile vin din surse publice și niciuna nu scrie un registru pe care os-283 nu-l scria deja; „DA” la fiecare.
 - Numele funcțiilor din care vin cele 844 de asserturi nu se pot afla fără simbolurile GSP-RM — nu deschidem firmware-ul (regula proiectului); decizia ar fi a lui Adrian.
-- CI GitHub VERDE pe `20830f5` (rularea 174, 16:01 UTC, 57 s); `6611c27` (doar documente) în curs la ora scrierii.
+- CI GitHub VERDE pe `b1d91a0` (rularea 43071432423, 17:46 UTC, 50 s).
