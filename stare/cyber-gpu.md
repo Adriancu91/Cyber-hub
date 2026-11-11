@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-11 15:05 (ora României) · **de:** sesiunea Cyber-GPU 87 (cloud, fără placă) — **jurnalul `os-280` citit; comparația „trei surse” (C-107) găsește o singură diferență față de toți cei patru driveri care pornesc GSP-RM 570: `bDmemStack` (noi 0, ei 1) → pus 1** (`cyber-gpu` `b3ac503`, un octet, 440 teste PASS, CI verde). Candidatul pentru `0x59`, **DEDUS, neprobat** — se vede la `gpu lant` cu Release-ul **`os-282`** (os-281 are codul vechi). **Nimic testat pe RTX 3070 Ti.**
+**Actualizat:** 2026-11-11 15:20 (ora României) · **de:** sesiunea Cyber-GPU 87 (cloud, fără placă) — **jurnalul `os-280` citit; comparația „trei surse” (C-107) găsește o singură diferență față de toți cei patru driveri care pornesc GSP-RM 570: `bDmemStack` (noi 0, ei 1) → pus 1** (`cyber-gpu` `b3ac503`, un octet, 440 teste PASS, CI verde; `d3c5351` adaugă conținutul brut al celor 2 jurnale PMU în jurnal). Candidatul pentru `0x59`, **DEDUS, neprobat** — se vede la `gpu lant` cu Release-ul **`os-282`** (os-281 are codul vechi). **Nimic testat pe RTX 3070 Ti.**
 
 ## Acum
 - **Sesiunea 87 (14:25–15:05) — după os-280: ce spun cele 844 de asserturi și ce îi lipsea lui GSP-RM.** Jurnalul `gpu-jurnal-008.txt` (trimis singur de OS):
@@ -12,7 +12,9 @@
     varianta pe care RM o alege doar la cerere). `NV_ERR_OPERATING_SYSTEM` e codul generic al stratului LibOS. **Reparat: `b3ac503`** (octetul 48 al structurii, verificat cu
     bindgen; nimic altceva nu se schimbă pe placă: aceleași scrieri, aceeași așezare VRAM). Tot ce diferă în alt loc e la fel ca cel puțin un driver care merge.
   - Nota pentru OS: `cyber-gpu/integration/cyber-universe/os-280_bdmemstack.md` — **nimic de schimbat în codul OS**, doar legarea + Release `os-282`.
-  - 440 teste PASS, CI verde (`b3ac503`; `2bbd0b3` în curs). Copia din hub (C-34) la `2bbd0b3` (201 commit-uri, `git bundle verify` OK, fără firmware). C-107 `gata`.
+  - **15:20, „C-102 continuare 2”:** conținutul celor 2 `UCODE_LIBOS_PRINT` (PMU, 16 și 24 B la os-280) ajunge în jurnal **ca atare** (cuvinte LE, ≤ 64 B, nedecodat; `d3c5351`);
+    `verifica_jurnal_lant` îl tipărește. Nimic de schimbat în OS.
+  - 440 teste PASS, CI verde (`b3ac503`, `2bbd0b3`; `d3c5351` în curs). Copia din hub (C-34) la `d3c5351` (202 commit-uri, `git bundle verify` OK, fără firmware). C-107 `gata`.
 - **Sesiunea 86 (13:26–13:45) — pregătirea analizei `os-280`.** Nimic nou în hub pentru cyber-gpu (C-103 `gata` partea GPU; C-104 e pentru OS); Release-ul `os-280` nu există încă
   (sesiunea OS n-a mai trecut de la 11:58). Un pas mic pe calea critică: jurnalul `os-280` va avea până la 20 de blocuri NOCAT printre ~3000 de rânduri; modulul nou `gsp::nocat_log`
   (doar text) le adună într-un rezumat de câteva rânduri — înregistrări primite / feluri / jurnale LibOS; felurile jurnalizate ordonate după cât de des apar (asserturi cu adresă + linie
@@ -115,13 +117,13 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: legarea `cyber-gpu` la `b3ac503` (sau `2bbd0b3`), **Release `os-282`** cu CI verde — nimic de schimbat în codul OS (nota `os-280_bdmemstack.md`).
+- De la `cyber-universe`: legarea `cyber-gpu` la `d3c5351` (sau mai nou), **Release `os-282`** cu CI verde — nimic de schimbat în codul OS (nota `os-280_bdmemstack.md`).
 - De la Adrian: `gpu lant` cu os-282 (pornire rece), apoi `gpu recupereaza` (C-103, prima probă); jurnalul ajunge singur în hub dacă e tokenul pe stick.
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
 
 ## Blocaje / nevoie de Adrian
 - **15:05 — răspuns la C-107 / „trei surse”:** comparația e făcută (patru drivere), diferența unică e reparată (`bDmemStack`), **Release-ul `os-282` îl face sesiunea OS**
-  (legarea `cyber-gpu` ≥ `b3ac503`, nimic de schimbat în codul OS; ~15 min de la prima ei trecere). Testul se poate face și fără Adrian la butoane, prin bucla C-104/C-105,
+  (legarea `cyber-gpu` ≥ `d3c5351`, nimic de schimbat în codul OS; ~15 min de la prima ei trecere). Testul se poate face și fără Adrian la butoane, prin bucla C-104/C-105,
   când o activează el (regula „scrieri pe placă doar cu Adrian de față” e neschimbată).
 - **Nu e blocat, dar depinde de placă:** reparația `bDmemStack` e DEDUSĂ din ce fac cele patru drivere, nu probată; doar `gpu lant` cu os-282 spune dacă `0x59` dispare.
   Numele funcțiilor din care vin cele 844 de asserturi nu se pot afla fără simbolurile GSP-RM — nu deschidem firmware-ul (regula proiectului); decizia ar fi a lui Adrian.
