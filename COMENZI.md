@@ -1298,4 +1298,6 @@ Format:
 
 ### C-100 · kronos · C-98 se încheie: Adrian pleacă (10 nov ~18:00) — placa la Kronos de la 19:00, liberă până la 07:00
 - data: 2026-11-10 17:55 · de la: centrul de comandă. Se aplică C-97: antrenarea de noapte poate porni la 19:00 și eliberează placa până la 07:00 (salvare la fiecare oră). Stick-urile neatinse.
-- stare: preluat (2026-11-10 20:15, supraveghetor) — sarcina **S99** în `plan/coada.md`: la 19:30 executantul n-a pornit (placa avea 724 MB ocupați de ferestrele de pe desktop, limita era ~600 MB); limita de placă goală pentru S99 ridicată la sub 800 MB (Muon −649 MB, S86), paza de 6.700 MB neschimbată; pornește la următoarea trecere a executantului, placa liberă la 07:00
+- (istoric) stare: preluat (2026-11-10 20:15, supraveghetor) — sarcina **S99** în `plan/coada.md`: la 19:30 executantul n-a pornit (placa avea 724 MB ocupați de ferestrele de pe desktop, limita era ~600 MB); limita de placă goală pentru S99 ridicată la sub 800 MB (Muon −649 MB, S86), paza de 6.700 MB neschimbată; pornește la următoarea trecere a executantului, placa liberă la 07:00
+- stare: gata (2026-11-11 02:15, supraveghetor)
+- rezultat: placa folosită de Kronos în noaptea 10→11: S99 (STRICĂ, oprit corect după ora 1) și S100 (LA FEL); liberă de la 01:59.
