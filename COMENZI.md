@@ -1356,7 +1356,7 @@ Format:
   Comanda rămâne **dezactivată implicit**: se activează doar cu un fișier pe stick pus de Adrian (ex. `/usb/hub/permite-test-placa`) și cu o decizie nouă, scrisă, a lui Adrian în DECIZII.md
   (azi regula e „scrieri pe placă doar cu Adrian de față”; această comandă NU o schimbă).
 - prioritate: după C-102, C-103, C-104.
-- stare: nou
+- stare: preluat (2026-11-11 15:05, sesiunea OS) · P6-75 (partea OS: pregătire, dezactivat implicit)
 
 ### C-106 · kronos · Adrian a terminat testele de azi (14:36) — placa liberă pentru Kronos
 - data: 2026-11-11 14:36 · de la: centrul de comandă, pentru Adrian (rezervarea din C-101 se încheie acum).
