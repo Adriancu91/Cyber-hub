@@ -7,3 +7,4 @@
 - `test tot` (18:18): PASS procesor (118 vectori de calcul în 100 ms), PASS ceas (RTC), PASS temporizator (200 ms = 200 ms), PASS stick (4 KiB scriși/citiți);
   FAIL rețea (fără cablu — așteptat), LIPSĂ placă video NVIDIA (corect, are Intel Iris Xe). Raport: `/usb/raport/test-tot-20261111-1.txt` — se urcă la următorul `trimite`.
 - Idee pentru mai târziu: driver Wi-Fi Intel (8086:a0f0, AX201) — fără cablu, laptopurile nu au rețea în OS.
+- Touchpad-ul **nu merge** (Adrian, 18:24). Probabil e legat prin I2C (controlerele Intel Serial IO 8086:a0e8 / a0eb apar „alt dispozitiv [-]”), iar OS-ul are doar mouse PS/2 + USB HID. De făcut pe viitor: driver I2C-HID pentru touchpad-uri. Un mouse USB ar trebui să meargă.
