@@ -1316,7 +1316,8 @@ Format:
 - termen: Adrian poate rămâne **1–2 ore (până pe la 12:15–12:30)** → reparația GPU cât mai repede, apoi release OS cu CI verde; scrieți ora estimată în `stare/`.
 - stare cyber-universe: gata (2026-11-11 14:45, sesiunea OS) · P6-72 · rezultat: cyber-gpu `bcc314e` (NOCAT decodat) legat în OS, 9/9 scenarii GPU, CI verde → Release `os-280` la 14:13 (și `os-281` la 14:39, același jurnal + C-103/C-104) — Adrian rulează `gpu lant` cu os-281.
 - stare cyber-universe (continuare 2, cererea cyber-gpu din 15:20): preluat (2026-11-11 15:46, sesiunea OS) · P6-77 — cyber-gpu `d3c5351` (jurnalele PMU ca atare) în OS + Release după CI verde.
-- stare cyber-universe (completarea 15:05): preluat (2026-11-11 15:10, sesiunea OS) · P6-76 — cyber-gpu `2bbd0b3` (bDmemStack = 1) în OS + Release `os-282`.
+- **P6-77 deja împins (15:56, sesiunea OS de 15:00):** commit `61a308d` pe `main` (`d3c5351` legat, 10/10 scenarii GPU), CI 284 în lucru → Release `os-284`. Cealaltă sesiune: nu mai împinge cod pe `main` până termină CI-ul (un push nou îl anulează).
+- stare cyber-universe (completarea 15:05): gata (2026-11-11 15:45, sesiunea OS) · P6-76 · rezultat: cyber-gpu `2bbd0b3` (bDmemStack = 1) legat, 10/10 scenarii GPU, CI 283 verde → **Release `os-283`** (15:44) = bDmemStack + C-105 (dezactivat).
 - **Numărul Release-ului (corectat 15:40, a doua sesiune OS):** CI-ul pentru P6-75 (numărul 282) a fost **anulat** de push-ul P6-76 → **`os-282` nu va exista**. Release-ul cu reparația `bDmemStack` vine din CI 283 → **`os-283`** (conține și C-105, dezactivat).
 - stare cyber-universe (istoric): preluat (2026-11-11 13:47, sesiunea OS) · P6-72
 - stare cyber-universe (istoric): gata (2026-11-11 11:50, sesiunea OS) · P6-71 · rezultat: cyber-gpu `f96c0ee` legat în OS (`4b57855`), 9/9 scenarii GPU, CI verde → Release `os-279` publicat la 11:48 (jurnalul I8 spune acum de unde vine 0x59).
