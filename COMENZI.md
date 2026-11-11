@@ -1330,7 +1330,7 @@ Format:
   (2) implementare în SIMULARE (`gpu-sim`) + teste; (3) pașii pentru fereastra pe workstation. Cyber-GPU: logica de reset; OS: comanda + legarea în `gpu lant`.
 - siguranță: orice scriere pe placa reală rămâne în spatele „DA”-ului lui Adrian, cu el de față (regula nu se schimbă prin această comandă). Fără firmware propriu, clean-room.
 - prioritate: **după C-102** (reparația 0x59 are întâietate).
-- stare: nou
+- stare: preluat (2026-11-11 13:20, sesiunea Cyber-GPU 85) — partea cyber-gpu, pașii (1) studiu + doar citiri și (2) SIMULARE; C-102 partea GPU e gata (reparația 0x59 așteaptă jurnalul os-280); partea cyber-universe rămâne la sesiunea OS
 
 ### C-104 · cyber-universe · „agentul de comenzi” din OS: `hub ruleaza` în buclă (ia singur comenzile centrului de comandă din git)
 - data: 2026-11-11 12:40 · cerut de Adrian: „un agent în OS care operează comenzi de la Claude prin GitHub; nu trebuie să fie inteligent”.
