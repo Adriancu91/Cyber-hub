@@ -1316,6 +1316,7 @@ Format:
 - termen: Adrian poate rămâne **1–2 ore (până pe la 12:15–12:30)** → reparația GPU cât mai repede, apoi release OS cu CI verde; scrieți ora estimată în `stare/`.
 - stare cyber-universe: gata (2026-11-11 14:45, sesiunea OS) · P6-72 · rezultat: cyber-gpu `bcc314e` (NOCAT decodat) legat în OS, 9/9 scenarii GPU, CI verde → Release `os-280` la 14:13 (și `os-281` la 14:39, același jurnal + C-103/C-104) — Adrian rulează `gpu lant` cu os-281.
 - stare cyber-universe (completarea 15:05): preluat (2026-11-11 15:10, sesiunea OS) · P6-76 — cyber-gpu `2bbd0b3` (bDmemStack = 1) în OS + Release `os-282`.
+- **ATENȚIE numărul Release-ului (2026-11-11 15:15, a doua sesiune OS, în paralel):** CI-ul pentru P6-75 (C-105) a pornit la 15:06 și a luat numărul **282** → `os-282` = doar C-105 (ciclul de test, dezactivat), **FĂRĂ** reparația `bDmemStack`. Reparația (P6-76) va fi în Release-ul **următor (`os-283` sau mai mare)** — Adrian: pentru testul 0x59 folosește Release-ul anunțat în `stare/cyber-universe.md` la P6-76, nu `os-282`.
 - stare cyber-universe (istoric): preluat (2026-11-11 13:47, sesiunea OS) · P6-72
 - stare cyber-universe (istoric): gata (2026-11-11 11:50, sesiunea OS) · P6-71 · rezultat: cyber-gpu `f96c0ee` legat în OS (`4b57855`), 9/9 scenarii GPU, CI verde → Release `os-279` publicat la 11:48 (jurnalul I8 spune acum de unde vine 0x59).
 - stare cyber-universe (istoric): preluat (2026-11-11 11:00, sesiunea OS)
@@ -1357,7 +1358,8 @@ Format:
   Comanda rămâne **dezactivată implicit**: se activează doar cu un fișier pe stick pus de Adrian (ex. `/usb/hub/permite-test-placa`) și cu o decizie nouă, scrisă, a lui Adrian în DECIZII.md
   (azi regula e „scrieri pe placă doar cu Adrian de față”; această comandă NU o schimbă).
 - prioritate: după C-102, C-103, C-104.
-- stare: preluat (2026-11-11 15:05, sesiunea OS) · P6-75 (partea OS: pregătire, dezactivat implicit)
+- stare: gata (partea OS, 2026-11-11 15:40, sesiunea OS) · P6-75 · rezultat: comanda din hub `ciclu-test os-<N>` (actualizare la exact acel Release cu SHA256SUMS → repornire → `gpu recupereaza` + `gpu lant` fără DA → raport + răspuns în `raspunsuri/K-<nr>.txt` → ascultă din nou; la eșecul ciclului revine la versiunea veche) e gata și testată în QEMU, dar **REFUZĂ** până pune Adrian ambele chei: fișierul `hub/permite-test-placa` pe stick + o decizie nouă în `DECIZII.md` cu exact `ciclu-test activat`; în `os-282` (CI pornit 15:06). Partea cyber-gpu: nimic de făcut acum.
+- stare (istoric): preluat (2026-11-11 15:05, sesiunea OS) · P6-75
 
 ### C-106 · kronos · Adrian a terminat testele de azi (14:36) — placa liberă pentru Kronos
 - data: 2026-11-11 14:36 · de la: centrul de comandă, pentru Adrian (rezervarea din C-101 se încheie acum).
