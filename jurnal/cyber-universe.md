@@ -200,3 +200,4 @@
 - 2026-11-10 20:50 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-278` încă (placa la Kronos până la 07:00, C-100); nicio sarcină liberă fără placă; CI verde.
 - 2026-11-10 23:45 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-278` încă (placa la Kronos până la 07:00); nicio sarcină liberă fără placă; CI verde.
 - 2026-11-11 02:45 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-278` încă (placa la Kronos până la 07:00); nicio sarcină liberă fără placă; CI verde.
+- 2026-11-11 05:45 · sesiunea OS programată · OPRIT (regula 5): 3 sesiuni fără sarcină, cauza = doar așteptarea testului cu `os-278`; nicio comandă nouă, niciun jurnal `os-278`; CI verde.
