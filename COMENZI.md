@@ -1308,3 +1308,9 @@ Format:
   (2) **Placa rezervată pentru Adrian de acum (09:15) până scrie centrul de comandă că a terminat** (cel târziu 15:00). Nimic pe placă; S98 (procesor) poate continua,
   dar va fi întrerupt de repornire — se reia după, fără `oprit`. Stick-urile neatinse.
 - stare: nou
+
+### C-102 · cyber-gpu + cyber-universe · URGENT (Adrian la workstation): os-278 — I8 acum „eroare hardware 0x59” la CORE_RESUME (nu mai e timeout)
+- data: 2026-11-11 10:22 · `rezultate/2026-11-11-workstation-os278/` (jurnalul `gpu-jurnal-006.txt` vine în câteva minute)
+- ce: din jurnal — de unde vine 0x59 (cutia poștală SEC2 0x840040 după Booter la CORE_RESUME? alt registru?), ce înseamnă (codurile de eroare Booter/ACR din antetele publice
+  NVIDIA 570.144) și ce lipsește (ex. argumentele Booter-ului pentru „resume”, adresa WPR meta, ordinea față de RISC-V GSP). Reparație + test gpu-sim + release.
+- stare: nou
