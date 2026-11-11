@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-11 20:55 (ora României) · **de:** sesiunea OS programată (17:40) — CI reparat, P6-77 (os-288), **C-108 gata (os-289)**, **C-109 gata (os-290)**.
+**Actualizat:** 2026-11-11 21:05 (ora României) · **de:** sesiunile OS programate (17:40, 20:40) — CI reparat, P6-77 (os-288), **C-108 gata (os-289)**, **C-109 gata (os-290)**.
 
 ## Acum
 - **Release `os-289` (≈19:58, CI verde) — pe acesta îl folosește Adrian joi la 07:00 (C-108).** Are cele 10 variante de setări I8 de la
@@ -12,6 +12,7 @@
 - **Release `os-290` (≈20:54) = os-289 + C-109 (P6-79):** pe ASUS TUF pornirea stătea după `acpi: MADT` — cel mai probabil ceasul PIT
   oprit de firmware (o buclă de așteptare fără limită). Acum așteptarea are limită, calibrarea trece pe temporizatorul ACPI PM sau pe CPUID,
   APIC-ul merge și în modul x2APIC, iar pe ecran apar rânduri noi. Testat în QEMU cu PIT-ul oprit; pe ASUS neîncercat.
+- Dacă apare `os-291` (CI pornit 20:55): **același cod ca `os-290`**, doar reparația pentru rularea CI săptămânală — oricare din ele e bun.
 - C-105 (`ciclu-test`) rămâne oprit până la cele două chei ale lui Adrian.
 
 ## Urmează
