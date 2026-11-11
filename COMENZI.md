@@ -1379,3 +1379,18 @@ Format:
   nouveau/nova: doar citite pentru idei (clean-room), cod copiat niciodată (GPL interzis). Fiecare diferență găsită → în `docs/` + hub, cu sursa; reparația doar unde e clar.
 - stare: gata (2026-11-11 15:05, sesiunea Cyber-GPU 87; preluat 14:30, înainte să apară comanda — era pasul următor scris de C-102)
 - rezultat: comparația câmp cu câmp (`GspSystemInfo`, registru, regiuni LibOS, `GspFwWprMeta`, `GSP_ARGUMENTS_CACHED`) cu **patru** surse — RM 570.144 (MIT), tinygrad (MIT), nouveau r570 și nova-core (GPL, doar citite) — în `cyber-gpu/docs/os-280_ANALIZA_0x59.md` §3: **o singură diferență față de toate patru: `bDmemStack`** (ele 1, noi 0) → reparat în `cyber-gpu` `b3ac503` (un octet, 440 PASS, CI verde). Restul e la fel ca cel puțin un driver care merge (ACPI zero ca tinygrad/nova, `flags` 0 ca nouveau/tinygrad/nova, 2 chei de registru ca RM/tinygrad). De probat la os-282 (DEDUS, neprobat). În plus: cele 844 de asserturi NOCAT din os-280 au forma normală a asserturilor pe GSP (fără linie, fără stivă, adrese diferite = locuri de apel diferite) și **nouveau le ignoră implicit** → probabil zgomot, nu cauza.
+
+### C-108 · cyber-gpu + cyber-universe · URGENT pentru JOI 12 nov ~07:00: MAI MULTE VARIANTE de setări I8 pe același stick (Adrian le încearcă pe rând)
+- data: 2026-11-11 17:33 · cerut de Adrian: „pregătim mai multe versiuni de test, setări cu mai multe variante, le încercăm pe rând până găsim setarea corectă; la un test 5–10 reporniri”.
+  Adrian vine **mâine 12 nov la ~07:00**, face testele, apoi pleacă. **Release-ul trebuie să existe până la ~06:00.**
+- ce (Cyber-GPU): din comparația „trei surse” (C-107: RM 570.144, tinygrad, nouveau/nova) alege **5–10 variante** pentru ce primește GSP-RM la prima pornire
+  (GspSystemInfo, registry — chei/valori, ordinea și conținutul RPC-urilor dinaintea pornirii, setări PMU, WPR meta, PCI/BAR etc.), fiecare o combinație coerentă, **varianta 1 = cea mai probabilă**.
+  Fiecare variantă: un nume scurt + o propoziție „ce schimbă” + sursa. Doar valori luate din surse publice (fără valori inventate, fără registre necunoscute). Toate în SIMULARE + teste.
+  Plus: hex-ul celor 2 UCODE_LIBOS_PRINT și valorile trimise, în jurnal, la fiecare variantă.
+- ce (OS): `gpu lant --varianta N` (și `gpu variante` = lista cu numele și ce schimbă fiecare); înainte de „DA” ecranul arată varianta aleasă; jurnalul și raportul poartă numărul variantei;
+  `trimite` le urcă în hub. Fără varianta dată = comportamentul de acum (os-283).
+- procedura pentru Adrian (o variantă = o pornire rece, cât timp C-103 nu e încercat): oprire → cablu 30 s → F8 stick de test → `gpu lant --varianta N` → `DA` → `trimite` → repetă cu N+1.
+  Se oprește la prima variantă care trece de I8.
+- siguranță: neschimbată — scrierile pe placă doar cu Adrian de față, după „DA” la fiecare variantă.
+- ordinea: Cyber-GPU **la rularea de 19:25** (sau mai devreme dacă sesiunea curentă vede comanda), OS la **20:40** (sau imediat după Cyber-GPU, pornit de centrul de comandă); rezervă: GPU 01:25, OS 02:40/05:40.
+- stare: nou
