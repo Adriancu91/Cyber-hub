@@ -1364,6 +1364,7 @@ Format:
 ### C-106 · kronos · Adrian a terminat testele de azi (14:36) — placa liberă pentru Kronos
 - data: 2026-11-11 14:36 · de la: centrul de comandă, pentru Adrian (rezervarea din C-101 se încheie acum).
 - ce: Adrian repornește workstation-ul în Windows acum; **placa e liberă pentru Kronos de acum**. Stick-urile rămân în calculator, neatinse (pe CYBER-UNIV e acum și `github.token` — nu se citește, nu se copiază, nu se șterge).
+- notă (15:30): Adrian probabil nu mai vine azi, iar mâine (12 nov) e plecat → placa rămâne la Kronos cel puțin până joi 13 nov; testul os-281 se face la următoarea venire, anunțată prin centrul de comandă.
 - stare: nou
 
 ### C-107 · cyber-gpu · Cerut de Adrian (14:39): caută setările de pornire GSP și în proiectele care au făcut deja asta
