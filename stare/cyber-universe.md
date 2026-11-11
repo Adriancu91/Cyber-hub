@@ -23,7 +23,7 @@
 
 ## Blocaje / nevoie de Adrian
 
-**Testul cu `os-283` (sau `os-284`, dacă apare până atunci) pe workstation, la următoarea venire (C-106: nu înainte de joi 13 nov):**
+**Testul cu `os-283` (sau `os-284`, dacă apare până atunci) pe workstation, — posibil chiar în seara asta (C-106, nota 17:05), altfel la următoarea venire:**
 1. Din Release-ul **`os-283`** (sau `os-284`) (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu Rufus pe **stick-ul de test**. Stick-ul normal rămâne cum e.
 2. **Oprire completă**, cablul scos **30 s**; pornești de pe stick-ul de test (F8), cu ambele stick-uri.
 3. `gpu lant` → `DA` + Enter. Ce contează: rândul `valoare GSP_INIT_DONE: rpc_result … = 0x…` — `0x00000000` înseamnă că reparația a mers; tot `0x59` = nu încă. **Poze** la rândul acesta, la rândurile `text NOCAT …` și la rezumatul de la final.
