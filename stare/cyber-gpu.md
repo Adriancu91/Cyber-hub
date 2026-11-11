@@ -1,8 +1,19 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-11 13:05 (ora României) · **de:** sesiunea Cyber-GPU 85 (cloud, fără placă) — **jurnalul os-279 analizat: GSP-RM pornește, dar refuză inițializarea (`GSP_INIT_DONE` cu `0x59` = `NV_ERR_OPERATING_SYSTEM`) după 843 de înregistrări de diagnostic pe care jurnalul nu le citea; acum le decodează** (continuarea C-102, în SIMULARE). Commit `f781428` (cod: `5cfe523`), 433 teste PASS, CI verde. **Nimic testat pe RTX 3070 Ti.**
+**Actualizat:** 2026-11-11 13:30 (ora României) · **de:** sesiunea Cyber-GPU 85 (cloud, fără placă) — **(1) jurnalul os-279 analizat: GSP-RM pornește, dar refuză inițializarea (`GSP_INIT_DONE` cu `0x59` = `NV_ERR_OPERATING_SYSTEM`) după 843 de înregistrări de diagnostic pe care jurnalul nu le citea; acum le decodează** (continuarea C-102). **(2) C-103 partea GPU gata în SIMULARE: WPR2 coborât fără repornire prin Booter Unload** (programul semnat NVIDIA deja pe stick), ca driverul NVIDIA. Commit `bcc314e` (cod: `5cfe523`, `364ece2`), 437 teste PASS, CI verde. **Nimic testat pe RTX 3070 Ti.**
 
 ## Acum
+- **Sesiunea 85 (13:20–13:30) — C-103 (placa readusă la starea de pornire fără repornire), partea GPU, SIMULARE.** Preluat 13:20 (după C-102, cum cere comanda).
+  - **Studiul (`cyber-gpu/docs/C-103_RESET_PLACA.md`):** calea publică de a coborî WPR2 fără reset PCIe e **Booter Unload** — exact ce face driverul NVIDIA la descărcare
+    (`kgspExecuteBooterUnloadIfNeeded_TU102`, 570.144 MIT): reset SEC2, programul semnat `booter_unload` cu cutiile poștale `0xFF`/`0xFF`, mailbox0 trebuie 0, apoi
+    `WPR2_ADDR_HI` trebuie să citească 0. **Fișierul e deja pe stick-ul lui Adrian** (al 4-lea din I4). FLR: plăcile GeForce de regulă nu-l anunță — se citește din
+    spațiul de configurare; Secondary Bus Reset pe root-port (`b2:xx.0` → `b3`) = rezervă, decizia OS-ului; D3hot nu resetează dacă `No_Soft_Reset` = 1; D3cold nu există pe desktop
+    fără S5 + „Power On By RTC” (varianta (b) a lui Adrian) sau priză inteligentă (c).
+  - **Implementat (`364ece2`, doar adăugări):** `falcon::booter_unload[_dma]` (reset GSP → reset SEC2 → Booter Unload → verificări), modelul în `gpu-sim`; test T118: după I6 + I7,
+    unload → WPR2 = 0 → **I6 rulează din nou în aceeași „pornire”**. `gpu_pci::caps::reset_capabilities` (doar citiri: FLR, `No_Soft_Reset`, D-state) pentru `raport` (T119).
+    Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-103_gpu-recupereaza.md`. Nicio scriere nouă în afara ferestrelor GSP/SEC2; registrele WPR2 nu le scriem noi.
+  - Pe placă: `gpu recupereaza` (OS) după un lanț oprit la I8; dacă WPR2 citește 0, a doua încercare nu mai cere cablul scos. Dacă Booter dă eroare: codul se notează, varianta cu
+    FWSEC-SB înainte. 437 teste PASS, CI verde (`364ece2`, `bcc314e`). Copia din hub (C-34) la `bcc314e`.
 - **Sesiunea 85 (12:28–13:05) — jurnalul `os-279` (`gpu-jurnal-007.txt`, 12:20) citit și răspuns la întrebarea sesiunii 84.** Nicio comandă nouă în hub; e pasul următor scris de C-102.
   - **Vestea bună:** lanțul de pornire merge **până la capăt**: I6, I7, toate cele 420 de comenzi ale secvențiatorului; la `#419 CORE_RESUME` Booter-ul a rulat
     de-adevăratelea (SCRATCH_14 `0x13100000` → `0x17100000`, bitul 26 pus abia după `0x840130 ← 2`, nu era bit vechi; SEC2 MAILBOX0 = 0), GSP RISC-V activ (`0x80`).
@@ -57,13 +68,16 @@
 3. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant`, citim înregistrările și **abia atunci** reparăm ce îi lipsește lui GSP-RM.
 
 ## Urmează
-1. OS-ul leagă `5cfe523` (sau mai nou) → Release `os-280` → `gpu lant` cu Adrian de față; apoi `verifica_jurnal_lant` pe jurnalul din `rezultate/` și **repararea lui `0x59`
+0. **C-103 pe placă (OS):** `gpu recupereaza` după un lanț oprit — Booter Unload → WPR2 = 0? Dacă da, I6–I8 se reiau fără pornire rece (`cyber-gpu/integration/cyber-universe/C-103_gpu-recupereaza.md`).
+1. OS-ul leagă `364ece2` (sau mai nou) → Release `os-280` → `gpu lant` cu Adrian de față; apoi `verifica_jurnal_lant` pe jurnalul din `rezultate/` și **repararea lui `0x59`
    din ce spun înregistrările NOCAT** (ce parametru / ce memorie / ce registru îi lipsește lui GSP-RM: `GSP_SET_SYSTEM_INFO`, registrul `SET_REGISTRY`, argumentele LibOS,
    `GspFwWprMeta`). Fără jurnal nou, niciun pas nou.
 2. După `GSP_INIT_DONE` pe placă: primele apeluri RM (`GSP_GET_GSP_STATIC_INFO`), golden (I8e), I9, I10 — toate scrise, testate doar în simulare.
 3. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 85 (C-103, doar adăugări):** `nvidia_ga104::gsp::falcon::{booter_unload, booter_unload_dma, BOOTER_UNLOAD_MAILBOX, Unloaded}`; `gpu_pci::caps::{reset_capabilities,
+  ResetCapabilities}` (doar citiri); `gpu-sim`: `SimUcode::BooterUnload`, `SimFault::Wpr2Stuck`.
 - **Sesiunea 85 (după os-279, doar adăugări):** `gpu_core::diag::Event::Text { what, len, bytes }` (afișat `text <nume> = "..."`) + `Event::text(...)`, `TEXT_LEN`;
   `nvidia_rm570::names` (tabele generate) + `status_name`, `status_text`, `rpc_name`; `nvidia_ga104::gsp::nocat` (`NocatRecord`, `LibosPrint`); `rpc::name`,
   `rpc::event::GSP_POST_NOCAT_RECORD`; câmpuri noi în `sequencer::InitLog`. Nicio scriere nouă în registre. OS-ul folosește `_ =>` și `Display` → compilează neschimbat.
@@ -82,11 +96,12 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: legarea `cyber-gpu` la `5cfe523` (sau `f781428`), Release `os-280` cu CI verde — nimic de schimbat în codul OS (`Event::Text` e doar o variantă nouă).
+- De la `cyber-universe`: legarea `cyber-gpu` la `364ece2` (sau `bcc314e`), Release `os-280` cu CI verde — nimic de schimbat în codul OS pentru 0x59 (`Event::Text` e doar o variantă nouă);
+  apoi C-103 partea OS: `gpu recupereaza` + rândul `reset_capabilities` în `raport`.
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
 - De la Adrian: rularea `gpu lant` cu Release-ul `os-280` la fereastra următoare și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
 - **Nu e blocat, dar depinde de placă:** `0x59` vine de la GSP-RM însuși, iar motivul e în cele 843 de înregistrări de diagnostic pe care jurnalul nou le citește.
   Următoarea rulare `gpu lant` (os-280) le aduce; fără ea nu se poate repara nimic „la sigur”.
-- CI GitHub VERDE pe `5cfe523` (cod) și `f781428` (document).
+- CI GitHub VERDE pe `5cfe523`, `364ece2` (cod) și `bcc314e` (document).
