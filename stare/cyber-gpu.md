@@ -1,8 +1,18 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-11 13:45 (ora României) · **de:** sesiunea Cyber-GPU 86 (cloud, fără placă) — **pregătirea analizei jurnalului `os-280`:** unealta `verifica_jurnal_lant` tipărește acum un **rezumat NOCAT** (ce a spus GSP-RM înainte de `0x59`: câte înregistrări, ce feluri, asserturile cu adresă + linie, înainte/după secvențiator, rezultatul cu nume). Commit `a669387` (doar adăugări, doar unealtă pe gazdă + modul de text), 440 teste PASS. Nicio comandă nouă, niciun jurnal nou, Release-ul `os-280` încă nu există. **Nimic testat pe RTX 3070 Ti.**
+**Actualizat:** 2026-11-11 15:05 (ora României) · **de:** sesiunea Cyber-GPU 87 (cloud, fără placă) — **jurnalul `os-280` citit; comparația „trei surse” (C-107) găsește o singură diferență față de toți cei patru driveri care pornesc GSP-RM 570: `bDmemStack` (noi 0, ei 1) → pus 1** (`cyber-gpu` `b3ac503`, un octet, 440 teste PASS, CI verde). Candidatul pentru `0x59`, **DEDUS, neprobat** — se vede la `gpu lant` cu Release-ul **`os-282`** (os-281 are codul vechi). **Nimic testat pe RTX 3070 Ti.**
 
 ## Acum
+- **Sesiunea 87 (14:25–15:05) — după os-280: ce spun cele 844 de asserturi și ce îi lipsea lui GSP-RM.** Jurnalul `gpu-jurnal-008.txt` (trimis singur de OS):
+  I6, I7, cele 420 de comenzi trec; `GSP_INIT_DONE` cu `0x59` ca la os-279; **844 de înregistrări NOCAT, toate ASSERT, toate ÎNAINTE de secvențiator, toate cu adrese
+  diferite** (crescătoare, `0x019ef3c6 … 0x019f0060` la primele 16), fără linie și fără stivă. Din codul RM: pe GSP asserturile se raportează așa (fără linie, cu adresa
+  de întoarcere) → sunt locuri de apel diferite, nu o buclă; **nouveau r570 ignoră implicit înregistrările NOCAT** → apar și pe porniri bune → probabil zgomot, nu cauza.
+  - **Comparația câmp cu câmp** (`cyber-gpu/docs/os-280_ANALIZA_0x59.md` §3) cu RM 570.144, nouveau r570, tinygrad și nova-core: `GspSystemInfo`, registru, regiuni LibOS,
+    `GspFwWprMeta`, `GSP_ARGUMENTS_CACHED` — **o singură diferență față de toate patru: `bDmemStack`** (stiva sarcinii RM de pe GSP: ei în DMEM = 1, noi 0 = „stiva LibOS”,
+    varianta pe care RM o alege doar la cerere). `NV_ERR_OPERATING_SYSTEM` e codul generic al stratului LibOS. **Reparat: `b3ac503`** (octetul 48 al structurii, verificat cu
+    bindgen; nimic altceva nu se schimbă pe placă: aceleași scrieri, aceeași așezare VRAM). Tot ce diferă în alt loc e la fel ca cel puțin un driver care merge.
+  - Nota pentru OS: `cyber-gpu/integration/cyber-universe/os-280_bdmemstack.md` — **nimic de schimbat în codul OS**, doar legarea + Release `os-282`.
+  - 440 teste PASS, CI verde (`b3ac503`; `2bbd0b3` în curs). Copia din hub (C-34) la `2bbd0b3` (201 commit-uri, `git bundle verify` OK, fără firmware). C-107 `gata`.
 - **Sesiunea 86 (13:26–13:45) — pregătirea analizei `os-280`.** Nimic nou în hub pentru cyber-gpu (C-103 `gata` partea GPU; C-104 e pentru OS); Release-ul `os-280` nu există încă
   (sesiunea OS n-a mai trecut de la 11:58). Un pas mic pe calea critică: jurnalul `os-280` va avea până la 20 de blocuri NOCAT printre ~3000 de rânduri; modulul nou `gsp::nocat_log`
   (doar text) le adună într-un rezumat de câteva rânduri — înregistrări primite / feluri / jurnale LibOS; felurile jurnalizate ordonate după cât de des apar (asserturi cu adresă + linie
@@ -67,22 +77,24 @@
 - **Pe placă până acum:** I0–I4 doar citire TREC; I6 TRECE (os-242, os-275, os-276, os-277); I7 TRECE (os-246, os-275, os-276, os-277); I8: mesajul GSP-RM citit corect,
   **419 din 420 de comenzi ale secvențiatorului executate**, oprit la `CORE_RESUME` (reparat acum, în simulare); I9–I14 neîncercate.
 
-## Lista pentru următoarea rulare `gpu lant` (Release `os-280`, cu `5cfe523` sau mai nou)
+## Lista pentru următoarea rulare `gpu lant` (Release `os-282`, cu `b3ac503` sau mai nou)
 1. Pornire rece; stick-ul de test cu noul Release + stick-ul cu firmware 570.144 și #513 în `kronos\`.
-2. `gpu lant` + „DA” o dată. **I8 se va opri probabil tot la `0x59`** — important e ce scrie înainte: rândurile `NOCAT` (mai ales `text NOCAT: source = "..."`,
-   `text NOCAT: recType = "..."`, `NOCAT ASSERT: adresa …` + `linia …` sau `errorCode (nume NV_STATUS)`, `subsystem`) și rezumatul de la final
-   (`I8 NOCAT (0x1020): inregistrari … primite`, `feluri distincte`). Poze la ele; jurnalul de pe stick e cel care contează. Esc oprește curat.
-3. După: jurnalul în `rezultate/`; noi rulăm `verifica_jurnal_lant <jurnal> 0x9c66000` — tipărește direct **rezumatul NOCAT** (sesiunea 86) — și **abia atunci** reparăm ce îi lipsește lui GSP-RM.
+2. `gpu lant` + „DA” o dată. **Dacă `bDmemStack` era cauza:** după `secv #419 CORE_RESUME`, rândul `valoare GSP_INIT_DONE: rpc_result … = 0x00000000` și lanțul
+   intră în **I8e (golden)** — primul apel RM pe placă. **Dacă nu:** același `0x59`; se compară numărul de înregistrări NOCAT (844?) și primele 16 adrese cu os-280.
+3. După un lanț oprit: `gpu recupereaza` + „DA” (C-103, prima probă pe placă) — dacă WPR2 citește 0, a doua încercare se face fără cablul scos.
+4. După: jurnalul în `rezultate/` (sau `trimite`); noi rulăm `verifica_jurnal_lant <jurnal> 0x9c66000`.
 
 ## Urmează
 0. **C-103 pe placă (OS):** `gpu recupereaza` după un lanț oprit — Booter Unload → WPR2 = 0? Dacă da, I6–I8 se reiau fără pornire rece (`cyber-gpu/integration/cyber-universe/C-103_gpu-recupereaza.md`).
-1. OS-ul leagă `364ece2` (sau mai nou) → Release `os-280` → `gpu lant` cu Adrian de față; apoi `verifica_jurnal_lant` pe jurnalul din `rezultate/` și **repararea lui `0x59`
-   din ce spun înregistrările NOCAT** (ce parametru / ce memorie / ce registru îi lipsește lui GSP-RM: `GSP_SET_SYSTEM_INFO`, registrul `SET_REGISTRY`, argumentele LibOS,
-   `GspFwWprMeta`). Fără jurnal nou, niciun pas nou.
+1. OS-ul leagă `b3ac503` (sau mai nou) → Release `os-282` → `gpu lant` (pornire rece; cu Adrian de față, sau prin bucla C-104/C-105 când o aprobă). Dacă `rpc_result = 0`:
+   I8e (golden) pe placă — se citește jurnalul. Dacă `0x59` rămâne: conținutul mesajelor nu mai diferă de nova/nouveau → se caută ordinea/momentul lor și starea plăcii;
+   rezerve, câte una pe rulare: `bIsPassthru = 1` (tinygrad), `CLOCK_BOOST` (RM pe GA104), `RMDevidCheckIgnore` (nouveau/nova). Fără jurnal nou, niciun pas nou.
 2. După `GSP_INIT_DONE` pe placă: primele apeluri RM (`GSP_GET_GSP_STATIC_INFO`), golden (I8e), I9, I10 — toate scrise, testate doar în simulare.
 3. „Un singur program pe simbol” — doar după ce lansările separate trec pe placă.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 87 (după os-280):** `gsp::libos::encode_gsp_args` pune `bDmemStack = 1` (aceeași semnătură; constanta nouă `libos::B_DMEM_STACK_OFF`). Nimic redenumit sau șters;
+  OS-ul compilează neschimbat și ia reparația la legarea commit-ului nou.
 - **Sesiunea 85 (C-103, doar adăugări):** `nvidia_ga104::gsp::falcon::{booter_unload, booter_unload_dma, BOOTER_UNLOAD_MAILBOX, Unloaded}`; `gpu_pci::caps::{reset_capabilities,
   ResetCapabilities}` (doar citiri); `gpu-sim`: `SimUcode::BooterUnload`, `SimFault::Wpr2Stuck`.
 - **Sesiunea 85 (după os-279, doar adăugări):** `gpu_core::diag::Event::Text { what, len, bytes }` (afișat `text <nume> = "..."`) + `Event::text(...)`, `TEXT_LEN`;
@@ -103,18 +115,14 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: legarea `cyber-gpu` la `364ece2` (sau `bcc314e`), Release `os-280` cu CI verde — nimic de schimbat în codul OS pentru 0x59 (`Event::Text` e doar o variantă nouă);
-  apoi C-103 partea OS: `gpu recupereaza` + rândul `reset_capabilities` în `raport`.
+- De la `cyber-universe`: legarea `cyber-gpu` la `b3ac503` (sau `2bbd0b3`), **Release `os-282`** cu CI verde — nimic de schimbat în codul OS (nota `os-280_bdmemstack.md`).
+- De la Adrian: `gpu lant` cu os-282 (pornire rece), apoi `gpu recupereaza` (C-103, prima probă); jurnalul ajunge singur în hub dacă e tokenul pe stick.
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
-- De la Adrian: rularea `gpu lant` cu Release-ul `os-280` la fereastra următoare și jurnalul de pe stick în `rezultate/`.
 
 ## Blocaje / nevoie de Adrian
-- **13:25 — răspuns la cererea urgentă „C-102 continuare” (Adrian la workstation):** cele trei puncte sunt **deja făcute** în `cyber-gpu` `5cfe523` (push 13:0x, CI verde):
-  (1) `0x1020` = `GSP_POST_NOCAT_RECORD` (înregistrare de diagnostic a RM-ului de pe GSP), `0x100c` = `UCODE_LIBOS_PRINT` (jurnalul PMU, binar); (2) conținutul lor e jurnalizat
-  (tip, sursă, cod cu nume `NV_STATUS` / adresa + linia asserturilor, subsistem, stiva; descriptor + mărime la LibOS) — doar citiri; (3) din antete **nu** se vede o cauză clară
-  pentru `NV_ERR_OPERATING_SYSTEM` (e un cod generic al stratului LibOS al GSP-RM; motivul e în cele 843 de înregistrări) → doar diagnostic, nicio reparație inventată.
-  **Release-ul `os-280` îl face sesiunea OS** (legarea `cyber-gpu` ≥ `5cfe523`, nimic de schimbat în codul OS); estimare: ~15 min de la prima ei trecere. Dacă Adrian nu mai poate
-  aștepta azi, testul cu `os-280` se face la fereastra următoare — jurnalul va spune cauza.
-- **Nu e blocat, dar depinde de placă:** `0x59` vine de la GSP-RM însuși, iar motivul e în cele 843 de înregistrări de diagnostic pe care jurnalul nou le citește.
-  Următoarea rulare `gpu lant` (os-280) le aduce; fără ea nu se poate repara nimic „la sigur”.
-- CI GitHub VERDE pe `5cfe523`, `364ece2`, `bcc314e`; `a669387` (sesiunea 86, rularea 169, 13:40).
+- **15:05 — răspuns la C-107 / „trei surse”:** comparația e făcută (patru drivere), diferența unică e reparată (`bDmemStack`), **Release-ul `os-282` îl face sesiunea OS**
+  (legarea `cyber-gpu` ≥ `b3ac503`, nimic de schimbat în codul OS; ~15 min de la prima ei trecere). Testul se poate face și fără Adrian la butoane, prin bucla C-104/C-105,
+  când o activează el (regula „scrieri pe placă doar cu Adrian de față” e neschimbată).
+- **Nu e blocat, dar depinde de placă:** reparația `bDmemStack` e DEDUSĂ din ce fac cele patru drivere, nu probată; doar `gpu lant` cu os-282 spune dacă `0x59` dispare.
+  Numele funcțiilor din care vin cele 844 de asserturi nu se pot afla fără simbolurile GSP-RM — nu deschidem firmware-ul (regula proiectului); decizia ar fi a lui Adrian.
+- CI GitHub VERDE pe `a669387`, `b3ac503` (sesiunea 87, 12:52 UTC, 54 s); `2bbd0b3` în curs la ora scrierii.
