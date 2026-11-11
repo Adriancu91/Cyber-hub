@@ -1404,5 +1404,6 @@ Format:
 - ipoteze de verificat (doar cod, în QEMU): (1) firmware-ul a lăsat procesorul în **modul x2APIC** (Tiger Lake, 16 fire) și noi folosim APIC-ul prin memorie (xAPIC, 0xfee00000) → citirile nu răspund, calibrarea ceasului se învârte la nesfârșit;
   (2) calibrarea APIC prin PIT/HPET fără limită de timp; (3) I/O APIC / redirectări IRQ. Reparația: detectarea x2APIC (CPUID + IA32_APIC_BASE bit 10) și folosirea MSR-urilor; orice buclă de așteptare cu limită + mesaj.
   Test QEMU: `-cpu ...,+x2apic` cu x2APIC pornit de firmware; mesaje noi de jurnal înainte/după fiecare pas din apic::init.
+- confirmat (18:00): și stick-ul de test TESTGPU se blochează în același loc, după MADT (`foto-2-stick-test-acelasi-loc.jpg`) → problema e reproductibilă.
 - prioritate: după C-108 (variantele pentru joi 07:00 au întâietate).
 - stare: nou
