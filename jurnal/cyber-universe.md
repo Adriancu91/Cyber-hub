@@ -211,3 +211,4 @@
 - 2026-11-11 15:58 · a doua sesiune OS (14:40) · P6-77 (`d3c5351`) pregătit local, dar cealaltă sesiune l-a împins prima (`61a308d`, CI 284) → nimic dublat pe GitHub; C-105 așteaptă doar cheile lui Adrian.
 - 2026-11-11 17:10 · sesiunea OS programată (15:00) · P6-76: cyber-gpu `2bbd0b3` (bDmemStack = 1) → **Release `os-283`** (15:44, cu C-105); P6-77: `d3c5351` (jurnalul PMU) legat, CI 284 atârnă la instalarea pachetelor pe GitHub (extern), re-rulat.
 - 2026-11-11 17:12 · sesiunea OS · cererea „C-102 continuare 3” (legare `2bbd0b3` + Release) era deja făcută: `os-283`; C-104 gata din os-281. Stare: testul poate fi în seara asta cu os-283.
+- 2026-11-11 20:05 · sesiunea OS programată (17:40) · CI reparat (arhiva Ubuntu nu răspundea → oglinda kernel.org); P6-77 → `os-288`; **C-108 gata (P6-78): `gpu variante` + `gpu lant --varianta N` → Release `os-289`** pentru testul de joi 07:00; C-109 preluat (P6-79: PIT cu limită + ceas de rezervă + x2APIC), cod în lucru.

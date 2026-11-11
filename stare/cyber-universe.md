@@ -1,35 +1,46 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-11 17:10 (ora României) · **de:** sesiunea OS programată (15:00) — P6-76 (os-283), P6-77 (cod gata, CI blocat extern).
+**Actualizat:** 2026-11-11 20:05 (ora României) · **de:** sesiunea OS programată (17:40) — CI reparat, P6-77 (os-288), **C-108 gata (os-289)**, C-109 în lucru.
 
 ## Acum
-- **Release `os-283` (15:44, CI verde) — pe acesta îl folosește Adrian la testul următor.** Conține reparația candidat pentru `0x59` (cyber-gpu `2bbd0b3`: `bDmemStack = 1`, singura diferență față de RM, tinygrad, nouveau, nova — C-107) + C-105 (ciclu-test, oprit). `os-282` nu există (CI anulat).
-- **P6-77 (C-102 continuare 2):** cyber-gpu `d3c5351` (conținutul celor 2 mesaje PMU în jurnal, doar citiri) legat în `main` (`61a308d`, 10/10 scenarii GPU local). **CI 284 atârnă la instalarea pachetelor pe mașinile GitHub** (pasul „Unelte sistem”, nu codul nostru): prima rulare oprită la 60 min, re-rulată la 16:57. Când trece → `os-284` (= os-283 + jurnalul PMU).
-- **C-105 partea OS (P6-75):** `ciclu-test os-<N>` din hub e gata și testat în QEMU, dar **oprit** până la cele două chei ale lui Adrian.
-- Din azi, tot în os-283: `hub asculta` (C-104), `gpu recupereaza` (C-103, pe placă neîncercat), jurnalul NOCAT decodat (C-102).
+- **Release `os-289` (≈19:58, CI verde) — pe acesta îl folosește Adrian joi la 07:00 (C-108).** Are cele 10 variante de setări I8 de la
+  Cyber-GPU (`49e6685`): `gpu variante` le arată, `gpu lant --varianta N` o alege (pe ecran înainte de DA, în jurnal și în raport;
+  număr greșit = nimic scris; fără `--varianta` = exact ca os-283). Testat doar în SIMULARE (QEMU).
+- `os-288` = os-283 + conținutul celor 2 mesaje PMU în jurnal (P6-77). `os-289` le are pe toate.
+- **CI reparat:** serverele de pachete Ubuntu (`azure.archive.ubuntu.com`, `archive.ubuntu.com`) nu răspundeau; CI-ul ia acum pachetele
+  de la oglinda kernel.org când primul încercat nu merge (4 rulări până la verde).
+- **C-109 (ASUS TUF blocat după `acpi: MADT`) — P6-79 în lucru:** cauza cea mai probabilă = ceasul PIT oprit de firmware (bucla de
+  așteptare fără limită din `apic::init`); reparația (limită + ceas de rezervă ACPI PM / CPUID + x2APIC + rânduri noi pe ecran) e scrisă
+  și trece în QEMU cu PIT-ul oprit; intră într-un Release după CI. **Nu e în os-289.**
+- C-105 (`ciclu-test`) rămâne oprit până la cele două chei ale lui Adrian.
 
 ## Urmează
-- CI 284 verde → Release `os-284`. Dacă tot atârnă, re-rulare; la a doua oprire, propun ca pasul de instalare să pice repede (limită de timp + reîncercări).
-- Jurnalul testului cu `os-283`/`os-284`: reușită = `rpc_result … = 0x00000000` și începe I8e; eșec = tot `0x59` → cyber-gpu încearcă rezervele (`bIsPassthru`, `CLOCK_BOOST`, `RMDevidCheckIgnore`), câte una pe rulare.
-- Prima probă `gpu recupereaza` pe placă (după un lanț oprit); dacă merge, propun legarea în `gpu lant` — doar cu „da”.
+- P6-79 → Release nou (după os-289, fără să-l înlocuiască pentru testul GPU de joi — conține aceleași variante).
+- Jurnalele de joi: prima variantă care trece de I8 → Cyber-GPU (unealta `compara_variante`) → pasul următor.
 
 ## Ce oferă proiectul celorlalți
-- `gpu lant` I6 → I14, `gpu recupereaza`, `kronos --gpu` pe stick-ul de test (I8–I14 doar în SIMULARE); jurnale + rapoarte trimise singure în hub (cu token).
-- `hub ruleaza` / `hub asculta` (comenzi din hub, răspuns pe comandă), `test tot`, `kronos --conversatie`, git pe ramuri `os/…`, `web`, `files`; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
+- `gpu lant [--varianta N]` I6 → I14, `gpu variante`, `gpu recupereaza`, `kronos --gpu` pe stick-ul de test; jurnale + rapoarte trimise în hub (cu token).
+- `hub ruleaza` / `hub asculta`, `test tot`, `kronos --conversatie`, git pe ramuri `os/…`, `web`, `files`; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
 
 ## De ce are nevoie de la ceilalți
-- **`cyber-gpu`:** după jurnalul cu `os-283`/`os-284`, pasul următor pentru 0x59 (dacă `bDmemStack` nu a fost cauza). Mai târziu: zona de comenzi de 32 KiB pentru modelul de 24 de straturi.
+- **`cyber-gpu`:** după jurnalele de joi, pasul următor (varianta care a trecut sau, dacă niciuna, următoarea ipoteză).
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
 
-**Testul cu `os-283` (sau `os-284`, dacă apare până atunci) pe workstation, — posibil chiar în seara asta (C-106, nota 17:05), altfel la următoarea venire:**
-1. Din Release-ul **`os-283`** (sau `os-284`) (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu Rufus pe **stick-ul de test**. Stick-ul normal rămâne cum e.
-2. **Oprire completă**, cablul scos **30 s**; pornești de pe stick-ul de test (F8), cu ambele stick-uri.
-3. `gpu lant` → `DA` + Enter. Ce contează: rândul `valoare GSP_INIT_DONE: rpc_result … = 0x…` — `0x00000000` înseamnă că reparația a mers; tot `0x59` = nu încă. **Poze** la rândul acesta, la rândurile `text NOCAT …` și la rezumatul de la final.
-4. **Nou (C-103):** imediat după, `gpu recupereaza` → `DA`. Poză la rândul „pas C-103 Booter Unload …” și la „pregatirea I6 trece din nou” / „NU trece”. Dacă trece, poți rula `gpu lant` încă o dată **fără** să scoți cablul.
-5. `raport` (+ `trimite` dacă ai token). Pozele + `raport\gpu-jurnal-*.txt` în `rezultate/<data>-workstation-os283/` (sau os-284).
+**Joi 12 nov, ~07:00, la workstation — testul cu variante (C-108), Release `os-289`:**
+1. Din Release-ul **`os-289`** (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu
+   Rufus pe **stick-ul de test**. Stick-ul normal rămâne cum e.
+2. Pentru fiecare variantă, începând cu **1**: **oprire completă → cablul scos 30 s** → pornire de pe stick-ul de test (F8) →
+   `gpu lant --varianta 1` → verifici pe ecran rândul „varianta I8 1: rpc-inainte …” → `DA` + Enter.
+3. Ce contează: rândul `valoare GSP_INIT_DONE: rpc_result … = 0x…` — **`0x00000000` = varianta a trecut** (lanțul merge mai departe la
+   `i8e-golden`); tot `0x59` = nu. **Poză** la rândul acesta și la rezumatul de la final.
+4. `trimite` (sau `raport`, apoi pozele + `raport\gpu-jurnal-*.txt` în `rezultate/2026-11-12-workstation-os289/`).
+5. Repeți de la pasul 2 cu varianta următoare (2, 3, … 10). **Te oprești la prima variantă care trece.** Lista completă: `gpu variante`.
 
-**Opțional (C-104, ~5 min):** tokenul pentru `hub asculta` — pașii exacți în `docs/USB.md` punctul 15 (token fin, doar `Cyber-hub`, Contents read and write, fișierul `github.token` DOAR pe stick).
+**Pe ASUS TUF (C-109):** nimic de făcut până la Release-ul cu P6-79; atunci, stick-ul normal → poză la rândurile noi `apic: mod …`,
+`apic: calibrez ceasul …`, `apic: ceasul de referinta: …` (sau la ultima linie, dacă tot se oprește).
 
-**Când vrei (C-105, fără grabă):** ciclul de test complet automat (`ciclu-test os-<N>` din hub) e gata în Release-urile de la `os-283` încolo, dar **oprit**. Îl pornești doar tu, cu două chei: (1) pe stick-ul de test, în dosarul `hub`, un fișier gol `permite-test-placa`; (2) o decizie nouă în `DECIZII.md` (prin centrul de comandă), un rând cu exact `ciclu-test activat`. Până atunci rămâne regula „scrieri pe placă doar cu tine de față”. Pașii: `docs/USB.md` punctul 16. Îl oprești oricând ștergând fișierul de pe stick.
+**Opțional (C-104, ~5 min):** tokenul pentru `hub asculta` — `docs/USB.md` punctul 15.
+
+**Când vrei (C-105):** ciclul de test automat e gata, dar **oprit**; îl pornești doar tu, cu cele două chei (`docs/USB.md` punctul 16).
