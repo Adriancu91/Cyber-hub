@@ -205,3 +205,5 @@
 - 2026-11-11 11:25 · sesiunea OS programată · C-102 preluat (P6-71): cyber-gpu `f96c0ee` legat (`4b57855`), 9/9 scenarii GPU; CI pornit → `os-279` estimat ~11:50.
 - 2026-11-11 11:55 · sesiunea OS programată · C-102 gata: CI verde (run 42994306895) → Release `os-279` la 11:48; Adrian poate rula `gpu lant`.
 - 2026-11-11 11:58 · sesiunea OS programată (11:40) · oprire scurtă: `os-279` publicat de sesiunea precedentă, nicio comandă nouă; aștept jurnalul testului cu `os-279`.
+- 2026-11-11 14:13 · sesiunea OS programată (13:30) · C-102 continuare (P6-72): cyber-gpu `bcc314e` (NOCAT decodat) legat, 9/9 scenarii GPU, CI verde → Release `os-280`.
+- 2026-11-11 14:45 · sesiunea OS programată (13:30) · C-104 gata (P6-73: `hub asculta`, răspuns pe comandă în `integrare/cyber-universe/raspunsuri/`), C-103 partea OS gata (P6-74: `gpu recupereaza`, SIMULARE); 14/14 scenarii, CI verde → Release `os-281`; aștept testul pe workstation.
