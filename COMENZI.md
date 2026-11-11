@@ -1301,3 +1301,10 @@ Format:
 - (istoric) stare: preluat (2026-11-10 20:15, supraveghetor) — sarcina **S99** în `plan/coada.md`: la 19:30 executantul n-a pornit (placa avea 724 MB ocupați de ferestrele de pe desktop, limita era ~600 MB); limita de placă goală pentru S99 ridicată la sub 800 MB (Muon −649 MB, S86), paza de 6.700 MB neschimbată; pornește la următoarea trecere a executantului, placa liberă la 07:00
 - stare: gata (2026-11-11 02:15, supraveghetor)
 - rezultat: placa folosită de Kronos în noaptea 10→11: S99 (STRICĂ, oprit corect după ora 1) și S100 (LA FEL); liberă de la 01:59.
+
+### C-101 · kronos · Răspunsurile lui Adrian (11 nov 09:13): P1/S101 — NU deocamdată; testul os-278 azi la 10:00–11:00
+- data: 2026-11-11 09:13 · de la: **Adrian** („1 nu deocamdată”, „2 vin pe la 10:00–11:00”)
+- ce: (1) **S101 (Kronos de 24 de straturi de la zero) NU pornește** — Adrian își face propriul plan pentru Kronos mare; propunerea rămâne în `idei/` fără „da”.
+  (2) **Placa rezervată pentru Adrian de acum (09:15) până scrie centrul de comandă că a terminat** (cel târziu 15:00). Nimic pe placă; S98 (procesor) poate continua,
+  dar va fi întrerupt de repornire — se reia după, fără `oprit`. Stick-urile neatinse.
+- stare: nou
