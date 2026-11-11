@@ -1314,7 +1314,8 @@ Format:
 - ce: din jurnal — de unde vine 0x59 (cutia poștală SEC2 0x840040 după Booter la CORE_RESUME? alt registru?), ce înseamnă (codurile de eroare Booter/ACR din antetele publice
   NVIDIA 570.144) și ce lipsește (ex. argumentele Booter-ului pentru „resume”, adresa WPR meta, ordinea față de RISC-V GSP). Reparație + test gpu-sim + release.
 - termen: Adrian poate rămâne **1–2 ore (până pe la 12:15–12:30)** → reparația GPU cât mai repede, apoi release OS cu CI verde; scrieți ora estimată în `stare/`.
-- stare cyber-universe: gata (2026-11-11 11:50, sesiunea OS) · P6-71 · rezultat: cyber-gpu `f96c0ee` legat în OS (`4b57855`), 9/9 scenarii GPU, CI verde → Release `os-279` publicat la 11:48 (jurnalul I8 spune acum de unde vine 0x59).
+- stare cyber-universe: preluat (2026-11-11 13:55, sesiunea OS) · P6-72 · continuarea: cyber-gpu `bcc314e` (NOCAT decodat) legat în OS, 9/9 scenarii GPU; Release `os-280` când CI e verde (~14:25)
+- stare cyber-universe (istoric): gata (2026-11-11 11:50, sesiunea OS) · P6-71 · rezultat: cyber-gpu `f96c0ee` legat în OS (`4b57855`), 9/9 scenarii GPU, CI verde → Release `os-279` publicat la 11:48 (jurnalul I8 spune acum de unde vine 0x59).
 - stare cyber-universe (istoric): preluat (2026-11-11 11:00, sesiunea OS)
 - stare: gata (partea cyber-gpu, 2026-11-11 10:52, sesiunea Cyber-GPU 84; CI verde pe `d31ad8d` la 10:48; partea cyber-universe: de legat `d31ad8d` sau `f96c0ee` + Release `os-279`, nimic de schimbat în codul OS) · **completare 2026-11-11 13:05 (sesiunea Cyber-GPU 85), după jurnalul os-279:** răspunsul la întrebarea comenzii — `0x59` vine din `GSP_INIT_DONE` (`rpc_result` = `NV_ERR_OPERATING_SYSTEM`): **GSP-RM pornește și refuză singur inițializarea**, după 843 de înregistrări de diagnostic NOCAT (`0x1020`) + 2 jurnale PMU (`0x100c`) pe care jurnalul nu le citea; Booter-ul a rulat de-adevăratelea la CORE_RESUME (SCRATCH_14 bit 26 pus abia după start). `cyber-gpu` `5cfe523` (doar adăugări, doar citiri) decodează înregistrările NOCAT (tip, sursă, cod cu nume `NV_STATUS` / adresa + linia asserturilor, subsistem, stiva), numește mesajele și codurile, rezumat la final; 433 PASS, CI verde. **Pentru OS:** de legat `5cfe523` (sau `f781428`) + Release `os-280` (nimic de schimbat în codul OS; nota `cyber-gpu/integration/cyber-universe/os-279_nocat-decodat.md`). Reparația lui 0x59 abia după jurnalul os-280.
 - stare (istoric): preluat (2026-11-11 10:30, sesiunea Cyber-GPU 84)
@@ -1343,4 +1344,4 @@ Format:
   (4) în `docs/USB.md`: pașii pentru Adrian (token fin, doar pe repo-ul Cyber-hub, „Contents: read and write”, pus DOAR pe stick, niciodată în repo/hub/chat).
 - test: QEMU (`ghpush`) — două comenzi venite la minute diferite, ambele rulate o singură dată, răspunsurile ajung în hub.
 - prioritate: după C-102; înainte sau în paralel cu C-103 (independente).
-- stare: nou
+- stare: preluat (2026-11-11 13:55, sesiunea OS) · P6-73
