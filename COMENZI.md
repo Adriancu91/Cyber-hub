@@ -1345,3 +1345,17 @@ Format:
 - test: QEMU (`ghpush`) — două comenzi venite la minute diferite, ambele rulate o singură dată, răspunsurile ajung în hub.
 - prioritate: după C-102; înainte sau în paralel cu C-103 (independente).
 - stare: preluat (2026-11-11 13:55, sesiunea OS) · P6-73
+
+### C-105 · cyber-universe + cyber-gpu · DUPĂ C-103 + C-104: test complet automat din hub (actualizare → repornire → test → raport), fără Adrian
+- data: 2026-11-11 14:36 · cerut de Adrian: „lăsăm Cyber Universe pornit, tu îi trimiți reparația prin GitHub și faci testele fără mine”.
+- ce (pregătire, în SIMULARE/QEMU): o comandă din hub de forma `K-N: ciclu-test os-XXX` care, pe workstation: (1) `actualizeaza` la Release-ul cerut (verificat cu SHA256SUMS),
+  (2) resetul plăcii din C-103 sau repornire, (3) `gpu lant`, (4) `raport` + `trimite`, (5) revine în așteptare (C-104). La orice eșec: revenire la versiunea anterioară de pe stick + raport.
+  Comanda rămâne **dezactivată implicit**: se activează doar cu un fișier pe stick pus de Adrian (ex. `/usb/hub/permite-test-placa`) și cu o decizie nouă, scrisă, a lui Adrian în DECIZII.md
+  (azi regula e „scrieri pe placă doar cu Adrian de față”; această comandă NU o schimbă).
+- prioritate: după C-102, C-103, C-104.
+- stare: nou
+
+### C-106 · kronos · Adrian a terminat testele de azi (14:36) — placa liberă pentru Kronos
+- data: 2026-11-11 14:36 · de la: centrul de comandă, pentru Adrian (rezervarea din C-101 se încheie acum).
+- ce: Adrian repornește workstation-ul în Windows acum; **placa e liberă pentru Kronos de acum**. Stick-urile rămân în calculator, neatinse (pe CYBER-UNIV e acum și `github.token` — nu se citește, nu se copiază, nu se șterge).
+- stare: nou
