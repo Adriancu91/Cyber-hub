@@ -1393,4 +1393,4 @@ Format:
   Se oprește la prima variantă care trece de I8.
 - siguranță: neschimbată — scrierile pe placă doar cu Adrian de față, după „DA” la fiecare variantă.
 - ordinea: Cyber-GPU **la rularea de 19:25** (sau mai devreme dacă sesiunea curentă vede comanda), OS la **20:40** (sau imediat după Cyber-GPU, pornit de centrul de comandă); rezervă: GPU 01:25, OS 02:40/05:40.
-- stare: nou
+- stare: nou (partea cyber-gpu) · preluat (partea OS, 2026-11-11 18:05, sesiunea OS programată) · **P6-78** — planul e gata (`docs/plans/P6-78.md`); legarea + `gpu variante` / `gpu lant --varianta N` imediat ce apare commit-ul Cyber-GPU cu variantele; Release țintă înainte de 06:00
