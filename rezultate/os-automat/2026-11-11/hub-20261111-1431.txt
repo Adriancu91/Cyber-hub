@@ -1,0 +1,27 @@
+== comenzi din hub: raport Cyber Universe OS ==
+fisier: integrare/cyber-universe/os-comenzi.md (hub)
+nucleu: cyber-universe 0.1.0 (cyber-gpu bcc314e)
+pornit: 2026-11-11 14:31:26
+2 comenzi noi; ruleaza doar cele de pe lista alba (doar citiri, test tot, trimite)
+
+== [1/2] K-1: uptime ==
+pornit de 720.14 s
+-- gata in 0 ms
+
+== [2/2] K-2: gpu identifica ==
+gpu0: b3:00.0 10de:2482 NVIDIA (clasa 03:00:00) subsistem 88131043
+gpu0: Command 0003 (memorie da, bus master nu), stare D0
+gpu0: BAR0 0xf9000000 memorie
+gpu0: BAR1 0xe0000000 memorie, 64 biti, prefetch
+gpu0: BAR3 0xf0000000 memorie, 64 biti, prefetch
+gpu0: BAR5 0xf000 I/O
+gpu0: Resizable BAR: BAR0 = 16 MiB acum
+gpu0: Resizable BAR: BAR1 = 256 MiB acum
+gpu0: Resizable BAR: BAR3 = 32 MiB acum
+gpu0: cyber-gpu bcc314e nvidia-ga104: GeForce RTX 3070 Ti (BAR0 0xf9000000)
+gpu0: NV_PMC_BOOT_0 = b74000a1, NV_PMC_BOOT_42 = 174a1000 (cyber-gpu, consecvent true)
+gpu0: cip 0x174 GA104 (arhitectura Ampere)
+zero scrieri in placa (configuratie PCI si registre: doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+-- gata in 50 ms
+
+== REZULTAT: 2 rulate, 0 refuzate ==
