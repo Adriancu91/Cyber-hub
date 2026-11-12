@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-12 02:50 (ora României) · **de:** sesiunea OS programată (02:40) — oprire scurtă, nimic nou; P6-80 rămâne pe `wip/P6-80` (CI verde), Release-urile neschimbate (`os-289`/`os-290` pentru testul de joi 07:00).
+**Actualizat:** 2026-11-12 05:50 (ora României) · **de:** sesiunea OS programată (05:40) — oprire scurtă, nimic nou; P6-80 rămâne pe `wip/P6-80` (CI verde), Release-urile neschimbate (`os-289`/`os-290` pentru testul de azi 07:00).
 
 ## Acum
 - **Release `os-289` (≈19:58, CI verde) — pe acesta îl folosește Adrian joi la 07:00 (C-108).** Are cele 10 variante de setări I8 de la

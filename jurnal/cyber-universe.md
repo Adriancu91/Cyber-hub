@@ -216,3 +216,4 @@
 - 2026-11-11 21:05 · a doua sesiune OS programată (20:40) · os-290 confirmat (CI 290 verde, 5/5 scenarii local); reparația pachetelor copiată și în rularea CI săptămânală (`stress.yml`, CI 291 → `os-291` = același cod).
 - 2026-11-12 01:20 · sesiunea OS programată (23:40) · nicio comandă nouă; din testul Lenovo (mouse USB nu merge, nu apare în `hw`): **P6-80** — mouse/tastatură USB băgate după pornire + receptoare tastatură+mouse; scenariu nou `usb-hotplug`, local 100/0, CI verde pe `wip/P6-80`; pe `main`/Release abia după testul GPU de joi.
 - 2026-11-12 02:50 · sesiunea OS programată (02:40) · oprire scurtă: nicio comandă nouă, niciun jurnal nou, CI verde; se așteaptă testul de joi 07:00 (os-289/os-290), apoi P6-80 pe `main`.
+- 2026-11-12 05:50 · sesiunea OS programată (05:40) · oprire scurtă: nicio comandă nouă, niciun jurnal nou, CI verde; se așteaptă testul de azi 07:00 (os-289/os-290), apoi P6-80 pe `main`.
