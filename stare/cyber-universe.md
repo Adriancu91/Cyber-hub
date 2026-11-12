@@ -1,37 +1,41 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-12 22:00 (ora României) · **de:** sesiunea OS programată (20:40) — **C-113 și C-114 gata → Release `os-297`** (CI verde). Ultimul Release: **`os-297`** (orice Release mai nou are aceleași schimbări).
+**Actualizat:** 2026-11-12 23:55 (ora României) · **de:** sesiunea OS programată (22:00) — **C-116 (partea OS) gata → Release `os-298`** (CI verde). Ultimul Release: **`os-298`**. În paralel, o altă sesiune OS lucrează la C-117 (P6-86, analizatorul UHL).
 
 ## Acum
-- **C-113 (stick Kingston 64 GB):** cauza găsită în cod — după antet, OS-ul îi cere stick-ului „sincronizarea” (SYNCHRONIZE CACHE),
-  iar multe stick-uri nu au comanda asta și o refuză; până la os-295 refuzul oprea jurnalul. FAT-ul mare nu era problema (testat în QEMU
-  pe 64 GB, clustere de 32 KiB). În **`os-297`**: refuzul e tolerat (scris o dată în `log usb`), orice alt refuz are motivul exact în log,
-  un rând de jurnal rescrie 1–2 sectoare în loc de un cluster întreg de 32 KiB, iar **`usb timp`** (și ultimul rând din raportul
-  `gpu lant`) arată cât au durat scrierile și sincronizările → vedem de unde vine ~1 s/rând.
-- **C-114 (un singur stick):** în Release-ul `os-297` e arhiva **`stick-test-complet.zip`**: o dezarhivezi și copiezi tot în rădăcina
-  stick-ului Kingston, apoi pui o dată `firmware\`, `kronos\`, `github.token` (pași și în `CITESTE.txt` din arhivă). Testat în QEMU:
-  pornire de pe stick FAT32 de 64 GB + jurnal scris. Stick-ul normal CYBER-UNIV rămâne pentru folosirea obișnuită.
-- **De ce a dispărut `os-289` (C-111):** CI-ul păstrează doar ultimele 5 Release-uri, în afară de cele trecute în
-  `docs/RELEASES_PASTRATE.md`. `os-295` (testat azi) e acum trecut acolo → nu se mai șterge.
-- Procedura testului cu variante (C-108) e aceeași, cu `os-297` în loc de `os-295` (partea GPU identică).
+- **C-116 (ASUS TUF, placa GA106):** în **`os-298`** laptopul e recunoscut (`gpu identifica`: „GeForce RTX 3060 Laptop … familia GA106”), doar
+  pentru citire. Fiindcă firmware-ul laptopului lasă placa „adormită” (Memory Space oprit), comanda nouă **`gpu tur --trezire`** (doar pe stick-ul
+  de test, după DA) o trezește pentru tur — o scriere în configurația PCI, repusă la final; niciun registru al plăcii scris. `gpu lant` refuză
+  laptopul până la DA-ul separat (C-116 pasul 3). `hw` arată modelul calculatorului (din SMBIOS). Testat în QEMU (SIMULARE), pe laptop netestat.
+- În același Release (de la Cyber-GPU): `gpu lant` fără `--varianta` = **varianta 1** (cea care a trecut I8), motivul pasului eșuat scris pe stick,
+  starea plăcii după un I7 picat, mesajele GSP-RM din I9 în jurnal; varianta 11 (`rpc-inainte+neprimar`) pentru proba cu ecranul.
+- `os-297` (C-113/C-114: jurnalul pe stick-ul Kingston, arhiva `stick-test-complet.zip`) rămâne valabil; `os-298` le conține.
 
 ## Urmează
+- Jurnalul `gpu tur --trezire` de pe laptop → Cyber-GPU (pasul 3, cu DA separat de la Adrian).
+- P6-86/P6-87 (C-117, analizatorul UHL) — sesiunea OS paralelă.
 - P6-12 pasul 2 (fereastră proprie fără cache) doar după un `log mmio` de pe un calculator real.
-- Când vine Adrian la workstation: testul cu variante (procedura de jos) → Cyber-GPU (`compara_variante`).
 
 ## Ce oferă proiectul celorlalți
-- `gpu lant [--varianta N]` I6 → I14, `gpu variante`, `gpu recupereaza`, `kronos --gpu` pe stick-ul de test; jurnale + rapoarte trimise în hub (cu token).
-- `hub ruleaza` / `hub asculta`, `test tot`, `kronos --conversatie`, git pe ramuri `os/…`, `web`, `files`; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
+- `gpu lant [--varianta N]` I6 → I14, `gpu variante`, `gpu recupereaza`, `gpu tur --trezire` (GA106), `kronos --gpu` pe stick-ul de test; jurnale + rapoarte trimise în hub (cu token).
+- `hw` cu modelul din SMBIOS, `hub ruleaza` / `hub asculta`, `test tot`, `kronos --conversatie`, git pe ramuri `os/…`, `web`, `files`; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
 
 ## De ce are nevoie de la ceilalți
-- **`cyber-gpu`:** după jurnalele de joi, pasul următor (varianta care a trecut sau, dacă niciuna, următoarea ipoteză).
+- **`cyber-gpu`:** după jurnalul de citire de pe laptop, pasul 3 din C-116; după următorul `gpu lant` pe workstation, cauza lui I9.
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
 
-**La următorul test (înainte de orice altceva pe placă):** stick-ul Kingston de 64 GB cu `stick-test-complet.zip` din **`os-297`**
-(sau, dacă preferi, cu imaginea de test ca până acum) → `gpu lant --varianta 1` + DA. Dacă jurnalul merge: poză la ultimul rând
-`usb: scrieri …, sincronizari …`; dacă nu: poză la mesaj + `log usb`. Rezultatele în `rezultate/<data>-workstation-os297/`.
+**Pe laptopul ASUS TUF (C-116, prima citire a plăcii video) — Release `os-298`:**
+1. Stick-ul de test (Kingston cu `stick-test-complet.zip` din **`os-298`**, sau imaginea `cyber-universe-gpu-scrie-usb.img` scrisă cu Rufus).
+2. Pornești laptopul de pe stick → `hw` (primul rând arată acum modelul: `calculator: ASUSTeK …`; poză).
+3. `gpu tur --trezire` → citești avertismentul → `DA` + Enter. Se face o singură scriere în configurația plăcii (pornește „Memory Space”),
+   turul de citire, apoi totul e pus la loc. Poză la ultimele rânduri (`trezirea minima: …`, `Command acum …`, `scrieri: 2 in configuratia PCI …`).
+4. `trimite` (sau jurnalul `raport\gpu-jurnal-*.txt` + pozele în `rezultate/<data>-laptop-asus-tuf/`). Cu el, Cyber-GPU face pasul 3.
+
+**La următorul test pe workstation:** același stick cu **`os-298`** → `gpu lant` (fără `--varianta` = varianta 1, cea care a trecut) + DA.
+Acum motivul unui pas eșuat (ex. I9) intră în jurnal. Dacă jurnalul merge: poză la ultimul rând
+`usb: scrieri …, sincronizari …`; dacă nu: poză la mesaj + `log usb`. Rezultatele în `rezultate/<data>-workstation-os298/`.
 
 **Când ai Lenovo-ul la îndemână (nu grăbește nimic):** scrie pe stick-ul normal `cyber-universe-usb.img` din Release-ul **`os-293`**
 (sau mai nou), pornește Lenovo-ul, apoi **bagă mouse-ul USB după ce apare desktopul** și vezi dacă merge; o poză la `lsusb` și una la
@@ -40,22 +44,6 @@
 **Mic, când ai Lenovo-ul la îndemână (nu grăbește nimic):** ca să știm sigur de ce nu mergea mouse-ul USB — pornește Lenovo-ul cu stick-ul normal
 **cu mouse-ul deja băgat**, scrie `lsusb` și fă o poză. Dacă mouse-ul apare în listă și tot nu merge → altă cauză; dacă nu apare → era cauza
 reparată în P6-80 (mouse băgat după pornire). Poza în `rezultate/2026-11-11-laptop-lenovo-i5/`.
-
-**Testul cu variante (C-108/C-111, acum) — Release `os-295`** (`os-289` nu mai e pe GitHub):
-1. Din Release-ul **`os-295`** (github.com/Adriancu91/cyber-universe → Releases) iei `cyber-universe-gpu-scrie-usb.img` și îl scrii cu
-   Rufus pe **stick-ul de test**. Stick-ul normal rămâne cum e.
-2. Pentru fiecare variantă, începând cu **1**: **oprire completă → cablul scos 30 s** → pornire de pe stick-ul de test (F8) →
-   `gpu lant --varianta 1` → verifici pe ecran rândul „varianta I8 1: rpc-inainte …” → `DA` + Enter.
-3. Ce contează: rândul `valoare GSP_INIT_DONE: rpc_result … = 0x…` — **`0x00000000` = varianta a trecut** (lanțul merge mai departe la
-   `i8e-golden`); tot `0x59` = nu. **Poză** la rândul acesta și la rezumatul de la final.
-4. `trimite` (sau `raport`, apoi pozele + `raport\gpu-jurnal-*.txt` în `rezultate/2026-11-12-workstation-os295/`).
-5. Repeți de la pasul 2 cu varianta următoare (2, 3, … 10). **Te oprești la prima variantă care trece.** Lista completă: `gpu variante`.
-
-(Merge la fel și cu `os-290`, `os-293` sau `os-294` — aceleași variante.)
-
-**Pe ASUS TUF (C-109), când ai 5 minute:** scrii `cyber-universe-usb.img` din Release-ul **`os-290`** pe stick-ul normal (Rufus), pornești
-ASUS-ul de pe el și faci **o poză** la rândurile `apic: mod …`, `apic: calibrez ceasul …`, `apic: ceasul de referinta: …` — sau la ultima
-linie, dacă tot se oprește. Dacă ajunge la desktop: `hw` + `test tot`, poze în `rezultate/<data>-laptop-asus-tuf/`.
 
 **Opțional (C-104, ~5 min):** tokenul pentru `hub asculta` — `docs/USB.md` punctul 15.
 
