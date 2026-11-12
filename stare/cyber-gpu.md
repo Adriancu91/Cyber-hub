@@ -1,7 +1,26 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-12 13:40 (ora României) · **de:** sesiunea Cyber-GPU 92 (cloud, fără placă) — **oprire scurtă, a treia la rând: testul cu variante rămâne AMÂNAT (C-110); nicio comandă nouă, niciun jurnal nou de pe placă; starea proiectului = AȘTEAPTĂ PLACA — nimic nou pe driver până la un jurnal nou sau o comandă nouă; totul e pregătit (orice Release de la `os-289` încoace are cele 10 variante; CI verde pe `bc864e3`/`c651bf5`).**
+**Actualizat:** 2026-11-12 18:40 (ora României) · **de:** sesiunea Cyber-GPU 93 (cloud, fără placă) — **🎉 I8 A TRECUT PE PLACĂ (os-295, varianta 1 `rpc-inainte`: `GSP_INIT_DONE = 0`), golden image (I8e) a trecut — primele apeluri RM acceptate de GSP-RM; I9 s-a oprit la al 11-lea mesaj RM (`PROMOTE_CTX` virtual) FĂRĂ motiv în jurnal (era doar pe ecranul înghețat). Reparat azi (`45dfc77`): motivul fiecărui pas eșuat intră în jurnalul de pe stick; OS-ul trebuie doar să lege `45dfc77`+. 455 PASS, CI verde (`f693307`).**
 ## Acum
+- **Sesiunea 93 (18:00–18:40) — jurnalul `gpu-jurnal-010.txt` (os-295, `gpu lant --varianta 1`, 17:48) citit; un pas pe driver.** Studiul: `cyber-gpu/docs/os-295_ANALIZA_I9.md`.
+  - **I8 TRECE:** `GSP_INIT_DONE rpc_result = 0x00000000` după 11,17 s → `pas i8-gsp-init: ok`. Doar **2 NOCAT** (os-283: 844): 1 ASSERT (adresă nouă, `0x0132d3b2`) + 1 ENGINE
+    `NV_ERR_INVALID_DMA_SPECIFIER` „Display Subsystem / Display Engine”; 2 `UCODE_LIBOS_PRINT` (ENG_PMU). **Analiza din sesiunea 88 (ordinea RPC-urilor) s-a confirmat pe placă;
+    variantele 2–10 nu mai sunt necesare** (`compara_variante`: „au trecut de I8: varianta 1 (rpc-inainte)”).
+  - **I8e golden TRECE:** 11 mesaje RM (7 alocări + 4 comenzi) acceptate de GSP-RM; tabelele de pagini scrise în VRAM prin fereastra 0x1700 — primele apeluri RM reușite pe placă.
+  - **I9 ESEC, motiv necunoscut:** din numărarea soneriilor, GSP-RM a acceptat 10 mesaje ale clientului de lucru (client, dispozitiv, subdispozitiv, VA space, `SET_PAGE_DIRECTORY`,
+    TSG, context share, canal, compute, `PROMOTE_CTX` fizic) și **al 11-lea — `PROMOTE_CTX` jumătatea virtuală (MAIN/PM/PATCH) — a eșuat**: refuz cu cod `NV_STATUS` sau limita de 5 s,
+    nu se poate spune — `run_chain_ready` scria doar `pas i9-canal-lucru: ESEC`, textul erorii mergea doar pe ecran, și ecranul înghețase. Marcajele de timp de pe stick sunt ora scrierii
+    (~13 ms/rând), nu a evenimentului. Forma mesajelor noastre e identică cu `promote_ctx` din tinygrad `ip.py` (citit azi ca specificație); dacă e refuz, diferă *ce* promovăm.
+  - **Ecranul înghețat** la rândul 2274 (`SCRATCH_14 = 0x17100000`) = exact pornirea RISC-V-ului GSP; jurnalul a mers încă ~9 s de evenimente și s-a închis curat (Bus Master oprit, tur după).
+    Ipoteză: GSP-RM a preluat afișajul (NOCAT „Display Engine”). **Nu avem o setare publică, cu sursă, care să-l oprească — nu inventăm**; propunere pentru OS: după I8 ecranul se
+    consideră pierdut, raportul e jurnalul + `trimite`.
+  - **Pasul făcut (`45dfc77`, doar adăugări):** `Journal::push_text`; `chain::run_chain_ready` scrie după `pas X: ESEC` rândul **`text motivul esecului = "…"`** (și pentru pașii opriți
+    de poartă) — **OS-ul n-are nimic de schimbat, doar legarea**; `gsp::golden::QueueTransportBellKeep` + `journal_skipped` (mesajele GSP-RM sărite în timpul unui apel RM, NOCAT decodat —
+    opțional pentru OS, o schimbare în `OsRm::call`); `compara_variante` arată motivul („fara motiv in jurnal” la jurnalele vechi). T124 a–e, **455 PASS**, CI verde (rulările 181, 182).
+    Nota pentru OS: `cyber-gpu/integration/cyber-universe/os-295_i9-motiv-in-jurnal.md`.
+  - **Văzut în hub la 18:30, neanalizat încă (sesiunea următoare):** repetarea variantei 1 (18:00, `gpu-jurnal-011.txt`) a picat la **I7 timeout** cu jurnalul la ~1 s/rând (C-113: stickul);
+    `gpu recupereaza` (C-103, 18:13, `gpu-jurnal-012.txt`): **Booter Unload → SEC2 MAILBOX0 = 0x88**, WPR2 rămâne ridicat → recuperarea fără cablu nu merge încă. Ambele cer analiză
+    (0x88 după regula trei surse: RM descarcă GSP-RM întâi cu RPC-ul de unload; dacă I7 e sensibil la pauzele lungi dintre scrieri).
 - **Sesiunea 92 (13:25–13:40) — oprire scurtă, fără pas nou pe driver (a treia la rând: 90, 91, 92).** Nimic nou pentru cyber-gpu în hub (C-110 în vigoare; Kronos are placa, S103/S104 gata),
   niciun jurnal nou de pe placă (ultimul: `gpu-jurnal-009.txt`, os-283). OS-ul a publicat `os-293`/`os-294`/`os-295` (mouse USB, `log mmio` — pasul 1 din P6-12, testul `remote` în CI) —
   **nimic schimbat în partea GPU**, `kernel/Cargo.toml` leagă tot `49e6685` (toate cele 5 crate-uri). Verificat: CI verde pe `bc864e3` (rularea 179); codul neschimbat de la `b1d91a0` (451 PASS).
@@ -53,21 +72,24 @@
 - **Pe placă până acum:** I0–I4 doar citire TREC; I6 TRECE (os-242…os-283); I7 TRECE (os-246…os-283); I8: toate cele 420 de comenzi ale secvențiatorului trec, GSP-RM pornește și
   răspunde `GSP_INIT_DONE 0x59` (os-278, os-279, os-280, os-283 — identic); I9–I14 neîncercate.
 
-## Lista pentru testul cu variante (C-108; era joi 12 nov 07:00 — AMÂNAT prin C-110, data următoare o anunță Adrian prin centrul de comandă; Release `os-289`/`os-290`)
-1. Fiecare variantă = o pornire rece: oprire → cablu 30 s → F8 stick de test → `gpu lant --varianta N` → `DA` → `trimite` (sau jurnalul în `rezultate/`) → `N+1`. **Începe cu 1.**
-2. **Reușita:** după `secv #419 CORE_RESUME`, rândul `valoare GSP_INIT_DONE: rpc_result … = 0x00000000` și lanțul intră în **I8e (golden)**. Se oprește la prima variantă care trece.
-3. Dacă varianta 1 dă tot `0x59`: de văzut câte înregistrări NOCAT (844 iar?) și dacă rândul `varianta I8 … numarul = 0x00000001` e în jurnal (altfel Release-ul nu are variantele).
-4. Opțional, după un lanț oprit: `gpu recupereaza` + `DA` (C-103, prima probă) — dacă WPR2 citește 0, următoarea variantă merge fără cablul scos.
-5. **Pentru sesiunea Cyber-GPU, după jurnale:** `compara_variante 0x9c66000 gpu-jurnal-009.txt <jurnalele noi>` → tabelul variantelor, ce diferă, care a trecut.
+## Lista pentru testul următor pe placă (după os-295; un singur test)
+1. Release OS care leagă `cyber-gpu` **`45dfc77` sau mai nou** (opțional și §2 din nota `os-295_i9-motiv-in-jurnal.md`); stick care scrie (C-113 e al OS-ului).
+2. Pornire rece → `gpu lant --varianta 1` → `DA` → după repornire `trimite`. Ecranul va îngheța la pornirea GSP-RM (așteptat); jurnalul merge pe stick.
+3. **Ce căutăm în jurnal:** după `pas i9-canal-lucru: ESEC`, rândul `text motivul esecului = "…"` (cod `NV_STATUS` → `nvidia_rm570::names` îl numește; „timeout dupa 5000000 us” → GSP-RM s-a
+   blocat pe promovarea virtuală). `compara_variante 0x9c66000 gpu-jurnal-010.txt <jurnalul nou>` arată motivul în tabel.
+4. Dacă I9 trece: I10 (add64) e primul calcul pe placă — jurnalul lui se citește cu `verifica_jurnal_lant`.
 
 ## Urmează
-1. **OS-ul (P6-78): făcut** — Release `os-289`/`os-290` (variantele + `gpu variante`); procedura pentru Adrian în `stare/cyber-universe.md`.
-2. **La următoarea venire a lui Adrian (amânat din 12 nov, C-110):** Adrian încearcă variantele de la 1, câte o pornire rece, `trimite` după fiecare. Noi: `compara_variante` pe toate jurnalele → care a trecut / ce diferă.
-   Dacă varianta 1 trece → I8e (golden) pe placă = primul apel RM; se citește jurnalul lui. Dacă nu trece niciuna din cele 10: următoarea comparație e **starea plăcii** (adresele DMA
-   reale, citirile `SEC2 CPUCTL` / `GSP MAILBOX0` de mai sus), nu conținutul mesajelor.
-3. După `GSP_INIT_DONE = 0` pe placă: I8e, I9, I10 — scrise, testate doar în simulare.
+1. **OS-ul:** leagă `45dfc77`+ → Release (și, dacă vrea, `QueueTransportBellKeep` + `journal_skipped` în `OsRm::call`); C-113 (stickul) e înaintea testului.
+2. **Adrian, la următoarea venire:** un singur test, `gpu lant --varianta 1` + `trimite` (lista de mai sus).
+3. **Noi, după jurnal:** motivul lui I9 → dacă e cod RM: regulile `PROMOTE_CTX` pentru ce promovăm (mărimi/aliniere buffere, VA space prin context share, `engineType`); dacă e timeout:
+   tabelele de pagini / `SET_PAGE_DIRECTORY`. Între timp (sesiunea următoare, fără placă): analiza `gpu-jurnal-012.txt` (Booter Unload 0x88, C-103) și a lui 011 (I7 timeout cu jurnal lent).
+4. După I9: I10 (add64), I11–I14 — scrise, testate doar în simulare.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 93 (doar adăugări):** `gpu_core::diag::Journal::push_text`; `nvidia_ga104::chain::{STEP_FAIL_REASON, STEP_FAIL_REASON_MORE}` (motivul după `pas X: ESEC`, automat în
+  `run_chain_ready`); `gsp::golden::{QueueTransportBellKeep, SKIPPED_KEEP_MAX, journal_skipped, SKIPPED_TOTAL, SKIPPED_AT}`; `variant_log::VariantRun::{fail_reasons, fail_reason}`.
+  `QueueTransportBell` și tot restul neschimbate — OS-ul compilează neschimbat.
 - **Sesiunea 89 (doar adăugări, text):** `nvidia_ga104::variant_log::{read, compare, strip_prefix, is_noise, VariantRun, Outcome, Difference, Table, TableRow}` + exemplul `compara_variante`. Codul driverului neschimbat.
 - **Sesiunea 88 (C-108, doar adăugări):** `nvidia_ga104::gsp::variants::{Settings, Variant, VARIANTS, OS_283, list, get, settings}`; `Settings::{encode_sysinfo, encode_registry,
   encode_wpr_meta, encode_gsp_args, queue_init_rpcs, init_rpcs_ready_for_i8, journal}`; `sysinfo::{Options, encode_with, off::B_IS_PASSTHRU}`, `registry::{boot_entries_with,
@@ -81,12 +103,14 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe` (P6-78): **făcut** — Release `os-289` (și `os-290`, același cod GPU) există; nimic de schimbat în legare până la jurnalele testului cu variante (data: prin centrul de comandă); `os-293`…`os-295` au același cod GPU.
-- De la Adrian (când vine la workstation — data prin centrul de comandă): variantele în ordine, de la 1, câte o pornire rece; `trimite` după fiecare (sau jurnalele în `rezultate/`).
+- De la `cyber-universe`: legarea `cyber-gpu` `45dfc77`+ (motivul pașilor eșuați pe stick) → Release; opțional §2 din `integration/cyber-universe/os-295_i9-motiv-in-jurnal.md`.
+  C-113 (stickul care nu scrie / scrie la ~1 s/rând) înaintea testului — fără jurnal pe stick nu aflăm motivul.
+- De la Adrian: un test, `gpu lant --varianta 1` cu Release-ul nou, `trimite` după repornire. Dacă vrea, și `gpu recupereaza` după (C-103) — dar abia după analiza lui 0x88.
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
 
 ## Blocaje / nevoie de Adrian
-- **Nu e blocat, dar depinde de placă:** că ordinea e cauza lui `0x59` e DEDUS din sursele RM (comentariile citate în studiu), nu probat; doar joi, cu varianta 1, se vede.
-  Fiecare variantă e „prima încercare” pe placă; toate valorile vin din surse publice și niciuna nu scrie un registru pe care os-283 nu-l scria deja; „DA” la fiecare.
-- Numele funcțiilor din care vin cele 844 de asserturi nu se pot afla fără simbolurile GSP-RM — nu deschidem firmware-ul (regula proiectului); decizia ar fi a lui Adrian.
-- CI GitHub VERDE pe `bc864e3` (rularea 179, 43161718850); `c651bf5` (doar documentul de stare) în curs la 13:40.
+- **Nu e blocat:** următorul pas pe driver depinde de motivul lui I9, care vine doar de pe placă (cu `45dfc77`+ legat în OS). Fără jurnal nou nu inventăm lucru.
+- Ecranul care îngheață după pornirea GSP-RM: nu avem o setare publică, cu sursă, care să țină GSP-RM departe de afișaj; dacă Adrian vrea ecranul înapoi în timpul testului, e o
+  întrebare deschisă (serial? alt monitor pe placa integrată?) — decizia e a lui și a sesiunii OS.
+- Numele funcțiilor din care vin asserturile nu se pot afla fără simbolurile GSP-RM — nu deschidem firmware-ul (regula proiectului).
+- CI GitHub VERDE pe `45dfc77` (rularea 181) și `f693307` (rularea 182).
