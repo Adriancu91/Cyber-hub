@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-12 23:55 (ora României) · **de:** sesiunea OS programată (22:00) — **C-116 (partea OS) gata → Release `os-298`** (CI verde). Ultimul Release: **`os-298`**. În paralel, o altă sesiune OS lucrează la C-117 (P6-86, analizatorul UHL).
+**Actualizat:** 2026-11-12 23:58 (ora României) · **de:** sesiunea OS programată (22:00) — **C-116 (partea OS) gata → Release `os-298`** (CI verde). Ultimul Release: **`os-298`**. În paralel, o altă sesiune OS lucrează la C-117 (P6-86, analizatorul UHL).
 
 ## Acum
 - **C-116 (ASUS TUF, placa GA106):** în **`os-298`** laptopul e recunoscut (`gpu identifica`: „GeForce RTX 3060 Laptop … familia GA106”), doar
@@ -31,7 +31,8 @@
 2. Pornești laptopul de pe stick → `hw` (primul rând arată acum modelul: `calculator: ASUSTeK …`; poză).
 3. `gpu tur --trezire` → citești avertismentul → `DA` + Enter. Se face o singură scriere în configurația plăcii (pornește „Memory Space”),
    turul de citire, apoi totul e pus la loc. Poză la ultimele rânduri (`trezirea minima: …`, `Command acum …`, `scrieri: 2 in configuratia PCI …`).
-4. `trimite` (sau jurnalul `raport\gpu-jurnal-*.txt` + pozele în `rezultate/<data>-laptop-asus-tuf/`). Cu el, Cyber-GPU face pasul 3.
+4. **Acasă, fără internet:** nu e nevoie de `trimite` — jurnalul rămâne pe stick, în `raport\gpu-jurnal-NNN.txt` (cel cu numărul cel mai mare).
+   Când ajungi la un calculator cu internet, pui fișierul + pozele în `rezultate/<data>-laptop-asus-tuf/` (sau `trimite` de pe un Cyber Universe cu cablu). Cu el, Cyber-GPU face pasul 3.
 
 **La următorul test pe workstation:** același stick cu **`os-298`** → `gpu lant` (fără `--varianta` = varianta 1, cea care a trecut) + DA.
 Acum motivul unui pas eșuat (ex. I9) intră în jurnal. Dacă jurnalul merge: poză la ultimul rând
