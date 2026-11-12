@@ -1,20 +1,19 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-12 17:50 (ora României) · **de:** sesiunea OS programată (17:40) — **Adrian vine acum la test (C-111). Release-ul `os-289` NU mai există pe GitHub (nici `os-292`) → testul se face cu `os-295`** (aceleași 10 variante GPU). Ultimul Release: **`os-295`**.
+**Actualizat:** 2026-11-12 22:00 (ora României) · **de:** sesiunea OS programată (20:40) — **C-113 și C-114 gata → Release `os-297`** (CI verde). Ultimul Release: **`os-297`** (orice Release mai nou are aceleași schimbări).
 
 ## Acum
-- **⚠ Pentru testul de acum (C-111): ia Release-ul `os-295`**, nu `os-289` (a dispărut din lista de Release-uri; `os-295` = os-289 + reparația ASUS + mouse USB + `log mmio`, partea GPU identică). Procedura de jos e neschimbată, doar numărul Release-ului. Bonus: o poză la `log mmio` (pentru P6-12).
-- **Testul cu variante (C-108) s-a amânat** (C-110). Procedura de mai jos rămâne valabilă cu **`os-289`** sau **`os-290`**; merge identic și
-  cu `os-293`/`os-294` (au aceleași variante GPU, nimic schimbat în partea GPU).
-- **Release `os-293` = os-290 + P6-80:** mouse-ul și tastatura USB merg acum și dacă le bagi DUPĂ pornire, iar receptoarele fără fir
-  tastatură+mouse sunt văzute amândouă (era cauza probabilă pentru mouse-ul care nu mergea pe Lenovo). Testat în QEMU; pe Lenovo neîncercat.
-- **Release `os-294` = os-293 + P6-81:** pasul 1 din P6-12 (observația Cyber-GPU despre registre cu cache). Nicio schimbare de
-  comportament: OS-ul doar numără ce găsește, iar comanda `log mmio` arată rezumatul. În QEMU apare deja un caz real: zona ecranului
-  (BAR0 al plăcii VGA de test) e mapată de Limine **cu cache** — exact situația din observație. Pe NVIDIA registrele sunt în alt BAR,
-  deci pe workstation ar trebui să iasă „0 deja CU cache” pentru BAR0; o poză la `log mmio` lămurește.
-- **Release `os-295` = os-294 + P6-82:** doar testul automat `remote` reparat (pica uneori în CI din cauza ordinii a două mesaje); nimic
-  schimbat pentru tine — orice Release de la `os-289` încoace e bun pentru test.
-- `os-290` (ASUS TUF, C-109) și C-105 (`ciclu-test`, oprit până la cele două chei) — neschimbate.
+- **C-113 (stick Kingston 64 GB):** cauza găsită în cod — după antet, OS-ul îi cere stick-ului „sincronizarea” (SYNCHRONIZE CACHE),
+  iar multe stick-uri nu au comanda asta și o refuză; până la os-295 refuzul oprea jurnalul. FAT-ul mare nu era problema (testat în QEMU
+  pe 64 GB, clustere de 32 KiB). În **`os-297`**: refuzul e tolerat (scris o dată în `log usb`), orice alt refuz are motivul exact în log,
+  un rând de jurnal rescrie 1–2 sectoare în loc de un cluster întreg de 32 KiB, iar **`usb timp`** (și ultimul rând din raportul
+  `gpu lant`) arată cât au durat scrierile și sincronizările → vedem de unde vine ~1 s/rând.
+- **C-114 (un singur stick):** în Release-ul `os-297` e arhiva **`stick-test-complet.zip`**: o dezarhivezi și copiezi tot în rădăcina
+  stick-ului Kingston, apoi pui o dată `firmware\`, `kronos\`, `github.token` (pași și în `CITESTE.txt` din arhivă). Testat în QEMU:
+  pornire de pe stick FAT32 de 64 GB + jurnal scris. Stick-ul normal CYBER-UNIV rămâne pentru folosirea obișnuită.
+- **De ce a dispărut `os-289` (C-111):** CI-ul păstrează doar ultimele 5 Release-uri, în afară de cele trecute în
+  `docs/RELEASES_PASTRATE.md`. `os-295` (testat azi) e acum trecut acolo → nu se mai șterge.
+- Procedura testului cu variante (C-108) e aceeași, cu `os-297` în loc de `os-295` (partea GPU identică).
 
 ## Urmează
 - P6-12 pasul 2 (fereastră proprie fără cache) doar după un `log mmio` de pe un calculator real.
@@ -29,6 +28,10 @@
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
+
+**La următorul test (înainte de orice altceva pe placă):** stick-ul Kingston de 64 GB cu `stick-test-complet.zip` din **`os-297`**
+(sau, dacă preferi, cu imaginea de test ca până acum) → `gpu lant --varianta 1` + DA. Dacă jurnalul merge: poză la ultimul rând
+`usb: scrieri …, sincronizari …`; dacă nu: poză la mesaj + `log usb`. Rezultatele în `rezultate/<data>-workstation-os297/`.
 
 **Când ai Lenovo-ul la îndemână (nu grăbește nimic):** scrie pe stick-ul normal `cyber-universe-usb.img` din Release-ul **`os-293`**
 (sau mai nou), pornește Lenovo-ul, apoi **bagă mouse-ul USB după ce apare desktopul** și vezi dacă merge; o poză la `lsusb` și una la
