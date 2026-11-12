@@ -16,3 +16,9 @@ Jurnal: `rezultate/os-automat/2026-11-12/gpu-jurnal-010.txt` (2425 rânduri, tri
   în 011 un rând a ajuns la ~0,8–1 s (aceeași încărcare 306 → 362 s, apoi I7 la 372 s). Pașii I6/I7 s-au întins pe ~80 s în loc de ~25 s.
   Ipoteză: scrierea „fiecare rând pe loc” pe stick a încetinit (fișier/stick?), iar ceva din I7 (stare FWSEC/Booter) nu suportă pauzele lungi.
   De verificat în cod: cât durează scrierea unui rând; dacă încetinirea crește cu numărul de fișiere din `/usb/raport` sau cu mărimea jurnalului; un mod „jurnal în RAM, scris la final” pentru pașii sensibili la timp.
+
+## C-103 `gpu recupereaza` — prima încercare pe placa reală (~18:13), `gpu-jurnal-012.txt` (514 rânduri, trimis singur)
+- Booter Unload (40192 B) încărcat în SEC2 (încet: jurnalul ~1 s/rând), pornit → **cutia SEC2 MAILBOX0 = 0x88** (Booter a dat eroare). Bus Master pus la loc.
+- După: WPR2 tot RIDICAT (0x1f4100000..0x1ffee0000) → „pregătirea I6 NU trece: tot pornire rece”. Notă din cod: „următoarea variantă: FWSEC-SB înainte”.
+- Concluzie: recuperarea fără cablu **nu merge încă**; codul 0x88 de la Booter Unload e de analizat (regula trei surse: cum descarcă RM 570.144 / nova / tinygrad GSP-RM — probabil trebuie oprit întâi GSP-RM curat (RPC de unload) sau rulat FWSEC-SB înainte).
+- Ziua de azi: I8 a trecut o dată (v1, jurnal 010); repetarea a picat la I7 (timeout, jurnal foarte lent); stick-ul CYBER-UNIV scrie ~1 s/rând → de înlocuit/golit `raport`.
