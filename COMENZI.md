@@ -1409,3 +1409,11 @@ Format:
 - confirmat (18:00): și stick-ul de test TESTGPU se blochează în același loc, după MADT (`foto-2-stick-test-acelasi-loc.jpg`) → problema e reproductibilă.
 - prioritate: după C-108 (variantele pentru joi 07:00 au întâietate).
 - stare: gata (2026-11-11 20:55, sesiunea OS programată) · **P6-79** · rezultat: **Release `os-290`**: așteptarea PIT are limită, calibrarea trece singură pe temporizatorul ACPI PM sau pe frecvența din CPUID dacă PIT-ul nu numără, APIC-ul merge și în modul x2APIC (prin MSR), iar pe ecran apar rândurile `apic: mod …` / `apic: calibrez ceasul …` / `apic: ceasul de referinta: …`; testat în QEMU cu PIT-ul oprit (x2APIC nu se poate încerca în QEMU); pe ASUS neîncercat.
+
+### C-110 · kronos · Adrian nu vine azi (12 nov) la test — placa e a lui Kronos; „dă-i lui Kronos de muncă”
+- data: 2026-11-12 06:49 · Adrian: „Nu mai ajung azi la test, dă-i lui Kronos de muncă.” Testul pe variante (os-289, C-108) se amână la următoarea venire, anunțată prin centrul de comandă.
+- ce: (1) **placa e a lui Kronos de acum**, toată ziua și la noapte (rezervarea de la 07:00 din C-108 se anulează);
+  (2) **„da” la întrebarea de la S98/S102: „legăm datele pe bucăți în antrenare?”** — cu condițiile scrise de executant: schimbare mică doar în module (nu în `kronos/`), proba că antrenarea iese identică (aceleași loturi/aceleași pierderi pe pașii de probă), 1380+ teste trec. Dacă se dovedește că trebuie atins `kronos/` → oprire și întrebare (regula nucleului);
+  (3) după probă, supraveghetorul pune pe placă pasul următor cel mai util din granițele REGULI_CASCADA (fără S101 — „nu deocamdată”).
+- rămân la Adrian (fără grabă): ștergerea S88 (~33 GB, C: la 92 %), Release-ul #513.
+- stare: nou
