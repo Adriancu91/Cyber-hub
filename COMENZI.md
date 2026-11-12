@@ -1487,3 +1487,18 @@ Format:
 - **Codul sursă UHL** (Rust, 88 de fișiere, verificat fără serii/chei) e în repo-ul **privat** `Adriancu91/uhl` (commit `94eb5dd`, 12 nov 23:47). Sesiunea OS îl poate citi pentru schemă, reguli și părți refolosibile (dacă nu are acces, cere-l prin centrul de comandă).
 - prioritate: după C-116 pasul OS (P6-85) și C-113.
 - stare (cyber-universe): gata (2026-11-13 00:45, sesiunea OS 23:40; preluat 23:45) · **P6-86** + **P6-87** · rezultat: comanda `analiza` (și `hw uhl`) scrie pe stick `raport/uhl/<calculator>/<sesiune>/` cu `inventory.json` (tot, cu seriile, nu pleacă), `inventory.redacted.json` și `report.txt` în forma `uhl-inventory/0.1` (PCI complet 4 KiB + BAR-uri + ReBAR + ASPM + D-states, toate tabelele ACPI + DSDT, SMBIOS, CPUID, USB, placa NVIDIA prin turul de citire Cyber-GPU, 0 scrieri); `trimite` urcă doar ultimele două; testat în QEMU, Release **`os-299`** (pasul 2 în `os-300`); de comparat cu un `inventory.redacted.json` din UHL-ul de Windows (schema exactă nu e în hub)
+
+### C-118 · cyber-universe · Wi-Fi Intel AX201 în Cyber Universe (laptopul ASUS TUF F15) — „da” de la Adrian, 13 nov 01:05; **la fiecare test pe laptop se testează și Wi-Fi**
+- data: 2026-11-13 01:05 · Adrian: „pune în hub și la fiecare test testăm și Wi-Fi”. Rețeaua prin cablu rămâne soluția imediată; Wi-Fi = proiect de săptămâni, în pași mici.
+- punct de plecare: raportul UHL Wi-Fi al lui Adrian (13 nov 00:49; rezumat mai jos, fără identificatori): AX201 **8086:43F0**, subsistem 8086:0074, rev 0x11, PCI **00:14.3** (CNVi: MAC în PCH HM570, radio CRF HR2 pe M.2, CNVio2), corespondența Linux `iwl_qu_long_latency_mac_cfg` + RF HR2 → firmware Linux `iwlwifi-Qu(Z)-*-hr-b0-77.ucode`;
+  Bluetooth separat pe USB 8087:0026; conexiunea lui Adrian: 802.11n, 2,4 GHz, WPA2-PSK/CCMP. Catalogul de comenzi: 181 de comenzi prezente, 86 cu nume cunoscut din iwlwifi.
+  **Limita legală:** firmware-ul Intel (Windows `Netwfw10.dat` și linux-firmware `.ucode`) **nu se desface și nu se analizează** (licența interzice); driverul Windows `.sys` nu se analizează. Surse permise: iwlwifi (GPL-2.0 OR **BSD-3**) citit ca specificație (fapte, ID-uri, structuri — cod scris de noi), standardele IEEE 802.11 / WPA2 (RFC-uri, documentație publică), comportament observat pe placa lui Adrian.
+- pași (fiecare = un Release + un test pe laptop; scrierile pe placa Wi-Fi doar după „DA” al lui Adrian, ca la GPU):
+  W0 `wifi identifica` — doar citire: configurație PCI completă, BAR0, starea CNVi, versiunea hardware (CSR_HW_REV / RF ID) prin registrele documentate de iwlwifi; în `test tot` și în raportul C-117.
+  W1 pornirea plăcii: reset, încărcarea firmware-ului Qu/QuZ-hr-b0 de pe stick (fișierul îl descarcă **Adrian** din linux-firmware, cu „da” scris la momentul respectiv; SHA-256 în docs, fișierul niciodată în repo/hub), notificarea ALIVE.
+  W2 comenzile de bază (configurare PHY/MAC) + **scanare pasivă**: lista rețelelor din jur (SSID-urile NU intră în hub — doar numărul lor și canalele).
+  W3 conectare la o rețea deschisă/de test, apoi **WPA2-PSK** (4-way handshake + CCMP scrise de noi; parola doar într-un fișier pe stick, ca `github.token`, niciodată în repo/hub/chat).
+  W4 legarea la stiva de rețea existentă (DHCP, TLS, `trimite`, `hub asculta`) → laptopul cu internet fără cablu.
+- la **fiecare** test pe laptop: `wifi identifica` (+ pasul curent W_n), poză + raport pe stick, `trimite` când există rețea.
+- prioritate: în paralel cu C-116 (placa video a laptopului); nu blochează I9 pe GA104.
+- stare: nou
