@@ -1430,3 +1430,12 @@ Format:
   Cele 31 refuzate = `gpt.pt` de linie (corect). Partea 2 (`lucru\memorie_mare`, ~10,5 GB) — Adrian o șterge de mână, la recomandarea raportului S88 (nu `memorie_ore`).
 - ce (kronos): marchează S88 `gata`, verifică jurnalul ștergerii și spațiul liber pe C: (doar citire), notează în raportul de dimineață.
 - stare: nou
+
+### C-113 · cyber-universe · Stick FAT32 de 64 GB: OS-ul citește, dar NU poate scrie al doilea rând în jurnal
+- data: 2026-11-12 18:28 · Kingston 64 GB (DTXM), formatat de Adrian cu `Format-Volume -FileSystem FAT32` (57,72 GB, eticheta CYBER-UNIV), copiat tot de pe vechiul CYBER-UNIV, `raport` gol.
+- ce s-a văzut (`rezultate/2026-11-12-workstation-os295/foto-5-stick-64gb-eroare-scriere.jpg`): `gpu lant --varianta 1` → „jurnalul pe stick nu se poate scrie (/usb/raport/gpu-jurnal-001.txt: eroare de citire sau scriere pe disc): STOP, nimic scris în placă”.
+  Totuși: `/usb` a fost găsit, `github.token` citit, `trimite` a urcat `gpu-jurnal-001.txt` — doar antetul (57 octeți). Deci crearea fișierului merge, **adăugarea** (al doilea rând / extinderea lanțului de clustere) eșuează.
+- de verificat (QEMU, imagine FAT32 de 64 GB cu clustere de 32 KiB, ~1,9 milioane de clustere, FAT de ~7,5 MB): alocarea unui cluster nou când FAT-ul e mare (căutarea clusterului liber, FSInfo, a doua copie a FAT-ului, sectoare > 2^32 / offset-uri pe 32 de biți), plus scrierea lentă (~1 s/rând) văzută pe vechiul stick când `raport` avea multe fișiere.
+- legat: jurnalul „fiecare rând pe loc” a ajuns la ~1 s/rând pe stick-ul vechi → I7 timeout (repetarea variantei 1). Propunere: jurnal în RAM cu scriere pe stick în bucăți / la final pentru pașii sensibili la timp.
+- prioritate: înaintea următorului test pe placă.
+- stare: nou
