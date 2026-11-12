@@ -1,11 +1,11 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-12 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-12 11:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **C-110 preluat:** Adrian nu vine azi la test → placa e a lui Kronos toată ziua și la noapte; „da” la legarea datelor pe bucăți în antrenare.
-- **S103 gata, verificat: DA** — legarea `date_bucati` în `model_conversatie.py` / `model_gpt.py` (fără `kronos/`): pe un model mic, 200/200 pierderi identice bit cu bit, aceleași loturi și greutăți; RAM la pornire 766 MB față de 41.756 MB; 1390 teste trec.
-- **S104 rulează (placa, de la 08:00, ~1–1,5 h):** aceeași probă pe modelul adevărat de 24 de straturi (vechi ×2 față de bucăți), pre-înregistrată înainte de pornire.
+- **S103 + S104 gata, verificate: DA** — datele pe bucăți sunt legate în antrenare (fără `kronos/`). Pe procesor (model mic): pierderi identice bit cu bit. Pe placă (modelul de 24, 300 de pași): loturi identice, pierderi în limita zgomotului plăcii (0,000326 față de 0,000303; prag 0,000607); RAM la pornire 2.156 MB față de 41.709 MB, aceeași viteză; placa max 3.834 MB / 61 °C.
+- Placa liberă până diseară (nicio a doua sarcină de placă în fereastra de zi).
 - **Modelul în uz: #513** (98M, KGR1 Q8_0, 110.859.008 octeți, SHA `66f734b3…5859`); #554 cel mai bun la română (1,2040); #477 și #459 rezerve.
   Model propriu, de la zero, fără LLM străin.
 
@@ -16,7 +16,7 @@
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu **#513** (suma, 3 texte de control). Rezervele #477 și #459 pornibile.
 - Motorul de referință `unelte/inferenta_bruta.py`, modulul `inferenta`; nota automată în română + setul ascuns de 500 (`examen_romana`).
-- Unelte pentru date mari cu RAM mic: `bucati_din_text.py` (text → bucăți, cu reluare), `date_bucati.py` + modulul `date_bucati` (mmap + SHA pe bucată); legate în antrenare (S103 DA); după S104, folosibile pe placă.
+- Unelte pentru date mari cu RAM mic: `bucati_din_text.py` (text → bucăți, cu reluare), `date_bucati.py` + modulul `date_bucati` (mmap + SHA pe bucată); legate în antrenare și dovedite pe placă (S103 + S104 DA) — antrenări pe date mult mai mari fără 42 GB RAM.
 - Lecții: un model „crescut” se așază lângă modelul din care a crescut; Muon pe model gata antrenat merge doar cu pași mici și atunci nu ajută.
 
 ## De ce are nevoie de la ceilalți

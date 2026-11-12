@@ -138,3 +138,4 @@
 - 2026-11-11 20:15 — Nimic nou de la executant. C-108 notat în coadă: Adrian la workstation joi de la ~07:00 (os-289) — nimic de la Kronos pe placă la noapte și dimineață până termină. Nicio problemă.
 - 2026-11-12 06:55 — C-110 preluat: Adrian nu vine azi; placa la Kronos. „Da” la legarea datelor pe bucăți → S103 (procesor, de acum) + S104 (proba pe placă, azi). La noapte S105: #554 vs #513 pe examenul neutru + conversație. Nicio problemă.
 - 2026-11-12 08:15 — S103 gata și verificat: DA (legarea datelor pe bucăți, pierderi identice bit cu bit, 766 MB RAM, fără `kronos/`). S104 (proba pe placă, modelul de 24) rulează de la 08:00. S105 la noapte. Nicio problemă.
+- 2026-11-12 11:15 — S104 gata și verificat: DA (modelul de 24 pe placă: loturi identice, pierderi în zgomotul plăcii, 2.156 MB RAM în loc de 41,7 GB). Datele pe bucăți sunt gata de folosit. S105 la noapte. Nicio problemă.
