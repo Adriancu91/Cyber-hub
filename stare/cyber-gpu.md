@@ -1,7 +1,11 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-12 01:45 (ora României) · **de:** sesiunea Cyber-GPU 90 (cloud, fără placă) — **rularea de rezervă „GPU 01:25” din C-108: oprire scurtă — nicio comandă nouă, niciun jurnal nou; totul e pregătit pentru testul de la 07:00 (Release `os-289`/`os-290` are cele 10 variante; `compara_variante` verificată pe jurnalele reale; 451 PASS, CI verde pe `b1d91a0`).**
+**Actualizat:** 2026-11-12 07:40 (ora României) · **de:** sesiunea Cyber-GPU 91 (cloud, fără placă) — **oprire scurtă: testul cu variante de azi 07:00 s-a AMÂNAT (C-110: Adrian nu vine azi, placa e a lui Kronos); nicio comandă nouă, niciun jurnal nou; totul rămâne pregătit pentru următoarea venire a lui Adrian (Release `os-289`/`os-290` cu cele 10 variante; CI verde pe `fbc70e7`/`bc864e3`).**
 ## Acum
+- **Sesiunea 91 (07:25–07:40) — oprire scurtă, fără pas nou pe driver.** C-110 (06:49): Adrian nu mai ajunge azi la test → **testul cu variante (C-108) se amână** la următoarea
+  lui venire, anunțată prin centrul de comandă; placa e a lui Kronos toată ziua și la noapte. Nimic nou pentru cyber-gpu în hub, niciun jurnal nou de pe placă (ultimul: `gpu-jurnal-009.txt`, os-283).
+  Verificat: CI verde pe `fbc70e7` (rularea 178); codul driverului neschimbat de la `b1d91a0` (451 PASS); Release-urile OS neschimbate. Doar documentul de stare (`bc864e3`); copia C-34 la `bc864e3`.
+  **Lista „pentru joi” de mai jos rămâne valabilă pentru ziua în care vine Adrian** — nimic de schimbat pe stick (`os-289` sau `os-290`).
 - **Sesiunea 90 (01:25–01:45) — oprire scurtă, fără pas nou pe driver (fără jurnal nou de pe placă nu se inventează lucru).** Verificat: `tools/check.sh` pe `b1d91a0` → 451 PASS, CI verde (rularea 177);
   OS-ul leagă `49e6685` (toate cele 5 crate-uri, `kernel/Cargo.toml`), care conține variantele (`20830f5`) → **Release `os-289` și `os-290` au cele 10 variante** (`gpu variante`, `gpu lant --varianta N`);
   `compara_variante` rulată dintr-un checkout proaspăt pe 009/008/007 → aceleași cifre ca în sesiunea 89, cod de ieșire 0. Doar documentul de stare (`fbc70e7`); copia C-34 la `fbc70e7`.
@@ -44,7 +48,7 @@
 - **Pe placă până acum:** I0–I4 doar citire TREC; I6 TRECE (os-242…os-283); I7 TRECE (os-246…os-283); I8: toate cele 420 de comenzi ale secvențiatorului trec, GSP-RM pornește și
   răspunde `GSP_INIT_DONE 0x59` (os-278, os-279, os-280, os-283 — identic); I9–I14 neîncercate.
 
-## Lista pentru joi 12 nov ~07:00 (C-108; Release-ul îl face sesiunea OS, P6-78)
+## Lista pentru testul cu variante (C-108; era joi 12 nov 07:00 — AMÂNAT prin C-110, data următoare o anunță Adrian prin centrul de comandă; Release `os-289`/`os-290`)
 1. Fiecare variantă = o pornire rece: oprire → cablu 30 s → F8 stick de test → `gpu lant --varianta N` → `DA` → `trimite` (sau jurnalul în `rezultate/`) → `N+1`. **Începe cu 1.**
 2. **Reușita:** după `secv #419 CORE_RESUME`, rândul `valoare GSP_INIT_DONE: rpc_result … = 0x00000000` și lanțul intră în **I8e (golden)**. Se oprește la prima variantă care trece.
 3. Dacă varianta 1 dă tot `0x59`: de văzut câte înregistrări NOCAT (844 iar?) și dacă rândul `varianta I8 … numarul = 0x00000001` e în jurnal (altfel Release-ul nu are variantele).
@@ -53,7 +57,7 @@
 
 ## Urmează
 1. **OS-ul (P6-78): făcut** — Release `os-289`/`os-290` (variantele + `gpu variante`); procedura pentru Adrian în `stare/cyber-universe.md`.
-2. **Joi ~07:00:** Adrian încearcă variantele de la 1, câte o pornire rece, `trimite` după fiecare. Noi: `compara_variante` pe toate jurnalele → care a trecut / ce diferă.
+2. **La următoarea venire a lui Adrian (amânat din 12 nov, C-110):** Adrian încearcă variantele de la 1, câte o pornire rece, `trimite` după fiecare. Noi: `compara_variante` pe toate jurnalele → care a trecut / ce diferă.
    Dacă varianta 1 trece → I8e (golden) pe placă = primul apel RM; se citește jurnalul lui. Dacă nu trece niciuna din cele 10: următoarea comparație e **starea plăcii** (adresele DMA
    reale, citirile `SEC2 CPUCTL` / `GSP MAILBOX0` de mai sus), nu conținutul mesajelor.
 3. După `GSP_INIT_DONE = 0` pe placă: I8e, I9, I10 — scrise, testate doar în simulare.
@@ -73,11 +77,11 @@
 
 ## De ce are nevoie de la ceilalți
 - De la `cyber-universe` (P6-78): **făcut** — Release `os-289` (și `os-290`, același cod GPU) există; nimic de schimbat în legare până la jurnalele de joi.
-- De la Adrian (joi): variantele în ordine, de la 1, câte o pornire rece; `trimite` după fiecare (sau jurnalele în `rezultate/`).
+- De la Adrian (când vine la workstation — data prin centrul de comandă): variantele în ordine, de la 1, câte o pornire rece; `trimite` după fiecare (sau jurnalele în `rezultate/`).
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
 
 ## Blocaje / nevoie de Adrian
 - **Nu e blocat, dar depinde de placă:** că ordinea e cauza lui `0x59` e DEDUS din sursele RM (comentariile citate în studiu), nu probat; doar joi, cu varianta 1, se vede.
   Fiecare variantă e „prima încercare” pe placă; toate valorile vin din surse publice și niciuna nu scrie un registru pe care os-283 nu-l scria deja; „DA” la fiecare.
 - Numele funcțiilor din care vin cele 844 de asserturi nu se pot afla fără simbolurile GSP-RM — nu deschidem firmware-ul (regula proiectului); decizia ar fi a lui Adrian.
-- CI GitHub VERDE pe `b1d91a0` (rularea 43071432423, 17:46 UTC, 50 s); `fbc70e7` (doar documentul de stare) în curs la 01:45.
+- CI GitHub VERDE pe `fbc70e7` (rularea 178, 43120530210); `bc864e3` (doar documentul de stare) în curs la 07:40.
