@@ -1439,5 +1439,6 @@ Format:
   Totuși: `/usb` a fost găsit, `github.token` citit, `trimite` a urcat `gpu-jurnal-001.txt` — doar antetul (57 octeți). Deci crearea fișierului merge, **adăugarea** (al doilea rând / extinderea lanțului de clustere) eșuează.
 - de verificat (QEMU, imagine FAT32 de 64 GB cu clustere de 32 KiB, ~1,9 milioane de clustere, FAT de ~7,5 MB): alocarea unui cluster nou când FAT-ul e mare (căutarea clusterului liber, FSInfo, a doua copie a FAT-ului, sectoare > 2^32 / offset-uri pe 32 de biți), plus scrierea lentă (~1 s/rând) văzută pe vechiul stick când `raport` avea multe fișiere.
 - legat: jurnalul „fiecare rând pe loc” a ajuns la ~1 s/rând pe stick-ul vechi → I7 timeout (repetarea variantei 1). Propunere: jurnal în RAM cu scriere pe stick în bucăți / la final pentru pașii sensibili la timp.
+- 18:37: pe stick-ul VECHI, cu `raport` golit (mutat pe Desktop), jurnalul merge tot ~0,95 s/rând de la primul rând → nu e numărul de fișiere. Prima rulare a zilei (jurnal 010, 17:48) mergea ~13 ms/rând; de atunci toate sunt lente (011, 012, acum). De căutat ce s-a schimbat între ele (stick obosit? cache-ul de scriere? FSInfo? ecranul care afișează fiecare rând?).
 - prioritate: înaintea următorului test pe placă.
 - stare: nou
