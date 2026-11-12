@@ -1,0 +1,1867 @@
+== raport Cyber Universe OS ==
+data (ceasul calculatorului): 2026-11-09 08:05:22
+motiv: manual (comanda raport)
+nucleu: cyber-universe 0.1.0 (cyber-gpu 34a9793)
+/usb/VERSIUNE: commit 1c32148d185bd9bb0872a4b13c68981cbe15f215
+erori in jurnal de la pornire: 0
+
+== hw ==
+== raport hardware ==
+procesor: Intel(R) Core(TM) i9-10980XE CPU @ 3.00GHz
+ecran: framebuffer la adresa fizica 0xe0000000, 8847360 octeti (9 MiB), 1920x1080, pitch 8192 B, 32 bpp
+memorie: libera 130618 MiB, folosita 159496 KiB (heap 11043 / 90008 KiB)
+pornit de 355.95 s
+PCI ([driver] = il folosim, [-] = fara driver):
+  00:00.0 8086:2020 punte gazda [-]
+  00:04.0 8086:2021 alt dispozitiv [-]
+  00:04.1 8086:2021 alt dispozitiv [-]
+  00:04.2 8086:2021 alt dispozitiv [-]
+  00:04.3 8086:2021 alt dispozitiv [-]
+  00:04.4 8086:2021 alt dispozitiv [-]
+  00:04.5 8086:2021 alt dispozitiv [-]
+  00:04.6 8086:2021 alt dispozitiv [-]
+  00:04.7 8086:2021 alt dispozitiv [-]
+  00:05.0 8086:2024 alt dispozitiv [-]
+  00:05.2 8086:2025 alt dispozitiv [-]
+  00:05.4 8086:2026 alt dispozitiv [-]
+  00:08.0 8086:2014 alt dispozitiv [-]
+  00:08.1 8086:2015 alt dispozitiv [-]
+  00:08.2 8086:2016 alt dispozitiv [-]
+  00:14.0 8086:a2af controler USB [xhci]
+  00:14.2 8086:a2b1 alt dispozitiv [-]
+  00:16.0 8086:a2ba alt dispozitiv [-]
+  00:17.0 8086:a282 controler SATA (AHCI) [ahci]
+  00:1c.0 8086:a290 punte PCI [-]
+  00:1c.6 8086:a296 punte PCI [-]
+  00:1f.0 8086:a2d2 punte ISA [-]
+  00:1f.2 8086:a2a1 alt dispozitiv [-]
+  00:1f.3 8086:a2f0 multimedia [-]
+  00:1f.4 8086:a2a3 SMBus [-]
+  00:1f.6 8086:15e3 placa de retea [e1000]
+  02:00.0 104c:8240 punte PCI [-]
+  16:05.0 8086:2034 alt dispozitiv [-]
+  16:05.2 8086:2035 alt dispozitiv [-]
+  16:05.4 8086:2036 alt dispozitiv [-]
+  16:08.0 8086:208d alt dispozitiv [-]
+  16:08.1 8086:208d alt dispozitiv [-]
+  16:08.2 8086:208d alt dispozitiv [-]
+  16:08.3 8086:208d alt dispozitiv [-]
+  16:08.4 8086:208d alt dispozitiv [-]
+  16:08.5 8086:208d alt dispozitiv [-]
+  16:08.6 8086:208d alt dispozitiv [-]
+  16:08.7 8086:208d alt dispozitiv [-]
+  16:09.0 8086:208d alt dispozitiv [-]
+  16:09.1 8086:208d alt dispozitiv [-]
+  16:09.2 8086:208d alt dispozitiv [-]
+  16:09.3 8086:208d alt dispozitiv [-]
+  16:09.4 8086:208d alt dispozitiv [-]
+  16:09.5 8086:208d alt dispozitiv [-]
+  16:09.6 8086:208d alt dispozitiv [-]
+  16:09.7 8086:208d alt dispozitiv [-]
+  16:0a.0 8086:208d alt dispozitiv [-]
+  16:0a.1 8086:208d alt dispozitiv [-]
+  16:0e.0 8086:208e alt dispozitiv [-]
+  16:0e.1 8086:208e alt dispozitiv [-]
+  16:0e.2 8086:208e alt dispozitiv [-]
+  16:0e.3 8086:208e alt dispozitiv [-]
+  16:0e.4 8086:208e alt dispozitiv [-]
+  16:0e.5 8086:208e alt dispozitiv [-]
+  16:0e.6 8086:208e alt dispozitiv [-]
+  16:0e.7 8086:208e alt dispozitiv [-]
+  16:0f.0 8086:208e alt dispozitiv [-]
+  16:0f.1 8086:208e alt dispozitiv [-]
+  16:0f.2 8086:208e alt dispozitiv [-]
+  16:0f.3 8086:208e alt dispozitiv [-]
+  16:0f.4 8086:208e alt dispozitiv [-]
+  16:0f.5 8086:208e alt dispozitiv [-]
+  16:0f.6 8086:208e alt dispozitiv [-]
+  16:0f.7 8086:208e alt dispozitiv [-]
+  16:10.0 8086:208e alt dispozitiv [-]
+  16:10.1 8086:208e alt dispozitiv [-]
+  16:1d.0 8086:2054 alt dispozitiv [-]
+  16:1d.1 8086:2055 alt dispozitiv [-]
+  16:1d.2 8086:2056 alt dispozitiv [-]
+  16:1d.3 8086:2057 alt dispozitiv [-]
+  16:1e.0 8086:2080 alt dispozitiv [-]
+  16:1e.1 8086:2081 alt dispozitiv [-]
+  16:1e.2 8086:2082 alt dispozitiv [-]
+  16:1e.3 8086:2083 alt dispozitiv [-]
+  16:1e.4 8086:2084 alt dispozitiv [-]
+  16:1e.5 8086:2085 alt dispozitiv [-]
+  16:1e.6 8086:2086 alt dispozitiv [-]
+  64:05.0 8086:2034 alt dispozitiv [-]
+  64:05.2 8086:2035 alt dispozitiv [-]
+  64:05.4 8086:2036 alt dispozitiv [-]
+  64:08.0 8086:2066 alt dispozitiv [-]
+  64:09.0 8086:2066 alt dispozitiv [-]
+  64:0a.0 8086:2040 alt dispozitiv [-]
+  64:0a.1 8086:2041 alt dispozitiv [-]
+  64:0a.2 8086:2042 alt dispozitiv [-]
+  64:0a.3 8086:2043 alt dispozitiv [-]
+  64:0a.4 8086:2044 alt dispozitiv [-]
+  64:0a.5 8086:2045 alt dispozitiv [-]
+  64:0a.6 8086:2046 alt dispozitiv [-]
+  64:0a.7 8086:2047 alt dispozitiv [-]
+  64:0b.0 8086:2048 alt dispozitiv [-]
+  64:0b.1 8086:2049 alt dispozitiv [-]
+  64:0b.2 8086:204a alt dispozitiv [-]
+  64:0b.3 8086:204b alt dispozitiv [-]
+  64:0c.0 8086:2040 alt dispozitiv [-]
+  64:0c.1 8086:2041 alt dispozitiv [-]
+  64:0c.2 8086:2042 alt dispozitiv [-]
+  64:0c.3 8086:2043 alt dispozitiv [-]
+  64:0c.4 8086:2044 alt dispozitiv [-]
+  64:0c.5 8086:2045 alt dispozitiv [-]
+  64:0c.6 8086:2046 alt dispozitiv [-]
+  64:0c.7 8086:2047 alt dispozitiv [-]
+  64:0d.0 8086:2048 alt dispozitiv [-]
+  64:0d.1 8086:2049 alt dispozitiv [-]
+  64:0d.2 8086:204a alt dispozitiv [-]
+  64:0d.3 8086:204b alt dispozitiv [-]
+  b2:00.0 8086:2030 punte PCI [-]
+  b2:02.0 8086:2032 punte PCI [-]
+  b2:03.0 8086:2033 punte PCI [-]
+  b2:05.0 8086:2034 alt dispozitiv [-]
+  b2:05.2 8086:2035 alt dispozitiv [-]
+  b2:05.4 8086:2036 alt dispozitiv [-]
+  b2:12.0 8086:204c alt dispozitiv [-]
+  b2:12.1 8086:204d alt dispozitiv [-]
+  b2:12.2 8086:204e alt dispozitiv [-]
+  b2:15.0 8086:2018 alt dispozitiv [-]
+  b2:15.1 8086:2088 alt dispozitiv [-]
+  b2:16.0 8086:2018 alt dispozitiv [-]
+  b2:16.1 8086:2088 alt dispozitiv [-]
+  b2:16.4 8086:2018 alt dispozitiv [-]
+  b2:16.5 8086:2088 alt dispozitiv [-]
+  b2:17.0 8086:2018 alt dispozitiv [-]
+  b2:17.1 8086:2088 alt dispozitiv [-]
+  b3:00.0 10de:2482 placa video [-]
+  b3:00.1 10de:228b multimedia [-]
+  b4:00.0 1c5c:1959 controler NVMe [nvme]
+USB:
+  port 5  17ef:608d  mouse (HID)
+  port 6  413c:2106  tastatura (HID)
+  port 10  0bda:5411  hub
+  port 25  0bda:0328  stocare (Mass Storage)
+  port 26  0bda:0411  hub
+  port 10.2  346d:5678  stocare (Mass Storage)
+  port 26.1  125f:db8a  stocare (Mass Storage)
+/disk: montat (2 intrari)
+/usb: montat (11 intrari)
+retea:
+  I219-LM  MAC cc:96:e5:08:b7:b5
+  pachete trimise 2, primite 611
+  legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e7000
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e7000, RDBAH 00000000, RDH 00000003, RDT 00000002, TDH 00000002, TDT 00000002 (pasii de pornire: log e1000)
+  IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
+
+== lspci ==
+  00:00.0  8086:2020  punte gazda
+  00:04.0  8086:2021  alt dispozitiv
+  00:04.1  8086:2021  alt dispozitiv
+  00:04.2  8086:2021  alt dispozitiv
+  00:04.3  8086:2021  alt dispozitiv
+  00:04.4  8086:2021  alt dispozitiv
+  00:04.5  8086:2021  alt dispozitiv
+  00:04.6  8086:2021  alt dispozitiv
+  00:04.7  8086:2021  alt dispozitiv
+  00:05.0  8086:2024  alt dispozitiv
+  00:05.2  8086:2025  alt dispozitiv
+  00:05.4  8086:2026  alt dispozitiv
+  00:08.0  8086:2014  alt dispozitiv
+  00:08.1  8086:2015  alt dispozitiv
+  00:08.2  8086:2016  alt dispozitiv
+  00:14.0  8086:a2af  controler USB
+  00:14.2  8086:a2b1  alt dispozitiv
+  00:16.0  8086:a2ba  alt dispozitiv
+  00:17.0  8086:a282  controler SATA (AHCI)
+  00:1c.0  8086:a290  punte PCI
+  00:1c.6  8086:a296  punte PCI
+  00:1f.0  8086:a2d2  punte ISA
+  00:1f.2  8086:a2a1  alt dispozitiv
+  00:1f.3  8086:a2f0  multimedia
+  00:1f.4  8086:a2a3  SMBus
+  00:1f.6  8086:15e3  placa de retea
+  02:00.0  104c:8240  punte PCI
+  16:05.0  8086:2034  alt dispozitiv
+  16:05.2  8086:2035  alt dispozitiv
+  16:05.4  8086:2036  alt dispozitiv
+  16:08.0  8086:208d  alt dispozitiv
+  16:08.1  8086:208d  alt dispozitiv
+  16:08.2  8086:208d  alt dispozitiv
+  16:08.3  8086:208d  alt dispozitiv
+  16:08.4  8086:208d  alt dispozitiv
+  16:08.5  8086:208d  alt dispozitiv
+  16:08.6  8086:208d  alt dispozitiv
+  16:08.7  8086:208d  alt dispozitiv
+  16:09.0  8086:208d  alt dispozitiv
+  16:09.1  8086:208d  alt dispozitiv
+  16:09.2  8086:208d  alt dispozitiv
+  16:09.3  8086:208d  alt dispozitiv
+  16:09.4  8086:208d  alt dispozitiv
+  16:09.5  8086:208d  alt dispozitiv
+  16:09.6  8086:208d  alt dispozitiv
+  16:09.7  8086:208d  alt dispozitiv
+  16:0a.0  8086:208d  alt dispozitiv
+  16:0a.1  8086:208d  alt dispozitiv
+  16:0e.0  8086:208e  alt dispozitiv
+  16:0e.1  8086:208e  alt dispozitiv
+  16:0e.2  8086:208e  alt dispozitiv
+  16:0e.3  8086:208e  alt dispozitiv
+  16:0e.4  8086:208e  alt dispozitiv
+  16:0e.5  8086:208e  alt dispozitiv
+  16:0e.6  8086:208e  alt dispozitiv
+  16:0e.7  8086:208e  alt dispozitiv
+  16:0f.0  8086:208e  alt dispozitiv
+  16:0f.1  8086:208e  alt dispozitiv
+  16:0f.2  8086:208e  alt dispozitiv
+  16:0f.3  8086:208e  alt dispozitiv
+  16:0f.4  8086:208e  alt dispozitiv
+  16:0f.5  8086:208e  alt dispozitiv
+  16:0f.6  8086:208e  alt dispozitiv
+  16:0f.7  8086:208e  alt dispozitiv
+  16:10.0  8086:208e  alt dispozitiv
+  16:10.1  8086:208e  alt dispozitiv
+  16:1d.0  8086:2054  alt dispozitiv
+  16:1d.1  8086:2055  alt dispozitiv
+  16:1d.2  8086:2056  alt dispozitiv
+  16:1d.3  8086:2057  alt dispozitiv
+  16:1e.0  8086:2080  alt dispozitiv
+  16:1e.1  8086:2081  alt dispozitiv
+  16:1e.2  8086:2082  alt dispozitiv
+  16:1e.3  8086:2083  alt dispozitiv
+  16:1e.4  8086:2084  alt dispozitiv
+  16:1e.5  8086:2085  alt dispozitiv
+  16:1e.6  8086:2086  alt dispozitiv
+  64:05.0  8086:2034  alt dispozitiv
+  64:05.2  8086:2035  alt dispozitiv
+  64:05.4  8086:2036  alt dispozitiv
+  64:08.0  8086:2066  alt dispozitiv
+  64:09.0  8086:2066  alt dispozitiv
+  64:0a.0  8086:2040  alt dispozitiv
+  64:0a.1  8086:2041  alt dispozitiv
+  64:0a.2  8086:2042  alt dispozitiv
+  64:0a.3  8086:2043  alt dispozitiv
+  64:0a.4  8086:2044  alt dispozitiv
+  64:0a.5  8086:2045  alt dispozitiv
+  64:0a.6  8086:2046  alt dispozitiv
+  64:0a.7  8086:2047  alt dispozitiv
+  64:0b.0  8086:2048  alt dispozitiv
+  64:0b.1  8086:2049  alt dispozitiv
+  64:0b.2  8086:204a  alt dispozitiv
+  64:0b.3  8086:204b  alt dispozitiv
+  64:0c.0  8086:2040  alt dispozitiv
+  64:0c.1  8086:2041  alt dispozitiv
+  64:0c.2  8086:2042  alt dispozitiv
+  64:0c.3  8086:2043  alt dispozitiv
+  64:0c.4  8086:2044  alt dispozitiv
+  64:0c.5  8086:2045  alt dispozitiv
+  64:0c.6  8086:2046  alt dispozitiv
+  64:0c.7  8086:2047  alt dispozitiv
+  64:0d.0  8086:2048  alt dispozitiv
+  64:0d.1  8086:2049  alt dispozitiv
+  64:0d.2  8086:204a  alt dispozitiv
+  64:0d.3  8086:204b  alt dispozitiv
+  b2:00.0  8086:2030  punte PCI
+  b2:02.0  8086:2032  punte PCI
+  b2:03.0  8086:2033  punte PCI
+  b2:05.0  8086:2034  alt dispozitiv
+  b2:05.2  8086:2035  alt dispozitiv
+  b2:05.4  8086:2036  alt dispozitiv
+  b2:12.0  8086:204c  alt dispozitiv
+  b2:12.1  8086:204d  alt dispozitiv
+  b2:12.2  8086:204e  alt dispozitiv
+  b2:15.0  8086:2018  alt dispozitiv
+  b2:15.1  8086:2088  alt dispozitiv
+  b2:16.0  8086:2018  alt dispozitiv
+  b2:16.1  8086:2088  alt dispozitiv
+  b2:16.4  8086:2018  alt dispozitiv
+  b2:16.5  8086:2088  alt dispozitiv
+  b2:17.0  8086:2018  alt dispozitiv
+  b2:17.1  8086:2088  alt dispozitiv
+  b3:00.0  10de:2482  placa video
+  b3:00.1  10de:228b  multimedia
+  b4:00.0  1c5c:1959  controler NVMe
+
+== net ==
+  I219-LM  MAC cc:96:e5:08:b7:b5
+  pachete trimise 2, primite 611
+  legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e7000
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e7000, RDBAH 00000000, RDH 00000003, RDT 00000002, TDH 00000002, TDT 00000002 (pasii de pornire: log e1000)
+  IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
+
+== jurnal net (si registrele placilor de retea) ==
+(niciun rand)
+
+== jurnal usb ==
+[ 204.610] INFO  gpu: gpu0: jurnalul pe loc: /usb/raport/gpu-jurnal-003.txt (1523 randuri, fiecare scris pe loc)
+
+== jurnal pci ==
+(niciun rand)
+
+== jurnal gpu ==
+[ 193.410] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001500 <- 0x00001600 => 0x00001600
+[ 193.420] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.430] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001500 <- 0x00001600 => 0x00001600
+[ 193.450] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001600 <- 0x00001700 => 0x00001700
+[ 193.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001600 <- 0x00001700 => 0x00001700
+[ 193.480] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001700 <- 0x00001800 => 0x00001800
+[ 193.490] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001700 <- 0x00001800 => 0x00001800
+[ 193.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001800 <- 0x00001900 => 0x00001900
+[ 193.530] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.540] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001800 <- 0x00001900 => 0x00001900
+[ 193.550] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001900 <- 0x00001a00 => 0x00001a00
+[ 193.560] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.580] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001900 <- 0x00001a00 => 0x00001a00
+[ 193.590] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001a00 <- 0x00001b00 => 0x00001b00
+[ 193.600] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.610] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001a00 <- 0x00001b00 => 0x00001b00
+[ 193.620] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001b00 <- 0x00001c00 => 0x00001c00
+[ 193.640] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.650] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001b00 <- 0x00001c00 => 0x00001c00
+[ 193.660] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001c00 <- 0x00001d00 => 0x00001d00
+[ 193.670] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.680] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001c00 <- 0x00001d00 => 0x00001d00
+[ 193.690] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001d00 <- 0x00001e00 => 0x00001e00
+[ 193.710] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.720] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001d00 <- 0x00001e00 => 0x00001e00
+[ 193.730] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001e00 <- 0x00001f00 => 0x00001f00
+[ 193.740] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.750] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001e00 <- 0x00001f00 => 0x00001f00
+[ 193.770] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001f00 <- 0x00002000 => 0x00002000
+[ 193.780] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.790] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001f00 <- 0x00002000 => 0x00002000
+[ 193.800] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002000 <- 0x00002100 => 0x00002100
+[ 193.810] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.820] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002000 <- 0x00002100 => 0x00002100
+[ 193.840] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002100 <- 0x00002200 => 0x00002200
+[ 193.850] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.860] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002100 <- 0x00002200 => 0x00002200
+[ 193.870] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002200 <- 0x00002300 => 0x00002300
+[ 193.900] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.910] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002200 <- 0x00002300 => 0x00002300
+[ 193.920] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002300 <- 0x00002400 => 0x00002400
+[ 193.930] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.940] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002300 <- 0x00002400 => 0x00002400
+[ 193.960] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002400 <- 0x00002500 => 0x00002500
+[ 193.970] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.980] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002400 <- 0x00002500 => 0x00002500
+[ 193.990] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002500 <- 0x00002600 => 0x00002600
+[ 194.000] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.020] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002500 <- 0x00002600 => 0x00002600
+[ 194.030] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002600 <- 0x00002700 => 0x00002700
+[ 194.040] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.050] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002600 <- 0x00002700 => 0x00002700
+[ 194.060] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002700 <- 0x00002800 => 0x00002800
+[ 194.070] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.090] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002700 <- 0x00002800 => 0x00002800
+[ 194.100] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002800 <- 0x00002900 => 0x00002900
+[ 194.110] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.120] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002800 <- 0x00002900 => 0x00002900
+[ 194.130] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002900 <- 0x00002a00 => 0x00002a00
+[ 194.140] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.160] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002900 <- 0x00002a00 => 0x00002a00
+[ 194.170] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002a00 <- 0x00002b00 => 0x00002b00
+[ 194.180] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.190] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002a00 <- 0x00002b00 => 0x00002b00
+[ 194.200] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002b00 <- 0x00002c00 => 0x00002c00
+[ 194.220] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.230] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002b00 <- 0x00002c00 => 0x00002c00
+[ 194.240] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002c00 <- 0x00002d00 => 0x00002d00
+[ 194.250] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.260] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002c00 <- 0x00002d00 => 0x00002d00
+[ 194.270] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002d00 <- 0x00002e00 => 0x00002e00
+[ 194.290] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.300] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002d00 <- 0x00002e00 => 0x00002e00
+[ 194.310] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002e00 <- 0x00002f00 => 0x00002f00
+[ 194.320] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.330] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002e00 <- 0x00002f00 => 0x00002f00
+[ 194.350] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002f00 <- 0x00003000 => 0x00003000
+[ 194.360] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.370] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002f00 <- 0x00003000 => 0x00003000
+[ 194.380] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003000 <- 0x00003100 => 0x00003100
+[ 194.390] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.400] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003000 <- 0x00003100 => 0x00003100
+[ 194.420] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003100 <- 0x00003200 => 0x00003200
+[ 194.430] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.440] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003100 <- 0x00003200 => 0x00003200
+[ 194.450] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003200 <- 0x00003300 => 0x00003300
+[ 194.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.480] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003200 <- 0x00003300 => 0x00003300
+[ 194.490] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003300 <- 0x00003400 => 0x00003400
+[ 194.500] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003300 <- 0x00003400 => 0x00003400
+[ 194.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003400 <- 0x00003500 => 0x00003500
+[ 194.530] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.550] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003400 <- 0x00003500 => 0x00003500
+[ 194.560] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003500 <- 0x00003600 => 0x00003600
+[ 194.570] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.580] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003500 <- 0x00003600 => 0x00003600
+[ 194.590] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003600 <- 0x00003700 => 0x00003700
+[ 194.610] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.620] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003600 <- 0x00003700 => 0x00003700
+[ 194.630] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003700 <- 0x00003800 => 0x00003800
+[ 194.640] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.650] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003700 <- 0x00003800 => 0x00003800
+[ 194.660] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003800 <- 0x00003900 => 0x00003900
+[ 194.680] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.690] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003800 <- 0x00003900 => 0x00003900
+[ 194.700] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003900 <- 0x00003a00 => 0x00003a00
+[ 194.710] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.720] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003900 <- 0x00003a00 => 0x00003a00
+[ 194.740] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003a00 <- 0x00003b00 => 0x00003b00
+[ 194.750] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.760] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003a00 <- 0x00003b00 => 0x00003b00
+[ 194.770] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003b00 <- 0x00003c00 => 0x00003c00
+[ 194.780] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.790] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003b00 <- 0x00003c00 => 0x00003c00
+[ 194.810] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003c00 <- 0x00003d00 => 0x00003d00
+[ 194.820] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.830] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003c00 <- 0x00003d00 => 0x00003d00
+[ 194.840] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003d00 <- 0x00003e00 => 0x00003e00
+[ 194.850] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.870] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003d00 <- 0x00003e00 => 0x00003e00
+[ 194.880] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003e00 <- 0x00003f00 => 0x00003f00
+[ 194.890] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.900] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003e00 <- 0x00003f00 => 0x00003f00
+[ 194.910] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003f00 <- 0x00004000 => 0x00004000
+[ 194.920] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.940] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003f00 <- 0x00004000 => 0x00004000
+[ 194.950] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004000 <- 0x00004100 => 0x00004100
+[ 194.960] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.970] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004000 <- 0x00004100 => 0x00004100
+[ 194.980] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004100 <- 0x00004200 => 0x00004200
+[ 195.000] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.010] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004100 <- 0x00004200 => 0x00004200
+[ 195.020] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004200 <- 0x00004300 => 0x00004300
+[ 195.030] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.040] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004200 <- 0x00004300 => 0x00004300
+[ 195.050] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004300 <- 0x00004400 => 0x00004400
+[ 195.070] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.080] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004300 <- 0x00004400 => 0x00004400
+[ 195.090] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004400 <- 0x00004500 => 0x00004500
+[ 195.100] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.110] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004400 <- 0x00004500 => 0x00004500
+[ 195.120] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004500 <- 0x00004600 => 0x00004600
+[ 195.140] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.150] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004500 <- 0x00004600 => 0x00004600
+[ 195.160] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004600 <- 0x00004700 => 0x00004700
+[ 195.170] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.180] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004600 <- 0x00004700 => 0x00004700
+[ 195.200] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004700 <- 0x00004800 => 0x00004800
+[ 195.210] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.220] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004700 <- 0x00004800 => 0x00004800
+[ 195.230] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004800 <- 0x00004900 => 0x00004900
+[ 195.240] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.250] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004800 <- 0x00004900 => 0x00004900
+[ 195.270] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004900 <- 0x00004a00 => 0x00004a00
+[ 195.280] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.290] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004900 <- 0x00004a00 => 0x00004a00
+[ 195.300] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004a00 <- 0x00004b00 => 0x00004b00
+[ 195.310] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.320] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004a00 <- 0x00004b00 => 0x00004b00
+[ 195.340] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004b00 <- 0x00004c00 => 0x00004c00
+[ 195.350] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.360] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004b00 <- 0x00004c00 => 0x00004c00
+[ 195.370] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004c00 <- 0x00004d00 => 0x00004d00
+[ 195.380] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.400] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004c00 <- 0x00004d00 => 0x00004d00
+[ 195.410] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004d00 <- 0x00004e00 => 0x00004e00
+[ 195.420] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.430] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004d00 <- 0x00004e00 => 0x00004e00
+[ 195.440] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004e00 <- 0x00004f00 => 0x00004f00
+[ 195.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004e00 <- 0x00004f00 => 0x00004f00
+[ 195.480] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004f00 <- 0x00005000 => 0x00005000
+[ 195.490] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.500] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004f00 <- 0x00005000 => 0x00005000
+[ 195.510] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005000 <- 0x00005100 => 0x00005100
+[ 195.530] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.540] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005000 <- 0x00005100 => 0x00005100
+[ 195.550] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005100 <- 0x00005200 => 0x00005200
+[ 195.560] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.570] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005100 <- 0x00005200 => 0x00005200
+[ 195.590] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005200 <- 0x00005300 => 0x00005300
+[ 195.600] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.610] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005200 <- 0x00005300 => 0x00005300
+[ 195.620] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005300 <- 0x00005400 => 0x00005400
+[ 195.630] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.640] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005300 <- 0x00005400 => 0x00005400
+[ 195.650] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005400 <- 0x00005500 => 0x00005500
+[ 195.670] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.680] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005400 <- 0x00005500 => 0x00005500
+[ 195.690] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005500 <- 0x00005600 => 0x00005600
+[ 195.700] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.710] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005500 <- 0x00005600 => 0x00005600
+[ 195.730] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005600 <- 0x00005700 => 0x00005700
+[ 195.740] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.750] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005600 <- 0x00005700 => 0x00005700
+[ 195.760] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005700 <- 0x00005800 => 0x00005800
+[ 195.770] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.780] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005700 <- 0x00005800 => 0x00005800
+[ 195.800] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005800 <- 0x00005900 => 0x00005900
+[ 195.810] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.820] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005800 <- 0x00005900 => 0x00005900
+[ 195.830] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005900 <- 0x00005a00 => 0x00005a00
+[ 195.840] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.860] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005900 <- 0x00005a00 => 0x00005a00
+[ 195.870] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005a00 <- 0x00005b00 => 0x00005b00
+[ 195.880] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.890] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005a00 <- 0x00005b00 => 0x00005b00
+[ 195.900] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005b00 <- 0x00005c00 => 0x00005c00
+[ 195.910] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.930] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005b00 <- 0x00005c00 => 0x00005c00
+[ 195.940] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005c00 <- 0x00005d00 => 0x00005d00
+[ 195.950] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.960] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005c00 <- 0x00005d00 => 0x00005d00
+[ 195.970] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005d00 <- 0x00005e00 => 0x00005e00
+[ 195.980] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.000] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005d00 <- 0x00005e00 => 0x00005e00
+[ 196.010] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005e00 <- 0x00005f00 => 0x00005f00
+[ 196.020] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.030] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005e00 <- 0x00005f00 => 0x00005f00
+[ 196.040] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005f00 <- 0x00006000 => 0x00006000
+[ 196.060] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.070] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005f00 <- 0x00006000 => 0x00006000
+[ 196.080] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006000 <- 0x00006100 => 0x00006100
+[ 196.090] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.100] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006000 <- 0x00006100 => 0x00006100
+[ 196.110] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006100 <- 0x00006200 => 0x00006200
+[ 196.130] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.140] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006100 <- 0x00006200 => 0x00006200
+[ 196.150] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006200 <- 0x00006300 => 0x00006300
+[ 196.160] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.170] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006200 <- 0x00006300 => 0x00006300
+[ 196.190] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006300 <- 0x00006400 => 0x00006400
+[ 196.200] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.210] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006300 <- 0x00006400 => 0x00006400
+[ 196.220] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006400 <- 0x00006500 => 0x00006500
+[ 196.230] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.240] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006400 <- 0x00006500 => 0x00006500
+[ 196.260] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006500 <- 0x00006600 => 0x00006600
+[ 196.270] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.280] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006500 <- 0x00006600 => 0x00006600
+[ 196.290] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006600 <- 0x00006700 => 0x00006700
+[ 196.300] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.310] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006600 <- 0x00006700 => 0x00006700
+[ 196.330] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006700 <- 0x00006800 => 0x00006800
+[ 196.340] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.350] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006700 <- 0x00006800 => 0x00006800
+[ 196.360] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006800 <- 0x00006900 => 0x00006900
+[ 196.370] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.380] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006800 <- 0x00006900 => 0x00006900
+[ 196.400] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006900 <- 0x00006a00 => 0x00006a00
+[ 196.410] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.420] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006900 <- 0x00006a00 => 0x00006a00
+[ 196.450] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006a00 <- 0x00006b00 => 0x00006b00
+[ 196.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006a00 <- 0x00006b00 => 0x00006b00
+[ 196.480] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006b00 <- 0x00006c00 => 0x00006c00
+[ 196.490] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006b00 <- 0x00006c00 => 0x00006c00
+[ 196.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006c00 <- 0x00006d00 => 0x00006d00
+[ 196.530] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.540] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006c00 <- 0x00006d00 => 0x00006d00
+[ 196.550] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006d00 <- 0x00006e00 => 0x00006e00
+[ 196.560] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.580] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006d00 <- 0x00006e00 => 0x00006e00
+[ 196.590] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006e00 <- 0x00006f00 => 0x00006f00
+[ 196.600] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.610] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006e00 <- 0x00006f00 => 0x00006f00
+[ 196.620] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006f00 <- 0x00007000 => 0x00007000
+[ 196.630] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.650] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006f00 <- 0x00007000 => 0x00007000
+[ 196.660] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007000 <- 0x00007100 => 0x00007100
+[ 196.670] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.680] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007000 <- 0x00007100 => 0x00007100
+[ 196.690] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007100 <- 0x00007200 => 0x00007200
+[ 196.710] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.720] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007100 <- 0x00007200 => 0x00007200
+[ 196.730] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007200 <- 0x00007300 => 0x00007300
+[ 196.740] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.750] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007200 <- 0x00007300 => 0x00007300
+[ 196.760] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007300 <- 0x00007400 => 0x00007400
+[ 196.780] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.790] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007300 <- 0x00007400 => 0x00007400
+[ 196.800] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007400 <- 0x00007500 => 0x00007500
+[ 196.810] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.820] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007400 <- 0x00007500 => 0x00007500
+[ 196.840] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007500 <- 0x00007600 => 0x00007600
+[ 196.850] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.860] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007500 <- 0x00007600 => 0x00007600
+[ 196.870] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007600 <- 0x00007700 => 0x00007700
+[ 196.880] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.890] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007600 <- 0x00007700 => 0x00007700
+[ 196.910] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007700 <- 0x00007800 => 0x00007800
+[ 196.920] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.930] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007700 <- 0x00007800 => 0x00007800
+[ 196.940] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007800 <- 0x00007900 => 0x00007900
+[ 196.960] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.970] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007800 <- 0x00007900 => 0x00007900
+[ 196.980] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007900 <- 0x00007a00 => 0x00007a00
+[ 196.990] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.000] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007900 <- 0x00007a00 => 0x00007a00
+[ 197.020] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007a00 <- 0x00007b00 => 0x00007b00
+[ 197.030] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.040] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007a00 <- 0x00007b00 => 0x00007b00
+[ 197.050] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007b00 <- 0x00007c00 => 0x00007c00
+[ 197.060] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.080] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007b00 <- 0x00007c00 => 0x00007c00
+[ 197.090] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007c00 <- 0x00007d00 => 0x00007d00
+[ 197.100] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.110] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007c00 <- 0x00007d00 => 0x00007d00
+[ 197.120] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007d00 <- 0x00007e00 => 0x00007e00
+[ 197.140] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.150] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007d00 <- 0x00007e00 => 0x00007e00
+[ 197.160] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007e00 <- 0x00007f00 => 0x00007f00
+[ 197.170] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.180] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007e00 <- 0x00007f00 => 0x00007f00
+[ 197.200] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007f00 <- 0x00008000 => 0x00008000
+[ 197.210] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.220] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007f00 <- 0x00008000 => 0x00008000
+[ 197.230] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008000 <- 0x00008100 => 0x00008100
+[ 197.250] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.260] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008000 <- 0x00008100 => 0x00008100
+[ 197.270] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008100 <- 0x00008200 => 0x00008200
+[ 197.280] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.290] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008100 <- 0x00008200 => 0x00008200
+[ 197.310] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008200 <- 0x00008300 => 0x00008300
+[ 197.320] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.330] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008200 <- 0x00008300 => 0x00008300
+[ 197.340] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008300 <- 0x00008400 => 0x00008400
+[ 197.350] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.370] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008300 <- 0x00008400 => 0x00008400
+[ 197.380] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008400 <- 0x00008500 => 0x00008500
+[ 197.390] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.400] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008400 <- 0x00008500 => 0x00008500
+[ 197.410] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008500 <- 0x00008600 => 0x00008600
+[ 197.430] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.440] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008500 <- 0x00008600 => 0x00008600
+[ 197.450] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008600 <- 0x00008700 => 0x00008700
+[ 197.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008600 <- 0x00008700 => 0x00008700
+[ 197.490] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008700 <- 0x00008800 => 0x00008800
+[ 197.500] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008700 <- 0x00008800 => 0x00008800
+[ 197.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008800 <- 0x00008900 => 0x00008900
+[ 197.540] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.550] INFO  gpu: jurnal: bar0 w 0x840110: 0x0009c670 <- 0x0009c6fa => 0x0009c6fa
+[ 197.560] INFO  gpu: jurnal: bar0 w 0x840128: 0x00000000 <- 0x00000000 => 0x00000000
+[ 197.570] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008800 <- 0x00000000 => 0x00000000
+[ 197.580] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008900 <- 0x00000000 => 0x00000000
+[ 197.600] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000600 => 0x00000600
+[ 197.610] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000000 <- 0x00000100 => 0x00000100
+[ 197.620] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000000 <- 0x00000100 => 0x00000100
+[ 197.630] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 197.950] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000100 <- 0x00000200 => 0x00000200
+[ 197.960] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000100 <- 0x00000200 => 0x00000200
+[ 197.970] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 197.990] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000200 <- 0x00000300 => 0x00000300
+[ 198.000] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000200 <- 0x00000300 => 0x00000300
+[ 198.010] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.020] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000300 <- 0x00000400 => 0x00000400
+[ 198.040] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000300 <- 0x00000400 => 0x00000400
+[ 198.050] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.060] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000400 <- 0x00000500 => 0x00000500
+[ 198.070] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000400 <- 0x00000500 => 0x00000500
+[ 198.090] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.100] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000500 <- 0x00000600 => 0x00000600
+[ 198.110] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000500 <- 0x00000600 => 0x00000600
+[ 198.120] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.140] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000600 <- 0x00000700 => 0x00000700
+[ 198.150] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000600 <- 0x00000700 => 0x00000700
+[ 198.160] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.170] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000700 <- 0x00000800 => 0x00000800
+[ 198.190] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000700 <- 0x00000800 => 0x00000800
+[ 198.200] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.210] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000800 <- 0x00000900 => 0x00000900
+[ 198.220] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000800 <- 0x00000900 => 0x00000900
+[ 198.240] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.250] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000900 <- 0x00000a00 => 0x00000a00
+[ 198.260] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000900 <- 0x00000a00 => 0x00000a00
+[ 198.270] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.290] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000a00 <- 0x00000b00 => 0x00000b00
+[ 198.300] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000a00 <- 0x00000b00 => 0x00000b00
+[ 198.310] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.320] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000b00 <- 0x00000c00 => 0x00000c00
+[ 198.340] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000b00 <- 0x00000c00 => 0x00000c00
+[ 198.350] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.360] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000c00 <- 0x00000d00 => 0x00000d00
+[ 198.370] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000c00 <- 0x00000d00 => 0x00000d00
+[ 198.390] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.400] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000d00 <- 0x00000e00 => 0x00000e00
+[ 198.410] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000d00 <- 0x00000e00 => 0x00000e00
+[ 198.420] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.440] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000e00 <- 0x00000f00 => 0x00000f00
+[ 198.450] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000e00 <- 0x00000f00 => 0x00000f00
+[ 198.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000f00 <- 0x00001000 => 0x00001000
+[ 198.490] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000f00 <- 0x00001000 => 0x00001000
+[ 198.500] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001000 <- 0x00001100 => 0x00001100
+[ 198.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001000 <- 0x00001100 => 0x00001100
+[ 198.540] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.550] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001100 <- 0x00001200 => 0x00001200
+[ 198.560] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001100 <- 0x00001200 => 0x00001200
+[ 198.570] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.590] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001200 <- 0x00001300 => 0x00001300
+[ 198.600] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001200 <- 0x00001300 => 0x00001300
+[ 198.610] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.620] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001300 <- 0x00001400 => 0x00001400
+[ 198.640] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001300 <- 0x00001400 => 0x00001400
+[ 198.650] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.660] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001400 <- 0x00001500 => 0x00001500
+[ 198.670] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001400 <- 0x00001500 => 0x00001500
+[ 198.690] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.700] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001500 <- 0x00001600 => 0x00001600
+[ 198.710] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001500 <- 0x00001600 => 0x00001600
+[ 198.720] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.740] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001600 <- 0x00001700 => 0x00001700
+[ 198.750] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001600 <- 0x00001700 => 0x00001700
+[ 198.760] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.780] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001700 <- 0x00001800 => 0x00001800
+[ 198.790] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001700 <- 0x00001800 => 0x00001800
+[ 198.800] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.810] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001800 <- 0x00001900 => 0x00001900
+[ 198.830] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001800 <- 0x00001900 => 0x00001900
+[ 198.840] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.850] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001900 <- 0x00001a00 => 0x00001a00
+[ 198.860] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001900 <- 0x00001a00 => 0x00001a00
+[ 198.880] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.890] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001a00 <- 0x00001b00 => 0x00001b00
+[ 198.900] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001a00 <- 0x00001b00 => 0x00001b00
+[ 198.910] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.930] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001b00 <- 0x00001c00 => 0x00001c00
+[ 198.940] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001b00 <- 0x00001c00 => 0x00001c00
+[ 198.950] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.960] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001c00 <- 0x00001d00 => 0x00001d00
+[ 198.980] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001c00 <- 0x00001d00 => 0x00001d00
+[ 198.990] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.000] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001d00 <- 0x00001e00 => 0x00001e00
+[ 199.010] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001d00 <- 0x00001e00 => 0x00001e00
+[ 199.030] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.040] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001e00 <- 0x00001f00 => 0x00001f00
+[ 199.050] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001e00 <- 0x00001f00 => 0x00001f00
+[ 199.060] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.080] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001f00 <- 0x00002000 => 0x00002000
+[ 199.090] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001f00 <- 0x00002000 => 0x00002000
+[ 199.100] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.110] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002000 <- 0x00002100 => 0x00002100
+[ 199.130] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002000 <- 0x00002100 => 0x00002100
+[ 199.140] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.150] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002100 <- 0x00002200 => 0x00002200
+[ 199.160] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002100 <- 0x00002200 => 0x00002200
+[ 199.180] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.190] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002200 <- 0x00002300 => 0x00002300
+[ 199.200] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002200 <- 0x00002300 => 0x00002300
+[ 199.210] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.230] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002300 <- 0x00002400 => 0x00002400
+[ 199.240] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002300 <- 0x00002400 => 0x00002400
+[ 199.250] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.260] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002400 <- 0x00002500 => 0x00002500
+[ 199.280] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002400 <- 0x00002500 => 0x00002500
+[ 199.290] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.300] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002500 <- 0x00002600 => 0x00002600
+[ 199.320] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002500 <- 0x00002600 => 0x00002600
+[ 199.330] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.340] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002600 <- 0x00002700 => 0x00002700
+[ 199.350] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002600 <- 0x00002700 => 0x00002700
+[ 199.370] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.380] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002700 <- 0x00002800 => 0x00002800
+[ 199.390] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002700 <- 0x00002800 => 0x00002800
+[ 199.420] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.430] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002800 <- 0x00002900 => 0x00002900
+[ 199.440] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002800 <- 0x00002900 => 0x00002900
+[ 199.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002900 <- 0x00002a00 => 0x00002a00
+[ 199.480] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002900 <- 0x00002a00 => 0x00002a00
+[ 199.490] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002a00 <- 0x00002b00 => 0x00002b00
+[ 199.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002a00 <- 0x00002b00 => 0x00002b00
+[ 199.530] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.540] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002b00 <- 0x00002c00 => 0x00002c00
+[ 199.560] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002b00 <- 0x00002c00 => 0x00002c00
+[ 199.570] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.580] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002c00 <- 0x00002d00 => 0x00002d00
+[ 199.600] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002c00 <- 0x00002d00 => 0x00002d00
+[ 199.610] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.620] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002d00 <- 0x00002e00 => 0x00002e00
+[ 199.630] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002d00 <- 0x00002e00 => 0x00002e00
+[ 199.650] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.660] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002e00 <- 0x00002f00 => 0x00002f00
+[ 199.670] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002e00 <- 0x00002f00 => 0x00002f00
+[ 199.680] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.700] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002f00 <- 0x00003000 => 0x00003000
+[ 199.710] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002f00 <- 0x00003000 => 0x00003000
+[ 199.720] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.730] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003000 <- 0x00003100 => 0x00003100
+[ 199.750] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003000 <- 0x00003100 => 0x00003100
+[ 199.760] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.770] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003100 <- 0x00003200 => 0x00003200
+[ 199.780] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003100 <- 0x00003200 => 0x00003200
+[ 199.800] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.810] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003200 <- 0x00003300 => 0x00003300
+[ 199.820] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003200 <- 0x00003300 => 0x00003300
+[ 199.830] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.850] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003300 <- 0x00003400 => 0x00003400
+[ 199.860] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003300 <- 0x00003400 => 0x00003400
+[ 199.870] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.880] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003400 <- 0x00003500 => 0x00003500
+[ 199.900] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003400 <- 0x00003500 => 0x00003500
+[ 199.910] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.920] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003500 <- 0x00003600 => 0x00003600
+[ 199.930] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003500 <- 0x00003600 => 0x00003600
+[ 199.950] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.960] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003600 <- 0x00003700 => 0x00003700
+[ 199.970] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003600 <- 0x00003700 => 0x00003700
+[ 199.980] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.000] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003700 <- 0x00003800 => 0x00003800
+[ 200.010] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003700 <- 0x00003800 => 0x00003800
+[ 200.020] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.030] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003800 <- 0x00003900 => 0x00003900
+[ 200.050] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003800 <- 0x00003900 => 0x00003900
+[ 200.060] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.070] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003900 <- 0x00003a00 => 0x00003a00
+[ 200.080] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003900 <- 0x00003a00 => 0x00003a00
+[ 200.100] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.110] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003a00 <- 0x00003b00 => 0x00003b00
+[ 200.120] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003a00 <- 0x00003b00 => 0x00003b00
+[ 200.130] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.150] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003b00 <- 0x00003c00 => 0x00003c00
+[ 200.160] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003b00 <- 0x00003c00 => 0x00003c00
+[ 200.170] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.180] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003c00 <- 0x00003d00 => 0x00003d00
+[ 200.200] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003c00 <- 0x00003d00 => 0x00003d00
+[ 200.210] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.220] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003d00 <- 0x00003e00 => 0x00003e00
+[ 200.240] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003d00 <- 0x00003e00 => 0x00003e00
+[ 200.250] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.260] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003e00 <- 0x00003f00 => 0x00003f00
+[ 200.270] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003e00 <- 0x00003f00 => 0x00003f00
+[ 200.290] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.300] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003f00 <- 0x00004000 => 0x00004000
+[ 200.310] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003f00 <- 0x00004000 => 0x00004000
+[ 200.320] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.340] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004000 <- 0x00004100 => 0x00004100
+[ 200.350] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004000 <- 0x00004100 => 0x00004100
+[ 200.360] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.370] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004100 <- 0x00004200 => 0x00004200
+[ 200.390] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004100 <- 0x00004200 => 0x00004200
+[ 200.400] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.410] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004200 <- 0x00004300 => 0x00004300
+[ 200.420] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004200 <- 0x00004300 => 0x00004300
+[ 200.440] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.450] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004300 <- 0x00004400 => 0x00004400
+[ 200.460] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004300 <- 0x00004400 => 0x00004400
+[ 200.470] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.490] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004400 <- 0x00004500 => 0x00004500
+[ 200.500] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004400 <- 0x00004500 => 0x00004500
+[ 200.510] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.520] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004500 <- 0x00004600 => 0x00004600
+[ 200.540] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004500 <- 0x00004600 => 0x00004600
+[ 200.550] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.560] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004600 <- 0x00004700 => 0x00004700
+[ 200.570] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004600 <- 0x00004700 => 0x00004700
+[ 200.590] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.600] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004700 <- 0x00004800 => 0x00004800
+[ 200.610] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004700 <- 0x00004800 => 0x00004800
+[ 200.620] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.640] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004800 <- 0x00004900 => 0x00004900
+[ 200.650] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004800 <- 0x00004900 => 0x00004900
+[ 200.660] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.670] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004900 <- 0x00004a00 => 0x00004a00
+[ 200.690] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004900 <- 0x00004a00 => 0x00004a00
+[ 200.700] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.710] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004a00 <- 0x00004b00 => 0x00004b00
+[ 200.720] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004a00 <- 0x00004b00 => 0x00004b00
+[ 200.740] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.750] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004b00 <- 0x00004c00 => 0x00004c00
+[ 200.760] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004b00 <- 0x00004c00 => 0x00004c00
+[ 200.770] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.790] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004c00 <- 0x00004d00 => 0x00004d00
+[ 200.800] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004c00 <- 0x00004d00 => 0x00004d00
+[ 200.810] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.820] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004d00 <- 0x00004e00 => 0x00004e00
+[ 200.840] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004d00 <- 0x00004e00 => 0x00004e00
+[ 200.850] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.860] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004e00 <- 0x00004f00 => 0x00004f00
+[ 200.870] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004e00 <- 0x00004f00 => 0x00004f00
+[ 200.890] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.900] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004f00 <- 0x00005000 => 0x00005000
+[ 200.910] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004f00 <- 0x00005000 => 0x00005000
+[ 200.920] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.940] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005000 <- 0x00005100 => 0x00005100
+[ 200.950] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005000 <- 0x00005100 => 0x00005100
+[ 200.960] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.970] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005100 <- 0x00005200 => 0x00005200
+[ 200.990] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005100 <- 0x00005200 => 0x00005200
+[ 201.000] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.010] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005200 <- 0x00005300 => 0x00005300
+[ 201.020] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005200 <- 0x00005300 => 0x00005300
+[ 201.040] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.050] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005300 <- 0x00005400 => 0x00005400
+[ 201.060] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005300 <- 0x00005400 => 0x00005400
+[ 201.070] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.090] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005400 <- 0x00005500 => 0x00005500
+[ 201.100] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005400 <- 0x00005500 => 0x00005500
+[ 201.110] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.120] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005500 <- 0x00005600 => 0x00005600
+[ 201.140] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005500 <- 0x00005600 => 0x00005600
+[ 201.150] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.160] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005600 <- 0x00005700 => 0x00005700
+[ 201.170] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005600 <- 0x00005700 => 0x00005700
+[ 201.190] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.200] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005700 <- 0x00005800 => 0x00005800
+[ 201.210] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005700 <- 0x00005800 => 0x00005800
+[ 201.220] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.240] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005800 <- 0x00005900 => 0x00005900
+[ 201.250] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005800 <- 0x00005900 => 0x00005900
+[ 201.260] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.270] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005900 <- 0x00005a00 => 0x00005a00
+[ 201.290] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005900 <- 0x00005a00 => 0x00005a00
+[ 201.300] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.310] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005a00 <- 0x00005b00 => 0x00005b00
+[ 201.320] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005a00 <- 0x00005b00 => 0x00005b00
+[ 201.340] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.350] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005b00 <- 0x00005c00 => 0x00005c00
+[ 201.360] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005b00 <- 0x00005c00 => 0x00005c00
+[ 201.370] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.390] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005c00 <- 0x00005d00 => 0x00005d00
+[ 201.400] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005c00 <- 0x00005d00 => 0x00005d00
+[ 201.410] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.420] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005d00 <- 0x00005e00 => 0x00005e00
+[ 201.440] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005d00 <- 0x00005e00 => 0x00005e00
+[ 201.450] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.460] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005e00 <- 0x00005f00 => 0x00005f00
+[ 201.470] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005e00 <- 0x00005f00 => 0x00005f00
+[ 201.490] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.500] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005f00 <- 0x00006000 => 0x00006000
+[ 201.510] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005f00 <- 0x00006000 => 0x00006000
+[ 201.520] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.540] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006000 <- 0x00006100 => 0x00006100
+[ 201.550] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006000 <- 0x00006100 => 0x00006100
+[ 201.560] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.570] INFO  gpu: jurnal: bar0 w 0x841210: 0x00000000 <- 0x00000010 => 0x00000010
+[ 201.590] INFO  gpu: jurnal: bar0 w 0x84119c: 0x00007fff <- 0x00000001 => 0x00000001
+[ 201.600] INFO  gpu: jurnal: bar0 w 0x841198: 0x00000000 <- 0x00000003 => 0x00000003
+[ 201.610] INFO  gpu: jurnal: bar0 w 0x841180: 0x00000000 <- 0x00000001 => 0x00000001
+[ 201.620] INFO  gpu: jurnal: bar0 w 0x840104: 0x00000000 <- 0x00000100 => 0x00000100
+[ 201.640] INFO  gpu: jurnal: pas I6/I7 ucode HS incarcat prin DMA: ok
+[ 201.650] INFO  gpu: jurnal: bar0 w 0x840040: 0x00000000 <- 0x09c66000 => 0x09c66000
+[ 201.660] INFO  gpu: jurnal: bar0 w 0x840044: 0x00000000 <- 0x00000000 => 0x00000000
+[ 201.670] INFO  gpu: jurnal: bar0 w 0x840100: 0x00000010 <- 0x00000002 => 0x00000000
+[ 201.910] INFO  gpu: jurnal: bar0 w 0x110080: 0x00000000 <- 0x0008b320 => 0x0008b320
+[ 201.920] INFO  gpu: jurnal: pas I7 GSP RISC-V + LibOS + Booter: ok
+[ 201.930] INFO  gpu: jurnal: bar0 r 0x840040 = 0x00000000
+[ 201.950] INFO  gpu: jurnal: bar0 r 0x840044 = 0x00000000
+[ 201.960] INFO  gpu: jurnal: bar0 r 0x111388 = 0x00000080
+[ 201.970] INFO  gpu: jurnal: pas i7-booter-gsp: ok
+[ 201.980] INFO  gpu: jurnal: bar0 r 0x840040 = 0x00000000
+[ 202.000] INFO  gpu: jurnal: bar0 r 0x840044 = 0x00000000
+[ 202.010] INFO  gpu: jurnal: bar0 r 0x111388 = 0x00000080
+[ 202.020] INFO  gpu: jurnal: pas i7-citit: ok
+[ 202.030] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 202.050] INFO  gpu: jurnal: bar0 w 0x110c00: 0x00000000 <- 0x00000000 => 0x00000000
+[ 203.870] INFO  gpu: jurnal: pas i8-gsp-init: ESEC
+[ 203.890] INFO  gpu: jurnal: cfg  w 0x004: 0x00100007 <- 0x00000003 => 0x00100003
+[ 203.900] INFO  gpu: jurnal: pas bus-master-oprit: ok
+[ 203.910] INFO  gpu: jurnal: nota: tur de citire (C-54): incepe, 0 scrieri permise
+[ 203.930] INFO  gpu: jurnal: pas nivel0: configuratie: ok
+[ 203.940] INFO  gpu: jurnal: bar0 r 0x000000 = 0xb74000a1
+[ 203.950] INFO  gpu: jurnal: bar0 r 0x000a00 = 0x174a1000
+[ 203.960] INFO  gpu: jurnal: pas nivel0: BOOT_0/BOOT_42: ok
+[ 203.980] INFO  gpu: jurnal: bar0 r 0x118128 = 0x00008b8f
+[ 203.990] INFO  gpu: jurnal: bar0 r 0x118234 = 0x000003ff
+[ 204.000] INFO  gpu: jurnal: pas I2: GFW_BOOT: ok
+[ 204.010] INFO  gpu: jurnal: bar0 r 0x300000 = 0xeb7faa55
+[ 204.030] INFO  gpu: jurnal: pas I3: VBIOS prin PROM: ok
+[ 204.040] INFO  gpu: jurnal: pas I3: descriptorul FWSEC: ok
+[ 204.050] INFO  gpu: jurnal: bar0 r 0x8241e0 = 0x00000003
+[ 204.070] INFO  gpu: jurnal: pas I6 pregatire: semnatura FWSEC aleasa (doar citire): ok
+[ 204.080] INFO  gpu: jurnal: bar0 r 0x1183a4 = 0x00002000
+[ 204.090] INFO  gpu: jurnal: bar0 r 0x1fa828 = 0x01ffee00
+[ 204.100] INFO  gpu: jurnal: bar0 r 0x1fa824 = 0x01f41000
+[ 204.120] INFO  gpu: jurnal: nota: I6: WPR2 deja ridicat (FWSEC a rulat dupa pornire): trebuie pornire rece
+[ 204.130] INFO  gpu: jurnal: pas I6 pregatire (doar citire): ESEC
+[ 204.140] INFO  gpu: jurnal: nota: tur de citire (C-54): gata, 0 scrieri
+[ 204.150] INFO  gpu: jurnal: bar0 r 0x001438 = 0x00000000
+[ 204.170] INFO  gpu: jurnal: bar0 r 0x1fa828 = 0x01ffee00
+[ 204.180] INFO  gpu: jurnal: bar0 r 0x1fa824 = 0x01f41000
+[ 204.190] INFO  gpu: jurnal: pas tur-dupa: ok
+[ 204.200] INFO  gpu: jurnal: nota: lant (C-54): oprit; vezi pasul cu ok=false
+[ 204.220] INFO  gpu: gpu0: b3:00.0 GeForce RTX 3070 Ti (BAR0 0xf9000000), cyber-gpu 34a9793
+[ 204.220] INFO  gpu: gpu0: FWSEC in VBIOS: descriptor v3 la PROM 0x41208, ucode_id 9, 3 semnaturi (masca 0x0007), 59904 octeti
+[ 204.230] INFO  gpu: gpu0: siguranta FWSEC 0x8241e0: versiunea 2 -> semnatura 2 din VBIOS
+[ 204.230] INFO  gpu: gpu0: VRAM 8192 MiB; FRTS 0x1ffe00000..0x1fff00000
+[ 204.230] INFO  gpu: gpu0: WPR2 coborat (pornire rece): bun
+[ 204.240] INFO  gpu: gpu0: criteriul I6-citire: TRECE
+[ 204.240] INFO  gpu: gpu0: Bus Master pornit (COMMAND 0x0003 -> 0x0007)
+[ 204.250] INFO  gpu: gpu0: pasul 2: FWSEC copiat din VBIOS in RAM cu semnatura 2 si comanda FRTS: 0xea00 octeti (234 blocuri de 256 B); nimic scris in placa
+[ 204.250] INFO  gpu: gpu0: zona DMA: 0xea00 octeti la adresa fizica 0x1209000 (sub 4 GiB, recitita)
+[ 204.250] INFO  gpu: gpu0: pas I6 FWSEC-FRTS: ok; WPR2 0x1ffe00000..0x1fff00000 (= regiunea FRTS)
+[ 204.260] INFO  gpu: gpu0: WPR2 citit dupa I6: LO 0x01ffe000 HI 0x01ffee00 (capat: ultimul bloc de 128 KiB) = 0x1ffe00000..0x1fff00000
+[ 204.260] INFO  gpu: gpu0: pas i6-wpr2-citit: WPR2 0x1ffe00000..0x1fff00000 = regiunea FRTS ceruta (capat: ultimul bloc de 128 KiB)
+[ 204.270] INFO  gpu: gpu0: I7: cele 4 fisiere GSP 570.144 de pe stick verificate (SHA-256)
+[ 204.270] INFO  gpu: gpu0: I7 pregatire: GSP-RM .fwimage 62052 KiB, semnatura 4096 B, bootloader 24576 B, Booter 60416 B (siguranta SEC2 ucode 3 = versiunea 1)
+[ 204.280] INFO  gpu: gpu0: I7 pregatire: zona DMA 62992 KiB la 0x5fa5000 (recitita); radix3 nivelul 0 la 0x9c3e000; GspFwWprMeta la 0x9c66000; Booter la 0x9c67000; nimic scris in placa
+[ 204.290] INFO  gpu: gpu0: I7 pregatire: cozile GSP (516 KiB) la 0x9ca8000, argumentele LibOS la 0x9c76000 (RMARGS 0x9ca7000); nimic scris in placa
+[ 204.290] INFO  gpu: gpu0: pas I7 GSP resetat in RISC-V + Booter: ok (GspFwWprMeta 0x9c66000; cutiile GSP = pagina LibOS 0x9c76000, recitite; versiunea 570144)
+[ 204.300] INFO  gpu: gpu0: I7: cutia SEC2 0 = 0x00000000, cutia 1 = 0x00000000, GSP RISC-V ACTIV (CPUCTL 0x00000080) -> TRECE
+[ 204.300] INFO  gpu: gpu0: I7: cutia SEC2 0 = 0x00000000, cutia 1 = 0x00000000, GSP RISC-V ACTIV (CPUCTL 0x00000080) -> TRECE
+[ 204.310] INFO  gpu: gpu0: I8: in coada: SetSystemInfo (BAR0 0xf9000000, BAR1 0xe0000000, BAR3 0xf0000000, 10de:2482 sub 1043:8813 rev 0xa1) + SetRegistry (2 intrari)
+[ 204.320] INFO  gpu: gpu0: pas I8 GSP init: ESEC: argument invalid: secventiator: marime sau index in afara bufferului (oprit la prima eroare)
+[ 204.320] INFO  gpu: gpu0: Bus Master oprit la loc (COMMAND 0x0003, ca inainte)
+[ 204.330] INFO  gpu: fapt pci.id = 10de:2482
+[ 204.330] INFO  gpu: fapt pci.subsistem = 1043:8813
+[ 204.340] INFO  gpu: fapt pci.clasa = 030000
+[ 204.340] INFO  gpu: fapt pci.command = 0x0003
+[ 204.340] INFO  gpu: fapt pci.bus_master = nu
+[ 204.350] INFO  gpu: fapt pci.stare = D0
+[ 204.350] INFO  gpu: fapt pci.bar0 = 0xf9000000 mem
+[ 204.360] INFO  gpu: fapt pci.bar1 = 0xe0000000 mem 64b prefetch
+[ 204.360] INFO  gpu: fapt pci.bar3 = 0xf0000000 mem 64b prefetch
+[ 204.370] INFO  gpu: fapt pci.bar5 = 0xf000 io
+[ 204.370] INFO  gpu: fapt pci.legatura = gen1 x8 (max gen3 x16)
+[ 204.380] INFO  gpu: fapt bar0.0x000000 = 0xb74000a1
+[ 204.380] INFO  gpu: fapt bar0.0x000a00 = 0x174a1000
+[ 204.380] INFO  gpu: fapt chip.nume = GA104
+[ 204.390] INFO  gpu: fapt chip.consecvent = da
+[ 204.390] INFO  gpu: fapt gfw.progres = 0xff
+[ 204.400] INFO  gpu: fapt gfw.runde = 1
+[ 204.400] INFO  gpu: fapt bar0.0x118128 = 0x00008b8f
+[ 204.410] INFO  gpu: fapt vbios.ifr = nu
+[ 204.410] INFO  gpu: fapt vbios.imagini = 4
+[ 204.420] INFO  gpu: fapt vbios.imagine0 = 0x00000 tip 0x00 65024 octeti 10de:2482
+[ 204.420] INFO  gpu: fapt vbios.imagine1 = 0x0fe00 tip 0x03 83968 octeti 10de:2482
+[ 204.420] INFO  gpu: fapt vbios.imagine2 = 0x24600 tip 0xe0 22016 octeti 10de:2200
+[ 204.430] INFO  gpu: fapt vbios.imagine3 = 0x29c00 tip 0xe0 386048 octeti 10de:2200
+[ 204.430] INFO  gpu: fapt vbios.bit = 0x1b0 17
+[ 204.440] INFO  gpu: fapt vbios.bit.jetoane = 0x32v1 0x42v2 0x43v2 0x44v1 0x49v1 0x4dv2 0x4ev0 0x50v2 0x53v2 0x54v1 0x55v1 0x56v1 0x78v1 0x64v1 0x70v2 0x75v1 0x69v2
+[ 204.450] INFO  gpu: fapt fwsec.pmu = 0x87ecb
+[ 204.450] INFO  gpu: fapt fwsec.aplicatii = 0x01 0x00 0x00 0x00 0x00 0x07 0x08 0x00 0x45 0x85 0x49 0x89 0x00 0x00 0x00 0x00
+[ 204.460] INFO  gpu: fapt fwsec.descriptor = v3 la 0x41208 antet 0x4ac ucode 0xea00 imem 0xe200 dmem 0x800
+[ 204.460] INFO  gpu: fapt fwsec.semnaturi = 3 masca 0x0007 motoare 0x0400 ucode_id 9
+[ 204.470] INFO  gpu: fapt i6.siguranta = 0x8241e0 versiunea 2 semnatura 2
+[ 204.470] INFO  gpu: fapt i6.vram = 8192 MiB
+[ 204.470] INFO  gpu: fapt i6.wpr2 = RIDICAT 0x1f4100000..0x1ffee0000
+[ 204.480] INFO  gpu: fapt i6.pregatire = nu
+[ 204.480] INFO  gpu: fapt i6.trece = da (WPR2 largit de Booter pentru GSP-RM dupa I7: I6 trecuse)
+[ 204.490] INFO  gpu: fapt i6.wpr2.etapa = largit pentru GSP-RM (dupa I7)
+[ 204.490] INFO  gpu: fapt bar0.0x000000 = 0xb74000a1
+[ 204.500] INFO  gpu: fapt bar0.0x000a00 = 0x174a1000
+[ 204.500] INFO  gpu: fapt bar0.0x118128 = 0x00008b8f
+[ 204.510] INFO  gpu: fapt bar0.0x118234 = 0x000003ff
+[ 204.510] INFO  gpu: fapt bar0.0x8241e0 = 0x00000003
+[ 204.510] INFO  gpu: fapt bar0.0x1183a4 = 0x00002000
+[ 204.520] INFO  gpu: fapt bar0.0x1fa828 = 0x01ffee00
+[ 204.520] INFO  gpu: fapt bar0.0x1fa824 = 0x01f41000
+[ 204.530] INFO  gpu: gpu0: tur de citire (C-54): 44 fapte, 9 citiri jurnalizate
+[ 204.530] INFO  gpu: gpu0: lantul pasilor (C-54):
+[ 204.540] INFO  gpu: gpu0: pregatire-i6: TRECE
+[ 204.540] INFO  gpu: gpu0: bus-master-pornit: TRECE
+[ 204.540] INFO  gpu: gpu0: i6-fwsec-frts: TRECE
+[ 204.550] INFO  gpu: gpu0: i6-wpr2-citit: TRECE
+[ 204.550] INFO  gpu: gpu0: i7-booter-gsp: TRECE
+[ 204.560] INFO  gpu: gpu0: i7-citit: TRECE
+[ 204.560] INFO  gpu: gpu0: i8-gsp-init: ESUAT: argument invalid: secventiator: marime sau index in afara bufferului
+[ 204.560] INFO  gpu: gpu0: i8e-golden: sarit (lantul s-a oprit inainte)
+[ 204.570] INFO  gpu: gpu0: i9-canal-lucru: sarit (lantul s-a oprit inainte)
+[ 204.570] INFO  gpu: gpu0: i10-add64: sarit (lantul s-a oprit inainte)
+[ 204.580] INFO  gpu: gpu0: i10-cost-lansare: sarit (lantul s-a oprit inainte)
+[ 204.580] INFO  gpu: gpu0: i11-copiere: sarit (lantul s-a oprit inainte)
+[ 204.590] INFO  gpu: gpu0: i12-q8-matvec: sarit (lantul s-a oprit inainte)
+[ 204.590] INFO  gpu: gpu0: i13-strat: sarit (lantul s-a oprit inainte)
+[ 204.590] INFO  gpu: gpu0: i14-simbol: sarit (lantul s-a oprit inainte)
+[ 204.600] INFO  gpu: gpu0: bus-master-oprit: TRECE
+[ 204.600] INFO  gpu: gpu0: tur-dupa: TRECE
+[ 204.610] INFO  gpu: gpu0: lant: oprit la i8-gsp-init: argument invalid: secventiator: marime sau index in afara bufferului; 1452 scrieri; pasii de curatare au rulat
+[ 204.610] INFO  gpu: gpu0: jurnalul pe loc: /usb/raport/gpu-jurnal-003.txt (1523 randuri, fiecare scris pe loc)
+[ 204.620] INFO  gpu: gpu0: rezultat lant: oprit la i8-gsp-init (1452 scrieri)
+
+== erori si avertismente ==
+(niciun rand)
+
+== jurnal complet (779 randuri pastrate in memorie) ==
+[ 193.410] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001500 <- 0x00001600 => 0x00001600
+[ 193.420] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.430] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001500 <- 0x00001600 => 0x00001600
+[ 193.450] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001600 <- 0x00001700 => 0x00001700
+[ 193.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001600 <- 0x00001700 => 0x00001700
+[ 193.480] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001700 <- 0x00001800 => 0x00001800
+[ 193.490] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001700 <- 0x00001800 => 0x00001800
+[ 193.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001800 <- 0x00001900 => 0x00001900
+[ 193.530] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.540] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001800 <- 0x00001900 => 0x00001900
+[ 193.550] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001900 <- 0x00001a00 => 0x00001a00
+[ 193.560] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.580] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001900 <- 0x00001a00 => 0x00001a00
+[ 193.590] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001a00 <- 0x00001b00 => 0x00001b00
+[ 193.600] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.610] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001a00 <- 0x00001b00 => 0x00001b00
+[ 193.620] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001b00 <- 0x00001c00 => 0x00001c00
+[ 193.640] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.650] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001b00 <- 0x00001c00 => 0x00001c00
+[ 193.660] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001c00 <- 0x00001d00 => 0x00001d00
+[ 193.670] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.680] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001c00 <- 0x00001d00 => 0x00001d00
+[ 193.690] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001d00 <- 0x00001e00 => 0x00001e00
+[ 193.710] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.720] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001d00 <- 0x00001e00 => 0x00001e00
+[ 193.730] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001e00 <- 0x00001f00 => 0x00001f00
+[ 193.740] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.750] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001e00 <- 0x00001f00 => 0x00001f00
+[ 193.770] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001f00 <- 0x00002000 => 0x00002000
+[ 193.780] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.790] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001f00 <- 0x00002000 => 0x00002000
+[ 193.800] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002000 <- 0x00002100 => 0x00002100
+[ 193.810] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.820] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002000 <- 0x00002100 => 0x00002100
+[ 193.840] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002100 <- 0x00002200 => 0x00002200
+[ 193.850] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.860] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002100 <- 0x00002200 => 0x00002200
+[ 193.870] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002200 <- 0x00002300 => 0x00002300
+[ 193.900] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.910] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002200 <- 0x00002300 => 0x00002300
+[ 193.920] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002300 <- 0x00002400 => 0x00002400
+[ 193.930] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.940] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002300 <- 0x00002400 => 0x00002400
+[ 193.960] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002400 <- 0x00002500 => 0x00002500
+[ 193.970] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 193.980] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002400 <- 0x00002500 => 0x00002500
+[ 193.990] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002500 <- 0x00002600 => 0x00002600
+[ 194.000] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.020] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002500 <- 0x00002600 => 0x00002600
+[ 194.030] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002600 <- 0x00002700 => 0x00002700
+[ 194.040] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.050] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002600 <- 0x00002700 => 0x00002700
+[ 194.060] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002700 <- 0x00002800 => 0x00002800
+[ 194.070] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.090] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002700 <- 0x00002800 => 0x00002800
+[ 194.100] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002800 <- 0x00002900 => 0x00002900
+[ 194.110] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.120] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002800 <- 0x00002900 => 0x00002900
+[ 194.130] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002900 <- 0x00002a00 => 0x00002a00
+[ 194.140] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.160] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002900 <- 0x00002a00 => 0x00002a00
+[ 194.170] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002a00 <- 0x00002b00 => 0x00002b00
+[ 194.180] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.190] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002a00 <- 0x00002b00 => 0x00002b00
+[ 194.200] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002b00 <- 0x00002c00 => 0x00002c00
+[ 194.220] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.230] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002b00 <- 0x00002c00 => 0x00002c00
+[ 194.240] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002c00 <- 0x00002d00 => 0x00002d00
+[ 194.250] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.260] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002c00 <- 0x00002d00 => 0x00002d00
+[ 194.270] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002d00 <- 0x00002e00 => 0x00002e00
+[ 194.290] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.300] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002d00 <- 0x00002e00 => 0x00002e00
+[ 194.310] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002e00 <- 0x00002f00 => 0x00002f00
+[ 194.320] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.330] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002e00 <- 0x00002f00 => 0x00002f00
+[ 194.350] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002f00 <- 0x00003000 => 0x00003000
+[ 194.360] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.370] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002f00 <- 0x00003000 => 0x00003000
+[ 194.380] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003000 <- 0x00003100 => 0x00003100
+[ 194.390] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.400] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003000 <- 0x00003100 => 0x00003100
+[ 194.420] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003100 <- 0x00003200 => 0x00003200
+[ 194.430] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.440] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003100 <- 0x00003200 => 0x00003200
+[ 194.450] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003200 <- 0x00003300 => 0x00003300
+[ 194.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.480] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003200 <- 0x00003300 => 0x00003300
+[ 194.490] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003300 <- 0x00003400 => 0x00003400
+[ 194.500] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003300 <- 0x00003400 => 0x00003400
+[ 194.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003400 <- 0x00003500 => 0x00003500
+[ 194.530] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.550] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003400 <- 0x00003500 => 0x00003500
+[ 194.560] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003500 <- 0x00003600 => 0x00003600
+[ 194.570] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.580] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003500 <- 0x00003600 => 0x00003600
+[ 194.590] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003600 <- 0x00003700 => 0x00003700
+[ 194.610] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.620] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003600 <- 0x00003700 => 0x00003700
+[ 194.630] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003700 <- 0x00003800 => 0x00003800
+[ 194.640] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.650] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003700 <- 0x00003800 => 0x00003800
+[ 194.660] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003800 <- 0x00003900 => 0x00003900
+[ 194.680] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.690] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003800 <- 0x00003900 => 0x00003900
+[ 194.700] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003900 <- 0x00003a00 => 0x00003a00
+[ 194.710] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.720] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003900 <- 0x00003a00 => 0x00003a00
+[ 194.740] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003a00 <- 0x00003b00 => 0x00003b00
+[ 194.750] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.760] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003a00 <- 0x00003b00 => 0x00003b00
+[ 194.770] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003b00 <- 0x00003c00 => 0x00003c00
+[ 194.780] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.790] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003b00 <- 0x00003c00 => 0x00003c00
+[ 194.810] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003c00 <- 0x00003d00 => 0x00003d00
+[ 194.820] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.830] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003c00 <- 0x00003d00 => 0x00003d00
+[ 194.840] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003d00 <- 0x00003e00 => 0x00003e00
+[ 194.850] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.870] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003d00 <- 0x00003e00 => 0x00003e00
+[ 194.880] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003e00 <- 0x00003f00 => 0x00003f00
+[ 194.890] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.900] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003e00 <- 0x00003f00 => 0x00003f00
+[ 194.910] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003f00 <- 0x00004000 => 0x00004000
+[ 194.920] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.940] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003f00 <- 0x00004000 => 0x00004000
+[ 194.950] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004000 <- 0x00004100 => 0x00004100
+[ 194.960] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 194.970] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004000 <- 0x00004100 => 0x00004100
+[ 194.980] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004100 <- 0x00004200 => 0x00004200
+[ 195.000] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.010] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004100 <- 0x00004200 => 0x00004200
+[ 195.020] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004200 <- 0x00004300 => 0x00004300
+[ 195.030] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.040] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004200 <- 0x00004300 => 0x00004300
+[ 195.050] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004300 <- 0x00004400 => 0x00004400
+[ 195.070] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.080] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004300 <- 0x00004400 => 0x00004400
+[ 195.090] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004400 <- 0x00004500 => 0x00004500
+[ 195.100] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.110] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004400 <- 0x00004500 => 0x00004500
+[ 195.120] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004500 <- 0x00004600 => 0x00004600
+[ 195.140] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.150] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004500 <- 0x00004600 => 0x00004600
+[ 195.160] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004600 <- 0x00004700 => 0x00004700
+[ 195.170] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.180] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004600 <- 0x00004700 => 0x00004700
+[ 195.200] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004700 <- 0x00004800 => 0x00004800
+[ 195.210] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.220] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004700 <- 0x00004800 => 0x00004800
+[ 195.230] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004800 <- 0x00004900 => 0x00004900
+[ 195.240] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.250] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004800 <- 0x00004900 => 0x00004900
+[ 195.270] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004900 <- 0x00004a00 => 0x00004a00
+[ 195.280] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.290] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004900 <- 0x00004a00 => 0x00004a00
+[ 195.300] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004a00 <- 0x00004b00 => 0x00004b00
+[ 195.310] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.320] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004a00 <- 0x00004b00 => 0x00004b00
+[ 195.340] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004b00 <- 0x00004c00 => 0x00004c00
+[ 195.350] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.360] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004b00 <- 0x00004c00 => 0x00004c00
+[ 195.370] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004c00 <- 0x00004d00 => 0x00004d00
+[ 195.380] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.400] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004c00 <- 0x00004d00 => 0x00004d00
+[ 195.410] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004d00 <- 0x00004e00 => 0x00004e00
+[ 195.420] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.430] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004d00 <- 0x00004e00 => 0x00004e00
+[ 195.440] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004e00 <- 0x00004f00 => 0x00004f00
+[ 195.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004e00 <- 0x00004f00 => 0x00004f00
+[ 195.480] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004f00 <- 0x00005000 => 0x00005000
+[ 195.490] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.500] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004f00 <- 0x00005000 => 0x00005000
+[ 195.510] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005000 <- 0x00005100 => 0x00005100
+[ 195.530] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.540] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005000 <- 0x00005100 => 0x00005100
+[ 195.550] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005100 <- 0x00005200 => 0x00005200
+[ 195.560] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.570] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005100 <- 0x00005200 => 0x00005200
+[ 195.590] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005200 <- 0x00005300 => 0x00005300
+[ 195.600] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.610] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005200 <- 0x00005300 => 0x00005300
+[ 195.620] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005300 <- 0x00005400 => 0x00005400
+[ 195.630] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.640] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005300 <- 0x00005400 => 0x00005400
+[ 195.650] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005400 <- 0x00005500 => 0x00005500
+[ 195.670] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.680] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005400 <- 0x00005500 => 0x00005500
+[ 195.690] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005500 <- 0x00005600 => 0x00005600
+[ 195.700] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.710] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005500 <- 0x00005600 => 0x00005600
+[ 195.730] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005600 <- 0x00005700 => 0x00005700
+[ 195.740] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.750] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005600 <- 0x00005700 => 0x00005700
+[ 195.760] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005700 <- 0x00005800 => 0x00005800
+[ 195.770] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.780] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005700 <- 0x00005800 => 0x00005800
+[ 195.800] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005800 <- 0x00005900 => 0x00005900
+[ 195.810] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.820] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005800 <- 0x00005900 => 0x00005900
+[ 195.830] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005900 <- 0x00005a00 => 0x00005a00
+[ 195.840] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.860] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005900 <- 0x00005a00 => 0x00005a00
+[ 195.870] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005a00 <- 0x00005b00 => 0x00005b00
+[ 195.880] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.890] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005a00 <- 0x00005b00 => 0x00005b00
+[ 195.900] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005b00 <- 0x00005c00 => 0x00005c00
+[ 195.910] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.930] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005b00 <- 0x00005c00 => 0x00005c00
+[ 195.940] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005c00 <- 0x00005d00 => 0x00005d00
+[ 195.950] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 195.960] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005c00 <- 0x00005d00 => 0x00005d00
+[ 195.970] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005d00 <- 0x00005e00 => 0x00005e00
+[ 195.980] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.000] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005d00 <- 0x00005e00 => 0x00005e00
+[ 196.010] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005e00 <- 0x00005f00 => 0x00005f00
+[ 196.020] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.030] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005e00 <- 0x00005f00 => 0x00005f00
+[ 196.040] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005f00 <- 0x00006000 => 0x00006000
+[ 196.060] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.070] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005f00 <- 0x00006000 => 0x00006000
+[ 196.080] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006000 <- 0x00006100 => 0x00006100
+[ 196.090] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.100] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006000 <- 0x00006100 => 0x00006100
+[ 196.110] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006100 <- 0x00006200 => 0x00006200
+[ 196.130] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.140] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006100 <- 0x00006200 => 0x00006200
+[ 196.150] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006200 <- 0x00006300 => 0x00006300
+[ 196.160] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.170] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006200 <- 0x00006300 => 0x00006300
+[ 196.190] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006300 <- 0x00006400 => 0x00006400
+[ 196.200] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.210] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006300 <- 0x00006400 => 0x00006400
+[ 196.220] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006400 <- 0x00006500 => 0x00006500
+[ 196.230] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.240] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006400 <- 0x00006500 => 0x00006500
+[ 196.260] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006500 <- 0x00006600 => 0x00006600
+[ 196.270] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.280] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006500 <- 0x00006600 => 0x00006600
+[ 196.290] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006600 <- 0x00006700 => 0x00006700
+[ 196.300] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.310] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006600 <- 0x00006700 => 0x00006700
+[ 196.330] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006700 <- 0x00006800 => 0x00006800
+[ 196.340] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.350] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006700 <- 0x00006800 => 0x00006800
+[ 196.360] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006800 <- 0x00006900 => 0x00006900
+[ 196.370] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.380] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006800 <- 0x00006900 => 0x00006900
+[ 196.400] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006900 <- 0x00006a00 => 0x00006a00
+[ 196.410] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.420] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006900 <- 0x00006a00 => 0x00006a00
+[ 196.450] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006a00 <- 0x00006b00 => 0x00006b00
+[ 196.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006a00 <- 0x00006b00 => 0x00006b00
+[ 196.480] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006b00 <- 0x00006c00 => 0x00006c00
+[ 196.490] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006b00 <- 0x00006c00 => 0x00006c00
+[ 196.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006c00 <- 0x00006d00 => 0x00006d00
+[ 196.530] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.540] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006c00 <- 0x00006d00 => 0x00006d00
+[ 196.550] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006d00 <- 0x00006e00 => 0x00006e00
+[ 196.560] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.580] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006d00 <- 0x00006e00 => 0x00006e00
+[ 196.590] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006e00 <- 0x00006f00 => 0x00006f00
+[ 196.600] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.610] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006e00 <- 0x00006f00 => 0x00006f00
+[ 196.620] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006f00 <- 0x00007000 => 0x00007000
+[ 196.630] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.650] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006f00 <- 0x00007000 => 0x00007000
+[ 196.660] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007000 <- 0x00007100 => 0x00007100
+[ 196.670] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.680] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007000 <- 0x00007100 => 0x00007100
+[ 196.690] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007100 <- 0x00007200 => 0x00007200
+[ 196.710] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.720] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007100 <- 0x00007200 => 0x00007200
+[ 196.730] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007200 <- 0x00007300 => 0x00007300
+[ 196.740] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.750] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007200 <- 0x00007300 => 0x00007300
+[ 196.760] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007300 <- 0x00007400 => 0x00007400
+[ 196.780] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.790] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007300 <- 0x00007400 => 0x00007400
+[ 196.800] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007400 <- 0x00007500 => 0x00007500
+[ 196.810] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.820] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007400 <- 0x00007500 => 0x00007500
+[ 196.840] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007500 <- 0x00007600 => 0x00007600
+[ 196.850] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.860] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007500 <- 0x00007600 => 0x00007600
+[ 196.870] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007600 <- 0x00007700 => 0x00007700
+[ 196.880] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.890] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007600 <- 0x00007700 => 0x00007700
+[ 196.910] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007700 <- 0x00007800 => 0x00007800
+[ 196.920] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.930] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007700 <- 0x00007800 => 0x00007800
+[ 196.940] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007800 <- 0x00007900 => 0x00007900
+[ 196.960] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 196.970] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007800 <- 0x00007900 => 0x00007900
+[ 196.980] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007900 <- 0x00007a00 => 0x00007a00
+[ 196.990] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.000] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007900 <- 0x00007a00 => 0x00007a00
+[ 197.020] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007a00 <- 0x00007b00 => 0x00007b00
+[ 197.030] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.040] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007a00 <- 0x00007b00 => 0x00007b00
+[ 197.050] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007b00 <- 0x00007c00 => 0x00007c00
+[ 197.060] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.080] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007b00 <- 0x00007c00 => 0x00007c00
+[ 197.090] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007c00 <- 0x00007d00 => 0x00007d00
+[ 197.100] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.110] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007c00 <- 0x00007d00 => 0x00007d00
+[ 197.120] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007d00 <- 0x00007e00 => 0x00007e00
+[ 197.140] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.150] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007d00 <- 0x00007e00 => 0x00007e00
+[ 197.160] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007e00 <- 0x00007f00 => 0x00007f00
+[ 197.170] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.180] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007e00 <- 0x00007f00 => 0x00007f00
+[ 197.200] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00007f00 <- 0x00008000 => 0x00008000
+[ 197.210] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.220] INFO  gpu: jurnal: bar0 w 0x840114: 0x00007f00 <- 0x00008000 => 0x00008000
+[ 197.230] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008000 <- 0x00008100 => 0x00008100
+[ 197.250] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.260] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008000 <- 0x00008100 => 0x00008100
+[ 197.270] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008100 <- 0x00008200 => 0x00008200
+[ 197.280] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.290] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008100 <- 0x00008200 => 0x00008200
+[ 197.310] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008200 <- 0x00008300 => 0x00008300
+[ 197.320] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.330] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008200 <- 0x00008300 => 0x00008300
+[ 197.340] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008300 <- 0x00008400 => 0x00008400
+[ 197.350] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.370] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008300 <- 0x00008400 => 0x00008400
+[ 197.380] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008400 <- 0x00008500 => 0x00008500
+[ 197.390] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.400] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008400 <- 0x00008500 => 0x00008500
+[ 197.410] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008500 <- 0x00008600 => 0x00008600
+[ 197.430] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.440] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008500 <- 0x00008600 => 0x00008600
+[ 197.450] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008600 <- 0x00008700 => 0x00008700
+[ 197.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008600 <- 0x00008700 => 0x00008700
+[ 197.490] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008700 <- 0x00008800 => 0x00008800
+[ 197.500] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008700 <- 0x00008800 => 0x00008800
+[ 197.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008800 <- 0x00008900 => 0x00008900
+[ 197.540] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000614 => 0x00000614
+[ 197.550] INFO  gpu: jurnal: bar0 w 0x840110: 0x0009c670 <- 0x0009c6fa => 0x0009c6fa
+[ 197.560] INFO  gpu: jurnal: bar0 w 0x840128: 0x00000000 <- 0x00000000 => 0x00000000
+[ 197.570] INFO  gpu: jurnal: bar0 w 0x840114: 0x00008800 <- 0x00000000 => 0x00000000
+[ 197.580] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00008900 <- 0x00000000 => 0x00000000
+[ 197.600] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000616 <- 0x00000600 => 0x00000600
+[ 197.610] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000000 <- 0x00000100 => 0x00000100
+[ 197.620] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000000 <- 0x00000100 => 0x00000100
+[ 197.630] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 197.950] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000100 <- 0x00000200 => 0x00000200
+[ 197.960] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000100 <- 0x00000200 => 0x00000200
+[ 197.970] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 197.990] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000200 <- 0x00000300 => 0x00000300
+[ 198.000] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000200 <- 0x00000300 => 0x00000300
+[ 198.010] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.020] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000300 <- 0x00000400 => 0x00000400
+[ 198.040] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000300 <- 0x00000400 => 0x00000400
+[ 198.050] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.060] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000400 <- 0x00000500 => 0x00000500
+[ 198.070] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000400 <- 0x00000500 => 0x00000500
+[ 198.090] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.100] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000500 <- 0x00000600 => 0x00000600
+[ 198.110] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000500 <- 0x00000600 => 0x00000600
+[ 198.120] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.140] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000600 <- 0x00000700 => 0x00000700
+[ 198.150] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000600 <- 0x00000700 => 0x00000700
+[ 198.160] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.170] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000700 <- 0x00000800 => 0x00000800
+[ 198.190] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000700 <- 0x00000800 => 0x00000800
+[ 198.200] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.210] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000800 <- 0x00000900 => 0x00000900
+[ 198.220] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000800 <- 0x00000900 => 0x00000900
+[ 198.240] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.250] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000900 <- 0x00000a00 => 0x00000a00
+[ 198.260] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000900 <- 0x00000a00 => 0x00000a00
+[ 198.270] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.290] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000a00 <- 0x00000b00 => 0x00000b00
+[ 198.300] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000a00 <- 0x00000b00 => 0x00000b00
+[ 198.310] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.320] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000b00 <- 0x00000c00 => 0x00000c00
+[ 198.340] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000b00 <- 0x00000c00 => 0x00000c00
+[ 198.350] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.360] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000c00 <- 0x00000d00 => 0x00000d00
+[ 198.370] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000c00 <- 0x00000d00 => 0x00000d00
+[ 198.390] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.400] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000d00 <- 0x00000e00 => 0x00000e00
+[ 198.410] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000d00 <- 0x00000e00 => 0x00000e00
+[ 198.420] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.440] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000e00 <- 0x00000f00 => 0x00000f00
+[ 198.450] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000e00 <- 0x00000f00 => 0x00000f00
+[ 198.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00000f00 <- 0x00001000 => 0x00001000
+[ 198.490] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00000f00 <- 0x00001000 => 0x00001000
+[ 198.500] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001000 <- 0x00001100 => 0x00001100
+[ 198.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001000 <- 0x00001100 => 0x00001100
+[ 198.540] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.550] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001100 <- 0x00001200 => 0x00001200
+[ 198.560] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001100 <- 0x00001200 => 0x00001200
+[ 198.570] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.590] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001200 <- 0x00001300 => 0x00001300
+[ 198.600] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001200 <- 0x00001300 => 0x00001300
+[ 198.610] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.620] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001300 <- 0x00001400 => 0x00001400
+[ 198.640] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001300 <- 0x00001400 => 0x00001400
+[ 198.650] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.660] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001400 <- 0x00001500 => 0x00001500
+[ 198.670] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001400 <- 0x00001500 => 0x00001500
+[ 198.690] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.700] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001500 <- 0x00001600 => 0x00001600
+[ 198.710] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001500 <- 0x00001600 => 0x00001600
+[ 198.720] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.740] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001600 <- 0x00001700 => 0x00001700
+[ 198.750] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001600 <- 0x00001700 => 0x00001700
+[ 198.760] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.780] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001700 <- 0x00001800 => 0x00001800
+[ 198.790] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001700 <- 0x00001800 => 0x00001800
+[ 198.800] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.810] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001800 <- 0x00001900 => 0x00001900
+[ 198.830] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001800 <- 0x00001900 => 0x00001900
+[ 198.840] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.850] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001900 <- 0x00001a00 => 0x00001a00
+[ 198.860] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001900 <- 0x00001a00 => 0x00001a00
+[ 198.880] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.890] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001a00 <- 0x00001b00 => 0x00001b00
+[ 198.900] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001a00 <- 0x00001b00 => 0x00001b00
+[ 198.910] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.930] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001b00 <- 0x00001c00 => 0x00001c00
+[ 198.940] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001b00 <- 0x00001c00 => 0x00001c00
+[ 198.950] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 198.960] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001c00 <- 0x00001d00 => 0x00001d00
+[ 198.980] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001c00 <- 0x00001d00 => 0x00001d00
+[ 198.990] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.000] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001d00 <- 0x00001e00 => 0x00001e00
+[ 199.010] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001d00 <- 0x00001e00 => 0x00001e00
+[ 199.030] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.040] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001e00 <- 0x00001f00 => 0x00001f00
+[ 199.050] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001e00 <- 0x00001f00 => 0x00001f00
+[ 199.060] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.080] INFO  gpu: jurnal: bar0 w 0x840114: 0x00001f00 <- 0x00002000 => 0x00002000
+[ 199.090] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00001f00 <- 0x00002000 => 0x00002000
+[ 199.100] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.110] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002000 <- 0x00002100 => 0x00002100
+[ 199.130] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002000 <- 0x00002100 => 0x00002100
+[ 199.140] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.150] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002100 <- 0x00002200 => 0x00002200
+[ 199.160] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002100 <- 0x00002200 => 0x00002200
+[ 199.180] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.190] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002200 <- 0x00002300 => 0x00002300
+[ 199.200] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002200 <- 0x00002300 => 0x00002300
+[ 199.210] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.230] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002300 <- 0x00002400 => 0x00002400
+[ 199.240] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002300 <- 0x00002400 => 0x00002400
+[ 199.250] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.260] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002400 <- 0x00002500 => 0x00002500
+[ 199.280] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002400 <- 0x00002500 => 0x00002500
+[ 199.290] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.300] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002500 <- 0x00002600 => 0x00002600
+[ 199.320] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002500 <- 0x00002600 => 0x00002600
+[ 199.330] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.340] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002600 <- 0x00002700 => 0x00002700
+[ 199.350] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002600 <- 0x00002700 => 0x00002700
+[ 199.370] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.380] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002700 <- 0x00002800 => 0x00002800
+[ 199.390] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002700 <- 0x00002800 => 0x00002800
+[ 199.420] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.430] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002800 <- 0x00002900 => 0x00002900
+[ 199.440] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002800 <- 0x00002900 => 0x00002900
+[ 199.460] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.470] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002900 <- 0x00002a00 => 0x00002a00
+[ 199.480] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002900 <- 0x00002a00 => 0x00002a00
+[ 199.490] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.510] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002a00 <- 0x00002b00 => 0x00002b00
+[ 199.520] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002a00 <- 0x00002b00 => 0x00002b00
+[ 199.530] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.540] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002b00 <- 0x00002c00 => 0x00002c00
+[ 199.560] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002b00 <- 0x00002c00 => 0x00002c00
+[ 199.570] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.580] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002c00 <- 0x00002d00 => 0x00002d00
+[ 199.600] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002c00 <- 0x00002d00 => 0x00002d00
+[ 199.610] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.620] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002d00 <- 0x00002e00 => 0x00002e00
+[ 199.630] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002d00 <- 0x00002e00 => 0x00002e00
+[ 199.650] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.660] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002e00 <- 0x00002f00 => 0x00002f00
+[ 199.670] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002e00 <- 0x00002f00 => 0x00002f00
+[ 199.680] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.700] INFO  gpu: jurnal: bar0 w 0x840114: 0x00002f00 <- 0x00003000 => 0x00003000
+[ 199.710] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00002f00 <- 0x00003000 => 0x00003000
+[ 199.720] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.730] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003000 <- 0x00003100 => 0x00003100
+[ 199.750] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003000 <- 0x00003100 => 0x00003100
+[ 199.760] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.770] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003100 <- 0x00003200 => 0x00003200
+[ 199.780] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003100 <- 0x00003200 => 0x00003200
+[ 199.800] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.810] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003200 <- 0x00003300 => 0x00003300
+[ 199.820] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003200 <- 0x00003300 => 0x00003300
+[ 199.830] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.850] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003300 <- 0x00003400 => 0x00003400
+[ 199.860] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003300 <- 0x00003400 => 0x00003400
+[ 199.870] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.880] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003400 <- 0x00003500 => 0x00003500
+[ 199.900] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003400 <- 0x00003500 => 0x00003500
+[ 199.910] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.920] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003500 <- 0x00003600 => 0x00003600
+[ 199.930] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003500 <- 0x00003600 => 0x00003600
+[ 199.950] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 199.960] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003600 <- 0x00003700 => 0x00003700
+[ 199.970] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003600 <- 0x00003700 => 0x00003700
+[ 199.980] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.000] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003700 <- 0x00003800 => 0x00003800
+[ 200.010] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003700 <- 0x00003800 => 0x00003800
+[ 200.020] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.030] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003800 <- 0x00003900 => 0x00003900
+[ 200.050] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003800 <- 0x00003900 => 0x00003900
+[ 200.060] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.070] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003900 <- 0x00003a00 => 0x00003a00
+[ 200.080] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003900 <- 0x00003a00 => 0x00003a00
+[ 200.100] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.110] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003a00 <- 0x00003b00 => 0x00003b00
+[ 200.120] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003a00 <- 0x00003b00 => 0x00003b00
+[ 200.130] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.150] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003b00 <- 0x00003c00 => 0x00003c00
+[ 200.160] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003b00 <- 0x00003c00 => 0x00003c00
+[ 200.170] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.180] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003c00 <- 0x00003d00 => 0x00003d00
+[ 200.200] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003c00 <- 0x00003d00 => 0x00003d00
+[ 200.210] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.220] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003d00 <- 0x00003e00 => 0x00003e00
+[ 200.240] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003d00 <- 0x00003e00 => 0x00003e00
+[ 200.250] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.260] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003e00 <- 0x00003f00 => 0x00003f00
+[ 200.270] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003e00 <- 0x00003f00 => 0x00003f00
+[ 200.290] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.300] INFO  gpu: jurnal: bar0 w 0x840114: 0x00003f00 <- 0x00004000 => 0x00004000
+[ 200.310] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00003f00 <- 0x00004000 => 0x00004000
+[ 200.320] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.340] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004000 <- 0x00004100 => 0x00004100
+[ 200.350] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004000 <- 0x00004100 => 0x00004100
+[ 200.360] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.370] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004100 <- 0x00004200 => 0x00004200
+[ 200.390] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004100 <- 0x00004200 => 0x00004200
+[ 200.400] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.410] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004200 <- 0x00004300 => 0x00004300
+[ 200.420] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004200 <- 0x00004300 => 0x00004300
+[ 200.440] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.450] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004300 <- 0x00004400 => 0x00004400
+[ 200.460] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004300 <- 0x00004400 => 0x00004400
+[ 200.470] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.490] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004400 <- 0x00004500 => 0x00004500
+[ 200.500] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004400 <- 0x00004500 => 0x00004500
+[ 200.510] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.520] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004500 <- 0x00004600 => 0x00004600
+[ 200.540] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004500 <- 0x00004600 => 0x00004600
+[ 200.550] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.560] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004600 <- 0x00004700 => 0x00004700
+[ 200.570] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004600 <- 0x00004700 => 0x00004700
+[ 200.590] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.600] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004700 <- 0x00004800 => 0x00004800
+[ 200.610] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004700 <- 0x00004800 => 0x00004800
+[ 200.620] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.640] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004800 <- 0x00004900 => 0x00004900
+[ 200.650] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004800 <- 0x00004900 => 0x00004900
+[ 200.660] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.670] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004900 <- 0x00004a00 => 0x00004a00
+[ 200.690] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004900 <- 0x00004a00 => 0x00004a00
+[ 200.700] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.710] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004a00 <- 0x00004b00 => 0x00004b00
+[ 200.720] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004a00 <- 0x00004b00 => 0x00004b00
+[ 200.740] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.750] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004b00 <- 0x00004c00 => 0x00004c00
+[ 200.760] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004b00 <- 0x00004c00 => 0x00004c00
+[ 200.770] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.790] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004c00 <- 0x00004d00 => 0x00004d00
+[ 200.800] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004c00 <- 0x00004d00 => 0x00004d00
+[ 200.810] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.820] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004d00 <- 0x00004e00 => 0x00004e00
+[ 200.840] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004d00 <- 0x00004e00 => 0x00004e00
+[ 200.850] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.860] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004e00 <- 0x00004f00 => 0x00004f00
+[ 200.870] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004e00 <- 0x00004f00 => 0x00004f00
+[ 200.890] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.900] INFO  gpu: jurnal: bar0 w 0x840114: 0x00004f00 <- 0x00005000 => 0x00005000
+[ 200.910] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00004f00 <- 0x00005000 => 0x00005000
+[ 200.920] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.940] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005000 <- 0x00005100 => 0x00005100
+[ 200.950] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005000 <- 0x00005100 => 0x00005100
+[ 200.960] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 200.970] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005100 <- 0x00005200 => 0x00005200
+[ 200.990] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005100 <- 0x00005200 => 0x00005200
+[ 201.000] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.010] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005200 <- 0x00005300 => 0x00005300
+[ 201.020] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005200 <- 0x00005300 => 0x00005300
+[ 201.040] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.050] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005300 <- 0x00005400 => 0x00005400
+[ 201.060] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005300 <- 0x00005400 => 0x00005400
+[ 201.070] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.090] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005400 <- 0x00005500 => 0x00005500
+[ 201.100] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005400 <- 0x00005500 => 0x00005500
+[ 201.110] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.120] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005500 <- 0x00005600 => 0x00005600
+[ 201.140] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005500 <- 0x00005600 => 0x00005600
+[ 201.150] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.160] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005600 <- 0x00005700 => 0x00005700
+[ 201.170] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005600 <- 0x00005700 => 0x00005700
+[ 201.190] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.200] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005700 <- 0x00005800 => 0x00005800
+[ 201.210] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005700 <- 0x00005800 => 0x00005800
+[ 201.220] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.240] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005800 <- 0x00005900 => 0x00005900
+[ 201.250] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005800 <- 0x00005900 => 0x00005900
+[ 201.260] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.270] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005900 <- 0x00005a00 => 0x00005a00
+[ 201.290] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005900 <- 0x00005a00 => 0x00005a00
+[ 201.300] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.310] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005a00 <- 0x00005b00 => 0x00005b00
+[ 201.320] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005a00 <- 0x00005b00 => 0x00005b00
+[ 201.340] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.350] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005b00 <- 0x00005c00 => 0x00005c00
+[ 201.360] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005b00 <- 0x00005c00 => 0x00005c00
+[ 201.370] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.390] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005c00 <- 0x00005d00 => 0x00005d00
+[ 201.400] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005c00 <- 0x00005d00 => 0x00005d00
+[ 201.410] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.420] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005d00 <- 0x00005e00 => 0x00005e00
+[ 201.440] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005d00 <- 0x00005e00 => 0x00005e00
+[ 201.450] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.460] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005e00 <- 0x00005f00 => 0x00005f00
+[ 201.470] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005e00 <- 0x00005f00 => 0x00005f00
+[ 201.490] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.500] INFO  gpu: jurnal: bar0 w 0x840114: 0x00005f00 <- 0x00006000 => 0x00006000
+[ 201.510] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00005f00 <- 0x00006000 => 0x00006000
+[ 201.520] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.540] INFO  gpu: jurnal: bar0 w 0x840114: 0x00006000 <- 0x00006100 => 0x00006100
+[ 201.550] INFO  gpu: jurnal: bar0 w 0x84011c: 0x00006000 <- 0x00006100 => 0x00006100
+[ 201.560] INFO  gpu: jurnal: bar0 w 0x840118: 0x00000602 <- 0x00000600 => 0x00000600
+[ 201.570] INFO  gpu: jurnal: bar0 w 0x841210: 0x00000000 <- 0x00000010 => 0x00000010
+[ 201.590] INFO  gpu: jurnal: bar0 w 0x84119c: 0x00007fff <- 0x00000001 => 0x00000001
+[ 201.600] INFO  gpu: jurnal: bar0 w 0x841198: 0x00000000 <- 0x00000003 => 0x00000003
+[ 201.610] INFO  gpu: jurnal: bar0 w 0x841180: 0x00000000 <- 0x00000001 => 0x00000001
+[ 201.620] INFO  gpu: jurnal: bar0 w 0x840104: 0x00000000 <- 0x00000100 => 0x00000100
+[ 201.640] INFO  gpu: jurnal: pas I6/I7 ucode HS incarcat prin DMA: ok
+[ 201.650] INFO  gpu: jurnal: bar0 w 0x840040: 0x00000000 <- 0x09c66000 => 0x09c66000
+[ 201.660] INFO  gpu: jurnal: bar0 w 0x840044: 0x00000000 <- 0x00000000 => 0x00000000
+[ 201.670] INFO  gpu: jurnal: bar0 w 0x840100: 0x00000010 <- 0x00000002 => 0x00000000
+[ 201.910] INFO  gpu: jurnal: bar0 w 0x110080: 0x00000000 <- 0x0008b320 => 0x0008b320
+[ 201.920] INFO  gpu: jurnal: pas I7 GSP RISC-V + LibOS + Booter: ok
+[ 201.930] INFO  gpu: jurnal: bar0 r 0x840040 = 0x00000000
+[ 201.950] INFO  gpu: jurnal: bar0 r 0x840044 = 0x00000000
+[ 201.960] INFO  gpu: jurnal: bar0 r 0x111388 = 0x00000080
+[ 201.970] INFO  gpu: jurnal: pas i7-booter-gsp: ok
+[ 201.980] INFO  gpu: jurnal: bar0 r 0x840040 = 0x00000000
+[ 202.000] INFO  gpu: jurnal: bar0 r 0x840044 = 0x00000000
+[ 202.010] INFO  gpu: jurnal: bar0 r 0x111388 = 0x00000080
+[ 202.020] INFO  gpu: jurnal: pas i7-citit: ok
+[ 202.030] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 202.050] INFO  gpu: jurnal: bar0 w 0x110c00: 0x00000000 <- 0x00000000 => 0x00000000
+[ 203.870] INFO  gpu: jurnal: pas i8-gsp-init: ESEC
+[ 203.890] INFO  gpu: jurnal: cfg  w 0x004: 0x00100007 <- 0x00000003 => 0x00100003
+[ 203.900] INFO  gpu: jurnal: pas bus-master-oprit: ok
+[ 203.910] INFO  gpu: jurnal: nota: tur de citire (C-54): incepe, 0 scrieri permise
+[ 203.930] INFO  gpu: jurnal: pas nivel0: configuratie: ok
+[ 203.940] INFO  gpu: jurnal: bar0 r 0x000000 = 0xb74000a1
+[ 203.950] INFO  gpu: jurnal: bar0 r 0x000a00 = 0x174a1000
+[ 203.960] INFO  gpu: jurnal: pas nivel0: BOOT_0/BOOT_42: ok
+[ 203.980] INFO  gpu: jurnal: bar0 r 0x118128 = 0x00008b8f
+[ 203.990] INFO  gpu: jurnal: bar0 r 0x118234 = 0x000003ff
+[ 204.000] INFO  gpu: jurnal: pas I2: GFW_BOOT: ok
+[ 204.010] INFO  gpu: jurnal: bar0 r 0x300000 = 0xeb7faa55
+[ 204.030] INFO  gpu: jurnal: pas I3: VBIOS prin PROM: ok
+[ 204.040] INFO  gpu: jurnal: pas I3: descriptorul FWSEC: ok
+[ 204.050] INFO  gpu: jurnal: bar0 r 0x8241e0 = 0x00000003
+[ 204.070] INFO  gpu: jurnal: pas I6 pregatire: semnatura FWSEC aleasa (doar citire): ok
+[ 204.080] INFO  gpu: jurnal: bar0 r 0x1183a4 = 0x00002000
+[ 204.090] INFO  gpu: jurnal: bar0 r 0x1fa828 = 0x01ffee00
+[ 204.100] INFO  gpu: jurnal: bar0 r 0x1fa824 = 0x01f41000
+[ 204.120] INFO  gpu: jurnal: nota: I6: WPR2 deja ridicat (FWSEC a rulat dupa pornire): trebuie pornire rece
+[ 204.130] INFO  gpu: jurnal: pas I6 pregatire (doar citire): ESEC
+[ 204.140] INFO  gpu: jurnal: nota: tur de citire (C-54): gata, 0 scrieri
+[ 204.150] INFO  gpu: jurnal: bar0 r 0x001438 = 0x00000000
+[ 204.170] INFO  gpu: jurnal: bar0 r 0x1fa828 = 0x01ffee00
+[ 204.180] INFO  gpu: jurnal: bar0 r 0x1fa824 = 0x01f41000
+[ 204.190] INFO  gpu: jurnal: pas tur-dupa: ok
+[ 204.200] INFO  gpu: jurnal: nota: lant (C-54): oprit; vezi pasul cu ok=false
+[ 204.220] INFO  gpu: gpu0: b3:00.0 GeForce RTX 3070 Ti (BAR0 0xf9000000), cyber-gpu 34a9793
+[ 204.220] INFO  gpu: gpu0: FWSEC in VBIOS: descriptor v3 la PROM 0x41208, ucode_id 9, 3 semnaturi (masca 0x0007), 59904 octeti
+[ 204.230] INFO  gpu: gpu0: siguranta FWSEC 0x8241e0: versiunea 2 -> semnatura 2 din VBIOS
+[ 204.230] INFO  gpu: gpu0: VRAM 8192 MiB; FRTS 0x1ffe00000..0x1fff00000
+[ 204.230] INFO  gpu: gpu0: WPR2 coborat (pornire rece): bun
+[ 204.240] INFO  gpu: gpu0: criteriul I6-citire: TRECE
+[ 204.240] INFO  gpu: gpu0: Bus Master pornit (COMMAND 0x0003 -> 0x0007)
+[ 204.250] INFO  gpu: gpu0: pasul 2: FWSEC copiat din VBIOS in RAM cu semnatura 2 si comanda FRTS: 0xea00 octeti (234 blocuri de 256 B); nimic scris in placa
+[ 204.250] INFO  gpu: gpu0: zona DMA: 0xea00 octeti la adresa fizica 0x1209000 (sub 4 GiB, recitita)
+[ 204.250] INFO  gpu: gpu0: pas I6 FWSEC-FRTS: ok; WPR2 0x1ffe00000..0x1fff00000 (= regiunea FRTS)
+[ 204.260] INFO  gpu: gpu0: WPR2 citit dupa I6: LO 0x01ffe000 HI 0x01ffee00 (capat: ultimul bloc de 128 KiB) = 0x1ffe00000..0x1fff00000
+[ 204.260] INFO  gpu: gpu0: pas i6-wpr2-citit: WPR2 0x1ffe00000..0x1fff00000 = regiunea FRTS ceruta (capat: ultimul bloc de 128 KiB)
+[ 204.270] INFO  gpu: gpu0: I7: cele 4 fisiere GSP 570.144 de pe stick verificate (SHA-256)
+[ 204.270] INFO  gpu: gpu0: I7 pregatire: GSP-RM .fwimage 62052 KiB, semnatura 4096 B, bootloader 24576 B, Booter 60416 B (siguranta SEC2 ucode 3 = versiunea 1)
+[ 204.280] INFO  gpu: gpu0: I7 pregatire: zona DMA 62992 KiB la 0x5fa5000 (recitita); radix3 nivelul 0 la 0x9c3e000; GspFwWprMeta la 0x9c66000; Booter la 0x9c67000; nimic scris in placa
+[ 204.290] INFO  gpu: gpu0: I7 pregatire: cozile GSP (516 KiB) la 0x9ca8000, argumentele LibOS la 0x9c76000 (RMARGS 0x9ca7000); nimic scris in placa
+[ 204.290] INFO  gpu: gpu0: pas I7 GSP resetat in RISC-V + Booter: ok (GspFwWprMeta 0x9c66000; cutiile GSP = pagina LibOS 0x9c76000, recitite; versiunea 570144)
+[ 204.300] INFO  gpu: gpu0: I7: cutia SEC2 0 = 0x00000000, cutia 1 = 0x00000000, GSP RISC-V ACTIV (CPUCTL 0x00000080) -> TRECE
+[ 204.300] INFO  gpu: gpu0: I7: cutia SEC2 0 = 0x00000000, cutia 1 = 0x00000000, GSP RISC-V ACTIV (CPUCTL 0x00000080) -> TRECE
+[ 204.310] INFO  gpu: gpu0: I8: in coada: SetSystemInfo (BAR0 0xf9000000, BAR1 0xe0000000, BAR3 0xf0000000, 10de:2482 sub 1043:8813 rev 0xa1) + SetRegistry (2 intrari)
+[ 204.320] INFO  gpu: gpu0: pas I8 GSP init: ESEC: argument invalid: secventiator: marime sau index in afara bufferului (oprit la prima eroare)
+[ 204.320] INFO  gpu: gpu0: Bus Master oprit la loc (COMMAND 0x0003, ca inainte)
+[ 204.330] INFO  gpu: fapt pci.id = 10de:2482
+[ 204.330] INFO  gpu: fapt pci.subsistem = 1043:8813
+[ 204.340] INFO  gpu: fapt pci.clasa = 030000
+[ 204.340] INFO  gpu: fapt pci.command = 0x0003
+[ 204.340] INFO  gpu: fapt pci.bus_master = nu
+[ 204.350] INFO  gpu: fapt pci.stare = D0
+[ 204.350] INFO  gpu: fapt pci.bar0 = 0xf9000000 mem
+[ 204.360] INFO  gpu: fapt pci.bar1 = 0xe0000000 mem 64b prefetch
+[ 204.360] INFO  gpu: fapt pci.bar3 = 0xf0000000 mem 64b prefetch
+[ 204.370] INFO  gpu: fapt pci.bar5 = 0xf000 io
+[ 204.370] INFO  gpu: fapt pci.legatura = gen1 x8 (max gen3 x16)
+[ 204.380] INFO  gpu: fapt bar0.0x000000 = 0xb74000a1
+[ 204.380] INFO  gpu: fapt bar0.0x000a00 = 0x174a1000
+[ 204.380] INFO  gpu: fapt chip.nume = GA104
+[ 204.390] INFO  gpu: fapt chip.consecvent = da
+[ 204.390] INFO  gpu: fapt gfw.progres = 0xff
+[ 204.400] INFO  gpu: fapt gfw.runde = 1
+[ 204.400] INFO  gpu: fapt bar0.0x118128 = 0x00008b8f
+[ 204.410] INFO  gpu: fapt vbios.ifr = nu
+[ 204.410] INFO  gpu: fapt vbios.imagini = 4
+[ 204.420] INFO  gpu: fapt vbios.imagine0 = 0x00000 tip 0x00 65024 octeti 10de:2482
+[ 204.420] INFO  gpu: fapt vbios.imagine1 = 0x0fe00 tip 0x03 83968 octeti 10de:2482
+[ 204.420] INFO  gpu: fapt vbios.imagine2 = 0x24600 tip 0xe0 22016 octeti 10de:2200
+[ 204.430] INFO  gpu: fapt vbios.imagine3 = 0x29c00 tip 0xe0 386048 octeti 10de:2200
+[ 204.430] INFO  gpu: fapt vbios.bit = 0x1b0 17
+[ 204.440] INFO  gpu: fapt vbios.bit.jetoane = 0x32v1 0x42v2 0x43v2 0x44v1 0x49v1 0x4dv2 0x4ev0 0x50v2 0x53v2 0x54v1 0x55v1 0x56v1 0x78v1 0x64v1 0x70v2 0x75v1 0x69v2
+[ 204.450] INFO  gpu: fapt fwsec.pmu = 0x87ecb
+[ 204.450] INFO  gpu: fapt fwsec.aplicatii = 0x01 0x00 0x00 0x00 0x00 0x07 0x08 0x00 0x45 0x85 0x49 0x89 0x00 0x00 0x00 0x00
+[ 204.460] INFO  gpu: fapt fwsec.descriptor = v3 la 0x41208 antet 0x4ac ucode 0xea00 imem 0xe200 dmem 0x800
+[ 204.460] INFO  gpu: fapt fwsec.semnaturi = 3 masca 0x0007 motoare 0x0400 ucode_id 9
+[ 204.470] INFO  gpu: fapt i6.siguranta = 0x8241e0 versiunea 2 semnatura 2
+[ 204.470] INFO  gpu: fapt i6.vram = 8192 MiB
+[ 204.470] INFO  gpu: fapt i6.wpr2 = RIDICAT 0x1f4100000..0x1ffee0000
+[ 204.480] INFO  gpu: fapt i6.pregatire = nu
+[ 204.480] INFO  gpu: fapt i6.trece = da (WPR2 largit de Booter pentru GSP-RM dupa I7: I6 trecuse)
+[ 204.490] INFO  gpu: fapt i6.wpr2.etapa = largit pentru GSP-RM (dupa I7)
+[ 204.490] INFO  gpu: fapt bar0.0x000000 = 0xb74000a1
+[ 204.500] INFO  gpu: fapt bar0.0x000a00 = 0x174a1000
+[ 204.500] INFO  gpu: fapt bar0.0x118128 = 0x00008b8f
+[ 204.510] INFO  gpu: fapt bar0.0x118234 = 0x000003ff
+[ 204.510] INFO  gpu: fapt bar0.0x8241e0 = 0x00000003
+[ 204.510] INFO  gpu: fapt bar0.0x1183a4 = 0x00002000
+[ 204.520] INFO  gpu: fapt bar0.0x1fa828 = 0x01ffee00
+[ 204.520] INFO  gpu: fapt bar0.0x1fa824 = 0x01f41000
+[ 204.530] INFO  gpu: gpu0: tur de citire (C-54): 44 fapte, 9 citiri jurnalizate
+[ 204.530] INFO  gpu: gpu0: lantul pasilor (C-54):
+[ 204.540] INFO  gpu: gpu0: pregatire-i6: TRECE
+[ 204.540] INFO  gpu: gpu0: bus-master-pornit: TRECE
+[ 204.540] INFO  gpu: gpu0: i6-fwsec-frts: TRECE
+[ 204.550] INFO  gpu: gpu0: i6-wpr2-citit: TRECE
+[ 204.550] INFO  gpu: gpu0: i7-booter-gsp: TRECE
+[ 204.560] INFO  gpu: gpu0: i7-citit: TRECE
+[ 204.560] INFO  gpu: gpu0: i8-gsp-init: ESUAT: argument invalid: secventiator: marime sau index in afara bufferului
+[ 204.560] INFO  gpu: gpu0: i8e-golden: sarit (lantul s-a oprit inainte)
+[ 204.570] INFO  gpu: gpu0: i9-canal-lucru: sarit (lantul s-a oprit inainte)
+[ 204.570] INFO  gpu: gpu0: i10-add64: sarit (lantul s-a oprit inainte)
+[ 204.580] INFO  gpu: gpu0: i10-cost-lansare: sarit (lantul s-a oprit inainte)
+[ 204.580] INFO  gpu: gpu0: i11-copiere: sarit (lantul s-a oprit inainte)
+[ 204.590] INFO  gpu: gpu0: i12-q8-matvec: sarit (lantul s-a oprit inainte)
+[ 204.590] INFO  gpu: gpu0: i13-strat: sarit (lantul s-a oprit inainte)
+[ 204.590] INFO  gpu: gpu0: i14-simbol: sarit (lantul s-a oprit inainte)
+[ 204.600] INFO  gpu: gpu0: bus-master-oprit: TRECE
+[ 204.600] INFO  gpu: gpu0: tur-dupa: TRECE
+[ 204.610] INFO  gpu: gpu0: lant: oprit la i8-gsp-init: argument invalid: secventiator: marime sau index in afara bufferului; 1452 scrieri; pasii de curatare au rulat
+[ 204.610] INFO  gpu: gpu0: jurnalul pe loc: /usb/raport/gpu-jurnal-003.txt (1523 randuri, fiecare scris pe loc)
+[ 204.620] INFO  gpu: gpu0: rezultat lant: oprit la i8-gsp-init (1452 scrieri)
+
+== sfarsit ==
