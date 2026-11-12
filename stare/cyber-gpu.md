@@ -1,7 +1,12 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-12 07:40 (ora României) · **de:** sesiunea Cyber-GPU 91 (cloud, fără placă) — **oprire scurtă: testul cu variante de azi 07:00 s-a AMÂNAT (C-110: Adrian nu vine azi, placa e a lui Kronos); nicio comandă nouă, niciun jurnal nou; totul rămâne pregătit pentru următoarea venire a lui Adrian (Release `os-289`/`os-290` cu cele 10 variante; CI verde pe `fbc70e7`/`bc864e3`).**
+**Actualizat:** 2026-11-12 13:40 (ora României) · **de:** sesiunea Cyber-GPU 92 (cloud, fără placă) — **oprire scurtă, a treia la rând: testul cu variante rămâne AMÂNAT (C-110); nicio comandă nouă, niciun jurnal nou de pe placă; starea proiectului = AȘTEAPTĂ PLACA — nimic nou pe driver până la un jurnal nou sau o comandă nouă; totul e pregătit (orice Release de la `os-289` încoace are cele 10 variante; CI verde pe `bc864e3`/`c651bf5`).**
 ## Acum
+- **Sesiunea 92 (13:25–13:40) — oprire scurtă, fără pas nou pe driver (a treia la rând: 90, 91, 92).** Nimic nou pentru cyber-gpu în hub (C-110 în vigoare; Kronos are placa, S103/S104 gata),
+  niciun jurnal nou de pe placă (ultimul: `gpu-jurnal-009.txt`, os-283). OS-ul a publicat `os-293`/`os-294`/`os-295` (mouse USB, `log mmio` — pasul 1 din P6-12, testul `remote` în CI) —
+  **nimic schimbat în partea GPU**, `kernel/Cargo.toml` leagă tot `49e6685` (toate cele 5 crate-uri). Verificat: CI verde pe `bc864e3` (rularea 179); codul neschimbat de la `b1d91a0` (451 PASS).
+  **Regula 8, citită cinstit:** trei rulări fără pas, dar nu din împotmolire — singurul pas următor are nevoie de placă. Nu e „OPRIT: necesită analiza lui Adrian” (nu e nimic de analizat),
+  ci **AȘTEAPTĂ PLACA**: rulările programate rămân opriri scurte până apare în hub un jurnal nou sau o comandă nouă pentru cyber-gpu. Doar documentul de stare (`c651bf5`); copia C-34 la `c651bf5`.
 - **Sesiunea 91 (07:25–07:40) — oprire scurtă, fără pas nou pe driver.** C-110 (06:49): Adrian nu mai ajunge azi la test → **testul cu variante (C-108) se amână** la următoarea
   lui venire, anunțată prin centrul de comandă; placa e a lui Kronos toată ziua și la noapte. Nimic nou pentru cyber-gpu în hub, niciun jurnal nou de pe placă (ultimul: `gpu-jurnal-009.txt`, os-283).
   Verificat: CI verde pe `fbc70e7` (rularea 178); codul driverului neschimbat de la `b1d91a0` (451 PASS); Release-urile OS neschimbate. Doar documentul de stare (`bc864e3`); copia C-34 la `bc864e3`.
@@ -76,7 +81,7 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe` (P6-78): **făcut** — Release `os-289` (și `os-290`, același cod GPU) există; nimic de schimbat în legare până la jurnalele de joi.
+- De la `cyber-universe` (P6-78): **făcut** — Release `os-289` (și `os-290`, același cod GPU) există; nimic de schimbat în legare până la jurnalele testului cu variante (data: prin centrul de comandă); `os-293`…`os-295` au același cod GPU.
 - De la Adrian (când vine la workstation — data prin centrul de comandă): variantele în ordine, de la 1, câte o pornire rece; `trimite` după fiecare (sau jurnalele în `rezultate/`).
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
 
@@ -84,4 +89,4 @@
 - **Nu e blocat, dar depinde de placă:** că ordinea e cauza lui `0x59` e DEDUS din sursele RM (comentariile citate în studiu), nu probat; doar joi, cu varianta 1, se vede.
   Fiecare variantă e „prima încercare” pe placă; toate valorile vin din surse publice și niciuna nu scrie un registru pe care os-283 nu-l scria deja; „DA” la fiecare.
 - Numele funcțiilor din care vin cele 844 de asserturi nu se pot afla fără simbolurile GSP-RM — nu deschidem firmware-ul (regula proiectului); decizia ar fi a lui Adrian.
-- CI GitHub VERDE pe `fbc70e7` (rularea 178, 43120530210); `bc864e3` (doar documentul de stare) în curs la 07:40.
+- CI GitHub VERDE pe `bc864e3` (rularea 179, 43161718850); `c651bf5` (doar documentul de stare) în curs la 13:40.
