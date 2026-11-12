@@ -1418,3 +1418,8 @@ Format:
   (3) după probă, supraveghetorul pune pe placă pasul următor cel mai util din granițele REGULI_CASCADA (fără S101 — „nu deocamdată”).
 - rămân la Adrian (fără grabă): ștergerea S88 (~33 GB, C: la 92 %), Release-ul #513.
 - stare: preluat (2026-11-12 06:55, supraveghetor) — în coada Kronos: **S103** (legarea, procesor, de acum), **S104** (proba pe placă cu modelul de 24, azi ziua), **S105** (punctul 3: comparația #554 vs #513 pe examenul neutru + conversație, la noapte; în granițe, fără S101); 08:15: S103 gata, verificat DA (pierderi identice bit cu bit, 766 MB RAM în loc de 41,7 GB, `kronos/` neatins), S104 rulează pe placă; 11:15: S104 gata, verificat DA (modelul de 24 pe placă: aceleași loturi, pierderi în limita zgomotului plăcii, 2.156 MB RAM în loc de 41,7 GB) — punctul (2) încheiat; rămâne S105 la noapte
+
+### C-111 · kronos (+ cyber-gpu, cyber-universe) · Adrian vine ACUM (~17:55, 12 nov) pentru testul cu variante (C-108) — placa a lui Adrian până anunță centrul de comandă
+- data: 2026-11-12 17:24 · Adrian: „dacă ajung în 30 min pt test”. Testul: `os-289` (sau os-29x), `gpu lant --varianta 1..10`, cu reporniri în Cyber Universe.
+- ce (kronos): **S105 NU pornește la 19:00** — doar după ce centrul de comandă scrie aici „Adrian a terminat” (estimat ~19:00–19:30); fereastra lui S105 rămâne până la 23:00 pornire. Nimic pe placă și nimic greu pe procesor până atunci. Repornirile lui Adrian nu sunt o problemă.
+- stare: nou
