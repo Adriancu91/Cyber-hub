@@ -1,20 +1,19 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-12 10:50 (ora României) · **de:** sesiunea OS programată (08:40) — testul GPU de azi amânat (C-110) → P6-80 pus pe `main` (**`os-293`**) + P6-81, diagnosticul `map_mmio` (CI → `os-294`).
+**Actualizat:** 2026-11-12 10:50 (ora României) · **de:** sesiunea OS programată (08:40) — testul GPU de azi amânat (C-110) → P6-80 pus pe `main` (**`os-293`**) + P6-81, diagnosticul `map_mmio` (**`os-294`**).
 
 ## Acum
 - **Testul cu variante (C-108) s-a amânat** (C-110). Procedura de mai jos rămâne valabilă cu **`os-289`** sau **`os-290`**; merge identic și
   cu `os-293`/`os-294` (au aceleași variante GPU, nimic schimbat în partea GPU).
 - **Release `os-293` = os-290 + P6-80:** mouse-ul și tastatura USB merg acum și dacă le bagi DUPĂ pornire, iar receptoarele fără fir
   tastatură+mouse sunt văzute amândouă (era cauza probabilă pentru mouse-ul care nu mergea pe Lenovo). Testat în QEMU; pe Lenovo neîncercat.
-- **P6-81 (CI pornit 10:19 → `os-294`):** pasul 1 din P6-12 (observația Cyber-GPU despre registre cu cache). Nicio schimbare de
+- **Release `os-294` = os-293 + P6-81:** pasul 1 din P6-12 (observația Cyber-GPU despre registre cu cache). Nicio schimbare de
   comportament: OS-ul doar numără ce găsește, iar comanda `log mmio` arată rezumatul. În QEMU apare deja un caz real: zona ecranului
   (BAR0 al plăcii VGA de test) e mapată de Limine **cu cache** — exact situația din observație. Pe NVIDIA registrele sunt în alt BAR,
   deci pe workstation ar trebui să iasă „0 deja CU cache” pentru BAR0; o poză la `log mmio` lămurește.
 - `os-290` (ASUS TUF, C-109) și C-105 (`ciclu-test`, oprit până la cele două chei) — neschimbate.
 
 ## Urmează
-- Verificarea CI 294 → `os-294`.
 - P6-12 pasul 2 (fereastră proprie fără cache) doar după un `log mmio` de pe un calculator real.
 - Când vine Adrian la workstation: testul cu variante (procedura de jos) → Cyber-GPU (`compara_variante`).
 
