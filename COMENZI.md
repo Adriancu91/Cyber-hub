@@ -1484,5 +1484,6 @@ Format:
   și pentru NVIDIA (prin cyber-gpu, doar citire, lista sigură existentă C-54): BOOT_0/BOOT_42, GFW, VBIOS din PROM (doar antete/versiune/jetoane BIT — **imaginea nu iese de pe stick și nu intră în hub**), siguranța, VRAM, WPR2.
   `trimite` urcă doar `inventory.redacted.json` + `report.txt`. Comparația Windows ↔ Cyber Universe pe același calculator = test automat de corectitudine pentru driverele noastre.
 - reguli: doar citire (nicio scriere în configurație, nici măcar ROM BAR, fără „DA”); clean-room (UHL e al lui Adrian, se poate refolosi schema); fără date personale în repo/hub.
+- **Codul sursă UHL** (Rust, 88 de fișiere, verificat fără serii/chei) e în repo-ul **privat** `Adriancu91/uhl` (commit `94eb5dd`, 12 nov 23:47). Sesiunea OS îl poate citi pentru schemă, reguli și părți refolosibile (dacă nu are acces, cere-l prin centrul de comandă).
 - prioritate: după C-116 pasul OS (P6-85) și C-113.
 - stare (cyber-universe): preluat (2026-11-12 23:45, sesiunea OS 23:40) · sarcina **P6-86** (plan `docs/plans/P6-86.md`): pasul 1 = `analiza` fără placa video (PCI complet, ACPI, SMBIOS, CPUID, JSON + varianta fără serii + `report.txt`); partea NVIDIA = pasul 2 (P6-87), după P6-85
