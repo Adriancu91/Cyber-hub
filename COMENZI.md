@@ -1410,6 +1410,7 @@ Format:
   (2) calibrarea APIC prin PIT/HPET fără limită de timp; (3) I/O APIC / redirectări IRQ. Reparația: detectarea x2APIC (CPUID + IA32_APIC_BASE bit 10) și folosirea MSR-urilor; orice buclă de așteptare cu limită + mesaj.
   Test QEMU: `-cpu ...,+x2apic` cu x2APIC pornit de firmware; mesaje noi de jurnal înainte/după fiecare pas din apic::init.
 - confirmat (18:00): și stick-ul de test TESTGPU se blochează în același loc, după MADT (`foto-2-stick-test-acelasi-loc.jpg`) → problema e reproductibilă.
+- **12 nov 20:20 — REZOLVAT pe placa reală:** cu os-295 (stick CYBER-UNIV), ASUS TUF F15 pornește până la desktop (`foto-3-os295-desktop-12nov.jpg`), cu cursorul mouse-ului pe ecran.
 - prioritate: după C-108 (variantele pentru joi 07:00 au întâietate).
 - stare: gata (2026-11-11 20:55, sesiunea OS programată) · **P6-79** · rezultat: **Release `os-290`**: așteptarea PIT are limită, calibrarea trece singură pe temporizatorul ACPI PM sau pe frecvența din CPUID dacă PIT-ul nu numără, APIC-ul merge și în modul x2APIC (prin MSR), iar pe ecran apar rândurile `apic: mod …` / `apic: calibrez ceasul …` / `apic: ceasul de referinta: …`; testat în QEMU cu PIT-ul oprit (x2APIC nu se poate încerca în QEMU); pe ASUS neîncercat.
 
