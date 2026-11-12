@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-12 18:40 (ora României) · **de:** sesiunea Cyber-GPU 93 (cloud, fără placă) — **🎉 I8 A TRECUT PE PLACĂ (os-295, varianta 1 `rpc-inainte`: `GSP_INIT_DONE = 0`), golden image (I8e) a trecut — primele apeluri RM acceptate de GSP-RM; I9 s-a oprit la al 11-lea mesaj RM (`PROMOTE_CTX` virtual) FĂRĂ motiv în jurnal (era doar pe ecranul înghețat). Reparat azi (`45dfc77`): motivul fiecărui pas eșuat intră în jurnalul de pe stick; OS-ul trebuie doar să lege `45dfc77`+. 455 PASS, CI verde (`f693307`).**
+**Actualizat:** 2026-11-12 18:55 (ora României) · **de:** sesiunea Cyber-GPU 93, a doua trecere (cloud, fără placă) — **NOU la 18:45 (cererea centrului de comandă): `gpu lant` fără `--varianta` = VARIANTA 1 de acum (`e49ca76`); varianta 11 `rpc-inainte+neprimar` (doar `bIsPrimary = 0`, ca tinygrad/nova) = proba pentru ecranul înghețat (efect DEDUS); OS-ul leagă `e49ca76`+ și corectează textele „ca os-283”.** **🎉 I8 A TRECUT PE PLACĂ (os-295, varianta 1 `rpc-inainte`: `GSP_INIT_DONE = 0`), golden image (I8e) a trecut — primele apeluri RM acceptate de GSP-RM; I9 s-a oprit la al 11-lea mesaj RM (`PROMOTE_CTX` virtual) FĂRĂ motiv în jurnal (era doar pe ecranul înghețat). Reparat azi (`45dfc77`): motivul fiecărui pas eșuat intră în jurnalul de pe stick; OS-ul trebuie doar să lege `45dfc77`+. 455 PASS, CI verde (`f693307`).**
 ## Acum
 - **Sesiunea 93 (18:00–18:40) — jurnalul `gpu-jurnal-010.txt` (os-295, `gpu lant --varianta 1`, 17:48) citit; un pas pe driver.** Studiul: `cyber-gpu/docs/os-295_ANALIZA_I9.md`.
   - **I8 TRECE:** `GSP_INIT_DONE rpc_result = 0x00000000` după 11,17 s → `pas i8-gsp-init: ok`. Doar **2 NOCAT** (os-283: 844): 1 ASSERT (adresă nouă, `0x0132d3b2`) + 1 ENGINE
@@ -72,8 +72,9 @@
 - **Pe placă până acum:** I0–I4 doar citire TREC; I6 TRECE (os-242…os-283); I7 TRECE (os-246…os-283); I8: toate cele 420 de comenzi ale secvențiatorului trec, GSP-RM pornește și
   răspunde `GSP_INIT_DONE 0x59` (os-278, os-279, os-280, os-283 — identic); I9–I14 neîncercate.
 
-## Lista pentru testul următor pe placă (după os-295; un singur test)
-1. Release OS care leagă `cyber-gpu` **`45dfc77` sau mai nou** (opțional și §2 din nota `os-295_i9-motiv-in-jurnal.md`); stick care scrie (C-113 e al OS-ului).
+## Lista pentru testul următor pe placă (după os-295)
+0. **18:45:** `e49ca76` face varianta 1 implicită (`gpu lant` simplu) și adaugă varianta 11 `rpc-inainte+neprimar` (varianta 1 + doar `bIsPrimary = 0`) — de încercat **după** `gpu lant` simplu, dacă ecranul tot îngheață și Adrian vrea să-l vadă; efectul pe afișaj e DEDUS, neprobat.
+1. Release OS care leagă `cyber-gpu` **`e49ca76` sau mai nou** (opțional și §2 din nota `os-295_i9-motiv-in-jurnal.md`); stick care scrie (C-113 e al OS-ului).
 2. Pornire rece → `gpu lant --varianta 1` → `DA` → după repornire `trimite`. Ecranul va îngheța la pornirea GSP-RM (așteptat); jurnalul merge pe stick.
 3. **Ce căutăm în jurnal:** după `pas i9-canal-lucru: ESEC`, rândul `text motivul esecului = "…"` (cod `NV_STATUS` → `nvidia_rm570::names` îl numește; „timeout dupa 5000000 us” → GSP-RM s-a
    blocat pe promovarea virtuală). `compara_variante 0x9c66000 gpu-jurnal-010.txt <jurnalul nou>` arată motivul în tabel.
@@ -87,6 +88,7 @@
 4. După I9: I10 (add64), I11–I14 — scrise, testate doar în simulare.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 93, 18:45 (schimbare de comportament, semnătura neschimbată):** `variants::settings(None)` dă varianta 1 (nu `OS_283`); `Some(0)` refuzat; `journal(None)` scrie numărul 1 + rândul nou `text varianta I8: aleasa`; `variants::{DEFAULT, default_variant}`; `VARIANTS` are 11 intrări (varianta 11 nouă, numerele vechi stabile). Textele OS „ca os-283” de corectat (nota §5).
 - **Sesiunea 93 (doar adăugări):** `gpu_core::diag::Journal::push_text`; `nvidia_ga104::chain::{STEP_FAIL_REASON, STEP_FAIL_REASON_MORE}` (motivul după `pas X: ESEC`, automat în
   `run_chain_ready`); `gsp::golden::{QueueTransportBellKeep, SKIPPED_KEEP_MAX, journal_skipped, SKIPPED_TOTAL, SKIPPED_AT}`; `variant_log::VariantRun::{fail_reasons, fail_reason}`.
   `QueueTransportBell` și tot restul neschimbate — OS-ul compilează neschimbat.
