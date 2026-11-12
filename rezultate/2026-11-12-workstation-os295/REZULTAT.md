@@ -9,3 +9,10 @@ Jurnal: `rezultate/os-automat/2026-11-12/gpu-jurnal-010.txt` (2425 rânduri, tri
 - **`pas i9-canal-lucru: ESEC`** (fără cod în jurnal; ultimele scrieri: fereastra 0x1700 ↔ 0x10e5, soneria 0x110c00 = 0). Apoi bus-master-oprit ok, tur-după ok.
 - **Ecranul a înghețat la ~154 s** (Adrian a văzut ultimul rând „SCRATCH_14 = 0x17100000”), dar jurnalul pe stick a continuat până la 164 s și lanțul s-a terminat.
   Ipoteză: GSP-RM a preluat motorul de afișare (vezi NOCAT „Display Engine”) → framebuffer-ul UEFI nu mai e afișat. De verificat/evitat (ex. să nu lăsăm GSP-RM să ia afișajul, sau să cerem un raport pe ecran după).
+
+## Repetarea variantei 1 (~18:00) — I7 timeout (Booter), `gpu-jurnal-011.txt`
+- Pornire rece corectă (I6 TRECE din nou). **I7 `i7-booter-gsp`: ESEC, timeout după 2 s** (după `0x840100 ← 2`, `0x110080 ← 0x8b320`), 1452 scrieri.
+- **Diferență mare de timp:** jurnalul pe stick a scris mult mai încet — în 010 un rând ≈ 13 ms (încărcarea Booter-ului prin DMA 128 → 144 s),
+  în 011 un rând a ajuns la ~0,8–1 s (aceeași încărcare 306 → 362 s, apoi I7 la 372 s). Pașii I6/I7 s-au întins pe ~80 s în loc de ~25 s.
+  Ipoteză: scrierea „fiecare rând pe loc” pe stick a încetinit (fișier/stick?), iar ceva din I7 (stare FWSEC/Booter) nu suportă pauzele lungi.
+  De verificat în cod: cât durează scrierea unui rând; dacă încetinirea crește cu numărul de fișiere din `/usb/raport` sau cu mărimea jurnalului; un mod „jurnal în RAM, scris la final” pentru pașii sensibili la timp.
