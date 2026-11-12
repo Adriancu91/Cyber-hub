@@ -15,3 +15,10 @@
 - **Wi-Fi Intel AX201 160 MHz** (8086:43F0, subsistem 8086:0074 — CNVi integrat, driver Netwtw10). Rețea pe cablu Realtek RTL8168 (10ec:8168 rev 15) — driverul nostru merge.
 - **Disc: NVMe Samsung MZVL21T0HCLR (1 TB) în spatele Intel RST VMD 9A0B** (de aceea OS-ul nostru nu-l vede). Touchpad ELAN1203 pe I2C (HID I2C).
 - ACPI: 31 de tabele, ECAM 0xC0000000 (bus 0–45), DMAR (VT-d), SSDT ×14, tabelul „RstVmdE”.
+
+## Raportul UHL al lui Adrian (12 nov 23:03; NVML/CUDA/Windows, doar citire; serialele ascunse) — date pentru C-116
+- **VBIOS 94.06.1E.00.23** (șirul din registrul driverului: „Version94.6.1e.0.23”). Imaginea VBIOS nu e citibilă din Windows (UHL n-o citește — corect, nu ne trebuie: driverul nostru o citește din PROM).
+- GA106M, compute capability **8.6**, **30 SM**, L2 **3 MiB**, VRAM **6 GiB / 192 biți**, frecvențe maxime: grafică/SM 2100 MHz, memorie 7001 MHz, video 1950 MHz.
+- Putere (NVML): limită implicită 80 W, aplicată 95 W, interval 1–95 W; în repaus ~20–26 W, 58–62 °C, P0. TGP documentat 60–115 W.
+- PCIe: Gen4 x16 max (x8 activ), BAR1 = 8 GiB @0x6000000000 (Resizable BAR), payload 256 B, D3cold suportat (cod 1036). Calea ACPI: `\_SB.PC00.PEG1.PEGP` (rădăcina Intel PEG10 9A01).
+- Concluzie: confirmă studiul C-95 (GA106, sm_86 ca GA104 — aceleași programe, mai puține SM: 30 față de 48), ce mai trebuie (VBIOS-ul laptopului, starea D0/Memory Space) vine din `gpu tur --trezire`.
