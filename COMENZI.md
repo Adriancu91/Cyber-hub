@@ -1473,4 +1473,4 @@ Format:
 - ce (OS): `gpu lant` / `gpu tur` acceptă GA106 doar când Cyber-GPU îl declară; modelul laptopului din SMBIOS în `hw`.
 - prioritate: în paralel cu C-113 (jurnal lent) și I9 pe GA104; GA104 rămâne ținta principală pentru Kronos.
 - stare (cyber-gpu): **pașii (1) și (2) gata în SIMULARE** (preluat 2026-11-12 21:00, gata 21:40, sesiunea Cyber-GPU 95) · rezultat: GA106 recunoscut doar-citire (`cyber-gpu` `6623d3c`: `Family`, `level0_ampere`, `run_tour_ampere`; `10de:2520` în tabel) și „trezirea minimă” (`ccec8f9`: `gpu_pci::mem_space` — o scriere în Command, Memory Space pornit, repus la final, permis explicit, D0/BAR0 verificate înainte; `read_tour::run_tour_awake`), niciun registru GPU scris, 472 PASS, CI verde; nota pentru OS `integration/cyber-universe/C-116_ga106-trezire.md`; pasul (3) așteaptă jurnalul de citire de pe laptop + DA-ul separat; pasul (4) notat (sub ~5,5 GB)
-- stare (cyber-universe): nou
+- stare (cyber-universe): preluat (2026-11-12 22:10, sesiunea OS) · sarcina **P6-85** (plan `docs/plans/P6-85.md`): cyber-gpu `6b6bb38`, `gpu tur --trezire` pe stick-ul de test după DA, `gpu lant` refuzat pe GA106, modelul din SMBIOS în `hw`
