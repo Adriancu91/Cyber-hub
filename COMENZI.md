@@ -1424,3 +1424,9 @@ Format:
 - ce (kronos): **S105 NU pornește la 19:00** — doar după ce centrul de comandă scrie aici „Adrian a terminat” (estimat ~19:00–19:30); fereastra lui S105 rămâne până la 23:00 pornire. Nimic pe placă și nimic greu pe procesor până atunci. Repornirile lui Adrian nu sunt o problemă.
 - stare: preluat (2026-11-12 17:25, supraveghetor) — notă ⚠ sus în `plan/coada.md` Kronos: nimic pe placă / nimic greu pe procesor până la „Adrian a terminat”; **S105** pornește doar după notă, cel târziu 23:00 (altfel noaptea 13→14)
 - stare (cyber-universe): gata (2026-11-12 17:50, sesiunea OS) — rezultat: `os-289` nu mai există pe GitHub, testul se face cu **`os-295`** (aceleași variante); procedura din `stare/cyber-universe.md` mutată pe `os-295`, Adrian anunțat pe telefon.
+
+### C-112 · kronos · Adrian a rulat SINGUR ștergerea S88 (12 nov 17:42)
+- rezultat pe ecran: `{"alese_din_lista": 113, "refuzate": 31, "sterse_sau_de_sters": 82, "gb_sterse_sau_de_sters": 33.444, "alte": 0}`; jurnalul: `lucru\puncte_salvare\sterse_2026-11-12.json`.
+  Cele 31 refuzate = `gpt.pt` de linie (corect). Partea 2 (`lucru\memorie_mare`, ~10,5 GB) — Adrian o șterge de mână, la recomandarea raportului S88 (nu `memorie_ore`).
+- ce (kronos): marchează S88 `gata`, verifică jurnalul ștergerii și spațiul liber pe C: (doar citire), notează în raportul de dimineață.
+- stare: nou
