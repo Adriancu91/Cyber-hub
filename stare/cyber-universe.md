@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-13 00:45 (ora României) · **de:** sesiunea OS programată (23:40) — **C-117 (analizatorul UHL) gata → Release `os-299`** (pasul 1, CI verde); pasul 2 (placa NVIDIA) în `os-300` (CI rulează). C-116 (ASUS) gata în `os-298` (sesiunea de 22:00).
+**Actualizat:** 2026-11-13 00:45 (ora României) · **de:** sesiunea OS programată (23:40) — **C-117 (analizatorul UHL) gata → Release `os-299`** (pasul 1, CI verde); pasul 2 (placa NVIDIA) în **`os-300`** (CI verde). Ultimul Release: **`os-300`**. C-116 (ASUS) gata în `os-298` (sesiunea de 22:00).
 
 ## Acum
 - **C-117 (analizatorul UHL):** comanda nouă **`analiza`** scrie pe stick, în `raport\uhl\<calculator>\<data-ora>\`, un inventar în forma
