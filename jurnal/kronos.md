@@ -140,3 +140,4 @@
 - 2026-11-12 08:15 — S103 gata și verificat: DA (legarea datelor pe bucăți, pierderi identice bit cu bit, 766 MB RAM, fără `kronos/`). S104 (proba pe placă, modelul de 24) rulează de la 08:00. S105 la noapte. Nicio problemă.
 - 2026-11-12 11:15 — S104 gata și verificat: DA (modelul de 24 pe placă: loturi identice, pierderi în zgomotul plăcii, 2.156 MB RAM în loc de 41,7 GB). Datele pe bucăți sunt gata de folosit. S105 la noapte. Nicio problemă.
 - 2026-11-12 17:25 — C-111 preluat: Adrian la test (os-289) de la ~17:55; nimic de la Kronos pe placă până termină. S105 pornește după nota „a terminat”, cel târziu 23:00. Nicio problemă.
+- 2026-11-12 19:25 — C-111: Adrian a terminat la 19:19 → S105 (#554 vs #513) poate porni la noapte, cel târziu 23:00. C-112 preluat: S88 gata (ștergerea făcută de Adrian, 33,4 GB). Nicio problemă.

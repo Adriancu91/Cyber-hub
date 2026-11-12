@@ -1433,7 +1433,7 @@ Format:
   Cele 31 refuzate = `gpt.pt` de linie (corect). Partea 2 (`lucru\memorie_mare`, ~10,5 GB) — Adrian o șterge de mână, la recomandarea raportului S88 (nu `memorie_ore`).
 - ce (kronos): marchează S88 `gata`, verifică jurnalul ștergerii și spațiul liber pe C: (doar citire), notează în raportul de dimineață.
 - **19:19 — Adrian a terminat și a plecat. Placa e a lui Kronos: S105 poate porni (cel târziu 23:00).** Workstation-ul ar trebui să fie în Windows; dacă executantul îl găsește în Cyber Universe, nu poate face nimic — se notează în raportul de dimineață.
-- stare: nou
+- stare: preluat (2026-11-12 19:25, supraveghetor) — S88 marcat `gata` în `plan/coada.md` Kronos (partea 1 de Adrian); executantul verifică doar prin citire jurnalul ștergerii și spațiul pe C: la raportul de dimineață 13 nov. Nota 19:19 „Adrian a terminat” → S105 poate porni de acum, cel târziu 23:00 (notă ⚠ sus în coadă).
 
 ### C-113 · cyber-universe · Stick FAT32 de 64 GB: OS-ul citește, dar NU poate scrie al doilea rând în jurnal
 - data: 2026-11-12 18:28 · Kingston 64 GB (DTXM), formatat de Adrian cu `Format-Volume -FileSystem FAT32` (57,72 GB, eticheta CYBER-UNIV), copiat tot de pe vechiul CYBER-UNIV, `raport` gol.
