@@ -1,0 +1,18 @@
+# jurnal gpu P6-40, cyber-gpu 4e6f747, comanda: gpu tur
+[   10.545438] gpu: nota: tur de citire (C-54): incepe, 0 scrieri permise
+[   10.557435] gpu: pas nivel0: configuratie: ok
+[   10.568892] gpu: bar0 r 0x000000 = 0xb74000a1
+[   10.580632] gpu: bar0 r 0x000a00 = 0x174a1000
+[   10.592112] gpu: pas nivel0: BOOT_0/BOOT_42: ok
+[   10.603809] gpu: bar0 r 0x118128 = 0x00008b8f
+[   10.615600] gpu: bar0 r 0x118234 = 0x000003ff
+[   10.627116] gpu: pas I2: GFW_BOOT: ok
+[   10.639035] gpu: bar0 r 0x300000 = 0xeb7faa55
+[   10.651239] gpu: pas I3: VBIOS prin PROM: ok
+[   10.663125] gpu: pas I3: descriptorul FWSEC: ok
+[   10.674700] gpu: bar0 r 0x8241e0 = 0x00000003
+[   10.686953] gpu: pas I6 pregatire: semnatura FWSEC aleasa (doar citire): ok
+[   10.698733] gpu: bar0 r 0x1183a4 = 0x00002000
+[   10.710594] gpu: bar0 r 0x1fa828 = 0x00000000
+[   10.722181] gpu: pas I6 pregatire (doar citire): ok
+[   10.733917] gpu: nota: tur de citire (C-54): gata, 0 scrieri
