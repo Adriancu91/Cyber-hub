@@ -1472,4 +1472,4 @@ Format:
   (4) limita de memorie pe laptop: sub ~5,5 GB (6 GB VRAM).
 - ce (OS): `gpu lant` / `gpu tur` acceptă GA106 doar când Cyber-GPU îl declară; modelul laptopului din SMBIOS în `hw`.
 - prioritate: în paralel cu C-113 (jurnal lent) și I9 pe GA104; GA104 rămâne ținta principală pentru Kronos.
-- stare: nou
+- stare: preluat (2026-11-12 21:00, sesiunea Cyber-GPU 95) — pasul (1) recunoașterea GA106 doar-citire, apoi (2) „trezirea minimă” în spatele unui „DA” explicit
