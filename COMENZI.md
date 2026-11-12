@@ -1457,6 +1457,7 @@ Format:
 - ce: după ce scrierea pe FAT32 mare merge (C-113), o arhivă „stick-test-complet” de copiat pe un stick FAT32 mare (varianta B din docs/USB.md): sistemul de test + `cyber.rw` + `VERSIUNE`,
   iar Adrian adaugă o dată `firmware\`, `kronos\`, `github.token`. La test: un singur stick. CYBER-UNIV (fără scriere pe placă) rămâne pentru folosirea obișnuită — separarea de siguranță se păstrează.
   Actualizarea ulterioară = o singură arhivă de copiat. Test QEMU: pornire de pe stick FAT32 de 64 GB, `/usb` corect, jurnal scris.
+- 13 nov 01:06 — Adrian va cumpăra o **carcasă USB pentru SSD** (NVMe/SATA) ca „stick” de test unic, mai rapid și mai rezistent (după oboseala stick-ului CYBER-UNIV). De verificat în OS: Mass Storage BOT pe USB 3 (carcasele UAS — JMicron JMS583, Realtek RTL9210, ASMedia ASM2362 — au și modul BOT), pornirea UEFI de pe SSD extern, FAT32 mare (C-113) sau o partiție FAT32 de ≤ 32 GB.
 - prioritate: mică, după C-113.
 - stare: gata (2026-11-12 19:55 UTC, sesiunea OS; preluat 19:10) · sarcina **P6-84** · rezultat: Release-ul **`os-297`** are `stick-test-complet.zip` (sistemul de test ca fișiere + `VERSIUNE` + `CITESTE.txt`), de copiat pe stick-ul Kingston lângă `firmware\`, `kronos\`, `github.token`; testat în QEMU (pornire de pe FAT32 de 64 GB + jurnal scris).
 
