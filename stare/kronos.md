@@ -1,18 +1,19 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-12 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-12 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **S105 gata, verificat: LA FEL → #513 rămâne.** #554 (24 de straturi) față de #513 pe texte de după 12 oct: română 1,1249 față de 1,1265 (−0,0016; prag 0,005); conversație 1,913 față de 1,900 (prag 0,3). 11 minute; placa max 4.490 MB / 55 °C.
-- Lecție: examenul de conversație (întrebări fără text alături) nu mai desparte modelele — amândouă răspund cinstit „Nu scrie în text.”.
-- S103 + S104 (azi): datele pe bucăți legate în antrenare, dovedite pe procesor și pe placă (RAM 2,2 GB în loc de 41,7 GB), fără `kronos/`.
-- C-112: Adrian a șters singur 82 de modele intermediare (33,4 GB); executantul verifică doar prin citire mâine dimineață.
+- **S106 gata, verificat: LA FEL → #513 rămâne.** Cu textul alături (cum e folosit modelul), #554 (24 de straturi) 81 din 140 corecte, #513 80 (prag +7); verificatorul fără alt AI: 82 față de 79. #477 (reper) 75. 9 minute; placa max 4.272 MB / 62 °C.
+- Întrebarea #554 față de #513 e închisă pe toate cele patru măsurători (S105 neutru + conversație, S106 S15 + S4).
+- Slăbiciunea comună: tipurile de întrebări nevăzute la antrenare (11–13 din 50).
+- Noaptea 12→13: nimic pe placă.
 - **Modelul în uz: #513** (98M, KGR1 Q8_0, 110.859.008 octeți, SHA `66f734b3…5859`); #554 cel mai bun la română (1,2040); #477 și #459 rezerve.
   Model propriu, de la zero, fără LLM străin.
 
 ## Urmează
-- **S106 (noaptea 12→13, placa ~1 h, aprobat de supraveghetor):** #554 față de #513 (și #477) pe examenele „răspuns din text” (S15 mare + S4) — felul în care e folosit modelul de fapt; doar examene.
-- S101 (24 de straturi de la zero): „nu deocamdată” (C-101). C-89 (tokenizer românesc): PARCAT.
+- **S107 (doar procesor, aprobat de supraveghetor):** unealtă nouă de renotare a examenului de conversație, care numără corect refuzul cinstit „Nu scrie în text.”; unealta oficială rămâne neschimbată.
+- Direcția următoare (decizia lui Adrian): S101 (24 de straturi de la zero, ~7 nopți, „nu deocamdată” din C-101) sau mai multe tipuri de întrebări pe linia modelului în uz. C-89 (tokenizer românesc): PARCAT.
+- 13 nov dimineață: verificarea prin citire a ștergerii C-112.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu **#513** (suma, 3 texte de control). Rezervele #477 și #459 pornibile.
@@ -25,6 +26,7 @@
 - De la `suita-office`: nimic acum.
 
 ## Blocaje / nevoie de Adrian
-- Niciun blocaj (legarea n-a cerut nicio schimbare în `kronos/`).
+- Niciun blocaj.
+- De la Adrian, fără grabă: alegerea direcției (S101 de la zero sau mai multe tipuri de întrebări pe #513).
 - Fără grabă: `lucru\memorie_mare` (~10,5 GB), pe care Adrian îl șterge de mână.
 - Release-ul `kronos-kgr1-513` (cu Adrian la workstation). `claude setup-token` pe workstation, dacă expiră.
