@@ -1,0 +1,6 @@
+# ASUS TUF F15 — 12 nov 2026 20:20, stick CYBER-UNIV, os-295
+- **Pornește până la desktop** (C-109 rezolvat). Mouse prin receptorul USB (1ea7:0066) merge (P6-80); touchpad-ul nu (I2C, ca la Lenovo).
+- `hw`: i7-11800H, 1920×1080, 65239 MiB liberi. Driver folosit: USB xHCI (2), rețea Realtek RTL8168 [rtl8168] (fără cablu). Fără driver: Intel UHD (8086:9a60), Wi-Fi Intel AX (8086:43f0),
+  **controlerul de stocare Intel 8086:9a0b = VMD (Intel RST) → `/disk: nemontat`** — discul NVMe Samsung e ascuns în spatele VMD; NVIDIA **10de:2520 (RTX 3060 Laptop, GA106)** + audio HDMI 10de:228e.
+  USB: cameră 322e:202c, bluetooth 8087:0026, stick 13fe:6700, receptor tastatură/mouse 1ea7:0066.
+- Idee de viitor (OS): suport VMD (ca discul NVMe al laptopurilor cu Intel RST să fie văzut), driver Wi-Fi Intel AX, I2C-HID pentru touchpad.
