@@ -1459,3 +1459,17 @@ Format:
   Actualizarea ulterioară = o singură arhivă de copiat. Test QEMU: pornire de pe stick FAT32 de 64 GB, `/usb` corect, jurnal scris.
 - prioritate: mică, după C-113.
 - stare: nou
+
+### C-116 · cyber-gpu + cyber-universe · RELUARE C-95: laptopul ASUS TUF F15 (RTX 3060 Laptop, GA106) = a doua mașină de test (decizia lui Adrian, 12 nov 20:57)
+- data: 2026-11-12 20:57 · Adrian: „ne mutăm cu testele aici (pe laptop) și vor fi mult mai rapide; apoi facem GPU pentru placa asta”. Internet: cablu (îl procură Adrian); Wi-Fi Intel AX = mai târziu (proiect de săptămâni).
+  Testele pot merge și fără internet (jurnalele rămân pe stick).
+- ce știm de pe laptop (azi, os-295, `rezultate/2026-11-11-laptop-asus-tuf/`): OS pornește (C-109 rezolvat); NVIDIA **10de:2520** la 01:00.0, stare D0, **Command 0000 — Memory Space oprit de firmware**,
+  BAR0 16 MiB @0x85000000, BAR1 8 GiB (ReBAR), BAR3 32 MiB; driverul a refuzat corect („dispozitiv nesuportat”), zero scrieri. Controler de stocare Intel VMD (9a0b) → discul NVMe nevăzut.
+- ce (Cyber-GPU), în ordine, cu regula „trei surse”:
+  (1) reia recunoașterea GA106 doar-citire din `256a1f2` (docs/GA106_LAPTOP.md), plus `0x2520` din tabel;
+  (2) **pasul nou „trezire minimă”**: pornirea bitului Memory Space în COMMAND (o singură scriere în configurația PCI, în spatele „DA”, doar pe stick-ul de test) ca să se poată citi BOOT_0 / GFW / VBIOS (PROM) — și tot turul de citire C-54 pe GA106; dacă VBIOS-ul prin PROM nu e valid → notează și propune citirea prin ACPI `_ROM` (sarcină separată);
+  (3) după jurnalul de citire: aceleași pași I6–I8 ca pe GA104 (firmware-ul e același, scurtătura `ga106/gsp -> ga102/gsp`), cu varianta 1 care a mers pe workstation;
+  (4) limita de memorie pe laptop: sub ~5,5 GB (6 GB VRAM).
+- ce (OS): `gpu lant` / `gpu tur` acceptă GA106 doar când Cyber-GPU îl declară; modelul laptopului din SMBIOS în `hw`.
+- prioritate: în paralel cu C-113 (jurnal lent) și I9 pe GA104; GA104 rămâne ținta principală pentru Kronos.
+- stare: nou
