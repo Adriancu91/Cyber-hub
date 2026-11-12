@@ -1443,3 +1443,11 @@ Format:
 - 18:37: pe stick-ul VECHI, cu `raport` golit (mutat pe Desktop), jurnalul merge tot ~0,95 s/rând de la primul rând → nu e numărul de fișiere. Prima rulare a zilei (jurnal 010, 17:48) mergea ~13 ms/rând; de atunci toate sunt lente (011, 012, acum). De căutat ce s-a schimbat între ele (stick obosit? cache-ul de scriere? FSInfo? ecranul care afișează fiecare rând?).
 - prioritate: înaintea următorului test pe placă.
 - stare: nou
+
+### C-114 · cyber-universe · DUPĂ C-113: un singur stick de test (fără Rufus), pe stick-ul Kingston de 64 GB
+- data: 2026-11-12 18:42 · întrebarea lui Adrian: „de ce două stick-uri?”. Azi: TESTGPU (imagine Rufus, 62 MiB, firmware-ul NVIDIA nu încape) + CYBER-UNIV (firmware, kronos, token, raport).
+- ce: după ce scrierea pe FAT32 mare merge (C-113), o arhivă „stick-test-complet” de copiat pe un stick FAT32 mare (varianta B din docs/USB.md): sistemul de test + `cyber.rw` + `VERSIUNE`,
+  iar Adrian adaugă o dată `firmware\`, `kronos\`, `github.token`. La test: un singur stick. CYBER-UNIV (fără scriere pe placă) rămâne pentru folosirea obișnuită — separarea de siguranță se păstrează.
+  Actualizarea ulterioară = o singură arhivă de copiat. Test QEMU: pornire de pe stick FAT32 de 64 GB, `/usb` corect, jurnal scris.
+- prioritate: mică, după C-113.
+- stare: nou
