@@ -1422,4 +1422,4 @@ Format:
 ### C-111 · kronos (+ cyber-gpu, cyber-universe) · Adrian vine ACUM (~17:55, 12 nov) pentru testul cu variante (C-108) — placa a lui Adrian până anunță centrul de comandă
 - data: 2026-11-12 17:24 · Adrian: „dacă ajung în 30 min pt test”. Testul: `os-289` (sau os-29x), `gpu lant --varianta 1..10`, cu reporniri în Cyber Universe.
 - ce (kronos): **S105 NU pornește la 19:00** — doar după ce centrul de comandă scrie aici „Adrian a terminat” (estimat ~19:00–19:30); fereastra lui S105 rămâne până la 23:00 pornire. Nimic pe placă și nimic greu pe procesor până atunci. Repornirile lui Adrian nu sunt o problemă.
-- stare: nou
+- stare: preluat (2026-11-12 17:25, supraveghetor) — notă ⚠ sus în `plan/coada.md` Kronos: nimic pe placă / nimic greu pe procesor până la „Adrian a terminat”; **S105** pornește doar după notă, cel târziu 23:00 (altfel noaptea 13→14)
