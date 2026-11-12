@@ -22,3 +22,9 @@
 - Putere (NVML): limită implicită 80 W, aplicată 95 W, interval 1–95 W; în repaus ~20–26 W, 58–62 °C, P0. TGP documentat 60–115 W.
 - PCIe: Gen4 x16 max (x8 activ), BAR1 = 8 GiB @0x6000000000 (Resizable BAR), payload 256 B, D3cold suportat (cod 1036). Calea ACPI: `\_SB.PC00.PEG1.PEGP` (rădăcina Intel PEG10 9A01).
 - Concluzie: confirmă studiul C-95 (GA106, sm_86 ca GA104 — aceleași programe, mai puține SM: 30 față de 48), ce mai trebuie (VBIOS-ul laptopului, starea D0/Memory Space) vine din `gpu tur --trezire`.
+
+## Raportul UHL de stocare (Adrian, 13 nov 01:31; doar citire, fără serii)
+- **Intel VMD 8086:9A0B** la 00:0E.0 (clasa 0x010400 RAID, părinte root complex), driver Windows iaStorVD 19.5.2.1049; **funcție însoțitoare 8086:09AB „VMD Managed Controller” la 00:06.0** (clasa 0x088000, fără serviciu).
+- SSD **Samsung PM9A1 (MZVL21T0HCLR-00BL7)**, firmware EL2QGXA7, 1 024 209 543 168 B, sector 512 B, în spatele VMD; calea ACPI `\_SB.PC00.VMD0.PEG0` (definiția VMD0 e într-un SSDT necitibil din Windows).
+- GPT, 4 partiții: EFI 200 MiB FAT32, MSR 16 MiB, Windows 952,79 GiB NTFS, Recovery 891 MiB NTFS. SMART: 47 °C, 4 % uzură, ~2877 ore, 103 opriri nesigure, 0 erori.
+- Pentru Cyber Universe: discul se vede doar cu un **driver VMD** (domeniu PCI suplimentar ascuns în spatele lui 9A0B; specificație: documentația publică Intel VMD + driverul Linux `vmd.c` citit ca specificație, GPL → fără cod copiat) **sau** cu VMD oprit în BIOS (atenție: Windows instalat pe RST poate să nu mai pornească — doar după verificare). Apoi NVMe (avem deja driver) + GPT + FAT32 (EFI) / NTFS (doar citire, mai târziu).
