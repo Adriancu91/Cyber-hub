@@ -1,7 +1,21 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-12 18:55 (ora României) · **de:** sesiunea Cyber-GPU 93, a doua trecere (cloud, fără placă) — **NOU la 18:45 (cererea centrului de comandă): `gpu lant` fără `--varianta` = VARIANTA 1 de acum (`e49ca76`); varianta 11 `rpc-inainte+neprimar` (doar `bIsPrimary = 0`, ca tinygrad/nova) = proba pentru ecranul înghețat (efect DEDUS); OS-ul leagă `e49ca76`+ și corectează textele „ca os-283”.** **🎉 I8 A TRECUT PE PLACĂ (os-295, varianta 1 `rpc-inainte`: `GSP_INIT_DONE = 0`), golden image (I8e) a trecut — primele apeluri RM acceptate de GSP-RM; I9 s-a oprit la al 11-lea mesaj RM (`PROMOTE_CTX` virtual) FĂRĂ motiv în jurnal (era doar pe ecranul înghețat). Reparat azi (`45dfc77`): motivul fiecărui pas eșuat intră în jurnalul de pe stick; OS-ul trebuie doar să lege `45dfc77`+. 455 PASS, CI verde (`f693307`).**
+**Actualizat:** 2026-11-12 20:00 (ora României) · **de:** sesiunea Cyber-GPU 94 (cloud, fără placă) — **jurnalele 011 și 012 analizate (`cyber-gpu/docs/os-295_ANALIZA_011_012.md`): la repetarea variantei 1, I7 a picat deși scrierile au fost identice cu 010 — Booter a terminat cu 0, RISC-V-ul GSP a rămas `0x10`; cauza nu se poate stabili din jurnal (singurul lucru diferit: stick-ul la ~1 s/rând, C-113). Booter Unload (C-103) a răspuns 0x88 — cod nepublicat; singura diferență față de RM: fără FWSEC-SB înainte. De la `3404313`, după un I7 / Unload eșuat jurnalul scrie starea plăcii (9 citiri numite) și așteptarea „RISC-V activ” are limita 5 s (nova). 458 PASS, CI verde. Nimic testat pe placă.** 🎉 **I8 și golden (I8e) au trecut pe placă la 17:48 (os-295, jurnalul 010); I9 s-a oprit la `PROMOTE_CTX` virtual fără motiv în jurnal — de la `45dfc77` motivul merge pe stick.**
 ## Acum
+- **Sesiunea 94 (19:25–20:00) — jurnalele 011 și 012 citite; un pas mic pe driver (`85e0a34`, `3404313`), doar citiri, doar adăugări.** Nicio comandă nouă pentru cyber-gpu în hub (C-113/C-114 sunt ale OS-ului).
+  - **Jurnalul 011 (`gpu lant`, varianta 1, ~18:00, stick la ~1 s/rând): I7 ESEC.** `diff` fără marcaje de timp față de 010 = **12 rânduri**: 4 adrese RAM (alocare diferită a OS-ului, valide)
+    + rezultatul → **scrierile în placă au fost identice, în aceeași ordine**; nu e regresie de cod. Booter a terminat cu `MAILBOX0 = 0` (`FALCON_OS` e scris după, deci SEC2 s-a oprit curat),
+    apoi așteptarea „RISC-V activ” a expirat: `GSP RISCV_CPUCTL = 0x10` = exact valoarea pe care 010 o arată **înainte** ca Booter să pornească nucleul la I8 → nu se poate spune dacă nucleul
+    n-a pornit deloc sau a pornit și s-a oprit; `SCRATCH_14` (bitul 26) și `GSP MAILBOX0` ar fi spus, dar la I7 nu le citeam. Singurul lucru diferit: **timpul** (I6 → Booter 65 s în loc de 15 s;
+    încărcarea Booter-ului 56 s în loc de 9 s — lentoarea a început la rândul ~1440, în mijlocul ei). Corelație, nu cauză dovedită.
+  - **Jurnalul 012 (`gpu recupereaza`, C-103, ~18:13, cel mai probabil aceeași pornire):** reset GSP + SEC2, Booter Unload → **`MAILBOX0 = 0x88`**, WPR2 rămâne ridicat. Codul **nu e publicat**
+    (RM și nouveau doar îl tipăresc). Starea era una pe care niciun driver public n-o rulează așa: GSP-RM nu pornise niciodată, iar RM la `kgspTeardown` rulează **FWSEC-SB înainte** de Booter
+    Unload (noi nu — decizia C-103). Propunere: FWSEC-SB înainte (același program semnat FWSEC, comanda SB) — **cere DA-ul lui Adrian**; până atunci `gpu recupereaza` nu se mai rulează.
+  - **Pasul făcut:** `falcon::journal_i7_failure` — după un I7 eșuat (Booter cu cod, sau Booter cu 0 + RISC-V neactiv) și după un Booter Unload cu cod, jurnalul scrie `nota: … starea placii
+    (doar citiri):` + **9 rânduri `valoare`** (`SCRATCH_14`, `SEC2 CPUCTL/MAILBOX0/1`, `GSP RISCV_CPUCTL/MAILBOX0/1`, `GSP RISCV_BCR_CTRL`, `GSP FALCON_OS`) — registre deja citite/scrise, niciunul nou.
+    `RISCV_ACTIVE_US` 2 s → **5 s** (nova; cea mai lungă din sursele publice). T125 a–d, **458 PASS**, CI verde (rulările 43273728070, 43274217367, 43274259743). **OS-ul doar leagă `3404313`+**
+    (nota `cyber-gpu/integration/cyber-universe/os-295_jurnalele-011-012.md`). Sursele RM n-au putut fi recitite din cloud azi (acces refuzat) — afirmațiile despre ordinea RM sunt din citirile anterioare.
+  - Copia C-34 refăcută la `3d61b04` (clona fusese superficială — bundle-ul din sesiunea 93 era incomplet; acum 219 commit-uri, clonare de probă OK).
 - **Sesiunea 93 (18:00–18:40) — jurnalul `gpu-jurnal-010.txt` (os-295, `gpu lant --varianta 1`, 17:48) citit; un pas pe driver.** Studiul: `cyber-gpu/docs/os-295_ANALIZA_I9.md`.
   - **I8 TRECE:** `GSP_INIT_DONE rpc_result = 0x00000000` după 11,17 s → `pas i8-gsp-init: ok`. Doar **2 NOCAT** (os-283: 844): 1 ASSERT (adresă nouă, `0x0132d3b2`) + 1 ENGINE
     `NV_ERR_INVALID_DMA_SPECIFIER` „Display Subsystem / Display Engine”; 2 `UCODE_LIBOS_PRINT` (ENG_PMU). **Analiza din sesiunea 88 (ordinea RPC-urilor) s-a confirmat pe placă;
@@ -73,21 +87,25 @@
   răspunde `GSP_INIT_DONE 0x59` (os-278, os-279, os-280, os-283 — identic); I9–I14 neîncercate.
 
 ## Lista pentru testul următor pe placă (după os-295)
-0. **18:45:** `e49ca76` face varianta 1 implicită (`gpu lant` simplu) și adaugă varianta 11 `rpc-inainte+neprimar` (varianta 1 + doar `bIsPrimary = 0`) — de încercat **după** `gpu lant` simplu, dacă ecranul tot îngheață și Adrian vrea să-l vadă; efectul pe afișaj e DEDUS, neprobat.
-1. Release OS care leagă `cyber-gpu` **`e49ca76` sau mai nou** (opțional și §2 din nota `os-295_i9-motiv-in-jurnal.md`); stick care scrie (C-113 e al OS-ului).
-2. Pornire rece → `gpu lant --varianta 1` → `DA` → după repornire `trimite`. Ecranul va îngheța la pornirea GSP-RM (așteptat); jurnalul merge pe stick.
-3. **Ce căutăm în jurnal:** după `pas i9-canal-lucru: ESEC`, rândul `text motivul esecului = "…"` (cod `NV_STATUS` → `nvidia_rm570::names` îl numește; „timeout dupa 5000000 us” → GSP-RM s-a
-   blocat pe promovarea virtuală). `compara_variante 0x9c66000 gpu-jurnal-010.txt <jurnalul nou>` arată motivul în tabel.
-4. Dacă I9 trece: I10 (add64) e primul calcul pe placă — jurnalul lui se citește cu `verifica_jurnal_lant`.
+0. **Întâi stick-ul (C-113, OS-ul).** La ~13 ms/rând lanțul I6 → I8 durează ~35 s; la ~1 s/rând ~25 de minute, și I7 a picat exact în rularea lentă. Testul se repetă **după** ce stick-ul scrie normal.
+1. Release OS care leagă `cyber-gpu` **`3404313` sau mai nou** (conține `e49ca76` = varianta 1 implicită, `45dfc77` = motivul pe stick, `85e0a34` = starea plăcii după un I7 eșuat).
+2. Pornire rece → `gpu lant` (fără `--varianta`) → `DA` → după repornire `trimite`. Ecranul va îngheța la pornirea GSP-RM (așteptat); jurnalul merge pe stick.
+3. **Ce căutăm în jurnal:** dacă I7 pică: rândurile `valoare …` de după `nota: I7: …` (SCRATCH_14 bitul 26 = Booter a predat etapa 3?; `GSP MAILBOX0` = 0 → încărcătorul a rulat); dacă I9 pică:
+   `text motivul esecului = "…"` (cod `NV_STATUS` numit; „timeout dupa 5000000 us” → GSP-RM blocat pe promovarea virtuală). `compara_variante 0x9c66000 gpu-jurnal-010.txt <jurnalul nou>`.
+4. **`gpu recupereaza` NU se mai rulează** până nu decide Adrian despre FWSEC-SB înainte de Booter Unload — ar da același 0x88 (acum cu starea plăcii în plus). Pornirea rece rămâne calea.
+5. Varianta 11 `rpc-inainte+neprimar` (doar `bIsPrimary = 0`): de încercat **după** `gpu lant` simplu, doar dacă Adrian vrea ecranul înapoi; efect DEDUS.
+6. Dacă I9 trece: I10 (add64) e primul calcul pe placă — jurnalul lui se citește cu `verifica_jurnal_lant`.
 
 ## Urmează
-1. **OS-ul:** leagă `45dfc77`+ → Release (și, dacă vrea, `QueueTransportBellKeep` + `journal_skipped` în `OsRm::call`); C-113 (stickul) e înaintea testului.
-2. **Adrian, la următoarea venire:** un singur test, `gpu lant --varianta 1` + `trimite` (lista de mai sus).
-3. **Noi, după jurnal:** motivul lui I9 → dacă e cod RM: regulile `PROMOTE_CTX` pentru ce promovăm (mărimi/aliniere buffere, VA space prin context share, `engineType`); dacă e timeout:
-   tabelele de pagini / `SET_PAGE_DIRECTORY`. Între timp (sesiunea următoare, fără placă): analiza `gpu-jurnal-012.txt` (Booter Unload 0x88, C-103) și a lui 011 (I7 timeout cu jurnal lent).
+1. **OS-ul:** C-113 (stick-ul) înaintea oricărui test; apoi legarea `3404313`+ → Release (opțional `QueueTransportBellKeep` + `journal_skipped` în `OsRm::call`, nota os-295 §2).
+2. **Adrian, la următoarea venire:** un singur test, `gpu lant` + `trimite` (lista de mai sus). Decizia despre FWSEC-SB înainte de Booter Unload (C-103), când vrea.
+3. **Noi, după jurnal:** I7 picat → rândurile stării spun unde (nu ghicim înainte); I9 picat cu cod RM → regulile `PROMOTE_CTX` (mărimi/aliniere, VA space prin context share, `engineType`);
+   timeout → tabelele de pagini / `SET_PAGE_DIRECTORY`. Fără jurnal nou, nimic altceva pe driver.
 4. După I9: I10 (add64), I11–I14 — scrise, testate doar în simulare.
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 94 (doar adăugări + o valoare):** `nvidia_ga104::gsp::falcon::{journal_i7_failure, I7_FAIL_RISCV_OFF, I7_FAIL_BOOTER_CODE, UNLOAD_FAIL_STATE, I7_FAIL_EXTRA_READS}`;
+  `falcon::RISCV_ACTIVE_US` = 5 000 000 (era 2 000 000). `booter_load_dma_libos` / `booter_unload_dma` scriu singure starea plăcii la eșec — OS-ul compilează neschimbat, doar leagă.
 - **Sesiunea 93, 18:45 (schimbare de comportament, semnătura neschimbată):** `variants::settings(None)` dă varianta 1 (nu `OS_283`); `Some(0)` refuzat; `journal(None)` scrie numărul 1 + rândul nou `text varianta I8: aleasa`; `variants::{DEFAULT, default_variant}`; `VARIANTS` are 11 intrări (varianta 11 nouă, numerele vechi stabile). Textele OS „ca os-283” de corectat (nota §5).
 - **Sesiunea 93 (doar adăugări):** `gpu_core::diag::Journal::push_text`; `nvidia_ga104::chain::{STEP_FAIL_REASON, STEP_FAIL_REASON_MORE}` (motivul după `pas X: ESEC`, automat în
   `run_chain_ready`); `gsp::golden::{QueueTransportBellKeep, SKIPPED_KEEP_MAX, journal_skipped, SKIPPED_TOTAL, SKIPPED_AT}`; `variant_log::VariantRun::{fail_reasons, fail_reason}`.
@@ -105,14 +123,15 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: legarea `cyber-gpu` `45dfc77`+ (motivul pașilor eșuați pe stick) → Release; opțional §2 din `integration/cyber-universe/os-295_i9-motiv-in-jurnal.md`.
-  C-113 (stickul care nu scrie / scrie la ~1 s/rând) înaintea testului — fără jurnal pe stick nu aflăm motivul.
-- De la Adrian: un test, `gpu lant --varianta 1` cu Release-ul nou, `trimite` după repornire. Dacă vrea, și `gpu recupereaza` după (C-103) — dar abia după analiza lui 0x88.
+- De la `cyber-universe`: **C-113** (stick-ul care nu scrie / scrie la ~1 s/rând) înaintea testului; legarea `cyber-gpu` `3404313`+ → Release; opțional §2 din
+  `integration/cyber-universe/os-295_i9-motiv-in-jurnal.md`.
+- De la Adrian: un test, `gpu lant` cu Release-ul nou și stick-ul reparat, `trimite` după repornire. Și o decizie (fără grabă): FWSEC-SB înainte de Booter Unload pentru `gpu recupereaza` (C-103) — DA/NU.
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`, `recover` la erori; 32 KiB pushbuffer pentru 24 de straturi.
 
 ## Blocaje / nevoie de Adrian
-- **Nu e blocat:** următorul pas pe driver depinde de motivul lui I9, care vine doar de pe placă (cu `45dfc77`+ legat în OS). Fără jurnal nou nu inventăm lucru.
-- Ecranul care îngheață după pornirea GSP-RM: nu avem o setare publică, cu sursă, care să țină GSP-RM departe de afișaj; dacă Adrian vrea ecranul înapoi în timpul testului, e o
-  întrebare deschisă (serial? alt monitor pe placa integrată?) — decizia e a lui și a sesiunii OS.
+- **Nu e blocat:** următorul pas pe driver depinde de jurnalul următor de pe placă (I7 cu starea plăcii, sau motivul lui I9). Fără jurnal nou nu inventăm lucru.
+- **I7 a picat o dată din două azi** (jurnalul 011) fără cauză stabilită; singura variabilă: stick-ul lent (C-113, OS). Dacă se repetă cu stick-ul reparat, rândurile noi ale stării spun unde.
+- **`gpu recupereaza` (C-103) nu merge pe placă** (Booter Unload 0x88, cod nepublicat); varianta cu sursă (FWSEC-SB înainte, ca RM) e un program semnat în plus → doar cu DA-ul lui Adrian.
+- Ecranul care îngheață după pornirea GSP-RM: nu avem o setare publică, cu sursă, care să țină GSP-RM departe de afișaj; varianta 11 (`bIsPrimary = 0`) e o probă cu efect DEDUS.
 - Numele funcțiilor din care vin asserturile nu se pot afla fără simbolurile GSP-RM — nu deschidem firmware-ul (regula proiectului).
-- CI GitHub VERDE pe `45dfc77` (rularea 181) și `f693307` (rularea 182).
+- CI GitHub VERDE pe `3404313` (push-ul cu `85e0a34` + `3404313`; rularea 43273728070), `ea50749` (43274217367) și `3d61b04` (43274259743).
