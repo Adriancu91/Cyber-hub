@@ -28,3 +28,14 @@
 - SSD **Samsung PM9A1 (MZVL21T0HCLR-00BL7)**, firmware EL2QGXA7, 1 024 209 543 168 B, sector 512 B, în spatele VMD; calea ACPI `\_SB.PC00.VMD0.PEG0` (definiția VMD0 e într-un SSDT necitibil din Windows).
 - GPT, 4 partiții: EFI 200 MiB FAT32, MSR 16 MiB, Windows 952,79 GiB NTFS, Recovery 891 MiB NTFS. SMART: 47 °C, 4 % uzură, ~2877 ore, 103 opriri nesigure, 0 erori.
 - Pentru Cyber Universe: discul se vede doar cu un **driver VMD** (domeniu PCI suplimentar ascuns în spatele lui 9A0B; specificație: documentația publică Intel VMD + driverul Linux `vmd.c` citit ca specificație, GPL → fără cod copiat) **sau** cu VMD oprit în BIOS (atenție: Windows instalat pe RST poate să nu mai pornească — doar după verificare). Apoi NVMe (avem deja driver) + GPT + FAT32 (EFI) / NTFS (doar citire, mai târziu).
+
+## Raportul UHL de energie (Adrian, 13 nov 07:11; `--energie`, doar citire; seria bateriei ascunsă)
+- **Baterie ASUS A32-K55** (Li-ion, ACPI `\_SB.BAT1`): proiectată **90 006 mWh**, maximă acum **57 223 mWh** → **uzură ~36 %** (calcul UHL). Patru surse concordă (driver _BIX, WMI, powercfg, CallNtPowerInformation).
+  Ciclurile apar 0 peste tot = firmware-ul nu le raportează (folosește _BIF), nu „baterie nouă”. Istoric powercfg: 58,6–62,8 Wh → 57,2 Wh după 9–10 nov.
+  Stare la citire: 97 %, 16,13 V, pe încărcător, nu încarcă.
+- **Temperaturi** (surse diferite, nu se compară între ele): zona ACPI `\_TZ.THRM` ~79 °C (prag critic declarat 100 °C), GPU 61 °C (NVML), SSD 52 °C; **CPU necitibil din Windows** (cere MSR, ring 0 — UHL corect nu instalează drivere).
+- **Ventilatoare** prin interfața ASUS (DSTS, metoda driverului Linux asus-wmi): CPU **3200 RPM**, GPU **3100 RPM**; fără ventilator mijlociu. Ventilatoarele sunt conduse de EC/firmware, nu de zona ACPI (_TMP/_CRT, fără _PSV/_ACx).
+  Funcțiile ASUS de limite de putere (PPT, TGP, NV_DYN_BOOST), MUX și eGPU: **nesuportate** pe acest model → confirmă „fără MUX”; dGPU activ.
+- **Putere măsurată**: pachet CPU **15,2 W** (RAPL, nuclee 11,8 W), GPU **25,6 W** în repaus (NVML; limită implicită 80 W, maximă 95 W). Plan activ „Performance” (minim procesor 100 % pe priză, sleep niciodată).
+- ACPI: EC `\_SB.PC00.LPCB.EC0`, AC `\_SB.ACAD`, capac `\_SB.LID0`, Intel DTT `\_SB.IETM` (+ senzori SEN2/SEN3), ASUS `\_SB.ASUP`/`ATKD`/`ARLS`. 13 din 14 SSDT-uri nu se pot citi din Windows.
+- Pentru Cyber Universe: baterie + AC + capac = ACPI standard (PNP0C0A / ACPI0003 / PNP0C0D) → un viitor `energie` în OS poate citi _BST/_BIF prin interpretorul ACPI; temperatura CPU o putem citi noi direct (MSR IA32_THERM_STATUS — suntem ring 0); ventilatoarele rămân la EC (fără scrieri).
