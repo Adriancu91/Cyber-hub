@@ -17,3 +17,4 @@
 - **`test tot` — 6/7:** PASS procesor (118 vectori, 80 ms), ceas, temporizator (200/200 ms), stick (4 KiB), **placa video** (doar ID-uri), **wifi** (rândul nou W0, nimic scris); FAIL rețea = fără cablu (așteptat). Raport `/usb/raport/test-tot-20261113-1.txt`.
 - Rapoartele sunt pe stick (fără token); Adrian le aduce din Windows.
 - Fișierele de pe stick (Adrian, 07:49): `gpu-jurnal-003.txt` (24 rânduri: Command 0x00100000 → |0x2 → 0x00100002, tur, repus 0x00100000; PROM 0x300000 = 0xeb7faa55 → semnătura 55AA a VBIOS-ului; 0x118234 = 0x3ff) și `test-tot-20261113-1.txt` (6/7).
+- Inventarul `analiza` (Adrian, 07:50): în hub doar `analiza-20261113-0741/inventory.redacted.json` (seriile/UUID „[ascuns]”, fără MAC) + `report.txt`; `inventory.json` complet rămâne la Adrian. 74 de componente, 14 surse. Toate ID-urile PCI (Intel/NVIDIA/Realtek) găsite de OS apar și în inventarul UHL din Windows (12 nov) — concordanță.

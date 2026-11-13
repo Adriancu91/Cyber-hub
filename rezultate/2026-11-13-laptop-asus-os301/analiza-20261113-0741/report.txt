@@ -1,0 +1,39 @@
+== Cyber Universe: analiza (C-117, schema uhl-inventory/0.1) ==
+calculator: ASUSTeK-COMPUTER-INC-ASUS-TUF-Gaming-F15-FX506HM | sesiunea 20261113-0741 | ceasul calculatorului 2026-11-13T07:41:51
+nucleu: cyber-universe 0.1.0 (cyber-gpu 835f24d)
+system: ASUSTeK COMPUTER INC. ASUS TUF Gaming F15 FX506HM_FX506HM
+firmware: FX506HM.318
+baseboard: FX506HM
+procesor: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (16 fire in MADT, 1 pornite)
+memorie: RAM 65273 MiB (2 module in SMBIOS)
+PCI: 24 functii
+  0000:00:00.0 0x8086:0x9a36 8086:9a36 punte gazda
+  0000:00:01.0 0x8086:0x9a01 8086:9a01 punte PCI | legatura 16 GT/s (Gen4) x8 | D0
+  0000:00:02.0 0x8086:0x9a60 8086:9a60 placa video (VGA) | D0
+  0000:00:04.0 0x8086:0x9a03 8086:9a03 achizitie de semnal | D0
+  0000:00:06.0 0x8086:0x09ab 8086:09ab periferic de sistem
+  0000:00:07.0 0x8086:0x9a2b 8086:9a2b punte PCI | legatura 2.5 GT/s (Gen1) x0 | D0
+  0000:00:08.0 0x8086:0x9a11 8086:9a11 periferic de sistem | D0
+  0000:00:0a.0 0x8086:0x9a0d 8086:9a0d achizitie de semnal | D0
+  0000:00:0d.0 0x8086:0x9a17 8086:9a17 controler USB (XHCI) | D0
+  0000:00:0d.2 0x8086:0x9a1f 8086:9a1f controler USB | D0
+  0000:00:0e.0 0x8086:0x9a0b 8086:9a0b controler de stocare | D0
+  0000:00:14.0 0x8086:0x43ed 8086:43ed controler USB (XHCI) | D0
+  0000:00:14.2 0x8086:0x43ef 8086:43ef controler de memorie | D0
+  0000:00:14.3 0x8086:0x43f0 Intel Wi-Fi 6 AX201 (CNVi) | D0
+  0000:00:15.0 0x8086:0x43e8 8086:43e8 controler de magistrala | D3
+  0000:00:16.0 0x8086:0x43e0 8086:43e0 comunicatii (serial) | D0
+  0000:00:1d.0 0x8086:0x43b6 8086:43b6 punte PCI | legatura 2.5 GT/s (Gen1) x1 | D0
+  0000:00:1f.0 0x8086:0x438b 8086:438b punte ISA (LPC)
+  0000:00:1f.3 0x8086:0x43c8 8086:43c8 audio HD | D0
+  0000:00:1f.4 0x8086:0x43a3 8086:43a3 SMBus
+  0000:00:1f.5 0x8086:0x43a4 8086:43a4 controler de magistrala
+  0000:01:00.0 0x10de:0x2520 NVIDIA GeForce RTX 3060 Laptop (GA106) | legatura 16 GT/s (Gen4) x8 | D0 | ReBAR BAR0 = 16 MiB | ReBAR BAR1 = 8192 MiB | ReBAR BAR3 = 32 MiB
+  0000:01:00.1 0x10de:0x228e 10de:228e audio HD | legatura 16 GT/s (Gen4) x8 | D0
+  0000:2d:00.0 0x10ec:0x8168 Realtek RTL8111/8168 Gigabit | legatura 2.5 GT/s (Gen1) x1 | D0
+ACPI: 32 tabele: FACP#1 SSDT#1 FIDT#1 SSDT#2 SSDT#3 SSDT#4 SSDT#5 HPET#1 APIC#1 SSDT#6 SSDT#7 NHLT#1 LPIT#1 WSMT#1 SSDT#8 SSDT#9 DBGP#1 DBG2#1 SSDT#10 DMAR#1 FPDT#1 SSDT#11 MCFG#1 SSDT#12 SSDT#13 UEFI#1 UEFI#2 TPM2#1 BGRT#1 SSDT#14 PTDT#1 DSDT#1
+USB: 4 dispozitive
+valori pe statusuri: CONFIRMED 34, MEASURED 1132, DOCUMENTED 53, INFERRED 1, UNKNOWN 33, UNSUPPORTED 5, NOT_TESTED 38
+serii si UUID: doar in inventory.json (ramane pe stick); inventory.redacted.json le are ascunse
+placa NVIDIA: NVIDIA | 0 fapte | cip - | VRAM - | GFW - | scrieri: 0 (adaptorul a refuzat 0 cereri de scriere)
+0 scrieri in dispozitive
