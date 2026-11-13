@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-13 04:30 (ora României) · **de:** sesiunea OS programată (02:40) — **C-118 pasul W0 gata (`wifi identifica`, doar citire) + versiunea VBIOS de la Cyber-GPU (`835f24d`) → Release `os-301`** (CI 301 verde). Înainte: `os-300` (C-117), `os-298` (C-116).
+**Actualizat:** 2026-11-13 05:45 (ora României) · **de:** sesiunea OS programată (05:40) — oprire scurtă, nimic nou de făcut fără Adrian. Ultimul Release: **`os-301`** (C-118 W0 `wifi identifica` + versiunea VBIOS, CI 301 verde). Înainte: `os-300` (C-117), `os-298` (C-116).
 
 ## Acum
 - **C-118 (Wi-Fi AX201 pe ASUS), pasul W0:** comanda nouă **`wifi identifica`** (sau doar `wifi`) găsește placa Wi-Fi Intel și arată
