@@ -1,7 +1,8 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-13 02:15 (ora României) · **de:** sesiunea Cyber-GPU 96 (cloud, fără placă) — **nicio comandă nouă pentru cyber-gpu, niciun jurnal nou de pe placă sau laptop.** Fapte noi din Windows (raportul UHL al laptopului, C-117) → un pas mic, doar citire: turul de citire scrie acum **versiunea VBIOS** (`vbios.versiune`, din jetonul BIT 'i'), ca prima comparație automată „Windows ↔ Cyber Universe pe aceeași placă” (`835f24d`); faptele UHL ale laptopului (subsistem `1043:16F2`, rev A1, VBIOS `94.06.1E.00.23`, 30 SM, BAR1 @0x6000000000) sunt în modelul de simulare. 475 PASS, CI verde (`79fc5ae`). Nimic rulat pe laptop sau workstation. De la sesiunea 95: C-116 pașii 1–2 (GA106 doar-citire + „trezirea minimă”) — OS-ul le-a legat în **`os-298`**. 🎉 Pe workstation: **I8 și golden (I8e) au trecut pe placă la 17:48 (os-295)**; I9 s-a oprit la `PROMOTE_CTX` virtual — motivul intră pe stick de la `45dfc77`.
+**Actualizat:** 2026-11-13 07:45 (ora României) · **de:** sesiunea Cyber-GPU 97 (cloud, fără placă) — **oprire scurtă: nicio comandă nouă pentru cyber-gpu, niciun jurnal nou de pe placă sau laptop; niciun commit de cod.** Doar o notă de documentație (`aabd093`): raportul UHL de energie (13 nov 07:11) confirmă că laptopul FX506HM e **fără MUX** (observat, nu mai e dedus) → ecranul rămâne pe Intel, placa NVIDIA e doar de calcul. 475 PASS, CI verde (`f4b012c`). **`os-301` leagă deja `835f24d`** (P6-89) → `vbios.versiune` ajunge în `gpu vbios` și `analiza`. De la sesiunea 96: turul de citire scrie **versiunea VBIOS** (`vbios.versiune`, jetonul BIT 'i') — prima comparație automată „Windows ↔ Cyber Universe pe aceeași placă” (`835f24d`). De la sesiunea 95: C-116 pașii 1–2 (GA106 doar-citire + „trezirea minimă”) — legate în **`os-298`**. 🎉 Pe workstation: **I8 și golden (I8e) au trecut pe placă la 17:48 (os-295)**; I9 s-a oprit la `PROMOTE_CTX` virtual — motivul intră pe stick de la `45dfc77`.
 ## Acum
+- **Sesiunea 97 (13 nov 07:25–07:45) — oprire scurtă.** Hub-ul de la 02:15: C-118 W0 gata (OS, `os-301`, `wifi identifica`; **leagă `835f24d`**), OS în oprire scurtă (05:45), Kronos stare 00:17; nicio comandă nouă pentru noi, niciun jurnal nou. Nou în `rezultate/2026-11-11-laptop-asus-tuf/`: raportul UHL de stocare (nu ne privește) și de **energie**: GPU 25,6 W / 61 °C în repaus, ventilator GPU 3100 RPM (EC), funcțiile ASUS de MUX/eGPU/limite de putere **nesuportate** → „fără MUX” OBSERVAT (`GA106_LAPTOP.md` §0b). Driverul nu atinge puterea sau ventilatoarele → nimic de codat. Sursele publice (nouveau `base.c`, RM) tot nu se pot reciti din cloud → ordinea octeților versiunii rămâne „de confirmat” — cel mai cinstit pe placă: `vbios.versiune` de pe laptop trebuie să fie exact `94.06.1e.00.23`. `tools/check.sh`: 475 PASS; CI verde pe `f4b012c`. Copia C-34 la `aabd093`.
 - **Sesiunea 96 (13 nov 01:25–02:15) — fără comandă nouă, un pas mic pe faptele noi.** Hub-ul de la 21:40: C-116 partea OS gata (`os-298`, leagă `6b6bb38`), C-117 (analizatorul UHL, `os-299`/`os-300`, OS; placa NVIDIA
   intră prin turul nostru de citire), C-118 (Wi-Fi, OS). Nou pentru noi: **raportul UHL din Windows** al laptopului (`rezultate/2026-11-11-laptop-asus-tuf/REZULTAT.md`): rev A1, subsistem
   `1043:16F2`, **VBIOS `94.06.1E.00.23`**, GA106M 30 SM, L2 3 MiB, 6 GiB/192 biți, BAR1 8 GiB @0x6000000000, Gen4 x8 (x16 max), D3cold.
@@ -43,8 +44,8 @@
 la I9 picat `text motivul esecului`. 4. `gpu recupereaza` NU, până la decizia FWSEC-SB. 5. Varianta 11 doar dacă Adrian vrea ecranul înapoi. 6. Dacă I9 trece: I10 (add64) = primul calcul pe placă.
 
 ## Urmează
-1. **OS-ul:** leagă `835f24d`+ (`79fc5ae`) când face următorul Release — doar ca rândul `vbios.versiune` să apară în jurnal; opțional propunerile din nota C-117 (`gpu vbios`, `analiza`). C-116 partea OS e gata (`os-298`).
-2. **Adrian:** pe laptop (`os-298`+) `gpu tur --trezire` + DA → primul jurnal de citire de pe GA106 (cu `835f24d`+ legat: și `vbios.versiune`, de comparat cu `94.06.1E.00.23`); `analiza` pentru C-117.
+1. **OS-ul:** nimic de la noi — `os-301` leagă deja `835f24d` (`vbios.versiune` în `gpu vbios` și `analiza`). C-116 partea OS e gata (`os-298`).
+2. **Adrian:** pe laptop (`os-301`) `gpu tur --trezire` + DA → primul jurnal de citire de pe GA106 (cu `835f24d`+ legat: și `vbios.versiune`, de comparat cu `94.06.1E.00.23`); `analiza` pentru C-117.
    Pe workstation: un test `gpu lant` cu stick-ul reparat (`os-297`+), când vine.
 3. **Noi, după jurnalul de pe laptop:** VBIOS gunoi → `_ROM`; totul ca pe GA104 → pasul 3 doar cu DA separat. După jurnalul de pe workstation: I7 picat → rândurile stării; I9 picat cu cod →
    regulile `PROMOTE_CTX`; timeout → tabelele de pagini. Fără jurnal nou, nimic altceva pe driver.
@@ -64,7 +65,7 @@ la I9 picat `text motivul esecului`. 4. `gpu recupereaza` NU, până la decizia 
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: legarea `835f24d`+ la următorul Release (fără grabă; nimic de schimbat în codul OS). C-116 partea OS și C-113 sunt gata (`os-298`, `os-297`).
+- De la `cyber-universe`: nimic acum — `os-301` leagă `835f24d`; C-116 partea OS și C-113 sunt gata (`os-298`, `os-297`).
 - De la Adrian: pe laptop `gpu tur --trezire` + DA (+ `analiza`), jurnalul în hub; pe workstation un `gpu lant` cu stick-ul reparat. Decizie (fără grabă): FWSEC-SB înainte de Booter Unload (C-103) — DA/NU.
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`.
 
@@ -73,4 +74,4 @@ la I9 picat `text motivul esecului`. 4. `gpu recupereaza` NU, până la decizia 
 - Laptopul: firmware-ul lasă placa cu Memory Space oprit — fără trezirea minimă nu se poate citi nimic din ea; trezirea e o scriere în configurația PCI, repusă la final, nu în placă.
   Risc rămas (DEDUS, neprobat): VBIOS-ul prin PROM pe laptop poate fi altfel (ACPI `_ROM`) — se vede în primul jurnal.
 - Workstation: I7 a picat o dată din două (stick lent, C-113); `gpu recupereaza` dă 0x88 (FWSEC-SB înainte = program semnat în plus → DA); ecranul îngheață după pornirea GSP-RM (varianta 11 ca probă).
-- CI GitHub: **VERDE pe `79fc5ae`** (sesiunea 96; rularea 43331815423, 56 s), pe `6b6bb38` (sesiunea 95) și pe `3d61b04` (sesiunea 94).
+- CI GitHub: **VERDE pe `f4b012c`** (sesiunea 97 a verificat; rularea 43332410525, 48 s), pe `79fc5ae` (sesiunea 96) și pe `6b6bb38` (sesiunea 95).
