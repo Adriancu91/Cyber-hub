@@ -16,3 +16,4 @@
   **De îmbunătățit (pentru echipa OS):** (1) „placa NVIDIA: 0 fapte | cip – | VRAM – | GFW –” — `analiza` nu refolosește faptele `gpu tur --trezire` din aceeași sesiune (pe laptop placa are Memory Space oprit); (2) „16 fire în MADT, 1 pornite” (un singur nucleu — limită cunoscută).
 - **`test tot` — 6/7:** PASS procesor (118 vectori, 80 ms), ceas, temporizator (200/200 ms), stick (4 KiB), **placa video** (doar ID-uri), **wifi** (rândul nou W0, nimic scris); FAIL rețea = fără cablu (așteptat). Raport `/usb/raport/test-tot-20261113-1.txt`.
 - Rapoartele sunt pe stick (fără token); Adrian le aduce din Windows.
+- Fișierele de pe stick (Adrian, 07:49): `gpu-jurnal-003.txt` (24 rânduri: Command 0x00100000 → |0x2 → 0x00100002, tur, repus 0x00100000; PROM 0x300000 = 0xeb7faa55 → semnătura 55AA a VBIOS-ului; 0x118234 = 0x3ff) și `test-tot-20261113-1.txt` (6/7).

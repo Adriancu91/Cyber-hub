@@ -1,0 +1,9 @@
+== test tot: autotestul Cyber Universe OS ==
+test tot: PASS procesor: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz; 118 vectori oficiali de calcul trecuti in 80 ms
+test tot: PASS ceas: 2026-11-13 07:42:52 (ceasul placii de baza)
+test tot: PASS temporizator: 200 ms de asteptare = 200 ms masurati
+test tot: PASS stick: /usb: 4 KiB scrisi, cititi inapoi identic, stersi
+test tot: FAIL retea: placa exista, dar DHCP nu a dat adresa in 10 s (cablul?)
+test tot: PASS placa video: NVIDIA 01:00.0 10de:2520 (doar ID-urile PCI, nimic scris)
+test tot: PASS wifi: 00:14.3 8086:43f0 Wi-Fi 6 AX201 (CNVi, chipset Tiger Lake-H); registre necitite: Memory Space oprit de firmware (nu il pornim: ar fi o scriere); nimic scris (W0)
+test tot: REZULTAT: FAIL (1 esuate din 7)

@@ -1,0 +1,25 @@
+# jurnal gpu P6-40, cyber-gpu 835f24d, comanda: gpu tur --trezire
+[  430.784727] gpu: nota: C-116 trezire minima: Memory Space oprit de firmware; il pornesc pentru tur si il repun dupa
+[  430.798746] gpu: cfg  r 0x004 = 0x00000000
+[  430.811588] gpu: cfg  w 0x004: 0x00100000 <- 0x00000002 => 0x00100002
+[  430.824415] gpu: pas C-116 trezire minima: Memory Space pornit: ok
+[  430.837263] gpu: nota: tur de citire (C-54): incepe, 0 scrieri permise
+[  430.850092] gpu: pas nivel0: configuratie: ok
+[  430.863033] gpu: nota: GA106 (C-116): doar citire; lantul cu scrieri ramane doar pentru GA104
+[  430.875886] gpu: bar0 r 0x000000 = 0xb76000a1
+[  430.888894] gpu: bar0 r 0x000a00 = 0x176a1000
+[  430.901928] gpu: pas nivel0: BOOT_0/BOOT_42: ok
+[  430.914949] gpu: bar0 r 0x118128 = 0x00008b8f
+[  430.927926] gpu: bar0 r 0x118234 = 0x000003ff
+[  430.940961] gpu: pas I2: GFW_BOOT: ok
+[  430.954192] gpu: bar0 r 0x300000 = 0xeb7faa55
+[  430.967162] gpu: pas I3: VBIOS prin PROM: ok
+[  430.980250] gpu: pas I3: descriptorul FWSEC: ok
+[  430.993445] gpu: bar0 r 0x8241e0 = 0x00000003
+[  431.006518] gpu: pas I6 pregatire: semnatura FWSEC aleasa (doar citire): ok
+[  431.019716] gpu: bar0 r 0x1183a4 = 0x00001800
+[  431.032944] gpu: bar0 r 0x1fa828 = 0x00000000
+[  431.046221] gpu: pas I6 pregatire (doar citire): ok
+[  431.059472] gpu: nota: tur de citire (C-54): gata, 0 scrieri
+[  431.313005] gpu: cfg  w 0x004: 0x00100002 <- 0x00000000 => 0x00100000
+[  431.326331] gpu: pas C-116 trezire minima: Command repus (Memory Space oprit): ok
