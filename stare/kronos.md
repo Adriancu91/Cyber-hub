@@ -1,14 +1,14 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-13 11:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-13 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **C-119 preluat (antrenamentul mare, ≤ 72 h de placă, Adrian plecat până luni seara 16 nov):** în coada Kronos, una după alta, fiecare cu pre-înregistrare și praguri scrise dinainte: **S109 = E1** (aprobat, de acum), **S110 = E2**, **S111 = E3**, **S112 = E4**.
-- **S108 gata, verificat:** linia lui #513 n-a văzut 11 din 13 tipuri de întrebări slabe (0 exemple); din Wikipedia RO deja descărcată ies ~6.150 de întrebări noi pentru ele.
+- **C-119 în lucru (antrenamentul mare, ≤ 72 h de placă, Adrian plecat până luni seara 16 nov):** S109 (E1) → S110 (E2) → S111 (E3) → S112 (E4), fiecare cu pre-înregistrare și praguri scrise dinainte.
+- **S109 (E1) rulează pe placă** (~12:55 → ~16:40): 3 h din #513 pe perechile vechi + **3.345 de întrebări noi** pentru cele 13 tipuri slabe; examen nou ținut deoparte (180 de întrebări, urcat înainte de antrenare); pre-înregistrarea verificată de supraveghetor.
 - **Modelul în uz: #513** (98M, KGR1 Q8_0, SHA `66f734b3…5859`); #554 și #477/#459 rezerve. Model propriu, de la zero, fără LLM străin.
 
 ## Urmează
-- **S109 (E1, ~5 h, de acum):** generator pentru cele 13 tipuri slabe + examen nou ținut deoparte + 3 h din #513 → dacă „AJUTĂ” fără regresii, #513+b intră în interfață cât rulează E2.
+- **S109 (E1, rezultat ~16:40):** generator pentru cele 13 tipuri slabe + examen nou ținut deoparte + 3 h din #513 → dacă „AJUTĂ” fără regresii, #513+b intră în interfață cât rulează E2.
 - **S110 (E2, ~55 h):** 24 de straturi (183 M) DE LA ZERO, Muon, pe amestec pe bucăți + întrebările E1 (~2,5 mld. simboluri); proba de rată 1 h; oprire la 12 h / 24 h dacă e pe drumul greșit (praguri scrise).
 - **S111 (E3, ~8 h):** conversația pe baza nouă + toate examenele → câștigătorul. **S112 (E4):** câștigătorul în interfața de convorbire (port 8787, local + Tailscale) + raport final pentru luni seara (estimat luni dimineață).
 

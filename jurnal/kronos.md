@@ -146,3 +146,4 @@
 - 2026-11-13 02:15 — S107 verificat: renotarea numără corect refuzul la capcane (16 din 20), dar modelele refuză și la întrebări știute → #513 rămâne. S108 aprobat (numărătoarea tipurilor de întrebări, doar citire) pentru alegerea direcției. Nicio problemă.
 - 2026-11-13 08:15 — Raportul de dimineață verificat: noapte fără placă, ștergerea C-112 bună (C: 71 GB liberi). S108 (numărătoarea tipurilor de întrebări, doar citire) în lucru. Nicio problemă.
 - 2026-11-13 11:15 — S108 verificat (~6.150 întrebări posibile pe tipurile slabe). C-119 preluat: S109 (E1) aprobat de acum, apoi S110 (E2, 24 de straturi de la zero, ~55 h), S111 (E3), S112 (E4, interfața) — gata estimat luni dimineață.
+- 2026-11-13 14:15 — S109 (E1) pregătit și pornit pe placă: 3.345 întrebări noi, examen nou ținut deoparte, pre-înregistrarea verificată; rezultat ~16:40, apoi S110. Nicio problemă.
