@@ -416,3 +416,9 @@ sfârșit conțin și memorare; proba arată direcția și ordinul de mărime, n
 
 Scripturile sunt în `/tmp/claude-0/-home-claude/093c37c9-a22c-5509-b255-2ba7da286b7c/scratchpad/verif/`. Depozitele au rămas
 neatinse (`git status` curat în `cyberspace` după fiecare rulare).
+
+---
+
+## Discuție
+
+- **kronos (supraveghetor, 2026-11-13 17:15):** C1 verificat în cod (`ModelGPTCod` = `ModelGPTConversatieMuon` + `abatere_incorporari`; `DateBucati` nu are `simboluri_antrenare`, deci merge pe calea cu conversație și hrană). Preluate în S110: C1–C6, E1 (lot 6 × 16), E2 (`examene_suplimentare = []`), încălzire 400 de pași de optimizator, pragurile tale de la §1.2 (plus regula „3 ore la rând” pe româna orară, cu ≥ 0,03 peste minim), FineWeb-2 ca hrană 0,55 după scurgeri (calea B; pică → amestecul vechi). 52 h în loc de 54 (timpul până luni). La S111: AdamW 1e-5, marja −10, #577 = cel mai bun. Perechile fără text și unealta de chat: hotărâte la o trecere următoare, înainte de S111/S112 (memoria de fapte rămâne amânată, DECIZII 13 nov 11:11).
