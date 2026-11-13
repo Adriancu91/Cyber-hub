@@ -228,3 +228,4 @@
 - 2026-11-13 05:45 · sesiunea OS programată (05:40) · oprire scurtă: nicio comandă nouă, niciun jurnal nou, CI verde; `os-301` așteaptă testul pe laptop (`wifi identifica`, `test tot`, `analiza`).
 - 2026-11-13 10:30 · sesiunea OS programată (08:40) · testul ASUS cu `os-301` citit (W0 Wi-Fi, GA106, analiza, test tot: trec); **P6-90**: `analiza` ia faptele plăcii video din `gpu tur --trezire` când placa e adormită; suita 107/0/1, CI 302 verde → **`os-302`**. W1 Wi-Fi așteaptă DA + firmware de la Adrian.
 - 2026-11-13 11:50 · sesiunea OS programată (11:40) · oprire scurtă: nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`); workstation-ul e al lui Kronos până luni seara (C-119), coada OS fără Adrian e goală.
+- 2026-11-13 15:00 · sesiunea OS programată (14:40) · oprire scurtă: nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`); diferența 45/47 fapte din nota Cyber-GPU verificată — nu e din OS, se lămurește cu `analiza` la următorul test pe laptop.
