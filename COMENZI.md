@@ -1503,4 +1503,4 @@ Format:
   W4 legarea la stiva de rețea existentă (DHCP, TLS, `trimite`, `hub asculta`) → laptopul cu internet fără cablu.
 - la **fiecare** test pe laptop: `wifi identifica` (+ pasul curent W_n), poză + raport pe stick, `trimite` când există rețea.
 - prioritate: în paralel cu C-116 (placa video a laptopului); nu blochează I9 pe GA104.
-- stare: preluat (2026-11-13 02:45, sesiunea OS programată 02:40) — pasul **W0** = sarcina **P6-88** în `docs/TASKS.md` (doar citire); W1–W4 se planifică după poza W0 de pe laptop (W1 cere fișierul de firmware descărcat de Adrian + „da”)
+- stare: preluat (2026-11-13 02:45, sesiunea OS programată 02:40) — W0 **gata** (04:35, P6-88), W1–W4 rămân în lucru pe rând · rezultat (W0): Release **`os-301`** are `wifi identifica` (doar citire: PCI, BAR0, D-state, registrele de identitate HW_REV/HW_RF_ID/GP_CNTRL dacă firmware-ul a lăsat placa trează), rândul „wifi” în `test tot` și placa în `analiza`; testat în QEMU, pe laptop netestat; W1 după poza W0 + fișierul de firmware descărcat de Adrian + „da”

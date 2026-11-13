@@ -1,8 +1,13 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-13 00:45 (ora României) · **de:** sesiunea OS programată (23:40) — **C-117 (analizatorul UHL) gata → Release `os-299`** (pasul 1, CI verde); pasul 2 (placa NVIDIA) în **`os-300`** (CI verde). Ultimul Release: **`os-300`**. C-116 (ASUS) gata în `os-298` (sesiunea de 22:00).
+**Actualizat:** 2026-11-13 04:30 (ora României) · **de:** sesiunea OS programată (02:40) — **C-118 pasul W0 gata (`wifi identifica`, doar citire) + versiunea VBIOS de la Cyber-GPU (`835f24d`) → Release `os-301`** (CI 301 verde). Înainte: `os-300` (C-117), `os-298` (C-116).
 
 ## Acum
+- **C-118 (Wi-Fi AX201 pe ASUS), pasul W0:** comanda nouă **`wifi identifica`** (sau doar `wifi`) găsește placa Wi-Fi Intel și arată
+  ID-urile, dacă e integrată (CNVi), starea ei, BAR-urile și — dacă firmware-ul a lăsat-o trează — 5 registre de identitate (versiunea MAC-ului,
+  a radioului, comutatorul radio). **Zero scrieri.** Rândul „wifi” apare și în `test tot`, iar placa intră în inventarul `analiza`. Testat în QEMU
+  (cu un dispozitiv de probă în locul plăcii); pe laptop netestat. Pașii următori în `docs/WIFI.md` din repo (W1 = firmware-ul, cu „da” separat).
+- **Cyber-GPU `835f24d`:** `gpu vbios` și `analiza` arată versiunea VBIOS (ca în Windows: `94.06.1E.00.23` pe ASUS, `94.04.65.00.3e` pe workstation) — comparație automată cu UHL.
 - **C-117 (analizatorul UHL):** comanda nouă **`analiza`** scrie pe stick, în `raport\uhl\<calculator>\<data-ora>\`, un inventar în forma
   UHL (`uhl-inventory/0.1`, aceleași statusuri): `inventory.json` (tot, cu numerele de serie — rămâne pe stick), `inventory.redacted.json`
   (seriile ascunse) și `report.txt`. Față de Windows are în plus: spațiul de configurare PCI complet (4 KiB) pentru fiecare dispozitiv, BAR-urile
@@ -17,6 +22,7 @@
 - `os-297` (C-113/C-114: jurnalul pe stick-ul Kingston, arhiva `stick-test-complet.zip`) rămâne valabil; `os-298` le conține.
 
 ## Urmează
+- C-118: poza `wifi identifica` de pe laptop → planul W1 (pornirea plăcii cu firmware-ul de pe stick, după „da”).
 - Jurnalul `gpu tur --trezire` de pe laptop → Cyber-GPU (pasul 3, cu DA separat de la Adrian).
 - C-117: compararea cu inventarul din Windows al aceluiași laptop (după `analiza` pe ASUS + un `inventory.redacted.json` din UHL).
 - P6-12 pasul 2 (fereastră proprie fără cache) doar după un `log mmio` de pe un calculator real.
@@ -38,6 +44,8 @@
    turul de citire, apoi totul e pus la loc. Poză la ultimele rânduri (`trezirea minima: …`, `Command acum …`, `scrieri: 2 in configuratia PCI …`).
 4. **Acasă, fără internet:** nu e nevoie de `trimite` — jurnalul rămâne pe stick, în `raport\gpu-jurnal-NNN.txt` (cel cu numărul cel mai mare).
    Când ajungi la un calculator cu internet, pui fișierul + pozele în `rezultate/<data>-laptop-asus-tuf/` (sau `trimite` de pe un Cyber Universe cu cablu). Cu el, Cyber-GPU face pasul 3.
+4b. **C-118 (Wi-Fi, `os-301` sau mai nou):** scrie `wifi identifica` + Enter → poză la ecran (doar citire, nimic de confirmat).
+   Dacă scrie „registrele CSR nu s-au citit: Memory Space oprit de firmware” — e normal la pasul ăsta.
 5. **C-117 (nou, `os-299` sau mai nou):** pe același stick scrie `analiza` + Enter (~câteva secunde, doar citire). Pe stick apare dosarul
    `raport\uhl\<calculator>\<data-ora>\`. Pune în `rezultate/<data>-laptop-asus-tuf/` DOAR `inventory.redacted.json` și `report.txt`
    (sau `trimite` cu cablu: pleacă singure doar acestea). `inventory.json` are numerele de serie — nu-l pune în hub.
