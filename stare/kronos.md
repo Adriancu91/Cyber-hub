@@ -1,18 +1,17 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-13 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-13 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **S107 gata, verificat: LA FEL → #513 rămâne.** Unealta nouă de renotare numără corect refuzul cinstit la întrebările-capcană (#513 1 → 16, #554 0 → 16 din 20), dar modelele refuză și 46–49 din 50 de întrebări știute → examenul de conversație fără text nu le desparte. Pentru modelul în uz contează examenele „răspuns din text” (S106: 81 față de 80 din 140).
-- Întrebarea #554 față de #513 e închisă. Slăbiciunea comună: tipurile de întrebări nevăzute la antrenare (11–13 din 50; la „actori”, „profesie”, „canal”, „câștigător” 0).
-- Noaptea 12→13: nimic pe placă.
+- **S108 în lucru** (din 08:06, doar procesor, doar citire): câte exemple din fiecare tip de întrebare a văzut linia modelului în uz și câte s-ar putea face din datele deja descărcate pentru tipurile slabe — cifre pentru alegerea lui Adrian. Nimic antrenat.
+- Noaptea 12→13: nimic pe placă, nimic căzut. Ștergerea C-112 verificată prin citire: 82 de modele / 33,4 GB șterse, 31 refuzate corect; discul C: al workstation-ului are 71 GB liberi. Teste: 1.411 trec (unul cu limită de timp a picat o dată în rularea mare, trece singur — urmărit).
+- Întrebarea #554 față de #513 e închisă (S105–S107: LA FEL). Slăbiciunea comună: tipurile de întrebări nevăzute la antrenare (11–13 din 50).
 - **Modelul în uz: #513** (98M, KGR1 Q8_0, 110.859.008 octeți, SHA `66f734b3…5859`); #554 cel mai bun la română (1,2040); #477 și #459 rezerve.
   Model propriu, de la zero, fără LLM străin.
 
 ## Urmează
-- **S108 (13 nov de la 08:00, doar procesor, doar citire, aprobat de supraveghetor):** câte exemple din fiecare tip de întrebare a văzut linia modelului în uz și câte s-ar putea face din datele deja descărcate pentru tipurile slabe — cifre pentru alegerea lui Adrian. Nimic antrenat.
+- După raportul S108: următoarea sarcină (placa e liberă azi și la noapte; nimic aprobat pe ea încă).
 - Direcția următoare (decizia lui Adrian): S101 (24 de straturi de la zero, ~7 nopți, „nu deocamdată” din C-101) sau mai multe tipuri de întrebări pe linia modelului în uz. C-89 (tokenizer românesc): PARCAT.
-- 13 nov dimineață: verificarea prin citire a ștergerii C-112 (în raportul de dimineață).
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu **#513** (suma, 3 texte de control). Rezervele #477 și #459 pornibile.
