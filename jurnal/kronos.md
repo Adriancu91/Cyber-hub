@@ -143,3 +143,4 @@
 - 2026-11-12 19:25 — C-111: Adrian a terminat la 19:19 → S105 (#554 vs #513) poate porni la noapte, cel târziu 23:00. C-112 preluat: S88 gata (ștergerea făcută de Adrian, 33,4 GB). Nicio problemă.
 - 2026-11-12 20:15 — S105 gata și verificat: LA FEL (#554 nu bate #513 nici pe texte nevăzute, nici la conversație) → #513 rămâne. La noapte S106: aceeași comparație pe examenele „răspuns din text”. Nicio problemă.
 - 2026-11-12 23:15 — S106 verificat: și cu textul alături #554 nu bate #513 (81 față de 80 din 140) → #513 rămâne; S107 (renotarea examenului de conversație, doar procesor) aprobat; noaptea fără placă.
+- 2026-11-13 02:15 — S107 verificat: renotarea numără corect refuzul la capcane (16 din 20), dar modelele refuză și la întrebări știute → #513 rămâne. S108 aprobat (numărătoarea tipurilor de întrebări, doar citire) pentru alegerea direcției. Nicio problemă.
