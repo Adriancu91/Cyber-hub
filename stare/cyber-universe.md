@@ -1,8 +1,10 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-13 05:45 (ora României) · **de:** sesiunea OS programată (05:40) — oprire scurtă, nimic nou de făcut fără Adrian. Ultimul Release: **`os-301`** (C-118 W0 `wifi identifica` + versiunea VBIOS, CI 301 verde). Înainte: `os-300` (C-117), `os-298` (C-116).
+**Actualizat:** 2026-11-13 10:30 (ora României) · **de:** sesiunea OS programată (08:40). Ultimul Release: **`os-301`** (testat azi pe ASUS: tot ce era de citit a trecut). În lucru: **`os-302`** (CI 302) = `os-301` + `analiza` cu faptele plăcii video din `gpu tur --trezire`.
 
 ## Acum
+- **Testul ASUS din 13 nov (`os-301`) — citit:** `wifi identifica`, `gpu identifica`, `gpu tur --trezire` (45 de fapte, VBIOS identic cu Windows, 0 scrieri în placă), `analiza` și `test tot` (6/7, doar rețeaua fără cablu) au trecut. Mulțumesc pentru poze și fișiere.
+- **P6-90 (din observația ta):** `analiza` arăta „placa NVIDIA: 0 fapte” pe laptop (placa „adormită”). Acum, dacă în aceeași pornire ai rulat `gpu tur --trezire`, `analiza` pune faptele lui în inventar (cu ora turului); `analiza` în sine tot nu scrie nimic. Testat în QEMU, toată suita trece; Release `os-302` după CI.
 - **C-118 (Wi-Fi AX201 pe ASUS), pasul W0:** comanda nouă **`wifi identifica`** (sau doar `wifi`) găsește placa Wi-Fi Intel și arată
   ID-urile, dacă e integrată (CNVi), starea ei, BAR-urile și — dacă firmware-ul a lăsat-o trează — 5 registre de identitate (versiunea MAC-ului,
   a radioului, comutatorul radio). **Zero scrieri.** Rândul „wifi” apare și în `test tot`, iar placa intră în inventarul `analiza`. Testat în QEMU
@@ -36,6 +38,11 @@
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
+
+**Nou (13 nov, după testul ASUS) — nimic urgent:**
+- **C-118 W1 (Wi-Fi):** registrele plăcii Wi-Fi nu se pot citi fiindcă placa e „adormită” (ca placa video). Ca să mergem mai departe am nevoie de „DA”-ul tău (în COMENZI) pentru o „trezire” ca la `gpu tur --trezire`: o scriere în configurația PCI a plăcii Wi-Fi, pusă la loc la final, nimic altceva. Plus, pentru W1, fișierul de firmware Qu/QuZ-hr-b0 descărcat de tine (pe stick, nu în hub).
+- **C-116 pasul 3 (placa video a laptopului):** Cyber-GPU așteaptă DA-ul tău separat.
+- La următorul test pe laptop (cu `os-302`): `gpu tur --trezire` (DA), apoi `analiza` → rândul „placa NVIDIA: … 45 fapte | cip GA106 | VRAM 6144 MiB …” și „faptele placii: din gpu tur --trezire …”.
 
 **Pe laptopul ASUS TUF (C-116, prima citire a plăcii video) — Release `os-298`:**
 1. Stick-ul de test (Kingston cu `stick-test-complet.zip` din **`os-298`**, sau imaginea `cyber-universe-gpu-scrie-usb.img` scrisă cu Rufus).
