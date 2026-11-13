@@ -149,3 +149,4 @@
 - 2026-11-13 14:15 — S109 (E1) pregătit și pornit pe placă: 3.345 întrebări noi, examen nou ținut deoparte, pre-înregistrarea verificată; rezultat ~16:40, apoi S110. Nicio problemă.
 - 2026-11-13 17:15 — S109 (E1) verificat: AJUTĂ, #577 102/130 față de 24, fără regresii. C-120 preluat: S110 rescrisă (pornire corectă 0,02, lot 6×16, FineWeb-2 românesc ca hrană după scurgeri → ~69 % română, 52 h, praguri noi); S111 cu AdamW 1e-5. Nicio problemă.
 - 2026-11-13 20:20 — S110: pregătirea făcută (pornirea reparată: 9,87; 1.462 teste). Restul FineWeb-2 curățat (0 potriviri cu examenele) intră totuși ca hrană 55 % (~70 % română); proba de rată se reface, rularea de 52 h pornește ~22:00. Nicio problemă.
+- 2026-11-13 23:15 — S110 (E2) pornit la 22:08: 52 h, ~73,6 % română, rata (a) aleasă corect la probă, pre-înregistrarea înainte de pornire (verificat). Puncte de control sâmbătă 10:45 / 23:00. Nicio problemă.
