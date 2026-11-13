@@ -1,10 +1,10 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-13 10:30 (ora României) · **de:** sesiunea OS programată (08:40). Ultimul Release: **`os-301`** (testat azi pe ASUS: tot ce era de citit a trecut). În lucru: **`os-302`** (CI 302) = `os-301` + `analiza` cu faptele plăcii video din `gpu tur --trezire`.
+**Actualizat:** 2026-11-13 10:30 (ora României) · **de:** sesiunea OS programată (08:40). Ultimul Release: **`os-301`** (testat azi pe ASUS: tot ce era de citit a trecut). Nou: **`os-302`** (CI 302 verde) = `os-301` + `analiza` cu faptele plăcii video din `gpu tur --trezire`.
 
 ## Acum
 - **Testul ASUS din 13 nov (`os-301`) — citit:** `wifi identifica`, `gpu identifica`, `gpu tur --trezire` (45 de fapte, VBIOS identic cu Windows, 0 scrieri în placă), `analiza` și `test tot` (6/7, doar rețeaua fără cablu) au trecut. Mulțumesc pentru poze și fișiere.
-- **P6-90 (din observația ta):** `analiza` arăta „placa NVIDIA: 0 fapte” pe laptop (placa „adormită”). Acum, dacă în aceeași pornire ai rulat `gpu tur --trezire`, `analiza` pune faptele lui în inventar (cu ora turului); `analiza` în sine tot nu scrie nimic. Testat în QEMU, toată suita trece; Release `os-302` după CI.
+- **P6-90 (din observația ta):** `analiza` arăta „placa NVIDIA: 0 fapte” pe laptop (placa „adormită”). Acum, dacă în aceeași pornire ai rulat `gpu tur --trezire`, `analiza` pune faptele lui în inventar (cu ora turului); `analiza` în sine tot nu scrie nimic. Testat în QEMU, toată suita trece; Release **`os-302`** gata (CI verde).
 - **C-118 (Wi-Fi AX201 pe ASUS), pasul W0:** comanda nouă **`wifi identifica`** (sau doar `wifi`) găsește placa Wi-Fi Intel și arată
   ID-urile, dacă e integrată (CNVi), starea ei, BAR-urile și — dacă firmware-ul a lăsat-o trează — 5 registre de identitate (versiunea MAC-ului,
   a radioului, comutatorul radio). **Zero scrieri.** Rândul „wifi” apare și în `test tot`, iar placa intră în inventarul `analiza`. Testat în QEMU
