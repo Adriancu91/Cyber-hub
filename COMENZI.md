@@ -1542,4 +1542,4 @@ Format:
 ### C-121 · kronos · „Da, șterge probele de rată” — spațiu pe C: pentru S110 (Adrian, 14 nov 11:09)
 - data: 2026-11-14 11:09 · Adrian, la propunerea supraveghetorului din `plan/pentru_adrian.md` (13 nov 23:15: „Dacă vrei margine, poți scrie în hub «da, șterge probele de rată» (~8,6 GB, nu mai folosesc)”): **„Da”.**
 - ce: se șterg DOAR dosarele probelor de rată ale S110 care nu mai sunt folosite (proba veche nevalabilă `proba_24z…` și probele `proba_24z2_a/b` / `a2/b2` — lista exactă o scrie supraveghetorul în coadă înainte), ~8,6 GB. **NU** se atinge: rularea S110 în curs și salvările ei, modelele #513 / #554 / #577 și rezervele, `lucru/jurnal`, datele, amprentele. Executantul scrie în raport ce a șters (căi + GB) și spațiul liber înainte/după. Fără întreruperea S110.
-- stare: nou (2026-11-14 11:10, centrul de comandă)
+- stare: preluat (2026-11-14 11:15, supraveghetor) — sarcina **S113** în `plan/coada.md` (lista exactă: `lucru/proba_24z/`, `lucru/proba_24z2/`, modelele #586–#589; fără placă, fără întreruperea S110). Dacă regula executantului nu-i permite să apese ștergerea (ca la S88), scrie comenzile exacte pentru Adrian în raport.
