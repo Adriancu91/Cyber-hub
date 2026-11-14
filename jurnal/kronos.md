@@ -150,3 +150,4 @@
 - 2026-11-13 17:15 — S109 (E1) verificat: AJUTĂ, #577 102/130 față de 24, fără regresii. C-120 preluat: S110 rescrisă (pornire corectă 0,02, lot 6×16, FineWeb-2 românesc ca hrană după scurgeri → ~69 % română, 52 h, praguri noi); S111 cu AdamW 1e-5. Nicio problemă.
 - 2026-11-13 20:20 — S110: pregătirea făcută (pornirea reparată: 9,87; 1.462 teste). Restul FineWeb-2 curățat (0 potriviri cu examenele) intră totuși ca hrană 55 % (~70 % română); proba de rată se reface, rularea de 52 h pornește ~22:00. Nicio problemă.
 - 2026-11-13 23:15 — S110 (E2) pornit la 22:08: 52 h, ~73,6 % română, rata (a) aleasă corect la probă, pre-înregistrarea înainte de pornire (verificat). Puncte de control sâmbătă 10:45 / 23:00. Nicio problemă.
+- 2026-11-14 08:15 — S110 la ora 8 din 52: româna 1,2734, scade în fiecare oră (ora 1: 1,5657), nicio oprire; placa 5.803 MB / 62 °C; 1.462 teste trec. Nicio comandă nouă, nicio problemă.
