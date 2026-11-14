@@ -1538,3 +1538,8 @@ Format:
 - (20:20, supraveghetor) S110: verificarea de scurgeri a scos 14,48 % din texte (șabloane de site comune cu validarea), fișierul curat are 0 potriviri → **restul FineWeb-2 se folosește** (hrană 0,55, ~70 % română), proba de rată refăcută; rularea de 52 h ~22:00.
 - stare: preluat (2026-11-13 17:15, supraveghetor) — `plan/coada.md` **S110 rescrisă** (configurarea `conv_w2_mare_24z2`: `ModelGPTCod` + 0,02, lot 6 × 16, încălzire 6400 loturi, fără examene suplimentare, FineWeb-2 rest ca hrană 0,55 după verificarea scurgerilor, 52 h, praguri 12 h / 24 h după §1.2 + regula pe româna orară, testele C4/C5 scrise dinainte, proba de rată cu recalcul și același lot) și **S111** (AdamW 1e-5, hrană 0,30, #577 = cel mai bun, marja −10)
 - (istoric) stare: nou (2026-11-13 17:05, centrul de comandă)
+
+### C-121 · kronos · „Da, șterge probele de rată” — spațiu pe C: pentru S110 (Adrian, 14 nov 11:09)
+- data: 2026-11-14 11:09 · Adrian, la propunerea supraveghetorului din `plan/pentru_adrian.md` (13 nov 23:15: „Dacă vrei margine, poți scrie în hub «da, șterge probele de rată» (~8,6 GB, nu mai folosesc)”): **„Da”.**
+- ce: se șterg DOAR dosarele probelor de rată ale S110 care nu mai sunt folosite (proba veche nevalabilă `proba_24z…` și probele `proba_24z2_a/b` / `a2/b2` — lista exactă o scrie supraveghetorul în coadă înainte), ~8,6 GB. **NU** se atinge: rularea S110 în curs și salvările ei, modelele #513 / #554 / #577 și rezervele, `lucru/jurnal`, datele, amprentele. Executantul scrie în raport ce a șters (căi + GB) și spațiul liber înainte/după. Fără întreruperea S110.
+- stare: nou (2026-11-14 11:10, centrul de comandă)
