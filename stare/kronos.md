@@ -1,12 +1,12 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-14 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-15 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **C-119 în lucru (antrenamentul mare; Adrian plecat până luni seara 16 nov):** S109 (E1) gata → S110 (E2) → S111 (E3) → S112 (E4), fiecare cu pre-înregistrare și praguri scrise dinainte.
 - **S109 (E1) GATA, verificat: AJUTĂ.** Modelul nou **#577** („#513+b”): 102/130 corecte pe tipurile antrenate (#513: 24), verificatorul 91 față de 23; fără regresii (română 1,2055, cod, R2, R1 98,97, S15, S4 în praguri). Mai slab pe tipuri nevăzute (5 față de 10 din 50).
-- **S110 (E2) RULEAZĂ din 22:08** (52 h, gata ~luni 16 nov 02:20–03:20): 24 de straturi de la zero, ~73,6 % română. **Punctele de 12 h și 24 h TRECUTE (verificate):** româna ora 24 = **1,1792** (deja sub #513, 1,2060 — informativ); media orelor 22–24 = 1,1822 vs 10–12 = 1,2410 (−0,059, pragul −0,02). Placa max 6.315 MB / 65 °C; C: 39 GB; 1.462 teste trec.
-- **C-121 preluat (11:15):** sarcina **S113** în coadă — ștergerea probelor de rată nefolosite (`lucru/proba_24z/`, `lucru/proba_24z2/`, modelele #586–#589, ~8,6 GB), fără placă, fără întreruperea S110. Supraveghetorul a precizat (14:15) că verificările S113 se fac în paralel cu S110 (doar disc). Verificările se fac la următoarea trecere a executantului (după raportul de 24 h).
+- **S110 (E2) RULEAZĂ din 13 nov 22:08** (52 h, gata ~luni 16 nov 03:10): 24 de straturi de la zero, ~73,6 % română. Punctele de 12 h și 24 h trecute. **Ora 31: româna 1,1603** (ora 24: 1,1792; #513: 1,2060), scade în fiecare oră, nicio regulă de oprire atinsă. Placa 5.653 MB / 62 °C. Teste: 1.461 trec, 1 pică (știut: siguranța de 40 GB pe disc; C: 34 GB).
+- **C-121 / S113 (ștergerea probelor, ~8,6 GB) încă nefăcută** — executantul iese la fiecare trecere cât placa e ocupată. Supraveghetorul a pus-o (08:15) obligatoriu înainte de S111.
 - **Modelul în uz: #513** (98M, KGR1 Q8_0); **#577 = cel mai bun măsurat** (nu e încă în interfață). Model propriu, de la zero, fără LLM străin.
 
 ## Urmează
@@ -25,5 +25,5 @@
 ## Blocaje / nevoie de Adrian
 - Niciun blocaj. Posibil de la Adrian: dacă executantul n-are voie să apese el ștergerea (ca la S88), Adrian rulează comenzile exacte din raportul S113 (~2 min, la workstation).
 - De știut: interfața 8787 rulează încă modele vechi (#312/#407); executantul n-are voie să oprească procesul → se schimbă la S112 (sau Adrian de mână, opțional; comanda în raportul S109).
-- Riscul de urmărit: discul C: ~18–19 GB liberi la final (pragul de oprire 15 GB); după S113 ~27 GB. Fără S113 la timp: oprire curată + întrebare.
+- Riscul de urmărit: discul C: ~19 GB liberi la finalul S110; S111 (7 h) ar coborî sub 15 GB pe la ora 6 fără S113 → oprire curată. După S113 ~27 GB.
 - Fără grabă: `lucru\memorie_mare` (~10,5 GB), Release-ul `kronos-kgr1-513`.
