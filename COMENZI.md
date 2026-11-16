@@ -1551,3 +1551,19 @@ Format:
 - data: 2026-11-16 13:02 · Adrian, la întrebarea executantului din `docs/rapoarte/2026-11-16_1238_S111_E3_conversatie.md` („e acceptabilă abaterea de 6.922 MB sau pun paza de memorie și în lanțurile de antrenare?”): **„este ok cred, pentru că nu s-a încins; mai grav e dacă ajunge temperatura critică”.**
 - deci: abaterea din S111 (6.922 MB ~3,5 min, sub limita generală de 7.000 MB, max 64 °C) e **acceptată**; nu e obligatorie paza de memorie nouă în lanțuri. **Rămân neschimbate**: limita generală a plăcii (~7 GB, CLAUDE.md) și paza de **temperatură** (83 °C) — aceea e cea importantă pentru Adrian.
 - stare: nou (2026-11-16 13:05, centrul de comandă)
+
+### C-123 · kronos · Fila „Chat” a interfeței: întrebarea în forma învățată + mesajul de sus actualizat (Adrian, 16 nov 13:47)
+- data: 2026-11-16 13:47 · Adrian a testat #651 pe 8787 (fila Chat: „salut” → text fără legătură) și a aprobat recomandarea („aprob recomandările”), adică propunerea 1 din `docs/rapoarte/2026-11-16_1309_C-119_final.md` §„Ce ar urma”.
+- ce: în `module/interfata/creiere.py` (+ teste), fila Chat pune întrebarea lui #651 în forma pe care a învățat-o (fără text alături, ca la antrenarea conversației: „Întrebare: … Răspuns:” sau forma exactă din datele `romana_raspunsuri_r2`), scriere mai puțin la întâmplare și **oprire la sfârșitul răspunsului** (nu 200 de litere fixe); mesajul gri de sus („engleză simplă și povești pentru copii…”) înlocuit cu ce știe #651 acum (română; răspunde cel mai bine cu text alături, în fila „Întreabă din text”). Fără `kronos/`; testele trec; repornești interfața de pe 8787 cu #651 și pui în raport 5 întrebări fără text (răspunsurile întocmai, timp).
+- așteptare cinstită (de scris în raport): răspunsuri scurte, dar faptele fără text pot fi greșite (modelul a învățat mai ales „din text”).
+- stare: nou (2026-11-16 13:50, centrul de comandă)
+
+### C-124 · kronos · După repornirea workstation-ului, interfața pornește direct cu #651 (Adrian, 16 nov 13:47)
+- data: 2026-11-16 13:47 · Adrian: „aprob recomandările” = propunerea 2 din raportul final C-119.
+- ce: valorile din `unelte/interfata_ws.ps1` (pornit de paznicul de procese) trecute pe #651 (`--config config/conv_w2_mare_24zc.toml --experiment 651 --experiment-text 651 --dispozitiv cpu`, port 8787), ca după o repornire să vină direct #651, nu #312/#407. Revenirea la vechi rămâne scrisă în raport. Testele trec.
+- stare: nou (2026-11-16 13:50, centrul de comandă)
+
+### C-125 · cyber-gpu · „Da” pentru V2 + V3 din ideea I9, în SIMULARE (Adrian, 16 nov 13:47)
+- data: 2026-11-16 13:47 · Adrian: „aprob recomandările”, la întrebarea din `stare/cyber-gpu.md` (sesiunea 102): „da pentru V2 + V3 în SIMULARE”.
+- ce: o variantă nouă de I9, **doar adăugare, oprită implicit**: (V2) bufferele de context MAIN/PM/PATCH mapate **privilegiat**; (V3) înainte de promovare, lista bufferelor cerută de la RM (`NV2080_CTRL_CMD_GR_GET_CTX_BUFFER_INFO` pe canal, doar citire) și **scrisă în jurnal**; teste în `gpu-sim` (SIMULARE). Pe placă **doar** în fereastra cu Adrian, odată cu `gpu lant` pe workstation. Sursa: `idei/2026-11-16_cercetare-i9-promote-ctx.md`.
+- stare: nou (2026-11-16 13:50, centrul de comandă)

@@ -43,7 +43,7 @@ de verificat** și o diferență de versiune de firmware. Motivul exact îl va d
 - Doar citire și comparare în cod; V3 ar fi un mesaj RM de citire în plus. Nicio scriere nouă în placă fără fereastra cu Adrian.
 
 ## Decizia lui Adrian
-- Nimic de decis acum (informație). Testul pe workstation, când Kronos eliberează placa.
+- 2026-11-16 13:47: Adrian aprobă V2 + V3 în SIMULARE → comanda **C-125**. Testul pe placă rămâne în fereastra cu Adrian.
 
 ## Discuție
 - 2026-11-16 centrul de comandă: surse — NVIDIA/open-gpu-kernel-modules tag 570.144 (MIT); nouveau r535 gr.c (MIT); tinygrad commit 2466e27 (MIT);
