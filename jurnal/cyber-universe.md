@@ -254,3 +254,4 @@
 - 2026-11-16 11:45 · sesiunea OS programată (11:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-16 15:05 · sesiunea OS programată (14:40) · OPRIT rămâne (regula 5): jurnalul os-302 citit (I9 = 0x57, la cyber-gpu/C-125); stresul CI picat o dată la proces 217 (#PF 0x400000), reluat verde de 3 ori → B-007; lipsea `github.token` pe stick-ul de test.
 - 2026-11-16 17:50 · sesiunea OS programată (17:40) · OPRIT rămâne (regula 5): nicio comandă nouă pentru OS, niciun jurnal nou, C-125 încă fără commit cyber-gpu, CI verde (`os-302`).
+- 2026-11-16 22:05 · sesiunea OS programată (20:40) · oprirea ridicată de C-125 (cyber-gpu `78704e5`/`239f986`): P6-91 — `gpu lant --i9 c125` (V2 + V3, implicit oprit), scenariul `gpu-i9`; suita 108/0/1, CI 303 verde → Release `os-303`; pe placă doar cu Adrian.

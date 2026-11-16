@@ -1,8 +1,12 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-16 17:50 (ora României) · **de:** sesiunea OS programată (17:40) — **OPRIT: necesită analiza lui Adrian** (regula 5; doar așteptare). CI verde (testul de stres a picat o dată, reluat verde — B-007). Ultimul Release: **`os-302`**.
+**Actualizat:** 2026-11-16 22:05 (ora României) · **de:** sesiunea OS programată (20:40) — **oprirea s-a ridicat** (commit-ul Cyber-GPU pentru C-125). **P6-91 gata**, CI verde. Ultimul Release: **`os-303`**.
 
 ## Acum
+- **16 nov 22:05 — `os-303` gata (P6-91, C-125):** OS-ul folosește noul cod Cyber-GPU (`239f986`). Comanda nouă **`gpu lant --i9 c125`** încearcă
+  pasul I9 (cel care a picat cu 0x57 în testul tău de azi) în varianta nouă: bufferele de context marcate „privilegiat” + lista bufferelor
+  cerută de la placă și scrisă în jurnal (și dacă I9 pică). Fără `--i9 c125`, `gpu lant` face exact ce a făcut în `os-302`. Testat doar în
+  SIMULARE (QEMU, toată suita 108/0/1, CI verde); pe placă netestat — doar în fereastra cu tine.
 - **16 nov 17:50:** nimic nou pentru OS (C-127…C-129 sunt pentru Kronos; C-125 la Cyber-GPU încă fără commit); „OPRIT” rămâne, CI verde (`os-302`). De la tine aștept doar: `github.token` pus pe stick-ul de test, ca `trimite` să urce jurnalele.
 - **16 nov 15:05:** am citit testul de azi (`os-302`): I8 trece iar, I9 pică cu 0x57 (obiect negăsit) → e la Cyber-GPU (C-125); OS-ul leagă commit-ul lor imediat ce apare. `trimite` n-a mers pentru că pe stick-ul de test lipsea `github.token`. Testul de stres de 5 minute din CI a picat o dată (un program n-a găsit pagina de cod, la al 217-lea proces); repetat de 3 ori (2 local, 1 în CI) → trece; notat ca B-007, de urmărit.
 - **16 nov 11:45:** tot nimic nou pentru OS (nicio comandă, niciun jurnal); „OPRIT” rămâne, CI verde (`os-302`).
@@ -57,14 +61,19 @@
 - P6-12 pasul 2 (fereastră proprie fără cache) doar după un `log mmio` de pe un calculator real.
 
 ## Ce oferă proiectul celorlalți
-- `gpu lant [--varianta N]` I6 → I14, `gpu variante`, `gpu recupereaza`, `gpu tur --trezire` (GA106), `kronos --gpu` pe stick-ul de test; jurnale + rapoarte trimise în hub (cu token).
+- `gpu lant [--varianta N] [--i9 c125]` I6 → I14 (`--i9 c125` = C-125, din `os-303`), `gpu variante`, `gpu recupereaza`, `gpu tur --trezire` (GA106), `kronos --gpu` pe stick-ul de test; jurnale + rapoarte trimise în hub (cu token).
 - `analiza` (inventar ca UHL, `uhl-inventory/0.1`), `hw` cu modelul din SMBIOS, `hub ruleaza` / `hub asculta`, `test tot`, `kronos --conversatie`, git pe ramuri `os/…`, `web`, `files`; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
 
 ## De ce are nevoie de la ceilalți
-- **`cyber-gpu`:** după jurnalul de citire de pe laptop, pasul 3 din C-116; după următorul `gpu lant` pe workstation, cauza lui I9.
+- **`cyber-gpu`:** nimic acum (`239f986` legat în `os-303`). După jurnalul `gpu lant --i9 c125` de pe workstation: pasul următor pentru I9; după DA-ul lui Adrian, pasul 3 din C-116 pe laptop.
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
+
+**Nou (16 nov 22:05) — când Kronos lasă placa de pe workstation (C-119):**
+1. Stick-ul de test cu **`os-303`** (`stick-test-complet.zip` din Release) + fișierul **`github.token`** în rădăcina stick-ului.
+2. Oprești complet workstation-ul (pornire rece), pornești de pe stick → `gpu lant --i9 c125` → citești avertismentul → `DA` + Enter.
+3. La final `trimite` (urcă jurnalul în hub). Dacă nu merge: poză la ultimele rânduri, jurnalul `raport\gpu-jurnal-NNN.txt` în `rezultate/<data>-workstation-os303/`.
 
 **Nou (16 nov):**
 - Pune fișierul `github.token` și pe **stick-ul de test** (în rădăcină, ca `/usb/github.token`), ca `trimite` să urce singur jurnalul data viitoare. Nimic urgent altceva.
