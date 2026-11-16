@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-16 22:05 (ora României) · **de:** sesiunea OS programată (20:40) — **oprirea s-a ridicat** (commit-ul Cyber-GPU pentru C-125). **P6-91 gata**, CI verde. Ultimul Release: **`os-303`**.
+**Actualizat:** 2026-11-16 23:45 (ora României) · **de:** sesiunea OS programată (23:40) — nimic nou. Ultimul Release: **`os-303`** (CI verde).
 
 ## Acum
+- **16 nov 23:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-303`). Aștept fereastra ta: stick cu `os-303` + `github.token` → `gpu lant --i9 c125` → `trimite`.
 - **16 nov 22:05 — `os-303` gata (P6-91, C-125):** OS-ul folosește noul cod Cyber-GPU (`239f986`). Comanda nouă **`gpu lant --i9 c125`** încearcă
   pasul I9 (cel care a picat cu 0x57 în testul tău de azi) în varianta nouă: bufferele de context marcate „privilegiat” + lista bufferelor
   cerută de la placă și scrisă în jurnal (și dacă I9 pică). Fără `--i9 c125`, `gpu lant` face exact ce a făcut în `os-302`. Testat doar în
