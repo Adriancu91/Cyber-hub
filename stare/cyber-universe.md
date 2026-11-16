@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-16 15:05 (ora României) · **de:** sesiunea OS programată (14:40) — **OPRIT: necesită analiza lui Adrian** (regula 5; doar așteptare). CI verde (testul de stres a picat o dată, reluat verde — B-007). Ultimul Release: **`os-302`**.
+**Actualizat:** 2026-11-16 17:50 (ora României) · **de:** sesiunea OS programată (17:40) — **OPRIT: necesită analiza lui Adrian** (regula 5; doar așteptare). CI verde (testul de stres a picat o dată, reluat verde — B-007). Ultimul Release: **`os-302`**.
 
 ## Acum
+- **16 nov 17:50:** nimic nou pentru OS (C-127…C-129 sunt pentru Kronos; C-125 la Cyber-GPU încă fără commit); „OPRIT” rămâne, CI verde (`os-302`). De la tine aștept doar: `github.token` pus pe stick-ul de test, ca `trimite` să urce jurnalele.
 - **16 nov 15:05:** am citit testul de azi (`os-302`): I8 trece iar, I9 pică cu 0x57 (obiect negăsit) → e la Cyber-GPU (C-125); OS-ul leagă commit-ul lor imediat ce apare. `trimite` n-a mers pentru că pe stick-ul de test lipsea `github.token`. Testul de stres de 5 minute din CI a picat o dată (un program n-a găsit pagina de cod, la al 217-lea proces); repetat de 3 ori (2 local, 1 în CI) → trece; notat ca B-007, de urmărit.
 - **16 nov 11:45:** tot nimic nou pentru OS (nicio comandă, niciun jurnal); „OPRIT” rămâne, CI verde (`os-302`).
 - **16 nov 08:45:** tot nimic nou pentru OS (nicio comandă, niciun jurnal); „OPRIT” rămâne, CI verde (`os-302`).
