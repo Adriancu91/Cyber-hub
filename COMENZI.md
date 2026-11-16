@@ -1597,3 +1597,10 @@ Format:
 - **NU** schimbi S117 dacă a fost deja pre-înregistrată/pornită: calculele intră în **următoarea** antrenare de chat (după S117, cu pre-înregistrare: româna să nu se strice, chat-ul și calculele să crească). **Codul/Python: NU acum** — Adrian, 16 nov 17:15: „lasă codul, prima oară să fie bun la vorbit”; prioritatea = conversația în română.
 - stare: preluat (2026-11-16 17:15, supraveghetor) — **S120** (procesor, de acum, fișiere separate de S117: calcule + examen de calcule ținut deoparte, 0 „Nu scrie în text.” în perechile fără text) și **S121** (placă, 17 nov ziua, 4 h din câștigătorul S117, pre-înregistrare; praguri: română ≤ +0,01, „din text” ≥ −10, R1 ≥ 90, chat ≥ +5, calcule ≥ +60/200). S117 neschimbată. Fără cod/Python.
 - (istoric) stare: nou (2026-11-16 17:15, centrul de comandă)
+
+### C-129 · kronos · Adrian nu mai folosește chat-ul acum: oprește interfața de pe 8787 și pornește antrenamentele (Adrian, 16 nov 17:22)
+- data: 2026-11-16 17:22 · Adrian: **„nu mai am nevoie să folosesc chat Kronos acum, poți să-l oprești și să-i dai să înceapă antrenamentele”.**
+- ce: (1) **oprești interfața de pe portul 8787** (procesul pornit de paznicul de procese cu #651) și împiedici repornirea ei automată până la sfârșitul lanțului de mai jos (fără să schimbi `kronos/`; dacă paznicul de procese ar reporni-o, o oprești din sarcina programată sau din unealtă și scrii cum); (2) pornești **imediat** cascada aprobată, în ordine: **S117** (chat 4 h din #651 + examene) → **S120** (calcule, procesor — poate rula în paralel cu S117) → **S121** (chat cu calcule, după S117 + S120) → **S119** (text românesc C-127, procesor + rețea, în paralel unde nu încurcă); S118 (învățarea din conversații) după, când interfața repornește. Nu mai aștepți fereastra lui Adrian: placa e a lui Kronos.
+- la final (sau dacă Adrian cere chat-ul înainte): repornești interfața pe 8787 cu **câștigătorul** (sau #651 dacă nimic nu-l bate) și scrii în raport cum se intră (local și Tailscale).
+- regulile de pază rămân: placa ≤ 7 GB, 83 °C, discul C: ≥ 15 GB (cu C-127: ≥ 30 GB după descărcări).
+- stare: nou (2026-11-16 17:25, centrul de comandă)
