@@ -1,0 +1,9 @@
+# Workstation (GA104) — 16 nov 2026 ~14:10–14:20, os-302 (cyber-gpu 835f24d), stick de test, `gpu lant` (varianta 1), cu Adrian de față
+
+- Pornire la rece; `gpu lant` + DA. Ecranul a înghețat ca la os-295, la „I8 CORE_RESUME: starea după predarea etapei 3” (`ecran-inghetat-i8.jpg`); oprire din buton după ~2 min, repornire de pe stick. `trimite`: **fără `/usb/github.token` pe stick-ul de test** → jurnalul adus de Adrian din Windows: `gpu-jurnal-004.txt` (2493 rânduri).
+- **I0–I8 TREC din nou** (varianta 1): I6 FWSEC-FRTS ok, I7 Booter ok, **I8 GSP_INIT_DONE ok** (148,99 s), **I8e golden ok** (158,70 s).
+- **I9 `i9-canal-lucru`: ESEC — `text motivul esecului = "eroare hardware 0x57"` = `NV_ERR_OBJECT_NOT_FOUND` („Requested object not found”, `nvstatuscodes.h` 570.144).**
+- Numărarea soneriilor (ca în `docs/os-295_ANALIZA_I9.md` din cyber-gpu): după golden 7 sonerii (ROOT…CONTEXT_SHARE) → fereastra 0x1700 (3) → sonerie (CHANNEL_GPFIFO; în așteptare 2 NOCAT ASSERT: `0x01ab9bda`, `0x01ab9c56`) → sonerie (COMPUTE) → fereastra (bufferele de context) → sonerie (`PROMOTE_CTX` fizic) → sonerie (`PROMOTE_CTX` **virtual**; în așteptare 2 NOCAT ASSERT: `0x01443f48`, `0x01418a2a`) → **ESEC 0x57**. Deci, ca la os-295, cade jumătatea **virtuală**, iar acum știm codul: GSP-RM **nu găsește un obiect** la promovarea VA.
+- Legătura cu cercetarea din `idei/2026-11-16_cercetare-i9-promote-ctx.md` (C-125, V2+V3 în simulare): `NV_ERR_OBJECT_NOT_FOUND` sugerează că GSP-RM caută ceva legat de VA / spațiul de adrese al canalului (de verificat de Cyber-GPU: ce obiect — maparea VA în VASPACE „deținut din afară”, context share-ul, sau `GR_GET_CTX_BUFFER_INFO`).
+- Curățare: Bus Master oprit ok, `tur-dupa: ok` (pregătirea I6 „ESEC” după lanț = WPR2 ridicat, normal fără pornire la rece).
+- Fără scrieri neplanificate; Kronos nu antrena (placa liberă).
