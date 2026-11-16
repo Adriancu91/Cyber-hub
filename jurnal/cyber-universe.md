@@ -252,3 +252,4 @@
 - 2026-11-16 05:45 · sesiunea OS programată (05:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-16 08:45 · sesiunea OS programată (08:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-16 11:45 · sesiunea OS programată (11:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
+- 2026-11-16 15:05 · sesiunea OS programată (14:40) · OPRIT rămâne (regula 5): jurnalul os-302 citit (I9 = 0x57, la cyber-gpu/C-125); stresul CI picat o dată la proces 217 (#PF 0x400000), reluat verde de 3 ori → B-007; lipsea `github.token` pe stick-ul de test.

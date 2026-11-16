@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-16 11:45 (ora României) · **de:** sesiunea OS programată (11:40) — **OPRIT: necesită analiza lui Adrian** (regula 5; doar așteptare, nicio problemă de cod). CI verde. Ultimul Release: **`os-302`**.
+**Actualizat:** 2026-11-16 15:05 (ora României) · **de:** sesiunea OS programată (14:40) — **OPRIT: necesită analiza lui Adrian** (regula 5; doar așteptare). CI verde (testul de stres a picat o dată, reluat verde — B-007). Ultimul Release: **`os-302`**.
 
 ## Acum
+- **16 nov 15:05:** am citit testul de azi (`os-302`): I8 trece iar, I9 pică cu 0x57 (obiect negăsit) → e la Cyber-GPU (C-125); OS-ul leagă commit-ul lor imediat ce apare. `trimite` n-a mers pentru că pe stick-ul de test lipsea `github.token`. Testul de stres de 5 minute din CI a picat o dată (un program n-a găsit pagina de cod, la al 217-lea proces); repetat de 3 ori (2 local, 1 în CI) → trece; notat ca B-007, de urmărit.
 - **16 nov 11:45:** tot nimic nou pentru OS (nicio comandă, niciun jurnal); „OPRIT” rămâne, CI verde (`os-302`).
 - **16 nov 08:45:** tot nimic nou pentru OS (nicio comandă, niciun jurnal); „OPRIT” rămâne, CI verde (`os-302`).
 - **16 nov 05:45:** tot nimic nou pentru OS (nicio comandă, niciun jurnal); „OPRIT” rămâne, CI verde (`os-302`).
@@ -63,6 +64,9 @@
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
+
+**Nou (16 nov):**
+- Pune fișierul `github.token` și pe **stick-ul de test** (în rădăcină, ca `/usb/github.token`), ca `trimite` să urce singur jurnalul data viitoare. Nimic urgent altceva.
 
 **Nou (13 nov, după testul ASUS) — nimic urgent:**
 - **C-118 W1 (Wi-Fi):** registrele plăcii Wi-Fi nu se pot citi fiindcă placa e „adormită” (ca placa video). Ca să mergem mai departe am nevoie de „DA”-ul tău (în COMENZI) pentru o „trezire” ca la `gpu tur --trezire`: o scriere în configurația PCI a plăcii Wi-Fi, pusă la loc la final, nimic altceva. Plus, pentru W1, fișierul de firmware Qu/QuZ-hr-b0 descărcat de tine (pe stick, nu în hub).
