@@ -1569,7 +1569,8 @@ Format:
 ### C-125 · cyber-gpu · „Da” pentru V2 + V3 din ideea I9, în SIMULARE (Adrian, 16 nov 13:47)
 - data: 2026-11-16 13:47 · Adrian: „aprob recomandările”, la întrebarea din `stare/cyber-gpu.md` (sesiunea 102): „da pentru V2 + V3 în SIMULARE”.
 - ce: o variantă nouă de I9, **doar adăugare, oprită implicit**: (V2) bufferele de context MAIN/PM/PATCH mapate **privilegiat**; (V3) înainte de promovare, lista bufferelor cerută de la RM (`NV2080_CTRL_CMD_GR_GET_CTX_BUFFER_INFO` pe canal, doar citire) și **scrisă în jurnal**; teste în `gpu-sim` (SIMULARE). Pe placă **doar** în fereastra cu Adrian, odată cu `gpu lant` pe workstation. Sursa: `idei/2026-11-16_cercetare-i9-promote-ctx.md`.
-- stare: preluat (2026-11-16 19:30, sesiunea Cyber-GPU 103)
+- stare: gata (preluat 2026-11-16 19:30, terminat 19:45, sesiunea Cyber-GPU 103)
+- rezultat: V2 (bufferele de context mapate privilegiat) + V3 (`GR_GET_CTX_BUFFER_INFO`, răspunsul sau refuzul scris în jurnal, lanțul merge mai departe) în spatele opțiunii `I9Options`, implicit oprită, doar SIMULARE — cyber-gpu `78704e5` (doar adăugări, 485 PASS, CI verde); OS-ul are de legat commit-ul + opțiunea `gpu lant --i9 c125` (nota `cyber-gpu/integration/cyber-universe/C-125_i9-v2-v3.md`); pe placă doar în fereastra cu Adrian.
 
 ### C-126 · kronos · Kronos folosibil în convorbiri, AUTOMAT, apoi învață singur din conversații (Adrian, 16 nov 13:53)
 - data: 2026-11-16 13:50–13:53 · Adrian, după ce a testat #651 în fila Chat („e dezamăgitor cum răspunde după atâta lucru”): **„trebuie să facem ceva automat ca să-l putem folosi în convorbiri, iar după aceea învață din conversații”.**
