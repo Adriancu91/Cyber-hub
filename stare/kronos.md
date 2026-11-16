@@ -1,12 +1,12 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-16 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-16 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **S117 (C-126 A) rulează din 19:30:** Kronos învață chat-ul 4 h din #651, apoi examenele (~01:00). Intră în interfață doar dacă trece pragurile pre-înregistrate.
+- **S117 (C-126 A) rulează din 19:30:** Kronos învață chat-ul 4 h din #651, apoi examenele (~01:00). Intră în interfață doar dacă trece pragurile pre-înregistrate. La ora 2: română 1,0898; placa 6.563 MB / 63 °C.
 - **S120 (C-128) gata, verificat:** 2.000 de exerciții de calcul făcute de program + un examen de calcule ținut deoparte (200); #651 = 1/200 acum. 0 scurgeri.
 - **S119 (C-127), prima trecere:** licențele verificate (FineWeb-2, oasst2, HPLT au voie; CulturaX cere acceptare → întrebare la Adrian); nimic descărcat.
-- **C-129:** interfața de pe 8787 se oprește acum (S122) și rămâne oprită până la capătul lanțului. Teste: 1.487 trec, 0 pică. C: ~64 GB liberi.
+- **C-129 / S122:** interfața de pe 8787 e oprită de la 22:00 (comutatorul `lucru\STOP_INTERFATA`, paznicul n-o mai repornește) până la capătul lanțului. Teste: 1.488 trec, 0 pică. C: ~64 GB liberi.
 
 ## Urmează
 - **S123 (C-130, E0):** ~10 min pe placă imediat după S117 — test de memorare (200 din antrenare față de 200 ținute deoparte), doar diagnostic.
