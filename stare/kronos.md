@@ -1,28 +1,27 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-16 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-16 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **C-119 în lucru (antrenamentul mare; Adrian plecat până luni seara 16 nov):** S109 (E1) gata → S110 (E2) gata → **S111 (E3) rulează** → S112 (E4).
-- **S110 (E2) GATA, verificat: MAI BUN.** Kronos de 24 de straturi (183 M), de la zero, 52 h: română curată **#641 = 1,0891** față de **#513 = 1,2060** (prag MAI BUN ≤ 1,2010). Și pe examenul neutru (texte noi): 1,0125 față de 1,1265. Codul și poveștile englezești puțin mai slabe (așteptat).
-- **S111 (E3) RULEAZĂ din 16 nov 04:10** (~7 h, gata ~11:20): conversația pe #641 (AdamW 1e-5, 30 % hrană FineWeb-2), apoi toate examenele pe #513, #577 și modelul nou → câștigătorul. Orele 1–2: româna 1,0889 → 1,0886 (stă pe loc, normal). Placa 6.411 MB / 61 °C.
-- Teste: 1.462 trec, 1 pică (știut: siguranța de 40 GB pe disc). **S113 gata:** Adrian a șters probele (C-121), C: ~22,8 GB liberi.
-- **Modelul în uz: #513** (98M, KGR1 Q8_0); #577 și #641 măsurate mai bine, încă nu în interfață. Model propriu, de la zero, fără LLM străin.
+- **C-119 (antrenamentul mare) ÎNCHIS.** S110: Kronos de 24 de straturi (183 M), de la zero → #641 (română 1,0891 față de 1,2060 la #513). S111: învățat pe conversație 7 h → **#651 CÂȘTIGĂ** (verificat: română 1,0878; corecte 228 față de 221 la #577; R1 99,31). Placa folosită ~67 h din 72.
+- **S112:** interfața de pe 8787 (local + Tailscale) rulează cu **#651** pe procesor. Fila „Întreabă din text” merge bine; fila Chat (fără text) încă nu are sens — modelul n-a văzut întrebări fără text.
+- **C-122:** abaterea de memorie 6.922 MB din S111 acceptată de Adrian; temperatura (83 °C) rămâne paza principală.
+- Teste: 1.462 trec, 1 pică (știut: siguranța de 40 GB pe disc; C: ~19 GB). Model propriu, de la zero, fără LLM străin.
 
-## Urmează
-- **S111:** verdictul strict (română ≤ cel mai bun − 0,005, corecte ≥ cel mai bun − 10, R1 ≥ 90, martorul S16).
-- **S112 (E4):** câștigătorul în interfața de convorbire (port 8787, local + Tailscale) + raport final pentru luni seara.
+## Urmează (comenzile lui Adrian de azi, în coada Kronos)
+- **S114 (C-123)** fila Chat cu întrebarea în forma învățată + mesajul de sus nou; **S115 (C-124)** după repornire interfața vine direct cu #651 — de acum, procesor.
+- **S116 (C-126 A)** date de chat fără text, făcute cu reguli din Wikipedia RO + șabloane (fără alt AI) și un examen de chat ținut deoparte; **S117** 4 h din #651 la noapte, intră în interfață doar dacă chat-ul crește clar și restul nu scade.
+- **S118 (C-126 B)** 👍/👎 și corecturi în interfață; bucla care învață din ele și schimbă modelul doar dacă trece examenele. Conversațiile rămân doar pe workstation.
 
 ## Ce oferă proiectul celorlalți
-- **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` cu **#513**. Dacă S111 alege un model nou (#577 sau baza de 24), îl anunțăm aici; KGR1 nou doar după „da”-ul lui Adrian (modelul de 24 e de ~2× mai mare).
-- Unelte pentru date mari cu RAM mic (`date_bucati`, dovedite pe placă).
+- **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` rămâne cu **#513** (KGR1). #651 e mai bun, dar ~2× mai mare; un KGR1 nou doar după „da”-ul lui Adrian.
+- Unelte pentru date mari cu RAM mic (`date_bucati`).
 
 ## De ce are nevoie de la ceilalți
-- De la centrul de comandă: notă în `COMENZI.md` dacă Adrian vine la workstation înainte de sfârșitul S111/S112 (Kronos salvează, se oprește, reia).
+- De la centrul de comandă: o notă în `COMENZI.md` când Adrian vrea placa workstation-ului pentru `gpu lant` (Cyber-GPU, I9) — Kronos nu pornește nimic pe placă până scrie „a terminat”. Antrenarea S117 e planificată în noaptea 16 → 17 nov.
 - De la `suita-office`: nimic.
 
 ## Blocaje / nevoie de Adrian
 - Niciun blocaj. De la Adrian: nimic acum.
-- Discul C: ~22,8 GB după ștergere → S111 ar trebui să meargă toate cele 7 ore (paza de 15 GB rămâne plasă).
-- De știut: interfața 8787 rulează încă modele vechi (#312/#407) → se schimbă la S112.
+- De știut: discul C: ~19 GB liberi (antrenările lungi sunt limitate la ~4 h fără o ștergere nouă).
 - Fără grabă: `lucru\memorie_mare` (~10,5 GB), Release-ul `kronos-kgr1-513`.

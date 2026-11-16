@@ -1550,18 +1550,21 @@ Format:
 ### C-122 · kronos · Răspuns la întrebarea din S111: abaterea de memorie 6.922 MB e acceptabilă (Adrian, 16 nov 13:02)
 - data: 2026-11-16 13:02 · Adrian, la întrebarea executantului din `docs/rapoarte/2026-11-16_1238_S111_E3_conversatie.md` („e acceptabilă abaterea de 6.922 MB sau pun paza de memorie și în lanțurile de antrenare?”): **„este ok cred, pentru că nu s-a încins; mai grav e dacă ajunge temperatura critică”.**
 - deci: abaterea din S111 (6.922 MB ~3,5 min, sub limita generală de 7.000 MB, max 64 °C) e **acceptată**; nu e obligatorie paza de memorie nouă în lanțuri. **Rămân neschimbate**: limita generală a plăcii (~7 GB, CLAUDE.md) și paza de **temperatură** (83 °C) — aceea e cea importantă pentru Adrian.
-- stare: nou (2026-11-16 13:05, centrul de comandă)
+- stare: gata (2026-11-16 14:15, supraveghetor) · rezultat: notat sus în `plan/coada.md` Kronos — abaterea S111 acceptată, limita generală 7.000 MB și paza de 83 °C rămân; nicio pază nouă obligatorie.
+- (istoric) stare: nou (2026-11-16 13:05, centrul de comandă)
 
 ### C-123 · kronos · Fila „Chat” a interfeței: întrebarea în forma învățată + mesajul de sus actualizat (Adrian, 16 nov 13:47)
 - data: 2026-11-16 13:47 · Adrian a testat #651 pe 8787 (fila Chat: „salut” → text fără legătură) și a aprobat recomandarea („aprob recomandările”), adică propunerea 1 din `docs/rapoarte/2026-11-16_1309_C-119_final.md` §„Ce ar urma”.
 - ce: în `module/interfata/creiere.py` (+ teste), fila Chat pune întrebarea lui #651 în forma pe care a învățat-o (fără text alături, ca la antrenarea conversației: „Întrebare: … Răspuns:” sau forma exactă din datele `romana_raspunsuri_r2`), scriere mai puțin la întâmplare și **oprire la sfârșitul răspunsului** (nu 200 de litere fixe); mesajul gri de sus („engleză simplă și povești pentru copii…”) înlocuit cu ce știe #651 acum (română; răspunde cel mai bine cu text alături, în fila „Întreabă din text”). Fără `kronos/`; testele trec; repornești interfața de pe 8787 cu #651 și pui în raport 5 întrebări fără text (răspunsurile întocmai, timp).
 - așteptare cinstită (de scris în raport): răspunsuri scurte, dar faptele fără text pot fi greșite (modelul a învățat mai ales „din text”).
-- stare: nou (2026-11-16 13:50, centrul de comandă)
+- stare: preluat (2026-11-16 14:15, supraveghetor) — **S114** în `plan/coada.md` Kronos (`aprobat`, procesor, de acum)
+- (istoric) stare: nou (2026-11-16 13:50, centrul de comandă)
 
 ### C-124 · kronos · După repornirea workstation-ului, interfața pornește direct cu #651 (Adrian, 16 nov 13:47)
 - data: 2026-11-16 13:47 · Adrian: „aprob recomandările” = propunerea 2 din raportul final C-119.
 - ce: valorile din `unelte/interfata_ws.ps1` (pornit de paznicul de procese) trecute pe #651 (`--config config/conv_w2_mare_24zc.toml --experiment 651 --experiment-text 651 --dispozitiv cpu`, port 8787), ca după o repornire să vină direct #651, nu #312/#407. Revenirea la vechi rămâne scrisă în raport. Testele trec.
-- stare: nou (2026-11-16 13:50, centrul de comandă)
+- stare: preluat (2026-11-16 14:15, supraveghetor) — **S115** în `plan/coada.md` Kronos (`aprobat`, procesor, de acum)
+- (istoric) stare: nou (2026-11-16 13:50, centrul de comandă)
 
 ### C-125 · cyber-gpu · „Da” pentru V2 + V3 din ideea I9, în SIMULARE (Adrian, 16 nov 13:47)
 - data: 2026-11-16 13:47 · Adrian: „aprob recomandările”, la întrebarea din `stare/cyber-gpu.md` (sesiunea 102): „da pentru V2 + V3 în SIMULARE”.
@@ -1573,4 +1576,5 @@ Format:
 - **Partea A — date de conversație făcute automat, fără alt AI** (regula „de la zero” rămâne): un generator nou în `unelte/` (ca la S109) care produce perechi **fără text alături**: (1) întrebări-răspunsuri scurte din Wikipedia RO deja descărcată (cine/ce/unde/când/câți, definiții „Ce este X?” → prima propoziție a articolului), (2) conversație socială pe șabloane scrise de executant (salut, „ce faci”, mulțumesc, la revedere, „cine ești” → „Sunt Kronos…”, „nu știu” când nu știe), (3) câteva conversații pe 2–3 replici. Examen nou ținut deoparte (nefolosit la antrenare) + întrebările de chat folosite azi de Adrian („salut”, „Care este capitala României?” etc.). Apoi o antrenare scurtă din **#651** (câteva ore, AdamW 1e-5, cu pre-înregistrare și praguri: româna să nu se strice > 0,01, „din text” să nu scadă, chat-ul să crească). Câștigătorul intră în interfață (împreună cu C-123).
 - **Partea B — învățare din conversații** (după A): interfața de pe 8787 **păstrează local** fiecare conversație (doar pe workstation, în `lucru/`, niciodată în GitHub/hub) cu butoane 👍 / 👎 și un câmp „răspunsul corect ar fi…”. O sarcină **automată** (de exemplu noaptea, cu cascada) strânge perechile aprobate/corectate de Adrian, le pune într-un fișier de lecții, face o antrenare scurtă și **schimbă modelul din interfață DOAR dacă trece examenele** (altfel păstrează modelul vechi și scrie de ce) — fără să uite ce știa (examenele vechi ca paznic). Prima variantă: învață doar din ce a marcat/corectat Adrian, nu din orice text scris.
 - reguli: `kronos/` doar cu aprobare (dacă e nevoie, întrebare separată); nimic descărcat; placa ≤ 7 GB, temperatura 83 °C; raport după A și după prima rulare B; conversațiile lui Adrian sunt private (nu în hub, nu în GitHub, nu în rapoarte decât cu acordul lui).
-- stare: nou (2026-11-16 13:58, centrul de comandă)
+- stare: preluat (2026-11-16 14:15, supraveghetor) — în `plan/coada.md` Kronos: **S116** (A: generatorul de chat fără text + examenul de chat ținut deoparte, procesor, azi) → **S117** (A: 4 h din #651 la noapte, praguri: română ≤ +0,01, corecte „din text” ≥ 218, R1 ≥ 90, chat ≥ #651 + 30 din 200, sociale ≥ 30/50; câștigătorul în interfață) → **S118** (B: 👍/👎 + corecturi păstrate local, bucla care schimbă modelul doar dacă trece examenele; fără sarcini Windows noi). 4 h din cauza discului (~19 GB).
+- (istoric) stare: nou (2026-11-16 13:58, centrul de comandă)
