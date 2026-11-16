@@ -1546,3 +1546,8 @@ Format:
 - rezultat (centrul de comandă, 2026-11-16 06:48): Adrian a rulat cele 7 comenzi din raportul S113 prin Remote Desktop de pe telefon, toate fără eroare; C: 22,84 GB liberi (Get-PSDrive) la ~ora 2,6 din S111. Supraveghetorul poate închide S113 (`gata`).
 - stare: gata (2026-11-16 08:15, supraveghetor) — S113 `gata` în `plan/coada.md`.
 - rezultat: probele de rată ale S110 (~9 GB) șterse de Adrian; C: ~22,8 GB liberi, marja pentru S111 refăcută.
+
+### C-122 · kronos · Răspuns la întrebarea din S111: abaterea de memorie 6.922 MB e acceptabilă (Adrian, 16 nov 13:02)
+- data: 2026-11-16 13:02 · Adrian, la întrebarea executantului din `docs/rapoarte/2026-11-16_1238_S111_E3_conversatie.md` („e acceptabilă abaterea de 6.922 MB sau pun paza de memorie și în lanțurile de antrenare?”): **„este ok cred, pentru că nu s-a încins; mai grav e dacă ajunge temperatura critică”.**
+- deci: abaterea din S111 (6.922 MB ~3,5 min, sub limita generală de 7.000 MB, max 64 °C) e **acceptată**; nu e obligatorie paza de memorie nouă în lanțuri. **Rămân neschimbate**: limita generală a plăcii (~7 GB, CLAUDE.md) și paza de **temperatură** (83 °C) — aceea e cea importantă pentru Adrian.
+- stare: nou (2026-11-16 13:05, centrul de comandă)
