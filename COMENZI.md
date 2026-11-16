@@ -1578,3 +1578,14 @@ Format:
 - reguli: `kronos/` doar cu aprobare (dacă e nevoie, întrebare separată); nimic descărcat; placa ≤ 7 GB, temperatura 83 °C; raport după A și după prima rulare B; conversațiile lui Adrian sunt private (nu în hub, nu în GitHub, nu în rapoarte decât cu acordul lui).
 - stare: preluat (2026-11-16 14:15, supraveghetor) — în `plan/coada.md` Kronos: **S116** (A: generatorul de chat fără text + examenul de chat ținut deoparte, procesor, azi) → **S117** (A: 4 h din #651 la noapte, praguri: română ≤ +0,01, corecte „din text” ≥ 218, R1 ≥ 90, chat ≥ #651 + 30 din 200, sociale ≥ 30/50; câștigătorul în interfață) → **S118** (B: 👍/👎 + corecturi păstrate local, bucla care schimbă modelul doar dacă trece examenele; fără sarcini Windows noi). 4 h din cauza discului (~19 GB).
 - (istoric) stare: nou (2026-11-16 13:58, centrul de comandă)
+
+### C-127 · kronos · Mai mult text românesc de calitate, scris de oameni (descărcare aprobată de Adrian, 16 nov 16:53)
+- data: 2026-11-16 16:50–16:53 · După discuția „există un fișier care să injecteze cunoștințele altui model în Kronos?” (răspuns: nu; calculul nu se poate sări; distilarea din alt AI încalcă regula „de la zero”; datele scrise de oameni DA), Adrian: **„Ok 👍 adună mai mult text de calitate”** = „da” pentru descărcare, în limitele de mai jos.
+- **ce se adună (doar text scris de oameni, licență deschisă, verificată de executant înainte și trecută în `docs/DATE_surse.md`):**
+  1. **restul de FineWeb-2 `ron_Latn`** (HuggingFaceFW/fineweb-2, ODC-By) — ce nu e încă pe disc;
+  2. **HPLT v2 (cleaned), română** — numai dacă licența e deschisă (de verificat; HPLT nu dă cifra pe limbă în articol);
+  3. **CulturaX `ro`** — numai dacă termenii permit (acceptarea condițiilor HF = întrebare pentru Adrian, nu o accepți singur);
+  4. **conversații scrise de oameni:** OpenAssistant **oasst2** (Apache-2.0), DOAR mesajele cu `lang = ro` (probabil puține — numără-le).
+- **NU fără „da” separat:** seturi traduse automat (de ex. `OpenLLM-Ro/ro_sft_oasst` = tradus cu Systran, licență NC) și orice text generat de alt AI.
+- **reguli:** discul C: rămâne cu **≥ 30 GB liberi** după descărcare (acum ~63 GB; buget de descărcare ~25 GB — dacă nu ajunge, ia doar 1 + 4 și scrie ce rămâne); curățare + eliminarea dublurilor + **verificarea de scurgeri față de toate examenele/validările** (ca la S110, prag 5 %, cu analiza „șabloane de site” dacă pică); tokenizare în bucăți ca la S103/S104; fără antrenare în această sarcină (folosirea lor = sarcină separată, cu pre-înregistrare). Placa nu e necesară (procesor + rețea). Raport: ce s-a descărcat (GB, nr. documente, simboluri estimate), licențe, cât e română nouă față de cea veche, cât spațiu a rămas.
+- stare: nou (2026-11-16 17:00, centrul de comandă)
