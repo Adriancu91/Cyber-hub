@@ -1620,3 +1620,11 @@ Format:
 - stare: preluat (2026-11-16 20:15, supraveghetor) — **S123** în `plan/coada.md` Kronos, pașii și regula de verdict copiate exact; pe placă imediat după S117 `gata`, înainte de S121 (care acum vine imediat, după C-129). Singura adaptare: dacă verificarea de scurgeri pică doar din cauza scurgerii vechi „Cu cine vorbesc?” (găsită la S120), întrebarea se scoate din B (199) și se scrie în raport.
 - (istoric) stare: nou
 - rezultat:
+
+### C-131 · kronos · Răspunsul lui Adrian la S123 (E0): varianta (a) + scoate și „Moctezuma” — apoi rulezi (Adrian, 17 nov 01:45)
+- data: 2026-11-17 01:50 · de la: Adrian (prin centrul de comandă): **„scoate dacă recomanzi că e mai corect”** — răspuns la întrebarea din `docs/rapoarte/2026-11-17_0140_E0_memorare.md`.
+- ce: **varianta (a)**, cu o singură adăugare. Din Setul B **scoți 3 întrebări**: `chat_179` „Cu cine vorbesc?” și `chat_187` „Ce știi tu să faci?” (amândouă sunt în antrenare) **și** `chat_099` „Câți oameni locuiesc în Moctezuma?” (subiectul e în antrenare; regula (3) cere 0, deci îl scoatem ca B să fie curat). **B = 197: 149 fapte + 48 sociale** (cine ești 6, ce poți 6). Celelalte 11 potriviri de la (2a) (același șablon + nume asemănător, inclusiv Izvoarele/Isvoarele) **rămân în B**: nu sunt aceleași lucruri și răspunsul lor nu e în antrenare — le scrii în raport ca limită. Setul A rămâne neschimbat (200: 150 + 50). Scorurile se compară în **procente**, pe categorii, cum cere C-130.
+- apoi: rulezi E0 pe **#668** exact ca în S123 (evaluatorul neschimbat, placa ~10 min), verificarea de reproducere pe aceleași 197 întrebări (din răspunsurile #668 din examenele S117), raportul complet cu toate punctele din C-130, și **imediat după S123 `gata` lanțul merge mai departe** (S121 → S119 → S122 pasul 4), fără altă așteptare.
+- **NU:** nimic altceva schimbat față de S123/C-130 (nicio antrenare în E0, niciun fișier al proiectului, examenul de chat din `docs/` rămâne neatins — eliminările sunt doar în `lucru/e0/setul_B.json`).
+- stare: nou
+- rezultat:
