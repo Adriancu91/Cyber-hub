@@ -1672,6 +1672,7 @@ Format:
   4. Documentul spune ce rezultat pe placă confirmă sau infirmă fiecare ipoteză și ce urmează (dacă trece: I10 add64, primul calcul). CI verde.
 - **Reguli (neschimbate):** pe placă doar cu Adrian de față și după „DA”; firmware-ul NVIDIA nu intră în repo/hub; clean-room (MIT/Apache citit ca specificație, fără GPL copiat, fără analiza firmware-ului); fără ocolirea pazelor; nu scrii în repo-urile altor proiecte.
 - **La final:** `stare/cyber-gpu.md` + jurnalul în hub, cu rezumat pe înțeles pentru Adrian (cauza probabilă, cât de sigur, ce testează `--i9 c135`). Centrul de comandă cere apoi OS-ului `os-305`.
-- stare: preluat (2026-11-17 16:20, sesiunea Cyber-GPU 108)
+- stare: gata (2026-11-17 17:10, sesiunea Cyber-GPU 108) — doar SIMULARE; pe placă NOT TESTED
+- (istoric) stare: preluat (2026-11-17 16:20, sesiunea Cyber-GPU 108)
 - (istoric) stare: nou
-- rezultat:
+- rezultat: analiza e în `cyber-gpu/docs/os-304_ANALIZA_I9.md` — mesajul refuzat cu `0x40` e **cererea jetonului de lucru** (`GET_WORK_SUBMIT_TOKEN`), nu programarea grupului (aceea nu a fost încă trimisă pe placă), iar cauza cea mai probabilă (~80 %) e că jetonul trebuie scris în notificatorul de erori pe care canalul nostru îl declară, dar îl descrie ca „nu memorie video” (driverul oficial și nouveau nu cer niciodată jetonul de la placă); reparația `open_work_channel_c135` (direct forma B; N = canal fără notificator, apoi F în grup nou = numărul canalului ales de noi + jeton calculat) e gata în SIMULARE la `cyber-gpu` `f732365` (507 PASS, CI verde), șansa ca I9 să treacă în aceeași rulare e ~70–75 %, iar OS-ul are de legat `gpu lant --i9 c135` după nota `integration/cyber-universe/C-135_i9-pasul-5.md` (→ `os-305`).
