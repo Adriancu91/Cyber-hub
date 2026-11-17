@@ -1626,5 +1626,6 @@ Format:
 - ce: **varianta (a)**, cu o singură adăugare. Din Setul B **scoți 3 întrebări**: `chat_179` „Cu cine vorbesc?” și `chat_187` „Ce știi tu să faci?” (amândouă sunt în antrenare) **și** `chat_099` „Câți oameni locuiesc în Moctezuma?” (subiectul e în antrenare; regula (3) cere 0, deci îl scoatem ca B să fie curat). **B = 197: 149 fapte + 48 sociale** (cine ești 6, ce poți 6). Celelalte 11 potriviri de la (2a) (același șablon + nume asemănător, inclusiv Izvoarele/Isvoarele) **rămân în B**: nu sunt aceleași lucruri și răspunsul lor nu e în antrenare — le scrii în raport ca limită. Setul A rămâne neschimbat (200: 150 + 50). Scorurile se compară în **procente**, pe categorii, cum cere C-130.
 - apoi: rulezi E0 pe **#668** exact ca în S123 (evaluatorul neschimbat, placa ~10 min), verificarea de reproducere pe aceleași 197 întrebări (din răspunsurile #668 din examenele S117), raportul complet cu toate punctele din C-130, și **imediat după S123 `gata` lanțul merge mai departe** (S121 → S119 → S122 pasul 4), fără altă așteptare.
 - **NU:** nimic altceva schimbat față de S123/C-130 (nicio antrenare în E0, niciun fișier al proiectului, examenul de chat din `docs/` rămâne neatins — eliminările sunt doar în `lucru/e0/setul_B.json`).
-- stare: nou
+- stare: preluat (2026-11-17 02:15, supraveghetor) — **S123** din nou `aprobat` în `plan/coada.md` Kronos, cu B = 197 (scoase `chat_179`, `chat_187`, `chat_099`), A neschimbat, pe #668; după S123 `gata`, lanțul S121 → S119 → S122 pasul 4 merge fără așteptare.
+- (istoric) stare: nou
 - rezultat:
