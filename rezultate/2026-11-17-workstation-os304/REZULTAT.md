@@ -1,0 +1,11 @@
+# Workstation (GA104) — 17 nov 2026 ~16:00–16:07, os-304 (cyber-gpu b352d50, C-133), stick de test, `gpu lant --i9 c133`, cu Adrian de față
+
+- Stick-ul TESTGPU actualizat cu `stick-test-complet.zip` din Release-ul `os-304` (SHA-256 verificat față de `SHA256SUMS`; VERSIUNE = commit `e142143`). Kronos nu folosea placa (S124 pe placă abia de la 19:00).
+- `gpu lant --i9 c133` + DA. Ecranul a înghețat ca de obicei la „I8 CORE_RESUME: starea după predarea etapei 3” (189,10 s pe ecran); lanțul a mers mai departe și **jurnalul a urcat singur la 16:07**: `rezultate/os-automat/2026-11-17/gpu-jurnal-006.txt` (antet: `cyber-gpu b352d50, comanda: gpu lant`, 2587 rânduri).
+- **I0–I8 + golden TREC din nou** (I8e golden ok la 199,01 s).
+- **I9 c133 (2 încercări făcute):**
+  - **A** (un mesaj PA+VA înaintea obiectului compute; MAIN+PM+PATCH, 3 intrări): grup `0xcf00000b`, canal `0xcf00000d` acceptate; **`PROMOTE_CTX` refuzat cu `0x57` `NV_ERR_OBJECT_NOT_FOUND`** (ultimul pas acceptat = 2), cu aceleași 2 NOCAT ASSERT ca la os-302/os-303 (`0x01443f48`, `0x01418a2a`).
+  - **B** (grup nou `0xcf00000e`, canal `0xcf000010`; 4 intrări: MAIN `0x10_20e4b000`/`0x13e000` PA+VA, PATCH `0x10_20f89000`/`0x5000` PA+VA, FECS_EVENT (id 9) `0x10_201ec000` doar VA, PRIV_ACCESS_MAP (id 10) `0x10_20c00000` doar VA; **fără PM**): **`PROMOTE_CTX` ACCEPTAT, obiectul compute ACCEPTAT** (ultimul pas acceptat = **4**); **refuz la pasul 5 (programarea canalului) cu `0x40` = `NV_ERR_INVALID_STATE`**, cu un NOCAT ASSERT nou: **`0x0185eb2e`** (ASSERT-urile de promovare `0x01443f48`/`0x01418a2a` NU mai apar la B).
+  - `varianta reusita = 0`; `i9-canal-lucru: ESEC`, motivul „eroare hardware 0x40”.
+- **Concluzie (după tabelul din `cyber-gpu/docs/os-303_ANALIZA_I9.md` §6):** rândul „A `0x57`, B trece [promovarea]” → **ipoteza (c) sau PM confirmată** (bufferele globale FECS_EVENT/PRIV_ACCESS_MAP în spațiul canalului și/sau fără PM); (a)+(d) singure infirmate. **Blocajul `0x57` din 16 nov e depășit.** Frontiera nouă: programarea canalului (`GET_WORK_SUBMIT_TOKEN` / `TSG_SCHEDULE` sau ce trimite pasul 5) → `INVALID_STATE`.
+- Curățare: Bus Master oprit ok, `tur-dupa: ok` (pregătirea I6 „ESEC” după lanț = WPR2 ridicat, normal). Fără scrieri neplanificate.
