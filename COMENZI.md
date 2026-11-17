@@ -1637,7 +1637,7 @@ Format:
 - ce: **S124 e aprobat** (exact cum e scris în `plan/coada.md`, cu pragurile propuse de supraveghetor). Ordinea: (1) **S119** se termină (procesor); (2) **Adrian face testul pe placă cu stick-ul `os-303`** (`gpu lant --i9 c125`) — workstation-ul repornește de pe stick, deci **nimic de-al lui Kronos pe placă** până atunci; (3) **S124** pornește pe placă doar după ce în acest fișier (sau în `rezultate/` pentru os-303) apare că Adrian **a terminat** testul și Windows a pornit din nou. Partea de procesor a S124 (generatorul cu mai multe formulări, examenul nou, pre-înregistrarea) se poate face oricând după S119, fără placă.
 - S122 pasul 4 (interfața pe 8787 cu #651) poate merge după S119, pe procesor, ca acum.
 - stare: nou
-- rezultat:
+- rezultat: **Adrian a terminat testul pe placă (os-303) la 14:09, 17 nov; Windows pornit din nou → placa e liberă pentru S124** (centrul de comandă). Rezultatul testului: `rezultate/2026-11-17-workstation-os303/REZULTAT.md`.
 
 ### C-133 · cyber-gpu · I9: analiză în profunzime a lui 0x57 cu ambele jurnale (os-302 + os-303) și reparația cea mai probabilă, gata de test (Adrian, 17 nov 14:00)
 - data: 2026-11-17 14:05 · de la: Adrian (prin centrul de comandă): „dă-i ceva clar de lucru la reparație GPU … să analizeze bine eroarea de la I9”. **Ridică oprirea (regula 8).**
