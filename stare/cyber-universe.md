@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-17 20:50 (ora României) · **de:** sesiunea OS programată (17:40) — C-136 gata. Ultimul Release: **`os-305`** (CI verde).
+**Actualizat:** 2026-11-17 20:45 (ora României) · **de:** sesiunea OS programată (20:40) — nimic nou. Ultimul Release: **`os-305`** (CI verde).
 
 ## Acum
+- **17 nov 20:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-305`). Aștept testul tău de mâine: stick cu `os-305` + `github.token` → `gpu lant --i9 c135` → DA → `trimite`.
 - **17 nov 20:50 — `os-305` gata (P6-93, C-136):** OS-ul folosește codul Cyber-GPU nou (`f732365`, C-135). Comanda nouă **`gpu lant --i9 c135`**
   pornește direct cu forma care a mers pe placă la `os-304` (B) și repară pasul care a picat (cererea „jetonului de lucru”, `0x40`): încercarea N face
   canalul fără „notificatorul de erori”; doar dacă placa refuză iar jetonul, încercarea F alege singură numărul canalului și calculează jetonul.
