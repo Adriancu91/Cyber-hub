@@ -1,0 +1,11 @@
+# Workstation (GA104) — 17 nov 2026 ~13:35–13:45, os-303 (cyber-gpu 239f986, C-125), stick de test, `gpu lant --i9 c125`, cu Adrian de față
+
+- Stick-ul de test actualizat cu `stick-test-complet.zip` din Release-ul `os-303` (SHA-256 verificat față de `SHA256SUMS`), plus `github.token` pus de Adrian. Kronos nu folosea placa (S119 oprit, doar procesor; S124 așteaptă testul, C-132).
+- `gpu lant --i9 c125` + DA. Ecranul a înghețat **ca la os-295/os-302**, la „I8 CORE_RESUME: starea după predarea etapei 3” (170,04 s pe ecran); lanțul a mers mai departe în spate și **jurnalul a urcat singur în hub la 13:41**: `rezultate/os-automat/2026-11-17/gpu-jurnal-005.txt` (antet: `cyber-gpu 239f986, comanda: gpu lant`). Oprire din buton, repornire de pe stick; `trimite` → „nimic nou (10 trimise deja)”. (Au urcat automat și jurnalele vechi 001–004 + un raport UHL redactat, verificat: fără serii/MAC.)
+- **I0–I8 TREC din nou:** I6 FWSEC-FRTS ok (133,23 s), I4 cele 4 imagini 570.144 ok, I7 Booter + GSP RISC-V ok (156,21 s), **I8 GSP_INIT_DONE ok** (171,88 s, rpc_result 0, 4 mesaje sărite), **I8e golden ok** (179,93 s).
+- **I9 cu C-125 (opțiuni 0x3 = V2 + V3):**
+  - **V3 `GR_GET_CTX_BUFFER_INFO`: REFUZAT cu `0x31` = `NV_ERR_INVALID_OBJECT`** — cererea nu a ajuns la obiectul pe care îl așteaptă RM (handle-ul folosit: de verificat de Cyber-GPU — subdevice vs. canal/kernel graphics context; obiectul poate să nu existe încă în momentul cererii).
+  - **V2 aplicat:** 3 buffere de context mapate privilegiat (VA 0x10_20d00000 mărime 0x13e000; 0x10_20e3e000 0x5000; 0x10_20e43000 0x5000; `privilegiat (V2) = 1` la toate).
+  - **`i9-canal-lucru`: tot ESEC cu `0x57` = `NV_ERR_OBJECT_NOT_FOUND`** — același cod ca la os-302 → maparea privilegiată singură **nu** rezolvă promovarea VA. Înainte de eșec, aceleași 2 NOCAT ASSERT ca ieri: `0x01443f48`, `0x01418a2a` (adresa față de începutul GSP-RM).
+- Curățare: Bus Master oprit ok, `tur-dupa: ok` (pregătirea I6 „ESEC” după lanț = WPR2 ridicat, normal fără pornire la rece, ca ieri).
+- Concluzie pentru Cyber-GPU (doar context, decizia e a lor + a lui Adrian): V2 eliminat ca singură cauză; refuzul V3 (`INVALID_OBJECT`) e indiciul nou — probabil același obiect lipsă / greșit pe care îl caută și `PROMOTE_CTX` virtual (`OBJECT_NOT_FOUND`). Fără scrieri neplanificate.
