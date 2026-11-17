@@ -1,8 +1,9 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-17 19:40 (ora României) · **de:** sesiunea Cyber-GPU 109 (cloud, fără placă) — oprire scurtă: nicio comandă nouă, niciun jurnal nou. Neschimbat de la 108: **`--i9 c135` gata în SIMULARE**, **507 PASS** (SIMULARE), **CI VERDE**. Nimic testat pe placă. Urmează: OS-ul scoate `os-305` (C-136), apoi proba cu Adrian pe workstation (18 nov, după S124).
+**Actualizat:** 2026-11-18 01:35 (ora României) · **de:** sesiunea Cyber-GPU 110 (cloud, fără placă) — oprire scurtă: nicio comandă nouă, niciun jurnal nou. Neschimbat de la 108: **`--i9 c135` gata în SIMULARE**, **507 PASS** (SIMULARE), **CI VERDE**. Nimic testat pe placă. OS-ul a scos `os-305` (C-136 gata); urmează proba cu Adrian pe workstation (18 nov, după S124).
 
 ## Acum
+- **Sesiunea 110 (18 nov 01:25–01:35) — oprire scurtă.** În hub de la 19:40: Kronos stare și OS-ul „nimic nou (os-305)” (20:45, 23:45). `rezultate/` neschimbat de la os-304. Verificat: 507 PASS, CI verde (`e3923c4`, rularea 44137250633; `3cbda10`, rularea 44199609120). Niciun cod; starea `3cbda10`; copia C-34 la `3cbda10` (249 commit-uri, verificată + clonare de probă). Regula 8: dacă și sesiunea 111 e fără jurnal și fără comandă → „OPRIT: necesită analiza lui Adrian” (doar așteptare).
 - **Sesiunea 109 (17 nov 19:25–19:40) — oprire scurtă.** În hub de la 17:10: Kronos stare și C-136 (OS-ul leagă `--i9 c135`, scoate `os-305`; testul pe placă mâine, după S124). `rezultate/` neschimbat de la os-304. Verificat: 507 PASS, CI verde (`f732365`, rularea 44110732068). Niciun cod; starea `e3923c4`; copia C-34 la `e3923c4` (248 commit-uri, verificată + clonare de probă).
 - **Sesiunea 108 (17 nov 16:15–17:10) — C-135 făcut în SIMULARE.** Pe înțeles, pentru Adrian:
   - **Ce s-a întâmplat la `os-304`:** vestea bună — blocajul vechi (`0x57`) e depășit. Forma B a trecut pe placă și de „spune-i plăcii unde sunt bufferele”, și de obiectul de calcul. Placa a refuzat **mesajul următor**: cel prin care îi cerem „numărul canalului” (jetonul cu care se sună la sonerie ca să pornească lucrul). Refuzul e `0x40` („stare nepotrivită”). Am numărat mesajele din jurnal: cel refuzat e cererea numărului, **nu** pornirea grupului de canale — aceea nu a mai fost trimisă, deci despre ea nu știm încă nimic de pe placă.
@@ -46,11 +47,11 @@
 2. Dacă DA: noi deschidem GA106 în `Family::writes_allowed()` doar pe stick-ul de test (`gpu-scrie`) + DA la ecran, cu trezirea minimă ținută pornită pe durata lanțului; OS-ul leagă commit-ul; test pe laptop **un pas pe rând**: întâi `gpu i6`, apoi `gpu lant`.
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
-## Lista pentru workstation (GA104; după ce OS-ul leagă `--i9 c135` = `os-305`)
+## Lista pentru workstation (GA104; `os-305` e gata — C-136)
 1. Stick cu versiunea nouă a OS-ului + `github.token` → pornire rece → `gpu lant --i9 c135` → DA → `trimite`. 2. În jurnal: rândurile `i9 c135 …` (ce s-a trimis în fiecare încercare, ce a răspuns placa, de unde vine jetonul, `varianta reusita`). 3. `gpu recupereaza` NU, până la decizia FWSEC-SB. 4. Dacă I9 trece, aceeași rulare merge mai departe: I10 (add64) = primul calcul pe placă.
 
 ## Urmează
-1. **OS-ul (`cyber-universe`):** leagă `cyber-gpu` `f732365` și adaugă `gpu lant --i9 c135` (implicit oprit) → `os-305` — schița e în `cyber-gpu/integration/cyber-universe/C-135_i9-pasul-5.md`; `open_work_channel_c135` înlocuiește perechea `open_compute_group` + `open_work_channel_with` (aceeași semnătură ca la `c133`, cu `C135Report`).
+1. ~~OS-ul leagă `--i9 c135` → `os-305`~~ — **făcut** (C-136, 17 nov 20:50).
 2. **Adrian, în fereastra pe workstation:** stick nou + `github.token` → pornire la rece → `gpu lant --i9 c135` → DA → `trimite`. O singură rulare ajunge.
 3. **Noi, după jurnal** (`os-304_ANALIZA_I9.md` §7): N sau F trece → **I10 (add64)**, primul calcul pe placă (rularea merge singură mai departe); pornirea grupului refuzată → pornire pe canal ca nouveau (`BIND` + `GPFIFO_SCHEDULE`) — cere un „da” nou; orice alt refuz → codul și semnalele noi decid.
 4. **Adrian (separat, fără grabă):** DA/NU pentru pasul 3 pe laptop (`cyber-gpu/docs/GA106_LAPTOP.md` §7).
@@ -75,12 +76,12 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: legarea C-135 (`gpu lant --i9 c135`, la `f732365`) → `os-305`. Pe stick-ul de test: `github.token`, ca `trimite` să urce jurnalul.
+- De la `cyber-universe`: legarea C-135 e gata (`os-305`). Pe stick-ul de test: `github.token`, ca `trimite` să urce jurnalul.
 - De la Adrian: fereastra pe workstation pentru `gpu lant --i9 c135` (după ce OS-ul leagă opțiunea); DA/NU pentru pasul 3 pe laptop; decizia FWSEC-SB (C-103), fără grabă.
 - De la `cyber-universe` (P6-66, mai târziu): `Generation::run` + `VramBudget::check` în `kronos --gpu`.
 
 ## Blocaje / nevoie de Adrian
-- **Nu e blocat.** I9 așteaptă proba pe placă a variantei `--i9 c135` (întâi OS-ul o leagă în `os-305`, apoi fereastra cu Adrian); laptopul așteaptă DA-ul separat.
-- Laptopul: turul de citire a trecut; următorul pas (scrieri în registrele GA106) cere **DA-ul tău separat** — nimic nu pornește fără el. Workstation: așteaptă fereastra ta pentru `gpu lant --i9 c135` (`os-305`, când e gata).
+- **Nu e blocat.** I9 așteaptă proba pe placă a variantei `--i9 c135` (`os-305` gata; urmează fereastra cu Adrian); laptopul așteaptă DA-ul separat.
+- Laptopul: turul de citire a trecut; următorul pas (scrieri în registrele GA106) cere **DA-ul tău separat** — nimic nu pornește fără el. Workstation: așteaptă fereastra ta pentru `gpu lant --i9 c135` (`os-305`, gata).
 - Workstation: I7 a picat o dată din două (stick lent, C-113 rezolvat în `os-297`); `gpu recupereaza` dă 0x88 (FWSEC-SB înainte = program semnat în plus → DA); ecranul îngheață după pornirea GSP-RM (varianta 11 ca probă). Pe laptop ecranul e pe Intel — problema nu ar trebui să apară acolo.
-- CI GitHub: **VERDE pe `f732365`** (rularea 44110732068) și pe `f7126b9` (rularea 44110478526, sesiunea 108: codul și documentele C-135), pe `92820d0` (rularea 44083271858, sesiunea 107: codul C-133), pe `01e0366` (rularea 44074232803, sesiunea 106), pe `f71e10a` (rularea 44024304144), pe `e6e9cc7` (rularea 43979569973), pe `239f986` (rularea 43920380338) și pe `78704e5` (sesiunea 103, rularea 43920119861), pe `559e26e`, `7beecb6` (rularea 43527343300) și pe `e0bacf9` (sesiunea 98, rularea 43419426786, 43 s; verificat în sesiunea 99), pe `4ff043d`, `aabd093` (sesiunea 97), `f4b012c` și `79fc5ae`. Pe `f394261` (sesiunea 99, doar documente — codul identic cu `e0bacf9`) **CI-ul nu a pornit**: GitHub a răspuns „Internal Server Error” la push (ref-ul s-a actualizat, evenimentul de push s-a pierdut); nu se face commit gol ca să-l pornim — următorul commit real îl rulează.
+- CI GitHub: **VERDE pe `3cbda10`** (rularea 44199609120), pe `e3923c4` (rularea 44137250633), pe `f732365` (rularea 44110732068) și pe `f7126b9` (rularea 44110478526, sesiunea 108: codul și documentele C-135), pe `92820d0` (rularea 44083271858, sesiunea 107: codul C-133), pe `01e0366` (rularea 44074232803, sesiunea 106), pe `f71e10a` (rularea 44024304144), pe `e6e9cc7` (rularea 43979569973), pe `239f986` (rularea 43920380338) și pe `78704e5` (sesiunea 103, rularea 43920119861), pe `559e26e`, `7beecb6` (rularea 43527343300) și pe `e0bacf9` (sesiunea 98, rularea 43419426786, 43 s; verificat în sesiunea 99), pe `4ff043d`, `aabd093` (sesiunea 97), `f4b012c` și `79fc5ae`. Pe `f394261` (sesiunea 99, doar documente — codul identic cu `e0bacf9`) **CI-ul nu a pornit**: GitHub a răspuns „Internal Server Error” la push (ref-ul s-a actualizat, evenimentul de push s-a pierdut); nu se face commit gol ca să-l pornim — următorul commit real îl rulează.
