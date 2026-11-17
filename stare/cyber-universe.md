@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-17 02:45 (ora României) · **de:** sesiunea OS programată (02:40) — nimic nou. Ultimul Release: **`os-303`** (CI verde).
+**Actualizat:** 2026-11-17 05:45 (ora României) · **de:** sesiunea OS programată (05:40) — nimic nou; OPRIT (regula 5). Ultimul Release: **`os-303`** (CI verde).
 
 ## Acum
+- **17 nov 05:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-303`). A treia sesiune la rând fără sarcină → „OPRIT” până la o comandă nouă sau un jurnal de test. Aștept fereastra ta: stick cu `os-303` + `github.token` → `gpu lant --i9 c125` → `trimite`.
 - **17 nov 02:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-303`). Aștept fereastra ta: stick cu `os-303` + `github.token` → `gpu lant --i9 c125` → `trimite`.
 - **16 nov 23:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-303`). Aștept fereastra ta: stick cu `os-303` + `github.token` → `gpu lant --i9 c125` → `trimite`.
 - **16 nov 22:05 — `os-303` gata (P6-91, C-125):** OS-ul folosește noul cod Cyber-GPU (`239f986`). Comanda nouă **`gpu lant --i9 c125`** încearcă
