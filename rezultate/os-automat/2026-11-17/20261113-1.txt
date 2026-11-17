@@ -1,0 +1,566 @@
+== raport Cyber Universe OS ==
+data (ceasul calculatorului): 2026-11-13 07:46:11
+motiv: manual (comanda raport)
+nucleu: cyber-universe 0.1.0 (cyber-gpu 835f24d)
+/usb/VERSIUNE: commit 53ce27c6e25143f92968c4d6569c4be0dd58990d
+erori in jurnal de la pornire: 0
+
+== hw ==
+== raport hardware ==
+calculator: ASUSTeK COMPUTER INC. ASUS TUF Gaming F15 FX506HM_FX506HM (versiune 1.0)
+  familia ASUS TUF Gaming F15; placa de baza ASUSTeK COMPUTER INC. FX506HM 1.0; SMBIOS 3.5
+procesor: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz
+ecran: framebuffer la adresa fizica 0x4000000000, 8294400 octeti (8 MiB), 1920x1080, pitch 7680 B, 32 bpp
+memorie: libera 65238 MiB, folosita 31720 KiB (heap 10518 / 27384 KiB)
+pornit de 820.12 s
+PCI ([driver] = il folosim, [-] = fara driver):
+  00:00.0 8086:9a36 punte gazda [-]
+  00:01.0 8086:9a01 punte PCI [-]
+  00:02.0 8086:9a60 placa video [-]
+  00:04.0 8086:9a03 alt dispozitiv [-]
+  00:06.0 8086:09ab alt dispozitiv [-]
+  00:07.0 8086:9a2b punte PCI [-]
+  00:08.0 8086:9a11 alt dispozitiv [-]
+  00:0a.0 8086:9a0d alt dispozitiv [-]
+  00:0d.0 8086:9a17 controler USB [xhci]
+  00:0d.2 8086:9a1f controler USB [-]
+  00:0e.0 8086:9a0b controler de stocare [-]
+  00:14.0 8086:43ed controler USB [xhci]
+  00:14.2 8086:43ef alt dispozitiv [-]
+  00:14.3 8086:43f0 placa de retea [-]
+  00:15.0 8086:43e8 alt dispozitiv [-]
+  00:16.0 8086:43e0 alt dispozitiv [-]
+  00:1d.0 8086:43b6 punte PCI [-]
+  00:1f.0 8086:438b punte ISA [-]
+  00:1f.3 8086:43c8 multimedia [-]
+  00:1f.4 8086:43a3 SMBus [-]
+  00:1f.5 8086:43a4 alt dispozitiv [-]
+  01:00.0 10de:2520 placa video [-]
+  01:00.1 10de:228e multimedia [-]
+  2d:00.0 10ec:8168 placa de retea [rtl8168]
+USB:
+  port c2/2  346d:5678  stocare (Mass Storage)
+  port c2/7  322e:202c  alt dispozitiv
+  port c2/14  8087:0026  bluetooth/wireless
+  port c2/19  13fe:6700  stocare (Mass Storage)
+/disk: nemontat
+/usb: montat (9 intrari)
+retea:
+  Realtek RTL8168/8111  MAC 7c:10:c9:91:26:55
+  pachete trimise 0, primite 0
+  legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 79756
+  inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+  primele cadre: -
+  cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (detalii: log rx, log rtl)
+  fara adresa (DHCP fara raspuns; reincearca la 10 s)
+
+== lspci ==
+  00:00.0  8086:9a36  punte gazda
+  00:01.0  8086:9a01  punte PCI
+  00:02.0  8086:9a60  placa video
+  00:04.0  8086:9a03  alt dispozitiv
+  00:06.0  8086:09ab  alt dispozitiv
+  00:07.0  8086:9a2b  punte PCI
+  00:08.0  8086:9a11  alt dispozitiv
+  00:0a.0  8086:9a0d  alt dispozitiv
+  00:0d.0  8086:9a17  controler USB
+  00:0d.2  8086:9a1f  controler USB
+  00:0e.0  8086:9a0b  controler de stocare
+  00:14.0  8086:43ed  controler USB
+  00:14.2  8086:43ef  alt dispozitiv
+  00:14.3  8086:43f0  placa de retea
+  00:15.0  8086:43e8  alt dispozitiv
+  00:16.0  8086:43e0  alt dispozitiv
+  00:1d.0  8086:43b6  punte PCI
+  00:1f.0  8086:438b  punte ISA
+  00:1f.3  8086:43c8  multimedia
+  00:1f.4  8086:43a3  SMBus
+  00:1f.5  8086:43a4  alt dispozitiv
+  01:00.0  10de:2520  placa video
+  01:00.1  10de:228e  multimedia
+  2d:00.0  10ec:8168  placa de retea
+
+== net ==
+  Realtek RTL8168/8111  MAC 7c:10:c9:91:26:55
+  pachete trimise 0, primite 0
+  legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 79756
+  inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+  primele cadre: -
+  cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (detalii: log rx, log rtl)
+  fara adresa (DHCP fara raspuns; reincearca la 10 s)
+
+== jurnal net (si registrele placilor de retea) ==
+[   4.420] INFO  net: placa Realtek RTL8168 pornita (revizia 54000000), MAC 7c:10:c9:91:26:55, legatura: nu
+[   4.420] INFO  net: rtl8168 registre: CR 00 RCR 0002c70a TCR 57100f00 IMR 0000 ISR 0000 RMS 2048 MISC 0000003f MCU 32 PHY 04
+[   4.430] INFO  net: rtl8168 inele: RDSAR 00000000_01000000 TNPDS 00000000_01001000 (sub 4 GB, sub 4 GB)
+[   4.430] INFO  net: rtl8168 C+ Command 2020, PMCH f0, revizia 54000000 = 8168H (doar citite)
+[   4.430] INFO  net: rtl8168 buffere RX: 0 la 1003000, 1 la 1003800, 2 la 1004000 (sub 4 GB); RAM 65159 MiB, cea mai mare adresa 108b800000 (are memorie peste 4 GB)
+[   4.430] INFO  net: rtl8168 memorie DMA: un bloc 1000000-108afff (139 pagini); inel RX 1000000 in 100000-3b653fff utilizabila; buffer RX 0 1003000 in 100000-3b653fff utilizabila; paza: ok (139 pagini DMA pazite)
+[   4.430] INFO  net: rtl8168 PCI 2d:00.0: Command 0007 (Bus Master da, Memory da), PCIe Device Control 2010 (doar citit); varianta implicita (cache bloc-dma model)
+[   4.440] WARN  net: Realtek: fara legatura dupa 4 s (cablu? PHYstatus 04); DHCP reincearca singur
+[  12.890] WARN  net: DHCP nu raspunde; fara adresa, reincerc la 10 s
+[  12.890] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 801
+[  12.890] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  12.890] INFO  net: primele cadre: -
+[  12.890] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[  31.290] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 2601
+[  31.290] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  31.290] INFO  net: primele cadre: -
+[  31.290] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[  34.870] INFO  proces: firul 4 a iesit cu codul 0
+[  49.690] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 4401
+[  49.690] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  49.690] INFO  net: primele cadre: -
+[  49.690] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[  68.090] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 6201
+[  68.090] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  68.090] INFO  net: primele cadre: -
+[  68.090] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[  86.490] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 8001
+[  86.490] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  86.490] INFO  net: primele cadre: -
+[  86.490] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[ 104.890] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 9801
+[ 104.890] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[ 104.890] INFO  net: primele cadre: -
+[ 104.890] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[ 289.960] INFO  wifi: wifi0: 00:14.3 8086:43f0 Wi-Fi 6 AX201 (CNVi, chipset Tiger Lake-H) subsistem 00748086 rev 11 (clasa 02:80:00)
+
+== jurnal usb ==
+[   0.030] INFO  pci: 00:0d.0 8086:9a17 clasa 0c:03:30 controler USB
+[   0.030] INFO  pci: 00:0d.2 8086:9a1f clasa 0c:03:40 controler USB
+[   0.030] INFO  pci: 00:14.0 8086:43ed clasa 0c:03:30 controler USB
+[   0.050] INFO  boot: pornit de pe disc (hard disk, SSD sau stick USB)
+[   0.110] INFO  usb: controler XHCI pornit, 5 porturi, 0 dispozitive (00:0d.0)
+[   0.210] INFO  usb: port 2: slot 1, viteza 3, pachet maxim EP0 64, configuratia 1 (32 octeti), endpoint-uri 01/2/512/b0 82/2/512/b0
+[   0.210] INFO  usb: port c2/2: 346d:5678 stocare (Mass Storage) (clasa 08:06:50, viteza 3)
+[   0.340] INFO  usb: port 7: slot 2, viteza 3, pachet maxim EP0 64, configuratia 1 (512 octeti), endpoint-uri 83/3/16/b0
+[   0.340] INFO  usb: port c2/7: 322e:202c alt dispozitiv (clasa ef:02:01, viteza 3)
+[   0.400] INFO  usb: port 14: slot 3, viteza 1, pachet maxim EP0 64, configuratia 1 (200 octeti), endpoint-uri 81/3/64/b0 02/2/64/b0 82/2/64/b0
+[   0.400] INFO  usb: port c2/14: 8087:0026 bluetooth/wireless (clasa e0:01:01, viteza 1)
+[   0.410] INFO  usb: port 19: slot 4, viteza 4, pachet maxim EP0 512, configuratia 1 (44 octeti), endpoint-uri 81/2/1024/b3 02/2/1024/b3
+[   0.410] INFO  usb: port c2/19: 13fe:6700 stocare (Mass Storage) (clasa 08:06:50, viteza 4)
+[   0.410] INFO  usb: controler XHCI pornit, 24 porturi, 4 dispozitive (00:14.0)
+[   0.410] INFO  usb: 2 controlere XHCI pornite, 4 dispozitive in total
+[   0.410] INFO  usb: port 2: SET_CONFIGURATION 1 ok
+[   0.410] INFO  usb: port c2/2: Configure Endpoint ok (2 endpoint-uri)
+[   0.410] INFO  usb: stocare VendorCo ProductCode (60000 MiB)
+[   0.420] INFO  usb: port 19: SET_CONFIGURATION 1 ok
+[   0.420] INFO  usb: port c2/19: Configure Endpoint ok (2 endpoint-uri)
+[   0.420] INFO  usb: stocare  USB DISK 3.0 (29604 MiB)
+[   4.460] INFO  fs: /usb: aleg discul 1 din 2 (are cyber.rw si VERSIUNE)
+[   4.460] INFO  fs: FAT32 (MBR, 30720 MiB) montat la /usb (scriere permisa)
+[   4.460] INFO  fs: FAT32 (fara tabela, 29604 MiB) montat la /usb2
+[   4.480] INFO  fs: /usb2: al doilea stick, cu dosarul firmware/nvidia/ga102/gsp (doar citire)
+[ 430.280] INFO  gpu: jurnalul pe loc: /usb/raport/gpu-jurnal-003.txt
+[ 430.910] INFO  gpu: gpu0: jurnalul pe loc: /usb/raport/gpu-jurnal-003.txt (24 randuri, fiecare scris pe loc)
+[ 430.910] INFO  gpu: gpu0: usb: scrieri 60 (total 367.7 ms, in medie 6.1 ms, cea mai lunga 242.5 ms), sincronizari 25 (total 1.4 ms, in medie 0.0 ms, cea mai lunga 0.0 ms)
+[ 561.720] INFO  analiza: /usb/raport/uhl/ASUSTeK-COMPUTER-INC-ASUS-TUF-Gaming-F15-FX506HM/20261113-0741/inventory.json scris (336600 octeti)
+[ 563.580] INFO  analiza: /usb/raport/uhl/ASUSTeK-COMPUTER-INC-ASUS-TUF-Gaming-F15-FX506HM/20261113-0741/inventory.redacted.json scris (336529 octeti)
+[ 563.640] INFO  analiza: /usb/raport/uhl/ASUSTeK-COMPUTER-INC-ASUS-TUF-Gaming-F15-FX506HM/20261113-0741/report.txt scris (2799 octeti)
+[ 631.580] INFO  raport: /usb/raport/test-tot-20261113-1.txt scris (760 octeti, test-tot)
+
+== jurnal pci ==
+[   -.---] INFO  acpi: 31 tabele (XSDT): FACP SSDT FIDT SSDT SSDT SSDT SSDT HPET APIC SSDT SSDT NHLT LPIT WSMT SSDT SSDT DBGP DBG2 SSDT DMAR FPDT SSDT MCFG SSDT SSDT UEFI UEFI TPM2 BGRT SSDT PTDT
+[   -.---] INFO  acpi: temporizator PM la portul 0x1808 (24 biti)
+[   -.---] INFO  acpi: FADT rev 6, RESET_REG io 0xcf9 <- 0x06 (declarat suportat, 8 biti)
+[   -.---] INFO  acpi: MADT: 16 procesoare, APIC local la 0xfee00000, 1 I/O APIC (primul la 0xfec00000, GSI 0), 2 redirectari IRQ
+[   0.010] INFO  pci: 00:00.0 8086:9a36 clasa 06:00:00 punte gazda
+[   0.020] INFO  pci: 00:01.0 8086:9a01 clasa 06:04:00 punte PCI
+[   0.020] INFO  pci: 00:02.0 8086:9a60 clasa 03:00:00 placa video
+[   0.020] INFO  pci: 00:04.0 8086:9a03 clasa 11:80:00 alt dispozitiv
+[   0.020] INFO  pci: 00:06.0 8086:09ab clasa 08:80:00 alt dispozitiv
+[   0.020] INFO  pci: 00:07.0 8086:9a2b clasa 06:04:00 punte PCI
+[   0.020] INFO  pci: 00:08.0 8086:9a11 clasa 08:80:00 alt dispozitiv
+[   0.020] INFO  pci: 00:0a.0 8086:9a0d clasa 11:80:00 alt dispozitiv
+[   0.030] INFO  pci: 00:0d.0 8086:9a17 clasa 0c:03:30 controler USB
+[   0.030] INFO  pci: 00:0d.2 8086:9a1f clasa 0c:03:40 controler USB
+[   0.030] INFO  pci: 00:0e.0 8086:9a0b clasa 01:04:00 controler de stocare
+[   0.030] INFO  pci: 00:14.0 8086:43ed clasa 0c:03:30 controler USB
+[   0.030] INFO  pci: 00:14.2 8086:43ef clasa 05:00:00 alt dispozitiv
+[   0.030] INFO  pci: 00:14.3 8086:43f0 clasa 02:80:00 placa de retea
+[   0.030] INFO  pci: 00:15.0 8086:43e8 clasa 0c:80:00 alt dispozitiv
+[   0.040] INFO  pci: 00:16.0 8086:43e0 clasa 07:80:00 alt dispozitiv
+[   0.040] INFO  pci: 00:1d.0 8086:43b6 clasa 06:04:00 punte PCI
+[   0.040] INFO  pci: 00:1f.0 8086:438b clasa 06:01:00 punte ISA
+[   0.040] INFO  pci: 00:1f.3 8086:43c8 clasa 04:03:80 multimedia
+[   0.040] INFO  pci: 00:1f.4 8086:43a3 clasa 0c:05:00 SMBus
+[   0.040] INFO  pci: 00:1f.5 8086:43a4 clasa 0c:80:00 alt dispozitiv
+[   0.050] INFO  pci: 01:00.0 10de:2520 clasa 03:00:00 placa video
+[   0.050] INFO  pci: 01:00.1 10de:228e clasa 04:03:00 multimedia
+[   0.050] INFO  pci: 2d:00.0 10ec:8168 clasa 02:00:00 placa de retea
+[   0.050] INFO  pci: 24 dispozitive pe 1 radacini (ECAM la 0xc0000000, magistralele 00-2d, cautare 2 ms)
+[ 289.970] INFO  wifi: wifi0: capabilitati PCI: 01 05 10 11
+
+== jurnal gpu ==
+[ 367.530] INFO  gpu: gpu0: 00:02.0 8086:9a60 Intel (clasa 03:00:00) subsistem 16f21043
+[ 367.530] INFO  gpu: gpu0: Command 0007 (memorie da, bus master da), stare D0
+[ 367.530] INFO  gpu: gpu0: BAR0 0x622e000000 memorie, 64 biti
+[ 367.530] INFO  gpu: gpu0: BAR2 0x4000000000 memorie, 64 biti, prefetch
+[ 367.530] INFO  gpu: gpu0: BAR4 0x5000 I/O
+[ 367.530] INFO  gpu: gpu0: Resizable BAR: absent (marimea BAR-urilor nu se masoara: ar cere scriere)
+[ 367.540] INFO  gpu: gpu0: cyber-gpu 835f24d nvidia-ga104: dispozitiv nesuportat 8086:9a60
+[ 367.540] INFO  gpu: gpu0: registre necitite (nivelul 0 citeste registre doar la NVIDIA)
+[ 367.540] INFO  gpu: gpu1: 01:00.0 10de:2520 NVIDIA (clasa 03:00:00) subsistem 16f21043
+[ 367.540] INFO  gpu: gpu1: Command 0000 (memorie nu, bus master nu), stare D0
+[ 367.540] INFO  gpu: gpu1: BAR0 0x85000000 memorie
+[ 367.540] INFO  gpu: gpu1: BAR1 0x6000000000 memorie, 64 biti, prefetch
+[ 367.540] INFO  gpu: gpu1: BAR3 0x6200000000 memorie, 64 biti, prefetch
+[ 367.540] INFO  gpu: gpu1: BAR5 0x4000 I/O
+[ 367.550] INFO  gpu: gpu1: Resizable BAR: BAR0 = 16 MiB acum
+[ 367.550] INFO  gpu: gpu1: Resizable BAR: BAR1 = 8192 MiB acum
+[ 367.550] INFO  gpu: gpu1: Resizable BAR: BAR3 = 32 MiB acum
+[ 367.550] INFO  gpu: gpu1: cyber-gpu 835f24d nvidia-ga104: GeForce RTX 3060 Laptop (BAR0 0x85000000), familia GA106
+[ 367.550] INFO  gpu: gpu1: GA106 (laptop): doar citire; pasii care scriu in placa (gpu i6 / lant / recupereaza) sunt refuzati pana la DA-ul separat al lui Adrian (C-116 pasul 3)
+[ 367.550] INFO  gpu: gpu1: reset (C-103, doar citire): FLR da; D3hot->D0 pastreaza starea (No_Soft_Reset=1, nu reseteaza); stare D0
+[ 367.550] INFO  gpu: gpu1: registrele nu s-au citit: Memory Space oprit de firmware: BAR0 nu raspunde; registrele nu se citesc (trezirea minima C-116 cere DA)
+[ 367.560] INFO  gpu: gpu1: pentru citire: `gpu tur --trezire` pe stick-ul de test (o scriere in registrul Command al PCI, repusa la final; cere DA)
+[ 367.560] INFO  gpu: gpu1: registrele nu s-au citit: Memory Space oprit de firmware (nu il pornim: ar fi o scriere)
+[ 367.560] INFO  gpu: zero scrieri in placa (configuratie PCI si registre: doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+[ 430.210] INFO  gpu: tur --trezire: confirmat cu DA
+[ 430.280] INFO  gpu: jurnalul pe loc: /usb/raport/gpu-jurnal-003.txt
+[ 430.280] INFO  gpu: jurnal: nota: C-116 trezire minima: Memory Space oprit de firmware; il pornesc pentru tur si il repun dupa
+[ 430.290] INFO  gpu: jurnal: cfg  r 0x004 = 0x00000000
+[ 430.300] INFO  gpu: jurnal: cfg  w 0x004: 0x00100000 <- 0x00000002 => 0x00100002
+[ 430.320] INFO  gpu: jurnal: pas C-116 trezire minima: Memory Space pornit: ok
+[ 430.330] INFO  gpu: jurnal: nota: tur de citire (C-54): incepe, 0 scrieri permise
+[ 430.340] INFO  gpu: jurnal: pas nivel0: configuratie: ok
+[ 430.360] INFO  gpu: jurnal: nota: GA106 (C-116): doar citire; lantul cu scrieri ramane doar pentru GA104
+[ 430.370] INFO  gpu: jurnal: bar0 r 0x000000 = 0xb76000a1
+[ 430.380] INFO  gpu: jurnal: bar0 r 0x000a00 = 0x176a1000
+[ 430.390] INFO  gpu: jurnal: pas nivel0: BOOT_0/BOOT_42: ok
+[ 430.410] INFO  gpu: jurnal: bar0 r 0x118128 = 0x00008b8f
+[ 430.420] INFO  gpu: jurnal: bar0 r 0x118234 = 0x000003ff
+[ 430.430] INFO  gpu: jurnal: pas I2: GFW_BOOT: ok
+[ 430.450] INFO  gpu: jurnal: bar0 r 0x300000 = 0xeb7faa55
+[ 430.460] INFO  gpu: jurnal: pas I3: VBIOS prin PROM: ok
+[ 430.470] INFO  gpu: jurnal: pas I3: descriptorul FWSEC: ok
+[ 430.490] INFO  gpu: jurnal: bar0 r 0x8241e0 = 0x00000003
+[ 430.500] INFO  gpu: jurnal: pas I6 pregatire: semnatura FWSEC aleasa (doar citire): ok
+[ 430.510] INFO  gpu: jurnal: bar0 r 0x1183a4 = 0x00001800
+[ 430.530] INFO  gpu: jurnal: bar0 r 0x1fa828 = 0x00000000
+[ 430.540] INFO  gpu: jurnal: pas I6 pregatire (doar citire): ok
+[ 430.550] INFO  gpu: jurnal: nota: tur de citire (C-54): gata, 0 scrieri
+[ 430.810] INFO  gpu: jurnal: cfg  w 0x004: 0x00100002 <- 0x00000000 => 0x00100000
+[ 430.820] INFO  gpu: jurnal: pas C-116 trezire minima: Command repus (Memory Space oprit): ok
+[ 430.830] INFO  gpu: gpu0: 01:00.0 GeForce RTX 3060 Laptop (BAR0 0x85000000), familia GA106, cyber-gpu 835f24d
+[ 430.830] INFO  gpu: fapt chip.familie = GA106
+[ 430.840] INFO  gpu: fapt chip.scrieri = interzise (C-116: doar citire pana la DA-ul lui Adrian)
+[ 430.840] INFO  gpu: fapt pci.id = 10de:2520
+[ 430.840] INFO  gpu: fapt pci.subsistem = 1043:16f2
+[ 430.840] INFO  gpu: fapt pci.clasa = 030000
+[ 430.840] INFO  gpu: fapt pci.command = 0x0002
+[ 430.840] INFO  gpu: fapt pci.bus_master = nu
+[ 430.840] INFO  gpu: fapt pci.stare = D0
+[ 430.840] INFO  gpu: fapt pci.bar0 = 0x85000000 mem
+[ 430.850] INFO  gpu: fapt pci.bar1 = 0x6000000000 mem 64b prefetch
+[ 430.850] INFO  gpu: fapt pci.bar3 = 0x6200000000 mem 64b prefetch
+[ 430.850] INFO  gpu: fapt pci.bar5 = 0x4000 io
+[ 430.850] INFO  gpu: fapt pci.legatura = gen4 x8 (max gen4 x16)
+[ 430.850] INFO  gpu: fapt bar0.0x000000 = 0xb76000a1
+[ 430.850] INFO  gpu: fapt bar0.0x000a00 = 0x176a1000
+[ 430.850] INFO  gpu: fapt chip.nume = GA106
+[ 430.860] INFO  gpu: fapt chip.consecvent = da
+[ 430.860] INFO  gpu: fapt gfw.progres = 0xff
+[ 430.860] INFO  gpu: fapt gfw.runde = 1
+[ 430.860] INFO  gpu: fapt bar0.0x118128 = 0x00008b8f
+[ 430.860] INFO  gpu: fapt vbios.ifr = nu
+[ 430.860] INFO  gpu: fapt vbios.imagini = 3
+[ 430.870] INFO  gpu: fapt vbios.imagine0 = 0x00000 tip 0x00 65024 octeti 10de:2520
+[ 430.870] INFO  gpu: fapt vbios.imagine1 = 0x0fe00 tip 0xe0 22016 octeti 10de:2200
+[ 430.870] INFO  gpu: fapt vbios.imagine2 = 0x15400 tip 0xe0 415744 octeti 10de:2200
+[ 430.870] INFO  gpu: fapt vbios.bit = 0x1b0 17
+[ 430.870] INFO  gpu: fapt vbios.bit.jetoane = 0x32v1 0x42v2 0x43v2 0x44v1 0x49v1 0x4dv2 0x4ev0 0x50v2 0x53v2 0x54v1 0x55v1 0x56v1 0x78v1 0x64v1 0x70v2 0x75v1 0x69v2
+[ 430.870] INFO  gpu: fapt vbios.versiune = 94.06.1e.00.23
+[ 430.880] INFO  gpu: fapt fwsec.pmu = 0x7aafe
+[ 430.880] INFO  gpu: fapt fwsec.aplicatii = 0x01 0x00 0x00 0x00 0x00 0x07 0x08 0x00 0x45 0x85 0x49 0x89 0x00 0x00 0x00 0x00
+[ 430.880] INFO  gpu: fapt fwsec.descriptor = v3 la 0x2c834 antet 0x4ac ucode 0xe900 imem 0xe100 dmem 0x800
+[ 430.880] INFO  gpu: fapt fwsec.semnaturi = 3 masca 0x0007 motoare 0x0400 ucode_id 9
+[ 430.880] INFO  gpu: fapt i6.siguranta = 0x8241e0 versiunea 2 semnatura 2
+[ 430.880] INFO  gpu: fapt i6.vram = 6144 MiB
+[ 430.890] INFO  gpu: fapt i6.wpr2 = coborat
+[ 430.890] INFO  gpu: fapt i6.trece = da
+[ 430.890] INFO  gpu: fapt i6.wpr2.etapa = coborat (pornire rece)
+[ 430.890] INFO  gpu: fapt bar0.0x000000 = 0xb76000a1
+[ 430.890] INFO  gpu: fapt bar0.0x000a00 = 0x176a1000
+[ 430.890] INFO  gpu: fapt bar0.0x118128 = 0x00008b8f
+[ 430.890] INFO  gpu: fapt bar0.0x118234 = 0x000003ff
+[ 430.900] INFO  gpu: fapt bar0.0x8241e0 = 0x00000003
+[ 430.900] INFO  gpu: fapt bar0.0x1183a4 = 0x00001800
+[ 430.900] INFO  gpu: fapt bar0.0x1fa828 = 0x00000000
+[ 430.900] INFO  gpu: fapt pci.trezire = Memory Space pornit de noi pentru tur (C-116, o scriere in Command), repus la loc dupa
+[ 430.900] INFO  gpu: gpu0: tur de citire (C-54): 45 fapte, 8 citiri jurnalizate
+[ 430.900] INFO  gpu: gpu0: trezirea minima: Memory Space pornit pentru tur, apoi repus
+[ 430.910] INFO  gpu: gpu0: Command acum 0000 (memorie nu, bus master nu)
+[ 430.910] INFO  gpu: gpu0: jurnalul pe loc: /usb/raport/gpu-jurnal-003.txt (24 randuri, fiecare scris pe loc)
+[ 430.910] INFO  gpu: gpu0: usb: scrieri 60 (total 367.7 ms, in medie 6.1 ms, cea mai lunga 242.5 ms), sincronizari 25 (total 1.4 ms, in medie 0.0 ms, cea mai lunga 0.0 ms)
+[ 430.910] INFO  gpu: gpu0: 11 pagini mapate pe rand (doar citire, fereastra de 16 MiB)
+[ 430.910] INFO  gpu: gpu0: scrieri: 2 in configuratia PCI (registrul Command, trezirea C-116), 0 in registrele placii; 0 cereri refuzate de adaptor
+[ 560.320] INFO  gpu: gpu0: 01:00.0 GeForce RTX 3060 Laptop (BAR0 0x85000000), familia GA106, cyber-gpu 835f24d
+[ 560.320] INFO  gpu: gpu0: Memory Space oprit de firmware: BAR0 nu raspunde; registrele nu se citesc (trezirea minima C-116 cere DA)
+[ 560.320] INFO  gpu: gpu0: pentru citire: `gpu tur --trezire` pe stick-ul de test (o scriere in registrul Command al PCI, repusa la final; cere DA)
+[ 560.320] INFO  gpu: 0 scrieri in placa (doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+
+== erori si avertismente ==
+[   -.---] WARN  apic: PIT (8254) nu numara (oprit de firmware?); incerc urmatorul ceas
+[   4.440] WARN  net: Realtek: fara legatura dupa 4 s (cablu? PHYstatus 04); DHCP reincearca singur
+[  12.890] WARN  net: DHCP nu raspunde; fara adresa, reincerc la 10 s
+
+== jurnal complet (261 randuri pastrate in memorie) ==
+[   -.---] INFO  jurnal: pornit (nucleu 0.1.0)
+[   -.---] INFO  fpu: XSAVE: x87, SSE, AVX; zona per fir 832 octeti; AVX2 da
+[   -.---] INFO  cpu: GDT si IDT incarcate (CS=0x08, TR=0x28)
+[   -.---] INFO  mem: 0x000000000000-0x000000087000      540 KiB utilizabila
+[   -.---] INFO  mem: 0x000000087000-0x000000088000        4 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x000000088000-0x00000009f000       92 KiB utilizabila
+[   -.---] INFO  mem: 0x00000009f000-0x0000000a0000        4 KiB rezervata
+[   -.---] INFO  mem: 0x0000000a0000-0x000000100000      384 KiB rezervata
+[   -.---] INFO  mem: 0x000000100000-0x00003b654000   972112 KiB utilizabila
+[   -.---] INFO  mem: 0x00003b654000-0x00003b655000        4 KiB rezervata
+[   -.---] INFO  mem: 0x00003b655000-0x00003c9a0000    19756 KiB utilizabila
+[   -.---] INFO  mem: 0x00003c9a0000-0x00003c9a1000        4 KiB rezervata
+[   -.---] INFO  mem: 0x00003c9a1000-0x000050fef000   334136 KiB utilizabila
+[   -.---] INFO  mem: 0x000050fef000-0x00005102f000      256 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x00005102f000-0x000058f5e000   130236 KiB utilizabila
+[   -.---] INFO  mem: 0x000058f5e000-0x000059391000     4300 KiB nucleu si module
+[   -.---] INFO  mem: 0x000059391000-0x000059fd1000    12544 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x000059fd1000-0x00005a072000      644 KiB utilizabila
+[   -.---] INFO  mem: 0x00005a072000-0x00005a165000      972 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x00005a165000-0x00005df57000    63432 KiB utilizabila
+[   -.---] INFO  mem: 0x00005df57000-0x000063664000    89140 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x000063664000-0x000063864000     2048 KiB utilizabila
+[   -.---] INFO  mem: 0x000063864000-0x00006423f000    10092 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x00006423f000-0x00006733f000    50176 KiB rezervata
+[   -.---] INFO  mem: 0x00006733f000-0x00006740b000      816 KiB ACPI (recuperabila)
+[   -.---] INFO  mem: 0x00006740b000-0x00006754e000     1292 KiB ACPI NVS
+[   -.---] INFO  mem: 0x00006754e000-0x000067e3b000     9140 KiB rezervata
+[   -.---] INFO  mem: 0x000067e3b000-0x000067eff000      784 KiB rezervata
+[   -.---] INFO  mem: 0x000067eff000-0x000067f00000        4 KiB bootloader (recuperabila)
+[   -.---] INFO  mem: 0x000067f00000-0x00006a000000    33792 KiB rezervata
+[   -.---] INFO  mem: 0x00006a000000-0x00006e000000    65536 KiB rezervata
+[   -.---] INFO  mem: 0x00006e400000-0x00006e600000     2048 KiB rezervata
+[   -.---] INFO  mem: 0x00006f000000-0x000070000000    16384 KiB rezervata
+[   -.---] INFO  mem: 0x000070000000-0x000074800000    73728 KiB rezervata
+[   -.---] INFO  mem: 0x0000c0000000-0x0000d0000000   262144 KiB rezervata
+[   -.---] INFO  mem: 0x0000fe000000-0x0000fe011000       68 KiB rezervata
+[   -.---] INFO  mem: 0x0000fec00000-0x0000fec01000        4 KiB rezervata
+[   -.---] INFO  mem: 0x0000fed00000-0x0000fed01000        4 KiB rezervata
+[   -.---] INFO  mem: 0x0000fed20000-0x0000fed80000      384 KiB rezervata
+[   -.---] INFO  mem: 0x0000fee00000-0x0000fee01000        4 KiB rezervata
+[   -.---] INFO  mem: 0x0000ff000000-0x000100000000    16384 KiB rezervata
+[   -.---] INFO  mem: 0x000100000000-0x00108b800000 65200128 KiB utilizabila
+[   -.---] INFO  mem: 0x004000000000-0x0040007e9000     8100 KiB ecran
+[   -.---] INFO  mem: usable: 65159 MiB in 40 regiuni, adresa maxima 0x40007e9000, HHDM la 0xffff800000000000
+[   -.---] INFO  mem: alocator de cadre gata: 16680249 cadre libere (65157 MiB), harta de 2117 KiB la 0x100000
+[   -.---] INFO  mem: tabele de pagini proprii active (15 tabele copiate de la Limine)
+[   -.---] INFO  mem: heap gata la 0xffff900000000000, 1024 KiB initial
+[   -.---] INFO  smp: pagina pentru trambulina la 0x1000
+[   -.---] INFO  ecran: copie in memorie a ecranului pornita (derularea nu mai citeste memoria placii video)
+[   -.---] INFO  sched: planificator gata (round-robin, felie 10 ms, stiva 16 KiB)
+[   -.---] INFO  acpi: 31 tabele (XSDT): FACP SSDT FIDT SSDT SSDT SSDT SSDT HPET APIC SSDT SSDT NHLT LPIT WSMT SSDT SSDT DBGP DBG2 SSDT DMAR FPDT SSDT MCFG SSDT SSDT UEFI UEFI TPM2 BGRT SSDT PTDT
+[   -.---] INFO  smbios: SMBIOS 3.5 ASUSTeK COMPUTER INC. ASUS TUF Gaming F15 FX506HM_FX506HM
+[   -.---] INFO  acpi: temporizator PM la portul 0x1808 (24 biti)
+[   -.---] INFO  acpi: FADT rev 6, RESET_REG io 0xcf9 <- 0x06 (declarat suportat, 8 biti)
+[   -.---] INFO  acpi: MADT: 16 procesoare, APIC local la 0xfee00000, 1 I/O APIC (primul la 0xfec00000, GSI 0), 2 redirectari IRQ
+[   -.---] INFO  apic: mod xAPIC (registre prin memorie) (IA32_APIC_BASE 0xfee00900); pasul urmator: rutele I/O APIC, apoi calibrarea ceasului
+[   -.---] INFO  apic: calibrez ceasul (PIT, apoi ACPI PM, apoi CPUID)
+[   -.---] WARN  apic: PIT (8254) nu numara (oprit de firmware?); incerc urmatorul ceas
+[   -.---] INFO  apic: ceasul de referinta: temporizatorul ACPI PM; TSC 2304183 kHz
+[   -.---] INFO  apic: temporizator 100 Hz pornit (24002 impulsuri APIC pe perioada), 120 linii I/O APIC
+[   0.000] INFO  tastatura: PS/2 gata (aranjament US)
+[   0.000] INFO  mouse: niciun mouse PS/2
+[   0.010] INFO  pci: 00:00.0 8086:9a36 clasa 06:00:00 punte gazda
+[   0.020] INFO  pci: 00:01.0 8086:9a01 clasa 06:04:00 punte PCI
+[   0.020] INFO  pci: 00:02.0 8086:9a60 clasa 03:00:00 placa video
+[   0.020] INFO  pci: 00:04.0 8086:9a03 clasa 11:80:00 alt dispozitiv
+[   0.020] INFO  pci: 00:06.0 8086:09ab clasa 08:80:00 alt dispozitiv
+[   0.020] INFO  pci: 00:07.0 8086:9a2b clasa 06:04:00 punte PCI
+[   0.020] INFO  pci: 00:08.0 8086:9a11 clasa 08:80:00 alt dispozitiv
+[   0.020] INFO  pci: 00:0a.0 8086:9a0d clasa 11:80:00 alt dispozitiv
+[   0.030] INFO  pci: 00:0d.0 8086:9a17 clasa 0c:03:30 controler USB
+[   0.030] INFO  pci: 00:0d.2 8086:9a1f clasa 0c:03:40 controler USB
+[   0.030] INFO  pci: 00:0e.0 8086:9a0b clasa 01:04:00 controler de stocare
+[   0.030] INFO  pci: 00:14.0 8086:43ed clasa 0c:03:30 controler USB
+[   0.030] INFO  pci: 00:14.2 8086:43ef clasa 05:00:00 alt dispozitiv
+[   0.030] INFO  pci: 00:14.3 8086:43f0 clasa 02:80:00 placa de retea
+[   0.030] INFO  pci: 00:15.0 8086:43e8 clasa 0c:80:00 alt dispozitiv
+[   0.040] INFO  pci: 00:16.0 8086:43e0 clasa 07:80:00 alt dispozitiv
+[   0.040] INFO  pci: 00:1d.0 8086:43b6 clasa 06:04:00 punte PCI
+[   0.040] INFO  pci: 00:1f.0 8086:438b clasa 06:01:00 punte ISA
+[   0.040] INFO  pci: 00:1f.3 8086:43c8 clasa 04:03:80 multimedia
+[   0.040] INFO  pci: 00:1f.4 8086:43a3 clasa 0c:05:00 SMBus
+[   0.040] INFO  pci: 00:1f.5 8086:43a4 clasa 0c:80:00 alt dispozitiv
+[   0.050] INFO  pci: 01:00.0 10de:2520 clasa 03:00:00 placa video
+[   0.050] INFO  pci: 01:00.1 10de:228e clasa 04:03:00 multimedia
+[   0.050] INFO  pci: 2d:00.0 10ec:8168 clasa 02:00:00 placa de retea
+[   0.050] INFO  pci: 24 dispozitive pe 1 radacini (ECAM la 0xc0000000, magistralele 00-2d, cautare 2 ms)
+[   0.050] INFO  rtc: 2026-11-13 07:32:31
+[   0.050] INFO  boot: pornit de pe disc (hard disk, SSD sau stick USB)
+[   0.050] INFO  boot: 1 fisiere de la Limine
+[   0.060] INFO  fs: radacina din initrd: 145 intrari, 2294 KiB
+[   0.110] INFO  usb: controler XHCI pornit, 5 porturi, 0 dispozitive (00:0d.0)
+[   0.210] INFO  usb: port 2: slot 1, viteza 3, pachet maxim EP0 64, configuratia 1 (32 octeti), endpoint-uri 01/2/512/b0 82/2/512/b0
+[   0.210] INFO  usb: port c2/2: 346d:5678 stocare (Mass Storage) (clasa 08:06:50, viteza 3)
+[   0.340] INFO  usb: port 7: slot 2, viteza 3, pachet maxim EP0 64, configuratia 1 (512 octeti), endpoint-uri 83/3/16/b0
+[   0.340] INFO  usb: port c2/7: 322e:202c alt dispozitiv (clasa ef:02:01, viteza 3)
+[   0.400] INFO  usb: port 14: slot 3, viteza 1, pachet maxim EP0 64, configuratia 1 (200 octeti), endpoint-uri 81/3/64/b0 02/2/64/b0 82/2/64/b0
+[   0.400] INFO  usb: port c2/14: 8087:0026 bluetooth/wireless (clasa e0:01:01, viteza 1)
+[   0.410] INFO  usb: port 19: slot 4, viteza 4, pachet maxim EP0 512, configuratia 1 (44 octeti), endpoint-uri 81/2/1024/b3 02/2/1024/b3
+[   0.410] INFO  usb: port c2/19: 13fe:6700 stocare (Mass Storage) (clasa 08:06:50, viteza 4)
+[   0.410] INFO  usb: controler XHCI pornit, 24 porturi, 4 dispozitive (00:14.0)
+[   0.410] INFO  usb: 2 controlere XHCI pornite, 4 dispozitive in total
+[   0.410] INFO  usb: port 2: SET_CONFIGURATION 1 ok
+[   0.410] INFO  usb: port c2/2: Configure Endpoint ok (2 endpoint-uri)
+[   0.410] INFO  usb: stocare VendorCo ProductCode (60000 MiB)
+[   0.420] INFO  usb: port 19: SET_CONFIGURATION 1 ok
+[   0.420] INFO  usb: port c2/19: Configure Endpoint ok (2 endpoint-uri)
+[   0.420] INFO  usb: stocare  USB DISK 3.0 (29604 MiB)
+[   4.420] INFO  net: placa Realtek RTL8168 pornita (revizia 54000000), MAC 7c:10:c9:91:26:55, legatura: nu
+[   4.420] INFO  net: rtl8168 registre: CR 00 RCR 0002c70a TCR 57100f00 IMR 0000 ISR 0000 RMS 2048 MISC 0000003f MCU 32 PHY 04
+[   4.430] INFO  net: rtl8168 inele: RDSAR 00000000_01000000 TNPDS 00000000_01001000 (sub 4 GB, sub 4 GB)
+[   4.430] INFO  net: rtl8168 C+ Command 2020, PMCH f0, revizia 54000000 = 8168H (doar citite)
+[   4.430] INFO  net: rtl8168 buffere RX: 0 la 1003000, 1 la 1003800, 2 la 1004000 (sub 4 GB); RAM 65159 MiB, cea mai mare adresa 108b800000 (are memorie peste 4 GB)
+[   4.430] INFO  net: rtl8168 memorie DMA: un bloc 1000000-108afff (139 pagini); inel RX 1000000 in 100000-3b653fff utilizabila; buffer RX 0 1003000 in 100000-3b653fff utilizabila; paza: ok (139 pagini DMA pazite)
+[   4.430] INFO  net: rtl8168 PCI 2d:00.0: Command 0007 (Bus Master da, Memory da), PCIe Device Control 2010 (doar citit); varianta implicita (cache bloc-dma model)
+[   4.440] WARN  net: Realtek: fara legatura dupa 4 s (cablu? PHYstatus 04); DHCP reincearca singur
+[   4.460] INFO  fs: /usb: aleg discul 1 din 2 (are cyber.rw si VERSIUNE)
+[   4.460] INFO  fs: FAT32 (MBR, 30720 MiB) montat la /usb (scriere permisa)
+[   4.460] INFO  fs: FAT32 (fara tabela, 29604 MiB) montat la /usb2
+[   4.480] INFO  fs: /usb2: al doilea stick, cu dosarul firmware/nvidia/ga102/gsp (doar citire)
+[   4.480] INFO  mem: recuperat 113012 KiB din memoria bootloader-ului
+[   4.480] INFO  metrici: pornire 4984.806 ms; memorie nucleu 17372 KiB (imagine 1900 KiB + cadre 15472 KiB, heap 10500 / 11176 KiB); libera 65254 MiB
+[  12.890] WARN  net: DHCP nu raspunde; fara adresa, reincerc la 10 s
+[  12.890] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 801
+[  12.890] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  12.890] INFO  net: primele cadre: -
+[  12.890] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[  31.290] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 2601
+[  31.290] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  31.290] INFO  net: primele cadre: -
+[  31.290] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[  34.870] INFO  proces: firul 4 a iesit cu codul 0
+[  49.690] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 4401
+[  49.690] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  49.690] INFO  net: primele cadre: -
+[  49.690] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[  68.090] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 6201
+[  68.090] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  68.090] INFO  net: primele cadre: -
+[  68.090] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[  86.490] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 8001
+[  86.490] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[  86.490] INFO  net: primele cadre: -
+[  86.490] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[ 104.890] INFO  net: legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 0000, descriptor RX 0 = 80000800, citiri 9801
+[ 104.890] INFO  net: inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
+[ 104.890] INFO  net: primele cadre: -
+[ 104.890] INFO  net: cadre cu tip 0000: 0; necitite de placa (model A5): 0; reparate de golirea cache-ului: 0; paza memoriei: ok (139 pagini DMA pazite); Bus Master: da; MISC 0000003f (poarta RXDV deschisa); varianta: implicita (cache bloc-dma model) (det[ 289.960] INFO  wifi: wifi0: 00:14.3 8086:43f0 Wi-Fi 6 AX201 (CNVi, chipset Tiger Lake-H) subsistem 00748086 rev 11 (clasa 02:80:00)
+[ 289.970] INFO  wifi: wifi0: integrata in chipset (magistrala 0: CNVi, radioul pe M.2); Command 0000 (memorie nu, bus master nu), stare D0
+[ 289.970] INFO  wifi: wifi0: BAR0 0x622f28c000 memorie, 64 biti
+[ 289.970] INFO  wifi: wifi0: legatura PCIe ? x0
+[ 289.970] INFO  wifi: wifi0: capabilitati PCI: 01 05 10 11
+[ 289.970] INFO  wifi: wifi0: registrele CSR nu s-au citit: Memory Space oprit de firmware (nu il pornim: ar fi o scriere)
+[ 289.970] INFO  wifi: zero scrieri in placa Wi-Fi (configuratie PCI si registre: doar citire; pasul W0 din C-118)
+[ 367.530] INFO  gpu: gpu0: 00:02.0 8086:9a60 Intel (clasa 03:00:00) subsistem 16f21043
+[ 367.530] INFO  gpu: gpu0: Command 0007 (memorie da, bus master da), stare D0
+[ 367.530] INFO  gpu: gpu0: BAR0 0x622e000000 memorie, 64 biti
+[ 367.530] INFO  gpu: gpu0: BAR2 0x4000000000 memorie, 64 biti, prefetch
+[ 367.530] INFO  gpu: gpu0: BAR4 0x5000 I/O
+[ 367.530] INFO  gpu: gpu0: Resizable BAR: absent (marimea BAR-urilor nu se masoara: ar cere scriere)
+[ 367.540] INFO  gpu: gpu0: cyber-gpu 835f24d nvidia-ga104: dispozitiv nesuportat 8086:9a60
+[ 367.540] INFO  gpu: gpu0: registre necitite (nivelul 0 citeste registre doar la NVIDIA)
+[ 367.540] INFO  gpu: gpu1: 01:00.0 10de:2520 NVIDIA (clasa 03:00:00) subsistem 16f21043
+[ 367.540] INFO  gpu: gpu1: Command 0000 (memorie nu, bus master nu), stare D0
+[ 367.540] INFO  gpu: gpu1: BAR0 0x85000000 memorie
+[ 367.540] INFO  gpu: gpu1: BAR1 0x6000000000 memorie, 64 biti, prefetch
+[ 367.540] INFO  gpu: gpu1: BAR3 0x6200000000 memorie, 64 biti, prefetch
+[ 367.540] INFO  gpu: gpu1: BAR5 0x4000 I/O
+[ 367.550] INFO  gpu: gpu1: Resizable BAR: BAR0 = 16 MiB acum
+[ 367.550] INFO  gpu: gpu1: Resizable BAR: BAR1 = 8192 MiB acum
+[ 367.550] INFO  gpu: gpu1: Resizable BAR: BAR3 = 32 MiB acum
+[ 367.550] INFO  gpu: gpu1: cyber-gpu 835f24d nvidia-ga104: GeForce RTX 3060 Laptop (BAR0 0x85000000), familia GA106
+[ 367.550] INFO  gpu: gpu1: GA106 (laptop): doar citire; pasii care scriu in placa (gpu i6 / lant / recupereaza) sunt refuzati pana la DA-ul separat al lui Adrian (C-116 pasul 3)
+[ 367.550] INFO  gpu: gpu1: reset (C-103, doar citire): FLR da; D3hot->D0 pastreaza starea (No_Soft_Reset=1, nu reseteaza); stare D0
+[ 367.550] INFO  gpu: gpu1: registrele nu s-au citit: Memory Space oprit de firmware: BAR0 nu raspunde; registrele nu se citesc (trezirea minima C-116 cere DA)
+[ 367.560] INFO  gpu: gpu1: pentru citire: `gpu tur --trezire` pe stick-ul de test (o scriere in registrul Command al PCI, repusa la final; cere DA)
+[ 367.560] INFO  gpu: gpu1: registrele nu s-au citit: Memory Space oprit de firmware (nu il pornim: ar fi o scriere)
+[ 367.560] INFO  gpu: zero scrieri in placa (configuratie PCI si registre: doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+[ 430.210] INFO  gpu: tur --trezire: confirmat cu DA
+[ 430.280] INFO  gpu: jurnalul pe loc: /usb/raport/gpu-jurnal-003.txt
+[ 430.280] INFO  gpu: jurnal: nota: C-116 trezire minima: Memory Space oprit de firmware; il pornesc pentru tur si il repun dupa
+[ 430.290] INFO  gpu: jurnal: cfg  r 0x004 = 0x00000000
+[ 430.300] INFO  gpu: jurnal: cfg  w 0x004: 0x00100000 <- 0x00000002 => 0x00100002
+[ 430.320] INFO  gpu: jurnal: pas C-116 trezire minima: Memory Space pornit: ok
+[ 430.330] INFO  gpu: jurnal: nota: tur de citire (C-54): incepe, 0 scrieri permise
+[ 430.340] INFO  gpu: jurnal: pas nivel0: configuratie: ok
+[ 430.360] INFO  gpu: jurnal: nota: GA106 (C-116): doar citire; lantul cu scrieri ramane doar pentru GA104
+[ 430.370] INFO  gpu: jurnal: bar0 r 0x000000 = 0xb76000a1
+[ 430.380] INFO  gpu: jurnal: bar0 r 0x000a00 = 0x176a1000
+[ 430.390] INFO  gpu: jurnal: pas nivel0: BOOT_0/BOOT_42: ok
+[ 430.410] INFO  gpu: jurnal: bar0 r 0x118128 = 0x00008b8f
+[ 430.420] INFO  gpu: jurnal: bar0 r 0x118234 = 0x000003ff
+[ 430.430] INFO  gpu: jurnal: pas I2: GFW_BOOT: ok
+[ 430.450] INFO  gpu: jurnal: bar0 r 0x300000 = 0xeb7faa55
+[ 430.460] INFO  gpu: jurnal: pas I3: VBIOS prin PROM: ok
+[ 430.470] INFO  gpu: jurnal: pas I3: descriptorul FWSEC: ok
+[ 430.490] INFO  gpu: jurnal: bar0 r 0x8241e0 = 0x00000003
+[ 430.500] INFO  gpu: jurnal: pas I6 pregatire: semnatura FWSEC aleasa (doar citire): ok
+[ 430.510] INFO  gpu: jurnal: bar0 r 0x1183a4 = 0x00001800
+[ 430.530] INFO  gpu: jurnal: bar0 r 0x1fa828 = 0x00000000
+[ 430.540] INFO  gpu: jurnal: pas I6 pregatire (doar citire): ok
+[ 430.550] INFO  gpu: jurnal: nota: tur de citire (C-54): gata, 0 scrieri
+[ 430.810] INFO  gpu: jurnal: cfg  w 0x004: 0x00100002 <- 0x00000000 => 0x00100000
+[ 430.820] INFO  gpu: jurnal: pas C-116 trezire minima: Command repus (Memory Space oprit): ok
+[ 430.830] INFO  gpu: gpu0: 01:00.0 GeForce RTX 3060 Laptop (BAR0 0x85000000), familia GA106, cyber-gpu 835f24d
+[ 430.830] INFO  gpu: fapt chip.familie = GA106
+[ 430.840] INFO  gpu: fapt chip.scrieri = interzise (C-116: doar citire pana la DA-ul lui Adrian)
+[ 430.840] INFO  gpu: fapt pci.id = 10de:2520
+[ 430.840] INFO  gpu: fapt pci.subsistem = 1043:16f2
+[ 430.840] INFO  gpu: fapt pci.clasa = 030000
+[ 430.840] INFO  gpu: fapt pci.command = 0x0002
+[ 430.840] INFO  gpu: fapt pci.bus_master = nu
+[ 430.840] INFO  gpu: fapt pci.stare = D0
+[ 430.840] INFO  gpu: fapt pci.bar0 = 0x85000000 mem
+[ 430.850] INFO  gpu: fapt pci.bar1 = 0x6000000000 mem 64b prefetch
+[ 430.850] INFO  gpu: fapt pci.bar3 = 0x6200000000 mem 64b prefetch
+[ 430.850] INFO  gpu: fapt pci.bar5 = 0x4000 io
+[ 430.850] INFO  gpu: fapt pci.legatura = gen4 x8 (max gen4 x16)
+[ 430.850] INFO  gpu: fapt bar0.0x000000 = 0xb76000a1
+[ 430.850] INFO  gpu: fapt bar0.0x000a00 = 0x176a1000
+[ 430.850] INFO  gpu: fapt chip.nume = GA106
+[ 430.860] INFO  gpu: fapt chip.consecvent = da
+[ 430.860] INFO  gpu: fapt gfw.progres = 0xff
+[ 430.860] INFO  gpu: fapt gfw.runde = 1
+[ 430.860] INFO  gpu: fapt bar0.0x118128 = 0x00008b8f
+[ 430.860] INFO  gpu: fapt vbios.ifr = nu
+[ 430.860] INFO  gpu: fapt vbios.imagini = 3
+[ 430.870] INFO  gpu: fapt vbios.imagine0 = 0x00000 tip 0x00 65024 octeti 10de:2520
+[ 430.870] INFO  gpu: fapt vbios.imagine1 = 0x0fe00 tip 0xe0 22016 octeti 10de:2200
+[ 430.870] INFO  gpu: fapt vbios.imagine2 = 0x15400 tip 0xe0 415744 octeti 10de:2200
+[ 430.870] INFO  gpu: fapt vbios.bit = 0x1b0 17
+[ 430.870] INFO  gpu: fapt vbios.bit.jetoane = 0x32v1 0x42v2 0x43v2 0x44v1 0x49v1 0x4dv2 0x4ev0 0x50v2 0x53v2 0x54v1 0x55v1 0x56v1 0x78v1 0x64v1 0x70v2 0x75v1 0x69v2
+[ 430.870] INFO  gpu: fapt vbios.versiune = 94.06.1e.00.23
+[ 430.880] INFO  gpu: fapt fwsec.pmu = 0x7aafe
+[ 430.880] INFO  gpu: fapt fwsec.aplicatii = 0x01 0x00 0x00 0x00 0x00 0x07 0x08 0x00 0x45 0x85 0x49 0x89 0x00 0x00 0x00 0x00
+[ 430.880] INFO  gpu: fapt fwsec.descriptor = v3 la 0x2c834 antet 0x4ac ucode 0xe900 imem 0xe100 dmem 0x800
+[ 430.880] INFO  gpu: fapt fwsec.semnaturi = 3 masca 0x0007 motoare 0x0400 ucode_id 9
+[ 430.880] INFO  gpu: fapt i6.siguranta = 0x8241e0 versiunea 2 semnatura 2
+[ 430.880] INFO  gpu: fapt i6.vram = 6144 MiB
+[ 430.890] INFO  gpu: fapt i6.wpr2 = coborat
+[ 430.890] INFO  gpu: fapt i6.trece = da
+[ 430.890] INFO  gpu: fapt i6.wpr2.etapa = coborat (pornire rece)
+[ 430.890] INFO  gpu: fapt bar0.0x000000 = 0xb76000a1
+[ 430.890] INFO  gpu: fapt bar0.0x000a00 = 0x176a1000
+[ 430.890] INFO  gpu: fapt bar0.0x118128 = 0x00008b8f
+[ 430.890] INFO  gpu: fapt bar0.0x118234 = 0x000003ff
+[ 430.900] INFO  gpu: fapt bar0.0x8241e0 = 0x00000003
+[ 430.900] INFO  gpu: fapt bar0.0x1183a4 = 0x00001800
+[ 430.900] INFO  gpu: fapt bar0.0x1fa828 = 0x00000000
+[ 430.900] INFO  gpu: fapt pci.trezire = Memory Space pornit de noi pentru tur (C-116, o scriere in Command), repus la loc dupa
+[ 430.900] INFO  gpu: gpu0: tur de citire (C-54): 45 fapte, 8 citiri jurnalizate
+[ 430.900] INFO  gpu: gpu0: trezirea minima: Memory Space pornit pentru tur, apoi repus
+[ 430.910] INFO  gpu: gpu0: Command acum 0000 (memorie nu, bus master nu)
+[ 430.910] INFO  gpu: gpu0: jurnalul pe loc: /usb/raport/gpu-jurnal-003.txt (24 randuri, fiecare scris pe loc)
+[ 430.910] INFO  gpu: gpu0: usb: scrieri 60 (total 367.7 ms, in medie 6.1 ms, cea mai lunga 242.5 ms), sincronizari 25 (total 1.4 ms, in medie 0.0 ms, cea mai lunga 0.0 ms)
+[ 430.910] INFO  gpu: gpu0: 11 pagini mapate pe rand (doar citire, fereastra de 16 MiB)
+[ 430.910] INFO  gpu: gpu0: scrieri: 2 in configuratia PCI (registrul Command, trezirea C-116), 0 in registrele placii; 0 cereri refuzate de adaptor
+[ 560.320] INFO  gpu: gpu0: 01:00.0 GeForce RTX 3060 Laptop (BAR0 0x85000000), familia GA106, cyber-gpu 835f24d
+[ 560.320] INFO  gpu: gpu0: Memory Space oprit de firmware: BAR0 nu raspunde; registrele nu se citesc (trezirea minima C-116 cere DA)
+[ 560.320] INFO  gpu: gpu0: pentru citire: `gpu tur --trezire` pe stick-ul de test (o scriere in registrul Command al PCI, repusa la final; cere DA)
+[ 560.320] INFO  gpu: 0 scrieri in placa (doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+[ 561.720] INFO  analiza: /usb/raport/uhl/ASUSTeK-COMPUTER-INC-ASUS-TUF-Gaming-F15-FX506HM/20261113-0741/inventory.json scris (336600 octeti)
+[ 563.580] INFO  analiza: /usb/raport/uhl/ASUSTeK-COMPUTER-INC-ASUS-TUF-Gaming-F15-FX506HM/20261113-0741/inventory.redacted.json scris (336529 octeti)
+[ 563.640] INFO  analiza: /usb/raport/uhl/ASUSTeK-COMPUTER-INC-ASUS-TUF-Gaming-F15-FX506HM/20261113-0741/report.txt scris (2799 octeti)
+[ 631.510] INFO  test tot: REZULTAT: FAIL (1 esuate din 7)
+[ 631.580] INFO  raport: /usb/raport/test-tot-20261113-1.txt scris (760 octeti, test-tot)
+
+== sfarsit ==
