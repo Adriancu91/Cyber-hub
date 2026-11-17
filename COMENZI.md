@@ -1681,5 +1681,6 @@ Format:
 - data: 2026-11-17 17:35 · de la: Adrian (prin centrul de comandă) — urmarea „da C-135” (16:11): reparația se testează pe workstation după S124.
 - ce: la fel ca la C-134 / `os-304`: legi în OS commit-ul Cyber-GPU cu C-135 (`f7126b9` sau mai nou pe `g0-g2-fundatie`) și opțiunea nouă **`gpu lant --i9 c135`**, după nota din `cyber-gpu/integration/cyber-universe/` pentru C-135 — doar adăugare: `gpu lant` fără opțiune, `--i9 c125` și `--i9 c133` rămân neschimbate. Testele în QEMU + CI verde, apoi **Release `os-305`** cu `stick-test-complet.zip` (kernelul care poate scrie în placă) și `SHA256SUMS`. Pe placă doar cu Adrian de față, după „DA”.
 - **Fără grabă de azi:** testul e mâine (17 → 18 nov), după ce S124 eliberează placa; ajunge să fie gata până mâine dimineață. Dacă testul `appwindow` pică iar în CI fără legătură cu schimbarea, repornești CI-ul (ca la P6-92) și îl notezi ca test instabil.
-- stare: nou
+- stare: preluat (2026-11-17 15:45 UTC, sesiunea OS; P6-93)
+- (istoric) stare: nou
 - rezultat:
