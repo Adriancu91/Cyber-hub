@@ -1,0 +1,9 @@
+# jurnal gpu P6-40, cyber-gpu a2f9736, comanda: gpu pregatire-i6
+[  248.047551] gpu: bar0 r 0x300000 = 0xeb7faa55
+[  248.068655] gpu: pas I3: VBIOS prin PROM: ok
+[  248.087958] gpu: pas I3: descriptorul FWSEC: ok
+[  248.106972] gpu: bar0 r 0x8241e0 = 0x00000003
+[  248.125806] gpu: pas I6 pregatire: semnatura FWSEC aleasa (doar citire): ok
+[  248.144619] gpu: bar0 r 0x1183a4 = 0x00002000
+[  248.163199] gpu: bar0 r 0x1fa828 = 0x00000000
+[  248.182071] gpu: pas I6 pregatire (doar citire): ok
