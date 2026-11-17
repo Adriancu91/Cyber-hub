@@ -1672,5 +1672,6 @@ Format:
   4. Documentul spune ce rezultat pe placă confirmă sau infirmă fiecare ipoteză și ce urmează (dacă trece: I10 add64, primul calcul). CI verde.
 - **Reguli (neschimbate):** pe placă doar cu Adrian de față și după „DA”; firmware-ul NVIDIA nu intră în repo/hub; clean-room (MIT/Apache citit ca specificație, fără GPL copiat, fără analiza firmware-ului); fără ocolirea pazelor; nu scrii în repo-urile altor proiecte.
 - **La final:** `stare/cyber-gpu.md` + jurnalul în hub, cu rezumat pe înțeles pentru Adrian (cauza probabilă, cât de sigur, ce testează `--i9 c135`). Centrul de comandă cere apoi OS-ului `os-305`.
-- stare: nou
+- stare: preluat (2026-11-17 16:20, sesiunea Cyber-GPU 108)
+- (istoric) stare: nou
 - rezultat:
