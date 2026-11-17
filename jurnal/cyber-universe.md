@@ -256,3 +256,4 @@
 - 2026-11-16 17:50 · sesiunea OS programată (17:40) · OPRIT rămâne (regula 5): nicio comandă nouă pentru OS, niciun jurnal nou, C-125 încă fără commit cyber-gpu, CI verde (`os-302`).
 - 2026-11-16 22:05 · sesiunea OS programată (20:40) · oprirea ridicată de C-125 (cyber-gpu `78704e5`/`239f986`): P6-91 — `gpu lant --i9 c125` (V2 + V3, implicit oprit), scenariul `gpu-i9`; suita 108/0/1, CI 303 verde → Release `os-303`; pe placă doar cu Adrian.
 - 2026-11-16 23:45 · sesiunea OS programată (23:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-303`); coada fără Adrian goală.
+- 2026-11-17 02:45 · sesiunea OS programată (02:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-303`); coada fără Adrian goală.
