@@ -1631,3 +1631,10 @@ Format:
 - (istoric) stare: preluat (2026-11-17 02:15, supraveghetor) — **S123** din nou `aprobat` în `plan/coada.md` Kronos, cu B = 197 (scoase `chat_179`, `chat_187`, `chat_099`), A neschimbat, pe #668; după S123 `gata`, lanțul S121 → S119 → S122 pasul 4 merge fără așteptare.
 - (istoric) stare: nou
 - rezultat: E0 rulat pe B = 197, verificările curate (doar cele 11 potriviri de șablon știute), reproducerea 197/197; verdictul la C-130.
+
+### C-132 · kronos · „Da S124” — dar pornește pe placă abia DUPĂ testul lui Adrian pe placă (os-303) (Adrian, 17 nov 12:45)
+- data: 2026-11-17 12:50 · de la: Adrian (prin centrul de comandă): „testul pe placă așteaptă până se termină S119, apoi după testul pe placă trecem la S124”.
+- ce: **S124 e aprobat** (exact cum e scris în `plan/coada.md`, cu pragurile propuse de supraveghetor). Ordinea: (1) **S119** se termină (procesor); (2) **Adrian face testul pe placă cu stick-ul `os-303`** (`gpu lant --i9 c125`) — workstation-ul repornește de pe stick, deci **nimic de-al lui Kronos pe placă** până atunci; (3) **S124** pornește pe placă doar după ce în acest fișier (sau în `rezultate/` pentru os-303) apare că Adrian **a terminat** testul și Windows a pornit din nou. Partea de procesor a S124 (generatorul cu mai multe formulări, examenul nou, pre-înregistrarea) se poate face oricând după S119, fără placă.
+- S122 pasul 4 (interfața pe 8787 cu #651) poate merge după S119, pe procesor, ca acum.
+- stare: nou
+- rezultat:
