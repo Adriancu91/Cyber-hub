@@ -1,8 +1,13 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-17 16:00 (ora României) · **de:** sesiunea OS programată (14:40) — C-134 gata. Ultimul Release: **`os-304`** (CI verde).
+**Actualizat:** 2026-11-17 20:50 (ora României) · **de:** sesiunea OS programată (17:40) — C-136 gata. Ultimul Release: **`os-305`** (CI verde).
 
 ## Acum
+- **17 nov 20:50 — `os-305` gata (P6-93, C-136):** OS-ul folosește codul Cyber-GPU nou (`f732365`, C-135). Comanda nouă **`gpu lant --i9 c135`**
+  pornește direct cu forma care a mers pe placă la `os-304` (B) și repară pasul care a picat (cererea „jetonului de lucru”, `0x40`): încercarea N face
+  canalul fără „notificatorul de erori”; doar dacă placa refuză iar jetonul, încercarea F alege singură numărul canalului și calculează jetonul.
+  Fără opțiune, `--i9 c125` sau `--i9 c133`, `gpu lant` face exact ce făcea în `os-304`. Testat doar în SIMULARE (toată suita 110/0/1, CI verde);
+  pe placă netestat — doar cu tine de față, după DA. Dacă I9 trece, lanțul merge singur la I10 (add64, primul calcul pe placă).
 - **17 nov 16:00 — `os-304` gata (P6-92, C-134):** OS-ul folosește codul Cyber-GPU nou (`b352d50`, C-133). Comanda nouă **`gpu lant --i9 c133`**
   încearcă pasul I9 (cel cu 0x57) în forma găsită de Cyber-GPU: pregătirea contextului trimisă într-un singur mesaj, înaintea obiectului de calcul
   (încercarea A; B doar dacă A e refuzată). Fără opțiune sau cu `--i9 c125`, `gpu lant` face exact ce făcea în `os-303`. Testat doar în SIMULARE
@@ -70,7 +75,7 @@
 - P6-12 pasul 2 (fereastră proprie fără cache) doar după un `log mmio` de pe un calculator real.
 
 ## Ce oferă proiectul celorlalți
-- `gpu lant [--varianta N] [--i9 c125]` I6 → I14 (`--i9 c125` = C-125, din `os-303`), `gpu variante`, `gpu recupereaza`, `gpu tur --trezire` (GA106), `kronos --gpu` pe stick-ul de test; jurnale + rapoarte trimise în hub (cu token).
+- `gpu lant [--varianta N] [--i9 c125|c133|c135]` I6 → I14 (`--i9 c135` = C-135, din `os-305`), `gpu variante`, `gpu recupereaza`, `gpu tur --trezire` (GA106), `kronos --gpu` pe stick-ul de test; jurnale + rapoarte trimise în hub (cu token).
 - `analiza` (inventar ca UHL, `uhl-inventory/0.1`), `hw` cu modelul din SMBIOS, `hub ruleaza` / `hub asculta`, `test tot`, `kronos --conversatie`, git pe ramuri `os/…`, `web`, `files`; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
 
 ## De ce are nevoie de la ceilalți
@@ -79,10 +84,10 @@
 
 ## Blocaje / nevoie de Adrian
 
-**Nou (17 nov 16:00) — azi, pe workstation, până la 19:00 (atunci pornește S124 la Kronos):**
-1. Stick-ul de test cu **`os-304`** (`stick-test-complet.zip` din Release, verificat cu `SHA256SUMS`) + fișierul **`github.token`** în rădăcina stick-ului.
-2. Oprești complet workstation-ul (pornire rece), pornești de pe stick → `gpu lant --i9 c133` → citești avertismentul → `DA` + Enter.
-3. La final `trimite` (urcă jurnalul în hub). Dacă nu merge: poză la ultimele rânduri, jurnalul `raport\gpu-jurnal-NNN.txt` în `rezultate/<data>-workstation-os304/`.
+**Nou (17 nov 20:50) — mâine (18 nov), pe workstation, după ce S124 lasă placa:**
+1. Stick-ul de test cu **`os-305`** (`stick-test-complet.zip` din Release, verificat cu `SHA256SUMS`) + fișierul **`github.token`** în rădăcina stick-ului.
+2. Oprești complet workstation-ul (pornire rece), pornești de pe stick → `gpu lant --i9 c135` → citești avertismentul → `DA` + Enter.
+3. La final `trimite` (urcă jurnalul în hub). Dacă nu merge: poză la ultimele rânduri, jurnalul `raport\gpu-jurnal-NNN.txt` în `rezultate/<data>-workstation-os305/`.
 
 **Nou (16 nov):**
 - Pune fișierul `github.token` și pe **stick-ul de test** (în rădăcină, ca `/usb/github.token`), ca `trimite` să urce singur jurnalul data viitoare. Nimic urgent altceva.
