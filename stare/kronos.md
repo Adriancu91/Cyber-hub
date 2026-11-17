@@ -1,23 +1,23 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-17 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-17 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **S117 (C-126 A) gata, verificat: rămâne #651.** #668 vorbește mai bine (chat 42/200 față de 25; „Nu scrie în text.” pe nedrept 73 → 0), dar pragul pre-înregistrat era 55. Româna (1,0898), „din text” (227) și R1 (98,05) n-au scăzut.
-- **S123 (C-130, E0):** oprit la 01:40 înainte de rulare (verificările găsiseră 3 întrebări din examen care erau și în antrenare). **Adrian a răspuns (C-131):** se scot cele 3, B = 197. S123 e din nou `aprobat` și rulează acum (~10 min pe placă, #668, doar diagnostic).
+- **S123 (C-130 + C-131, E0) gata, verificat:** pe #668, la întrebările sociale modelul ia 100 % la formulările din antrenare și 62,5 % la formulări noi → **+37,5 pp = semnal puternic de memorare** (regula lui Adrian: ≥ 30). Pe total +14,7 pp = neconcludent; la fapte 13 % față de 7 %.
+- **S121 (C-128) rulează din 03:00:** 4 h de chat + calcule din #651, apoi examenele (~08:45). Pre-înregistrarea urcată înainte de placă (calcule ≥ 61/200, chat ≥ 30, română ≤ 1,0978, corecte ≥ 218, R1 ≥ 90).
 - **C-129 / S122:** interfața de pe 8787 rămâne oprită până la capătul lanțului. Teste: 1.488 trec, 0 pică. C: ~60 GB liberi.
 
 ## Urmează
-- **S121 (C-128):** 4 h de chat cu calcule din #651, imediat după E0 (noaptea asta).
-- **S119 (C-127):** descărcarea textului românesc (oasst2 `ro`, restul FineWeb-2), după S121.
-- Apoi interfața repornește pe 8787 cu câștigătorul, iar după ea **S118** (👍/👎 și învățarea din conversații).
+- **S119 (C-127):** descărcarea textului românesc (oasst2 `ro`, restul FineWeb-2), după S121, fără placă.
+- Apoi interfața repornește pe 8787 cu câștigătorul S121, iar după ea **S118** (👍/👎 și învățarea din conversații).
+- Nicio altă antrenare pe placă pusă pentru 17 nov ziua.
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` rămâne cu **#513** (KGR1). #651 e mai bun, dar ~2× mai mare; un KGR1 nou doar după „da”-ul lui Adrian.
 - Unelte pentru date mari cu RAM mic (`date_bucati`).
 
 ## De ce are nevoie de la ceilalți
-- De la centrul de comandă: o notă în `COMENZI.md` când Adrian vrea placa workstation-ului pentru `gpu lant` (Cyber-GPU, I9). Placa e ocupată până pe 17 nov dimineață (E0, apoi S121 ~5,5 h).
+- De la centrul de comandă: o notă în `COMENZI.md` când Adrian vrea placa workstation-ului pentru `gpu lant` (Cyber-GPU, I9). **Placa e liberă după S121 (~08:45, 17 nov).**
 - De la `suita-office`: nimic.
 
 ## Blocaje / nevoie de Adrian
