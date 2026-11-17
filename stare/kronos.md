@@ -1,10 +1,10 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-17 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-17 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **S123 (C-130 + C-131, E0) gata, verificat:** pe #668, la întrebările sociale modelul ia 100 % la formulările din antrenare și 62,5 % la formulări noi → **+37,5 pp = semnal puternic de memorare** (regula lui Adrian: ≥ 30). Pe total +14,7 pp = neconcludent; la fapte 13 % față de 7 %.
-- **S121 (C-128) rulează din 03:00:** 4 h de chat + calcule din #651, apoi examenele (~08:45). Pre-înregistrarea urcată înainte de placă (calcule ≥ 61/200, chat ≥ 30, română ≤ 1,0978, corecte ≥ 218, R1 ≥ 90).
+- **S121 (C-128):** antrenarea (4 h chat + calcule din #651) gata la 07:07, fără erori (#677–#680; română ora 4: 1,0901); examenele pe #651 și #680 rulează din 07:31, gata ~09:00. Pre-înregistrarea urcată înainte de placă (calcule ≥ 61/200, chat ≥ 30, română ≤ 1,0978, corecte ≥ 218, R1 ≥ 90).
 - **C-129 / S122:** interfața de pe 8787 rămâne oprită până la capătul lanțului. Teste: 1.488 trec, 0 pică. C: ~60 GB liberi.
 
 ## Urmează
@@ -17,7 +17,7 @@
 - Unelte pentru date mari cu RAM mic (`date_bucati`).
 
 ## De ce are nevoie de la ceilalți
-- De la centrul de comandă: o notă în `COMENZI.md` când Adrian vrea placa workstation-ului pentru `gpu lant` (Cyber-GPU, I9). **Placa e liberă după S121 (~08:45, 17 nov).**
+- De la centrul de comandă: o notă în `COMENZI.md` când Adrian vrea placa workstation-ului pentru `gpu lant` (Cyber-GPU, I9). **Placa e liberă după examenele S121 (~09:00, 17 nov).**
 - De la `suita-office`: nimic.
 
 ## Blocaje / nevoie de Adrian
