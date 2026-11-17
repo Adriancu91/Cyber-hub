@@ -1,26 +1,26 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-17 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-17 11:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **S123 (C-130 + C-131, E0) gata, verificat:** pe #668, la întrebările sociale modelul ia 100 % la formulările din antrenare și 62,5 % la formulări noi → **+37,5 pp = semnal puternic de memorare** (regula lui Adrian: ≥ 30). Pe total +14,7 pp = neconcludent; la fapte 13 % față de 7 %.
-- **S121 (C-128):** antrenarea (4 h chat + calcule din #651) gata la 07:07, fără erori (#677–#680; română ora 4: 1,0901); examenele pe #651 și #680 rulează din 07:31, gata ~09:00. Pre-înregistrarea urcată înainte de placă (calcule ≥ 61/200, chat ≥ 30, română ≤ 1,0978, corecte ≥ 218, R1 ≥ 90).
-- **C-129 / S122:** interfața de pe 8787 rămâne oprită până la capătul lanțului. Teste: 1.488 trec, 0 pică. C: ~60 GB liberi.
+- **S121 (C-128) gata, verificat: rămâne #651.** #680 (chat + calcule, 4 h din #651): calcule 51/200 (prag 61 → pică), chat 40 față de 25, sociale 31, româna 1,0901, „din text” 226, R1 97,82 — toate celelalte trec. Interfața nu se schimbă.
+- **S119 (C-127, text românesc):** 2 fișiere FineWeb-2 `ron_Latn` curățate → 2,55 mil. texte, 7,96 GB (≈ +107 % română față de ce aveam); oasst2 `ro` = 0 mesaje. A doua verificare de scurgeri a găsit 162 de texte → executantul s-a oprit corect. **Varianta 1 aprobată de supraveghetor** (repară căutarea, scoate cele 162, verificare = 0, apoi tokenizare), fără ștergeri, discul ≥ 30 GB. Procesor, fără placă.
+- Teste: 1.490 trec, 0 pică. C: 38 GB liberi. Interfața 8787 oprită (C-129) până la capătul lanțului.
 
 ## Urmează
-- **S119 (C-127):** descărcarea textului românesc (oasst2 `ro`, restul FineWeb-2), după S121, fără placă.
-- Apoi interfața repornește pe 8787 cu câștigătorul S121, iar după ea **S118** (👍/👎 și învățarea din conversații).
-- Nicio altă antrenare pe placă pusă pentru 17 nov ziua.
+- S119 gata → interfața repornește pe 8787 cu #651 (S122 pasul 4) → **S118** (👍/👎, învățarea din conversații).
+- **S124 propus lui Adrian:** mai multe formulări pentru aceeași întrebare (calcule + sociale), apoi 4 h din #680 — răspuns la semnalul de memorare din E0.
+- Placa workstation-ului e **liberă** de la 08:30, 17 nov (nicio sarcină de placă aprobată).
 
 ## Ce oferă proiectul celorlalți
 - **Pentru `cyber-universe`:** `integrare/kronos/MODEL.md` rămâne cu **#513** (KGR1). #651 e mai bun, dar ~2× mai mare; un KGR1 nou doar după „da”-ul lui Adrian.
 - Unelte pentru date mari cu RAM mic (`date_bucati`).
 
 ## De ce are nevoie de la ceilalți
-- De la centrul de comandă: o notă în `COMENZI.md` când Adrian vrea placa workstation-ului pentru `gpu lant` (Cyber-GPU, I9). **Placa e liberă după examenele S121 (~09:00, 17 nov).**
+- De la centrul de comandă: o notă în `COMENZI.md` când Adrian vrea placa workstation-ului pentru `gpu lant` (Cyber-GPU, I9). **Placa e liberă acum.**
 - De la `suita-office`: nimic.
 
 ## Blocaje / nevoie de Adrian
 - Niciun blocaj.
-- De la Adrian, doar dacă vrea: CulturaX `ro` cere acceptarea condițiilor pe Hugging Face → „da CulturaX” după ce le acceptă. Altfel S119 merge fără el.
+- Doar dacă vrea: „da S124” (formulări noi + 4 h pe placă); „da CulturaX” după ce acceptă condițiile pe Hugging Face.
 - Fără grabă: `lucru\memorie_mare` (~10,5 GB), Release-ul `kronos-kgr1-513`.

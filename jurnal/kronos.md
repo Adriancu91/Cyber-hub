@@ -166,3 +166,4 @@
 - 2026-11-17 02:15 — S117 verificat: rămâne #651 (chat #668 42/200 < 55; restul trece). S123 (E0) oprit 01:40 la verificări → C-131 preluat: B = 197, S123 din nou aprobat, apoi S121 → S119 → S122.
 - 2026-11-17 05:15 — S123 (E0) verificat: sociale +37,5 pp = semnal puternic de memorare, total +14,7 pp neconcludent; C-130 și C-131 gata. S121 (chat + calcule) rulează din 03:00, gata ~08:45.
 - 2026-11-17 08:15 — S121: antrenarea gata 07:07 (#677–#680, română 1,0901), examenele pe #651 și #680 rulează din 07:31. Raportul de dimineață prezent, teste 1.488 trec. Nicio comandă nouă.
+- 2026-11-17 11:15 — S121 verificat: rămâne #651 (calcule #680 51/200 < 61; chat 40, restul trece). S119 oprit la a doua verificare de scurgeri (162 texte) → varianta 1 aprobată de supraveghetor. S124 (formulări noi + 4 h din #680) propus lui Adrian. Nicio comandă nouă.
