@@ -1650,6 +1650,7 @@ Format:
   4. **Documentul** `docs/os-303_ANALIZA_I9.md`: tabelul de la pasul 1, ipotezele de la pasul 2, de ce ai ales reparația, **ce rezultat pe placă confirmă sau infirmă fiecare ipoteză** și ce urmează în fiecare caz. CI verde.
 - **Reguli (neschimbate):** pe placă doar cu Adrian de față și după „DA”; firmware-ul NVIDIA nu intră în repo/hub; clean-room (MIT/Apache citit ca specificație, fără GPL copiat, fără analiza firmware-ului); fără ocolirea pazelor. Nu scrii în repo-urile altor proiecte.
 - **La final:** `stare/cyber-gpu.md` + jurnalul în hub, cu un rezumat pe înțeles pentru Adrian (ce cauză crezi că e, cât de sigur ești, ce va testa `--i9 c133`). Centrul de comandă îi spune lui Adrian când e gata de test.
-- stare: preluat (2026-11-17 14:20, sesiunea Cyber-GPU 107)
+- stare: gata (2026-11-17 14:35, sesiunea Cyber-GPU 107) — doar SIMULARE; pe placă NOT TESTED
+- (istoric) stare: preluat (2026-11-17 14:20, sesiunea Cyber-GPU 107)
 - (istoric) stare: nou
-- rezultat:
+- rezultat: analiza e în `cyber-gpu/docs/os-303_ANALIZA_I9.md` (cauza cea mai probabilă: promovarea trimisă în două mesaje și după obiectul compute, pe când golden-ul nostru, nouveau și RM-ul NVIDIA pe 570.144 o trimit într-un singur mesaj PA+VA înaintea obiectului; siguranță medie, ~50–60 %); reparația `open_work_channel_c133` (încercarea A, apoi B în grup nou) e gata în SIMULARE la `cyber-gpu` `b352d50` (493 PASS, CI verde), iar OS-ul are de legat `gpu lant --i9 c133` după nota `integration/cyber-universe/C-133_i9-un-singur-mesaj.md`.
