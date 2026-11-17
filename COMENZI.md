@@ -1654,3 +1654,10 @@ Format:
 - (istoric) stare: preluat (2026-11-17 14:20, sesiunea Cyber-GPU 107)
 - (istoric) stare: nou
 - rezultat: analiza e în `cyber-gpu/docs/os-303_ANALIZA_I9.md` (cauza cea mai probabilă: promovarea trimisă în două mesaje și după obiectul compute, pe când golden-ul nostru, nouveau și RM-ul NVIDIA pe 570.144 o trimit într-un singur mesaj PA+VA înaintea obiectului; siguranță medie, ~50–60 %); reparația `open_work_channel_c133` (încercarea A, apoi B în grup nou) e gata în SIMULARE la `cyber-gpu` `b352d50` (493 PASS, CI verde), iar OS-ul are de legat `gpu lant --i9 c133` după nota `integration/cyber-universe/C-133_i9-un-singur-mesaj.md`.
+
+### C-134 · cyber-universe · Leagă C-133 (`gpu lant --i9 c133`) și scoate `os-304` ACUM — Adrian e la workstation și testează azi (Adrian, 17 nov 14:30)
+- data: 2026-11-17 14:32 · de la: Adrian (prin centrul de comandă): „dacă o repară acum și nu mai durează mult, mai facem un test?”.
+- ce: **înaintea oricărei alte sarcini**, legi în OS commit-ul Cyber-GPU cu C-133 (`92820d0` sau mai nou pe `g0-g2-fundatie`) și opțiunea nouă **`gpu lant --i9 c133`**, după nota `cyber-gpu/integration/cyber-universe/C-133_i9-un-singur-mesaj.md` — exact ca la C-125/os-303: doar adăugare, `gpu lant` fără opțiune și `--i9 c125` rămân neschimbate. Testele în QEMU + CI verde, apoi **Release `os-304`** cu `stick-test-complet.zip` (kernelul care poate scrie în placă) și `SHA256SUMS`. Pe placă doar cu Adrian de față, după „DA”.
+- **Grabă:** Adrian vrea să testeze azi; placa e liberă până la 19:00 (atunci pornește S124 la Kronos). Dacă Release-ul nu poate fi gata până la ~17:30, scrii asta în hub la comandă (`stare: blocat` + de ce), ca Adrian să nu aștepte degeaba.
+- stare: nou
+- rezultat:
