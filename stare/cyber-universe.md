@@ -1,8 +1,12 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-17 11:45 (ora României) · **de:** sesiunea OS programată (11:40) — nimic nou; OPRIT (regula 5). Ultimul Release: **`os-303`** (CI verde).
+**Actualizat:** 2026-11-17 16:00 (ora României) · **de:** sesiunea OS programată (14:40) — C-134 gata. Ultimul Release: **`os-304`** (CI verde).
 
 ## Acum
+- **17 nov 16:00 — `os-304` gata (P6-92, C-134):** OS-ul folosește codul Cyber-GPU nou (`b352d50`, C-133). Comanda nouă **`gpu lant --i9 c133`**
+  încearcă pasul I9 (cel cu 0x57) în forma găsită de Cyber-GPU: pregătirea contextului trimisă într-un singur mesaj, înaintea obiectului de calcul
+  (încercarea A; B doar dacă A e refuzată). Fără opțiune sau cu `--i9 c125`, `gpu lant` face exact ce făcea în `os-303`. Testat doar în SIMULARE
+  (QEMU + CI verde); pe placă netestat — doar cu tine de față, după DA.
 - **17 nov 11:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-303`). „OPRIT” rămâne. Aștept fereastra ta: stick cu `os-303` + `github.token` → `gpu lant --i9 c125` → `trimite`.
 - **17 nov 08:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-303`). „OPRIT” rămâne. Aștept fereastra ta: stick cu `os-303` + `github.token` → `gpu lant --i9 c125` → `trimite`.
 - **17 nov 05:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-303`). A treia sesiune la rând fără sarcină → „OPRIT” până la o comandă nouă sau un jurnal de test. Aștept fereastra ta: stick cu `os-303` + `github.token` → `gpu lant --i9 c125` → `trimite`.
@@ -75,10 +79,10 @@
 
 ## Blocaje / nevoie de Adrian
 
-**Nou (16 nov 22:05) — când Kronos lasă placa de pe workstation (C-119):**
-1. Stick-ul de test cu **`os-303`** (`stick-test-complet.zip` din Release) + fișierul **`github.token`** în rădăcina stick-ului.
-2. Oprești complet workstation-ul (pornire rece), pornești de pe stick → `gpu lant --i9 c125` → citești avertismentul → `DA` + Enter.
-3. La final `trimite` (urcă jurnalul în hub). Dacă nu merge: poză la ultimele rânduri, jurnalul `raport\gpu-jurnal-NNN.txt` în `rezultate/<data>-workstation-os303/`.
+**Nou (17 nov 16:00) — azi, pe workstation, până la 19:00 (atunci pornește S124 la Kronos):**
+1. Stick-ul de test cu **`os-304`** (`stick-test-complet.zip` din Release, verificat cu `SHA256SUMS`) + fișierul **`github.token`** în rădăcina stick-ului.
+2. Oprești complet workstation-ul (pornire rece), pornești de pe stick → `gpu lant --i9 c133` → citești avertismentul → `DA` + Enter.
+3. La final `trimite` (urcă jurnalul în hub). Dacă nu merge: poză la ultimele rânduri, jurnalul `raport\gpu-jurnal-NNN.txt` în `rezultate/<data>-workstation-os304/`.
 
 **Nou (16 nov):**
 - Pune fișierul `github.token` și pe **stick-ul de test** (în rădăcină, ca `/usb/github.token`), ca `trimite` să urce singur jurnalul data viitoare. Nimic urgent altceva.

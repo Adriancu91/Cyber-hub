@@ -260,3 +260,4 @@
 - 2026-11-17 05:45 · sesiunea OS programată (05:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-303`); OPRIT (regula 5, 3 sesiuni fără sarcină).
 - 2026-11-17 08:45 · sesiunea OS programată (08:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-303`); OPRIT rămâne (regula 5).
 - 2026-11-17 11:45 · sesiunea OS programată (11:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-303`); OPRIT rămâne (regula 5).
+- 2026-11-17 16:00 · sesiunea OS programată (14:40) · C-134 → P6-92 gata: cyber-gpu `b352d50` (C-133), `gpu lant --i9 c133`; CI verde → Release `os-304`. De la Adrian: test pe workstation până la 19:00 (`gpu lant --i9 c133` → DA → `trimite`).

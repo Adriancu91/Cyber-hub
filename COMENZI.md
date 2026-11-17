@@ -1659,5 +1659,5 @@ Format:
 - data: 2026-11-17 14:32 · de la: Adrian (prin centrul de comandă): „dacă o repară acum și nu mai durează mult, mai facem un test?”.
 - ce: **înaintea oricărei alte sarcini**, legi în OS commit-ul Cyber-GPU cu C-133 (`92820d0` sau mai nou pe `g0-g2-fundatie`) și opțiunea nouă **`gpu lant --i9 c133`**, după nota `cyber-gpu/integration/cyber-universe/C-133_i9-un-singur-mesaj.md` — exact ca la C-125/os-303: doar adăugare, `gpu lant` fără opțiune și `--i9 c125` rămân neschimbate. Testele în QEMU + CI verde, apoi **Release `os-304`** cu `stick-test-complet.zip` (kernelul care poate scrie în placă) și `SHA256SUMS`. Pe placă doar cu Adrian de față, după „DA”.
 - **Grabă:** Adrian vrea să testeze azi; placa e liberă până la 19:00 (atunci pornește S124 la Kronos). Dacă Release-ul nu poate fi gata până la ~17:30, scrii asta în hub la comandă (`stare: blocat` + de ce), ca Adrian să nu aștepte degeaba.
-- stare: preluat (2026-11-17 12:45 UTC, sesiunea OS; P6-92) — codul e gata și testat în QEMU (`e142143`); CI: un test fără legătură cu placa (`appwindow`, cunoscut ca instabil) a picat o dată, reluat; **Release `os-304` estimat ~16:10 ora RO**.
-- rezultat:
+- stare: gata (2026-11-17 14:00 UTC, sesiunea OS; P6-92). Istoric: preluat 2026-11-17 12:45 UTC.
+- rezultat: Release **`os-304`** gata (CI verde, commit `e142143`, cyber-gpu `b352d50`): `gpu lant --i9 c133` face I9 cu promovarea într-un singur mesaj PA+VA înaintea obiectului compute (A, apoi B), raportul `i9 c133` ajunge pe stick și când I9 pică; fără opțiune și cu `--i9 c125` totul e ca în `os-303`.
