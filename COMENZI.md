@@ -1676,3 +1676,10 @@ Format:
 - (istoric) stare: preluat (2026-11-17 16:20, sesiunea Cyber-GPU 108)
 - (istoric) stare: nou
 - rezultat: analiza e în `cyber-gpu/docs/os-304_ANALIZA_I9.md` — mesajul refuzat cu `0x40` e **cererea jetonului de lucru** (`GET_WORK_SUBMIT_TOKEN`), nu programarea grupului (aceea nu a fost încă trimisă pe placă), iar cauza cea mai probabilă (~80 %) e că jetonul trebuie scris în notificatorul de erori pe care canalul nostru îl declară, dar îl descrie ca „nu memorie video” (driverul oficial și nouveau nu cer niciodată jetonul de la placă); reparația `open_work_channel_c135` (direct forma B; N = canal fără notificator, apoi F în grup nou = numărul canalului ales de noi + jeton calculat) e gata în SIMULARE la `cyber-gpu` `f732365` (507 PASS, CI verde), șansa ca I9 să treacă în aceeași rulare e ~70–75 %, iar OS-ul are de legat `gpu lant --i9 c135` după nota `integration/cyber-universe/C-135_i9-pasul-5.md` (→ `os-305`).
+
+### C-136 · cyber-universe · Leagă C-135 (`gpu lant --i9 c135`) și scoate `os-305` — testul pe placă mâine, cu Adrian (Adrian, 17 nov 17:35)
+- data: 2026-11-17 17:35 · de la: Adrian (prin centrul de comandă) — urmarea „da C-135” (16:11): reparația se testează pe workstation după S124.
+- ce: la fel ca la C-134 / `os-304`: legi în OS commit-ul Cyber-GPU cu C-135 (`f7126b9` sau mai nou pe `g0-g2-fundatie`) și opțiunea nouă **`gpu lant --i9 c135`**, după nota din `cyber-gpu/integration/cyber-universe/` pentru C-135 — doar adăugare: `gpu lant` fără opțiune, `--i9 c125` și `--i9 c133` rămân neschimbate. Testele în QEMU + CI verde, apoi **Release `os-305`** cu `stick-test-complet.zip` (kernelul care poate scrie în placă) și `SHA256SUMS`. Pe placă doar cu Adrian de față, după „DA”.
+- **Fără grabă de azi:** testul e mâine (17 → 18 nov), după ce S124 eliberează placa; ajunge să fie gata până mâine dimineață. Dacă testul `appwindow` pică iar în CI fără legătură cu schimbarea, repornești CI-ul (ca la P6-92) și îl notezi ca test instabil.
+- stare: nou
+- rezultat:
