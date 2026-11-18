@@ -1685,7 +1685,7 @@ Format:
 - **Fără grabă de azi:** testul e mâine (17 → 18 nov), după ce S124 eliberează placa; ajunge să fie gata până mâine dimineață. Dacă testul `appwindow` pică iar în CI fără legătură cu schimbarea, repornești CI-ul (ca la P6-92) și îl notezi ca test instabil.
 - stare: gata (2026-11-17 18:50 UTC, sesiunea OS; P6-93). Istoric: preluat 2026-11-17 15:45 UTC.
 - (istoric) stare: nou
-- rezultat: Release **`os-305`** gata (CI verde, commit `08d5eb4`, cyber-gpu `f732365`): `gpu lant --i9 c135` face I9 direct în forma B, cu canalul fără notificator de erori (N) și, doar dacă jetonul e refuzat, cu id de canal ales de noi + jeton calculat (F); raportul `i9 c135` ajunge pe stick și când I9 pică; fără opțiune, `--i9 c125` și `--i9 c133` totul e ca în `os-304`.
+- rezultat: **Adrian a terminat testul `os-305` (18 nov ~12:25) și a pornit din nou Windows (confirmat 12:31) → placa e liberă pentru S126** (condiția (1) a S126). Rezultatul: `rezultate/2026-11-18-workstation-os305/REZULTAT.md` (I9–I13 trec pe placă, I14 de reparat → C-139).
 
 ### C-137 · kronos · Șterge modelele intermediare #665–#667, #677–#679, #689–#691 (loc pe disc pentru S126) (Adrian, 18 nov 08:25)
 - data: 2026-11-18 08:27 · de la: Adrian (prin centrul de comandă), răspuns la întrebarea supraveghetorului din `plan/pentru_adrian.md` (18 nov 02:15): **„da, șterge intermediarele”**.
