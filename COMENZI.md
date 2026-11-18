@@ -1760,3 +1760,10 @@ Format:
 - stare: preluat (2026-11-18 20:50 RO / 18:50 UTC, sesiunea OS) → P6-96
 - (istoric) stare: nou
 - rezultat:
+
+### C-144 · kronos · „da S126 a”: S126 pornește în noaptea asta pe configurarea nouă `conv_w2_mare_24zcf_b.toml` (Adrian, 18 nov 23:10)
+- data: 2026-11-18 23:10 · de la: Adrian (prin centrul de comandă) — „dai ceva de antrenat, să nu stea degeaba toată noaptea”.
+- ce: **varianta (a)** din raportul executantului `docs/rapoarte/2026-11-18_2037_S126_oprit_unealta_nu_continua.md`. Adrian permite o configurare nouă, copie fidelă: `config/conv_w2_mare_24zcf_b.toml` = `config/conv_w2_mare_24zcf.toml` cu **doar** `nume = "w2_mare_24zcf_b"` și `cale_stare = "lucru/w2_mare_24zcf_b/gpt.pt"` (aceleași date, aceeași rețetă). Apoi pasul 3 al S126 cu `python unelte/antrenare_recalcul.py --config config/conv_w2_mare_24zcf_b.toml --ore 4 --porneste-din 692` (în jurnal trebuie să apară „Pornesc din #692”). Restul S126 rămâne neschimbat: pre-înregistrarea existentă `2026-11-18_w2_mare_24zcf_b.md` cu o notă datată despre comandă, aceleași praguri (C-132), paza de disc 30 GB, placa ≤ 7.000 MB și < 83 °C, examenele pasului 4, raportul. Fără nicio schimbare în `kronos/`, examene sau date.
+- când: **în noaptea asta, cât mai repede; pornire cel târziu 01:00**. Placa trebuie să fie liberă la 07:00 (ziua de 19 nov e a testelor Cyber Universe); dacă examenele nu se termină până atunci, oprire curată și restul lor în noaptea următoare. Dacă nu poate porni până la 01:00, rămâne `aprobat` pentru noaptea 19 → 20 nov.
+- stare: nou
+- rezultat:
