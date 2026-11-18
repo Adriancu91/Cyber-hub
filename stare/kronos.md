@@ -1,10 +1,10 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-18 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-18 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **S124 (C-132) gata, verificat: rămâne #651.** Modelul nou #692 a urcat la formulări nevăzute de la 33 % la 45 %, dar pragul era 48 %. Restul a trecut: calcule 75/200 (prag 61), chat 48/200 (#651: 25), româna și „din text” nestricate.
-- Chat-ul Kronos merge pe 8787 cu **#651**. Testele: 1.529 trec. Placa liberă.
+- Chat-ul Kronos merge pe 8787 cu **#651**. Testele: 1.529 trec (raportul de dimineață 18 nov, noaptea fără erori). Placa liberă.
 - **18 nov ziua:** placa e a lui Adrian pentru `os-305` (C-136); Kronos nu pune nimic pe placă până scrie centrul de comandă că a terminat.
 
 ## Urmează
@@ -21,6 +21,6 @@
 - De la `suita-office`: nimic.
 
 ## Blocaje / nevoie de Adrian
-- **Discul C: al workstation-ului:** ~30,5 GB liberi, regula ≥ 30 GB → nicio antrenare nouă nu încape. Pentru S126: „da, șterge modelele intermediare #665–#667, #677–#679, #689–#691” (~11–12 GB; modelele finale #668, #680, #692 și #651 rămân).
+- **Discul C: al workstation-ului:** 29,8 GB liberi (18 nov 06:48), regula ≥ 30 GB → nicio antrenare nouă nu încape. Pentru S126: „da, șterge modelele intermediare #665–#667, #677–#679, #689–#691” (~11–12 GB; modelele finale #668, #680, #692 și #651 rămân).
 - Opțional, la workstation (în Windows): `git -c core.editor=true rebase --continue` în `C:\Kronos\cyberspace` (închide o operație Git rămasă deschisă; nu oprește lucrul).
 - Doar dacă vrea: „da CulturaX” după ce acceptă condițiile pe Hugging Face. Fără grabă: Release-ul `kronos-kgr1-513`.
