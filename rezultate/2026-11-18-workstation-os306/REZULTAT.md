@@ -12,3 +12,12 @@
 - Observații (nu blochează): NOCAT de la GSP-RM ca la testele anterioare (ASSERT la I7/apel RM; „Display Engine: NV_ERR_INVALID_DMA_SPECIFIER” înainte de I8) — de urmărit la Cyber-GPU, lanțul nu e afectat.
 - **Concluzie:** **lanțul I0 → I14 trece în întregime pe RTX 3070 Ti** cu driverul nostru și cu reparația C-139. Următorul pas natural (doar cu „da”-ul lui Adrian): un model Kronos real (de ex. #513, zona de comenzi de 32 KiB din nota C-139) și mai multe simboluri la rând.
 - Fără fotografii aici: ecranul are eticheta de inventar a monitorului.
+
+## A doua tură, ~18:03–18:12 (proba drumului automat Windows → stick → Windows)
+- Pornirea pe stick **fără F12**: scriptul `porneste-stick.ps1` (Desktop\Cyber-stick, `bcdedit /set {fwbootmgr} bootsequence`, rulat de Adrian ca administrator) → Cyber Universe a pornit direct de pe stick. Ordinea din BIOS neschimbată (Windows primul).
+- **Agentul `hub asculta`** (fișierul `hub/asculta` = 5 min, pus azi pe stick): la 2,7 s după pornire a rulat singur K-1 `uptime` și K-2 `gpu identifica` din `integrare/cyber-universe/os-comenzi.md` și a urcat răspunsurile (`raspunsuri/K-1.txt`, `K-2.txt`, 18:04). K-2 arată **FLR da** (reset de funcție PCIe), propus la C-142.
+- `gpu lant --i9 c135` + DA (Adrian): **identic cu prima tură** — I0→I13 ok, scara: proba 1 DATE VECHI (argmax `0x172d`), proba 2 TRECE (`0x2861`), **`i14-simbol: ok`**; jurnal `rezultate/os-automat/2026-11-18/gpu-jurnal-009.txt` (3.350 rânduri). → reparația C-139 e **reproductibilă**.
+- După înghețarea ecranului, Adrian a scris **`reboot` orbește** → sistemul a repornit (**tastatura și shell-ul merg fără ecran**) și a ajuns **singur în Windows** (pornirea o dată de pe stick consumată).
+- Windows: **Autologon** a intrat singur în cont la 0,4 min după pornire și a blocat ecranul; sesiunea Kronos (Remote Control) a pornit singură (18:12).
+- **Placa în Windows după repornire caldă (fără oprire completă): văzută normal** — Task Manager: GPU 0 NVIDIA GeForce RTX 3070 Ti, 1 %, 33 °C (18:22). → pentru Windows nu e nevoie de oprire la rece după lanț.
+- Observație Kronos (de decis de Adrian): la intrarea în Windows, scriptul vechi de reluare a nopții `ws_w2` (octombrie, `antrenare_lunga.py --config config/ws_w2.toml --ore 40`) a pornit la 18:11 și a căzut după 7 s doar pentru că `experiment_363.pt` fusese șters la C-138.
