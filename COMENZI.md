@@ -1722,5 +1722,6 @@ Format:
   4. Documentul `docs/os-305_ANALIZA_I14.md`, CI verde.
 - **Reguli (neschimbate):** pe placă doar cu Adrian de față și după „DA”; firmware-ul NVIDIA nu intră în repo/hub; clean-room; fără ocolirea pazelor; nu scrii în repo-urile altor proiecte.
 - **La final:** `stare/cyber-gpu.md` + jurnalul în hub, rezumat pe înțeles pentru Adrian. Centrul de comandă cere apoi OS-ului `os-306`.
-- stare: preluat (2026-11-18 12:30, sesiunea Cyber-GPU 112)
-- rezultat:
+- stare: gata (2026-11-18 14:45, sesiunea Cyber-GPU 112) — doar SIMULARE; pe placă NOT TESTED
+- (istoric) stare: preluat (2026-11-18 12:30, sesiunea Cyber-GPU 112)
+- rezultat: analiza e în `cyber-gpu/docs/os-305_ANALIZA_I14.md` — la `os-305` a căzut **primul simbol** (toate cele 36 de lansări terminate, toate logit-urile finite, argmax-ul verificat înaintea judecății față de procesor, deci jurnalul nu are cifrele plăcii; nu e rotunjire: marja 0,28 față de toleranța 0,001), iar cauza cea mai probabilă (~55 %) e că placa a citit **valori vechi din cache**, fiindcă I14 e primul pas care recitește o adresă rescrisă în aceeași trimitere și noi goleam cache-urile o singură dată; reparația (`transfer::encode_sequence_fresh`: golire înaintea fiecărei lansări, aceeași metodă deja primită de placă), scara care încearcă felurile de trimitere și **diagnosticul scris în jurnal** (`kronos_diag`: poziția, argmax placă / vectori / procesor, primele 8 logit-uri, abaterea maximă și etapa greșită) sunt gata în SIMULARE la `cyber-gpu` `f56727f` (531 PASS, CI verde), șansa ca I14 să treacă de tot la testul următor e ~50 % (peste 90 % ca jurnalul să numească etapa greșită dacă nu trece), iar OS-ul are de legat pasul după nota `integration/cyber-universe/C-139_i14-diagnostic-si-reparatie.md` (→ `os-306`).
