@@ -1694,3 +1694,20 @@ Format:
 - **NU:** nimic altceva șters; nicio antrenare din această comandă.
 - stare: nou
 - rezultat:
+
+### C-138 · kronos · Curățenie mare pe C: (~90–100 GB) — modelele intermediare și stările de reluare ale liniilor terminate; lista exactă hotărâtă de centrul de comandă (Adrian, 18 nov 10:29)
+- data: 2026-11-18 10:45 · de la: Adrian (prin centrul de comandă): **„analizează ce ne trebuie și ce nu, apoi hotărăște tu ce ștergem — ai aprobarea mea”**. Include și C-137 (dacă nu e făcută încă, o faci în același pas).
+- **Analiza (centrul de comandă, 18 nov 10:40, prin citirea dosarelor pe workstation):** `lucru/stocare/modele/` ≈ 85 GB (salvările orare ale S110 #590–#650 ≈ 43 GB; linia de 24 de straturi dinainte #517–#563 ≈ 17 GB; modelele vechi #252–#508 ≈ 15 GB; ultimele 3 antrenări de chat ≈ 9 GB); în plus, câte un `gpt.pt` de reluare (0,7–2,2 GB) în fiecare dosar de antrenare din `lucru/` (~45 de dosare).
+- **ȘTERGI (doar fișierele de model `lucru/stocare/modele/experiment_<N>.pt`):**
+  - **A — salvările orare S110:** #590–#640 și #645–#650 (**păstrezi #641**, baza liniei 24zc).
+  - **C-137:** #665, #666, #667, #677, #678, #679, #689, #690, #691.
+  - **B — linia de 24 de straturi dinainte de S110:** #517, #523, #525, #528, #529, #532, #533, #534, #535, #540, #542, #544, #546, #548, #550, #551, #552, #553, #558, #562.
+  - **C — modelele vechi nefolosite:** #286, #299, #300, #314, #316, #317, #337, #363, #394, #405, #413, #424, #428, #431, #436, #443, #446, #451, #462, #466, #471, #499, #505, #508, #575, #576.
+- **ȘTERGI și stările de reluare** (`gpt.pt` / `gpt_*.pt`) din dosarele de antrenare **terminate** din `lucru/` (de ex. `w2_mare_24`, `24b`, `24d1`, `24e1`, `24e2`, `24f`, `24g`, `24m`, `24n`, `24s`, `w2_muon_*`, `w2_reteta_*`, `w2_conv*`, `w2_spec_*`, `w2_romana_*`, `w2_e3_*`, `avans_s94_mare_*`, `ws_w*`, `proba_*`, `cod_c1*` etc.) — **doar fișierele de stare `.pt`**; `rezultat.json`, `placa_*.csv`, `pornire.json` și restul rămân. **Păstrezi** stările liniilor de acum: `w2_mare_24zcf`, `w2_mare_24zch`, `w2_mare_24zcc`, `w2_mare_24zc`, `w2_mare_24z2`, și `lucru/w2_mare/gpt_24.pt`.
+- **PĂSTREZI ÎNTOTDEAUNA** (nu se ating): modelele **#252, #257, #262, #295, #312, #353, #373, #385, #401, #407, #415, #422, #429, #438, #441, #459, #477, #513, #536, #554, #563, #577, #641, #651, #668, #680, #692**; datele (`conversatie_chat*`, `bucati`, `hrana_*`, textul S119 etc.), examenele, jurnalul (rândurile experimentelor șterse rămân), `amprente.json`, codul, `kronos/`, rapoartele.
+- **Plasa de siguranță:** înainte de fiecare model din listă, cauți numărul ca referință de model (`--experiment N`, `--porneste-din N`, `--experiment-text N`, `experiment_N`, `model_in_uz`, `experimente = [...]`, `#N` în comentariile de pornire) în `config/`, `unelte/`, `module/`, `kronos/` (fără `docs/` și `plan/`, care sunt istorie). Dacă apare → **nu-l ștergi** și îl treci în raport la „păstrate din prudență”. La stările de reluare: nu ștergi niciun dosar care are `ruleaza.lock` de la o antrenare care rulează acum.
+- **Când:** acum, pe disc (fără placă), **nu** cât timp workstation-ul e pornit de pe stick (testul `os-305` al lui Adrian) și **nu** în timpul unei antrenări. 
+- **Raport** `docs/rapoarte/<data>_<ora>_C138_curatenie.md`: C: liber înainte/după; lista exactă a fișierelor șterse (nume + mărime), cele păstrate din prudență și de ce; total eliberat. Un rând sus în `plan/pentru_adrian.md`; commit + push. Apoi S126 poate trece de condiția de disc.
+- **NU:** nimic în afara listei; nicio antrenare; fără `rm -r` pe dosare întregi.
+- stare: nou
+- rezultat:
