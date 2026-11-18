@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-17 23:45 (ora României) · **de:** sesiunea OS programată (23:40) — nimic nou. Ultimul Release: **`os-305`** (CI verde).
+**Actualizat:** 2026-11-18 02:45 (ora României) · **de:** sesiunea OS programată (02:40) — nimic nou; OPRIT (regula 5). Ultimul Release: **`os-305`** (CI verde).
 
 ## Acum
+- **18 nov 02:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-305`). A treia sesiune la rând fără sarcină → „OPRIT” până la o comandă nouă sau jurnalul testului tău. Aștept testul de azi: stick cu `os-305` + `github.token` → `gpu lant --i9 c135` → DA → `trimite`.
 - **17 nov 23:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-305`). Aștept testul tău de mâine: stick cu `os-305` + `github.token` → `gpu lant --i9 c135` → DA → `trimite`.
 - **17 nov 20:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-305`). Aștept testul tău de mâine: stick cu `os-305` + `github.token` → `gpu lant --i9 c135` → DA → `trimite`.
 - **17 nov 20:50 — `os-305` gata (P6-93, C-136):** OS-ul folosește codul Cyber-GPU nou (`f732365`, C-135). Comanda nouă **`gpu lant --i9 c135`**
