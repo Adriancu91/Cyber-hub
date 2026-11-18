@@ -1,0 +1,14 @@
+# Workstation (GA104) — 18 nov 2026 ~17:25, os-306 (cyber-gpu db34429, C-139/C-140), stick de test, `gpu lant --i9 c135`, cu Adrian de față
+
+- Stick-ul TESTGPU actualizat **de centrul de comandă direct pe workstation** cu fișierele din `stick-test-complet.zip` al Release-ului `os-306` (SHA-256 al arhivei verificat față de `SHA256SUMS`; față de os-305 s-au schimbat doar `boot/kernel`, `boot/initrd.tar`, `VERSIUNE`; toate trei recitite de pe stick, SHA-256 identic; VERSIUNE = commit `686952c`). `firmware/`, `KRONOS/`, `github.token`, `raport/` neatinse. Kronos nu folosea placa.
+- `gpu lant --i9 c135` + DA. Ecranul a înghețat ca de obicei la „I8 CORE_RESUME: starea după predarea etapei 3” (134,89 s pe ecran); lanțul a mers mai departe; **jurnalul a urcat singur**: `rezultate/os-automat/2026-11-18/gpu-jurnal-008.txt` (3.350 de rânduri, antet `cyber-gpu db34429, comanda: gpu lant`).
+- I0–I8 + golden ok (`i8e-golden: ok` la 146,72 s); `i9-canal-lucru: ok` (148,00 s); `i10-add64`, `i10-cost-lansare`, `i11-copiere`, `i12-q8-matvec`, `i13-strat`: **ok** (până la 154,78 s) — se repetă os-305.
+- **Scara C-139 (`i14d`), modelul de control `mic_q8_0.kgr`, simbolul 0x41, poziția 0, 35 de lansări:**
+  - **proba 1 = o singură invalidare pe trimitere (ca în os-305): DATE VECHI** — argmax placă `0x172d`, procesor și `vectori.json` `0x2861`; prima etapă greșită: `qkv = Wqkv * h` (stratul 1, lansarea 1), abatere 2,56; o parte din ieșire e ce dau valorile vechi ale intrării (din stratul 0). → **eșecul os-305 reprodus exact și cauza C-139 (cache vechi) confirmată pe placă.**
+  - **proba 2 = invalidare înaintea fiecărei lansări: TRECE** — argmax placă = procesor = `vectori.json` = `0x2861`; abaterea maximă a logit-urilor `0x36300000` ≈ 2,6·10⁻⁶; **20 de etape în toleranță, 0 în afară**; embedding scris de programul `embed` (nu de driver).
+  - felul ales pentru texte = 2 (invalidare înaintea fiecărei lansări).
+- **`i14-simbol: ok` (167,55 s) — PRIMA DATĂ.** Placa video a calculat cu driverul nostru un simbol al unui model Kronos (de control), identic cu procesorul și cu vectorii oficiali.
+- Curățare: Bus Master oprit ok, `tur-dupa: ok` (pregătirea I6 „ESEC” după lanț = WPR2 ridicat, normal fără pornire la rece, ca la os-305). Fără scrieri neplanificate.
+- Observații (nu blochează): NOCAT de la GSP-RM ca la testele anterioare (ASSERT la I7/apel RM; „Display Engine: NV_ERR_INVALID_DMA_SPECIFIER” înainte de I8) — de urmărit la Cyber-GPU, lanțul nu e afectat.
+- **Concluzie:** **lanțul I0 → I14 trece în întregime pe RTX 3070 Ti** cu driverul nostru și cu reparația C-139. Următorul pas natural (doar cu „da”-ul lui Adrian): un model Kronos real (de ex. #513, zona de comenzi de 32 KiB din nota C-139) și mai multe simboluri la rând.
+- Fără fotografii aici: ecranul are eticheta de inventar a monitorului.
