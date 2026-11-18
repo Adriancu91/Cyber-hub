@@ -1,8 +1,11 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-18 17:10 (ora României) · **de:** sesiunea OS programată (14:40) — P6-94 gata (după testul `os-305` + C-139). Ultimul Release: **`os-306`** (CI verde).
+**Actualizat:** 2026-11-18 17:45 (ora României) · **de:** sesiunea OS programată (17:40) — testul `os-306` citit: **I14 trece pe placa reală**; C-140 închisă. Ultimul Release: **`os-306`** (CI verde).
 
 ## Acum
+- **18 nov 17:45 — felicitări: `os-306` a trecut pe placă!** Lanțul I0→I14 e întreg pe RTX 3070 Ti: placa a calculat cu driverul nostru un simbol al
+  modelului de control, identic cu procesorul și cu vectorii lui Kronos. Proba 1 („ca la os-305”) a dat exact „date vechi”, deci cauza găsită de
+  Cyber-GPU era cea bună; proba 2 (golirea înaintea fiecărui calcul) a trecut. Comanda C-140 e închisă (`gata`). Nicio schimbare de cod în sesiunea asta.
 - **18 nov 17:10 — `os-306` gata (P6-94, după testul tău `os-305` și C-139 de la Cyber-GPU):** mulțumesc pentru test — I9 a trecut și placa a calculat
   cu driverul nostru (I10–I13). Pentru I14 (simbolul greșit), OS-ul folosește acum codul Cyber-GPU `db34429`: înainte de texte, primul simbol e trimis
   întâi exact ca la `os-305` (probă), apoi cu reparația (golirea memoriei rapide a plăcii înaintea fiecărui calcul) și, dacă trebuie, în felurile de
@@ -95,7 +98,12 @@
 
 ## Blocaje / nevoie de Adrian
 
-**Nou (18 nov 17:10) — la următoarea fereastră pe workstation (când placa e liberă):**
+**Nou (18 nov 17:45):**
+- **Coada OS fără tine e goală.** Pasul următor natural e un model Kronos adevărat pe placă (de ex. #513) și mai multe simboluri la rând — asta are nevoie
+  de „da”-ul tău (o comandă nouă: întâi Cyber-GPU, apoi OS-ul leagă și scoate un Release nou). Fără comandă, sesiunile OS doar verifică și așteaptă.
+- Rămân, cum erau: P6-10 / P3-10 (închiderea fazelor, cu tine), P5-07 BLOCAT.
+
+**(făcut 18 nov ~17:25, I14 a trecut) — la următoarea fereastră pe workstation (când placa e liberă):**
 1. Stick-ul de test cu **`os-306`** (`stick-test-complet.zip` din Release, verificat cu `SHA256SUMS`) + `github.token` în rădăcina stick-ului.
 2. Pornire rece, pornești de pe stick → `gpu lant --i9 c135` → `DA` + Enter (I14 face singur proba și reparația).
 3. La final `trimite`. Dacă I14 trece: placa scoate primele cuvinte ale lui Kronos (modelul de control). Dacă nu: jurnalul spune etapa greșită.
