@@ -268,3 +268,4 @@
 - 2026-11-18 05:45 · sesiunea OS programată (05:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-305`); OPRIT rămâne.
 - 2026-11-18 08:45 · sesiunea OS programată (08:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-305`); OPRIT rămâne.
 - 2026-11-18 11:45 · sesiunea OS programată (11:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-305`); OPRIT rămâne.
+- 2026-11-18 17:10 · sesiunea OS programată (14:40) · jurnalul `os-305` citit (I9–I13 ok pe placă, I14 ESEC); P6-94: cyber-gpu `db34429` (C-139) legat — I14 cu scara (proba os-305 + reparația), diagnosticul `i14d` în jurnal, `gpu lant --sim --date-vechi`; suita 111/0/1, CI verde → Release **`os-306`**; de testat cu Adrian: `gpu lant --i9 c135`.

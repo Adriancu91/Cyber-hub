@@ -1,8 +1,13 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-18 11:45 (ora României) · **de:** sesiunea OS programată (11:40) — nimic nou; OPRIT (regula 5). Ultimul Release: **`os-305`** (CI verde).
+**Actualizat:** 2026-11-18 17:10 (ora României) · **de:** sesiunea OS programată (14:40) — P6-94 gata (după testul `os-305` + C-139). Ultimul Release: **`os-306`** (CI verde).
 
 ## Acum
+- **18 nov 17:10 — `os-306` gata (P6-94, după testul tău `os-305` și C-139 de la Cyber-GPU):** mulțumesc pentru test — I9 a trecut și placa a calculat
+  cu driverul nostru (I10–I13). Pentru I14 (simbolul greșit), OS-ul folosește acum codul Cyber-GPU `db34429`: înainte de texte, primul simbol e trimis
+  întâi exact ca la `os-305` (probă), apoi cu reparația (golirea memoriei rapide a plăcii înaintea fiecărui calcul) și, dacă trebuie, în felurile de
+  rezervă; textele merg în felul care trece. Dacă ceva tot nu trece, jurnalul scrie exact unde (etapa, simbolul plăcii față de procesor, primele cifre).
+  În simulare, cu „date vechi” pornite, proba ca `os-305` greșește exact ca pe placă, iar reparația trece. Toată suita 111/0/1, CI verde. Pe placă netestat.
 - **18 nov 11:45:** nimic nou pentru OS (nicio comandă, niciun jurnal; C-138 e pentru Kronos); CI verde (`os-305`). „OPRIT” rămâne până la o comandă nouă sau jurnalul testului tău. Aștept testul de azi: stick cu `os-305` + `github.token` → `gpu lant --i9 c135` → DA → `trimite`.
 - **18 nov 08:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-305`). „OPRIT” rămâne până la o comandă nouă sau jurnalul testului tău. Aștept testul de azi: stick cu `os-305` + `github.token` → `gpu lant --i9 c135` → DA → `trimite`.
 - **18 nov 05:45:** nimic nou pentru OS (nicio comandă, niciun jurnal); CI verde (`os-305`). „OPRIT” rămâne până la o comandă nouă sau jurnalul testului tău. Aștept testul de azi: stick cu `os-305` + `github.token` → `gpu lant --i9 c135` → DA → `trimite`.
@@ -81,16 +86,21 @@
 - P6-12 pasul 2 (fereastră proprie fără cache) doar după un `log mmio` de pe un calculator real.
 
 ## Ce oferă proiectul celorlalți
-- `gpu lant [--varianta N] [--i9 c125|c133|c135]` I6 → I14 (`--i9 c135` = C-135, din `os-305`), `gpu variante`, `gpu recupereaza`, `gpu tur --trezire` (GA106), `kronos --gpu` pe stick-ul de test; jurnale + rapoarte trimise în hub (cu token).
+- `gpu lant [--varianta N] [--i9 c125|c133|c135]` I6 → I14 (`--i9 c135` = C-135, din `os-305`; I14 cu scara și diagnosticul C-139, din `os-306`), `gpu variante`, `gpu recupereaza`, `gpu tur --trezire` (GA106), `kronos --gpu` pe stick-ul de test; jurnale + rapoarte trimise în hub (cu token).
 - `analiza` (inventar ca UHL, `uhl-inventory/0.1`), `hw` cu modelul din SMBIOS, `hub ruleaza` / `hub asculta`, `test tot`, `kronos --conversatie`, git pe ramuri `os/…`, `web`, `files`; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
 
 ## De ce are nevoie de la ceilalți
-- **`cyber-gpu`:** nimic acum (`239f986` legat în `os-303`). După jurnalul `gpu lant --i9 c125` de pe workstation: pasul următor pentru I9; după DA-ul lui Adrian, pasul 3 din C-116 pe laptop.
+- **`cyber-gpu`:** nimic acum (`db34429`, C-139, legat în `os-306`). După jurnalul testului `os-306`: pasul următor pentru I14 (dacă nu trece) sau #513 pe placă (zona de comenzi de 32 KiB, întrebarea 2 din nota C-139). După jurnalul `gpu lant --i9 c125` de pe workstation: pasul următor pentru I9; după DA-ul lui Adrian, pasul 3 din C-116 pe laptop.
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
 
-**Nou (17 nov 20:50) — mâine (18 nov), pe workstation, după ce S124 lasă placa:**
+**Nou (18 nov 17:10) — la următoarea fereastră pe workstation (când placa e liberă):**
+1. Stick-ul de test cu **`os-306`** (`stick-test-complet.zip` din Release, verificat cu `SHA256SUMS`) + `github.token` în rădăcina stick-ului.
+2. Pornire rece, pornești de pe stick → `gpu lant --i9 c135` → `DA` + Enter (I14 face singur proba și reparația).
+3. La final `trimite`. Dacă I14 trece: placa scoate primele cuvinte ale lui Kronos (modelul de control). Dacă nu: jurnalul spune etapa greșită.
+
+**(făcut 18 nov) — testul cu `os-305`:**
 1. Stick-ul de test cu **`os-305`** (`stick-test-complet.zip` din Release, verificat cu `SHA256SUMS`) + fișierul **`github.token`** în rădăcina stick-ului.
 2. Oprești complet workstation-ul (pornire rece), pornești de pe stick → `gpu lant --i9 c135` → citești avertismentul → `DA` + Enter.
 3. La final `trimite` (urcă jurnalul în hub). Dacă nu merge: poză la ultimele rânduri, jurnalul `raport\gpu-jurnal-NNN.txt` în `rezultate/<data>-workstation-os305/`.
