@@ -1686,3 +1686,11 @@ Format:
 - stare: gata (2026-11-17 18:50 UTC, sesiunea OS; P6-93). Istoric: preluat 2026-11-17 15:45 UTC.
 - (istoric) stare: nou
 - rezultat: Release **`os-305`** gata (CI verde, commit `08d5eb4`, cyber-gpu `f732365`): `gpu lant --i9 c135` face I9 direct în forma B, cu canalul fără notificator de erori (N) și, doar dacă jetonul e refuzat, cu id de canal ales de noi + jeton calculat (F); raportul `i9 c135` ajunge pe stick și când I9 pică; fără opțiune, `--i9 c125` și `--i9 c133` totul e ca în `os-304`.
+
+### C-137 · kronos · Șterge modelele intermediare #665–#667, #677–#679, #689–#691 (loc pe disc pentru S126) (Adrian, 18 nov 08:25)
+- data: 2026-11-18 08:27 · de la: Adrian (prin centrul de comandă), răspuns la întrebarea supraveghetorului din `plan/pentru_adrian.md` (18 nov 02:15): **„da, șterge intermediarele”**.
+- ce: ștergi **doar** fișierele de model ale experimentelor **#665, #666, #667, #677, #678, #679, #689, #690, #691** (orele 1–3 ale S117, S121, S124) din `lucru/` — exact cele 9, verificate după număr înainte de ștergere (lista fișierelor + mărimea lor în raport). **Rămân neatinse:** #513, #577, #651, #668, #680, #692 și orice alt model, jurnalul (rândurile din jurnal pentru experimentele șterse rămân; doar fișierele de model dispar), examenele, datele, `kronos/`. C: liber înainte/după în raport (~11–12 GB eliberați așteptați).
+- **Când:** oricând azi, dar **nu în timpul testului lui Adrian pe placă (`os-305`)** — ștergerea e pe disc, nu pe placă, deci poate merge înainte sau după, nu cât timp workstation-ul e pornit de pe stick. După ștergere, S126 poate trece de condiția de disc la noapte (cealaltă condiție rămâne: testul `os-305` terminat).
+- **NU:** nimic altceva șters; nicio antrenare din această comandă.
+- stare: nou
+- rezultat:
