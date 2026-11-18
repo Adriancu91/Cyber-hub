@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-18 17:45 (ora României) · **de:** sesiunea OS programată (17:40) — testul `os-306` citit: **I14 trece pe placa reală**; C-140 închisă. Ultimul Release: **`os-306`** (CI verde).
+**Actualizat:** 2026-11-18 23:15 (ora României) · **de:** sesiunea OS programată (20:40) — C-141 + C-143 gata → **`os-307`** (CI verde). Ultimul Release: **`os-307`**.
 
 ## Acum
+- **18 nov 23:15 — `os-307` gata (C-141 + C-143):** (1) **#513 pe placă:** `run kronos --gpu --n 16 Buna ziua` + DA rulează lanțul o dată (I9 c135, cel care a trecut) și apoi modelul #513 pe placă, fiecare simbol comparat cu procesorul; rezultatul și viteza (placă / procesor) intră singure în gpu-jurnal (rândurile `kg`, `kv`). (2) **Ciclul automat:** din Windows `bucla-automata.ps1 pregateste -DosarRelease <os-307> -TestPlaca` → o singură pornire de pe stick → `test-placa` (doar cu cheile tale) → recuperarea plăcii; dacă nu merge, se oprește curat cu „trebuie pornire rece”; altfel lanțul + #513 → jurnalul urcă în hub → repornire în Windows. Testat doar în SIMULARE (suita 111/0/1, CI verde); pe placă netestat.
 - **18 nov 17:45 — felicitări: `os-306` a trecut pe placă!** Lanțul I0→I14 e întreg pe RTX 3070 Ti: placa a calculat cu driverul nostru un simbol al
   modelului de control, identic cu procesorul și cu vectorii lui Kronos. Proba 1 („ca la os-305”) a dat exact „date vechi”, deci cauza găsită de
   Cyber-GPU era cea bună; proba 2 (golirea înaintea fiecărui calcul) a trecut. Comanda C-140 e închisă (`gata`). Nicio schimbare de cod în sesiunea asta.
@@ -97,6 +98,7 @@
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
+- **Pentru primul test `os-307` (centrul de comandă sau Adrian):** pe stick `os-307` + `kronos\kronos_513_q8_0.kgr` + `hub\permite-test-placa` + `github.token`; automat: `bucla-automata.ps1 pregateste -TestPlaca`; manual: pornire rece → `run kronos --gpu --n 16 Buna ziua` → DA → `trimite`. După Windows, `gpu recupereaza` rulează prima dată pe placa reală; dacă pică, e nevoie de o pornire rece (Adrian). FLR (C-142) doar după „da”-ul tău.
 
 **Nou (18 nov 17:45):**
 - **Coada OS fără tine e goală.** Pasul următor natural e un model Kronos adevărat pe placă (de ex. #513) și mai multe simboluri la rând — asta are nevoie
