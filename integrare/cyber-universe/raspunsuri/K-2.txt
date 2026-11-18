@@ -1,0 +1,21 @@
+== raspuns Cyber Universe OS: K-2 ==
+comanda: gpu identifica
+ora: 2026-11-18 18:04:11
+nucleu: cyber-universe 0.1.0 (cyber-gpu db34429)
+
+gpu0: b3:00.0 10de:2482 NVIDIA (clasa 03:00:00) subsistem 88131043
+gpu0: Command 0003 (memorie da, bus master nu), stare D0
+gpu0: BAR0 0xf9000000 memorie
+gpu0: BAR1 0xe0000000 memorie, 64 biti, prefetch
+gpu0: BAR3 0xf0000000 memorie, 64 biti, prefetch
+gpu0: BAR5 0xf000 I/O
+gpu0: Resizable BAR: BAR0 = 16 MiB acum
+gpu0: Resizable BAR: BAR1 = 256 MiB acum
+gpu0: Resizable BAR: BAR3 = 32 MiB acum
+gpu0: cyber-gpu db34429 nvidia-ga104: GeForce RTX 3070 Ti (BAR0 0xf9000000), familia GA104
+gpu0: reset (C-103, doar citire): FLR da; D3hot->D0 pastreaza starea (No_Soft_Reset=1, nu reseteaza); stare D0
+gpu0: NV_PMC_BOOT_0 = b74000a1, NV_PMC_BOOT_42 = 174a1000 (cyber-gpu, consecvent true)
+gpu0: cip 0x174 GA104 (arhitectura Ampere)
+zero scrieri in placa (configuratie PCI si registre: doar citire; adaptorul cyber-gpu a refuzat 0 scrieri)
+
+-- gata in 0 ms
