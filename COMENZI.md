@@ -1692,8 +1692,8 @@ Format:
 - ce: ștergi **doar** fișierele de model ale experimentelor **#665, #666, #667, #677, #678, #679, #689, #690, #691** (orele 1–3 ale S117, S121, S124) din `lucru/` — exact cele 9, verificate după număr înainte de ștergere (lista fișierelor + mărimea lor în raport). **Rămân neatinse:** #513, #577, #651, #668, #680, #692 și orice alt model, jurnalul (rândurile din jurnal pentru experimentele șterse rămân; doar fișierele de model dispar), examenele, datele, `kronos/`. C: liber înainte/după în raport (~11–12 GB eliberați așteptați).
 - **Când:** oricând azi, dar **nu în timpul testului lui Adrian pe placă (`os-305`)** — ștergerea e pe disc, nu pe placă, deci poate merge înainte sau după, nu cât timp workstation-ul e pornit de pe stick. După ștergere, S126 poate trece de condiția de disc la noapte (cealaltă condiție rămâne: testul `os-305` terminat).
 - **NU:** nimic altceva șters; nicio antrenare din această comandă.
-- stare: nou
-- rezultat:
+- stare: gata (2026-11-18 10:39, centrul de comandă, direct pe workstation)
+- rezultat: făcută în C-138 de centrul de comandă (cele 9 modele intermediare șterse).
 
 ### C-138 · kronos · Curățenie mare pe C: (~90–100 GB) — modelele intermediare și stările de reluare ale liniilor terminate; lista exactă hotărâtă de centrul de comandă (Adrian, 18 nov 10:29)
 - data: 2026-11-18 10:45 · de la: Adrian (prin centrul de comandă): **„analizează ce ne trebuie și ce nu, apoi hotărăște tu ce ștergem — ai aprobarea mea”**. Include și C-137 (dacă nu e făcută încă, o faci în același pas).
@@ -1709,5 +1709,5 @@ Format:
 - **Când:** acum, pe disc (fără placă), **nu** cât timp workstation-ul e pornit de pe stick (testul `os-305` al lui Adrian) și **nu** în timpul unei antrenări. 
 - **Raport** `docs/rapoarte/<data>_<ora>_C138_curatenie.md`: C: liber înainte/după; lista exactă a fișierelor șterse (nume + mărime), cele păstrate din prudență și de ce; total eliberat. Un rând sus în `plan/pentru_adrian.md`; commit + push. Apoi S126 poate trece de condiția de disc.
 - **NU:** nimic în afara listei; nicio antrenare; fără `rm -r` pe dosare întregi.
-- stare: nou
-- rezultat:
+- stare: gata (2026-11-18 10:39, centrul de comandă, direct pe workstation)
+- rezultat: **făcută de centrul de comandă direct pe workstation** (legat prin aplicația Claude; scriptul `C:\Kronos\curatenie\curatenie_C138.ps1`, rulat întâi în verificare, apoi cu ștergere): **162 de fișiere, 139,7 GB șterse; C: liber 37,0 → 176,7 GB**; plasa de siguranță n-a găsit niciun model din listă folosit în config/unelte/module/kronos; cele 26 de modele „păstrezi întotdeauna” verificate prezente după (#407 nu era în `stocare/modele` nici înainte). Lista completă: `rezultate/2026-11-18-curatenie-C138/raport_stergere.txt`. **Executantul nu mai are nimic de făcut la C-137/C-138**; S126 trece acum de condiția de disc.
