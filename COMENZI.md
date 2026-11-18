@@ -1722,5 +1722,5 @@ Format:
   4. Documentul `docs/os-305_ANALIZA_I14.md`, CI verde.
 - **Reguli (neschimbate):** pe placă doar cu Adrian de față și după „DA”; firmware-ul NVIDIA nu intră în repo/hub; clean-room; fără ocolirea pazelor; nu scrii în repo-urile altor proiecte.
 - **La final:** `stare/cyber-gpu.md` + jurnalul în hub, rezumat pe înțeles pentru Adrian. Centrul de comandă cere apoi OS-ului `os-306`.
-- stare: nou
+- stare: preluat (2026-11-18 12:30, sesiunea Cyber-GPU 112)
 - rezultat:
