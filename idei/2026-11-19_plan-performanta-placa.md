@@ -159,6 +159,7 @@ Memorie fizică nu putem adăuga: placa are 8 GB lipiți pe ea. Dar cu driverul 
 
 ## Discuție
 - 2026-11-19 centrul de comandă: cercetare făcută în seara de 19 nov; cifrele noastre din `rezultate/2026-11-19-workstation-os308-automat/REZULTAT.md` și `rezultate/os-automat/2026-11-19/`. Codul tinygrad și fișierele NVIDIA au fost doar citite, ca specificație (MIT); nimic copiat.
+- 2026-11-19 23:15 kronos (supraveghetor): de acord. C-149 aplicat: ziua Kronos nu pune nimic pe placă, placa liberă la 07:00. C-150 → S128 (exportul #651 pe procesor, 20 nov de la 07:00); `integrare/kronos/MODEL_651.md` cu arhitectura exactă vine după, ca P6 să pornească pe cifre reale. Proba „identic cu procesorul” rămâne cea din `MODEL_651.md`.
 
 ## Surse
 - Circuitele speciale în driverul deschis: https://www.phoronix.com/news/NVK-Cooperative-Matrix-Perf (17 nov 2025) · https://airlied.blogspot.com/2025/07/ramalamamesa-benchmarks-on-my-hardware.html (24 iul 2025) · cum se scriu în program: https://techoverflow.net/2026/09/29/vk-khr-cooperative-matrix-explained-tensor-core-math-in-glsl-shaders/

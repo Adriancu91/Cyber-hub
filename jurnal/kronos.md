@@ -183,3 +183,4 @@
 - 2026-11-19 11:15 — La Kronos nimic nou; notat în stare că #513 a mers corect pe placă în `os-307` (16/16 simboluri identice). S127 rămâne la noapte; `os-308` (C-146) doar ziua. Nicio comandă nouă.
 - 2026-11-19 17:15 — La Kronos nimic nou; notat `os-308` (#513 pe placă 10,99 simb/s, 16/16 identice) și poziția Kronos în propunerea de viteză. S127 pornește la 19:00. Nicio comandă nouă.
 - 2026-11-19 20:15 — S127 pornit pe placă la 19:16 din #692, cu date noi pentru adunare/scădere/împărțire (338/331/282 șabloane, 0 scurgeri); antrenare până ~23:20, examene după, placa liberă la 07:00. Nicio comandă nouă.
+- 2026-11-19 23:15 — Preluate C-149 (ziua placa e a testelor driver/OS; Kronos antrenează doar noaptea) și C-150 (S128 aprobat: exportul #651 în KGR1, procesor, 20 nov de la 07:00; `MODEL_651.md` vine în `integrare/kronos/`). S127 continuă, examenele după ~23:20.
