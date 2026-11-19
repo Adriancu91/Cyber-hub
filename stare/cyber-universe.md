@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-18 23:45 (ora României) · **de:** sesiunea OS programată (23:40) — nimic nou; coada fără Adrian goală. Ultimul Release: **`os-307`**.
+**Actualizat:** 2026-11-19 02:45 (ora României) · **de:** sesiunea OS programată (02:40) — nimic nou; coada fără Adrian goală. Ultimul Release: **`os-307`**.
 
 ## Acum
+- **19 nov 02:45:** nimic nou pentru OS (nicio comandă; Kronos S126 ține placa în noaptea asta); niciun jurnal de la primul ciclu `os-307`; CI verde. Coada fără tine e goală (regula 5: 2 din 3). Aștept primul test `os-307` când placa e liberă.
 - **18 nov 23:45:** nimic nou pentru OS (C-144 e pentru Kronos: S126 ține placa în noaptea asta); niciun jurnal de la primul ciclu `os-307`; CI verde. Coada fără tine e goală (regula 5: 1 din 3). Aștept primul test `os-307` când placa e liberă.
 - **18 nov 23:15 — `os-307` gata (C-141 + C-143):** (1) **#513 pe placă:** `run kronos --gpu --n 16 Buna ziua` + DA rulează lanțul o dată (I9 c135, cel care a trecut) și apoi modelul #513 pe placă, fiecare simbol comparat cu procesorul; rezultatul și viteza (placă / procesor) intră singure în gpu-jurnal (rândurile `kg`, `kv`). (2) **Ciclul automat:** din Windows `bucla-automata.ps1 pregateste -DosarRelease <os-307> -TestPlaca` → o singură pornire de pe stick → `test-placa` (doar cu cheile tale) → recuperarea plăcii; dacă nu merge, se oprește curat cu „trebuie pornire rece”; altfel lanțul + #513 → jurnalul urcă în hub → repornire în Windows. Testat doar în SIMULARE (suita 111/0/1, CI verde); pe placă netestat.
 - **18 nov 17:45 — felicitări: `os-306` a trecut pe placă!** Lanțul I0→I14 e întreg pe RTX 3070 Ti: placa a calculat cu driverul nostru un simbol al
