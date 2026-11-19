@@ -113,8 +113,8 @@ Despre partiția pe SSD (întrebarea lui Adrian) — **corectat pe 19 nov 22:40*
 | **P2** | vin 20 nov, după-amiaza (sau sâm dimineața) | ce n-a încăput în P1 + M0 (bugetul de memorie) + inventarul discurilor (doar citire) | dat |
 | **P3** | sâm–dum 21–22 nov | etapa 3a: calculele lipite, 196 → ~87 de lansări | dat (programe noi, aceeași probă) |
 | **P4** | 22–23 nov | etapa 4: cursa variantelor de înmulțire, cea mai rapidă devine cea folosită | dat |
-| **P5** | după cifrele P1 | etapa 2: viteza maximă cerută oficial | **separat** |
-| **P6** | ~24–25 nov | M1: Kronos #651 pe placă | **separat** (exportul #651; Kronos cere „da”) |
+| **P5** | după cifrele P1 | etapa 2: viteza maximă cerută oficial | dat (19 nov 22:50), cu condițiile din C-147 |
+| **P6** | ~24–25 nov | M1: Kronos #651 pe placă | dat (19 nov 22:50) → C-150 |
 | **P7** | ~25–27 nov | etapa 3b: lanțul de lansări pe placă | **separat** |
 | **P8** | ~26–28 nov | T2: primul calcul cu circuitele speciale | **separat** |
 | **P9** | după P7 | etapa 5: generare fără drum la procesor | dat (programe noi) + ce cere P7 |
@@ -155,6 +155,7 @@ Memorie fizică nu putem adăuga: placa are 8 GB lipiți pe ea. Dar cu driverul 
 
 ## Decizia lui Adrian
 - **2026-11-19 22:33 — aprobat să înceapă** („Aprob începerea planului și fă un plan de lucru mai bun, mai progresiv, mai intens. Încearcă să aduci fiecare plus pentru ele.”) → C-147, C-148, C-149; `DECIZII.md`. Pe placă acum: etapele 0, 1 și programele de calcul noi. „Da” separat pentru: viteza maximă (P5), exportul #651 (P6), lanțul pe placă (P7), circuitele speciale (P8).
+- **2026-11-19 22:50 — „Da, aprob tot”** la cele trei întrebări: viteza maximă (P5) poate intra în testul de după P1 dacă măsurătorile arată o stare joasă (condițiile la C-147); exportul #651 (P6) → C-150; sesiunile Cyber-GPU de la 4 la 8 pe zi. Rămân cu „da” separat: lanțul pe placă (P7) și circuitele speciale (P8).
 
 ## Discuție
 - 2026-11-19 centrul de comandă: cercetare făcută în seara de 19 nov; cifrele noastre din `rezultate/2026-11-19-workstation-os308-automat/REZULTAT.md` și `rezultate/os-automat/2026-11-19/`. Codul tinygrad și fișierele NVIDIA au fost doar citite, ca specificație (MIT); nimic copiat.

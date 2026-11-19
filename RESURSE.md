@@ -22,6 +22,7 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 |---|---|
 | Kronos supraveghetor | 02:15, 05:15, 08:15, 11:15, 14:15, 17:15, 20:15, 23:15 |
 | Cyber Universe OS | 02:40, 05:40, 08:40, 11:40, 14:40, 17:40, 20:40, 23:40 |
+| Cyber-GPU (de la 19 nov 2026 22:50: 8 pe zi, „da”-ul lui Adrian; înainte 4 pe zi) | 01:25, 04:25, 07:25, 10:25, 13:25, 16:25, 19:25, 22:25 |
 | Coordonatorul hub-ului (rescrie PANOU.md) | 08:50, 14:50, 20:50 |
 
 ## Rezervări (doar cu „da”-ul lui Adrian)
