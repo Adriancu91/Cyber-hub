@@ -1,8 +1,9 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-19 01:35 (ora României) · **de:** sesiunea Cyber-GPU 114 (cloud, fără placă) — **oprire scurtă: nimic nou** (nicio comandă, niciun jurnal; `os-307` e legat de vârful nostru `3a23dc0`). 538 PASS (SIMULARE), CI verde. Ultimul lucru făcut: C-142 (sesiunea 113, 18 nov 19:55).
+**Actualizat:** 2026-11-19 07:30 (ora României) · **de:** sesiunea Cyber-GPU 115 (cloud, fără placă) — **oprire scurtă: nimic nou** (nicio comandă, niciun jurnal; `os-307` e legat de codul nostru de la C-142). 538 PASS (SIMULARE), CI verde. Ultimul lucru făcut: C-142 (sesiunea 113, 18 nov 19:55).
 
 ## Acum
+- **19 nov 07:30:** tot nimic nou pentru Cyber-GPU (sesiunea 115) — se așteaptă fereastra de azi cu Adrian: stick `os-307` + #513 → `run kronos --gpu --n 16 Buna ziua` → DA → `trimite`, și DA/NU pentru proba FLR. Dacă și sesiunea 116 nu găsește jurnal nou sau comandă: OPRIT (regula 8). Copia C-34 la `826da5b`.
 - **19 nov 01:35:** nimic nou pentru Cyber-GPU — `os-307` (OS) folosește exact codul nostru de la C-142; placa e la Kronos în noaptea asta (S126). Se așteaptă fereastra cu Adrian: `kronos --gpu` cu #513 → `trimite`, și DA/NU pentru proba FLR. Copia C-34 la `eef7d55`.
 - **Vestea zilei (`os-306`, 18 nov, cu Adrian): lanțul I0 → I14 a trecut ÎNTREG pe RTX 3070 Ti**, de două ori la rând: placa a calculat un simbol al modelului de control Kronos identic cu procesorul și cu vectorii oficiali. Reparația C-139 (golirea cache-urilor înaintea fiecărei lansări) e confirmată pe placă: fără ea, simbolul iese greșit exact ca la `os-305`.
 - **Sesiunea 113 (C-142), pe înțeles:**
