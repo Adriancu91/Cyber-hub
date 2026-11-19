@@ -1,33 +1,29 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-19 07:30 (ora României) · **de:** sesiunea Cyber-GPU 115 (cloud, fără placă) — **oprire scurtă: nimic nou** (nicio comandă, niciun jurnal; `os-307` e legat de codul nostru de la C-142). 538 PASS (SIMULARE), CI verde. Ultimul lucru făcut: C-142 (sesiunea 113, 18 nov 19:55).
+**Actualizat:** 2026-11-19 11:05 (ora României) · **de:** sesiunea Cyber-GPU 116 (cloud, fără placă) — **C-145 gata în SIMULARE** (pauzele driverului la `kronos --gpu`). 545 PASS (SIMULARE). Copia C-34 la `e74b418`; CI verde (rularea 44492910520).
 
 ## Acum
-- **19 nov 07:30:** tot nimic nou pentru Cyber-GPU (sesiunea 115) — se așteaptă fereastra de azi cu Adrian: stick `os-307` + #513 → `run kronos --gpu --n 16 Buna ziua` → DA → `trimite`, și DA/NU pentru proba FLR. Dacă și sesiunea 116 nu găsește jurnal nou sau comandă: OPRIT (regula 8). Copia C-34 la `826da5b`.
-- **19 nov 01:35:** nimic nou pentru Cyber-GPU — `os-307` (OS) folosește exact codul nostru de la C-142; placa e la Kronos în noaptea asta (S126). Se așteaptă fereastra cu Adrian: `kronos --gpu` cu #513 → `trimite`, și DA/NU pentru proba FLR. Copia C-34 la `eef7d55`.
-- **Vestea zilei (`os-306`, 18 nov, cu Adrian): lanțul I0 → I14 a trecut ÎNTREG pe RTX 3070 Ti**, de două ori la rând: placa a calculat un simbol al modelului de control Kronos identic cu procesorul și cu vectorii oficiali. Reparația C-139 (golirea cache-urilor înaintea fiecărei lansări) e confirmată pe placă: fără ea, simbolul iese greșit exact ca la `os-305`.
-- **Sesiunea 113 (C-142), pe înțeles:**
-  - **#513 încape și merge (în SIMULARE):** un model cu exact forma lui #513 (12 straturi, 768, 12 capete, 16 384 de cuvinte, context 512; greutăți generate, nu cele reale) a rulat pe canalul simulat la fel cum îl va rula OS-ul: greutățile (~106 MiB) urcate în 14 bucăți de 8 MiB, fiecare simbol = o singură sonerie cu 196 de lansări; rezultatele identice cu procesorul.
-  - **Limitele reale:** zona de comenzi trebuie **32 KiB** (16 KiB nu ajung — deja în C-141); VRAM necesar **142 MiB** din 8 GiB; restul valorilor din OS ajung. **Pe partea driverului nu trebuie nimic nou.**
-  - **Viteza:** contoare noi care țin separat timpul plăcii, timpul cu driverul/jurnalul și urcarea greutăților; scriu 14 rânduri `kv` în gpu-jurnal. Din jurnalul `os-306`: un simbol al modelului mic durează ~0,27 s, aproape tot din scrierea jurnalului pe stick (~18 ms pe rând); pentru #513 estimăm ~0,3 s pe simbol + timpul plăcii (încă necunoscut — de asta contoarele).
-  - **Resetul fără tăierea curentului (FLR):** placa îl anunță (K-2). tinygrad face exact asta când găsește placa „ocupată” (WPR2): reset al funcției PCI și merge mai departe; driverul NVIDIA îl folosește ca reset complet. **Propunere:** FLR la începutul lanțului, doar dacă WPR2 e ridicat; proba cu Adrian de față. Cât de sigur că merge: ~80 %. Am corectat și studiul vechi C-103 (spunea „probabil nu există FLR”).
-- Documente: `cyber-gpu/docs/C-142_K513_VITEZA_FLR.md`; nota pentru OS `cyber-gpu/integration/cyber-universe/C-142_k513-limite-si-viteza.md`.
+- **Vestea (`os-307`, 19 nov 08:52, primul ciclu automat, fără om):** Kronos #513 a generat pe RTX 3070 Ti 16 simboluri, toate identice cu procesorul. Viteza: 43,9 simb/s doar placa, 3,1 cu driverul.
+- **Sesiunea 116 (C-145), pe înțeles — de ce 3,1 și nu 44:**
+  - **Jurnalul pe stick:** fiecare simbol scrie 15 rânduri, fiecare scris *și sincronizat* pe stick înainte de pasul următor (~16 ms rândul) ≈ **246 ms** din 295 ms.
+  - **Rescrierea comenzilor:** cele 196 de lansări (~100 KiB) sunt rescrise cuvânt cu cuvânt la fiecare simbol, cu recitire ≈ **41 ms**. Placa însăși: 23 ms.
+  - **Cifra 0,24** include verificarea pe procesor (motorul de referință, 1 nucleu: **3,9 s pe poziție**) între simboluri; 3,10 n-o include.
+  - **Ce am adăugat (oprit implicit, nimic schimbat în ce primește placa):** jurnal cu rândurile de rutină ținute în memorie și scrise o dată pe simbol (toate rândurile rămân, în aceeași ordine; pașii și cifrele merg imediat); „umbra” — se rescriu doar cuvintele schimbate (în simulare: 18 KB în loc de 147 KB, rezultate identice bit cu bit); verificarea pe procesor după placă; timpul pe simbol pe bucăți (placă / driver / jurnal / ecran / verificare, rânduri `kt`).
+  - **Estimare (nemăsurat):** ~20–22 simboluri/s cu golire pe simbol, ~30–34 cu golire la 16 simboluri. Dacă verificarea de referință rămâne între simboluri, „cu verificare” rămâne ~0,25 — OS-ul poate folosi motorul lui optimizat (14 ms) sau verificarea după placă.
+- Documente: `cyber-gpu/docs/C-145_PAUZELE_DRIVERULUI.md`; nota pentru OS `cyber-gpu/integration/cyber-universe/C-145_pauzele-driverului.md`.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
 2. Dacă DA: noi deschidem GA106 în `Family::writes_allowed()` doar pe stick-ul de test (`gpu-scrie`) + DA la ecran, cu trezirea minimă ținută pornită pe durata lanțului; OS-ul leagă commit-ul; test pe laptop **un pas pe rând**: întâi `gpu i6`, apoi `gpu lant`.
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
-## Lista pentru workstation (GA104; după ce OS-ul scoate `os-307` cu C-141/C-143)
-1. Stick cu `os-307` + #513 (`kronos_513_q8_0.kgr`, SHA-256 `66f734b3…5c5859`) → pornire (rece sau, după proba FLR, caldă) → `gpu lant --i9 c135` → `kronos --gpu` → DA → `trimite`. 2. În jurnal: rândurile `kv …` (viteza) și limitele lui #513. 3. **Doar cu „da”-ul lui Adrian:** proba FLR (`cyber-gpu/docs/C-142_K513_VITEZA_FLR.md` §4): WPR2 citit → FLR → WPR2 recitit (așteptat 0) → `gpu lant --i9 c135` din nou, fără cablu scos. 4. `gpu recupereaza` NU (rămâne rezervă, cu FWSEC-SB înainte).
-
 ## Urmează
-1. **OS-ul (`cyber-universe`, C-141):** zona de comenzi 32 KiB + `kronos --gpu` cu #513; dacă vrea, leagă `kronos_speed` (limitele + contoarele `kv`) din nota C-142 → `os-307`.
-2. **Adrian, în fereastră:** `kronos --gpu` cu #513 pe placă → `trimite`.
-3. **Noi, după jurnal:** cifrele `kv` (cât e placa, cât e driverul/jurnalul), apoi ce se poate grăbi. Dacă Adrian spune „da” la FLR: ordinea + citirile pentru OS (scrierea în configurația PCI o face OS-ul).
-4. **Adrian (separat, fără grabă):** DA/NU pentru pasul 3 pe laptop (`cyber-gpu/docs/GA106_LAPTOP.md` §7).
+1. **OS (C-146):** leagă C-145 după nota de mai sus → `os-308` → ciclul automat (fără Adrian).
+2. **Noi, după jurnalul `os-308`:** cifrele `kt` față de estimare; dacă trebuie, următorul pas (fereastra VRAM fixă etc.).
+3. **Adrian (fără grabă):** DA/NU pentru proba FLR (`cyber-gpu/docs/C-142_K513_VITEZA_FLR.md` §4) și pentru pasul 3 pe laptop (`GA106_LAPTOP.md` §7).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 116 (C-145, doar adăugări — OS-ul compilează neschimbat la `3a23dc0`):** `gpu_core::diag::{Flush, LiveSink, Routine, LiveStats}`, `Journal::{with_live_sink, set_routine, routine, flush_live, live_stats}`; modulul nou `nvidia_ga104::kronos_fast`: `GEN_WRITES`, `GEN_MAX_PENDING`, `gen_routine`, `WriteShadow`, `TokenSplit`, `SplitSummary`, `TimeSplit`, `ParsedSplit`, `parse_split`, `FIGURES`; `kronos_gen::Generation::{run_check_after, deferred_bytes}`. Nota: `cyber-gpu/integration/cyber-universe/C-145_pauzele-driverului.md`. Commit: `e74b418` (codul: `8a8e227`).
 - **Sesiunea 113 (C-142, doar adăugări — OS-ul compilează neschimbat la `db34429`):** modulul nou `nvidia_ga104::kronos_speed`: `ModelLimits` (`of`, `k513`, `check` → `Limit`, `lines`), `Speed` (`add_piece`, `add_token`, `summary` → `SpeedSummary`, `lines`, `journal`, `rows`), `Source`, `Upload`, `TokenTime`, `ParsedSpeed`, `parse_journal`, `rows`, `K513_SHAPE/LAYERS/VOCAB/CONTEXT`. În `gpu-sim` doar interiorul copierii memoriei (mai rapid, aceleași rezultate). Nota: `cyber-gpu/integration/cyber-universe/C-142_k513-limite-si-viteza.md`. Commit: `3a23dc0` (codul: `c6aa5f5`).
 - **Sesiunea 112 (C-139, doar adăugări — OS-ul compilează neschimbat la `db34429`):** `transfer::{encode_sequence_fresh, sequence_words_fresh}`; modulul nou `nvidia_ga104::kronos_diag`: `SeqMode`, `EmbedBy`, `Way`, `TokenIo` (4 operații date de OS: `submit`, `read`, `write`, `journal`), `encode`, `words`, `push_bytes`, `submissions`, `driver_embedding`, `send_token`, `ladder` → `Ladder`, `probe`, `examine`, `explain` → `Explained`, `locate`, `ProbeCtx`, `Probe`, `Verdict`, `StageCheck`, `Stale`, `LogitReport`, `logit_report`, `rows`, `parse_journal`; `kronos_layer::copy_launch`; `gpu_compute::layer::{LayerTrace, trace_gpu, attention_gpu}`, `gpu_compute::model::{TokenTrace, trace_gpu}`; `gpu_sim::cmdproc::CommandProcessor::{model_stale_reads, stale_bytes_served}` (ipoteza „date vechi”, oprită implicit). Unelte pe gazdă: `analiza_i14`, iar `verifica_jurnal_lant` afișează acum și diagnosticul I14. Nicio schimbare incompatibilă; `gpu lant` trimite exact ce trimitea până când OS-ul leagă nota. Nota: `cyber-gpu/integration/cyber-universe/C-139_i14-diagnostic-si-reparatie.md`.
 - **Sesiunea 108 (doar adăugări — OS-ul compilează neschimbat la `f732365`):** `gsp::user_space::{open_work_channel_c135, C135Report, C135Try, C135Variant, C135Stage, C135Token, journal_rows_c135, C135_BUFFERS, C135_GLOBAL_VAS, C135_F_CHID}`; `gsp::rmapi::{ErrorNotifier, work_channel_params_with, internal_flags, channel_flags, fixed_chid_flags, chid_of_flags, control_reply_status, GSP_RESERVED_CHIDS}`; `gpu_sim::fake_rm::{TokenRule, FakeRm::token_rule (implicit `Lenient` = ca înainte), ChannelFacts, FakeRm::channel_facts, FakeRm::fixed_chid, GSP_RESERVED_CHIDS, SIM_CHANNELS, status::NO_FREE_FIFOS}`. Nicio schimbare incompatibilă în driver. **O schimbare doar în modelul de simulare:** canalul golden primește acum numărul de canal din `flags` (3), nu 0; canalele de lucru primesc aceleași numere ca înainte (1, 2, …). `gpu lant` fără opțiune, `--i9 c125` și `--i9 c133` trimit exact ce trimiteau. Nota: `cyber-gpu/integration/cyber-universe/C-135_i9-pasul-5.md`.
@@ -49,13 +45,9 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: C-141 (zona de comenzi 32 KiB + `kronos --gpu` cu #513), opțional contoarele `kv` din nota C-142; pentru ciclul C-143, comanda FLR doar după „da”-ul lui Adrian. Pe stick: `github.token` și #513.
-- De la Kronos: nimic nou (#513 e pe workstation; SHA-256 în `integrare/kronos/MODEL.md`).
+- De la `cyber-universe`: C-146 (legarea C-145 → `os-308`, cu rândurile `kt` în raportul ciclului).
+- De la Kronos: nimic nou.
 
 ## Blocaje / nevoie de Adrian
-- **Nu e blocat.** #513 pe placă așteaptă `os-307` (C-141) și fereastra.
-- **AM NEVOIE DE ADRIAN (o decizie):** „da” sau „nu” pentru **proba FLR** cu tine de față (resetul plăcii fără scos cablul; propunerea și ce înseamnă fiecare rezultat: `cyber-gpu/docs/C-142_K513_VITEZA_FLR.md` §4). Dacă merge, ciclul automat de test (C-143) nu mai are nevoie de pornire rece.
-- Laptopul: următorul pas (scrieri în registrele GA106) cere **DA-ul tău separat** — nimic nu pornește fără el.
-- De confirmat (fără grabă): depozitele `Cyber-hub`, `cyber-universe`, `cyberspace` și `cyber-gpu` sunt toate **publice** pe GitHub; noi păstrăm regula de a nu pune vectorii de control în `cyber-gpu`.
-- Ecranul îngheață după pornirea GSP-RM (I8) — lanțul merge mai departe, `reboot` scris orbește funcționează (os-306); pe laptop ecranul e pe Intel.
-- CI GitHub: **VERDE pe `c6aa5f5`** (rularea 44360950272, codul C-142); înainte verde pe `db34429` (44305098379) și pe toate vârfurile sesiunilor 107–112 (lista completă în `cyber-gpu/docs/IMPLEMENTATION_STATUS.md`).
+- **Nu e blocat.** Testul pe placă îl face ciclul automat după `os-308`.
+- **De la Adrian (decizii, fără grabă):** „da”/„nu” pentru **proba FLR** (resetul plăcii fără scos cablul, `cyber-gpu/docs/C-142_K513_VITEZA_FLR.md` §4); „da”/„nu” pentru primele scrieri pe **laptop** (`cyber-gpu/docs/GA106_LAPTOP.md` §7).
