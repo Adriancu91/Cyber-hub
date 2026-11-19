@@ -1744,6 +1744,7 @@ Format:
 - stare: gata (2026-11-18 23:10 RO / 21:10 UTC, sesiunea OS; Release `os-307`, commit `cc2c631`, CI verde run 44391087032). Istoric: preluat 18:50 UTC
 - (istoric) stare: nou
 - rezultat: P6-95 → `os-307`: cyber-gpu `3a23dc0` (C-142), zona de comenzi 32 KiB, limitele verificate înainte de urcare, `kronos --gpu` (I9 c135) cu rezultatul și viteza în gpu-jurnal (rândurile `kg`/`kv`, plus motorul procesorului); comanda pentru Adrian în CITESTE.txt: `run kronos --gpu --n 16 Buna ziua` + DA. Testat doar în SIMULARE (suita 111/0/1); #513 pe placă netestat.
+- test pe placa (centrul de comandă, 19 nov 09:00): **primul ciclu automat os-307, fără Adrian, a trecut** — lanțul I0→I14 ok, Kronos #513: 16 simboluri pe placă identice cu procesorul (lansări 43,9 simb/s, cu driverul 3,1 simb/s), jurnalul urcat singur, revenire singură în Windows. Detalii: `rezultate/2026-11-19-workstation-os307-automat/REZULTAT.md`.
 
 ### C-142 · cyber-gpu · Sprijin pentru #513 pe placă (C-141): verificare în `gpu-sim` cu forma lui #513 + măsurarea vitezei (Adrian, 18 nov 17:45)
 - data: 2026-11-18 17:45 · de la: Adrian (prin centrul de comandă) — „da” pentru Kronos #513 pe placă după I14 trecut pe placa reală (os-306, cyber-gpu `db34429`).
@@ -1760,6 +1761,7 @@ Format:
 - stare: gata (2026-11-18 23:10 RO / 21:10 UTC, sesiunea OS; Release `os-307`, commit `cc2c631`, CI verde run 44391087032). Istoric: preluat 18:50 UTC
 - (istoric) stare: nou
 - rezultat: P6-96 → `os-307`: `ciclu-test os-N [--i9 …]` (implicit c135); `test-placa` în `auto\teste.txt` (din Windows: `bucla-automata.ps1 pregateste -TestPlaca`) rulează doar cu ambele chei: `gpu recupereaza` → dacă nu aduce placa înapoi „CICLU OPRIT: trebuie pornire rece (Adrian)”, fără altă încercare → lanțul + #513 dacă e pe stick → raportul și gpu-jurnalul urcă singure → repornire în Windows, fără repornire la mijloc. Cheia (b) verificată pe rândul real din DECIZII.md. Pe placă netestat (prima tură = centrul de comandă).
+- test pe placa (centrul de comandă, 19 nov 09:00): **primul ciclu automat os-307, fără Adrian, a trecut** — lanțul I0→I14 ok, Kronos #513: 16 simboluri pe placă identice cu procesorul (lansări 43,9 simb/s, cu driverul 3,1 simb/s), jurnalul urcat singur, revenire singură în Windows. Detalii: `rezultate/2026-11-19-workstation-os307-automat/REZULTAT.md`.
 
 ### C-144 · kronos · „da S126 a”: S126 pornește în noaptea asta pe configurarea nouă `conv_w2_mare_24zcf_b.toml` (Adrian, 18 nov 23:10)
 - data: 2026-11-18 23:10 · de la: Adrian (prin centrul de comandă) — „dai ceva de antrenat, să nu stea degeaba toată noaptea”.
