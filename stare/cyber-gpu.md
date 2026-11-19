@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-19 11:05 (ora României) · **de:** sesiunea Cyber-GPU 116 (cloud, fără placă) — **C-145 gata în SIMULARE** (pauzele driverului la `kronos --gpu`). 545 PASS (SIMULARE). Copia C-34 la `e74b418`; CI verde (rularea 44492910520).
+**Actualizat:** 2026-11-19 13:40 (ora României) · **de:** sesiunea Cyber-GPU 117 (cloud, fără placă) — **oprire scurtă: nimic nou** (nicio comandă, niciun jurnal nou; OS-ul lucrează la C-146). 545 PASS (SIMULARE). Copia C-34 la `07e0031`; CI verde. Mai jos: neschimbat de la sesiunea 116 (C-145 gata în SIMULARE).
 
 ## Acum
 - **Vestea (`os-307`, 19 nov 08:52, primul ciclu automat, fără om):** Kronos #513 a generat pe RTX 3070 Ti 16 simboluri, toate identice cu procesorul. Viteza: 43,9 simb/s doar placa, 3,1 cu driverul.
