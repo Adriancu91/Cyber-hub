@@ -1,12 +1,18 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-19 19:35 (ora României) · **de:** sesiunea Cyber-GPU 118 (cloud, fără placă) — **analiza cifrelor `kt` din `os-308`** (fără cod). 545 PASS (SIMULARE), CI verde. Copia C-34 la `438d6e7`.
+**Actualizat:** 2026-11-19 23:40 (ora României) · **de:** sesiunea Cyber-GPU 119 (cloud, fără placă) — **C-147 punctul 1 (etapa 0, măsurătorile) gata în SIMULARE**, punctul 4 (viteza maximă) pregătit și oprit, limitele #651 (C-150). 555 PASS (SIMULARE), CI verde. Copia C-34 la `02bbc36`.
 
 ## Acum
-- **`os-308` (19 nov 14:37, ciclul automat):** 16 simboluri pe placă identice cu procesorul; **10,99 simb/s cu driverul** (de la 3,10). Rescrierea lansărilor a dispărut (41 → 0 ms), placa 23 ms, **jurnalul încă 74 ms**.
-- **Sesiunea 118, pe înțeles — de ce 11 și nu 20 cât estimasem:** rândurile de rutină nu se mai scriu pe stick unul câte unul, dar OS-ul încă le **afișează** pe fiecare (ecran + port serial) înainte să le țină în memorie: ~4,3 ms pe rând × 15 rânduri pe simbol ≈ 64 ms, plus o scriere pe stick pe simbol ≈ 10–12 ms. Noi am presupus că un rând ținut nu costă nimic — greșeala estimării.
-- **Ce înseamnă pentru propunerea OS (`idei/2026-11-19_kronos-placa-mai-rapid.md`, ESTIMARE):** doar „golirea la final” → ~13 simb/s; **fără afișarea rândurilor ținute** → ~27–29; amândouă → ~40. Schimbarea e doar în OS; cyber-gpu nu are nimic de schimbat.
-- Documente: `cyber-gpu/docs/os-308_ANALIZA_KT.md`; nota pentru OS `cyber-gpu/integration/cyber-universe/os-308_ecoul-jurnalului.md`.
+- **Etapa 0 e gata de legat în `os-309`** (nota: `cyber-gpu/integration/cyber-universe/C-147_etapa0-masuratori.md`, detaliile: `cyber-gpu/docs/C-147_ETAPA0.md`). La sfârșitul testului, jurnalul va spune: **cât ține fiecare fel de calcul** pe simbol (`kp`, 20 de feluri), **cât costă o pornire goală** (`kl`), **cât de repede copiază placa în propria memorie** (`kc`, 64 MiB × 3, cu % din 608 GB/s) și **în ce stare de performanță e placa** (`ks`, P0 = cea mai înaltă). Calculele nu se schimbă.
+- **Pe înțeles, ce am aflat citind sursele:** driverul NVIDIA **nu** trimite la programul intern al plăcii comanda publică de „viteză maximă” pe care o trimite tinygrad; o traduce într-o comandă internă (`INTERNAL_PERF_BOOST_SET_2X`). tinygrad o trimite direct **și nu verifică dacă placa a acceptat-o** — deci n-avem dovada că forma lor merge. Am pregătit forma NVIDIA ca implicită, forma tinygrad ca rezervă; amândouă **oprite**.
+- **Ce NU se poate citi (fără cale documentată în fișierele publice NVIDIA 570.144):** ceasurile pe niveluri (`LEVEL_INFO_V2`) și **temperatura**. Nu se trimite nimic ghicit.
+- **#651 pe placă:** limitele sunt calculate: 388 de lansări pe simbol, zona de comenzi 64 KiB, ~250–290 MiB pe placă; **OS-ul trebuie să mărească pasul valorilor pe sonerie de la `0x100` la `0x200`** pentru #651.
+
+## Urmează
+1. **OS (C-148 punctul 3):** leagă etapa 0 → `os-309` → ciclul automat; noi citim `kp`/`kl`/`kc`/`ks` și scriem estimarea pe etape (C-147 punctul 7).
+2. **Noi, sesiunile următoare (C-147 în ordine):** punctul 2 — lipirea calculelor mărunte (196 → ~87 lansări) în SIMULARE; punctul 3 — `q8_matvec` cu toate cele 32 de fire + cursa variantelor; punctul 5 — unealta NAK nouă (circuitele speciale); punctul 6 — studiul câmpurilor de lansare.
+3. **Viteza maximă pe placă:** doar după ce centrul de comandă confirmă în hub că `ks`/`kc` arată o stare joasă; atunci OS-ul o leagă într-un Release separat.
+4. **Adrian (fără grabă):** DA/NU pentru proba FLR și pentru pasul 3 pe laptop (`GA106_LAPTOP.md` §7).
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
@@ -19,6 +25,7 @@
 3. **Adrian (fără grabă):** DA/NU pentru proba FLR (`cyber-gpu/docs/C-142_K513_VITEZA_FLR.md` §4) și pentru pasul 3 pe laptop (`GA106_LAPTOP.md` §7).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 119 (C-147 / C-150, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::kronos_perf` (`Kind`, `LAYER_KINDS`, `ALL_KINDS`, `token_kinds`, `KindProfile`, `KindTime`, `rows`, `launch_rows`, `launch_cost_rows`, `journal_launch_cost`, `VramCopy`, `VramCopySpeed`, `VRAM_COPY_BYTES`, `VRAM_COPY_REPEATS`, `PAPER_MB_S`, `copy_rows`, `ParsedPerf`, `value_row`, `parse_journal`); modulul nou `nvidia_ga104::gsp::perf` (`encode_get_pstate`, `read_pstate`, `Pstate`, `When`, `journal_pstate`, `rows`, `BoostPlan` **oprit implicit**, `BoostShape`, `read_boost`, `boost_flags`, constantele comenzilor); `kronos_speed::{K651_LAYERS, K651_VOCAB, K651_CONTEXT, K651_SHAPE, ModelLimits::k651}`. Nota: `cyber-gpu/integration/cyber-universe/C-147_etapa0-masuratori.md`. Commit: `02bbc36` (codul: `9c5e8e8`, `c2c228b`).
 - **Sesiunea 118:** nicio schimbare de cod (doar analiză + notă pentru OS); OS-ul la `e74b418` rămâne valabil.
 - **Sesiunea 116 (C-145, doar adăugări — OS-ul compilează neschimbat la `3a23dc0`):** `gpu_core::diag::{Flush, LiveSink, Routine, LiveStats}`, `Journal::{with_live_sink, set_routine, routine, flush_live, live_stats}`; modulul nou `nvidia_ga104::kronos_fast`: `GEN_WRITES`, `GEN_MAX_PENDING`, `gen_routine`, `WriteShadow`, `TokenSplit`, `SplitSummary`, `TimeSplit`, `ParsedSplit`, `parse_split`, `FIGURES`; `kronos_gen::Generation::{run_check_after, deferred_bytes}`. Nota: `cyber-gpu/integration/cyber-universe/C-145_pauzele-driverului.md`. Commit: `e74b418` (codul: `8a8e227`).
 - **Sesiunea 113 (C-142, doar adăugări — OS-ul compilează neschimbat la `db34429`):** modulul nou `nvidia_ga104::kronos_speed`: `ModelLimits` (`of`, `k513`, `check` → `Limit`, `lines`), `Speed` (`add_piece`, `add_token`, `summary` → `SpeedSummary`, `lines`, `journal`, `rows`), `Source`, `Upload`, `TokenTime`, `ParsedSpeed`, `parse_journal`, `rows`, `K513_SHAPE/LAYERS/VOCAB/CONTEXT`. În `gpu-sim` doar interiorul copierii memoriei (mai rapid, aceleași rezultate). Nota: `cyber-gpu/integration/cyber-universe/C-142_k513-limite-si-viteza.md`. Commit: `3a23dc0` (codul: `c6aa5f5`).
@@ -42,9 +49,9 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: nimic obligatoriu; dacă Adrian spune „da” la idee, schimbarea din `gpu_i6::live_line` (nota de mai sus).
+- De la `cyber-universe`: C-148 punctul 3 (legarea etapei 0 în `os-309`); pentru #651, `STRIDE = 0x200`.
 - De la Kronos: nimic nou.
 
 ## Blocaje / nevoie de Adrian
-- **Nu e blocat.** Fără placă și fără comandă nouă, nu mai e nimic de făcut în cyber-gpu.
-- **De la Adrian (decizii, fără grabă):** „da”/„nu” la ideea vitezei (de mai sus), la **proba FLR** și la primele scrieri pe **laptop**.
+- **Nu e blocat.** C-147 continuă cu punctele 2, 3, 5, 6 (în SIMULARE).
+- **De la Adrian (decizii, fără grabă):** **proba FLR** și primele scrieri pe **laptop**. De știut: temperatura plăcii nu are cale documentată de citire — la viteza maximă protecția rămâne a plăcii + durata limitată (10 min) + ștergerea la final; un prag de temperatură ar cere o decizie separată.
