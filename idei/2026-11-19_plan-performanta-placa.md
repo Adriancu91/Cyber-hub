@@ -2,7 +2,7 @@
 
 - **Propus de:** centrul de comandă (la cererea lui Adrian, 19 nov 2026 21:54) · **Data:** 2026-11-19
 - **Proiecte implicate:** `cyber-gpu`, `cyber-universe` (`kronos`: doar martor — „identic cu procesorul” rămâne proba)
-- **Stare:** propus
+- **Stare:** aprobat să înceapă (Adrian, 19 nov 2026 22:33) — vezi „Decizia lui Adrian” și Partea 6
 - **Leagă:** `idei/2026-11-19_kronos-placa-mai-rapid.md` (etapa 1 de aici), `idei/2026-11-03_cyber-gpu-un-singur-bloc.md` (etapa 3 de aici, aprobată ca direcție pe 3 nov)
 
 ## Ideea (pe înțelesul lui Adrian)
@@ -81,23 +81,88 @@ dacă e aproape tot cost fix, 87 de lansări ar da ~98 simb/s și 25 ar da ~340;
 
 Țintele, toate **estimări** până le măsoară placa: după etapa 1 ~40; după 2 + 3 între 100 și 200; după 4 + 5 între 300 și 600 (un singur răspuns).
 
-Despre partiția pe SSD (întrebarea lui Adrian): după etapa 1 jurnalul costă sub 2 ms pe simbol, deci SSD-ul nu mai aduce viteză la generare. Rămâne util doar pentru citirea modelului de pe stick, o singură dată la pornire (urcarea pe placă ține ~2 s la `os-308`); un driver de SSD e un proiect separat, cu risc pentru Windows dacă e același disc.
+Despre partiția pe SSD (întrebarea lui Adrian) — **corectat pe 19 nov 22:40**: centrul de comandă spusese greșit că OS-ul nu are driver de SSD. Are: `ahci.rs` (SATA, citire și scriere), `nvme.rs` (NVMe, testat pe hardware real la citire pe 22 oct) și FAT32, cu regula că scrie doar pe partițiile marcate cu fișierul `cyber.rw`. Pentru viteza generării, după etapa 1 discul nu mai contează (jurnalul sub 2 ms pe simbol). Contează pentru încărcarea modelelor mari și ca să nu depindem de stick → firul S din Partea 6.
+
+## Partea 6 — Planul de lucru v2: patru fire, două teste pe zi (aprobat să înceapă, 19 nov 22:33)
+
+**Ritmul zilei** (cu programul de azi al sesiunilor; nimic nou de programat):
+
+| Ora | Ce se întâmplă |
+|---|---|
+| 01:25 · 02:40 · 05:40 | sesiunile Cyber-GPU și OS de noapte scriu codul pachetului de dimineață → Release |
+| 07:00 | Kronos eliberează placa |
+| 07:30 | centrul de comandă: verifică Release-ul, îl pune pe stick, pornește **testul 1** (~08:15) |
+| ~09:30 | cifrele testului 1 → comenzi / note pentru pachetul următor |
+| 13:25 · 14:40 | sesiunile Cyber-GPU și OS de zi → Release |
+| ~15:30–17:00 | **testul 2** |
+| 17:30 | cifrele testului 2 → comenzi pentru sesiunile de noapte (19:25, 20:40, 23:40) |
+| 19:00–07:00 | Kronos antrenează (umplutură) |
+
+**Cele patru fire** (merg în paralel; pe placă intră câte un pachet pe test):
+
+- **V — viteza pe placă:** etapele 0–5 din Partea 5.
+- **T — circuitele speciale (tensor cores):** T0 unealta nouă de compilare; T1 primul program în simulare; T2 primul test pe placă; T3 folosirea la citirea întrebării și la loturi. Partea 7.
+- **M — memoria:** M0 bugetul de memorie scris în jurnal la fiecare test; M1 Kronos cel mare (#651, 183 M) pe placă; M2 greutăți pe 4 biți; M3 RAM-ul ca prelungire aleasă de noi. Partea 8.
+- **S — sistemul de operare:** S1 jurnalul (etapa 1); S2 verificarea după placă, cu motorul rapid; S3 discul propriu (partiție marcată `cyber.rw`); S4 resetul plăcii fără pornire rece (proba FLR din C-142, așteaptă DA); S5 convorbirea cu Kronos direct în OS, pe placă.
+
+**Pachetele** (un pachet = un Release = un test pe placă; ordinea de după P2 se reașază după cifrele etapei 0):
+
+| Pachet | Când (țintă) | Ce intră pe placă | „Da” |
+|---|---|---|---|
+| **P1** `os-309` | vin 20 nov, dimineața | etapa 0 (măsurători) + etapa 1 (jurnalul) + verificarea după placă | dat |
+| **P2** | vin 20 nov, după-amiaza (sau sâm dimineața) | ce n-a încăput în P1 + M0 (bugetul de memorie) + inventarul discurilor (doar citire) | dat |
+| **P3** | sâm–dum 21–22 nov | etapa 3a: calculele lipite, 196 → ~87 de lansări | dat (programe noi, aceeași probă) |
+| **P4** | 22–23 nov | etapa 4: cursa variantelor de înmulțire, cea mai rapidă devine cea folosită | dat |
+| **P5** | după cifrele P1 | etapa 2: viteza maximă cerută oficial | **separat** |
+| **P6** | ~24–25 nov | M1: Kronos #651 pe placă | **separat** (exportul #651; Kronos cere „da”) |
+| **P7** | ~25–27 nov | etapa 3b: lanțul de lansări pe placă | **separat** |
+| **P8** | ~26–28 nov | T2: primul calcul cu circuitele speciale | **separat** |
+| **P9** | după P7 | etapa 5: generare fără drum la procesor | dat (programe noi) + ce cere P7 |
+| **P10** | după P8–P9 | etapa 6 + T3: loturi, citirea întrebării cu circuitele speciale | după P8 |
+
+Datele sunt ținte, nu promisiuni: fiecare pachet pleacă doar după ce cel dinainte a trecut pe placă cu aceleași simboluri ca procesorul. Dacă un pachet pică, următorul test e reparația lui, nu pachetul următor.
+
+## Partea 7 — Circuitele speciale de calcul („tensor cores”) și compilatorul nostru
+
+**Ce sunt.** Placa are două feluri de „muncitori”. Nucleele obișnuite fac o înmulțire și o adunare pe rând. Circuitele speciale înmulțesc dintr-o singură mișcare două tabele mici de numere (de exemplu 16 × 16), lucrând cu numere scurte, de 16 biți (sau întregi de 8 biți). NVIDIA dă pentru generația plăcii noastre de 8 ori mai mult calcul în modul lor de 32 de biți și de 16 ori în cel de 16 biți, față de nucleele obișnuite (cifre de pe placa lor de centru de date; plăcile de jocuri din aceeași generație, ca a noastră, au mai puține astfel de circuite — din câte știm, cam jumătate din aceste cifre; nemăsurat de noi).
+
+**De ce nu le-am pus în prima variantă a planului.** Ca să le folosești, programul trebuie să conțină o instrucțiune specială, iar compilatorul trebuie să știe s-o scrie. Am presupus că al nostru (Mesa NAK) nu știe. **Presupunerea era greșită:** NAK a primit acest suport (`VK_KHR_cooperative_matrix`) în Mesa 25.2, la mijlocul lui 2025, iar în noiembrie 2025 ajunsese la ~92 % din viteza driverului NVIDIA pe astfel de calcule. Unealta noastră e construită din Mesa 25.0.7 — cu o versiune prea veche. Deci circuitele sunt la îndemână: trebuie o unealtă nouă (T0 din C-147), cea veche rămânând pentru programele de azi.
+
+**Unde ajută și unde nu.**
+- La **un singur cuvânt generat** (matrice × vector) frâna e citirea greutăților din memorie, nu calculul: câștig mic. Un dezvoltator al driverului deschis spune același lucru despre motorul llama.cpp: la generare contează legarea și lipirea calculelor, la citirea întrebării contează înmulțirile de matrice.
+- La **citirea întrebării** (toate cuvintele ei deodată), la **mai multe răspunsuri deodată** și mai ales la **antrenare**: aici sunt înmulțiri matrice × matrice și câștigul poate fi de câteva ori.
+
+**Prețul.** Lucrează cu numere scurte, deci rezultatul nu mai e identic bit cu bit cu procesorul. Proba devine „același simbol ales + abatere sub un prag scris dinainte”. De aceea T2 e un test separat, cu „da” separat.
+
+## Partea 8 — Putem câștiga și memorie, nu doar viteză?
+
+Memorie fizică nu putem adăuga: placa are 8 GB lipiți pe ea. Dar cu driverul și OS-ul nostru câștigăm în patru feluri:
+
+1. **Toată placa e a noastră.** Din 8 192 MiB, programul intern al plăcii ține ~190 MiB (zona citită pe placă: `0x1f4100000..0x1ffee0000`); restul de ~8 000 MiB e liber. Sub Windows, regula noastră pentru Kronos e „sub ~7 000 MB”. Câștig: **~1 GB**.
+2. **Fără balast.** #513 ocupă pe placă 142 MiB cu tot cu memoria convorbirii; #651 (183 M) ~270 MiB (calcul, `VramBudget`). La rulare folosim sub 4 % din placă. Socoteală: la 8 biți pe greutate încap ~7 miliarde de parametri; la 4 biți ~14 miliarde.
+3. **Împachetare mai strânsă (M2):** greutăți pe 4 biți în loc de 8 → model de două ori mai mare în aceeași memorie. Cere lucru la Kronos (formatul) și verificare pe examen (cât pierde din calitate).
+4. **RAM-ul ca prelungire aleasă de noi (M3).** Placa poate citi direct din RAM-ul calculatorului (o facem deja la urcarea modelului): 128 GB pe workstation. Dar drumul e îngust: legătura plăcii duce cel mult ~15 GB/s (noi am măsurat 1,2), față de 608 GB/s înăuntrul plăcii. Bun pentru ce se citește rar (tabelul de simboluri: un rând pe simbol; convorbiri foarte lungi; date de antrenare), prost pentru greutățile citite la fiecare simbol. Windows face asta singur și orbește, iar când se întâmplă totul merge mult mai încet (de ~3 ori într-o măsurătoare publicată); la noi alegem noi ce stă unde.
+
+**Unde e limita adevărată.** La rulare, memoria nu ne limitează: limitează cât de mare e modelul pe care apucăm să-l antrenăm. La antrenare (azi sub Windows) memoria contează mult mai tare; antrenarea pe driverul nostru e o etapă târzie (cere programele de învățare) și intră sub decizia din 13 nov („toate piesele la treabă”), după ce firele V și T își arată cifrele.
 
 ## Cost și riscuri
 - **Lucru:** etapele 0 și 1 sunt mici (o zi, un test automat). Etapele 2–3a: câte una-două zile. 3b–5: o săptămână sau două la ritmul de acum. Fiecare etapă = o pereche de comenzi + un test în ciclul automat, ziua, 08:00–18:00.
 - **Etapa 2 schimbă ce primește placa:** cere regula „trei surse” (avem două: documentația NVIDIA și tinygrad; a treia o caută Cyber-GPU) și „da”-ul separat al lui Adrian. Risc: placa mai caldă — de aceea citim temperatura și avem prag. Se poate și ca programul intern să refuze comanda; atunci aflăm din răspuns și rămânem ca azi.
 - **Etapa 3b schimbă felul de trimitere** care a trecut I14 (C-139) și pune în lansare câmpuri pe care placa nu le-a primit încă de la noi (regula „trei surse”): diagnosticul existent („unde apare primul număr greșit”) rămâne pornit; dacă apar date vechi, ne întoarcem la felul de azi.
-- **Compilatorul (Mesa NAK) e tânăr:** unele câștiguri din etapa 4 pot ieși mai mici decât la alții. Nucleele speciale pentru matrice mari („tensor cores”) nu sunt la îndemână cu el; nu le punem în plan.
+- **Compilatorul (Mesa NAK) e tânăr:** unele câștiguri din etapa 4 pot ieși mai mici decât la alții. Despre circuitele speciale pentru matrice („tensor cores”) vezi Partea 7: prima variantă a planului le lăsase pe dinafară dintr-o presupunere greșită.
 - **Nimic din plan** nu scrie în registre necunoscute, nu atinge firmware-ul și nu schimbă Kronos. Antrenările de noapte nu sunt atinse.
 - **Ce nu putem promite:** cifrele de după etapa 1 sunt estimări. Lecția tinygrad e că un driver propriu poate fi la început mult mai lent decât motoarele vechi; avantajul nostru e că reglăm totul pentru un singur model și o singură placă.
 
 ## Decizia lui Adrian
-- (completează Adrian sau centrul de comandă cu data aprobării din chat)
+- **2026-11-19 22:33 — aprobat să înceapă** („Aprob începerea planului și fă un plan de lucru mai bun, mai progresiv, mai intens. Încearcă să aduci fiecare plus pentru ele.”) → C-147, C-148, C-149; `DECIZII.md`. Pe placă acum: etapele 0, 1 și programele de calcul noi. „Da” separat pentru: viteza maximă (P5), exportul #651 (P6), lanțul pe placă (P7), circuitele speciale (P8).
 
 ## Discuție
 - 2026-11-19 centrul de comandă: cercetare făcută în seara de 19 nov; cifrele noastre din `rezultate/2026-11-19-workstation-os308-automat/REZULTAT.md` și `rezultate/os-automat/2026-11-19/`. Codul tinygrad și fișierele NVIDIA au fost doar citite, ca specificație (MIT); nimic copiat.
 
 ## Surse
+- Circuitele speciale în driverul deschis: https://www.phoronix.com/news/NVK-Cooperative-Matrix-Perf (17 nov 2025) · https://airlied.blogspot.com/2025/07/ramalamamesa-benchmarks-on-my-hardware.html (24 iul 2025) · cum se scriu în program: https://techoverflow.net/2026/09/29/vk-khr-cooperative-matrix-explained-tensor-core-math-in-glsl-shaders/
+- NVIDIA, cât calculează circuitele speciale: https://developer.nvidia.com/blog/accelerating-ai-training-with-tf32-tensor-cores/
+- Windows, memoria împărțită cu RAM-ul: https://discuss.pytorch.org/t/documented-fix-slow-execution-pytorch-using-gpu-shared-memory/218909
 - tinygrad, driverul NVIDIA (`runtime/ops_nv.py`, ramura principală, citit 19 nov 2026): https://github.com/tinygrad/tinygrad
 - tinygrad pe Mac — viteza măsurată și cauzele (14 apr 2026): https://www.lucebox.com/blog/egpu-myth
 - Apple aprobă driverul tiny corp (8 apr 2026): https://macdailynews.com/2026/04/08/apple-approves-third-party-drivers-for-amd-and-nvidia-egpus-on-apple-silicon-macs/
