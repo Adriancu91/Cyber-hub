@@ -2,7 +2,7 @@
 
 - **Propus de:** centrul de comandă (la cererea lui Adrian, 19 nov 2026 23:28: „caută de ce unelte mai avem nevoie pe OS-ul nostru și pentru viitor, și pentru mai multă independență de Windows”) · **Data:** 2026-11-19
 - **Proiecte implicate:** `cyber-universe`, `cyber-gpu`, `kronos`
-- **Stare:** propus
+- **Stare:** treapta 1 aprobată (Adrian, 19 nov 2026 23:37) → C-151, C-152; treptele 2 și 3: propus
 - **Leagă:** `idei/2026-11-04_planul-independentei-os.md` (aprobat pe 4 nov; mare parte făcut), `idei/2026-11-19_plan-performanta-placa.md` (firele V, T, M, S), decizia din 13 nov („toate piesele la treabă”)
 
 ## Ideea (pe înțelesul lui Adrian)
@@ -75,7 +75,7 @@ Că se poate fără PyTorch arată proiectul `llm.c`: antrenează GPT-2 de 124 d
 - Treapta 3 e un proiect cât tot driverul de până acum. Până e gata, antrenările rămân în Windows.
 
 ## Decizia lui Adrian
-- (completează Adrian sau centrul de comandă cu data aprobării din chat)
+- **2026-11-19 23:37 — „Da” la treapta 1** (uneltele 1–5), inclusiv: proba de reset pe placa reală în ciclul automat; cele două comenzi ale tabloului de bord după regula „trei surse”; schimbarea ordinii din BIOS făcută de Adrian când e gata comutatorul. Comenzile: C-151, C-152. Treptele 2 și 3 așteaptă.
 
 ## Discuție
 - 2026-11-19 centrul de comandă: inventarul e din `cyber-universe` (`docs/TASKS.md`, `kernel/src`, `user/src/bin`) la commit-ul de după `os-308`; căile pentru uneltele 1 și 3 sunt citite din surse publice, ca specificație.
