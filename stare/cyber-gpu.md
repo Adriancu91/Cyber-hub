@@ -1,30 +1,25 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-19 23:40 (ora României) · **de:** sesiunea Cyber-GPU 119 (cloud, fără placă) — **C-147 punctul 1 (etapa 0, măsurătorile) gata în SIMULARE**, punctul 4 (viteza maximă) pregătit și oprit, limitele #651 (C-150). 555 PASS (SIMULARE), CI verde. Copia C-34 la `02bbc36`.
+**Actualizat:** 2026-11-20 01:45 (ora României) · **de:** sesiunea Cyber-GPU 120 (cloud, fără placă) — **C-147 punctul 2 (etapa 3a, calculele lipite) gata în SIMULARE**: un simbol al lui #513 cere **88 de lansări în loc de 196**. 561 PASS (SIMULARE). Copia C-34 la `96301cf`.
 
 ## Acum
-- **Etapa 0 e gata de legat în `os-309`** (nota: `cyber-gpu/integration/cyber-universe/C-147_etapa0-masuratori.md`, detaliile: `cyber-gpu/docs/C-147_ETAPA0.md`). La sfârșitul testului, jurnalul va spune: **cât ține fiecare fel de calcul** pe simbol (`kp`, 20 de feluri), **cât costă o pornire goală** (`kl`), **cât de repede copiază placa în propria memorie** (`kc`, 64 MiB × 3, cu % din 608 GB/s) și **în ce stare de performanță e placa** (`ks`, P0 = cea mai înaltă). Calculele nu se schimbă.
-- **Pe înțeles, ce am aflat citind sursele:** driverul NVIDIA **nu** trimite la programul intern al plăcii comanda publică de „viteză maximă” pe care o trimite tinygrad; o traduce într-o comandă internă (`INTERNAL_PERF_BOOST_SET_2X`). tinygrad o trimite direct **și nu verifică dacă placa a acceptat-o** — deci n-avem dovada că forma lor merge. Am pregătit forma NVIDIA ca implicită, forma tinygrad ca rezervă; amândouă **oprite**.
-- **Ce NU se poate citi (fără cale documentată în fișierele publice NVIDIA 570.144):** ceasurile pe niveluri (`LEVEL_INFO_V2`) și **temperatura**. Nu se trimite nimic ghicit.
-- **#651 pe placă:** limitele sunt calculate: 388 de lansări pe simbol, zona de comenzi 64 KiB, ~250–290 MiB pe placă; **OS-ul trebuie să mărească pasul valorilor pe sonerie de la `0x100` la `0x200`** pentru #651.
+- **Programul nou `q8_fused`** (compilat cu aceeași unealtă NAK, 9 248 octeți): face într-o singură lansare înmulțirea cu matricea **și** operațiile mărunte de după ea (termenul liber, adunarea cu stratul dinainte, GELU, scrierea cheii și valorii în cache). Un strat: 16 → 7 lansări.
+- **De ce ar trebui să dea exact aceleași numere:** în listarea compilatorului, partea de înmulțire are aceleași instrucțiuni ca programul vechi, iar GELU și adunările sunt aceleași instrucțiuni ca la programele separate. În SIMULARE: stratul și un model mic dau **aceleași logit-uri bit cu bit** ca lista de 196; greșelile plantate sunt prinse.
+- **Etapa 0 (sesiunea 119)** rămâne de legat în `os-309` (nota `C-147_etapa0-masuratori.md`).
 
 ## Urmează
-1. **OS (C-148 punctul 3):** leagă etapa 0 → `os-309` → ciclul automat; noi citim `kp`/`kl`/`kc`/`ks` și scriem estimarea pe etape (C-147 punctul 7).
-2. **Noi, sesiunile următoare (C-147 în ordine):** punctul 2 — lipirea calculelor mărunte (196 → ~87 lansări) în SIMULARE; punctul 3 — `q8_matvec` cu toate cele 32 de fire + cursa variantelor; punctul 5 — unealta NAK nouă (circuitele speciale); punctul 6 — studiul câmpurilor de lansare.
-3. **Viteza maximă pe placă:** doar după ce centrul de comandă confirmă în hub că `ks`/`kc` arată o stare joasă; atunci OS-ul o leagă într-un Release separat.
-4. **Adrian (fără grabă):** DA/NU pentru proba FLR și pentru pasul 3 pe laptop (`GA106_LAPTOP.md` §7).
+1. **OS:** după `os-309`, lista lipită într-un Release separat, oprită implicit (nota: `cyber-gpu/integration/cyber-universe/C-147_etapa3a-programe-lipite.md`); proba: aceleași 16 simboluri ca procesorul și aceleași logit-uri ca lista de 196, plus `kp`/`kt` înainte/după.
+2. **Noi (în ordine):** C-147 punctul 3 (`q8_matvec` cu toate cele 32 de fire + cursa variantelor), C-151 punctul 3 (nota de reset din interior pentru OS), C-151 punctul 1 (tabloul de bord RUSD), C-147 punctele 5, 6; punctul 7 după cifrele `os-309`.
+3. **Viteza maximă pe placă:** doar după ce centrul de comandă confirmă că `ks`/`kc` arată o stare joasă.
+4. **Adrian (fără grabă):** DA/NU pentru primele scrieri pe laptop (`GA106_LAPTOP.md` §7).
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
 2. Dacă DA: noi deschidem GA106 în `Family::writes_allowed()` doar pe stick-ul de test (`gpu-scrie`) + DA la ecran, cu trezirea minimă ținută pornită pe durata lanțului; OS-ul leagă commit-ul; test pe laptop **un pas pe rând**: întâi `gpu i6`, apoi `gpu lant`.
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
-## Urmează
-1. **Adrian:** „da”/„nu” pe `idei/2026-11-19_kronos-placa-mai-rapid.md` (cu corecția de mai sus: câștigul mare e „fără afișarea rândurilor ținute”).
-2. **Dacă da:** OS-ul schimbă `gpu_i6::live_line` → Release nou → ciclul automat; noi citim cifrele `kt`.
-3. **Adrian (fără grabă):** DA/NU pentru proba FLR (`cyber-gpu/docs/C-142_K513_VITEZA_FLR.md` §4) și pentru pasul 3 pe laptop (`GA106_LAPTOP.md` §7).
-
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 120 (C-147 punctul 2, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::q8_fused` (`Q8_FUSED`, `cbuf`, `Tail`, steagurile); `kronos_layer::{Prog::Q8Fused, PROGRAMS_FUSED, LAUNCHES_PER_TOKEN_FUSED, token_launches_fused, Prog::registers}`; `kronos_model::{token_launches_fused, launches_per_token_fused}`; `kronos_perf::{LAYER_KINDS_FUSED, token_kinds_fused}`; `gpu_sim::cmdproc::{q8_fused_on_cpu, Q8_FUSED_NEEDS}`. `PROGRAMS`, `token_launches` și octeții QMD de azi: neschimbați. Nota: `cyber-gpu/integration/cyber-universe/C-147_etapa3a-programe-lipite.md`. Commit: `96301cf`.
 - **Sesiunea 119 (C-147 / C-150, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::kronos_perf` (`Kind`, `LAYER_KINDS`, `ALL_KINDS`, `token_kinds`, `KindProfile`, `KindTime`, `rows`, `launch_rows`, `launch_cost_rows`, `journal_launch_cost`, `VramCopy`, `VramCopySpeed`, `VRAM_COPY_BYTES`, `VRAM_COPY_REPEATS`, `PAPER_MB_S`, `copy_rows`, `ParsedPerf`, `value_row`, `parse_journal`); modulul nou `nvidia_ga104::gsp::perf` (`encode_get_pstate`, `read_pstate`, `Pstate`, `When`, `journal_pstate`, `rows`, `BoostPlan` **oprit implicit**, `BoostShape`, `read_boost`, `boost_flags`, constantele comenzilor); `kronos_speed::{K651_LAYERS, K651_VOCAB, K651_CONTEXT, K651_SHAPE, ModelLimits::k651}`. Nota: `cyber-gpu/integration/cyber-universe/C-147_etapa0-masuratori.md`. Commit: `02bbc36` (codul: `9c5e8e8`, `c2c228b`).
 - **Sesiunea 118:** nicio schimbare de cod (doar analiză + notă pentru OS); OS-ul la `e74b418` rămâne valabil.
 - **Sesiunea 116 (C-145, doar adăugări — OS-ul compilează neschimbat la `3a23dc0`):** `gpu_core::diag::{Flush, LiveSink, Routine, LiveStats}`, `Journal::{with_live_sink, set_routine, routine, flush_live, live_stats}`; modulul nou `nvidia_ga104::kronos_fast`: `GEN_WRITES`, `GEN_MAX_PENDING`, `gen_routine`, `WriteShadow`, `TokenSplit`, `SplitSummary`, `TimeSplit`, `ParsedSplit`, `parse_split`, `FIGURES`; `kronos_gen::Generation::{run_check_after, deferred_bytes}`. Nota: `cyber-gpu/integration/cyber-universe/C-145_pauzele-driverului.md`. Commit: `e74b418` (codul: `8a8e227`).
@@ -49,9 +44,9 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: C-148 punctul 3 (legarea etapei 0 în `os-309`); pentru #651, `STRIDE = 0x200`.
+- De la `cyber-universe`: C-148 (etapa 0 → `os-309`); apoi lista lipită într-un Release separat; pentru #651, `STRIDE = 0x200`.
 - De la Kronos: nimic nou.
 
 ## Blocaje / nevoie de Adrian
-- **Nu e blocat.** C-147 continuă cu punctele 2, 3, 5, 6 (în SIMULARE).
-- **De la Adrian (decizii, fără grabă):** **proba FLR** și primele scrieri pe **laptop**. De știut: temperatura plăcii nu are cale documentată de citire — la viteza maximă protecția rămâne a plăcii + durata limitată (10 min) + ștergerea la final; un prag de temperatură ar cere o decizie separată.
+- **Nu e blocat.** C-147 continuă cu punctele 3, 5, 6 (în SIMULARE), apoi C-151.
+- **De la Adrian (decizii, fără grabă):** primele scrieri pe **laptop**. De știut: lista lipită nu cere un „da” nou (sunt programe noi care calculează același lucru, proba obișnuită — cum scrie la C-147 punctul 2).
