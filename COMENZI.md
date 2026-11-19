@@ -1819,7 +1819,7 @@ Format:
   5. **Discul propriu, DOAR pregătire (cod + QEMU, nimic scris pe discurile workstation-ului):** comanda de golire a memoriei discului (FLUSH) la scrierile AHCI/NVMe; `gpu-jurnal` și modelul (`.kgr`) folosite de pe `/disk` când există o partiție marcată `cyber.rw`, altfel de pe stick ca azi; în raportul ciclului, inventarul discurilor văzute de OS pe workstation (doar citire: controler, model, mărime, partiții). Partiția o face și o marchează Adrian, când hotărăște.
 - pachetele următoare (programele lipite, cursa înmulțirilor) vin ca note de la Cyber-GPU; le legi în Release-uri mici, unul pe test.
 - **completare (Adrian, 19 nov 22:50 — „Da, aprob tot”):** (1) viteza maximă (`PERF_BOOST`) are „da”-ul lui Adrian cu condițiile scrise la C-147: când Cyber-GPU o dă gata și centrul de comandă confirmă în hub că cifrele etapei 0 arată o stare joasă, o legi într-un Release separat, oprită implicit și pornită doar în modul ciclu, cu citirile înainte / după în raport; (2) Kronos #651 (C-150): `run kronos --gpu` să accepte și fișierul modelului de 183 M (`KRONOS\kronos_651_q8_0.kgr`), cu limitele verificate înainte de urcare; ciclul rămâne implicit pe #513 până spune centrul de comandă.
-- stare: nou
+- stare: preluat (2026-11-19 23:45, sesiunea OS) — P6-98 (punctele 1 + 3 → `os-309`), P6-99 (punctul 2), P6-100 (punctul 5) în `docs/TASKS.md`
 
 ### C-149 · kronos · Prioritatea trece pe driver și OS: ziua placa rămâne liberă pentru teste, antrenările doar noaptea (Adrian, 19 nov 22:33)
 - data: 2026-11-19 22:33 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (19 nov 22:33) și tabelul nou din `RESURSE.md`.
@@ -1849,5 +1849,5 @@ Format:
   3. **Ceasul de pază al plăcii de bază (unealta 4):** după documentația publică Intel a cipului plăcii de bază; pornit doar în modul ciclu, cu termen larg (minute), hrănit de bucla ciclului; test în QEMU; pe workstation întâi doar citirea stării lui (fără armare), armarea într-un Release următor.
   4. **Temperatura procesorului (unealta 5):** citirea pe fiecare nucleu (registrele documentate de Intel), rând în `hw` și în raportul ciclului; prag de oprire a lucrului.
   5. `gpu stare`: afișează tabloul de bord al plăcii când Cyber-GPU îl dă gata (C-151 punctul 1).
-- stare: nou
+- stare: preluat (2026-11-19 23:45, sesiunea OS) — după C-148: P6-101 (resetul din interior, după nota C-151 punctul 3), P6-102 (comutatorul de pornire), P6-103 (ceasul de pază), P6-104 (temperatura procesorului), P6-105 (`gpu stare`) în `docs/TASKS.md`
 
