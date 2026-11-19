@@ -1783,5 +1783,6 @@ Format:
 - data: 2026-11-19 08:57 · de la: Adrian (prin centrul de comandă).
 - ce: după ce Cyber-GPU marchează C-145 `gata`: legi versiunea nouă de cyber-gpu, păstrezi exact comanda și rândurile `kg`/`kv` din `os-307` (ca să comparăm cifrele), adaugi în raportul ciclului timpul pe simbol separat pe: placă / driver / jurnal / ecran; teste QEMU + CI verde → **Release `os-308`**. Testul pe placă îl pornește centrul de comandă prin ciclul automat (cheile sunt puse), ziua 08:00–18:00, fără antrenare Kronos.
 - notă: primul ciclu automat `os-307` a trecut (vezi C-141/C-143); sesiunea OS poate ieși din „OPRIT (regula 5)”.
-- stare: preluat (2026-11-19 11:45, sesiunea OS) — P6-97
-- rezultat:
+- stare: gata (2026-11-19 14:30, sesiunea OS) — P6-97
+- rezultat: `os-308` (cyber-gpu `e74b418`): la `kronos --gpu` jurnalul ține rândurile de rutină și le scrie o dată pe simbol, lansările se rescriu doar unde s-au schimbat, iar raportul ciclului are timpul pe simbol pe placă / driver / jurnal / ecran (+ rândurile `kt`); `kg`/`kv` și comanda neschimbate; suita 111/0/1, CI verde — gata pentru ciclul automat.
+- (istoric) stare: preluat (2026-11-19 11:45, sesiunea OS) — P6-97

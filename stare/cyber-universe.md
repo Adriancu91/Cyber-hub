@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-19 08:45 (ora României) · **de:** sesiunea OS programată (08:40) — nimic nou; OPRIT (regula 5) până la o comandă nouă sau jurnalul `os-307`. Ultimul Release: **`os-307`**.
+**Actualizat:** 2026-11-19 14:30 (ora României) · **de:** sesiunea OS programată (11:40) — C-146 → P6-97 gata. Ultimul Release: **`os-308`**.
 
 ## Acum
+- **19 nov 14:30 — `os-308` gata (C-146, după primul ciclu automat `os-307`, care a trecut cap-coadă fără tine):** OS-ul folosește codul Cyber-GPU nou (`e74b418`, C-145). La `run kronos --gpu --n 16 Buna ziua`: jurnalul nu mai scrie și sincronizează stick-ul la fiecare rând de rutină (le ține în memorie și le scrie o dată pe simbol — toate rândurile rămân, în aceeași ordine), iar lansările se rescriu în placă doar unde s-au schimbat (verificat la final prin recitire). Raportul ciclului arată acum timpul pe simbol pe bucăți: placă / driver / jurnal / ecran, plus verificarea pe procesor. Comanda și rândurile `kg`/`kv` sunt ca în `os-307`, ca să comparăm cifrele. Testat doar în SIMULARE (suita 111/0/1, CI verde). Așteptat (estimare, nemăsurat): ~20 simboluri/s cu driverul în loc de 3,10.
 - **19 nov 08:45:** nimic nou pentru OS (nicio comandă; niciun jurnal de la primul ciclu `os-307`); CI verde. „OPRIT” rămâne până la o comandă nouă sau jurnalul testului tău. Placa e liberă de la 07:00 — aștept primul test `os-307`.
 - **19 nov 05:45:** nimic nou pentru OS (nicio comandă; Kronos eliberează placa la 07:00); niciun jurnal de la primul ciclu `os-307`; CI verde. A treia sesiune la rând fără sarcină → „OPRIT” până la o comandă nouă sau jurnalul testului tău. Aștept primul test `os-307` când placa e liberă (după 07:00).
 - **19 nov 02:45:** nimic nou pentru OS (nicio comandă; Kronos S126 ține placa în noaptea asta); niciun jurnal de la primul ciclu `os-307`; CI verde. Coada fără tine e goală (regula 5: 2 din 3). Aștept primul test `os-307` când placa e liberă.
@@ -98,11 +99,14 @@
 - `analiza` (inventar ca UHL, `uhl-inventory/0.1`), `hw` cu modelul din SMBIOS, `hub ruleaza` / `hub asculta`, `test tot`, `kronos --conversatie`, git pe ramuri `os/…`, `web`, `files`; bibliotecile `crypto/`, `tls/`, `json/`, `rtl8168/`, `e1000e/`.
 
 ## De ce are nevoie de la ceilalți
-- **`cyber-gpu`:** nimic acum (`db34429`, C-139, legat în `os-306`). După jurnalul testului `os-306`: pasul următor pentru I14 (dacă nu trece) sau #513 pe placă (zona de comenzi de 32 KiB, întrebarea 2 din nota C-139). După jurnalul `gpu lant --i9 c125` de pe workstation: pasul următor pentru I9; după DA-ul lui Adrian, pasul 3 din C-116 pe laptop.
+- **`cyber-gpu`:** nimic acum (`e74b418`, C-145, legat în `os-308`). După ciclul `os-308`: cifrele `kt` arată ce a rămas (de ex. verificarea pe procesor între simboluri, C-145 punctul 3). După jurnalul testului `os-306`: pasul următor pentru I14 (dacă nu trece) sau #513 pe placă (zona de comenzi de 32 KiB, întrebarea 2 din nota C-139). După jurnalul `gpu lant --i9 c125` de pe workstation: pasul următor pentru I9; după DA-ul lui Adrian, pasul 3 din C-116 pe laptop.
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
-- **Pentru primul test `os-307` (centrul de comandă sau Adrian):** pe stick `os-307` + `kronos\kronos_513_q8_0.kgr` + `hub\permite-test-placa` + `github.token`; automat: `bucla-automata.ps1 pregateste -TestPlaca`; manual: pornire rece → `run kronos --gpu --n 16 Buna ziua` → DA → `trimite`. După Windows, `gpu recupereaza` rulează prima dată pe placa reală; dacă pică, e nevoie de o pornire rece (Adrian). FLR (C-142) doar după „da”-ul tău.
+- **Pentru ciclul automat cu `os-308` (centrul de comandă):** ca la `os-307`: `bucla-automata.ps1 pregateste -DosarRelease <os-308> -TestPlaca` (stick-ul are deja #513, `permite-test-placa`, `github.token`), ziua 08:00–18:00, fără antrenare Kronos. Nimic altceva de la tine.
+- **După cifre:** dacă vrei mai departe (de ex. verificarea pe procesor mai rapidă, ca „cu verificare” să nu mai fie ~0,25 simb/s), e nevoie de o comandă nouă (întâi Cyber-GPU sau direct OS-ul).
+- (făcut 19 nov 08:52, a trecut) primul test `os-307`.
+- (istoric) **Pentru primul test `os-307`:** pe stick `os-307` + `kronos\kronos_513_q8_0.kgr` + `hub\permite-test-placa` + `github.token`; automat: `bucla-automata.ps1 pregateste -TestPlaca`; manual: pornire rece → `run kronos --gpu --n 16 Buna ziua` → DA → `trimite`. După Windows, `gpu recupereaza` rulează prima dată pe placa reală; dacă pică, e nevoie de o pornire rece (Adrian). FLR (C-142) doar după „da”-ul tău.
 
 **Nou (18 nov 17:45):**
 - **Coada OS fără tine e goală.** Pasul următor natural e un model Kronos adevărat pe placă (de ex. #513) și mai multe simboluri la rând — asta are nevoie
