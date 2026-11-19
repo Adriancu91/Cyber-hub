@@ -1,16 +1,15 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-19 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-19 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **S124 (C-132) gata, verificat: rămâne #651.** Modelul nou #692 a urcat la formulări nevăzute de la 33 % la 45 %, dar pragul era 48 %. Restul a trecut: calcule 75/200 (prag 61), chat 48/200 (#651: 25), româna și „din text” nestricate.
-- **S126 (C-144): antrenarea s-a terminat la 03:52, cod 0** — modelul nou **#704** (română 1,0903 ≤ 1,0978); placa max 6.563 MB / 65 °C. **Examenele rulează din 04:00, gata ~06:00. Placa liberă la 07:00.**
-- Chat-ul Kronos merge pe 8787 cu **#651**. Testele: 1.530 trec. Disc C: 170,9 GB liberi.
-- **C-137/C-138 gata** (centrul de comandă, 10:39): 139,7 GB șterși, C: 37,0 → **176,7 GB liberi**; modelele de păstrat sunt la locul lor.
+- **S126 (C-144) gata, verificat: rămâne #651.** Modelul nou #704 (încă 4 h din #692 pe aceleași date) a luat la formulări nevăzute **42,0 %** (prag 48,0 %; #692 avea 45,0 %). Restul a trecut: chat 49 (#651: 25), calcule 70 ≥ 61, româna și „din text” nestricate. Concluzie: mai multe ore pe aceleași date nu mai ajută.
+- Noaptea a mers fără erori (placa max 6.563 MB / 65 °C); placa liberă de la ~05:50.
+- Chat-ul Kronos merge pe 8787 cu **#651**. Testele: 1.530 trec. Disc C: ~160–170 GB liberi.
 
 ## Urmează
-- **Verdictul S126** (aceleași praguri, formulări nevăzute ≥ 48 %) pe la ~06:00; verificat de supraveghetor la 08:15.
-- **19 nov ziua (08:00–18:30): nimic de la Kronos pe placă** — e pentru C-141 (#513 pe placă, cu Adrian) și ciclul automat C-143.
+- **19 nov ziua (08:00–18:30): nimic de la Kronos pe placă** — e pentru C-141 (#513 pe placă, `os-307`, cu Adrian) și ciclul automat C-143.
+- **S127, noaptea 19 → 20 nov (aprobată de supraveghetor, în granițe):** date noi făcute de program pentru adunare / scădere / împărțire formulate altfel (acolo #704 are doar 3 din 78), apoi 4 h din #692 + examenele, aceleași praguri (C-132). Procesorul de la 19:00, placa cel târziu de la 00:30, liberă la 07:00.
 - Bucla 👍/👎 (S118) pornește pe placă la ≥ 30 de lecții noi (acum 2).
 - Textul românesc S119 în antrenare doar ca sarcină separată, cu „da”.
 
@@ -19,7 +18,7 @@
 - Unelte pentru date mari cu RAM mic (`date_bucati`).
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe` / `cyber-gpu`: o notă în `COMENZI.md` dacă ciclul automat (C-143) sau un test vrea placa noaptea (19:00–07:00), ca să nu se suprapună cu o antrenare Kronos. Pentru C-141: #513 rămâne în `C:\Kronos\cyberspace\lucru\export\` (suma în `integrare/kronos/MODEL.md`).
+- De la `cyber-universe` / `cyber-gpu`: o notă în `COMENZI.md` dacă ciclul automat (C-143) sau un test vrea placa noaptea (19:00–07:00) — **în noaptea 19 → 20 nov placa e a lui Kronos (S127)**. Pentru C-141: #513 rămâne în `C:\Kronos\cyberspace\lucru\export\` (suma în `integrare/kronos/MODEL.md`).
 - De la `suita-office`: nimic.
 
 ## Blocaje / nevoie de Adrian
