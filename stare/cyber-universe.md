@@ -1,8 +1,9 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-19 14:30 (ora României) · **de:** sesiunea OS programată (11:40) — C-146 → P6-97 gata. Ultimul Release: **`os-308`**.
+**Actualizat:** 2026-11-19 14:50 (ora României) · **de:** sesiunea OS programată (14:40) — ciclul automat `os-308` a trecut. Ultimul Release: **`os-308`**.
 
 ## Acum
+- **19 nov 14:50 — ciclul automat `os-308` a trecut pe placă (14:37, fără tine):** lanțul întreg + #513: 16 simboluri pe placă, toate identice cu procesorul. **Viteza cu driverul: 10,99 simboluri/s** (la `os-307`: 3,10 → de ~3,5 ori mai repede). Placa în sine: 43,8 simb/s (neschimbat). Din ~87 ms pe simbol, ~74 ms sunt scrierea jurnalului pe stick (o dată pe simbol); verificarea pe procesor între simboluri rămâne ~3,9 s (0,25 simb/s cu ea). Nicio schimbare de cod; CI verde. Propunere: `idei/2026-11-19_kronos-placa-mai-rapid.md`.
 - **19 nov 14:30 — `os-308` gata (C-146, după primul ciclu automat `os-307`, care a trecut cap-coadă fără tine):** OS-ul folosește codul Cyber-GPU nou (`e74b418`, C-145). La `run kronos --gpu --n 16 Buna ziua`: jurnalul nu mai scrie și sincronizează stick-ul la fiecare rând de rutină (le ține în memorie și le scrie o dată pe simbol — toate rândurile rămân, în aceeași ordine), iar lansările se rescriu în placă doar unde s-au schimbat (verificat la final prin recitire). Raportul ciclului arată acum timpul pe simbol pe bucăți: placă / driver / jurnal / ecran, plus verificarea pe procesor. Comanda și rândurile `kg`/`kv` sunt ca în `os-307`, ca să comparăm cifrele. Testat doar în SIMULARE (suita 111/0/1, CI verde). Așteptat (estimare, nemăsurat): ~20 simboluri/s cu driverul în loc de 3,10.
 - **19 nov 08:45:** nimic nou pentru OS (nicio comandă; niciun jurnal de la primul ciclu `os-307`); CI verde. „OPRIT” rămâne până la o comandă nouă sau jurnalul testului tău. Placa e liberă de la 07:00 — aștept primul test `os-307`.
 - **19 nov 05:45:** nimic nou pentru OS (nicio comandă; Kronos eliberează placa la 07:00); niciun jurnal de la primul ciclu `os-307`; CI verde. A treia sesiune la rând fără sarcină → „OPRIT” până la o comandă nouă sau jurnalul testului tău. Aștept primul test `os-307` când placa e liberă (după 07:00).
@@ -103,6 +104,8 @@
 - **`kronos`:** Release-ul `kronos-kgr1-513` (opțional).
 
 ## Blocaje / nevoie de Adrian
+- **Nimic urgent.** Dacă vrei Kronos și mai repede pe placă: „da” la `idei/2026-11-19_kronos-placa-mai-rapid.md` (pas 1: jurnalul scris pe stick doar la final → estimat ~40 simb/s; pas 2: verificarea pe procesor mai rapidă). Fără comandă nouă, sesiunile OS doar verifică (regula 5: 1 din 3).
+- (făcut 19 nov 14:37, a trecut) ciclul automat cu `os-308`.
 - **Pentru ciclul automat cu `os-308` (centrul de comandă):** ca la `os-307`: `bucla-automata.ps1 pregateste -DosarRelease <os-308> -TestPlaca` (stick-ul are deja #513, `permite-test-placa`, `github.token`), ziua 08:00–18:00, fără antrenare Kronos. Nimic altceva de la tine.
 - **După cifre:** dacă vrei mai departe (de ex. verificarea pe procesor mai rapidă, ca „cu verificare” să nu mai fie ~0,25 simb/s), e nevoie de o comandă nouă (întâi Cyber-GPU sau direct OS-ul).
 - (făcut 19 nov 08:52, a trecut) primul test `os-307`.

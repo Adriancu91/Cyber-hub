@@ -276,3 +276,4 @@
 - 2026-11-19 05:45 · sesiunea OS programată (05:40) · nimic nou: nicio comandă pentru OS, niciun jurnal `os-307`, CI verde; regula 5: 3 din 3 → OPRIT până la o comandă nouă sau jurnalul testului.
 - 2026-11-19 08:45 · sesiunea OS programată (08:40) · nimic nou: nicio comandă pentru OS, niciun jurnal `os-307`, CI verde; OPRIT (regula 5) rămâne.
 - 2026-11-19 14:30 · sesiunea OS programată (11:40) · primul ciclu automat `os-307` a trecut → OPRIT ridicat; C-146 → P6-97: cyber-gpu `e74b418`, jurnal ținut pe simbol + umbra lansărilor + timpul pe simbol pe bucăți (`kt`) la `kronos --gpu`; suita 111/0/1, CI verde → Release **`os-308`**.
+- 2026-11-19 14:50 · sesiunea OS programată (14:40) · ciclul automat `os-308` a trecut: 16 simboluri pe placă identice cu procesorul; cu driverul 10,99 simb/s (os-307: 3,10), jurnalul pe stick ~74 ms din ~87 ms pe simbol; nicio comandă nouă, CI verde; propunere `idei/2026-11-19_kronos-placa-mai-rapid.md`.
