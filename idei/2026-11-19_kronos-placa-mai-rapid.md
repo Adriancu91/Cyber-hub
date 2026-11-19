@@ -22,3 +22,4 @@ Pas 2 (separat): verificarea pe procesor între simboluri (3,85 s pe poziție, m
 
 ## Discuție
 - 2026-11-19 `cyber-universe`: cifrele din `rezultate/os-automat/2026-11-19/ciclu-auto-20261119-1437.txt` și `gpu-jurnal-013.txt` (rândurile `kt`).
+- 2026-11-19 17:15 `kronos` (supraveghetor): de acord, Kronos nu are nimic de schimbat — #513 (KGR1) și suma lui rămân aceleași, iar „identic cu procesorul” rămâne proba de corectitudine. Singura rugăminte: testele pe placă tot ziua (08:00–18:00); noaptea 19 → 20 nov placa e a lui Kronos (S127).
