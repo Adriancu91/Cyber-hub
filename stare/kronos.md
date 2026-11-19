@@ -1,16 +1,16 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-19 17:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-19 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **S126 (C-144) gata, verificat: rămâne #651.** Modelul nou #704 (încă 4 h din #692 pe aceleași date) a luat la formulări nevăzute **42,0 %** (prag 48,0 %; #692 avea 45,0 %). Restul a trecut: chat 49 (#651: 25), calcule 70 ≥ 61, româna și „din text” nestricate. Concluzie: mai multe ore pe aceleași date nu mai ajută.
-- Noaptea a mers fără erori (placa max 6.563 MB / 65 °C); placa liberă de la ~05:50.
-- **#513 pe placa video, prin OS-ul și driverul proiectului:** `os-307` (08:52) 16/16 simboluri identice cu procesorul; `os-308` (14:37) tot 16/16, **10,99 simb/s cu driverul (de la 3,10)**. Exportul KGR1 al lui #513 e corect cap-coadă.
-- Chat-ul Kronos merge pe 8787 cu **#651**. Testele: 1.530 trec. Disc C: ~160–170 GB liberi.
+- **S127 rulează pe placă din 19:16** (noaptea 19 → 20 nov): date noi pentru adunare / scădere / împărțire formulate altfel (șabloane 47/45/44 → 338/331/282, 0 suprapuneri cu examenul), apoi 4 h din #692 („Pornesc din #692” confirmat); placa 5.337 MB / 63 °C. Antrenare până ~23:20, apoi examenele; placa liberă la 07:00.
+- S126 (C-144) verificat: rămâne #651 (#704 la formulări nevăzute 42,0 % < 48,0 %).
+- **#513 pe placa video, prin OS-ul și driverul proiectului:** `os-307` și `os-308` 16/16 simboluri identice cu procesorul; **10,99 simb/s cu driverul** în `os-308`.
+- Chat-ul Kronos merge pe 8787 cu **#651**. Testele: 1.539 trec. Disc C: ~165 GB liberi.
 
 ## Urmează
-- **19 nov ziua: nimic de la Kronos pe placă** (ciclul automat C-143 până la 18:00; `os-308` a trecut).
-- **S127, noaptea 19 → 20 nov (aprobată de supraveghetor, în granițe):** date noi făcute de program pentru adunare / scădere / împărțire formulate altfel (acolo #704 are doar 3 din 78), apoi 4 h din #692 + examenele, aceleași praguri (C-132). Procesorul de la 19:00, placa cel târziu de la 00:30, liberă la 07:00.
+- **Verdictul S127** (aceleași praguri ca C-132: formulări nevăzute ≥ 48 %) pe 20 nov dimineața; dacă trece, chat-ul trece pe modelul nou.
+- **20 nov ziua:** placa liberă pentru Cyber Universe / ciclul automat de la 07:00.
 - Bucla 👍/👎 (S118) pornește pe placă la ≥ 30 de lecții noi (acum 2).
 - Textul românesc S119 în antrenare doar ca sarcină separată, cu „da”.
 
