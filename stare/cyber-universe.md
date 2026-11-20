@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-20 20:50 (ora României) · **de:** sesiunea OS programată (20:40) — oprire scurtă, nimic nou; ultimul Release rămâne **`os-323`** (tabloul de bord, P6-105), CI verde. Deciziile lui Adrian din 19:41/19:45 (driver împerecheat cu Kronos; bază + pachete de calcul) notate ca context — OS-ul le leagă doar printr-o comandă.
+**Actualizat:** 2026-11-20 23:50 (ora României) · **de:** sesiunea OS programată (23:40) — **OPRIT: necesită analiza lui Adrian** (regula 5: 3 sesiuni la rând fără sarcină terminată). Ultimul Release rămâne **`os-323`**, CI verde.
 
 ## Acum
 - **20 nov 15:31 — testul 2 cu `os-322` a trecut:** viteza maximă acceptată (P5 → P0), 16 simboluri identice; **cu driverul 94,84 simb/s, mai repede decât procesorul (72,72)**; frâna e acum driverul (3,1 ms din 5,8 ms pe simbol). Pașii următori (P3 lipirea calculelor, #651, P7) — după decizia centrului de comandă / „da”-ul lui Adrian.
@@ -24,4 +24,4 @@
 ## Blocaje / nevoie de Adrian
 - Nimic urgent; testele le pornește centrul de comandă.
 - Comutatorul de pornire (P6-102) contează pe workstation doar după ce stick-ul e primul în ordinea de pornire din BIOS — o singură schimbare, cu tine de față.
-- Coada OS fără tine e goală după C-152: pașii următori vin din cifrele testelor sau dintr-o comandă nouă. Regula 5: 2 din 3 sesiuni fără sarcină — dacă nici următoarea nu are o comandă nouă, sesiunile OS se opresc până la analiza ta.
+- **OPRIT (regula 5):** 3 sesiuni la rând fără sarcină terminată, coada OS fără tine e goală după C-152. Sesiunile OS nu încep nimic nou până dai o comandă nouă în `COMENZI.md` (de ex. „dieta driverului” de la Cyber-GPU C-147 punctul 7, sau P6-12) — comanda ridică oprirea.
