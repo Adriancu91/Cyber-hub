@@ -1,15 +1,15 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-20 01:45 (ora României) · **de:** sesiunea Cyber-GPU 120 (cloud, fără placă) — **C-147 punctul 2 (etapa 3a, calculele lipite) gata în SIMULARE**: un simbol al lui #513 cere **88 de lansări în loc de 196**. 561 PASS (SIMULARE). Copia C-34 la `96301cf`.
+**Actualizat:** 2026-11-20 04:50 (ora României) · **de:** sesiunea Cyber-GPU 121 (cloud, fără placă) — **C-147 punctul 3 (etapa 4) gata în SIMULARE**: înmulțirea nouă `q8_matvec32` (toate cele 32 de fire la lucru) + **cursa pe placă** pregătită pentru OS. 575 PASS (SIMULARE), CI verde. Copia C-34 la `ab85fe7`.
 
 ## Acum
-- **Programul nou `q8_fused`** (compilat cu aceeași unealtă NAK, 9 248 octeți): face într-o singură lansare înmulțirea cu matricea **și** operațiile mărunte de după ea (termenul liber, adunarea cu stratul dinainte, GELU, scrierea cheii și valorii în cache). Un strat: 16 → 7 lansări.
-- **De ce ar trebui să dea exact aceleași numere:** în listarea compilatorului, partea de înmulțire are aceleași instrucțiuni ca programul vechi, iar GELU și adunările sunt aceleași instrucțiuni ca la programele separate. În SIMULARE: stratul și un model mic dau **aceleași logit-uri bit cu bit** ca lista de 196; greșelile plantate sunt prinse.
-- **Etapa 0 (sesiunea 119)** rămâne de legat în `os-309` (nota `C-147_etapa0-masuratori.md`).
+- **Programul nou `q8_matvec32`** (NAK 25.0.7, 3 184 octeți, 199 instrucțiuni față de 503): fiecare fir ia un sfert de bloc în loc de un bloc întreg, deci la matricele cu 768 de intrări lucrează **toate cele 32 de fire** (azi 24); cele 32 de fire citesc greutățile una după alta, fără goluri, iar vectorul de intrare cu citiri de 16 octeți. Aceleași argumente ca `q8_matvec`. În SIMULARE: identic bit cu bit cu oracolul lui (ordinea citită în listare), în marja de azi față de procesor.
+- **Cursa** (`q8_race`): pe cele 5 forme de matrice ale lui #513, cele două programe alternează (A B B A), cu marcă de timp după fiecare lansare și rezultatul verificat după fiecare serie; rânduri `kr` în jurnal. Regula, scrisă înainte: o formă trece pe programul nou doar dacă acesta trece proba pe placă **și** e mai rapid cu cel puțin 5 %.
+- **Nu s-a făcut (și de ce, în `cyber-gpu/docs/C-147_ETAPA4.md`):** citiri de 16 octeți din greutăți (blocurile de 36 de octeți nu sunt aliniate), vectorul în memoria partajată (ajută doar cu mai multe rânduri pe grup), programele f32 vechi în cursă (locul lor e la loturi).
 
 ## Urmează
-1. **OS:** după `os-309`, lista lipită într-un Release separat, oprită implicit (nota: `cyber-gpu/integration/cyber-universe/C-147_etapa3a-programe-lipite.md`); proba: aceleași 16 simboluri ca procesorul și aceleași logit-uri ca lista de 196, plus `kp`/`kt` înainte/după.
-2. **Noi (în ordine):** C-147 punctul 3 (`q8_matvec` cu toate cele 32 de fire + cursa variantelor), C-151 punctul 3 (nota de reset din interior pentru OS), C-151 punctul 1 (tabloul de bord RUSD), C-147 punctele 5, 6; punctul 7 după cifrele `os-309`.
+1. **OS:** după `os-309` și lista lipită, cursa într-un Release, oprită implicit (nota: `cyber-gpu/integration/cyber-universe/C-147_etapa4-cursa-q8.md`; ~320 de lansări, sub o secundă).
+2. **Noi (în ordine):** C-151 punctul 3 (nota de reset din interior pentru OS), C-151 punctul 1 (tabloul de bord RUSD), C-147 punctele 5, 6; punctul 7 după cifrele `os-309`; după cursa pe placă: câștigătorul în lista de simbol (și `q8_fused` cu aceeași împărțire).
 3. **Viteza maximă pe placă:** doar după ce centrul de comandă confirmă că `ks`/`kc` arată o stare joasă.
 4. **Adrian (fără grabă):** DA/NU pentru primele scrieri pe laptop (`GA106_LAPTOP.md` §7).
 
@@ -19,6 +19,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 121 (C-147 punctul 3, doar adăugări — OS-ul compilează neschimbat):** `gpu_compute::q8::{row_gpu_order_w32, matvec_gpu_order_w32, busy_threads, W32_QUARTERS, W32_UNIT}`; `gpu_sim::cmdproc::{q8_matvec32_on_cpu, Q8_MATVEC32_NEEDS}`; modulul nou `nvidia_ga104::q8_matvec32` (`Q8_MATVEC32`, `cbuf`, `qmd`, `judge`, …); modulul nou `nvidia_ga104::q8_race` (`Entrant`, `K513_LANES`, `heats`, `encode_heat`, `Standing`, `rows`, `journal`, `parse_journal`, …). Nimic schimbat în ce primește placa azi. Nota: `cyber-gpu/integration/cyber-universe/C-147_etapa4-cursa-q8.md`. Commit: `ab85fe7` (codul: `c11225d`).
 - **Sesiunea 120 (C-147 punctul 2, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::q8_fused` (`Q8_FUSED`, `cbuf`, `Tail`, steagurile); `kronos_layer::{Prog::Q8Fused, PROGRAMS_FUSED, LAUNCHES_PER_TOKEN_FUSED, token_launches_fused, Prog::registers}`; `kronos_model::{token_launches_fused, launches_per_token_fused}`; `kronos_perf::{LAYER_KINDS_FUSED, token_kinds_fused}`; `gpu_sim::cmdproc::{q8_fused_on_cpu, Q8_FUSED_NEEDS}`. `PROGRAMS`, `token_launches` și octeții QMD de azi: neschimbați. Nota: `cyber-gpu/integration/cyber-universe/C-147_etapa3a-programe-lipite.md`. Commit: `96301cf`.
 - **Sesiunea 119 (C-147 / C-150, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::kronos_perf` (`Kind`, `LAYER_KINDS`, `ALL_KINDS`, `token_kinds`, `KindProfile`, `KindTime`, `rows`, `launch_rows`, `launch_cost_rows`, `journal_launch_cost`, `VramCopy`, `VramCopySpeed`, `VRAM_COPY_BYTES`, `VRAM_COPY_REPEATS`, `PAPER_MB_S`, `copy_rows`, `ParsedPerf`, `value_row`, `parse_journal`); modulul nou `nvidia_ga104::gsp::perf` (`encode_get_pstate`, `read_pstate`, `Pstate`, `When`, `journal_pstate`, `rows`, `BoostPlan` **oprit implicit**, `BoostShape`, `read_boost`, `boost_flags`, constantele comenzilor); `kronos_speed::{K651_LAYERS, K651_VOCAB, K651_CONTEXT, K651_SHAPE, ModelLimits::k651}`. Nota: `cyber-gpu/integration/cyber-universe/C-147_etapa0-masuratori.md`. Commit: `02bbc36` (codul: `9c5e8e8`, `c2c228b`).
 - **Sesiunea 118:** nicio schimbare de cod (doar analiză + notă pentru OS); OS-ul la `e74b418` rămâne valabil.
@@ -44,9 +45,9 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: C-148 (etapa 0 → `os-309`); apoi lista lipită într-un Release separat; pentru #651, `STRIDE = 0x200`.
+- De la `cyber-universe`: C-148 (etapa 0 → `os-309`); apoi lista lipită și cursa în Release-uri separate; pentru #651, `STRIDE = 0x200`.
 - De la Kronos: nimic nou.
 
 ## Blocaje / nevoie de Adrian
-- **Nu e blocat.** C-147 continuă cu punctele 3, 5, 6 (în SIMULARE), apoi C-151.
-- **De la Adrian (decizii, fără grabă):** primele scrieri pe **laptop**. De știut: lista lipită nu cere un „da” nou (sunt programe noi care calculează același lucru, proba obișnuită — cum scrie la C-147 punctul 2).
+- **Nu e blocat.** Urmează C-151 punctul 3, apoi 1; C-147 punctele 5, 6 (în SIMULARE).
+- **De la Adrian (decizii, fără grabă):** primele scrieri pe **laptop**. Cursa nu cere un „da” nou (programe noi care calculează același lucru, proba obișnuită — C-147 punctul 3).
