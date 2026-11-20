@@ -1,19 +1,18 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-20 10:50 (ora României) · **de:** sesiunea Cyber-GPU 123 (cloud, fără placă) — **C-147 punctul 4 (viteza maximă) gata de legat, în SIMULARE**, după nota centrului de comandă din 09:20 (`os-313`: P8, memoria la 3 %). 587 PASS (SIMULARE), CI verde (run 44703664000). Copia C-34 la `9565f68`.
+**Actualizat:** 2026-11-20 14:20 (ora României) · **de:** sesiunea Cyber-GPU 124 (cloud, fără placă) — **C-151 punctul 1 (tabloul de bord al plăcii, RUSD) gata de legat, în SIMULARE**. 597 PASS (SIMULARE). Copia C-34 la `de4887d`.
 
 ## Acum
-- **Viteza maximă, gata pentru OS:** două funcții noi. `boost_start` — o singură dată, imediat după deschiderea canalului de lucru: citește starea plăcii, cere viteza maximă (forma driverului NVIDIA, 600 s), recitește starea și scrie un verdict (0 oprită / 1 urcată / 2 acceptată fără efect / 3 refuzată). `boost_finish` — la sfârșit, în locul citirii de azi: starea înainte de ștergere, ștergerea cererii, starea la final. Un refuz al plăcii e doar un rând; lanțul merge ca azi.
-- **Sursele, verificate încă o dată:** driverul NVIDIA 570.144 trimite exact acest mesaj, cu mânerele clientului însuși și același plic ca al nostru; o altă comandă din aceeași familie („internă”) a fost deja acceptată de placă la I10. Regula „trei surse” e îndeplinită.
-- **În SIMULARE:** modelul plăcii din `gpu-sim` stă în P8, urcă la P0 cu cererea și coboară la ștergere; și cazurile rele (refuz, acceptată fără efect, fără model) dau rânduri corecte, fără erori false. Cititorul pentru raport (`parse_ks`) și comparația cu `os-313` (`PerfGain`: timpul plăcii pe simbol, copierea VRAM, `ln1`).
-- **Nesigur până la placă:** dacă GSP-RM acceptă cererea de la clientul nostru și cât câștigăm.
+- **Tabloul de bord, gata pentru OS (P6-105, `gpu stare`):** o pagină de memorie pe care programul NVIDIA din placă o completează singur la 500 ms: temperatura, ceasurile nucleului și memoriei, starea de performanță, încărcarea, motivele încetinirii (inclusiv „termic”), puterea medie și limita. Două comenzi pornesc zona, apoi driverul doar citește memorie; la final două comenzi o opresc. Oprit implicit; pe placă (aprobat de Adrian) doar la sfârșitul lanțului, după ce rezultatele sunt pe stick.
+- **Regula „trei surse”: îndeplinită** pentru forma mesajelor, memorie (pagină de sistem contiguă) și citire (marcă de timp – copie – marcă, 10 încercări): antetele și codul NVIDIA 570.144 + seria nouveau din 14 iul 2026. **O diferență, scrisă:** NVIDIA și nouveau trimit comenzile cu clientul intern al GSP-RM; noi cu clientul nostru (aceeași clasă de drepturi ca o comandă deja acceptată pe placă la I10). Dacă placa refuză, e un rând în jurnal și nu se mai trimite nimic.
+- **În SIMULARE (T140):** pornire → citire → oprire, toate refuzurile posibile, citirea cu scriere în curs / secțiune lipsă / ocupată, placa „fierbinte” cu încetinire termică, cititorul `parse_kd`.
+- **Viteza maximă** (sesiunea 123) e la OS (P6-106, Release pentru testul 2 de azi).
 
 ## Urmează
-1. **OS (C-148 completarea 1):** leagă viteza maximă **singură** într-un Release (oprită implicit, pornită doar în modul ciclu), după nota `cyber-gpu/integration/cyber-universe/C-147_punctul4-viteza-maxima.md`; în raport: rândurile `ks` + comparația cu `os-313`. Proba rămâne: aceleași 16 simboluri ca procesorul.
-2. **Noi (în ordine):** C-151 punctul 1 (tabloul de bord RUSD: întâi regula „trei surse”), C-151 punctul 2 (tabloul înainte/după viteza maximă), C-147 punctele 5, 6; punctul 7 (estimarea pe etape) după cifrele testului cu viteza maximă.
-3. **OS (C-152 punctul 1):** resetul FLR, Release separat (nota `C-151_reset-flr.md`).
-4. **Cursa înmulțirilor și lista lipită:** în Release-uri mici, după testul cu viteza maximă.
-5. **Adrian (fără grabă):** DA/NU pentru primele scrieri pe laptop (`GA106_LAPTOP.md` §7).
+1. **OS:** P6-106 (viteza maximă) acum; apoi P6-101 (resetul FLR) și P6-105 (`gpu stare` = tabloul de bord), după nota `cyber-gpu/integration/cyber-universe/C-151_tablou-rusd.md` — într-un Release separat de viteza maximă, dacă centrul de comandă nu cere altfel.
+2. **Noi:** C-151 punctul 2 (tabloul înainte/după viteza maximă, pragul de temperatură) după ce tabloul merge pe placă; până atunci C-147 punctele 5, 6; punctul 7 după cifrele testului cu viteza maximă.
+3. Dacă placa refuză tabloul de la clientul nostru: varianta cu mânerele interne (citirea `GET_GSP_STATIC_INFO`), cu „da”-ul lui Adrian.
+4. **Adrian (fără grabă):** DA/NU pentru primele scrieri pe laptop (`GA106_LAPTOP.md` §7).
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
@@ -21,6 +20,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 124 (C-151 punctul 1, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::gsp::rusd` (`RusdPlan` **oprit implicit**, `rusd_start` → `RusdStart` (`page_given`, `polling`), `rusd_stop` → `RusdStop` (`page_free`), `RusdMem` (trăsătura pentru pagina citită volatil), `read_section` → `Section`, `read_dashboard` → `Dashboard` (`temp_c`, `pstate`, `thermal_slowdown`), `dashboard_at_end`, `parse_kd` → `ParsedKd`, `rows`, `off`, `poll`, `reason`, `CMD_INIT`, `CMD_SET_DATA_POLL`, `SHARED_DATA_SIZE`); `gpu_sim::fake_rm::{SimRusd, RusdRule, RUSD_SIZE, cmd::INTERNAL_INIT_USER_SHARED_DATA, cmd::INTERNAL_USER_SHARED_DATA_SET_DATA_POLL}` + câmpul public `FakeRm::rusd` (implicit `None` = ca înainte). OS-ul dă o pagină de 4 KiB de memorie de sistem, zero, contiguă. Nota: `cyber-gpu/integration/cyber-universe/C-151_tablou-rusd.md`. Commit: `de4887d`.
 - **Sesiunea 123 (C-147 punctul 4, doar adăugări — OS-ul compilează neschimbat):** în `nvidia_ga104::gsp::perf`: `boost_start`, `boost_finish`, `BoostStart` (`verdict`, `needs_clear`), `BoostEnd`, `BoostAnswer`, `BoostVerdict`, `RmControl`, `ParsedKs`, `parse_ks`, rândurile noi `rows::{BEFORE_CLEAR, OFF, VERDICT}`; `kronos_perf::PerfGain` (`compare`); `gpu_sim::fake_rm::{SimPerf, BoostRule, cmd::{PERF_GET_CURRENT_PSTATE, PERF_BOOST, INTERNAL_PERF_BOOST_SET_2X}}` + câmpul public `FakeRm::perf` (implicit `None` = ca înainte). Nimic schimbat în lanțul de azi. Nota: `cyber-gpu/integration/cyber-universe/C-147_punctul4-viteza-maxima.md`. Commit: `9565f68` (codul: `dc899b3`).
 - **Sesiunea 122 (C-151 punctul 3, doar adăugări — OS-ul compilează neschimbat):** modulul nou `gpu_pci::flr` (`FlrPermit`, `SavedConfig`, `save_config`, `function_level_reset` → `FlrDone`, `FLR_WAIT_US`, `FLR_READY_TIMEOUT_US`, `PENDING_TIMEOUT_US`, `POLL_US`); modulul nou `nvidia_ga104::flr_reset` (`FlrBoard`, `reset_if_wpr2_up` → `FlrReport` (`row`), `FlrVerdict` (`code`, `chain_may_run`, `meaning`), `parse_row`); `gpu_sim::pci::{FLR_NOT_READY_READS, SimConfig::with_flr}` + câmpuri `flr_count`, `flr_not_ready_left`, `flr_never_ready`, `pending_transactions`; `gpu_sim::fake_gsp::{FakeGsp::sim_flr, FakeGsp::flr_count, GFW_PRIV_MASK, GFW_REBOOT_READS, SimFault::Wpr2SurvivesFlr, SimFault::GfwNeverAfterFlr}` (variante noi). Nimic schimbat în lanțul de azi. Nota: `cyber-gpu/integration/cyber-universe/C-151_reset-flr.md`. Commit: `388351e`.
 - **Sesiunea 121 (C-147 punctul 3, doar adăugări — OS-ul compilează neschimbat):** `gpu_compute::q8::{row_gpu_order_w32, matvec_gpu_order_w32, busy_threads, W32_QUARTERS, W32_UNIT}`; `gpu_sim::cmdproc::{q8_matvec32_on_cpu, Q8_MATVEC32_NEEDS}`; modulul nou `nvidia_ga104::q8_matvec32` (`Q8_MATVEC32`, `cbuf`, `qmd`, `judge`, …); modulul nou `nvidia_ga104::q8_race` (`Entrant`, `K513_LANES`, `heats`, `encode_heat`, `Standing`, `rows`, `journal`, `parse_journal`, …). Nimic schimbat în ce primește placa azi. Nota: `cyber-gpu/integration/cyber-universe/C-147_etapa4-cursa-q8.md`. Commit: `ab85fe7` (codul: `c11225d`).
@@ -49,9 +49,10 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: Release-ul cu viteza maximă (singură, modul ciclu) și jurnalul lui (rândurile `ks`, `kp`, `kc`); C-152 punctul 1 (resetul FLR) separat; pentru #651, `STRIDE = 0x200`.
+- De la `cyber-universe`: Release-ul cu viteza maximă (P6-106) și jurnalul lui (`ks`, `kp`, `kc`); apoi P6-101 (FLR) și P6-105 (tabloul de bord, rândurile `kd`), separat; pentru #651, `STRIDE = 0x200`.
 - De la Kronos: nimic nou.
 
 ## Blocaje / nevoie de Adrian
-- **Nu e blocat.** Urmează C-151 punctul 1 (tabloul de bord), apoi 2; C-147 punctele 5, 6 (în SIMULARE).
-- **De la Adrian:** nimic nou pentru viteza maximă („da”-ul din 19 nov 22:50 / 23:25 acoperă testul în ciclul automat, condiția (a) e îndeplinită). Rămâne, fără grabă, decizia pentru primele scrieri pe **laptop**.
+- **Nu e blocat.** Urmează C-147 punctele 5, 6 (în SIMULARE); C-151 punctul 2 după ce tabloul merge pe placă.
+- **De la Adrian:** nimic nou („da”-ul din 19 nov 23:37 acoperă tabloul pe placă la sfârșitul lanțului). Rămâne, fără grabă, decizia pentru primele scrieri pe **laptop**.
+- 2026-11-20 14:20 — Sesiunea 124 (programată, C-151 punctul 1): tabloul de bord RUSD gata de legat în SIMULARE — regula „trei surse” îndeplinită (NVIDIA 570.144 + nouveau 14 iul 2026; diferența: clientul nostru în loc de cel intern, DEDUS); `gsp::rusd` (pornire INIT → interval → mască, citire marcă–copie–marcă, oprire), rândurile `kd`, modelul `SimRusd` (T140). Nota OS `C-151_tablou-rusd.md`. 597 PASS. Copia C-34 la `de4887d`.
