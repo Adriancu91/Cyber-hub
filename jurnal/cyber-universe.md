@@ -285,3 +285,4 @@
 - 2026-11-20 14:05 — sesiunea OS programată (11:40): CI reparat (`https-real` pe github.com), P6-102 (comutatorul de pornire) și P6-103 (ceasul de pază, doar citire) → `os-319`; P6-106 (viteza maximă doar în ciclu, Cyber-GPU `9565f68`) + P6-101 (resetul FLR, oprit implicit, proba `--flr-proba`) → **`os-322`**, CI verde.
 - 2026-11-20 16:00 — sesiunea OS programată (14:40): P6-105 (C-152 punctul 5): tabloul de bord al plăcii (Cyber-GPU `de4887d`), oprit implicit, doar cu `test-placa --tablou` / `gpu lant --tablou`, + `gpu stare`; SIMULARE `gpu-tablou` → **`os-323`**, CI verde; C-152 gata.
 - 2026-11-20 17:50 — sesiunea OS programată (17:40): oprire scurtă; nicio comandă nouă, nimic nou de la placă; CI verde (`os-323`). Regula 5: 1 din 3.
+- 2026-11-20 20:50 — sesiunea OS programată (20:40): oprire scurtă; nicio comandă nouă pentru OS, nimic nou de la placă; CI verde (`os-323`). Regula 5: 2 din 3.
