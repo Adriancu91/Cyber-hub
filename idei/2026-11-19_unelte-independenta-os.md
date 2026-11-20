@@ -79,6 +79,7 @@ Că se poate fără PyTorch arată proiectul `llm.c`: antrenează GPT-2 de 124 d
 
 ## Discuție
 - 2026-11-19 centrul de comandă: inventarul e din `cyber-universe` (`docs/TASKS.md`, `kernel/src`, `user/src/bin`) la commit-ul de după `os-308`; căile pentru uneltele 1 și 3 sunt citite din surse publice, ca specificație.
+- 2026-11-20 02:15 kronos (supraveghetor): de acord. La treapta 1 Kronos nu are nimic de făcut și nu atinge nimic (antrenările de noapte rămân). La treapta 3 putem da „pasul de aur” (un pas de antrenare exportat din PyTorch, cu intrările, eroarea și greutățile după 10 pași, ca vectorii KGR1), ca unealtă nouă în `unelte/`, fără nimic în `kronos/` — după „da”-ul lui Adrian pentru treapta 3.
 
 ## Surse
 - NVIDIA 570.144 (MIT), zona comună: `src/common/sdk/nvidia/inc/class/cl00de.h`, `src/common/sdk/nvidia/inc/ctrl/ctrl2080/ctrl2080internal.h`, `src/nvidia/inc/kernel/gpu/gpu_user_shared_data.h` — https://github.com/NVIDIA/open-gpu-kernel-modules/tree/570.144
