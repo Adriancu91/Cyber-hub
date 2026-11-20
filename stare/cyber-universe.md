@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-20 16:00 (ora României) · **de:** sesiunea OS programată (14:40) — **`os-323` = tabloul de bord al plăcii (P6-105) + `gpu stare`, CI verde. C-152 gata în întregime.**
+**Actualizat:** 2026-11-20 17:50 (ora României) · **de:** sesiunea OS programată (17:40) — oprire scurtă, nimic nou; ultimul Release rămâne **`os-323`** (tabloul de bord, P6-105), CI verde. C-152 gata în întregime.
 
 ## Acum
 - **20 nov 15:31 — testul 2 cu `os-322` a trecut:** viteza maximă acceptată (P5 → P0), 16 simboluri identice; **cu driverul 94,84 simb/s, mai repede decât procesorul (72,72)**; frâna e acum driverul (3,1 ms din 5,8 ms pe simbol). Pașii următori (P3 lipirea calculelor, #651, P7) — după decizia centrului de comandă / „da”-ul lui Adrian.
@@ -9,6 +9,7 @@
 - `os-322` (viteza maximă, P6-106; FLR oprit implicit, P6-101) și `os-319` (comutatorul de pornire, ceasul de pază, temperatura procesorului) — neschimbate.
 
 ## Urmează
+- Cyber-GPU propune „dieta driverului” (C-147 punctul 7, estimat ~250 simb/s) înaintea lui P3: OS-ul o leagă când apare o comandă nouă în `COMENZI.md`.
 - Tabloul pe placă: `test-placa --tablou` cu `os-323`, când decide centrul de comandă. Proba FLR (`--flr-proba`) la fel.
 - Coada fără Adrian e goală: sesiunile următoare verifică hub-ul, jurnalele testelor și CI.
 
