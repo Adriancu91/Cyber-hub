@@ -3,12 +3,12 @@
 **Actualizat:** 2026-11-20 16:00 (ora României) · **de:** sesiunea OS programată (14:40) — **`os-323` = tabloul de bord al plăcii (P6-105) + `gpu stare`, CI verde. C-152 gata în întregime.**
 
 ## Acum
+- **20 nov 15:31 — testul 2 cu `os-322` a trecut:** viteza maximă acceptată (P5 → P0), 16 simboluri identice; **cu driverul 94,84 simb/s, mai repede decât procesorul (72,72)**; frâna e acum driverul (3,1 ms din 5,8 ms pe simbol). Pașii următori (P3 lipirea calculelor, #651, P7) — după decizia centrului de comandă / „da”-ul lui Adrian.
 - **20 nov ~15:55 — `os-323` (P6-105, C-152 punctul 5):** Cyber-GPU `de4887d` (C-151 punctul 1). Tabloul de bord al plăcii, **oprit implicit**: doar cu `test-placa --tablou` (lista automată; se poate și `test-placa --i9 c135 --tablou`, `test-placa --flr-proba --tablou`) sau de mână `gpu lant --tablou` (cu DA). La sfârșitul lanțului, după I14 și rândurile `ks` (rezultatele deja pe stick): OS-ul dă plăcii o pagină de memorie, cere citirile la 500 ms, așteaptă 1,5 s, citește o dată, oprește. În raport: rândurile `kd …` (răspunsurile plăcii, temperatura, ceasurile, starea, încărcarea, motivele de încetinire, puterea, `sectiuni citite 0x7f` = toate). Un refuz = un rând, nimic altceva trimis. `gpu stare` arată ultimul tablou citit (placa nu e atinsă). Testat doar în SIMULARE (scenariul `gpu-tablou`: acceptat și refuzat).
 - **Fără `--tablou`, `os-323` face exact ce face `os-322`** (viteza maximă în ciclu, proba FLR la cerere) — tabloul e o comandă nouă către placă, ținută separat de testul vitezei.
 - `os-322` (viteza maximă, P6-106; FLR oprit implicit, P6-101) și `os-319` (comutatorul de pornire, ceasul de pază, temperatura procesorului) — neschimbate.
 
 ## Urmează
-- Testul 2 cu `os-322` (sau `os-323` fără `--tablou`) — centrul de comandă.
 - Tabloul pe placă: `test-placa --tablou` cu `os-323`, când decide centrul de comandă. Proba FLR (`--flr-proba`) la fel.
 - Coada fără Adrian e goală: sesiunile următoare verifică hub-ul, jurnalele testelor și CI.
 
