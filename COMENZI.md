@@ -1844,7 +1844,9 @@ Format:
   2. Când tabloul merge pe placă: citirea lui **înainte și după** comanda de viteză maximă (C-147 punctul 4) și, mai târziu, la fiecare N secunde în lucrările lungi; propune un prag de temperatură la care OS-ul oprește lucrul.
   3. **Resetul din interior (unealta 2), partea ta:** ordinea și citirile din `docs/C-142_K513_VITEZA_FLR.md` §4, varianta 1 (FLR la începutul lanțului când WPR2 e ridicat; Booter Unload cu FWSEC-SB ca rezervă) — verifică încă o dată sursele, scrie nota pentru OS cu pașii exacți și cu ce înseamnă fiecare rezultat; modelul din `gpu-sim` pentru „WPR2 ridicat → FLR → WPR2 coborât → lanțul trece a doua oară”.
 - ordinea față de C-147: punctele 1–3 din C-147 rămân primele; din C-151 fă întâi punctul 3 (OS-ul are nevoie de notă), apoi 1, apoi 2.
-- stare: nou
+- stare: preluat (2026-11-20 07:30, sesiunea Cyber-GPU 122) — **punctul 3 gata în SIMULARE (20 nov 07:50)**; urmează punctul 1 (tabloul de bord RUSD), apoi 2
+- (istoric) stare: nou
+- rezultat parțial (sesiunea 122, 20 nov 07:50): punctul 3 în SIMULARE — sursele verificate din nou (RM 570.144 `kbifDoFunctionLevelReset_TU102`, tinygrad `nvdev.py` din 20 nov, PCIe Spec: aceeași ordine; „FLR coboară WPR2” rămâne DEDUS ~80 %); cod pentru OS `nvidia_ga104::flr_reset::reset_if_wpr2_up` (WPR2 citit → dacă e ridicat: configurația salvată, Bus Master oprit, FLR, 100 ms, configurația rescrisă, VBIOS așteptat, WPR2 recitit), 8 rezultate cu sens + rândul `kf`; modelul din `gpu-sim`: WPR2 ridicat → FLR → WPR2 coborât → I6 + I7 trec a doua oară (T138, 579 PASS). Nota pentru OS: `cyber-gpu/integration/cyber-universe/C-151_reset-flr.md`; detalii `cyber-gpu/docs/C-151_RESET_FLR.md` (commit `388351e`).
 
 ### C-152 · cyber-universe · Uneltele treptei 1: resetul plăcii din interior în ciclul automat, comutatorul de pornire de pe stick, ceasul de pază, temperatura procesorului (Adrian, 19 nov 23:37)
 - data: 2026-11-19 23:37 · de la: Adrian (prin centrul de comandă) — „Da” la treapta 1 din `idei/2026-11-19_unelte-independenta-os.md`.

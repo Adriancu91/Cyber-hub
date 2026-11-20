@@ -1,17 +1,18 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-20 04:50 (ora României) · **de:** sesiunea Cyber-GPU 121 (cloud, fără placă) — **C-147 punctul 3 (etapa 4) gata în SIMULARE**: înmulțirea nouă `q8_matvec32` (toate cele 32 de fire la lucru) + **cursa pe placă** pregătită pentru OS. 575 PASS (SIMULARE), CI verde. Copia C-34 la `ab85fe7`.
+**Actualizat:** 2026-11-20 07:50 (ora României) · **de:** sesiunea Cyber-GPU 122 (cloud, fără placă) — **C-151 punctul 3 gata în SIMULARE**: resetul plăcii din interior (FLR la începutul lanțului, doar când WPR2 e ridicat) + nota pentru OS. 579 PASS (SIMULARE), CI verde (run 44682282056). Copia C-34 la `388351e`.
 
 ## Acum
-- **Programul nou `q8_matvec32`** (NAK 25.0.7, 3 184 octeți, 199 instrucțiuni față de 503): fiecare fir ia un sfert de bloc în loc de un bloc întreg, deci la matricele cu 768 de intrări lucrează **toate cele 32 de fire** (azi 24); cele 32 de fire citesc greutățile una după alta, fără goluri, iar vectorul de intrare cu citiri de 16 octeți. Aceleași argumente ca `q8_matvec`. În SIMULARE: identic bit cu bit cu oracolul lui (ordinea citită în listare), în marja de azi față de procesor.
-- **Cursa** (`q8_race`): pe cele 5 forme de matrice ale lui #513, cele două programe alternează (A B B A), cu marcă de timp după fiecare lansare și rezultatul verificat după fiecare serie; rânduri `kr` în jurnal. Regula, scrisă înainte: o formă trece pe programul nou doar dacă acesta trece proba pe placă **și** e mai rapid cu cel puțin 5 %.
-- **Nu s-a făcut (și de ce, în `cyber-gpu/docs/C-147_ETAPA4.md`):** citiri de 16 octeți din greutăți (blocurile de 36 de octeți nu sunt aliniate), vectorul în memoria partajată (ajută doar cu mai multe rânduri pe grup), programele f32 vechi în cursă (locul lor e la loturi).
+- **Resetul din interior (unealta 2), partea noastră:** sursele verificate încă o dată (driverul NVIDIA 570.144, tinygrad din 20 nov, specificația PCIe) — toate fac aceeași ordine. Funcția nouă pentru OS `flr_reset::reset_if_wpr2_up`: citește WPR2; dacă e 0 nu face nimic; dacă e ridicat: salvează configurația plăcii, oprește accesul ei la memoria calculatorului, face resetul (FLR), așteaptă 100 ms, rescrie configurația, așteaptă ca VBIOS să-și refacă pornirea și **recitește WPR2**. Fiecare rezultat (8) are un rând `kf` în jurnal și un sens scris („lanțul poate rula din nou” sau „oprire curată, pornire rece”). Fără a doua încercare.
+- **În SIMULARE:** WPR2 ridicat → FLR → WPR2 coborât → **I6 + I7 trec a doua oară în aceeași pornire**; și cazurile rele (WPR2 rămâne, placa nu mai răspunde, configurația nu revine, VBIOS nu termină) sunt prinse și numite.
+- **Nesigur până la placă:** că FLR coboară WPR2 pe RTX 3070 Ti e DEDUS (~80 %); nicio sursă nu o scrie direct. Proba o face OS-ul (C-152 punctul 1).
 
 ## Urmează
-1. **OS:** după `os-309` și lista lipită, cursa într-un Release, oprită implicit (nota: `cyber-gpu/integration/cyber-universe/C-147_etapa4-cursa-q8.md`; ~320 de lansări, sub o secundă).
-2. **Noi (în ordine):** C-151 punctul 3 (nota de reset din interior pentru OS), C-151 punctul 1 (tabloul de bord RUSD), C-147 punctele 5, 6; punctul 7 după cifrele `os-309`; după cursa pe placă: câștigătorul în lista de simbol (și `q8_fused` cu aceeași împărțire).
-3. **Viteza maximă pe placă:** doar după ce centrul de comandă confirmă că `ks`/`kc` arată o stare joasă.
-4. **Adrian (fără grabă):** DA/NU pentru primele scrieri pe laptop (`GA106_LAPTOP.md` §7).
+1. **OS (C-152 punctul 1):** leagă `reset_if_wpr2_up` la începutul lanțului, într-un Release separat de viteză; proba: lanț → WPR2 ridicat → reset → WPR2 0 → lanțul a doua oară. Nota: `cyber-gpu/integration/cyber-universe/C-151_reset-flr.md`.
+2. **Noi (în ordine):** C-151 punctul 1 (tabloul de bord RUSD: întâi regula „trei surse”), C-151 punctul 2, C-147 punctele 5, 6; punctul 7 după cifrele `os-309`/`os-313`.
+3. **Cursa înmulțirilor și lista lipită:** în Release-uri mici, după `os-313` (note C-147 deja în repo).
+4. **Viteza maximă pe placă:** doar după ce centrul de comandă confirmă că `ks`/`kc` arată o stare joasă.
+5. **Adrian (fără grabă):** DA/NU pentru primele scrieri pe laptop (`GA106_LAPTOP.md` §7).
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
@@ -19,6 +20,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 122 (C-151 punctul 3, doar adăugări — OS-ul compilează neschimbat):** modulul nou `gpu_pci::flr` (`FlrPermit`, `SavedConfig`, `save_config`, `function_level_reset` → `FlrDone`, `FLR_WAIT_US`, `FLR_READY_TIMEOUT_US`, `PENDING_TIMEOUT_US`, `POLL_US`); modulul nou `nvidia_ga104::flr_reset` (`FlrBoard`, `reset_if_wpr2_up` → `FlrReport` (`row`), `FlrVerdict` (`code`, `chain_may_run`, `meaning`), `parse_row`); `gpu_sim::pci::{FLR_NOT_READY_READS, SimConfig::with_flr}` + câmpuri `flr_count`, `flr_not_ready_left`, `flr_never_ready`, `pending_transactions`; `gpu_sim::fake_gsp::{FakeGsp::sim_flr, FakeGsp::flr_count, GFW_PRIV_MASK, GFW_REBOOT_READS, SimFault::Wpr2SurvivesFlr, SimFault::GfwNeverAfterFlr}` (variante noi). Nimic schimbat în lanțul de azi. Nota: `cyber-gpu/integration/cyber-universe/C-151_reset-flr.md`. Commit: `388351e`.
 - **Sesiunea 121 (C-147 punctul 3, doar adăugări — OS-ul compilează neschimbat):** `gpu_compute::q8::{row_gpu_order_w32, matvec_gpu_order_w32, busy_threads, W32_QUARTERS, W32_UNIT}`; `gpu_sim::cmdproc::{q8_matvec32_on_cpu, Q8_MATVEC32_NEEDS}`; modulul nou `nvidia_ga104::q8_matvec32` (`Q8_MATVEC32`, `cbuf`, `qmd`, `judge`, …); modulul nou `nvidia_ga104::q8_race` (`Entrant`, `K513_LANES`, `heats`, `encode_heat`, `Standing`, `rows`, `journal`, `parse_journal`, …). Nimic schimbat în ce primește placa azi. Nota: `cyber-gpu/integration/cyber-universe/C-147_etapa4-cursa-q8.md`. Commit: `ab85fe7` (codul: `c11225d`).
 - **Sesiunea 120 (C-147 punctul 2, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::q8_fused` (`Q8_FUSED`, `cbuf`, `Tail`, steagurile); `kronos_layer::{Prog::Q8Fused, PROGRAMS_FUSED, LAUNCHES_PER_TOKEN_FUSED, token_launches_fused, Prog::registers}`; `kronos_model::{token_launches_fused, launches_per_token_fused}`; `kronos_perf::{LAYER_KINDS_FUSED, token_kinds_fused}`; `gpu_sim::cmdproc::{q8_fused_on_cpu, Q8_FUSED_NEEDS}`. `PROGRAMS`, `token_launches` și octeții QMD de azi: neschimbați. Nota: `cyber-gpu/integration/cyber-universe/C-147_etapa3a-programe-lipite.md`. Commit: `96301cf`.
 - **Sesiunea 119 (C-147 / C-150, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::kronos_perf` (`Kind`, `LAYER_KINDS`, `ALL_KINDS`, `token_kinds`, `KindProfile`, `KindTime`, `rows`, `launch_rows`, `launch_cost_rows`, `journal_launch_cost`, `VramCopy`, `VramCopySpeed`, `VRAM_COPY_BYTES`, `VRAM_COPY_REPEATS`, `PAPER_MB_S`, `copy_rows`, `ParsedPerf`, `value_row`, `parse_journal`); modulul nou `nvidia_ga104::gsp::perf` (`encode_get_pstate`, `read_pstate`, `Pstate`, `When`, `journal_pstate`, `rows`, `BoostPlan` **oprit implicit**, `BoostShape`, `read_boost`, `boost_flags`, constantele comenzilor); `kronos_speed::{K651_LAYERS, K651_VOCAB, K651_CONTEXT, K651_SHAPE, ModelLimits::k651}`. Nota: `cyber-gpu/integration/cyber-universe/C-147_etapa0-masuratori.md`. Commit: `02bbc36` (codul: `9c5e8e8`, `c2c228b`).
@@ -45,9 +47,9 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: C-148 (etapa 0 → `os-309`); apoi lista lipită și cursa în Release-uri separate; pentru #651, `STRIDE = 0x200`.
+- De la `cyber-universe`: C-152 punctul 1 (resetul FLR legat după nota nouă, proba în ciclu) și jurnalul ei (rândurile `kf`, pașii `C-151 FLR …`); lista lipită și cursa în Release-uri separate; pentru #651, `STRIDE = 0x200`.
 - De la Kronos: nimic nou.
 
 ## Blocaje / nevoie de Adrian
-- **Nu e blocat.** Urmează C-151 punctul 3, apoi 1; C-147 punctele 5, 6 (în SIMULARE).
+- **Nu e blocat.** Urmează C-151 punctul 1 (tabloul de bord), apoi 2; C-147 punctele 5, 6 (în SIMULARE).
 - **De la Adrian (decizii, fără grabă):** primele scrieri pe **laptop**. Cursa nu cere un „da” nou (programe noi care calculează același lucru, proba obișnuită — C-147 punctul 3).
