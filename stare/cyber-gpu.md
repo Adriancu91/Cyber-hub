@@ -11,7 +11,7 @@
 ## Urmează
 1. **Propunere pentru centrul de comandă (ordinea, neschimbată):** întâi **dieta driverului** singură (OS, opțiune oprită implicit; proba: logit-uri identice bit cu bit cu os-322, `kt median driver` ~3 081 → ~1 300 µs), apoi P3, apoi #651; **LayerNorm mai rapid** înaintea etapei 4; P7 după etapa 4. Circuitele speciale: abia când avem loturi (de ex. citirea promptului), cu „da”-ul lui Adrian.
 2. **OS:** P6-101 (FLR) și P6-105 (`gpu stare`) cum erau; plus două mărci de timp pentru cei 0,84 ms ai procesorului (nota punctului 7, pasul 4).
-3. **Noi:** C-147 punctul 6 (studiul lanțului pe placă, doar document) — ultimul punct din C-147; dacă centrul de comandă aprobă, un LayerNorm nou în SIMULARE; C-151 punctul 2 după ce tabloul merge pe placă.
+3. **Noi:** C-147 punctul 6 (studiul lanțului pe placă, doar document) — ultimul punct din C-147; dacă centrul de comandă aprobă, un LayerNorm nou în SIMULARE; C-151 punctul 2 după ce tabloul merge pe placă. Am citit decizia lui Adrian din 19:41 (driverul împerecheat cu Kronos): la pasul următor verificăm ce mărimi Kronos sunt încă scrise în cod în loc să fie luate din fișa KGR1 și le notăm.
 4. **Adrian (fără grabă):** DA/NU pentru primele scrieri pe laptop (`GA106_LAPTOP.md` §7); DA/NU (mai târziu) pentru o probă a circuitelor speciale pe placă (T142b, aceeași toleranță).
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
