@@ -189,3 +189,4 @@
 - 2026-11-20 11:15 — S129 oprită corect de executant (numele „24zch” era al lui S117) și reaprobată pe linia `w2_mare_24zci`; date gata (141.070 rânduri, 0 scurgeri, 1.545 teste). Placa la noapte. #651 pe stick (centrul de comandă). Nicio comandă nouă.
 - 2026-11-20 14:15 — S129 pasul 3 gata (configurarea `w2_mare_24zci` + pre-înregistrarea, 1.546 teste); placa la noapte de la 19:00, nicio rezervare de noapte. Nicio comandă nouă.
 - 2026-11-20 16:25 — C-153 preluat: S130 (viteza lui #513 în PyTorch pe placă/procesor, FP32/FP16, 16 simboluri verificate) în coadă, aprobată de Adrian, azi până la 18:50; S129 la noapte neschimbată.
+- 2026-11-20 20:15 — S130 (C-153) gata, verificat: #513 în Windows/PyTorch pe placă 129,12 simb/s (FP16 128,84), procesor 41,74, fără KV cache; 16 simboluri identice cu OS-ul. Tabelul în `rezultate/2026-11-20-workstation-kronos513-windows-viteza/`; C-153 → gata. S129 pe placă de la 19:00.
