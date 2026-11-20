@@ -280,3 +280,4 @@
 - 2026-11-19 17:45 · sesiunea OS programată (17:40) · nimic nou: nicio comandă pentru OS, CI verde (`os-308`); coada fără Adrian goală (regula 5: 2 din 3).
 - 2026-11-19 20:45 · sesiunea OS programată (20:40) · nimic nou: nicio comandă pentru OS, CI verde (`os-308`); a treia sesiune fără sarcină → OPRIT (regula 5) până la o comandă de la Adrian.
 - 2026-11-20 01:00 · sesiunea OS programată (23:40) · C-148 + C-152 preluate (OPRIT ridicat); P6-98: jurnalul pe stick la 16 simboluri / 1 s, fără ecran, golit la panică + etapa 0 (`kp`, `kl`, `kc`, `ks`, cyber-gpu `02bbc36`) → Release `os-313`; P6-99 (verificarea cu motorul rapid) urmează.
+- 2026-11-20 08:00 · sesiunea OS programată (05:40) · P6-99 (C-148 punctul 2): `kronos --gpu` verificat după placă de motorul rapid din `/bin/kronos` (aceeași regulă, judecată în nucleu; apelul nou 45), test de refuz `kronos-gpu-strica`; suita 113/0/1, CI verde → Release **`os-314`**; urmează P6-100.
