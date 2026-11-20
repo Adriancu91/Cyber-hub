@@ -1826,6 +1826,8 @@ Format:
 - stare: preluat (2026-11-19 23:45, sesiunea OS) — P6-98 (punctele 1 + 3 → `os-309`), P6-99 (punctul 2), P6-100 (punctul 5) în `docs/TASKS.md`
 - stare: gata parțial (2026-11-20 03:20, sesiunea OS) — punctele 1, 3, 4 gata; punctul 2 → P6-99 (următoarea sarcină), punctul 5 → P6-100
 - stare: gata parțial (2026-11-20 08:00, sesiunea OS) — punctele 1, 2, 3, 4 gata; punctul 5 → P6-100 (următoarea sarcină)
+- stare: gata (2026-11-20 11:00, sesiunea OS) — punctul 5 gata (P6-100); completarea 1 (viteza maximă) → P6-106, prima în coada OS (Cyber-GPU `9565f68` gata, P8 confirmat la 09:20)
+- rezultat (punctul 5): P6-100 (`b1a9ab2`): FLUSH la SATA/NVMe, `/disk` = partiția cu `cyber.rw` a discului propriu (azi pe workstation: niciuna → ca înainte, doar citire), jurnalul gpu și modelul de acolo când există (jurnalul copiat și pe stick), inventarul discurilor (comanda `discuri` + raportul ciclului); testat în QEMU (scenariul `disc-propriu`), suita 114/0/1; Release-ul vine din CI-ul de pe `main` (în curs).
 - rezultat (punctul 2): Release `os-314` (P6-99): `kronos --gpu` verificat după placă cu motorul rapid al OS-ului, la fel de strict (regula `judge` în nucleu), rânduri `kv … cu verificare` noi; CI verde, pe placă netestat.
 - rezultat: Release `os-313` (P6-98, cyber-gpu `02bbc36`): rândurile de rutină ale jurnalului fără ecran/serial, pe stick la 16 simboluri sau la 1 s, golite și la panică (testat în QEMU), plus `kp` (tabelul pe feluri în raportul ciclului), `kl`, `kc`, `ks` la sfârșitul lanțului; `kg`/`kv`/`kt` și comanda neschimbate; viteza maximă nelegată; CI verde, pe placă netestat.
 
@@ -1863,4 +1865,5 @@ Format:
   4. **Temperatura procesorului (unealta 5):** citirea pe fiecare nucleu (registrele documentate de Intel), rând în `hw` și în raportul ciclului; prag de oprire a lucrului.
   5. `gpu stare`: afișează tabloul de bord al plăcii când Cyber-GPU îl dă gata (C-151 punctul 1).
 - stare: preluat (2026-11-19 23:45, sesiunea OS) — după C-148: P6-101 (resetul din interior, după nota C-151 punctul 3), P6-102 (comutatorul de pornire), P6-103 (ceasul de pază), P6-104 (temperatura procesorului), P6-105 (`gpu stare`) în `docs/TASKS.md`
+- stare: gata parțial (2026-11-20 11:00, sesiunea OS) — punctul 4 gata (P6-104, `70ef3a8`: temperatura procesorului, doar citiri păzite de CPUID, rând în `hw` și în raportul ciclului, ciclul nu pornește la TjMax − 10 °C); punctele 2, 3 făcute de sesiunea OS paralelă (P6-102, P6-103); punctul 1 → P6-101, punctul 5 → P6-105 (după C-151 punctul 1)
 

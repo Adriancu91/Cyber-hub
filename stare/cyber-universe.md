@@ -1,8 +1,12 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-20 08:00 (ora României) · **de:** sesiunea OS programată (05:40) — C-148 punctul 2 gata → Release **`os-314`** (CI verde).
+**Actualizat:** 2026-11-20 11:05 (ora României) · **de:** sesiunea OS programată (10:40) — P6-100 (discul propriu, pregătire) și P6-104 (temperatura procesorului) gata; CI pe `main` în curs.
 
 ## Acum
+- **20 nov 08:07 — ciclul automat `os-313` a trecut pe placă:** 16 simboluri identice cu procesorul; **cu driverul 21,54 simb/s** (os-308: 10,99 — aproape dublu); jurnalul pe simbol 14 ms (era 74 ms); placa 43,8 simb/s; copierea VRAM 9165 MB/s fără greșeli; placa stă în **P8** (stare de putere joasă) → viteza maximă (P6-106) e următoarea.
+- **20 nov ~11:00 — P6-100 (C-148 punctul 5, doar pregătire):** comanda de golire a memoriei discului (FLUSH) la SATA și NVMe; dacă pe un disc al calculatorului există o partiție FAT marcată `cyber.rw`, OS-ul o montează la `/disk` și pune acolo jurnalul gpu (copiat și pe stick la sfârșit, ca `trimite` să-l urce) și ia modelul Kronos de acolo. Azi pe workstation nu există una → totul ca înainte. Nou: comanda `discuri` și primul bloc din raportul ciclului — ce discuri și partiții vede OS-ul (doar citire). Testat în QEMU (disc cu 3 partiții), suita 114/0/1.
+- **20 nov ~11:00 — P6-104 (C-152 punctul 4):** temperatura procesorului (pachetul + nucleul, TjMax), doar citiri; rând în `hw` și în raportul ciclului; peste TjMax − 10 °C ciclul nu pornește testul pe placă. În QEMU „necitita” (normal).
+- **Atenție:** azi au lucrat două sesiuni OS în paralel pe același cod (cealaltă a făcut P6-102 comutatorul de pornire și P6-103 ceasul de pază, plus testul `https-real` mutat pe github.com). Release-ul care le are pe toate iese din CI-ul de pe `main` (`8a16c02`), dacă e verde.
 - **20 nov ~08:00 — `os-314` (P6-99, C-148 punctul 2): verificarea pe procesor DUPĂ placă, cu motorul rapid al OS-ului.** La `run kronos --gpu`, placa generează întâi tot textul; apoi nucleul cere programului `/bin/kronos` (toate nucleele, AVX2) logit-urile fiecărei poziții și le judecă la fel de strict ca înainte (aceeași regulă, în nucleu). Prima poziție refuzată oprește textul. Până acum verificarea dura ~3,9 s pe poziție (0,25 simb/s cu ea). Rânduri noi în gpu-jurnal: `kv verificarea dupa placa median …`, `kv simboluri pe secunda x100 cu verificare …`. `--verificare-nucleu` păstrează calea veche. Testat în SIMULARE (suita 113/0/1, plus un test care strică intenționat o poziție și vede refuzul exact acolo); pe placă netestat.
 - **20 nov ~01:00 — `os-313` (P6-98, C-148 punctele 1 + 3):** (1) **jurnalul mai ușor:** rândurile de rutină ale lui `kronos --gpu` nu se mai afișează pe ecran/portul serial (rămân în `log`) și ajung pe stick la 16 simboluri sau la o secundă; orice rând important (pași, `kg`/`kv`/`kt`, erori) se scrie imediat, iar la final, la eroare și la panică se golește tot (testat în QEMU: o panică cu rânduri ținute le lasă pe toate pe disc). (2) **Măsurătorile etapei 0** (Cyber-GPU `02bbc36`): `kp` + tabelul „timpul pe fel de lansare” în raportul ciclului, `kl` (lansarea goală), `kc` (copierea VRAM → VRAM, 64 MiB × 3, verificată), `ks` (starea de performanță, o citire la sfârșitul lanțului). Comanda și `kg`/`kv`/`kt` ca la `os-308`. Viteza maximă NU e legată. Testat doar în SIMULARE. (Numerele 309–312 au fost rulări CI intermediare.)
 - **C-148 punctul 5** (discul propriu, doar pregătire) → P6-100, următoarea sarcină.
@@ -12,8 +16,8 @@
 - **19 nov 14:30 — `os-308` gata (C-146, după primul ciclu automat `os-307`, care a trecut cap-coadă fără tine):** OS-ul folosește codul Cyber-GPU nou (`e74b418`, C-145). La `run kronos --gpu --n 16 Buna ziua`: jurnalul nu mai scrie și sincronizează stick-ul la fiecare rând de rutină (le ține în memorie și le scrie o dată pe simbol — toate rândurile rămân, în aceeași ordine), iar lansările se rescriu în placă doar unde s-au schimbat (verificat la final prin recitire). Raportul ciclului arată acum timpul pe simbol pe bucăți: placă / driver / jurnal / ecran, plus verificarea pe procesor. Comanda și rândurile `kg`/`kv` sunt ca în `os-307`, ca să comparăm cifrele. Testat doar în SIMULARE (suita 111/0/1, CI verde). Așteptat (estimare, nemăsurat): ~20 simboluri/s cu driverul în loc de 3,10.
 
 ## Urmează
-- P6-100 (discul propriu, doar pregătire).
-- C-152: P6-102 (comutatorul de pornire, doar cod + QEMU), P6-103 (ceasul de pază), P6-104 (temperatura procesorului); P6-101 (FLR) după nota Cyber-GPU C-151 punctul 3; P6-105 (`gpu stare`) după C-151 punctul 1.
+- **P6-106:** viteza maximă a plăcii (C-148 completarea 1, Cyber-GPU `9565f68`), doar în modul ciclu, Release separat.
+- P6-101 (resetul FLR din interior, nota Cyber-GPU C-151 punctul 3 e gata); P6-105 (`gpu stare`) după C-151 punctul 1.
 
 ## Ce oferă proiectul celorlalți
 - `os-314`: ciclul automat cu verificarea după placă (rândurile `kv` noi) + rândurile `kp`/`kl`/`kc`/`ks` din `os-313`.
@@ -24,5 +28,6 @@
 - Centrul de comandă: ciclul automat cu `os-314` (ziua; are și tot ce avea `os-313`) și confirmarea în hub a cifrelor `ks`/`kc` pentru viteza maximă. Dacă raportul spune „motorul de referinta TRECE … diferenta e intre cele doua motoare”, ciclul se poate rula cu `--verificare-nucleu` până se lămurește.
 
 ## Blocaje / nevoie de Adrian
-- Nimic urgent. Testul `os-314` îl pornește centrul de comandă prin ciclul automat, ziua (cheile tale există).
-- Comutatorul de pornire (P6-102): când e gata, o singură schimbare a ordinii din BIOS, cu tine de față (ghidat de centrul de comandă).
+- Nimic urgent. Testul pe placă al Release-ului nou îl pornește centrul de comandă prin ciclul automat (de verificat în raport: blocul „discurile vazute de OS” — nimic cu `cyber.rw` pe workstation — și rândul temperaturii).
+- Discul propriu: când vrei, faci o partiție FAT32 pe un disc al workstation-ului și pui în ea fișierul `cyber.rw`; până atunci OS-ul doar citește discurile.
+- Două sesiuni OS au rulat în același timp azi (10:40–12:00): dacă nu era intenționat, merită verificate programările.
