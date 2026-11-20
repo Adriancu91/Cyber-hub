@@ -36,7 +36,7 @@
 - 2026-10-22 21:30 — Completările C-9 (18:20, 18:30) făcute: golirea cache-ului e pornirea obișnuită (P6-10f, Release os-149, CI verde), alias `fetch`, mesajul `host`; lista pentru testul 7 rescrisă (rece cu `rtl porneste rece`, cald fără nicio variantă).
 - 2026-10-23 00:00 — C-10 gata (P6-10g + P6-10h, Release os-155, CI verde): bufferele Realtek într-un bloc separat peste 16 MiB, paza paginilor DMA (testată în QEMU), buffere umplute cu A5 ca diagnostic; OCP verificat (pașii 7, 9, 12 nu erau defecte, rămâne FIFO-ul la rece); ICS notat; lista pentru testul 8 scrisă.
 - 2026-10-23 00:05 — Sesiune programată (23:42): nicio comandă nouă, nicio sarcină liberă; CI verde pe reparația `modules`; se așteaptă testul 8 (os-155).
-- 2026-10-23 02:55 — Sesiune programată (02:45): nicio comandă nouă, niciun rezultat de la testul 8; luat la cunoștință proiectul Cyber-GPU (încă niciun patch pentru OS). A 3-a sesiune la rând fără lucru: următoarea se oprește dacă testul 8 nu vine.
+- 2026-10-23 02:55 — Sesiune programată (03:20): nicio comandă nouă, niciun rezultat de la testul 8; luat la cunoștință proiectul Cyber-GPU (încă niciun patch pentru OS). A 3-a sesiune la rând fără lucru: următoarea se oprește dacă testul 8 nu vine.
 - 2026-10-23 05:50 — Sesiune programată (05:40): nicio comandă nouă, niciun rezultat de la testul 8 → oprire de siguranță („OPRIT: necesită analiza lui Adrian” în STATE.md); CI verde.
 - 2026-10-23 09:30 — C-12: comanda `gpu` (nivel 0, doar citire) scrisă de la zero (repo-ul cyber-gpu e privat, patch-ul n-a putut fi citit), CI verde, Release os-163; observația `map_mmio` → P6-12; se așteaptă fereastra pe workstation și testul 8.
 - 2026-10-23 09:25 — Pornire manuală pentru C-12: comanda era deja gata (os-163); accesul la cyber-gpu tot refuzat (repo privat).
@@ -111,7 +111,7 @@
 - 2026-11-01 20:40 — C-52 gata (P6-40): `gpu pregatire-i6`, jurnalul pe loc pe stick, `gpu i6 --scrie` doar pe stick-ul de test (`gpu-scrie`, „DA”); trece în simulare; CI verde, Release `os-212`; fereastra I6 așteaptă pe Adrian.
 - 2026-11-01 22:35 — C-53 gata (P6-41): bucla automată, partea OS — lista `auto/teste.txt` (doar citire), raport pe loc, ceas de siguranță, repornire; scriptul Windows `bucla-automata.ps1`; testat în QEMU; CI verde, Release `os-213`. C-55 urmează.
 - 2026-11-02 01:20 — C-55 gata (P6-42): `gpu tur` (doar citire, rânduri `fapt …`, pe lista albă a buclei) + `gpu lant` (pașii ferestrei în lanț, doar cu „DA”, oprire la I7, Bus Master pus la loc); testat în simulare/QEMU; CI verde, Release `os-214`.
-- 2026-11-02 02:45 — oprire scurtă: nicio comandă nouă pentru `cyber-universe`; CI verde, Release `os-214`; așteaptă fereastra de pe workstation cu Adrian.
+- 2026-11-02 03:20 — oprire scurtă: nicio comandă nouă pentru `cyber-universe`; CI verde, Release `os-214`; așteaptă fereastra de pe workstation cu Adrian.
 - 2026-11-02 07:45 — oprire scurtă: nicio comandă nouă pentru `cyber-universe`; CI verde, Release `os-214`; așteaptă fereastra de pe workstation cu Adrian.
 - 2026-11-02 08:45 — oprire scurtă: nicio comandă nouă pentru `cyber-universe`; CI verde, Release `os-214`; așteaptă fereastra de pe workstation cu Adrian.
 - 2026-11-02 11:45 — OPRIT (oprire de siguranță): 3 sesiuni la rând fără sarcină, din lipsă de comenzi; nicio comandă nouă pentru `cyber-universe`; CI verde, `os-214`; se ridică cu o comandă nouă de la Adrian.
@@ -153,7 +153,7 @@
 - 2026-11-05 18:50 (sesiunea OS 17:42): P6-56 pas 3 — I10 în `gpu lant` (`add64` pe canalul de lucru, invalidarea TLB, soneria canalului 0xBB0090 prin gardul ei, rezultatul bit cu bit; costul lansării); în simulare tot lanțul trece; CI verde → **Release `os-249`**. C-72 gata.
 - 2026-11-05 21:55 (sesiunea OS 20:45): P6-58 — zona VRAM a lui golden verificată după I7 (`free_after_i7`, cyber-gpu `60740a3`; WPR2 recitit, oprire înainte de prima scriere VRAM dacă nu e cel cerut); nicio scriere nouă; CI verde → **Release `os-250`**.
 - 2026-11-05 23:50 (sesiunea OS 23:40): nicio comandă nouă, nicio sarcină liberă fără hardware; se așteaptă fereastra cu `os-250`.
-- 2026-11-06 03:40 (sesiunea OS 02:45): P6-59 — simularea I7 ca placa (Booter-ul modelului lărgește WPR2 din `GspFwWprMeta`-ul nostru, cyber-gpu `657e209`); nimic schimbat pe placă; CI verde → **Release `os-251`**.
+- 2026-11-06 03:40 (sesiunea OS 03:20): P6-59 — simularea I7 ca placa (Booter-ul modelului lărgește WPR2 din `GspFwWprMeta`-ul nostru, cyber-gpu `657e209`); nimic schimbat pe placă; CI verde → **Release `os-251`**.
 - 2026-11-06 05:45 (sesiunea OS 05:40): nicio comandă nouă, nicio sarcină liberă fără hardware; se așteaptă fereastra cu `os-251`.
 - 2026-11-06 08:45 (sesiunea OS 08:40): nicio comandă nouă, nicio sarcină liberă fără hardware; Adrian e la fereastra cu `os-250` (C-79), jurnalele se analizează când apar în `rezultate/`.
 - 2026-11-06 11:45 (sesiunea OS 11:40): nicio comandă nouă, niciun jurnal nou în `rezultate/`, nicio sarcină liberă fără hardware; CI verde pe `os-251`. Sesiunea următoare scrie „OPRIT” dacă jurnalele ferestrei nu apar.
@@ -190,7 +190,7 @@
 - 2026-11-09 17:45 · sesiunea OS programată · oprire scurtă; nicio comandă nouă; `os-276` așteaptă testul (C-93); următoarea sesiune intră în „OPRIT” (regula 5) până la jurnal/comandă nouă.
 - 2026-11-09 20:45 · sesiunea OS programată · **OPRIT** (regula 5: 3 sesiuni fără sarcină) — doar așteptarea testului cu `os-276`, mutat mâine 07:15 (C-94); nicio comandă nouă pentru noi; CI verde.
 - 2026-11-09 23:45 · sesiunea OS programată · OPRIT rămâne (regula 5); nicio comandă nouă, niciun jurnal `os-276`; testul e mâine 07:15 (C-94).
-- 2026-11-10 02:45 · sesiunea OS programată · OPRIT rămâne (regula 5); nicio comandă nouă, niciun jurnal `os-276`; testul e azi 07:15 (C-94); CI verde.
+- 2026-11-10 03:20 · sesiunea OS programată · OPRIT rămâne (regula 5); nicio comandă nouă, niciun jurnal `os-276`; testul e azi 07:15 (C-94); CI verde.
 - 2026-11-10 05:45 · sesiunea OS programată · OPRIT rămâne (regula 5); nicio comandă nouă, niciun jurnal `os-276`; testul e azi 07:15 (C-94); CI verde.
 - 2026-11-10 08:45 · sesiunea OS programată · OPRIT rămâne (regula 5); nicio comandă nouă (C-95 parcat de Adrian, nimic de făcut în OS); niciun jurnal `os-276` în `rezultate/` încă.
 - 2026-11-10 12:25 · sesiunea OS programată · C-96 pct. 2 GATA (P6-69): cyber-gpu `2d66deb` (resetul GSP, I8 0xbadf5620) în OS, 9/9 teste GPU în simulare, CI verde → Release `os-277`; OPRIT ridicat.
@@ -199,7 +199,7 @@
 - 2026-11-10 18:35 · sesiunea OS programată · C-99 GATA (P6-70): cyber-gpu `3aed5eb` (CORE_RESUME prin CPUCTL_ALIAS) în OS + Esc și rândul „aștept placa… N s” (ideea lui Adrian), antetul cozii I8 60 s; 9/9 teste GPU în simulare, CI verde → Release `os-278`.
 - 2026-11-10 20:50 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-278` încă (placa la Kronos până la 07:00, C-100); nicio sarcină liberă fără placă; CI verde.
 - 2026-11-10 23:45 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-278` încă (placa la Kronos până la 07:00); nicio sarcină liberă fără placă; CI verde.
-- 2026-11-11 02:45 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-278` încă (placa la Kronos până la 07:00); nicio sarcină liberă fără placă; CI verde.
+- 2026-11-11 03:20 · sesiunea OS programată · nicio comandă nouă, niciun jurnal `os-278` încă (placa la Kronos până la 07:00); nicio sarcină liberă fără placă; CI verde.
 - 2026-11-11 05:45 · sesiunea OS programată · OPRIT (regula 5): 3 sesiuni fără sarcină, cauza = doar așteptarea testului cu `os-278`; nicio comandă nouă, niciun jurnal `os-278`; CI verde.
 - 2026-11-11 08:45 · sesiunea OS programată · OPRIT (regula 5) rămâne: nicio comandă nouă, niciun jurnal `os-278`; placa e iar liberă (Kronos pe procesor); CI verde.
 - 2026-11-11 11:25 · sesiunea OS programată · C-102 preluat (P6-71): cyber-gpu `f96c0ee` legat (`4b57855`), 9/9 scenarii GPU; CI pornit → `os-279` estimat ~11:50.
@@ -240,7 +240,7 @@
 - 2026-11-14 17:45 · sesiunea OS programată (17:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-14 20:45 · sesiunea OS programată (20:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-14 23:45 · sesiunea OS programată (23:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
-- 2026-11-15 02:45 · sesiunea OS programată (02:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
+- 2026-11-15 03:20 · sesiunea OS programată (02:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-15 05:45 · sesiunea OS programată (05:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-15 08:45 · sesiunea OS programată (08:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-15 11:45 · sesiunea OS programată (11:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
@@ -248,7 +248,7 @@
 - 2026-11-15 17:45 · sesiunea OS programată (17:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-15 20:45 · sesiunea OS programată (20:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-15 23:45 · sesiunea OS programată (23:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
-- 2026-11-16 02:45 · sesiunea OS programată (02:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
+- 2026-11-16 03:20 · sesiunea OS programată (02:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-16 05:45 · sesiunea OS programată (05:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-16 08:45 · sesiunea OS programată (08:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
 - 2026-11-16 11:45 · sesiunea OS programată (11:40) · OPRIT rămâne (regula 5): nicio comandă nouă, niciun jurnal nou, CI verde (`os-302`).
@@ -256,7 +256,7 @@
 - 2026-11-16 17:50 · sesiunea OS programată (17:40) · OPRIT rămâne (regula 5): nicio comandă nouă pentru OS, niciun jurnal nou, C-125 încă fără commit cyber-gpu, CI verde (`os-302`).
 - 2026-11-16 22:05 · sesiunea OS programată (20:40) · oprirea ridicată de C-125 (cyber-gpu `78704e5`/`239f986`): P6-91 — `gpu lant --i9 c125` (V2 + V3, implicit oprit), scenariul `gpu-i9`; suita 108/0/1, CI 303 verde → Release `os-303`; pe placă doar cu Adrian.
 - 2026-11-16 23:45 · sesiunea OS programată (23:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-303`); coada fără Adrian goală.
-- 2026-11-17 02:45 · sesiunea OS programată (02:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-303`); coada fără Adrian goală.
+- 2026-11-17 03:20 · sesiunea OS programată (02:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-303`); coada fără Adrian goală.
 - 2026-11-17 05:45 · sesiunea OS programată (05:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-303`); OPRIT (regula 5, 3 sesiuni fără sarcină).
 - 2026-11-17 08:45 · sesiunea OS programată (08:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-303`); OPRIT rămâne (regula 5).
 - 2026-11-17 11:45 · sesiunea OS programată (11:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-303`); OPRIT rămâne (regula 5).
@@ -264,7 +264,7 @@
 - 2026-11-17 20:50 · sesiunea OS programată (17:40) · C-136 → P6-93 gata: cyber-gpu `f732365` (C-135), `gpu lant --i9 c135`; suita 110/0/1; CI verde (după reluarea `https-real`, test cu internet) → Release `os-305`. De la Adrian: mâine pe workstation `gpu lant --i9 c135` → DA → `trimite`.
 - 2026-11-17 20:45 · sesiunea OS programată (20:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-305`); regula 5: 1 din 3.
 - 2026-11-17 23:45 · sesiunea OS programată (23:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-305`); regula 5: 2 din 3.
-- 2026-11-18 02:45 · sesiunea OS programată (02:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-305`); regula 5: 3 din 3 → OPRIT până la comandă nouă sau jurnalul `os-305`.
+- 2026-11-18 03:20 · sesiunea OS programată (02:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-305`); regula 5: 3 din 3 → OPRIT până la comandă nouă sau jurnalul `os-305`.
 - 2026-11-18 05:45 · sesiunea OS programată (05:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-305`); OPRIT rămâne.
 - 2026-11-18 08:45 · sesiunea OS programată (08:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-305`); OPRIT rămâne.
 - 2026-11-18 11:45 · sesiunea OS programată (11:40) · nimic nou: nicio comandă pentru OS, niciun jurnal nou, CI verde (`os-305`); OPRIT rămâne.
@@ -272,10 +272,11 @@
 - 2026-11-18 17:45 · sesiunea OS programată (17:40) · testul `os-306` citit: `i14-simbol: ok`, lanțul I0→I14 întreg pe placa reală (proba 1 = date vechi, proba 2 trece); C-140 închisă `gata`; nicio schimbare de cod; coada fără Adrian goală (regula 5: 1 din 3).
 - 2026-11-18 23:15 · sesiunea OS programată (20:40) · C-141 + C-143 → P6-95 + P6-96: cyber-gpu `3a23dc0`, zona de comenzi 32 KiB, `kronos --gpu` #513 cu `kg`/`kv` în gpu-jurnal, `ciclu-test`/`test-placa` cu cheile (I9 c135, oprire curată „trebuie pornire rece”); suita 111/0/1, CI verde → Release **`os-307`**.
 - 2026-11-18 23:45 · sesiunea OS programată (23:40) · nimic nou: nicio comandă pentru OS (C-144 e pentru Kronos), niciun jurnal `os-307`, CI verde; coada fără Adrian goală (regula 5: 1 din 3).
-- 2026-11-19 02:45 · sesiunea OS programată (02:40) · nimic nou: nicio comandă pentru OS, niciun jurnal `os-307`, CI verde; coada fără Adrian goală (regula 5: 2 din 3).
+- 2026-11-19 03:20 · sesiunea OS programată (02:40) · nimic nou: nicio comandă pentru OS, niciun jurnal `os-307`, CI verde; coada fără Adrian goală (regula 5: 2 din 3).
 - 2026-11-19 05:45 · sesiunea OS programată (05:40) · nimic nou: nicio comandă pentru OS, niciun jurnal `os-307`, CI verde; regula 5: 3 din 3 → OPRIT până la o comandă nouă sau jurnalul testului.
 - 2026-11-19 08:45 · sesiunea OS programată (08:40) · nimic nou: nicio comandă pentru OS, niciun jurnal `os-307`, CI verde; OPRIT (regula 5) rămâne.
 - 2026-11-19 14:30 · sesiunea OS programată (11:40) · primul ciclu automat `os-307` a trecut → OPRIT ridicat; C-146 → P6-97: cyber-gpu `e74b418`, jurnal ținut pe simbol + umbra lansărilor + timpul pe simbol pe bucăți (`kt`) la `kronos --gpu`; suita 111/0/1, CI verde → Release **`os-308`**.
 - 2026-11-19 14:50 · sesiunea OS programată (14:40) · ciclul automat `os-308` a trecut: 16 simboluri pe placă identice cu procesorul; cu driverul 10,99 simb/s (os-307: 3,10), jurnalul pe stick ~74 ms din ~87 ms pe simbol; nicio comandă nouă, CI verde; propunere `idei/2026-11-19_kronos-placa-mai-rapid.md`.
 - 2026-11-19 17:45 · sesiunea OS programată (17:40) · nimic nou: nicio comandă pentru OS, CI verde (`os-308`); coada fără Adrian goală (regula 5: 2 din 3).
 - 2026-11-19 20:45 · sesiunea OS programată (20:40) · nimic nou: nicio comandă pentru OS, CI verde (`os-308`); a treia sesiune fără sarcină → OPRIT (regula 5) până la o comandă de la Adrian.
+- 2026-11-20 01:00 · sesiunea OS programată (23:40) · C-148 + C-152 preluate (OPRIT ridicat); P6-98: jurnalul pe stick la 16 simboluri / 1 s, fără ecran, golit la panică + etapa 0 (`kp`, `kl`, `kc`, `ks`, cyber-gpu `02bbc36`) → Release `os-313`; P6-99 (verificarea cu motorul rapid) urmează.

@@ -1821,6 +1821,8 @@ Format:
 - pachetele următoare (programele lipite, cursa înmulțirilor) vin ca note de la Cyber-GPU; le legi în Release-uri mici, unul pe test.
 - **completare (Adrian, 19 nov 22:50 — „Da, aprob tot”):** (1) viteza maximă (`PERF_BOOST`) are „da”-ul lui Adrian cu condițiile scrise la C-147: când Cyber-GPU o dă gata și centrul de comandă confirmă în hub că cifrele etapei 0 arată o stare joasă, o legi într-un Release separat, oprită implicit și pornită doar în modul ciclu, cu citirile înainte / după în raport; (2) Kronos #651 (C-150): `run kronos --gpu` să accepte și fișierul modelului de 183 M (`KRONOS\kronos_651_q8_0.kgr`), cu limitele verificate înainte de urcare; ciclul rămâne implicit pe #513 până spune centrul de comandă.
 - stare: preluat (2026-11-19 23:45, sesiunea OS) — P6-98 (punctele 1 + 3 → `os-309`), P6-99 (punctul 2), P6-100 (punctul 5) în `docs/TASKS.md`
+- stare: gata parțial (2026-11-20 03:20, sesiunea OS) — punctele 1, 3, 4 gata; punctul 2 → P6-99 (următoarea sarcină), punctul 5 → P6-100
+- rezultat: Release `os-313` (P6-98, cyber-gpu `02bbc36`): rândurile de rutină ale jurnalului fără ecran/serial, pe stick la 16 simboluri sau la 1 s, golite și la panică (testat în QEMU), plus `kp` (tabelul pe feluri în raportul ciclului), `kl`, `kc`, `ks` la sfârșitul lanțului; `kg`/`kv`/`kt` și comanda neschimbate; viteza maximă nelegată; CI verde, pe placă netestat.
 
 ### C-149 · kronos · Prioritatea trece pe driver și OS: ziua placa rămâne liberă pentru teste, antrenările doar noaptea (Adrian, 19 nov 22:33)
 - data: 2026-11-19 22:33 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (19 nov 22:33) și tabelul nou din `RESURSE.md`.
