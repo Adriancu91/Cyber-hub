@@ -290,3 +290,4 @@
 - 2026-11-21 02:45 — sesiunea OS programată (02:40): tot **OPRIT** (regula 5); nicio comandă nouă pentru OS; CI verde (`os-323`).
 - 2026-11-21 05:45 — sesiunea OS programată (05:40): tot **OPRIT** (regula 5); nicio comandă nouă pentru OS, nimic nou de la placă; CI verde (`os-323`).
 - 2026-11-21 10:05 — sesiunea OS (08:41), lucrul continuu: **C-154 gata → `os-324`** (dieta driverului doar în ciclu, CI verde; SIMULARE: aceleași logit-uri, 48 vs 599 cuvinte VRAM pe simbol). C-159 pasul 1, partea 1 (P6-108, poarta canalului viu + `docs/LIVE.md`) gata; urmează P6-109.
+- 2026-11-21 12:45 — sesiunea OS (10:41), lucrul continuu: **C-159 pasul 1 gata → `os-326`** (bucla `live <minute>` pe `os/live`, ETag; PREDARE către centrul de comandă) și **P3 (C-155 p.1) → `os-328`** (doar cu `test-placa --lipit`; SIMULARE: logit-urile lipite identice bit cu bit cu cele simple) + rândurile pozițiilor lente (C-157 p.2b).
