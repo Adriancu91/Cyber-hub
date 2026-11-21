@@ -1,1 +1,1 @@
-liber · terminat 2026-11-21 16:45 · următorul pas: C-157 punctul 5 (C-151 punctul 2: tabloul înainte/după viteza maximă și la N secunde, pragul de temperatură) sau punctul 2 dacă apare un test pe placă
+ocupat · început 2026-11-21 17:15 · sarcina: C-160 punctul 1 (P8: predarea primului calcul cu circuitele speciale) · estimat gata: 18:15
