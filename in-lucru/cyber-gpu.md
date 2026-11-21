@@ -1,1 +1,1 @@
-ocupat · început 2026-11-21 22:12 · sarcina: C-160 p.4, programul 8 (suma pe coloane / LayerNorm înapoi, SIMULARE) · estimat gata: 23:30
+liber · terminat 2026-11-21 22:36 · următorul pas: C-160 punctul 4, programul 3 (LayerNorm înainte pe multe rânduri, scrie μ și r) sau 5 (GELU înainte/înapoi), SIMULARE față de train; sau C-157 punctul 2 dacă apare testul P8 (os-335)
