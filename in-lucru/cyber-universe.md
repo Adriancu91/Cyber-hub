@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 00:17 · următorul pas: verifică CI run 339 (os-339 = #651 la cerere, P6-122) și confirmă GATA DE TEST; apoi argmax pe placă / Fused32, câte unul pe Release; C-161 p.3; P6-111
+ocupat · început 2026-11-22 00:41 · sarcina: CI os-339 + PREDARE argmax pe placă (Release nou) · estimat gata: 02:11
