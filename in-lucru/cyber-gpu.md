@@ -1,1 +1,1 @@
-ocupat · început 2026-11-21 15:13 · sarcina: C-157 punctul 4 (#651 pe placă: limitele și proba în SIMULARE, bugetul de memorie) · estimat gata: 16:15
+liber · terminat 2026-11-21 15:30 · următorul pas: C-157 punctul 5 (C-151 punctul 2: tabloul înainte/după viteza maximă și la N secunde, pragul de temperatură) sau punctul 2 dacă apare un test pe placă

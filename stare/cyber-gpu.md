@@ -1,14 +1,14 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-21 14:25 (ora României) · **de:** sesiunea Cyber-GPU 136 (cloud, fără placă) — **C-157 punctul 3: dieta 2 a driverului (SIMULARE)**. 651 PASS. Lucru continuu (C-157).
+**Actualizat:** 2026-11-21 15:30 (ora României) · **de:** sesiunea Cyber-GPU 137 (cloud, fără placă) — **C-157 punctul 4: #651 pe placă (SIMULARE)**. 655 PASS. Lucru continuu (C-157).
 
 ## Acum
-- **Dieta 2 gata de legat (C-157 punctul 3, SIMULARE):** driverul de azi (759 µs pe simbol, os-328) se duce pe: citirea celor 89 de înregistrări prin fereastră (~166 µs), așteptarea cu o citire la 100 µs (~50), amprenta FNV a logit-urilor în ceasul simbolului (~100–150), argmax pe numere într-un nucleu soft-float (85), restul lansările/ferestrele. Patru tăieturi, **nimic nou pe placă** → estimat ~330–410 µs (simbolul #513 ~2,88 ms, ~347 simb/s). Detalii: `cyber-gpu/docs/C-157_P3_DIETA_DOI.md`.
-- Niciun test nou pe placă de la os-328 (comparat în sesiunea 135).
+- **#651 gata de legat (C-157 punctul 4, SIMULARE):** formele lui #651 = fișierul (206 665 728 B de tensori, 98 Q8_0 + 194 F32 = 292). **Găsirea:** OS-ul își face limitele cu lista **simplă** oricare listă rulează → la #651 (388 de lansări) pasul `0x100` și zona de comenzi de 32 KiB nu ajung → **#651 ar fi refuzat înainte de urcare chiar și cu lista lipită singură**, care încape (172 de lansări, 8 288 B). Remediu: un rând în `run_model` (`ModelLimits::of_lists`). Bugetul: VRAM **270 MiB** (greutăți 197 + cache-uri 72), 25 de bucăți de urcare; RAM-ul nucleului ~470–550 MiB (heap 1 GiB). Proba: model cu forma lui #651 (greutăți generate), lista lipită, constantele OS: oracolul trece. Estimat pe placă (DEDUS): **~5,1–5,6 ms pe simbol (~180–195 simb/s)**. Detalii: `cyber-gpu/docs/C-157_P4_K651.md`.
+- Niciun test nou pe placă de la os-328.
 
 ## Urmează
 1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate.
-2. C-157 punctul 4: #651 pe placă — limitele și proba în SIMULARE pentru 24 de straturi / 292 de tensori, bugetul de memorie.
+2. C-157 punctul 5 (C-151 punctul 2): citirea tabloului înainte/după viteza maximă și la N secunde, pragul de temperatură — SIMULARE + notă.
 3. După cifrele cursei pe placă: lista mixtă (doar felurile care câștigă ≥ 50 ‰).
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
@@ -17,6 +17,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- PREDARE → cyber-universe: **#651 pe placă — limitele pe lista care rulează** (C-157 punctul 4, pentru C-158 punctul 3), nota `cyber-gpu/integration/cyber-universe/C-157_P4_k651-limite.md`, commit `839704f`. Doar adăugări: `kronos_speed::ModelLimits::{of_lists, k651_lists}`, `kronos_gen::VramBudget::with_programs`. În `run_model`: `ModelLimits::of_lists(..., &listele_care_ruleaza, &[])` în loc de `ModelLimits::of(...)` — altfel #651 e refuzat (pasul `0x100` < `0x185`, 32 KiB < 37 312 B). Cu lista simplă la #651: `STRIDE 0x200` + `PUSH_BYTES 0x10000`. Ce e nou pentru placă: **nimic**. Cifre așteptate: VRAM ~270 MiB, 25 de bucăți, 172 de lansări, simbolurile din `MODEL_651.md`, ~5,1–5,6 ms pe simbol.
 - PREDARE → cyber-universe: **dieta 2 a driverului** (C-157 punctul 3), nota `cyber-gpu/integration/cyber-universe/C-157_P3_dieta-doi.md`, commit `367edf4`. Doar adăugări: `gpu_compute::model::{order_key, argmax_bits}`, modulul `nvidia_ga104::kronos_diet2` (`RecordPlan`, `ends_span`, `WaitPlan`, `poll_planned`, `WaitStats`, `Diet2Stats`, `ParsedDiet2`, `parse_diet2`). Ce e nou pentru placă: **nimic** (aceleași programe, lansări, octeți, registre). Patru bucăți independente: (A) două înregistrări în loc de 89 pe 7 din 8 poziții, (B) așteptarea planificată, (C) amprenta FNV după oprirea ceasului, (D) `argmax_bits`. Proba: amprenta identică cu os-328 (`0xda9ae084`), `kt median placa` neschimbat, `kt median driver` 759 → ~350–400 µs, rândurile noi `kt dieta 2`, `kt cuvinte de inregistrari citite pe simbol (median)` = 8.
 - PREDARE → cyber-universe: **cursa înmulțirilor în lista de simbol** (C-155 punctul 4), nota `cyber-gpu/integration/cyber-universe/C-155_cursa-pe-sferturi.md`, commit `9d256ca`. Doar adăugări: `kronos_diag::TokenList::Fused32` (`lipita-32`), `kronos_layer::{Prog::Q8Fused32, Prog::Q8Matvec32, PROGRAMS_FUSED32}`, `kronos_model::token_launches_fused32`, modulul `nvidia_ga104::q8_fused32` (`quarter`, `narrow`, `count`, …), `gpu_sim::cmdproc::{q8_fused32_on_cpu, Q8_FUSED32_NEEDS}`. Ce e nou pentru placă: **programele `q8_fused32`** (SHA-256 `f26faedd…bcb2`, 22 registre, 128 B partajați, fără barieră) și **`q8_matvec32`** (`86ae584b…c303`); aceleași cbuf-uri, nicio scriere nouă în registre. Proba: același text cu `Fused`, apoi cu `Fused32` (ca `--lipit`); corect = aceleași simboluri ca procesorul, abaterea față de `Fused` sub 1e-4 (amprenta se schimbă); mai rapid = rândurile `kp` pe fel; un fel trece doar cu ≥ 50 ‰.
 - PREDARE → cyber-universe: **argmax pe placă** (C-155 punctul 3), nota `cyber-gpu/integration/cyber-universe/C-155_argmax-pe-placa.md`, commit `3683ef4`. Doar adăugări: modulul `nvidia_ga104::argmax` (`launch`, `ArgmaxResult::{from_bytes, token, agrees}`), `kronos_layer::{Prog::Argmax, PROGRAMS_ARGMAX}`, `kronos_gen::{TopOutput, TopRunner, Generation::{accept_top, run_top}}`, `gpu_compute::model::{argmax_result, ARGMAX_NONE}`, `gpu_sim::cmdproc::{argmax_on_cpu, ARGMAX_NEEDS}`; `kronos_token::work_list` refuză și `LayerNorm256`/`Argmax` (OS-ul nu-l folosește). Ce e nou pentru placă: **programul `argmax`** (SHA-256 `4d67cd34…0572`, 256 fire, 25 registre, 96 B partajați, o barieră) + o scriere de 16 octeți în arena RAM a logit-urilor; nicio scriere nouă în registre. Release separat după LayerNorm nou; proba: copie + argmax în același simbol, cuvintele = `argmax_result` al logit-urilor copiate (prag 0), apoi doar argmax.
@@ -56,7 +57,7 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: P6-112 (fără scriere pe stick în mijlocul generării; dieta 2 poate intra în același Release, nimic nou pe placă); apoi LayerNorm nou, argmax pe placă și cursa pe sferturi (`Fused32`), câte unul pe Release. Opțional: rândurile `kt lipit fata de simplu` / `kt sferturi fata de lipit` (abaterea maximă între liste).
+- De la `cyber-universe`: pentru #651 (C-158 punctul 3) — schimbarea de un rând din nota `C-157_P4_k651-limite.md`; P6-112 (fără scriere pe stick în mijlocul generării; dieta 2 poate intra în același Release, nimic nou pe placă); apoi LayerNorm nou, argmax pe placă și cursa pe sferturi (`Fused32`), câte unul pe Release. Opțional: rândurile `kt lipit fata de simplu` / `kt sferturi fata de lipit` (abaterea maximă între liste).
 - De la Kronos: nimic nou.
 
 ## Blocaje / nevoie de Adrian
