@@ -1,13 +1,13 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-21 22:35 (ora României) · **de:** sesiunea Cyber-GPU 144 (cloud, fără placă) — **C-160 punctul 4, programele 4 și 2 (LayerNorm înapoi + sumele pe coloane)**. 697 PASS. Lucru continuu (C-157 + C-160).
+**Actualizat:** 2026-11-21 23:55 (ora României) · **de:** sesiunea Cyber-GPU 145 (cloud, fără placă) — **C-157 punctul 2: comparația după os-335 (P8)**. 702 PASS. Lucru continuu (C-157 + C-160).
 
 ## Acum
-- **C-160 p.4, programele 4 și 2 gata (SIMULARE):** „înapoi” prin LayerNorm, în două programe fără `atomic` (aceiași biți la fiecare rulare): `ln_back` (dx, un bloc de 256 pe rând; SHA-256 `369afd8d…85cd7063`, 2 736 octeți) și `colsum` (un fir pe coloană: suma deplasării = programul 2, sau dγ + dβ; SHA-256 `7a0fa2bd…a47fb10`, 1 136 octeți). Fără MUFU: modelul urmează codul NAK operație cu operație. T154/T155: totul în marginea scrisă față de oracolul f64 (`train::layernorm_back_rows` = calculul din `loss_and_grad`), C până la 2 048, până la 2 048 de rânduri, γ-urile reale ale modelului mic. Nota `cyber-gpu/docs/C-160_P4_LN_BACK.md`, commit `b157c7f`.
-- Programele 1 (`mm_train`) și 7 (`xent`) gata în SIMULARE, nepredate. P8 (os-335) și predările mai vechi așteaptă la OS / la test.
+- **P8 pe placa reală (os-335) — lămurit cum adună GA104 (pe procesor, din cifrele plăcii):** un singur model, `gpu_compute::mma::GA104_OS335` — acumulatorul + 8 produse pe pas, alinierea la cel mai mare exponent nominal (exp(a)+exp(b)), 24 + 1 biți, tăiere spre zero, rezultatul tăiat spre zero la f32 — reproduce toate cele 12 cifre ale plăcii (exacte 256/80/63/71/89/83, ‰ 0/108/72/110/148/124); cele 10 modele vechi și 19 vecini nu (T156). Potrivire pe amprentă, nu încă bit cu bit. Nota `cyber-gpu/integration/cyber-universe/C-157_P2e_os-335_P8.md`, commit `cf9e911`.
+- C-160 p.4: programele 1, 7, 4 și 2 gata în SIMULARE, nepredate.
 
 ## Urmează
-1. După fiecare test pe placă (P8 / os-335 mai ales): comparația (C-157 punctul 2), cu întâietate.
+1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate — la următorul P8: rândul `kt mma16 set: model ga104` (1 pe toate 6 = modelul confirmat bit cu bit).
 2. **C-160 punctul 4, mai departe:** programul 3 (LayerNorm înainte pe multe rânduri, care scrie μ și r), GELU înainte / înapoi, atenția înapoi, încorporările, norma + tăierea, AdamW — câte unul, față de `train`.
 3. C-160 punctul 5: pasul de aur pe placa simulată (modelul mic, ambele rețete).
 4. P7 (lanțul) în trepte, la rândul lui; C-157 punctele 5, 7, 8 când C-160 așteaptă.
@@ -18,6 +18,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- PREDARE → cyber-universe: **comparația după os-335 (P8) — modelul sumatorului plăcii** (C-157 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-157_P2e_os-335_P8.md`, commit `cf9e911` (CI verde). Doar adăugări: `gpu_compute::mma::{HwAdder, GA104_OS335, mma16_hw}`, `nvidia_ga104::mma16_probe::{OS335_EXACT, OS335_PERMILLE, d_fnv, ga104_fit_bytes, fit_rows, journal_fit, parse_mma16_fit}`. Opțional în OS: `mp::journal_fit(journal, i, d)?` lângă `judge_set` în proba P8 (două rânduri pe set: FNV-ul ieșirii + „model ga104” 1/0). Ce e nou pentru placă: **nimic** (același program, aceleași trimiteri); poate intra în orice Release, fără test separat.
 - **Sesiunea 144 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulele noi `nvidia_ga104::ln_back` (`LN_BACK`, `LN_BACK_SHA256`, `REGISTERS`, `BLOCK`, `SHARED`, `CBUF_BYTES`, `Args::{cbuf, grid, inv_c}`) și `nvidia_ga104::colsum` (`COLSUM`, `COLSUM_SHA256`, `REGISTERS`, `BLOCK`, `CBUF_BYTES`, `Mode`, `Args::{cbuf, grid}`), `gpu_compute::layer::{ln_back_gpu256, colsum_gpu, LnStats}`, `gpu_compute::train::{layernorm_stats, layernorm_back_rows}`, `gpu_sim::cmdproc::{ln_back_on_cpu, colsum_on_cpu, LN_BACK_NEEDS}`. Nimic de legat acum; nimic nou pentru placă. Pentru C-160 p.6 („un singur program înapoi pe placă”): `ln_back` sau `colsum` sunt candidați buni — fără MUFU, deci comparabile bit cu bit cu modelul.
 - **Sesiunea 143 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::xent` (`XENT`, `XENT_SHA256`, `REGISTERS`, `BLOCK`, `SHARED`, `CBUF_BYTES`, `Args::{cbuf, grid}`), `gpu_compute::layer::xent_gpu256`, `gpu_compute::train::{softmax_xent, logits}`, `gpu_sim::cmdproc::{xent_on_cpu, XENT_NEEDS}`. Nimic de legat acum; nimic nou pentru placă.
 - **Sesiunea 142 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::mm_train` (`MM_TRAIN`, `MM_TRAIN_SHA256`, `REGISTERS`, `BLOCK`, `SHARED`, `TA`, `TB`, `BIAS`, `CBUF_BYTES`, `Args::{cbuf, grid}`), `gpu_compute::reference::matmul_t_fma_ftz`, `gpu_sim::cmdproc::{mm_train_on_cpu, MM_TRAIN_NEEDS, MM_TRAIN_TA, MM_TRAIN_TB, MM_TRAIN_BIAS}`; `gpu_compute::train::{linear, linear_back}` devin publice. Nimic de legat acum; nimic nou pentru placă.

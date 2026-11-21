@@ -1,1 +1,1 @@
-ocupat · început 2026-11-21 23:12 · sarcina: C-157 p.2 — comparația P8 (os-335): cum adună GA104 în mma16 · estimat gata: 00:30
+liber · terminat 2026-11-21 23:55 · următorul pas: C-160 punctul 4, programul 3 (LayerNorm înainte cu μ și r) sau 5 (GELU), SIMULARE față de train; sau C-157 p.2 la un test nou pe placă
