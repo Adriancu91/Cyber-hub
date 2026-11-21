@@ -27,6 +27,9 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 | 4c | următorul | LayerNorm nou (P6-114) | de anunțat de sesiunea OS | în lucru la OS (estimat 17:40) |
 | — | `os-328` | **proba agentului viu** (C-159 pasul 1; doar citiri + refuzuri; nu atinge placa) | `live 10`, apoi `live 2` | **făcut 21 nov 13:03 și 13:18 — trecută** (61 de comenzi, zero abateri) → `rezultate/2026-11-21-workstation-agentul-viu-proba/`; sesiunea C după reparația `live.cheie` secret |
 | 5 | următorul | Kronos #651 pe placă (P6) | de stabilit de sesiunea OS | după 3–4 |
+| 6 | de anunțat | **P8 — primul calcul cu circuitele speciale** (aprobat de Adrian, 21 nov 16:18) | de anunțat de sesiunea OS | așteaptă PREDARE Cyber-GPU (C-160 p.1) → Release OS (C-161 p.2) |
+| 7 | de anunțat | **prima comandă pe placă din modul viu** (`test-placa` trimis prin canalul viu; cheia e pe stick din 16:12) | `live 10` + comanda trimisă de centrul de comandă | așteaptă Release-ul OS cu comanda de placă a modului viu (C-161 p.1); test separat, anunțat lui Adrian |
+| 8 | mai târziu | **motorul de antrenare:** un program „înapoi” singur, apoi „pasul de aur” al modelului mic | de anunțat de sesiunea OS | C-160 / C-161; antrenarea adevărată (ore) doar cu decizia nouă a lui Adrian |
 Sesiunea OS anunță o versiune gata prin rândul `GATA DE TEST:` din `stare/cyber-universe.md`; centrul de comandă o trece aici.
 
 ## Program în cloud (ora României)
