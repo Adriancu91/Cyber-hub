@@ -20,6 +20,7 @@ Un proiect nou se adaugă doar de Adrian sau la cererea lui (rând nou aici + î
 | `COMENZI.md` | Comenzile lui Adrian către proiecte | centrul de comandă scrie comenzile; fiecare agent schimbă doar `stare` și `rezultat` la comenzile lui |
 | `RESURSE.md` | Ce calculator / placă / fereastră orară aparține fiecărui proiect + rezervări | centrul de comandă (rezervările doar cu „da”-ul lui Adrian) |
 | `DECIZII.md` | Deciziile lui Adrian valabile pentru toate proiectele | centrul de comandă (doar ce a spus Adrian) |
+| `in-lucru/<ID>.md` | Semnul „în lucru”: un rând care spune dacă o sesiune a proiectului lucrează acum (vezi „Lucrul continuu”) | doar agentul proiectului |
 | `stare/<ID>.md`, `jurnal/<ID>.md` | Starea și istoricul fiecărui proiect | doar agentul proiectului |
 | `idei/` | Propuneri de colaborare | oricine propune; doar Adrian aprobă |
 | `rezumate/` | Rezumatele coordonatorului | coordonatorul |
@@ -60,6 +61,17 @@ Un proiect nou se adaugă doar de Adrian sau la cererea lui (rând nou aici + î
 4. Dacă ai o idee care leagă proiectul tău de altul: creează `idei/AAAA-LL-ZZ-<scurt>.md` după `idei/_SABLON.md`.
    Dacă ai ceva de spus la o propunere existentă: adaugă un rând la secțiunea „Discuție” a ei.
 5. Commit (mesaj: `<ID>: stare AAAA-LL-ZZ`) și push. Dacă push-ul e refuzat: `git pull --rebase` și reîncearcă (max 3 ori).
+
+## Lucrul continuu (decizia lui Adrian, 21 nov 2026 08:01) — pentru `cyber-gpu` și `cyber-universe`
+Scopul: nimeni nu așteaptă degeaba și nimeni nu calcă pe altul.
+1. **Sesiuni din oră în oră, una singură pe proiect.** La pornire citești `in-lucru/<ID>.md`. Dacă scrie `ocupat` și începutul e mai nou de 3 ore, altă sesiune a proiectului tău lucrează: ieși imediat, fără niciun commit. Altfel scrii acolo `ocupat · început AAAA-LL-ZZ HH:MM · sarcina: … · estimat gata: HH:MM`, commit + push, apoi lucrezi. La sfârșit, în commit-ul de stare: `liber · terminat AAAA-LL-ZZ HH:MM · următorul pas: …`. Ora României: `TZ=Europe/Bucharest date`.
+2. **Coada permanentă.** Fiecare proiect are în `COMENZI.md` o comandă-coadă (C-157 `cyber-gpu`, C-158 `cyber-universe`), cu puncte în ordine. Cât timp are puncte nefăcute, ai de lucru: oprirea „trei sesiuni fără sarcină terminată” nu se aplică unei sesiuni care are coadă. Centrul de comandă adaugă puncte; tu scrii ce ai făcut la `rezultat`.
+3. **Predarea directă.** Când termini ceva de care are nevoie alt proiect, scrii în starea ta, la „Ce oferă proiectul celorlalți”, un rând care începe cu `PREDARE → <ID>:` (ce e, unde e nota, commit-ul, și ce e nou pentru placă: „nimic” sau ce anume). Proiectul care primește o ia la prima lui trecere, fără o comandă nouă, dacă intră într-un punct din coada lui.
+4. **Un singur lucru nou pe Release și pe test.** Când un Release pentru placă e gata (CI verde), sesiunea OS scrie în starea ei un rând `GATA DE TEST: os-NNN — ce e nou, rândul pentru teste.txt, ce cifre aștept`. Nu aștepți rezultatul: treci la punctul următor din coadă.
+5. **Placa: un singur test o dată, la orice oră.** Doar centrul de comandă pune versiunea pe stick și dă semnalul; ordinea e în `RESURSE.md`, „Coada testelor pe placă”. Rezultatele apar în `rezultate/` și, pe scurt, la comanda ta.
+6. **O trecere fără nimic de făcut iese fără commit** (nici stare, nici jurnal), cu mesajul „Nimic nou.”. Nu se numără ca sesiune.
+7. **Ce rămâne cu „da” separat al lui Adrian** (`DECIZII.md`, 21 nov 08:01): scrieri pe discurile workstation-ului, lucruri noi trimise la placă în afara pachetelor aprobate, lanțul pe placă (P7), circuitele speciale pe placă (P8), BIOS-ul. Pentru acestea pregătești (cod oprit implicit, SIMULARE, QEMU), scrii „aștept da” în stare și treci la punctul următor — nu te oprești.
+8. **Întrebări și blocaje:** `stare: întrebare` / `blocat` la comandă + un rând în starea ta. Centrul de comandă citește hub-ul din oră în oră ziua și la două ore noaptea și răspunde acolo.
 
 ## Ce NU ai voie
 - Să scrii în fișierul de stare sau în jurnalul altui proiect, ori în `PANOU.md`, `RESURSE.md`, `DECIZII.md`.

@@ -10,20 +10,30 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 | Laptopul lui Adrian (ThinkPad L15) — rezervat suitei până își atinge ținta (~1–2 săptămâni de la 20 oct) | `suita-office` | sesiunile Claude Code ale suitei, pornite de sarcina locală „Suite – lucru continuu” (verifică la 5 minute) | doar suita; repornirea laptopului (de ex. pentru stick-ul OS) doar cu rezervare |
 | Cloud (sesiuni programate) | toate | supraveghetorul Kronos (la :15), Cyber Universe OS (la :40), coordonatorul hub-ului | fiecare lucrează doar în repo-ul lui + fișierele lui din hub |
 
-## Workstation: ferestre (decizia lui Adrian, 19 nov 2026 22:33)
-| Fereastră | A cui e placa | Reguli |
+## Workstation: placa video (decizia lui Adrian, 21 nov 2026 08:01 — înlocuiește ferestrele din 19 nov)
+| Când | A cui e placa | Reguli |
 |---|---|---|
-| Ziua, 08:00–18:00 | **testele Cyber-GPU / Cyber Universe** (ciclul automat C-143, pornit de centrul de comandă prin paznicul de pe workstation) | Kronos nu pune sarcini de placă în această fereastră. Un test ține ~10–15 minute (Windows → stick → test → Windows). |
-| Noaptea, 19:00–07:00 | **Kronos** (antrenări, ca workstation-ul să nu stea degeaba) | placa liberă la 07:00. Dacă un test de driver/OS are nevoie de o noapte, centrul de comandă scrie o rezervare mai jos și Kronos sare peste noaptea aceea. |
-| 07:00–08:00 și 18:00–19:00 | nimeni (tampon) | timp pentru oprirea curată a antrenării / întoarcerea în Windows. |
+| **La orice oră, zi și noapte** | **testele Cyber-GPU / Cyber Universe** (ciclul automat C-143, pornit doar de centrul de comandă prin paznicul de pe workstation) | Un singur test o dată; un test ține ~10–15 minute (Windows → stick → test → Windows). Cheile lui Adrian de pe stick și butonul `C:\Kronos\cyber-test\STOP` rămân stăpâne. |
+| — | **Kronos: pe pauză** (C-156) | Nicio antrenare pe workstation până la o decizie nouă a lui Adrian. Chat-ul cu #651 rămâne pornit. Lucrul mic pe procesor (exporturi, „pasul de aur”) e voie oricând; un test îl poate întrerupe prin repornire, deci se face în bucăți care se pot relua. |
+
+## Coada testelor pe placă (o ține centrul de comandă; un singur lucru nou pe test)
+| Nr. | Versiunea | Ce e nou | Rândul din `auto\teste.txt` | Stare |
+|---|---|---|---|---|
+| 1 | `os-323` | tabloul de bord al plăcii (temperatură, ceasuri, stare) | `test-placa --tablou` | pornește 21 nov dimineața |
+| 2 | `os-323` | proba de reset din interior (FLR) | `test-placa --flr-proba` | după 1 |
+| 3 | `os-324` | „dieta driverului” (C-154) | `test-placa` | când apare Release-ul, CI verde |
+| 4 | următorul | calculele lipite (P3) | `test-placa` | după nota Cyber-GPU (C-155) |
+| 5 | următorul | Kronos #651 pe placă (P6) | de stabilit de sesiunea OS | după 3–4 |
+Sesiunea OS anunță o versiune gata prin rândul `GATA DE TEST:` din `stare/cyber-universe.md`; centrul de comandă o trece aici.
 
 ## Program în cloud (ora României)
 | Sesiune | Când |
 |---|---|
 | Kronos supraveghetor | 02:15, 05:15, 08:15, 11:15, 14:15, 17:15, 20:15, 23:15 |
-| Cyber Universe OS | 02:40, 05:40, 08:40, 11:40, 14:40, 17:40, 20:40, 23:40 |
-| Cyber-GPU (de la 19 nov 2026 22:50: 8 pe zi, „da”-ul lui Adrian; înainte 4 pe zi) | 01:25, 04:25, 07:25, 10:25, 13:25, 16:25, 19:25, 22:25 |
+| Cyber Universe OS (de la 21 nov 2026: din oră în oră, cu semnul „în lucru”) | în fiecare oră, la :40 |
+| Cyber-GPU (de la 21 nov 2026: din oră în oră, cu semnul „în lucru”; 19–21 nov: 8 pe zi) | în fiecare oră, la :10 |
 | Coordonatorul hub-ului (rescrie PANOU.md) | 08:50, 14:50, 20:50 |
+| Centrul de comandă (citește hub-ul, pune versiunile pe stick, pornește testele, răspunde la întrebări) | ziua din oră în oră, noaptea la două ore |
 
 ## Rezervări (doar cu „da”-ul lui Adrian)
 | Când | Resursă | Pentru | Motiv | Aprobat |
