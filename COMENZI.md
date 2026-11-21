@@ -1926,6 +1926,7 @@ Format:
 - cum lucrezi: (a) sesiunile pornesc din oră în oră — semnul `in-lucru/cyber-universe.md` înainte de orice (pe 20 nov două sesiuni OS au lucrat în același timp pe `main`; semnul oprește asta); (b) cât timp coada are puncte nefăcute ai de lucru, regula 5 nu te oprește; (c) **un singur lucru nou pentru placă pe Release**; când e gata (CI verde) scrii în stare `GATA DE TEST: os-NNN — ce e nou, rândul pentru teste.txt, ce cifre aștept` și treci la punctul următor fără să aștepți testul; (d) notele Cyber-GPU marcate `PREDARE → cyber-universe:` le iei la prima trecere, fără comandă nouă, dacă intră într-un punct de mai jos; (e) între două note pentru placă lucrezi la uneltele de la punctele 6–10 — nu există „nimic de făcut”; (f) regulile tale (clean-room, cod, siguranță) rămân toate.
 - coada, în ordine (cele pentru placă au întâietate, câte una pe Release):
   1. **C-154:** „dieta driverului” → `os-324`, singură.
+  1b. **C-159 — agentul viu** (adăugat 21 nov 08:30; Adrian: „implementare importantă pentru uneltele OS-ului”): pașii lui alternează cu notele pentru placă — după fiecare Release pentru placă, un pas din C-159; are întâietate față de punctele 5–10.
   2. **P3** (calculele lipite), când apare nota Cyber-GPU (C-155 punctul 1) → Release separat.
   3. **Kronos #651 pe placă (P6):** ciclul să poată rula și cu `KRONOS\kronos_651_q8_0.kgr` (fișierul e pe stick; fișa `integrare/kronos/MODEL_651.md`), la cerere printr-un rând în `teste.txt`; #513 rămâne implicit → Release separat.
   4. **Notele următoare de la Cyber-GPU** din planul aprobat (LayerNorm nou, înmulțirea cea mai rapidă, argmax pe placă, dieta a doua) — câte una pe Release, fiecare cu proba „aceleași simboluri”.
@@ -1937,3 +1938,16 @@ Format:
   10. **Examenul lui Kronos în OS (unealta 7)** și, când Cyber-GPU are ce lega, **motorul de antrenare** (treapta 3) — doar pregătire, QEMU / SIMULARE; pe placă doar cu o comandă nouă.
 - ce rămâne cu „da” separat al lui Adrian: lanțul pe placă (P7), circuitele speciale pe placă (P8), orice scriere pe discurile workstation-ului, schimbarea ordinii din BIOS (o face el).
 - stare: nou
+
+### C-159 · cyber-universe · AGENTUL VIU: Claude conduce OS-ul pas cu pas prin hub (Adrian, 21 nov 08:18)
+- data: 2026-11-21 08:18 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (21 nov 08:18); studiul, alegerea și forma canalului: `idei/2026-11-21_agentul-viu.md` (citește-l întâi). Locul în coadă: C-158 punctul 1b.
+- ce, în pași (fiecare cu test în QEMU și plan în `docs/plans/`; un pas = un Release, fără nimic nou pentru placă):
+  1. **Canalul viu.** Comanda `live <minute>` (și rândul `live <minute>` în `auto\teste.txt`): OS-ul deschide o sesiune pe ramura `os/live` din hub, dosarul `live/<sesiune>/`; întreabă la 2–3 s (cerere condiționată, ETag) după `c-NNNN.json`, execută, scrie `r-NNNN.json`. Comenzile de shell (`fel: comanda`) cu răspuns complet: ecoul comenzii, codul de ieșire, durata, tot textul scris, textul ecranului după, starea (versiune, temperaturi, memorie). Numărul exact următor + semnătura HMAC-SHA-256 cu `/usb/hub/live.cheie` + „o singură dată” (jurnal pe stick); altfel `REFUZAT` cu motivul. `gata` sau `<minute>` fără comenzi → încheie (în ciclu: repornire în Windows, ca azi). Fără `live.cheie` modul nu pornește.
+  2. **Mâinile.** `scrie` (text), `tasta` (taste și combinații), `clic` / `muta` (x y) băgate în aceeași coadă ca tastatura și mouse-ul adevărate; `ecran` (textul ecranului) și `captura` (imagine micșorată a ecranului, urcată în `live/<sesiune>/`).
+  3. **Sesiune care trece peste repornire:** `actualizeaza --versiune os-N` + repornire din modul viu, cu reluarea aceleiași sesiuni (versiunea nouă ajunge pe stick fără Windows); citire / scriere de fișiere în dosarele permise de pe stick; `puls.json` la 60 s.
+  4. **Ceasul de pază armat în modul viu** (leagă C-158 punctul 6): un OS înghețat repornește singur.
+  5. **Aceleași mâini pentru Claude din OS** (`/bin/claude`, P6-04…06) — pregătit, **oprit** până la „da”-ul lui Adrian și cheia API pusă de el.
+- ce are voie agentul: tot ce are shell-ul, nu doar lista albă a citirilor. **Rămân păzite de nucleu:** fișierele secrete (token, chei) nu se arată niciodată; scrieri pe disc doar pe partiții `cyber.rw`; **orice comandă care scrie în placa video e `REFUZAT` fără cheia `/usb/hub/permite-live-placa`** (o pune centrul de comandă doar după „da”-ul lui Adrian) — `after-gpu.sh` să verifice asta.
+- predarea: când pasul 1 e într-un Release cu CI verde, scrii în stare `PREDARE → centrul de comandă:` cu forma exactă a fișierelor (`docs/LIVE.md`), ca centrul de comandă să-și scrie capătul lui și să facă prima probă pe workstation (`live 10`, doar citiri).
+- stare: nou
+
