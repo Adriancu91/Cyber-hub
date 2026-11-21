@@ -1,15 +1,15 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-21 12:35 (ora României) · **de:** sesiunea Cyber-GPU 134 (cloud, fără placă) — **C-155 punctul 3: argmax pe placă (SIMULARE)**. 636 PASS, CI verde. Lucru continuu (C-157).
+**Actualizat:** 2026-11-21 13:30 (ora României) · **de:** sesiunea Cyber-GPU 135 (cloud, fără placă) — **comparația os-328 + C-155 punctul 4: cursa înmulțirilor în lista de simbol (SIMULARE)**. 644 PASS. Lucru continuu (C-157). C-155 gata în întregime.
 
 ## Acum
-- **Argmax pe placă gata de legat (SIMULARE):** programul nou `argmax` (256 de fire, Mesa NAK) alege simbolul din logit-urile din VRAM și scrie **16 octeți** în RAM (simbolul, cel mai mare logit, câte logit-uri nefinite, n), în loc de copia de 64 KiB + alegerea pe procesor (os-324: 47 + 85 µs). Rezultatul e **exact** argmax-ul procesorului (alegerea maximului nu rotunjește). Prima variantă compara numerele cu FTZ (NAK) — am trecut pe chei întregi din biți, ca să dea același simbol și în cazurile-limită.
-- În SIMULARE (T145): copie + argmax în același simbol → aceleași cuvinte ca oracolul la toate pozițiile; doar argmax → aceleași simboluri ca generarea cu copie; NaN → fără simbol; program plantat greșit → prins.
-- Câștig estimat (DEDUS): ~130 µs pe simbol (~4,08 → ~3,95 ms). Mic; rostul e etapa 5 (simbolul rămâne pe placă).
+- **os-328 comparat** (C-157 punctul 2): P3 pe placă a dat 3 284 µs pe simbol față de ~3 600 estimat; câștigul a venit mai mult din driver (−588 µs) decât din placă (−203). Pauza de 0,9 s din prima rulare = tot scrierea jurnalului pe stick, înainte de poziția 16 (P6-112 o repară). Înmulțirile sunt 60 % din placă și merg la ~12 % din viteza memoriei → acolo e următorul câștig mare.
+- **Cursa înmulțirilor gata de legat (SIMULARE):** programul nou `q8_fused32` (aceeași muncă împărțită pe sferturi de bloc: toate cele 32 de fire lucrează, citiri la rând, x cu citiri de 16 octeți) + logit-urile pe `q8_matvec32`, în lista `Fused32` — aceleași 88 de lansări, aceleași cbuf-uri; doar programul se schimbă. În SIMULARE: oracolul trece, aceleași simboluri ca lista lipită (T146). Care e mai rapid se vede doar pe placă.
 
 ## Urmează
-1. **C-155 punctul 4:** cursa înmulțirilor (etapa 4: fc/proj/qkv) cu cifrele os-322/324 ca bază.
-2. După fiecare test pe placă (P3 + pozițiile lente e următorul): comparația cu estimarea (C-157 punctul 2), cu întâietate.
+1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate.
+2. C-157 punctul 3: dieta, partea a doua (driverul sub 0,5 ms pe simbol) — SIMULARE + notă.
+3. După cifrele cursei pe placă: lista mixtă (doar felurile care câștigă ≥ 50 ‰).
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
@@ -17,6 +17,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- PREDARE → cyber-universe: **cursa înmulțirilor în lista de simbol** (C-155 punctul 4), nota `cyber-gpu/integration/cyber-universe/C-155_cursa-pe-sferturi.md`, commit `9d256ca`. Doar adăugări: `kronos_diag::TokenList::Fused32` (`lipita-32`), `kronos_layer::{Prog::Q8Fused32, Prog::Q8Matvec32, PROGRAMS_FUSED32}`, `kronos_model::token_launches_fused32`, modulul `nvidia_ga104::q8_fused32` (`quarter`, `narrow`, `count`, …), `gpu_sim::cmdproc::{q8_fused32_on_cpu, Q8_FUSED32_NEEDS}`. Ce e nou pentru placă: **programele `q8_fused32`** (SHA-256 `f26faedd…bcb2`, 22 registre, 128 B partajați, fără barieră) și **`q8_matvec32`** (`86ae584b…c303`); aceleași cbuf-uri, nicio scriere nouă în registre. Proba: același text cu `Fused`, apoi cu `Fused32` (ca `--lipit`); corect = aceleași simboluri ca procesorul, abaterea față de `Fused` sub 1e-4 (amprenta se schimbă); mai rapid = rândurile `kp` pe fel; un fel trece doar cu ≥ 50 ‰.
 - PREDARE → cyber-universe: **argmax pe placă** (C-155 punctul 3), nota `cyber-gpu/integration/cyber-universe/C-155_argmax-pe-placa.md`, commit `3683ef4`. Doar adăugări: modulul `nvidia_ga104::argmax` (`launch`, `ArgmaxResult::{from_bytes, token, agrees}`), `kronos_layer::{Prog::Argmax, PROGRAMS_ARGMAX}`, `kronos_gen::{TopOutput, TopRunner, Generation::{accept_top, run_top}}`, `gpu_compute::model::{argmax_result, ARGMAX_NONE}`, `gpu_sim::cmdproc::{argmax_on_cpu, ARGMAX_NEEDS}`; `kronos_token::work_list` refuză și `LayerNorm256`/`Argmax` (OS-ul nu-l folosește). Ce e nou pentru placă: **programul `argmax`** (SHA-256 `4d67cd34…0572`, 256 fire, 25 registre, 96 B partajați, o barieră) + o scriere de 16 octeți în arena RAM a logit-urilor; nicio scriere nouă în registre. Release separat după LayerNorm nou; proba: copie + argmax în același simbol, cuvintele = `argmax_result` al logit-urilor copiate (prag 0), apoi doar argmax.
 - PREDARE → cyber-universe: **pozițiile lente + rândul `kt` pe poziții** (C-157 punctul 2b, după os-324), nota `cyber-gpu/integration/cyber-universe/C-157_P2b_pozitii-lente.md`, commit `46078f4` (nota: `847329d`). Doar adăugări: `kronos_fast::{WriteShadow::forget_range, SLOW_FACTOR, SLOW_MAX, SlowReport, TimeSplit::{slow_report, slow_rows, journal_slow, slow_lines}, ParsedSlow, parse_slow}`. Propuneri în OS: (1) fără scriere pe stick în mijlocul generării (inel în memorie, scris la final/panică; sau la 5 s), (2) golirea jurnalului înainte de poziția 0, în afara ceasului, (3) `forget_range` în loc de `forget()` în `write`. Ce e nou pentru placă: **nimic**; rândurile `kt` intră în Release-ul cu P3 (citiri de ceas).
 - PREDARE → cyber-universe: **LayerNorm nou** (C-155 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-155_LayerNorm-nou.md`, commit `139b145`. Doar adăugări: `kronos_diag::TokenList::FusedLn`, `kronos_layer::{Prog::LayerNorm256, PROGRAMS_FUSED_LN, token_launches_fused_ln}`, `kronos_model::token_launches_fused_ln`, modulul `nvidia_ga104::layernorm256`, `gpu_sim::cmdproc::{layernorm256_on_cpu, LAYERNORM256_NEEDS}`, `gpu_compute::layer::{layernorm_gpu256, LN256_MAX_N}`. Ce e nou pentru placă: **programul `layernorm256`** (SHA-256 `a407dd68…334d`, 256 de fire, 25 registre, 32 B partajați, o barieră); nicio scriere nouă în registre. Release separat după P3; proba: oracolul pe procesor + aceleași simboluri, abaterea față de LayerNorm vechi sub 1e-4.
@@ -54,9 +55,10 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: P3 într-un Release separat (C-158 punctul 2), cu rândurile `kt` pe poziții și cele 3 propuneri din nota C-157 punctul 2b; apoi LayerNorm nou și argmax pe placă, câte unul pe Release (C-158 punctul 4).
+- De la `cyber-universe`: P6-112 (fără scriere pe stick în mijlocul generării); apoi LayerNorm nou, argmax pe placă și cursa pe sferturi (`Fused32`), câte unul pe Release. Opțional: rândurile `kt lipit fata de simplu` / `kt sferturi fata de lipit` (abaterea maximă între liste).
 - De la Kronos: nimic nou.
 
 ## Blocaje / nevoie de Adrian
 - Nimic care să oprească lucrul. „Aștept da” (fără grabă): primele scrieri pe laptop (`GA106_LAPTOP.md` §7); P7 (lanțul) și P8 (circuitele speciale) pe placă.
 - 2026-11-21 12:35 — Sesiunea 134 (lucru continuu, C-157): **C-155 punctul 3 gata** — argmax pe placă (`argmax.comp`, 16 octeți în loc de 64 KiB, chei întregi fără FTZ), `Generation::run_top`, T145 în SIMULARE, nota pentru OS. 636 PASS. Commit `3683ef4`.
+- 2026-11-21 13:30 — Sesiunea 135 (lucru continuu, C-157): comparația os-328 (3 284 µs față de ~3 600 estimat); **C-155 punctul 4 gata** — cursa înmulțirilor în lista de simbol (`q8_fused32` + `q8_matvec32`, `TokenList::Fused32`), T146 în SIMULARE, nota pentru OS. 644 PASS. Commit `9d256ca`.
