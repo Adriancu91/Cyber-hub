@@ -1896,7 +1896,7 @@ Format:
 - de ce: os-322 a arătat că frâna e driverul (3,1 ms din 5,8 ms pe simbol). Cyber-GPU a pregătit în SIMULARE „dieta”: pushbuffer-ul prin umbră + fără zerorizarea înregistrărilor — **nimic nou trimis la placă** (aceleași programe, aceleași lansări, aceiași octeți), estimat driver ~1,3 ms.
 - ce: (1) leagă pașii 1–4 din `cyber-gpu/integration/cyber-universe/C-147_punctul7-dieta-*.md` (cyber-gpu `4925469` sau mai nou), **pornită în modul ciclu** (testul obișnuit), cu regula „orice altă trimitere pe același canal → `forget()` înainte”; (2) rândurile noi `kt cuvinte VRAM pe simbol`, `kt dieta`, `kt median citirea logit-urilor`, `kt median argmax`; (3) blocul „viteza fata de os-322” în raportul ciclului (kt driver, kt total, simb/s cu driverul, logit-urile identice bit cu bit cu os-322?); (4) viteza maximă rămâne ca în os-322; FLR și `--tablou` oprite în testul obișnuit; (5) teste QEMU + CI verde → Release **`os-324`**, **singur** (fără P3 în același Release).
 - după: P3 (calculele lipite) într-un Release separat, când Cyber-GPU dă nota (C-155).
-- stare: nou
+- stare: preluat (2026-11-21 09:30, sesiunea OS) — sarcina **P6-107** (`docs/plans/P6-107.md`)
 
 ### C-155 · cyber-gpu · După os-322: P3 gata de legat + argmax pe placă (centrul de comandă, 21 nov 07:35)
 - data: 2026-11-21 07:35 · de la: centrul de comandă, în planul aprobat de Adrian. Ridică oprirea de la regula 8.
