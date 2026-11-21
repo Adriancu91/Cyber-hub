@@ -1,0 +1,143 @@
+<!doctype html><html lang="ro"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Exo+2:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+@page{size:960px 540px;margin:0}*{box-sizing:border-box}html,body{margin:0;background:#03060f}
+body{font-family:"Exo 2","DejaVu Sans",sans-serif;color:#dfe9ff}
+.pg{width:960px;height:540px;position:relative;overflow:hidden;page-break-after:always;padding:46px 56px;
+background:radial-gradient(700px 420px at 82% 8%,rgba(0,229,255,.16),transparent 62%),radial-gradient(620px 420px at 6% 104%,rgba(168,85,247,.20),transparent 60%),#03060f}
+.pg:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.055) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 55%,#000 100%);mask-image:linear-gradient(180deg,transparent 0,#000 55%,#000 100%)}
+.pg>*{position:relative}
+.tag{font-family:Orbitron;font-size:10px;letter-spacing:4px;color:#00e5ff;font-weight:700}
+.tag b{color:#a855f7}
+h1{font-size:40px;line-height:1.08;font-weight:800;margin:14px 0 0;letter-spacing:-.5px;color:#fff}
+h1 i{font-style:normal;color:#00e5ff;text-shadow:0 0 22px rgba(0,229,255,.55)}
+.sub{font-size:17px;line-height:1.5;color:#9fb2d6;margin-top:14px;max-width:720px;font-weight:300}
+.sub b{color:#fff;font-weight:600}
+.next{position:absolute;right:56px;bottom:34px;font-size:15px;font-weight:600;color:#fff;display:flex;align-items:center;gap:12px}
+.next span{font-family:Orbitron;font-size:11px;letter-spacing:2px;color:#03060f;background:#00e5ff;padding:7px 12px;border-radius:3px;box-shadow:0 0 22px rgba(0,229,255,.6)}
+.no{position:absolute;left:56px;bottom:36px;font-family:Orbitron;font-size:10px;letter-spacing:3px;color:#4b5f86}
+.cards{display:flex;gap:18px;margin-top:30px}
+.card{flex:1;border:1px solid rgba(0,229,255,.35);background:linear-gradient(180deg,rgba(0,229,255,.08),rgba(168,85,247,.05));padding:20px 20px 18px;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px))}
+.card .n{font-family:Orbitron;font-weight:900;font-size:19px;color:#fff;letter-spacing:1.5px}
+.card .r{font-size:12px;letter-spacing:2.5px;color:#00e5ff;font-weight:700;margin-top:5px;text-transform:uppercase}
+.card p{font-size:13.5px;line-height:1.5;color:#b9c8e6;margin:12px 0 0}
+.card p b{color:#fff}
+.big{font-family:Orbitron;font-weight:900;color:#fff;line-height:1;text-shadow:0 0 30px rgba(0,229,255,.55)}
+.stats{display:flex;gap:44px;margin-top:34px}
+.stats div .big{font-size:50px}
+.stats div span{display:block;font-size:13px;color:#9fb2d6;margin-top:8px;letter-spacing:.5px}
+.term{font-family:"JetBrains Mono",monospace;font-size:10.5px;line-height:1.75;background:rgba(2,8,20,.85);border:1px solid rgba(0,229,255,.3);border-left:3px solid #00e5ff;padding:14px 18px;color:#8fb3d9;white-space:pre-wrap;margin-top:22px}
+.term b{color:#39ffb0;font-weight:700}.term u{text-decoration:none;color:#ffd166;font-weight:700}
+.cap{font-size:10.5px;color:#5f7299;margin-top:8px}
+.bar{display:flex;align-items:center;gap:14px;margin-top:15px}
+.bar .l{width:250px;font-size:14px;color:#cfdcf5;text-align:right;line-height:1.2}
+.bar .l small{display:block;color:#6f83aa;font-size:11px}
+.bar .t{height:26px;background:linear-gradient(90deg,#a855f7,#00e5ff);box-shadow:0 0 18px rgba(0,229,255,.45);clip-path:polygon(0 0,100% 0,calc(100% - 9px) 100%,0 100%)}
+.bar .t.g{background:#33415f;box-shadow:none}
+.bar .v{font-family:Orbitron;font-weight:700;font-size:19px;color:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px 34px;margin-top:24px}
+.it{font-size:15px;color:#e7efff;display:flex;gap:11px;align-items:baseline}
+.it:before{content:"";flex:none;width:9px;height:9px;background:#39ffb0;box-shadow:0 0 12px #39ffb0;transform:rotate(45deg) translateY(-1px)}
+.it.w{color:#9fb2d6}.it.w:before{background:transparent;border:1.5px solid #ffd166;box-shadow:none}
+.vs{display:flex;gap:22px;margin-top:28px;align-items:stretch}
+.vs .card{padding:22px}
+.vs .big{font-size:38px}
+.vs ul{margin:14px 0 0;padding:0;list-style:none;font-size:14px;line-height:1.75;color:#b9c8e6}
+.x{display:flex;align-items:center;font-family:Orbitron;font-weight:900;color:#a855f7;font-size:20px}
+.ring{position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(0,229,255,.25);box-shadow:inset 0 0 80px rgba(0,229,255,.12),0 0 60px rgba(168,85,247,.18)}
+.ring:after{content:"";position:absolute;inset:60px;border-radius:50%;border:1px dashed rgba(168,85,247,.45)}
+.ring:before{content:"";position:absolute;inset:140px;border-radius:50%;background:radial-gradient(circle,rgba(0,229,255,.35),transparent 70%)}
+</style></head><body>
+
+<div class="pg"><div class="ring"></div>
+<div class="tag">PROIECT INDEPENDENT <b>//</b> ROMÂNIA <b>//</b> 2026</div>
+<div class="big" style="font-size:104px;margin-top:66px;letter-spacing:6px">KRONOS</div>
+<div style="font-family:Orbitron;font-size:17px;letter-spacing:9px;color:#00e5ff;margin-top:12px;font-weight:700">CYBER UNIVERSE <span style="color:#a855f7">×</span> CYBER-GPU</div>
+<div class="sub" style="margin-top:34px;font-size:20px">Un AI. Un sistem de operare. Un driver de placă video.<br><b>Toate construite de la zero. De un singur om.</b></div>
+<div class="no">01 / 08</div><div class="next">Ce înseamnă asta, de fapt? <span>URMEAZĂ ▶</span></div></div>
+
+<div class="pg">
+<div class="tag">02 <b>//</b> CELE TREI PIESE</div>
+<h1>Trei lucruri pe care le fac<br>doar <i>companiile uriașe</i></h1>
+<div class="cards">
+<div class="card"><div class="n">KRONOS</div><div class="r">AI-ul · creierul</div><p>Un AI care vorbește românește, <b>antrenat de la zero</b>. Fără niciun model împrumutat de la alții.</p></div>
+<div class="card"><div class="n">CYBER UNIVERSE</div><div class="r">Sistemul de operare · lumea lui</div><p>Ce e Windows pentru un calculator. <b>Scris de la prima linie</b>, nu copiat după Windows sau Linux.</p></div>
+<div class="card"><div class="n">CYBER-GPU</div><div class="r">Driverul plăcii video · mușchii</div><p>Programul care pune placa video la calcul. De obicei îl scrie <b>doar fabricantul plăcii</b>.</p></div>
+</div>
+<div class="sub" style="font-size:15px;margin-top:22px">Fiecare dintre ele e, în mod normal, munca unor echipe de specialiști, ani la rând.</div>
+<div class="no">02 / 08</div><div class="next">Aici, echipa e alta. <span>URMEAZĂ ▶</span></div></div>
+
+<div class="pg">
+<div class="tag">03 <b>//</b> ECHIPA</div>
+<h1>Un om. <i>Zero</i> linii de cod<br>scrise de mâna lui.</h1>
+<div class="sub">Adrian nu știe să programeze. A învățat cum funcționează fiecare piesă, a pus reguli stricte și conduce <b>mai mulți agenți AI ca pe o echipă</b>, zi și noapte. El decide fiecare pas. El stă la fiecare test.</div>
+<div class="stats">
+<div><div class="big">7</div><span>săptămâni de lucru</span></div>
+<div><div class="big">170.000</div><span>rânduri de program</span></div>
+<div><div class="big">2.200</div><span>teste automate</span></div>
+<div><div class="big">3</div><span>calculatoare obișnuite</span></div>
+</div>
+<div class="no">03 / 08</div><div class="next">Frumos pe hârtie. Dar merge? <span>URMEAZĂ ▶</span></div></div>
+
+<div class="pg">
+<div class="tag">04 <b>//</b> DOVADA</div>
+<h1>Merge. Pe <i>calculatorul real</i>.</h1>
+<div class="sub">AI-ul Kronos scrie text calculat pe placa video, în sistemul lui de operare, prin driverul lui. Fiecare cuvânt e verificat: <b>identic cu cel calculat pe procesor</b>.</div>
+<div class="term">kronos --gpu: 16 simboluri generate pe placa, <b>toate identice cu procesorul</b> (niciun simbol diferit)
+comparatie: placa <u>119.82 simboluri/s</u> (ceasul placii) / procesor <u>72.72 simboluri/s</u>; simbolurile <b>IDENTICE</b>
+resetul din interior …: lantul poate rula din nou in aceeasi pornire
+gpu0: lant: <b>toti pasii au trecut</b>; 2373 scrieri</div>
+<div class="cap">Rânduri din jurnalul scris de sistem în testele din 21 noiembrie 2026, placă RTX 3070 Ti. Testele pornesc și se încheie singure, fără niciun om la calculator. „…” = rând scurtat.</div>
+<div class="no">04 / 08</div><div class="next">Bine, merge. Cât de repede? <span>URMEAZĂ ▶</span></div></div>
+
+<div class="pg">
+<div class="tag">05 <b>//</b> VITEZA</div>
+<h1>Driverul nostru a trecut de procesor.<br><i>Urmează Windows.</i></h1>
+<div style="margin-top:22px">
+<div class="bar"><div class="l">Procesorul<small>același AI, fără placa video</small></div><div class="t g" style="width:86px"></div><div class="v">73</div></div>
+<div class="bar"><div class="l">Placa video, cu driverul nostru<small>tot drumul, măsurat în sistemul nostru</small></div><div class="t" style="width:128px"></div><div class="v">109</div></div>
+<div class="bar"><div class="l">Aceeași placă, în Windows<small>driverul fabricantului + PyTorch</small></div><div class="t g" style="width:152px"></div><div class="v">129</div></div>
+<div class="bar"><div class="l">Doar calculul de pe placă, la noi<small>cât poate placa sub driverul nostru</small></div><div class="t" style="width:450px"></div><div class="v">382</div></div>
+</div>
+<div class="term" style="margin-top:20px;font-size:10px">simboluri/s cu driverul: … 94.84 -> acum <u>109.11</u>   |   pe placa: median 2624 us … = <u>382.11 simboluri/s</u>   |   procesor <u>72.72 simboluri/s</u></div>
+<div class="cap">Cuvinte pe secundă, același model Kronos, același calculator. Jurnalele testelor din 21 nov 2026; cifra din Windows: măsurată pe 20 nov 2026. Încă nu am depășit Windows pe tot drumul: diferența e în driver, nu în placă.</div>
+<div class="no">05 / 08</div><div class="next">Și ce mai știe sistemul? <span>URMEAZĂ ▶</span></div></div>
+
+<div class="pg">
+<div class="tag">06 <b>//</b> CE AVEM AZI</div>
+<h1>O lume întreagă, <i>construită de la zero</i></h1>
+<div class="grid2">
+<div class="it">Pornește singur pe calculatoare reale</div>
+<div class="it">Internet securizat, scris de noi</div>
+<div class="it">AI-ul Kronos răspunde în sistemul lui</div>
+<div class="it">Calculează pe placa video, cu driverul propriu</div>
+<div class="it">Citește temperatura și consumul plăcii</div>
+<div class="it">Repornește placa singur, în 0,13 secunde</div>
+<div class="it">Se testează singur, zi și noapte, fără om</div>
+<div class="it">Ferestre, editor, fișiere, consolă de la distanță</div>
+<div class="it w">În lucru: viteza peste Windows</div>
+<div class="it w">În lucru: condus pas cu pas de un agent AI</div>
+<div class="it w">În lucru: discul propriu</div>
+<div class="it w">Ținta: Kronos învață în sistemul lui</div>
+</div>
+<div class="cap" style="margin-top:20px">Verde = dovedit pe calculatorul real. Galben = în construcție. Ce se adaugă zi de zi e în fișierul „Jurnalul Kronos”.</div>
+<div class="no">06 / 08</div><div class="next">Cât ar costa asta la o firmă? <span>URMEAZĂ ▶</span></div></div>
+
+<div class="pg">
+<div class="tag">07 <b>//</b> CÂT VALOREAZĂ MUNCA</div>
+<h1>O firmă ar plăti <i>milioane</i>.</h1>
+<div class="vs">
+<div class="card"><div class="r">O firmă, ca să refacă ce există</div><div class="big" style="margin-top:12px">~3,5 mil. €</div><ul><li>20 de programatori + supervizori + birou</li><li>servere, laborator, securitate, avocați</li><li>luni de pregătire, apoi peste un an de lucru</li></ul></div>
+<div class="x">VS</div>
+<div class="card" style="border-color:#a855f7"><div class="r" style="color:#c084fc">Aici</div><div class="big" style="margin-top:12px">1 om</div><ul><li>un calculator de birou și două laptopuri</li><li>o echipă de agenți AI, condusă de el</li><li>7 săptămâni de lucru</li></ul></div>
+</div>
+<div class="cap" style="margin-top:14px">Estimare aproximativă a costului de înlocuire în România (în Vestul Europei sau SUA: 5,5–10 milioane €). Nu e un preț de vânzare.</div>
+<div class="no">07 / 08</div><div class="next">Și unde duce drumul? <span>URMEAZĂ ▶</span></div></div>
+
+<div class="pg"><div class="ring" style="right:auto;left:-160px;top:auto;bottom:-200px"></div>
+<div class="tag">08 <b>//</b> DESTINAȚIA</div>
+<h1 style="font-size:46px;margin-top:70px;max-width:800px">Un AI care <i>trăiește, învață<br>și se dezvoltă</i> în propria lui lume.</h1>
+<div class="sub" style="font-size:18px;margin-top:26px">Fără Windows. Fără driverele altora. Fără limitele altora.<br><b>Partea care părea imposibilă pentru un om singur există deja și funcționează.</b></div>
+<div style="font-family:Orbitron;font-size:12px;letter-spacing:5px;color:#00e5ff;margin-top:56px;font-weight:700">KRONOS <span style="color:#a855f7">//</span> CYBER UNIVERSE <span style="color:#a855f7">//</span> CYBER-GPU</div>
+<div class="no">08 / 08 · STAREA LA 21 NOIEMBRIE 2026</div></div>
+</body></html>

@@ -1,0 +1,79 @@
+<!doctype html><html lang="ro"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Exo+2:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+@page{size:960px 540px;margin:0}*{box-sizing:border-box}html,body{margin:0;background:#03060f}
+body{font-family:"Exo 2","DejaVu Sans",sans-serif;color:#dfe9ff}
+.pg{width:960px;height:540px;position:relative;overflow:hidden;page-break-after:always;padding:46px 56px;
+background:radial-gradient(700px 420px at 82% 8%,rgba(0,229,255,.16),transparent 62%),radial-gradient(620px 420px at 6% 104%,rgba(168,85,247,.20),transparent 60%),#03060f}
+.pg:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.055) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 55%,#000 100%);mask-image:linear-gradient(180deg,transparent 0,#000 55%,#000 100%)}
+.pg>*{position:relative}
+.tag{font-family:Orbitron;font-size:10px;letter-spacing:4px;color:#00e5ff;font-weight:700}
+.tag b{color:#a855f7}
+h1{font-size:40px;line-height:1.08;font-weight:800;margin:14px 0 0;letter-spacing:-.5px;color:#fff}
+h1 i{font-style:normal;color:#00e5ff;text-shadow:0 0 22px rgba(0,229,255,.55)}
+.sub{font-size:17px;line-height:1.5;color:#9fb2d6;margin-top:14px;max-width:720px;font-weight:300}
+.sub b{color:#fff;font-weight:600}
+.next{position:absolute;right:56px;bottom:34px;font-size:15px;font-weight:600;color:#fff;display:flex;align-items:center;gap:12px}
+.next span{font-family:Orbitron;font-size:11px;letter-spacing:2px;color:#03060f;background:#00e5ff;padding:7px 12px;border-radius:3px;box-shadow:0 0 22px rgba(0,229,255,.6)}
+.no{position:absolute;left:56px;bottom:36px;font-family:Orbitron;font-size:10px;letter-spacing:3px;color:#4b5f86}
+.cards{display:flex;gap:18px;margin-top:30px}
+.card{flex:1;border:1px solid rgba(0,229,255,.35);background:linear-gradient(180deg,rgba(0,229,255,.08),rgba(168,85,247,.05));padding:20px 20px 18px;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px))}
+.card .n{font-family:Orbitron;font-weight:900;font-size:19px;color:#fff;letter-spacing:1.5px}
+.card .r{font-size:12px;letter-spacing:2.5px;color:#00e5ff;font-weight:700;margin-top:5px;text-transform:uppercase}
+.card p{font-size:13.5px;line-height:1.5;color:#b9c8e6;margin:12px 0 0}
+.card p b{color:#fff}
+.big{font-family:Orbitron;font-weight:900;color:#fff;line-height:1;text-shadow:0 0 30px rgba(0,229,255,.55)}
+.stats{display:flex;gap:44px;margin-top:34px}
+.stats div .big{font-size:50px}
+.stats div span{display:block;font-size:13px;color:#9fb2d6;margin-top:8px;letter-spacing:.5px}
+.term{font-family:"JetBrains Mono",monospace;font-size:10.5px;line-height:1.75;background:rgba(2,8,20,.85);border:1px solid rgba(0,229,255,.3);border-left:3px solid #00e5ff;padding:14px 18px;color:#8fb3d9;white-space:pre-wrap;margin-top:22px}
+.term b{color:#39ffb0;font-weight:700}.term u{text-decoration:none;color:#ffd166;font-weight:700}
+.cap{font-size:10.5px;color:#5f7299;margin-top:8px}
+.bar{display:flex;align-items:center;gap:14px;margin-top:15px}
+.bar .l{width:250px;font-size:14px;color:#cfdcf5;text-align:right;line-height:1.2}
+.bar .l small{display:block;color:#6f83aa;font-size:11px}
+.bar .t{height:26px;background:linear-gradient(90deg,#a855f7,#00e5ff);box-shadow:0 0 18px rgba(0,229,255,.45);clip-path:polygon(0 0,100% 0,calc(100% - 9px) 100%,0 100%)}
+.bar .t.g{background:#33415f;box-shadow:none}
+.bar .v{font-family:Orbitron;font-weight:700;font-size:19px;color:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px 34px;margin-top:24px}
+.it{font-size:15px;color:#e7efff;display:flex;gap:11px;align-items:baseline}
+.it:before{content:"";flex:none;width:9px;height:9px;background:#39ffb0;box-shadow:0 0 12px #39ffb0;transform:rotate(45deg) translateY(-1px)}
+.it.w{color:#9fb2d6}.it.w:before{background:transparent;border:1.5px solid #ffd166;box-shadow:none}
+.vs{display:flex;gap:22px;margin-top:28px;align-items:stretch}
+.vs .card{padding:22px}
+.vs .big{font-size:38px}
+.vs ul{margin:14px 0 0;padding:0;list-style:none;font-size:14px;line-height:1.75;color:#b9c8e6}
+.x{display:flex;align-items:center;font-family:Orbitron;font-weight:900;color:#a855f7;font-size:20px}
+.ring{position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(0,229,255,.25);box-shadow:inset 0 0 80px rgba(0,229,255,.12),0 0 60px rgba(168,85,247,.18)}
+.ring:after{content:"";position:absolute;inset:60px;border-radius:50%;border:1px dashed rgba(168,85,247,.45)}
+.ring:before{content:"";position:absolute;inset:140px;border-radius:50%;background:radial-gradient(circle,rgba(0,229,255,.35),transparent 70%)}
+
+.day{display:flex;gap:22px;margin-top:20px}
+.d{flex:none;width:150px}.d .big{font-size:44px}.d span{display:block;font-family:Orbitron;font-size:11px;letter-spacing:3px;color:#00e5ff;margin-top:6px}
+.ev{flex:1;border-left:1px solid rgba(0,229,255,.35);padding-left:22px}
+.e{font-size:14.5px;line-height:1.45;color:#cfdcf5;margin-bottom:10px;display:flex;gap:12px}
+.e b{color:#fff}.e i{flex:none;font-style:normal;font-family:"JetBrains Mono";font-size:11px;color:#39ffb0;width:44px;padding-top:2px}
+.sep{height:1px;background:linear-gradient(90deg,rgba(0,229,255,.5),transparent);margin-top:14px}
+</style></head><body>
+<div class="pg"><div class="ring"></div>
+<div class="tag">JURNALUL KRONOS <b>//</b> CE S-A ÎNTÂMPLAT, ZI DE ZI <b>//</b> CEA MAI NOUĂ ZI ÎNTÂI</div>
+<div class="day"><div class="d"><div class="big">21</div><span>NOIEMBRIE 2026</span></div><div class="ev">
+<div class="e"><i>08:21</i><div><b>Sistemul citește temperatura plăcii video</b>: 35,8 °C, 25 W în repaus. Prima dată când „vedem” placa din sistemul nostru.</div></div>
+<div class="e"><i>08:32</i><div><b>Sistemul repornește singur placa</b>, în 0,13 secunde, fără să repornească tot calculatorul. Al doilea test din aceeași pornire a trecut toți pașii.</div></div>
+<div class="e"><i>11:01</i><div><b>Driverul, de două ori mai ușor</b>: pregătirea unui cuvânt a scăzut de la 3,1 la 1,35 milisecunde. Viteza: <b>de la 95 la 109 cuvinte pe secundă</b>.</div></div>
+<div class="e"><i>ziua</i><div>Program nou de lucru: echipele de agenți lucrează <b>din oră în oră, zi și noapte</b>, la driver și la sistem. A început „agentul viu”, prin care sistemul va fi condus pas cu pas de la distanță.</div></div>
+</div></div>
+<div class="sep"></div>
+<div class="sub" style="font-size:14px;margin-top:14px"><b>Urmează:</b> calculele „lipite” (mai puține drumuri până la placă) și vânătoarea cuvintelor lente care țin viteza medie sub cea din Windows.</div>
+<div class="no">KRONOS = AI-UL · CYBER UNIVERSE = SISTEMUL DE OPERARE · CYBER-GPU = DRIVERUL PLĂCII VIDEO</div></div>
+
+<div class="pg">
+<div class="tag">JURNALUL KRONOS <b>//</b> ZILELE DINAINTE</div>
+<div class="day"><div class="d"><div class="big">20</div><span>NOIEMBRIE</span></div><div class="ev">
+<div class="e"><i>ziua</i><div><b>Viteza a crescut de peste 4 ori într-o zi</b>: de la 21,5 la 95 de cuvinte pe secundă. Placa video, cu driverul nostru, <b>a trecut de procesor</b> (95 față de 73).</div></div></div></div>
+<div class="day"><div class="d"><div class="big">19</div><span>NOIEMBRIE</span></div><div class="ev">
+<div class="e"><i>ziua</i><div><b>Kronos întreg scrie pe placa video</b>: 16 cuvinte, toate identice cu cele de pe procesor. Testul a pornit și s-a încheiat singur, fără niciun om la calculator.</div></div></div></div>
+<div class="day"><div class="d"><div class="big">18</div><span>NOIEMBRIE</span></div><div class="ev">
+<div class="e"><i>ziua</i><div><b>Primul cuvânt</b> al lui Kronos calculat pe placa video, în sistemul lui de operare, prin driverul lui.</div></div></div></div>
+<div class="no">CIFRELE VIN DIN JURNALELE SCRISE DE SISTEM ÎN TIMPUL TESTELOR PE CALCULATORUL REAL</div></div>
+</body></html>
