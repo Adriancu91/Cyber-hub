@@ -1,1 +1,1 @@
-liber · terminat 2026-11-21 23:35 · următorul pas: verifică CI os-338 (P6-121); apoi #651 pe placă (scara cu lista simplă: 388 lansări) / argmax / Fused32, câte unul pe Release; C-161 p.3 mai departe; P6-111
+ocupat · început 2026-11-21 23:41 · sarcina: verificare CI os-338 (P6-121), apoi predări cyber-gpu / C-158 · estimat gata: 00:45
