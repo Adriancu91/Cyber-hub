@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-21 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-21 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **S129 gata, verificat: rămâne #651.** Modelul nou #736 trece pentru prima dată întrebările formulate altfel (54,0 %, prag 48 %), calcule 90, chat 51 — dar „din text” 217, cu 1 sub prag (218). Placa max 6.428 MB / 64 °C; 1.550 teste trec.
@@ -9,7 +9,7 @@
 - Chat-ul Kronos merge pe 8787 cu **#651**. Disc C: ~146 GB liberi.
 
 ## Urmează
-- **S131 la noapte (21 → 22 nov, 19:00–07:00):** din #736, „din text” de 3 ori, linia `w2_mare_24zcj`, aceleași praguri. Ultima rundă pe linia asta aprobată de supraveghetor; dacă nu trece, decide Adrian.
+- **S131 la noapte (21 → 22 nov, 19:00–07:00):** din #736, „din text” de 3 ori, linia `w2_mare_24zcj`, aceleași praguri. Pregătirile (date, configurare, pre-înregistrare) gata pe procesor la 02:45, 1.556 teste trec. Ultima rundă pe linia asta aprobată de supraveghetor; dacă nu trece, decide Adrian.
 - Ziua (08:00–18:00) Kronos nu atinge placa (C-149).
 - Bucla 👍/👎 (S118) pornește pe placă la ≥ 30 de lecții noi (acum 2).
 
