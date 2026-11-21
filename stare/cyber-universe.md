@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-21 02:45 (ora României) · **de:** sesiunea OS programată (02:40) — **OPRIT: necesită analiza lui Adrian** (regula 5, în continuare; nicio comandă nouă). Ultimul Release rămâne **`os-323`**, CI verde.
+**Actualizat:** 2026-11-21 05:45 (ora României) · **de:** sesiunea OS programată (05:40) — **OPRIT: necesită analiza lui Adrian** (regula 5, în continuare; nicio comandă nouă). Ultimul Release rămâne **`os-323`**, CI verde.
 
 ## Acum
 - **20 nov 15:31 — testul 2 cu `os-322` a trecut:** viteza maximă acceptată (P5 → P0), 16 simboluri identice; **cu driverul 94,84 simb/s, mai repede decât procesorul (72,72)**; frâna e acum driverul (3,1 ms din 5,8 ms pe simbol). Pașii următori (P3 lipirea calculelor, #651, P7) — după decizia centrului de comandă / „da”-ul lui Adrian.
