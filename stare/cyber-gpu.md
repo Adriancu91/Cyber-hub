@@ -1,15 +1,14 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-21 20:35 (ora României) · **de:** sesiunea Cyber-GPU 142 (cloud, fără placă) — **C-157 p.2 (os-332) + C-160 punctul 4, programul 1 (înmulțirea pentru antrenare)**. 681 PASS. Lucru continuu (C-157 + C-160).
+**Actualizat:** 2026-11-21 21:35 (ora României) · **de:** sesiunea Cyber-GPU 143 (cloud, fără placă) — **C-160 punctul 4, programul 7 (eroarea + gradientul ei)**. 687 PASS. Lucru continuu (C-157 + C-160).
 
 ## Acum
-- **os-332 comparat (C-157 p.2):** 0 poziții lente, cum estimasem; media cu driverul **351,39 simb/s** față de ~348 estimat (+1 %); încălzirea 12 687 cuvinte față de 12 328 socotite (+3 %, mărunt). Driverul 818 µs neschimbat (dieta 2 nu e încă în OS). `cyber-gpu/docs/C-157_P2_COMPARATII.md`. Nimic nou de cerut OS-ului.
-- **C-160 p.4, programul 1 gata (SIMULARE):** `mm_train` — C = op(A)·op(B) (+ deplasare) în F32, un singur program pentru cele trei înmulțiri ale unui strat `Linear` (înainte Y = X·Wᵀ + b, dX = dY·W, dW = dYᵀ·X). Mesa NAK 25.0.7, SHA-256 `69d54ef2…3fa350`, 4 128 octeți, 19 registre, 2 KiB partajați, o barieră. T152: **bit cu bit** egal cu ce calculează codul compilat (4 forme × 6 combinații de opțiuni); față de oracolul de antrenare (cel egal cu PyTorch), pe greutățile reale ale modelului mic: abateri 9,5e-7 / 1,9e-8 / 1,2e-7, toate sub marginea scrisă dinainte (≤ 4,6 % din ea). Nota `cyber-gpu/docs/C-160_P4_MATMUL.md`, commit `2f4f895` (CI verde pe `9e2d255`). **Nepredat încă** (punctul 6 vrea întâi un program „înapoi” mic).
-- P8 și predările mai vechi (#651, dieta 2, argmax, cursa) așteaptă la OS, câte una pe Release.
+- **C-160 p.4, programul 7 gata (SIMULARE):** `xent` — eroarea (softmax + entropia încrucișată) și gradientul ei, pe fiecare rând de logit-uri, un bloc de 256 de fire pe rând. Mesa NAK 25.0.7 (reconstruit în cloud; `mm_train` a ieșit identic), SHA-256 `44cc3536…f420e339d`, 3 680 octeți, 19 registre, 32 B partajați, o barieră. `exp` / `ln` / `1/s` sunt unitățile MUFU aproximative → nu bit cu bit, ci față de oracolul f64 (`train::softmax_xent`, scos din `loss_and_grad`, același calcul) într-o margine scrisă dinainte (la prima rulare uitase FTZ — adăugat cinstit, nimic altceva lărgit). T153: V de la 1 la 16 384 și logit-urile reale ale modelului mic, toate în margine; media erorii 44,193805307 față de 44,193805695. Nota `cyber-gpu/docs/C-160_P4_XENT.md`, commit `69d8284`. **Nepredat** (punctul 6 vrea întâi un program „înapoi” mic).
+- Programul 1 (`mm_train`, sesiunea 142) gata în SIMULARE, nepredat. P8 și predările mai vechi (#651, dieta 2, argmax, cursa) așteaptă la OS, câte una pe Release.
 
 ## Urmează
 1. După fiecare test pe placă (P8 mai ales): comparația (C-157 punctul 2), cu întâietate.
-2. **C-160 punctul 4, mai departe:** programul 7 — eroarea (softmax + entropia încrucișată) cu gradientul ei, față de `train::loss_and_grad`; apoi LayerNorm înapoi, GELU, atenția, încorporările, suma pe coloane, norma + tăierea, AdamW.
+2. **C-160 punctul 4, mai departe:** LayerNorm înapoi, GELU înapoi, atenția înapoi, încorporările, suma pe coloane, norma + tăierea, AdamW — câte unul, față de `train`.
 3. C-160 punctul 5: pasul de aur pe placa simulată (modelul mic, ambele rețete).
 4. P7 (lanțul) în trepte, la rândul lui; C-157 punctele 5, 7, 8 când C-160 așteaptă.
 
@@ -19,6 +18,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 143 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::xent` (`XENT`, `XENT_SHA256`, `REGISTERS`, `BLOCK`, `SHARED`, `CBUF_BYTES`, `Args::{cbuf, grid}`), `gpu_compute::layer::xent_gpu256`, `gpu_compute::train::{softmax_xent, logits}`, `gpu_sim::cmdproc::{xent_on_cpu, XENT_NEEDS}`. Nimic de legat acum; nimic nou pentru placă.
 - **Sesiunea 142 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::mm_train` (`MM_TRAIN`, `MM_TRAIN_SHA256`, `REGISTERS`, `BLOCK`, `SHARED`, `TA`, `TB`, `BIAS`, `CBUF_BYTES`, `Args::{cbuf, grid}`), `gpu_compute::reference::matmul_t_fma_ftz`, `gpu_sim::cmdproc::{mm_train_on_cpu, MM_TRAIN_NEEDS, MM_TRAIN_TA, MM_TRAIN_TB, MM_TRAIN_BIAS}`; `gpu_compute::train::{linear, linear_back}` devin publice. Nimic de legat acum; nimic nou pentru placă.
 - **Sesiunea 141 (C-160 punctul 3, doar adăugări — OS-ul compilează neschimbat):** modulul nou `gpu_compute::train` (`Arch`, `MIC`, `M513`, `TensorSpec`, `Batch`, `loss_and_grad`, `grad_norm`, `clip_grad_norm`, `sgd_step`, `AdamW`, `Recipe`, `GoldenRun`, `golden_run`, toleranțele `TOL_*`). E unealta de verificare (oracol pe procesor), nu cod de placă; nimic nou pentru placă.
 - PREDARE → cyber-universe: **răspunsul la os-331** (C-157 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-157_P2d_os-331.md`, commit `741cd60`. Fără cod nou. (1) „logit-urile identice cu os-322? NU” = normal (LayerNorm nou adună pe 256 de fire); amprenta de referință cu LayerNorm nou: `0x46a07914`. (2) Propunere: rândurile de viteză să spună rularea 1 / rularea 2 (azi unele amestecă cele două rulări). (3) „87 lansări” în rândul `kt lista` față de 88 în tabel — de verificat textul. Ce e nou pentru placă: **nimic**.
