@@ -29,6 +29,7 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 | 5 | următorul | Kronos #651 pe placă (P6) | de stabilit de sesiunea OS | după 3–4 |
 | 6 | de anunțat | **P8 — primul calcul cu circuitele speciale** (aprobat de Adrian, 21 nov 16:18) | de anunțat de sesiunea OS | așteaptă PREDARE Cyber-GPU (C-160 p.1) → Release OS (C-161 p.2) |
 | 7 | de anunțat | **prima comandă pe placă din modul viu** (`test-placa` trimis prin canalul viu; cheia e pe stick din 16:12) | `live 10` + comanda trimisă de centrul de comandă | așteaptă Release-ul OS cu comanda de placă a modului viu (C-161 p.1); test separat, anunțat lui Adrian |
+| 7b | de anunțat | **P7 — lanțul pe placă**, treptele 1, 2, 3 (aprobat de Adrian, 21 nov 16:27; fiecare treaptă = test separat) | de anunțat de sesiunea OS | după poziția lentă, P8 și predările în așteptare; așteaptă predările Cyber-GPU pe trepte |
 | 8 | mai târziu | **motorul de antrenare:** un program „înapoi” singur, apoi „pasul de aur” al modelului mic | de anunțat de sesiunea OS | C-160 / C-161; antrenarea adevărată (ore) doar cu decizia nouă a lui Adrian |
 Sesiunea OS anunță o versiune gata prin rândul `GATA DE TEST:` din `stare/cyber-universe.md`; centrul de comandă o trece aici.
 
