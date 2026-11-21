@@ -1951,5 +1951,6 @@ Format:
   5. **Aceleași mâini pentru Claude din OS** (`/bin/claude`, P6-04…06) — pregătit, **oprit** până la „da”-ul lui Adrian și cheia API pusă de el.
 - ce are voie agentul: tot ce are shell-ul, nu doar lista albă a citirilor. **Rămân păzite de nucleu:** fișierele secrete (token, chei) nu se arată niciodată; scrieri pe disc doar pe partiții `cyber.rw`; **orice comandă care scrie în placa video e `REFUZAT` fără cheia `/usb/hub/permite-live-placa`** (o pune centrul de comandă doar după „da”-ul lui Adrian) — `after-gpu.sh` să verifice asta.
 - predarea: când pasul 1 e într-un Release cu CI verde, scrii în stare `PREDARE → centrul de comandă:` cu forma exactă a fișierelor (`docs/LIVE.md`), ca centrul de comandă să-și scrie capătul lui și să facă prima probă pe workstation (`live 10`, doar citiri).
+- completare (Adrian, 21 nov 08:31 — „Da, după ce îl testezi și verifici că merge bine și nu face greșeli”): comenzile pe placă din modul viu au „da”-ul lui Adrian **condiționat** de proba agentului (condițiile 1–4 din `DECIZII.md`, 21 nov 08:31). Pentru tine: fă ca probele de refuz să se poată rula ușor (semnătură greșită, număr greșit, comandă repetată, comandă pe placă fără cheie) și ca fiecare răspuns să poarte ecoul exact al comenzii primite — centrul de comandă le numără. Cheia `permite-live-placa` o pune doar centrul de comandă.
 - stare: nou
 
