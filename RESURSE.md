@@ -19,8 +19,8 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 ## Coada testelor pe placă (o ține centrul de comandă; un singur lucru nou pe test)
 | Nr. | Versiunea | Ce e nou | Rândul din `auto\teste.txt` | Stare |
 |---|---|---|---|---|
-| 1 | `os-323` | tabloul de bord al plăcii (temperatură, ceasuri, stare) | `test-placa --tablou` | pornește 21 nov dimineața |
-| 2 | `os-323` | proba de reset din interior (FLR) | `test-placa --flr-proba` | după 1 |
+| 1 | `os-323` | tabloul de bord al plăcii (temperatură, ceasuri, stare) | `test-placa --tablou` | **făcut 21 nov 08:21 — merge** (35,8 °C, P8, 25 W; oprirea zonei refuzată) → `rezultate/2026-11-21-workstation-os323-tablou/` |
+| 2 | `os-323` | proba de reset din interior (FLR) | `test-placa --flr-proba` | semnal dat 21 nov 08:27 |
 | 3 | `os-324` | „dieta driverului” (C-154) | `test-placa` | când apare Release-ul, CI verde |
 | 4 | următorul | calculele lipite (P3) | `test-placa` | după nota Cyber-GPU (C-155) |
 | 5 | următorul | Kronos #651 pe placă (P6) | de stabilit de sesiunea OS | după 3–4 |
