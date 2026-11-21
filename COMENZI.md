@@ -1887,3 +1887,16 @@ Format:
 - rezultat: #513 în Windows/PyTorch pe RTX 3070 Ti: placa FP32 **129,12 simb/s** (FP16 128,84), procesorul 41,74, fără memoria pașilor (rețeaua n-o are); cele 16 simboluri identice cu OS-ul la toate variantele, SHA-urile neschimbate — tabelul în `rezultate/2026-11-20-workstation-kronos513-windows-viteza/REZULTAT.md` (de comparat cu os-322: 94,84 cu driverul, 381,98 placa singură).
 - (istoric) stare: preluat (2026-11-20 16:25, supraveghetor) — **S130** în `plan/coada.md` din cyberspace, `aprobat` (Adrian, C-153): la prima trecere a executantului, pornire cel târziu 18:15, gata până la 18:50 (S129 pe placă la 19:00, neschimbată); doar inferență, nimic în `kronos/`/`config/`; supraveghetorul copiază tabelul în `rezultate/2026-11-20-workstation-kronos513-windows-viteza/REZULTAT.md`.
 
+### C-154 · cyber-universe · Pachetul P2b: „dieta driverului” (nota Cyber-GPU C-147 punctul 7) → Release `os-324` pentru testul de sâmbătă (centrul de comandă, 21 nov 07:35)
+- data: 2026-11-21 07:35 · de la: centrul de comandă, în planul aprobat de Adrian (DECIZII 19 nov 22:33 + 22:50 „aprob tot”; prioritatea pe driver și OS). Ridică oprirea de la regula 5.
+- de ce: os-322 a arătat că frâna e driverul (3,1 ms din 5,8 ms pe simbol). Cyber-GPU a pregătit în SIMULARE „dieta”: pushbuffer-ul prin umbră + fără zerorizarea înregistrărilor — **nimic nou trimis la placă** (aceleași programe, aceleași lansări, aceiași octeți), estimat driver ~1,3 ms.
+- ce: (1) leagă pașii 1–4 din `cyber-gpu/integration/cyber-universe/C-147_punctul7-dieta-*.md` (cyber-gpu `4925469` sau mai nou), **pornită în modul ciclu** (testul obișnuit), cu regula „orice altă trimitere pe același canal → `forget()` înainte”; (2) rândurile noi `kt cuvinte VRAM pe simbol`, `kt dieta`, `kt median citirea logit-urilor`, `kt median argmax`; (3) blocul „viteza fata de os-322” în raportul ciclului (kt driver, kt total, simb/s cu driverul, logit-urile identice bit cu bit cu os-322?); (4) viteza maximă rămâne ca în os-322; FLR și `--tablou` oprite în testul obișnuit; (5) teste QEMU + CI verde → Release **`os-324`**, **singur** (fără P3 în același Release).
+- după: P3 (calculele lipite) într-un Release separat, când Cyber-GPU dă nota (C-155).
+- stare: nou
+
+### C-155 · cyber-gpu · După os-322: P3 gata de legat + argmax pe placă (centrul de comandă, 21 nov 07:35)
+- data: 2026-11-21 07:35 · de la: centrul de comandă, în planul aprobat de Adrian. Ridică oprirea de la regula 8.
+- ce, în ordine: (1) **P3 — calculele lipite** (196 → ~88 de lansări) gata de legat: nota pentru OS în `integration/cyber-universe/`, cu oracol pe procesor și proba (aceleași simboluri; abaterea logit-urilor sub pragul scris), compatibilă cu dieta (C-154) și cu viteza maximă; (2) **LayerNorm nou** (ln1/ln2 ~260 µs fiecare pe simbol la P0) — un program mai bun, în SIMULARE; (3) **argmax pe placă** (alegerea simbolului pe placă, citit 4 octeți în loc de 64 KiB), pregătit în SIMULARE, ca pas spre etapa 5; (4) reia cursa înmulțirilor (etapa 4: fc/proj/qkv) cu cifrele os-322 ca bază. Pe placă intră doar prin Release-urile OS și testele centrului de comandă.
+- reguli: ale tale, neschimbate. Lanțul pe placă (P7) și circuitele speciale (P8) rămân cu „da” separat de la Adrian.
+- stare: nou
+
