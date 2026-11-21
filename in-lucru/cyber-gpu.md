@@ -1,1 +1,1 @@
-liber · terminat 2026-11-21 21:37 · următorul pas: C-160 punctul 4, următorul program (LayerNorm înapoi sau suma pe coloane pentru deplasare, SIMULARE față de train) sau C-157 punctul 2 dacă apare un test pe placă (P8)
+ocupat · început 2026-11-21 22:12 · sarcina: C-160 p.4, programul 8 (suma pe coloane / LayerNorm înapoi, SIMULARE) · estimat gata: 23:30
