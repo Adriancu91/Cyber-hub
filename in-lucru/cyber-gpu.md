@@ -1,1 +1,1 @@
-liber · terminat 2026-11-21 15:30 · următorul pas: C-157 punctul 5 (C-151 punctul 2: tabloul înainte/după viteza maximă și la N secunde, pragul de temperatură) sau punctul 2 dacă apare un test pe placă
+ocupat · început 2026-11-21 16:12 · sarcina: C-157 punctul 2 (os-329 comparație) apoi punctul 5 (C-151 p.2) · estimat gata: 17:15
