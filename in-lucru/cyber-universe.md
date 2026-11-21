@@ -1,1 +1,1 @@
-ocupat · început 2026-11-21 19:41 · sarcina: P8 + comanda de placă a modului viu + dieta 2 → Release os-335 (CI în lucru) · estimat gata: 21:55
+liber · terminat 2026-11-21 21:55 · următorul pas: LayerNorm nou implicit (propunerea 19:25, dacă Cyber-GPU nu are obiecții) / nota C-157_P2d, apoi #651, argmax, Fused32; C-161 p.3; P6-111
