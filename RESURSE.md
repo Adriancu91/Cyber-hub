@@ -23,7 +23,8 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 | 2 | `os-323` | proba de reset din interior (FLR) | `test-placa --flr-proba` | **făcut 21 nov 08:32 — merge** (placa răspunde după 0,13 s; al doilea lanț trece toți pașii) → `rezultate/2026-11-21-workstation-os323-flr/` |
 | 3 | `os-324` | „dieta driverului” (C-154) | `test-placa` | **făcut 21 nov 11:01 — merge** (driverul 3 081 → 1 347 µs; 109 simb/s, mediana 245) → `rezultate/2026-11-21-workstation-os324-dieta/` |
 | 4 | `os-328` | calculele lipite (P3) | `test-placa --lipit` | **făcut 21 nov 12:56 — merge** (simbolul median 3 284 µs = 304,5 simb/s; media 120 din cauza a 2 poziții lente) → `rezultate/2026-11-21-workstation-os328-p3/` |
-| 4b | următorul | fără scriere pe stick în mijlocul generării (P6-112) | de anunțat de sesiunea OS | în lucru la OS |
+| 4b | `os-329` | fără scriere pe stick în mijlocul generării (P6-112) + lista lipită implicită | `test-placa` | **făcut 21 nov 15:56 — merge: media 262 simb/s, de 2 ori Windows/PyTorch (129)** → `rezultate/2026-11-21-workstation-os329-pozitii/` |
+| 4c | următorul | LayerNorm nou (P6-114) | de anunțat de sesiunea OS | în lucru la OS (estimat 17:40) |
 | — | `os-328` | **proba agentului viu** (C-159 pasul 1; doar citiri + refuzuri; nu atinge placa) | `live 10`, apoi `live 2` | **făcut 21 nov 13:03 și 13:18 — trecută** (61 de comenzi, zero abateri) → `rezultate/2026-11-21-workstation-agentul-viu-proba/`; sesiunea C după reparația `live.cheie` secret |
 | 5 | următorul | Kronos #651 pe placă (P6) | de stabilit de sesiunea OS | după 3–4 |
 Sesiunea OS anunță o versiune gata prin rândul `GATA DE TEST:` din `stare/cyber-universe.md`; centrul de comandă o trece aici.
