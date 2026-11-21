@@ -1896,7 +1896,8 @@ Format:
 - de ce: os-322 a arătat că frâna e driverul (3,1 ms din 5,8 ms pe simbol). Cyber-GPU a pregătit în SIMULARE „dieta”: pushbuffer-ul prin umbră + fără zerorizarea înregistrărilor — **nimic nou trimis la placă** (aceleași programe, aceleași lansări, aceiași octeți), estimat driver ~1,3 ms.
 - ce: (1) leagă pașii 1–4 din `cyber-gpu/integration/cyber-universe/C-147_punctul7-dieta-*.md` (cyber-gpu `4925469` sau mai nou), **pornită în modul ciclu** (testul obișnuit), cu regula „orice altă trimitere pe același canal → `forget()` înainte”; (2) rândurile noi `kt cuvinte VRAM pe simbol`, `kt dieta`, `kt median citirea logit-urilor`, `kt median argmax`; (3) blocul „viteza fata de os-322” în raportul ciclului (kt driver, kt total, simb/s cu driverul, logit-urile identice bit cu bit cu os-322?); (4) viteza maximă rămâne ca în os-322; FLR și `--tablou` oprite în testul obișnuit; (5) teste QEMU + CI verde → Release **`os-324`**, **singur** (fără P3 în același Release).
 - după: P3 (calculele lipite) într-un Release separat, când Cyber-GPU dă nota (C-155).
-- stare: preluat (2026-11-21 09:30, sesiunea OS) — sarcina **P6-107** (`docs/plans/P6-107.md`)
+- stare: gata (2026-11-21 10:05, sesiunea OS) — **P6-107**
+- rezultat: Release **`os-324`** (CI run 324 verde, doar dieta: pushbuffer prin umbră + fără zerorizarea înregistrărilor, pornită doar în testul obișnuit al ciclului; rândurile `kt dieta`, `kt cuvinte VRAM pe simbol`, `kt median citirea logit-urilor`, `kt median argmax` + blocul „viteza fata de os-322”); în SIMULARE aceleași logit-uri bit cu bit, 48 de cuvinte VRAM pe simbol față de 599.
 
 ### C-155 · cyber-gpu · După os-322: P3 gata de legat + argmax pe placă (centrul de comandă, 21 nov 07:35)
 - data: 2026-11-21 07:35 · de la: centrul de comandă, în planul aprobat de Adrian. Ridică oprirea de la regula 8.
@@ -1942,7 +1943,8 @@ Format:
   9. **Starea pe telefon (unealta 9):** rezumat + captură urcate singure în hub — QEMU.
   10. **Examenul lui Kronos în OS (unealta 7)** și, când Cyber-GPU are ce lega, **motorul de antrenare** (treapta 3) — doar pregătire, QEMU / SIMULARE; pe placă doar cu o comandă nouă.
 - ce rămâne cu „da” separat al lui Adrian: lanțul pe placă (P7), circuitele speciale pe placă (P8), orice scriere pe discurile workstation-ului, schimbarea ordinii din BIOS (o face el).
-- stare: nou
+- stare: în lucru (coadă permanentă)
+- rezultat: 2026-11-21 10:05 — punctul 1 (C-154) gata → `os-324`; punctul 1b (C-159) pasul 1 început: P6-108 poarta + `docs/LIVE.md` gata, P6-109 (bucla `live <minute>`) urmează; nota de la punctul 5 („11 scrieri refuzate”): vezi starea.
 
 - notă centrul de comandă (2026-11-21 08:45) — pentru punctul 5: **proba FLR a trecut pe placă** (`rezultate/2026-11-21-workstation-os323-flr/REZULTAT.md`), deci „mai multe teste într-o singură pornire” se poate construi; **de lămurit de tine:** rândul „adaptoarele OS au REFUZAT 11 scrieri cerute în afara gardului” la al doilea lanț (care scrieri; așteptate sau nu) — un rând în stare. Tabloul de bord merge și el (`rezultate/2026-11-21-workstation-os323-tablou/`): 35,8 °C; oprirea zonei comune e refuzată de placă (o repară Cyber-GPU; până atunci nimic de schimbat la tine).
 
@@ -1957,5 +1959,5 @@ Format:
 - ce are voie agentul: tot ce are shell-ul, nu doar lista albă a citirilor. **Rămân păzite de nucleu:** fișierele secrete (token, chei) nu se arată niciodată; scrieri pe disc doar pe partiții `cyber.rw`; **orice comandă care scrie în placa video e `REFUZAT` fără cheia `/usb/hub/permite-live-placa`** (o pune centrul de comandă doar după „da”-ul lui Adrian) — `after-gpu.sh` să verifice asta.
 - predarea: când pasul 1 e într-un Release cu CI verde, scrii în stare `PREDARE → centrul de comandă:` cu forma exactă a fișierelor (`docs/LIVE.md`), ca centrul de comandă să-și scrie capătul lui și să facă prima probă pe workstation (`live 10`, doar citiri).
 - completare (Adrian, 21 nov 08:31 — „Da, după ce îl testezi și verifici că merge bine și nu face greșeli”): comenzile pe placă din modul viu au „da”-ul lui Adrian **condiționat** de proba agentului (condițiile 1–4 din `DECIZII.md`, 21 nov 08:31). Pentru tine: fă ca probele de refuz să se poată rula ușor (semnătură greșită, număr greșit, comandă repetată, comandă pe placă fără cheie) și ca fiecare răspuns să poarte ecoul exact al comenzii primite — centrul de comandă le numără. Cheia `permite-live-placa` o pune doar centrul de comandă.
-- stare: nou
+- stare: preluat (2026-11-21 10:05, sesiunea OS) — pasul 1 = P6-108 (poarta: semnătura, numărul, o singură dată, placa fără cheie, ecoul — **gata**, testat în QEMU) + P6-109 (bucla pe `os/live`, apoi Release + predarea)
 

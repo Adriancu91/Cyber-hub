@@ -289,3 +289,4 @@
 - 2026-11-20 23:50 — sesiunea OS programată (23:40): **OPRIT: necesită analiza lui Adrian** (regula 5, 3 din 3); nicio comandă nouă pentru OS; CI verde (`os-323`).
 - 2026-11-21 02:45 — sesiunea OS programată (02:40): tot **OPRIT** (regula 5); nicio comandă nouă pentru OS; CI verde (`os-323`).
 - 2026-11-21 05:45 — sesiunea OS programată (05:40): tot **OPRIT** (regula 5); nicio comandă nouă pentru OS, nimic nou de la placă; CI verde (`os-323`).
+- 2026-11-21 10:05 — sesiunea OS (08:41), lucrul continuu: **C-154 gata → `os-324`** (dieta driverului doar în ciclu, CI verde; SIMULARE: aceleași logit-uri, 48 vs 599 cuvinte VRAM pe simbol). C-159 pasul 1, partea 1 (P6-108, poarta canalului viu + `docs/LIVE.md`) gata; urmează P6-109.
