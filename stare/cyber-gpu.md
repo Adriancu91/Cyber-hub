@@ -1,16 +1,16 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-21 18:25 (ora României) · **de:** sesiunea Cyber-GPU 140 (cloud, fără placă) — **C-157 p.2 (os-331) + C-160 punctul 2 (studiul motorului)**. 667 PASS. Lucru continuu (C-157 + C-160).
+**Actualizat:** 2026-11-21 19:29 (ora României) · **de:** sesiunea Cyber-GPU 141 (cloud, fără placă) — **C-160 punctul 3 (oracolul pasului de antrenare)**. 674 PASS. Lucru continuu (C-157 + C-160).
 
 ## Acum
-- **os-331 comparat (C-157 p.2):** LayerNorm nou a dat pe placă exact cât estimasem (~4 µs pe lansare, −445 µs pe simbol); 348 simb/s e a doua rulare din pornire (încălzită) — o rulare rece singură ar da ~300 până la încălzire (os-332). Abaterea puțin mai mare față de procesor (1,74e-5) e normală: sume pe 256 de fire. Înmulțirile sunt acum 74 % din placă → cursa pe sferturi e următorul câștig. `cyber-gpu/docs/C-157_P2_COMPARATII.md`.
-- **Studiul motorului de antrenare (C-160 p.2) gata:** `cyber-gpu/docs/C-160_MOTOR_STUDIU.md` — pasul întreg în ordine, cele 10 programe de placă necesare, memoria (DEDUS): starea fixă #513 1,46 GiB, #651 2,73 GiB; pașii de aur (mic și #513 1 × 64) încap ușor în F32; #513 cu 12 × 512 cere atenția cu P recalculat; #651 4–11 texte de 512, după variantă; circuitele speciale prin NAK = doar f16 (cu scalarea erorii), deci întâi totul F32.
-- P8 și predările mai vechi (încălzirea, #651, dieta 2, argmax, cursa) așteaptă la OS, câte una pe Release.
+- **Oracolul pasului de antrenare (C-160 p.3) gata:** `gpu_compute::train` — pasul întreg al lui Kronos pe procesor (înainte, eroarea, înapoi prin toți tensorii cu capul legat, tăierea, SGD, AdamW ca PyTorch 2.14). Față de pasul de aur mic al lui Kronos (T151, MĂSURAT pe procesor): **ambele rețete în toleranță, cu marjă mare** — `sgd`: eroarea ≤ 1,1e-7 rel., gradientul pasului 1 ≤ 3,6e-7, greutățile după 10 pași ≤ 2,4e-7 (tol. 1e-6); `adamw_513`: greutățile ≤ 1,05e-5 (tol. 1e-4). Gradientul verificat și independent (diferențe finite). Nota `cyber-gpu/docs/C-160_P3_ORACOL.md`, commit `3a62b13` (CI verde pe `82008ff`).
+- Datele pasului de aur mic sunt copiate în `cyber-gpu/crates/gpu-compute/tests/date/pas_de_aur_mic/` (SHA-256 verificate 198/198), ca testul să meargă și în CI.
+- P8 și predările mai vechi (încălzirea, #651, dieta 2, argmax, cursa) așteaptă la OS, câte una pe Release; os-332 (încălzirea) e pornit, fără rezultat încă.
 
 ## Urmează
 1. După fiecare test pe placă (P8, încălzirea os-332): comparația (C-157 punctul 2), cu întâietate.
-2. **C-160 punctul 3:** oracolul Rust al pasului întreg = „pasul de aur” mic (întâi `sgd`: eroarea pe 10 pași, gradientul pasului 1, greutățile după 1 și 10; apoi `adamw_513`).
-3. C-160 punctul 4: programele de placă câte unul (întâi matrice × matrice F32 cu transpuse), în SIMULARE cu oracol.
+2. **C-160 punctul 4:** programele de placă câte unul, în SIMULARE cu oracolul de acum — întâi înmulțirea matrice × matrice F32 și cu transpusa (`train::linear` / `linear_back`), apoi eroarea cu gradientul ei, LayerNorm înapoi, GELU, atenția, încorporările, norma + tăierea, AdamW.
+3. C-160 punctul 5: pasul de aur pe placa simulată (modelul mic, ambele rețete).
 4. P7 (lanțul) în trepte, la rândul lui; C-157 punctele 5, 7, 8 când C-160 așteaptă.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
@@ -19,6 +19,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 141 (C-160 punctul 3, doar adăugări — OS-ul compilează neschimbat):** modulul nou `gpu_compute::train` (`Arch`, `MIC`, `M513`, `TensorSpec`, `Batch`, `loss_and_grad`, `grad_norm`, `clip_grad_norm`, `sgd_step`, `AdamW`, `Recipe`, `GoldenRun`, `golden_run`, toleranțele `TOL_*`). E unealta de verificare (oracol pe procesor), nu cod de placă; nimic nou pentru placă.
 - PREDARE → cyber-universe: **răspunsul la os-331** (C-157 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-157_P2d_os-331.md`, commit `741cd60`. Fără cod nou. (1) „logit-urile identice cu os-322? NU” = normal (LayerNorm nou adună pe 256 de fire); amprenta de referință cu LayerNorm nou: `0x46a07914`. (2) Propunere: rândurile de viteză să spună rularea 1 / rularea 2 (azi unele amestecă cele două rulări). (3) „87 lansări” în rândul `kt lista` față de 88 în tabel — de verificat textul. Ce e nou pentru placă: **nimic**.
 - PREDARE → cyber-universe: **P8 — primul calcul cu circuitele speciale pe placa reală** (C-160 punctul 1, pentru C-161 punctul 2; aprobat de Adrian 21 nov 16:18), nota `cyber-gpu/integration/cyber-universe/C-160_P8_primul-calcul-tensor.md`, commit de legat `3199fa2` (codul: `82178f7`, CI verde). Doar adăugări: modulul `nvidia_ga104::mma16_probe` (`SETS`, `ProbeSet::{inputs, page, inputs_fnv}`, `launch_bytes`, `judge_set` → `SetResult`, `Probe::{add, passes, rows, journal, lines}`, `parse_mma16`, `A_OFF`/`B_OFF`/`C_OFF`/`D_OFF`, `D_FILL`), `gpu_compute::mma::{Rounding, AddModel, ADD_MODELS, mma16_blocked, matching_models, worst_permille}`. Ce e nou pentru placă: **programul `mma16_f16`** (SHA-256 `f8c0db68b654372d94ed96c767c7775c32909298a1b77076ddda81a66afa1ef9`, primul din Mesa 26.3.1), instrucțiunile `hmma.m16n8k16.f32` ×2 și `movm.16.m8n8.trans` ×4, cbuf de 0x800 octeți cu adresele la 0x700, 32 de registre, un warp; citește A, B, C din RAM și scrie 1 KiB (D) în RAM; nicio scriere nouă în registre, nimic nou prin GSP. Proba: 6 seturi, câte o trimitere; trece = `kt mma16 seturi in toleranta` = 6 și `identitate` 256/256 exacte; toleranța `17 · 2⁻²³ · (|c| + Σ|a·b|)`. Rândurile `kt mma16 …` în notă.
 - PREDARE → cyber-universe: **poziția 0 — încălzirea** (C-157 punctul 2, după os-329), nota `cyber-gpu/integration/cyber-universe/C-157_P2c_pozitia-0.md`, commit `538e3b4`. Fără cod nou la noi (doar testul T149); în OS: `runner.run_token(run.prompt[0], 0)` o dată pe listă, înainte de `loop`, plus profilul `kp` golit. Ce e nou pentru placă: **nimic** (aceleași lansări, același simbol). Proba: `kt pozitii lente` = 0, amprenta `0xda9ae084`, ~297 simb/s.

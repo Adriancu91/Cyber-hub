@@ -1,1 +1,1 @@
-ocupat · început 2026-11-21 19:14 · sarcina: C-160 punctul 3 (oracolul Rust al pasului de aur mic, întâi rețeta sgd) · estimat gata: 20:45
+liber · terminat 2026-11-21 19:29 · următorul pas: C-160 punctul 4 (primul program de placă al antrenării: matrice × matrice F32 și cu transpusa, în SIMULARE cu oracolul train) sau C-157 punctul 2 dacă apare un test pe placă (os-332, P8)
