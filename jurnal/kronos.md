@@ -194,3 +194,4 @@
 - 2026-11-21 05:15 — S131 pașii 0–3 gata pe procesor (date „din text” ×3, 0 suprapuneri; configurarea `24zcj`; pre-înregistrarea cu pragurile C-132), verificat; placa la noapte de la 19:00. Nicio comandă nouă.
 - 2026-11-21 08:20 — C-156 preluat: pauză la antrenări; S131 „în așteptare (pauză)”, pregătirile păstrate; S132 „pasul de aur” (procesor, model mic apoi #513) în coadă, aprobată de Adrian.
 - 2026-11-21 11:20 — S132 „pasul de aur” (C-156 punctul 5) gata, verificat: modelul mic + fișa + rețeta #513 copiate în `integrare/kronos/` (PREDARE → cyber-gpu, C-157 punctul 9c); C-156 → gata, pauza la antrenări rămâne. Nimic nou în coadă.
+- 2026-11-21 17:20 — C-162 preluat: S133 „fișa de antrenare” în coadă (doar citire + document, procesor), pentru motorul de antrenare propriu (C-160/C-161); pauza C-156 rămâne.

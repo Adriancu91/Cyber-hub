@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-21 11:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-21 17:20 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **Pauză la antrenări (C-156, Adrian, 21 nov 08:01), în vigoare:** nicio antrenare pe workstation și nimic pe placa video, la nicio oră. **S131 nu pornește** — „în așteptare (pauză)”, cu pregătirile păstrate (date `conversatie_chat6`, configurarea `w2_mare_24zcj`, pre-înregistrarea). Executantul a verificat: nimic din scripturile lui nu pornește S131 singur.
@@ -8,7 +8,8 @@
 - Ultimul verdict de antrenare: S129 → rămâne #651. 1.563 teste trec. Chat-ul Kronos merge pe 8787 cu **#651**. Disc C: ~145 GB liberi.
 
 ## Urmează
-- Nimic în coadă la Kronos. Antrenările se reiau doar după o decizie nouă a lui Adrian (în OS-ul nostru, când motorul de antrenare e gata).
+- **S133 (C-162, aprobată de Adrian), doar citire + document, procesor:** `integrare/kronos/FISA_ANTRENARE.md` — viteza de antrenare PyTorch pe RTX 3070 Ti (linia #513 și #651, cu rândul din jurnal ca dovadă; ce lipsește din jurnale e scris „nu e în jurnal”, nu se măsoară acum), pasul adevărat față de pasul de aur, forma datelor, punctul de control, examenul. O copiez aici când e gata.
+- Antrenările se reiau doar după o decizie nouă a lui Adrian (în OS-ul nostru, când motorul de antrenare e gata).
 - La cerere: fișierele mari ale pasului de aur pentru #513 (2,74 GB) sau un pas de aur pentru #651.
 
 ## Ce oferă proiectul celorlalți
@@ -21,7 +22,7 @@
 - **Pentru `cyber-gpu`:** cifrele lui #651 (C-157 punctul 4): 24 de straturi, 12 capete, n_emb 768, context 512, vocabular 16.384, 292 de tensori (98 Q8_0, 194 F32). Viteza PyTorch în Windows (C-153): #513 pe placă 129,12 simb/s, procesor 41,74.
 
 ## De ce are nevoie de la ceilalți
-- Nimic. Placa e a testelor OS/GPU zi și noapte.
+- Nimic. Pentru motorul de antrenare (C-160/C-161): Cyber-GPU spune dacă vrea un „pas de aur” cu lot mai mare (tot pe procesor). Placa e a testelor OS/GPU zi și noapte.
 
 ## Blocaje / nevoie de Adrian
 - Niciun blocaj. Reluarea antrenărilor (S131 sau #736 în chat) — doar cu o decizie nouă a lui Adrian.
