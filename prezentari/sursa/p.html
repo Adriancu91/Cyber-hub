@@ -83,7 +83,7 @@ h1 i{font-style:normal;color:#4fd2ff}
 <h1>Merge. Pe <i>calculatorul real</i>.</h1>
 <div class="sub">AI-ul Kronos scrie text calculat pe placa video, în sistemul lui de operare, prin driverul lui. Fiecare cuvânt e verificat: <b>identic cu cel calculat pe procesor</b>.</div>
 <div class="term">kronos --gpu: 16 simboluri generate pe placa, <b>toate identice cu procesorul</b> (niciun simbol diferit)
-viteza: placa <u>413.56 simboluri/s</u> (ceasul placii), cu driverul <u>262.04 simboluri/s</u> … procesor <u>72.72 simboluri/s</u>
+pozitiile lente (placa): 0 din 18 … = <u>351.39 simboluri/s in medie</u> (cu driverul) … procesor <u>72.72 simboluri/s</u>
 resetul din interior …: lantul poate rula din nou in aceeasi pornire
 gpu0: lant: <b>toti pasii au trecut</b>; 2373 scrieri</div>
 <div class="cap">Rânduri din jurnalul scris de sistem în testele din 21 noiembrie 2026, placă RTX 3070 Ti. Testele pornesc și se încheie singure, fără niciun om la calculator. „…” = rând scurtat.</div>
@@ -91,15 +91,15 @@ gpu0: lant: <b>toti pasii au trecut</b>; 2373 scrieri</div>
 
 <div class="pg">
 <div class="tag">05 <b>//</b> VITEZA</div>
-<h1>Aceeași placă, același AI:<br><i>de 2 ori mai repede</i> decât în Windows.</h1>
+<h1>Aceeași placă, același AI:<br><i>de 2,7 ori mai repede</i> decât în Windows.</h1>
 <div style="margin-top:22px">
-<div class="bar"><div class="l">Procesorul<small>același AI, fără placa video</small></div><div class="t g" style="width:79px"></div><div class="v">73</div></div>
-<div class="bar"><div class="l">Aceeași placă, în Windows<small>driverul fabricantului + PyTorch</small></div><div class="t g" style="width:140px"></div><div class="v">129</div></div>
-<div class="bar"><div class="l">Placa video, cu driverul nostru<small>tot drumul, măsurat în sistemul nostru</small></div><div class="t" style="width:285px"></div><div class="v">262</div></div>
-<div class="bar"><div class="l">Doar calculul de pe placă, la noi<small>cât poate placa sub driverul nostru</small></div><div class="t" style="width:450px"></div><div class="v">414</div></div>
+<div class="bar"><div class="l">Procesorul<small>același AI, fără placa video</small></div><div class="t g" style="width:65px"></div><div class="v">73</div></div>
+<div class="bar"><div class="l">Aceeași placă, în Windows<small>driverul fabricantului + PyTorch</small></div><div class="t g" style="width:115px"></div><div class="v">129</div></div>
+<div class="bar"><div class="l">Placa video, cu driverul nostru<small>tot drumul, măsurat în sistemul nostru</small></div><div class="t" style="width:312px"></div><div class="v">351</div></div>
+<div class="bar"><div class="l">Doar calculul de pe placă, la noi<small>cât poate placa sub driverul nostru</small></div><div class="t" style="width:450px"></div><div class="v">507</div></div>
 </div>
-<div class="term" style="margin-top:20px;font-size:10px">simboluri/s cu driverul: … 94.84 -> acum <u>262.04</u>   |   pe placa: median 2420 us … = <u>413.56 simboluri/s</u>   |   procesor <u>72.72 simboluri/s</u></div>
-<div class="cap">Cuvinte pe secundă, același model Kronos, aceleași 16 cuvinte, același calculator. Jurnalul testului din 21 nov 2026, ora 15:56; cifra din Windows: măsurată pe 20 nov 2026, cu Kronos rulat prin PyTorch, fără memoria de context. Cu o zi înainte, driverul nostru era la 95.</div>
+<div class="term" style="margin-top:20px;font-size:10px">pozitiile lente: 0 din 18 … suma 51225 us = <u>351.39 simboluri/s in medie</u>   |   doar lansarile <u>507.15 simboluri/s</u>   |   procesor <u>72.72 simboluri/s</u></div>
+<div class="cap">Cuvinte pe secundă, același model Kronos, aceleași 16 cuvinte, același calculator. Jurnalul testului din 21 nov 2026, ora 19:16; cifra din Windows: măsurată pe 20 nov 2026, cu Kronos rulat prin PyTorch, fără memoria de context. Cu o zi înainte, driverul nostru era la 95; azi dimineață, la 109.</div>
 <div class="no">05 / 08</div><div class="next">Și ce mai știe sistemul? <span>URMEAZĂ ▶</span></div></div>
 
 <div class="pg">
@@ -114,7 +114,7 @@ gpu0: lant: <b>toti pasii au trecut</b>; 2373 scrieri</div>
 <div class="it">Repornește placa singur, în 0,13 secunde</div>
 <div class="it">Se testează singur, zi și noapte, fără om</div>
 <div class="it">Ferestre, editor, fișiere, consolă de la distanță</div>
-<div class="it">De 2 ori viteza din Windows, pe aceeași placă</div>
+<div class="it">De 2,7 ori viteza din Windows, pe aceeași placă</div>
 <div class="it w">În lucru: condus pas cu pas de un agent AI</div>
 <div class="it w">În lucru: discul propriu</div>
 <div class="it w">În lucru: Kronos cel mare pe placa video</div>

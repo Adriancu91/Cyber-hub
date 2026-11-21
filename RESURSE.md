@@ -25,7 +25,7 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 | 4 | `os-328` | calculele lipite (P3) | `test-placa --lipit` | **făcut 21 nov 12:56 — merge** (simbolul median 3 284 µs = 304,5 simb/s; media 120 din cauza a 2 poziții lente) → `rezultate/2026-11-21-workstation-os328-p3/` |
 | 4b | `os-329` | fără scriere pe stick în mijlocul generării (P6-112) + lista lipită implicită | `test-placa` | **făcut 21 nov 15:56 — merge: media 262 simb/s, de 2 ori Windows/PyTorch (129)** → `rezultate/2026-11-21-workstation-os329-pozitii/` |
 | 4c | `os-331` | LayerNorm nou (P6-114) | `test-placa --ln-nou` | **făcut 21 nov 17:26 — merge: media 348 simb/s (a doua rulare), LayerNorm ~4 µs** → `rezultate/2026-11-21-workstation-os331-ln/` |
-| 4d | `os-332` | poziția 0 — încălzirea (P6-116) | `test-placa --ln-nou` (prima rulare = testul obișnuit; a doua = LayerNorm nou, deja probat) | **pornit 21 nov ~19:10** (stick verificat, semnal dat) |
+| 4d | `os-332` | poziția 0 — încălzirea (P6-116) | `test-placa --ln-nou` | **făcut 21 nov 19:16 — merge: nicio poziție lentă; media 351 simb/s (LayerNorm nou), de 2,7 ori Windows** → `rezultate/2026-11-21-workstation-os332-pozitia0/` |
 | — | `os-328` | **proba agentului viu** (C-159 pasul 1; doar citiri + refuzuri; nu atinge placa) | `live 10`, apoi `live 2` | **făcut 21 nov 13:03 și 13:18 — trecută** (61 de comenzi, zero abateri) → `rezultate/2026-11-21-workstation-agentul-viu-proba/`; sesiunea C după reparația `live.cheie` secret |
 | 5 | următorul | Kronos #651 pe placă (P6) | de stabilit de sesiunea OS | după 3–4 |
 | 6 | de anunțat | **P8 — primul calcul cu circuitele speciale** (aprobat de Adrian, 21 nov 16:18) | de anunțat de sesiunea OS | așteaptă PREDARE Cyber-GPU (C-160 p.1) → Release OS (C-161 p.2) |
