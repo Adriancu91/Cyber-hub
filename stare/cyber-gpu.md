@@ -1,16 +1,15 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-21 09:17 (ora României) · **de:** sesiunea Cyber-GPU 131 (cloud, fără placă) — **C-155 punctul 1 gata: P3 (calculele lipite) gata de legat**, în SIMULARE. 617 PASS, CI verde (rularea 249). Lucru continuu (C-157): oprirea de la regula 8 e ridicată.
+**Actualizat:** 2026-11-21 10:40 (ora României) · **de:** sesiunea Cyber-GPU 132 (cloud, fără placă) — **C-157 punctul 2 (comparațiile os-323) + C-155 punctul 2 (LayerNorm nou)**, în SIMULARE. 624 PASS. Lucru continuu (C-157).
 
 ## Acum
-- **P3 gata de legat (C-155 punctul 1):** OS-ul trimitea fiecare simbol prin `kd::send_token`, care știa doar lista simplă (196 de lansări la #513). Am adăugat `kronos_diag::send_token_list` cu `TokenList::Fused` (88 de lansări), plus tăieturile pe strat și mărimea pushbuffer-ului (4 256 B în loc de 9 440 B). Testat în SIMULARE (T142): un text întreg cu lista lipită **și** dieta pornită dă logit-uri **identice bit cu bit** cu lista simplă, iar oracolul pe procesor trece la fiecare poziție; un program greșit plantat e prins. **Pe placă: NOT TESTED.** Nota: `cyber-gpu/integration/cyber-universe/C-155_P3-gata-de-legat.md`.
-- **Pe placă e nou doar:** programul `q8_fused` (deja compilat în sesiunea 120) și o listă mai scurtă; nicio scriere nouă în registre.
+- **Comparațiile os-323 (C-157 punctul 2):** tabloul de bord și resetul FLR au ieșit cum am estimat (FLR: placa răspunde la 131 ms, WPR2 coborât, al doilea lanț trece). Singurul lucru altfel: oprirea zonei comune (`INIT(0)`) refuzată — driverul NVIDIA 570.144 nu o trimite niciodată. Am adăugat oprirea fără ea (o comandă mai puțin, nimic nou pe placă). „Motivele încetinirii = 0x1” = placa în repaus (bitul GPU_IDLE). P0 înainte de viteza maximă: necunoscut, ipoteză în `cyber-gpu/docs/C-157_P2_COMPARATII.md`.
+- **LayerNorm nou (C-155 punctul 2):** programul `layernorm256` (256 de fire, o singură citire a datelor, `shfl` + o barieră; compilat cu Mesa NAK 25.0.7). Testat în SIMULARE (T143): oracolul pe procesor trece, aceleași simboluri ca LayerNorm vechi (abatere 3,1e-7), program greșit plantat prins. **Pe placă: NOT TESTED.** Estimare (DEDUS): ~21,8 → ~3–5 µs pe lansare, ~0,45 ms mai puțin pe simbol la #513.
 - **Estimare (DEDUS, #513):** 172 simb/s azi → dieta (`os-324`) ~250 → + P3 ~280 → + LayerNorm nou ~320 → + etapa 4 ~470.
 
 ## Urmează
-1. **C-155 punctul 2:** LayerNorm nou (ln1/ln2 ~260 µs fiecare pe simbol), în SIMULARE.
-2. C-155 punctul 3: argmax pe placă (4 octeți citiți în loc de 64 KiB), SIMULARE; punctul 4: cursa înmulțirilor cu cifrele os-322.
-3. După fiecare test pe placă (`os-323 --tablou`, `--flr-proba`, `os-324`): comparația cu estimarea (C-157 punctul 2), cu întâietate.
+1. **C-155 punctul 3:** argmax pe placă (4 octeți citiți în loc de 64 KiB), SIMULARE; apoi punctul 4: cursa înmulțirilor cu cifrele os-322.
+2. După fiecare test pe placă (`os-324` e următorul): comparația cu estimarea (C-157 punctul 2), cu întâietate.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
@@ -18,6 +17,8 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- PREDARE → cyber-universe: **LayerNorm nou** (C-155 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-155_LayerNorm-nou.md`, commit `139b145`. Doar adăugări: `kronos_diag::TokenList::FusedLn`, `kronos_layer::{Prog::LayerNorm256, PROGRAMS_FUSED_LN, token_launches_fused_ln}`, `kronos_model::token_launches_fused_ln`, modulul `nvidia_ga104::layernorm256`, `gpu_sim::cmdproc::{layernorm256_on_cpu, LAYERNORM256_NEEDS}`, `gpu_compute::layer::{layernorm_gpu256, LN256_MAX_N}`. Ce e nou pentru placă: **programul `layernorm256`** (SHA-256 `a407dd68…334d`, 256 de fire, 25 registre, 32 B partajați, o barieră); nicio scriere nouă în registre. Release separat după P3; proba: oracolul pe procesor + aceleași simboluri, abaterea față de LayerNorm vechi sub 1e-4.
+- PREDARE → cyber-universe: **oprirea tabloului fără `INIT(0)`** (după os-323), nota `cyber-gpu/integration/cyber-universe/os-323_tablou-oprire-fara-init0.md`, commit `fb22ffb`. Doar adăugări: `gsp::rusd::{rusd_stop_poll_only, dashboard_at_end_keep_page, rows::KEEP_PAGE_ON_PURPOSE}`. Ce e nou pentru placă: nimic (o comandă mai puțin); se poate lega în orice Release.
 - PREDARE → cyber-universe: **P3 — calculele lipite** (C-155 punctul 1), nota `cyber-gpu/integration/cyber-universe/C-155_P3-gata-de-legat.md`, commit `6f0fdbf` (ramura `g0-g2-fundatie`). Doar adăugări: `kronos_diag::{TokenList, send_token_list, submissions_of, push_bytes_of}`, `Way::submissions_of`. Ce e nou pentru placă: **programul `q8_fused`** (SHA-256 `d86e53e2…dd08`) și lista de 88 de lansări în loc de 196; nicio scriere nouă în registre. Release separat după `os-324` (dieta), opțiune oprită implicit; proba: oracolul pe procesor + logit-uri identice bit cu bit cu lista simplă.
 - **Sesiunea 127 (C-147 punctul 6):** nicio schimbare de cod; interfața publică neschimbată. Doar documentul `cyber-gpu/docs/C-147_PUNCTUL6_LANT.md` (de citit de OS înainte de P7).
 - **Sesiunea 126 (C-147 punctul 5, doar adăugări — OS-ul compilează neschimbat):** modulul nou `gpu_compute::mma` (`f16_to_f32`, `f32_to_f16`, `mma16_exact`, `mma16_block8_trunc`, `tolerance`, `judge` → `MmaVerdict`, `M`, `N`, `K`, `TOL_TERMS`, `HYPOTHESIS_BLOCK`); modulul nou `nvidia_ga104::mma16` (`MMA16_F16`, `MMA16_F16_SHA256`, `MMA16_S8_SHA256`, `MMA16_F16_REGISTERS`, `MMA16_F16_BLOCK`, `PUSH_BASE` = 0x700, `CBUF_SIZE`, `ALIGN`, `cbuf`, `qmd`); `gpu_sim::cmdproc::{mma16_f16_on_cpu, MMA16_F16_NEEDS, MMA16_PUSH_BASE}`. Nimic de legat în OS acum (nu intră pe placă fără „da”). Commit: `f8141d3` (codul: `072b6ea`).
