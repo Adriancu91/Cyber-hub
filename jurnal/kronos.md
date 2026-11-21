@@ -192,3 +192,4 @@
 - 2026-11-20 20:15 — S130 (C-153) gata, verificat: #513 în Windows/PyTorch pe placă 129,12 simb/s (FP16 128,84), procesor 41,74, fără KV cache; 16 simboluri identice cu OS-ul. Tabelul în `rezultate/2026-11-20-workstation-kronos513-windows-viteza/`; C-153 → gata. S129 pe placă de la 19:00.
 - 2026-11-21 02:15 — S129 gata, verificat: rămâne #651 (#736: formulări 54,0 % ≥ 48 pentru prima dată, calcule 90, chat 51, dar „din text” 217 < 218). S131 în coadă la noapte: din #736, „din text” ×3, linia `w2_mare_24zcj`. Nicio comandă nouă.
 - 2026-11-21 05:15 — S131 pașii 0–3 gata pe procesor (date „din text” ×3, 0 suprapuneri; configurarea `24zcj`; pre-înregistrarea cu pragurile C-132), verificat; placa la noapte de la 19:00. Nicio comandă nouă.
+- 2026-11-21 08:20 — C-156 preluat: pauză la antrenări; S131 „în așteptare (pauză)”, pregătirile păstrate; S132 „pasul de aur” (procesor, model mic apoi #513) în coadă, aprobată de Adrian.
