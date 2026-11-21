@@ -1,1 +1,1 @@
-liber · terminat 2026-11-21 17:20 · următorul pas: C-160 punctul 2 (studiul motorului de antrenare: calculele înainte/înapoi, bugetul de memorie) sau C-157 punctul 2 dacă apare un test pe placă (inclusiv P8)
+ocupat · început 2026-11-21 18:14 · sarcina: C-157 p.2 (os-331, LayerNorm nou pe placă), apoi C-160 p.2 (studiul motorului) · estimat gata: 19:10
