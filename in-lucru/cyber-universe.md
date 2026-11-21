@@ -1,1 +1,1 @@
-liber · terminat 2026-11-21 19:16 · următorul pas: C-161 p.1 (comanda de placă a modului viu) sau dieta 2 (nimic nou pe placă), apoi P8 la predare; #651, argmax, Fused32, P6-111
+ocupat · început 2026-11-21 19:41 · sarcina: predarea Cyber-GPU (dacă există) apoi C-158/C-161 · estimat gata: 21:30
