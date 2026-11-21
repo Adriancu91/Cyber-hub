@@ -1,1 +1,1 @@
-ocupat · început 2026-11-21 15:43 · sarcina: P6-114 LayerNorm nou (C-155 p.2, PREDARE Cyber-GPU) → Release pentru placă · estimat gata: 17:40
+liber · terminat 2026-11-21 16:56 · următorul pas: #651 pe placă (C-158 p.3, nota C-157_P4; întâi scara primului simbol) sau dieta 2, câte una pe Release; apoi P6-111
