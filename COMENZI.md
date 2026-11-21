@@ -1898,6 +1898,7 @@ Format:
 - după: P3 (calculele lipite) într-un Release separat, când Cyber-GPU dă nota (C-155).
 - stare: gata (2026-11-21 10:05, sesiunea OS) — **P6-107**
 - rezultat: Release **`os-324`** (CI run 324 verde, doar dieta: pushbuffer prin umbră + fără zerorizarea înregistrărilor, pornită doar în testul obișnuit al ciclului; rândurile `kt dieta`, `kt cuvinte VRAM pe simbol`, `kt median citirea logit-urilor`, `kt median argmax` + blocul „viteza fata de os-322”); în SIMULARE aceleași logit-uri bit cu bit, 48 de cuvinte VRAM pe simbol față de 599.
+- notă centrul de comandă (2026-11-21 11:15) — **dieta merge pe placa reală** (`os-324`, 11:01): driverul pe simbol 3 081 → **1 347 µs**; simbolul median 5 802 → 4 083 µs (245 simb/s); rândul „cu driverul” 94,84 → **109,11 simb/s**; 16/16 identice, abaterea maximă exact ca în os-322. **De lămurit:** media (109) e mult sub mediană (245) — câteva poziții lente; detalii `rezultate/2026-11-21-workstation-os324-dieta/REZULTAT.md`.
 
 ### C-155 · cyber-gpu · După os-322: P3 gata de legat + argmax pe placă (centrul de comandă, 21 nov 07:35)
 - data: 2026-11-21 07:35 · de la: centrul de comandă, în planul aprobat de Adrian. Ridică oprirea de la regula 8.
@@ -1927,6 +1928,7 @@ Format:
 - stare: preluat (2026-11-21 09:10, sesiunea Cyber-GPU 131) — lucru continuu pornit; punctul 1 (C-155) în lucru.
 - rezultat: 2026-11-21 09:17 — C-155 punctul 1 (P3 gata de legat) terminat, `PREDARE → cyber-universe` în `stare/cyber-gpu.md`.
 - rezultat: 2026-11-21 10:40 — punctul 2 al cozii: comparațiile os-323 (`--tablou`, `--flr-proba`) în `cyber-gpu/docs/C-157_P2_COMPARATII.md` + oprirea tabloului fără `INIT(0)`; C-155 punctul 2 (LayerNorm nou) terminat; ambele `PREDARE → cyber-universe` în `stare/cyber-gpu.md`.
+- adăugat de centrul de comandă (2026-11-21 11:15), **punctul 2b, înaintea punctului 3:** după testul cu dieta (`rezultate/2026-11-21-workstation-os324-dieta/`), simbolul median e 4,08 ms (245/s) dar media 109/s — câteva poziții (~80 ms în plus pe generare) sunt mult mai lente. Află care (prima poziție? textul dat? alt motiv) din jurnalul `gpu-jurnal-024.txt` și din cod, propune scoaterea lor și cere OS-ului un rând `kt` cu timpul fiecărei poziții; explică și cele 238 de cuvinte VRAM pe simbol (SIMULARE 48). Nota în `integration/cyber-universe/`.
 
 ### C-158 · cyber-universe · COADA PERMANENTĂ: lucru zi și noapte, sesiuni din oră în oră (Adrian, 21 nov 08:01)
 - data: 2026-11-21 08:01 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (21 nov 08:01) și `REGULI.md`, secțiunea „Lucrul continuu”. Comanda rămâne deschisă: centrul de comandă adaugă puncte, tu scrii la `rezultat` ce ai terminat. Ridică oprirea de la regula 5.
@@ -1948,6 +1950,7 @@ Format:
 - rezultat: 2026-11-21 10:05 — punctul 1 (C-154) gata → `os-324`; punctul 1b (C-159) pasul 1 început: P6-108 poarta + `docs/LIVE.md` gata, P6-109 (bucla `live <minute>`) urmează; nota de la punctul 5 („11 scrieri refuzate”): vezi starea.
 
 - notă centrul de comandă (2026-11-21 08:45) — pentru punctul 5: **proba FLR a trecut pe placă** (`rezultate/2026-11-21-workstation-os323-flr/REZULTAT.md`), deci „mai multe teste într-o singură pornire” se poate construi; **de lămurit de tine:** rândul „adaptoarele OS au REFUZAT 11 scrieri cerute în afara gardului” la al doilea lanț (care scrieri; așteptate sau nu) — un rând în stare. Tabloul de bord merge și el (`rezultate/2026-11-21-workstation-os323-tablou/`): 35,8 °C; oprirea zonei comune e refuzată de placă (o repară Cyber-GPU; până atunci nimic de schimbat la tine).
+- adăugat de centrul de comandă (2026-11-21 11:15): în Release-ul cu P3 pune și rândul `kt` cu timpul **fiecărei** poziții (nu doar mediana) și împărțirea lui (placă / driver / jurnal / altceva), ca să vedem de ce media (109 simb/s) e mult sub mediană (245) — vezi `rezultate/2026-11-21-workstation-os324-dieta/REZULTAT.md`. Nu e un al doilea „lucru nou” pentru placă: doar citiri de ceas.
 
 ### C-159 · cyber-universe · AGENTUL VIU: Claude conduce OS-ul pas cu pas prin hub (Adrian, 21 nov 08:18)
 - data: 2026-11-21 08:18 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (21 nov 08:18); studiul, alegerea și forma canalului: `idei/2026-11-21_agentul-viu.md` (citește-l întâi). Locul în coadă: C-158 punctul 1b.

@@ -21,7 +21,7 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 |---|---|---|---|---|
 | 1 | `os-323` | tabloul de bord al plăcii (temperatură, ceasuri, stare) | `test-placa --tablou` | **făcut 21 nov 08:21 — merge** (35,8 °C, P8, 25 W; oprirea zonei refuzată) → `rezultate/2026-11-21-workstation-os323-tablou/` |
 | 2 | `os-323` | proba de reset din interior (FLR) | `test-placa --flr-proba` | **făcut 21 nov 08:32 — merge** (placa răspunde după 0,13 s; al doilea lanț trece toți pașii) → `rezultate/2026-11-21-workstation-os323-flr/` |
-| 3 | `os-324` | „dieta driverului” (C-154) | `test-placa` | când apare Release-ul, CI verde |
+| 3 | `os-324` | „dieta driverului” (C-154) | `test-placa` | **făcut 21 nov 11:01 — merge** (driverul 3 081 → 1 347 µs; 109 simb/s, mediana 245) → `rezultate/2026-11-21-workstation-os324-dieta/` |
 | 4 | următorul | calculele lipite (P3) | `test-placa` | după nota Cyber-GPU (C-155) |
 | 5 | următorul | Kronos #651 pe placă (P6) | de stabilit de sesiunea OS | după 3–4 |
 Sesiunea OS anunță o versiune gata prin rândul `GATA DE TEST:` din `stare/cyber-universe.md`; centrul de comandă o trece aici.
