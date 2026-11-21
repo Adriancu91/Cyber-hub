@@ -1,1 +1,1 @@
-ocupat · început 2026-11-21 17:15 · sarcina: C-160 punctul 1 (P8: predarea primului calcul cu circuitele speciale) · estimat gata: 18:15
+liber · terminat 2026-11-21 17:20 · următorul pas: C-160 punctul 2 (studiul motorului de antrenare: calculele înainte/înapoi, bugetul de memorie) sau C-157 punctul 2 dacă apare un test pe placă (inclusiv P8)

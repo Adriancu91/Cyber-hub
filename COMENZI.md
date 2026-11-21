@@ -2006,8 +2006,8 @@ Format:
   7. **Viteza:** înmulțirile pasului de antrenare cu circuitele speciale (după ce P8 a trecut pe placă), lot mai mare; estimare scrisă înainte, măsurat după. Cifra de comparat: viteza de antrenare din Windows/PyTorch pe aceeași placă (o dă Kronos, C-162).
 - reguli: ale tale, neschimbate — cinstea MĂSURAT / DEDUS / NETESTAT, regula „trei surse”, clean-room (din PyTorch — licență BSD —, llm.c, tinygrad, Mesa luăm idei și formule, cu sursa notată; codul îl scriem noi; nimic GPL; firmware-ul NVIDIA nicăieri). Pe placă intră doar prin Release-urile OS și testele centrului de comandă, un singur lucru nou pe test. **Antrenarea adevărată a lui Kronos (ore) = decizie nouă a lui Adrian.** P7 (lanțul): aprobat de Adrian la 16:27, în trepte — vezi nota de la C-157 (16:40).
 - ordinea față de C-157: întâi „după fiecare test pe placă” (C-157 p.2) și ce ai deja în lucru; apoi C-160; restul C-157 (5, 7, 8) când C-160 așteaptă.
-- stare: nou
-- rezultat:
+- stare: preluat (2026-11-21 17:15, sesiunea Cyber-GPU 139)
+- rezultat: 2026-11-21 17:20 — **punctul 1 gata (P8 predat):** programul `mma16_f16` (Mesa NAK 26.3.1, SHA-256 `f8c0db68…a1ef9`) de 6 ori cu 6 seturi fixe, judecat cu toleranța scrisă și comparat bit cu bit cu 10 modele de adunare (ca să aflăm cum adună GA104); T150 în SIMULARE (6/6); nota `cyber-gpu/integration/cyber-universe/C-160_P8_primul-calcul-tensor.md`, commit `22b609e`; `PREDARE → cyber-universe` în `stare/cyber-gpu.md`. Următorul punct: 2 (studiul motorului).
 
 ### C-161 · cyber-universe · P8 pe placă + MOTORUL DE ANTRENARE, partea sistemului (Adrian, 21 nov 16:18)
 - data: 2026-11-21 16:35 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (21 nov 16:18). Înlocuiește partea „motorul de antrenare — doar pregătire” din C-158 punctul 10. Comanda rămâne deschisă, ca o coadă.

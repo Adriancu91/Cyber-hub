@@ -1,15 +1,16 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-21 16:45 (ora României) · **de:** sesiunea Cyber-GPU 138 (cloud, fără placă) — **C-157 punctul 2: os-329 comparat**. 656 PASS. Lucru continuu (C-157).
+**Actualizat:** 2026-11-21 17:20 (ora României) · **de:** sesiunea Cyber-GPU 139 (cloud, fără placă) — **C-160 punctul 1: P8 predat**. 667 PASS. Lucru continuu (C-157 + C-160).
 
 ## Acum
-- **os-329 comparat (C-157 punctul 2):** 262 simb/s în medie (estimat ~280), mediana 299,6, identic bit cu bit. **Singura poziție lentă rămasă, poziția 0** (driver 9 863 µs) = umbra lansărilor pornește goală, iar scara a folosit lista simplă → primul simbol lipit scrie 11 264 + 1 064 de cuvinte (7,43 + 0,69 ms în jurnal; T149, aritmetică: 0,66 µs/cuvânt explică și poziția 0 din os-324). Remediu: **încălzirea** (poziția 0 trimisă o dată înainte de ceas) → ~297 simb/s estimat (DEDUS); cu dieta 2 ~340. Comparația: `cyber-gpu/docs/C-157_P2_COMPARATII.md`.
-- #651 gata de legat (sesiunea 137), dieta 2 gata de legat (sesiunea 136).
+- **P8 gata de legat (C-160 punctul 1, aprobat de Adrian 16:18):** primul calcul cu circuitele speciale — programul `mma16_f16` (Mesa NAK 26.3.1) trimis de 6 ori cu 6 seturi fixe de numere, în afara generării; judecat pe procesor cu toleranța scrisă în C-147 (neschimbată) și comparat bit cu bit cu 10 modele de adunare (pe placă aflăm câți termeni adună GA104 odată și cum rotunjește). SIMULARE: 6/6 în toleranță. Nota: `cyber-gpu/integration/cyber-universe/C-160_P8_primul-calcul-tensor.md`.
+- Predările mai vechi (încălzirea poziției 0, #651, dieta 2, LayerNorm nou, argmax, cursa) așteaptă la OS, câte una pe Release.
 
 ## Urmează
-1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate.
-2. C-157 punctul 5 (C-151 punctul 2): citirea tabloului înainte/după viteza maximă și la N secunde, pragul de temperatură — SIMULARE + notă.
-3. După cifrele cursei pe placă: lista mixtă (doar felurile care câștigă ≥ 50 ‰).
+1. După fiecare test pe placă (inclusiv P8): comparația (C-157 punctul 2), cu întâietate.
+2. **C-160 punctul 2:** studiul motorului de antrenare — calculele înainte/înapoi ale lui Kronos într-un pas, bugetul de memorie al plăcii (model mic, #513, #651), `docs/C-160_MOTOR_STUDIU.md`.
+3. C-160 punctele 3–4: oracolul pasului întreg pe procesor (= „pasul de aur” mic), apoi programele „înapoi” câte unul, în SIMULARE.
+4. P7 (lanțul) în trepte, la rândul lui; C-157 punctele 5, 7, 8 când C-160 așteaptă.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
@@ -17,6 +18,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- PREDARE → cyber-universe: **P8 — primul calcul cu circuitele speciale pe placa reală** (C-160 punctul 1, pentru C-161 punctul 2; aprobat de Adrian 21 nov 16:18), nota `cyber-gpu/integration/cyber-universe/C-160_P8_primul-calcul-tensor.md`, commit `22b609e` (codul: `82178f7`). Doar adăugări: modulul `nvidia_ga104::mma16_probe` (`SETS`, `ProbeSet::{inputs, page, inputs_fnv}`, `launch_bytes`, `judge_set` → `SetResult`, `Probe::{add, passes, rows, journal, lines}`, `parse_mma16`, `A_OFF`/`B_OFF`/`C_OFF`/`D_OFF`, `D_FILL`), `gpu_compute::mma::{Rounding, AddModel, ADD_MODELS, mma16_blocked, matching_models, worst_permille}`. Ce e nou pentru placă: **programul `mma16_f16`** (SHA-256 `f8c0db68b654372d94ed96c767c7775c32909298a1b77076ddda81a66afa1ef9`, primul din Mesa 26.3.1), instrucțiunile `hmma.m16n8k16.f32` ×2 și `movm.16.m8n8.trans` ×4, cbuf de 0x800 octeți cu adresele la 0x700, 32 de registre, un warp; citește A, B, C din RAM și scrie 1 KiB (D) în RAM; nicio scriere nouă în registre, nimic nou prin GSP. Proba: 6 seturi, câte o trimitere; trece = `kt mma16 seturi in toleranta` = 6 și `identitate` 256/256 exacte; toleranța `17 · 2⁻²³ · (|c| + Σ|a·b|)`. Rândurile `kt mma16 …` în notă.
 - PREDARE → cyber-universe: **poziția 0 — încălzirea** (C-157 punctul 2, după os-329), nota `cyber-gpu/integration/cyber-universe/C-157_P2c_pozitia-0.md`, commit `538e3b4`. Fără cod nou la noi (doar testul T149); în OS: `runner.run_token(run.prompt[0], 0)` o dată pe listă, înainte de `loop`, plus profilul `kp` golit. Ce e nou pentru placă: **nimic** (aceleași lansări, același simbol). Proba: `kt pozitii lente` = 0, amprenta `0xda9ae084`, ~297 simb/s.
 - PREDARE → cyber-universe: **#651 pe placă — limitele pe lista care rulează** (C-157 punctul 4, pentru C-158 punctul 3), nota `cyber-gpu/integration/cyber-universe/C-157_P4_k651-limite.md`, commit `839704f`. Doar adăugări: `kronos_speed::ModelLimits::{of_lists, k651_lists}`, `kronos_gen::VramBudget::with_programs`. În `run_model`: `ModelLimits::of_lists(..., &listele_care_ruleaza, &[])` în loc de `ModelLimits::of(...)` — altfel #651 e refuzat (pasul `0x100` < `0x185`, 32 KiB < 37 312 B). Cu lista simplă la #651: `STRIDE 0x200` + `PUSH_BYTES 0x10000`. Ce e nou pentru placă: **nimic**. Cifre așteptate: VRAM ~270 MiB, 25 de bucăți, 172 de lansări, simbolurile din `MODEL_651.md`, ~5,1–5,6 ms pe simbol.
 - PREDARE → cyber-universe: **dieta 2 a driverului** (C-157 punctul 3), nota `cyber-gpu/integration/cyber-universe/C-157_P3_dieta-doi.md`, commit `367edf4`. Doar adăugări: `gpu_compute::model::{order_key, argmax_bits}`, modulul `nvidia_ga104::kronos_diet2` (`RecordPlan`, `ends_span`, `WaitPlan`, `poll_planned`, `WaitStats`, `Diet2Stats`, `ParsedDiet2`, `parse_diet2`). Ce e nou pentru placă: **nimic** (aceleași programe, lansări, octeți, registre). Patru bucăți independente: (A) două înregistrări în loc de 89 pe 7 din 8 poziții, (B) așteptarea planificată, (C) amprenta FNV după oprirea ceasului, (D) `argmax_bits`. Proba: amprenta identică cu os-328 (`0xda9ae084`), `kt median placa` neschimbat, `kt median driver` 759 → ~350–400 µs, rândurile noi `kt dieta 2`, `kt cuvinte de inregistrari citite pe simbol (median)` = 8.
@@ -58,11 +60,11 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: pentru #651 (C-158 punctul 3) — schimbarea de un rând din nota `C-157_P4_k651-limite.md`; P6-112 (fără scriere pe stick în mijlocul generării; dieta 2 poate intra în același Release, nimic nou pe placă); apoi LayerNorm nou, argmax pe placă și cursa pe sferturi (`Fused32`), câte unul pe Release. Opțional: rândurile `kt lipit fata de simplu` / `kt sferturi fata de lipit` (abaterea maximă între liste).
-- De la Kronos: nimic nou.
+- De la `cyber-universe`: **P8 pe placă** (C-161 punctul 2) — Release separat, doar proba din nota `C-160_P8_primul-calcul-tensor.md`. Apoi, ca până acum: pentru #651 (C-158 punctul 3) — schimbarea de un rând din nota `C-157_P4_k651-limite.md`; P6-112 (fără scriere pe stick în mijlocul generării; dieta 2 poate intra în același Release, nimic nou pe placă); apoi LayerNorm nou, argmax pe placă și cursa pe sferturi (`Fused32`), câte unul pe Release. Opțional: rândurile `kt lipit fata de simplu` / `kt sferturi fata de lipit` (abaterea maximă între liste).
+- De la Kronos: fișa de antrenare (C-162) — viteza de antrenare din Windows/PyTorch, cifra de egalat la C-160 punctul 7.
 
 ## Blocaje / nevoie de Adrian
-- Nimic care să oprească lucrul. „Aștept da” (fără grabă): primele scrieri pe laptop (`GA106_LAPTOP.md` §7); P7 (lanțul) și P8 (circuitele speciale) pe placă.
+- Nimic care să oprească lucrul. „Aștept da” (fără grabă): primele scrieri pe laptop (`GA106_LAPTOP.md` §7). P7 și P8 sunt aprobate (21 nov 16:18 / 16:27).
 - 2026-11-21 12:35 — Sesiunea 134 (lucru continuu, C-157): **C-155 punctul 3 gata** — argmax pe placă (`argmax.comp`, 16 octeți în loc de 64 KiB, chei întregi fără FTZ), `Generation::run_top`, T145 în SIMULARE, nota pentru OS. 636 PASS. Commit `3683ef4`.
 - 2026-11-21 13:30 — Sesiunea 135 (lucru continuu, C-157): comparația os-328 (3 284 µs față de ~3 600 estimat); **C-155 punctul 4 gata** — cursa înmulțirilor în lista de simbol (`q8_fused32` + `q8_matvec32`, `TokenList::Fused32`), T146 în SIMULARE, nota pentru OS. 644 PASS. Commit `9d256ca`.
 - 2026-11-21 14:25 — Sesiunea 136 (lucru continuu, C-157): **punctul 3 gata** — dieta 2 a driverului (SIMULARE), T147, nota pentru OS. 651 PASS. Commit `367edf4`.
