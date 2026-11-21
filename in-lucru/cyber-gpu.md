@@ -1,1 +1,1 @@
-ocupat · început 2026-11-21 20:13 · sarcina: C-160 punctul 4 (matrice × matrice F32 și cu transpusa, SIMULARE cu oracolul train) · estimat gata: 21:40
+liber · terminat 2026-11-21 20:32 · următorul pas: C-160 punctul 4, programul 7 (eroarea: softmax + entropia încrucișată cu gradientul ei, SIMULARE față de train::loss_and_grad) sau C-157 punctul 2 dacă apare un test pe placă (P8)
