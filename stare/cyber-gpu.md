@@ -1,15 +1,16 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-21 10:40 (ora României) · **de:** sesiunea Cyber-GPU 132 (cloud, fără placă) — **C-157 punctul 2 (comparațiile os-323) + C-155 punctul 2 (LayerNorm nou)**, în SIMULARE. 624 PASS. Lucru continuu (C-157).
+**Actualizat:** 2026-11-21 11:25 (ora României) · **de:** sesiunea Cyber-GPU 133 (cloud, fără placă) — **C-157 punctul 2b: pozițiile lente din os-324 + cele 238 de cuvinte**. 627 PASS, CI verde. Lucru continuu (C-157).
 
 ## Acum
-- **Comparațiile os-323 (C-157 punctul 2):** tabloul de bord și resetul FLR au ieșit cum am estimat (FLR: placa răspunde la 131 ms, WPR2 coborât, al doilea lanț trece). Singurul lucru altfel: oprirea zonei comune (`INIT(0)`) refuzată — driverul NVIDIA 570.144 nu o trimite niciodată. Am adăugat oprirea fără ea (o comandă mai puțin, nimic nou pe placă). „Motivele încetinirii = 0x1” = placa în repaus (bitul GPU_IDLE). P0 înainte de viteza maximă: necunoscut, ipoteză în `cyber-gpu/docs/C-157_P2_COMPARATII.md`.
-- **LayerNorm nou (C-155 punctul 2):** programul `layernorm256` (256 de fire, o singură citire a datelor, `shfl` + o barieră; compilat cu Mesa NAK 25.0.7). Testat în SIMULARE (T143): oracolul pe procesor trece, aceleași simboluri ca LayerNorm vechi (abatere 3,1e-7), program greșit plantat prins. **Pe placă: NOT TESTED.** Estimare (DEDUS): ~21,8 → ~3–5 µs pe lansare, ~0,45 ms mai puțin pe simbol la #513.
-- **Estimare (DEDUS, #513):** 172 simb/s azi → dieta (`os-324`) ~250 → + P3 ~280 → + LayerNorm nou ~320 → + etapa 4 ~470.
+- **os-324 (dieta) față de estimare:** a ieșit cum am scris (driverul ~1 300 → 1 347 µs, simbolul ~4,0 → 4,08 ms, ~250 → 245 simb/s median, „~200 de cuvinte” → 238).
+- **De ce media (109 simb/s) e sub mediană (245):** doar **două poziții** lente, citite din ceasurile jurnalului `gpu-jurnal-024.txt`: **poziția 0** (~40 ms: locurile de lansare rescrise întregi pentru că o scriere a „scării” uită toată umbra, ~17 ms, + o scriere pe stick forțată de rândurile rămase de la scară, ~20 ms) și **poziția 15** (~58 ms: scrierea pe stick la al 16-lea simbol). 40 + 58 + 16 × 4,1 ≈ 165 ms = exact suma. La generări lungi, scrierea la 16 simboluri ar costa ~3,4 ms pe simbol în medie — frâna principală. 3 propuneri pentru OS (nimic nou pe placă) → media ≈ mediana, ~245 simb/s (DEDUS).
+- **Cele 238 de cuvinte pe simbol, explicate la cuvânt** (T144): 197 valorile înregistrărilor din pushbuffer (una pe lansare, se schimbă la fiecare simbol) + 38 în cbuf-uri (simbolul, poziția) + 3 inelul. SIMULARE-a avea 48 pentru că modelul de test e mic. Cu P3: ~130.
+- **Rândul `kt` cu pozițiile lente** cerut de centrul de comandă: gata de legat (`TimeSplit::slow_rows`).
 
 ## Urmează
-1. **C-155 punctul 3:** argmax pe placă (4 octeți citiți în loc de 64 KiB), SIMULARE; apoi punctul 4: cursa înmulțirilor cu cifrele os-322.
-2. După fiecare test pe placă (`os-324` e următorul): comparația cu estimarea (C-157 punctul 2), cu întâietate.
+1. **C-155 punctul 3:** argmax pe placă (4 octeți citiți în loc de 64 KiB), SIMULARE; apoi punctul 4: cursa înmulțirilor cu cifrele os-322/324.
+2. După fiecare test pe placă (P3 e următorul): comparația cu estimarea (C-157 punctul 2), cu întâietate.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
@@ -17,6 +18,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- PREDARE → cyber-universe: **pozițiile lente + rândul `kt` pe poziții** (C-157 punctul 2b, după os-324), nota `cyber-gpu/integration/cyber-universe/C-157_P2b_pozitii-lente.md`, commit `46078f4` (nota: `847329d`). Doar adăugări: `kronos_fast::{WriteShadow::forget_range, SLOW_FACTOR, SLOW_MAX, SlowReport, TimeSplit::{slow_report, slow_rows, journal_slow, slow_lines}, ParsedSlow, parse_slow}`. Propuneri în OS: (1) fără scriere pe stick în mijlocul generării (inel în memorie, scris la final/panică; sau la 5 s), (2) golirea jurnalului înainte de poziția 0, în afara ceasului, (3) `forget_range` în loc de `forget()` în `write`. Ce e nou pentru placă: **nimic**; rândurile `kt` intră în Release-ul cu P3 (citiri de ceas).
 - PREDARE → cyber-universe: **LayerNorm nou** (C-155 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-155_LayerNorm-nou.md`, commit `139b145`. Doar adăugări: `kronos_diag::TokenList::FusedLn`, `kronos_layer::{Prog::LayerNorm256, PROGRAMS_FUSED_LN, token_launches_fused_ln}`, `kronos_model::token_launches_fused_ln`, modulul `nvidia_ga104::layernorm256`, `gpu_sim::cmdproc::{layernorm256_on_cpu, LAYERNORM256_NEEDS}`, `gpu_compute::layer::{layernorm_gpu256, LN256_MAX_N}`. Ce e nou pentru placă: **programul `layernorm256`** (SHA-256 `a407dd68…334d`, 256 de fire, 25 registre, 32 B partajați, o barieră); nicio scriere nouă în registre. Release separat după P3; proba: oracolul pe procesor + aceleași simboluri, abaterea față de LayerNorm vechi sub 1e-4.
 - PREDARE → cyber-universe: **oprirea tabloului fără `INIT(0)`** (după os-323), nota `cyber-gpu/integration/cyber-universe/os-323_tablou-oprire-fara-init0.md`, commit `fb22ffb`. Doar adăugări: `gsp::rusd::{rusd_stop_poll_only, dashboard_at_end_keep_page, rows::KEEP_PAGE_ON_PURPOSE}`. Ce e nou pentru placă: nimic (o comandă mai puțin); se poate lega în orice Release.
 - PREDARE → cyber-universe: **P3 — calculele lipite** (C-155 punctul 1), nota `cyber-gpu/integration/cyber-universe/C-155_P3-gata-de-legat.md`, commit `6f0fdbf` (ramura `g0-g2-fundatie`). Doar adăugări: `kronos_diag::{TokenList, send_token_list, submissions_of, push_bytes_of}`, `Way::submissions_of`. Ce e nou pentru placă: **programul `q8_fused`** (SHA-256 `d86e53e2…dd08`) și lista de 88 de lansări în loc de 196; nicio scriere nouă în registre. Release separat după `os-324` (dieta), opțiune oprită implicit; proba: oracolul pe procesor + logit-uri identice bit cu bit cu lista simplă.
@@ -52,7 +54,7 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: `os-324` (dieta) cum e în C-154; apoi P3 într-un Release separat, după nota de mai sus (C-158 punctul 2).
+- De la `cyber-universe`: P3 într-un Release separat (C-158 punctul 2), cu rândurile `kt` pe poziții și, dacă se poate, cele 3 propuneri din nota C-157 punctul 2b (doar OS, nimic nou pe placă).
 - De la Kronos: nimic nou.
 
 ## Blocaje / nevoie de Adrian
