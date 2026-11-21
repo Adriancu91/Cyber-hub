@@ -1,15 +1,16 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-21 17:20 (ora României) · **de:** sesiunea Cyber-GPU 139 (cloud, fără placă) — **C-160 punctul 1: P8 predat**. 667 PASS. Lucru continuu (C-157 + C-160).
+**Actualizat:** 2026-11-21 18:25 (ora României) · **de:** sesiunea Cyber-GPU 140 (cloud, fără placă) — **C-157 p.2 (os-331) + C-160 punctul 2 (studiul motorului)**. 667 PASS. Lucru continuu (C-157 + C-160).
 
 ## Acum
-- **P8 gata de legat (C-160 punctul 1, aprobat de Adrian 16:18):** primul calcul cu circuitele speciale — programul `mma16_f16` (Mesa NAK 26.3.1) trimis de 6 ori cu 6 seturi fixe de numere, în afara generării; judecat pe procesor cu toleranța scrisă în C-147 (neschimbată) și comparat bit cu bit cu 10 modele de adunare (pe placă aflăm câți termeni adună GA104 odată și cum rotunjește). SIMULARE: 6/6 în toleranță. Nota: `cyber-gpu/integration/cyber-universe/C-160_P8_primul-calcul-tensor.md`.
-- Predările mai vechi (încălzirea poziției 0, #651, dieta 2, LayerNorm nou, argmax, cursa) așteaptă la OS, câte una pe Release.
+- **os-331 comparat (C-157 p.2):** LayerNorm nou a dat pe placă exact cât estimasem (~4 µs pe lansare, −445 µs pe simbol); 348 simb/s e a doua rulare din pornire (încălzită) — o rulare rece singură ar da ~300 până la încălzire (os-332). Abaterea puțin mai mare față de procesor (1,74e-5) e normală: sume pe 256 de fire. Înmulțirile sunt acum 74 % din placă → cursa pe sferturi e următorul câștig. `cyber-gpu/docs/C-157_P2_COMPARATII.md`.
+- **Studiul motorului de antrenare (C-160 p.2) gata:** `cyber-gpu/docs/C-160_MOTOR_STUDIU.md` — pasul întreg în ordine, cele 10 programe de placă necesare, memoria (DEDUS): starea fixă #513 1,46 GiB, #651 2,73 GiB; pașii de aur (mic și #513 1 × 64) încap ușor în F32; #513 cu 12 × 512 cere atenția cu P recalculat; #651 4–11 texte de 512, după variantă; circuitele speciale prin NAK = doar f16 (cu scalarea erorii), deci întâi totul F32.
+- P8 și predările mai vechi (încălzirea, #651, dieta 2, argmax, cursa) așteaptă la OS, câte una pe Release.
 
 ## Urmează
-1. După fiecare test pe placă (inclusiv P8): comparația (C-157 punctul 2), cu întâietate.
-2. **C-160 punctul 2:** studiul motorului de antrenare — calculele înainte/înapoi ale lui Kronos într-un pas, bugetul de memorie al plăcii (model mic, #513, #651), `docs/C-160_MOTOR_STUDIU.md`.
-3. C-160 punctele 3–4: oracolul pasului întreg pe procesor (= „pasul de aur” mic), apoi programele „înapoi” câte unul, în SIMULARE.
+1. După fiecare test pe placă (P8, încălzirea os-332): comparația (C-157 punctul 2), cu întâietate.
+2. **C-160 punctul 3:** oracolul Rust al pasului întreg = „pasul de aur” mic (întâi `sgd`: eroarea pe 10 pași, gradientul pasului 1, greutățile după 1 și 10; apoi `adamw_513`).
+3. C-160 punctul 4: programele de placă câte unul (întâi matrice × matrice F32 cu transpuse), în SIMULARE cu oracol.
 4. P7 (lanțul) în trepte, la rândul lui; C-157 punctele 5, 7, 8 când C-160 așteaptă.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
@@ -18,6 +19,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- PREDARE → cyber-universe: **răspunsul la os-331** (C-157 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-157_P2d_os-331.md`, commit `741cd60`. Fără cod nou. (1) „logit-urile identice cu os-322? NU” = normal (LayerNorm nou adună pe 256 de fire); amprenta de referință cu LayerNorm nou: `0x46a07914`. (2) Propunere: rândurile de viteză să spună rularea 1 / rularea 2 (azi unele amestecă cele două rulări). (3) „87 lansări” în rândul `kt lista` față de 88 în tabel — de verificat textul. Ce e nou pentru placă: **nimic**.
 - PREDARE → cyber-universe: **P8 — primul calcul cu circuitele speciale pe placa reală** (C-160 punctul 1, pentru C-161 punctul 2; aprobat de Adrian 21 nov 16:18), nota `cyber-gpu/integration/cyber-universe/C-160_P8_primul-calcul-tensor.md`, commit de legat `3199fa2` (codul: `82178f7`, CI verde). Doar adăugări: modulul `nvidia_ga104::mma16_probe` (`SETS`, `ProbeSet::{inputs, page, inputs_fnv}`, `launch_bytes`, `judge_set` → `SetResult`, `Probe::{add, passes, rows, journal, lines}`, `parse_mma16`, `A_OFF`/`B_OFF`/`C_OFF`/`D_OFF`, `D_FILL`), `gpu_compute::mma::{Rounding, AddModel, ADD_MODELS, mma16_blocked, matching_models, worst_permille}`. Ce e nou pentru placă: **programul `mma16_f16`** (SHA-256 `f8c0db68b654372d94ed96c767c7775c32909298a1b77076ddda81a66afa1ef9`, primul din Mesa 26.3.1), instrucțiunile `hmma.m16n8k16.f32` ×2 și `movm.16.m8n8.trans` ×4, cbuf de 0x800 octeți cu adresele la 0x700, 32 de registre, un warp; citește A, B, C din RAM și scrie 1 KiB (D) în RAM; nicio scriere nouă în registre, nimic nou prin GSP. Proba: 6 seturi, câte o trimitere; trece = `kt mma16 seturi in toleranta` = 6 și `identitate` 256/256 exacte; toleranța `17 · 2⁻²³ · (|c| + Σ|a·b|)`. Rândurile `kt mma16 …` în notă.
 - PREDARE → cyber-universe: **poziția 0 — încălzirea** (C-157 punctul 2, după os-329), nota `cyber-gpu/integration/cyber-universe/C-157_P2c_pozitia-0.md`, commit `538e3b4`. Fără cod nou la noi (doar testul T149); în OS: `runner.run_token(run.prompt[0], 0)` o dată pe listă, înainte de `loop`, plus profilul `kp` golit. Ce e nou pentru placă: **nimic** (aceleași lansări, același simbol). Proba: `kt pozitii lente` = 0, amprenta `0xda9ae084`, ~297 simb/s.
 - PREDARE → cyber-universe: **#651 pe placă — limitele pe lista care rulează** (C-157 punctul 4, pentru C-158 punctul 3), nota `cyber-gpu/integration/cyber-universe/C-157_P4_k651-limite.md`, commit `839704f`. Doar adăugări: `kronos_speed::ModelLimits::{of_lists, k651_lists}`, `kronos_gen::VramBudget::with_programs`. În `run_model`: `ModelLimits::of_lists(..., &listele_care_ruleaza, &[])` în loc de `ModelLimits::of(...)` — altfel #651 e refuzat (pasul `0x100` < `0x185`, 32 KiB < 37 312 B). Cu lista simplă la #651: `STRIDE 0x200` + `PUSH_BYTES 0x10000`. Ce e nou pentru placă: **nimic**. Cifre așteptate: VRAM ~270 MiB, 25 de bucăți, 172 de lansări, simbolurile din `MODEL_651.md`, ~5,1–5,6 ms pe simbol.
