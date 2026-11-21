@@ -28,7 +28,7 @@ log("sesiunea", S, head.decode()[:300])
 OK = ("ok",)
 def R(p): return ("REFUZAT", p)
 sent = {}; rows = []; nr = 0
-def step(kind, text, expect, raw=None, note=""):
+def step(kind, text, expect, raw=None, note="", must=None):
     """Trimite fisierul cu numarul urmator, asteapta raspunsul, verifica."""
     global nr
     nr += 1
@@ -38,14 +38,18 @@ def step(kind, text, expect, raw=None, note=""):
     t = time.time()
     live.put(f"live/{S}/{live.fname('c', nr)}", data, f"live: {live.fname('c', nr)} (centrul de comanda)")
     reply, waited = live.wait(f"live/{S}/{live.fname('r', nr)}", timeout=150)
-    return record(nr, kind, text, expect, data, reply, time.time() - t, note)
+    return record(nr, kind, text, expect, data, reply, time.time() - t, note, must)
 
-def record(n, kind, text, expect, data, reply, secs, note=""):
+def record(n, kind, text, expect, data, reply, secs, note="", must=None):
     if reply is None:
         rows.append({"nr": n, "fel": kind, "text": text[:80], "asteptat": expect[0], "probleme": ["FARA RASPUNS"], "s": round(secs, 1), "nota": note})
         log(f"c-{n:04d} {kind} {text[:40]!r}: FARA RASPUNS dupa {secs:.0f}s"); return None
     open(os.path.join(D, live.fname("r", n)), "wb").write(reply)
     r, problems = live.check(data, reply, S, n, expect)
+    if live.KEY in reply or live.KEY.hex().encode() in reply or live.KEY.hex().upper().encode() in reply:
+        problems.append("CHEIA VIE APARE IN RASPUNS")
+    if must and r is not None and not any(m in (r.get("iesire") or "") for m in must):
+        problems.append(f"iesirea nu contine niciuna din {must!r}: {(r.get('iesire') or '')[:120]!r}")
     row = {"nr": n, "fel": kind, "text": text[:80], "asteptat": expect[0] + (": " + expect[1] if len(expect) > 1 else ""),
            "stare": r and r.get("stare"), "motiv": r and r.get("motiv"), "nr_raspuns": r and r.get("nr"), "cod": r and r.get("cod"),
            "durata_ms": r and r.get("durata_ms"), "iesire_octeti": r and len(r.get("iesire", "") or ""), "s": round(secs, 1), "probleme": problems, "nota": note}
@@ -79,6 +83,25 @@ if which == "A":
     step("comanda", "mem", R("alta sesiune"), raw=other_session, note="semnata pentru alta sesiune")
     step("comanda", "mem", R("semnatura gresita"), raw=with_other_key, note="semnata cu alta cheie")
     # dupa refuzuri, sirul merge mai departe
+    for c in ["mem", "uptime"]:
+        step("comanda", c, OK)
+    step("stare", "", OK)
+    step("gata", "", OK)
+elif which == "C":
+    step("stare", "", OK)
+    for c in ["hw", "mem", "uptime", "net", "lspci", "discuri", "lsusb", "cpu", "ls /usb", "ls /usb/hub", "cat /usb/VERSIUNE", "gpu stare",
+              "cat /usb/KRONOS/kronos_651_q8_0.kgr.sha256"]:
+        step("comanda", c, OK)
+    SEC = ["secret", "nu exista", "refuz"]
+    step("comanda", "cat /usb/hub/live.cheie", OK, must=SEC, note="cheia nu se arata")
+    step("comanda", "cat /usb/hub/LIVE.CHEIE", OK, must=SEC, note="cu litere mari")
+    step("comanda", "cat /usb/hub/../hub/./live.cheie", OK, must=SEC, note="cale ocolita")
+    step("comanda", "cat /usb/hub/LIVE~1.CHE", OK, must=SEC, note="numele scurt al fisierului")
+    step("comanda", "cat /usb/hub/live/../live.cheie", OK, must=SEC, note="cale ocolita prin subdosar")
+    step("comanda", "compara /usb/hub/live.cheie /usb/VERSIUNE", OK, must=SEC, note="compara cu cheia")
+    step("comanda", "cat /usb/hub/permite-live-placa", OK, must=SEC, note="cheia placii (nu exista inca)")
+    step("comanda", "mem", R("semnatura gresita"), raw=bad_sig, note="semnatura din zerouri")
+    step("comanda", "gpu lant", R("comanda scrie in placa video"))
     for c in ["mem", "uptime"]:
         step("comanda", c, OK)
     step("stare", "", OK)

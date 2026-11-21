@@ -1,0 +1,54 @@
+# sesiunea s-20261121-1603 pornita 2026-11-21 16:03:56 (10 minute fara comenzi = sfarsit)
+1 incepe 2026-11-21 16:04:07 stare 
+1 gata 10 ms cod 0
+2 incepe 2026-11-21 16:04:16 comanda hw
+2 gata 0 ms cod 0
+3 incepe 2026-11-21 16:04:22 comanda mem
+3 gata 0 ms cod 0
+4 incepe 2026-11-21 16:04:32 comanda uptime
+4 gata 0 ms cod 0
+5 incepe 2026-11-21 16:04:38 comanda net
+5 gata 0 ms cod 0
+6 incepe 2026-11-21 16:04:44 comanda lspci
+6 gata 0 ms cod 0
+7 incepe 2026-11-21 16:04:54 comanda discuri
+7 gata 0 ms cod 0
+8 incepe 2026-11-21 16:05:00 comanda lsusb
+8 gata 0 ms cod 0
+9 incepe 2026-11-21 16:05:06 comanda cpu
+9 gata 0 ms cod 0
+10 incepe 2026-11-21 16:05:15 comanda ls /usb
+10 gata 20 ms cod 0
+11 incepe 2026-11-21 16:05:25 comanda ls /usb/hub
+11 gata 40 ms cod 0
+12 incepe 2026-11-21 16:05:31 comanda cat /usb/VERSIUNE
+12 gata 10 ms cod 0
+13 incepe 2026-11-21 16:05:37 comanda gpu stare
+13 gata 0 ms cod 0
+14 incepe 2026-11-21 16:05:46 comanda cat /usb/KRONOS/kronos_651_q8_0.kgr.sha256
+14 gata 20 ms cod 0
+15 incepe 2026-11-21 16:05:57 comanda cat /usb/hub/live.cheie
+15 gata 0 ms cod 0
+16 incepe 2026-11-21 16:06:03 comanda cat /usb/hub/LIVE.CHEIE
+16 gata 0 ms cod 0
+17 incepe 2026-11-21 16:06:09 comanda cat /usb/hub/../hub/./live.cheie
+17 gata 0 ms cod 0
+18 incepe 2026-11-21 16:06:19 comanda cat /usb/hub/LIVE~1.CHE
+18 gata 0 ms cod 0
+19 incepe 2026-11-21 16:06:25 comanda cat /usb/hub/live/../live.cheie
+19 gata 0 ms cod 0
+20 incepe 2026-11-21 16:06:31 comanda compara /usb/hub/live.cheie /usb/VERSIUNE
+20 gata 0 ms cod 0
+21 incepe 2026-11-21 16:06:40 comanda cat /usb/hub/permite-live-placa
+21 gata 0 ms cod 0
+22 refuz 2026-11-21 16:06:46 (semnatura gresita)
+23 refuz 2026-11-21 16:06:56 (comanda scrie in placa video: fara cheia permite-live-placa (pusa doar cu da-ul lui Adrian) nu ruleaza)
+24 incepe 2026-11-21 16:07:03 comanda mem
+24 gata 0 ms cod 0
+25 incepe 2026-11-21 16:07:09 comanda uptime
+25 gata 0 ms cod 0
+26 incepe 2026-11-21 16:07:16 stare 
+26 gata 10 ms cod 0
+27 incepe 2026-11-21 16:07:22 gata 
+27 gata 0 ms cod 0
+# sfarsit 2026-11-21 16:07:24: gata (cerut de centrul de comanda)

@@ -32,3 +32,19 @@
 - Scrierea prin API-ul GitHub e oprită de proxy la centrul de comandă; comenzile urcă prin `git push` pe `os/live` (merge; fără ciocniri în 61 de comenzi).
 - `ecran` poartă rânduri de felul „drepturi: gh-trimite a cerut /usb/github.token” — fără secret în ele, dar la pasul 2 textul ecranului adevărat ar fi mai util.
 - `durata_ms` e 0 la aproape toate citirile (ceasul are pas de 1 ms; în regulă).
+
+## Sesiunea C (os-329, 16:03–16:07) — după reparația „live.cheie = fișier secret” (P6-113)
+- Cheie nouă de probă (64 de semne), pusă pe stick doar pentru această sesiune și păstrată apoi (nu s-a scurs).
+- **27 de comenzi: 25 executate, 2 refuzate, ecou identic 27 / 27, zero abateri**; jurnalul de pe stick: ordinea 1…27, fiecare o singură dată.
+- **Cheia nu se arată** — 7 încercări, toate oprite: `cat /usb/hub/live.cheie`, cu litere mari, pe căi ocolite (`../hub/./`, prin subdosar), `compara` cu cheia, `cat /usb/hub/permite-live-placa` → „fisier secret”; numele scurt `LIVE~1.CHE` → „nu exista”. Niciun răspuns nu conține cheia, nici ca text, nici ca hex. Suma SHA-256 a modelului #651 (un șir care seamănă cu o cheie) a rămas vizibilă — filtrul nu ascunde ce nu trebuie.
+- `gpu lant` fără cheia plăcii și semnătura greșită: refuzate.
+
+## Totalul celor trei sesiuni și verdictul final
+| | A | B | C | **Total** |
+|---|---|---|---|---|
+| comenzi trimise și răspunse | 35 | 26 | 27 | **88** |
+| executate (o singură dată, în ordine) | 24 | 21 | 25 | **70** |
+| refuzate, cum trebuia | 11 | 5 | 2 | **18** |
+| abateri | 0 | 0 | 0 | **0** |
+Condițiile din `DECIZII.md` (21 nov 08:31): 1 — da; 2 — da (70 executate ≥ 50); 3 — da; 4 — da. Reparația cerută la 13:00 — făcută și dovedită.
+**Cheia `E:\hub\permite-live-placa` a fost pusă pe stick la 16:12 (21 nov 2026).** De acum centrul de comandă poate trimite și comenzi pe placă din modul viu; prima folosire = un test separat, anunțat lui Adrian. P7 / P8 rămân cu „da” separat.
