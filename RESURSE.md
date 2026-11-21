@@ -24,7 +24,7 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 | 3 | `os-324` | „dieta driverului” (C-154) | `test-placa` | **făcut 21 nov 11:01 — merge** (driverul 3 081 → 1 347 µs; 109 simb/s, mediana 245) → `rezultate/2026-11-21-workstation-os324-dieta/` |
 | 4 | `os-328` | calculele lipite (P3) | `test-placa --lipit` | **făcut 21 nov 12:56 — merge** (simbolul median 3 284 µs = 304,5 simb/s; media 120 din cauza a 2 poziții lente) → `rezultate/2026-11-21-workstation-os328-p3/` |
 | 4b | următorul | fără scriere pe stick în mijlocul generării (P6-112) | de anunțat de sesiunea OS | în lucru la OS |
-| — | `os-328` | **proba agentului viu** (C-159 pasul 1; doar citiri + refuzuri; nu atinge placa) | `live 10`, apoi `live 2` | 21 nov, după P3 |
+| — | `os-328` | **proba agentului viu** (C-159 pasul 1; doar citiri + refuzuri; nu atinge placa) | `live 10`, apoi `live 2` | **făcut 21 nov 13:03 și 13:18 — trecută** (61 de comenzi, zero abateri) → `rezultate/2026-11-21-workstation-agentul-viu-proba/`; sesiunea C după reparația `live.cheie` secret |
 | 5 | următorul | Kronos #651 pe placă (P6) | de stabilit de sesiunea OS | după 3–4 |
 Sesiunea OS anunță o versiune gata prin rândul `GATA DE TEST:` din `stare/cyber-universe.md`; centrul de comandă o trece aici.
 
