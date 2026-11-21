@@ -32,7 +32,7 @@ Sesiunea OS anunță o versiune gata prin rândul `GATA DE TEST:` din `stare/cyb
 | Sesiune | Când |
 |---|---|
 | Kronos supraveghetor | 02:15, 05:15, 08:15, 11:15, 14:15, 17:15, 20:15, 23:15 |
-| Cyber Universe OS (de la 21 nov 2026: din oră în oră, cu semnul „în lucru”) | în fiecare oră, la :40 |
+| Cyber Universe OS (de la 21 nov 2026 14:23: de două ori pe oră, cu semnul „în lucru”) | în fiecare oră, la :10 și la :40 |
 | Cyber-GPU (de la 21 nov 2026: din oră în oră, cu semnul „în lucru”; 19–21 nov: 8 pe zi) | în fiecare oră, la :10 |
 | Coordonatorul hub-ului (rescrie PANOU.md) | 08:50, 14:50, 20:50 |
 | Centrul de comandă (citește hub-ul, pune versiunile pe stick, pornește testele, răspunde la întrebări) | ziua din oră în oră, noaptea la două ore |
