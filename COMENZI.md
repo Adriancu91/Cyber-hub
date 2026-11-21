@@ -1867,6 +1867,8 @@ Format:
 
 - notă centrul de comandă (2026-11-21 08:30) — **tabloul de bord merge pe placa reală** (`os-323`, `test-placa --tablou`, 08:21): cele 3 cereri acceptate; 35,8 °C, 225 / 405 MHz, P8, 25,2 W din 290 W, motive 0x1 (nu termic), secțiuni 0x7f. **Oprirea zonei comune refuzată (0x8000001f) + un ASSERT nou al RM** (adresa 0x0185eb2e) — de reparat sau de scos. Înainte de cererea de viteză placa era deja în P0 (ieri P5). Detalii: `rezultate/2026-11-21-workstation-os323-tablou/REZULTAT.md`. Urmează punctul 2.
 
+- notă centrul de comandă (2026-11-21 08:45) — **resetul din interior merge pe placa reală** (`os-323`, `test-placa --flr-proba`, 08:32): FLR → placa răspunde după 131 ms → WPR2 coborât → **al doilea lanț trece toți pașii în aceeași pornire** (2 373 de scrieri; I10, I13, I14 TREC). Punctul 3 e dovedit; rezerva Booter Unload n-a fost necesară. Detalii: `rezultate/2026-11-21-workstation-os323-flr/REZULTAT.md`.
+
 ### C-152 · cyber-universe · Uneltele treptei 1: resetul plăcii din interior în ciclul automat, comutatorul de pornire de pe stick, ceasul de pază, temperatura procesorului (Adrian, 19 nov 23:37)
 - data: 2026-11-19 23:37 · de la: Adrian (prin centrul de comandă) — „Da” la treapta 1 din `idei/2026-11-19_unelte-independenta-os.md`.
 - **întâi C-148** (jurnalul + măsurătorile → `os-309`): nimic de aici nu întârzie testul de mâine dimineață. Apoi, câte o unealtă pe Release:
@@ -1940,6 +1942,8 @@ Format:
   10. **Examenul lui Kronos în OS (unealta 7)** și, când Cyber-GPU are ce lega, **motorul de antrenare** (treapta 3) — doar pregătire, QEMU / SIMULARE; pe placă doar cu o comandă nouă.
 - ce rămâne cu „da” separat al lui Adrian: lanțul pe placă (P7), circuitele speciale pe placă (P8), orice scriere pe discurile workstation-ului, schimbarea ordinii din BIOS (o face el).
 - stare: nou
+
+- notă centrul de comandă (2026-11-21 08:45) — pentru punctul 5: **proba FLR a trecut pe placă** (`rezultate/2026-11-21-workstation-os323-flr/REZULTAT.md`), deci „mai multe teste într-o singură pornire” se poate construi; **de lămurit de tine:** rândul „adaptoarele OS au REFUZAT 11 scrieri cerute în afara gardului” la al doilea lanț (care scrieri; așteptate sau nu) — un rând în stare. Tabloul de bord merge și el (`rezultate/2026-11-21-workstation-os323-tablou/`): 35,8 °C; oprirea zonei comune e refuzată de placă (o repară Cyber-GPU; până atunci nimic de schimbat la tine).
 
 ### C-159 · cyber-universe · AGENTUL VIU: Claude conduce OS-ul pas cu pas prin hub (Adrian, 21 nov 08:18)
 - data: 2026-11-21 08:18 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (21 nov 08:18); studiul, alegerea și forma canalului: `idei/2026-11-21_agentul-viu.md` (citește-l întâi). Locul în coadă: C-158 punctul 1b.
