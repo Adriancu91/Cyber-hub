@@ -1,14 +1,14 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-22 00:35 (ora României) · **de:** sesiunea Cyber-GPU 146 (cloud, fără placă) — **C-160 punctul 4, programul 3 (`ln_fwd`)**. 710 PASS. Lucru continuu (C-157 + C-160).
+**Actualizat:** 2026-11-22 01:55 (ora României) · **de:** sesiunea Cyber-GPU 147 (cloud, fără placă) — **C-160 punctul 4, programul 5 (`gelu_tr`)**. 718 PASS. Lucru continuu (C-157 + C-160).
 
 ## Acum
-- **C-160 p.4, programul 3 gata în SIMULARE:** `ln_fwd` — LayerNorm înainte pe multe rânduri, orice lățime, care scrie μ și r pentru programele „înapoi” (`ln_back`, `colsum`); un `MUFU.RSQ` pe rând, deci judecat în margine (cu loc pentru unitatea aproximativă a plăcii). Lanțul înainte → înapoi verificat față de oracol. Nota `cyber-gpu/docs/C-160_P4_LN_FWD.md`, commit `33550f5`.
-- C-160 p.4: programele 1, 7, 4, 2 și 3 gata în SIMULARE, nepredate. P8 pe placă: modelul sumatorului `GA104_OS335` așteaptă confirmarea bit cu bit (rândul opțional `kt mma16 set: model ga104`).
+- **C-160 p.4, programul 5 gata în SIMULARE:** `gelu_tr` — GELU înainte și înapoi într-un singur program (un fir pe element); un `MUFU.RCP` + un `MUFU.EX2` pe element, deci judecat în margine (cu loc pentru unitățile aproximative ale plăcii). Lanțul înainte → înapoi verificat față de oracol. Pe drum: o buclă fără sfârșit în oracol la u = 0, reparată. Nota `cyber-gpu/docs/C-160_P4_GELU.md`, commit `110b386`.
+- C-160 p.4: programele 1, 7, 4, 2, 3 și 5 gata în SIMULARE, nepredate. P8 pe placă: modelul sumatorului `GA104_OS335` așteaptă confirmarea bit cu bit (rândul opțional `kt mma16 set: model ga104`).
 
 ## Urmează
 1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate — la următorul P8: rândul `kt mma16 set: model ga104` (1 pe toate 6 = modelul confirmat bit cu bit).
-2. **C-160 punctul 4, mai departe:** programul 5 (GELU înainte / înapoi), atenția înapoi, încorporările, norma + tăierea, AdamW — câte unul, față de `train`.
+2. **C-160 punctul 4, mai departe:** atenția înapoi (cu masca), încorporările, norma + tăierea, AdamW — câte unul, față de `train`.
 3. C-160 punctul 5: pasul de aur pe placa simulată (modelul mic, ambele rețete).
 4. P7 (lanțul) în trepte, la rândul lui; C-157 punctele 5, 7, 8 când C-160 așteaptă.
 
@@ -18,6 +18,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 147 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::gelu_tr` (`GELU_TR`, `GELU_TR_SHA256`, `REGISTERS`, `BLOCK`, `CBUF_BYTES`, `Mode`, `Args::{cbuf, grid}`), `gpu_compute::layer::gelu_tr_gpu`, `gpu_compute::train::{gelu_rows, gelu_back_rows}`, `gpu_sim::cmdproc::gelu_tr_on_cpu`. Reparat: `train::erf64(0)` (privat) nu se mai agață — `antrenare proba` din OS nu e afectată (numerele pasului de aur neschimbate). Nimic de legat acum; nimic nou pentru placă.
 - **Sesiunea 146 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::ln_fwd` (`LN_FWD`, `LN_FWD_SHA256`, `REGISTERS`, `BLOCK`, `SHARED`, `CBUF_BYTES`, `Args::{cbuf, grid, inv_c}`), `gpu_compute::layer::ln_fwd_gpu256`, `gpu_compute::train::layernorm_rows`, `gpu_sim::cmdproc::{ln_fwd_on_cpu, LN_FWD_NEEDS}`. Nimic de legat acum; nimic nou pentru placă.
 - PREDARE → cyber-universe: **comparația după os-335 (P8) — modelul sumatorului plăcii** (C-157 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-157_P2e_os-335_P8.md`, commit `cf9e911` (CI verde). Doar adăugări: `gpu_compute::mma::{HwAdder, GA104_OS335, mma16_hw}`, `nvidia_ga104::mma16_probe::{OS335_EXACT, OS335_PERMILLE, d_fnv, ga104_fit_bytes, fit_rows, journal_fit, parse_mma16_fit}`. Opțional în OS: `mp::journal_fit(journal, i, d)?` lângă `judge_set` în proba P8 (două rânduri pe set: FNV-ul ieșirii + „model ga104” 1/0). Ce e nou pentru placă: **nimic** (același program, aceleași trimiteri); poate intra în orice Release, fără test separat.
 - **Sesiunea 144 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulele noi `nvidia_ga104::ln_back` (`LN_BACK`, `LN_BACK_SHA256`, `REGISTERS`, `BLOCK`, `SHARED`, `CBUF_BYTES`, `Args::{cbuf, grid, inv_c}`) și `nvidia_ga104::colsum` (`COLSUM`, `COLSUM_SHA256`, `REGISTERS`, `BLOCK`, `CBUF_BYTES`, `Mode`, `Args::{cbuf, grid}`), `gpu_compute::layer::{ln_back_gpu256, colsum_gpu, LnStats}`, `gpu_compute::train::{layernorm_stats, layernorm_back_rows}`, `gpu_sim::cmdproc::{ln_back_on_cpu, colsum_on_cpu, LN_BACK_NEEDS}`. Nimic de legat acum; nimic nou pentru placă. Pentru C-160 p.6 („un singur program înapoi pe placă”): `ln_back` sau `colsum` sunt candidați buni — fără MUFU, deci comparabile bit cu bit cu modelul.
