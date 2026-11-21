@@ -1,1 +1,1 @@
-ocupat · început 2026-11-21 14:12 · sarcina: C-157 punctul 3 (dieta a doua: driverul sub 0,5 ms pe simbol, SIMULARE) · estimat gata: 15:30
+liber · terminat 2026-11-21 14:25 · următorul pas: C-157 punctul 4 (#651 pe placă: limitele și proba în SIMULARE, bugetul de memorie) sau punctul 2 dacă apare un test pe placă
