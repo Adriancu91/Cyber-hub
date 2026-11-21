@@ -1,1 +1,1 @@
-liber · terminat 2026-11-21 19:29 · următorul pas: C-160 punctul 4 (primul program de placă al antrenării: matrice × matrice F32 și cu transpusa, în SIMULARE cu oracolul train) sau C-157 punctul 2 dacă apare un test pe placă (os-332, P8)
+ocupat · început 2026-11-21 20:13 · sarcina: C-160 punctul 4 (matrice × matrice F32 și cu transpusa, SIMULARE cu oracolul train) · estimat gata: 21:40
