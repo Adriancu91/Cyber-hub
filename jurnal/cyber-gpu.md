@@ -150,3 +150,4 @@
 - 2026-11-21 01:40 — Sesiunea 128 (programată): **oprire scurtă** — nicio comandă nouă, nicio decizie nouă, niciun jurnal nou de pe placă (`os-322` rămâne ultimul; OS oprit). 614 PASS, CI verde; niciun cod. Copia C-34 la `12fe41a`.
 - 2026-11-21 04:30 — Sesiunea 129 (programată): **oprire scurtă** — nimic nou de la 128 (nicio comandă, decizie sau jurnal de pe placă). 614 PASS, CI verde; niciun cod. Copia C-34 la `9ee9fc1`.
 - 2026-11-21 07:35 — Sesiunea 130 (programată): **OPRIT (regula 8)** — a treia sesiune la rând fără nimic nou (nicio comandă, decizie sau jurnal de pe placă); necesită analiza lui Adrian. 614 PASS, CI verde; niciun cod. Copia C-34 la `c7aa873`.
+- 2026-11-21 09:17 — Sesiunea 131 (lucru continuu, C-157): **C-155 punctul 1 gata** — P3 (calculele lipite) gata de legat: `kronos_diag::send_token_list`, nota pentru OS, T142 în SIMULARE (lista lipită + dieta = bit cu bit lista simplă, oracolul trece). 617 PASS. Commit `6f0fdbf`.

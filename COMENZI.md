@@ -1902,7 +1902,7 @@ Format:
 - data: 2026-11-21 07:35 · de la: centrul de comandă, în planul aprobat de Adrian. Ridică oprirea de la regula 8.
 - ce, în ordine: (1) **P3 — calculele lipite** (196 → ~88 de lansări) gata de legat: nota pentru OS în `integration/cyber-universe/`, cu oracol pe procesor și proba (aceleași simboluri; abaterea logit-urilor sub pragul scris), compatibilă cu dieta (C-154) și cu viteza maximă; (2) **LayerNorm nou** (ln1/ln2 ~260 µs fiecare pe simbol la P0) — un program mai bun, în SIMULARE; (3) **argmax pe placă** (alegerea simbolului pe placă, citit 4 octeți în loc de 64 KiB), pregătit în SIMULARE, ca pas spre etapa 5; (4) reia cursa înmulțirilor (etapa 4: fc/proj/qkv) cu cifrele os-322 ca bază. Pe placă intră doar prin Release-urile OS și testele centrului de comandă.
 - reguli: ale tale, neschimbate. Lanțul pe placă (P7) și circuitele speciale (P8) rămân cu „da” separat de la Adrian.
-- stare: nou
+- stare: preluat (2026-11-21 09:10, sesiunea Cyber-GPU 131) — punctul 1 **gata** (commit `6f0fdbf`): P3 gata de legat, nota `integration/cyber-universe/C-155_P3-gata-de-legat.md` (`kd::send_token_list` + `TokenList::Fused`; T142 în SIMULARE: lista lipită cu dieta = logit-uri bit cu bit ca lista simplă, oracolul pe procesor trece; prag față de lista simplă: 0); urmează punctul 2 (LayerNorm nou).
 
 ### C-156 · kronos · PAUZĂ la antrenări până la mutarea în OS-ul nostru; S131 nu pornește (Adrian, 21 nov 08:01)
 - data: 2026-11-21 08:01 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (21 nov 08:01). Înlocuiește partea „antrenările de noapte continuă” din C-149.
@@ -1923,7 +1923,8 @@ Format:
   7. **Generarea fără drum la procesor (etapa 5 / P9):** tot ce se poate pregăti fără P7 (simbolul ales rămâne pe placă pentru pasul următor) — SIMULARE.
   8. **Fișa de model și „pachetele de calcul”** (deciziile din 20 nov 19:41 și 19:45): documentul de proiectare — ce citește driverul din fișa KGR1, ce e baza comună, ce e pachet pe model — apoi primul pas mic de cod.
   9. **Motorul de antrenare, doar pregătire (treapta 3 a uneltelor de independență):** (a) studiu cu surse: ce calcule „înapoi” cere arhitectura lui Kronos, în ce ordine, câtă memorie a plăcii; (b) programele „înapoi” unul câte unul, în SIMULARE, cu oracol pe procesor; (c) proba față de „pasul de aur” al lui Kronos (C-156: întâi modelul mic de probă) — aceleași numere; (d) înmulțirea matrice × matrice. Nimic din acestea pe placă fără o comandă nouă.
-- stare: nou
+- stare: preluat (2026-11-21 09:10, sesiunea Cyber-GPU 131) — lucru continuu pornit; punctul 1 (C-155) în lucru.
+- rezultat: 2026-11-21 09:17 — C-155 punctul 1 (P3 gata de legat) terminat, `PREDARE → cyber-universe` în `stare/cyber-gpu.md`.
 
 ### C-158 · cyber-universe · COADA PERMANENTĂ: lucru zi și noapte, sesiuni din oră în oră (Adrian, 21 nov 08:01)
 - data: 2026-11-21 08:01 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (21 nov 08:01) și `REGULI.md`, secțiunea „Lucrul continuu”. Comanda rămâne deschisă: centrul de comandă adaugă puncte, tu scrii la `rezultat` ce ai terminat. Ridică oprirea de la regula 5.
