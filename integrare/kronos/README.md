@@ -56,3 +56,14 @@ modelul minuscul; pentru modelul mare, testul pe hardware din `MODEL.md` cere si
 
 Vectorii se fac din nou cu `python unelte/vectori_kgr1.py vectori --iesire integrare/kronos` (ies la fel, bit cu bit);
 testul `teste/test_vectori_kgr1.py` îi recitește.
+
+## Pasul de aur (S132, comanda C-156, 21 nov 2026)
+
+Pentru motorul de antrenare din OS (Cyber-GPU, C-157 punctul 9c): 10 pași de antrenare făcuți în PyTorch (procesor, F32,
+repetabil), cu tot ce trebuie ca motorul să se compare. Fișa completă: `PAS_DE_AUR.md`.
+
+| fișier | ce e |
+|---|---|
+| `PAS_DE_AUR.md` | fișa: ce e în fiecare fișier, ordinea tensorilor, formulele SGD și AdamW pas cu pas, toleranțele măsurate |
+| `pas_de_aur_mic/` | modelul mic de probă (arhitectura #513, 2 straturi, n_emb 64, vocabular 256, context 32), lot 2 × 32, rețetele `sgd` și `adamw_513`; 198 de fișiere `.f32`/`.i32` simple + `reteta.json` cu forma și SHA-256 la fiecare; 3,32 MB |
+| `pas_de_aur_513/reteta.json` | doar rețeta pentru #513 (fișierele de 2,74 GB stau pe workstation, în `lucru/pas_de_aur/513/`) |
