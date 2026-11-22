@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 23:11 · sarcina: C-160 p.7 legarea lui attn_p în pas (Prog::AttnP) · estimat gata: 00:41
+ocupat · început 2026-11-22 23:11 · sarcina: C-157 p.5 (tabloul înainte/după viteza maximă și la N secunde, pragul de temperatură; AttnP așteaptă rândul OS-ului) · estimat gata: 00:41
