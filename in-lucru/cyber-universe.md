@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 19:51 · următorul pas: PREDARE-uri noi Cyber-GPU (atenția 128 / pe plăci, colsum_part, pasul mixt) dacă apar; altfel C-158 p.7 (discul propriu, pregătire) sau p.8 (managerul de lucrări lungi)
+ocupat · început 2026-11-22 20:12 · sarcina: rapoartele os-355 (20:06–20:08), apoi C-158 p.7/p.8 · estimat gata: 21:50
