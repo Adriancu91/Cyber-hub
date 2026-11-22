@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 21:10 · următorul pas: PREDARE-uri noi Cyber-GPU dacă apar; altfel ridicarea limitei „o comandă de placă pe sesiune” din modul viu (os-355 a mers) sau C-158 p.7 (discul propriu) / p.9 (starea pe telefon)
+ocupat · început 2026-11-22 21:14 · sarcina: legarea PREDARE Cyber-GPU „proba atenției pe plăci” (C-160 p.7e, 44a4d16) într-un Release · estimat gata: 22:50
