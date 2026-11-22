@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 12:11 · sarcina: C-160 p.7 partea a treia (scalarea erorii cu mm_tc + proba pe 10 pași, SIMULARE) · estimat gata: 13:10
+liber · terminat 2026-11-22 12:35 · următorul pas: C-157 p.2 la colsum (os-349) / #651 pe lipita-ln-32 / pasul de aur pe placă; până atunci C-160 p.7 partea a patra (proba mm_tc pentru placă: seturi fixe + timpul la forma qkv a lui #513)

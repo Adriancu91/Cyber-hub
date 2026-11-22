@@ -1,17 +1,16 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-22 11:30 (ora României) · **de:** sesiunea Cyber-GPU 157 (cloud, fără placă) — **C-160 p.7, partea a doua: `mm_tc`, înmulțirea antrenării pe circuitele speciale, în SIMULARE**.
+**Actualizat:** 2026-11-22 12:35 (ora României) · **de:** sesiunea Cyber-GPU 158 (cloud, fără placă) — **C-160 p.7, partea a treia: pasul de aur mic „mixt” (înmulțirile pe `mm_tc` + scalarea erorii), în SIMULARE**.
 
 ## Acum
-- **`mm_tc` gata în SIMULARE** (`cyber-gpu/docs/C-160_P7_MM_TC.md`, commit `951bae5`): același lucru ca `mm_train` (C = op(A)·op(B) + deplasare, aceleași opțiuni și buffere f32), dar intrările rotunjite la f16 și adunate de circuitele speciale (16 `hmma` pe felie, a doua unealtă NAK, Mesa 26.3.1; SHA-256 `f60cd944…1ee3`, 24 KiB partajați, bloc 128). T168: toate formele în marginea scrisă înainte (cel mai rău 46 ‰); pe greutățile reale ale modelului mic față de F32 abaterea ~3·10⁻⁴ (prețul f16, în marginea scrisă). Limita cinstită: gradienții sub ~6·10⁻⁸ devin 0 în f16 → trebuie scalarea erorii (pasul următor). 786 PASS.
-- Estimarea vitezei revăzută după listare (DEDUS): `mm_tc` așa cum e ~8–17 TFLOP/s (frâna: intrările f32 și plăcile 64×64 → memoria plăcii); ~30 doar cu plăci mai mari și activări în f16.
+- **Pasul de aur mic „mixt” gata în SIMULARE** (`cyber-gpu/docs/C-160_P7_PAS_MIXT.md`, cod `352e953`, toleranța scrisă înainte în `2f2321f`): toate cele 27 de înmulțiri ale pasului pe `mm_tc` (intrări f16), scalarea erorii S = 1 024, 74 / 76 de lansări pe pas, o trimitere pe pas. Față de PyTorch F32 pe 10 pași: **eroarea 3·10⁻⁵ (`sgd`) / 2·10⁻⁵ (`adamw_513`)**, toleranța scrisă 1·10⁻³ — PASS; gradientul 7,5·10⁻⁴, normele 1,4·10⁻⁵ — PASS.
+- Spus cinstit: **criteriul scris pentru greutățile AdamW a căzut** (2,4·10⁻² față de 1·10⁻³) — toată abaterea e în deplasările q/k ale atenției (gradientul k e 0 exact, AdamW amplifică zgomotul); restul greutăților 8,5·10⁻⁴, în toleranță. Și **predicția că fără scalare e mai rău a fost greșită** (raport 1,00 pe modelul mic). Greșelile plantate sunt prinse; la AdamW o greșeală de scară e aproape invizibilă → proba pe placă trebuie să ruleze și `sgd`. 791 PASS.
 - Pe placă nimic nou de la ciclul 10:06; os-349 (`colsum`) e GATA DE TEST.
 
 ## Urmează
 1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate — `colsum` (3 778 / 3 778 bit cu bit), #651 pe `lipita-ln-32` (~293 simb/s estimat), pasul de aur mic.
-2. C-160 punctul 7, partea a treia: scalarea erorii în lista pasului cu `mm_tc` + proba „aceeași eroare pe 10 pași în toleranța scrisă” (SIMULARE); apoi proba `mm_tc` pentru placă (seturi fixe + timpul la forma qkv a lui #513), predată separat.
+2. C-160 punctul 7, partea a patra: proba `mm_tc` pentru placă (seturi fixe + timpul la forma qkv a lui #513), ca notă separată pentru OS — de legat după pasul de aur F32.
 3. C-157 punctele 5, 7, 8 când C-160 așteaptă.
-
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
 2. Dacă DA: noi deschidem GA106 în `Family::writes_allowed()` doar pe stick-ul de test (`gpu-scrie`) + DA la ecran, cu trezirea minimă ținută pornită pe durata lanțului; OS-ul leagă commit-ul; test pe laptop **un pas pe rând**: întâi `gpu i6`, apoi `gpu lant`.
