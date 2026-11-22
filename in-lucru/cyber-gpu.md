@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 21:12 · sarcina: C-160 p.7 atenția „înapoi” fără P păstrat (SIMULARE) · estimat gata: 23:30
+liber · terminat 2026-11-22 21:31 · următorul pas: C-157 p.2 la os-351 / os-352 / proba atenției când rulează pe placă; până atunci C-160 p.7 program doar pentru P (fără P·V), apoi programele pe plăci în pas
