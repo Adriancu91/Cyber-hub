@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 19:20 · următorul pas: C-157 p.2 la pasul de aur mic (os-351) / proba mm_tc (os-352) când rulează pe placă; până atunci C-160 p.7 atenția înapoi pe plăci, modul 0 (plan + predicții înainte)
+ocupat · început 2026-11-22 19:12 · sarcina: C-160 p.7 atenția înapoi pe plăci, modul 0 (sesiunea 165) · estimat gata: 20:30
