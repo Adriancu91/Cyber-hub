@@ -1,8 +1,9 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-22 17:40 (ora României) · **de:** sesiunea Cyber-GPU 163 (cloud, fără placă) — **C-160 p.7: atenția înainte pe plăci (SIMULARE)**.
+**Actualizat:** 2026-11-22 19:20 (ora României) · **de:** sesiunea Cyber-GPU 164 (cloud, fără placă) — **C-160 p.7: atenția înapoi pe plăci, modul 1 (SIMULARE)**.
 
 ## Acum
+- **C-160 p.7 — atenția înapoi „pe plăci”, modul 1 (dQ / dK / dV) (`cyber-gpu/docs/C-160_P7_ATENTIA_INAPOI_PE_PLACI.md`, planul și predicțiile înainte în `3021024`):** program nou `attn_back_tile` (Mesa NAK 25.0.7, SHA-256 `1da80d3f…29a8d7e20`, 73 de registre, 32 KiB partajați): blocuri de 256 = 64 de poziții, 4 × 4 rezultate pe fir, același cbuf ca `attn_back`. T174 (SIMULARE): **bit cu bit** egal cu `attn_back` modul 1 pe 10 forme — verificat cu o emulare literală a codului GLSL, nu doar cu modelul; NaN deasupra diagonalei fără efect; greșeli plantate prinse. Predicția „≤ 64 registre” ratată (73), fără efect asupra ocupării (DEDUS). Estimat ~15–24 ms pe bucată #513 față de ~44 / ~133 (DEDUS). 820 PASS, CI verde, commit `29b7c63`; nepredat.
 - **C-160 p.7 — atenția înainte „pe plăci” (`cyber-gpu/docs/C-160_P7_ATENTIA_PE_PLACI.md`, planul și predicțiile înainte în `abd3307`):** program nou `attn_fwd_tile` (Mesa NAK 25.0.7, SHA-256 `4ef8dca3…eebe632`, 55 de registre, 37 KiB partajați): blocuri de 256 de fire = 64 de rânduri, fiecare fir 4 × 4 rezultate din plăci Q/K/P/V în memoria partajată. T173 (SIMULARE): rândurile i ≤ 15 **bit cu bit** ca `attn_fwd`, restul în 2⁻²⁰; față de oracolul f64 ≤ 14 % din marginea T160; lanțul → `attn_back` ≤ 2⁻¹⁴; greșeli plantate prinse. Estimat ~19 ms pe bucată #513 față de ~37 (blocuri de 128) / ~90 (azi) — DEDUS. Am aflat și că „un warp pe rând” **nu** câștigă (aceleași instrucțiuni). 815 PASS, CI verde, commit `d9a64d6`; nepredat.
 - **C-160 p.7 — cine e limitat de un fir (DEDUS, `cyber-gpu/docs/C-160_P7_FIR_LIMITAT.md`):** la #513, `ln_back`, AdamW și norma **nu** sunt (au destule fire, limitate de memorie, ~20 ms pe bucată împreună cu `xent`/`gelu`); **atenția este**: ~257 ms din ~290 pe bucată (PyTorch face toată bucata în 156 ms) — blocuri de 32 (GA104 ține doar 16 blocuri pe SM → 16 warp-uri din 48) și un fir pe rând.
 - Primul remediu, fără risc pentru numere: **`attn_fwd128` / `attn_back128`** (același cod pe fir, blocuri de 128; NAK 25.0.7, 25 de registre, o singură instrucțiune diferită la `attn_fwd`). T172: **bit cu bit** egale cu programele de 32 pe 7 forme (SIMULARE); estimat ~257 → ~115 ms (DEDUS). Nepredat (intră la viteza pasului). 811 PASS, commit `3db01e8`.
@@ -14,7 +15,7 @@
 
 ## Urmează
 1. După fiecare test pe placă: comparația (C-157 punctul 2) — pasul de aur mic (os-351), proba `mm_tc` (os-352), #651 pe `lipita-ln-32`, dieta 2 A+B fără copie.
-2. C-160 punctul 7: atenția **înapoi** pe plăci (întâi modul 1, coloanele — cel mai lent), plan și predicții scrise înainte.
+2. C-160 punctul 7: atenția înapoi pe plăci, **modul 0** (rândurile lui dS; modul 1 e gata), plan și predicții scrise înainte.
 3. Apoi C-157 punctele 5, 7, 8.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
@@ -23,6 +24,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 164 (C-160 punctul 7, doar adăugări — OS-ul compilează neschimbat; nepredat pentru placă):** modulul `nvidia_ga104::attn_back_tile` (`ATTN_BACK_TILE`, SHA-256, `REGISTERS` 73, `BLOCK` 256, `POSITIONS_PER_BLOCK` 64, `MAX_D` 64, `SHARED` 32 768 B, `grid`, `shape_ok`; bufferul constant = `attn_back::Args::cbuf` cu `Mode::Columns`, după `attn_back` modul 0), `gpu_sim::cmdproc::attn_back_tile_on_cpu`. Nimic de legat acum.
 - **Sesiunea 163 (C-160 punctul 7, doar adăugări — OS-ul compilează neschimbat; nepredat pentru placă):** modulul `nvidia_ga104::attn_fwd_tile` (`ATTN_FWD_TILE`, SHA-256, `REGISTERS` 55, `BLOCK` 256, `ROWS_PER_BLOCK` 64, `MAX_D` 64, `SHARED` 37 376 B, `grid`, `shape_ok`; bufferul constant = `attn_fwd::Args::cbuf`), `gpu_compute::layer::{attn_fwd_tile_row_gpu, attn_fwd_tile_gpu, ATTN_TILE_MAX_D}`, `gpu_sim::cmdproc::attn_fwd_tile_on_cpu`. Nimic de legat acum.
 - **Sesiunea 162 (C-160 punctul 7, doar adăugări — OS-ul compilează neschimbat; nepredat pentru placă):** modulele `nvidia_ga104::attn_fwd128` (`ATTN_FWD128`, SHA-256, `REGISTERS` 25, `BLOCK` 128, `grid`) și `nvidia_ga104::attn_back128` (`ATTN_BACK128`, SHA-256, `REGISTERS`, `BLOCK`, `HEADS_PER_BLOCK`, `grid`; bufferul constant = `attn_fwd::Args::cbuf` / `attn_back::Args::cbuf`), `gpu_sim::cmdproc::{attn_fwd128_on_cpu, attn_back128_on_cpu}`. Nimic de legat acum.
 - PREDARE → cyber-universe: **după ciclul 15:06 (argmax fără copie)** (C-157 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-157_P2j_argmax-fara-copie.md`, commit `0c46879`. Fără cod nou la noi. **Ce e nou pentru placă: nimic.** Propunere: în `gpu_i14.rs` dieta 2 fără `!argmax_top` (doar A+B lucrează în `run_top`), plus în `run_top` contoarele `d2_words`/`d2_polls` și sărirea profilului pe pozițiile cu două înregistrări (4 schimbări mici, în notă); proba: aceleași simboluri, driverul 608 → ~410–460 µs.
