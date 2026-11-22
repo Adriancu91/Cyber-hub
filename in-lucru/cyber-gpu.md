@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 14:13 · sarcina: C-160 p.7 partea a patra (proba mm_tc pentru placă) · estimat gata: 15:30
+liber · terminat 2026-11-22 14:35 · următorul pas: C-157 p.2 la pasul de aur mic / proba mm_tc pe placă; până atunci C-160 p.7 (ln_back, attn_back, AdamW: cine e limitat de un fir)
