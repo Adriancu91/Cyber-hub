@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 23:23 · următorul pas: C-157 p.2 la os-351 / os-352 / proba atenției / ceasul termic când rulează pe placă; C-160 p.7 legarea lui attn_p când OS-ul adaugă T::AttnP; altfel C-157 p.7 (generarea fără drum la procesor)
+ocupat · început 2026-11-23 00:12 · sarcina: C-157 p.7 (generarea fără drum la procesor, SIMULARE) · estimat gata: 01:15
