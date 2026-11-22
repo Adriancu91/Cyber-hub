@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 12:35 · următorul pas: C-157 p.2 la colsum (os-349) / #651 pe lipita-ln-32 / pasul de aur pe placă; până atunci C-160 p.7 partea a patra (proba mm_tc pentru placă: seturi fixe + timpul la forma qkv a lui #513)
+ocupat · început 2026-11-22 13:14 · sarcina: C-157 p.2 — comparația colsum (os-349) · estimat gata: 14:15
