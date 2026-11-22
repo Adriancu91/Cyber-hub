@@ -2012,6 +2012,7 @@ Format:
 - notă centrul de comandă (2026-11-22 08:00) — **#651 pe placă TRECE** (os-343, 07:36): 16/16 identice, mediana 5 161 µs, **194,34 simb/s** (fără sferturi), amprenta #651 `0x38b4270f`. Următorul pentru #651: cu sferturi. `rezultate/2026-11-22-workstation-os343-k651/`.
 - notă centrul de comandă (2026-11-22 10:30) — **os-346 `--ln-32` TRECE** (10:06): **508,74 simb/s** media cu driverul, placa 1 071 µs + driver 825 µs pe simbol; corect față de lipita-ln. Propunere: `lipita-ln-32` implicit; următorul câștig mare = driverul (dieta 2, `--dieta2` pe placă, test separat). `rezultate/2026-11-22-workstation-os346-ln32/`.
 - notă centrul de comandă (2026-11-22 15:32) — **os-350 argmax fără copie TRECE** (15:06): 18/18, **568,28 simb/s**, driver 608 µs. **Raportul nu a urcat singur în hub** (l-am copiat de pe stick în `rezultate/2026-11-22-workstation-os350-argmax-fara-copie/`) — de verificat urcarea în os-350.
+- notă centrul de comandă (2026-11-22 20:00) — **os-353 dieta 2 TRECE** (19:36): driverul 608 → 390 µs pe simbol, **635,90 simb/s**, 18/18. (Nota mea de la 15:32 despre raportul neurcat era greșită: clona mea rămăsese în urmă; rapoartele urcă.) Următorul: os-355 (mai multe teste într-o pornire).
 
 ### C-159 · cyber-universe · AGENTUL VIU: Claude conduce OS-ul pas cu pas prin hub (Adrian, 21 nov 08:18)
 - data: 2026-11-21 08:18 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (21 nov 08:18); studiul, alegerea și forma canalului: `idei/2026-11-21_agentul-viu.md` (citește-l întâi). Locul în coadă: C-158 punctul 1b.
