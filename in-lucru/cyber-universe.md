@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 00:42 · sarcina: PREDARE Cyber-GPU ceasul termic (1922eb2) + nota după os-355 (92da7af) · estimat gata: 02:30
+liber · terminat 2026-11-23 02:12 · următorul pas: confirmă CI os-360 (P6-143 + P6-144); apoi PREDARE Cyber-GPU embed_dev / lot de poziții (P6-145, plan scris, Release separat); apoi T::AttnP când e adăugat; C-158 p.7
