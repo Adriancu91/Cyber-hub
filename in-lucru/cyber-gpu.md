@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 01:55 · următorul pas: C-160 punctul 4, atenția înapoi (cu masca), SIMULARE față de train; sau C-157 p.2 la un test nou pe placă
+ocupat · început 2026-11-22 02:13 · sarcina: C-160 p.4 programul 6 — atenția înapoi (cu masca), SIMULARE · estimat gata: 03:45
