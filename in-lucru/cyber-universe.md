@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 09:16 · următorul pas: PREDARE-uri noi Cyber-GPU întâi; apoi C-159 pasul 5 (mâinile pentru /bin/claude, oprit) sau C-158 p.5 (mai multe teste într-o pornire); os-348 PREDARE (fișiere + ceasul de pază)
+ocupat · început 2026-11-22 09:42 · sarcina: leg PREDARE Cyber-GPU proba colsum (C-161 p.4) într-un Release mic · estimat gata: 11:10
