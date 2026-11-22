@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 11:14 · sarcina: P6-135 — nota Cyber-GPU după --ln-32 (0fd77c7): lipita-ln-32 implicită în test-placa · estimat gata: 12:40
+liber · terminat 2026-11-22 12:46 · următorul pas: după testul colsum pe placă: PREDARE pasul de aur mic (dd67483); altfel C-158 p.5 (mai multe teste într-o pornire) sau C-159 pasul 5 (oprit)
