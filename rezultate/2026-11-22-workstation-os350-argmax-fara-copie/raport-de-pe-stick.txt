@@ -1,0 +1,1805 @@
+== bucla automata: raport Cyber Universe OS ==
+lista: /usb/auto/teste.txt
+nucleu: cyber-universe 0.1.0 (cyber-gpu 3b4ca77)
+/usb/VERSIUNE: commit 5e0d1fabc523a8a58f67947c1a3e6a3988a39e23
+pornit: 2026-11-22 15:03:56 · ceasul de siguranta: 40 min
+
+== [1/1] test-placa --argmax-fara-copie ==
+in lucru: test-placa --i9 c135 --argmax-fara-copie (de la 2026-11-22 15:06:13; cheile: fisierul de pe stick + DECIZII.md)
+
+-- discurile vazute de OS (doar citire)
+nvme: disc PC801 NVMe SK hynix 512GB (488386 MiB, 1000215216 sectoare; memorie de scriere da, golita cu Flush)
+  nvme partitia 1 (GPT, EFI (sistem)): de la sectorul 2048, 499 MiB, FAT, fara cyber.rw
+  nvme partitia 2 (GPT, rezervata Microsoft): de la sectorul 1024000, 16 MiB, format necunoscut
+  nvme partitia 3 (GPT, date de baza (FAT sau NTFS)): de la sectorul 1056768, 486993 MiB, NTFS
+  nvme partitia 4 (GPT, recuperare Windows): de la sectorul 998418432, 876 MiB, NTFS
+montat la /disk: nvme partitia 1 (doar citire)
+temperatura procesorului: pachetul 41 C, nucleul 0 41 C; TjMax 86 C, pragul de oprire a lucrului lung 76 C
+ceasul de paza (TCO): la portul 0x400 (SMBus 00:1f.4 TCOBASE); oprit; termen 4 x 0,6 s (~4 s pana la repornire)
+ceasul de paza: neactivat (armarea ceasului de paza vine intr-un Release urmator; acum doar citirea starii)
+
+-- gpu recupereaza
+gpu0: b3:00.0 GeForce RTX 3070 Ti (BAR0 0xf9000000), cyber-gpu 3b4ca77
+gpu0: I7: cele 4 fisiere GSP 570.144 de pe stick verificate (SHA-256)
+gpu0: C-103 pregatire: Booter Unload 40192 B la 0x1203000 (recitit; siguranta SEC2 ucode 3 = versiunea 1); nimic scris in placa
+gpu0: Bus Master pornit (COMMAND 0x0003 -> 0x0007)
+gpu0: C-103: WPR2 nu era ridicat: Booter Unload nu s-a rulat (nimic de coborat, ca driverul NVIDIA)
+gpu0: Bus Master oprit la loc (COMMAND 0x0003, ca inainte)
+gpu0: FWSEC in VBIOS: descriptor v3 la PROM 0x41208, ucode_id 9, 3 semnaturi (masca 0x0007), 59904 octeti
+gpu0: siguranta FWSEC 0x8241e0: versiunea 2 -> semnatura 2 din VBIOS
+gpu0: VRAM 8192 MiB; FRTS 0x1ffe00000..0x1fff00000
+gpu0: WPR2 coborat (pornire rece): bun
+gpu0: criteriul I6-citire: TRECE
+gpu0: C-103: pregatirea I6 trece din nou: `gpu lant` poate rula in aceeasi pornire
+gpu0: jurnalul pe loc: /usb/raport/gpu-jurnal-047.txt (19 randuri, fiecare scris pe loc)
+gpu0: usb: scrieri 78 (total 174.9 ms, in medie 2.2 ms, cea mai lunga 2.7 ms), sincronizari 25 (total 1.1 ms, in medie 0.0 ms, cea mai lunga 0.0 ms)
+gpu0: configuratie: COMMAND la final 0x0003; 0 scrieri refuzate de garduri
+
+(argmax fara copie: cerut de lista (--argmax-fara-copie); fiecare simbol se termina doar cu programul `argmax` (ca in os-340, fara copierea logit-urilor); OS-ul citeste cei 16 octeti si ia simbolul de acolo; dupa placa, procesorul calculeaza simbolul fiecarei pozitii: trebuie sa fie acelasi; logit-urile nu se mai citesc, deci fara amprenta si fara abaterea lor)
+
+(lista lipita-ln-32 implicit (LayerNorm nou + toate inmultirile pe sferturi, 88 de lansari pe simbol, nimic nou pentru placa; amprenta de referinta 0x6c8501f0); --lipita-ln = implicitul de pana acum, --ln-32 = amandoua comparate, --ln-vechi = LayerNorm vechi, --simplu = lista simpla)
+
+-- run kronos --gpu --n 16 Buna ziua (lantul cu I9 c135, apoi #513 la i14-simbol; DA dat de cheile ciclului)
+kronos: model ales: /usb/kronos/kronos_513_q8_0.kgr (#513, modelul Kronos pentru OS)
+kronos: fara /usb/kronos/kronos_513_q8_0.kgr.sha256: folosesc suma cunoscuta a lui #513
+kronos: SHA-256 66f734b3136206d1be8825b1188b1a90f0c5b00c2e19746547f327f9b95c5859 = suma asteptata
+kronos: modelul cunoscut #513 (kronos_513_q8_0.kgr)
+kronos: reglaj: niciun fisier pentru `Intel-R-Core-TM-i9-10980XE-CPU-3-00GHz` (kronos-calcul --cauta il scrie); valorile implicite
+kronos: /usb/kronos/kronos_513_q8_0.kgr (q8_0, 105 MiB, citit in 15590 ms): 12 straturi, 12 capete, n_emb 768, context 512, vocabular 16384, 98022912 parametri
+kronos: sursa `#513 w2_romana_r1`, tokenizer 214851 octeti; vectori AVX2+FMA, 1 fir, ordine t-j
+kronos: proiectia la generare pe 1 fir (cate capete are modelul)
+kronos: tokenizer Ws: 16127 imbinari, 16384 simboluri (Unicode 15.1.0)
+kronos: textul `Buna ziua` = 3 simboluri [66, 2612, 7464]; decodat inapoi identic
+kronos: --gpu: lantul ferestrei porneste, apoi 16 simboluri pe placa (pot trece cateva minute)
+kronos: --gpu: verificarea dupa placa: fiecare pozitie judecata in nucleu fata de motorul rapid al acestui program (vectori AVX2+FMA, 1 fir, ordine t-j)
+kronos: --gpu: verificarea dupa placa: 18 pozitii calculate de motorul rapid in 260 ms
+kronos: lant: gpu0: ks: viteza maxima ceruta (doar in ciclu, 600 s): inainte P8, cererea acceptata, dupa P0; verdict 1 (Raised)
+kronos: lant: gpu0: pas I14 simbol: ok (modelul de control, 29 simboluri comparate cu procesorul si cu vectorii lui Kronos, trimise cu: invalidare inaintea fiecarei lansari; #513 prin kronos --gpu)
+kronos: lant: gpu0: kronos --gpu: /usb/kronos/kronos_513_q8_0.kgr (12 straturi, E 768, vocabular 16384, context 512): 3 simboluri date, 16 de generat
+kronos: lant: gpu0: kronos --gpu (lista lipita-ln-32, toate inmultirile pe sferturi): generare (placa): 18 pozitii, 16 simboluri noi; 557.33 simboluri/s (ceasul placii, cu pauzele driverului), 932.60 simboluri/s doar lansarile; median 1076000 ns, cel mai lent 1151648 ns (toate simbolurile cerute)
+kronos: lant: gpu0: kronos --gpu: kt incalzirea: pozitia 0 trimisa o data inainte de ceas pe 1 liste (10612 us in afara ceasului, 12687 cuvinte VRAM la prima)
+kronos: lant: gpu0: kronos --gpu: kt argmax fara copie: simbolul placii = procesorului: 18/18 (logit-urile raman pe placa; procesorul verifica dupa placa)
+kronos: lant: gpu0: kronos --gpu: kt median citirea rezultatului (us): 0 (cei 16 octeti ai programului argmax)
+kronos: lant: gpu0: kronos --gpu: kt median argmax placa (us): 16.192 (lansarea argmax, din inregistrari, 18 pozitii)
+kronos: lant: gpu0: kronos --gpu: argmax fara copie (simbolul ales pe placa): TRECE (18/18 pozitii identice cu procesorul)
+kronos: lant: gpu0: kronos --gpu: abaterea maxima a logit-urilor fata de procesor 0e0; durata mediana a unui simbol 1076000 ns (ceasul placii)
+kronos: lant: gpu0: kronos --gpu: kt lista: lipita-ln-32 (LayerNorm nou + toate inmultirile pe sferturi) singura (88 lansari pe simbol, cu copierea logit-urilor; amprenta de referinta 0x6c8501f0)
+kronos: lant: gpu0: kronos --gpu: viteza (placa): urcarea greutatilor: 110786560 octeti in 14 bucati; placa 18017 us (6148 MB/s), procesor 294989 us (375 MB/s)
+kronos: lant: gpu0: kronos --gpu: viteza (placa): 18 simboluri; pe placa: median 1076 us lansarile, 1076 us prima-ultima inregistrare (cel mai lent 1151 us) = 932.60 simboluri/s
+kronos: lant: gpu0: kronos --gpu: viteza (placa): cu driverul, jurnalul si ecranul: median 1778 us pe simbol = 568.28 simboluri/s
+kronos: lant: gpu0: kronos --gpu: viteza: placa 932.60 simboluri/s (ceasul placii), cu driverul 568.28 simboluri/s; verificarea dupa placa (motorul rapid /bin/kronos) median 15019 us/pozitie = 66.15 pozitii/s; cu verificare 59.25 simboluri/s
+kronos: lant: gpu0: kronos --gpu: jurnalul in generare: nicio scriere pe stick intre pozitii (randurile de rutina scrise la final); 0 randuri de rutina aruncate
+kronos: lant: gpu0: kronos --gpu: pozitiile lente (placa): 0 din 18 peste 2 x mediana (1778 us); in plus 0 us; suma 31674 us = 568.28 simboluri/s in medie
+kronos: lant: gpu0: kronos --gpu: umbra lansarilor: recitite la final, identice (placa nu rescrie sloturile)
+kronos: lant: gpu0: kronos --gpu: timpul pe simbol (placa, median, 18 simboluri): placa 1076 us, driver 608 us, jurnal 64 us, ecran 0 us = 1778 us (562.42 simboluri/s)
+kronos: lant: gpu0: kronos --gpu: verificarea pe procesor (placa): median 15019 us pe pozitie; cu ea 16801 us pe simbol (59.52 simboluri/s)
+kronos: lant: gpu0: kronos --gpu: dieta driverului: PORNITA (pushbuffer prin umbra, inregistrari nezerorizate); cuvinte VRAM scrise pe simbol (median) 130; citirea logit-urilor 0 us, argmax 0 us (median)
+kronos: lant: gpu0: kronos --gpu: logit-urile: necitite (argmax fara copie, 18 pozitii): fara amprenta si fara abatere in aceasta rulare
+kronos: lant: gpu0: kronos --gpu: timpul pe fel de lansare (placa, median pe simbol, 18 simboluri; toate ~1060 us pe simbol):
+kronos: lant: gpu0: kronos --gpu:   atentie          251 us pe simbol (12 lansari; una 20768 ns)
+kronos: lant: gpu0: kronos --gpu:   fc               224 us pe simbol (12 lansari; una 18752 ns)
+kronos: lant: gpu0: kronos --gpu:   qkv              175 us pe simbol (12 lansari; una 14656 ns)
+kronos: lant: gpu0: kronos --gpu:   proj             142 us pe simbol (12 lansari; una 11904 ns)
+kronos: lant: gpu0: kronos --gpu:   logit             87 us pe simbol (1 lansari; una 87840 ns)
+kronos: lant: gpu0: kronos --gpu:   out               72 us pe simbol (12 lansari; una 6080 ns)
+kronos: lant: gpu0: kronos --gpu:   ln1               49 us pe simbol (12 lansari; una 4064 ns)
+kronos: lant: gpu0: kronos --gpu:   ln2               46 us pe simbol (12 lansari; una 3872 ns)
+kronos: lant: gpu0: kronos --gpu:   embed              5 us pe simbol (1 lansari; una 5056 ns)
+kronos: lant: gpu0: kronos --gpu:   ln_final           4 us pe simbol (1 lansari; una 4064 ns)
+kronos: lant: gpu0: kronos --gpu: jurnalul pe stick: 661 randuri de rutina tinute in memorie (nu pe ecran), scrise pe stick in 14 scrieri (in generare: doar dupa ultima pozitie, P6-112; in rest la 16 simboluri sau la o secunda; 25 goliri)
+kronos: lant: gpu0: kronos --gpu: 16 simboluri generate pe placa, toate identice cu procesorul (niciun simbol diferit)
+kronos: lant: gpu0: kronos --gpu: copierea VRAM -> VRAM: 65536 KiB x 3, cuvinte gresite 0 din 3; cea mai rapida 238 us, mediana 238 us = 281723 MB/s (563447 MB/s trafic, 926 promile din 608 GB/s)
+kronos: lant: gpu0: kronos --gpu: 16 simboluri generate pe placa (fiecare comparat cu procesorul, dupa placa)
+kronos: lant: gpu0: ks: inainte de stergere P0, stergerea acceptata, starea de performanta la final: P0
+kronos: lant: gpu0: rezultat lant: oprit la tur-dupa (2902 scrieri)
+kronos: continuare: ,
+Imi doresc sa ma intorc la mine,
+Sa ma
+kronos: textul generat `,\nImi doresc sa ma intorc la mine,\nSa ma`
+kronos: simboluri generate: [44, 10, 73, 2524, 10766, 1438, 1505, 1428, 1765, 99, 1547, 3644, 44, 10, 15879, 1505]
+kronos: PE PLACA: 16 simboluri, fiecare comparat in nucleu cu procesorul (dupa placa, motorul rapid al OS-ului) (lantul intreg + textul in 105180 ms)
+kronos: acelasi text si pe procesor, pentru comparatia de viteza (C-87):
+kronos: continuare: ,
+Imi doresc sa ma intorc la mine,
+Sa ma
+kronos: textul generat `,\nImi doresc sa ma intorc la mine,\nSa ma`
+kronos: simboluri generate: [44, 10, 73, 2524, 10766, 1438, 1505, 1428, 1765, 99, 1547, 3644, 44, 10, 15879, 1505]
+kronos: textul dat (3 simboluri) in 30 ms; 16 simboluri noi in 230 ms = 69.5 simboluri/s
+kronos: comparatie: placa ? simboluri/s (fara randul de viteza al nucleului) / procesor 69.56 simboluri/s; simbolurile IDENTICE
+(kronos a iesit cu codul 0)
+
+-- viteza fata de os-313 (fara cerere de viteza; jurnalul /usb/raport/gpu-jurnal-048.txt)
+timpul placii pe simbol (us, kp toate): os-313 22968 -> acum 1059 (46 la mie)
+copierea VRAM (MB/s, kc): os-313 9165 -> acum 281723 (30739 la mie)
+ln1 pe simbol (us, legat de ceasuri): os-313 2260 -> acum 49 (21 la mie)
+
+-- viteza fata de os-322 (dieta driverului pornita; jurnalul /usb/raport/gpu-jurnal-048.txt)
+driverul pe simbol (us, kt median driver): os-322 3081 -> acum 608 (197 la mie)
+simbolul fara verificare (us, kt): os-322 5802 -> acum 1778 (306 la mie)
+simboluri/s cu driverul: os-322 94.84 -> acum 568.28
+cuvinte VRAM pe simbol (median): 130; citirea logit-urilor 0 us, argmax 0 us (median)
+logit-urile identice bit cu bit cu referinta listei care a rulat (lipita-ln-32)? nu se poate spune: argmax fara copie (logit-urile nu se citesc; simbolurile placii = procesorului, vezi randul kt argmax fara copie)
+amprenta logit-urilor de acum (pentru testele urmatoare): - (argmax fara copie)
+amprenta fata de referinta: fara amprenta in aceasta rulare (argmax fara copie: logit-urile raman pe placa)
+
+REZULTAT TEST PLACA: kronos: lant: gpu0: rezultat lant: oprit la tur-dupa (2902 scrieri); kronos: PE PLACA: 16 simboluri, fiecare comparat in nucleu cu procesorul (dupa placa, motorul rapid al OS-ului) (lantul intreg + textul in 105180 ms); kronos: lant: gpu0: kronos --gpu: argmax fara copie (simbolul ales pe placa): TRECE (18/18 pozitii identice cu procesorul)
+-- gata in 131840 ms
+trimite: trimit rapoartele noi din /usb/raport in hub...
+
+== REZULTAT: 1 rulate, 0 refuzate, 138 s ==
+== raport Cyber Universe OS ==
+data (ceasul calculatorului): 2026-11-22 15:06:20
+motiv: bucla automata (dupa lista)
+nucleu: cyber-universe 0.1.0 (cyber-gpu 3b4ca77)
+/usb/VERSIUNE: commit 5e0d1fabc523a8a58f67947c1a3e6a3988a39e23
+erori in jurnal de la pornire: 0
+
+== hw ==
+== raport hardware ==
+calculator: Dell Inc. Precision 5820 Tower X-Series
+  familia Precision; SKU 08B1; placa de baza Dell Inc. 0X75JG A01; SMBIOS 3.2
+procesor: Intel(R) Core(TM) i9-10980XE CPU @ 3.00GHz
+temperatura procesorului: pachetul 44 C, nucleul 0 44 C; TjMax 86 C, pragul de oprire a lucrului lung 76 C
+ceasul de paza (TCO): la portul 0x400 (memorat); oprit; termen 4 x 0,6 s (~4 s pana la repornire)
+ecran: framebuffer la adresa fizica 0xe0000000, 8847360 octeti (9 MiB), 1920x1080, pitch 8192 B, 32 bpp
+memorie: libera 130354 MiB, folosita 428896 KiB (heap 11120 / 339692 KiB)
+pornit de 140.36 s
+PCI ([driver] = il folosim, [-] = fara driver):
+  00:00.0 8086:2020 punte gazda [-]
+  00:04.0 8086:2021 alt dispozitiv [-]
+  00:04.1 8086:2021 alt dispozitiv [-]
+  00:04.2 8086:2021 alt dispozitiv [-]
+  00:04.3 8086:2021 alt dispozitiv [-]
+  00:04.4 8086:2021 alt dispozitiv [-]
+  00:04.5 8086:2021 alt dispozitiv [-]
+  00:04.6 8086:2021 alt dispozitiv [-]
+  00:04.7 8086:2021 alt dispozitiv [-]
+  00:05.0 8086:2024 alt dispozitiv [-]
+  00:05.2 8086:2025 alt dispozitiv [-]
+  00:05.4 8086:2026 alt dispozitiv [-]
+  00:08.0 8086:2014 alt dispozitiv [-]
+  00:08.1 8086:2015 alt dispozitiv [-]
+  00:08.2 8086:2016 alt dispozitiv [-]
+  00:14.0 8086:a2af controler USB [xhci]
+  00:14.2 8086:a2b1 alt dispozitiv [-]
+  00:16.0 8086:a2ba alt dispozitiv [-]
+  00:17.0 8086:a282 controler SATA (AHCI) [ahci]
+  00:1c.0 8086:a290 punte PCI [-]
+  00:1c.6 8086:a296 punte PCI [-]
+  00:1f.0 8086:a2d2 punte ISA [-]
+  00:1f.2 8086:a2a1 alt dispozitiv [-]
+  00:1f.3 8086:a2f0 multimedia [-]
+  00:1f.4 8086:a2a3 SMBus [-]
+  00:1f.6 8086:15e3 placa de retea [e1000]
+  02:00.0 104c:8240 punte PCI [-]
+  16:05.0 8086:2034 alt dispozitiv [-]
+  16:05.2 8086:2035 alt dispozitiv [-]
+  16:05.4 8086:2036 alt dispozitiv [-]
+  16:08.0 8086:208d alt dispozitiv [-]
+  16:08.1 8086:208d alt dispozitiv [-]
+  16:08.2 8086:208d alt dispozitiv [-]
+  16:08.3 8086:208d alt dispozitiv [-]
+  16:08.4 8086:208d alt dispozitiv [-]
+  16:08.5 8086:208d alt dispozitiv [-]
+  16:08.6 8086:208d alt dispozitiv [-]
+  16:08.7 8086:208d alt dispozitiv [-]
+  16:09.0 8086:208d alt dispozitiv [-]
+  16:09.1 8086:208d alt dispozitiv [-]
+  16:09.2 8086:208d alt dispozitiv [-]
+  16:09.3 8086:208d alt dispozitiv [-]
+  16:09.4 8086:208d alt dispozitiv [-]
+  16:09.5 8086:208d alt dispozitiv [-]
+  16:09.6 8086:208d alt dispozitiv [-]
+  16:09.7 8086:208d alt dispozitiv [-]
+  16:0a.0 8086:208d alt dispozitiv [-]
+  16:0a.1 8086:208d alt dispozitiv [-]
+  16:0e.0 8086:208e alt dispozitiv [-]
+  16:0e.1 8086:208e alt dispozitiv [-]
+  16:0e.2 8086:208e alt dispozitiv [-]
+  16:0e.3 8086:208e alt dispozitiv [-]
+  16:0e.4 8086:208e alt dispozitiv [-]
+  16:0e.5 8086:208e alt dispozitiv [-]
+  16:0e.6 8086:208e alt dispozitiv [-]
+  16:0e.7 8086:208e alt dispozitiv [-]
+  16:0f.0 8086:208e alt dispozitiv [-]
+  16:0f.1 8086:208e alt dispozitiv [-]
+  16:0f.2 8086:208e alt dispozitiv [-]
+  16:0f.3 8086:208e alt dispozitiv [-]
+  16:0f.4 8086:208e alt dispozitiv [-]
+  16:0f.5 8086:208e alt dispozitiv [-]
+  16:0f.6 8086:208e alt dispozitiv [-]
+  16:0f.7 8086:208e alt dispozitiv [-]
+  16:10.0 8086:208e alt dispozitiv [-]
+  16:10.1 8086:208e alt dispozitiv [-]
+  16:1d.0 8086:2054 alt dispozitiv [-]
+  16:1d.1 8086:2055 alt dispozitiv [-]
+  16:1d.2 8086:2056 alt dispozitiv [-]
+  16:1d.3 8086:2057 alt dispozitiv [-]
+  16:1e.0 8086:2080 alt dispozitiv [-]
+  16:1e.1 8086:2081 alt dispozitiv [-]
+  16:1e.2 8086:2082 alt dispozitiv [-]
+  16:1e.3 8086:2083 alt dispozitiv [-]
+  16:1e.4 8086:2084 alt dispozitiv [-]
+  16:1e.5 8086:2085 alt dispozitiv [-]
+  16:1e.6 8086:2086 alt dispozitiv [-]
+  64:05.0 8086:2034 alt dispozitiv [-]
+  64:05.2 8086:2035 alt dispozitiv [-]
+  64:05.4 8086:2036 alt dispozitiv [-]
+  64:08.0 8086:2066 alt dispozitiv [-]
+  64:09.0 8086:2066 alt dispozitiv [-]
+  64:0a.0 8086:2040 alt dispozitiv [-]
+  64:0a.1 8086:2041 alt dispozitiv [-]
+  64:0a.2 8086:2042 alt dispozitiv [-]
+  64:0a.3 8086:2043 alt dispozitiv [-]
+  64:0a.4 8086:2044 alt dispozitiv [-]
+  64:0a.5 8086:2045 alt dispozitiv [-]
+  64:0a.6 8086:2046 alt dispozitiv [-]
+  64:0a.7 8086:2047 alt dispozitiv [-]
+  64:0b.0 8086:2048 alt dispozitiv [-]
+  64:0b.1 8086:2049 alt dispozitiv [-]
+  64:0b.2 8086:204a alt dispozitiv [-]
+  64:0b.3 8086:204b alt dispozitiv [-]
+  64:0c.0 8086:2040 alt dispozitiv [-]
+  64:0c.1 8086:2041 alt dispozitiv [-]
+  64:0c.2 8086:2042 alt dispozitiv [-]
+  64:0c.3 8086:2043 alt dispozitiv [-]
+  64:0c.4 8086:2044 alt dispozitiv [-]
+  64:0c.5 8086:2045 alt dispozitiv [-]
+  64:0c.6 8086:2046 alt dispozitiv [-]
+  64:0c.7 8086:2047 alt dispozitiv [-]
+  64:0d.0 8086:2048 alt dispozitiv [-]
+  64:0d.1 8086:2049 alt dispozitiv [-]
+  64:0d.2 8086:204a alt dispozitiv [-]
+  64:0d.3 8086:204b alt dispozitiv [-]
+  b2:00.0 8086:2030 punte PCI [-]
+  b2:02.0 8086:2032 punte PCI [-]
+  b2:03.0 8086:2033 punte PCI [-]
+  b2:05.0 8086:2034 alt dispozitiv [-]
+  b2:05.2 8086:2035 alt dispozitiv [-]
+  b2:05.4 8086:2036 alt dispozitiv [-]
+  b2:12.0 8086:204c alt dispozitiv [-]
+  b2:12.1 8086:204d alt dispozitiv [-]
+  b2:12.2 8086:204e alt dispozitiv [-]
+  b2:15.0 8086:2018 alt dispozitiv [-]
+  b2:15.1 8086:2088 alt dispozitiv [-]
+  b2:16.0 8086:2018 alt dispozitiv [-]
+  b2:16.1 8086:2088 alt dispozitiv [-]
+  b2:16.4 8086:2018 alt dispozitiv [-]
+  b2:16.5 8086:2088 alt dispozitiv [-]
+  b2:17.0 8086:2018 alt dispozitiv [-]
+  b2:17.1 8086:2088 alt dispozitiv [-]
+  b3:00.0 10de:2482 placa video [-]
+  b3:00.1 10de:228b multimedia [-]
+  b4:00.0 1c5c:1959 controler NVMe [nvme]
+USB:
+  port 5  17ef:608d  mouse (HID)
+  port 6  413c:2106  tastatura (HID)
+  port 10  0bda:5411  hub
+  port 25  0bda:0328  stocare (Mass Storage)
+  port 26  0bda:0411  hub
+  port 10.1  346d:5678  stocare (Mass Storage)
+/disk: montat (2 intrari)
+/usb: montat (13 intrari)
+retea:
+  I219-LM  MAC cc:96:e5:08:b7:b5
+  pachete trimise 526, primite 579
+  legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e1000
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e1000, RDBAH 00000000, RDH 00000003, RDT 00000002, TDH 0000000e, TDT 0000000e (pasii de pornire: log e1000)
+  IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
+
+== lspci ==
+  00:00.0  8086:2020  punte gazda
+  00:04.0  8086:2021  alt dispozitiv
+  00:04.1  8086:2021  alt dispozitiv
+  00:04.2  8086:2021  alt dispozitiv
+  00:04.3  8086:2021  alt dispozitiv
+  00:04.4  8086:2021  alt dispozitiv
+  00:04.5  8086:2021  alt dispozitiv
+  00:04.6  8086:2021  alt dispozitiv
+  00:04.7  8086:2021  alt dispozitiv
+  00:05.0  8086:2024  alt dispozitiv
+  00:05.2  8086:2025  alt dispozitiv
+  00:05.4  8086:2026  alt dispozitiv
+  00:08.0  8086:2014  alt dispozitiv
+  00:08.1  8086:2015  alt dispozitiv
+  00:08.2  8086:2016  alt dispozitiv
+  00:14.0  8086:a2af  controler USB
+  00:14.2  8086:a2b1  alt dispozitiv
+  00:16.0  8086:a2ba  alt dispozitiv
+  00:17.0  8086:a282  controler SATA (AHCI)
+  00:1c.0  8086:a290  punte PCI
+  00:1c.6  8086:a296  punte PCI
+  00:1f.0  8086:a2d2  punte ISA
+  00:1f.2  8086:a2a1  alt dispozitiv
+  00:1f.3  8086:a2f0  multimedia
+  00:1f.4  8086:a2a3  SMBus
+  00:1f.6  8086:15e3  placa de retea
+  02:00.0  104c:8240  punte PCI
+  16:05.0  8086:2034  alt dispozitiv
+  16:05.2  8086:2035  alt dispozitiv
+  16:05.4  8086:2036  alt dispozitiv
+  16:08.0  8086:208d  alt dispozitiv
+  16:08.1  8086:208d  alt dispozitiv
+  16:08.2  8086:208d  alt dispozitiv
+  16:08.3  8086:208d  alt dispozitiv
+  16:08.4  8086:208d  alt dispozitiv
+  16:08.5  8086:208d  alt dispozitiv
+  16:08.6  8086:208d  alt dispozitiv
+  16:08.7  8086:208d  alt dispozitiv
+  16:09.0  8086:208d  alt dispozitiv
+  16:09.1  8086:208d  alt dispozitiv
+  16:09.2  8086:208d  alt dispozitiv
+  16:09.3  8086:208d  alt dispozitiv
+  16:09.4  8086:208d  alt dispozitiv
+  16:09.5  8086:208d  alt dispozitiv
+  16:09.6  8086:208d  alt dispozitiv
+  16:09.7  8086:208d  alt dispozitiv
+  16:0a.0  8086:208d  alt dispozitiv
+  16:0a.1  8086:208d  alt dispozitiv
+  16:0e.0  8086:208e  alt dispozitiv
+  16:0e.1  8086:208e  alt dispozitiv
+  16:0e.2  8086:208e  alt dispozitiv
+  16:0e.3  8086:208e  alt dispozitiv
+  16:0e.4  8086:208e  alt dispozitiv
+  16:0e.5  8086:208e  alt dispozitiv
+  16:0e.6  8086:208e  alt dispozitiv
+  16:0e.7  8086:208e  alt dispozitiv
+  16:0f.0  8086:208e  alt dispozitiv
+  16:0f.1  8086:208e  alt dispozitiv
+  16:0f.2  8086:208e  alt dispozitiv
+  16:0f.3  8086:208e  alt dispozitiv
+  16:0f.4  8086:208e  alt dispozitiv
+  16:0f.5  8086:208e  alt dispozitiv
+  16:0f.6  8086:208e  alt dispozitiv
+  16:0f.7  8086:208e  alt dispozitiv
+  16:10.0  8086:208e  alt dispozitiv
+  16:10.1  8086:208e  alt dispozitiv
+  16:1d.0  8086:2054  alt dispozitiv
+  16:1d.1  8086:2055  alt dispozitiv
+  16:1d.2  8086:2056  alt dispozitiv
+  16:1d.3  8086:2057  alt dispozitiv
+  16:1e.0  8086:2080  alt dispozitiv
+  16:1e.1  8086:2081  alt dispozitiv
+  16:1e.2  8086:2082  alt dispozitiv
+  16:1e.3  8086:2083  alt dispozitiv
+  16:1e.4  8086:2084  alt dispozitiv
+  16:1e.5  8086:2085  alt dispozitiv
+  16:1e.6  8086:2086  alt dispozitiv
+  64:05.0  8086:2034  alt dispozitiv
+  64:05.2  8086:2035  alt dispozitiv
+  64:05.4  8086:2036  alt dispozitiv
+  64:08.0  8086:2066  alt dispozitiv
+  64:09.0  8086:2066  alt dispozitiv
+  64:0a.0  8086:2040  alt dispozitiv
+  64:0a.1  8086:2041  alt dispozitiv
+  64:0a.2  8086:2042  alt dispozitiv
+  64:0a.3  8086:2043  alt dispozitiv
+  64:0a.4  8086:2044  alt dispozitiv
+  64:0a.5  8086:2045  alt dispozitiv
+  64:0a.6  8086:2046  alt dispozitiv
+  64:0a.7  8086:2047  alt dispozitiv
+  64:0b.0  8086:2048  alt dispozitiv
+  64:0b.1  8086:2049  alt dispozitiv
+  64:0b.2  8086:204a  alt dispozitiv
+  64:0b.3  8086:204b  alt dispozitiv
+  64:0c.0  8086:2040  alt dispozitiv
+  64:0c.1  8086:2041  alt dispozitiv
+  64:0c.2  8086:2042  alt dispozitiv
+  64:0c.3  8086:2043  alt dispozitiv
+  64:0c.4  8086:2044  alt dispozitiv
+  64:0c.5  8086:2045  alt dispozitiv
+  64:0c.6  8086:2046  alt dispozitiv
+  64:0c.7  8086:2047  alt dispozitiv
+  64:0d.0  8086:2048  alt dispozitiv
+  64:0d.1  8086:2049  alt dispozitiv
+  64:0d.2  8086:204a  alt dispozitiv
+  64:0d.3  8086:204b  alt dispozitiv
+  b2:00.0  8086:2030  punte PCI
+  b2:02.0  8086:2032  punte PCI
+  b2:03.0  8086:2033  punte PCI
+  b2:05.0  8086:2034  alt dispozitiv
+  b2:05.2  8086:2035  alt dispozitiv
+  b2:05.4  8086:2036  alt dispozitiv
+  b2:12.0  8086:204c  alt dispozitiv
+  b2:12.1  8086:204d  alt dispozitiv
+  b2:12.2  8086:204e  alt dispozitiv
+  b2:15.0  8086:2018  alt dispozitiv
+  b2:15.1  8086:2088  alt dispozitiv
+  b2:16.0  8086:2018  alt dispozitiv
+  b2:16.1  8086:2088  alt dispozitiv
+  b2:16.4  8086:2018  alt dispozitiv
+  b2:16.5  8086:2088  alt dispozitiv
+  b2:17.0  8086:2018  alt dispozitiv
+  b2:17.1  8086:2088  alt dispozitiv
+  b3:00.0  10de:2482  placa video
+  b3:00.1  10de:228b  multimedia
+  b4:00.0  1c5c:1959  controler NVMe
+
+== net ==
+  I219-LM  MAC cc:96:e5:08:b7:b5
+  pachete trimise 526, primite 579
+  legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e1000
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e1000, RDBAH 00000000, RDH 00000003, RDT 00000002, TDH 0000000e, TDT 0000000e (pasii de pornire: log e1000)
+  IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
+
+== jurnal net (si registrele placilor de retea) ==
+(niciun rand)
+
+== jurnal usb ==
+[ 133.420] INFO  gpu: gpu0: i14: modelul de control /usb/kronos/mic_q8_0.kgr (SHA-256 ca vectori.json; greutati la intamplare, NU #513): 2 straturi, E 32, 4 capete, vocabular 16384, context 64; 35 lansari pe simbol + 1 copiere a logit-urilor
+[ 133.580] INFO  gpu: gpu0: kronos --gpu: /usb/kronos/kronos_513_q8_0.kgr (12 straturi, E 768, vocabular 16384, context 512): 3 simboluri date, 16 de generat
+[ 133.810] INFO  gpu: gpu0: jurnalul pe loc: /usb/raport/gpu-jurnal-048.txt (4212 randuri, fiecare scris pe loc)
+[ 133.810] INFO  gpu: gpu0: usb: scrieri 7381 (total 25012.2 ms, in medie 3.3 ms, cea mai lunga 770.0 ms), sincronizari 3577 (total 164.1 ms, in medie 0.0 ms, cea mai lunga 0.3 ms)
+[ 134.870] INFO  drepturi: gh-trimite a cerut /usb/github.token
+
+== jurnal pci ==
+(niciun rand)
+
+== jurnal gpu ==
+[ 128.430] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.430] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.430] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.430] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.430] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.430] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.430] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.430] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.430] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.430] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.430] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.430] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2f => 0x00001b2f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2f <- 0x000010e6 => 0x000010e6
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.440] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2f => 0x00001b2f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2f <- 0x000010e6 => 0x000010e6
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.440] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.440] INFO  gpu: jurnal: nota: kt generarea incepe (randurile tinute sunt pe stick; pana la final randurile de rutina raman in memorie)
+[ 128.460] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.460] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.470] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x000010e6 => 0x000010e6
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.470] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.470] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.470] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.490] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.490] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.490] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.490] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.490] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.500] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.500] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.500] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.500] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.780] INFO  gpu: jurnal: valoare kt incalzirea: pozitia 0 trimisa o data inainte de ceas (numarul listelor) = 0x00000001
+[ 128.860] INFO  gpu: jurnal: valoare kt incalzirea: durata totala (us, in afara ceasului) = 0x00002974
+[ 128.880] INFO  gpu: jurnal: valoare kt incalzirea: cuvinte VRAM scrise (prima lista) = 0x0000318f
+[ 128.890] INFO  gpu: jurnal: valoare kt argmax fara copie (0/1) = 0x00000001
+[ 128.910] INFO  gpu: jurnal: valoare kt argmax fara copie: pozitii la care simbolul placii = simbolul procesorului = 0x00000012
+[ 128.920] INFO  gpu: jurnal: valoare kt argmax fara copie: pozitii verificate = 0x00000012
+[ 128.940] INFO  gpu: jurnal: valoare kt median citirea rezultatului (us) = 0x00000000
+[ 128.960] INFO  gpu: jurnal: valoare kt median argmax placa (ns, lansarea, din inregistrari) = 0x00003f40
+[ 128.970] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.970] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.980] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x0001fff0 => 0x0001fff0
+[ 128.980] INFO  gpu: jurnal: valoare kg simboluri generate pe placa (identice cu procesorul) = 0x00000010
+[ 128.990] INFO  gpu: jurnal: valoare kg primul simbol diferit de procesor (pozitia; ffffffff = niciunul) = 0xffffffff
+[ 129.010] INFO  gpu: jurnal: valoare kg abaterea maxima a logit-urilor fata de procesor (x1e6) = 0x00000000
+[ 129.030] INFO  gpu: jurnal: valoare kv sursa (0 SIMULARE, 1 placa) = 0x00000001
+[ 129.040] INFO  gpu: jurnal: valoare kv urcare KiB = 0x0001a69e
+[ 129.060] INFO  gpu: jurnal: valoare kv urcare bucati = 0x0000000e
+[ 129.840] INFO  gpu: jurnal: valoare kv urcare pe placa (us, copierile) = 0x00004661
+[ 129.860] INFO  gpu: jurnal: valoare kv urcare procesor (us, ffffffff = fara ceas) = 0x0004804d
+[ 129.870] INFO  gpu: jurnal: valoare kv simboluri = 0x00000012
+[ 129.890] INFO  gpu: jurnal: valoare kv median lansarile (us) = 0x00000434
+[ 129.900] INFO  gpu: jurnal: valoare kv median prima-ultima inregistrare (us) = 0x00000434
+[ 129.920] INFO  gpu: jurnal: valoare kv cel mai lent simbol pe placa (us) = 0x0000047f
+[ 129.930] INFO  gpu: jurnal: valoare kv median procesor (us) = 0x000006f2
+[ 129.950] INFO  gpu: jurnal: valoare kv simboluri pe secunda x100 (placa) = 0x00016c4c
+[ 129.970] INFO  gpu: jurnal: valoare kv simboluri pe secunda x100 (procesor) = 0x0000ddfc
+[ 129.980] INFO  gpu: jurnal: valoare kv urcare MB/s (placa) = 0x00001804
+[ 130.000] INFO  gpu: jurnal: valoare kv urcare MB/s (procesor) = 0x00000177
+[ 130.010] INFO  gpu: jurnal: valoare kv verificarea dupa placa median pe pozitie (us, motorul rapid /bin/kronos) = 0x00003aab
+[ 130.030] INFO  gpu: jurnal: valoare kv pozitii pe secunda x100 (verificarea dupa placa) = 0x000019d7
+[ 130.050] INFO  gpu: jurnal: valoare kv simboluri pe secunda x100 cu verificare (placa + driver + verificarea dupa placa) = 0x00001725
+[ 130.060] INFO  gpu: jurnal: valoare kt simboluri = 0x00000012
+[ 130.080] INFO  gpu: jurnal: valoare kt median placa (us) = 0x00000434
+[ 130.090] INFO  gpu: jurnal: valoare kt median driver (us) = 0x00000260
+[ 130.110] INFO  gpu: jurnal: valoare kt median jurnal (us) = 0x00000040
+[ 130.130] INFO  gpu: jurnal: valoare kt median ecran (us) = 0x00000000
+[ 130.140] INFO  gpu: jurnal: valoare kt median verificare procesor (us) = 0x00003aab
+[ 130.160] INFO  gpu: jurnal: valoare kt median simbol fara verificare (us) = 0x000006f2
+[ 130.170] INFO  gpu: jurnal: valoare kt median simbol cu verificare (us) = 0x000041a1
+[ 130.190] INFO  gpu: jurnal: valoare kt simboluri pe secunda x100 (fara verificare) = 0x0000dbb2
+[ 130.200] INFO  gpu: jurnal: valoare kt simboluri pe secunda x100 (cu verificare) = 0x00001740
+[ 130.220] INFO  gpu: jurnal: valoare kt suma simbol fara verificare (us) = 0x00007bba
+[ 130.230] INFO  gpu: jurnal: valoare kt pozitii lente (peste 2 x mediana) = 0x00000000
+[ 130.250] INFO  gpu: jurnal: valoare kt timp in plus in pozitiile lente (us) = 0x00000000
+[ 130.270] INFO  gpu: jurnal: valoare kt randuri de rutina aruncate = 0x00000000
+[ 130.280] INFO  gpu: jurnal: valoare kt umbra lansarilor: cuvinte schimbate de placa in sloturi (0 = umbra corecta) = 0x00000000
+[ 130.300] INFO  gpu: jurnal: valoare kt dieta (0/1) = 0x00000001
+[ 130.310] INFO  gpu: jurnal: valoare kt cuvinte VRAM pe simbol (median) = 0x00000082
+[ 130.330] INFO  gpu: jurnal: valoare kt median citirea logit-urilor (us) = 0x00000000
+[ 130.340] INFO  gpu: jurnal: valoare kt median argmax (us) = 0x00000000
+[ 130.360] INFO  gpu: jurnal: valoare kp simboluri = 0x00000012
+[ 130.380] INFO  gpu: jurnal: valoare kp lansari pe simbol = 0x00000057
+[ 130.390] INFO  gpu: jurnal: valoare kp embed simbol (us) = 0x00000005
+[ 130.410] INFO  gpu: jurnal: valoare kp embed lansare (ns) = 0x000013c0
+[ 130.420] INFO  gpu: jurnal: valoare kp ln1 simbol (us) = 0x00000031
+[ 130.440] INFO  gpu: jurnal: valoare kp ln1 lansare (ns) = 0x00000fe0
+[ 130.450] INFO  gpu: jurnal: valoare kp qkv simbol (us) = 0x000000af
+[ 130.470] INFO  gpu: jurnal: valoare kp qkv lansare (ns) = 0x00003940
+[ 130.490] INFO  gpu: jurnal: valoare kp atentie simbol (us) = 0x000000fb
+[ 130.500] INFO  gpu: jurnal: valoare kp atentie lansare (ns) = 0x00005120
+[ 130.520] INFO  gpu: jurnal: valoare kp out simbol (us) = 0x00000048
+[ 130.530] INFO  gpu: jurnal: valoare kp out lansare (ns) = 0x000017c0
+[ 130.800] INFO  gpu: jurnal: valoare kp ln2 simbol (us) = 0x0000002e
+[ 130.820] INFO  gpu: jurnal: valoare kp ln2 lansare (ns) = 0x00000f20
+[ 130.830] INFO  gpu: jurnal: valoare kp fc simbol (us) = 0x000000e0
+[ 130.850] INFO  gpu: jurnal: valoare kp fc lansare (ns) = 0x00004940
+[ 130.860] INFO  gpu: jurnal: valoare kp proj simbol (us) = 0x0000008e
+[ 130.880] INFO  gpu: jurnal: valoare kp proj lansare (ns) = 0x00002e80
+[ 130.900] INFO  gpu: jurnal: valoare kp ln_final simbol (us) = 0x00000004
+[ 130.910] INFO  gpu: jurnal: valoare kp ln_final lansare (ns) = 0x00000fe0
+[ 130.930] INFO  gpu: jurnal: valoare kp logit simbol (us) = 0x00000057
+[ 130.940] INFO  gpu: jurnal: valoare kp logit lansare (ns) = 0x00015720
+[ 130.960] INFO  gpu: jurnal: valoare kp toate simbol (us) = 0x00000423
+[ 130.980] INFO  gpu: jurnal: valoare kp felul cel mai lung (index) = 0x00000006
+[ 131.000] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 131.010] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 131.030] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x00001f30 => 0x00001f30
+[ 131.050] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.060] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.080] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.100] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.120] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.130] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.150] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.170] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.180] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.200] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.220] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.230] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.250] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.270] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.290] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.300] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.320] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.340] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.350] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.370] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.390] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.400] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.420] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.460] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.510] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.520] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.540] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.560] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.580] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.590] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.610] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.630] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.650] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.660] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.680] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.700] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.710] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.730] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.750] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.770] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.780] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.800] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.820] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.840] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.850] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.870] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.890] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.900] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.920] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.940] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.950] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.970] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.990] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 132.010] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 132.020] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 132.040] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 132.060] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f32 => 0x00001f32
+[ 132.070] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f32 <- 0x00001000 => 0x00001000
+[ 132.090] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f32 => 0x00001f32
+[ 132.110] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f32 <- 0x00001000 => 0x00001000
+[ 132.130] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f32 => 0x00001f32
+[ 132.140] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f32 <- 0x00001b2e => 0x00001b2e
+[ 132.160] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 132.180] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 132.190] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 132.210] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.220] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 132.240] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 132.260] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 132.270] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 132.290] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 132.310] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.320] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 132.340] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 132.360] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 132.370] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.390] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 132.410] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x00001d30 => 0x00001d30
+[ 132.420] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001d30 <- 0x00001f30 => 0x00001f30
+[ 132.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x0001fff0 => 0x0001fff0
+[ 132.460] INFO  gpu: jurnal: valoare kc copiere VRAM KiB = 0x00010000
+[ 132.470] INFO  gpu: jurnal: valoare kc copieri = 0x00000003
+[ 132.490] INFO  gpu: jurnal: valoare kc copiere (us) = 0x000000ee
+[ 132.510] INFO  gpu: jurnal: valoare kc copiere (us) = 0x000000ef
+[ 132.520] INFO  gpu: jurnal: valoare kc copiere (us) = 0x000000ee
+[ 132.540] INFO  gpu: jurnal: valoare kc cea mai rapida (us) = 0x000000ee
+[ 132.560] INFO  gpu: jurnal: valoare kc median (us) = 0x000000ee
+[ 132.570] INFO  gpu: jurnal: valoare kc copiere MB/s = 0x00044c7b
+[ 132.590] INFO  gpu: jurnal: valoare kc trafic memorie MB/s (citire + scriere) = 0x000898f7
+[ 132.610] INFO  gpu: jurnal: valoare kc din 608 GB/s (promile) = 0x0000039e
+[ 132.620] INFO  gpu: jurnal: valoare kc cuvinte verificate gresite (din 3) = 0x00000000
+[ 132.640] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.660] INFO  gpu: jurnal: bar0 w 0x110c00: 0x00000000 <- 0x00000000 => 0x00000000
+[ 132.670] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.690] INFO  gpu: jurnal: bar0 w 0x110c00: 0x00000000 <- 0x00000000 => 0x00000000
+[ 132.710] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.720] INFO  gpu: jurnal: bar0 w 0x110c00: 0x00000000 <- 0x00000000 => 0x00000000
+[ 132.740] INFO  gpu: jurnal: valoare ks stare de performanta inainte de stergere (0 = P0; 8000xxxx = refuz) = 0x00000000
+[ 132.750] INFO  gpu: jurnal: valoare ks stergerea cererii (0 = acceptata; 8000xxxx = refuz) = 0x00000000
+[ 132.770] INFO  gpu: jurnal: valoare ks stare de performanta la final (0 = P0; 8000xxxx = refuz) = 0x00000000
+[ 132.790] INFO  gpu: jurnal: nota: ks nivelurile si temperatura: necitite (fara cale documentata in 570.144)
+[ 132.800] INFO  gpu: jurnal: pas i14-simbol: ok
+[ 132.820] INFO  gpu: jurnal: cfg  w 0x004: 0x00100007 <- 0x00000003 => 0x00100003
+[ 132.840] INFO  gpu: jurnal: pas bus-master-oprit: ok
+[ 132.850] INFO  gpu: jurnal: nota: tur de citire (C-54): incepe, 0 scrieri permise
+[ 132.870] INFO  gpu: jurnal: pas nivel0: configuratie: ok
+[ 132.890] INFO  gpu: jurnal: bar0 r 0x000000 = 0xb74000a1
+[ 132.900] INFO  gpu: jurnal: bar0 r 0x000a00 = 0x174a1000
+[ 132.920] INFO  gpu: jurnal: pas nivel0: BOOT_0/BOOT_42: ok
+[ 132.940] INFO  gpu: jurnal: bar0 r 0x118128 = 0x00008b8f
+[ 132.950] INFO  gpu: jurnal: bar0 r 0x118234 = 0x000003ff
+[ 132.970] INFO  gpu: jurnal: pas I2: GFW_BOOT: ok
+[ 132.990] INFO  gpu: jurnal: bar0 r 0x300000 = 0xeb7faa55
+[ 133.000] INFO  gpu: jurnal: pas I3: VBIOS prin PROM: ok
+[ 133.020] INFO  gpu: jurnal: pas I3: descriptorul FWSEC: ok
+[ 133.030] INFO  gpu: jurnal: bar0 r 0x8241e0 = 0x00000003
+[ 133.050] INFO  gpu: jurnal: pas I6 pregatire: semnatura FWSEC aleasa (doar citire): ok
+[ 133.070] INFO  gpu: jurnal: bar0 r 0x1183a4 = 0x00002000
+[ 133.080] INFO  gpu: jurnal: bar0 r 0x1fa828 = 0x01ffee00
+[ 133.100] INFO  gpu: jurnal: bar0 r 0x1fa824 = 0x01f41000
+[ 133.120] INFO  gpu: jurnal: nota: I6: WPR2 deja ridicat (FWSEC a rulat dupa pornire): trebuie pornire rece
+[ 133.130] INFO  gpu: jurnal: pas I6 pregatire (doar citire): ESEC
+[ 133.150] INFO  gpu: jurnal: pas tur-dupa: ESEC
+[ 133.170] INFO  gpu: jurnal: text motivul esecului = "nepermis de politica de sigurant"
+[ 133.180] INFO  gpu: jurnal: text motivul esecului (urmare) = "a: turul de citire a jurnalizat "
+[ 133.200] INFO  gpu: jurnal: text motivul esecului (urmare) = "o scriere: rezultat respins"
+[ 133.220] INFO  gpu: jurnal: nota: lant (C-54): oprit; vezi pasul cu ok=false
+[ 133.230] INFO  gpu: gpu0: varianta I8 implicita: 1 (rpc-inainte)
+[ 133.240] INFO  gpu: gpu0: optiune I9: c135 (C-135, SIMULARE testata; pe placa doar cu Adrian) - direct forma B; N: canal fara notificator de erori; F (doar daca jetonul lui N e refuzat): canal cu id ales de noi + jeton calculat
+[ 133.240] INFO  gpu: gpu0: b3:00.0 GeForce RTX 3070 Ti (BAR0 0xf9000000), cyber-gpu 3b4ca77
+[ 133.250] INFO  gpu: gpu0: FWSEC in VBIOS: descriptor v3 la PROM 0x41208, ucode_id 9, 3 semnaturi (masca 0x0007), 59904 octeti
+[ 133.250] INFO  gpu: gpu0: siguranta FWSEC 0x8241e0: versiunea 2 -> semnatura 2 din VBIOS
+[ 133.250] INFO  gpu: gpu0: VRAM 8192 MiB; FRTS 0x1ffe00000..0x1fff00000
+[ 133.260] INFO  gpu: gpu0: WPR2 coborat (pornire rece): bun
+[ 133.260] INFO  gpu: gpu0: criteriul I6-citire: TRECE
+[ 133.260] INFO  gpu: gpu0: Bus Master pornit (COMMAND 0x0003 -> 0x0007)
+[ 133.270] INFO  gpu: gpu0: pasul 2: FWSEC copiat din VBIOS in RAM cu semnatura 2 si comanda FRTS: 0xea00 octeti (234 blocuri de 256 B); nimic scris in placa
+[ 133.270] INFO  gpu: gpu0: zona DMA: 0xea00 octeti la adresa fizica 0x120d000 (sub 4 GiB, recitita)
+[ 133.280] INFO  gpu: gpu0: pas I6 FWSEC-FRTS: ok; WPR2 0x1ffe00000..0x1fff00000 (= regiunea FRTS)
+[ 133.280] INFO  gpu: gpu0: WPR2 citit dupa I6: LO 0x01ffe000 HI 0x01ffee00 (capat: ultimul bloc de 128 KiB) = 0x1ffe00000..0x1fff00000
+[ 133.280] INFO  gpu: gpu0: pas i6-wpr2-citit: WPR2 0x1ffe00000..0x1fff00000 = regiunea FRTS ceruta (capat: ultimul bloc de 128 KiB)
+[ 133.290] INFO  gpu: gpu0: I7: cele 4 fisiere GSP 570.144 de pe stick verificate (SHA-256)
+[ 133.290] INFO  gpu: gpu0: I7 pregatire: GSP-RM .fwimage 62052 KiB, semnatura 4096 B, bootloader 24576 B, Booter 60416 B (siguranta SEC2 ucode 3 = versiunea 1)
+[ 133.300] INFO  gpu: gpu0: I7 pregatire (varianta C-108): SetSystemInfo + SetRegistry (2 intrari) puse in coada INAINTE de Booter; nimic scris in placa
+[ 133.300] INFO  gpu: gpu0: I7 pregatire: zona DMA 62992 KiB la 0x10000000 (recitita); radix3 nivelul 0 la 0x13c99000; GspFwWprMeta la 0x13cc1000; Booter la 0x13cc2000; nimic scris in placa
+[ 133.310] INFO  gpu: gpu0: I7 pregatire: cozile GSP (516 KiB) la 0x13d03000, argumentele LibOS la 0x13cd1000 (RMARGS 0x13d02000); nimic scris in placa
+[ 133.310] INFO  gpu: gpu0: I7 (varianta C-108): soneria cozii de comenzi inainte de Booter
+[ 133.310] INFO  gpu: gpu0: pas I7 GSP resetat in RISC-V + Booter: ok (GspFwWprMeta 0x13cc1000; cutiile GSP = pagina LibOS 0x13cd1000, recitite; versiunea 570144)
+[ 133.320] INFO  gpu: gpu0: I7: cutia SEC2 0 = 0x00000000, cutia 1 = 0x00000000, GSP RISC-V ACTIV (CPUCTL 0x00000080) -> TRECE
+[ 133.320] INFO  gpu: gpu0: I7: cutia SEC2 0 = 0x00000000, cutia 1 = 0x00000000, GSP RISC-V ACTIV (CPUCTL 0x00000080) -> TRECE
+[ 133.330] INFO  gpu: gpu0: I8: in coada: SetSystemInfo (BAR0 0xf9000000, BAR1 0xe0000000, BAR3 0xf0000000, 10de:2482 sub 1043:8813 rev 0xa1) + SetRegistry (2 intrari) (puse la I7, inainte de Booter)
+[ 133.330] INFO  gpu: gpu0: asteptat I8 antetul cozii de stare (de la sonerie): raspuns dupa 0 us
+[ 133.340] INFO  gpu: gpu0: pas I8 GSP init: ok (GSP_INIT_DONE; secventiator: 1 rulari, 420 comenzi; alte evenimente: 4)
+[ 133.340] INFO  gpu: gpu0: golden: WPR2 dupa I7 0x1f4100000..0x1ffee0000
+[ 133.340] INFO  gpu: gpu0: golden: WPR2 = cel cerut de GspFwWprMeta; ecranul in VRAM Some((0, 870000)); zona driverului 0x10000000-0x1f4000000 (restul protejat)
+[ 133.350] INFO  gpu: gpu0: pas golden: ok (VRAM 0x10000000-0x1f4000000; 10 buffere GR; 11 mesaje RM, fiecare cu soneria GSP; 17946 cuvinte VRAM scrise si recitite)
+[ 133.360] INFO  gpu: gpu0: I9 c135: 1 incercari; reusita: N (detalii: randurile i9 c135 din jurnal)
+[ 133.360] INFO  gpu: gpu0: pas I9 canal de lucru: ok (SM 8.6; 13 mesaje RM)
+[ 133.360] INFO  gpu: gpu0: ks: viteza maxima ceruta (doar in ciclu, 600 s): inainte P8, cererea acceptata, dupa P0; verdict 1 (Raised)
+[ 133.360] INFO  gpu: gpu0: pas I10 add64: ok (64 rezultate identice bit cu bit cu procesorul; semafor 0x100000007; soneria canalului 0xbb0090 o data; 440 cuvinte VRAM scrise si recitite)
+[ 133.370] INFO  gpu: gpu0: I10 cost lansare: 16 lansari, mediana 1440 ns, minim 1376 ns, maxim 1600 ns, total 23104 ns
+[ 133.370] INFO  gpu: gpu0: pas I10 cost lansare: ok (mediana 1440 ns, masurata de ceasul placii)
+[ 133.380] INFO  gpu: gpu0: i11: 8388608 octeti; RAM->VRAM 1547840 ns (5419 MB/s); VRAM->RAM 1244480 ns (6740 MB/s)
+[ 133.380] INFO  gpu: gpu0: pas I11 copiere: ok (8388608 octeti RAM -> VRAM -> RAM identici bit cu bit; 3 cuvinte VRAM recitite; 25007 cuvinte VRAM scrise si recitite)
+[ 133.390] INFO  gpu: gpu0: i12: TRECE in marja - 782 randuri difera de oracol (primul 4), toate in marja fata de procesor; de analizat
+[ 133.390] INFO  gpu: gpu0: i12: durate (ceasul placii): copiere sus 507584 ns, inmultire 36832 ns (72062 MB/s din W), copiere jos 3232 ns
+[ 133.390] INFO  gpu: gpu0: pas I12 q8 matvec: ok (3072x768 Q8_0, y comparat cu procesorul)
+[ 133.390] INFO  gpu: gpu0: i13: strat E 768 / 12 capete: 8085504 octeti (greutati + spatiu de lucru) urcati cu o copiere in 1544960 ns (5233 MB/s)
+[ 133.400] INFO  gpu: gpu0: i13: pozitia 0: TRECE - abaterea maxima fata de procesor 1.9073486e-6 (toleranta 1e-4 + 1e-4*|x|); 16 lansari, 187488 ns in total (ceasul placii)
+[ 133.400] INFO  gpu: gpu0: i13: pozitia 1: TRECE - abaterea maxima fata de procesor 1.1920929e-6 (toleranta 1e-4 + 1e-4*|x|); 16 lansari, 190016 ns in total (ceasul placii)
+[ 133.410] INFO  gpu: gpu0: i13: pozitia 2: TRECE - abaterea maxima fata de procesor 1.0728836e-6 (toleranta 1e-4 + 1e-4*|x|); 16 lansari, 190688 ns in total (ceasul placii)
+[ 133.410] INFO  gpu: gpu0: i13: pozitia 3: TRECE - abaterea maxima fata de procesor 1.66893e-6 (toleranta 1e-4 + 1e-4*|x|); 16 lansari, 191168 ns in total (ceasul placii)
+[ 133.420] INFO  gpu: gpu0: pas I13 strat: ok (E 768, 12 capete, 4 pozitii x 16 lansari, comparat cu procesorul)
+[ 133.420] INFO  gpu: gpu0: i14: modelul de control /usb/kronos/mic_q8_0.kgr (SHA-256 ca vectori.json; greutati la intamplare, NU #513): 2 straturi, E 32, 4 capete, vocabular 16384, context 64; 35 lansari pe simbol + 1 copiere a logit-urilor
+[ 133.430] INFO  gpu: gpu0: i14: buget VRAM (2 straturi): 1.0 MiB = greutati+lucru 0.6 + cache-uri 0.2 + programe 0.0 + lansari 0.0 + tabele 0.1 MiB; VRAM liber 7708 MiB (cea mai lunga bucata 7708 MiB)
+[ 133.430] INFO  gpu: gpu0: i14: limite (2 straturi): 36 lansari pe simbol (cu copierea logit-urilor in RAM)
+[ 133.440] INFO  gpu: gpu0: i14: limite: comenzi pe simbol: 1472 B (o invalidare), 1760 B (invalidare inaintea fiecarei lansari), 712 B (pe straturi); zona de comenzi: cel putin 4 KiB (are 32 KiB)
+[ 133.440] INFO  gpu: gpu0: i14: limite: pasul valorilor inregistrarilor pe sonerie: cel putin 0x25
+[ 133.450] INFO  gpu: gpu0: i14: limite: urcarea greutatilor: cel mult 1 bucati de 8 MiB prin arena I11
+[ 133.450] INFO  gpu: gpu0: i14: 692480 octeti (greutati + spatiu de lucru + logit-uri) urcati in 1 bucati in 151680 ns (4565 MB/s)
+[ 133.450] INFO  gpu: gpu0: i14 diagnostic: 35 lansari, o invalidare pe trimitere (ca in os-305): DATE VECHI: qkv = Wqkv * h (stratul 1, lansarea 1): abaterea fata de model 2.5557635e0 - IN AFARA; fata de intrarile placii 2.5557635e0 (NU urmeaza din ele); [ 133.450] INFO  gpu: gpu0: i14: pozitia 0 (simbolul 65): argmax placa 5933, procesor 10337, vectori 10337; abaterea maxima a logit-urilor 6.316818e0 la 9017; 16364 in afara tolerantei; 0 nefinite; 0 nescrise; marja pe procesor 2.8487873e-1
+[ 133.460] INFO  gpu: gpu0: i14 diagnostic: qkv = Wqkv * h (stratul 1, lansarea 1): abaterea fata de model 2.5557635e0 - IN AFARA; fata de intrarile placii 2.5557635e0 (NU urmeaza din ele); o parte din iesire e ce dau valorile VECHI ale intrarii (cele din [ 133.470] INFO  gpu: gpu0: i14 diagnostic: qkv + bqkv (stratul 1, lansarea 2): abaterea fata de model 2.5557635e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.470] INFO  gpu: gpu0: i14 diagnostic: copiere K in cache (stratul 1, lansarea 3): abaterea fata de model 2.0279007e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.480] INFO  gpu: gpu0: i14 diagnostic: copiere V in cache (stratul 1, lansarea 4): abaterea fata de model 2.1863616e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.480] INFO  gpu: gpu0: i14 diagnostic: atentie (stratul 1, lansarea 5): abaterea fata de model 2.1863616e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.490] INFO  gpu: gpu0: i14 diagnostic: o = Wout * att (stratul 1, lansarea 6): abaterea fata de model 3.5783606e0 - IN AFARA; fata de intrarile placii 2.760814e0 (NU urmeaza din ele)
+[ 133.490] INFO  gpu: gpu0: i14 diagnostic: o + bout (stratul 1, lansarea 7): abaterea fata de model 3.5783606e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.500] INFO  gpu: gpu0: i14 diagnostic: x1 = x + ob (stratul 1, lansarea 8): abaterea fata de model 3.5783606e0 - IN AFARA
+[ 133.500] INFO  gpu: gpu0: i14 diagnostic: normalizare 2 (stratul 1, lansarea 9): abaterea fata de model 2.3857343e0 - IN AFARA; fata de intrarile placii 2.3841858e-7 (urmeaza din ele)
+[ 133.510] INFO  gpu: gpu0: i14 diagnostic: f = Wfc * h2 (stratul 1, lansarea 10): abaterea fata de model 2.6905918e0 - IN AFARA; fata de intrarile placii 2.1524823e0 (NU urmeaza din ele); o parte din iesire e ce dau valorile VECHI ale intrarii (cele din s[ 133.510] INFO  gpu: gpu0: i14 diagnostic: f + bfc (stratul 1, lansarea 11): abaterea fata de model 2.6905918e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.520] INFO  gpu: gpu0: i14 diagnostic: gelu (stratul 1, lansarea 12): abaterea fata de model 2.007237e0 - IN AFARA; fata de intrarile placii 1.1920929e-7 (urmeaza din ele)
+[ 133.520] INFO  gpu: gpu0: i14 diagnostic: p = Wproj * g (stratul 1, lansarea 13): abaterea fata de model 2.1832442e0 - IN AFARA; fata de intrarile placii 1.3773608e0 (NU urmeaza din ele); o parte din iesire e ce dau valorile VECHI ale intrarii (cele din [ 133.520] INFO  gpu: gpu0: i14 diagnostic: p + bproj (stratul 1, lansarea 14): abaterea fata de model 2.1832442e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.530] INFO  gpu: gpu0: i14 diagnostic: x = x1 + pb (stratul 1, lansarea 15): abaterea fata de model 3.774498e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.530] INFO  gpu: gpu0: i14 diagnostic: normalizare finala (dupa straturi): abaterea fata de model 2.2598898e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.540] INFO  gpu: gpu0: i14 diagnostic: logit-uri = Emb * h (dupa straturi): abaterea fata de model 6.3168173e0 - IN AFARA; fata de intrarile placii 4.7683716e-7 (urmeaza din ele)
+[ 133.540] INFO  gpu: gpu0: i14 diagnostic: 35 lansari, invalidare inaintea fiecarei lansari: TRECE
+[ 133.550] INFO  gpu: gpu0: i14: pozitia 0 (simbolul 65): argmax placa 10337, procesor 10337, vectori 10337; abaterea maxima a logit-urilor 2.6226044e-6 la 2133; 0 in afara tolerantei; 0 nefinite; 0 nescrise; marja pe procesor 2.8487873e-1
+[ 133.550] INFO  gpu: gpu0: i14 diagnostic: textele ruleaza cu: invalidare inaintea fiecarei lansari
+[ 133.550] INFO  gpu: gpu0: i14: "Ana are mere.": TRECE - 9 pozitii, argmax ca vectori.json pe fiecare pozitie, 5 simboluri greedy [4978, 3604, 4649, 13843, 3604] identice
+[ 133.560] INFO  gpu: gpu0: i14: "Capitala Romaniei este": TRECE - 9 pozitii, argmax ca vectori.json pe fiecare pozitie, 5 simboluri greedy [3604, 3604, 3604, 13843, 3604] identice
+[ 133.570] INFO  gpu: gpu0: i14: "def suma(a, b):": TRECE - 11 pozitii, argmax ca vectori.json pe fiecare pozitie, 5 simboluri greedy [8117, 8117, 3604, 3604, 3604] identice
+[ 133.570] INFO  gpu: gpu0: i14: 29 simboluri pe placa in 31 trimiteri (36 lansari pe simbol), trimise cu: invalidare inaintea fiecarei lansari; abaterea maxima a logit-urilor fata de procesor 3.5762787e-6; durata mediana a unui simbol 201440 ns (ceasul pl[ 133.570] INFO  gpu: gpu0: pas I14 simbol: ok (modelul de control, 29 simboluri comparate cu procesorul si cu vectorii lui Kronos, trimise cu: invalidare inaintea fiecarei lansari; #513 prin kronos --gpu)
+[ 133.580] INFO  gpu: gpu0: kronos --gpu: /usb/kronos/kronos_513_q8_0.kgr (12 straturi, E 768, vocabular 16384, context 512): 3 simboluri date, 16 de generat
+[ 133.580] INFO  gpu: gpu0: i14: buget VRAM (12 straturi): 142.2 MiB = greutati+lucru 105.6 + cache-uri 36.0 + programe 0.0 + lansari 0.1 + tabele 0.4 MiB; VRAM liber 7707 MiB (cea mai lunga bucata 7707 MiB)
+[ 133.590] INFO  gpu: gpu0: i14: limite (12 straturi): 89 lansari pe simbol (cu copierea logit-urilor in RAM)
+[ 133.590] INFO  gpu: gpu0: i14: limite: comenzi pe simbol: 3592 B (o invalidare), 4304 B (invalidare inaintea fiecarei lansari), 352 B (pe straturi); zona de comenzi: cel putin 16 KiB (are 32 KiB)
+[ 133.590] INFO  gpu: gpu0: i14: limite: pasul valorilor inregistrarilor pe sonerie: cel putin 0x5a
+[ 133.600] INFO  gpu: gpu0: i14: buget VRAM (12 straturi): 142.3 MiB = greutati+lucru 105.6 + cache-uri 36.0 + programe 0.0 + lansari 0.1 + tabele 0.4 MiB
+[ 133.600] INFO  gpu: gpu0: i14: limite: urcarea greutatilor: cel mult 14 bucati de 8 MiB prin arena I11
+[ 133.600] INFO  gpu: gpu0: i14: 110786560 octeti (greutati + spatiu de lucru + logit-uri) urcati in 14 bucati in 18017952 ns (6148 MB/s)
+[ 133.600] INFO  gpu: gpu0: kronos --gpu (lista lipita-ln-32, toate inmultirile pe sferturi): generare (placa): 18 pozitii, 16 simboluri noi; 557.33 simboluri/s (ceasul placii, cu pauzele driverului), 932.60 simboluri/s doar lansarile; median 1076000 ns, c[ 133.610] INFO  gpu: gpu0: kronos --gpu: kt incalzirea: pozitia 0 trimisa o data inainte de ceas pe 1 liste (10612 us in afara ceasului, 12687 cuvinte VRAM la prima)
+[ 133.610] INFO  gpu: gpu0: kronos --gpu: kt argmax fara copie: simbolul placii = procesorului: 18/18 (logit-urile raman pe placa; procesorul verifica dupa placa)
+[ 133.620] INFO  gpu: gpu0: kronos --gpu: kt median citirea rezultatului (us): 0 (cei 16 octeti ai programului argmax)
+[ 133.620] INFO  gpu: gpu0: kronos --gpu: kt median argmax placa (us): 16.192 (lansarea argmax, din inregistrari, 18 pozitii)
+[ 133.620] INFO  gpu: gpu0: kronos --gpu: argmax fara copie (simbolul ales pe placa): TRECE (18/18 pozitii identice cu procesorul)
+[ 133.630] INFO  gpu: gpu0: kronos --gpu: abaterea maxima a logit-urilor fata de procesor 0e0; durata mediana a unui simbol 1076000 ns (ceasul placii)
+[ 133.630] INFO  gpu: gpu0: kronos --gpu: kt lista: lipita-ln-32 (LayerNorm nou + toate inmultirile pe sferturi) singura (88 lansari pe simbol, cu copierea logit-urilor; amprenta de referinta 0x6c8501f0)
+[ 133.630] INFO  gpu: gpu0: kronos --gpu: viteza (placa): urcarea greutatilor: 110786560 octeti in 14 bucati; placa 18017 us (6148 MB/s), procesor 294989 us (375 MB/s)
+[ 133.640] INFO  gpu: gpu0: kronos --gpu: viteza (placa): 18 simboluri; pe placa: median 1076 us lansarile, 1076 us prima-ultima inregistrare (cel mai lent 1151 us) = 932.60 simboluri/s
+[ 133.640] INFO  gpu: gpu0: kronos --gpu: viteza (placa): cu driverul, jurnalul si ecranul: median 1778 us pe simbol = 568.28 simboluri/s
+[ 133.650] INFO  gpu: gpu0: kronos --gpu: viteza: placa 932.60 simboluri/s (ceasul placii), cu driverul 568.28 simboluri/s; verificarea dupa placa (motorul rapid /bin/kronos) median 15019 us/pozitie = 66.15 pozitii/s; cu verificare 59.25 simboluri/s
+[ 133.650] INFO  gpu: gpu0: kronos --gpu: jurnalul in generare: nicio scriere pe stick intre pozitii (randurile de rutina scrise la final); 0 randuri de rutina aruncate
+[ 133.660] INFO  gpu: gpu0: kronos --gpu: pozitiile lente (placa): 0 din 18 peste 2 x mediana (1778 us); in plus 0 us; suma 31674 us = 568.28 simboluri/s in medie
+[ 133.660] INFO  gpu: gpu0: kronos --gpu: umbra lansarilor: recitite la final, identice (placa nu rescrie sloturile)
+[ 133.670] INFO  gpu: gpu0: kronos --gpu: timpul pe simbol (placa, median, 18 simboluri): placa 1076 us, driver 608 us, jurnal 64 us, ecran 0 us = 1778 us (562.42 simboluri/s)
+[ 133.670] INFO  gpu: gpu0: kronos --gpu: verificarea pe procesor (placa): median 15019 us pe pozitie; cu ea 16801 us pe simbol (59.52 simboluri/s)
+[ 133.670] INFO  gpu: gpu0: kronos --gpu: dieta driverului: PORNITA (pushbuffer prin umbra, inregistrari nezerorizate); cuvinte VRAM scrise pe simbol (median) 130; citirea logit-urilor 0 us, argmax 0 us (median)
+[ 133.680] INFO  gpu: gpu0: kronos --gpu: logit-urile: necitite (argmax fara copie, 18 pozitii): fara amprenta si fara abatere in aceasta rulare
+[ 133.680] INFO  gpu: gpu0: kronos --gpu: timpul pe fel de lansare (placa, median pe simbol, 18 simboluri; toate ~1060 us pe simbol):
+[ 133.680] INFO  gpu: gpu0: kronos --gpu:   atentie          251 us pe simbol (12 lansari; una 20768 ns)
+[ 133.690] INFO  gpu: gpu0: kronos --gpu:   fc               224 us pe simbol (12 lansari; una 18752 ns)
+[ 133.690] INFO  gpu: gpu0: kronos --gpu:   qkv              175 us pe simbol (12 lansari; una 14656 ns)
+[ 133.690] INFO  gpu: gpu0: kronos --gpu:   proj             142 us pe simbol (12 lansari; una 11904 ns)
+[ 133.700] INFO  gpu: gpu0: kronos --gpu:   logit             87 us pe simbol (1 lansari; una 87840 ns)
+[ 133.700] INFO  gpu: gpu0: kronos --gpu:   out               72 us pe simbol (12 lansari; una 6080 ns)
+[ 133.700] INFO  gpu: gpu0: kronos --gpu:   ln1               49 us pe simbol (12 lansari; una 4064 ns)
+[ 133.700] INFO  gpu: gpu0: kronos --gpu:   ln2               46 us pe simbol (12 lansari; una 3872 ns)
+[ 133.710] INFO  gpu: gpu0: kronos --gpu:   embed              5 us pe simbol (1 lansari; una 5056 ns)
+[ 133.710] INFO  gpu: gpu0: kronos --gpu:   ln_final           4 us pe simbol (1 lansari; una 4064 ns)
+[ 133.710] INFO  gpu: gpu0: kronos --gpu: jurnalul pe stick: 661 randuri de rutina tinute in memorie (nu pe ecran), scrise pe stick in 14 scrieri (in generare: doar dupa ultima pozitie, P6-112; in rest la 16 simboluri sau la o secunda; 25 goliri)
+[ 133.720] INFO  gpu: gpu0: kronos --gpu: 16 simboluri generate pe placa, toate identice cu procesorul (niciun simbol diferit)
+[ 133.720] INFO  gpu: gpu0: kronos --gpu: copierea VRAM -> VRAM: 65536 KiB x 3, cuvinte gresite 0 din 3; cea mai rapida 238 us, mediana 238 us = 281723 MB/s (563447 MB/s trafic, 926 promile din 608 GB/s)
+[ 133.730] INFO  gpu: gpu0: kronos --gpu: 16 simboluri generate pe placa (fiecare comparat cu procesorul, dupa placa)
+[ 133.730] INFO  gpu: gpu0: ks: inainte de stergere P0, stergerea acceptata, starea de performanta la final: P0
+[ 133.730] INFO  gpu: gpu0: Bus Master oprit la loc (COMMAND 0x0003, ca inainte)
+[ 133.740] INFO  gpu: gpu0: lantul pasilor (C-54):
+[ 133.740] INFO  gpu: gpu0: pregatire-i6: TRECE
+[ 133.740] INFO  gpu: gpu0: bus-master-pornit: TRECE
+[ 133.740] INFO  gpu: gpu0: i6-fwsec-frts: TRECE
+[ 133.750] INFO  gpu: gpu0: i6-wpr2-citit: TRECE
+[ 133.750] INFO  gpu: gpu0: i7-booter-gsp: TRECE
+[ 133.750] INFO  gpu: gpu0: i7-citit: TRECE
+[ 133.760] INFO  gpu: gpu0: i8-gsp-init: TRECE
+[ 133.760] INFO  gpu: gpu0: i8e-golden: TRECE
+[ 133.760] INFO  gpu: gpu0: i9-canal-lucru: TRECE
+[ 133.770] INFO  gpu: gpu0: i10-add64: TRECE
+[ 133.770] INFO  gpu: gpu0: i10-cost-lansare: TRECE
+[ 133.770] INFO  gpu: gpu0: i11-copiere: TRECE
+[ 133.780] INFO  gpu: gpu0: i12-q8-matvec: TRECE
+[ 133.780] INFO  gpu: gpu0: i13-strat: TRECE
+[ 133.780] INFO  gpu: gpu0: i14-simbol: TRECE
+[ 133.790] INFO  gpu: gpu0: bus-master-oprit: TRECE
+[ 133.790] INFO  gpu: gpu0: tur-dupa: ESUAT: nepermis de politica de siguranta: turul de citire a jurnalizat o scriere: rezultat respins
+[ 133.790] INFO  gpu: gpu0: lant: oprit la tur-dupa: nepermis de politica de siguranta: turul de citire a jurnalizat o scriere: rezultat respins; 2902 scrieri; pasii de curatare au rulat
+[ 133.800] INFO  gpu: gpu0: adaptoarele OS au REFUZAT 11 scrieri cerute in afara gardului
+[ 133.800] INFO  gpu: gpu0: scrierile refuzate pe pasi: i8e-golden 11
+[ 133.810] INFO  gpu: gpu0: jurnalul pe loc: /usb/raport/gpu-jurnal-048.txt (4212 randuri, fiecare scris pe loc)
+[ 133.810] INFO  gpu: gpu0: usb: scrieri 7381 (total 25012.2 ms, in medie 3.3 ms, cea mai lunga 770.0 ms), sincronizari 3577 (total 164.1 ms, in medie 0.0 ms, cea mai lunga 0.3 ms)
+[ 133.820] INFO  gpu: gpu0: rezultat lant: oprit la tur-dupa (2902 scrieri)
+[ 133.820] INFO  gpu: kronos --gpu: stiva firului lantului: 26 KiB folositi din 256 KiB
+
+== erori si avertismente ==
+(niciun rand)
+
+== jurnal complet (681 randuri pastrate in memorie) ==
+[ 128.430] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.430] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.430] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.430] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.430] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.430] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.430] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.430] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.430] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.430] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.430] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.430] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2f => 0x00001b2f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2f <- 0x000010e6 => 0x000010e6
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.440] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2f => 0x00001b2f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2f <- 0x000010e6 => 0x000010e6
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.440] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.440] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.440] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.440] INFO  gpu: jurnal: nota: kt generarea incepe (randurile tinute sunt pe stick; pana la final randurile de rutina raman in memorie)
+[ 128.460] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.460] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.470] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x000010e6 => 0x000010e6
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.470] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.470] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.470] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.470] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.470] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.480] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.480] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.480] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.480] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.490] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.490] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.490] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.490] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.490] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.490] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.500] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.500] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.500] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 128.500] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 128.500] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 128.500] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 128.500] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 128.780] INFO  gpu: jurnal: valoare kt incalzirea: pozitia 0 trimisa o data inainte de ceas (numarul listelor) = 0x00000001
+[ 128.860] INFO  gpu: jurnal: valoare kt incalzirea: durata totala (us, in afara ceasului) = 0x00002974
+[ 128.880] INFO  gpu: jurnal: valoare kt incalzirea: cuvinte VRAM scrise (prima lista) = 0x0000318f
+[ 128.890] INFO  gpu: jurnal: valoare kt argmax fara copie (0/1) = 0x00000001
+[ 128.910] INFO  gpu: jurnal: valoare kt argmax fara copie: pozitii la care simbolul placii = simbolul procesorului = 0x00000012
+[ 128.920] INFO  gpu: jurnal: valoare kt argmax fara copie: pozitii verificate = 0x00000012
+[ 128.940] INFO  gpu: jurnal: valoare kt median citirea rezultatului (us) = 0x00000000
+[ 128.960] INFO  gpu: jurnal: valoare kt median argmax placa (ns, lansarea, din inregistrari) = 0x00003f40
+[ 128.970] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 128.970] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 128.980] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x0001fff0 => 0x0001fff0
+[ 128.980] INFO  gpu: jurnal: valoare kg simboluri generate pe placa (identice cu procesorul) = 0x00000010
+[ 128.990] INFO  gpu: jurnal: valoare kg primul simbol diferit de procesor (pozitia; ffffffff = niciunul) = 0xffffffff
+[ 129.010] INFO  gpu: jurnal: valoare kg abaterea maxima a logit-urilor fata de procesor (x1e6) = 0x00000000
+[ 129.030] INFO  gpu: jurnal: valoare kv sursa (0 SIMULARE, 1 placa) = 0x00000001
+[ 129.040] INFO  gpu: jurnal: valoare kv urcare KiB = 0x0001a69e
+[ 129.060] INFO  gpu: jurnal: valoare kv urcare bucati = 0x0000000e
+[ 129.840] INFO  gpu: jurnal: valoare kv urcare pe placa (us, copierile) = 0x00004661
+[ 129.860] INFO  gpu: jurnal: valoare kv urcare procesor (us, ffffffff = fara ceas) = 0x0004804d
+[ 129.870] INFO  gpu: jurnal: valoare kv simboluri = 0x00000012
+[ 129.890] INFO  gpu: jurnal: valoare kv median lansarile (us) = 0x00000434
+[ 129.900] INFO  gpu: jurnal: valoare kv median prima-ultima inregistrare (us) = 0x00000434
+[ 129.920] INFO  gpu: jurnal: valoare kv cel mai lent simbol pe placa (us) = 0x0000047f
+[ 129.930] INFO  gpu: jurnal: valoare kv median procesor (us) = 0x000006f2
+[ 129.950] INFO  gpu: jurnal: valoare kv simboluri pe secunda x100 (placa) = 0x00016c4c
+[ 129.970] INFO  gpu: jurnal: valoare kv simboluri pe secunda x100 (procesor) = 0x0000ddfc
+[ 129.980] INFO  gpu: jurnal: valoare kv urcare MB/s (placa) = 0x00001804
+[ 130.000] INFO  gpu: jurnal: valoare kv urcare MB/s (procesor) = 0x00000177
+[ 130.010] INFO  gpu: jurnal: valoare kv verificarea dupa placa median pe pozitie (us, motorul rapid /bin/kronos) = 0x00003aab
+[ 130.030] INFO  gpu: jurnal: valoare kv pozitii pe secunda x100 (verificarea dupa placa) = 0x000019d7
+[ 130.050] INFO  gpu: jurnal: valoare kv simboluri pe secunda x100 cu verificare (placa + driver + verificarea dupa placa) = 0x00001725
+[ 130.060] INFO  gpu: jurnal: valoare kt simboluri = 0x00000012
+[ 130.080] INFO  gpu: jurnal: valoare kt median placa (us) = 0x00000434
+[ 130.090] INFO  gpu: jurnal: valoare kt median driver (us) = 0x00000260
+[ 130.110] INFO  gpu: jurnal: valoare kt median jurnal (us) = 0x00000040
+[ 130.130] INFO  gpu: jurnal: valoare kt median ecran (us) = 0x00000000
+[ 130.140] INFO  gpu: jurnal: valoare kt median verificare procesor (us) = 0x00003aab
+[ 130.160] INFO  gpu: jurnal: valoare kt median simbol fara verificare (us) = 0x000006f2
+[ 130.170] INFO  gpu: jurnal: valoare kt median simbol cu verificare (us) = 0x000041a1
+[ 130.190] INFO  gpu: jurnal: valoare kt simboluri pe secunda x100 (fara verificare) = 0x0000dbb2
+[ 130.200] INFO  gpu: jurnal: valoare kt simboluri pe secunda x100 (cu verificare) = 0x00001740
+[ 130.220] INFO  gpu: jurnal: valoare kt suma simbol fara verificare (us) = 0x00007bba
+[ 130.230] INFO  gpu: jurnal: valoare kt pozitii lente (peste 2 x mediana) = 0x00000000
+[ 130.250] INFO  gpu: jurnal: valoare kt timp in plus in pozitiile lente (us) = 0x00000000
+[ 130.270] INFO  gpu: jurnal: valoare kt randuri de rutina aruncate = 0x00000000
+[ 130.280] INFO  gpu: jurnal: valoare kt umbra lansarilor: cuvinte schimbate de placa in sloturi (0 = umbra corecta) = 0x00000000
+[ 130.300] INFO  gpu: jurnal: valoare kt dieta (0/1) = 0x00000001
+[ 130.310] INFO  gpu: jurnal: valoare kt cuvinte VRAM pe simbol (median) = 0x00000082
+[ 130.330] INFO  gpu: jurnal: valoare kt median citirea logit-urilor (us) = 0x00000000
+[ 130.340] INFO  gpu: jurnal: valoare kt median argmax (us) = 0x00000000
+[ 130.360] INFO  gpu: jurnal: valoare kp simboluri = 0x00000012
+[ 130.380] INFO  gpu: jurnal: valoare kp lansari pe simbol = 0x00000057
+[ 130.390] INFO  gpu: jurnal: valoare kp embed simbol (us) = 0x00000005
+[ 130.410] INFO  gpu: jurnal: valoare kp embed lansare (ns) = 0x000013c0
+[ 130.420] INFO  gpu: jurnal: valoare kp ln1 simbol (us) = 0x00000031
+[ 130.440] INFO  gpu: jurnal: valoare kp ln1 lansare (ns) = 0x00000fe0
+[ 130.450] INFO  gpu: jurnal: valoare kp qkv simbol (us) = 0x000000af
+[ 130.470] INFO  gpu: jurnal: valoare kp qkv lansare (ns) = 0x00003940
+[ 130.490] INFO  gpu: jurnal: valoare kp atentie simbol (us) = 0x000000fb
+[ 130.500] INFO  gpu: jurnal: valoare kp atentie lansare (ns) = 0x00005120
+[ 130.520] INFO  gpu: jurnal: valoare kp out simbol (us) = 0x00000048
+[ 130.530] INFO  gpu: jurnal: valoare kp out lansare (ns) = 0x000017c0
+[ 130.800] INFO  gpu: jurnal: valoare kp ln2 simbol (us) = 0x0000002e
+[ 130.820] INFO  gpu: jurnal: valoare kp ln2 lansare (ns) = 0x00000f20
+[ 130.830] INFO  gpu: jurnal: valoare kp fc simbol (us) = 0x000000e0
+[ 130.850] INFO  gpu: jurnal: valoare kp fc lansare (ns) = 0x00004940
+[ 130.860] INFO  gpu: jurnal: valoare kp proj simbol (us) = 0x0000008e
+[ 130.880] INFO  gpu: jurnal: valoare kp proj lansare (ns) = 0x00002e80
+[ 130.900] INFO  gpu: jurnal: valoare kp ln_final simbol (us) = 0x00000004
+[ 130.910] INFO  gpu: jurnal: valoare kp ln_final lansare (ns) = 0x00000fe0
+[ 130.930] INFO  gpu: jurnal: valoare kp logit simbol (us) = 0x00000057
+[ 130.940] INFO  gpu: jurnal: valoare kp logit lansare (ns) = 0x00015720
+[ 130.960] INFO  gpu: jurnal: valoare kp toate simbol (us) = 0x00000423
+[ 130.980] INFO  gpu: jurnal: valoare kp felul cel mai lung (index) = 0x00000006
+[ 131.000] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 131.010] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2e => 0x00001b2e
+[ 131.030] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x00001f30 => 0x00001f30
+[ 131.050] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.060] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.080] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.100] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.120] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.130] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.150] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.170] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.180] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.200] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.220] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.230] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.250] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.270] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.290] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.300] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.320] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.340] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.350] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.370] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.390] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.400] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.420] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.460] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.470] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f30 => 0x00001f30
+[ 131.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x00001000 => 0x00001000
+[ 131.510] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.520] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.540] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.560] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.580] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.590] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.610] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.630] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.650] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.660] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.680] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.700] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.710] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.730] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.750] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.770] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.780] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.800] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.820] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.840] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.850] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.870] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.890] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.900] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.920] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.940] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.950] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 131.970] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 131.990] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 132.010] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 132.020] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f31 => 0x00001f31
+[ 132.040] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f31 <- 0x00001000 => 0x00001000
+[ 132.060] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f32 => 0x00001f32
+[ 132.070] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f32 <- 0x00001000 => 0x00001000
+[ 132.090] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f32 => 0x00001f32
+[ 132.110] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f32 <- 0x00001000 => 0x00001000
+[ 132.130] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001000 <- 0x00001f32 => 0x00001f32
+[ 132.140] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f32 <- 0x00001b2e => 0x00001b2e
+[ 132.160] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2e <- 0x000010e6 => 0x000010e6
+[ 132.180] INFO  gpu: jurnal: bar0 w 0x001700: 0x000010e6 <- 0x0000101f => 0x0000101f
+[ 132.190] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 132.210] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.220] INFO  gpu: jurnal: bar0 w 0xb830a0: 0x00100000 <- 0x00100000 => 0x00100000
+[ 132.240] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
+[ 132.260] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
+[ 132.270] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
+[ 132.290] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 132.310] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.320] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 132.340] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x0000101f => 0x0000101f
+[ 132.360] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[ 132.370] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.390] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b30 => 0x00001b30
+[ 132.410] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b30 <- 0x00001d30 => 0x00001d30
+[ 132.420] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001d30 <- 0x00001f30 => 0x00001f30
+[ 132.440] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001f30 <- 0x0001fff0 => 0x0001fff0
+[ 132.460] INFO  gpu: jurnal: valoare kc copiere VRAM KiB = 0x00010000
+[ 132.470] INFO  gpu: jurnal: valoare kc copieri = 0x00000003
+[ 132.490] INFO  gpu: jurnal: valoare kc copiere (us) = 0x000000ee
+[ 132.510] INFO  gpu: jurnal: valoare kc copiere (us) = 0x000000ef
+[ 132.520] INFO  gpu: jurnal: valoare kc copiere (us) = 0x000000ee
+[ 132.540] INFO  gpu: jurnal: valoare kc cea mai rapida (us) = 0x000000ee
+[ 132.560] INFO  gpu: jurnal: valoare kc median (us) = 0x000000ee
+[ 132.570] INFO  gpu: jurnal: valoare kc copiere MB/s = 0x00044c7b
+[ 132.590] INFO  gpu: jurnal: valoare kc trafic memorie MB/s (citire + scriere) = 0x000898f7
+[ 132.610] INFO  gpu: jurnal: valoare kc din 608 GB/s (promile) = 0x0000039e
+[ 132.620] INFO  gpu: jurnal: valoare kc cuvinte verificate gresite (din 3) = 0x00000000
+[ 132.640] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.660] INFO  gpu: jurnal: bar0 w 0x110c00: 0x00000000 <- 0x00000000 => 0x00000000
+[ 132.670] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.690] INFO  gpu: jurnal: bar0 w 0x110c00: 0x00000000 <- 0x00000000 => 0x00000000
+[ 132.710] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 132.720] INFO  gpu: jurnal: bar0 w 0x110c00: 0x00000000 <- 0x00000000 => 0x00000000
+[ 132.740] INFO  gpu: jurnal: valoare ks stare de performanta inainte de stergere (0 = P0; 8000xxxx = refuz) = 0x00000000
+[ 132.750] INFO  gpu: jurnal: valoare ks stergerea cererii (0 = acceptata; 8000xxxx = refuz) = 0x00000000
+[ 132.770] INFO  gpu: jurnal: valoare ks stare de performanta la final (0 = P0; 8000xxxx = refuz) = 0x00000000
+[ 132.790] INFO  gpu: jurnal: nota: ks nivelurile si temperatura: necitite (fara cale documentata in 570.144)
+[ 132.800] INFO  gpu: jurnal: pas i14-simbol: ok
+[ 132.820] INFO  gpu: jurnal: cfg  w 0x004: 0x00100007 <- 0x00000003 => 0x00100003
+[ 132.840] INFO  gpu: jurnal: pas bus-master-oprit: ok
+[ 132.850] INFO  gpu: jurnal: nota: tur de citire (C-54): incepe, 0 scrieri permise
+[ 132.870] INFO  gpu: jurnal: pas nivel0: configuratie: ok
+[ 132.890] INFO  gpu: jurnal: bar0 r 0x000000 = 0xb74000a1
+[ 132.900] INFO  gpu: jurnal: bar0 r 0x000a00 = 0x174a1000
+[ 132.920] INFO  gpu: jurnal: pas nivel0: BOOT_0/BOOT_42: ok
+[ 132.940] INFO  gpu: jurnal: bar0 r 0x118128 = 0x00008b8f
+[ 132.950] INFO  gpu: jurnal: bar0 r 0x118234 = 0x000003ff
+[ 132.970] INFO  gpu: jurnal: pas I2: GFW_BOOT: ok
+[ 132.990] INFO  gpu: jurnal: bar0 r 0x300000 = 0xeb7faa55
+[ 133.000] INFO  gpu: jurnal: pas I3: VBIOS prin PROM: ok
+[ 133.020] INFO  gpu: jurnal: pas I3: descriptorul FWSEC: ok
+[ 133.030] INFO  gpu: jurnal: bar0 r 0x8241e0 = 0x00000003
+[ 133.050] INFO  gpu: jurnal: pas I6 pregatire: semnatura FWSEC aleasa (doar citire): ok
+[ 133.070] INFO  gpu: jurnal: bar0 r 0x1183a4 = 0x00002000
+[ 133.080] INFO  gpu: jurnal: bar0 r 0x1fa828 = 0x01ffee00
+[ 133.100] INFO  gpu: jurnal: bar0 r 0x1fa824 = 0x01f41000
+[ 133.120] INFO  gpu: jurnal: nota: I6: WPR2 deja ridicat (FWSEC a rulat dupa pornire): trebuie pornire rece
+[ 133.130] INFO  gpu: jurnal: pas I6 pregatire (doar citire): ESEC
+[ 133.150] INFO  gpu: jurnal: pas tur-dupa: ESEC
+[ 133.170] INFO  gpu: jurnal: text motivul esecului = "nepermis de politica de sigurant"
+[ 133.180] INFO  gpu: jurnal: text motivul esecului (urmare) = "a: turul de citire a jurnalizat "
+[ 133.200] INFO  gpu: jurnal: text motivul esecului (urmare) = "o scriere: rezultat respins"
+[ 133.220] INFO  gpu: jurnal: nota: lant (C-54): oprit; vezi pasul cu ok=false
+[ 133.230] INFO  gpu: gpu0: varianta I8 implicita: 1 (rpc-inainte)
+[ 133.240] INFO  gpu: gpu0: optiune I9: c135 (C-135, SIMULARE testata; pe placa doar cu Adrian) - direct forma B; N: canal fara notificator de erori; F (doar daca jetonul lui N e refuzat): canal cu id ales de noi + jeton calculat
+[ 133.240] INFO  gpu: gpu0: b3:00.0 GeForce RTX 3070 Ti (BAR0 0xf9000000), cyber-gpu 3b4ca77
+[ 133.250] INFO  gpu: gpu0: FWSEC in VBIOS: descriptor v3 la PROM 0x41208, ucode_id 9, 3 semnaturi (masca 0x0007), 59904 octeti
+[ 133.250] INFO  gpu: gpu0: siguranta FWSEC 0x8241e0: versiunea 2 -> semnatura 2 din VBIOS
+[ 133.250] INFO  gpu: gpu0: VRAM 8192 MiB; FRTS 0x1ffe00000..0x1fff00000
+[ 133.260] INFO  gpu: gpu0: WPR2 coborat (pornire rece): bun
+[ 133.260] INFO  gpu: gpu0: criteriul I6-citire: TRECE
+[ 133.260] INFO  gpu: gpu0: Bus Master pornit (COMMAND 0x0003 -> 0x0007)
+[ 133.270] INFO  gpu: gpu0: pasul 2: FWSEC copiat din VBIOS in RAM cu semnatura 2 si comanda FRTS: 0xea00 octeti (234 blocuri de 256 B); nimic scris in placa
+[ 133.270] INFO  gpu: gpu0: zona DMA: 0xea00 octeti la adresa fizica 0x120d000 (sub 4 GiB, recitita)
+[ 133.280] INFO  gpu: gpu0: pas I6 FWSEC-FRTS: ok; WPR2 0x1ffe00000..0x1fff00000 (= regiunea FRTS)
+[ 133.280] INFO  gpu: gpu0: WPR2 citit dupa I6: LO 0x01ffe000 HI 0x01ffee00 (capat: ultimul bloc de 128 KiB) = 0x1ffe00000..0x1fff00000
+[ 133.280] INFO  gpu: gpu0: pas i6-wpr2-citit: WPR2 0x1ffe00000..0x1fff00000 = regiunea FRTS ceruta (capat: ultimul bloc de 128 KiB)
+[ 133.290] INFO  gpu: gpu0: I7: cele 4 fisiere GSP 570.144 de pe stick verificate (SHA-256)
+[ 133.290] INFO  gpu: gpu0: I7 pregatire: GSP-RM .fwimage 62052 KiB, semnatura 4096 B, bootloader 24576 B, Booter 60416 B (siguranta SEC2 ucode 3 = versiunea 1)
+[ 133.300] INFO  gpu: gpu0: I7 pregatire (varianta C-108): SetSystemInfo + SetRegistry (2 intrari) puse in coada INAINTE de Booter; nimic scris in placa
+[ 133.300] INFO  gpu: gpu0: I7 pregatire: zona DMA 62992 KiB la 0x10000000 (recitita); radix3 nivelul 0 la 0x13c99000; GspFwWprMeta la 0x13cc1000; Booter la 0x13cc2000; nimic scris in placa
+[ 133.310] INFO  gpu: gpu0: I7 pregatire: cozile GSP (516 KiB) la 0x13d03000, argumentele LibOS la 0x13cd1000 (RMARGS 0x13d02000); nimic scris in placa
+[ 133.310] INFO  gpu: gpu0: I7 (varianta C-108): soneria cozii de comenzi inainte de Booter
+[ 133.310] INFO  gpu: gpu0: pas I7 GSP resetat in RISC-V + Booter: ok (GspFwWprMeta 0x13cc1000; cutiile GSP = pagina LibOS 0x13cd1000, recitite; versiunea 570144)
+[ 133.320] INFO  gpu: gpu0: I7: cutia SEC2 0 = 0x00000000, cutia 1 = 0x00000000, GSP RISC-V ACTIV (CPUCTL 0x00000080) -> TRECE
+[ 133.320] INFO  gpu: gpu0: I7: cutia SEC2 0 = 0x00000000, cutia 1 = 0x00000000, GSP RISC-V ACTIV (CPUCTL 0x00000080) -> TRECE
+[ 133.330] INFO  gpu: gpu0: I8: in coada: SetSystemInfo (BAR0 0xf9000000, BAR1 0xe0000000, BAR3 0xf0000000, 10de:2482 sub 1043:8813 rev 0xa1) + SetRegistry (2 intrari) (puse la I7, inainte de Booter)
+[ 133.330] INFO  gpu: gpu0: asteptat I8 antetul cozii de stare (de la sonerie): raspuns dupa 0 us
+[ 133.340] INFO  gpu: gpu0: pas I8 GSP init: ok (GSP_INIT_DONE; secventiator: 1 rulari, 420 comenzi; alte evenimente: 4)
+[ 133.340] INFO  gpu: gpu0: golden: WPR2 dupa I7 0x1f4100000..0x1ffee0000
+[ 133.340] INFO  gpu: gpu0: golden: WPR2 = cel cerut de GspFwWprMeta; ecranul in VRAM Some((0, 870000)); zona driverului 0x10000000-0x1f4000000 (restul protejat)
+[ 133.350] INFO  gpu: gpu0: pas golden: ok (VRAM 0x10000000-0x1f4000000; 10 buffere GR; 11 mesaje RM, fiecare cu soneria GSP; 17946 cuvinte VRAM scrise si recitite)
+[ 133.360] INFO  gpu: gpu0: I9 c135: 1 incercari; reusita: N (detalii: randurile i9 c135 din jurnal)
+[ 133.360] INFO  gpu: gpu0: pas I9 canal de lucru: ok (SM 8.6; 13 mesaje RM)
+[ 133.360] INFO  gpu: gpu0: ks: viteza maxima ceruta (doar in ciclu, 600 s): inainte P8, cererea acceptata, dupa P0; verdict 1 (Raised)
+[ 133.360] INFO  gpu: gpu0: pas I10 add64: ok (64 rezultate identice bit cu bit cu procesorul; semafor 0x100000007; soneria canalului 0xbb0090 o data; 440 cuvinte VRAM scrise si recitite)
+[ 133.370] INFO  gpu: gpu0: I10 cost lansare: 16 lansari, mediana 1440 ns, minim 1376 ns, maxim 1600 ns, total 23104 ns
+[ 133.370] INFO  gpu: gpu0: pas I10 cost lansare: ok (mediana 1440 ns, masurata de ceasul placii)
+[ 133.380] INFO  gpu: gpu0: i11: 8388608 octeti; RAM->VRAM 1547840 ns (5419 MB/s); VRAM->RAM 1244480 ns (6740 MB/s)
+[ 133.380] INFO  gpu: gpu0: pas I11 copiere: ok (8388608 octeti RAM -> VRAM -> RAM identici bit cu bit; 3 cuvinte VRAM recitite; 25007 cuvinte VRAM scrise si recitite)
+[ 133.390] INFO  gpu: gpu0: i12: TRECE in marja - 782 randuri difera de oracol (primul 4), toate in marja fata de procesor; de analizat
+[ 133.390] INFO  gpu: gpu0: i12: durate (ceasul placii): copiere sus 507584 ns, inmultire 36832 ns (72062 MB/s din W), copiere jos 3232 ns
+[ 133.390] INFO  gpu: gpu0: pas I12 q8 matvec: ok (3072x768 Q8_0, y comparat cu procesorul)
+[ 133.390] INFO  gpu: gpu0: i13: strat E 768 / 12 capete: 8085504 octeti (greutati + spatiu de lucru) urcati cu o copiere in 1544960 ns (5233 MB/s)
+[ 133.400] INFO  gpu: gpu0: i13: pozitia 0: TRECE - abaterea maxima fata de procesor 1.9073486e-6 (toleranta 1e-4 + 1e-4*|x|); 16 lansari, 187488 ns in total (ceasul placii)
+[ 133.400] INFO  gpu: gpu0: i13: pozitia 1: TRECE - abaterea maxima fata de procesor 1.1920929e-6 (toleranta 1e-4 + 1e-4*|x|); 16 lansari, 190016 ns in total (ceasul placii)
+[ 133.410] INFO  gpu: gpu0: i13: pozitia 2: TRECE - abaterea maxima fata de procesor 1.0728836e-6 (toleranta 1e-4 + 1e-4*|x|); 16 lansari, 190688 ns in total (ceasul placii)
+[ 133.410] INFO  gpu: gpu0: i13: pozitia 3: TRECE - abaterea maxima fata de procesor 1.66893e-6 (toleranta 1e-4 + 1e-4*|x|); 16 lansari, 191168 ns in total (ceasul placii)
+[ 133.420] INFO  gpu: gpu0: pas I13 strat: ok (E 768, 12 capete, 4 pozitii x 16 lansari, comparat cu procesorul)
+[ 133.420] INFO  gpu: gpu0: i14: modelul de control /usb/kronos/mic_q8_0.kgr (SHA-256 ca vectori.json; greutati la intamplare, NU #513): 2 straturi, E 32, 4 capete, vocabular 16384, context 64; 35 lansari pe simbol + 1 copiere a logit-urilor
+[ 133.430] INFO  gpu: gpu0: i14: buget VRAM (2 straturi): 1.0 MiB = greutati+lucru 0.6 + cache-uri 0.2 + programe 0.0 + lansari 0.0 + tabele 0.1 MiB; VRAM liber 7708 MiB (cea mai lunga bucata 7708 MiB)
+[ 133.430] INFO  gpu: gpu0: i14: limite (2 straturi): 36 lansari pe simbol (cu copierea logit-urilor in RAM)
+[ 133.440] INFO  gpu: gpu0: i14: limite: comenzi pe simbol: 1472 B (o invalidare), 1760 B (invalidare inaintea fiecarei lansari), 712 B (pe straturi); zona de comenzi: cel putin 4 KiB (are 32 KiB)
+[ 133.440] INFO  gpu: gpu0: i14: limite: pasul valorilor inregistrarilor pe sonerie: cel putin 0x25
+[ 133.450] INFO  gpu: gpu0: i14: limite: urcarea greutatilor: cel mult 1 bucati de 8 MiB prin arena I11
+[ 133.450] INFO  gpu: gpu0: i14: 692480 octeti (greutati + spatiu de lucru + logit-uri) urcati in 1 bucati in 151680 ns (4565 MB/s)
+[ 133.450] INFO  gpu: gpu0: i14 diagnostic: 35 lansari, o invalidare pe trimitere (ca in os-305): DATE VECHI: qkv = Wqkv * h (stratul 1, lansarea 1): abaterea fata de model 2.5557635e0 - IN AFARA; fata de intrarile placii 2.5557635e0 (NU urmeaza din ele); [ 133.450] INFO  gpu: gpu0: i14: pozitia 0 (simbolul 65): argmax placa 5933, procesor 10337, vectori 10337; abaterea maxima a logit-urilor 6.316818e0 la 9017; 16364 in afara tolerantei; 0 nefinite; 0 nescrise; marja pe procesor 2.8487873e-1
+[ 133.460] INFO  gpu: gpu0: i14 diagnostic: qkv = Wqkv * h (stratul 1, lansarea 1): abaterea fata de model 2.5557635e0 - IN AFARA; fata de intrarile placii 2.5557635e0 (NU urmeaza din ele); o parte din iesire e ce dau valorile VECHI ale intrarii (cele din [ 133.470] INFO  gpu: gpu0: i14 diagnostic: qkv + bqkv (stratul 1, lansarea 2): abaterea fata de model 2.5557635e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.470] INFO  gpu: gpu0: i14 diagnostic: copiere K in cache (stratul 1, lansarea 3): abaterea fata de model 2.0279007e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.480] INFO  gpu: gpu0: i14 diagnostic: copiere V in cache (stratul 1, lansarea 4): abaterea fata de model 2.1863616e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.480] INFO  gpu: gpu0: i14 diagnostic: atentie (stratul 1, lansarea 5): abaterea fata de model 2.1863616e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.490] INFO  gpu: gpu0: i14 diagnostic: o = Wout * att (stratul 1, lansarea 6): abaterea fata de model 3.5783606e0 - IN AFARA; fata de intrarile placii 2.760814e0 (NU urmeaza din ele)
+[ 133.490] INFO  gpu: gpu0: i14 diagnostic: o + bout (stratul 1, lansarea 7): abaterea fata de model 3.5783606e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.500] INFO  gpu: gpu0: i14 diagnostic: x1 = x + ob (stratul 1, lansarea 8): abaterea fata de model 3.5783606e0 - IN AFARA
+[ 133.500] INFO  gpu: gpu0: i14 diagnostic: normalizare 2 (stratul 1, lansarea 9): abaterea fata de model 2.3857343e0 - IN AFARA; fata de intrarile placii 2.3841858e-7 (urmeaza din ele)
+[ 133.510] INFO  gpu: gpu0: i14 diagnostic: f = Wfc * h2 (stratul 1, lansarea 10): abaterea fata de model 2.6905918e0 - IN AFARA; fata de intrarile placii 2.1524823e0 (NU urmeaza din ele); o parte din iesire e ce dau valorile VECHI ale intrarii (cele din s[ 133.510] INFO  gpu: gpu0: i14 diagnostic: f + bfc (stratul 1, lansarea 11): abaterea fata de model 2.6905918e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.520] INFO  gpu: gpu0: i14 diagnostic: gelu (stratul 1, lansarea 12): abaterea fata de model 2.007237e0 - IN AFARA; fata de intrarile placii 1.1920929e-7 (urmeaza din ele)
+[ 133.520] INFO  gpu: gpu0: i14 diagnostic: p = Wproj * g (stratul 1, lansarea 13): abaterea fata de model 2.1832442e0 - IN AFARA; fata de intrarile placii 1.3773608e0 (NU urmeaza din ele); o parte din iesire e ce dau valorile VECHI ale intrarii (cele din [ 133.520] INFO  gpu: gpu0: i14 diagnostic: p + bproj (stratul 1, lansarea 14): abaterea fata de model 2.1832442e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.530] INFO  gpu: gpu0: i14 diagnostic: x = x1 + pb (stratul 1, lansarea 15): abaterea fata de model 3.774498e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.530] INFO  gpu: gpu0: i14 diagnostic: normalizare finala (dupa straturi): abaterea fata de model 2.2598898e0 - IN AFARA; fata de intrarile placii 0e0 (urmeaza din ele)
+[ 133.540] INFO  gpu: gpu0: i14 diagnostic: logit-uri = Emb * h (dupa straturi): abaterea fata de model 6.3168173e0 - IN AFARA; fata de intrarile placii 4.7683716e-7 (urmeaza din ele)
+[ 133.540] INFO  gpu: gpu0: i14 diagnostic: 35 lansari, invalidare inaintea fiecarei lansari: TRECE
+[ 133.550] INFO  gpu: gpu0: i14: pozitia 0 (simbolul 65): argmax placa 10337, procesor 10337, vectori 10337; abaterea maxima a logit-urilor 2.6226044e-6 la 2133; 0 in afara tolerantei; 0 nefinite; 0 nescrise; marja pe procesor 2.8487873e-1
+[ 133.550] INFO  gpu: gpu0: i14 diagnostic: textele ruleaza cu: invalidare inaintea fiecarei lansari
+[ 133.550] INFO  gpu: gpu0: i14: "Ana are mere.": TRECE - 9 pozitii, argmax ca vectori.json pe fiecare pozitie, 5 simboluri greedy [4978, 3604, 4649, 13843, 3604] identice
+[ 133.560] INFO  gpu: gpu0: i14: "Capitala Romaniei este": TRECE - 9 pozitii, argmax ca vectori.json pe fiecare pozitie, 5 simboluri greedy [3604, 3604, 3604, 13843, 3604] identice
+[ 133.570] INFO  gpu: gpu0: i14: "def suma(a, b):": TRECE - 11 pozitii, argmax ca vectori.json pe fiecare pozitie, 5 simboluri greedy [8117, 8117, 3604, 3604, 3604] identice
+[ 133.570] INFO  gpu: gpu0: i14: 29 simboluri pe placa in 31 trimiteri (36 lansari pe simbol), trimise cu: invalidare inaintea fiecarei lansari; abaterea maxima a logit-urilor fata de procesor 3.5762787e-6; durata mediana a unui simbol 201440 ns (ceasul pl[ 133.570] INFO  gpu: gpu0: pas I14 simbol: ok (modelul de control, 29 simboluri comparate cu procesorul si cu vectorii lui Kronos, trimise cu: invalidare inaintea fiecarei lansari; #513 prin kronos --gpu)
+[ 133.580] INFO  gpu: gpu0: kronos --gpu: /usb/kronos/kronos_513_q8_0.kgr (12 straturi, E 768, vocabular 16384, context 512): 3 simboluri date, 16 de generat
+[ 133.580] INFO  gpu: gpu0: i14: buget VRAM (12 straturi): 142.2 MiB = greutati+lucru 105.6 + cache-uri 36.0 + programe 0.0 + lansari 0.1 + tabele 0.4 MiB; VRAM liber 7707 MiB (cea mai lunga bucata 7707 MiB)
+[ 133.590] INFO  gpu: gpu0: i14: limite (12 straturi): 89 lansari pe simbol (cu copierea logit-urilor in RAM)
+[ 133.590] INFO  gpu: gpu0: i14: limite: comenzi pe simbol: 3592 B (o invalidare), 4304 B (invalidare inaintea fiecarei lansari), 352 B (pe straturi); zona de comenzi: cel putin 16 KiB (are 32 KiB)
+[ 133.590] INFO  gpu: gpu0: i14: limite: pasul valorilor inregistrarilor pe sonerie: cel putin 0x5a
+[ 133.600] INFO  gpu: gpu0: i14: buget VRAM (12 straturi): 142.3 MiB = greutati+lucru 105.6 + cache-uri 36.0 + programe 0.0 + lansari 0.1 + tabele 0.4 MiB
+[ 133.600] INFO  gpu: gpu0: i14: limite: urcarea greutatilor: cel mult 14 bucati de 8 MiB prin arena I11
+[ 133.600] INFO  gpu: gpu0: i14: 110786560 octeti (greutati + spatiu de lucru + logit-uri) urcati in 14 bucati in 18017952 ns (6148 MB/s)
+[ 133.600] INFO  gpu: gpu0: kronos --gpu (lista lipita-ln-32, toate inmultirile pe sferturi): generare (placa): 18 pozitii, 16 simboluri noi; 557.33 simboluri/s (ceasul placii, cu pauzele driverului), 932.60 simboluri/s doar lansarile; median 1076000 ns, c[ 133.610] INFO  gpu: gpu0: kronos --gpu: kt incalzirea: pozitia 0 trimisa o data inainte de ceas pe 1 liste (10612 us in afara ceasului, 12687 cuvinte VRAM la prima)
+[ 133.610] INFO  gpu: gpu0: kronos --gpu: kt argmax fara copie: simbolul placii = procesorului: 18/18 (logit-urile raman pe placa; procesorul verifica dupa placa)
+[ 133.620] INFO  gpu: gpu0: kronos --gpu: kt median citirea rezultatului (us): 0 (cei 16 octeti ai programului argmax)
+[ 133.620] INFO  gpu: gpu0: kronos --gpu: kt median argmax placa (us): 16.192 (lansarea argmax, din inregistrari, 18 pozitii)
+[ 133.620] INFO  gpu: gpu0: kronos --gpu: argmax fara copie (simbolul ales pe placa): TRECE (18/18 pozitii identice cu procesorul)
+[ 133.630] INFO  gpu: gpu0: kronos --gpu: abaterea maxima a logit-urilor fata de procesor 0e0; durata mediana a unui simbol 1076000 ns (ceasul placii)
+[ 133.630] INFO  gpu: gpu0: kronos --gpu: kt lista: lipita-ln-32 (LayerNorm nou + toate inmultirile pe sferturi) singura (88 lansari pe simbol, cu copierea logit-urilor; amprenta de referinta 0x6c8501f0)
+[ 133.630] INFO  gpu: gpu0: kronos --gpu: viteza (placa): urcarea greutatilor: 110786560 octeti in 14 bucati; placa 18017 us (6148 MB/s), procesor 294989 us (375 MB/s)
+[ 133.640] INFO  gpu: gpu0: kronos --gpu: viteza (placa): 18 simboluri; pe placa: median 1076 us lansarile, 1076 us prima-ultima inregistrare (cel mai lent 1151 us) = 932.60 simboluri/s
+[ 133.640] INFO  gpu: gpu0: kronos --gpu: viteza (placa): cu driverul, jurnalul si ecranul: median 1778 us pe simbol = 568.28 simboluri/s
+[ 133.650] INFO  gpu: gpu0: kronos --gpu: viteza: placa 932.60 simboluri/s (ceasul placii), cu driverul 568.28 simboluri/s; verificarea dupa placa (motorul rapid /bin/kronos) median 15019 us/pozitie = 66.15 pozitii/s; cu verificare 59.25 simboluri/s
+[ 133.650] INFO  gpu: gpu0: kronos --gpu: jurnalul in generare: nicio scriere pe stick intre pozitii (randurile de rutina scrise la final); 0 randuri de rutina aruncate
+[ 133.660] INFO  gpu: gpu0: kronos --gpu: pozitiile lente (placa): 0 din 18 peste 2 x mediana (1778 us); in plus 0 us; suma 31674 us = 568.28 simboluri/s in medie
+[ 133.660] INFO  gpu: gpu0: kronos --gpu: umbra lansarilor: recitite la final, identice (placa nu rescrie sloturile)
+[ 133.670] INFO  gpu: gpu0: kronos --gpu: timpul pe simbol (placa, median, 18 simboluri): placa 1076 us, driver 608 us, jurnal 64 us, ecran 0 us = 1778 us (562.42 simboluri/s)
+[ 133.670] INFO  gpu: gpu0: kronos --gpu: verificarea pe procesor (placa): median 15019 us pe pozitie; cu ea 16801 us pe simbol (59.52 simboluri/s)
+[ 133.670] INFO  gpu: gpu0: kronos --gpu: dieta driverului: PORNITA (pushbuffer prin umbra, inregistrari nezerorizate); cuvinte VRAM scrise pe simbol (median) 130; citirea logit-urilor 0 us, argmax 0 us (median)
+[ 133.680] INFO  gpu: gpu0: kronos --gpu: logit-urile: necitite (argmax fara copie, 18 pozitii): fara amprenta si fara abatere in aceasta rulare
+[ 133.680] INFO  gpu: gpu0: kronos --gpu: timpul pe fel de lansare (placa, median pe simbol, 18 simboluri; toate ~1060 us pe simbol):
+[ 133.680] INFO  gpu: gpu0: kronos --gpu:   atentie          251 us pe simbol (12 lansari; una 20768 ns)
+[ 133.690] INFO  gpu: gpu0: kronos --gpu:   fc               224 us pe simbol (12 lansari; una 18752 ns)
+[ 133.690] INFO  gpu: gpu0: kronos --gpu:   qkv              175 us pe simbol (12 lansari; una 14656 ns)
+[ 133.690] INFO  gpu: gpu0: kronos --gpu:   proj             142 us pe simbol (12 lansari; una 11904 ns)
+[ 133.700] INFO  gpu: gpu0: kronos --gpu:   logit             87 us pe simbol (1 lansari; una 87840 ns)
+[ 133.700] INFO  gpu: gpu0: kronos --gpu:   out               72 us pe simbol (12 lansari; una 6080 ns)
+[ 133.700] INFO  gpu: gpu0: kronos --gpu:   ln1               49 us pe simbol (12 lansari; una 4064 ns)
+[ 133.700] INFO  gpu: gpu0: kronos --gpu:   ln2               46 us pe simbol (12 lansari; una 3872 ns)
+[ 133.710] INFO  gpu: gpu0: kronos --gpu:   embed              5 us pe simbol (1 lansari; una 5056 ns)
+[ 133.710] INFO  gpu: gpu0: kronos --gpu:   ln_final           4 us pe simbol (1 lansari; una 4064 ns)
+[ 133.710] INFO  gpu: gpu0: kronos --gpu: jurnalul pe stick: 661 randuri de rutina tinute in memorie (nu pe ecran), scrise pe stick in 14 scrieri (in generare: doar dupa ultima pozitie, P6-112; in rest la 16 simboluri sau la o secunda; 25 goliri)
+[ 133.720] INFO  gpu: gpu0: kronos --gpu: 16 simboluri generate pe placa, toate identice cu procesorul (niciun simbol diferit)
+[ 133.720] INFO  gpu: gpu0: kronos --gpu: copierea VRAM -> VRAM: 65536 KiB x 3, cuvinte gresite 0 din 3; cea mai rapida 238 us, mediana 238 us = 281723 MB/s (563447 MB/s trafic, 926 promile din 608 GB/s)
+[ 133.730] INFO  gpu: gpu0: kronos --gpu: 16 simboluri generate pe placa (fiecare comparat cu procesorul, dupa placa)
+[ 133.730] INFO  gpu: gpu0: ks: inainte de stergere P0, stergerea acceptata, starea de performanta la final: P0
+[ 133.730] INFO  gpu: gpu0: Bus Master oprit la loc (COMMAND 0x0003, ca inainte)
+[ 133.740] INFO  gpu: gpu0: lantul pasilor (C-54):
+[ 133.740] INFO  gpu: gpu0: pregatire-i6: TRECE
+[ 133.740] INFO  gpu: gpu0: bus-master-pornit: TRECE
+[ 133.740] INFO  gpu: gpu0: i6-fwsec-frts: TRECE
+[ 133.750] INFO  gpu: gpu0: i6-wpr2-citit: TRECE
+[ 133.750] INFO  gpu: gpu0: i7-booter-gsp: TRECE
+[ 133.750] INFO  gpu: gpu0: i7-citit: TRECE
+[ 133.760] INFO  gpu: gpu0: i8-gsp-init: TRECE
+[ 133.760] INFO  gpu: gpu0: i8e-golden: TRECE
+[ 133.760] INFO  gpu: gpu0: i9-canal-lucru: TRECE
+[ 133.770] INFO  gpu: gpu0: i10-add64: TRECE
+[ 133.770] INFO  gpu: gpu0: i10-cost-lansare: TRECE
+[ 133.770] INFO  gpu: gpu0: i11-copiere: TRECE
+[ 133.780] INFO  gpu: gpu0: i12-q8-matvec: TRECE
+[ 133.780] INFO  gpu: gpu0: i13-strat: TRECE
+[ 133.780] INFO  gpu: gpu0: i14-simbol: TRECE
+[ 133.790] INFO  gpu: gpu0: bus-master-oprit: TRECE
+[ 133.790] INFO  gpu: gpu0: tur-dupa: ESUAT: nepermis de politica de siguranta: turul de citire a jurnalizat o scriere: rezultat respins
+[ 133.790] INFO  gpu: gpu0: lant: oprit la tur-dupa: nepermis de politica de siguranta: turul de citire a jurnalizat o scriere: rezultat respins; 2902 scrieri; pasii de curatare au rulat
+[ 133.800] INFO  gpu: gpu0: adaptoarele OS au REFUZAT 11 scrieri cerute in afara gardului
+[ 133.800] INFO  gpu: gpu0: scrierile refuzate pe pasi: i8e-golden 11
+[ 133.810] INFO  gpu: gpu0: jurnalul pe loc: /usb/raport/gpu-jurnal-048.txt (4212 randuri, fiecare scris pe loc)
+[ 133.810] INFO  gpu: gpu0: usb: scrieri 7381 (total 25012.2 ms, in medie 3.3 ms, cea mai lunga 770.0 ms), sincronizari 3577 (total 164.1 ms, in medie 0.0 ms, cea mai lunga 0.3 ms)
+[ 133.820] INFO  gpu: gpu0: rezultat lant: oprit la tur-dupa (2902 scrieri)
+[ 133.820] INFO  gpu: kronos --gpu: stiva firului lantului: 26 KiB folositi din 256 KiB
+[ 134.300] INFO  proces: firul 7 a iesit cu codul 0
+[ 134.870] INFO  drepturi: gh-trimite a cerut /usb/github.token
+[ 140.210] INFO  proces: firul 9 a iesit cu codul 0
+[ 140.220] INFO  trimite: gh-trimite --rapoarte a iesit cu codul 0
+
+== sfarsit ==
+
+REZULTAT: 1 rulate, 0 refuzate, 138 s
