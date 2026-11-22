@@ -1,16 +1,15 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-22 03:45 (ora României) · **de:** sesiunea Cyber-GPU 149 (cloud, fără placă) — **comparația os-340 (C-157 p.2) + C-160 punctul 4, programul 6, jumătatea „înainte” (`attn_fwd`)**. 731 PASS. Lucru continuu (C-157 + C-160).
+**Actualizat:** 2026-11-22 04:30 (ora României) · **de:** sesiunea Cyber-GPU 150 (cloud, fără placă) — **C-160 punctul 4, programul 8: încorporările (`emb_fwd` + `emb_back`)**. 738 PASS. Lucru continuu (C-157 + C-160).
 
 ## Acum
-- **os-340 (argmax pe placă) comparat:** lansarea argmax 15,04 µs (estimat 5–15); scăderea mediei 347 → 339 simb/s vine din **măsurarea probei** (OS-ul recitește toată arena de 64 KiB ca să ia cei 16 octeți + verificarea, +73 µs), nu din program. Argmax fără copie: estimat **~360 simb/s**. Nota `cyber-gpu/integration/cyber-universe/C-157_P2f_os-340_argmax.md`, commit `dc4edf0`.
-- **C-160 p.4, atenția înainte gata în SIMULARE:** `attn_fwd` — atenția cauzală pe toate cele T poziții ale lotului, scrie **P** (cu +0 deasupra diagonalei) pentru `attn_back` și ieșirea att; un `mufu.exp2` + un `mufu.rcp`. Față de oracolul f64: P ≤ 13,6 %, att ≤ 6,5 % din marginea scrisă pe 8 forme; lanțul înainte → înapoi verificat. Nota `cyber-gpu/docs/C-160_P4_ATTN_FWD.md`, commit `f9fb377`.
-- C-160 p.4: programele 1, 7, 4, 2, 3, 5 și 6 (ambele jumătăți) gata în SIMULARE, nepredate. P8: modelul sumatorului `GA104_OS335` așteaptă confirmarea bit cu bit (rândul opțional `kt mma16 set: model ga104`).
+- **C-160 p.4, încorporările gata în SIMULARE:** `emb_fwd` (x = emb[simbol] + poz[i], o singură adunare → **bit cu bit** egal cu oracolul; fără împărțire — varianta cu r mod T folosea `mufu.rcp` și dădea rest greșit dacă RCP-ul plăcii greșește cu 2 unități, deci am scos-o) și `emb_back` (gradientul celor două tabele **fără `atomic`**: rândurile grupate în segmente pe procesor; `emb_token` adunat peste dW-ul capului legat). Pe datele pasului de aur mic: față de gradientul **PyTorch** al pasului 1, abaterea maximă 1,5e-8 (tol. 1e-6); pe 8 forme ≤ 48,8 % din marginea scrisă; 8 greșeli plantate prinse. Nota `cyber-gpu/docs/C-160_P4_EMB.md`, commit `bc7c5d0`.
+- C-160 p.4: programele 1, 7, 4, 2, 3, 5, 6 (ambele jumătăți) și 8 gata în SIMULARE, nepredate. Rămân: norma + tăierea gradientului, AdamW. P8: modelul sumatorului `GA104_OS335` așteaptă confirmarea bit cu bit (rândul opțional `kt mma16 set: model ga104`).
 
 ## Urmează
-1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate — la argmax fără copie: ~2 770 µs pe simbol, ~360 simb/s (DEDUS).
-2. **C-160 punctul 4, mai departe:** încorporările (înainte / adunarea înapoi), norma + tăierea, AdamW — câte unul, față de `train`.
-3. C-160 punctul 5: pasul de aur pe placa simulată (modelul mic, ambele rețete).
+1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate.
+2. **C-160 punctul 4, mai departe:** norma + tăierea gradientului, apoi pasul AdamW — câte unul, față de `train`.
+3. C-160 punctul 5: pasul de aur mic cap-coadă pe placa simulată (ambele rețete).
 4. P7 (lanțul) în trepte, la rândul lui; C-157 punctele 5, 7, 8 când C-160 așteaptă.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
@@ -19,6 +18,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 150 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulele noi `nvidia_ga104::emb_fwd` și `nvidia_ga104::emb_back` (`EMB_FWD` / `EMB_BACK`, SHA-256, `REGISTERS`, `BLOCK`, `CBUF_BYTES`, `Args::{cbuf, grid}`, `emb_back::Mode`), `gpu_compute::layer::{emb_fwd_gpu, EmbSegments, emb_back_seg_gpu, emb_back_gpu}`, `gpu_compute::train::{embed_rows, embed_back_rows, embed_grad_inputs}` (liniile din `loss_and_grad` mutate în funcții — `antrenare proba` din OS dă aceleași numere, T151 neschimbat), `gpu_sim::cmdproc::{emb_fwd_on_cpu, emb_back_on_cpu}`. Nimic de legat acum; nimic nou pentru placă. Pentru C-160 p.6: `emb_back` e alt candidat bun de „primul program înapoi pe placă” (doar adunări, bit cu bit cu modelul).
 - **Sesiunea 149 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::attn_fwd` (`ATTN_FWD`, `ATTN_FWD_SHA256`, `REGISTERS`, `BLOCK`, `CBUF_BYTES`, `Args::{cbuf, grid}`), `gpu_compute::layer::{ATTN_FWD_LOG2E, attn_fwd_row_gpu, attn_fwd_gpu}`, `gpu_sim::cmdproc::attn_fwd_on_cpu`. Nimic de legat acum; nimic nou pentru placă.
 - PREDARE → cyber-universe: **răspunsul la os-340** (argmax pe placă, C-157 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-157_P2f_os-340_argmax.md`, commit `dc4edf0` (CI verde). Fără cod nou. (1) Cele +73 µs din rândul „argmax” = a doua citire a întregii arene (64 KiB, doar pentru 16 octeți) + verificarea `agrees()` în ceas — propunere: citiți doar cei 16 octeți și verificați după ceas. (2) Argmax fără copie (punctul 4 al notei C-155): placa ~1 980 µs, driverul ~680 µs, simbolul ~2 770 µs ≈ 360 simb/s (DEDUS). Ce e nou pentru placă: **nimic**.
 - **Sesiunea 148 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::attn_back` (`ATTN_BACK`, `ATTN_BACK_SHA256`, `REGISTERS`, `BLOCK`, `CBUF_BYTES`, `Mode`, `Args::{cbuf, grid, scale_for}`), `gpu_compute::layer::{AttnShape, attn_back_row_gpu, attn_back_col_gpu, attn_back_gpu}`, `gpu_compute::train::{attention_rows, attention_back_rows}`, `gpu_sim::cmdproc::attn_back_on_cpu`. Nimic de legat acum; nimic nou pentru placă.

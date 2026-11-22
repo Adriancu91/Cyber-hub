@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 04:13 · sarcina: C-160 p.4, încorporările (înainte + adunarea înapoi la tabela de simboluri), SIMULARE · estimat gata: 05:30
+liber · terminat 2026-11-22 04:30 · următorul pas: C-160 punctul 4, norma + tăierea gradientului, apoi AdamW (SIMULARE față de train); sau C-157 p.2 la un test nou pe placă
