@@ -1,16 +1,16 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-22 12:35 (ora României) · **de:** sesiunea Cyber-GPU 158 (cloud, fără placă) — **C-160 p.7, partea a treia: pasul de aur mic „mixt” (înmulțirile pe `mm_tc` + scalarea erorii), în SIMULARE**.
+**Actualizat:** 2026-11-22 13:35 (ora României) · **de:** sesiunea Cyber-GPU 159 (cloud, fără placă) — **C-157 p.2: `colsum` pe placă = modelul bit cu bit; C-160 p.7: `colsum` împărțit pe rânduri, în SIMULARE**.
 
 ## Acum
-- **Pasul de aur mic „mixt” gata în SIMULARE** (`cyber-gpu/docs/C-160_P7_PAS_MIXT.md`, cod `352e953`, toleranța scrisă înainte în `2f2321f`): toate cele 27 de înmulțiri ale pasului pe `mm_tc` (intrări f16), scalarea erorii S = 1 024, 74 / 76 de lansări pe pas, o trimitere pe pas. Față de PyTorch F32 pe 10 pași: **eroarea 3·10⁻⁵ (`sgd`) / 2·10⁻⁵ (`adamw_513`)**, toleranța scrisă 1·10⁻³ — PASS; gradientul 7,5·10⁻⁴, normele 1,4·10⁻⁵ — PASS.
-- Spus cinstit: **criteriul scris pentru greutățile AdamW a căzut** (2,4·10⁻² față de 1·10⁻³) — toată abaterea e în deplasările q/k ale atenției (gradientul k e 0 exact, AdamW amplifică zgomotul); restul greutăților 8,5·10⁻⁴, în toleranță. Și **predicția că fără scalare e mai rău a fost greșită** (raport 1,00 pe modelul mic). Greșelile plantate sunt prinse; la AdamW o greșeală de scară e aproape invizibilă → proba pe placă trebuie să ruleze și `sgd`. 791 PASS.
-- Pe placă nimic nou de la ciclul 10:06; os-349 (`colsum`) e GATA DE TEST.
+- **os-349 (`colsum` pe placă) = exact predicția** (`cyber-gpu/docs/C-157_P2_COMPARATII.md`): 3 778 / 3 778 elemente bit cu bit, aceleași ‰ pe fiecare set (24/19/447/197/319), toate cele 5 amprente ale ieșirii = modelul nostru. Primul program „înapoi” al antrenării dovedit pe placa reală; modelul lui pe procesor e placa.
+- Ce a arătat timpul (MĂSURAT ~0,6–0,7 µs pe rând, buffer în RAM-ul procesorului; DEDUS mai departe, `tools/buget-antrenare/colsum_timp.py`): un fir care adună singur toată coloana ar face cele 73 de `colsum` ale unui pas #513 în ~165–275 ms — mai mult decât tot pasul PyTorch (156 ms). Scris și în `C-160_P7_VITEZA_ESTIMARE.md` §6.
+- **`colsum_part` gata în SIMULARE** (`cyber-gpu/docs/C-160_P7_COLSUM_IMPARTIT.md`, cod `9afef53`, marginea scrisă înainte în `5d582a5`): sume parțiale pe bucăți de rânduri (Mesa NAK 25.0.7, `740f5d43…`, 20 de registre), a doua trecere = `colsum`-ul deja dovedit. T170: 48 % din margine, bit cu bit modelul, o bucată = `colsum`; la 6 144 × 768 abaterea de 10× mai mică. 796 PASS. Nepredat (pe placă după pasul de aur și `mm_tc`).
 
 ## Urmează
-1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate — `colsum` (3 778 / 3 778 bit cu bit), #651 pe `lipita-ln-32` (~293 simb/s estimat), pasul de aur mic.
+1. După fiecare test pe placă: comparația (C-157 punctul 2) — pasul de aur mic (sesiunea OS îl leagă acum), #651 pe `lipita-ln-32` (~293 simb/s estimat), `lipita-ln-32` implicită (os-350, amprenta de referință `0x6c8501f0`).
 2. C-160 punctul 7, partea a patra: proba `mm_tc` pentru placă (seturi fixe + timpul la forma qkv a lui #513), ca notă separată pentru OS — de legat după pasul de aur F32.
-3. C-157 punctele 5, 7, 8 când C-160 așteaptă.
+3. C-160 punctul 7: aceeași privire ca la `colsum` pentru `ln_back`, `attn_back`, AdamW (programe în care un fir face prea mult); apoi C-157 punctele 5, 7, 8.
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
 2. Dacă DA: noi deschidem GA106 în `Family::writes_allowed()` doar pe stick-ul de test (`gpu-scrie`) + DA la ecran, cu trezirea minimă ținută pornită pe durata lanțului; OS-ul leagă commit-ul; test pe laptop **un pas pe rând**: întâi `gpu i6`, apoi `gpu lant`.
@@ -79,7 +79,7 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: **`colsum` pe placă** (C-161 punctul 4) — Release separat, doar proba din nota `C-160_P6_primul-program-inapoi.md`; apoi #651 cu `--ln-32` (gata în os-346, cum e în REZULTAT-ul os-343); după `colsum`, pasul de aur mic (nota `C-160_P6b_pasul-de-aur-pe-placa.md`).
+- De la `cyber-universe`: **pasul de aur mic pe placă** (nota `C-160_P6b_pasul-de-aur-pe-placa.md`; `colsum` a trecut în os-349); #651 cu `--ln-32` (gata în os-346).
 - De la Kronos: fișa de antrenare (C-162) — viteza de antrenare din Windows/PyTorch, cifra de egalat la C-160 punctul 7.
 
 ## Blocaje / nevoie de Adrian
