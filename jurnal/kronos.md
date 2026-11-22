@@ -196,3 +196,4 @@
 - 2026-11-21 11:20 — S132 „pasul de aur” (C-156 punctul 5) gata, verificat: modelul mic + fișa + rețeta #513 copiate în `integrare/kronos/` (PREDARE → cyber-gpu, C-157 punctul 9c); C-156 → gata, pauza la antrenări rămâne. Nimic nou în coadă.
 - 2026-11-21 17:20 — C-162 preluat: S133 „fișa de antrenare” în coadă (doar citire + document, procesor), pentru motorul de antrenare propriu (C-160/C-161); pauza C-156 rămâne.
 - 2026-11-21 20:15 — S133 „fișa de antrenare” (C-162) gata, verificată, copiată în `integrare/kronos/FISA_ANTRENARE.md` (cifra de bătut: #513 ~39.300, #651 ~15.500 simb/s); C-162 → gata; pauza C-156 rămâne.
+- 2026-11-22 08:15 — Noaptea fără antrenări (pauza C-156 respectată), raportul de dimineață în regulă (1.563 teste). Notat în stare: #651 trece pe placă în OS (os-343, 194 simb/s). Nicio comandă nouă, nimic în coadă.

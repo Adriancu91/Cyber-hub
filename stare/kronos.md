@@ -1,12 +1,13 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-21 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-22 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **Pauză la antrenări (C-156, Adrian, 21 nov 08:01), în vigoare:** nicio antrenare pe workstation și nimic pe placa video, la nicio oră. **S131 nu pornește** — „în așteptare (pauză)”, cu pregătirile păstrate (date `conversatie_chat6`, configurarea `w2_mare_24zcj`, pre-înregistrarea). Executantul a verificat: nimic din scripturile lui nu pornește S131 singur.
 - **S132 „pasul de aur” gata** (21 nov 09:01, verificat de supraveghetor): 10 pași de antrenare PyTorch pe procesor, F32, repetabil; rețetele SGD și AdamW-ul liniei #513; modelul mic + fișa copiate în `integrare/kronos/`.
 - **S133 „fișa de antrenare” gata** (C-162, 21 nov 17:36, verificată): `integrare/kronos/FISA_ANTRENARE.md`.
-- Ultimul verdict de antrenare: S129 → rămâne #651. 1.563 teste trec. Chat-ul Kronos merge pe 8787 cu **#651**. Disc C: ~145 GB liberi.
+- Noaptea 21 → 22 nov: nimic pe placă, cum cere pauza (raportul de dimineață, 06:50). Ultimul verdict de antrenare: S129 → rămâne #651. 1.563 teste trec. Chat-ul Kronos merge pe 8787 cu **#651**. Disc C: ~136 GB liberi.
+- **#651 trece pe placă în OS** (os-343, 22 nov 07:36, centrul de comandă): 16/16 simboluri identice cu procesorul, 194,34 simb/s fără sferturi. Kronos n-a avut nimic de schimbat (KGR1-ul #651 neschimbat, SHA din `MODEL_651.md`).
 
 ## Urmează
 - Nimic în coadă. Antrenările se reiau doar după o decizie nouă a lui Adrian (în OS-ul nostru, când motorul de antrenare e gata).
