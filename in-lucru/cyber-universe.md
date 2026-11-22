@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 06:42 · sarcina: P6-130 gata (actualizeaza + reluarea sesiunii); CI os-346 în curs (os-345 oprit de limita de 60 min → CI în 3 părți) · estimat gata: 08:15
+liber · terminat 2026-11-22 08:13 · următorul pas: PREDARE-uri noi Cyber-GPU întâi; apoi C-159 pasul 3 ultima parte (fișiere în dosarele permise de pe stick) sau pasul 4 (ceasul de pază în modul viu); os-346 GATA DE TEST
