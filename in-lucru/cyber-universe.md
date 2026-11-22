@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 21:14 · sarcina: legarea PREDARE Cyber-GPU „proba atenției pe plăci” (P6-141, 44a4d16) — aștept CI-ul (rerulat: rularea a fost anulată la 23:16) · estimat gata: 00:25
+liber · terminat 2026-11-23 00:25 · următorul pas: PREDARE Cyber-GPU „ceasul termic” (1922eb2) și nota după os-355 (92da7af); apoi `T::AttnP` când e predat; apoi limita „o comandă de placă pe sesiune” din modul viu sau C-158 p.7 / p.9
