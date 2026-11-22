@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 01:41 · sarcina: confirmă os-340 (CI), apoi Fused32 pe Release propriu (C-155 p.4) · estimat gata: 02:40
+liber · terminat 2026-11-22 02:30 · următorul pas: verifică CI run 44966522777 (os-341 = cursa pe sferturi, P6-124) și confirmă GATA DE TEST; apoi argmax fără copie (după proba pe placă); C-161 p.3; P6-111
