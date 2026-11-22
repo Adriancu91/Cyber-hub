@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 00:12 · sarcina: C-157 p.7 (generarea fără drum la procesor, SIMULARE) · estimat gata: 01:15
+liber · terminat 2026-11-23 00:27 · următorul pas: C-157 p.2 la primul test nou pe placă; C-160 p.7 legarea lui attn_p când OS-ul adaugă T::AttnP; altfel C-157 p.7 partea a doua (scrierea lotului următor cât placa lucrează) sau p.8
