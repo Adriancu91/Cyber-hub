@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 20:12 · sarcina: rapoartele os-355 (20:06–20:08), apoi C-158 p.7/p.8 · estimat gata: 21:50
+liber · terminat 2026-11-22 21:10 · următorul pas: PREDARE-uri noi Cyber-GPU dacă apar; altfel ridicarea limitei „o comandă de placă pe sesiune” din modul viu (os-355 a mers) sau C-158 p.7 (discul propriu) / p.9 (starea pe telefon)
