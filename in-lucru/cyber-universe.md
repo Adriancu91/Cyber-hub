@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 14:47 · următorul pas: după testul os-351 (--pas-aur) pe placă: comparația/PREDARE-uri noi Cyber-GPU; altfel C-158 p.5 (mai multe teste într-o pornire) sau C-159 pasul 5 (oprit)
+ocupat · început 2026-11-22 15:11 · sarcina: legarea probei mm_tc (PREDARE Cyber-GPU C-160 p.7d) într-un Release pentru placă · estimat gata: 16:41
