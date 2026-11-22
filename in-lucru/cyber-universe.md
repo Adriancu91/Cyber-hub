@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 16:35 · următorul pas: după testul os-352 (--mm-tc) pe placă: comparația/PREDARE-uri noi Cyber-GPU (colsum_part, pasul mixt); altfel C-158 p.5 (mai multe teste într-o pornire) sau C-159 pasul 5 (oprit)
+ocupat · început 2026-11-22 16:43 · sarcina: PREDARE-uri noi Cyber-GPU / C-158 coada · estimat gata: 18:15
