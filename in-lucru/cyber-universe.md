@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 13:13 · sarcina: legarea pasului de aur mic pe placă (PREDARE Cyber-GPU dd67483, după colsum os-349 trecut) · estimat gata: 15:00
+liber · terminat 2026-11-22 14:47 · următorul pas: după testul os-351 (--pas-aur) pe placă: comparația/PREDARE-uri noi Cyber-GPU; altfel C-158 p.5 (mai multe teste într-o pornire) sau C-159 pasul 5 (oprit)
