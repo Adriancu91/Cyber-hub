@@ -1,8 +1,9 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-22 19:20 (ora României) · **de:** sesiunea Cyber-GPU 164 (cloud, fără placă) — **C-160 p.7: atenția înapoi pe plăci, modul 1 (SIMULARE)**.
+**Actualizat:** 2026-11-22 19:35 (ora României) · **de:** sesiunea Cyber-GPU 165 (cloud, fără placă) — **C-160 p.7: atenția înapoi pe plăci, modul 0 (SIMULARE)**.
 
 ## Acum
+- **C-160 p.7 — atenția înapoi „pe plăci”, modul 0 (rândurile lui dS) (`cyber-gpu/docs/C-160_P7_ATENTIA_INAPOI_MOD0_PE_PLACI.md`, planul și predicțiile înainte în `80968c3`):** program nou `attn_back_tile0` (Mesa NAK 25.0.7, SHA-256 `7107ecc6…06530a9a`, **50 de registre**, 32 KiB partajați): blocuri de 256 = 64 de rânduri, dP 4 × 4 pe fir din plăci dO / V partajate, lanțul Σ P·dP un fir pe rând, apoi fiecare fir își rescrie valorile; adrese rotite în memoria partajată. T175 (SIMULARE): **bit cu bit** egal cu `attn_back` modul 0 pe 10 forme (emulare literală a GLSL + lansarea; și semnul zerourilor), lanțul → modul 1 = dqkv-ul lui `attn_back`, greșeli plantate prinse; toate cele 4 predicții DA. Estimat ~18 ms pe bucată #513 față de ~34; **atenția întreagă pe plăci ~52–61 ms față de ~257** (DEDUS). 826 PASS, CI verde, commit `cfa9003`; nepredat.
 - **C-160 p.7 — atenția înapoi „pe plăci”, modul 1 (dQ / dK / dV) (`cyber-gpu/docs/C-160_P7_ATENTIA_INAPOI_PE_PLACI.md`, planul și predicțiile înainte în `3021024`):** program nou `attn_back_tile` (Mesa NAK 25.0.7, SHA-256 `1da80d3f…29a8d7e20`, 73 de registre, 32 KiB partajați): blocuri de 256 = 64 de poziții, 4 × 4 rezultate pe fir, același cbuf ca `attn_back`. T174 (SIMULARE): **bit cu bit** egal cu `attn_back` modul 1 pe 10 forme — verificat cu o emulare literală a codului GLSL, nu doar cu modelul; NaN deasupra diagonalei fără efect; greșeli plantate prinse. Predicția „≤ 64 registre” ratată (73), fără efect asupra ocupării (DEDUS). Estimat ~15–24 ms pe bucată #513 față de ~44 / ~133 (DEDUS). 820 PASS, CI verde, commit `29b7c63`; nepredat.
 - **C-160 p.7 — atenția înainte „pe plăci” (`cyber-gpu/docs/C-160_P7_ATENTIA_PE_PLACI.md`, planul și predicțiile înainte în `abd3307`):** program nou `attn_fwd_tile` (Mesa NAK 25.0.7, SHA-256 `4ef8dca3…eebe632`, 55 de registre, 37 KiB partajați): blocuri de 256 de fire = 64 de rânduri, fiecare fir 4 × 4 rezultate din plăci Q/K/P/V în memoria partajată. T173 (SIMULARE): rândurile i ≤ 15 **bit cu bit** ca `attn_fwd`, restul în 2⁻²⁰; față de oracolul f64 ≤ 14 % din marginea T160; lanțul → `attn_back` ≤ 2⁻¹⁴; greșeli plantate prinse. Estimat ~19 ms pe bucată #513 față de ~37 (blocuri de 128) / ~90 (azi) — DEDUS. Am aflat și că „un warp pe rând” **nu** câștigă (aceleași instrucțiuni). 815 PASS, CI verde, commit `d9a64d6`; nepredat.
 - **C-160 p.7 — cine e limitat de un fir (DEDUS, `cyber-gpu/docs/C-160_P7_FIR_LIMITAT.md`):** la #513, `ln_back`, AdamW și norma **nu** sunt (au destule fire, limitate de memorie, ~20 ms pe bucată împreună cu `xent`/`gelu`); **atenția este**: ~257 ms din ~290 pe bucată (PyTorch face toată bucata în 156 ms) — blocuri de 32 (GA104 ține doar 16 blocuri pe SM → 16 warp-uri din 48) și un fir pe rând.
@@ -15,7 +16,7 @@
 
 ## Urmează
 1. După fiecare test pe placă: comparația (C-157 punctul 2) — pasul de aur mic (os-351), proba `mm_tc` (os-352), #651 pe `lipita-ln-32`, dieta 2 A+B fără copie.
-2. C-160 punctul 7: atenția înapoi pe plăci, **modul 0** (rândurile lui dS; modul 1 e gata), plan și predicții scrise înainte.
+2. C-160 punctul 7: proba de viteză a atenției pe plăci pentru placă (`attn_fwd_tile` + `attn_back_tile0` + `attn_back_tile`: corectitudine + timp, ca `mm_tc_probe`), plan și predicții scrise înainte.
 3. Apoi C-157 punctele 5, 7, 8.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
