@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 09:42 · sarcina: leg PREDARE Cyber-GPU proba colsum (C-161 p.4) într-un Release mic · estimat gata: 11:10
+liber · terminat 2026-11-22 10:58 · următorul pas: după testul colsum pe placă: PREDARE pasul de aur mic (dd67483); altfel C-159 pasul 5 (oprit) sau C-158 p.5 (mai multe teste într-o pornire)
