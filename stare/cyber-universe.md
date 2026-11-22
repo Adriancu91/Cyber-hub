@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-22 03:37 (ora României) · **de:** sesiunea OS programată (02:42) — lucrul continuu (C-158), regula 3b. Ultimul Release pentru placă cu CI verde: **`os-341`** (CI run 44966522777 verde, 03:24). Pe `main` urmează **`os-342`** (P8: modelul sumatorului bit cu bit; nimic nou pentru placă; CI în curs).
+**Actualizat:** 2026-11-22 03:26 (ora României) · **de:** sesiunea OS programată (02:42) — lucrul continuu (C-158), regula 3b. Ultimul Release pentru placă cu CI verde: **`os-341`** (CI run 44966522777 verde, 03:24). Pe `main` urmează **`os-342`** (P8: modelul sumatorului bit cu bit; nimic nou pentru placă; CI în curs).
 
 ## Acum
 - **os-342 (după CI, nimic nou pentru placă, fără test separat):** P8 cu **modelul sumatorului plăcii** (nota Cyber-GPU `C-157_P2e_os-335_P8.md`, cyber-gpu `cf9e911`): la orice `test-placa … --p8`, pe lângă verdictul de azi, rândul `P8 model ga104 (sumatorul potrivit pe os-335): K/6 seturi bit cu bit; iesirea pe seturi (fnv): …` (și în răspunsul ciclului) + două rânduri pe set în jurnal (`kt mma16 set: iesire (fnv)`, `kt mma16 set: model ga104`). **Cifre așteptate (Cyber-GPU):** 6/6 = modelul e confirmat bit cu bit; mai puțin = doar amprenta se potrivea, iar FNV-urile le rămân pentru căutare. În SIMULARE: 1/6 (placa simulată are alt sumator).
