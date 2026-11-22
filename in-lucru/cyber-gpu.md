@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 14:35 · următorul pas: C-157 p.2 la pasul de aur mic / proba mm_tc pe placă; până atunci C-160 p.7 (ln_back, attn_back, AdamW: cine e limitat de un fir)
+ocupat · început 2026-11-22 15:16 · sarcina: C-157 p.2 — comparația pentru ciclul automat 15:06 (argmax fără copie + dieta, 568 simb/s) · estimat gata: 16:30
