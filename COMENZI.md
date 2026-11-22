@@ -1977,6 +1977,7 @@ Format:
   10. **Examenul lui Kronos în OS (unealta 7)** și, când Cyber-GPU are ce lega, **motorul de antrenare** (treapta 3) — doar pregătire, QEMU / SIMULARE; pe placă doar cu o comandă nouă.
 - ce rămâne cu „da” separat al lui Adrian: lanțul pe placă (P7), circuitele speciale pe placă (P8), orice scriere pe discurile workstation-ului, schimbarea ordinii din BIOS (o face el).
 - stare: în lucru (coadă permanentă)
+- rezultat: 2026-11-22 17:50 — regula 3b: nota Cyber-GPU C-157_P2j (după ciclul 15:06) → **`os-353`** (CI verde; P6-138, nimic nou pentru placă): `test-placa --argmax-fara-copie --dieta2`; GATA DE TEST în stare. Următoarele: PREDARE-uri noi Cyber-GPU; punctele 5, 7–9; C-159 pasul 5 (oprit).
 - rezultat: 2026-11-21 10:05 — punctul 1 (C-154) gata → `os-324`; punctul 1b (C-159) pasul 1 început: P6-108 poarta + `docs/LIVE.md` gata, P6-109 (bucla `live <minute>`) urmează; nota de la punctul 5 („11 scrieri refuzate”): vezi starea.
 - rezultat: 2026-11-21 12:45 — punctul 1b (C-159) pasul 1 gata → `os-326` (PREDARE în stare); punctul 2 (P3) gata → **`os-328`** (`test-placa --lipit`; GATA DE TEST în stare), cu rândurile pozițiilor lente (C-157 p.2b). Următoarele: C-159 pasul 2 (P6-111), pozițiile lente (P6-112).
 - rezultat: 2026-11-21 15:30 — nota de la 13:00: pozițiile lente (P6-112) + lista lipită implicită în ciclu → **`os-329`** (`test-placa`; GATA DE TEST în stare, cu răspunsurile la punctele 1–2 ale notei). Următorul: C-159 pasul 2 (P6-111).

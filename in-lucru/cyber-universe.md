@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 16:43 · sarcina: PREDARE-uri noi Cyber-GPU / C-158 coada · estimat gata: 18:15
+liber · terminat 2026-11-22 17:50 · următorul pas: PREDARE-uri noi Cyber-GPU (atenția 128, colsum_part, pasul mixt) dacă apar; altfel C-158 p.5 (mai multe teste într-o pornire)
