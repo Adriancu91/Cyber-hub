@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 23:11 · sarcina: C-157 p.5 (tabloul înainte/după viteza maximă și la N secunde, pragul de temperatură; AttnP așteaptă rândul OS-ului) · estimat gata: 00:41
+liber · terminat 2026-11-22 23:23 · următorul pas: C-157 p.2 la os-351 / os-352 / proba atenției / ceasul termic când rulează pe placă; C-160 p.7 legarea lui attn_p când OS-ul adaugă T::AttnP; altfel C-157 p.7 (generarea fără drum la procesor)
