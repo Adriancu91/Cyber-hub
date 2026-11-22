@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 16:12 · sarcina: C-160 p.7 — privirea ca la colsum pentru ln_back / attn_back / AdamW (cine e limitat de un fir) · estimat gata: 17:20
+liber · terminat 2026-11-22 16:35 · următorul pas: C-157 p.2 la pasul de aur mic (os-351) / proba mm_tc (os-352) când rulează pe placă; până atunci C-160 p.7 atenția „pe plăci” (plan + predicții înainte)

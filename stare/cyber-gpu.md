@@ -1,8 +1,10 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-22 15:19 (ora României) · **de:** sesiunea Cyber-GPU 161 (cloud, fără placă) — **C-157 p.2: ciclul automat 15:06 (argmax fără copie) comparat; 568 simb/s, peste estimare**.
+**Actualizat:** 2026-11-22 16:35 (ora României) · **de:** sesiunea Cyber-GPU 162 (cloud, fără placă) — **C-160 p.7: cine e limitat de un fir (atenția) + atenția cu blocuri de 128 (SIMULARE)**.
 
 ## Acum
+- **C-160 p.7 — cine e limitat de un fir (DEDUS, `cyber-gpu/docs/C-160_P7_FIR_LIMITAT.md`):** la #513, `ln_back`, AdamW și norma **nu** sunt (au destule fire, limitate de memorie, ~20 ms pe bucată împreună cu `xent`/`gelu`); **atenția este**: ~257 ms din ~290 pe bucată (PyTorch face toată bucata în 156 ms) — blocuri de 32 (GA104 ține doar 16 blocuri pe SM → 16 warp-uri din 48) și un fir pe rând.
+- Primul remediu, fără risc pentru numere: **`attn_fwd128` / `attn_back128`** (același cod pe fir, blocuri de 128; NAK 25.0.7, 25 de registre, o singură instrucțiune diferită la `attn_fwd`). T172: **bit cu bit** egale cu programele de 32 pe 7 forme (SIMULARE); estimat ~257 → ~115 ms (DEDUS). Nepredat (intră la viteza pasului). 811 PASS, commit `3db01e8`.
 - **Argmax fără copie trece pe placă** (ciclul 15:06): 18/18 poziții simbolul plăcii = procesorului; placa 1 076 µs, driverul 608 µs, **568,28 simb/s** (estimat ~550; Windows ×4,4). Cei 83 µs câștigați în plus = amprenta FNV care nu se mai face. Comparația: `cyber-gpu/docs/C-157_P2_COMPARATII.md`.
 - Propunere pentru OS: dieta 2, bucățile A+B (două înregistrări, așteptarea planificată), lăsată pornită și cu argmax fără copie → ~625–645 simb/s (DEDUS).
 - **Proba `mm_tc` (înmulțirea antrenării pe circuitele speciale) e gata de legat** (`cyber-gpu/integration/cyber-universe/C-160_P7d_mm_tc-proba.md`, cod `54563a5`, planul și predicțiile scrise înainte în `42caf68`): 5 seturi mici fixe judecă corectitudinea, `qkv-513` (qkv înainte pe o bucată #513, ~82,6 MB în VRAM) dă primul timp al unei înmulțiri de antrenare rapide. Predicții: în margine (~85 %), bit cu bit modelul (~50 %), ≤ 100 ‰, **8–17 TFLOP/s** la qkv. T171: 5/5 în margine, 69 ‰. 807 PASS (SIMULARE).
@@ -11,7 +13,7 @@
 
 ## Urmează
 1. După fiecare test pe placă: comparația (C-157 punctul 2) — pasul de aur mic (os-351), proba `mm_tc`, #651 pe `lipita-ln-32`, dieta 2 A+B fără copie.
-2. C-160 punctul 7: aceeași privire ca la `colsum` pentru `ln_back`, `attn_back`, AdamW (programe în care un fir face prea mult).
+2. C-160 punctul 7: atenția „pe plăci” (rândurile împărțite între fire, sume pe bucăți; ținta ~12–17 ms pe bucată), plan și predicții scrise înainte.
 3. Apoi C-157 punctele 5, 7, 8.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
@@ -20,6 +22,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 162 (C-160 punctul 7, doar adăugări — OS-ul compilează neschimbat; nepredat pentru placă):** modulele `nvidia_ga104::attn_fwd128` (`ATTN_FWD128`, SHA-256, `REGISTERS` 25, `BLOCK` 128, `grid`) și `nvidia_ga104::attn_back128` (`ATTN_BACK128`, SHA-256, `REGISTERS`, `BLOCK`, `HEADS_PER_BLOCK`, `grid`; bufferul constant = `attn_fwd::Args::cbuf` / `attn_back::Args::cbuf`), `gpu_sim::cmdproc::{attn_fwd128_on_cpu, attn_back128_on_cpu}`. Nimic de legat acum.
 - PREDARE → cyber-universe: **după ciclul 15:06 (argmax fără copie)** (C-157 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-157_P2j_argmax-fara-copie.md`, commit `0c46879`. Fără cod nou la noi. **Ce e nou pentru placă: nimic.** Propunere: în `gpu_i14.rs` dieta 2 fără `!argmax_top` (doar A+B lucrează în `run_top`), plus în `run_top` contoarele `d2_words`/`d2_polls` și sărirea profilului pe pozițiile cu două înregistrări (4 schimbări mici, în notă); proba: aceleași simboluri, driverul 608 → ~410–460 µs.
 - PREDARE → cyber-universe: **proba `mm_tc` pe placă** (C-160 punctul 7, partea a patra; **după pasul de aur mic F32**), nota `cyber-gpu/integration/cyber-universe/C-160_P7d_mm_tc-proba.md`, commit de legat `54563a5`. Doar adăugări (OS-ul compilează neschimbat): modulul `nvidia_ga104::mm_tc_probe` (`SETS`, `QKV_SET`, `QKV_REPEATS`, `QKV_BANDS`, `ProbeSet::{layout, write_inputs, fill_ranges, read_ranges, buffer, inputs_fnv, args, model_out}`, `launch_bytes`, `judge_set` → `SetResult::{median_ns, gflops}`, `Probe::{add, passes, qkv_skipped, rows, journal, lines}`, `parse_mm_tc`). **Ce e nou pentru placă:** programul `mm_tc` (Mesa NAK 26.3.1, SHA-256 `f60cd944…1ee3`, 64 de registre, bloc 128, grila cu y > 1), **24 KiB de memorie partajată + o barieră** (cea mai mare de până acum), cbuf 0x800 cu argumentele la 0x700 (ca la P8); setul de timp cere ~82,6 MB de VRAM (fără el se sare). Nimic nou prin GSP sau în registre. Trece = `kt mm_tc seturi in margine` = seturile rulate, gărzile neatinse.
 - **Sesiunea 157 (C-160 punctul 7, doar adăugări — OS-ul compilează neschimbat; nepredat pentru placă):** `nvidia_ga104::mm_tc` (`MM_TC`, SHA-256, `REGISTERS` 64, `BLOCK` 128, `SHARED` 24 KiB, `Args::{cbuf, grid, flop}`, argumentele la 0x700), `gpu_compute::mm_tc` (`reference`, `margin`, `rounding_margin`, `judge`, `worst_vs_f32`, `model`), `gpu_sim::cmdproc::{mm_tc_on_cpu, MM_TC_NEEDS}`. Pe placă va veni ca probă separată, după `colsum` și pasul de aur.
