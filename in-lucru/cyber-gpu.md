@@ -1,1 +1,1 @@
-liber · terminat 2026-11-22 10:21 · următorul pas: C-157 p.2 la #651 pe lipita-ln-32, colsum și pasul de aur pe placă; până atunci C-160 p.7 partea a doua (programul mm_tc pe circuitele speciale, SIMULARE)
+ocupat · început 2026-11-22 11:11 · sarcina: C-160 p.7 partea a doua (mm_tc pe circuitele speciale, SIMULARE) · estimat gata: 12:10
