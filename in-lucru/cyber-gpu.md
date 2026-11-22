@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 06:14 · sarcina: C-160 p.4 (norma + tăierea gradientului, apoi AdamW, SIMULARE) · estimat gata: 07:45
+liber · terminat 2026-11-22 06:28 · următorul pas: C-160 punctul 5, pasul de aur mic cap-coadă pe placa simulată (toate cele 10 programe); sau C-157 p.2 la un test nou pe placă

@@ -1,16 +1,16 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-22 05:50 (ora României) · **de:** sesiunea Cyber-GPU 151 (cloud, fără placă) — **C-157 p.2: comparația după cursa pe sferturi (ciclul automat 05:06) + lista aleasă `lipita-ln-32`**. 741 PASS. Lucru continuu (C-157 + C-160).
+**Actualizat:** 2026-11-22 06:35 (ora României) · **de:** sesiunea Cyber-GPU 152 (cloud, fără placă) — **C-160 punctul 4, programele 9 și 10: `gnorm` (norma + tăierea gradientului) și `opt_step` (SGD / AdamW)** — acum toate cele 10 programe ale pasului de antrenare există în SIMULARE. 756 PASS. Lucru continuu (C-157 + C-160).
 
 ## Acum
-- **Cursa pe sferturi a trecut pe placă (MĂSURAT, ciclul automat 05:06):** 5 feluri pe sferturi (fc +538 ‰, proj +648, qkv +539, logit +527, out +510), 16/16 simboluri identice, față de lista lipită max |d| 1,14e-5; placa 2 419 → 1 516 µs pe simbol. Diferit de estimare: proj a câștigat cel mai mult → frâna rămasă = rândurile scurte de 768 (DEDUS). Comparația: `cyber-gpu/docs/C-157_P2_COMPARATII.md`.
-- **Lista aleasă: `lipita-ln-32`** (`TokenList::FusedLn32` = LayerNorm nou + toate înmulțirile pe sferturi), T162 în SIMULARE; estimat placa ~1 070 µs, **~510 simb/s** cu driverul de azi, ~550 cu argmax fără copie (DEDUS). Nimic nou pentru placă.
-- C-160 p.4: programele 1, 7, 4, 2, 3, 5, 6 și 8 gata în SIMULARE, nepredate. Rămân: norma + tăierea gradientului, AdamW. P8: modelul `GA104_OS335` așteaptă confirmarea bit cu bit.
+- **C-160 punctul 4 terminat în SIMULARE:** ultimele două programe — `gnorm` (norma totală a gradientului pe toți tensorii + factorul de tăiere, fără `atomic`; pe gradientul PyTorch al pasului 1: aceeași normă ca PyTorch) și `opt_step` (pasul SGD / AdamW pe toți parametrii; SGD și m, v bit cu bit, greutățile AdamW ≤ 71 % din marginea scrisă). Pasul de aur mic cu norma + tăierea + optimizatorul pe placa simulată, 10 pași, față de PyTorch: `sgd` 2,4e-7 (tol. 1e-6), `adamw_513` 1,1e-5 (tol. 1e-4). Nota `cyber-gpu/docs/C-160_P4_OPT.md`, commit `cff94b5`.
+- Toate cele 10 programe (1 înmulțirea, 2/4 sumele și LayerNorm înapoi, 3 LayerNorm înainte, 5 GELU, 6 atenția, 7 eroarea, 8 încorporările, 9 norma, 10 AdamW): în SIMULARE, **nimic din ele pe placă încă**. P8: modelul `GA104_OS335` așteaptă confirmarea bit cu bit.
+- Ultimul test pe placă (ciclul 05:06, cursa pe sferturi) e comparat (sesiunea 151); lista `lipita-ln-32` predată.
 
 ## Urmează
 1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate.
-2. **C-160 punctul 4, mai departe:** norma + tăierea gradientului, apoi pasul AdamW — câte unul, față de `train`.
-3. C-160 punctul 5: pasul de aur mic cap-coadă pe placa simulată (ambele rețete).
+2. **C-160 punctul 5:** pasul de aur mic cap-coadă pe placa simulată — toate cele 10 programe legate (ambele rețete), apoi `pas_de_aur_513` cât permite simularea.
+3. C-160 punctul 6: primul program „înapoi” predat OS-ului (candidați fără MUFU: `ln_back`, `colsum`, `emb_back`).
 4. P7 (lanțul) în trepte, la rândul lui; C-157 punctele 5, 7, 8 când C-160 așteaptă.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
@@ -19,6 +19,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- **Sesiunea 152 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulele noi `nvidia_ga104::gnorm` și `nvidia_ga104::opt_step` (`GNORM` / `OPT_STEP`, SHA-256, `REGISTERS`, `BLOCK`, `CBUF_BYTES`, `gnorm::SHARED`, `Mode`, `Args::{cbuf, grid}`), `gpu_compute::layer::{GNORM_SQUARE, GNORM_FINISH, gnorm_block_gpu, gnorm_finish_gpu, grad_norm_gpu, OptScalars, opt_step_gpu}`, `gpu_compute::train::{AdamW::scalars, AdamScalars}` (`AdamW::step` le folosește — aceleași numere, `antrenare proba` din OS neschimbată), `gpu_sim::cmdproc::{GNORM_NEEDS, gnorm_on_cpu, opt_step_on_cpu}`. Nimic de legat acum; nimic nou pentru placă. Pentru motorul din OS (C-161 p.3): driverul trebuie să oprească pasul dacă `gnorm` dă o normă care nu e finită.
 - PREDARE → cyber-universe: **lista `lipita-ln-32`** (C-157 punctul 2, după cursa pe sferturi de la 05:06), nota `cyber-gpu/integration/cyber-universe/C-157_P2g_sferturi.md`, commit `feb0819`. Doar adăugări (OS-ul compilează neschimbat): `kronos_diag::TokenList::FusedLn32` (`lipita-ln-32`), `kronos_layer::PROGRAMS_FUSED_LN32`, `kronos_model::token_launches_fused_ln32`. **Ce e nou pentru placă: nimic** — `q8_fused32`, `q8_matvec32` și `layernorm256` au rulat toate pe placă; nou e doar că merg în aceeași listă. Proba propusă: același text cu `lipita-ln`, apoi `lipita-ln-32`; aceleași simboluri, abaterea < 1e-4; dacă trece de două ori → lista implicită.
 - **Sesiunea 150 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulele noi `nvidia_ga104::emb_fwd` și `nvidia_ga104::emb_back` (`EMB_FWD` / `EMB_BACK`, SHA-256, `REGISTERS`, `BLOCK`, `CBUF_BYTES`, `Args::{cbuf, grid}`, `emb_back::Mode`), `gpu_compute::layer::{emb_fwd_gpu, EmbSegments, emb_back_seg_gpu, emb_back_gpu}`, `gpu_compute::train::{embed_rows, embed_back_rows, embed_grad_inputs}` (liniile din `loss_and_grad` mutate în funcții — `antrenare proba` din OS dă aceleași numere, T151 neschimbat), `gpu_sim::cmdproc::{emb_fwd_on_cpu, emb_back_on_cpu}`. Nimic de legat acum; nimic nou pentru placă. Pentru C-160 p.6: `emb_back` e alt candidat bun de „primul program înapoi pe placă” (doar adunări, bit cu bit cu modelul).
 - **Sesiunea 149 (C-160 punctul 4, doar adăugări — OS-ul compilează neschimbat):** modulul nou `nvidia_ga104::attn_fwd` (`ATTN_FWD`, `ATTN_FWD_SHA256`, `REGISTERS`, `BLOCK`, `CBUF_BYTES`, `Args::{cbuf, grid}`), `gpu_compute::layer::{ATTN_FWD_LOG2E, attn_fwd_row_gpu, attn_fwd_gpu}`, `gpu_sim::cmdproc::attn_fwd_on_cpu`. Nimic de legat acum; nimic nou pentru placă.
