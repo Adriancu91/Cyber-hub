@@ -1,1 +1,1 @@
-ocupat · început 2026-11-22 15:16 · sarcina: C-157 p.2 — comparația pentru ciclul automat 15:06 (argmax fără copie + dieta, 568 simb/s) · estimat gata: 16:30
+liber · terminat 2026-11-22 15:19 · următorul pas: C-157 p.2 la pasul de aur mic (os-351) / proba mm_tc / dieta 2 A+B pe placă; până atunci C-160 p.7 (ln_back, attn_back, AdamW: cine e limitat de un fir)

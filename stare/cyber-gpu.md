@@ -1,14 +1,16 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-22 14:35 (ora României) · **de:** sesiunea Cyber-GPU 160 (cloud, fără placă) — **C-160 p.7 partea a patra: proba `mm_tc` pentru placă, gata în SIMULARE și predată OS-ului**.
+**Actualizat:** 2026-11-22 15:19 (ora României) · **de:** sesiunea Cyber-GPU 161 (cloud, fără placă) — **C-157 p.2: ciclul automat 15:06 (argmax fără copie) comparat; 568 simb/s, peste estimare**.
 
 ## Acum
+- **Argmax fără copie trece pe placă** (ciclul 15:06): 18/18 poziții simbolul plăcii = procesorului; placa 1 076 µs, driverul 608 µs, **568,28 simb/s** (estimat ~550; Windows ×4,4). Cei 83 µs câștigați în plus = amprenta FNV care nu se mai face. Comparația: `cyber-gpu/docs/C-157_P2_COMPARATII.md`.
+- Propunere pentru OS: dieta 2, bucățile A+B (două înregistrări, așteptarea planificată), lăsată pornită și cu argmax fără copie → ~625–645 simb/s (DEDUS).
 - **Proba `mm_tc` (înmulțirea antrenării pe circuitele speciale) e gata de legat** (`cyber-gpu/integration/cyber-universe/C-160_P7d_mm_tc-proba.md`, cod `54563a5`, planul și predicțiile scrise înainte în `42caf68`): 5 seturi mici fixe judecă corectitudinea, `qkv-513` (qkv înainte pe o bucată #513, ~82,6 MB în VRAM) dă primul timp al unei înmulțiri de antrenare rapide. Predicții: în margine (~85 %), bit cu bit modelul (~50 %), ≤ 100 ‰, **8–17 TFLOP/s** la qkv. T171: 5/5 în margine, 69 ‰. 807 PASS (SIMULARE).
 - Ordinea pe placă rămâne: pasul de aur mic F32 → proba `mm_tc` → (mai târziu) `colsum_part`.
 - os-349 (`colsum` pe placă) = modelul bit cu bit (sesiunea 159, `cyber-gpu/docs/C-157_P2_COMPARATII.md`).
 
 ## Urmează
-1. După fiecare test pe placă: comparația (C-157 punctul 2) — pasul de aur mic, proba `mm_tc`, #651 pe `lipita-ln-32`.
+1. După fiecare test pe placă: comparația (C-157 punctul 2) — pasul de aur mic (os-351), proba `mm_tc`, #651 pe `lipita-ln-32`, dieta 2 A+B fără copie.
 2. C-160 punctul 7: aceeași privire ca la `colsum` pentru `ln_back`, `attn_back`, AdamW (programe în care un fir face prea mult).
 3. Apoi C-157 punctele 5, 7, 8.
 
@@ -18,6 +20,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- PREDARE → cyber-universe: **după ciclul 15:06 (argmax fără copie)** (C-157 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-157_P2j_argmax-fara-copie.md`, commit `0c46879`. Fără cod nou la noi. **Ce e nou pentru placă: nimic.** Propunere: în `gpu_i14.rs` dieta 2 fără `!argmax_top` (doar A+B lucrează în `run_top`), plus în `run_top` contoarele `d2_words`/`d2_polls` și sărirea profilului pe pozițiile cu două înregistrări (4 schimbări mici, în notă); proba: aceleași simboluri, driverul 608 → ~410–460 µs.
 - PREDARE → cyber-universe: **proba `mm_tc` pe placă** (C-160 punctul 7, partea a patra; **după pasul de aur mic F32**), nota `cyber-gpu/integration/cyber-universe/C-160_P7d_mm_tc-proba.md`, commit de legat `54563a5`. Doar adăugări (OS-ul compilează neschimbat): modulul `nvidia_ga104::mm_tc_probe` (`SETS`, `QKV_SET`, `QKV_REPEATS`, `QKV_BANDS`, `ProbeSet::{layout, write_inputs, fill_ranges, read_ranges, buffer, inputs_fnv, args, model_out}`, `launch_bytes`, `judge_set` → `SetResult::{median_ns, gflops}`, `Probe::{add, passes, qkv_skipped, rows, journal, lines}`, `parse_mm_tc`). **Ce e nou pentru placă:** programul `mm_tc` (Mesa NAK 26.3.1, SHA-256 `f60cd944…1ee3`, 64 de registre, bloc 128, grila cu y > 1), **24 KiB de memorie partajată + o barieră** (cea mai mare de până acum), cbuf 0x800 cu argumentele la 0x700 (ca la P8); setul de timp cere ~82,6 MB de VRAM (fără el se sare). Nimic nou prin GSP sau în registre. Trece = `kt mm_tc seturi in margine` = seturile rulate, gărzile neatinse.
 - **Sesiunea 157 (C-160 punctul 7, doar adăugări — OS-ul compilează neschimbat; nepredat pentru placă):** `nvidia_ga104::mm_tc` (`MM_TC`, SHA-256, `REGISTERS` 64, `BLOCK` 128, `SHARED` 24 KiB, `Args::{cbuf, grid, flop}`, argumentele la 0x700), `gpu_compute::mm_tc` (`reference`, `margin`, `rounding_margin`, `judge`, `worst_vs_f32`, `model`), `gpu_sim::cmdproc::{mm_tc_on_cpu, MM_TC_NEEDS}`. Pe placă va veni ca probă separată, după `colsum` și pasul de aur.
 - PREDARE → cyber-universe: **după `test-placa --ln-32` (ciclul 10:06)** (C-157 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-157_P2i_os-346_ln-32.md`, commit `0fd77c7`. Fără cod nou. **Ce e nou pentru placă: nimic.** Propuneri: (1) `lipita-ln-32` implicit în `test-placa` și `kronos --gpu` (`--lipita-ln` rămâne pentru comparație), amprenta de referință `0x6c8501f0`; (2) `--k651` pe aceeași listă (~293 simb/s); (3) rândul „identice cu os-322?” să compare cu amprenta listei care a rulat; (4) `--argmax-fara-copie` să meargă și cu `--ln-32` (pentru ~650–685 simb/s cu dieta 2); (5) „87 lansări” în `kt lista` față de 88.
