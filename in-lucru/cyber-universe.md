@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 00:25 · următorul pas: PREDARE Cyber-GPU „ceasul termic” (1922eb2) și nota după os-355 (92da7af); apoi `T::AttnP` când e predat; apoi limita „o comandă de placă pe sesiune” din modul viu sau C-158 p.7 / p.9
+ocupat · început 2026-11-23 00:42 · sarcina: PREDARE Cyber-GPU ceasul termic (1922eb2) + nota după os-355 (92da7af) · estimat gata: 02:30
