@@ -1,15 +1,15 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-22 09:05 (ora României) · **de:** sesiunea Cyber-GPU 154 (cloud, fără placă) — **C-157 p.2: comparația după os-343 (#651 pe placă) + C-160 punctul 6: primul program „înapoi” (`colsum`) predat OS-ului** (SIMULARE).
+**Actualizat:** 2026-11-22 09:35 (ora României) · **de:** sesiunea Cyber-GPU 155 (cloud, fără placă) — **C-160 punctul 6, partea a doua: pasul de aur mic întreg pe placa reală, predat OS-ului ca listă** (SIMULARE; de legat după ce `colsum` trece).
 
 ## Acum
-- **os-343 comparat (C-157 p.2):** #651 pe placă 5 161 µs față de 5,1–5,6 ms estimat (194,34 simb/s); fiecare fel de lansare durează cât la #513 → placa scalează exact cu straturile; driverul ~5,9 µs pe lansare + ~300 fix (DEDUS). Estimare pentru #651 pe sferturi (`--ln-32`): placa ~2 030 µs, **~293 simb/s**; peste ~3,8 ms ar însemna că sferturile nu scalează. Nota `cyber-gpu/integration/cyber-universe/C-157_P2h_os-343_k651.md`, nimic nou pe placă.
-- **C-160 punctul 6, prima parte, predată:** proba `colsum` (sumele pe coloane: gradientul deplasării + dγ/dβ ale LayerNorm-ului) pentru placa reală — 5 seturi fixe, gărzi NaN, judecată în marginea scrisă în T155; fără MUFU / memorie partajată / `atomic` → predicția **3 778 / 3 778 elemente bit cu bit** cu modelul. T166 în SIMULARE: 5/5, 3 778 exacte, cel mai rău 447 ‰, greșelile plantate prinse. 768 PASS, CI verde.
+- **C-160 punctul 6, partea a doua, predată:** lista întreagă a pasului de aur mic (75 de lansări la `adamw_513`, 73 la `sgd`) e acum în bibliotecă, gata de trimis de OS — `nvidia_ga104::train_step`: cele 13 programe cu SHA-256, arena plăcii (~2,8 MiB) și ce scrie procesorul o singură dată, lansările unui pas (fiecare cu eticheta a ce calculează), zona de control pentru **o singură trimitere pe pas**, verdictul față de PyTorch în toleranțele hub-ului (rândurile `kt pas-aur …`). T165 rulează acum exact lista bibliotecii, un pas = o trimitere: aceleași numere ca PyTorch (`sgd` cel mai rău 239 ‰, `adamw_513` 128 ‰ din toleranță); greșelile plantate prinse. 773 PASS.
+- Niciun test nou pe placă de la os-343 (comparat în sesiunea 154).
 
 ## Urmează
-1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate — întâi #651 pe sferturi, apoi `colsum`.
-2. **C-160 punctul 6, partea a doua:** pasul de aur mic întreg pe placa reală = lista de 75 de lansări (nota pentru OS: ce e nou, fișierele, verdictul) — după ce `colsum` trece.
-3. C-160 punctul 7 (pregătire: estimarea înmulțirilor antrenării pe circuitele speciale); P7 în trepte; C-157 punctele 5, 7, 8 când C-160 așteaptă.
+1. După fiecare test pe placă: comparația (C-157 punctul 2), cu întâietate — întâi #651 pe sferturi (~293 simb/s estimat), apoi `colsum` (3 778 / 3 778 bit cu bit), apoi pasul de aur mic.
+2. C-160 punctul 7 (pregătire: estimarea înmulțirilor antrenării pe circuitele speciale, lot mai mare); dacă OS-ul o cere, probe pe rând pentru celelalte programe „înapoi”.
+3. P7 în trepte; C-157 punctele 5, 7, 8 când C-160 așteaptă.
 
 ## Lista pentru laptop (C-116 pasul 3 — DOAR după DA-ul lui Adrian; detalii `cyber-gpu/docs/GA106_LAPTOP.md` §7)
 1. Adrian: **DA sau NU** pentru primele scrieri în registrele laptopului (I6 = FWSEC-FRTS, apoi I7 Booter, I8 GSP-RM; același firmware 570.144 de pe stick, `ga106/gsp -> ga102/gsp`).
@@ -17,6 +17,7 @@
 3. Limita de memorie pe laptop: sub ~5,5 GB (pasul 4), când lanțul ajunge la alocări (I9+).
 
 ## Ce oferă proiectul celorlalți
+- PREDARE → cyber-universe: **pasul de aur mic întreg pe placa reală** (C-160 punctul 6, partea a doua, pentru C-161 punctul 4; **după ce `colsum` trece pe placă**), nota `cyber-gpu/integration/cyber-universe/C-160_P6b_pasul-de-aur-pe-placa.md`, commit de legat `dd67483` (codul: `29c1076`). Doar adăugări (OS-ul compilează neschimbat): modulul `nvidia_ga104::train_step` (`Prog`, `PROGRAMS`, `check_programs`, `Plan::{new, bytes, uploads, step, launches_per_step, unflat, t, li}`, `Launch::qmd`, `pack`, `SLOT`, `Outcome`, `Refs`, `judge` → `Verdict::{passes, rows, journal, lines}`, `deviation`, `parse_rows`, `f32s`). **Ce e nou pentru placă: 11 programe care n-au rulat niciodată** (`mm_train`, `xent`, `ln_fwd`, `ln_back`, `gelu_tr`, `attn_fwd`, `attn_back`, `emb_fwd`, `emb_back`, `gnorm`, `opt_step`; Mesa NAK 25.0.7, SHA-256 în `Prog::sha256()`, ≤ 25 registre) + `colsum` (din proba de dinainte) + `vadd` (din generare); o trimitere de 73 / 75 de lansări pe pas cu `encode_sequence_fresh`; o arenă de ~2,8 MiB; nicio scriere nouă în registre, nimic nou prin GSP. Datele: `integrare/kronos/pas_de_aur_mic/` (ca la `antrenare proba`). Trece = `kt pas-aur verdict (1 aceleasi numere)` = 1 la `sgd` și la `adamw_513` (toate cifrele ≤ 1000 ‰ din toleranța hub-ului). E un test mare — dacă vreți întâi programele pe rând, facem probe ca la `colsum`.
 - PREDARE → cyber-universe: **primul program „înapoi” al antrenării pe placă — proba `colsum`** (C-160 punctul 6, pentru C-161 punctul 4), nota `cyber-gpu/integration/cyber-universe/C-160_P6_primul-program-inapoi.md`, commit de legat `3b4ca77`. Doar adăugări (OS-ul compilează neschimbat): modulul `nvidia_ga104::colsum_probe` (`SETS`, `BUF_BYTES`, `GUARD`, `FILL`, `CBUF_SIZE`, `ProbeSet::{layout, inputs, buffer, inputs_fnv, args, out_range, model_out}`, `launch_bytes`, `judge_set` → `SetResult`, `Verdict`, `Probe::{add, passes, rows, journal, lines}`, `parse_colsum`, `fnv`) și `gpu_compute::train::colsum_margin`. **Ce e nou pentru placă: exact programul `colsum`** (Mesa NAK 25.0.7, SHA-256 `7a0fa2bd…a47fb10`, 19 registre, blocuri de 256, 1–3 blocuri) care citește și scrie într-un buffer de 64 KiB; cbuf 0x100 ca azi; nimic nou prin GSP sau în registre. Trece = 5/5 seturi în margine, gărzi neatinse; predicția: 3 778 / 3 778 bit cu bit (amprentele ieșirii în notă). Rânduri `kt colsum …`.
 - PREDARE → cyber-universe: **după os-343 (#651 pe placă)** (C-157 punctul 2), nota `cyber-gpu/integration/cyber-universe/C-157_P2h_os-343_k651.md`, commit `89593ac`. Fără cod nou, nimic nou pe placă: ce aștept la #651 + `--ln-32` (~2 030 µs placa, ~293 simb/s; prag ~3,8 ms) și două mărunțișuri ale OS-ului (citirea modelului 29 s; rândul final „placa ?”).
 - **Sesiunea 153 (C-160 punctul 5, doar un test nou — crate-urile neschimbate, OS-ul compilează neschimbat):** `crates/nvidia-ga104/tests/sim_c160_p5_golden.rs` = **lista completă a unui pas de antrenare** (ordinea lansărilor, argumentele fiecăreia, ce buffere păstrează înainte pentru înapoi, zeroizarea o dată a gradienților, oprirea la normă nefinită) — e rețeta pe care motorul din OS (C-161 p.3) o poate urma când leagă programele. Nimic nou pentru placă acum.
@@ -76,7 +77,7 @@
 - `cyber-universe`: crate-urile no_std `gpu-core`, `gpu-pci`, `nvidia-ga104`, `gpu-compute`, `gpu-sim` (teste). `kronos` / K6-CPU: operatorii pe procesor, neschimbați.
 
 ## De ce are nevoie de la ceilalți
-- De la `cyber-universe`: **`colsum` pe placă** (C-161 punctul 4) — Release separat, doar proba din nota `C-160_P6_primul-program-inapoi.md`; apoi #651 cu `--ln-32` (gata în os-346, cum e în REZULTAT-ul os-343).
+- De la `cyber-universe`: **`colsum` pe placă** (C-161 punctul 4) — Release separat, doar proba din nota `C-160_P6_primul-program-inapoi.md`; apoi #651 cu `--ln-32` (gata în os-346, cum e în REZULTAT-ul os-343); după `colsum`, pasul de aur mic (nota `C-160_P6b_pasul-de-aur-pe-placa.md`).
 - De la Kronos: fișa de antrenare (C-162) — viteza de antrenare din Windows/PyTorch, cifra de egalat la C-160 punctul 7.
 
 ## Blocaje / nevoie de Adrian
