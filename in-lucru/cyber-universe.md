@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 16:56 · următorul pas: PREDARE Cyber-GPU rămase, câte una pe Release (AdamW m, v în RAM `ab9b537` după ce os-376 trece pe placă; lotul următor `92e0358`); --placa-sim cu vocabularul lui Kronos
+ocupat · început 2026-11-23 17:11 · sarcina: C-158/C-161 p.5 — antrenare mini --placa-sim cu vocabularul lui Kronos (nicio PREDARE nouă de legat: AdamW-RAM așteaptă os-376, lotul următor așteaptă lot pe o sonerie) · estimat gata: 19:15
