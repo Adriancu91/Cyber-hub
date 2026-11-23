@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 19:29 · următorul pas: comparația probei gen 4 (`attn_back_tile_4`) când rulează pe placă; până atunci C-157 p.8 (fișa de model și pachetele de calcul: documentul de proiectare, plan întâi)
+ocupat · început 2026-11-23 20:13 · sarcina: decizia 23 nov 20:11 — cauza vitezei PCIe (legătura plăcii și a slotului, LnkCap/LnkSta) și pașii de reparare · estimat gata: 22:00
