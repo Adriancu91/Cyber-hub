@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 02:43 · următorul pas: confirmă CI P6-145 → Release os-361 + GATA DE TEST (`test-placa --argmax-fara-copie --dieta2 --lot`); apoi T::AttnP când e adăugat; C-158 p.7 (discul propriu)
+ocupat · început 2026-11-23 03:11 · sarcina: Release os-361 (P6-145) + C-158 · estimat gata: 04:40
