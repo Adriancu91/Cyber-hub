@@ -1,8 +1,11 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-23 11:45 (ora României) · **de:** sesiunea OS programată (11:10) — lucrul continuu (C-158). CI P6-157 verde → **`os-372`** (nimic nou pentru placă). **P6-158: pasul lui `antrenare mini` făcut de lista plăcii, pe placa simulată** → push pe `main`, CI în curs → Release următor (nimic nou pentru placă). Nicio PREDARE nouă Cyber-GPU.
+**Actualizat:** 2026-11-23 15:30 (ora României) · **de:** sesiunea OS programată (12:11) — lucrul continuu (C-158). CI P6-158 verde → **`os-373`**; **P6-159** (`antrenare mini --placa-sim --atentie placi|placi-p`) → **`os-374`** (amândouă: nimic nou pentru placă). **PREDARE Cyber-GPU `d885efd` (atenția `_3`) legată → P6-160 → Release pentru placă (GATA DE TEST mai jos).**
 
 ## Acum
+- __GATA__
+- **os-374 (CI verde 23 nov ~14:05; nimic nou pentru placă, fără GATA DE TEST):** P6-159 — `antrenare mini … --placa-sim --atentie simpla|p|placi|placi-p`: pasul de antrenare al plăcii simulate și cu atenția pe plăci (`Plan::new_tiles`, 75 de lansări, 14 programe) și cu un singur P refăcut (`Plan::new_p_only_tiles`, 76 de lansări, 15 programe); QEMU: pierderea identică cu oracolul, greutățile la cel mult 4,0e-5 → `ACELEASI NUMERE`. **Pentru Cyber-GPU:** `new_tiles` / `new_p_only_tiles` merg cu starea AdamW a rulării și loturi noi la fiecare pas — nicio schimbare cerută.
+- os-373 (CI verde 23 nov ~12:25; P6-158 `antrenare mini --placa-sim`, aranjarea simplă; nimic nou pentru placă).
 - **P6-158 (C-161 p.5 / C-158 p.10), în `main`, CI în curs; nimic nou pentru placa reală:** `antrenare mini … --placa-sim [--fara-oracol]` (doar în build-ul de simulare) — pasul întreg de antrenare îl face **lista de lansări a plăcii** (`train_step::Plan::step`, cele 13 programe ale pasului de aur mic care au rulat pe placă în os-351; 75 de lansări, o trimitere pe pas, cu starea AdamW a rulării urcată în arenă) pe placa simulată; oracolul de pe procesor merge alături pe aceleași loturi. QEMU (vocabular 256, lot 4 × 32): **pierderea identică cu oracolul la toți cei 4 pași** (5,5624 → 5,3784), greutățile la cel mult 6,1e-5 relativ → `ACELEASI NUMERE`; oracolul reia din punctul de control al plăcii. **Pentru Cyber-GPU:** lista voastră (`Plan::new`) merge și cu altă rată de învățare / alt lot la fiecare pas și cu `m`, `v` nenuli la urcare — nicio schimbare cerută.
 - os-372 (CI verde 23 nov ~11:35; P6-157 `antrenare mini`, prima antrenare întreagă în OS pe procesor; **nimic nou pentru placă**, fără GATA DE TEST).
 - **P6-157 (C-161 p.3 + p.5), în `main`, CI în curs; nimic nou pentru placă:** `antrenare mini [dosar] [--pasi N] [--lot B T] [--vocabular V] [--samanta s] [--lr x] [--salveaza <cale>] [--din <cale>]` — **prima antrenare întreagă în OS-ul nostru**: datele lui Kronos verificate ca la pornirea lui → loturile exact ca Kronos → pasul întreg al oracolului Cyber-GPU pe procesor (AdamW, tăiere 1,0) → punct de control `CYBKCK01` cu greutățile și starea AdamW → reluare (`--din`, generatorul orei următoare ca Kronos). Modelul mic (2 straturi, E 64) pe vocabularul lui Kronos. În QEMU: cu 16 384 de simboluri pornirea 9,7026 (= ln 16 384) dar ~50 s pe pas; proba pe 256 de simboluri: pierderea **5,56 → 4,24 (pasul 20) → 3,95 (pasul 30, după reluare)**.
@@ -37,7 +40,7 @@
 - P8 a trecut pe placă (os-335, nota 22:40) — mulțumesc.
 
 ## Urmează
-- CI-ul push-ului 11:41 (P6-158) → Release următor (nimic pentru placă). PREDARE-urile noi Cyber-GPU (câte una pe Release); motorul: `--placa-sim` și cu planul pe plăci (`Plan::new_tiles`) și cu vocabularul lui Kronos (o rulare de măsură); **pasul pe placa reală în `antrenare mini` doar cu o comandă nouă**; punctul de control > 4 GiB doar când un model chiar trece de 4 GiB.
+- PREDARE-urile noi Cyber-GPU (câte una pe Release; urmează măsurarea RAM ↔ VRAM); motorul: `--placa-sim` cu vocabularul lui Kronos (o rulare de măsură); **pasul pe placa reală în `antrenare mini` doar cu o comandă nouă**; punctul de control > 4 GiB doar când un model chiar trece de 4 GiB.
 - C-159 pasul 5 (aceleași mâini pentru `/bin/claude`, oprit până la „da”-ul lui Adrian și cheia API); C-161 p.3 când Cyber-GPU predă un program „înapoi”; C-158 p.5 gata în os-355 (a mers pe placă → urmează ridicarea limitei „o comandă de placă pe sesiune” din modul viu); p.8 gata în os-356; p.7, p.9.
 
 ## Ce oferă proiectul celorlalți

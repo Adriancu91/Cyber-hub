@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 12:12 · sarcina: P6-159 gata; acum PREDARE Cyber-GPU d885efd (atentie3, Release pentru placă) · estimat gata: 15:00
+liber · terminat 2026-11-23 15:30 · următorul pas: PREDARE-uri noi Cyber-GPU (RAM ↔ VRAM, câte una pe Release); --placa-sim cu vocabularul lui Kronos (o rulare de măsură)
