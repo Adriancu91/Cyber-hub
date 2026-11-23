@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 09:46 · următorul pas: PREDARE-uri noi Cyber-GPU (câte una pe Release pentru placă); motorul de antrenare (loturile legate de pas când există un model mic pe vocabularul lui Kronos); dacă o parte CI trece de ~45 min, refă tests/durate-ci.txt
+ocupat · început 2026-11-23 10:13 · sarcina: C-158/C-161 — următorul pas din coadă (nicio PREDARE nouă pentru placă) · estimat gata: 11:30
