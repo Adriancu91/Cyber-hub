@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 22:40 · următorul pas: confirmă CI-ul lui b40a491 (P6-165, nimic pentru placă) → Release; apoi PREDARE c5645e9 (attn_back_tile_4) după rezultatul os-380; apoi bf16 în antrenare / arena în VRAM
+ocupat · început 2026-11-23 22:42 · sarcina: CI b40a491 → Release, apoi coada C-158 · estimat gata: 23:45
