@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 09:30 · următorul pas: `attn_fwd_tile3` și `attn_back_tile_3` (citiri fără ramură, plan + predicții întâi), apoi proba „vechi lângă nou” cu `_3`; după ele punctul nou RAM ↔ VRAM + studiul
+ocupat · început 2026-11-23 10:11 · sarcina: C-157 — attn_fwd_tile3 + attn_back_tile_3 (SIMULARE) · estimat gata: 11:10
