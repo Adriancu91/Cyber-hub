@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 23:30 · următorul pas: comparațiile când rulează pe placă (os-380 `--antrenare-mini`, os-352, gen 4, „lot”, `pci.legatura.port`); altfel ordinea 20:11 pasul 4 — recalcularea activărilor (plan + predicții întâi)
+ocupat · început 2026-11-24 00:12 · sarcina: comparația os-380 (C-157 p.2, antrenarea pe placa reală) + arena antrenării în VRAM (nota 23:36 pasul 2) · estimat gata: 01:45
