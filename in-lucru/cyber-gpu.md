@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 04:22 · următorul pas: C-157 p.2 comparația probei „vechi lângă nou” (attn_*_2) după rularea OS pe placă; altfel C-160 p.7 attn_p când OS-ul adaugă T::AttnP, sau C-157 p.7 partea a doua (lotul următor scris cât placa lucrează)
+ocupat · început 2026-11-23 05:11 · sarcina: C-160 p.7 legarea attn_p în pas (Prog::AttnP) · estimat gata: 06:10
