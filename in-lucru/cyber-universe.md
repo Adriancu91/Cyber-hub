@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 10:13 · sarcina: C-158/C-161 — următorul pas din coadă (nicio PREDARE nouă pentru placă) · estimat gata: 11:30
+liber · terminat 2026-11-23 11:00 · următorul pas: confirmă CI-ul P6-157 → Release (nimic pentru placă); PREDARE-uri noi Cyber-GPU (câte una pe Release); programele de placă în locul oracolului în `antrenare mini`
