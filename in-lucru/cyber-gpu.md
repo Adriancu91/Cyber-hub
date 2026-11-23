@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 20:13 · sarcina: decizia 23 nov 20:11 — cauza vitezei PCIe (legătura plăcii și a slotului, LnkCap/LnkSta) și pașii de reparare · estimat gata: 22:00
+liber · terminat 2026-11-23 20:35 · următorul pas: comparația rândurilor `pci.legatura.port` / `.cauza` când le scrie OS-ul și os-376 după mutarea plăcii în slotul 2 / 4; probele gen 4 și „lot” când rulează; altfel C-157 p.8 (fișa de model), plan întâi
