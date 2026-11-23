@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 02:11 · sarcina: CI os-360 + P6-145 (embed_dev / lot de poziții, C-157 p.7) · estimat gata: 03:41
+liber · terminat 2026-11-23 02:43 · următorul pas: confirmă CI P6-145 → Release os-361 + GATA DE TEST (`test-placa --argmax-fara-copie --dieta2 --lot`); apoi T::AttnP când e adăugat; C-158 p.7 (discul propriu)
