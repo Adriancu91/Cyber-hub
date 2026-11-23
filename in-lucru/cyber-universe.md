@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 20:46 · următorul pas: confirmă CI run 45241259921 (P6-163 + P6-162 + reparația testelor) → Release → GATA DE TEST (test-placa --ram-vram --adam-ram) în stare; apoi PREDARE e899760 (atenția _3 în pas, doar simulare), 92e0358 după „lot pe o sonerie”
+liber · terminat 2026-11-23 20:50 · următorul pas: test-placa --antrenare-mini (C-161 nota 18:16, prioritatea lui Adrian 20:36) — Release separat + GATA DE TEST; înainte confirmă CI run 45241259921 (P6-163 doar simulare + P6-162 + reparația testelor; Release fără test pe placă)
