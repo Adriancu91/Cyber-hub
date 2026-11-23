@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 17:33 · următorul pas: tăietura dK / dV în attn_back_tile_3 (plan + predicții întâi); comparațiile ram_vram (os-376) / lot au întâietate când rulează pe placă; apoi C-157 p.8
+ocupat · început 2026-11-23 18:12 · sarcina: C-157 — tăietura dK / dV în attn_back_tile_3 (plan + predicții, SIMULARE) · estimat gata: 19:10
