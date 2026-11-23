@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 01:13 · sarcina: C-157 ordinea 20:11 pasul 4 — recalcularea activărilor (plan + predicții, apoi cod în SIMULARE) · estimat gata: 02:30
+liber · terminat 2026-11-24 01:27 · următorul pas: comparațiile când rulează pe placă (os-384 `--antrenare-mini --mixt`, gen 4, arena în VRAM, os-352); altfel ordinea 20:11 pasul 5 în SIMULARE (lotul următor în paralel cu pasul de antrenare) sau GELU' lipit pe `mm_tc`
