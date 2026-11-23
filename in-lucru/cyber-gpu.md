@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 00:12 · sarcina: comparația os-380 (C-157 p.2, antrenarea pe placa reală) + arena antrenării în VRAM (nota 23:36 pasul 2) · estimat gata: 01:45
+liber · terminat 2026-11-24 00:27 · următorul pas: comparațiile când rulează pe placă (`--antrenare-mini --mixt`, gen 4, arena în VRAM cu predicția 1–5 ms, os-352); altfel ordinea 20:11 pasul 4 — recalcularea activărilor (plan + predicții întâi)
