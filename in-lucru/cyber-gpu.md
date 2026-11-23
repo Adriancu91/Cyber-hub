@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 07:35 · următorul pas: C-157 p.2 comparația probei „vechi lângă nou” (os-364) după rularea pe placă; altfel C-157 p.7 partea a doua (lotul următor cât placa lucrează) sau C-157 p.8 (fișa de model)
+ocupat · început 2026-11-23 08:15 · sarcina: C-157 (coada) — punctul următor după citire · estimat gata: 09:15
