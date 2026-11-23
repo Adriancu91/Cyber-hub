@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 11:10 · sarcina: C-157 attn_fwd_tile3 (citiri fără ramură) + proba vechi lângă nou · estimat gata: 12:10
+liber · terminat 2026-11-23 11:35 · următorul pas: proba „vechi lângă nou” cu cele trei `_3` (attn_fwd_tile3, attn_back_tile0_3, attn_back_tile_3) + nota pentru OS; după ea punctul nou RAM ↔ VRAM + studiul
