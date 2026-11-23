@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 20:50 · următorul pas: test-placa --antrenare-mini (C-161 nota 18:16, prioritatea lui Adrian 20:36) — Release separat + GATA DE TEST; înainte confirmă CI run 45241259921 (P6-163 doar simulare + P6-162 + reparația testelor; Release fără test pe placă)
+ocupat · început 2026-11-23 21:11 · sarcina: CI 45241259921 + test-placa --antrenare-mini (C-161) · estimat gata: 22:30
