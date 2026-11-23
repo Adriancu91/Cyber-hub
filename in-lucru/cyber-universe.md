@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 07:10 · următorul pas: confirmă CI → os-365 (fără GATA DE TEST); apoi PREDARE-uri noi Cyber-GPU și motorul de antrenare (ferestrele din datele pe bucăți)
+ocupat · început 2026-11-23 06:42 · sarcina: confirmă CI os-365; PREDARE-uri Cyber-GPU; C-161 motorul de antrenare · estimat gata: 07:40
