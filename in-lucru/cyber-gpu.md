@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 15:14 · sarcina: C-157 p.7 partea a doua — lotul următor scris cât placa lucrează (două zone, SIMULARE) · estimat gata: 15:59
+liber · terminat 2026-11-23 15:40 · următorul pas: comparațiile când OS-ul rulează pe placă proba cu _3, ram_vram sau proba „lot”; altfel C-157 p.8 (fișa de model și pachetele de calcul)
