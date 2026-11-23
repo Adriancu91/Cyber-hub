@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 18:12 · sarcina: C-157 — tăietura dK / dV în attn_back_tile_3 (plan + predicții, SIMULARE) · estimat gata: 19:10
+liber · terminat 2026-11-23 18:52 · următorul pas: `attn_back_tile_4` în proba „vechi lângă nou” (plan + predicții întâi); comparațiile „lot” / pas de aur au întâietate când rulează pe placă; apoi C-157 p.8
