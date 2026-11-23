@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 04:38 · următorul pas: PREDARE-uri noi Cyber-GPU (câte una pe Release); C-161 p.5 (citirea datelor de antrenare din bucăți int16 + index.json, salvarea modelului cu golirea sigură); examenul pe placă doar cu o comandă nouă
+ocupat · început 2026-11-23 04:41 · sarcina: legarea PREDARE Cyber-GPU attn_*_2 (vechi lângă nou, 31cfa2a) într-un Release mic; apoi C-161 p.5 · estimat gata: 06:10
