@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 18:14 · sarcina: CI P6-162 → Release; PREDARE Cyber-GPU (AdamW m,v în RAM) · estimat gata: 19:30
+liber · terminat 2026-11-23 20:46 · următorul pas: confirmă CI run 45241259921 (P6-163 + P6-162 + reparația testelor) → Release → GATA DE TEST (test-placa --ram-vram --adam-ram) în stare; apoi PREDARE e899760 (atenția _3 în pas, doar simulare), 92e0358 după „lot pe o sonerie”
