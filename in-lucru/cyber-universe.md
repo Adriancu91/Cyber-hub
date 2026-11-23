@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 12:12 · sarcina: CI P6-158 → Release; C-158 coada (--placa-sim cu Plan::new_tiles) · estimat gata: 13:15
+ocupat · început 2026-11-23 12:12 · sarcina: P6-159 gata; acum PREDARE Cyber-GPU d885efd (atentie3, Release pentru placă) · estimat gata: 15:00
