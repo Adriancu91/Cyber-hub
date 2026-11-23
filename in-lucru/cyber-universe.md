@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 03:11 · sarcina: Release os-361 (P6-145) + C-158 · estimat gata: 04:40
+liber · terminat 2026-11-23 04:38 · următorul pas: PREDARE-uri noi Cyber-GPU (câte una pe Release); C-161 p.5 (citirea datelor de antrenare din bucăți int16 + index.json, salvarea modelului cu golirea sigură); examenul pe placă doar cu o comandă nouă
