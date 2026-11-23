@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 17:57 · următorul pas: confirmă CI #377 (P6-162) → Release; PREDARE Cyber-GPU rămase, câte una pe Release (AdamW m, v în RAM `ab9b537` după ce os-376 trece pe placă; lotul următor `92e0358` după „lot pe o sonerie”); PREDARE-uri noi (atenția _3 în train_step)
+ocupat · început 2026-11-23 18:14 · sarcina: CI P6-162 → Release; PREDARE Cyber-GPU (AdamW m,v în RAM) · estimat gata: 19:30
