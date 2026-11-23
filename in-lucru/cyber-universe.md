@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 15:42 · sarcina: PREDARE Cyber-GPU (RAM ↔ VRAM / lotul următor) într-un Release · estimat gata: 17:15
+liber · terminat 2026-11-23 16:56 · următorul pas: PREDARE Cyber-GPU rămase, câte una pe Release (AdamW m, v în RAM `ab9b537` după ce os-376 trece pe placă; lotul următor `92e0358`); --placa-sim cu vocabularul lui Kronos
