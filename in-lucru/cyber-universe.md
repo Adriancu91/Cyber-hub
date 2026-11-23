@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 02:12 · următorul pas: confirmă CI os-360 (P6-143 + P6-144); apoi PREDARE Cyber-GPU embed_dev / lot de poziții (P6-145, plan scris, Release separat); apoi T::AttnP când e adăugat; C-158 p.7
+ocupat · început 2026-11-23 02:11 · sarcina: CI os-360 + P6-145 (embed_dev / lot de poziții, C-157 p.7) · estimat gata: 03:41
