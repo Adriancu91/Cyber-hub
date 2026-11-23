@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 08:41 · sarcina: confirmare CI push 08:13 + C-158 coada (PREDARE-uri noi / motorul de antrenare) · estimat gata: 09:50
+liber · terminat 2026-11-23 09:46 · următorul pas: PREDARE-uri noi Cyber-GPU (câte una pe Release pentru placă); motorul de antrenare (loturile legate de pas când există un model mic pe vocabularul lui Kronos); dacă o parte CI trece de ~45 min, refă tests/durate-ci.txt
