@@ -1970,6 +1970,7 @@ Format:
 - notă centrul de comandă (2026-11-22 08:00) — **#651 pe placă TRECE** (os-343, 07:36): 16/16 identice, mediana 5 161 µs, **194,34 simb/s** (fără sferturi), amprenta #651 `0x38b4270f`. Următorul pentru #651: cu sferturi. `rezultate/2026-11-22-workstation-os343-k651/`.
 - notă centrul de comandă (2026-11-22 10:30) — **os-346 `--ln-32` TRECE** (10:06): **508,74 simb/s** media cu driverul, placa 1 071 µs + driver 825 µs pe simbol; corect față de lipita-ln. Propunere: `lipita-ln-32` implicit; următorul câștig mare = driverul (dieta 2, `--dieta2` pe placă, test separat). `rezultate/2026-11-22-workstation-os346-ln32/`.
 - notă centrul de comandă (2026-11-22 15:32) — **os-350 argmax fără copie TRECE** (15:06): 18/18, **568,28 simb/s**, driver 608 µs. **Raportul nu a urcat singur în hub** (l-am copiat de pe stick în `rezultate/2026-11-22-workstation-os350-argmax-fara-copie/`) — de verificat urcarea în os-350.
+- notă centrul de comandă (2026-11-23 08:06) — **os-364 atenția nouă TRECE**: identică bit cu bit cu vechea, de 1,17–1,77 ori mai rapidă (1,53 / 1,54 / 2,25 ms), încă peste estimare la back0 (estimat 0,7–1,1). `rezultate/2026-11-23-workstation-os364-atentie2/`.
 
 ### C-158 · cyber-universe · COADA PERMANENTĂ: lucru zi și noapte, sesiuni din oră în oră (Adrian, 21 nov 08:01)
 - data: 2026-11-21 08:01 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (21 nov 08:01) și `REGULI.md`, secțiunea „Lucrul continuu”. Comanda rămâne deschisă: centrul de comandă adaugă puncte, tu scrii la `rezultat` ce ai terminat. Ridică oprirea de la regula 5.
@@ -2095,6 +2096,7 @@ Format:
 - notă centrul de comandă (2026-11-22 13:00) — **primul program „înapoi” (`colsum`) TRECE pe placă** (os-349, 12:36): 5/5 seturi, 3 778/3 778 elemente exacte, gărzi neatinse. Următorul pas al motorului: alt program „înapoi” / pasul de aur mic, câte unul. `rezultate/2026-11-22-workstation-os349-colsum/`.
 - notă centrul de comandă (2026-11-23 01:10) — **atenția de antrenare pe placă TRECE** (os-358, 00:36): 6/6 seturi la toate trei programele, „înapoi” exact 100 %, setul mare 151 MB în VRAM. `rezultate/2026-11-23-workstation-os358-atentie/`.
 - notă centrul de comandă (2026-11-23 01:12) — la os-358, **timpii pe setul mare sunt de 4–9 ori peste estimare**: attn_fwd_tile 2,49 ms (estimat ~0,53), attn_back_tile0 1,81 ms (~0,49), attn_back_tile 3,99 ms (~0,42–0,68); corectitudinea e bună. De lămurit de ce (memoria partajată, ocuparea?) înainte de pasul de aur pe placă.
+- notă centrul de comandă (2026-11-23 08:06) — **os-364 atenția nouă TRECE**: identică bit cu bit cu vechea, de 1,17–1,77 ori mai rapidă (1,53 / 1,54 / 2,25 ms), încă peste estimare la back0 (estimat 0,7–1,1). `rezultate/2026-11-23-workstation-os364-atentie2/`.
 
 ### C-161 · cyber-universe · P8 pe placă + MOTORUL DE ANTRENARE, partea sistemului (Adrian, 21 nov 16:18)
 - data: 2026-11-21 16:35 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (21 nov 16:18). Înlocuiește partea „motorul de antrenare — doar pregătire” din C-158 punctul 10. Comanda rămâne deschisă, ca o coadă.
