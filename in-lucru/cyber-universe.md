@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 23:42 · sarcina: CI 777acc3 + Release P6-166, apoi coada C-158 · estimat gata: 01:00
+ocupat · început 2026-11-23 23:42 · sarcina: P6-167 (test-placa --antrenare-mini --mixt) gata, aștept CI → Release · estimat gata: 01:45
