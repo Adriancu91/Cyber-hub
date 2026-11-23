@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 09:14 · sarcina: C-157 p.2 atenția pe plăci _3 — attn_back_tile0_3 (citiri fără ramură): plan + predicții, apoi programul în SIMULARE · estimat gata: 10:45
+liber · terminat 2026-11-23 09:30 · următorul pas: `attn_fwd_tile3` și `attn_back_tile_3` (citiri fără ramură, plan + predicții întâi), apoi proba „vechi lângă nou” cu `_3`; după ele punctul nou RAM ↔ VRAM + studiul
