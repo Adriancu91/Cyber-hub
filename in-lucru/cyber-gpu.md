@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 06:15 · sarcina: C-160 p.7 attn_p_tile (varianta „doar P” pe plăci, SIMULARE) · estimat gata: 07:05
+liber · terminat 2026-11-23 06:40 · următorul pas: C-157 p.2 comparația probei „vechi lângă nou” (attn_*_2, os-364) după rularea pe placă; altfel C-160 p.7 programele pe plăci legate în pas (anunț în hub întâi) sau C-157 p.8 (fișa de model)
