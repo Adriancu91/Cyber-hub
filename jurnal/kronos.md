@@ -198,3 +198,4 @@
 - 2026-11-21 20:15 — S133 „fișa de antrenare” (C-162) gata, verificată, copiată în `integrare/kronos/FISA_ANTRENARE.md` (cifra de bătut: #513 ~39.300, #651 ~15.500 simb/s); C-162 → gata; pauza C-156 rămâne.
 - 2026-11-22 08:15 — Noaptea fără antrenări (pauza C-156 respectată), raportul de dimineață în regulă (1.563 teste). Notat în stare: #651 trece pe placă în OS (os-343, 194 simb/s). Nicio comandă nouă, nimic în coadă.
 - 2026-11-23 05:15 — Nimic nou la Kronos (pauza C-156). Văzută cererea OS (os-363): reperul bpb #513 Q8_0 pentru `kronos --examen`; întrebat Adrian, nu intră în coadă fără „da”.
+- 2026-11-23 08:15 — Raportul de dimineață în regulă (pauza C-156, 1.563 teste). Nou la blocaje: conectarea Claude Code pe workstation expiră 29 nov–2 dec — cerut lui Adrian `claude auth login`. Nicio comandă nouă.
