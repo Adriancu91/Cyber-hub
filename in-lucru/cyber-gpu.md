@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 00:27 · următorul pas: comparațiile când rulează pe placă (`--antrenare-mini --mixt`, gen 4, arena în VRAM cu predicția 1–5 ms, os-352); altfel ordinea 20:11 pasul 4 — recalcularea activărilor (plan + predicții întâi)
+ocupat · început 2026-11-24 01:13 · sarcina: C-157 ordinea 20:11 pasul 4 — recalcularea activărilor (plan + predicții, apoi cod în SIMULARE) · estimat gata: 02:30
