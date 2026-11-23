@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 04:41 · sarcina: legarea PREDARE Cyber-GPU attn_*_2 (vechi lângă nou, 31cfa2a) într-un Release mic; apoi C-161 p.5 · estimat gata: 06:10
+liber · terminat 2026-11-23 05:55 · următorul pas: confirmă CI #364 → os-364 (GATA DE TEST scris); rebase wip/P6-150-151 în main → os-365; apoi PREDARE-uri noi Cyber-GPU și motorul de antrenare (ferestrele din datele pe bucăți)
