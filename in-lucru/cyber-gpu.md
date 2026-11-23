@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 08:15 · sarcina: C-157 (coada) — punctul următor după citire · estimat gata: 09:15
+liber · terminat 2026-11-23 08:50 · următorul pas: atenția pe plăci _3 (citiri fără ramură, întâi attn_back_tile0_3: plan + predicții) sau comparația următorului test pe placă; altfel C-157 p.7 partea a doua / p.8
