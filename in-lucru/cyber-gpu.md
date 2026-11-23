@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 03:45 · următorul pas: C-157 p.2 os-358 — proba „vechi lângă nou” pentru attn_*_2 în attn_tile_probe (adăugare, SIMULARE) + nota PREDARE; C-160 p.7 attn_p când OS-ul adaugă T::AttnP
+ocupat · început 2026-11-23 04:11 · sarcina: C-157 p.2 os-358 — proba „vechi lângă nou” attn_*_2 în attn_tile_probe (SIMULARE) · estimat gata: 05:41
