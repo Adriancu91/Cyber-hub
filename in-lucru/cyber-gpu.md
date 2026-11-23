@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 07:12 · sarcina: C-160 p.7 programele pe plăci (attn_p_tile) legate în pas — plan, SIMULARE, anunț · estimat gata: 08:20
+liber · terminat 2026-11-23 07:35 · următorul pas: C-157 p.2 comparația probei „vechi lângă nou” (os-364) după rularea pe placă; altfel C-157 p.7 partea a doua (lotul următor cât placa lucrează) sau C-157 p.8 (fișa de model)
