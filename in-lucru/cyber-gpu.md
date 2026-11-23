@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 05:11 · sarcina: C-160 p.7 legarea attn_p în pas (Prog::AttnP) · estimat gata: 06:10
+liber · terminat 2026-11-23 05:24 · următorul pas: C-157 p.2 comparația probei „vechi lângă nou” (attn_*_2) după rularea OS pe placă; altfel C-160 p.7 `attn_p_tile` (varianta „doar P” pe plăci) sau C-157 p.8 (fișa de model)
