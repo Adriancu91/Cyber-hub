@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 22:42 · sarcina: CI b40a491 → Release, apoi coada C-158 · estimat gata: 23:45
+liber · terminat 2026-11-23 23:21 · următorul pas: confirmă CI-ul lui 777acc3 (P6-166, nimic pentru placă) → Release; după rezultatul os-380: c5645e9 sau --antrenare-mini --mixt pe placă; ln_back_res în --placa-sim; arena în VRAM
