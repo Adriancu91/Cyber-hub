@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 14:15 · sarcina: C-157 AdamW cu m, v în RAM strat cu strat (SIMULARE) · estimat gata: 15:45
+liber · terminat 2026-11-23 14:35 · următorul pas: comparațiile când OS-ul rulează pe placă proba cu _3 și proba ram_vram; altfel C-157: suprapunerea la AdamW în RAM (după cifra legăturii) sau punctele 7 / 8
