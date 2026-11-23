@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 02:13 · sarcina: C-157 p.2 os-358 partea a doua (attn_*_tile2: plan + predicții + SIMULARE) · estimat gata: 03:30
+liber · terminat 2026-11-23 02:45 · următorul pas: C-157 p.2 os-358 — attn_back_tile0_2 + attn_back_tile_2 (plan + predicții, SIMULARE), apoi proba „vechi lângă nou”; C-160 p.7 attn_p când OS-ul adaugă T::AttnP
