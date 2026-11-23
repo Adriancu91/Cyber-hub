@@ -1,1 +1,1 @@
-ocupat · început 2026-11-23 22:13 · sarcina: ordinea 20:11 pasul 3 — lipirea operațiilor „înapoi” (plan + predicții întâi) · estimat gata: 23:20
+liber · terminat 2026-11-23 22:55 · următorul pas: comparațiile când rulează pe placă (`--antrenare-mini`, os-352, gen 4, „lot”, `pci.legatura.port`); altfel ordinea 20:11 pasul 3 partea a doua — `mm_train_gelu` (GELU' în proj-dX), listarea NAK întâi
