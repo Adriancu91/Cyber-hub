@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 18:52 · următorul pas: `attn_back_tile_4` în proba „vechi lângă nou” (plan + predicții întâi); comparațiile „lot” / pas de aur au întâietate când rulează pe placă; apoi C-157 p.8
+ocupat · început 2026-11-23 19:11 · sarcina: C-157 — attn_back_tile_4 în proba „vechi lângă nou” · estimat gata: 20:10
