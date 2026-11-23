@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 11:00 · următorul pas: confirmă CI-ul P6-157 → Release (nimic pentru placă); PREDARE-uri noi Cyber-GPU (câte una pe Release); programele de placă în locul oracolului în `antrenare mini`
+ocupat · început 2026-11-23 11:13 · sarcina: CI P6-157 → Release; apoi coada C-158 (antrenare mini / unelte) · estimat gata: 12:15
