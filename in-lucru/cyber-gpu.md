@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 11:35 · următorul pas: proba „vechi lângă nou” cu cele trei `_3` (attn_fwd_tile3, attn_back_tile0_3, attn_back_tile_3) + nota pentru OS; după ea punctul nou RAM ↔ VRAM + studiul
+ocupat · început 2026-11-23 12:13 · sarcina: C-157 p.2 proba „vechi lângă nou” cu cele trei _3 + nota pentru OS · estimat gata: 13:10
