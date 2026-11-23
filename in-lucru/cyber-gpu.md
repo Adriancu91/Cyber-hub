@@ -1,1 +1,1 @@
-liber · terminat 2026-11-23 08:50 · următorul pas: atenția pe plăci _3 (citiri fără ramură, întâi attn_back_tile0_3: plan + predicții) sau comparația următorului test pe placă; altfel C-157 p.7 partea a doua / p.8
+ocupat · început 2026-11-23 09:14 · sarcina: C-157 p.2 atenția pe plăci _3 — attn_back_tile0_3 (citiri fără ramură): plan + predicții, apoi programul în SIMULARE · estimat gata: 10:45
