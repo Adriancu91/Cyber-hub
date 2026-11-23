@@ -1,12 +1,13 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-22 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-23 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **Pauză la antrenări (C-156, Adrian, 21 nov 08:01), în vigoare:** nicio antrenare pe workstation și nimic pe placa video, la nicio oră. **S131 nu pornește** — „în așteptare (pauză)”, cu pregătirile păstrate (date `conversatie_chat6`, configurarea `w2_mare_24zcj`, pre-înregistrarea). Executantul a verificat: nimic din scripturile lui nu pornește S131 singur.
 - **S132 „pasul de aur” gata** (21 nov 09:01, verificat de supraveghetor): 10 pași de antrenare PyTorch pe procesor, F32, repetabil; rețetele SGD și AdamW-ul liniei #513; modelul mic + fișa copiate în `integrare/kronos/`.
 - **S133 „fișa de antrenare” gata** (C-162, 21 nov 17:36, verificată): `integrare/kronos/FISA_ANTRENARE.md`.
 - Noaptea 21 → 22 nov: nimic pe placă, cum cere pauza (raportul de dimineață, 06:50). Ultimul verdict de antrenare: S129 → rămâne #651. 1.563 teste trec. Chat-ul Kronos merge pe 8787 cu **#651**. Disc C: ~136 GB liberi.
+- 22 nov 08:15 → 23 nov 05:15: nimic nou la Kronos (pauza respectată, executantul fără treabă).
 - **#651 trece pe placă în OS** (os-343, 22 nov 07:36, centrul de comandă): 16/16 simboluri identice cu procesorul, 194,34 simb/s fără sferturi. Kronos n-a avut nimic de schimbat (KGR1-ul #651 neschimbat, SHA din `MODEL_651.md`).
 
 ## Urmează
@@ -24,8 +25,10 @@
 - **Pentru `cyber-gpu`:** cifrele lui #651 (C-157 punctul 4): 24 de straturi, 12 capete, n_emb 768, context 512, vocabular 16.384, 292 de tensori (98 Q8_0, 194 F32). Viteza PyTorch în Windows (C-153): #513 pe placă 129,12 simb/s, procesor 41,74.
 
 ## De ce are nevoie de la ceilalți
+- **Cererea `cyber-universe` (os-363, 23 nov 04:38): reperul bpb al lui #513 Q8_0** pe primele 100.000 de caractere din `validare_curata.txt`, pentru `kronos --examen` din OS — văzută; e scurtă și doar pe procesor, dar intră în coada Kronos doar cu „da”-ul lui Adrian (întrebat în `plan/pentru_adrian.md`, 23 nov 05:15).
 - Nimic. Pentru motorul de antrenare (C-160/C-161): Cyber-GPU spune dacă vrea un „pas de aur” cu lot mai mare (tot pe procesor). Cifrele lipsă din fișă se măsoară doar cu „da”-ul lui Adrian. Placa e a testelor OS/GPU zi și noapte.
 
 ## Blocaje / nevoie de Adrian
+- Aștept de la Adrian (opțional): „da” pentru reperul bpb #513 Q8_0 cerut de OS (doar procesor).
 - Niciun blocaj. Reluarea antrenărilor (S131 sau #736 în chat) — doar cu o decizie nouă a lui Adrian.
 - Opțional, la workstation: `schtasks /query /fo list | findstr /i "Kronos"` (să vadă el că nicio sarcină Windows nu pornește o antrenare) și `git -c core.editor=true rebase --continue` în `C:\Kronos\cyberspace`. Doar dacă vrea: „da CulturaX”.
