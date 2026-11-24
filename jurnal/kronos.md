@@ -200,3 +200,4 @@
 - 2026-11-23 05:15 — Nimic nou la Kronos (pauza C-156). Văzută cererea OS (os-363): reperul bpb #513 Q8_0 pentru `kronos --examen`; întrebat Adrian, nu intră în coadă fără „da”.
 - 2026-11-23 08:15 — Raportul de dimineață în regulă (pauza C-156, 1.563 teste). Nou la blocaje: conectarea Claude Code pe workstation expiră 29 nov–2 dec — cerut lui Adrian `claude auth login`. Nicio comandă nouă.
 - 2026-11-24 08:15 — Raportul de dimineață în regulă (pauza C-156, 1.563 teste, nimic pe placă). Nicio comandă nouă; rămâne de la Adrian `claude auth login` până pe 29 nov.
+- 2026-11-24 11:15 — Nimic nou la Kronos (pauza C-156). Văzut os-395 (#513 rulează pe placa din OS, dar pierderea urcă și e de ~43× mai lent decât Kronos în Windows); propus în `idei/` ca Kronos să dea „cifrele corecte” pentru 10 pași #513 în PyTorch, pe procesor — doar cu „da”-ul lui Adrian.
