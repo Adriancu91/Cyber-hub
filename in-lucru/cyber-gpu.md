@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 21:47 · următorul pas: raportul cursei os-412 + A4 → comparația; tabelul cursei → MmChoice::from_race → OS leagă with_mm_choice (+ with_mm_tile_gelu dacă vrea lipirile); apoi variantele pentru atenție
+ocupat · început 2026-11-24 22:13 · sarcina: C-157 p.2 comparația os-412 (colsum împărțit) + deciziile 21:39 · estimat gata: 23:30
