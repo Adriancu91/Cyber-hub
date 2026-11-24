@@ -208,3 +208,8 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
 ## 24 nov 2026, 11:04 — „Da” la lotul prin RAM (P6-178 `--lot-ram`)
 - Adrian aprobă testul pe placa reală `test-placa --antrenare-mini --vram --lot-ram`: lotul (~1,3 KiB) și pierderile (260 B) ale pasului prin RAM fixată, aduse de programul de copiere.
 - Excepție limitată de la condiția din 23 nov 20:11 („nimic din antrenare în RAM până la PCIe”): se aplică doar lotului mic, unde viteza PCIe nu contează. Straturile, greutățile, Adam etc. rămân în VRAM până la mutarea plăcii pe x16.
+
+## 24 nov 2026, 13:17 — placa video mutată în SLOT2 (x16)
+- Adrian a mutat RTX 3070 Ti din SLOT1 („PCIe3X16 (8,4,1)”, 8 linii) în **SLOT2 („PCIe3X16 75W”, 16 linii)**. Workstation-ul a repornit de câteva ori la prima pornire (normal la Dell), apoi a intrat în Windows.
+- Urmează os-376 refăcut (`test-placa --ram-vram` cu os-403): prezis ~11,5–13 GB/s în ambele sensuri.
+- Condiția din 23 nov 20:11 („nimic din antrenare în RAM până la PCIe”) se poate ridica **doar după** ce testul confirmă x16 și viteza; decizia rămâne a lui Adrian.
