@@ -228,3 +228,9 @@ Adrian a răspuns „Da” la mesajul centrului care cerea „da / nu” la H1, 
 - **H3 — cursa de noapte (C-165, `cyber-gpu` + `cyber-universe`):** într-o pornire / noapte pot rula pe placa reală mai multe variante **ale aceluiași fel de program de calcul**, dacă fiecare (1) e dovedită în SIMULARE că dă aceiași biți ca un program deja trecut pe placă sau ca oracolul, (2) are SHA-256 verificat, (3) nu aduce niciun registru și nicio comandă nouă. Pentru orice altceva rămâne „un singur lucru nou pe test”. Paza de temperatură pornită; rezultatul dimineața (fără mesaje 23:00–07:00).
 - **Împărțirea plăcii:** un test din OS repornește workstation-ul și ar omorî o antrenare de laborator. De aceea: executantul Kronos scrie `C:\Kronos\cyber-test\laborator-ocupat.txt` (ora de început, ora estimată de sfârșit) înainte de fiecare probă și îl șterge la sfârșit; nu pornește dacă există `porneste-test.txt`. Centrul de comandă nu dă niciun semnal de test cât există fișierul. Noaptea (23:00–07:00) placa e a testelor OS / cursei de noapte, dacă laboratorul nu are o probă anunțată.
 - Lucrul la viteza brută (pista A, decizia din 14:15) continuă neschimbat.
+
+## 24 nov 2026, 18:29 — Simulatorul Kronos (`Adriancu91/kronos-simulator`): unealtă de ajutor, nu judecător
+- Se folosește când e nevoie (socoteli de memorie, timp, unde e gâtuirea), se reglează în timp după fiecare test real și primește funcții noi la nevoie.
+- Interfața rămâne pentru Adrian, să se poată juca pe ea. Joaca lui nu schimbă nimic în proiecte: un fișier de setări descărcat de el e doar o idee de analizat, nu o comandă.
+- Deciziile pe placă se iau tot după testele reale. Previziunile se scriu înainte de test (`calibrare/PREVIZIUNI.md`).
+- Primul test nevăzut (os-410): prezis 225 ms/pas, real 476 ms — eroare ×2, din estimarea de viteză pentru un program nerulat încă.
