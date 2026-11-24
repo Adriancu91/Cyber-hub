@@ -2184,3 +2184,5 @@ Format:
 - rezultat:
 
 > **Notă centru 24 nov 08:10 (C-157/C-158):** os-390 TRECE — pasul întreg **4,15 ms = 15 421 simb/s** (de la ~370 ms), placa 3,63 ms, aceleași numere ca oracolul, 0 scrieri pe stick. Test 2: 632,84 simb/s. Rest: golirea VRAM 302 µs e acum cea mai mare bucată în afara plăcii. Mic defect: rezumatul „REZULTAT TEST PLACA” spune „antrenare mini: niciun rezultat” deși blocul spune TRECE (C-158, de reparat). Urmează os-392 `--pas-lipit`. Detalii: `rezultate/2026-11-24-workstation-os390-pas-taiat/`.
+
+> **Notă centru 24 nov 09:00 (C-157/C-158):** os-392 TRECE — programele lipite merg din prima, lipit = nelipit bit cu bit (69 lansări în loc de 75, greutățile 0 diferite), placa 3 602 vs 3 628 µs, pasul întreg 4 141 µs = 15 455 simb/s. Pe modelul mini lipirea aduce puțin; 85% din pas e așteptarea plăcii, deci urmează bf16 `--mixt` și pasul #513 pe placă (P6-172), care dă comparația cu Windows. Rezumatul „niciun rezultat” încă de reparat (C-158). Detalii: `rezultate/2026-11-24-workstation-os392-pas-lipit/`.
