@@ -334,3 +334,4 @@
 - 2026-11-24 02:45 — P6-170 `antrenare mini --placa-sim --lipit` (`ln_back_res` + `mm_train_gelu`): 69 lansări în loc de 75, aceiași biți 2 / 2; pe `wip/P6-170`.
 - 2026-11-24 02:50 — os-386 GATA DE TEST (`test-placa --antrenare-mini --vram`, arena în VRAM); P6-170 (`--lipit`) și P6-171 (`--recalcul`, PREDARE `c5fcb2e`: 83 lansări, aceiași biți 2 / 2) în `main`, CI în curs; plan P6-172 (#513 pe placă).
 - 2026-11-24 03:12–05:05 — os-388 verde (P6-170 + P6-171, doar SIMULARE). P6-173: pasul întreg al antrenării pe bucăți (nota 03:12) → os-389 GATA DE TEST `test-placa --antrenare-mini --vram`; CI reluat o dată (oglinda `apt` inaccesibilă).
+- 2026-11-24 05:12–06:35 — PREDĂRI Cyber-GPU 197 + 198 legate (P6-174: jurnalul în memorie în pași + tăieturile 2) → os-390 GATA DE TEST `test-placa --antrenare-mini --vram`; P6-175 `--pas-lipit` (lipit = nelipit bit cu bit în SIMULARE) în `main`, CI în curs.
