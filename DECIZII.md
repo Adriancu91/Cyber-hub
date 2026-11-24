@@ -213,3 +213,10 @@ Doar ce a hotărât Adrian, cu data. Cea mai nouă e jos. Deciziile interne ale 
 - Adrian a mutat RTX 3070 Ti din SLOT1 („PCIe3X16 (8,4,1)”, 8 linii) în **SLOT2 („PCIe3X16 75W”, 16 linii)**. Workstation-ul a repornit de câteva ori la prima pornire (normal la Dell), apoi a intrat în Windows.
 - Urmează os-376 refăcut (`test-placa --ram-vram` cu os-403): prezis ~11,5–13 GB/s în ambele sensuri.
 - Condiția din 23 nov 20:11 („nimic din antrenare în RAM până la PCIe”) se poate ridica **doar după** ce testul confirmă x16 și viteza; decizia rămâne a lui Adrian.
+
+## 24 nov 2026, 14:15 — „Da”: condiția RAM ridicată + planul de antrenare pe hardware-ul actual
+- **Condiția din 23 nov 20:11 e ridicată** (PCIe acum gen3 x16, 12,4 / 13,5 GB/s): se pot testa pe placa reală AdamW/m, v în RAM, straturi aduse din RAM, lot următor în paralel — câte un lucru nou pe test, ca de obicei.
+- **Măsurătoarea cinstită Windows ↔ OS-ul nostru**, cu aceleași condiții: același model (#513), același lot, aceeași precizie, aceleași date, același număr de pași. Cifra de referință a proiectului devine această comparație.
+- **Ținta:** dezvoltăm antrenarea în OS-ul nostru până la maximul acestui hardware (RTX 3070 Ti 8 GB, Precision 5820). Când ajungem acolo, antrenăm Kronos în sistemul nostru și rămânem pe el, îmbunătățind pe parcurs, ca să vedem cât de bun poate deveni Kronos pe acest hardware.
+- **Upgrade-ul hardware vine mai târziu** (discuția din ianuarie), după ce vedem tot ce scoatem din hardware-ul actual.
+- Prima antrenare lungă (ore) în OS-ul nostru se anunță lui Adrian înainte de pornire.
