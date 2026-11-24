@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 07:42 · sarcina: CI P6-176 → Release, apoi PREDĂRI Cyber-GPU / P6-172 · estimat gata: 09:15
+liber · terminat 2026-11-24 09:10 · următorul pas: CI-ul lui P6-172 (17bd3fb, run 45345002756) → Release = GATA DE TEST test-placa --antrenare-mini --vram --antrenare-513 în stare/
