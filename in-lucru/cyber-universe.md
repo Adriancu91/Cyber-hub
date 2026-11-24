@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 12:13 · sarcina: Release os-NNN din d4ba2a7 (P6-180..182) GATA DE TEST, apoi C-158 · estimat gata: 13:30
+liber · terminat 2026-11-24 12:50 · următorul pas: CI-ul lui `6ba17f4` (P6-183) → Release (nimic nou de testat); apoi cifrele os-403 și coada C-158
