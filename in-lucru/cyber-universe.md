@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 10:12 · sarcina: CI P6-178 → Release placă + coada C-158 · estimat gata: 11:10
+liber · terminat 2026-11-24 10:58 · următorul pas: CI-ul lui P6-179 (5096eb9) → Release (nimic nou de testat); apoi coada C-158
