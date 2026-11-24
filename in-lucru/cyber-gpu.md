@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 05:35 · următorul pas: comparația când OS-ul rulează os-389 (pasul întreg pe bucăți) sau os-384/385; altfel C-157 punctul 8 (fișa de model, documentul de proiectare)
+ocupat · început 2026-11-24 06:12 · sarcina: C-157 p.2 — comparația os-389 (pasul întreg pe bucăți) · estimat gata: 07:15
