@@ -14,3 +14,7 @@
    - Mini (os-390) e rapid pentru că modelul e de 85 de ori mai mic; la #513 contează calculele mari (înmulțiri F32 fără tensor cores, atenție pe context 512, backward).
    - **Cerere Cyber-GPU:** timpul pe fel de program (ca la generare: qkv, atenție, fc, logit, backward, AdamW) pentru pasul #513, ca să știm unde se duce secunda. Apoi: bf16/tensor cores (P8, deja verificate la generare) în înmulțirile antrenării.
 3. Mic: „placa 1 149 541 µs” > „pasul întreg 1 115 457 µs” la pasul 1 — cele două ceasuri nu se potrivesc (de verificat de OS).
+
+## Comparația cu Windows, exact (FISA_ANTRENARE.md)
+- Același model #513 (12 straturi, E 768, context 512, vocabular 16 384). Windows: lot 12 × 512, Adam o dată la 8 loturi, 156,5 ms pe lot = ~39 300 simb/s. Noi: lot 2 × 512, AdamW la fiecare lot, 1 123 ms = 911 simb/s.
+- Lotul nostru e de 6 ori mai mic și facem AdamW la fiecare lot, deci placa e mai puțin ocupată; un lot mai mare ne-ar ridica parțial cifra. Diferența ×43 nu vine doar din asta: rămân de adus înmulțirile rapide (tensor cores).
