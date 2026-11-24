@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 02:50 · următorul pas: confirmă CI-ul lui 47bdcb5 (P6-169, run 45291502004) → Release = GATA DE TEST `test-placa --antrenare-mini --vram`; apoi adu wip/P6-170 în main; apoi pasul #513 pe placă (comparația cu Windows)
+ocupat · început 2026-11-24 02:12 · sarcina: CI P6-169 → Release os-386, apoi wip/P6-170 în main, apoi C-158 · estimat gata: 03:30
