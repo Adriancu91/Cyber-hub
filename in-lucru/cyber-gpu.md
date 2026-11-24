@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 04:13 · sarcina: C-157 p.2 — al doilea rând de tăieturi pentru pasul întreg (umbra pushbuffer-ului, prima/ultima înregistrare) în SIMULARE · estimat gata: 05:30
+liber · terminat 2026-11-24 04:30 · următorul pas: comparația când OS-ul rulează remediul jurnalului + tăieturile 2 (pasul întreg ~4–4,5 ms) sau os-384/385 --mixt; altfel lipirea GELU' pe mm_tc (pasul mixt) în SIMULARE
