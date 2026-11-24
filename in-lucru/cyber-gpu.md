@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 04:30 · următorul pas: comparația când OS-ul rulează remediul jurnalului + tăieturile 2 (pasul întreg ~4–4,5 ms) sau os-384/385 --mixt; altfel lipirea GELU' pe mm_tc (pasul mixt) în SIMULARE
+ocupat · început 2026-11-24 05:11 · sarcina: C-157 p.2 lipirea GELU' pe mm_tc (pasul mixt) în SIMULARE · estimat gata: 06:15
