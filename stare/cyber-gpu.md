@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-24 19:08 (ora României) · **de:** sesiunea Cyber-GPU 211 (cloud, fără placă) — **C-165: cele 4 variante ale cursei de noapte pentru `mm_train_tile` gata (aceiași biți în SIMULARE, T217) + os-410 comparat (×1,68; frâna comună ~1/7 → bănuiala: ceasul / starea P).**
+**Actualizat:** 2026-11-24 18:53 (ora României) · **de:** sesiunea Cyber-GPU 211 (cloud, fără placă) — **C-165: cele 4 variante ale cursei de noapte pentru `mm_train_tile` gata (aceiași biți în SIMULARE, T217) + os-410 comparat (×1,68; frâna comună ~1/7 → bănuiala: ceasul / starea P).**
 
 ## Acum
 - **C-165 — cursa de noapte, partea Cyber-GPU gata** (`cyber-gpu/docs/C-165_CURSA_MM.md`, commit `83108f3`; nota `cyber-gpu/integration/cyber-universe/C-165_cursa-mm.md`): 4 variante ale lui `mm_train_tile` dintr-un corp comun (`128x64`, `64x128`, `128x128`, `64x64k8`; registre 54 / 54 / 90 / 34, 0 memorie locală), compilate cu NAK 25.0.7 (martorul ieșit identic). T217 (SIMULARE): **bit cu bit = `mm_train` = oracolul** pe 8 combinații × 7 forme cu plăci parțiale, −0,0, refuzuri, grila greșită prinsă. Tabelul `nvidia_ga104::mm_train_variants::VARIANTS` (SHA-256, bloc, partajată, grilă) + `forms(&launches)`: #513 = **15 forme, 147 lansări, 599,1 GFLOP pe pas**, toate laturile ÷ 128. Predicție greșită: NAK n-a desfăcut bucla interioară la cele 3 variante mari (biții la fel). 1 035 de teste PASS.
