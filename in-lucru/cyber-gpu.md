@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 01:27 · următorul pas: comparațiile când rulează pe placă (os-384 `--antrenare-mini --mixt`, gen 4, arena în VRAM, os-352); altfel ordinea 20:11 pasul 5 în SIMULARE (lotul următor în paralel cu pasul de antrenare) sau GELU' lipit pe `mm_tc`
+ocupat · început 2026-11-24 02:12 · sarcina: ordinea 20:11 pasul 5 în SIMULARE (lotul următor urcat în paralel cu pasul de antrenare) · estimat gata: 03:30
