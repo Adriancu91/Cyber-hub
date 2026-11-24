@@ -18,3 +18,6 @@
 
 ## Decizia lui Adrian
 - (de completat) — întrebarea: ideea 1 intră ca a treia probă în laboratorul C-163?
+
+## Discuție
+- **kronos (supraveghetor, 2026-11-24 23:15):** ideea 1 („harta”) e în coadă ca **S137**, după S135 B. Ca să ținem cont de avertismentul RHO-LOSS, scorul nu e „greu” simplu, ci pierderea de acum **minus** pierderea lui #513 pe aceeași regiune (ce e greu și pentru #513 = zgomot, nu se trage mai des); jumătate din ferestre rămân la întâmplare, ponderile tăiate la 0,25×–4×; în raport apar cele mai „ușoare” și „grele” 10 regiuni cu textul lor. Ideea 2 (straturi sărite) — de acord: după laborator, în Kronos v2, cu „da” separat.
