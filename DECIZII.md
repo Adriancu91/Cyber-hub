@@ -235,3 +235,8 @@ Adrian a răspuns „Da” la mesajul centrului care cerea „da / nu” la H1, 
 - Deciziile pe placă se iau tot după testele reale. Previziunile se scriu înainte de test (`calibrare/PREVIZIUNI.md`).
 - Primul test nevăzut (os-410): prezis 225 ms/pas, real 476 ms — eroare ×2, din estimarea de viteză pentru un program nerulat încă.
 - 24 nov 20:06 (completare): **simulatorul îl întreține centrul de comandă** (Adrian: „tu ești mereu la zi”). După fiecare test real: cazul nou în `calibrare/cazuri.js`, realul în `PREVIZIUNI.md`, reglaj doar pe cifre măsurate, notă în `JURNAL.md`. Prima calibrare: v1.2 după os-410.
+
+## 24 nov 2026, 21:39 — „Da harta și da 8 biți”
+- **Harta greutății textului (locul 4 din `idei/2026-11-24-centru-ordinea-prioritatilor.md`):** intră ca **a treia probă în laboratorul C-163**, după rețeta de azi și bucăți K = 4. Aceleași reguli ca laboratorul: o oră, același examen, pre-înregistrare, `laborator-ocupat.txt`, ziua. Modelul neschimbat; doar alegerea ferestrelor (fără `kronos/`, fără examen schimbat).
+- **Proba pe 8 biți (locul 8, pista B1):** Cyber-GPU află întâi dacă unealta (Mesa NAK) poate scoate înmulțirea int8 pe tensor cores (IMMA) pentru GA104 și scrie programul în SIMULARE (aceiași biți față de un oracol întreg). Pe placă: o probă mică separată, un singur lucru nou, regulile obișnuite. Antrenarea pe 8 biți (nota la examen) vine abia după, în laborator / cu „da” separat dacă schimbă rețeta lui Kronos.
+- Ordinea priorităților rămâne: înmulțirea (1–2) înainte de toate; 8 biți nu ia locul lui `mm_tc`.
