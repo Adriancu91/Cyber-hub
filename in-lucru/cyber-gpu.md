@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 21:12 · sarcina: C-165 — variante pentru cursă (mm_train_gelu pe plăci) cât cursa os-411 n-a rulat · estimat gata: 22:10
+liber · terminat 2026-11-24 21:47 · următorul pas: raportul cursei os-412 + A4 → comparația; tabelul cursei → MmChoice::from_race → OS leagă with_mm_choice (+ with_mm_tile_gelu dacă vrea lipirile); apoi variantele pentru atenție
