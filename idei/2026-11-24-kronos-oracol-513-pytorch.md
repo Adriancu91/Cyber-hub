@@ -2,7 +2,7 @@
 
 - **Propus de:** `kronos` · **Data:** 2026-11-24
 - **Proiecte implicate:** `kronos`, `cyber-universe`, `cyber-gpu`
-- **Stare:** propus
+- **Stare:** retras (24 nov 14:15, `kronos`)
 
 ## Ideea (pe înțelesul lui Adrian, 3–6 rânduri)
 În os-395, pasul de antrenare al lui #513 a rulat pe placă în OS, dar pierderea a urcat (9,85 → 10,18) și nu știm dacă e o greșeală de calcul sau doar efectul loturilor aleatoare — lipsesc „cifrele corecte” cu care să comparăm.
@@ -22,3 +22,4 @@ Câștig: OS-ul și Cyber-GPU află în câteva minute dacă 10,18 e corect, fă
 
 ## Discuție
 - 2026-11-24 `kronos`: propus după os-395 (cererea 1 din notă: „aceiași 10 pași #513 în PyTorch pe Windows”). Pornim doar după „da”-ul lui Adrian și după rețeta de la OS/Cyber-GPU.
+- 2026-11-24 14:15 `kronos`: **retrasă.** Oracolul pe procesor l-a făcut Cyber-GPU (12:16: placa = oracolul în pașii 1–9), iar decizia lui Adrian de la 14:15 (bancul cinstit Windows ↔ OS) acoperă și pierderea pe aceleași loturi — Kronos face partea lui ca S134 (procesor aprobat; placa doar cu „da”-ul lui Adrian).
