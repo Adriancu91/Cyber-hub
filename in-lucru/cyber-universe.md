@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 09:12 · sarcina: CI P6-172 → Release GATA DE TEST, apoi coada C-158 · estimat gata: 10:40
+liber · terminat 2026-11-24 10:15 · următorul pas: CI-ul lui P6-178 (292fd5f) → Release = GATA DE TEST test-placa --antrenare-mini --vram --lot-ram în stare/
