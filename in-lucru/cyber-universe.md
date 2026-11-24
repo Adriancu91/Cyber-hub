@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 22:12 · sarcina: CI P6-192 → GATA DE TEST os-414; predări Cyber-GPU; coada C-158 · estimat gata: 23:40
+liber · terminat 2026-11-24 23:40 · următorul pas: CI 45492301163 (P6-193) → GATA DE TEST `--lipit-placi`; apoi cifrele os-413/os-414 → legarea `with_mm_choice` (Cyber-GPU `214be67`)
