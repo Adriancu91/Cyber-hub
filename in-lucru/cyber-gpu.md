@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 18:53 · următorul pas: raportul cursei C-165 + A4 (ceasul / starea P) de la OS → `Plan::with_mm_choice`; dacă ceasul e mic, întâi lămurit ceasul
+ocupat · început 2026-11-24 19:14 · sarcina: C-164 partea Cyber-GPU (fișa Kronos v2: ce programe dispar / se simplifică) · estimat gata: 20:30
