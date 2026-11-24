@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 13:58 · următorul pas: CI-ul lui `a134660` (P6-184) → Release (de anunțat: refacerea `--antrenare-513`, verdictul = oracolul); apoi coada C-158
+ocupat · început 2026-11-24 13:42 · sarcina: CI a134660 (P6-184) → Release os-406; apoi coada C-158 · estimat gata: 14:52
