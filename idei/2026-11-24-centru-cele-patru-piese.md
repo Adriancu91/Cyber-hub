@@ -1,0 +1,72 @@
+# Cele patru piese ale noastre: ce câștigăm de la fiecare și ce câștigăm doar pentru că sunt toate ale noastre
+
+- **Propus de:** centrul de comandă · **Data:** 2026-11-24
+- **Proiecte implicate:** `cyber-universe`, `cyber-gpu`, `kronos`
+- **Stare:** propus — document de hotărât (trei „da / nu” la sfârșit)
+
+## Ideea (pe înțelesul lui Adrian)
+OS-ul, driverul, motorul de antrenare și Kronos sunt scrise de noi. Fiecare aduce câte puțin singur; câștigul mare e la **îmbinări**:
+lucruri care cer ca două-trei piese să fie schimbate deodată, ceea ce nimeni care stă pe Windows + driverul NVIDIA + PyTorch nu poate face.
+Mai jos: ce limite au ceilalți, ce putem noi, și cât cred că aduce (tot ce e cifră de câștig e DEDUS, nu măsurat).
+
+## Ce limite au ceilalți și noi nu
+| Piesa lor | Limita | La noi |
+|---|---|---|
+| Windows | ține o parte din memoria plăcii pentru ecran (rețeta Kronos stă sub 7 GB din 8); nu lasă placa să folosească RAM-ul ca prelungire în mod controlat (ori încape, ori se oprește / se târăște) | toată placa e a antrenării; RAM-ul îl împărțim noi |
+| driverul NVIDIA | programele de calcul sunt închise și **generale** (bune pentru orice formă de matrice, nu pentru ale noastre); nu se pot lipi pași în interiorul lor | programe scrise exact pe formele lui Kronos |
+| PyTorch | fiecare operație e o lansare separată; în Windows nu avem nici varianta lui „compilată” (rețeta noastră nu o folosește — verificat în cod); precizia e aceeași peste tot (bf16) | pasul întreg e un plan fix; precizia se alege pe fiecare bucată |
+| modelul lor | e gândit pentru orice placă | Kronos poate fi croit pe placa noastră |
+
+## Ce câștigăm de la fiecare piesă, singură
+| Piesa | Ce | Câștig |
+|---|---|---|
+| **OS** | zero pauze: fără alte programe, fără actualizări, jurnalul în memorie (azi: pasul mic de la 370 ms la 4 ms doar din asta); antrenare zile întregi, cu pază de temperatură și reluare exactă după o pană de curent | mic pe secundă, mare pe săptămână |
+| **Driver** | toată memoria plăcii (de cerut: de ce arena e limitată la 6 GiB când Windows folosește 7); placa ținută la viteza maximă; un singur „client” | +5–15 % (lot mai mare) |
+| **Motor** | înmulțiri pe tensor cores, numere pe 16 biți în memorie, lot mare (pista A) | de aici vine ajungerea din urmă: 70–110 % din Windows |
+| **Kronos** | antrenarea în trepte (bucăți + caiet + ieșire pe eșantion) | ×2–2,5 până la aceeași notă (Muon scos: la noi n-a câștigat) |
+
+## Ce câștigăm doar pentru că sunt TOATE ale noastre (îmbinările)
+| # | Îmbinarea | Piese | Ce înseamnă | Câștig (DEDUS) |
+|---|---|---|---|---|
+| 1 | **Kronos croit pe placă** | AI + motor | Noul Kronos folosește doar piese ieftine pentru placă: ReLU² în loc de GELU, normă simplă (RMS) în loc de LayerNorm, fără „deplasări” (bias), lățimi care se împart exact la plăcile de 64. Pasul rămâne din ~5 feluri de programe în loc de 13. Aceleași alegeri le fac și modelele moderne (deci nu pierdem calitate) | +10–20 % viteză brută |
+| 2 | **Programe pe măsură, reglate singure noaptea** | motor + driver + OS | Kronos are doar ~6 forme de matrice. Pentru fiecare, programul se compilează cu mărimile fixe (fără margini, fără ramuri) în mai multe variante; ciclul automat le aleargă noaptea pe placa reală și păstrează cea mai rapidă. NVIDIA nu poate face asta pentru modelul fiecărui client | +10–30 % peste un program general bun |
+| 3 | **O singură memorie: VRAM + RAM** | OS + driver + motor | Planul pasului e fix, deci știm dinainte ce bucată trebuie și când: o aducem din RAM cu un pas înainte (legătura de 12–13 GB/s). Stările optimizatorului (jumătate din memoria greutăților) stau în RAM | nu viteză, ci **mărime**: lot mai mare și un Kronos mai mare decât ar încăpea altfel pe 8 GB (cât anume: de măsurat) |
+| 4 | **Procesorul lucrează în același pas** | OS + motor + AI | Cele 18 nuclee țin caietul din RAM, optimizatorul și pregătirea lotului următor, în timp ce placa înmulțește. Placa nu așteaptă niciodată | face posibile 3 și caietul; +5–10 % |
+| 5 | **Precizie pe trepte** | motor + AI | La început (faza pe bucăți) calcule grosiere, ieftine (16 biți, de încercat 8 biți); la sfârșit calcule fine. PyTorch pe placa asta are o singură precizie | până la +30–50 % în prima fază, dacă proba pe 8 biți iese |
+| 6 | **Laborator fără zgomot** | OS + motor | Motorul nostru dă aceiași biți la fiecare rulare. Două variante de antrenare se pot compara pe exact aceleași date și aceeași pornire, deci o diferență mică se vede din prima — Kronos spune că în Windows diferențele sub 0,005 sunt zgomot. Ciclul automat poate încerca variante singur, noaptea | cercetare de câteva ori mai rapidă pe aceeași placă — asta e partea de „se îmbunătățește singur” |
+
+## Socoteala cinstită
+- Viteză brută (simboluri/s, aceleași calcule ca Windows): pista A × îmbinările 1, 2 → **cam 0,9–1,5 × Windows**, dacă toate ies.
+- Până la aceeași notă la examen: încă ×2–2,5 din trepte → **în total ×2–3 față de Windows de azi** e ținta realistă; ×4 dacă iese și 8 biți.
+- Ce Windows nu poate deloc: îmbinarea 3 (un Kronos mai mare decât placa) și 6.
+
+## Ce NU e al nostru (ca să știm unde mai sunt limite)
+1. **Firmware-ul plăcii (GSP)** — al NVIDIA, obligatoriu; noi doar îl încărcăm.
+2. **Compilatorul programelor de placă (Mesa NAK)** — unealtă liberă, nu a noastră: nu știe bf16, poate nu știe 8 biți, și codul scos e mai slab
+   decât al NVIDIA. E veriga cea mai slabă din lanț. Pe termen lung: un generator de cod al nostru pentru cele 2–3 bucle fierbinți
+   (a cincea piesă).
+3. **Siliciul** — plafonul plăcii rămâne plafon.
+
+„Singurul din lume”: nu cunosc alt proiect mic care să aibă toate patru piesele scrise de la zero. Cel mai aproape e tinygrad (driver și
+motor proprii, fără OS și fără model propriu). Nu pot dovedi că nu mai există altul, așa că în prezentări aș scrie „printre foarte puținele”.
+
+## Ordinea propusă
+1. **Acum (aprobat deja):** pista A — `mm_train_tile` → tensor cores → umbra pe 16 biți → lotul mare; bancul cinstit Windows ↔ OS.
+2. **În paralel, cu „da”:** laboratorul treptelor în Windows — întâi doar bucăți K = 4 față de rețeta de azi, o oră fiecare, același
+   examen (`romana_bpb`), cu pre-înregistrare ca la Kronos. Caietul rămâne ultimul (Kronos: e cel mai scump, schimbă formatul modelului).
+3. **Apoi, cu „da”:** „Kronos croit pe placă” (îmbinarea 1) + ce a câștigat în laborator = modelul nou care se antrenează de la zero în
+   OS-ul nostru („versiunea 1”). #513 și #651 rămân neatinse.
+4. **Pe parcurs, cu „da”:** cursa de noapte a programelor (îmbinarea 2) și memoria unică (3 + 4).
+
+## Cele trei hotărâri
+- **H1 — laboratorul:** ridicăm pauza C-156 doar pentru antrenări de probă de câte o oră în Windows (întâi 2: rețeta de azi și bucăți K = 4)?
+- **H2 — Kronos croit pe placă:** următorul Kronos (de la zero) se proiectează împreună cu motorul (îmbinarea 1 + treptele câștigătoare)?
+- **H3 — cursa de noapte:** pe placa reală pot rula într-o noapte mai multe variante de program, dacă fiecare e dovedită în simulare că dă
+  aceiași biți și are suma verificată? (Azi regula e „un singur lucru nou pe test”.)
+
+## Decizia lui Adrian
+- (de completat)
+
+## Discuție
+- 2026-11-24 17:50 centru: scris la cererea lui Adrian (17:17). Se sprijină pe `idei/2026-11-24-centru-viteza-peste-windows.md` și
+  `idei/2026-11-24-centru-antrenarea-in-trepte.md` (cu corectura despre Muon).

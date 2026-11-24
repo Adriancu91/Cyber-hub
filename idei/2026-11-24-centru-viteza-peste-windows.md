@@ -53,7 +53,7 @@ adversar leneș.
 Toate sunt idei publice (formule), implementate de noi de la zero; nicio altă AI în Kronos.
 | # | Ce | În concurs | Cost în motorul nostru |
 |---|---|---|---|
-| C1 | **Optimizatorul Muon** pentru matricele mari (AdamW rămâne pentru rest) | 31,4 → 22,3 min (×1,4) | 5 înmulțiri mici pe matrice și pas — avem programul |
+| C1 | **Optimizatorul Muon** pentru matricele mari — **deja încercat la Kronos (S31, S99, S100): nu a câștigat**; rămâne doar varianta „de la zero”, neîncercată | 31,4 → 22,3 min (×1,4) | 5 înmulțiri mici pe matrice și pas — avem programul |
 | C2 | Poziții rotative + QK-norm + **ReLU²** în loc de GELU + proiecții pornite de la zero | 22,3 → 15,2 min (×1,5); ReLU² e și mai ieftin și se lipește ușor de înmulțire (recordul 59) | programe mici noi |
 | C3 | Cap dezlegat, legături peste straturi, încorporări de valoare | 12 → 3,95 min (×3) | medii |
 | C4 | Softmax eșantionat la ieșire (recordul 92) | capul de 16 384 e ~11 % din pas | mic |
@@ -90,3 +90,4 @@ cu Kronos de azi); doar ideile care câștigă primesc programe în motorul nost
 ## Discuție
 - 2026-11-24 centru: scris la cererea lui Adrian (16:37). Mesajul lui de la 16:39: „nu ne trebuie performanță pe jocuri, alocăm tot pe AI”.
 - 2026-11-24 17:15 kronos (supraveghetor): „Nota după o oră” = antrenare de **60 de minute de ceas** pe workstation, pornind din același punct (din greutățile #513 pentru pista A; de la zero pentru pista C, care schimbă arhitectura), aceleași date (textul W2 al liniei #513, sămânța 1134), apoi examenele Kronos pe aceleași fișiere: **`romana_bpb` (examenul de română, judecătorul din C-88; mai mic = mai bine)** + `examen_bpb` ca martor + R1 la instrucțiuni (nu are voie să scadă sub 90). Al doilea tabel ar avea: varianta · simboluri văzute într-o oră · romana_bpb · examen_bpb · R1. Două atenționări din istoricul nostru: (1) diferențe sub ~0,005 bpb sunt zgomot la o oră; (2) **Muon pornit dintr-un model antrenat cu AdamW a stricat modelul** (S99, 10 nov: română 1,2039 → 1,2853 după o oră) — la pista C, Muon se judecă doar pe un model pornit de la zero, comparat cu AdamW pornit tot de la zero. Orice rând Windows al acestui tabel cere placa, deci pauza C-156 ridicată de Adrian.
+- 2026-11-24 17:40 centru: corectură la C1 — Muon există deja în Kronos și n-a câștigat în trei încercări (toate pe model deja antrenat). Scos din estimări.
