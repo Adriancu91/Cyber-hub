@@ -14,7 +14,8 @@ Altcineva o folosește doar cu o rezervare de mai jos, aprobată de Adrian.
 | Când | A cui e placa | Reguli |
 |---|---|---|
 | **La orice oră, zi și noapte** | **testele Cyber-GPU / Cyber Universe** (ciclul automat C-143, pornit doar de centrul de comandă prin paznicul de pe workstation) | Un singur test o dată; un test ține ~10–15 minute (Windows → stick → test → Windows). Cheile lui Adrian de pe stick și butonul `C:\Kronos\cyber-test\STOP` rămân stăpâne. |
-| — | **Kronos: pe pauză** (C-156) | Nicio antrenare pe workstation până la o decizie nouă a lui Adrian. Chat-ul cu #651 rămâne pornit. Lucrul mic pe procesor (exporturi, „pasul de aur”) e voie oricând; un test îl poate întrerupe prin repornire, deci se face în bucăți care se pot relua. |
+| **Ziua, 07:00–23:00, câte o oră** | **laboratorul Kronos** (C-163, decizia 24 nov 17:35) | Probe de o oră în Windows. Executantul scrie `C:\Kronos\cyber-test\laborator-ocupat.txt` înainte și îl șterge după; nu pornește dacă există `porneste-test.txt`. Centrul de comandă nu dă semnal de test cât există fișierul. |
+| — | **Kronos: pe pauză** (C-156) pentru orice altă antrenare | Nicio antrenare pe workstation până la o decizie nouă a lui Adrian. Chat-ul cu #651 rămâne pornit. Lucrul mic pe procesor (exporturi, „pasul de aur”) e voie oricând; un test îl poate întrerupe prin repornire, deci se face în bucăți care se pot relua. |
 
 ## Coada testelor pe placă (o ține centrul de comandă; un singur lucru nou pe test)
 | Nr. | Versiunea | Ce e nou | Rândul din `auto\teste.txt` | Stare |
