@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 06:12 · sarcina: C-157 p.2 — comparația os-389 (pasul întreg pe bucăți) · estimat gata: 07:15
+liber · terminat 2026-11-24 06:34 · următorul pas: comparația când OS-ul rulează P6-174 pe placă (pasul întreg, predicția 4–5 ms) sau os-384/385; altfel C-157 punctul 8 (fișa de model, documentul de proiectare)
