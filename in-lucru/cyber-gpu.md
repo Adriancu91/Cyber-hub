@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 06:34 · următorul pas: comparația când OS-ul rulează P6-174 pe placă (pasul întreg, predicția 4–5 ms) sau os-384/385; altfel C-157 punctul 8 (fișa de model, documentul de proiectare)
+ocupat · început 2026-11-24 07:12 · sarcina: C-157 punctul 8 (fișa de model + pachetele de calcul, documentul de proiectare) dacă nu vine un test nou pe placă · estimat gata: 08:15
