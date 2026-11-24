@@ -17,4 +17,5 @@
 
 ## Comparația cu Windows, exact (FISA_ANTRENARE.md)
 - Același model #513 (12 straturi, E 768, context 512, vocabular 16 384). Windows: lot 12 × 512, Adam o dată la 8 loturi, 156,5 ms pe lot = ~39 300 simb/s. Noi: lot 2 × 512, AdamW la fiecare lot, 1 123 ms = 911 simb/s.
+- Windows calculează în **bf16 (autocast, tensor cores)**; noi în F32 curat.
 - Lotul nostru e de 6 ori mai mic și facem AdamW la fiecare lot, deci placa e mai puțin ocupată; un lot mai mare ne-ar ridica parțial cifra. Diferența ×43 nu vine doar din asta: rămân de adus înmulțirile rapide (tensor cores).
