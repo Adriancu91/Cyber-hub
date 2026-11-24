@@ -2,7 +2,7 @@
 
 - **Propus de:** centrul de comandă · **Data:** 2026-11-24
 - **Proiecte implicate:** `cyber-universe`, `cyber-gpu`, `kronos`
-- **Stare:** propus — document de hotărât (trei „da / nu” la sfârșit)
+- **Stare:** aprobat (Adrian, 24 nov 17:35: „Da” la H1, H2, H3 — vezi DECIZII.md; comenzile C-163, C-164, C-165)
 
 ## Ideea (pe înțelesul lui Adrian)
 OS-ul, driverul, motorul de antrenare și Kronos sunt scrise de noi. Fiecare aduce câte puțin singur; câștigul mare e la **îmbinări**:
@@ -65,7 +65,7 @@ motor proprii, fără OS și fără model propriu). Nu pot dovedi că nu mai exi
   aceiași biți și are suma verificată? (Azi regula e „un singur lucru nou pe test”.)
 
 ## Decizia lui Adrian
-- (de completat)
+- 2026-11-24 17:35: **„Da”** la H1, H2, H3 (în chat cu centrul de comandă). Limitele exacte: `DECIZII.md`, aceeași dată.
 
 ## Discuție
 - 2026-11-24 17:50 centru: scris la cererea lui Adrian (17:17). Se sprijină pe `idei/2026-11-24-centru-viteza-peste-windows.md` și
