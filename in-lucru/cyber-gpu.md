@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 10:13 · sarcina: C-157 p.8 pasul 2 (formele #513/#651 prin ModelCard) · estimat gata: 11:15
+liber · terminat 2026-11-24 10:45 · următorul pas: comparația următorului test pe placă (profilul pasului / lotul prin RAM / --mixt); altfel C-157 p.9 (motorul de antrenare, pregătire: ce a rămas nefăcut)
