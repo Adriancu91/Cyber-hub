@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 12:16 · următorul pas: comparația următorului test pe placă (profilul #513 pe 2 părți / --antrenare-513 --mixt cu S = 2^14 / lotul prin RAM / --mixt mini); altfel C-157 p.9 (motorul de antrenare, pregătire)
+ocupat · început 2026-11-24 13:11 · sarcina: C-157 p.2 comparația os-403 (profilul pasului #513) · estimat gata: 14:26
