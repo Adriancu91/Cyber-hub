@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 23:42 · sarcina: CI P6-193 → GATA DE TEST --lipit-placi; PREDARE Cyber-GPU sesiunea 216 · estimat gata: 01:10
+liber · terminat 2026-11-25 00:22 · următorul pas: CI 45500123784 (P6-194) → GATA DE TEST os-416 (cursa fără 64x64k8, --cursa-mm); apoi cifrele cursei → legarea with_mm_choice (--mm-alegere)
