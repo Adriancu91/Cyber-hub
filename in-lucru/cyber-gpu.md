@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 02:12 · sarcina: ordinea 20:11 pasul 5 în SIMULARE (lotul următor urcat în paralel cu pasul de antrenare) · estimat gata: 03:30
+liber · terminat 2026-11-24 02:36 · următorul pas: comparațiile când rulează pe placă (os-384/385 `--antrenare-mini --mixt`, gen 4, arena în VRAM); altfel lipirea GELU' pe `mm_tc` sau ordinea 20:11 pasul 6 în SIMULARE
