@@ -2233,6 +2233,7 @@ Format:
 ### C-164 · kronos + cyber-gpu · KRONOS CROIT PE PLACĂ: proiectul modelului următor (Adrian, 24 nov 17:35)
 - **Ce:** o fișă comună `integrare/KRONOS_V2_FISA.md`: arhitectura următorului Kronos pornit de la zero, aleasă împreună cu motorul — candidate: ReLU² în loc de GELU, normă RMS în loc de LayerNorm, fără bias, lățimi multiple de 64, capul; pentru fiecare: ce programe de placă dispar / se simplifică (Cyber-GPU) și ce risc are pentru calitate (Kronos, verificabil în laboratorul C-163 cu probe de o oră).
 - **Doar proiect și simulare acum.** Nicio schimbare în `kronos/`; modelul nou vine ca modul care trece `teste_contracte/`. Antrenarea lungă în OS = „da” separat al lui Adrian.
+- stare (cyber-gpu): gata pentru partea noastră (2026-11-24 20:30, sesiunea Cyber-GPU 212) · rezultat: fișa `integrare/KRONOS_V2_FISA.md` cu coloana „placă” (lansări, ce dispare, câștig DEDUS din os-410: toate candidatele −5 % azi, ~1 % după `colsum` împărțit), cod `gpu_compute::v2` + T218 (`cyber-gpu` `212bc15`); coloanele „calitate” rămân lui Kronos.
 
 ### C-165 · cyber-gpu + cyber-universe · CURSA DE NOAPTE A PROGRAMELOR (Adrian, 24 nov 17:35)
 - **Ce:** pentru formele de înmulțire ale pasului #513 (și apoi atenția), mai multe variante ale aceluiași program (mărimea plăcii, fire pe bloc, mărimi fixe compilate) rulate într-o pornire pe placa reală; raportul scrie timpul median al fiecăreia și păstrează cea mai rapidă pe formă.
