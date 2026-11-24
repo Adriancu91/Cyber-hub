@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 03:12 · sarcina: CI f9f7faf → Release; apoi P6-172 / --lipit pe placă după os-386 · estimat gata: 04:40
+liber · terminat 2026-11-24 05:05 · următorul pas: după rezultatul os-389 (bucățile pasului) → P6-174 tăierea bucății celei mai mari; apoi --antrenare-mini --lipit pe placă; apoi P6-172 (#513)

@@ -333,3 +333,4 @@
 - 2026-11-24 01:13–02:50 — os-385 verde = GATA DE TEST `--atentie4` (P6-168). P6-169 `test-placa --antrenare-mini --vram` (arena antrenării în VRAM, PREDARE `f2e5097`): SIMULARE = oracolul, pe pas 1 284 B sus / 260 B jos în loc de ~18 MB / ~13 MB; în CI pe `main` → Release următor.
 - 2026-11-24 02:45 — P6-170 `antrenare mini --placa-sim --lipit` (`ln_back_res` + `mm_train_gelu`): 69 lansări în loc de 75, aceiași biți 2 / 2; pe `wip/P6-170`.
 - 2026-11-24 02:50 — os-386 GATA DE TEST (`test-placa --antrenare-mini --vram`, arena în VRAM); P6-170 (`--lipit`) și P6-171 (`--recalcul`, PREDARE `c5fcb2e`: 83 lansări, aceiași biți 2 / 2) în `main`, CI în curs; plan P6-172 (#513 pe placă).
+- 2026-11-24 03:12–05:05 — os-388 verde (P6-170 + P6-171, doar SIMULARE). P6-173: pasul întreg al antrenării pe bucăți (nota 03:12) → os-389 GATA DE TEST `test-placa --antrenare-mini --vram`; CI reluat o dată (oglinda `apt` inaccesibilă).
