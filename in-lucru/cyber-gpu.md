@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 08:55 · următorul pas: comparația os-392 (--pas-lipit) sau a lotului prin RAM când rulează pe placă; altfel C-157 p.8 pasul 2 (formele #513/#651 prin ModelCard) sau p.9
+ocupat · început 2026-11-24 09:14 · sarcina: C-157 p.2 — comparația os-392 (--pas-lipit) · estimat gata: 10:15
