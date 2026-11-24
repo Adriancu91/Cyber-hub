@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 00:15 · sarcina: C-165 — pasul mixt (mm_tc) pe #513 în SIMULARE (după cursa os-413) · estimat gata: 01:45
+liber · terminat 2026-11-25 00:58 · următorul pas: comparația cursei complete (os-414+) → parse_race → MmChoice; după os-352 pe placă comparația mm_tc la qkv-513; apoi lotul mare (prioritatea 5) sau pista B1 (int8 IMMA)
