@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 23:12 · sarcina: C-165 — raportul cursei os-413 (comparație + parse_race pe raportul adevărat) · estimat gata: 00:30
+liber · terminat 2026-11-24 23:43 · următorul pas: raportul cursei complete (fără 64x64k8) + A4 → comparația + parse_race → MmChoice → OS leagă with_mm_choice; proba 64x64k8 cu program_map_bytes; apoi mm_tc / pasul mixt pe #513
