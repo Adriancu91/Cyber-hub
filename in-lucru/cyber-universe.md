@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 02:50 · următorul pas: confirmă CI-ul lui f9f7faf (P6-171, run 45299303031) → Release (nimic pentru placă); după rezultatul os-386: test-placa --antrenare-mini --lipit; apoi P6-172 (#513 pe placă)
+ocupat · început 2026-11-24 03:12 · sarcina: CI f9f7faf → Release; apoi P6-172 / --lipit pe placă după os-386 · estimat gata: 04:40
