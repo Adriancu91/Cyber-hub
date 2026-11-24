@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 14:48 · următorul pas: comparația urcării pe părți (nota C-157_P2w) sau a testului #513 pe atenția _3 (nota P2v) când vin; apoi --antrenare-513 --mixt (S = 2^14) / mm_train F32 pe plăci; altfel C-157 p.9
+ocupat · început 2026-11-24 15:13 · sarcina: C-157 p.9 (motorul de antrenare, ce a rămas din a–d) sau comparația urcării pe părți dacă vine · estimat gata: 16:15
