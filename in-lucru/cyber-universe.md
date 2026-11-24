@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 13:13 · sarcina: CI 6ba17f4 (P6-183) → Release; cifre os-403; coada C-158 · estimat gata: 14:00
+liber · terminat 2026-11-24 13:58 · următorul pas: CI-ul lui `a134660` (P6-184) → Release (de anunțat: refacerea `--antrenare-513`, verdictul = oracolul); apoi coada C-158
