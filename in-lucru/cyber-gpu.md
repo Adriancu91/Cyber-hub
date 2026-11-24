@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 00:58 · următorul pas: comparația cursei complete (os-414+) → parse_race → MmChoice; după os-352 pe placă comparația mm_tc la qkv-513; apoi lotul mare (prioritatea 5) sau pista B1 (int8 IMMA)
+ocupat · început 2026-11-25 01:15 · sarcina: C-157 p.2 comparația rapoartelor de azi-noapte (os-415/cursa) + C-165 următorul pas · estimat gata: 02:15
