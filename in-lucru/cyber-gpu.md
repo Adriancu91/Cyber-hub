@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 23:43 · următorul pas: raportul cursei complete (fără 64x64k8) + A4 → comparația + parse_race → MmChoice → OS leagă with_mm_choice; proba 64x64k8 cu program_map_bytes; apoi mm_tc / pasul mixt pe #513
+ocupat · început 2026-11-25 00:15 · sarcina: C-165 — pasul mixt (mm_tc) pe #513 în SIMULARE (după cursa os-413) · estimat gata: 01:45
