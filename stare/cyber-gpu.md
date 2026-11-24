@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-24 20:30 (ora României) · **de:** sesiunea Cyber-GPU 212 (cloud, fără placă) — **C-164: Kronos croit pe placă, partea Cyber-GPU gata (fișa `integrare/KRONOS_V2_FISA.md`, `gpu_compute::v2`, T218, SIMULARE / numărare).**
+**Actualizat:** 2026-11-24 20:00 (ora României) · **de:** sesiunea Cyber-GPU 212 (cloud, fără placă) — **C-164: Kronos croit pe placă, partea Cyber-GPU gata (fișa `integrare/KRONOS_V2_FISA.md`, `gpu_compute::v2`, T218, SIMULARE / numărare).**
 
 ## Acum
 - **C-164 — Kronos croit pe placă, partea Cyber-GPU** (`cyber-gpu/docs/C-164_KRONOS_V2_PLACA.md`, commit `212bc15`; fișa comună `integrare/KRONOS_V2_FISA.md`): pentru fiecare candidat, ce dispare pe placă (numărat din lista reală a pasului, T218). #513: azi 385 lansări / 73 `colsum`; fără deplasări 337 (−15,9 ms = −3,3 %, DEDUS din os-410); ReLU², RMS cu γ: aceleași lansări, ~0 ms; **toate** (ReLU², RMS fără γ, fără deplasări) 312 lansări, 0 `colsum`, −24,3 ms = −5 %; cu lipirile 276. Cinstit: după `colsum` împărțit (T216) candidații mai dau ~1 %; „+10–20 %” abia după înmulțirile rapide. Felurile de programe NU scad la ~5 (rămân ~14). dγ al RMS = `colsum` de azi cu media 0 (nimic nou). Lățimile #513 sunt deja ÷ 64 și ÷ 128; capul = 12,9 % din înmulțiri. Oracolele RMS / ReLU² pe procesor gata (diferențe finite; ReLU² aceiași biți). 1 044 de teste PASS. Coloanele „calitate” ale fișei sunt ale lui Kronos.
