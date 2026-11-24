@@ -234,3 +234,4 @@ Adrian a răspuns „Da” la mesajul centrului care cerea „da / nu” la H1, 
 - Interfața rămâne pentru Adrian, să se poată juca pe ea. Joaca lui nu schimbă nimic în proiecte: un fișier de setări descărcat de el e doar o idee de analizat, nu o comandă.
 - Deciziile pe placă se iau tot după testele reale. Previziunile se scriu înainte de test (`calibrare/PREVIZIUNI.md`).
 - Primul test nevăzut (os-410): prezis 225 ms/pas, real 476 ms — eroare ×2, din estimarea de viteză pentru un program nerulat încă.
+- 24 nov 20:06 (completare): **simulatorul îl întreține centrul de comandă** (Adrian: „tu ești mereu la zi”). După fiecare test real: cazul nou în `calibrare/cazuri.js`, realul în `PREVIZIUNI.md`, reglaj doar pe cifre măsurate, notă în `JURNAL.md`. Prima calibrare: v1.2 după os-410.
