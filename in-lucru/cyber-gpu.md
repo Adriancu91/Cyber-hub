@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 10:45 · următorul pas: comparația următorului test pe placă (profilul pasului / lotul prin RAM / --mixt); altfel C-157 p.9 (motorul de antrenare, pregătire: ce a rămas nefăcut)
+ocupat · început 2026-11-24 11:14 · sarcina: C-157 p.2 — comparația os-395 (pasul #513 pe placă, NU TRECE, 911 simb/s) · estimat gata: 12:10
