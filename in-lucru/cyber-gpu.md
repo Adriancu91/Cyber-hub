@@ -1,1 +1,1 @@
-ocupat · început 2026-11-24 16:11 · sarcina: C-157 p.2 — Plan::with_mm_tile + proba mică pentru placă (nota P2x) · estimat gata: 16:56
+liber · terminat 2026-11-24 16:39 · următorul pas: comparația testelor care vin (os-407 --placi3, urcarea pe părți P2w); altfel proba mică pentru placă a lui mm_train_tile (ca mm_tc_probe)
