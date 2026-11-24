@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 15:30 · următorul pas: CI-ul lui `4b8e071` (P6-186) → Release (nimic nou de testat); apoi coada C-158 / PREDARE-uri noi Cyber-GPU
+ocupat · început 2026-11-24 15:42 · sarcina: Release P6-186 + PREDARE-uri noi Cyber-GPU / coada C-158 · estimat gata: 17:10
