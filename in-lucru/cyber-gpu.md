@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 09:50 · următorul pas: comparația următorului test pe placă (profilul pasului / lotul prin RAM / --mixt); altfel C-157 p.8 pasul 2 (formele #513/#651 prin ModelCard) sau p.9
+ocupat · început 2026-11-24 10:13 · sarcina: C-157 p.8 pasul 2 (formele #513/#651 prin ModelCard) · estimat gata: 11:15
