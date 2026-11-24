@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 03:27 · următorul pas: comparația când rulează remediul jurnalului (pasul întreg ~5 ms) sau os-384/385 --mixt; altfel al doilea rând de tăieturi pentru pasul întreg (umbra pushbuffer-ului, prima/ultima înregistrare) în SIMULARE
+ocupat · început 2026-11-24 04:13 · sarcina: C-157 p.2 — al doilea rând de tăieturi pentru pasul întreg (umbra pushbuffer-ului, prima/ultima înregistrare) în SIMULARE · estimat gata: 05:30
