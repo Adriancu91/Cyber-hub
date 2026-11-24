@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 02:36 · următorul pas: comparațiile când rulează pe placă (os-384/385 `--antrenare-mini --mixt`, gen 4, arena în VRAM); altfel lipirea GELU' pe `mm_tc` sau ordinea 20:11 pasul 6 în SIMULARE
+ocupat · început 2026-11-24 03:13 · sarcina: C-157 p.2 — comparația os-386 (arena în VRAM, pasul întreg 370 ms) · estimat gata: 04:30
