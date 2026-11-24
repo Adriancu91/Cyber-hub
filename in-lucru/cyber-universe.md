@@ -1,1 +1,1 @@
-liber · terminat 2026-11-24 10:58 · următorul pas: CI-ul lui P6-179 (5096eb9) → Release (nimic nou de testat); apoi coada C-158
+ocupat · început 2026-11-24 11:11 · sarcina: Release pentru P6-179 + coada C-158 · estimat gata: 12:30
