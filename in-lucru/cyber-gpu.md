@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 04:05 · următorul pas: comparația pasului #513 cu `mm_tv_128x128` (P6-196) și a os-417 când vin; `mm_tc`/`mm_tc128` după os-352; altfel `mm_tc_gelu` pe 128×128 sau B1 (int8 IMMA)
+ocupat · început 2026-11-25 04:14 · sarcina: comparația os-417 (proba 64x64k8 pe placă, C-157 p.2) · estimat gata: 05:00
