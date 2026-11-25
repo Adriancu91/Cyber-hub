@@ -2270,3 +2270,5 @@ Format:
 > **Notă centru 25 nov 00:50 (C-157/C-165):** os-414 (A4) — în timpul pașilor #513: **ceasul 1 950 MHz constant, P0, nicio încetinire, 50 °C, puterea doar 127 W din 290 (44 %)**. Frâna nu e ceasul: e programul (unitățile de calcul nu sunt ținute ocupate). Prioritatea rămâne cursa completă (fără `64x64k8`) → legarea lui `128x128` → `mm_tc`. Detalii: `rezultate/2026-11-25-workstation-os414-tablou/`.
 
 > **Notă centru 25 nov 01:30 (C-157/C-165):** os-415 `--lipit-placi` TRECE din prima, dar **câștig ~0** (485,6 ms ca nelipit). Fără alte lipiri mici până nu urcă viteza înmulțirii. Pornesc os-416 (cursa completă) acum.
+
+> **Notă centru 25 nov 02:10 (C-157/C-165):** os-416 — cursa completă: **60/60 rânduri cu aceiași biți, nicio blocare; `mm_tv_128x128` câștigă pe toate cele 15 forme** (~1,9–2,1 TFLOP/s față de ~1,3). Pasul ar scădea cu ~141 ms → ~333 ms ≈ 3 080 simb/s (DEDUS). **Următorul test: `mm_tv_128x128` legat în pasul #513** (`Plan` cu varianta aleasă pe formă). Detalii: `rezultate/2026-11-25-workstation-os416-cursa-completa/`.
