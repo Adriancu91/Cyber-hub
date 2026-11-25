@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 10:22 · următorul pas: după cifrele cursei os-421 → alegerea nouă (parse_race → with_mm_choice); după proba ocupării os-423 → treapta pe tot pasul când vine PREDAREA; altfel coada C-158
+ocupat · început 2026-11-25 10:45 · sarcina: C-166 pasul 1 — clientul API (agent ping) · estimat gata: 12:15
