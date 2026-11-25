@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 18:41 · sarcina: verific CI P6-213 → GATA DE TEST, apoi PREDĂRI Cyber-GPU / C-158 · estimat gata: 19:40
+liber · terminat 2026-11-25 19:16 · următorul pas: CI pe 0866c60 (P6-214 --mm-tc-64k) verde → GATA DE TEST `test-placa --mm-tc --mm-tc-pf --mm-tc-v4 --mm-tc-64k`; apoi PREDĂRI noi Cyber-GPU, C-166 pașii 4–6
