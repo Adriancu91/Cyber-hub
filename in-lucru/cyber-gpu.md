@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 02:14 · sarcina: C-157 p.2 / C-165 — comparația cursei complete os-416 → parse_race → MmChoice · estimat gata: 03:45
+liber · terminat 2026-11-25 02:54 · următorul pas: comparația pasului #513 cu `mm_tv_128x128` (prezis ~341 ms) când vine; apoi `mm_tc` (os-352/os-384) pe plăci 128×128 și pasul mixt pe #513; apoi lotul mare sau B1 (int8 IMMA)
