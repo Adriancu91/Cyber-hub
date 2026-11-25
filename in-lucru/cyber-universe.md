@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 00:37 · următorul pas: CI pe main (P6-220) verde → Release (doar agentul, nimic pentru placă); apoi PREDĂRI noi Cyber-GPU sau C-166 pasul 6 (canalul live/os-agent-comenzi.md)
+ocupat · început 2026-11-26 00:41 · sarcina: CI P6-220 → Release agent; PREDĂRI Cyber-GPU noi / C-166 pasul 6 · estimat gata: 01:51
