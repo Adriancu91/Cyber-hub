@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 07:11 · sarcina: verific PREDĂRI Cyber-GPU noi / coada C-158 · estimat gata: 08:40
+liber · terminat 2026-11-25 08:15 · următorul pas: după cifrele cursei os-421 cu 5 variante → alegerea nouă (parse_race → with_mm_choice); altfel coada C-158
