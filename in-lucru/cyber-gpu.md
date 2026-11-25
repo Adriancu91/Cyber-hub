@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 15:50 · următorul pas: comparațiile când vin (mm_tc_pf, mm_tc_v4, mm_tc128_v4 în --mm-tc, os-421, os-422); dacă mm_tc128_v4 nu bate mm_tc_v4 → placa 128×64 cu citiri de 128 de biți; apoi mm_s8 / mm_tv_*
+ocupat · început 2026-11-25 16:14 · sarcina: C-157 p.2 — comparațiile testelor noi de pe placă (os-423 ocupare, os-431) sau următorul punct din coadă · estimat gata: 17:10
