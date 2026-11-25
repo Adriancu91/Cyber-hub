@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 11:50 · următorul pas: mm_tc cu citirile în avans (≥ 16 în zbor, aceiași biți în SIMULARE), apoi același leac în mm_tc128/mm_s8/mm_tv_*; comparațiile când vin (proba ocupării, os-421, os-422)
+ocupat · început 2026-11-25 12:10 · sarcina: C-157 — mm_tc cu citiri în avans (≥16 în zbor), SIMULARE · estimat gata: 13:30
