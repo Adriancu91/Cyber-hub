@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 18:22 · sarcina: C-157 — comparația os-438 dacă a rulat, altfel următorul punct din coadă · estimat gata: 19:30
+liber · terminat 2026-11-25 19:10 · următorul pas: comparația os-438 (mm_tc_v4, Q1–Q4) când vine; OS-ul leagă pack_mixed_fast în --mixt (nota C-157_P2zf); apoi partea fixă a feliei dacă mm_tc* rămân sub 5 TFLOP/s la 2 blocuri
