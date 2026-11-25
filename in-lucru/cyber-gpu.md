@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 00:16 · următorul pas: comparațiile testelor noi de pe placă (proba barierei, --lot-prin-ram, text real F32/mixt) când vin; altfel token.comp cu token_cbuf_for în SIMULARE pentru generare
+ocupat · început 2026-11-26 01:13 · sarcina: C-157 — comparațiile testelor noi de pe placă, dacă au venit; altfel token.comp cu token_cbuf_for (SIMULARE) · estimat gata: 03:00
