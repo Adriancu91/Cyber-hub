@@ -102,3 +102,14 @@ De retinut: placa de retea functioneaza, dar pornirea ei pe acest model de calcu
 **Lipsesc:** jurnalul nu are pasi, viteza, pierderi sau temperatura.
   abatere: [ 332.650] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"
 
+2026-11-25 22:03 tura 1
+**Acum nu ruleaza nicio lucrare de antrenare**, deci nu exista pasi, viteza sau pierderi de raportat. Calculatorul e pornit de aproximativ 9 minute.
+
+**Testul placii video (GA104, 8 GB): toti cei 17 pasi au trecut, cu 2870 de scrieri.** Totusi, sistemul a refuzat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”.
+
+**Stick-ul USB:** jurnalul testului s-a salvat pe el, in 5989 de randuri. O scriere a durat 808,9 ms, desi media e de 3,6 ms.
+
+**Rapoartele s-au trimis pe GitHub cu succes.** Imediat dupa, procesul numarul 5 a fost oprit fortat (cod -9).
+
+**Memorie si retea:** memoria e aproape libera (aproximativ 880 MiB folositi, 129890 MiB liberi), iar reteaua merge la 100 Mb/s. Temperatura nu apare in date.
+
