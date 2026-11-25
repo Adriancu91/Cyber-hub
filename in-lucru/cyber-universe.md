@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 00:41 · sarcina: CI P6-220 → Release agent; PREDĂRI Cyber-GPU noi / C-166 pasul 6 · estimat gata: 01:51
+liber · terminat 2026-11-26 01:30 · următorul pas: CI pe main (P6-221 + P6-222) verde → Release (nimic pentru placă); apoi PREDĂRI noi Cyber-GPU sau C-166 pasul 6 partea 2 (test-placa semnat prin canal)
