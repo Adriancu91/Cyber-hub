@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 16:43 · sarcina: Release din d3f0e89 (P6-210/211) + legarea mm_tc128_v4 (PREDARE abb4f73) · estimat gata: 17:40
+liber · terminat 2026-11-25 17:22 · următorul pas: CI pe 6c96997 (P6-212 mm_tc128_v4) verde → GATA DE TEST `test-placa --mm-tc --mm-tc-pf --mm-tc-v4 --mm-tc128-v4`; apoi PREDĂRI noi Cyber-GPU, C-166 pașii 4–6
