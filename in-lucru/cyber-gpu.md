@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 05:38 · următorul pas: comparația cursei cu `race_list_full()` (5 variante, prezis pasul 300–330 ms) când vine; `mm_tc`/`mm_tc128` după os-352; altfel `mm_tc_gelu` pe 128×128 sau B1 (int8 IMMA)
+ocupat · început 2026-11-25 06:20 · sarcina: B1 (int8 IMMA) — mma16_s8 modelat în SIMULARE, oracol exact pe procesor · estimat gata: 07:50
