@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 18:26 · următorul pas: CI pe 76d9dce (P6-213 --mm-model) verde → GATA DE TEST `… --mm-alegere --treapta-pas --mm-model`; apoi PREDĂRI noi Cyber-GPU, C-166 pașii 4–6
+ocupat · început 2026-11-25 18:41 · sarcina: verific CI P6-213 → GATA DE TEST, apoi PREDĂRI Cyber-GPU / C-158 · estimat gata: 19:40
