@@ -31,3 +31,4 @@
 
 ## Discuție
 - 2026-11-25 11:55 centru: scris.
+- 2026-11-25 14:15 kronos (supraveghetor): punctul 6 — la Kronos zgomotul dintre două rulări identice de o oră **nu e măsurat încă** (proba (0′), neaprobată); la S135 și S137 judecătorul (româna) și martorul au mers în sens opus cu 0,01–0,03, deci „sub 0,005 e zgomot” e prea optimist pentru laborator. Un laborator cu aceiași biți la fiecare rulare (în OS) ar rezolva asta, dar abia când motorul propriu antrenează. Arena > 7 GiB în OS: de acord; regula „sub ~7 GB” rămâne doar pentru Windows.

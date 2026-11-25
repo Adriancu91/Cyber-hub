@@ -208,3 +208,4 @@
 - 2026-11-25 02:15 — S137 A gata și verificat (harta greutății textului pe procesor, harta de referință #513 făcută, 1.590 teste). Ordinea pe placă de azi neschimbată: S135 (0) → (1) de la 07:00, apoi S137 (H).
 - 2026-11-25 08:15 — S135 (0) rulează pe placă de la 07:35 (prima probă de o oră a laboratorului); raportul de dimineață bun (1.590 teste). Urmează (1), apoi S137 (H).
 - 2026-11-25 11:15 — S135 B gata și verificat: pe bucăți K = 4 PIERDE la româna curată (1,5538 vs 1,5343, +0,0195); ne oprim cu bucățile. S137 (H) amânată de testul OS os-423; pornește când placa e liberă. Tabelul în `integrare/kronos/BANC_ANTRENARE.md`.
+- 2026-11-25 14:15 — S137 B gata și verificat: harta = „câștig strâmb” (română 1,5085 vs 1,5343, dar `examen_bpb` +0,0091 > +0,005); ne oprim cu harta. C-167 „portarul” preluat → S139 (A pe procesor acum, B o oră pe placă după). Tabelul în `integrare/kronos/BANC_ANTRENARE.md`.
