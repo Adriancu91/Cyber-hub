@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 12:10 · sarcina: C-157 — mm_tc cu citiri în avans (≥16 în zbor), SIMULARE · estimat gata: 13:30
+liber · terminat 2026-11-25 13:35 · următorul pas: citiri de 128 de biți în mm_tc_pf (8 pe felie în loc de 32), apoi același leac în mm_tc128/mm_s8/mm_tv_*; comparațiile când vin (mm_tc_pf, proba ocupării, os-421, os-422)
