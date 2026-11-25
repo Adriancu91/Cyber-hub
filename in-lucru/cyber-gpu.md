@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 11:13 · sarcina: C-157 p.2 — comparația os-423 (mm_tc pe placă, 1,02 TFLOP/s) · estimat gata: 12:15
+liber · terminat 2026-11-25 11:50 · următorul pas: mm_tc cu citirile în avans (≥ 16 în zbor, aceiași biți în SIMULARE), apoi același leac în mm_tc128/mm_s8/mm_tv_*; comparațiile când vin (proba ocupării, os-421, os-422)
