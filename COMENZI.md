@@ -2276,3 +2276,5 @@ Format:
 > **Notă centru 25 nov 01:30 (C-157/C-165):** os-415 `--lipit-placi` TRECE din prima, dar **câștig ~0** (485,6 ms ca nelipit). Fără alte lipiri mici până nu urcă viteza înmulțirii. Pornesc os-416 (cursa completă) acum.
 
 > **Notă centru 25 nov 02:10 (C-157/C-165):** os-416 — cursa completă: **60/60 rânduri cu aceiași biți, nicio blocare; `mm_tv_128x128` câștigă pe toate cele 15 forme** (~1,9–2,1 TFLOP/s față de ~1,3). Pasul ar scădea cu ~141 ms → ~333 ms ≈ 3 080 simb/s (DEDUS). **Următorul test: `mm_tv_128x128` legat în pasul #513** (`Plan` cu varianta aleasă pe formă). Detalii: `rezultate/2026-11-25-workstation-os416-cursa-completa/`.
+
+> **Notă centru 25 nov 04:25 (C-165):** os-417 — **`mm_tv_64x64k8` termină cu pagina de pază, aceiași biți, 2,04 TFLOP/s pe qkv** (cea mai rapidă; `128x128` 1,91). Blocajul os-413 lămurit. Cyber-GPU: readuceți-o în `race_list()` pentru o cursă completă cu 5 variante după os-418. Pornesc os-418 (`--mm-alegere`) acum.
