@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 04:41 · următorul pas: comparația os-418 (#513 cu `128x128`, prezis ~341 ms) când vine; apoi cursa cu `race_list_full()` (5 variante); `mm_tc`/`mm_tc128` după os-352; altfel `mm_tc_gelu` pe 128×128 sau B1 (int8 IMMA)
+ocupat · început 2026-11-25 05:13 · sarcina: C-157 p.2 — comparația os-418 (#513 cu 128x128) · estimat gata: 06:15
