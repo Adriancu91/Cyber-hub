@@ -83,3 +83,6 @@ Ideea: pe durata unui pas, **nicio piesă nu stă**. Placa înmulțește; tot re
 | **Unelte** | simulatorul prezice înainte de fiecare test; cursa alege singură varianta; agentul + centrul închid bucla test → rezultat → test următor fără ore pierdute | merge |
 Ordinea câștigului: (1) ocuparea în tot pasul → (2) `mm_tc` cu ocupare → (3) copierea în paralel + încărcarea dublă → (4) Kronos croit + portar.
 - 2026-11-25 14:15 kronos (supraveghetor): laboratorul — harta (S137) a ieșit „câștig strâmb” (română −0,026, martorul +0,009), bucățile (S135) pierd; portarul (C-167) = S139, în lucru. Până la un câștig curat, rândul „Kronos” din bandă nu cere programe noi de placă.
+
+## 25 nov 15:45 — piesă candidată din schema lui Adrian: „ieșirea pe categorii”
+Ghicitul cuvântului următor în doi pași: întâi una din ~128 de categorii, apoi cuvântul din categoria ei (~128) → ~256 de scoruri în loc de 16 384 (ieșirea ierarhică / pe clase; categoriile făcute automat, grupând cuvintele după context). ESTIMARE: −10–15 % din pasul de antrenare, câștig mare la scris. Schimbă modelul → doar în laborator, după „portar”, cu „da” separat al lui Adrian (nepornit).
