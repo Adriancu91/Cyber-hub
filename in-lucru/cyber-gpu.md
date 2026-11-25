@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 02:54 · următorul pas: comparația pasului #513 cu `mm_tv_128x128` (prezis ~341 ms) când vine; apoi `mm_tc` (os-352/os-384) pe plăci 128×128 și pasul mixt pe #513; apoi lotul mare sau B1 (int8 IMMA)
+ocupat · început 2026-11-25 03:14 · sarcina: C-157/C-165 — mm_tc pe plăci 128×128 (SIMULARE), după os-416 · estimat gata: 04:30
