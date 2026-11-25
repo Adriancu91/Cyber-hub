@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 20:45 · următorul pas: CI pe 708a90a (P6-215 --mixt-rapid) verde → GATA DE TEST `test-placa --antrenare-mini --mixt --mixt-rapid`; apoi PREDĂRI noi Cyber-GPU, C-166 pașii 4–6
+ocupat · început 2026-11-25 21:13 · sarcina: CI os pe 708a90a → GATA DE TEST --mixt-rapid; legarea PREDĂRII Cyber-GPU 1ddf092 (lotul prin RAM, pasul mixt rapid) · estimat gata: 22:45
