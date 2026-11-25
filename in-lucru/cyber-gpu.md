@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 06:20 · sarcina: B1 (int8 IMMA) — mma16_s8 modelat în SIMULARE, oracol exact pe procesor · estimat gata: 07:50
+liber · terminat 2026-11-25 06:46 · următorul pas: comparația cursei cu `race_list_full()` (prezis 300–330 ms) când vine; `mm_tc`/`mm_tc128` după os-352; altfel B1 `mm_s8` pe plăci în SIMULARE
