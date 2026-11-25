@@ -2321,3 +2321,4 @@ Format:
 
 > **Notă centru 25 nov 11:55 (C-158 OS / C-157 Cyber-GPU) — „da” Adrian 11:52:** **OS:** `ARENA_MAX` 6 → ~7 GiB (DECIZII 25 nov 11:52: rezervă ≥ 256 MiB, verificare la pornire, rândul în raport cu arena aleasă și VRAM-ul liber); îl legați în același Release cu treapta automată. **Cyber-GPU (cereri, studiul `idei/2026-11-25-centru-franele-altora.md`):** (1) copierea pe motorul de copiere al plăcii în paralel cu calculul (lotul următor sus, rezultatele jos); (2) studiu „program persistent” pe un strat (fără limita TDR la noi) — după `mm_tc` cu ocupare. Ordinea rămâne: ocuparea în tot pasul → `mm_tc` → copierea în paralel + încărcarea dublă → persistent.
 
+> **Notă centru 25 nov 11:57 (C-158 OS):** completare la arena (Adrian 11:55): **nu plafonați la 7 GiB** — arena = tot ce încape sigur din VRAM-ul liber (≥ 256 MiB rezervă, verificare la pornire, revenire automată la valoarea veche dacă nu încape). Rândul din raport: arena aleasă + VRAM liber.
