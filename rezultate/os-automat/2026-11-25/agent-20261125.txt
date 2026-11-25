@@ -10,3 +10,14 @@ Placa de rețea a semnalat și un pas de pornire neterminat („LAN_INIT_DONE nu
   abatere: [   1.270] WARN  usb: port 25: incercarea 3, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
   abatere: [   1.310] WARN  usb: stick-ul de pe portul 25 nu porneste
 
+2026-11-25 17:08 tura 1
+**Acum:** nicio lucrare nu ruleaza. Sistemul e pornit de aproape 9 minute. Memoria e aproape libera: ~960 MiB folositi, ~127 GiB liberi.
+
+**Antrenarea #513 pe placa video:** 10 pasi, ~656 ms pe pas, 4680 simboluri/secunda. Pierderea a crescut de la 9.8716 la 9.9386 in loc sa scada, iar testul a iesit **NU TRECE**.
+
+**Placa video:** 56 °C la final (intre 41 si 61 °C), putere medie ~80 W, maxim ~166 W din limita de 290 W.
+
+**Lantul de pasi:** toti pasii au trecut, cu exceptia ultimului, „tur-dupa”, care a **ESUAT**. Politica de siguranta a respins rezultatul, pentru ca turul de citire a inregistrat o scriere. In plus, sistemul a refuzat 11 scrieri in afara zonei permise, toate la pasul „i8e-golden”.
+
+**Alte abateri:** trimiterea rapoartelor pe GitHub a esuat (codul 1), iar firul 5 a fost oprit fortat (codul -9).
+
