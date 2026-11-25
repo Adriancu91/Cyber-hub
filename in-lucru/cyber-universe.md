@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 17:22 · următorul pas: CI pe 6c96997 (P6-212 mm_tc128_v4) verde → GATA DE TEST `test-placa --mm-tc --mm-tc-pf --mm-tc-v4 --mm-tc128-v4`; apoi PREDĂRI noi Cyber-GPU, C-166 pașii 4–6
+ocupat · început 2026-11-25 17:42 · sarcina: CI P6-212 → GATA DE TEST os-NNN (mm_tc128_v4); PREDĂRI Cyber-GPU; C-166 pașii 4–6 · estimat gata: 18:40
