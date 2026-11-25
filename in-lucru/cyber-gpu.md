@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 19:10 · următorul pas: comparația os-438 (mm_tc_v4, Q1–Q4) când vine; OS-ul leagă pack_mixed_fast în --mixt (nota C-157_P2zf); apoi partea fixă a feliei dacă mm_tc* rămân sub 5 TFLOP/s la 2 blocuri
+ocupat · început 2026-11-25 19:12 · sarcina: C-157 (nota 11:55 p.1) copierea lotului în paralel cu calculul — încărcarea dublă, SIMULARE · estimat gata: 20:15
