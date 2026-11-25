@@ -1,0 +1,185 @@
+== test pe placa din lista automata (P6-96, C-143): raport Cyber Universe OS ==
+nucleu: cyber-universe 0.1.0 (cyber-gpu 408c69c)
+ora: 2026-11-25 21:05:28
+in lucru: test-placa --i9 c135 --mm-tc --mm-tc-pf --mm-tc-v4 --mm-tc-64k (testul pe placa nr. 1 in aceasta pornire, cel mult 4; gpu recupereaza, apoi lantul; de la 2026-11-25 21:05:28; cheile: fisierul de pe stick + DECIZII.md)
+
+-- discurile vazute de OS (doar citire)
+nvme: disc PC801 NVMe SK hynix 512GB (488386 MiB, 1000215216 sectoare; memorie de scriere da, golita cu Flush)
+  nvme partitia 1 (GPT, EFI (sistem)): de la sectorul 2048, 499 MiB, FAT, fara cyber.rw
+  nvme partitia 2 (GPT, rezervata Microsoft): de la sectorul 1024000, 16 MiB, format necunoscut
+  nvme partitia 3 (GPT, date de baza (FAT sau NTFS)): de la sectorul 1056768, 486993 MiB, NTFS
+  nvme partitia 4 (GPT, recuperare Windows): de la sectorul 998418432, 876 MiB, NTFS
+montat la /disk: nvme partitia 1 (doar citire)
+temperatura procesorului: pachetul 38 C, nucleul 0 38 C; TjMax 86 C, pragul de oprire a lucrului lung 76 C
+ceasul de paza (TCO): la portul 0x400 (SMBus 00:1f.4 TCOBASE); oprit; termen 4 x 0,6 s (~4 s pana la repornire)
+ceasul de paza: neactivat (armarea ceasului de paza vine intr-un Release urmator; acum doar citirea starii)
+
+-- gpu recupereaza
+gpu0: 65:00.0 GeForce RTX 3070 Ti (BAR0 0xd7000000), cyber-gpu 408c69c
+gpu0: I7: cele 4 fisiere GSP 570.144 de pe stick verificate (SHA-256)
+gpu0: C-103 pregatire: Booter Unload 40192 B la 0x165b000 (recitit; siguranta SEC2 ucode 3 = versiunea 1); nimic scris in placa
+gpu0: Bus Master pornit (COMMAND 0x0003 -> 0x0007)
+gpu0: C-103: WPR2 nu era ridicat: Booter Unload nu s-a rulat (nimic de coborat, ca driverul NVIDIA)
+gpu0: Bus Master oprit la loc (COMMAND 0x0003, ca inainte)
+gpu0: FWSEC in VBIOS: descriptor v3 la PROM 0x41208, ucode_id 9, 3 semnaturi (masca 0x0007), 59904 octeti
+gpu0: siguranta FWSEC 0x8241e0: versiunea 2 -> semnatura 2 din VBIOS
+gpu0: VRAM 8192 MiB; FRTS 0x1ffe00000..0x1fff00000
+gpu0: WPR2 coborat (pornire rece): bun
+gpu0: criteriul I6-citire: TRECE
+gpu0: C-103: pregatirea I6 trece din nou: `gpu lant` poate rula in aceeasi pornire
+gpu0: jurnalul pe loc: /usb/raport/gpu-jurnal-123.txt (19 randuri, fiecare scris pe loc)
+gpu0: usb: scrieri 131 (total 1160.5 ms, in medie 8.8 ms, cea mai lunga 810.6 ms), sincronizari 28 (total 1.3 ms, in medie 0.0 ms, cea mai lunga 0.0 ms)
+gpu0: configuratie: COMMAND la final 0x0003; 0 scrieri refuzate de garduri
+
+(proba mm_tc, inmultirea antrenarii pe circuitele speciale: ceruta de lista (--mm-tc); dupa textele lui #513, programul mm_tc (nou pentru placa: 64 de registre, blocuri de 128, 24 KiB de memorie partajata + o bariera, grila cu y > 1) de 5 ori cu 5 seturi fixe mici (judecate pe procesor cu marginea scrisa), apoi setul de timp qkv-513 (6144 x 2304 x 768, ~82,6 MB in VRAM, 5 lansari, judecat pe 3 benzi); trece = toate seturile rulate in margine, garzile neatinse; predictia Cyber-GPU: abaterea maxima sub 100 promile, qkv-513 la 8-17 TFLOP/s)
+
+(mm_tc_pf langa mm_tc: cerut de lista (--mm-tc-pf); in proba mm_tc, dupa fiecare set, acelasi set cu programul mm_tc_pf (aceeasi treaba ca mm_tc, cu citirile cerute in avans; nou pentru placa: 248 de registre, blocuri de 128, 24 KiB de memorie partajata + o bariera), iesirea comparata octet cu octet cu a lui mm_tc; la qkv-513 tot 5 lansari si timpul median al amandurora; trece = aceiasi biti ca mm_tc pe toate seturile; predictia Cyber-GPU: qkv-513 ~3-5 TFLOP/s (os-423: 1,03); sub 2 = frana e altundeva)
+
+(mm_tc_v4 langa mm_tc: cerut de lista (--mm-tc-v4); in proba mm_tc, dupa fiecare set (si dupa mm_tc_pf, daca e cerut), acelasi set cu programul mm_tc_v4 (aceeasi treaba ca mm_tc_pf, cu citiri de 128 de biti = 4 numere pe citire; nou pentru placa: 128 de registre, blocuri de 128, 24 KiB de memorie partajata + o bariera), doar pe seturile aliniate (celelalte: nealiniat, sarit), iesirea comparata octet cu octet cu a lui mm_tc; la qkv-513 tot 5 lansari si timpul median; trece = aceiasi biti ca mm_tc pe toate seturile rulate; predictia Cyber-GPU: qkv-513 ~5-9 TFLOP/s (os-423: 1,03); sub x1,5 fata de mm_tc_pf = frana e altundeva)
+
+(mm_tc* la treapta 64 KiB: cerut de lista (--mm-tc-64k); in proba mm_tc, dupa fiecare set, acelasi set inca o data cu mm_tc si cu fiecare program cerut langa el, lansate cu treapta memoriei comune 64 KiB (aceleasi campuri ca --treapta-pas din os-431: 2 blocuri pe unitate in loc de 1), iesirea comparata octet cu octet cu a lui mm_tc la treapta de azi; randurile lor au numele cu @64k; la qkv-513 tot 5 lansari si timpul median; nou pentru placa: nimic (aceleasi programe, aceleasi campuri); predictia Cyber-GPU: aceiasi biti, mm_tc_pf qkv-513 x1,6-1,9 -> ~4,4-5,2 TFLOP/s)
+
+(lista lipita-ln-32 implicit (LayerNorm nou + toate inmultirile pe sferturi, 88 de lansari pe simbol, nimic nou pentru placa; amprenta de referinta 0x6c8501f0); --lipita-ln = implicitul de pana acum, --ln-32 = amandoua comparate, --ln-vechi = LayerNorm vechi, --simplu = lista simpla)
+
+-- run kronos --gpu --n 16 Buna ziua (lantul cu I9 c135, apoi #513 la i14-simbol; DA dat de cheile ciclului)
+kronos: model ales: /usb/kronos/kronos_513_q8_0.kgr (#513, modelul Kronos pentru OS)
+kronos: fara /usb/kronos/kronos_513_q8_0.kgr.sha256: folosesc suma cunoscuta a lui #513
+kronos: SHA-256 66f734b3136206d1be8825b1188b1a90f0c5b00c2e19746547f327f9b95c5859 = suma asteptata
+kronos: modelul cunoscut #513 (kronos_513_q8_0.kgr)
+kronos: reglaj: niciun fisier pentru `Intel-R-Core-TM-i9-10980XE-CPU-3-00GHz` (kronos-calcul --cauta il scrie); valorile implicite
+kronos: /usb/kronos/kronos_513_q8_0.kgr (q8_0, 105 MiB, citit in 15590 ms): 12 straturi, 12 capete, n_emb 768, context 512, vocabular 16384, 98022912 parametri
+kronos: sursa `#513 w2_romana_r1`, tokenizer 214851 octeti; vectori AVX2+FMA, 1 fir, ordine t-j
+kronos: proiectia la generare pe 1 fir (cate capete are modelul)
+kronos: tokenizer Ws: 16127 imbinari, 16384 simboluri (Unicode 15.1.0)
+kronos: textul `Buna ziua` = 3 simboluri [66, 2612, 7464]; decodat inapoi identic
+kronos: --gpu: lantul ferestrei porneste, apoi 16 simboluri pe placa (pot trece cateva minute)
+kronos: --gpu: verificarea dupa placa: fiecare pozitie judecata in nucleu fata de motorul rapid al acestui program (vectori AVX2+FMA, 1 fir, ordine t-j)
+kronos: --gpu: verificarea dupa placa: 18 pozitii calculate de motorul rapid in 270 ms
+kronos: lant: gpu0: ks: viteza maxima ceruta (doar in ciclu, 600 s): inainte P5, cererea acceptata, dupa P0; verdict 1 (Raised)
+kronos: lant: gpu0: kronos --gpu: viteza (placa): urcarea pe procesor pe parti (1 bucati, 410507 us): copia in RAM 74 us (0 promile, 9357 MB/s), pregatirea comenzilor 9 us (0 promile), trimiterea + asteptarea 410424 us (999 promile); cea mai mare: trimiterea + asteptarea
+kronos: lant: gpu0: pas I14 simbol: ok (modelul de control, 29 simboluri comparate cu procesorul si cu vectorii lui Kronos, trimise cu: invalidare inaintea fiecarei lansari; #513 prin kronos --gpu)
+kronos: lant: gpu0: kronos --gpu: fisa modelului: 12 straturi, 12 capete, n_emb 768, context 512, vocabular 16384
+kronos: lant: gpu0: kronos --gpu: pachet kronos-gpt-q8-generare v1: dovedit pe placa (#513, os-346 (22 nov 2026): 16 simboluri identice cu procesorul)
+kronos: lant: gpu0: kronos --gpu: limitele din fisa (cu argmax pe placa): limite (12 straturi): 89 lansari pe simbol (cu copierea logit-urilor in RAM)
+kronos: lant: gpu0: kronos --gpu: limitele din fisa (cu argmax pe placa): limite: comenzi pe simbol: 3592 B (o invalidare), 4304 B (invalidare inaintea fiecarei lansari), 352 B (pe straturi); zona de comenzi: cel putin 16 KiB
+kronos: lant: gpu0: kronos --gpu: limitele din fisa (cu argmax pe placa): limite: pasul valorilor inregistrarilor pe sonerie: cel putin 0x5a
+kronos: lant: gpu0: kronos --gpu: limitele din fisa (cu argmax pe placa): buget VRAM (12 straturi): 142.3 MiB = greutati+lucru 105.6 + cache-uri 36.0 + programe 0.0 + lansari 0.1 + tabele 0.4 MiB
+kronos: lant: gpu0: kronos --gpu: limitele din fisa (cu argmax pe placa): limite: urcarea greutatilor: cel mult 14 bucati de 8 MiB prin arena I11
+kronos: lant: gpu0: kronos --gpu: /usb/kronos/kronos_513_q8_0.kgr (12 straturi, E 768, vocabular 16384, context 512): 3 simboluri date, 16 de generat
+kronos: lant: gpu0: kronos --gpu: viteza (placa): urcarea pe procesor pe parti (14 bucati, 318971 us): copia in RAM 14393 us (45 promile, 7697 MB/s), pregatirea comenzilor 208 us (0 promile), trimiterea + asteptarea 304370 us (954 promile); cea mai mare: trimiterea + asteptarea
+kronos: lant: gpu0: kronos --gpu (lista lipita-ln-32, toate inmultirile pe sferturi): generare (placa): 18 pozitii, 16 simboluri noi; 482.12 simboluri/s (ceasul placii, cu pauzele driverului), 941.83 simboluri/s doar lansarile; median 1065120 ns, cel mai lent 1139104 ns (toate simbolurile cerute)
+kronos: lant: gpu0: kronos --gpu: kt incalzirea: pozitia 0 trimisa o data inainte de ceas pe 1 liste (11051 us in afara ceasului, 12687 cuvinte VRAM la prima)
+kronos: lant: gpu0: kronos --gpu: abaterea maxima a logit-urilor fata de procesor 1.5974045e-5; durata mediana a unui simbol 1065120 ns (ceasul placii)
+kronos: lant: gpu0: kronos --gpu: kt lista: lipita-ln-32 (LayerNorm nou + toate inmultirile pe sferturi) singura (88 lansari pe simbol, cu copierea logit-urilor; amprenta de referinta 0x6c8501f0)
+kronos: lant: gpu0: kronos --gpu: viteza (placa): urcarea greutatilor: 110786560 octeti in 14 bucati; placa 9125 us (12139 MB/s), procesor 318971 us (347 MB/s)
+kronos: lant: gpu0: kronos --gpu: viteza (placa): 18 simboluri; pe placa: median 1065 us lansarile, 1065 us prima-ultima inregistrare (cel mai lent 1139 us) = 941.83 simboluri/s
+kronos: lant: gpu0: kronos --gpu: viteza (placa): cu driverul, jurnalul si ecranul: median 2027 us pe simbol = 492.03 simboluri/s
+kronos: lant: gpu0: kronos --gpu: viteza: placa 941.83 simboluri/s (ceasul placii), cu driverul 492.03 simboluri/s; verificarea dupa placa (motorul rapid /bin/kronos) median 15614 us/pozitie = 63.69 pozitii/s; cu verificare 56.39 simboluri/s
+kronos: lant: gpu0: kronos --gpu: jurnalul in generare: nicio scriere pe stick intre pozitii (randurile de rutina scrise la final); 0 randuri de rutina aruncate
+kronos: lant: gpu0: kronos --gpu: pozitiile lente (placa): 0 din 18 peste 2 x mediana (2027 us); in plus 0 us; suma 36583 us = 492.03 simboluri/s in medie
+kronos: lant: gpu0: kronos --gpu: umbra lansarilor: recitite la final, identice (placa nu rescrie sloturile)
+kronos: lant: gpu0: kronos --gpu: timpul pe simbol (placa, median, 18 simboluri): placa 1065 us, driver 905 us, jurnal 62 us, ecran 0 us = 2027 us (493.33 simboluri/s)
+kronos: lant: gpu0: kronos --gpu: verificarea pe procesor (placa): median 15614 us pe pozitie; cu ea 17654 us pe simbol (56.64 simboluri/s)
+kronos: lant: gpu0: kronos --gpu: dieta driverului: PORNITA (pushbuffer prin umbra, inregistrari nezerorizate); cuvinte VRAM scrise pe simbol (median) 130; citirea logit-urilor 50 us, argmax 88 us (median)
+kronos: lant: gpu0: kronos --gpu: logit-urile: amprenta 0x6c8501f0 (18 pozitii), abaterea maxima 0x37860000 (biti f32)
+kronos: lant: gpu0: kronos --gpu: timpul pe fel de lansare (placa, median pe simbol, 18 simboluri; toate ~1066 us pe simbol):
+kronos: lant: gpu0: kronos --gpu:   atentie          250 us pe simbol (12 lansari; una 20800 ns)
+kronos: lant: gpu0: kronos --gpu:   fc               224 us pe simbol (12 lansari; una 18656 ns)
+kronos: lant: gpu0: kronos --gpu:   qkv              175 us pe simbol (12 lansari; una 14656 ns)
+kronos: lant: gpu0: kronos --gpu:   proj             143 us pe simbol (12 lansari; una 11936 ns)
+kronos: lant: gpu0: kronos --gpu:   logit             87 us pe simbol (1 lansari; una 87584 ns)
+kronos: lant: gpu0: kronos --gpu:   out               73 us pe simbol (12 lansari; una 6080 ns)
+kronos: lant: gpu0: kronos --gpu:   ln1               48 us pe simbol (12 lansari; una 4032 ns)
+kronos: lant: gpu0: kronos --gpu:   ln2               46 us pe simbol (12 lansari; una 3840 ns)
+kronos: lant: gpu0: kronos --gpu:   copiere            7 us pe simbol (1 lansari; una 7392 ns)
+kronos: lant: gpu0: kronos --gpu:   embed              5 us pe simbol (1 lansari; una 5280 ns)
+kronos: lant: gpu0: kronos --gpu:   ln_final           4 us pe simbol (1 lansari; una 4064 ns)
+kronos: lant: gpu0: kronos --gpu: jurnalul pe stick: 662 randuri de rutina tinute in memorie (nu pe ecran), scrise pe stick in 13 scrieri (in generare: doar dupa ultima pozitie, P6-112; in rest la 16 simboluri sau la o secunda; 25 goliri)
+kronos: lant: gpu0: kronos --gpu: 16 simboluri generate pe placa, toate identice cu procesorul (niciun simbol diferit)
+kronos: lant: gpu0: kronos --gpu: copierea VRAM -> VRAM: 65536 KiB x 3, cuvinte gresite 0 din 3; cea mai rapida 238 us, mediana 239 us = 281496 MB/s (562993 MB/s trafic, 925 promile din 608 GB/s)
+kronos: lant: gpu0: kronos --gpu: proba mm_tc (placa): programul mm_tc (42112 octeti, SHA-256 f60cd944ab67ae17..., 64 registre, blocuri de 128, 24 KiB partajati), 5 seturi mici cate o trimitere, apoi qkv-513
+kronos: lant: gpu0: kronos --gpu: proba mm_tc@64k (placa): programul mm_tc (42112 octeti, SHA-256 f60cd944ab67ae17..., 64 registre, blocuri de 128, 24 KiB partajati, treapta memoriei comune 64 KiB) langa mm_tc pe fiecare set, comparat bit cu bit
+kronos: lant: gpu0: kronos --gpu: proba mm_tc_pf (placa): programul mm_tc_pf (44272 octeti, SHA-256 48defc5de143bd55..., 248 registre, blocuri de 128, 24 KiB partajati) langa mm_tc pe fiecare set, comparat bit cu bit
+kronos: lant: gpu0: kronos --gpu: proba mm_tc_pf@64k (placa): programul mm_tc_pf (44272 octeti, SHA-256 48defc5de143bd55..., 248 registre, blocuri de 128, 24 KiB partajati, treapta memoriei comune 64 KiB) langa mm_tc pe fiecare set, comparat bit cu bit
+kronos: lant: gpu0: kronos --gpu: proba mm_tc_v4 (placa): programul mm_tc_v4 (29472 octeti, SHA-256 488ca341fd5bf400..., 128 registre, blocuri de 128, 24 KiB partajati) langa mm_tc pe fiecare set, comparat bit cu bit
+kronos: lant: gpu0: kronos --gpu: proba mm_tc_v4@64k (placa): programul mm_tc_v4 (29472 octeti, SHA-256 488ca341fd5bf400..., 128 registre, blocuri de 128, 24 KiB partajati, treapta memoriei comune 64 KiB) langa mm_tc pe fiecare set, comparat bit cu bit
+kronos: lant: gpu0: kronos --gpu: proba mm_tc: qkv-513: 25961472 octeti de intrari urcati si recititi identic din VRAM (fnv 0x7f6be273, asteptat 0x7f6be273) in 5743 ms; bufferul 82587648 octeti
+kronos: lant: gpu0: kronos --gpu: mm_tc (placa): 6 / 6 seturi in margine, 132780 / 132780 elemente exacte fata de model, abaterea maxima 69 promile din margine
+kronos: lant: gpu0: kronos --gpu: mm_tc qkv-513 (placa): mediana 21145952 ns pe 5 lansari = 1.02 TFLOP/s (estimat 8-17)
+kronos: lant: gpu0: kronos --gpu: mm_tc set 16x16x16 (placa): in margine, exacte 256/256, 37 promile, garzi neatinse, 18848 ns
+kronos: lant: gpu0: kronos --gpu: mm_tc set 70x130x33-tb-bias (placa): in margine, exacte 9100/9100, 40 promile, garzi neatinse, 36928 ns
+kronos: lant: gpu0: kronos --gpu: mm_tc set 64x64x96-ta (placa): in margine, exacte 4096/4096, 17 promile, garzi neatinse, 75008 ns
+kronos: lant: gpu0: kronos --gpu: mm_tc set 100x72x200-ta-tb (placa): in margine, exacte 7200/7200, 10 promile, garzi neatinse, 160704 ns
+kronos: lant: gpu0: kronos --gpu: mm_tc set 32x48x64-limite-f16 (placa): in margine, exacte 1536/1536, 69 promile, garzi neatinse, 39200 ns
+kronos: lant: gpu0: kronos --gpu: mm_tc set qkv-513 (placa): in margine, exacte 110592/110592, 5 promile, garzi neatinse, 21145952 ns
+kronos: lant: gpu0: kronos --gpu: proba mm_tc: TRECE: 6 / 6 seturi in margine, 132780 / 132780 elemente exacte fata de model, abaterea maxima 69 promile din margine, qkv-513 21145952 ns = 1.02 TFLOP/s
+kronos: lant: gpu0: kronos --gpu: mm_tc@64k set 16x16x16 (placa): ACEIASI BITI (512 cuvinte); mm_tc@64k in margine fata de model; mm_tc 18848 ns, mm_tc@64k 18112 ns = x1.04
+kronos: lant: gpu0: kronos --gpu: mm_tc@64k set 70x130x33-tb-bias (placa): ACEIASI BITI (9356 cuvinte); mm_tc@64k in margine fata de model; mm_tc 36928 ns, mm_tc@64k 36736 ns = x1.00
+kronos: lant: gpu0: kronos --gpu: mm_tc@64k set 64x64x96-ta (placa): ACEIASI BITI (4352 cuvinte); mm_tc@64k in margine fata de model; mm_tc 75008 ns, mm_tc@64k 76032 ns = x0.98
+kronos: lant: gpu0: kronos --gpu: mm_tc@64k set 100x72x200-ta-tb (placa): ACEIASI BITI (7456 cuvinte); mm_tc@64k in margine fata de model; mm_tc 160704 ns, mm_tc@64k 161696 ns = x0.99
+kronos: lant: gpu0: kronos --gpu: mm_tc@64k set 32x48x64-limite-f16 (placa): ACEIASI BITI (1792 cuvinte); mm_tc@64k in margine fata de model; mm_tc 39200 ns, mm_tc@64k 39296 ns = x0.99
+kronos: lant: gpu0: kronos --gpu: mm_tc@64k set qkv-513 (placa): ACEIASI BITI (110848 cuvinte); mm_tc@64k in margine fata de model; mm_tc 21145952 ns, mm_tc@64k 10924576 ns = x1.93
+kronos: lant: gpu0: kronos --gpu: proba mm_tc@64k: TRECE: 6 / 6 seturi cu aceiasi biti ca mm_tc, qkv-513 mm_tc 21145952 ns, mm_tc@64k 10924576 ns (1.99 TFLOP/s) = x1.93
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf set 16x16x16 (placa): ACEIASI BITI (512 cuvinte); mm_tc_pf in margine fata de model; mm_tc 18848 ns, mm_tc_pf 12800 ns = x1.47
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf set 70x130x33-tb-bias (placa): ACEIASI BITI (9356 cuvinte); mm_tc_pf in margine fata de model; mm_tc 36928 ns, mm_tc_pf 24480 ns = x1.50
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf set 64x64x96-ta (placa): ACEIASI BITI (4352 cuvinte); mm_tc_pf in margine fata de model; mm_tc 75008 ns, mm_tc_pf 27552 ns = x2.72
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf set 100x72x200-ta-tb (placa): ACEIASI BITI (7456 cuvinte); mm_tc_pf in margine fata de model; mm_tc 160704 ns, mm_tc_pf 65856 ns = x2.44
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf set 32x48x64-limite-f16 (placa): ACEIASI BITI (1792 cuvinte); mm_tc_pf in margine fata de model; mm_tc 39200 ns, mm_tc_pf 20960 ns = x1.87
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf set qkv-513 (placa): ACEIASI BITI (110848 cuvinte); mm_tc_pf in margine fata de model; mm_tc 21145952 ns, mm_tc_pf 7896096 ns = x2.67
+kronos: lant: gpu0: kronos --gpu: proba mm_tc_pf: TRECE: 6 / 6 seturi cu aceiasi biti ca mm_tc, qkv-513 mm_tc 21145952 ns, mm_tc_pf 7896096 ns (2.75 TFLOP/s) = x2.67
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf@64k set 16x16x16 (placa): ACEIASI BITI (512 cuvinte); mm_tc_pf@64k in margine fata de model; mm_tc 18848 ns, mm_tc_pf@64k 12800 ns = x1.47
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf@64k set 70x130x33-tb-bias (placa): ACEIASI BITI (9356 cuvinte); mm_tc_pf@64k in margine fata de model; mm_tc 36928 ns, mm_tc_pf@64k 24448 ns = x1.51
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf@64k set 64x64x96-ta (placa): ACEIASI BITI (4352 cuvinte); mm_tc_pf@64k in margine fata de model; mm_tc 75008 ns, mm_tc_pf@64k 27424 ns = x2.73
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf@64k set 100x72x200-ta-tb (placa): ACEIASI BITI (7456 cuvinte); mm_tc_pf@64k in margine fata de model; mm_tc 160704 ns, mm_tc_pf@64k 65888 ns = x2.43
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf@64k set 32x48x64-limite-f16 (placa): ACEIASI BITI (1792 cuvinte); mm_tc_pf@64k in margine fata de model; mm_tc 39200 ns, mm_tc_pf@64k 20960 ns = x1.87
+kronos: lant: gpu0: kronos --gpu: mm_tc_pf@64k set qkv-513 (placa): ACEIASI BITI (110848 cuvinte); mm_tc_pf@64k in margine fata de model; mm_tc 21145952 ns, mm_tc_pf@64k 4482592 ns = x4.71
+kronos: lant: gpu0: kronos --gpu: proba mm_tc_pf@64k: TRECE: 6 / 6 seturi cu aceiasi biti ca mm_tc, qkv-513 mm_tc 21145952 ns, mm_tc_pf@64k 4482592 ns (4.85 TFLOP/s) = x4.71
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4 set 70x130x33-tb-bias (placa): nealiniat (randuri nu multiplu de 4 sau adrese nu multiplu de 16 octeti), sarit
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4 set 16x16x16 (placa): ACEIASI BITI (512 cuvinte); mm_tc_v4 in margine fata de model; mm_tc 18848 ns, mm_tc_v4 10048 ns = x1.87
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4 set 64x64x96-ta (placa): ACEIASI BITI (4352 cuvinte); mm_tc_v4 in margine fata de model; mm_tc 75008 ns, mm_tc_v4 19840 ns = x3.78
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4 set 100x72x200-ta-tb (placa): ACEIASI BITI (7456 cuvinte); mm_tc_v4 in margine fata de model; mm_tc 160704 ns, mm_tc_v4 56384 ns = x2.85
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4 set 32x48x64-limite-f16 (placa): ACEIASI BITI (1792 cuvinte); mm_tc_v4 in margine fata de model; mm_tc 39200 ns, mm_tc_v4 14784 ns = x2.65
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4 set qkv-513 (placa): ACEIASI BITI (110848 cuvinte); mm_tc_v4 in margine fata de model; mm_tc 21145952 ns, mm_tc_v4 4737216 ns = x4.46
+kronos: lant: gpu0: kronos --gpu: proba mm_tc_v4: TRECE: 5 / 5 seturi cu aceiasi biti ca mm_tc, 1 sarite (nealiniate), qkv-513 mm_tc 21145952 ns, mm_tc_v4 4737216 ns (4.58 TFLOP/s) = x4.46
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4@64k set 70x130x33-tb-bias (placa): nealiniat (randuri nu multiplu de 4 sau adrese nu multiplu de 16 octeti), sarit
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4@64k set 16x16x16 (placa): ACEIASI BITI (512 cuvinte); mm_tc_v4@64k in margine fata de model; mm_tc 18848 ns, mm_tc_v4@64k 9824 ns = x1.91
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4@64k set 64x64x96-ta (placa): ACEIASI BITI (4352 cuvinte); mm_tc_v4@64k in margine fata de model; mm_tc 75008 ns, mm_tc_v4@64k 19904 ns = x3.76
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4@64k set 100x72x200-ta-tb (placa): ACEIASI BITI (7456 cuvinte); mm_tc_v4@64k in margine fata de model; mm_tc 160704 ns, mm_tc_v4@64k 56448 ns = x2.84
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4@64k set 32x48x64-limite-f16 (placa): ACEIASI BITI (1792 cuvinte); mm_tc_v4@64k in margine fata de model; mm_tc 39200 ns, mm_tc_v4@64k 14784 ns = x2.65
+kronos: lant: gpu0: kronos --gpu: mm_tc_v4@64k set qkv-513 (placa): ACEIASI BITI (110848 cuvinte); mm_tc_v4@64k in margine fata de model; mm_tc 21145952 ns, mm_tc_v4@64k 2623680 ns = x8.05
+kronos: lant: gpu0: kronos --gpu: proba mm_tc_v4@64k: TRECE: 5 / 5 seturi cu aceiasi biti ca mm_tc, 1 sarite (nealiniate), qkv-513 mm_tc 21145952 ns, mm_tc_v4@64k 2623680 ns (8.28 TFLOP/s) = x8.05
+kronos: lant: gpu0: kronos --gpu: 16 simboluri generate pe placa (fiecare comparat cu procesorul, dupa placa)
+kronos: lant: gpu0: ks: inainte de stergere P0, stergerea acceptata, starea de performanta la final: P0
+kronos: lant: gpu0: rezultat lant: oprit la tur-dupa (2821 scrieri)
+kronos: continuare: ,
+Imi doresc sa ma intorc la mine,
+Sa ma
+kronos: textul generat `,\nImi doresc sa ma intorc la mine,\nSa ma`
+kronos: simboluri generate: [44, 10, 73, 2524, 10766, 1438, 1505, 1428, 1765, 99, 1547, 3644, 44, 10, 15879, 1505]
+kronos: PE PLACA: 16 simboluri, fiecare comparat in nucleu cu procesorul (dupa placa, motorul rapid al OS-ului) (lantul intreg + textul in 351440 ms)
+kronos: acelasi text si pe procesor, pentru comparatia de viteza (C-87):
+kronos: continuare: ,
+Imi doresc sa ma intorc la mine,
+Sa ma
+kronos: textul generat `,\nImi doresc sa ma intorc la mine,\nSa ma`
+kronos: simboluri generate: [44, 10, 73, 2524, 10766, 1438, 1505, 1428, 1765, 99, 1547, 3644, 44, 10, 15879, 1505]
+kronos: textul dat (3 simboluri) in 40 ms; 16 simboluri noi in 220 ms = 72.7 simboluri/s
+kronos: comparatie: placa ? simboluri/s (fara randul de viteza al nucleului) / procesor 72.72 simboluri/s; simbolurile IDENTICE
+(kronos a iesit cu codul 0)
+
+-- viteza fata de os-313 (fara cerere de viteza; jurnalul /usb/raport/gpu-jurnal-124.txt)
+timpul placii pe simbol (us, kp toate): os-313 22968 -> acum 1065 (46 la mie)
+copierea VRAM (MB/s, kc): os-313 9165 -> acum 281496 (30714 la mie)
+ln1 pe simbol (us, legat de ceasuri): os-313 2260 -> acum 48 (21 la mie)
+
+-- viteza fata de os-322 (dieta driverului pornita; jurnalul /usb/raport/gpu-jurnal-124.txt)
+driverul pe simbol (us, kt median driver): os-322 3081 -> acum 905 (293 la mie)
+simbolul fara verificare (us, kt): os-322 5802 -> acum 2027 (349 la mie)
+simboluri/s cu driverul: os-322 94.84 -> acum 492.03
+cuvinte VRAM pe simbol (median): 130; citirea logit-urilor 50 us, argmax 88 us (median)
+logit-urile identice bit cu bit cu referinta listei care a rulat (lipita-ln-32)? DA: amprenta 0x6c8501f0, referinta 0x6c8501f0; simbolurile aceleasi fata de os-322
+amprenta logit-urilor de acum (pentru testele urmatoare): 0x6c8501f0
+amprenta fata de referinta: lipita-ln-32 (referinta 0x6c8501f0): ACEEASI
+
+REZULTAT TEST PLACA: kronos: lant: gpu0: rezultat lant: oprit la tur-dupa (2821 scrieri); kronos: PE PLACA: 16 simboluri, fiecare comparat in nucleu cu procesorul (dupa placa, motorul rapid al OS-ului) (lantul intreg + textul in 351440 ms); kronos: lant: gpu0: kronos --gpu: proba mm_tc: TRECE: 6 / 6 seturi in margine, 132780 / 132780 elemente exacte fata de model, abaterea maxima 69 promile din margine, qkv-513 21145952 ns = 1.02 TFLOP/s; kronos: lant: gpu0: kronos --gpu: proba mm_tc_pf: TRECE: 6 / 6 seturi cu aceiasi biti ca mm_tc, qkv-513 mm_tc 21145952 ns, mm_tc_pf 7896096 ns (2.75 TFLOP/s) = x2.67; kronos: lant: gpu0: kronos --gpu: proba mm_tc_v4: TRECE: 5 / 5 seturi cu aceiasi biti ca mm_tc, 1 sarite (nealiniate), qkv-513 mm_tc 21145952 ns, mm_tc_v4 4737216 ns (4.58 TFLOP/s) = x4.46; kronos: lant: gpu0: kronos --gpu: proba mm_tc@64k: TRECE: 6 / 6 seturi cu aceiasi biti ca mm_tc, qkv-513 mm_tc 21145952 ns, mm_tc@64k 10924576 ns (1.99 TFLOP/s) = x1.93; kronos: lant: gpu0: kronos --gpu: proba mm_tc_pf@64k: TRECE: 6 / 6 seturi cu aceiasi biti ca mm_tc, qkv-513 mm_tc 21145952 ns, mm_tc_pf@64k 4482592 ns (4.85 TFLOP/s) = x4.71; kronos: lant: gpu0: kronos --gpu: proba mm_tc_v4@64k: TRECE: 5 / 5 seturi cu aceiasi biti ca mm_tc, 1 sarite (nealiniate), qkv-513 mm_tc 21145952 ns, mm_tc_v4@64k 2623680 ns (8.28 TFLOP/s) = x8.05
+-- gata in 379430 ms
