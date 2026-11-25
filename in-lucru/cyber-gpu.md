@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 19:12 · sarcina: C-157 (nota 11:55 p.1) copierea lotului în paralel cu calculul — încărcarea dublă, SIMULARE · estimat gata: 20:15
+liber · terminat 2026-11-25 20:20 · următorul pas: comparația os-438 (mm_tc_v4, Q1–Q4) când vine; OS-ul leagă pack_mixed_fast, apoi --lot-prin-ram (nota C-157_P2zg); noi: studiul programului persistent pe un strat (nota 11:55, cererea 2)
