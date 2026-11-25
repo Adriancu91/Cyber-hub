@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 22:20 · următorul pas: comparația pasului mixt rapid (--mixt-rapid / --mixt-513-rapid) și a probei barierei când vin; altfel token.comp cu token_cbuf_for în SIMULARE pentru generare
+ocupat · început 2026-11-25 23:14 · sarcina: C-157 p.2 — comparația os-445 (pasul mixt rapid #513) · estimat gata: 00:40
