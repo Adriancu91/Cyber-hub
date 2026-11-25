@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 01:13 · sarcina: C-157 — comparațiile testelor noi de pe placă, dacă au venit; altfel token.comp cu token_cbuf_for (SIMULARE) · estimat gata: 03:00
+liber · terminat 2026-11-26 01:53 · următorul pas: comparațiile testelor noi de pe placă (proba barierei os-451, --lot-prin-ram, două locuri, text real) când vin; altfel token32_qmd cu treapta aleasă pentru G mare (SIMULARE)
