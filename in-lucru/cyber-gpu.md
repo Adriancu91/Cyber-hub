@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 10:46 · următorul pas: comparațiile când vin (os-423 ocuparea, os-421, os-419 mm_tc, os-422); apoi mm_tc cu mai puțină memorie comună pe bloc; dacă dieta 128x128t512 câștigă în cursă → MmChoice/Prog
+ocupat · început 2026-11-25 11:13 · sarcina: C-157 p.2 — comparația os-423 (mm_tc pe placă, 1,02 TFLOP/s) · estimat gata: 12:15
