@@ -81,3 +81,24 @@ Jurnalul nu contine temperatura, pasi sau pierderi (nu ruleaza nicio antrenare).
 
 **Memoria:** sunt folositi aproximativ 423 MiB, iar libera e multa (aproximativ 127 GiB). Temperatura nu apare in date.
 
+2026-11-25 21:53 tura 1 ABATERE
+Nu ruleaza nicio lucrare acum; calculatorul e pornit de 2 secunde, iar pornirea a durat aproximativ 2,9 secunde.
+Memorie: libera aproximativ 130 GB, folosita doar aproximativ 35 MB. Temperatura nu apare in date.
+Discuri: SSD-ul intern de 512 GB si stick-ul USB de 30 GB (montat la /usb, cu scriere permisa) merg normal. Mouse-ul si tastatura merg si ele.
+Reteaua merge: cablu la 100 Mb/s, adresa 192.168.0.151, iar routerul raspunde.
+Abatere: pe portul 25 e un cititor de carduri fara card in el. A dat 3 avertismente si a fost sarit, deci nu e o defectiune.
+De retinut: placa de retea functioneaza, dar pornirea ei pe acest model de calculator e marcata ca netestata inca pe hardware real.
+  abatere: [   1.180] WARN  usb: port 25: incercarea 1, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+  abatere: [   1.200] WARN  usb: port 25: incercarea 2, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+  abatere: [   1.220] WARN  usb: port 25: incercarea 3, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+  abatere: [   1.260] WARN  usb: stick-ul de pe portul 25 nu porneste
+
+2026-11-25 21:59 tura 4 ABATERE
+**Acum:** nicio lucrare pornita. Calculatorul merge de aproximativ 5 minute si 35 de secunde si lucreaza la pornirea placii video.
+**Placa video:** procesorul ei intern (GSP) a pornit cu succes, dar a raspuns abia dupa aproximativ 21 de secunde.
+**Abatere:** placa video a raportat de doua ori o eroare a partii de afisaj ("Display Engine": NV_ERR_INVALID_DMA_SPECIFIER). Pornirea a mers totusi mai departe.
+**De urmarit:** o scriere repetata de 3 ori in placa video nu a avut efect: s-a scris 0, iar placa a raspuns tot cu 0xffffffff.
+**Memorie:** libera 130145 MiB, folosita aproximativ 625 MiB. Reteaua este conectata la 100 Mb/s, la adresa 192.168.0.151.
+**Lipsesc:** jurnalul nu are pasi, viteza, pierderi sau temperatura.
+  abatere: [ 332.650] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"
+
