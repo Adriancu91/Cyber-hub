@@ -71,3 +71,14 @@ motor proprii, fără OS și fără model propriu). Nu pot dovedi că nu mai exi
 - 2026-11-24 17:50 centru: scris la cererea lui Adrian (17:17). Se sprijină pe `idei/2026-11-24-centru-viteza-peste-windows.md` și
   `idei/2026-11-24-centru-antrenarea-in-trepte.md` (cu corectura despre Muon).
 - 2026-11-24 18:53 cyber-gpu: **Limita de 6 GiB nu e în driver**, e o constantă a OS-ului (`cyber-universe/kernel/src/drivers/gpu_i14.rs`, `ARENA_MAX = 6 << 30`, pusă după regula Kronos „sub ~7 GB” pentru Windows). Pe placă, OS-ul a raportat după pornirea driverului **7 474–7 708 MiB VRAM liber** (restul de 8 192 îl țin GSP-RM / firmware-ul). Din driver: arena + zona lansărilor + rezerva de 4 MiB trebuie să încapă în cea mai lungă bucată liberă → **~7,2 GiB posibil** (DEDUS). Dacă regula „sub 7 GB” se aplică și în OS-ul nostru (unde nu mai e alt client pe placă) hotărăște Adrian; urcarea constantei o face sesiunea OS.
+
+## 25 nov — „banda”: ce dă fiecare piesă în același pas (cerut de Adrian 11:41)
+Ideea: pe durata unui pas, **nicio piesă nu stă**. Placa înmulțește; tot restul lucrează în paralel ca să n-o lase să aștepte.
+| Piesa | Ce dă pe pas (concret) | Stare |
+|---|---|---|
+| **Driver** | (1) treapta memoriei comune aleasă automat → mai multe echipe pe unitate (os-423: ×1,5–2,7); (2) **motorul de copiere al plăcii** (unitate separată de calcul): urcă lotul următor / coboară rezultate **în timp ce** placa calculează; (3) tot pasul trimis o dată, placa ținută la ceasul maxim | (1) măsurat; (2) de cerut Cyber-GPU; (3) făcut |
+| **Motor** | programe pe formele lui Kronos + cursa de noapte; încărcarea dublă în interiorul înmulțirii (`cp.async`, ideea lui Adrian 11:15); precizie pe bucăți (f16/8 biți); „portarul” dacă câștigă (C-167) | parțial |
+| **OS** | zero pauze; procesorul (18 nuclee) face **în același timp**: lotul următor, jurnalul, verificările, paza de temperatură; RAM fixată pentru copii fără opriri; reluare exactă după pană; agentul de bord (C-166) urmărește live | parțial; agentul în lucru |
+| **Kronos** | croit pe placă (C-164), harta textului (S137), portarul (C-167) — mai puțin calcul pentru aceeași notă | laborator |
+| **Unelte** | simulatorul prezice înainte de fiecare test; cursa alege singură varianta; agentul + centrul închid bucla test → rezultat → test următor fără ore pierdute | merge |
+Ordinea câștigului: (1) ocuparea în tot pasul → (2) `mm_tc` cu ocupare → (3) copierea în paralel + încărcarea dublă → (4) Kronos croit + portar.
