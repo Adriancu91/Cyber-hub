@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 01:42 · sarcina: CI P6-221+P6-222 → Release; apoi C-166 pasul 6 partea 2 (test-placa semnat) · estimat gata: 02:45
+liber · terminat 2026-11-26 02:06 · următorul pas: CI pe main (P6-221 + P6-222 + P6-223, run 45724703434) verde → Release (nimic pentru placă); apoi PREDĂRI noi Cyber-GPU sau C-166 pasul 4 rămas (alegerea variantelor dovedite, reluarea unui pas)
