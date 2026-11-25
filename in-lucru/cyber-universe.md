@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 15:42 · sarcina: CI 5c4fabd → GATA DE TEST; PREDARE de la cyber-gpu; C-158 coada · estimat gata: 17:00
+liber · terminat 2026-11-25 16:22 · următorul pas: CI pe d3f0e89 (P6-210 mm_tc_v4 + P6-211 tablou) verde → GATA DE TEST `test-placa --mm-tc --mm-tc-pf --mm-tc-v4`; apoi PREDĂRI noi Cyber-GPU, C-166 pașii 4–6
