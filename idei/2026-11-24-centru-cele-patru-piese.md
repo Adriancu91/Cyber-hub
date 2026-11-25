@@ -86,3 +86,5 @@ Ordinea câștigului: (1) ocuparea în tot pasul → (2) `mm_tc` cu ocupare → 
 
 ## 25 nov 15:45 — piesă candidată din schema lui Adrian: „ieșirea pe categorii”
 Ghicitul cuvântului următor în doi pași: întâi una din ~128 de categorii, apoi cuvântul din categoria ei (~128) → ~256 de scoruri în loc de 16 384 (ieșirea ierarhică / pe clase; categoriile făcute automat, grupând cuvintele după context). ESTIMARE: −10–15 % din pasul de antrenare, câștig mare la scris. Schimbă modelul → doar în laborator, după „portar”, cu „da” separat al lui Adrian (nepornit).
+- 25 nov 15:50 (Adrian): **ghicitul pe rol în propoziție** (dacă lipsește verbul, caut doar printre verbe) = varianta gramaticală a ieșirii pe categorii; **„ghicitorul mic + verificatorul mare”** (decodare speculativă) pentru scris, ×2–3 la chat cu același text. Ambele nepornite, doar cu „da”.
+- 25 nov 16:29: **portarul (S139) = „LA FEL”** — română −0,0057 (prag −0,010), martorul în toleranță, viteza ×1,062 în PyTorch. Ne oprim cu el (regula din C-167).
