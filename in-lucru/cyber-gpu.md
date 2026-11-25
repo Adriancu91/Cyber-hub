@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 07:14 · sarcina: proba ocupării (studiul centrului 07:00, TARGET_SM_CONFIG) — părerea + pregătirea în SIMULARE · estimat gata: 08:00
+liber · terminat 2026-11-25 07:39 · următorul pas: comparația probei ocupării / cursei cu 5 variante / mm_tc când vin; dacă ocuparea se confirmă → o treaptă pe tot pasul în Plan (best_step); altfel B1 mm_s8 pe plăci în SIMULARE
