@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 10:45 · sarcina: C-166 pasul 1 — clientul API (agent ping) · estimat gata: 12:15
+liber · terminat 2026-11-25 12:00 · următorul pas: CI pe cc5e597 verde → GATA DE TEST (agent ping); apoi P6-204 (C-166 pasul 3, live în hub)
