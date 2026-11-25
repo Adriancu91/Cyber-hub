@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 17:20 · sarcina: C-157 p.2 — comparațiile os-436 (mm_tc_pf pe placă, 17:02) + pasul #513 lot 6 la 64 KiB (17:07) · estimat gata: 18:40
+liber · terminat 2026-11-25 18:05 · următorul pas: comparația os-438 (mm_tc_v4, predicțiile Q1–Q4 în docs/C-157_P2_OS436.md); apoi mm_tc* la 64 KiB și alegerea pe formă la lotul 6 (V7 ~554 ms) când OS-ul le leagă
