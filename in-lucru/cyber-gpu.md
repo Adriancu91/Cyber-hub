@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 14:58 · următorul pas: citiri de 128 de biți în mm_tc128, apoi mm_s8/mm_tv_*; comparațiile când vin (mm_tc_pf, mm_tc_v4, proba ocupării, os-421, os-422)
+ocupat · început 2026-11-25 15:14 · sarcina: C-157 p.2 — citiri de 128 de biți în mm_tc128 (mm_tc128_v4) · estimat gata: 16:45
