@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 09:15 · sarcina: C-165 ocuparea p.3 — treapta SM_CONFIG aleasă automat, aceeași pe tot pasul (Plan, SIMULARE) · estimat gata: 10:15
+liber · terminat 2026-11-25 09:58 · următorul pas: comparațiile când vin (ocuparea, os-421, os-419 mm_tc, os-422); după ocupare: --treapta-pas, mm_tc cu mai puțină memorie, treapta în pasul mixt
