@@ -207,3 +207,4 @@
 - 2026-11-24 23:15 — S135 A și S136 gata, verificate (1.581 teste; coloanele „calitate” copiate în `integrare/KRONOS_V2_FISA.md`). „Da harta” → S137, a treia probă de o oră a laboratorului, după S135 B (25 nov de la 07:00). Probele v2 (S138) doar propuse.
 - 2026-11-25 02:15 — S137 A gata și verificat (harta greutății textului pe procesor, harta de referință #513 făcută, 1.590 teste). Ordinea pe placă de azi neschimbată: S135 (0) → (1) de la 07:00, apoi S137 (H).
 - 2026-11-25 08:15 — S135 (0) rulează pe placă de la 07:35 (prima probă de o oră a laboratorului); raportul de dimineață bun (1.590 teste). Urmează (1), apoi S137 (H).
+- 2026-11-25 11:15 — S135 B gata și verificat: pe bucăți K = 4 PIERDE la româna curată (1,5538 vs 1,5343, +0,0195); ne oprim cu bucățile. S137 (H) amânată de testul OS os-423; pornește când placa e liberă. Tabelul în `integrare/kronos/BANC_ANTRENARE.md`.
