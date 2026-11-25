@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 21:13 · sarcina: CI os pe 708a90a → GATA DE TEST --mixt-rapid; legarea PREDĂRII Cyber-GPU 1ddf092 (lotul prin RAM, pasul mixt rapid) · estimat gata: 22:45
+liber · terminat 2026-11-25 21:51 · următorul pas: CI pe 92f91d4 (P6-216 --lot-prin-ram) verde → GATA DE TEST `… --mixt-513 --mixt-513-rapid --lot-prin-ram`; apoi PREDĂRI noi Cyber-GPU, P6-217 (două locuri) sau C-166 pașii 4–6
