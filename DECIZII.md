@@ -250,3 +250,8 @@ Adrian a răspuns „Da” la mesajul centrului care cerea „da / nu” la H1, 
 ## 25 nov 2026, 11:41 — „Da” la „portar” (amestecul de adâncimi) în laboratorul Kronos
 - Proba următoare a laboratorului (C-163), după S137: o oră de la zero, rețeta de azi față de rețeta cu „portar” — la jumătate din straturi un mic selector trimite prin stratul întreg doar ~jumătate din simboluri (cele „grele”, strânse într-un bloc); celelalte trec doar prin legătura directă (rămân în atenție, ca context). Același examen (`romana_bpb`), pre-înregistrare, `laborator-ocupat.txt`, ziua. Fără `kronos/`, fără examen schimbat. Programele de placă vin doar dacă câștigă.
 - Adrian a mai cerut: fiecare piesă (OS, driver, motor, unelte) să aducă un câștig și să lucreze sincronizat cu celelalte — vezi `idei/2026-11-24-centru-cele-patru-piese.md`, secțiunea „25 nov — banda”.
+
+## 25 nov 2026, 11:52 — „Da”: arena plăcii în OS-ul nostru urcă de la 6 GiB la ~7 GiB
+- În Cyber Universe OS placa nu mai e împărțită cu ecranul / Windows, deci regula Kronos „sub ~7 GB” (făcută pentru Windows) nu se aplică acolo. Sesiunea OS urcă `ARENA_MAX` (`kernel/src/drivers/gpu_i14.rs`) cât încape sigur: arena + zona lansărilor + rezerva de 4 MiB în cea mai lungă bucată liberă (Cyber-GPU: ~7,2 GiB DEDUS; VRAM liber raportat 7 474–7 708 MiB) — **lasă cel puțin ~256 MiB rezervă** și verifică la pornire; dacă nu încape, rămâne la valoarea veche și scrie de ce.
+- Regula „sub ~7 GB” rămâne neschimbată pentru antrenările Kronos din Windows.
+- Tot din studiul `idei/2026-11-25-centru-franele-altora.md` (pe direcția deja aprobată, ca cereri): copierea în paralel cu calculul (motorul de copiere al plăcii) + RAM fixată fără limita Windows; „programul persistent” ca studiu la Cyber-GPU după `mm_tc`.
