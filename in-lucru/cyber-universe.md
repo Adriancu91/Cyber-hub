@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 15:38 · următorul pas: CI pe 5c4fabd (P6-208 + P6-209) verde → GATA DE TEST `… --treapta-pas --lot-513 6`; apoi legarea mm_tc rapid / pas mixt la PREDARE, C-166 unealta tablou
+ocupat · început 2026-11-25 15:42 · sarcina: CI 5c4fabd → GATA DE TEST; PREDARE de la cyber-gpu; C-158 coada · estimat gata: 17:00
