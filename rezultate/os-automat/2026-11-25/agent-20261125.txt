@@ -40,3 +40,20 @@ Placa de rețea a semnalat și un pas de pornire neterminat („LAN_INIT_DONE nu
   abatere: [   1.210] WARN  usb: port 25: incercarea 3, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
   abatere: [   1.250] WARN  usb: stick-ul de pe portul 25 nu porneste
 
+2026-11-25 20:18 tura 1
+**Ce ruleaza:** nicio lucrare in /usb/lucrari. Testul placii video (kronos --gpu) s-a incheiat, iar rapoartele au fost trimise pe GitHub fara eroare. Calculatorul e pornit de ~4,5 minute, are retea (100 Mb/s) si memorie suficienta: 130346 MiB libera, 424 MiB folositi.
+
+**Rezultatele placii video:**
+- Toate probele de calcul au TRECUT, cu rezultate exacte fata de model.
+- Viteza la setul mare (qkv-513): varianta de baza 1,02 TFLOP/s, varianta „pf” 2,76 TFLOP/s, varianta „v4” 4,59 TFLOP/s, adica de 4,5 ori mai rapida decat cea de baza.
+- La v4 un set a fost sarit, pentru ca datele nu erau aliniate.
+- Au fost generate 16 simboluri pe placa.
+
+**Abateri:**
+- Lantul de pasi s-a oprit la ultimul pas, „tur-dupa”, cu ESUAT: politica de siguranta a respins rezultatul, pentru ca turul de citire a inregistrat o scriere. Pana atunci s-au facut 2604 scrieri, iar pasii de curatare au rulat.
+- Sistemul a refuzat 11 scrieri in afara zonei permise, toate la pasul i8e-golden.
+- Firul 5 s-a inchis fortat (cod -9).
+- Cea mai lenta scriere pe USB a durat 810,8 ms.
+
+Jurnalul nu contine temperatura, pasi sau pierderi (nu ruleaza nicio antrenare).
+
