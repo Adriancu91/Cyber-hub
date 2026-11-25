@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 23:12 · sarcina: CI P6-217 → GATA DE TEST, apoi PREDĂRI Cyber-GPU / C-166 pașii 4–6 · estimat gata: 00:40
+liber · terminat 2026-11-25 23:50 · următorul pas: CI pe main (P6-218 --bariera + P6-219) verde → GATA DE TEST `test-placa --bariera`; apoi PREDĂRI noi Cyber-GPU sau C-166 pașii 5–6
