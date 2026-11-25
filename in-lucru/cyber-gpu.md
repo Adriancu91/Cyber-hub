@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 23:14 · sarcina: C-157 p.2 — comparația os-445 (pasul mixt rapid #513) · estimat gata: 00:40
+liber · terminat 2026-11-26 00:16 · următorul pas: comparațiile testelor noi de pe placă (proba barierei, --lot-prin-ram, text real F32/mixt) când vin; altfel token.comp cu token_cbuf_for în SIMULARE pentru generare
