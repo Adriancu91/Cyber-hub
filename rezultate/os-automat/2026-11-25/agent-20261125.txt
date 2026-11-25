@@ -1,0 +1,12 @@
+2026-11-25 16:58 tura 1 ABATERE
+Calculatorul a pornit acum 2 secunde (pornirea a durat aproximativ 3 s) și nu rulează nicio lucrare, deci nu există pași, viteză sau pierderi de raportat. Temperatura nu apare în date.
+Memorie: liberă aproximativ 130 GB, folosită doar 35 MB.
+Internet: placa de rețea e pornită, legătură la 100 Mb/s, adresa 192.168.0.151. Routerul răspunde.
+Discuri: SSD-ul de 512 GB e găsit, iar stick-ul USB e montat (FAT32, 30 GB, se poate scrie pe el).
+Abatere: cititorul de carduri SD de pe portul USB 25 a dat 3 avertismente pentru că nu are card în el, așa că a fost sărit.
+Placa de rețea a semnalat și un pas de pornire neterminat („LAN_INIT_DONE nu a venit”), dar legătura merge.
+  abatere: [   1.230] WARN  usb: port 25: incercarea 1, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+  abatere: [   1.250] WARN  usb: port 25: incercarea 2, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+  abatere: [   1.270] WARN  usb: port 25: incercarea 3, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+  abatere: [   1.310] WARN  usb: stick-ul de pe portul 25 nu porneste
+
