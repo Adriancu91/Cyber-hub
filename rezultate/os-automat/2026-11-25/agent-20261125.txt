@@ -57,3 +57,14 @@ Placa de rețea a semnalat și un pas de pornire neterminat („LAN_INIT_DONE nu
 
 Jurnalul nu contine temperatura, pasi sau pierderi (nu ruleaza nicio antrenare).
 
+2026-11-25 20:58 tura 1 ABATERE
+**Nicio lucrare** nu ruleaza (nu exista fise in /usb/lucrari). Calculatorul a pornit de 2 secunde.
+**Memoria:** libera ~128 GB, folosita ~35 MB. Temperatura nu apare in date. Nu exista pasi, viteza sau pierderi de raportat.
+**Reteaua** merge: 100 Mb/s, adresa 192.168.0.151, 5 pachete trimise si 5 primite.
+**Discuri:** discul NVMe de 512 GB e gasit, iar stick-ul de 30 GB e montat la /usb cu scriere permisa.
+**Avertisment:** cititorul de carduri de pe portul 25 a esuat de 3 ori, pentru ca nu are card in el, asa ca sistemul l-a sarit. Placa de retea e testata doar pe model, nu si pe acest tip de calculator.
+  abatere: [   1.170] WARN  usb: port 25: incercarea 1, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+  abatere: [   1.190] WARN  usb: port 25: incercarea 2, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+  abatere: [   1.210] WARN  usb: port 25: incercarea 3, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+  abatere: [   1.250] WARN  usb: stick-ul de pe portul 25 nu porneste
+
