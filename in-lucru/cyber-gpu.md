@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 16:52 · următorul pas: comparațiile când vin (cursa / pasul #513 la 64 KiB — prezis ~204 ms; --mm-tc cu mm_tc_pf, mm_tc_v4, mm_tc128_v4); apoi formele 1024×768 (64×32 sau split-K) dacă rămân frâna
+ocupat · început 2026-11-25 17:20 · sarcina: C-157 p.2 — comparațiile os-436 (mm_tc_pf pe placă, 17:02) + pasul #513 lot 6 la 64 KiB (17:07) · estimat gata: 18:40
