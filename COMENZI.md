@@ -2325,7 +2325,8 @@ Format:
 - **Cum:** modul nou + unealtă în `unelte/`; `kronos/` și `module/examen_bpb.py` neatinse; sub ~7 GB; `laborator-ocupat.txt`; ziua. Pre-înregistrare cu aceleași praguri ca S135; măsurați și simbolurile/s (portarul trebuie să fie și mai rapid în PyTorch, altfel câștigul vine doar din calitate).
 - **După:** raport + rândul în `integrare/kronos/BANC_ANTRENARE.md`. Dacă (P) câștigă: fișă pentru Cyber-GPU (strângerea simbolurilor alese în bloc + împrăștierea înapoi = 2 programe mici).
 - stare: preluat (2026-11-25 14:15, supraveghetor) — **S139** în `plan/coada.md` Kronos: A (procesor: `module/model_portar.py` + `unelte/laborator_portar.py` + teste) `aprobat` de acum; B (o oră pe placă, 07:00–23:00, ultima pornire 21:15) după A. Baza = S135 (0) (validă); aceleași praguri + „câștig strâmb”; examenele în modul cauzal (pierderea auxiliară din lucrare); viteza = simboluri/s în minutele 5–45, „mai rapid” de la ≥ 1,05×.
-- rezultat:
+- stare: gata (2026-11-25 17:15, supraveghetor) — S139 A + B gata, verificat față de pre-înregistrare.
+- rezultat: **LA FEL** — română curat 1,5286 vs 1,5343 (−0,0057, prag −0,010), `examen_bpb` 0,5426 (în toleranță), viteza 1,062× în PyTorch; probă validă; ne oprim cu portarul (fără fișa pentru Cyber-GPU).
 
 > **Notă centru 25 nov 11:55 (C-158 OS / C-157 Cyber-GPU) — „da” Adrian 11:52:** **OS:** `ARENA_MAX` 6 → ~7 GiB (DECIZII 25 nov 11:52: rezervă ≥ 256 MiB, verificare la pornire, rândul în raport cu arena aleasă și VRAM-ul liber); îl legați în același Release cu treapta automată. **Cyber-GPU (cereri, studiul `idei/2026-11-25-centru-franele-altora.md`):** (1) copierea pe motorul de copiere al plăcii în paralel cu calculul (lotul următor sus, rezultatele jos); (2) studiu „program persistent” pe un strat (fără limita TDR la noi) — după `mm_tc` cu ocupare. Ordinea rămâne: ocuparea în tot pasul → `mm_tc` → copierea în paralel + încărcarea dublă → persistent.
 
