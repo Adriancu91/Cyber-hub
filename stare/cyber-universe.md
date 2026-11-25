@@ -135,7 +135,6 @@
 
 ## Blocaje / nevoie de Adrian
 - **C-166 (agentul de bord): pune pe stick fișierul `claude.cheie`** (un singur rând: cheia API de pe console.anthropic.com, cea legată de creditul de 200 $) și, dacă vrei alt plafon sau știi prețurile reale ale modelului, fișierul `agent.setari` (ex. `plafon_zi = 40`, `pret_intrare = 5`, `pret_iesire = 25`). Fără cheie `agent ping` spune doar „nu am gasit cheia API”.
-- Nimic nou de la tine în această sesiune (25 nov 08:43–10:22): un Release nou gata de test (os-423, proba ocupării); testele le pornește centrul de comandă.
 - Nimic nou de la tine în această sesiune (25 nov 02:11–03:48): două Release-uri gata de test (os-417, os-418), testele le pornește centrul.
 - Nimic nou de la tine în această sesiune. (Observat în ciclul automat os-414 de la 00:18: în timpul pașilor #513 placa merge la 1 950 MHz constant, P0, 100 % încărcare, ~127 W din 290 → încetinirea „~1/7” a înmulțirilor nu vine din ceas.)
 - Nimic urgent; testele le pornește centrul de comandă. Ordinea propusă pe placă: os-352 (`test-placa --mm-tc`, proba `mm_tc` singură) înainte de os-384 (`test-placa --antrenare-mini --mixt`) — dacă `mm_tc` nu trece singur, nici pasul mixt nu are cum.
