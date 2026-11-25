@@ -1,10 +1,11 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-24 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-25 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **S135 A gata (C-163):** `module/model_trepte.py` (bucăți de K: media încorporărilor, eroarea pe cele K simboluri ale bucății următoare; apoi pasul de azi, același AdamW) + `unelte/laborator_trepte.py` + 9 teste; proba pe procesor merge la ambele rețete (pe bucăți ~3,4× mai mulți pași pe minut). **1.581 teste trec**, amprentele modelelor și examenului identice.
 - **S136 gata (C-164):** coloanele „calitate” sunt în `integrare/KRONOS_V2_FISA.md`. Pe scurt: risc mic la ReLU², fără deplasări, RMS cu γ; RMS fără γ doar cu γ păstrat la norma finală (capul Kronos e legat).
+- **S137 A gata (C-163, 25 nov 00:05, verificat):** `module/date_harta.py` (regiuni de ~1 M simboluri, EMA a pierderii, ½ uniform + ½ după scor, 0,25×–4×) + `unelte/laborator_harta.py` + 7 teste; **1.590 teste trec**. Harta de referință #513 făcută pe procesor (7,3 min; media 1,560, mediana 1,240 nats/simbol; ușor = TinyStories, greu = literatură veche / diacritice stricate / spam). Pasul nu încetinește. Notă: la început harta trage puțin mai des textul ușor (model de la zero vs #513) — formula aprobată, neschimbată.
 - **„Da harta” (DECIZII 24 nov 21:39) → S137:** a treia probă a laboratorului. Scor pe regiune de ~1 M simboluri = pierderea de acum − pierderea lui #513 (RHO-LOSS: doar ce se mai poate învăța, nu zgomotul); jumătate din ferestre uniform, jumătate după scor, ponderi tăiate la 0,25×–4×; primele 5 min uniform. Aceleași praguri ca S135, baza = S135 (0).
 - Pauza C-156 rămâne pentru orice altă antrenare (S131, S134 B). Chat-ul merge pe 8787 cu **#651**.
 
