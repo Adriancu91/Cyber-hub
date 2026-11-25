@@ -68,3 +68,16 @@ Jurnalul nu contine temperatura, pasi sau pierderi (nu ruleaza nicio antrenare).
   abatere: [   1.210] WARN  usb: port 25: incercarea 3, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
   abatere: [   1.250] WARN  usb: stick-ul de pe portul 25 nu porneste
 
+2026-11-25 21:05 tura 1
+**Acum:** nu ruleaza nicio lucrare de antrenare, deci nu exista pasi sau pierderi. Testul placii video (GPU) s-a terminat, iar rapoartele au fost trimise pe GitHub fara eroare. Calculatorul e pornit de aproximativ 6,5 minute, iar reteaua merge la 100 Mb/s.
+
+**Viteze GPU:** toate variantele de calcul dau exact aceleasi rezultate ca varianta de baza. Cea mai rapida, mm_tc_v4@64k, atinge 8,28 TFLOP/s, adica de 8 ori mai rapid. Placa a generat 16 simboluri, toate verificate cu procesorul.
+
+**Abatere 1:** lantul de teste GPU s-a oprit la ultimul pas („tur-dupa”). Politica de siguranta a respins rezultatul, pentru ca o verificare care trebuia doar sa citeasca a facut o scriere. Toti pasii de dinainte au trecut, iar curatarea a rulat.
+
+**Abatere 2:** sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”.
+
+**Abatere 3:** firul 5 a fost oprit fortat (cod -9). Separat, cea mai lunga scriere pe stick-ul USB a durat 810 ms.
+
+**Memoria:** sunt folositi aproximativ 423 MiB, iar libera e multa (aproximativ 127 GiB). Temperatura nu apare in date.
+
