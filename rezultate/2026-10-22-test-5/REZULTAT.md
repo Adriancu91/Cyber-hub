@@ -17,7 +17,7 @@ Stick cu fișierele din `cyber-universe-stick-v5.zip` (os-136, sume verificate).
 ## Ce s-a văzut, cuvânt cu cuvânt
 **`net`:**
 ```
-Realtek RTL8168/8111  MAC 38:f3:ab:6b:11:34
+Realtek RTL8168/8111  MAC (ascuns)
 pachete trimise 0, primite 0
 legatura: da, 1000 Mbit/s, full duplex; primire: aruncate 0, pierdute de placa 0, ISR vazut 0020, descriptor RX 0 = 80000800, citiri 6078
 inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
@@ -32,7 +32,7 @@ citiri 800 → 2600 → 4400 → 6200 → 8000 → 9800. `log rx`: doar rânduri
 **`log rtl`** (poza 6):
 ```
 [  8.010] INFO  net: rtl8168 PCIe Device Control 2010 -> 2000 (No Snoop si Relaxed Ordering oprite)
-[ 11.250] INFO  net: placa Realtek RTL8168 pornita (revizia 50800000), MAC 38:f3:ab:6b:11:34, legatura: da, 1000 Mbit/s, full duplex
+[ 11.250] INFO  net: placa Realtek RTL8168 pornita (revizia 50800000), MAC (ascuns), legatura: da, 1000 Mbit/s, full duplex
 [ 11.420] INFO  net: rtl8168 registre: CR 0c RCR 0000c70a TCR 53900f00 IMR 0000 ISR 0020 RMS 2048 RDSAR 3d8000 TNPDS 3d9000 PHY 93
 ```
 

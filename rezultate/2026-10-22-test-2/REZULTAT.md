@@ -11,7 +11,7 @@ comanda `hw`), fișierele copiate pe stick FAT32 **formatat în Windows** (nu im
 - **NVMe merge:** `/disk: montat (2 intrari)`; `ls /disk` → `EFI/`, `System Volume Information/` (poza `04-ls-disk.jpg`) — OS-ul citește
   partiția de sistem a discului Samsung real.
 - **USB:** controlerele xHCI pornesc; dispozitive văzute: `04f2:b6be` (cameră), `125f:db8a` (stick ADATA, Mass Storage).
-- **Driverul Realtek pornește și citește MAC-ul real:** `Realtek RTL8168/8111 MAC 38:f3:ab:6b:11:34` (prefix Lenovo); **pachete trimise 4**.
+- **Driverul Realtek pornește și citește MAC-ul real:** `Realtek RTL8168/8111 MAC (ascuns)` (prefix Lenovo); **pachete trimise 4**.
 
 ## Ce NU a mers
 1. **Recepție pe Realtek: 0 pachete primite.** DHCP nu a primit răspuns, așa că OS-ul a rămas pe configurația implicită

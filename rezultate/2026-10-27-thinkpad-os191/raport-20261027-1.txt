@@ -46,7 +46,7 @@ USB:
 /disk: montat (2 intrari)
 /usb: montat (7 intrari)
 retea:
-  Realtek RTL8168/8111  MAC 38:f3:ab:6b:11:34
+  Realtek RTL8168/8111  MAC (ascuns)
   pachete trimise 9, primite 0
   legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 4084, descriptor RX 0 = 80000800, citiri 3781
   inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
@@ -86,7 +86,7 @@ retea:
   04:00.6  1022:15e3  multimedia
 
 == net ==
-  Realtek RTL8168/8111  MAC 38:f3:ab:6b:11:34
+  Realtek RTL8168/8111  MAC (ascuns)
   pachete trimise 9, primite 0
   legatura: nu; primire: aruncate 0, pierdute de placa 0, ISR vazut 4084, descriptor RX 0 = 80000800, citiri 3781
   inel RX 256: index 0, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0
@@ -95,7 +95,7 @@ retea:
   fara adresa (DHCP fara raspuns; reincearca la 10 s)
 
 == jurnal net (si registrele placilor de retea) ==
-[  12.010] INFO  net: placa Realtek RTL8168 pornita (revizia 50800000), MAC 38:f3:ab:6b:11:34, legatura: nu
+[  12.010] INFO  net: placa Realtek RTL8168 pornita (revizia 50800000), MAC (ascuns), legatura: nu
 [  12.170] INFO  net: rtl8168 registre: CR 0c RCR 0002c70a TCR 53900f00 IMR 0000 ISR 0000 RMS 2048 MISC 0000003f MCU 32 PHY 90
 [  12.330] INFO  net: rtl8168 inele: RDSAR 00000000_01000000 TNPDS 00000000_01001000 (sub 4 GB, sub 4 GB)
 [  12.480] INFO  net: rtl8168 C+ Command 2021, PMCH f0, revizia 50800000 = 8168GU/8111GU (doar citite)
@@ -306,7 +306,7 @@ retea:
 [   7.510] INFO  usb: stocare ADATA USB Flash Drive (29600 MiB)
 [   7.690] INFO  nvme: disc SAMSUNG MZVLQ256HAJD-000H1 (244198 MiB)
 [   7.850] INFO  fs: FAT32 (GPT, 100 MiB) montat la /disk
-[  12.010] INFO  net: placa Realtek RTL8168 pornita (revizia 50800000), MAC 38:f3:ab:6b:11:34, legatura: nu
+[  12.010] INFO  net: placa Realtek RTL8168 pornita (revizia 50800000), MAC (ascuns), legatura: nu
 [  12.170] INFO  net: rtl8168 registre: CR 0c RCR 0002c70a TCR 53900f00 IMR 0000 ISR 0000 RMS 2048 MISC 0000003f MCU 32 PHY 90
 [  12.330] INFO  net: rtl8168 inele: RDSAR 00000000_01000000 TNPDS 00000000_01001000 (sub 4 GB, sub 4 GB)
 [  12.480] INFO  net: rtl8168 C+ Command 2021, PMCH f0, revizia 50800000 = 8168GU/8111GU (doar citite)

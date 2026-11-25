@@ -150,7 +150,7 @@ USB:
 /disk: montat (2 intrari)
 /usb: montat (11 intrari)
 retea:
-  I219-LM  MAC cc:96:e5:08:b7:b5
+  I219-LM  MAC (ascuns)
   pachete trimise 26, primite 202
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11eb000
   registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011eb000, RDBAH 00000000, RDH 0000000a, RDT 00000009, TDH 0000001a, TDT 0000001a (pasii de pornire: log e1000)
@@ -285,7 +285,7 @@ retea:
   b4:00.0  1c5c:1959  controler NVMe
 
 == net ==
-  I219-LM  MAC cc:96:e5:08:b7:b5
+  I219-LM  MAC (ascuns)
   pachete trimise 26, primite 202
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11eb000
   registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011eb000, RDBAH 00000000, RDH 0000000a, RDT 00000009, TDH 0000001a, TDT 0000001a (pasii de pornire: log e1000)

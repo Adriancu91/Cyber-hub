@@ -24,7 +24,7 @@ Stick ADATA `125f:db8a` (29.600 MiB), FAT32/MBR din Windows, cu fișierele din `
 
 **`net`** (poza 1, ~1 minut):
 ```
-Realtek RTL8168/8111  MAC 38:f3:ab:6b:11:34
+Realtek RTL8168/8111  MAC (ascuns)
 pachete trimise 36, primite 24
 legatura: da, 1000 Mbit/s, full duplex; primire: aruncate 0, pierdute de placa 0, ISR vazut 40a5, descriptor RX 24 = 80000800, citiri 1504x
 inel RX 256: index 24, ai placii 256; RDU vazut 0 ori, reporniri 0, resincronizari 0; raspunsuri DHCP (udp 68) 0

@@ -20,13 +20,13 @@ formatat în Windows, cu fișierele din `cyber-universe-stick-v3.zip` (Release o
 
 **`log rtl`:**
 ```
-[  10.120] INFO  net: placa Realtek RTL8168 pornita (revizia 50800000), MAC 38:f3:ab:6b:11:34, legatura: da, 1000 Mbit/s, full duplex
+[  10.120] INFO  net: placa Realtek RTL8168 pornita (revizia 50800000), MAC (ascuns), legatura: da, 1000 Mbit/s, full duplex
 [  10.290] INFO  net: rtl8168 registre: CR 0c RCR 0002c70a TCR 53900f00 IMR 0000 ISR 0021 RMS 2048 RDSAR 3d8000 TNPDS 3d9000 PHY f3
 ```
 
 **`net`** (la câteva minute de la pornire):
 ```
-Realtek RTL8168/8111  MAC 38:f3:ab:6b:11:34
+Realtek RTL8168/8111  MAC (ascuns)
 pachete trimise 60, primite 16
 legatura: da, 1000 Mbit/s, full duplex; primire: aruncate 0, pierdute de placa 0, ISR vazut 40b5, descriptor RX 0 = 80000800, citiri 26190
 fara adresa (DHCP fara raspuns; reincearca la 10 s)
