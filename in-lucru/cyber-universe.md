@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 23:50 · următorul pas: CI pe main (P6-218 --bariera + P6-219) verde → GATA DE TEST `test-placa --bariera`; apoi PREDĂRI noi Cyber-GPU sau C-166 pașii 5–6
+ocupat · început 2026-11-26 00:11 · sarcina: CI main (P6-218+P6-219) → Release GATA DE TEST --bariera; apoi C-166 pasul 5/6 (agentul de bord) · estimat gata: 01:15
