@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 21:51 · următorul pas: CI pe 92f91d4 (P6-216 --lot-prin-ram) verde → GATA DE TEST `… --mixt-513 --mixt-513-rapid --lot-prin-ram`; apoi PREDĂRI noi Cyber-GPU, P6-217 (două locuri) sau C-166 pașii 4–6
+ocupat · început 2026-11-25 21:41 · sarcina: CI 92f91d4 (P6-216) → GATA DE TEST, apoi coada C-158/PREDĂRI · estimat gata: 23:10
