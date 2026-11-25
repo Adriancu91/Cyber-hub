@@ -1,0 +1,20 @@
+# jurnal gpu P6-40, cyber-gpu 408c69c, comanda: gpu recupereaza
+[    4.525170] gpu: pas I4: booter_load-570.144: ok
+[    4.591731] gpu: pas I4: booter_unload-570.144: ok
+[    4.943853] gpu: pas I4: bootloader-570.144: ok
+[   14.588599] gpu: pas I4: gsp-570.144: ok
+[   14.610046] gpu: bar0 r 0x824148 = 0x00000001
+[   14.630991] gpu: cfg  r 0x004 = 0x00100003
+[   14.652208] gpu: cfg  w 0x004: 0x00100003 <- 0x00000007 => 0x00100007
+[   14.673244] gpu: pas I5g Bus Master pornit: ok
+[   14.694480] gpu: nota: C-103 gpu recupereaza: fereastra cu Adrian (P6-74)
+[   14.715466] gpu: nota: C-103 Booter Unload: WPR2 nu e ridicat, nimic de coborat (sarit, ca RM)
+[   14.736899] gpu: cfg  w 0x004: 0x00100007 <- 0x00000003 => 0x00100003
+[   14.758667] gpu: bar0 r 0x300000 = 0xeb7faa55
+[   14.779740] gpu: pas I3: VBIOS prin PROM: ok
+[   14.800959] gpu: pas I3: descriptorul FWSEC: ok
+[   14.822016] gpu: bar0 r 0x8241e0 = 0x00000003
+[   14.843175] gpu: pas I6 pregatire: semnatura FWSEC aleasa (doar citire): ok
+[   14.867180] gpu: bar0 r 0x1183a4 = 0x00002000
+[   14.888342] gpu: bar0 r 0x1fa828 = 0x00000000
+[   14.909451] gpu: pas I6 pregatire (doar citire): ok
