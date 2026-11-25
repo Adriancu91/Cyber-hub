@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 10:15 · sarcina: C-157/C-165 pregătirile ocupării (punctul 3 al notei 07:00: 128x128 la ≤ 80 registre / mm_tc cu mai puțină memorie comună) · estimat gata: 11:45
+liber · terminat 2026-11-25 10:46 · următorul pas: comparațiile când vin (os-423 ocuparea, os-421, os-419 mm_tc, os-422); apoi mm_tc cu mai puțină memorie comună pe bloc; dacă dieta 128x128t512 câștigă în cursă → MmChoice/Prog
