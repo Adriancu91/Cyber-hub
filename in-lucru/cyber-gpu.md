@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 01:43 · următorul pas: comparația cursei complete (fără 64x64k8) → parse_race → MmChoice; după os-352 comparația mm_tc la qkv-513; frâna e în program → plăci cu citiri ascunse doar dacă cursa nu ajunge; apoi lotul mare sau B1 (int8 IMMA)
+ocupat · început 2026-11-25 02:14 · sarcina: C-157 p.2 / C-165 — comparația cursei complete os-416 → parse_race → MmChoice · estimat gata: 03:45
