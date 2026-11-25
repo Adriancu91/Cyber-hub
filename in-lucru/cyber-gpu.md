@@ -1,1 +1,1 @@
-ocupat · început 2026-11-25 04:14 · sarcina: comparația os-417 (proba 64x64k8 pe placă, C-157 p.2) · estimat gata: 05:00
+liber · terminat 2026-11-25 04:41 · următorul pas: comparația os-418 (#513 cu `128x128`, prezis ~341 ms) când vine; apoi cursa cu `race_list_full()` (5 variante); `mm_tc`/`mm_tc128` după os-352; altfel `mm_tc_gelu` pe 128×128 sau B1 (int8 IMMA)
