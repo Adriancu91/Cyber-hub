@@ -1,1 +1,1 @@
-liber · terminat 2026-11-25 16:22 · următorul pas: CI pe d3f0e89 (P6-210 mm_tc_v4 + P6-211 tablou) verde → GATA DE TEST `test-placa --mm-tc --mm-tc-pf --mm-tc-v4`; apoi PREDĂRI noi Cyber-GPU, C-166 pașii 4–6
+ocupat · început 2026-11-25 16:43 · sarcina: Release din d3f0e89 (P6-210/211) + legarea mm_tc128_v4 (PREDARE abb4f73) · estimat gata: 17:40
