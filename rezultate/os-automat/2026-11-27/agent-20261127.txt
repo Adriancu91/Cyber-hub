@@ -1,0 +1,24 @@
+2026-11-27 00:28 tura 1
+Calculatorul a pornit de doar 2 secunde (pornirea a durat circa 3 s) și **nu rulează nicio lucrare** acum, deci nu există pași, viteză sau pierderi de raportat. Nici temperatura nu apare în date.
+
+**Memorie:** liberă aproape toată (circa 130 GB), folosiți doar circa 36 MB.
+
+**Funcționează:** internetul (cablu, 100 Mb/s, adresa 192.168.0.151), mouse-ul, tastatura, discul intern de 512 GB și stick-ul USB de 30 GB, pe care se poate scrie.
+
+**Abateri:** nicio eroare. Placa de rețea a raportat că un pas de pornire („LAN_INIT_DONE”) nu s-a confirmat și că pașii ei de pornire au fost testați doar în simulare, nu pe un calculator real. Totuși legătura merge. Cititorul de carduri e gol, dar asta nu e o problemă.
+
+2026-11-27 00:33 tura 1
+**Acum:** nicio lucrare in coada. Antrenarea de proba #513 pe placa video s-a terminat, iar rapoartele au fost trimise pe GitHub fara eroare (cod 0). Calculatorul e pornit de aproximativ 287 s.
+
+**Antrenare #513:** lot 2 x 512, precizie mixta. Rezultatul a iesit identic cu cel calculat pe procesor (TRECE): abaterea pierderii 2.7e-5, a normei 3.2e-4, limita admisa fiind 1e-3. Placa a generat 16 simboluri, toate verificate. Randul din tabel e taiat in jurnal: 10 | 108.322 | 9453 | 9.84.
+
+**Placa video:** 47 °C la final (intre 33 si 51 °C in timpul rularii), putere maxima 119 W, medie 77 W, din limita de 290 W.
+
+**Memorie:** 129889 MiB libera, aproximativ 880 MiB folosita. Reteaua e conectata la 100 Mb/s.
+
+**⚠ Abateri:**
+- Lantul de pasi s-a oprit la ultimul pas, „tur-dupa” (ESUAT): politica de siguranta a respins rezultatul, pentru ca turul de citire a inregistrat o scriere.
+- Sistemul a refuzat 11 scrieri in afara zonei permise, toate la pasul i8e-golden.
+- Firul 5 a fost oprit fortat (cod -9).
+- O scriere pe USB a durat 805 ms.
+
