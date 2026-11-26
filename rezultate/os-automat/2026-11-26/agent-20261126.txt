@@ -67,3 +67,16 @@
 
 Rapoartele au fost trimise pe GitHub fara eroare. Jurnalul complet: /usb/raport/gpu-jurnal-134.txt.
 
+2026-11-26 10:58 tura 1
+**Acum nu ruleaza nicio lucrare**: calculatorul a pornit de 2 secunde, iar in /usb/lucrari nu e nimic.
+
+**Memorie:** aproape toata e libera (circa 130 GB), sistemul foloseste doar circa 35 MB.
+
+**Internet:** merge pe cablu la 100 Mb/s, cu adresa 192.168.0.151, iar routerul raspunde. Pasi, viteza de lucru, pierderi sau temperatura nu exista, pentru ca nu ruleaza nimic.
+
+**Discuri:** au fost gasite discul intern de 512 GB si stick-ul USB (montat, cu scriere permisa), plus mouse-ul si tastatura. Cititorul de carduri e gol, ceea ce nu e o eroare.
+
+**Abateri:** nu sunt erori. La placa de retea, un semnal de pornire („LAN_INIT_DONE”) nu a venit, dar legatura functioneaza. Pasii de pornire ai acestei placi au fost testati doar pe un model, nu si pe acest calculator.
+
+**De stiut:** programele „agent” si „gh-ia” au citit de pe stick cheile pentru GitHub si Claude.
+
