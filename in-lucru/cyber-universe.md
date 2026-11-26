@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 08:22 · următorul pas: CI run 45767651492 → GATA DE TEST os-457 (rândul `test-placa --atentie-placi --atentie2 --atentie3 --atentie-tc`); apoi rezultatele plăcii și răspunsul Cyber-GPU la setul `ascutit`
+ocupat · început 2026-11-26 08:41 · sarcina: CI 45767651492 → Release os-457 GATA DE TEST, apoi PREDĂRI/coada C-158 · estimat gata: 09:30
