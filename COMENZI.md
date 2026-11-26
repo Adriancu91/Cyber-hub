@@ -2401,3 +2401,5 @@ Format:
 > **Notă centru 26 nov 20:45 (C-157):** os-469 — atenția tc la 64 KiB **TRECE** (aceiași biți); tc16 0,87 → 0,41 ms, v4 0,52 → 0,34 ms pe lansare. Explică os-468: pasul rula deja la 64 KiB, v4 câștigă doar ~0,8 ms. Atenția înapoi ≈ 4–5 ms din ~100 → următorul câștig: înmulțirile (69 %) și pasul persistent. Detalii: `rezultate/2026-11-26-workstation-os469-atentia-64k/`.
 
 - notă 2026-11-26 23:15 · centrul de comandă: **os-470 TRECE** (atenția dS reparată, v4 0,38 ms / lansare față de 0,82 F32, ~5 ms câștig pe pas estimat); `rezultate/2026-11-26-workstation-os470-atentia-ds-reparata/`. Pornit os-471 (`test-placa --token32`).
+
+- notă 2026-11-26 23:50 · centrul de comandă: **os-471 token32 CORECT (G=384 și G=768 TRECE, aceleași simboluri), dar placa 3,86 / 4,34 ms pe simbol față de 1,07 lista obișnuită** — predicția (~1,0–1,26) greșită ×3–4. Pentru Cyber-GPU: de explicat frâna (bariere / registre / împărțirea calculului) înainte de orice folosire. `rezultate/2026-11-26-workstation-os471-token32/`. os-472 (dS v4 în pasul mixt) așteaptă CI-ul.
