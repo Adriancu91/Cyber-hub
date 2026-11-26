@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 09:50 · următorul pas: comparațiile când vin (os-457 P2zm, bariera G = 48 / 96); altfel attn_back_tile0_tc legat în pasul mixt (gpu-sim + opțiunea + antrenarea mini în SIMULARE), apoi PREDARE
+ocupat · început 2026-11-26 10:14 · sarcina: C-157 comparația os-457 (P2zm, atenția înapoi pe f16) · estimat gata: 11:10
