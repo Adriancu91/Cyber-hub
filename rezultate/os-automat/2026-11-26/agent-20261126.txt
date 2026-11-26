@@ -139,3 +139,10 @@ Rețea: placa I219-LM merge la 100 Mb/s, adresa 192.168.0.151, iar routerul răs
 Discuri: SSD-ul SK hynix de 512 GB și stick-ul USB de 30 GB sunt văzute, iar stick-ul permite scriere. Mouse-ul și tastatura funcționează, iar cititorul de carduri e gol (normal).
 De urmărit: la placa de rețea, un pas de pornire („LAN_INIT_DONE”) nu s-a confirmat, iar pașii pentru acest model au fost testați doar în simulare. Totuși, legătura funcționează. Agentul a citit cheile de pe stick (GitHub și Claude).
 
+2026-11-26 17:49 tura 1
+**Acum:** nu ruleaza nicio lucrare. Calculatorul e pornit de circa 5 minute, iar reteaua merge (100 Mb/s, adresa 192.168.0.151). Rapoartele au fost trimise pe GitHub fara eroare.
+**Testul de antrenare pe placa video (modelul #513):** a facut 10 pasi, in medie 272,6 ms pe pas, adica vreo 11.270 simboluri pe secunda. Pierderea a fost de aproximativ 9,8 (randul din jurnal e taiat). Testul a iesit **NU TRECE**, iar randurile de dinainte nu arata motivul. Placa a generat si 16 simboluri, verificate cu procesorul.
+**Abatere:** sirul de pasi al placii video s-a oprit la ultimul pas („tur-dupa”). Regula de siguranta a respins rezultatul, pentru ca o verificare care trebuia doar sa citeasca a inregistrat o scriere. Toti pasii de dinainte au trecut. Sistemul a blocat 11 scrieri in afara zonei permise, toate la pasul „i8e-golden”. Pasii de curatare au rulat.
+**Alte semnale:** procesul nr. 5 a fost oprit fortat (cod -9). Cea mai lunga scriere pe stick-ul USB a durat 0,8 secunde.
+**Memorie:** sunt libere aproximativ 127 GiB si folositi circa 962 MiB. Temperatura nu apare in date.
+
