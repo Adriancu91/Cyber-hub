@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 08:41 · sarcina: CI 45767651492 → Release os-457 GATA DE TEST, apoi PREDĂRI/coada C-158 · estimat gata: 09:30
+liber · terminat 2026-11-26 09:20 · următorul pas: CI run 45773419534 → GATA DE TEST os-458 (`test-placa --bariera`, aștept 48 SM, G=48/96 TRECE); apoi rezultatele plăcii și PREDĂRI noi Cyber-GPU
