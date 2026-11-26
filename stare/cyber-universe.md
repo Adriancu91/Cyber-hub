@@ -1,6 +1,6 @@
 # Stare: Cyber Universe OS (`cyber-universe`)
 
-**Actualizat:** 2026-11-26 04:20 (ora României) · trecere scurtă: nicio PREDARE nouă (Cyber-GPU 241 = nimic pentru placă), nicio comandă nouă, CI verde; ultimul Release rămâne **`os-455`**. Testele de placă în așteptare: os-445, os-447, os-449, os-451 (rezultatul os-451 deblochează proba barierei largă).
+**Actualizat:** 2026-11-26 04:50 (ora României) · trecere scurtă: nicio PREDARE nouă (Cyber-GPU 241 = nimic pentru placă; 242 în lucru), nicio comandă nouă, CI verde; ultimul Release rămâne **`os-455`**. Testele de placă în așteptare: os-445, os-447, os-449, os-451 (rezultatul os-451 deblochează proba barierei largă).
 
 ## Acum
 - GATA DE TEST: os-449 — **pasul mixt rapid #513 cu două locuri de lot** (P6-217, nota Cyber-GPU `C-157_P2zg_lot-prin-ram-mixt.md`, pasul 2), CI run 45697639496 verde (`07d5b05`, 13 fișiere). Nou pentru placă: niciun program, niciun registru; doar ordinea trimiterilor (părțile pasului N+1 trimise pe măsură ce se termină cele ale pasului N, cel mult un pas în buffer). **Rândul pentru teste.txt:** `test-placa --antrenare-mini --vram --antrenare-513 --placi3 --mm-placi --colsum-impartit --mixt-513 --mixt-513-rapid --lot-prin-ram --doua-locuri` (apoi același cu ` --lot-513 6` la coadă). **Aștept:** aceleași verificări ca `--lot-prin-ram` (pierderile scad, numere finite), rândul „doua locuri: X parti ale pasilor 2..N trimise cat placa lucra pasul dinainte …, 0 amanate”, „pasul intreg” ≈ placa + < 0,5 ms (DEDUS Cyber-GPU). Ideal după os-447.
