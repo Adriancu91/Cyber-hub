@@ -80,3 +80,10 @@ Rapoartele au fost trimise pe GitHub fara eroare. Jurnalul complet: /usb/raport/
 
 **De stiut:** programele „agent” si „gh-ia” au citit de pe stick cheile pentru GitHub si Claude.
 
+2026-11-26 11:01 tura 1
+**Acum:** testul pe placa video (kronos --gpu) s-a terminat. Nu ruleaza nicio lucrare. Calculatorul e pornit de 161 s. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Cifre:** 16 simboluri generate pe placa, toate identice cu procesorul. Fiecare simbol a durat cam 1,07 ms. Copierea in memoria placii merge cu 282 GB/s, adica 93% din maximul de 608 GB/s. Testele de sincronizare au trecut (1,1 µs). Memoria e aproape toata libera: s-au folosit cam 424 MiB. Reteaua e conectata la 100 Mb/s. Jurnalul nu arata temperatura si pierderi.
+
+**Abateri:** lantul de pasi s-a oprit la ultimul pas, „tur-dupa”, cu ESUAT. Verificarea finala, care trebuia doar sa citeasca, a facut o scriere, asa ca regula de siguranta a respins rezultatul. Pasii de curatare au rulat. Sistemul a blocat 11 scrieri in afara zonei permise, toate la pasul i8e-golden. Firul 5 a fost oprit fortat (cod -9). O scriere pe stick a durat 0,9 s, mult peste media de 3,5 ms.
+
