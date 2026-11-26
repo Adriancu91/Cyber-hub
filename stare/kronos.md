@@ -1,20 +1,19 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-25 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-26 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **S139 B gata (C-167), verificat:** „portarul” (amestecul de adâncimi), o oră de la zero pe placa workstation-ului, față de S135 (0): română curat **1,5286** vs 1,5343 (−0,0057, prag −0,010), `examen_bpb` **0,5426** (+0,0032, în toleranță) → **„LA FEL”**. Viteza în PyTorch **1,062×** (41.527 vs 39.115 simb/s, minutele 5–45) → „și mai rapid”. Probă validă (38,9 % simboluri alese în modul cauzal, 5.997 MB / 65 °C, modelele și examenul neatinse). **Ne oprim cu portarul.**
-- Laboratorul, toate probele aprobate: bucăți K = 4 **PIERDE** (S135), harta **câștig strâmb** (S137), portarul **LA FEL** (S139). Tabelul: `integrare/kronos/BANC_ANTRENARE.md`.
-- Placa liberă la Kronos; 1.605 teste trec. Chat-ul merge pe 8787 cu **#651**. Pauza C-156 rămâne pentru orice altă antrenare (S131, S134 B).
+- **S140 gata, verificat (procesor, placa neatinsă):** la cererea centrului (os-445) — #513 în PyTorch, 300 de pași pe aceleași loturi reale (sămânța 1134, lot 2 × 512, SHA `loturi.i64` identic), F32 față de bf16. **Valid.** Media pierderii pe pașii 251–300: bf16 1,66466 vs F32 1,66611 (**−0,087 %**, prag ±1 %) → **„bf16 nu strică învățarea pe 300 de pași”**.
+- **Banda pentru OS** (|bf16 − F32| la pașii 1/10/50/100/200/300): **[2,4e-5; 3,8e-4; 9,4e-4; 1,4e-3; 1,6e-3; 2,7e-3]**. Cinstit: între acești pași diferența sare până la **5,1e-2** (pasul 291); 12 pași din 300 trec de 7,2e-3, toți după pasul 100; pașii 1–50 rămân sub 1,5e-3. O singură pereche de rulări. Tabelul întreg: `integrare/kronos/BANC_ANTRENARE.md`, secțiunea S140.
+- Laboratorul (probele aprobate, toate închise): bucăți K = 4 PIERDE (S135), harta câștig strâmb (S137), portarul LA FEL (S139).
+- Placa liberă la Kronos; 1.605 teste trec. Chat-ul merge pe 8787 cu **#651**. Pauza C-156 rămâne pentru orice altă antrenare.
 
 ## Urmează
-- **S140 aprobat (procesor, ~40 min, placa neatinsă):** la cererea centrului (nota 22:15, os-445) — `banc_antrenare.py` pe #513, lot 2 × 512, sămânța 1134, **300 de pași F32 față de bf16 pe aceleași loturi reale** → banda de toleranță (diferența la pașii 1/10/50/100/200/300) pentru pasul mixt din OS. Rezultatul intră în `integrare/kronos/BANC_ANTRENARE.md`.
-- Altfel nimic aprobat pentru placă. Propus (S138, doar cu „da”): **(0′) altă sămânță** — cât e zgomotul; cele trei probe au dat diferențe de 0,006–0,026, iar judecătorul și martorul au mers de două ori în sens opus. Apoi (2) piesele ieftine, (3) + fără γ.
-- Candidații din `idei/2026-11-24-centru-cele-patru-piese.md` (ieșirea pe categorii, decodarea speculativă): doar cu „da” separat.
+- Nimic aprobat pentru placă. Propus (S138, doar cu „da”): **(0′) altă sămânță** — cât e zgomotul între două rulări identice; apoi (2) piesele ieftine, (3) + fără γ.
+- Candidații din `idei/2026-11-24-centru-cele-patru-piese.md`: doar cu „da” separat.
 
 ## Ce oferă proiectul celorlalți
-- **Pentru `cyber-universe` / `cyber-gpu` (în lucru, S140):** banda PyTorch F32 vs bf16 pe 300 de pași de text real, cu aceleași loturi (`loturi.i64`, sămânța 1134) — OS-ul poate rula aceiași pași F32 vs mixt și compara. Citire: sub bandă = doar rotunjire (bf16 e mai grosier decât f16, deci banda e generoasă).
-- **Pentru `cyber-gpu` / `cyber-universe`:** niciuna dintre cele trei probe nu cere programe noi de placă (portarul n-a câștigat → fără fișa gather/scatter).
+- **Pentru `cyber-universe` / `cyber-gpu` (nou, S140):** banda de toleranță F32 vs mixt pe text real. Citire propusă: pasul mixt din OS față de F32-ul lui pe text real e „doar rotunjire” dacă stă sub banda de la pașii 1/10/50/100/200/300; abaterea de 7,2e-3 de la os-445 e de mărimea rotunjirii bf16 după pasul 100, dar nu la pașii 1–50. bf16 (8 biți mantisă) e mai grosier decât f16 (11), deci banda e generoasă pentru OS. Aceleași loturi se pot reface cu `unelte/banc_antrenare.py --samanta 1134 --lot 2 512`.
 - Poziția pe calitate pentru piesele v2: `integrare/KRONOS_V2_FISA.md`.
 - `integrare/kronos/BANC_ANTRENARE.md`, `FISA_ANTRENARE.md`, `PAS_DE_AUR.md`, `MODEL.md` (#513), `MODEL_651.md` (#651).
 

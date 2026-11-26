@@ -80,8 +80,44 @@ Unealta: `unelte/laborator_trepte.py`; rezultatele în `lucru/laborator/S135_<re
 | (0) rețeta de azi | 0 / 60 | 140.820.480 | 2.865 | **1,5343** | 0,5394 | 42,07 | 5.952 MB, 65 °C | baza (validă: < 2,0) |
 | (1) bucăți K = 4 | 40 / 20 | 338.903.040 | 6.895 (5.940 + 955) | **1,5538** | 0,5144 | 60,12 | 6.018 MB, 65 °C | **PIERDE** (+0,0195 ≥ +0,010) |
 | (H) harta (S137) | 0 / 60 (harta din min 5) | 139.542.528 | 2.839 (2.602 cu harta) | **1,5085** | 0,5485 | 43,33 | 6.005 MB, 65 °C | **CÂȘTIG STRÂMB** (română −0,0258, dar `examen_bpb` +0,0091 > +0,005) — nu e câștig |
+| (P) portarul (S139) | 0 / 60 (portar la straturile 2, 4, …, 12, capacitate 50 %) | 149.520.384 | 3.042 | **1,5286** | 0,5426 | 26,44 | 5.997 MB, 65 °C | **LA FEL** (română −0,0057, între 1,5243 și 1,5443); viteza min 5–45 **41.527 simb/s = 1,062×** (0) 39.115 → „și mai rapid” |
 
 - Judecătorul (româna curată) dă PIERDE; martorul `examen_bpb` și R1 sunt mai bune la (1) (−0,025, +18 puncte), dar nu
   decid. Pre-înregistrarea: `docs/preinregistrari/2026-11-25_laborator_trepte_k4.md`.
 - (H) (S137, unealta `unelte/laborator_harta.py`, ieșirea `lucru/laborator/S137_H/`): ferestre trase pe sferturi după `ref`
   #513 (ușor → greu) 22,7 / 23,8 / 25,7 / 27,7 %. Pre-înregistrarea: `docs/preinregistrari/2026-11-25_laborator_harta.md`.
+- (P) (S139, unealta `unelte/laborator_portar.py`, modulul `module/model_portar.py`, ieșirea `lucru/laborator/S139_P/`):
+  examenele în modul cauzal (`sigmoid(r) > 0,5`); partea aleasă la română 38,9 % (validă: 35–65 %), potrivirea cu top-k
+  88–89 %. Informativ top-k (nu decide): română 1,5229, `examen_bpb` 0,5370. Pre-înregistrarea:
+  `docs/preinregistrari/2026-11-25_laborator_portar.md`.
+
+## S140 — F32 vs bf16, 300 de pași (26 nov 2026, procesor, aceleași loturi)
+
+Din #513, `unelte/banc_antrenare.py` neschimbată, `--dispozitiv cpu --lot 2 512 --pasi 300 --samanta 1134`, o dată
+`--precizie f32` și o dată `--precizie bf16` (autocast bf16 la trecerea înainte și la pierdere; greutățile, gradientele și
+AdamW în F32). AdamW lr 5e-5 constantă, tăierea 1,0. Loturile identice: SHA-256 `loturi.i64` = `82023c5d…3737` la amândouă.
+Ieșirile: `lucru/banc/S140_f32/`, `lucru/banc/S140_bf16/` (`rezultat.json` cu toți pașii). Norma = înainte de tăiere.
+
+| pas | pierdere F32 | pierdere bf16 | bf16 − F32 | relativ | norma gradient F32 | norma bf16 | ms/pas F32 | ms/pas bf16 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 1,067867 | 1,067842 | −2,43e-5 | 0,002 % | 3,690 | 3,690 | 1.428 | 2.872 |
+| 10 | 1,136150 | 1,135774 | −3,76e-4 | 0,033 % | 3,899 | 3,888 | 1.284 | 2.661 |
+| 50 | 2,266573 | 2,267512 | +9,39e-4 | 0,041 % | 4,909 | 4,902 | 1.339 | 2.915 |
+| 100 | 1,625381 | 1,626824 | +1,44e-3 | 0,089 % | 4,766 | 4,794 | 1.335 | 2.659 |
+| 200 | 2,206031 | 2,207622 | +1,59e-3 | 0,072 % | 4,978 | 4,986 | 1.310 | 2.678 |
+| 300 | 0,894853 | 0,897521 | +2,67e-3 | 0,298 % | 3,593 | 3,609 | 1.275 | 2.646 |
+
+- **Diferența maximă pe pașii 1–300: 5,11e-2 la pasul 291** (F32 1,2271, bf16 1,1760; 4,16 %). Maximul pe bucăți:
+  1–50 1,42e-3 (pas 21) · 51–100 5,69e-3 (93) · 101–150 7,79e-3 (101) · 151–200 8,40e-3 (181) · 201–250 3,55e-2 (208) ·
+  251–300 5,11e-2 (291). Pași cu |bf16 − F32| > 1e-3: 123 din 300; > 7,2e-3: 12 din 300 (toți după pasul 100).
+- Media |bf16 − F32|: pașii 1–50 4,55e-4 · 101–150 1,20e-3 · 251–300 3,73e-3 · 1–300 1,93e-3.
+- Media pierderii pe 251–300: F32 1,66611, bf16 1,66466 (−0,087 %). Pe 1–300: 1,67876 / 1,67884.
+- Norma gradientului: la cei 6 pași diferă cu 0,01–0,57 %, dar la 40 din 300 de pași cu > 1 % (cel mai mult la pasul 275:
+  5,09 vs 10,84). Tăierea la 1,0 face pasul AdamW mai puțin sensibil la normă decât arată cifra.
+- ms/pas (media pașilor 2–300): F32 1.311 (781 simb/s), bf16 2.673 (383 simb/s) — bf16 de 2,04× mai lent pe procesor.
+- Banda propusă pentru OS (pragul (c), |bf16 − F32| la pașii 1/10/50/100/200/300):
+  **[2,4e-5; 3,8e-4; 9,4e-4; 1,4e-3; 1,6e-3; 2,7e-3]**. Atenție: e o singură pereche de rulări și diferența sare mult de la
+  un pas la altul (până la 5,1e-2); banda la 6 pași e mică doar fiindcă pașii aceia au ieșit liniștiți. bf16 (8 biți de
+  mantisă) e mai grosier decât f16 (11 biți) din OS.
+- Verdict (pre-înregistrarea `docs/preinregistrari/2026-11-25_banc_f32_vs_bf16_300.md`): (a) valid; (b) **„bf16 nu strică
+  învățarea pe 300 de pași”** (−0,087 %, în ±1 %); (c) banda de mai sus; (d) SHA înainte = după (21/21).
