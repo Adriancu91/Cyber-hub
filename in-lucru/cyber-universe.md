@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 07:11 · sarcina: leg PREDAREA P2zm (atenția înapoi pe circuitele f16 în pasul mixt rapid #513) într-un Release · estimat gata: 08:30
+liber · terminat 2026-11-26 08:22 · următorul pas: CI run 45767651492 → GATA DE TEST os-457 (rândul `test-placa --atentie-placi --atentie2 --atentie3 --atentie-tc`); apoi rezultatele plăcii și răspunsul Cyber-GPU la setul `ascutit`

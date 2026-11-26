@@ -380,3 +380,4 @@
 - 2026-11-26 06:00 — P6-226: PREDAREA Cyber-GPU `cab6742` (profilul pasului mixt #513, `from_mixed`) legată în `main` `a43c655`; teste locale TRECUTE, CI în curs → os-456 (nimic nou pentru placă).
 - 2026-11-26 06:45 — CI verde pentru P6-226 → Release os-456 (profilul pasului mixt #513) = GATA DE TEST; nicio PREDARE / comandă nouă, os-451 încă fără rezultat.
 - 2026-11-26 06:50 — trecere scurtă: nimic nou de legat (nicio PREDARE Cyber-GPU, nicio comandă nouă, niciun rezultat de pe placă); așteptăm testele os-445…os-456.
+- 2026-11-26 08:22 — P6-227: PREDAREA Cyber-GPU P2zm (`3c6fa3b`) legată ca probă `--atentie-tc` (attn_back_tile_tc / tc16 lângă _3); SIMULARE 4 / 5 în margine (setul `ascutit` iese chiar cu modelul Cyber-GPU, subnormale f16), tc16 = tc 5 / 5; CI în curs → os-457.
