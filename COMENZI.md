@@ -800,7 +800,7 @@ Format:
   pentru OS, dacă e nevoie de cod nou acolo); (2) pentru bucla automată (doar citire): lista de citiri fără risc care să ruleze la fiecare tur (registre de stare,
   spațiul PCI, temperaturi, ce mai ajută modelul) și unealta care le compară cu `gpu-sim`; (3) `gpu-sim` primește datele reale din `rezultate/` (fără conținutul
   firmware-ului/VBIOS NVIDIA în repo), ca simularea să ghicească mai puțin. Nimic nu scrie în placă fără Adrian.
-- stare: gata (2026-11-01 20:05, sesiunea Cyber-GPU 33; preluat 19:47)
+- stare: gata (2026-11-01 19:58, sesiunea Cyber-GPU 33; preluat 19:47)
 - rezultat: în SIMULARE: `gpu-sim` construit din valorile reale de pe placă (pe cele 3 rapoarte: 33 la fel, 0 diferit), turul de citire fără risc + unealta `compara_raport`, pașii în lanț cu oprire sigură; propunerea pentru OS `idei/2026-11-01_cyber-gpu-tur-si-lant.md`.
 
 ### C-55 · cyber-universe · `gpu tur` (lista albă a buclei automate) + `gpu lant` (doar cu „DA”, la fereastră)
@@ -2046,6 +2046,7 @@ Format:
 - rezultat: 2026-11-26 15:45 — sesiunea 252: niciun test nou pe placă → **`attn_back_tile0_tc_v4` legat în pasul mixt rapid** (nota `cyber-gpu/docs/C-157_ATTN_BACK0_TC_V4_LEGAT.md`, plan `140df52`, cod `9b11018`): `pack_mixed_fast_attn3` alege v4 pe formele aliniate, altfel tc; T262 SIMULARE: aceiași biți ca tc, forma nealiniată cade pe tc; 1 291 PASS; `PREDARE → cyber-universe` P2zu în `stare/cyber-gpu.md` (de folosit după P2zt).
 - rezultat: 2026-11-26 16:55 — sesiunea 253: niciun test nou pe placă → **`attn_back_tile_tc16_v4` / `_v4pf` legate în pasul mixt rapid** (nota `cyber-gpu/docs/C-157_ATTN_BACK_TC16_V4_LEGAT.md`, plan `a922bab`, cod `6e8b29a`): varianta rapidă a programului al doilea al atenției aleasă singură pe formele aliniate, aceiași biți ca tc16 în SIMULARE (T263); PREDARE P2zv în `stare/cyber-gpu.md`; 1 297 PASS.
 - rezultat: 2026-11-26 18:00 — sesiunea 254: **os-462 și os-465 comparate** (nota `cyber-gpu/docs/C-157_OS462_OS465.md`, `8125211`): tc16 în pas −6,7 ms față de 2,2–4,0 prezis (proba rulează la 1 bloc pe SM, pasul la 3–4 — T264); v4 0,52 ms (×1,67) în bandă, v4pf tăiat; bariera largă W1–W5 confirmate → G = 384 pentru `token32`; rândul lot 6 sărit din cauza ordinii (`--atentie-tc16` după `--doua-locuri`); `PREDARE → cyber-universe` P2zw în `stare/cyber-gpu.md`.
+- rezultat: 2026-11-26 19:58 — punctul 2 (os-467, sesiunea 255): `attn_back_tile0_tc` nu termina din scrieri de 64 de biți nealiniate în memoria partajată (rânduri de 65), nu din barieră; `attn_back_tile0_tc` / `_v4` reparate (rânduri de 68, aceiași biți în SIMULARE) + verificarea `program_lint` peste toate programele; nota `cyber-gpu/integration/cyber-universe/C-157_P2zx_os467-attn0-tc-reparat.md`, commit `5c83a80`; `PREDARE → cyber-universe` în `stare/cyber-gpu.md`; de reluat os-467.
 
 ### C-158 · cyber-universe · COADA PERMANENTĂ: lucru zi și noapte, sesiuni din oră în oră (Adrian, 21 nov 08:01)
 - data: 2026-11-21 08:01 · de la: Adrian (prin centrul de comandă) — decizia din `DECIZII.md` (21 nov 08:01) și `REGULI.md`, secțiunea „Lucrul continuu”. Comanda rămâne deschisă: centrul de comandă adaugă puncte, tu scrii la `rezultat` ce ai terminat. Ridică oprirea de la regula 5.
