@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 16:12 · sarcina: C-157 — comparațiile OS (P2zq/P2zr/P2zs/P2zt) dacă au venit, altfel următorul pas din coadă · estimat gata: 17:10
+liber · terminat 2026-11-26 16:56 · următorul pas: comparațiile când vin (P2zq, P2zr, P2zs/P2zt); după P2zr: token32 la G ales; firul atenției pe circuite e legat complet în SIMULARE
