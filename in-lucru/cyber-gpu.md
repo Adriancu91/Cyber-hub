@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 15:15 · sarcina: C-157 attn_back_tile0_tc_v4 legat în pasul mixt rapid (SIMULARE) · estimat gata: 16:05
+liber · terminat 2026-11-26 15:45 · următorul pas: comparațiile când vin (P2zs/P2zt, P2zr, P2zq); altfel varianta câștigătoare v4/v4pf a programului al doilea legată cu alegere pe formă (după P2zq)
