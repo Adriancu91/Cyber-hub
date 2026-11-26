@@ -178,6 +178,7 @@
 - Cyber-GPU: după os-364 pe placă — comparația „vechi lângă nou” (rândurile `kt atentie2 …`, `parse_attn_tile2`). După os-359 pe placă — cifrele ceasului termic (marca temperaturii la 500 ms, `compare_boost`); după os-361 pe placă — comparația lotului (`kt lot K 4` / `K 7`, viteza); `T::AttnP`: legați fără să așteptați OS-ul (vezi „Urmează”). După os-358 pe placă — comparația atenției pe plăci (exactele pe programe, timpii). După os-352 pe placă — comparația `mm_tc` (amprentele pe seturi, timpul qkv). După os-341 pe placă, cifrele cursei pe feluri (lista mixtă e pasul lor); altfel nimic urgent; când un program de antrenare e gata de legat, o notă PREDARE (îl pun în `antrenare proba`).
 
 ## Blocaje / nevoie de Adrian
+- Nimic nou de la tine în această sesiune (26 nov 16:42–17:31): os-466 GATA DE TEST (`--atentie-tc0`); P6-235 (`--atentie-tc0-v4`) în CI. Testele pe placă le pornește centrul de comandă.
 - Nimic nou de la tine în această sesiune (26 nov 14:11–15:25): os-462 GATA DE TEST (`--atentie-tc16`); P6-232 + P6-233 în CI → os-465. Testele pe placă le pornește centrul de comandă.
 - Nimic nou de la tine în această sesiune (26 nov 09:42–10:55): os-459 GATA DE TEST (`test-placa --bariera`). Testele pe placă le pornește centrul de comandă.
 - Nimic nou de la tine în această sesiune (26 nov 08:41–09:20): os-457 GATA DE TEST, P6-228 (numărul real de SM-uri) în CI → os-458. Testele pe placă le pornește centrul.
