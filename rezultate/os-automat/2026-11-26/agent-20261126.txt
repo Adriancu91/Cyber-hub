@@ -214,3 +214,29 @@ Jurnalul complet e in /usb/raport/gpu-jurnal-149.txt.
 
 **Memorie:** aproximativ 424 MiB folositi, aproximativ 127 GiB liberi. Reteaua e conectata la 100 Mb/s. Nu am date despre pasi de antrenare, pierderi sau temperatura, iar jurnalul primit a fost taiat la final.
 
+2026-11-26 22:48 tura 1
+Calculatorul tocmai a pornit (acum 3 secunde, pornirea a durat circa 2,9 s) și **nu rulează nicio lucrare** acum. De aceea nu există pași, viteză, pierderi sau temperatură de raportat.
+
+**Memorie:** aproape toată e liberă, circa 130 GB liberi și doar 36 MB folosiți.
+
+**Internet:** conectat prin cablu, cu viteza de 100 Mb/s și adresa 192.168.0.151.
+
+**Discuri:** discul intern de 512 GB și stick-ul USB de 30 GB sunt montate. Mouse-ul și tastatura merg. Cititorul de carduri e gol, dar asta nu e o eroare.
+
+**Abateri:** nu sunt erori sau avertismente. Două lucruri de notat:
+- placa de rețea n-a trimis un semnal de pregătire la pornire, totuși funcționează;
+- pașii de pornire pentru acest model de placă au fost testați doar pe simulare, nu pe calculator real.
+
+Agentul și gh-ia au citit cheile de pe stick (GitHub și Claude), ceea ce pare normal la pornire.
+
+2026-11-26 22:54 tura 1
+**Acum:** nu ruleaza nicio lucrare. Testul placii video (kronos --gpu) s-a incheiat, iar rapoartele au fost trimise pe GitHub fara eroare. Calculatorul e pornit de 331 s.
+
+**Teste reusite:** toate testele de atentie au trecut (6/6, 5/5, 5/5, 4/4 seturi), iar placa a generat 16 simboluri. Variantele noi sunt de 1,4–1,85 ori mai rapide decat cele vechi, de exemplu 1,00 ms fata de 1,52 ms.
+
+**Abatere:** lantul de pasi s-a oprit la ultimul pas, „tur-dupa”. Politica de siguranta l-a respins, pentru ca un pas care trebuia doar sa citeasca a inregistrat o scriere. Primii 16 pasi au trecut, iar curatarea a rulat. In plus, sistemul a refuzat 11 scrieri in afara zonei permise, toate la pasul i8e-golden.
+
+**Alte semnale:** firul 5 a fost oprit fortat (cod -9). Jurnalul primit e taiat la 8 KiB, deci poate lipsi ceva. Cea mai lunga scriere pe USB a durat 812 ms.
+
+**Cifre:** memorie folosita ~424 MiB, libera ~130 GiB. Reteaua merge la 100 Mb/s. Temperatura nu apare in date.
+
