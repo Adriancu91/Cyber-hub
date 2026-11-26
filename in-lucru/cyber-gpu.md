@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 21:12 · sarcina: C-157 coada (P2zx os-467 / P2zz token32 dacă au venit, altfel mm_tc_v4 plan+predicții) · estimat gata: 22:30
+liber · terminat 2026-11-26 21:50 · următorul pas: comparația os-467 reluat (P2zx) și `token32` (P2zz) când vin; altfel plan + predicții pentru `mm_tc_v4` (79 % din pasul #513)
