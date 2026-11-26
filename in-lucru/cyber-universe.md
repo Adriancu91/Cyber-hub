@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 21:45 · următorul pas: CI 90e37de (P6-240) → GATA DE TEST os-471 (`test-placa --token32`); apoi rezultatul os-470 (tc0 reluat) și P2zu după ce tc0 trece pe placă
+ocupat · început 2026-11-26 21:42 · sarcina: CI P6-240 → os-471 (token32) + coada C-158 · estimat gata: 22:40
