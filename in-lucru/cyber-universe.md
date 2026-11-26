@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 21:11 · sarcina: CI P6-239 → GATA DE TEST os-467 reluat; P2zz (token32 pe placă) într-un Release · estimat gata: 22:45
+liber · terminat 2026-11-26 21:45 · următorul pas: CI 90e37de (P6-240) → GATA DE TEST os-471 (`test-placa --token32`); apoi rezultatul os-470 (tc0 reluat) și P2zu după ce tc0 trece pe placă
