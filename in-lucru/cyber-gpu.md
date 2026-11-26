@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 22:12 · sarcina: C-157 p.2 — planul + predicțiile pentru mm_tc_v4 (79 % din pasul #513), scrise înainte de placă · estimat gata: 23:40
+liber · terminat 2026-11-26 22:51 · următorul pas: comparațiile os-470, token32 (P2zz) și mm_tc_v5 (P2zzb) când vin; altfel plan + predicții pentru bucla lui mm_tc_v5 (scrieri f16 împerecheate)
