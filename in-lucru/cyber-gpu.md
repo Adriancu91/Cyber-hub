@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 16:56 · următorul pas: comparațiile când vin (P2zq, P2zr, P2zs/P2zt); după P2zr: token32 la G ales; firul atenției pe circuite e legat complet în SIMULARE
+ocupat · început 2026-11-26 17:14 · sarcina: C-157 punctul 2 — comparațiile os-462 și os-465 (P2zq, P2zr) · estimat gata: 18:10
