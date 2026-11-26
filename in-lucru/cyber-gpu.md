@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 23:13 · sarcina: C-157 p.2 comparația os-470 (dS pe f16), apoi bucla mm_tc_v5 · estimat gata: 00:30
+liber · terminat 2026-11-27 00:05 · următorul pas: comparația os-471 (token32 ~3,6× mai lent), apoi os-472 și mm_tc_v5 (P2zzb) când vin; altfel bucla lui mm_tc_v5
