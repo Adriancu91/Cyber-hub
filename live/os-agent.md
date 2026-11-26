@@ -1,43 +1,47 @@
 # Agentul de bord — starea live (Cyber Universe OS)
 
-**Actualizat:** 2026-11-25 22:03 (ceasul OS-ului) · tura 1 · fara abateri noi
+**Actualizat:** 2026-11-26 07:13 (ceasul OS-ului) · tura 1 · ABATERE
 
-## Rezumatul lui Claude (2026-11-25 22:03, acum)
-**Acum nu ruleaza nicio lucrare de antrenare**, deci nu exista pasi, viteza sau pierderi de raportat. Calculatorul e pornit de aproximativ 9 minute.
+## Rezumatul lui Claude (2026-11-26 07:13, acum)
+**Acum nu ruleaza nicio lucrare.** Folderul /usb/lucrari e gol, deci nu exista pasi, viteza sau pierderi de raportat. Calculatorul a pornit acum 2 secunde (pornirea a durat 2,9 s).
 
-**Testul placii video (GA104, 8 GB): toti cei 17 pasi au trecut, cu 2870 de scrieri.** Totusi, sistemul a refuzat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”.
+**Memorie:** libera aproape 128 GiB, folosita doar 35 MiB. Jurnalul nu da nicio temperatura.
 
-**Stick-ul USB:** jurnalul testului s-a salvat pe el, in 5989 de randuri. O scriere a durat 808,9 ms, desi media e de 3,6 ms.
+**Discuri:** discul intern NVMe de 512 GB merge. Stick-ul USB e montat la /usb (30 GB) si se poate scrie pe el.
 
-**Rapoartele s-au trimis pe GitHub cu succes.** Imediat dupa, procesul numarul 5 a fost oprit fortat (cod -9).
+**Retea:** legatura merge la 100 Mb/s, adresa 192.168.0.151.
 
-**Memorie si retea:** memoria e aproape libera (aproximativ 880 MiB folositi, 129890 MiB liberi), iar reteaua merge la 100 Mb/s. Temperatura nu apare in date.
+**Abatere:** cititorul de carduri SD de pe portul 25 nu are card in el, asa ca e sarit (3 avertismente). Altfel nu sunt erori.
+
+**Observatie:** pasii de pornire ai placii de retea au fost testati doar pe model, nu pe calculatorul real. Unul dintre ei nu a primit confirmarea asteptata (LAN_INIT_DONE), desi reteaua functioneaza.
 
 ## Abateri noi
-- niciuna
+- `[   1.170] WARN  usb: port 25: incercarea 1, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00`
+- `[   1.190] WARN  usb: port 25: incercarea 2, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00`
+- `[   1.210] WARN  usb: port 25: incercarea 3, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00`
+- `[   1.250] WARN  usb: stick-ul de pe portul 25 nu porneste`
 
-## Cifrele brute (la fiecare 0 min, fara Claude)
+## Cifrele brute (la fiecare 2 min, fara Claude)
 ```
 $ uptime
-pornit de 537.89 s
+pornit de 2.14 s
 $ mem
-memorie: libera 129890 MiB, folosita 900764 KiB (heap 11415 / 712596 KiB)
+memorie: libera 130734 MiB, folosita 36092 KiB (heap 11481 / 12740 KiB)
 $ lucrare stare
 lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
   I219-LM  MAC cc:96:e5:08:b7:b5
-  pachete trimise 1630, primite 2059
+  pachete trimise 5, primite 8
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e2000
-  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e2000, RDBAH 00000000, RDH 0000000b, RDT 0000000a, TDH 0000001e, TDT 0000001e (pasii de pornire: log e1000)
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e2000, RDBAH 00000000, RDH 00000008, RDT 00000007, TDH 00000005, TDT 00000005 (pasii de pornire: log e1000)
   IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
 ```
 
 ## Ultimele randuri importante din jurnal
 ```
-[ 514.380] INFO  gpu: gpu0: i12-q8-matvec: TRECE
-[ 514.390] INFO  gpu: gpu0: i13-strat: TRECE
-[ 514.390] INFO  gpu: gpu0: i14-simbol: TRECE
-[ 514.390] INFO  gpu: gpu0: bus-master-oprit: TRECE
-[ 514.400] INFO  gpu: gpu0: tur-dupa: TRECE
+[   1.170] WARN  usb: port 25: incercarea 1, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[   1.190] WARN  usb: port 25: incercarea 2, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[   1.210] WARN  usb: port 25: incercarea 3, TEST UNIT READY: CSW 1 (comanda esuata), sense 2/3a/00
+[   1.250] WARN  usb: stick-ul de pe portul 25 nu porneste
 ```
