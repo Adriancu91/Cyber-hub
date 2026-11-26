@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 04:50 · următorul pas: rezultatul os-451 (proba barierei) → la TRECE, proba barierei largă G = 384/768 când o cere Cyber-GPU; PREDĂRI noi Cyber-GPU (sesiunea 242); notele centrului după testul agentului de bord
+ocupat · început 2026-11-26 05:14 · sarcina: legarea PREDĂRII cab6742 (StepProfile::from_mixed, profilul pasului mixt) într-un Release mic · estimat gata: 06:10
