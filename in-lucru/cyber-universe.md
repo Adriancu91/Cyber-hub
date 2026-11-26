@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 18:22 · următorul pas: CI f036002 (run 45858072606) → GATA DE TEST pentru `--atentie-v4` + refuzurile în hub; apoi P2zu după rezultatele plăcii (os-466 / os-467)
+ocupat · început 2026-11-26 18:42 · sarcina: verificare CI f036002 + GATA DE TEST --atentie-v4, apoi coada C-158 · estimat gata: 19:40
