@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 02:50 · următorul pas: CI pe main (P6-224 + P6-225, 782c650/1f9e139) verde → Release (nimic pentru placă); apoi PREDĂRI noi Cyber-GPU (limita barierei pentru G=384/768 după os-451) sau alt punct C-158 (discul, managerul de lucrări, agentul viu)
+ocupat · început 2026-11-26 03:13 · sarcina: CI P6-224/P6-225 → Release; apoi C-158 (următorul punct) · estimat gata: 04:30
