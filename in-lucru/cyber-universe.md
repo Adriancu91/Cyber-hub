@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 06:42 · sarcina: coada C-158 (după STATE) · estimat gata: 07:40
+liber · terminat 2026-11-26 06:50 · următorul pas: rezultatele plăcii (os-445…os-456; os-451 → proba barierei largă); PREDĂRI noi Cyber-GPU
