@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 09:13 · sarcina: C-157 — răspunsul la nota OS despre setul ascuțit (subnormale f16 în attn_tc::judge), apoi attn_back_tile0_tc legat · estimat gata: 11:30
+liber · terminat 2026-11-26 09:50 · următorul pas: comparațiile când vin (os-457 P2zm, bariera G = 48 / 96); altfel attn_back_tile0_tc legat în pasul mixt (gpu-sim + opțiunea + antrenarea mini în SIMULARE), apoi PREDARE
