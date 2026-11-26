@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 17:31 · următorul pas: CI 3349975 (run 45849900055) → GATA DE TEST pentru `--atentie-tc0-v4`; apoi P2zs pasul 2 / P2zu după rezultatele plăcii (os-466, os-NNN)
+ocupat · început 2026-11-26 17:44 · sarcina: rândul os-465 sărit în tăcere (--atentie-tc16 + --lot-513 6) + PREDARE P2zv (tc16-v4 în pasul mixt); GATA DE TEST os-NNN după CI 45849900055 · estimat gata: 19:00
