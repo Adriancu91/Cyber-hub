@@ -107,3 +107,28 @@ Rapoartele au fost trimise pe GitHub fara eroare. Jurnalul complet: /usb/raport/
 
 **Memorie:** libera ~127 GB, folosita ~0,9 GB. Reteaua merge la 100 Mb/s. Nu am date despre temperatura, pasi, viteza sau pierderi.
 
+2026-11-26 16:28 tura 1
+**Acum:** calculatorul tocmai a pornit (de 2 secunde). **Nu ruleaza nicio lucrare** (nu exista fise in /usb/lucrari), deci nu sunt pasi, viteza sau pierderi de raportat. **Temperatura** nu apare in date.
+
+**Memoria:** aproape toata e libera, circa 130 GB. Sistemul foloseste doar circa 35 MB.
+
+**Restul merge normal:**
+- Internet: conectat prin cablu la 100 Mb/s, adresa 192.168.0.151.
+- Discuri: discul SSD de 512 GB si stick-ul USB de 30 GB sunt montate.
+- Mouse si tastatura: functioneaza.
+
+**De retinut:**
+- Placa de retea a raportat ca un pas de pornire nu s-a terminat ("LAN_INIT_DONE nu a venit"), dar legatura functioneaza.
+- Pasii de pornire pentru acest tip de placa de retea nu au fost testati pe calculatorul real, doar intr-o simulare.
+- Cititorul de carduri e gol si a fost ignorat; asta nu e o eroare.
+- Agentul a citit cheia GitHub si cheia Claude de pe stick, iar programul gh-ia a citit cheia GitHub.
+
+2026-11-26 16:36 tura 1
+**Acum:** nicio lucrare nu ruleaza. Calculatorul e pornit de circa 7 minute, memoria e aproape toata libera (~130 GB liberi, ~424 MB folositi), iar reteaua merge (100 Mb/s).
+
+**Testul placii video:** placa a generat 16 simboluri, toate identice cu procesorul. Copierea in memoria placii a mers cu ~281 GB/s, fara greseli. Toate probele de sincronizare au trecut.
+
+**Abatere:** lantul de teste s-a oprit la ultimul pas, „tur-dupa”, care a ESUAT. Politica de siguranta a respins rezultatul, pentru ca turul de verificare a inregistrat o scriere, desi trebuia doar sa citeasca. Inainte, la pasul „i8e-golden”, sistemul a refuzat 11 scrieri cerute in afara zonei permise. Curatarea a rulat.
+
+**Altele:** raportul a fost trimis pe GitHub fara eroare. Firul 5 a fost oprit fortat (cod -9). Jurnalul nu arata pasi de antrenare, pierderi sau temperatura.
+
