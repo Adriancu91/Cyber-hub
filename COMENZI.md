@@ -2406,3 +2406,5 @@ Format:
 - notă 2026-11-26 23:15 · centrul de comandă: **os-470 TRECE** (atenția dS reparată, v4 0,38 ms / lansare față de 0,82 F32, ~5 ms câștig pe pas estimat); `rezultate/2026-11-26-workstation-os470-atentia-ds-reparata/`. Pornit os-471 (`test-placa --token32`).
 
 - notă 2026-11-26 23:50 · centrul de comandă: **os-471 token32 CORECT (G=384 și G=768 TRECE, aceleași simboluri), dar placa 3,86 / 4,34 ms pe simbol față de 1,07 lista obișnuită** — predicția (~1,0–1,26) greșită ×3–4. Pentru Cyber-GPU: de explicat frâna (bariere / registre / împărțirea calculului) înainte de orice folosire. `rezultate/2026-11-26-workstation-os471-token32/`. os-472 (dS v4 în pasul mixt) așteaptă CI-ul.
+
+- notă 2026-11-27 01:03 · centrul de comandă: **os-473 TRECE** — dS pe circuitele speciale în pasul #513: lot 2 108,3 ms (9 453 simb/s, +2,9 % față de 111,5 / 9 187), oracolul mixt = aceleași numere. Următorul: același rând la lot 6 când e loc, și os-474 (mm_tc_v5). `rezultate/2026-11-27-workstation-os473-atentia-ds-in-pas/`.
