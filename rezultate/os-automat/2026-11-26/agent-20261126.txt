@@ -26,3 +26,16 @@
 - **Cifre lipsa:** nu exista date despre pasi, viteza, pierderi sau temperatura.
   abatere: [ 639.780] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"
 
+2026-11-26 07:31 tura 1
+**Acum:** nicio lucrare nu ruleaza. Testul placii video (kronos --gpu) s-a terminat, iar rapoartele au fost trimise pe GitHub fara eroare. Calculatorul e pornit de aproximativ 16,5 minute, cu reteaua conectata la 100 Mb/s.
+
+**Rezultatele testului:** placa video a generat 16 simboluri, toate identice cu cele calculate de procesor. Viteza a fost de circa 482 simboluri/s, iar cu verificarea pe procesor, 57 simboluri/s. Copierea in memoria placii a mers la 282 GB/s, adica 93% din maxim, fara greseli. Proba de sincronizare pe 84 de unitati a trecut (1133 ns).
+
+**Abateri:**
+- Lantul de pasi s-a oprit la ultimul pas, „tur-dupa”, cu ESUAT. Regula de siguranta a respins rezultatul pentru ca o verificare care trebuia doar sa citeasca a inregistrat o scriere. Pasii de curatare au rulat.
+- Sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul i8e-golden.
+- Proba de sincronizare s-a oprit inainte de urmatorul test: „G prea mare pentru pagina probei”.
+- Firul 5 a fost oprit fortat (cod -9).
+
+**Memorie:** 129677 MiB libera, aproximativ 1,1 GiB folosita. Jurnalul complet este in /usb/raport/gpu-jurnal-132.txt. Datele nu contin temperatura sau pierderi.
+
