@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 01:53 · următorul pas: comparațiile testelor noi de pe placă (proba barierei os-451, --lot-prin-ram, două locuri, text real) când vin; altfel token32_qmd cu treapta aleasă pentru G mare (SIMULARE)
+ocupat · început 2026-11-26 02:13 · sarcina: C-157 — token32_qmd cu treapta pentru G mare / comparațiile noi de pe placă (SIMULARE) · estimat gata: 03:30
