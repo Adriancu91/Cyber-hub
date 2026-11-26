@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 22:42 · sarcina: rezultatele os-470/os-471 și coada C-158 · estimat gata: 23:40
+liber · terminat 2026-11-26 23:10 · următorul pas: CI os-472 verde → GATA DE TEST (--atentie-ds); rezultatul os-471 (token32)
