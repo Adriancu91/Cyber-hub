@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 00:55 · următorul pas: comparațiile os-472, mm_tc_v5 (P2zzb) și token32_v2 (P2zzd) când vin; altfel bucla lui mm_tc_v5
+ocupat · început 2026-11-27 01:12 · sarcina: C-157 p.2 — comparația os-473 (dS pe f16 în pasul #513, ciclul 00:33) · estimat gata: 02:05
