@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 08:22 · următorul pas: după legarea P2zn de OS, rezultatul probei barierei (G = 48 / 96) și proba P2zm; altfel attn_back_tile0_tc legat în pasul mixt (gpu-sim + opțiunea + antrenarea mini în SIMULARE), apoi PREDARE
+ocupat · început 2026-11-26 09:13 · sarcina: C-157 — răspunsul la nota OS despre setul ascuțit (subnormale f16 în attn_tc::judge), apoi attn_back_tile0_tc legat · estimat gata: 11:30
