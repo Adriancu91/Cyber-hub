@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 20:50 · următorul pas: CI 96c6699 (P6-239) → GATA DE TEST os-467 reluat (rândul --atentie-tc0 --atentie-tc0-v4); apoi rezultatul os-469 (64 KiB) și P2zu după ce tc0 trece pe placă
+ocupat · început 2026-11-26 21:11 · sarcina: CI P6-239 → GATA DE TEST os-467 reluat; P2zz (token32 pe placă) într-un Release · estimat gata: 22:45
