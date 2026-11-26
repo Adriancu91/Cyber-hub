@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 03:13 · sarcina: CI P6-224/P6-225 → Release; apoi C-158 (următorul punct) · estimat gata: 04:30
+liber · terminat 2026-11-26 03:45 · următorul pas: rezultatul os-451 (proba barierei) → la TRECE, proba barierei largă G = 384/768 când o cere Cyber-GPU; PREDĂRI noi Cyber-GPU; notele centrului după testul agentului de bord
