@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 12:11 · sarcina: C-157 comparația os-459 (bariera) + pasul următor din coadă · estimat gata: 13:21
+liber · terminat 2026-11-26 12:55 · următorul pas: comparațiile când vin (proba largă P2zr, proba P2zq tc16/v4/v4pf); altfel attn_back_tile0_tc legat în pasul mixt rapid, apoi v4 sau v4pf legat
