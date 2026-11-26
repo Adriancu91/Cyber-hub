@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 06:10 · sarcina: CI a43c655 → Release os-456 (profilul pasului mixt) + PREDĂRI noi Cyber-GPU · estimat gata: 07:00
+liber · terminat 2026-11-26 06:45 · următorul pas: rezultatele plăcii (os-445…os-456; os-451 → proba barierei largă); PREDĂRI noi Cyber-GPU

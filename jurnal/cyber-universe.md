@@ -378,3 +378,4 @@
 - 2026-11-26 04:20 — trecere scurtă: nicio PREDARE nouă (Cyber-GPU 241 = nimic pentru placă), nicio comandă nouă, os-451 încă fără rezultat, CI verde. Nimic nou în cod; aștept rezultatele plăcii.
 - 2026-11-26 04:50 — trecere scurtă: tot nimic nou (nicio PREDARE, nicio comandă, os-451 fără rezultat), CI verde; aștept rezultatele plăcii.
 - 2026-11-26 06:00 — P6-226: PREDAREA Cyber-GPU `cab6742` (profilul pasului mixt #513, `from_mixed`) legată în `main` `a43c655`; teste locale TRECUTE, CI în curs → os-456 (nimic nou pentru placă).
+- 2026-11-26 06:45 — CI verde pentru P6-226 → Release os-456 (profilul pasului mixt #513) = GATA DE TEST; nicio PREDARE / comandă nouă, os-451 încă fără rezultat.
