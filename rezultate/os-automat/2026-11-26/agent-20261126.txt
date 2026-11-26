@@ -254,3 +254,14 @@ Agentul și gh-ia au citit cheile de pe stick (GitHub și Claude), ceea ce pare 
 
 **Acces la chei:** agentul si gh-ia au cerut tokenul GitHub, iar agentul a cerut si cheia Claude.
 
+2026-11-26 23:21 tura 1
+**Acum:** nicio lucrare nu ruleaza. Calculatorul e pornit de aproximativ 2 minute si 44 de secunde. Testul placii video (kronos pe GPU) s-a terminat, iar rapoartele au fost trimise pe GitHub fara eroare.
+
+**Cifre:** placa a generat 16 simboluri, toate identice cu cele calculate de procesor. Viteza este de 941 simboluri/s doar pe placa, 481 simboluri/s cu driverul si 56 simboluri/s cu verificarea pe procesor. Copierea in memoria placii a mers fara greseli. Memoria folosita e de aproximativ 424 MiB, iar libera de aproximativ 130.345 MiB. Pierderi si temperatura nu apar in date.
+
+**Abateri:**
+- Lantul de teste a trecut 16 pasi, dar s-a oprit la ultimul, „tur-dupa”, marcat ESUAT. Politica de siguranta a respins rezultatul, pentru ca turul de citire a inregistrat o scriere.
+- Sistemul a refuzat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”.
+- Procesul 5 a fost oprit fortat (cod -9).
+- O scriere pe stick a durat 812 ms, mult peste media de 3,8 ms.
+
