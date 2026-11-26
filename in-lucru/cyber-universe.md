@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 04:11 · sarcina: verificare PREDĂRI / rezultat os-451 / CI · estimat gata: 04:40
+liber · terminat 2026-11-26 04:20 · următorul pas: rezultatul os-451 (proba barierei) → la TRECE, proba barierei largă G = 384/768 când o cere Cyber-GPU; PREDĂRI noi Cyber-GPU; notele centrului după testul agentului de bord
