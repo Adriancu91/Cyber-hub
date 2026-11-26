@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 13:56 · următorul pas: comparațiile când vin (P2zs, P2zr, P2zq); altfel attn_back_tile0_tc cu citiri de 128 de biți sau v4/v4pf legat după P2zq
+ocupat · început 2026-11-26 14:11 · sarcina: C-157 — verific comparațiile venite (P2zs/P2zr/P2zq), altfel următorul punct din coadă · estimat gata: 15:41
