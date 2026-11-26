@@ -240,3 +240,17 @@ Agentul și gh-ia au citit cheile de pe stick (GitHub și Claude), ceea ce pare 
 
 **Cifre:** memorie folosita ~424 MiB, libera ~130 GiB. Reteaua merge la 100 Mb/s. Temperatura nu apare in date.
 
+2026-11-26 23:18 tura 1
+**Ce ruleaza:** calculatorul a pornit acum 3 secunde si nu e nicio lucrare in curs (nicio fisa in /usb/lucrari).
+
+**Memorie:** libera aproximativ 130 GB, folosita 36 MB. Nu am date despre pasi, viteza, pierderi sau temperatura.
+
+**Dispozitive si retea:** mouse, tastatura, discul NVMe SK hynix 512 GB si stick-ul USB de 30 GB (montat la /usb) merg. Reteaua e conectata la 100 Mb/s, cu adresa 192.168.0.151.
+
+**Abateri:**
+- Placa de retea a raportat ca un pas de initializare (LAN_INIT_DONE) nu a venit, totusi legatura functioneaza.
+- Pasii de pornire pentru aceasta placa sunt testati doar pe model, nu si pe calculatorul real.
+- Cititorul de carduri e gol si a fost sarit, ceea ce nu e o eroare.
+
+**Acces la chei:** agentul si gh-ia au cerut tokenul GitHub, iar agentul a cerut si cheia Claude.
+
