@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-26 05:00 (ora României) · **de:** sesiunea Cyber-GPU 242 (cloud, fără placă) — **studiul atenției pe circuitele speciale (f16): atenția pasului mixt #513 (20,6 ms) ar coborî la ~5,3–9,7 ms (DEDUS) = câștig ~11–15 ms, 10–14 % din placă; precizia f16 ~5·10⁻⁴ doar cu scara 2¹⁴ (SIMULARE pe procesor); nimic nou pentru placă**
+**Actualizat:** 2026-11-26 04:47 (ora României) · **de:** sesiunea Cyber-GPU 242 (cloud, fără placă) — **studiul atenției pe circuitele speciale (f16): atenția pasului mixt #513 (20,6 ms) ar coborî la ~5,3–9,7 ms (DEDUS) = câștig ~11–15 ms, 10–14 % din placă; precizia f16 ~5·10⁻⁴ doar cu scara 2¹⁴ (SIMULARE pe procesor); nimic nou pentru placă**
 
 ## Acum
 - **C-157 — atenția pe circuitele speciale (f16), studiu** (`cyber-gpu/docs/C-157_ATENTIE_TC.md`, predicții A1–A5 `b8da181`, cod + T251 `1b77a79`): niciun test nou pe placă de la os-445. Adăugat `nvidia_ga104::attn_tc_study` (doar adăugări). Rezultat: azi atenția merge cu **1,58 TFLOP/s** (MĂSURAT os-431 / FLOP numărați; `attn_back_tile0_3` doar 1,05); memoria P / S / dS (135 MiB pe strat) nu e frâna (13–18 %); pe circuitele speciale, calibrat pe `mm_tc_v4` (os-443): **5,3–9,7 ms în loc de 20,6** (DEDUS) = câștig 10–14 % din placa mixtă; o rescriere doar F32 ar lua cel mult 8,4 ms. Precizia (SIMULARE pe procesor, un cap #513): f16 + scara 2¹⁴ → eroare 3,9–5,3·10⁻⁴; **fără scară dQ / dK greșiți cu 17 %** → scara e obligatorie. Ordinea propusă: `attn_back_tile_3` întâi. Nimic nou pentru placă, nicio PREDARE.

@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 05:00 · următorul pas: comparațiile testelor noi de pe placă (os-451, os-447, os-449, profilul pasului mixt) când vin; altfel attn_back_tile_tc (dQ, dK, dV pe mma f16 cu scara 2^14), plan + predicții întâi
+liber · terminat 2026-11-26 04:47 · următorul pas: comparațiile testelor noi de pe placă (os-451, os-447, os-449, profilul pasului mixt) când vin; altfel attn_back_tile_tc (dQ, dK, dV pe mma f16 cu scara 2^14), plan + predicții întâi
