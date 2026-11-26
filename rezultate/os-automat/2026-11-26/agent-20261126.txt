@@ -146,3 +146,18 @@ De urmărit: la placa de rețea, un pas de pornire („LAN_INIT_DONE”) nu s-a 
 **Alte semnale:** procesul nr. 5 a fost oprit fortat (cod -9). Cea mai lunga scriere pe stick-ul USB a durat 0,8 secunde.
 **Memorie:** sunt libere aproximativ 127 GiB si folositi circa 962 MiB. Temperatura nu apare in date.
 
+2026-11-26 18:38 tura 1
+**Nicio lucrare nu ruleaza acum.** Calculatorul a pornit de 3 secunde, iar folderul /usb/lucrari e gol. Nu exista pasi, viteza, pierderi sau temperatura de raportat.
+
+**Memoria:** libera aproximativ 128 GB, sistemul foloseste doar circa 35 MB. Pornirea a durat 2,9 secunde.
+
+**Restul:**
+- Reteaua merge pe cablu, la 100 Mb/s, cu adresa 192.168.0.151, iar routerul raspunde.
+- Discurile sunt montate: SSD-ul SK hynix de 512 GB si stick-ul USB de 30 GB, cu scriere permisa.
+- Tastatura si mouse-ul functioneaza.
+
+**De urmarit:**
+- Placa de retea a afisat mesajul „LAN_INIT_DONE nu a venit”. Totusi legatura functioneaza.
+- Pasii de pornire ai acestei placi de retea sunt marcati ca netestati inca pe calculator real.
+- Cititorul de carduri e gol si a fost sarit. Asta nu e o eroare.
+
