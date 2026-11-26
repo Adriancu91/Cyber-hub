@@ -394,3 +394,4 @@
 - 2026-11-26 22:45 — os-471 GATA DE TEST (`test-placa --token32`: tot simbolul într-o lansare, G = 384 apoi 768); os-470 încă fără rezultat; P2zy / P2zza de la Cyber-GPU citite (nimic nou pentru placă).
 - 2026-11-26 23:10 — os-470 TRECE pe placă (dS pe f16: tc0 5 / 5, v4 = tc, ×1,46); P6-241 (`--atentie-ds`, P2zu: dS pe tc / v4 în pasul mixt rapid #513) pregătit pe ramură, adus în `main` după rezultat; CI în curs → os-472.
 - 2026-11-27 00:05 — os-473 GATA DE TEST (dS pe f16 în pasul mixt #513, `--atentie-ds`, cu `--tablou-viteza`); os-471: token32 corect, dar ×3,6 mai lent. P6-242: PREDARE Cyber-GPU P2zzb (`mm_tc_v5`, 12 KiB pe bloc) legată în proba `--mm-tc`, SIMULARE TRECE, CI în curs → os-476.
+- 2026-11-27 01:00 — os-476 GATA DE TEST (`mm_tc_v5` lângă `mm_tc_v4`, `--mm-tc-v5`); os-473 TRECE pe placă: dS pe f16 în pasul #513 5,19 → 2,43 ms, pasul lot 2 111,5 → 108,3 ms, aceleași numere ca oracolul mixt.
