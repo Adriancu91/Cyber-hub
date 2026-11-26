@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 07:55 · următorul pas: comparațiile testelor de pe placă (os-451, os-447, os-449, proba P2zm) când vin; altfel attn_back_tile0_tc legat în pasul mixt (gpu-sim + opțiunea + antrenarea mini în SIMULARE), apoi PREDARE
+ocupat · început 2026-11-26 07:57 · sarcina: C-157 p.2 — os-456: numărul de SM-uri citit greșit (84 = maximul de proiect, placa are 48) — e în codul nostru (grid_barrier / token32 folosesc LITTER); reparare prin adăugare · estimat gata: 09:00
