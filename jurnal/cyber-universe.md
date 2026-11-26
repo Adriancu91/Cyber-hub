@@ -382,3 +382,4 @@
 - 2026-11-26 06:50 — trecere scurtă: nimic nou de legat (nicio PREDARE Cyber-GPU, nicio comandă nouă, niciun rezultat de pe placă); așteptăm testele os-445…os-456.
 - 2026-11-26 08:22 — P6-227: PREDAREA Cyber-GPU P2zm (`3c6fa3b`) legată ca probă `--atentie-tc` (attn_back_tile_tc / tc16 lângă _3); SIMULARE 4 / 5 în margine (setul `ascutit` iese chiar cu modelul Cyber-GPU, subnormale f16), tc16 = tc 5 / 5; CI în curs → os-457.
 - 2026-11-26 09:20 — CI verde pentru P6-227 → Release os-457 (atenția f16, `--atentie-tc`) = GATA DE TEST; P6-228: PREDAREA Cyber-GPU P2zn (`aa94bea`, numărul real de SM-uri: 48, nu 84) legată în `main` `ac6bf52`, teste locale TRECUTE, CI în curs → os-458 (`test-placa --bariera`).
+- 2026-11-26 10:55 — Release os-459 (CI verde) = GATA DE TEST: proba barierei cu 48 SM (P6-228; os-458 anulat de CI) + P6-229: cititorul de carduri gol nu mai apare ca „abatere” la agentul de bord.
