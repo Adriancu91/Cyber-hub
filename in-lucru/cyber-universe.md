@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 01:14 · sarcina: rezultat os-476 / PREDĂRI Cyber-GPU (v5 în pasul #513) · estimat gata: 02:10
+liber · terminat 2026-11-27 01:35 · următorul pas: CI-ul lui P6-243 (6b7bea0) verde → GATA DE TEST cu `test-placa --tablou-viteza --token32 --token32-v2`; apoi pasul #513 cu mm_tc_v5 când Cyber-GPU dă pack_mixed_fast cu v5
