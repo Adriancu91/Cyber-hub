@@ -188,3 +188,29 @@ Nu apar erori sau avertismente. De retinut: placa de retea a raportat ca un pas 
 
 Jurnalul complet e in /usb/raport/gpu-jurnal-149.txt.
 
+2026-11-26 20:23 tura 1
+**Ce ruleaza:** Calculatorul a pornit acum ~2 secunde si nu ruleaza nicio lucrare. Nu exista pasi, viteza sau pierderi de raportat, iar temperatura nu apare in date.
+
+**Memoria:** liber aproximativ 130 GB, folosit doar ~35 MB.
+
+**Discuri:** SSD-ul intern de 512 GB si stick-ul USB de 30 GB (cu scriere permisa) sunt montate. Mouse-ul si tastatura merg. Cititorul de carduri e gol si a fost sarit, ceea ce nu e o eroare.
+
+**Internet:** merge la 100 Mb/s, cu adresa 192.168.0.151. S-au trimis si primit cate 7 pachete, fara pierderi.
+
+**De urmarit:**
+- La pornirea placii de retea a lipsit un semnal de initializare (LAN_INIT_DONE), desi legatura functioneaza.
+- Pasii de pornire pentru acest model de placa sunt testati doar in simulare, nu pe calculator real.
+
+**Acces la chei:** agentul a cerut accesul la cheia GitHub si la cheia Claude de pe stick.
+
+2026-11-26 20:29 tura 1
+**Acum:** nicio lucrare nu ruleaza. Calculatorul e pornit de aproximativ 5 minute. Testul placii video s-a incheiat, iar rapoartele au fost trimise pe GitHub fara eroare.
+
+**Placa video:** testele noi de atentie au trecut toate (6/6 si 5/5 seturi). Variantele noi sunt de 1,4 pana la 1,9 ori mai rapide decat cele vechi (de exemplu 1,00 ms fata de 1,53 ms).
+
+**Abatere:** lantul de pasi a trecut 16 pasi, dar s-a oprit la ultimul pas, „tur-dupa”. Politica de siguranta l-a respins, pentru ca un tur care trebuia doar sa citeasca a inregistrat o scriere. Curatarea a rulat. Sistemul a refuzat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”.
+
+**Alte semnale:** firul 5 a fost oprit fortat (cod -9). Scrierile pe stick-ul USB au durat in medie 3,9 ms, cea mai lunga 826 ms.
+
+**Memorie:** aproximativ 424 MiB folositi, aproximativ 127 GiB liberi. Reteaua e conectata la 100 Mb/s. Nu am date despre pasi de antrenare, pierderi sau temperatura, iar jurnalul primit a fost taiat la final.
+
