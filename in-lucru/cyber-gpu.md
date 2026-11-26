@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 05:12 · sarcina: C-157 — comparațiile de pe placă dacă au venit, altfel attn_back_tile_tc (plan + predicții) · estimat gata: 06:30
+liber · terminat 2026-11-26 06:05 · următorul pas: comparațiile testelor de pe placă (os-451, os-447, os-449) când vin; altfel attn_back_tile_tc cu 16 KiB partajată, apoi înlocuitorul în gpu-sim + opțiunea în pasul mixt, apoi PREDARE
