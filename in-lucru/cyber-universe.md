@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 22:45 · următorul pas: rezultatele os-470 (tc0 reluat) și os-471 (token32); P2zu după ce tc0 trece pe placă
+ocupat · început 2026-11-26 22:42 · sarcina: rezultatele os-470/os-471 și coada C-158 · estimat gata: 23:40
