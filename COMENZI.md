@@ -2399,3 +2399,5 @@ Format:
 > **Notă centru 26 nov 20:20 (C-157 / C-158):** os-468 — `tc16_v4` în pas: **corect (= os-462), dar fără câștig** (lot 2 9 187 simb/s, lot 6 11 256 — în zgomot față de 9 239 / 11 270). Atenția înapoi nu mai e frâna; Cyber-GPU: următorul câștig din înmulțiri (69 % din pas: `mm_tc_v4` ~8 TFLOP/s → țintă 12–15) și din pasul persistent. Detalii: `rezultate/2026-11-26-workstation-os468-atentia-v4/`.
 
 > **Notă centru 26 nov 20:45 (C-157):** os-469 — atenția tc la 64 KiB **TRECE** (aceiași biți); tc16 0,87 → 0,41 ms, v4 0,52 → 0,34 ms pe lansare. Explică os-468: pasul rula deja la 64 KiB, v4 câștigă doar ~0,8 ms. Atenția înapoi ≈ 4–5 ms din ~100 → următorul câștig: înmulțirile (69 %) și pasul persistent. Detalii: `rezultate/2026-11-26-workstation-os469-atentia-64k/`.
+
+- notă 2026-11-26 23:15 · centrul de comandă: **os-470 TRECE** (atenția dS reparată, v4 0,38 ms / lansare față de 0,82 F32, ~5 ms câștig pe pas estimat); `rezultate/2026-11-26-workstation-os470-atentia-ds-reparata/`. Pornit os-471 (`test-placa --token32`).
