@@ -1,6 +1,6 @@
 # Agentul de bord — starea live (Cyber Universe OS)
 
-**Actualizat:** 2026-11-26 07:20 (ceasul OS-ului) · tura 4 · fara abateri noi
+**Actualizat:** 2026-11-26 07:22 (ceasul OS-ului) · tura 5 · fara abateri noi
 
 ## Rezumatul lui Claude (2026-11-26 07:13; urmatorul la abatere sau la ~10 min)
 **Acum nu ruleaza nicio lucrare.** Folderul /usb/lucrari e gol, deci nu exista pasi, viteza sau pierderi de raportat. Calculatorul a pornit acum 2 secunde (pornirea a durat 2,9 s).
@@ -21,25 +21,25 @@
 ## Cifrele brute (la fiecare 2 min, fara Claude)
 ```
 $ uptime
-pornit de 395.13 s
+pornit de 517.80 s
 $ mem
-memorie: libera 129715 MiB, folosita 1079356 KiB (heap 14699 / 712864 KiB)
+memorie: libera 129650 MiB, folosita 1146000 KiB (heap 661089 / 712864 KiB)
 $ lucrare stare
 lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
   I219-LM  MAC cc:96:e5:08:b7:b5
-  pachete trimise 1051, primite 1450
+  pachete trimise 1119, primite 1591
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e2000
-  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e2000, RDBAH 00000000, RDH 0000000a, RDT 00000009, TDH 0000001b, TDT 0000001b (pasii de pornire: log e1000)
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e2000, RDBAH 00000000, RDH 00000017, RDT 00000016, TDH 0000001f, TDT 0000001f (pasii de pornire: log e1000)
   IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
 ```
 
 ## Ultimele randuri importante din jurnal
 ```
-[ 394.860] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
-[ 394.880] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
-[ 394.900] INFO  gpu: jurnal: bar0 w 0x001700: 0x00000000 <- 0x0000124e => 0x0000124e
-[ 395.220] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000124e <- 0x0000101f => 0x0000101f
-[ 395.240] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x00000000 => 0x00000000
+[ 512.550] INFO  gpu: jurnal: valoare kt antrenare-513 lot prin RAM (1/0) = 0x00000001
+[ 512.570] INFO  gpu: jurnal: valoare kt antrenare-513 doua locuri de lot (1/0) = 0x00000000
+[ 512.820] INFO  gpu: jurnal: valoare kt antrenare-513 arena in VRAM (MiB) = 0x00000a00
+[ 512.840] INFO  gpu: jurnal: valoare kt antrenare-513 lansari pe pas = 0x000001eb
+[ 512.860] INFO  gpu: jurnal: valoare kt antrenare-513 trimiteri pe pas = 0x00000002
 ```
