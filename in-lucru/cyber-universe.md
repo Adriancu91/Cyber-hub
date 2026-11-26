@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 02:11 · sarcina: verific CI + PREDĂRI Cyber-GPU, apoi coada C-158 · estimat gata: 03:30
+liber · terminat 2026-11-26 02:50 · următorul pas: CI pe main (P6-224 + P6-225, 782c650/1f9e139) verde → Release (nimic pentru placă); apoi PREDĂRI noi Cyber-GPU (limita barierei pentru G=384/768 după os-451) sau alt punct C-158 (discul, managerul de lucrări, agentul viu)
