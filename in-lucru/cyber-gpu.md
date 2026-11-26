@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 06:51 · următorul pas: comparațiile testelor de pe placă (os-451, os-447, os-449, proba P2zm) când vin; altfel studiul atenției înainte / dS pe circuitele speciale, cu predicții întâi
+ocupat · început 2026-11-26 07:14 · sarcina: C-157 — comparațiile testelor de pe placă (dacă au venit), altfel atenția înainte pe circuitele speciale (f16), predicții întâi · estimat gata: 08:10
