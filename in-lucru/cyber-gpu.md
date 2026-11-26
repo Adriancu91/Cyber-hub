@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 02:56 · următorul pas: comparațiile testelor noi de pe placă (os-451 proba barierei, os-447, os-449, text real) când vin; dacă os-451 TRECE → cererea către OS pentru proba barierei largă (8/16 pe SM)
+ocupat · început 2026-11-26 03:15 · sarcina: C-157 — valurile mm_tc_v4 pe pasul mixt #513 (unde se duc cele 106 ms) + lansarea dublă dX+dW remăsurată pe v4, SIMULARE/DEDUS · estimat gata: 04:20
