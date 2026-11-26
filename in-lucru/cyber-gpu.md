@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 03:56 · următorul pas: comparațiile testelor noi de pe placă (os-451, os-447, os-449, profilul pasului mixt) când vin; altfel studiul atenției pe circuitele speciale (f16), predicții înainte
+ocupat · început 2026-11-26 04:12 · sarcina: C-157 — studiul atenției pe circuitele speciale (f16), predicții înainte (sesiunea 242) · estimat gata: 05:05
