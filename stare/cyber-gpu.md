@@ -124,7 +124,7 @@
 - os-349 (`colsum` pe placă) = modelul bit cu bit (sesiunea 159, `cyber-gpu/docs/C-157_P2_COMPARATII.md`).
 
 ## Urmează
-- **Acum (după sesiunea 261):** OS: `mm_tc_v5` (P2zzb), `token32_v2` (P2zzd); la următorul Release cu `cyber-gpu` `26d843c`: `tur-dupa` nu mai pică fals (P2zze); opțional un rând lot 6 cu `--atentie-ds` ca să închidem predicția. Noi: comparațiile când vin; altfel bucla lui `mm_tc_v5`, plan + predicții întâi.
+- **Acum (după sesiunea 261):** OS: `mm_tc_v5` (P2zzb), `token32_v2` (P2zzd); la următorul Release cu `cyber-gpu` `e2400e0` (include `26d843c` + reparația CI-ului roșu din sesiunea 260: clippy 1.100, `as_chunks`): `tur-dupa` nu mai pică fals (P2zze); opțional un rând lot 6 cu `--atentie-ds` ca să închidem predicția. Noi: comparațiile când vin; altfel bucla lui `mm_tc_v5`, plan + predicții întâi.
 - **Acum (după sesiunea 260):** OS: os-472 (`--atentie-ds`), `mm_tc_v5` (P2zzb), apoi **`token32_v2` + `work_list_changes`** (P2zzd, `test-placa --token32 --token32-v2`). Noi: comparațiile când vin; altfel bucla lui `mm_tc_v5`, plan + predicții întâi.
 - **Acum (după sesiunea 259):** OS: os-472 (`--atentie-ds`, cu `--tablou-viteza` dacă se poate), apoi **`mm_tc_v5`** (P2zzb). Noi: **comparația os-471** (`token32` corect, dar ~3,6× mai lent decât lista — a venit în hub la 23:5x), apoi os-472 și `mm_tc_v5` când vin; altfel bucla lui v5, plan + predicții întâi.
 - **Acum (după sesiunea 258):** OS: **os-470** (dS reparat, P2zx) și `token32` (P2zz) cum erau; apoi **`mm_tc_v5`** (P2zzb): rândul în `--mm-tc-64k`, apoi pasul #513 lot 6 cu v5. Noi: comparațiile când vin; altfel bucla lui v5 (scrierile f16 împerecheate în memoria comună), plan + predicții întâi.
