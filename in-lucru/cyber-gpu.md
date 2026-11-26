@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 03:15 · sarcina: C-157 — valurile mm_tc_v4 pe pasul mixt #513 (unde se duc cele 106 ms) + lansarea dublă dX+dW remăsurată pe v4, SIMULARE/DEDUS · estimat gata: 04:20
+liber · terminat 2026-11-26 03:56 · următorul pas: comparațiile testelor noi de pe placă (os-451, os-447, os-449, profilul pasului mixt) când vin; altfel studiul atenției pe circuitele speciale (f16), predicții înainte
