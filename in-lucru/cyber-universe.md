@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 06:00 · următorul pas: CI `a43c655` verde → Release os-456 (profilul pasului mixt) + GATA DE TEST; rezultatul os-451; PREDĂRI noi Cyber-GPU (sesiunea 243)
+ocupat · început 2026-11-26 06:10 · sarcina: CI a43c655 → Release os-456 (profilul pasului mixt) + PREDĂRI noi Cyber-GPU · estimat gata: 07:00
