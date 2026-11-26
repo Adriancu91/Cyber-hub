@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 01:35 · următorul pas: CI-ul lui P6-243 (6b7bea0) verde → GATA DE TEST cu `test-placa --tablou-viteza --token32 --token32-v2`; apoi pasul #513 cu mm_tc_v5 când Cyber-GPU dă pack_mixed_fast cu v5
+ocupat · început 2026-11-27 01:42 · sarcina: CI P6-243 → GATA DE TEST os-NNN (token32_v2), apoi coada C-158 · estimat gata: 02:40
