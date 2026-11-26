@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 16:42 · sarcina: CI c7fc867 → GATA DE TEST --atentie-tc0, rezultate placă, apoi coada C-158 · estimat gata: 18:00
+liber · terminat 2026-11-26 17:31 · următorul pas: CI 3349975 (run 45849900055) → GATA DE TEST pentru `--atentie-tc0-v4`; apoi P2zs pasul 2 / P2zu după rezultatele plăcii (os-466, os-NNN)
