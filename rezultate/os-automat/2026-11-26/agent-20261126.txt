@@ -175,3 +175,16 @@ Memoria: aproape toata e libera (circa 128 GB), iar sistemul foloseste doar 36 M
 Reteaua merge: legatura pe cablu la 100 Mb/s, adresa 192.168.0.151. Discurile sunt vazute: SSD-ul de 512 GB si stick-ul USB, montat cu scriere permisa. Mouse-ul si tastatura merg.
 Nu apar erori sau avertismente. De retinut: placa de retea a raportat ca un pas de initializare (LAN_INIT_DONE) nu a venit, dar a pornit normal. Pasii ei de pornire au fost testati doar pe model, nu pe acest calculator. Cititorul de carduri e gol si a fost sarit, ceea ce nu e o eroare.
 
+2026-11-26 20:03 tura 1
+**Acum:** nicio lucrare in curs. Testul de antrenare pe placa video (#513) s-a terminat cu **NU TRECE**. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Cifre:** 10 pasi, aproximativ 273 ms pe pas, aproximativ 11.256 simboluri/s. Pierderea pare sa fie 9.8, dar randul e taiat in jurnal. Temperatura nu apare. Memorie: libera aproximativ 127 GiB, folosita aproximativ 1 GiB. Reteaua merge (100 Mb/s).
+
+**Abateri:**
+- Lantul de pasi s-a oprit la ultimul pas, „tur-dupa”, blocat de politica de siguranta: verificarea de citire a facut o scriere. Toti pasii de dinainte au trecut.
+- Sistemul a refuzat 11 scrieri in afara zonei permise, toate la pasul „i8e-golden”.
+- Firul 5 a fost oprit fortat (cod -9).
+- Pe stick-ul USB, o scriere a durat 888 ms.
+
+Jurnalul complet e in /usb/raport/gpu-jurnal-149.txt.
+
