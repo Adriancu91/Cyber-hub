@@ -95,3 +95,15 @@ Rapoartele au fost trimise pe GitHub fara eroare. Jurnalul complet: /usb/raport/
 - **De urmarit:** placa de retea a semnalat ca un pas de initializare ("LAN_INIT_DONE") nu a venit, desi legatura merge. In plus, pornirea acestui tip de placa a fost testata doar pe simulare, nu pe un calculator real.
 - **Acces la chei:** agentul a citit cheia GitHub si cheia Claude, iar gh-ia a citit cheia GitHub. Nu apar erori.
 
+2026-11-26 15:53 tura 1
+**Acum nu ruleaza nicio lucrare** (nicio antrenare in /usb/lucrari). Calculatorul e pornit de vreo 9 minute.
+
+**Placa video (GA104, 8 GB):** testul complet s-a terminat si **toti cei 17 pasi au trecut**, cu 2870 scrieri. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Abateri:**
+- Sistemul a **blocat 11 scrieri** cerute in afara zonei permise, toate la pasul „i8e-golden”. Au fost oprite, deci placa e protejata, dar merita stiut.
+- Firul 5 a fost **oprit fortat** (cod -9).
+- O scriere pe stick-ul USB a durat aproape 0,9 secunde (in medie 3,5 ms).
+
+**Memorie:** libera ~127 GB, folosita ~0,9 GB. Reteaua merge la 100 Mb/s. Nu am date despre temperatura, pasi, viteza sau pierderi.
+
