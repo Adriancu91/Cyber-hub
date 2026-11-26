@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 07:14 · sarcina: C-157 — comparațiile testelor de pe placă (dacă au venit), altfel atenția înainte pe circuitele speciale (f16), predicții întâi · estimat gata: 08:10
+liber · terminat 2026-11-26 07:55 · următorul pas: comparațiile testelor de pe placă (os-451, os-447, os-449, proba P2zm) când vin; altfel attn_back_tile0_tc legat în pasul mixt (gpu-sim + opțiunea + antrenarea mini în SIMULARE), apoi PREDARE
