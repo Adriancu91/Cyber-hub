@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 23:12 · sarcina: CI os-472 → GATA DE TEST; rezultate placă; PREDARE nouă · estimat gata: 00:10
+liber · terminat 2026-11-27 00:05 · următorul pas: CI P6-242 verde → GATA DE TEST os-474 (--mm-tc-v5); rezultatul os-473
