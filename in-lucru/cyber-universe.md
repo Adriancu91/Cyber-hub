@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 21:42 · sarcina: CI P6-240 → os-471 (token32) + coada C-158 · estimat gata: 22:40
+liber · terminat 2026-11-26 22:45 · următorul pas: rezultatele os-470 (tc0 reluat) și os-471 (token32); P2zu după ce tc0 trece pe placă
