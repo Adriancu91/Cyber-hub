@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 05:14 · sarcina: legarea PREDĂRII cab6742 (StepProfile::from_mixed, profilul pasului mixt) într-un Release mic · estimat gata: 06:10
+liber · terminat 2026-11-26 06:00 · următorul pas: CI `a43c655` verde → Release os-456 (profilul pasului mixt) + GATA DE TEST; rezultatul os-451; PREDĂRI noi Cyber-GPU (sesiunea 243)

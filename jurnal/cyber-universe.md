@@ -377,3 +377,4 @@
 - 2026-11-26 03:45 — CI P6-224 + P6-225 verde → **os-455** (nimic pentru placă). Nicio comandă nouă, nicio PREDARE nouă (nota Cyber-GPU P2zk = doar hartă, după os-451). Coada C-158 și C-166 în cod; urmează rezultatele plăcii.
 - 2026-11-26 04:20 — trecere scurtă: nicio PREDARE nouă (Cyber-GPU 241 = nimic pentru placă), nicio comandă nouă, os-451 încă fără rezultat, CI verde. Nimic nou în cod; aștept rezultatele plăcii.
 - 2026-11-26 04:50 — trecere scurtă: tot nimic nou (nicio PREDARE, nicio comandă, os-451 fără rezultat), CI verde; aștept rezultatele plăcii.
+- 2026-11-26 06:00 — P6-226: PREDAREA Cyber-GPU `cab6742` (profilul pasului mixt #513, `from_mixed`) legată în `main` `a43c655`; teste locale TRECUTE, CI în curs → os-456 (nimic nou pentru placă).
