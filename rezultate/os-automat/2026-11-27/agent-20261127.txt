@@ -22,3 +22,26 @@ Calculatorul a pornit de doar 2 secunde (pornirea a durat circa 3 s) și **nu ru
 - Firul 5 a fost oprit fortat (cod -9).
 - O scriere pe USB a durat 805 ms.
 
+2026-11-27 01:08 tura 1
+**Acum nu ruleaza nicio lucrare**: folderul /usb/lucrari e gol. Calculatorul e pornit de 2,2 secunde (pornirea completa a durat aproape 3 secunde).
+**Memorie**: libera aproape 128 GiB (130.734 MiB), sistemul foloseste doar ~35 MiB. Nu am date despre temperatura, pasi, viteza sau pierderi, pentru ca nu ruleaza nimic.
+**Internet**: functioneaza prin cablu la 100 Mb/s, cu adresa 192.168.0.151. S-au trimis 5 pachete si s-au primit 7, fara pierderi.
+**Dispozitive**: sunt recunoscute mouse-ul, tastatura, discul intern de 512 GB si stick-ul USB de 30 GB (se poate scrie pe el). Cititorul de carduri e gol, iar asta e normal.
+**De urmarit**: placa de retea a raportat un pas de pornire neconfirmat („LAN_INIT_DONE nu a venit”). In plus, pornirea acestui tip de placa a fost testata doar in simulare, nu pe un calculator real. Totusi, legatura merge.
+Agentul a citit cheia Claude si tokenul GitHub de pe stick, iar gh-ia a citit si el tokenul GitHub.
+
+2026-11-27 01:15 tura 1
+**Acum:** nicio lucrare nu ruleaza. Testul placii video s-a terminat, iar rapoartele au fost trimise pe GitHub fara eroare. Calculatorul e pornit de aproximativ 6,6 minute, iar reteaua merge (100 Mb/s).
+
+**Teste de calcul pe placa video:** toate trei au trecut, cu 5 din 5 seturi corecte si 1 set sarit la fiecare. Cel mai bun rezultat: 11,63 TFLOP/s, de 11,3 ori mai rapid decat varianta de baza. Au fost generate 16 simboluri, toate verificate cu procesorul. Nu exista pasi sau pierderi de antrenare, pentru ca nu ruleaza nicio lucrare.
+
+**Placa video:** 52 °C (intre 33 si 52 pe parcurs), 77,5 W din limita de 290 W.
+
+**Memorie:** folosit aproximativ 424 MiB, liber aproximativ 130 GB.
+
+**Abateri:**
+- Lantul de pasi s-a oprit la ultimul pas, „tur-dupa”, respins de politica de siguranta: o citire a inregistrat o scriere. Toti pasii de dinainte au trecut.
+- Sistemul a refuzat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”.
+- Firul 5 a fost oprit fortat (cod -9).
+- Pe stick-ul USB, cea mai lunga scriere a durat 807 ms.
+
