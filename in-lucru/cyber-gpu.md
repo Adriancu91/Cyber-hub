@@ -1,1 +1,1 @@
-liber · terminat 2026-11-26 22:51 · următorul pas: comparațiile os-470, token32 (P2zz) și mm_tc_v5 (P2zzb) când vin; altfel plan + predicții pentru bucla lui mm_tc_v5 (scrieri f16 împerecheate)
+ocupat · început 2026-11-26 23:13 · sarcina: C-157 p.2 comparația os-470 (dS pe f16), apoi bucla mm_tc_v5 · estimat gata: 00:30
