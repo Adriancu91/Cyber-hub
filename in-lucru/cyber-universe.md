@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 19:42 · sarcina: CI 95319dd → GATA DE TEST --atentie-tc-64k; rezultatele plăcii; PREDĂRI Cyber-GPU · estimat gata: 20:40
+liber · terminat 2026-11-26 20:50 · următorul pas: CI 96c6699 (P6-239) → GATA DE TEST os-467 reluat (rândul --atentie-tc0 --atentie-tc0-v4); apoi rezultatul os-469 (64 KiB) și P2zu după ce tc0 trece pe placă
