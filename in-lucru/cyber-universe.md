@@ -1,1 +1,1 @@
-ocupat · început 2026-11-26 17:44 · sarcina: rândul os-465 sărit în tăcere (--atentie-tc16 + --lot-513 6) + PREDARE P2zv (tc16-v4 în pasul mixt); GATA DE TEST os-NNN după CI 45849900055 · estimat gata: 19:00
+liber · terminat 2026-11-26 18:37 · următorul pas: CI f036002 (run 45858072606) → GATA DE TEST pentru `--atentie-v4` + refuzurile în hub; apoi P2zu după rezultatele plăcii (os-466 / os-467)
