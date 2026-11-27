@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 06:41 · sarcina: CI P6-246 → GATA DE TEST os-NNN; PREDARE noi Cyber-GPU · estimat gata: 08:30
+liber · terminat 2026-11-27 08:17 · următorul pas: CI P6-247 (57246a4) verde → GATA DE TEST os-NNN (--mm-tc-dxdw); rezultatele os-477 / os-481 / os-483
