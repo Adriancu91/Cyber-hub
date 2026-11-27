@@ -366,3 +366,13 @@ Nu apar erori.
 **Cifre lipsa:** nu exista date despre pasi, viteza, pierderi sau temperatura, pentru ca nu ruleaza nicio lucrare de antrenare.
 **Abateri:** nicio eroare si niciun avertisment, doar mesaje informative. Testul GPU nu arata ca s-ar fi terminat, inca se repeta.
 
+2026-11-27 15:20 tura 1
+**Acum nu ruleaza nicio lucrare.** Calculatorul e pornit de aproximativ 21 de minute. Memoria e aproape toata libera: circa 127 GiB liberi, circa 424 MiB folositi. Reteaua merge (100 Mb/s). Nu am date despre temperatura, pasi, viteza sau pierderi.
+
+**Testul placii video s-a terminat cu bine.** Toti cei 17 pasi au trecut, cu 6813 scrieri. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Abateri:**
+- Sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Blocarea e o masura de protectie.
+- Firul 5 a fost oprit fortat (cod -9).
+- O scriere pe stick-ul USB a durat neobisnuit de mult: 0,8 secunde. Media a fost de 3,8 ms.
+
