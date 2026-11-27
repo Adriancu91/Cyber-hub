@@ -1,41 +1,44 @@
 # Agentul de bord — starea live (Cyber Universe OS)
 
-**Actualizat:** 2026-11-27 09:50 (ceasul OS-ului) · tura 13 · fara abateri noi
+**Actualizat:** 2026-11-27 09:52 (ceasul OS-ului) · tura 1 · fara abateri noi
 
-## Rezumatul lui Claude (2026-11-27 09:48; urmatorul la abatere sau la ~10 min)
-**Ce ruleaza:** nicio lucrare (folderul de lucrari e gol). Pe placa video ruleaza o proba (C-55, „fereastra cu Adrian”). Ea repeta in bucla acelasi set de scrieri si „suna” canalul de lucru.
+## Rezumatul lui Claude (2026-11-27 09:52, acum)
+**Ce ruleaza:** nicio lucrare in asteptare. Calculatorul e pornit de aproximativ 27 de minute. Reteaua merge (100 Mb/s), iar memoria e aproape toata libera: circa 127 GiB liberi, aproximativ 424 MiB folositi.
 
-**Cifre:** calculatorul e pornit de aproximativ 23 de minute. Memorie libera: aproximativ 127 GiB, folosita: aproximativ 600 MiB (zona de lucru plina in proportie de 75%). Nu exista date despre pasi, viteza, pierderi sau temperatura, pentru ca nu ruleaza nicio lucrare.
+**Testul placii video (C-54):** s-a terminat cu bine. Toti cei 17 pasi au trecut, cu 7822 scrieri, iar placa raporteaza 8192 MiB memorie video. Raportul a fost salvat pe stick (/usb/raport/gpu-jurnal-171.txt) si trimis pe GitHub fara eroare.
 
-**Retea:** conectata la 100 Mb/s, adresa 192.168.0.151. Pachete trimise: 1112, primite: 1770.
+**Abateri:**
+- Protectia sistemului a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Testul a trecut oricum.
+- Firul 5 a fost oprit fortat (cod -9), nu s-a inchis normal.
+- O scriere pe stick a durat 824 ms, fata de o medie de 3,8 ms.
 
-**Abateri:** in jurnal nu apar erori sau avertismente, doar informatii. Ultimul rand din jurnal e de acum aproximativ 36 de secunde, deci proba nu a mai scris nimic de atunci. Nu se vede daca s-a terminat.
+Jurnalul nu contine date despre temperatura, viteza sau pierderi.
 
 ## Abateri noi
 - niciuna
 
-## Cifrele brute (la fiecare 2 min, fara Claude)
+## Cifrele brute (la fiecare 0 min, fara Claude)
 ```
 $ uptime
-pornit de 1540.08 s
+pornit de 1650.67 s
 $ mem
-memorie: libera 130170 MiB, folosita 612744 KiB (heap 255615 / 340716 KiB)
+memorie: libera 130345 MiB, folosita 434432 KiB (heap 11483 / 340716 KiB)
 $ lucrare stare
 lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
   I219-LM  MAC cc:96:e5:08:b7:b5
-  pachete trimise 1269, primite 1968
+  pachete trimise 2322, primite 2864
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e2000
-  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e2000, RDBAH 00000000, RDH 00000010, RDT 0000000f, TDH 00000015, TDT 00000015 (pasii de pornire: log e1000)
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e2000, RDBAH 00000000, RDH 00000010, RDT 0000000f, TDH 00000012, TDT 00000012 (pasii de pornire: log e1000)
   IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
 ```
 
 ## Ultimele randuri importante din jurnal
 ```
-[1478.470] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
-[1478.490] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
-[1478.510] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b31 => 0x00001b31
-[1478.530] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b31 <- 0x0000101f => 0x0000101f
-[1478.560] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[1641.610] INFO  gpu: gpu0: i12-q8-matvec: TRECE
+[1641.610] INFO  gpu: gpu0: i13-strat: TRECE
+[1641.620] INFO  gpu: gpu0: i14-simbol: TRECE
+[1641.620] INFO  gpu: gpu0: bus-master-oprit: TRECE
+[1641.620] INFO  gpu: gpu0: tur-dupa: TRECE
 ```
