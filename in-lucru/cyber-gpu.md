@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 19:13 · sarcina: C-157 p.2 — comparații noi (dacă au venit) sau planul+predicțiile LayerNorm lipit (D1, P2zzs) · estimat gata: 20:15
+liber · terminat 2026-11-27 19:56 · următorul pas: comparațiile când vin (--token32-v3 P2zzt: L1, L3–L5; --pas-v7 P2zzr); altfel planul + predicțiile pentru atenția pe mai multe grupuri în token32 (D2); apoi dW
