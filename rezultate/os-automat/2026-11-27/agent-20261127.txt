@@ -206,3 +206,11 @@ Nu exista erori sau avertismente.
 
 Jurnalul nu contine date despre temperatura, viteza sau pierderi.
 
+2026-11-27 09:58 tura 1
+Calculatorul tocmai a pornit (de 2 secunde) și **nu rulează nicio lucrare**. Nu există pași, viteză, pierderi sau temperatură de raportat.
+**Memoria:** liberă aproape toată, circa 130 GB; sistemul folosește doar circa 35 MB.
+**Rețeaua:** placa de rețea merge la 100 Mb/s, cu adresa 192.168.0.151, iar routerul răspunde.
+**Hardware găsit:** discul intern SK hynix de 512 GB, stick-ul USB (montat, cu scriere permisă), mouse-ul și tastatura.
+**Abateri (fără erori sau avertismente):** cititorul de carduri e gol și a fost sărit. La placa de rețea un semnal de pornire („LAN_INIT_DONE”) nu a venit, dar legătura funcționează. Pașii de pornire ai plăcii au fost testați doar pe model, nu pe acest calculator.
+Agentul și gh-ia au cerut fișierele cu cheile GitHub și Claude de pe stick.
+
