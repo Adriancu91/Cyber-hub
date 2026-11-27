@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 05:56 · următorul pas: comparațiile v5 în pas (P2zzf), token32_v2 (P2zzd), proba v6 + seturile 6/7 (P2zzg/P2zzh) când vin; altfel socoteala conflictelor la citiri (coopMatLoad) pe cele trei steaguri ale pasului
+ocupat · început 2026-11-27 06:11 · sarcina: C-157 coada (P2zzf/P2zzd/P2zzg sau socoteala conflictelor la citiri coopMatLoad) · estimat gata: 07:40
