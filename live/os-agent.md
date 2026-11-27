@@ -1,38 +1,43 @@
 # Agentul de bord — starea live (Cyber Universe OS)
 
-**Actualizat:** 2026-11-27 09:02 (ceasul OS-ului) · tura 1 · fara abateri noi
+**Actualizat:** 2026-11-27 09:23 (ceasul OS-ului) · tura 1 · fara abateri noi
 
-## Rezumatul lui Claude (2026-11-27 09:02, acum)
-**Acum:** nu ruleaza nicio lucrare (lista din /usb/lucrari e goala). Calculatorul e pornit de aproximativ 8 minute, iar reteaua merge (100 Mb/s, adresa 192.168.0.151).
-**Placa video:** testul complet (C-54) s-a terminat cu toate cei 17 pasi trecuti, 4808 scrieri, 8 GB memorie video gasita. Rapoartele au fost trimise pe GitHub cu succes.
-**Memorie:** libera aproximativ 127 GB, folosita aproximativ 424 MB. Jurnalul nu are date despre pasi, viteza, pierderi sau temperatura.
-**De urmarit:** sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Firul 5 a fost oprit fortat (cod -9). O scriere pe stick-ul USB a durat neobisnuit de mult (0,9 secunde).
+## Rezumatul lui Claude (2026-11-27 09:23, acum)
+**Ce ruleaza:** calculatorul a pornit acum ~3 secunde. Nu ruleaza nicio lucrare (nu exista fise in /usb/lucrari), deci nu sunt pasi, viteza sau pierderi de raportat. Temperatura nu apare in date.
+
+**Memorie:** libera aproape toata (~130,7 GB). Sistemul foloseste doar ~36 MB.
+
+**Discuri si retea:** sunt vazute SSD-ul de 512 GB si stick-ul USB (montat la /usb, cu scriere permisa). Reteaua merge pe cablu la 100 Mb/s, cu adresa 192.168.0.151.
+
+**Abateri:** nu apare nicio eroare sau avertisment. Doua notite minore la placa de retea: un semnal de initializare („LAN_INIT_DONE”) n-a venit, dar legatura a pornit oricum. In plus, pasii de pornire ai acestui model de placa sunt testati doar in simulare, nu pe acest tip de calculator. Cititorul de carduri e gol si a fost sarit, ceea ce e normal.
+
+**De stiut:** programele „agent” si „gh-ia” au cerut acces la fisierele cu cheia GitHub si cheia Claude de pe stick.
 
 ## Abateri noi
 - niciuna
 
-## Cifrele brute (la fiecare 0 min, fara Claude)
+## Cifrele brute (la fiecare 2 min, fara Claude)
 ```
 $ uptime
-pornit de 478.85 s
+pornit de 2.95 s
 $ mem
-memorie: libera 130345 MiB, folosita 434432 KiB (heap 11483 / 340716 KiB)
+memorie: libera 130734 MiB, folosita 36092 KiB (heap 11480 / 12740 KiB)
 $ lucrare stare
 lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
   I219-LM  MAC cc:96:e5:08:b7:b5
-  pachete trimise 1060, primite 1317
+  pachete trimise 7, primite 8
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e2000
-  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e2000, RDBAH 00000000, RDH 00000005, RDT 00000004, TDH 00000004, TDT 00000004 (pasii de pornire: log e1000)
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e2000, RDBAH 00000000, RDH 00000008, RDT 00000007, TDH 00000007, TDT 00000007 (pasii de pornire: log e1000)
   IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
 ```
 
 ## Ultimele randuri importante din jurnal
 ```
-[ 469.000] INFO  gpu: gpu0: i12-q8-matvec: TRECE
-[ 469.010] INFO  gpu: gpu0: i13-strat: TRECE
-[ 469.010] INFO  gpu: gpu0: i14-simbol: TRECE
-[ 469.010] INFO  gpu: gpu0: bus-master-oprit: TRECE
-[ 469.020] INFO  gpu: gpu0: tur-dupa: TRECE
+[   1.850] INFO  net: arp primit: cerere de la 0.0.0.0 (ac:1c:26:9a:ca:3d) pentru 192.168.0.15
+[   2.080] INFO  net: arp primit: cerere de la 192.168.0.1 (10:27:f5:74:fe:93) pentru 192.168.0.151
+[   2.770] INFO  drepturi: agent a cerut /usb/github.token
+[   2.920] INFO  drepturi: agent a cerut /usb/claude.cheie
+[   2.940] INFO  drepturi: gh-ia a cerut /usb/github.token
 ```
