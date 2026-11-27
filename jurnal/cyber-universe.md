@@ -411,3 +411,4 @@
 - 2026-11-27 19:24 — P6-254: PREDAREA Cyber-GPU P2zzr (`mm_tc_v7` în pasul #513) legată → **os-496 GATA DE TEST** (`… --pas-v5 --pas-v6 --pas-v7`, lot 2 apoi lot 6); teste locale și CI verzi.
 - 2026-11-27 20:30 — P6-256: `tools/verifica-rand.py` (rândurile `test-placa` verificate pe gazdă cu codul lui `ciclu.rs`; în CI) → os-497, CI verde; nimic nou pentru placă. P2zzs fără nimic de legat.
 - 2026-11-27 21:54 — P6-257: PREDAREA Cyber-GPU P2zzt (`token32_v3`, LayerNorm lipit în înmulțirea următoare) legată → **os-498 GATA DE TEST** (`test-placa --tablou-viteza --token32 --token32-v2 --token32-v3`); teste locale și CI verzi. os-496 (`--pas-v7`) TRECE pe placă: record 20 795 simb/s.
+- 2026-11-27 23:45 — P6-258: PREDAREA Cyber-GPU P3a (înmulțirea v8: `mm_tc_v8` + `mm_tc_v8n`) legată → **os-500 GATA DE TEST** (`test-placa --tablou-viteza --mm-tc --mm-tc-v6 --mm-tc-v7 --mm-tc-v8 --mm-tc-64k --mm-tc-dxdw`; rândul notei fără v6 e refuzat); teste locale și CI verzi.

@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 22:12 · sarcina: PREDARE P3a (--mm-tc-v8) într-un Release · estimat gata: 23:40
+liber · terminat 2026-11-27 23:45 · următorul pas: rezultatele os-500 (--mm-tc-v8) și os-498 (--token32-v3); PREDĂRI noi Cyber-GPU (v8 în pas); apoi coada C-158
