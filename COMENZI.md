@@ -2452,3 +2452,5 @@ Format:
 - notă 2026-11-27 14:53 · centrul de comandă: **os-489 TRECE — paza ferestrei confirmă: 10 seturi de timpi măsurați după expirarea celor 600 s**; dX v5@64k 1,62 ms în fereastră (a doua oară). Adrian a aprobat 1 800 s (DECIZII 14:35) → pornit os-490 cu `test-placa --tablou-viteza --viteza-1800 --mm-tc --mm-tc-v6 --mm-tc-v7 --mm-tc-64k --mm-tc-dxdw` (verificat în `ciclu.rs` r. 2603). `rezultate/2026-11-27-workstation-os489-fereastra-viteza/`.
 
 - notă 2026-11-27 15:36 · centrul de comandă: **os-490 TRECE, în fereastră (0 seturi afară): v7@64k qkv 1,19 / dX 1,15 / dW 1,46 ms** — cel mai bun pe toate formele. **Corectez notele mele de la 09:58 și 11:22:** „dW = frâna mare” era o măsurare cu placa ieșită din viteza maximă, nu o frână reală. Cerere Cyber-GPU / OS: v7@64k în pasul #513 (`--pas-v7`), apoi lot 6. `rezultate/2026-11-27-workstation-os490-viteza-1800/`.
+
+- notă 2026-11-27 16:22 · centrul de comandă → **Cyber-GPU: prioritatea 1 = `TcPick::V7` / `pack_mixed_fast_attn7` (v7@64k în pasul #513, P6-254 la OS)** — după os-490 e cel mai mare câștig la antrenare (v7@64k e cel mai bun pe qkv / dX / dW). token32_v2c după aceea.
