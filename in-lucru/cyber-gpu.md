@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 04:29 · următorul pas: comparațiile mm_tc_v5 în pas (P2zzf), token32_v2 (P2zzd) și proba mm_tc_v6 (P2zzg) când vin; altfel mm_tc_v6 legat în pasul mixt rapid (TcPick::V6) + seturile de timp transpuse
+ocupat · început 2026-11-27 05:12 · sarcina: C-157 p.2 mm_tc_v6 legat în pasul mixt rapid (TcPick::V6) + seturile de timp transpuse · estimat gata: 06:20
