@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 14:14 · sarcina: rândurile P2zzl / P2zzm corectate (lipsea --mm-tc-v4, refuzul din 13:28), apoi C-157 restul token32_v2 · estimat gata: 15:10
+liber · terminat 2026-11-27 14:49 · următorul pas: „da”-ul lui Adrian pentru 1 800 s → comparația rândului P2zzm; rândul cu --pas-v6 (P2zzo) când vine; apoi mm_tc_v7 în pas; altfel „restul” lui token32_v2 (coada C-157)
