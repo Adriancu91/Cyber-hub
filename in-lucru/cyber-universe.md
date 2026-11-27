@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 12:18 · următorul pas: CI P6-250 (61dd926) verde → GATA DE TEST os-NNN (rândul P2zzl: --i9 c135 --tablou-viteza --mm-tc --mm-tc-v5 --mm-tc-v6 --mm-tc-64k --mm-tc-dxdw); rezultatele os-486 / os-487
+ocupat · început 2026-11-27 12:41 · sarcina: CI P6-250 → Release; P6-251 PREDARE P2zzm (cererea de viteză 1 800 s pentru reluarea dX/dW) · estimat gata: 14:10
