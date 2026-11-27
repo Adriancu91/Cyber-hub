@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 07:01 · următorul pas: comparațiile când vin (pasul cu v5 P2zzf, token32_v2 P2zzd, proba v6 + seturile 6/7); altfel mm_tc_v7 (rânduri cu umplutură) după docs/C-157_CITIRI_CONFLICTE.md §5: compilare → SIMULARE
+ocupat · început 2026-11-27 07:13 · sarcina: C-157 p.2 — mm_tc_v7 (rânduri cu umplutură): compilare → SIMULARE · estimat gata: 08:10
