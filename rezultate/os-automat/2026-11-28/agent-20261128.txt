@@ -26,3 +26,10 @@
 
 **Abateri:** nu exista erori sau avertismente, toate randurile sunt informative. Jurnalul noteaza ca „soneria” canalului GPU e scrisa fara verificare; la adresa 0xbb0090 se scrie 1, dar se citeste inapoi 0. Ultimul rand din jurnal e de la secunda 1215, adica de acum circa 52 de secunde, iar testul C-55 nu apare ca terminat.
 
+2026-11-28 00:46 tura 16
+- **Ce ruleaza:** nicio lucrare in /usb/lucrari. Jurnalul arata doar placa video (GPU) care repeta acelasi ciclu de scrieri in registri, marcat „C-55 gpu lant: fereastra cu Adrian (P6-42)”.
+- **Calculatorul:** pornit de circa 31,5 minute. Memorie libera circa 127 GiB, folosita circa 598 MiB.
+- **Retea:** conectata la 100 Mb/s, IP 192.168.0.151. 1236 pachete trimise, 2836 primite.
+- **Cifre lipsa:** nu exista date despre pasi, viteza, pierderi sau temperatura.
+- **Abateri:** nicio eroare si niciun avertisment, toate randurile sunt informative. La „soneria canalului de lucru” se trimite 1, dar se citeste inapoi 0. Jurnalul noteaza asta ca „scriere fara recitire”, deci pare un lucru stiut. Ultimul rand din jurnal e de acum aproximativ 24 de secunde.
+
