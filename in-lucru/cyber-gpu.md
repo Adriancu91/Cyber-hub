@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 10:58 · următorul pas: comparațiile când vin (pasul cu --pas-v6, reluarea --mm-tc-dxdw în fereastra de 600 s P2zzl, proba v7 P2zzi, lot 6 cu tabloul ținut P2zzj, token32_v2 P2zzd); altfel următorul punct al cozii C-157
+ocupat · început 2026-11-27 11:13 · sarcina: C-157 p.2 — compar os-486 (mm_tc_v7, ciclul 11:09) · estimat gata: 12:15
