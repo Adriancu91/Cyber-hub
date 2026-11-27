@@ -123,3 +123,15 @@ Agentul a citit cheia Claude si tokenul GitHub de pe stick, iar gh-ia a citit si
 
 Altfel nu apar erori.
 
+2026-11-27 08:24 tura 1
+**Acum:** nicio lucrare nu ruleaza. Calculatorul e pornit de aproximativ 5 minute, iar reteaua merge (100 Mb/s, adresa 192.168.0.151).
+
+**Testul placii video (gpu0):** s-a terminat. Toti cei 17 pasi au trecut, cu 4718 scrieri. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Abateri:**
+- Sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Protectia a functionat, dar e un semn de urmarit.
+- Firul 5 s-a oprit cu codul -9, adica a fost oprit fortat, nu s-a incheiat normal.
+- Pe stick-ul USB, o scriere a durat 808 ms, desi in medie dureaza 3,6 ms.
+
+**Cifre:** memoria folosita e de circa 962 MiB, iar cea libera de circa 127 GiB. Pasi, viteza, pierderi si temperatura nu apar in datele primite.
+
