@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 00:58 · următorul pas: comparația --mm-tc-v8 (P3a, G4–G6) când vine; altfel C-168 p.4 pasul 2: modelul pe procesor attn_fwd_tc_gpu + SIMULAREA în gpu-sim (H3, T299), docs/C-168_ATTN_FWD_TC_PLAN.md §8
+ocupat · început 2026-11-28 01:12 · sarcina: C-168 p.3 — analiza os-500 (v8 G4–G6) + vitezele măsurate în alegerea pe formă · estimat gata: 03:00
