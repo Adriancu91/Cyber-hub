@@ -1,8 +1,9 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-26 02:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-27 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
+- **27 nov, raportul de dimineață (verificat):** noaptea n-a rulat nimic la Kronos (nimic aprobat); 1.605 teste trec, placa liberă (458 MB, 30 °C), nimic oprit de paznic. Cele 14 reporniri ale workstation-ului din ultima zi vin toate de la testele OS de pe stick (os-456 … os-476).
 - **S140 gata, verificat (procesor, placa neatinsă):** la cererea centrului (os-445) — #513 în PyTorch, 300 de pași pe aceleași loturi reale (sămânța 1134, lot 2 × 512, SHA `loturi.i64` identic), F32 față de bf16. **Valid.** Media pierderii pe pașii 251–300: bf16 1,66466 vs F32 1,66611 (**−0,087 %**, prag ±1 %) → **„bf16 nu strică învățarea pe 300 de pași”**.
 - **Banda pentru OS** (|bf16 − F32| la pașii 1/10/50/100/200/300): **[2,4e-5; 3,8e-4; 9,4e-4; 1,4e-3; 1,6e-3; 2,7e-3]**. Cinstit: între acești pași diferența sare până la **5,1e-2** (pasul 291); 12 pași din 300 trec de 7,2e-3, toți după pasul 100; pașii 1–50 rămân sub 1,5e-3. O singură pereche de rulări. Tabelul întreg: `integrare/kronos/BANC_ANTRENARE.md`, secțiunea S140.
 - Laboratorul (probele aprobate, toate închise): bucăți K = 4 PIERDE (S135), harta câștig strâmb (S137), portarul LA FEL (S139).
@@ -23,7 +24,7 @@
 
 ## Blocaje / nevoie de Adrian
 - Să șteargă de mână `C:\Kronos\cyber-test\laborator-ocupat.txt` (acum scrie „LIBER”).
-- **Conectarea lui Claude Code pe workstation expiră între 29 nov și 2 dec:** `claude auth login` la workstation.
+- **Conectarea lui Claude Code pe workstation expiră între 29 nov și 2 dec (cel mai devreme peste 2 zile):** `claude auth login` la workstation — altfel se opresc executantul, supraveghetorul și raportul de dimineață.
 - La workstation: `git -c core.editor=true rebase --continue` în `C:\Kronos\cyberspace`.
 - Opțional, recomandat: „da (0′)”; „da probele v2 (S138)”; „da bancul Kronos pe placă (S134 B)”.
 - Orice antrenare în afara laboratorului și antrenarea lungă a lui Kronos v2 în OS — doar cu „da” separat.
