@@ -1,45 +1,45 @@
 # Agentul de bord — starea live (Cyber Universe OS)
 
-**Actualizat:** 2026-11-27 01:44 (ceasul OS-ului) · tura 1 · ABATERE
+**Actualizat:** 2026-11-27 07:14 (ceasul OS-ului) · tura 1 · fara abateri noi
 
-## Rezumatul lui Claude (2026-11-27 01:44, acum)
-**Acum:** nu ruleaza nicio lucrare. Calculatorul e pornit de circa 5 minute, iar ultima proba pe placa video s-a incheiat.
+## Rezumatul lui Claude (2026-11-27 07:14, acum)
+**Acum nu ruleaza nicio lucrare** (folderul /usb/lucrari e gol). Calculatorul a pornit acum 2,5 secunde, iar pornirea a durat in total aproape 2,9 s.
 
-**Antrenarea mica:** a trecut. Numerele placii sunt aceleasi cu cele de control in toti cei 10 pasi. Pierderea a pornit de la 9,74, iar viteza a fost de circa 17.650 simboluri/s (pasul intreg: circa 14.970/s).
+**Memoria:** libera aproape 128 GB, sistemul foloseste doar circa 35 MB. Nu exista inca cifre de pasi, viteza, pierderi sau temperatura, pentru ca nu ruleaza nimic.
 
-**Antrenarea mare (#513, 98 milioane de greutati, lot 6 x 512):** NU a terminat. S-a oprit dupa pasul 2 (pierderea 9,87 → 9,86, circa 0,28 s pe pas) din cauza semnalului de incetinire termica / de urgenta (motive 0x20).
+**Dispozitive:** mouse-ul, tastatura, discul NVMe de 512 GB si stick-ul USB de 30 GB functioneaza. Cititorul de carduri e gol si a fost sarit, ceea ce nu e o eroare.
 
-**Nepotrivire:** temperatura placii a fost doar intre 35 si 56 °C, cu putere maxima de circa 167 W din 290 W. Semnalul de incetinire nu se potriveste cu aceste cifre.
+**Internet:** functioneaza (adresa 192.168.0.151), dar legatura merge la 100 Mb/s, nu la 1000.
 
-**Alte abateri:** apare si un rand „antrenare mini oprita: timeout dupa 2 s”, deci un test care nu s-a incheiat la timp. Jurnalul e taiat la final, asa ca restul lantului de pasi nu se vede (cei vazuti au trecut).
+**Abateri:** placa de retea a semnalat ca un semnal de initializare (LAN_INIT_DONE) nu a venit, dar a pornit totusi normal. Pasii ei de pornire sunt marcati ca testati doar in simulare, nu pe acest calculator.
 
-**Memorie si retea:** memoria e in regula (circa 127 GiB liberi, circa 962 MiB folositi). Reteaua e conectata la 100 Mb/s, cu adresa 192.168.0.151.
+**Acces la chei:** agentul si gh-ia au citit cheile de pe stick (github.token si claude.cheie).
 
 ## Abateri noi
-- `[ 297.210] INFO  gpu: gpu0: kronos --gpu: antrenare #513 pe placa (arena in VRAM): NU A TERMINAT (vezi randul de mai sus)`
+- niciuna
 
-## Cifrele brute (la fiecare 0 min, fara Claude)
+## Cifrele brute (la fiecare 2 min, fara Claude)
 ```
 $ uptime
-pornit de 306.47 s
+pornit de 2.45 s
 $ mem
-memorie: libera 129807 MiB, folosita 985004 KiB (heap 11484 / 795528 KiB)
+memorie: libera 130734 MiB, folosita 36092 KiB (heap 11480 / 12740 KiB)
 $ lucrare stare
 lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
   I219-LM  MAC cc:96:e5:08:b7:b5
-  pachete trimise 960, primite 1028
-  legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e6000
-  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e6000, RDBAH 00000000, RDH 00000004, RDT 00000003, TDH 00000000, TDT 00000000 (pasii de pornire: log e1000)
+  pachete trimise 7, primite 6
+  legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e2000
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e2000, RDBAH 00000000, RDH 00000006, RDT 00000005, TDH 00000007, TDT 00000007 (pasii de pornire: log e1000)
   IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
 ```
 
 ## Ultimele randuri importante din jurnal
 ```
-[ 297.250] INFO  gpu: gpu0: i6-fwsec-frts: TRECE
-[ 297.250] INFO  gpu: gpu0: i6-wpr2-citit: TRECE
-[ 297.250] INFO  gpu: gpu0: i7-booter-gsp: TRECE
-[ 297.260] INFO  gpu: gpu0: i7-citit: TRECE
-[ 297.260] INFO  gpu: gpu0: i8-gsp-init: TRECE
+[   2.190] INFO  net: arp primit: cerere de la 192.168.0.15 (ac:1c:26:9a:ca:3d) pentru 192.168.0.1
+[   2.340] INFO  drepturi: agent a cerut /usb/github.token
+[   2.350] INFO  drepturi: gh-ia a cerut /usb/github.token
+[   2.420] INFO  drepturi: agent a cerut /usb/claude.cheie
+[   2.460] INFO  net: arp primit: raspuns de la 192.168.0.1 (10:27:f5:74:fe:93) pentru 192.168.0.151
 ```
