@@ -256,3 +256,5 @@ Adrian a răspuns „Da” la mesajul centrului care cerea „da / nu” la H1, 
 - Regula „sub ~7 GB” rămâne neschimbată pentru antrenările Kronos din Windows.
 - Tot din studiul `idei/2026-11-25-centru-franele-altora.md` (pe direcția deja aprobată, ca cereri): copierea în paralel cu calculul (motorul de copiere al plăcii) + RAM fixată fără limita Windows; „programul persistent” ca studiu la Cyber-GPU după `mm_tc`.
 - **Completare 11:55 (Adrian: „da și pentru mai mult de 7 GB dacă este necesar și nu ne blochează nimic”):** fără plafon fix de 7 GiB în OS — arena poate lua tot ce încape sigur în VRAM-ul liber raportat după pornirea driverului, cu aceleași condiții: rezervă ≥ 256 MiB, verificare la fiecare pornire, valoarea aleasă scrisă în raport; dacă ceva nu încape sau pornirea pică, revine singură la valoarea veche.
+
+- 2026-11-27 14:35 · Adrian: viteza maxima 1800 s aprobata (doar pentru proba lunga a inmultirilor `--mm-tc-dxdw`, prin optiunea `--viteza-1800`; paza termica 80/85/70 °C ramane pornita). Raspunsul lui Adrian in conversatia cu centrul de comanda: „Da”.
