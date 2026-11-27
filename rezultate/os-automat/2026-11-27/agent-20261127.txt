@@ -344,3 +344,25 @@ Abateri: la pornirea plăcii de rețea, semnalul „LAN_INIT_DONE” nu a venit,
 
 **Memoria:** aproximativ 424 MiB folositi, aproximativ 130.000 MiB liberi. Jurnalul nu are date despre temperatura, pasi de antrenare, viteza sau pierderi.
 
+2026-11-27 14:58 tura 1
+**Acum nu ruleaza nicio lucrare.** Calculatorul a pornit de 2 secunde (pornirea a durat cam 2,9 s), deci nu exista pasi, viteza sau pierderi de raportat. Temperatura nu apare in date.
+
+**Memorie:** aproape toata e libera (~130.700 MiB). Sistemul foloseste doar ~35 MiB.
+
+**Dispozitive:** discul intern de 512 GB, stick-ul USB (montat cu scriere permisa), mouse-ul si tastatura sunt pornite. Cititorul de carduri e gol, iar asta nu e o eroare.
+
+**Retea:** functioneaza cu adresa 192.168.0.151 si legatura la 100 Mb/s.
+
+**De urmarit:**
+- La pornirea placii de retea, un pas de initializare n-a confirmat ca s-a terminat ("LAN_INIT_DONE nu a venit"), desi reteaua merge.
+- Pasii de pornire ai acestei placi sunt testati doar pe model, nu pe hardware real.
+
+Nu apar erori.
+
+2026-11-27 15:09 tura 6
+**Acum:** nicio lucrare pornita din /usb/lucrari. Ruleaza doar un test pe placa video (GPU), notat „C-55 lant: fereastra cu Adrian (P6-42)”, care repeta aceeasi secventa de scrieri cam de 3 ori pe secunda.
+**Calculatorul:** pornit de aproape 11 minute (643 s). Memorie folosita circa 600 MiB, libera circa 127 GiB.
+**Retea:** conectata la 100 Mb/s, adresa 192.168.0.151; 471 pachete trimise, 1020 primite.
+**Cifre lipsa:** nu exista date despre pasi, viteza, pierderi sau temperatura, pentru ca nu ruleaza nicio lucrare de antrenare.
+**Abateri:** nicio eroare si niciun avertisment, doar mesaje informative. Testul GPU nu arata ca s-ar fi terminat, inca se repeta.
+
