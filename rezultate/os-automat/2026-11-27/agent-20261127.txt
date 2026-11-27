@@ -294,3 +294,12 @@ Abateri: la pornirea plăcii de rețea, semnalul „LAN_INIT_DONE” nu a venit,
 - Firul 5 a fost oprit fortat (cod -9).
 - O scriere pe USB a durat 805 ms, mult peste media de 3,8 ms.
 
+2026-11-27 13:28 tura 1
+**Calculatorul a pornit acum 3 secunde.** Nu ruleaza nicio lucrare (nu exista fise in /usb/lucrari), deci nu sunt pasi, viteza, pierderi sau temperatura de raportat.
+**Memorie:** libera aproape toata (circa 128 GB). Sistemul foloseste doar circa 23 MB.
+**Dispozitive:** functioneaza mouse-ul, tastatura, discul NVMe de 512 GB si stick-ul USB de 30 GB (se poate scrie pe el). Internetul merge prin cablu la 100 Mb/s, cu adresa 192.168.0.151.
+**Abateri:**
+- Un proces (firul 5) a fost oprit fortat, cu codul -9.
+- La placa de retea, un semnal de pornire (LAN_INIT_DONE) nu a venit. Pasii pentru acest model de placa au fost testati doar in simulare, nu pe hardware real, dar legatura functioneaza.
+- Cititorul de carduri e gol. Asta nu e o eroare.
+
