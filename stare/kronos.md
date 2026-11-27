@@ -1,29 +1,28 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-27 20:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-27 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
-- **C-168 preluat (partea Kronos, punctele 1 și 7)** — în `plan/coada.md` Kronos, ambele `aprobat`:
-  - **S141 (prioritar, E1):** (A, procesor) oracolul PyTorch #513 pe primii 10 pași cu loturile reale din bucățile #651, sămânța 1134, lot 2 × 512 și lot 6 × 512, F32 și bf16 (pierderea, norma gradientului, `loturi.i64`); validitate: lot 2 F32 = S140 la pașii 1–10. (B) bucățile #651 (27 × `bucata_NNNNN.bin`, 2.682.381.582 o) + `index.json` + `bpe_16384.json` copiate pe stick în `E:\antrenare\date\`, **doar dacă are loc**, verificate SHA-256 citind înapoi de pe stick; nimic șters de pe stick, nimic în vreun repo.
-  - **S142 (E8):** scrisul #513 în Windows cu memoria de context (KV cache) în FP32 / FP16 / bf16, la 16 și 256 simboluri, martor S130 (129,12 simb/s); A pe procesor, B ~20 min pe placă după S141 B.
-- 27 nov dimineața: 1.605 teste trec, nimic oprit; laboratorul închis (K = 4 PIERDE, harta câștig strâmb, portarul LA FEL); S140 (banda F32 vs bf16) gata.
+- **C-168, partea Kronos (punctele 1 și 7) — GATA, verificată de supraveghetor:**
+  - **S141 (E1):** oracolul PyTorch #513 pe primii 10 pași cu loturile reale (bucățile #651, sămânța 1134), lot 2 și lot 6, F32 și bf16 — **VALID** (lot 2 F32 identic cu S140, pasul 1 = 1,067867; lot 6 pasul 1 = 1,0107 F32 / 1,0108 bf16; fără NaN). Bucățile #651 + `index.json` + `bpe_16384.json` sunt pe stick în `E:\antrenare\date\` (29 de fișiere, 2,68 GB), SHA 29/29 citit înapoi de pe stick.
+  - **S142 (E8):** scrisul #513 în Windows, placa RTX 3070 Ti, 16 simboluri: martorul FP32 fără memorie 132,55 simb/s (valid față de 129,12); FP32 cu memoria de context 159,65; FP16 159,43; **bf16 160,05 = cea mai bună rețetă Windows** → OS 351 / 160,05 = **×2,19** (nu ×2,7). Toate scriu aceleași 16 simboluri. Cele trei variante cu memorie sunt la 0,4 % una de alta.
+- 1.611 teste trec, 1 sărit; modelele neatinse (SHA înainte = după); semnul laboratorului „LIBER”.
 - Chat-ul merge pe 8787 cu **#651**. Pauza C-156 rămâne pentru orice antrenare.
 
 ## Urmează
-- S141 A (procesor, oricând) → S141 B (stickul, 07:00–23:00, cu semnul `laborator-ocupat.txt` = „OCUPAT — S141 copiere pe stick”) → S142 A → S142 B (placa ~20 min).
-- Propus, doar cu „da”: S138 (0′) zgomotul, (2) piesele ieftine, (3) + fără γ.
+- Nimic în coadă la Kronos. Propus, doar cu „da”: S138 (0′) zgomotul, (2) piesele ieftine, (3) + fără γ.
 
 ## Ce oferă proiectul celorlalți
-- **Pentru `cyber-universe` (C-168 p.2), când e gata S141:** datele reale pe stick în `E:\antrenare\date\` (formatul din `integrare/kronos/FISA_ANTRENARE.md` §3) și oracolul în `integrare/kronos/ORACOL_DATE_REALE/` (pierderea pașilor 1–10 la lot 2 și lot 6, F32 și bf16, + pozițiile ferestrelor ca `antrenare date … --lot` să fie verificat). Dacă stickul nu are loc, scriem aici câți MB lipsesc.
-- **Pentru C-168 p.7:** cifra Windows „cea mai bună rețetă” la scris (S142), ca OS-ul să se compare cu ea în locul lui 129,12.
+- **PREDARE → cyber-universe (C-168 p.2):** datele reale pe stick în `E:\antrenare\date\` (formatul din `integrare/kronos/FISA_ANTRENARE.md` §3) + oracolul în `integrare/kronos/ORACOL_DATE_REALE/` (`ORACOL_DATE_REALE.md` = rețeta și regula de tragere; pe fiecare rulare `rezultat.json` cu pierderea/norma pașilor 1–10, `loturi.i64` cu pozițiile ferestrelor pentru `antrenare date … --lot`). Nou pentru placă: nimic (doar date citite de pe stick).
+- **PREDARE → cyber-universe (C-168 p.7):** cifra Windows la scris = **160,05 simb/s** (bf16 + memoria de context, 16 simboluri; la 256: 159,44); tabelul, versiunile și comenzile în `integrare/kronos/VITEZA_513_WINDOWS.md` (secțiunea S142). OS-ul se compară de acum cu ea, nu cu 129,12.
 - Banda F32 vs bf16 (S140), `BANC_ANTRENARE.md`, `FISA_ANTRENARE.md`, `PAS_DE_AUR.md`, `MODEL.md`, `MODEL_651.md`, `KRONOS_V2_FISA.md`.
 
 ## De ce are nevoie de la ceilalți
-- **Centrul / OS:** niciun test care pornește din stick cât `C:\Kronos\cyber-test\laborator-ocupat.txt` scrie „OCUPAT” (copierea S141 B ~15–30 min; S142 B ~40 min de placă). „LIBER” = nu e a laboratorului.
-- Bucățile pe stick sunt doar citite de OS; nimic din ele nu se urcă în repo-uri sau Release-uri.
+- Bucățile de pe stick sunt doar citite de OS; nimic din ele nu se urcă în repo-uri sau Release-uri și nu se șterg fără „da”-ul lui Adrian.
+- Niciun test care pornește din stick cât `C:\Kronos\cyber-test\laborator-ocupat.txt` scrie „OCUPAT” (acum „LIBER”).
 
 ## Blocaje / nevoie de Adrian
-- **`claude auth login` la workstation, cel târziu pe 28 nov** (conectarea expiră cel mai devreme pe 29 nov) — altfel se opresc executantul, supraveghetorul și raportul de dimineață, deci și S141/S142.
+- **`claude auth login` la workstation, mâine, 28 nov** (conectarea expiră cel mai devreme pe 29 nov) — altfel se opresc executantul, supraveghetorul și raportul de dimineață.
 - La workstation: `git -c core.editor=true rebase --continue` în `C:\Kronos\cyberspace`.
 - Să șteargă de mână `C:\Kronos\cyber-test\laborator-ocupat.txt` (acum scrie „LIBER”).
 - Opțional: „da (0′)”; „da probele v2 (S138)”; „da bancul Kronos pe placă (S134 B)”.
