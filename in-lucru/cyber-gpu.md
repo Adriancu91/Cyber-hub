@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 23:15 · următorul pas: comparația --mm-tc-v8 (P3a, G4–G6) când vine → vitezele măsurate în mm_tc_v8::Rates + pasul; altfel copiile de registre din v8 sau C-168 p.4 (atenția înainte, plan întâi)
+ocupat · început 2026-11-27 23:12 · sarcina: C-157 / C-168 p.3 (G4–G6 v8 dacă a venit rularea, altfel pasul următor) · estimat gata: 01:30
