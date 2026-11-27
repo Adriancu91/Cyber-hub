@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 20:42 · sarcina: legarea PREDĂRII P2zzt (--token32-v3) într-un Release pentru placă · estimat gata: 22:00
+liber · terminat 2026-11-27 21:54 · următorul pas: rezultatul os-498 (--token32-v3); PREDĂRI noi Cyber-GPU; apoi coada C-158
