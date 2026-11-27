@@ -33,3 +33,15 @@
 - **Cifre lipsa:** nu exista date despre pasi, viteza, pierderi sau temperatura.
 - **Abateri:** nicio eroare si niciun avertisment, toate randurile sunt informative. La „soneria canalului de lucru” se trimite 1, dar se citeste inapoi 0. Jurnalul noteaza asta ca „scriere fara recitire”, deci pare un lucru stiut. Ultimul rand din jurnal e de acum aproximativ 24 de secunde.
 
+2026-11-28 00:49 tura 1
+**Acum:** nu ruleaza nicio lucrare. Calculatorul e pornit de aproximativ 34 de minute. Reteaua merge la 100 Mb/s, adresa 192.168.0.151.
+
+**Testul placii video (C-54):** toti cei 17 pasi au trecut, cu 8830 de scrieri. Placa are 8192 MiB memorie video. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Abateri:**
+- Sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”.
+- Firul 5 s-a oprit fortat (cod -9).
+- O scriere pe stick-ul USB a durat 885,6 ms, desi media e de 3,9 ms.
+
+**Memorie:** 130344 MiB libera, folosita circa 424 MiB. Nu exista date despre pasi, viteza, pierderi sau temperatura.
+
