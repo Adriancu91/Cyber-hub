@@ -323,3 +323,12 @@ Abateri: la pornirea plăcii de rețea, semnalul „LAN_INIT_DONE” nu a venit,
 
 **Abateri:** în jurnal nu sunt erori sau avertismente, toate rândurile sunt informative. „Soneria” GPU (adresa 0xbb0090) primește 1, dar citirea dă 0. Jurnalul o notează ca „scriere fără recitire”, deci pare un comportament știut. Secvența GPU se repetă identic, fără un rezultat sau un final vizibil, așa că testul pare încă neterminat.
 
+2026-11-27 14:35 tura 11
+**Acum:** nicio lucrare de antrenare nu ruleaza (lista din /usb/lucrari e goala). Pe placa video ruleaza in bucla testul de lant „C-55”, din fereastra de lucru cu tine (P6-42). Acelasi tipar de scrieri se repeta cam de 3 ori pe secunda.
+
+**Cifre:** calculatorul e pornit de circa 21 de minute. Memoria folosita e de vreo 598 MiB, iar zona de lucru (heap) e de 230 MiB din 333 MiB. Raman libere peste 127 GiB. Pasi, viteza, pierderi sau temperatura nu apar, pentru ca nu ruleaza nicio lucrare.
+
+**Retea:** conectata la 100 Mb/s, adresa 192.168.0.151, cu trafic normal.
+
+**De retinut:** jurnalul nu are erori sau avertismente, doar informatii. O singura nota: masuratorile de timp „ks” s-au facut in afara ferestrei de viteza maxima, pentru ca cererea expirase, deci acele timpi nu reflecta viteza maxima. Soneria canalului de lucru e scrisa fara verificare, iar jurnalul marcheaza asta ca fiind asa intentionat.
+
