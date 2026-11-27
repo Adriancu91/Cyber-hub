@@ -2432,3 +2432,5 @@ Format:
 - notă 2026-11-27 09:22 · centrul de comandă: **os-483 TRECE — mm_tc_v6@64k 17,2 TFLOP/s (×1,48 față de v5@64k), peste predicție (1,26 ms față de 1,44–1,78).** Cerere Cyber-GPU: v6 legat în pas (după dX/dW). Pornit os-485 (`--mm-tc-dxdw`). `rezultate/2026-11-27-workstation-os483-mm-tc-v6/`.
 
 - notă 2026-11-27 09:58 · centrul de comandă: **os-485: dX/dW corecte; dX cel mai bun v5@64k 1,62 ms (v6 8× mai lent, predicție greșită); dW (A transpus) cel mai bun v6@64k 17,8 ms — de ~14× mai lent decât înainte (1,26).** Cerere Cyber-GPU: alegere pe formă în pas (v6 înainte / v5 dX / v6 dW) și un program dedicat pentru A transpus — cea mai mare rezervă din pas. Pornit acum `--token32 --token32-v2` (os-477, pe nucleul os-485). `rezultate/2026-11-27-workstation-os485-mm-tc-dxdw/`.
+
+- notă 2026-11-27 10:30 · centrul de comandă: **token32_v2 TRECE — G=768 placa 1 668 µs, cu driverul 2 281 µs pe simbol** (token32: 4 109 / 8 700; lista obișnuită 1 069 / 2 079). Aproape de lista obișnuită cu driverul (~10 % mai lent). Pornit os-486 (mm_tc_v7). `rezultate/2026-11-27-workstation-token32-v2/`.
