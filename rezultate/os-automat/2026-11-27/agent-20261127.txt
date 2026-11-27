@@ -234,3 +234,14 @@ Agentul și gh-ia au cerut fișierele cu cheile GitHub și Claude de pe stick.
 - **Retea:** functioneaza, 100 Mb/s, adresa 192.168.0.151, iar routerul raspunde.
 - **De urmarit:** placa de retea nu a dat semnalul de initializare de la memoria ei (LAN_INIT_DONE), dar legatura s-a facut totusi. Pasii pentru acest tip de placa sunt testati doar in simulare, nu pe hardware real. Nu exista erori sau avertismente propriu-zise.
 
+2026-11-27 10:45 tura 6
+**Ce ruleaza:** nicio lucrare pornita (nu exista fise in /usb/lucrari). Calculatorul merge de aproximativ 10,8 minute.
+
+**Placa video:** jurnalul arata doar scrieri de test in placa video, repetate in acelasi tipar cam de 9 ori pe secunda. Tot jurnalul are nivel INFO, fara erori sau avertismente. Notele care apar sunt „C-55 lant: fereastra cu Adrian (P6-42)” si „soneria canalului de lucru: scriere fara recitire”. A doua nota e asteptata: valoarea scrisa (1) se citeste inapoi ca 0.
+
+**Memoria:** libera 130170 MiB, folosita circa 598 MiB (heap 237 din 333 MiB).
+
+**Reteaua:** legatura e activa, 100 Mb/s, adresa 192.168.0.151. Pachete: 532 trimise, 861 primite.
+
+**Lipsesc:** pasi, viteza, pierderi si temperatura nu apar in date, pentru ca nu ruleaza niciun antrenament. Nu se vede niciun test neterminat.
+
