@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 19:42 · sarcina: C-158 coada (după os-496; P2zzs fără nimic pentru placă) · estimat gata: 21:30
+liber · terminat 2026-11-27 20:30 · următorul pas: rezultatul os-496 (--pas-v7); PREDĂRI noi Cyber-GPU; apoi coada C-158

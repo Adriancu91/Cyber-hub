@@ -409,3 +409,4 @@
 - 2026-11-27 15:44 — os-490 cu `--viteza-1800` TRECE pe placă (0 seturi în afara ferestrei; v7@64k cel mai bun). P6-254 `--pas-v7` planificat, așteaptă PREDAREA Cyber-GPU. CI P6-253 (`8707c2b`) la coadă → Release următor.
 - 2026-11-27 17:23 — P6-255: PREDAREA Cyber-GPU P2zzq (`token32_v2c`, programul cu ceas) legată → **os-495 GATA DE TEST** (`test-placa --tablou-viteza --token32 --token32-v2 --token32-v2c`); copia logit-urilor de la capătul listei numărată separat (rândul `kc copie logit fereastra (ns)`).
 - 2026-11-27 19:24 — P6-254: PREDAREA Cyber-GPU P2zzr (`mm_tc_v7` în pasul #513) legată → **os-496 GATA DE TEST** (`… --pas-v5 --pas-v6 --pas-v7`, lot 2 apoi lot 6); teste locale și CI verzi.
+- 2026-11-27 20:30 — P6-256: `tools/verifica-rand.py` (rândurile `test-placa` verificate pe gazdă cu codul lui `ciclu.rs`; în CI) → os-497, CI verde; nimic nou pentru placă. P2zzs fără nimic de legat.
