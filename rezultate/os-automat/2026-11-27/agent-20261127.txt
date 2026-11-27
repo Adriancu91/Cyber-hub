@@ -214,3 +214,15 @@ Calculatorul tocmai a pornit (de 2 secunde) și **nu rulează nicio lucrare**. N
 **Abateri (fără erori sau avertismente):** cititorul de carduri e gol și a fost sărit. La placa de rețea un semnal de pornire („LAN_INIT_DONE”) nu a venit, dar legătura funcționează. Pașii de pornire ai plăcii au fost testați doar pe model, nu pe acest calculator.
 Agentul și gh-ia au cerut fișierele cu cheile GitHub și Claude de pe stick.
 
+2026-11-27 10:01 tura 1
+**Acum nu ruleaza nicio lucrare de antrenare**, deci nu exista pasi, viteza sau pierderi. Calculatorul e pornit de aproape 3 minute (164 s), iar reteaua merge normal (100 Mb/s, adresa 192.168.0.151).
+
+**Testul placii video (C-54) s-a terminat cu bine:** toti cei 17 pasi au trecut, cu 4010 scrieri. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Abateri:**
+- Sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Protectia a functionat, dar e de urmarit.
+- Firul 5 s-a oprit fortat (cod -9), nu s-a incheiat normal.
+- O scriere pe stick-ul USB a durat 806 ms. Media a fost 3,8 ms.
+
+**Memorie:** aproximativ 424 MiB folositi, aproximativ 127 GiB liberi. Nu am primit date despre temperatura.
+
