@@ -376,3 +376,23 @@ Nu apar erori.
 - Firul 5 a fost oprit fortat (cod -9).
 - O scriere pe stick-ul USB a durat neobisnuit de mult: 0,8 secunde. Media a fost de 3,8 ms.
 
+2026-11-27 18:03 tura 1
+**Acum:** Calculatorul a pornit acum 2 secunde. Nu ruleaza nicio lucrare, deci nu exista pasi, viteza sau pierderi de raportat. Temperatura nu apare in date.
+
+**Memoria:** Sunt libere aproximativ 128 GB. Sistemul foloseste doar circa 35 MB.
+
+**Retea si discuri:** Internetul merge prin cablu, la 100 Mb/s, cu adresa 192.168.0.151. Sunt vazute discul intern de 512 GB si stick-ul USB de aproximativ 30 GB, pe care se poate scrie. Mouse-ul si tastatura merg.
+
+**Abateri:** Nu sunt erori sau avertismente.
+- La pornirea placii de retea, un semnal de initializare ("LAN_INIT_DONE") nu a venit, dar reteaua functioneaza.
+- Jurnalul noteaza ca pasii de pornire pentru aceasta placa de retea au fost testati doar pe model, nu pe calculatorul real.
+- Cititorul de carduri e gol si a fost sarit, ceea ce e normal.
+
+2026-11-27 18:06 tura 1
+**Acum:** nicio lucrare nu ruleaza. Calculatorul e pornit de aproape 3 minute. Rapoartele au fost trimise pe GitHub fara eroare.
+**Testul placii video (C-54):** toti cei 17 pasi au trecut, cu 4268 de scrieri. Placa are 8192 MiB memorie.
+**Abatere 1:** sistemul a blocat 11 scrieri in afara zonei permise, toate la pasul „i8e-golden”. Testul a trecut totusi.
+**Abatere 2:** firul 5 a fost oprit fortat (cod -9).
+**Memorie:** libera 130344 MiB, folosita circa 424 MiB. Reteaua merge (100 Mb/s). Cea mai lunga scriere pe stick a durat 810 ms.
+Nu exista date despre pasi, viteza, pierderi sau temperatura.
+
