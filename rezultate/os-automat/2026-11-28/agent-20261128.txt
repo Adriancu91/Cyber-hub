@@ -17,3 +17,12 @@
 
 **Abateri:** nu apar erori sau avertismente. Soneria canalului GPU citeste 0 dupa ce i se scrie 1, dar jurnalul o marcheaza ca normala („scriere fara recitire”). Randurile noi din jurnal se opresc la secunda 609,8, adica in ultimele aproximativ 33 de secunde nu a aparut nimic nou.
 
+2026-11-28 00:35 tura 11
+**Acum:** calculatorul e pornit de aproximativ 21 de minute. Nu ruleaza nicio lucrare din /usb/lucrari. Jurnalul arata doar placa video (GPU) in testul C-55 („fereastra cu Adrian”, P6-42), care repeta aceleasi scrieri in registre, ciclu dupa ciclu.
+
+**Cifre:** pasi, viteza, pierderi si temperatura nu apar in date. Memoria libera e de circa 127 GiB, iar cea folosita de circa 598 MiB. Zona de lucru interna e plina in proportie de aproximativ 75% (255621 din 340716 KiB).
+
+**Retea:** functioneaza, la 100 Mb/s, cu adresa 192.168.0.151. S-au trimis 845 de pachete si s-au primit 2168.
+
+**Abateri:** nu exista erori sau avertismente, toate randurile sunt informative. Jurnalul noteaza ca „soneria” canalului GPU e scrisa fara verificare; la adresa 0xbb0090 se scrie 1, dar se citeste inapoi 0. Ultimul rand din jurnal e de la secunda 1215, adica de acum circa 52 de secunde, iar testul C-55 nu apare ca terminat.
+
