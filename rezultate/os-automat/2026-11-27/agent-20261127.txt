@@ -194,3 +194,15 @@ Nu exista erori sau avertismente.
 
 **Abateri:** in jurnal nu apar erori sau avertismente, doar informatii. Ultimul rand din jurnal e de acum aproximativ 36 de secunde, deci proba nu a mai scris nimic de atunci. Nu se vede daca s-a terminat.
 
+2026-11-27 09:52 tura 1
+**Ce ruleaza:** nicio lucrare in asteptare. Calculatorul e pornit de aproximativ 27 de minute. Reteaua merge (100 Mb/s), iar memoria e aproape toata libera: circa 127 GiB liberi, aproximativ 424 MiB folositi.
+
+**Testul placii video (C-54):** s-a terminat cu bine. Toti cei 17 pasi au trecut, cu 7822 scrieri, iar placa raporteaza 8192 MiB memorie video. Raportul a fost salvat pe stick (/usb/raport/gpu-jurnal-171.txt) si trimis pe GitHub fara eroare.
+
+**Abateri:**
+- Protectia sistemului a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Testul a trecut oricum.
+- Firul 5 a fost oprit fortat (cod -9), nu s-a inchis normal.
+- O scriere pe stick a durat 824 ms, fata de o medie de 3,8 ms.
+
+Jurnalul nu contine date despre temperatura, viteza sau pierderi.
+
