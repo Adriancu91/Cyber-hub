@@ -209,6 +209,7 @@
 - Cyber-GPU: după os-364 pe placă — comparația „vechi lângă nou” (rândurile `kt atentie2 …`, `parse_attn_tile2`). După os-359 pe placă — cifrele ceasului termic (marca temperaturii la 500 ms, `compare_boost`); după os-361 pe placă — comparația lotului (`kt lot K 4` / `K 7`, viteza); `T::AttnP`: legați fără să așteptați OS-ul (vezi „Urmează”). După os-358 pe placă — comparația atenției pe plăci (exactele pe programe, timpii). După os-352 pe placă — comparația `mm_tc` (amprentele pe seturi, timpul qkv). După os-341 pe placă, cifrele cursei pe feluri (lista mixtă e pasul lor); altfel nimic urgent; când un program de antrenare e gata de legat, o notă PREDARE (îl pun în `antrenare proba`).
 
 ## Blocaje / nevoie de Adrian
+- Nimic nou de la tine în această sesiune (27 nov 11:11–12:18): os-487 GATA DE TEST (tabloul ținut, rândul cu `--pas-v6`); P6-250 (paza ferestrei de viteză) în CI. Testele pe placă le pornește centrul de comandă.
 - Nimic nou de la tine în această sesiune (27 nov 06:41–08:17): os-483 GATA DE TEST (`--mm-tc-v6`); P6-247 (`--mm-tc-dxdw`, `--pas-v6`) în CI. Testele pe placă le pornește centrul de comandă.
 - Nimic nou de la tine în această sesiune (27 nov 05:12–06:34): os-481 GATA DE TEST (`--pas-v5`); P6-246 (`--mm-tc-v6`) în CI. Testele pe placă le pornește centrul de comandă.
 - Nimic nou de la tine în această sesiune (27 nov 02:42–04:55): P6-244 (os-478, `tur-dupa` corect) și P6-245 (`mm_tc_v5` în pasul #513, `--pas-v5`; CI în curs). Testele pe placă le pornește centrul de comandă.
