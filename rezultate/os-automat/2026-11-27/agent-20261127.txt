@@ -88,3 +88,11 @@ Agentul a citit cheia Claude si tokenul GitHub de pe stick, iar gh-ia a citit si
 - **Abatere:** firul 5 s-a oprit cu codul -9, adica a fost oprit fortat. Jurnalul nu spune de ce.
 - **Lipsesc din date:** temperatura, pasii, viteza si pierderile.
 
+2026-11-27 07:43 tura 1
+- **Ce ruleaza:** calculatorul a pornit acum 2 secunde. Nu ruleaza nicio lucrare, iar folderul de lucrari e gol.
+- **Cifre:** nu exista pasi, viteza, pierderi sau temperatura, pentru ca nu ruleaza nimic. Memoria e aproape toata libera: 130.734 MiB liberi si doar ~35 MiB folositi.
+- **Hardware:** discul NVMe de 512 GB, stick-ul USB (montat la /usb, cu scriere permisa), mouse-ul si tastatura au pornit normal. Cititorul de carduri e gol, dar asta nu e o eroare.
+- **Retea:** functioneaza la 100 Mb/s, cu adresa 192.168.0.151.
+- **De urmarit:** la placa de retea, un semnal de pornire ("LAN_INIT_DONE") nu a venit, desi reteaua merge. Pasii pentru acest tip de placa sunt marcati ca testati doar pe model, nu pe hardware real.
+- **Acces la chei:** agentul si gh-ia au cerut cheile de pe stick (github.token si claude.cheie).
+
