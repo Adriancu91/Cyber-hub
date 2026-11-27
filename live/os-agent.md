@@ -1,43 +1,39 @@
 # Agentul de bord — starea live (Cyber Universe OS)
 
-**Actualizat:** 2026-11-27 11:09 (ceasul OS-ului) · tura 1 · fara abateri noi
+**Actualizat:** 2026-11-27 12:21 (ceasul OS-ului) · tura 2 · fara abateri noi
 
-## Rezumatul lui Claude (2026-11-27 11:09, acum)
-**Acum nu ruleaza nicio lucrare.** Testul placii video (GPU) s-a terminat: toti cei 17 pasi au trecut, cu 8830 de scrieri. Calculatorul e pornit de aproximativ 34 de minute.
-
-**Memoria:** 424 MiB folositi, aproximativ 127 GiB liberi. Reteaua merge la 100 Mb/s. Nu am primit date despre temperatura, viteza sau pierderi.
-
-**Abateri:**
-- Sistemul a blocat 11 scrieri ale placii video in afara zonei permise, toate la pasul „i8e-golden”.
-- Trimiterea rapoartelor pe GitHub a esuat (codul 1).
-- Un proces (firul 5) a fost oprit fortat (codul -9).
-- Pe stick-ul USB, cea mai lenta scriere a durat 0,8 secunde.
+## Rezumatul lui Claude (2026-11-27 12:18; urmatorul la abatere sau la ~10 min)
+Calculatorul a pornit acum 2 secunde și nu rulează nicio lucrare (în /usb/lucrari nu e nimic). Nu există pași, viteză, pierderi sau temperatură de raportat.
+Memorie: liberă circa 130.700 MiB, folosită circa 35 MiB, deci aproape toată e liberă.
+Discuri: SSD-ul intern de 512 GB și stick-ul USB de 30 GB (montat la /usb, cu scriere permisă) funcționează. Mouse-ul și tastatura merg. Cititorul de carduri e gol, ceea ce e normal.
+Rețea: placa I219-LM e conectată la 100 Mb/s și a primit adresa 192.168.0.151. Routerul răspunde.
+Abateri: la pornirea plăcii de rețea, semnalul „LAN_INIT_DONE” nu a venit, deși placa merge. Pașii de pornire pentru acest tip de placă au fost testați doar pe model, nu pe acest calculator. Nu apar erori.
 
 ## Abateri noi
 - niciuna
 
-## Cifrele brute (la fiecare 0 min, fara Claude)
+## Cifrele brute (la fiecare 2 min, fara Claude)
 ```
 $ uptime
-pornit de 2044.16 s
+pornit de 151.49 s
 $ mem
-memorie: libera 130345 MiB, folosita 434432 KiB (heap 11483 / 340716 KiB)
+memorie: libera 130170 MiB, folosita 612744 KiB (heap 232583 / 340716 KiB)
 $ lucrare stare
 lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
   I219-LM  MAC cc:96:e5:08:b7:b5
-  pachete trimise 2732, primite 3976
+  pachete trimise 254, primite 309
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e2000
-  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e2000, RDBAH 00000000, RDH 00000008, RDT 00000007, TDH 0000000c, TDT 0000000c (pasii de pornire: log e1000)
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e2000, RDBAH 00000000, RDH 00000015, RDT 00000014, TDH 0000001e, TDT 0000001e (pasii de pornire: log e1000)
   IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
 ```
 
 ## Ultimele randuri importante din jurnal
 ```
-[2033.840] INFO  gpu: gpu0: i12-q8-matvec: TRECE
-[2033.850] INFO  gpu: gpu0: i13-strat: TRECE
-[2033.850] INFO  gpu: gpu0: i14-simbol: TRECE
-[2033.860] INFO  gpu: gpu0: bus-master-oprit: TRECE
-[2033.860] INFO  gpu: gpu0: tur-dupa: TRECE
+[ 151.860] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[ 151.860] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 151.860] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b31 => 0x00001b31
+[ 151.860] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b31 <- 0x0000101f => 0x0000101f
+[ 151.860] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
 ```
