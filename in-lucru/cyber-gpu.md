@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 20:13 · sarcina: C-157 p.2 — comparațiile P2zzt/P2zzr dacă au venit, altfel D2 (atenția pe mai multe grupuri în token32) · estimat gata: 21:45
+liber · terminat 2026-11-27 21:06 · următorul pas: C-168 p.3 — unealta Mesa 26.3.1 + mm_tc_v8.comp (v8 / v8n), listarea G1–G2, SIMULARE G3; comparația --token32-v3 (P2zzt) când vine
