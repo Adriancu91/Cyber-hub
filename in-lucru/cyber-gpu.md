@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 05:12 · sarcina: C-157 p.2 mm_tc_v6 legat în pasul mixt rapid (TcPick::V6) + seturile de timp transpuse · estimat gata: 06:20
+liber · terminat 2026-11-27 05:56 · următorul pas: comparațiile v5 în pas (P2zzf), token32_v2 (P2zzd), proba v6 + seturile 6/7 (P2zzg/P2zzh) când vin; altfel socoteala conflictelor la citiri (coopMatLoad) pe cele trei steaguri ale pasului
