@@ -430,3 +430,9 @@ Abateri: jurnalul nu conține erori. Totuși, la pornirea plăcii de rețea, un 
 
 **Acces la chei:** agentul a citit cheia GitHub si cheia Claude de pe stick, iar gh-ia a citit cheia GitHub.
 
+2026-11-27 22:11 tura 1
+- **Acum:** calculatorul e pornit de aproape 3 minute si nu ruleaza nicio lucrare. Memoria e aproape toata libera (~127 GB liberi, ~424 MB folositi). Reteaua merge la 100 Mb/s. Temperatura nu apare in date.
+- **Testul placii video (C-54):** toti cei 17 pasi au trecut, cu 4518 scrieri. Raportul e salvat in /usb/raport/gpu-jurnal-188.txt.
+- **De retinut:** sistemul a blocat 11 scrieri ale placii video care ieseau din zona permisa, toate la pasul „i8e-golden”. Protectia a functionat, dar e o abatere de urmarit. O scriere pe stick-ul USB a durat 0,8 secunde (media e 3,8 ms).
+- **Eroare:** trimiterea rapoartelor pe GitHub a esuat (cod 1). Imediat dupa, un alt proces (firul 5) a fost oprit fortat (cod -9).
+
