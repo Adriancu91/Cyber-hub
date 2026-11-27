@@ -305,3 +305,4 @@
 - 2026-11-27 23:05 · sesiunea 280 (cloud): os-498 comparat — `token32_v3` aceiași biți pe placă, 1,453 ms pe simbol la G = 768 (prezis 1,18–1,38: NECONFIRMAT), 478 simb/s cu driverul ≈ lista; T296.
 - 2026-11-27 23:05 · C-168 p.3 G7: v8 / v8n legate în pas cu alegerea pe formă (SIMULARE, T297): lot 6 v7 12 / v8 38 / v8n 97 ca în plan, antrenarea mini bit cu bit; 1 470 PASS, commit `c74237a`. PREDARE P2zzv + P3b.
 - 2026-11-28 00:10 · sesiunea 281 (cloud): C-168 p.4 — planul atenției înainte pe circuite (`attn_fwd_tc`: două treceri, P scris o dată, grila în perechi, 2 blocuri pe SM) + predicțiile H1–H7 scrise înainte de cod; T298 CALCUL; 1 475 PASS, commit `9743c50`. Nou pentru placă: nimic.
+- 2026-11-28 00:58 · sesiunea 282 (cloud): C-168 p.4 pasul 1 — `attn_fwd_tc` scris și compilat (NAK 26.3.1); H1 (120 registre, 27 648 B, 2 blocuri pe SM) și H2 (doar `ldsm`, 3 / 5 bariere) CONFIRMATE pe listare; 1 480 PASS, commit `e235701`. Nou pentru placă: nimic încă.
