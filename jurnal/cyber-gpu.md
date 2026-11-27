@@ -304,3 +304,4 @@
 - 2026-11-27 22:00 · aflat pe listare: compilatorul copia acumulatorii în jurul fiecărui `hmma` (și în v7 de pe placă); cu acumulatori 16×8 v8n coboară 161 → 41 de copii. PREDARE P3a: proba `--mm-tc-v8` pentru OS.
 - 2026-11-27 23:05 · sesiunea 280 (cloud): os-498 comparat — `token32_v3` aceiași biți pe placă, 1,453 ms pe simbol la G = 768 (prezis 1,18–1,38: NECONFIRMAT), 478 simb/s cu driverul ≈ lista; T296.
 - 2026-11-27 23:05 · C-168 p.3 G7: v8 / v8n legate în pas cu alegerea pe formă (SIMULARE, T297): lot 6 v7 12 / v8 38 / v8n 97 ca în plan, antrenarea mini bit cu bit; 1 470 PASS, commit `c74237a`. PREDARE P2zzv + P3b.
+- 2026-11-28 00:10 · sesiunea 281 (cloud): C-168 p.4 — planul atenției înainte pe circuite (`attn_fwd_tc`: două treceri, P scris o dată, grila în perechi, 2 blocuri pe SM) + predicțiile H1–H7 scrise înainte de cod; T298 CALCUL; 1 475 PASS, commit `9743c50`. Nou pentru placă: nimic.
