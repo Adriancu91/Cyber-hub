@@ -303,3 +303,14 @@ Abateri: la pornirea plăcii de rețea, semnalul „LAN_INIT_DONE” nu a venit,
 - La placa de retea, un semnal de pornire (LAN_INIT_DONE) nu a venit. Pasii pentru acest model de placa au fost testati doar in simulare, nu pe hardware real, dar legatura functioneaza.
 - Cititorul de carduri e gol. Asta nu e o eroare.
 
+2026-11-27 14:13 tura 1
+**Acum nu ruleaza nicio lucrare.** Calculatorul a pornit acum cateva secunde, iar in folderul de lucrari de pe stick nu este nicio fisa.
+
+**Memorie:** libera aproximativ 130.700 MiB, folosita de sistem doar circa 36 MiB.
+
+**Retea:** legatura functioneaza la 100 Mb/s. Calculatorul a primit adresa 192.168.0.151 de la router.
+
+**Dispozitive gasite:** discul NVMe de 512 GB, stick-ul USB montat la /usb, mouse-ul si tastatura. Cititorul de carduri e gol si a fost sarit, ceea ce nu e o eroare.
+
+**Abateri:** nu apar erori sau avertismente. Placa de retea a raportat ca un pas de pornire nu s-a confirmat ("LAN_INIT_DONE nu a venit"), dar reteaua merge. Pasi, viteza de antrenare, pierderi si temperatura nu apar in date.
+
