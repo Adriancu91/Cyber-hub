@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 09:12 · sarcina: C-157 p.2 — comparația probei mm_tc_v6 (+@64k) din ciclul automat 09:02 · estimat gata: 10:05
+liber · terminat 2026-11-27 09:59 · următorul pas: comparațiile când vin (pasul cu --pas-v6 lot 2 / lot 6, --mm-tc-dxdw os-485, proba v7 P2zzi, lot 6 cu tabloul ținut P2zzj, token32_v2 P2zzd); altfel următorul punct al cozii C-157
