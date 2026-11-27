@@ -135,3 +135,24 @@ Altfel nu apar erori.
 
 **Cifre:** memoria folosita e de circa 962 MiB, iar cea libera de circa 127 GiB. Pasi, viteza, pierderi si temperatura nu apar in datele primite.
 
+2026-11-27 08:53 tura 1
+**Acum nu ruleaza nicio lucrare.** Calculatorul tocmai a pornit (acum 2 secunde) si sta pregatit. Nu exista cifre de pasi, viteza sau pierderi. Nici temperatura nu apare in date.
+
+**Memorie:** aproape toata e libera, circa 130 GB. Sistemul foloseste doar circa 35 MB.
+
+**Retea:** cablul functioneaza la 100 Mb/s. Calculatorul a primit adresa 192.168.0.151, iar routerul raspunde.
+
+**Discuri:** discul intern (512 GB) si stick-ul USB (/usb, cu scriere permisa) sunt gasite. Cititorul de carduri e gol, ceea ce e normal, nu e o eroare.
+
+**Abateri mici la placa de retea:**
+- Un pas de pornire („LAN_INIT_DONE nu a venit”) nu a confirmat la timp, dar reteaua merge.
+- Pasii acestei placi sunt marcati ca testati doar pe simulare, nu pe hardware real.
+
+Nu exista erori sau avertismente.
+
+2026-11-27 09:02 tura 1
+**Acum:** nu ruleaza nicio lucrare (lista din /usb/lucrari e goala). Calculatorul e pornit de aproximativ 8 minute, iar reteaua merge (100 Mb/s, adresa 192.168.0.151).
+**Placa video:** testul complet (C-54) s-a terminat cu toate cei 17 pasi trecuti, 4808 scrieri, 8 GB memorie video gasita. Rapoartele au fost trimise pe GitHub cu succes.
+**Memorie:** libera aproximativ 127 GB, folosita aproximativ 424 MB. Jurnalul nu are date despre pasi, viteza, pierderi sau temperatura.
+**De urmarit:** sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Firul 5 a fost oprit fortat (cod -9). O scriere pe stick-ul USB a durat neobisnuit de mult (0,9 secunde).
+
