@@ -415,3 +415,18 @@ Abateri: jurnalul nu conține erori. Totuși, la pornirea plăcii de rețea, un 
 
 **Memoria:** libere aproximativ 129.700 MiB, folosit aproximativ 1 GiB. Jurnalul nu are date despre pasi de antrenare, viteza, pierderi sau temperatura.
 
+2026-11-27 22:08 tura 1
+**Calculatorul tocmai a pornit** (de 2 secunde, pornirea a durat 2,9 s). **Nu ruleaza nicio lucrare**, deci nu exista pasi, viteza sau pierderi de raportat. Temperatura nu apare in date.
+
+**Memorie:** 130 GB libera, sistemul foloseste doar 36 MB.
+
+**Internet:** placa de retea merge la 100 Mb/s, adresa 192.168.0.151, iar routerul raspunde.
+
+**Discuri:** SSD-ul de 512 GB si stick-ul USB (/usb, 30 GB, se poate scrie pe el) sunt montate. Mouse-ul si tastatura merg. Cititorul de carduri e gol, ceea ce nu e o eroare.
+
+**Abateri:**
+- La pornirea placii de retea, un semnal de initializare („LAN_INIT_DONE”) nu a venit. Totusi, reteaua functioneaza.
+- Pasii de pornire pentru acest model de placa de retea au fost testati doar pe simulator, nu pe acest calculator.
+
+**Acces la chei:** agentul a citit cheia GitHub si cheia Claude de pe stick, iar gh-ia a citit cheia GitHub.
+
