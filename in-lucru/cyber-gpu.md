@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 09:59 · următorul pas: comparațiile când vin (pasul cu --pas-v6 lot 2 / lot 6, --mm-tc-dxdw os-485, proba v7 P2zzi, lot 6 cu tabloul ținut P2zzj, token32_v2 P2zzd); altfel următorul punct al cozii C-157
+liber · terminat 2026-11-27 09:59 · următorul pas: comparația os-485 (--mm-tc-dxdw, a venit la 09:56: rezultate/…dX/dW) — prima; apoi pasul cu --pas-v6, proba v7 P2zzi, lot 6 cu tabloul ținut P2zzj, token32_v2 P2zzd; altfel următorul punct al cozii C-157
