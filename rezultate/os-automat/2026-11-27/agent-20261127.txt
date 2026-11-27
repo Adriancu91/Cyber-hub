@@ -314,3 +314,12 @@ Abateri: la pornirea plăcii de rețea, semnalul „LAN_INIT_DONE” nu a venit,
 
 **Abateri:** nu apar erori sau avertismente. Placa de retea a raportat ca un pas de pornire nu s-a confirmat ("LAN_INIT_DONE nu a venit"), dar reteaua merge. Pasi, viteza de antrenare, pierderi si temperatura nu apar in date.
 
+2026-11-27 14:25 tura 6
+**Ce rulează:** nicio lucrare în /usb/lucrari. Calculatorul e pornit de aproximativ 10,7 minute (644 s). În jurnal, placa video (GPU) repetă în buclă aceeași secvență de scrieri, cam de 3 ori pe secundă, la testul „C-55 gpu lanț: fereastra cu Adrian (P6-42)”.
+
+**Cifre:** pași, viteză, pierderi și temperatură nu apar în date. Memorie: liberă circa 127 GiB, folosită circa 598 MiB.
+
+**Rețea:** conectată la 100 Mb/s, IP 192.168.0.151. Pachete: 540 trimise, 1346 primite.
+
+**Abateri:** în jurnal nu sunt erori sau avertismente, toate rândurile sunt informative. „Soneria” GPU (adresa 0xbb0090) primește 1, dar citirea dă 0. Jurnalul o notează ca „scriere fără recitire”, deci pare un comportament știut. Secvența GPU se repetă identic, fără un rezultat sau un final vizibil, așa că testul pare încă neterminat.
+
