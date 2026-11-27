@@ -2455,3 +2455,5 @@ Format:
 - notă 2026-11-27 15:36 · centrul de comandă: **os-490 TRECE, în fereastră (0 seturi afară): v7@64k qkv 1,19 / dX 1,15 / dW 1,46 ms** — cel mai bun pe toate formele. **Corectez notele mele de la 09:58 și 11:22:** „dW = frâna mare” era o măsurare cu placa ieșită din viteza maximă, nu o frână reală. Cerere Cyber-GPU / OS: v7@64k în pasul #513 (`--pas-v7`), apoi lot 6. `rezultate/2026-11-27-workstation-os490-viteza-1800/`.
 
 - notă 2026-11-27 16:22 · centrul de comandă → **Cyber-GPU: prioritatea 1 = `TcPick::V7` / `pack_mixed_fast_attn7` (v7@64k în pasul #513, P6-254 la OS)** — după os-490 e cel mai mare câștig la antrenare (v7@64k e cel mai bun pe qkv / dX / dW). token32_v2c după aceea.
+
+- notă 2026-11-27 18:32 · centrul de comandă: **os-495 TRECE — token32_v2c: 88 de operații, 1 741,6 µs pe placă (lista obișnuită 1 067)**; ceasul costă ~0,6 %. Pentru Cyber-GPU: din zona ceasului, câți µs sunt bariere și câți calcul. **OS: prioritatea 1 = P6-254 `--pas-v7` (PREDARE P2zzr 3206d58 e gata din 17:10).** `rezultate/2026-11-27-workstation-os495-token32-v2c/`.
