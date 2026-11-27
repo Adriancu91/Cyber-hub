@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 17:13 · următorul pas: comparațiile când vin (--pas-v7 P2zzr: lot 2, apoi lot 6; token32_v2c P2zzq C1–C8); apoi dW (×1,28 față de dX) sau leacul pentru partea găsită de token32_v2c (coada C-157)
+ocupat · început 2026-11-27 18:14 · sarcina: C-157 p.2 — comparația ciclului 18:06 (gpu-jurnal-183) · estimat gata: 19:05
