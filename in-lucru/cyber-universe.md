@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 12:41 · sarcina: CI P6-250 → Release; P6-251 PREDARE P2zzm (cererea de viteză 1 800 s pentru reluarea dX/dW) · estimat gata: 14:10
+liber · terminat 2026-11-27 13:20 · următorul pas: CI P6-251 (bf0697c) verde → Release; rândul --viteza-1800 GATA DE TEST doar după „da”-ul lui Adrian (viteza maxima 1800 s aprobata); rezultatele os-487 / os-489
