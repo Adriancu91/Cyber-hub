@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 15:44 · următorul pas: CI-ul P6-253 (`8707c2b`, run 46007378447) → Release; PREDAREA Cyber-GPU pentru v7 în pas → P6-254 (`--pas-v7`)
+ocupat · început 2026-11-27 16:14 · sarcina: PREDAREA Cyber-GPU P2zzq (`token32_v2c`, e117394) → Release os-493 + CI P6-253 · estimat gata: 17:30
