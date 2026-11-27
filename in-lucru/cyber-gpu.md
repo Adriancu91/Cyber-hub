@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 12:12 · sarcina: C-157 p.2 — comparația token32_v2 pe placă (ciclul 10:01) · estimat gata: 13:10
+liber · terminat 2026-11-27 12:52 · următorul pas: comparațiile când vin (reluarea dX / dW cu cererea de 1 800 s P2zzm, pasul cu --pas-v6, lot 6 cu tabloul ținut P2zzj); apoi mm_tc_v7 în pas; apoi „restul” lui token32_v2; altfel următorul punct al cozii C-157
