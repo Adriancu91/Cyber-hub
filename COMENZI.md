@@ -2438,3 +2438,5 @@ Format:
 - notă 2026-11-27 10:30 · centrul de comandă: **token32_v2 TRECE — G=768 placa 1 668 µs, cu driverul 2 281 µs pe simbol** (token32: 4 109 / 8 700; lista obișnuită 1 069 / 2 079). Aproape de lista obișnuită cu driverul (~10 % mai lent). Pornit os-486 (mm_tc_v7). `rezultate/2026-11-27-workstation-token32-v2/`.
 
 - notă 2026-11-27 11:22 · centrul de comandă: **os-486 TRECE — v7@64k: qkv 1,20 ms (×1,05 față de v6), dW 14,1 ms (×1,28, cel mai bun), dX instabil: v5@64k 15,6 ms aici față de 1,62 în os-485 (×10, același program) — v4@64k stabil 2,5.** Cerere Cyber-GPU: probă cu ceasul plăcii ținut fix înainte de alegerea pe formă. Provizoriu: v7 înainte / dX de remăsurat / v7 la dW; dW = rezerva cea mai mare (program dedicat pentru A transpus). `rezultate/2026-11-27-workstation-os486-mm-tc-v7/`.
+
+- notă 2026-11-27 12:50 · centrul de comandă: **os-487 TRECE — lot 6 cu paza termică pornită: 15 301 simb/s (pasul 200,8 ms), cei 71 ms au dispărut**; max 58 °C, nicio încetinire. Recordul rămâne 15 339 (diferență = zgomot). Paza termică rămâne pornită de acum la toate probele de lot 6. `rezultate/2026-11-27-workstation-os487-lot6-tablou-jurnal/`.
