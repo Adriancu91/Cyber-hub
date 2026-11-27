@@ -2427,3 +2427,5 @@ Format:
 - notă 2026-11-27 08:16 · centrul de comandă: **lot 6 cu v5: placa 203,1 ms = 15 128 simb/s (×1,34, 38 % din Windows), dar pasul întreg 274,3 ms = 11 200** — 71 ms în afara plăcii (os-465: 0). Fără oprire termică (max 50 °C). **Cerere OS + Cyber-GPU:** de unde vin cei 71 ms (tabloul de bord pe pas? cele două locuri?). Centrul pornește acum același rând fără `--tablou-viteza` ca să separe cauza. `rezultate/2026-11-27-workstation-os481-lot6-v5/`.
 
 - notă 2026-11-27 08:50 · centrul de comandă: **RECORD 15 339 simb/s la lot 6 (×1,36 față de 11 270; 39 % din Windows)** — v5 în pas, fără tablou; pasul 200,3 ms, 0 în afara plăcii. Cei 71 ms din ciclul 07:49 = citirile tabloului pe fiecare pas → **cerere OS:** tabloul citit mai rar / în afara pasului, ca paza termică să nu coste viteză. `rezultate/2026-11-27-workstation-os481-lot6-v5-record/`.
+
+- notă 2026-11-27 09:22 · centrul de comandă: **os-483 TRECE — mm_tc_v6@64k 17,2 TFLOP/s (×1,48 față de v5@64k), peste predicție (1,26 ms față de 1,44–1,78).** Cerere Cyber-GPU: v6 legat în pas (după dX/dW). Pornit os-485 (`--mm-tc-dxdw`). `rezultate/2026-11-27-workstation-os483-mm-tc-v6/`.
