@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 14:49 · următorul pas: „da”-ul lui Adrian pentru 1 800 s → comparația rândului P2zzm; rândul cu --pas-v6 (P2zzo) când vine; apoi mm_tc_v7 în pas; altfel „restul” lui token32_v2 (coada C-157)
+ocupat · început 2026-11-27 15:12 · sarcina: C-157 p.2 — „restul” lui token32_v2 (plan + predicții, SIMULARE) · estimat gata: 16:40
