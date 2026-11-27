@@ -71,5 +71,6 @@ Calea spre Windows (estimat, nemăsurat): F1 v7 → ~150 ms; F3 → ~140; F4 →
 Fiecare pas: măsurătoare înainte, schimbare, aceeași măsurătoare după, notă în hub; dacă o dată nouă schimbă diagnosticul, planul se rescrie.
 
 ## 7. Jurnalul analizei
+- 27 nov 20:05 — **os-496: v7 în pas → 20 795 simb/s la lot 6 (147,7 ms, 53 % din Windows), oracolul la lot 2 = aceleași numere, max 64 °C.** F1 pasul „v7” confirmat (prezis ~150 ms). Două rânduri într-o pornire merg (F5 parțial rezolvat). **Lucrul în curs e terminat → începe planul de reparație.**
 - 27 nov 18:32 — os-495: scrisul dintr-o lansare (token32_v2c) 1 676 µs pe placă față de 1 067 la listă; 88 de operații măsurate cu ceasul (cost 0,6 %). Scrisul rămâne mai bun pe listă; F-scris = barierele dintre operații (de confirmat din zona ceasului).
 - 27 nov 18:15 — ciorna 1 (date: profilul pasului record 08:24, os-485/486/489/490, stările din hub, foaia NVIDIA GA104).
