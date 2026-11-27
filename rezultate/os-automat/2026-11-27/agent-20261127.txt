@@ -96,3 +96,15 @@ Agentul a citit cheia Claude si tokenul GitHub de pe stick, iar gh-ia a citit si
 - **De urmarit:** la placa de retea, un semnal de pornire ("LAN_INIT_DONE") nu a venit, desi reteaua merge. Pasii pentru acest tip de placa sunt marcati ca testati doar pe model, nu pe hardware real.
 - **Acces la chei:** agentul si gh-ia au cerut cheile de pe stick (github.token si claude.cheie).
 
+2026-11-27 07:49 tura 1
+**Acum:** nu ruleaza nicio lucrare. Calculatorul e pornit de aproximativ 5 minute, iar reteaua merge (100 Mb/s, adresa 192.168.0.151).
+
+**Placa video:** testul complet s-a terminat cu bine, toti cei 17 pasi au trecut (4722 scrieri). Placa are 8 GB memorie video. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Cifre:** memorie libera aproximativ 127 GB, folosita aproximativ 0,96 GB. Nu am date despre pasi de antrenare, viteza, pierderi sau temperatura.
+
+**Abateri:**
+- Sistemul a blocat 11 scrieri pe care testul placii video a incercat sa le faca in afara zonei permise, toate la pasul „i8e-golden”. Testul a trecut totusi.
+- Procesul nr. 5 a fost oprit fortat (cod -9), nu s-a inchis singur.
+- Cea mai lunga scriere pe stick-ul USB a durat 0,8 secunde, desi in medie dureaza 3,6 ms.
+
