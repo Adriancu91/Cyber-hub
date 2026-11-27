@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 18:58 · următorul pas: comparațiile când vin (--pas-v7 P2zzr: lot 2, apoi lot 6); altfel planul + predicțiile pentru token32 cu LayerNorm lipit în înmulțirea următoare (D1, P2zzs); apoi dW (×1,28 față de dX)
+ocupat · început 2026-11-27 19:13 · sarcina: C-157 p.2 — comparații noi (dacă au venit) sau planul+predicțiile LayerNorm lipit (D1, P2zzs) · estimat gata: 20:15
