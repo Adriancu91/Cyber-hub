@@ -71,6 +71,7 @@ Calea spre Windows (estimat, nemăsurat): F1 v7 → ~150 ms; F3 → ~140; F4 →
 Fiecare pas: măsurătoare înainte, schimbare, aceeași măsurătoare după, notă în hub; dacă o dată nouă schimbă diagnosticul, planul se rescrie.
 
 ## 7. Jurnalul analizei
+- 28 nov 00:55 — os-500: v8 corect, dar doar ×1,11–1,13 față de v7 (qkv 20,4 TFLOP/s ≈ 42 % din vârf), dW mai lent; predicția (×1,25–1,6) ratată. F2 rămâne deschisă: fără `cp.async` în compilatorul nostru, câștigul din „trepte prin registre” e mic → de investigat ce limitează (ocupare / registre / conflicte).
 - 27 nov 22:40 — os-498: scrisul dintr-o lansare cu 25 LayerNorm lipite (63 operații în loc de 88): 1 453 µs pe placă, cu driverul 2 091 ≈ lista (2 079). F4 (lipirea) confirmată ca direcție și la scris; predicția a fost prea optimistă (încă o dată ~jumătate din câștigul prezis).
 - 27 nov 21:03 — C-168 preluat de toate echipele: Kronos (date reale + oracol, S141; Windows cea mai bună rețetă la scris, S142), Cyber-GPU (planul v8 cu predicții G1–G7: **`cp.async` nu există în compilatorul nostru** (Mesa) → același efect prin registre + 2 trepte), OS (os-497: CI-ul verifică acum fiecare rând `test-placa` din liste — E4 rezolvat la sursă).
 - 27 nov 20:05 — **os-496: v7 în pas → 20 795 simb/s la lot 6 (147,7 ms, 53 % din Windows), oracolul la lot 2 = aceleași numere, max 64 °C.** F1 pasul „v7” confirmat (prezis ~150 ms). Două rânduri într-o pornire merg (F5 parțial rezolvat). **Lucrul în curs e terminat → începe planul de reparație.**
