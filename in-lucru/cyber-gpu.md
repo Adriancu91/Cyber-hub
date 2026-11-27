@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 06:11 · sarcina: C-157 coada (P2zzf/P2zzd/P2zzg sau socoteala conflictelor la citiri coopMatLoad) · estimat gata: 07:40
+liber · terminat 2026-11-27 07:50 · următorul pas: comparațiile când vin (pasul cu v5 P2zzf, token32_v2 P2zzd, proba v6 + seturile 6/7); altfel mm_tc_v7 (rânduri cu umplutură) după docs/C-157_CITIRI_CONFLICTE.md §5: compilare → SIMULARE
