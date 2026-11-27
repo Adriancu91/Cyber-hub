@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 15:12 · sarcina: C-157 p.2 — „restul” lui token32_v2 (plan + predicții, SIMULARE) · estimat gata: 16:40
+liber · terminat 2026-11-27 16:05 · următorul pas: comparațiile când vin (P2zzm la 1 800 s, --pas-v6 P2zzo, token32_v2c P2zzq C1–C8); apoi leacul pentru partea găsită; după dX/dW la viteză: mm_tc_v7 în pas (coada C-157)
