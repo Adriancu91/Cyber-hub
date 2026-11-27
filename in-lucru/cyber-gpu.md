@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 08:57 · următorul pas: comparațiile când vin (lot 6 cu tabloul ținut P2zzj, token32_v2 P2zzd, proba v6 + seturile 6/7, proba v7 P2zzi); altfel următorul punct al cozii C-157
+ocupat · început 2026-11-27 09:12 · sarcina: C-157 p.2 — comparația probei mm_tc_v6 (+@64k) din ciclul automat 09:02 · estimat gata: 10:05
