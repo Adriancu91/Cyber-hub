@@ -282,3 +282,15 @@ Discuri: SSD-ul intern de 512 GB și stick-ul USB de 30 GB (montat la /usb, cu s
 Rețea: placa I219-LM e conectată la 100 Mb/s și a primit adresa 192.168.0.151. Routerul răspunde.
 Abateri: la pornirea plăcii de rețea, semnalul „LAN_INIT_DONE” nu a venit, deși placa merge. Pașii de pornire pentru acest tip de placă au fost testați doar pe model, nu pe acest calculator. Nu apar erori.
 
+2026-11-27 12:24 tura 1
+**Acum:** nicio lucrare nu ruleaza. Calculatorul e pornit de aproximativ 5 minute (313 s), iar reteaua merge (100 Mb/s).
+
+**Testul placii video:** s-a terminat cu bine. Toti cei 17 pasi au trecut, cu 4722 scrieri, iar rapoartele au fost trimise pe GitHub.
+
+**Memoria:** sunt folositi aproximativ 962 MiB, iar liberi sunt aproximativ 127 GiB. Nu exista date despre temperatura, viteza sau pierderi.
+
+**Abateri:**
+- Sistemul a blocat 11 scrieri care cereau acces in afara zonei permise, toate la pasul „i8e-golden”.
+- Firul 5 a fost oprit fortat (cod -9).
+- O scriere pe USB a durat 805 ms, mult peste media de 3,8 ms.
+
