@@ -108,3 +108,18 @@ Agentul a citit cheia Claude si tokenul GitHub de pe stick, iar gh-ia a citit si
 - Procesul nr. 5 a fost oprit fortat (cod -9), nu s-a inchis singur.
 - Cea mai lunga scriere pe stick-ul USB a durat 0,8 secunde, desi in medie dureaza 3,6 ms.
 
+2026-11-27 08:18 tura 1
+**Ce ruleaza:** calculatorul a pornit acum 2,4 secunde, iar pornirea a durat in total aproximativ 2,9 secunde. Nu ruleaza nicio lucrare, deci nu exista pasi, viteza, pierderi sau temperatura de raportat.
+
+**Memoria:** libera aproximativ 130.700 MiB (circa 128 GB), folosita doar 36 MB.
+
+**Discuri:** SSD-ul NVMe SK hynix de 512 GB si stick-ul USB de 30 GB (montat la /usb, cu scriere permisa) sunt pornite. Mouse-ul si tastatura merg. Cititorul de carduri e gol, iar asta nu e o eroare.
+
+**Retea:** placa de retea e pornita, legatura merge la 100 Mb/s, adresa e 192.168.0.151, iar routerul raspunde.
+
+**Abateri:**
+- Placa de retea a raportat ca un semnal de initializare (LAN_INIT_DONE) nu a venit. Placa a pornit totusi.
+- Pasii de pornire pentru acest model de placa au fost testati doar in simulare, nu pe acest calculator.
+
+Altfel nu apar erori.
+
