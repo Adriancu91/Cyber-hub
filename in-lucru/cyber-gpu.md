@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 21:11 · sarcina: C-168 p.3 — unealta Mesa 26.3.1 + mm_tc_v8.comp (v8/v8n), listare G1–G2, SIMULARE G3 · estimat gata: 22:40
+liber · terminat 2026-11-27 22:00 · următorul pas: C-168 p.3 G7 — alegerea pe formă în pas (TcPick::V8 / V8n) + copiile din v8; comparația --mm-tc-v8 (P3a) și --token32-v3 (P2zzt) când vin
