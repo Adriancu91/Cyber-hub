@@ -275,3 +275,10 @@ Agentul și gh-ia au cerut fișierele cu cheile GitHub și Claude de pe stick.
 - Un proces (firul 5) a fost oprit fortat (codul -9).
 - Pe stick-ul USB, cea mai lenta scriere a durat 0,8 secunde.
 
+2026-11-27 12:18 tura 1
+Calculatorul a pornit acum 2 secunde și nu rulează nicio lucrare (în /usb/lucrari nu e nimic). Nu există pași, viteză, pierderi sau temperatură de raportat.
+Memorie: liberă circa 130.700 MiB, folosită circa 35 MiB, deci aproape toată e liberă.
+Discuri: SSD-ul intern de 512 GB și stick-ul USB de 30 GB (montat la /usb, cu scriere permisă) funcționează. Mouse-ul și tastatura merg. Cititorul de carduri e gol, ceea ce e normal.
+Rețea: placa I219-LM e conectată la 100 Mb/s și a primit adresa 192.168.0.151. Routerul răspunde.
+Abateri: la pornirea plăcii de rețea, semnalul „LAN_INIT_DONE” nu a venit, deși placa merge. Pașii de pornire pentru acest tip de placă au fost testați doar pe model, nu pe acest calculator. Nu apar erori.
+
