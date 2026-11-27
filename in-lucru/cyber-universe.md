@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 11:11 · sarcina: CI P6-249 → GATA DE TEST os-NNN, apoi coada C-158 · estimat gata: 12:30
+liber · terminat 2026-11-27 12:18 · următorul pas: CI P6-250 (61dd926) verde → GATA DE TEST os-NNN (rândul P2zzl: --i9 c135 --tablou-viteza --mm-tc --mm-tc-v5 --mm-tc-v6 --mm-tc-64k --mm-tc-dxdw); rezultatele os-486 / os-487
