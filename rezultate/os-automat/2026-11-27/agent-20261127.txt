@@ -332,3 +332,15 @@ Abateri: la pornirea plăcii de rețea, semnalul „LAN_INIT_DONE” nu a venit,
 
 **De retinut:** jurnalul nu are erori sau avertismente, doar informatii. O singura nota: masuratorile de timp „ks” s-au facut in afara ferestrei de viteza maxima, pentru ca cererea expirase, deci acele timpi nu reflecta viteza maxima. Soneria canalului de lucru e scrisa fara verificare, iar jurnalul marcheaza asta ca fiind asa intentionat.
 
+2026-11-27 14:42 tura 1
+**Acum nu ruleaza nicio lucrare.** Calculatorul e pornit de aproximativ 28 de minute, iar reteaua merge (100 Mb/s, adresa 192.168.0.151).
+
+**Testul placii video (C-54):** toti cei 17 pasi au trecut, cu 7822 scrieri. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Abateri:**
+- Sistemul a blocat 11 scrieri in afara zonei permise, toate la pasul „i8e-golden”. Blocarea a functionat, dar e bine de stiut.
+- Firul 5 a fost oprit fortat (cod -9).
+- O scriere pe stick-ul USB a durat 802 ms; in medie dureaza 3,8 ms.
+
+**Memoria:** aproximativ 424 MiB folositi, aproximativ 130.000 MiB liberi. Jurnalul nu are date despre temperatura, pasi de antrenare, viteza sau pierderi.
+
