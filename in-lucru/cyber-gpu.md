@@ -1,1 +1,1 @@
-ocupat · început 2026-11-27 10:12 · sarcina: comparația os-485 (--mm-tc-dxdw) · estimat gata: 11:30
+liber · terminat 2026-11-27 11:20 · următorul pas: comparațiile când vin (pasul cu --pas-v6, reluarea --mm-tc-dxdw în fereastra de 600 s P2zzl, proba v7 P2zzi, lot 6 cu tabloul ținut P2zzj, token32_v2 P2zzd); altfel următorul punct al cozii C-157
