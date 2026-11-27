@@ -185,3 +185,12 @@ Nu exista erori sau avertismente.
 - **Lipsesc din date:** pasi, viteza, pierderi si temperatura nu sunt raportate.
   abatere: [ 759.610] WARN  tcp: 140.82.121.6:443 nu mai raspunde, renunt
 
+2026-11-27 09:48 tura 12
+**Ce ruleaza:** nicio lucrare (folderul de lucrari e gol). Pe placa video ruleaza o proba (C-55, „fereastra cu Adrian”). Ea repeta in bucla acelasi set de scrieri si „suna” canalul de lucru.
+
+**Cifre:** calculatorul e pornit de aproximativ 23 de minute. Memorie libera: aproximativ 127 GiB, folosita: aproximativ 600 MiB (zona de lucru plina in proportie de 75%). Nu exista date despre pasi, viteza, pierderi sau temperatura, pentru ca nu ruleaza nicio lucrare.
+
+**Retea:** conectata la 100 Mb/s, adresa 192.168.0.151. Pachete trimise: 1112, primite: 1770.
+
+**Abateri:** in jurnal nu apar erori sau avertismente, doar informatii. Ultimul rand din jurnal e de acum aproximativ 36 de secunde, deci proba nu a mai scris nimic de atunci. Nu se vede daca s-a terminat.
+
