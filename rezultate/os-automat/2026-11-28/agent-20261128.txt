@@ -1,0 +1,19 @@
+2026-11-28 00:13 tura 1
+**Acum:** calculatorul a pornit acum ~2 secunde. **Nu ruleaza nicio lucrare**, deci nu exista pasi, viteza, pierderi sau temperatura de raportat.
+**Memoria:** libera ~130 GB, folosita ~36 MB.
+**Retea:** placa I219-LM merge la 100 Mb/s, adresa 192.168.0.151, routerul raspunde.
+**Discuri:** SSD-ul SK hynix de 512 GB, stick-ul USB de 30 GB (montat cu scriere) si inca un stick de 60 GB au fost gasite. Cititorul de carduri e gol (nu e o eroare).
+**De urmarit:** la pornirea placii de retea a aparut „LAN_INIT_DONE nu a venit”, desi reteaua functioneaza. Jurnalul mai noteaza ca pasii de pornire pentru acest tip de placa au fost testati doar in simulare, nu pe hardware real.
+**Acces la chei:** agentul a cerut cheile GitHub si Claude de pe stick, iar gh-ia a cerut cheia GitHub.
+
+2026-11-28 00:25 tura 6
+**Ce ruleaza:** calculatorul e pornit de aproximativ 10 minute si 43 de secunde. Nu ruleaza nicio lucrare din /usb/lucrari. In jurnal apare doar placa video (GPU), care repeta in bucla aceleasi scrieri de test, cu nota „C-55 lant: fereastra cu Adrian (P6-42)”.
+
+**Memoria:** libera aproximativ 127 GiB, folosita aproximativ 598 MiB. Zona de lucru (heap) e plina in proportie de 71% (237 din 333 MiB).
+
+**Reteaua:** functioneaza la 100 Mb/s, adresa 192.168.0.151. S-au trimis 459 de pachete si s-au primit 1129.
+
+**Cifre lipsa:** nu exista date despre pasi, viteza, pierderi sau temperatura.
+
+**Abateri:** nu apar erori sau avertismente. Soneria canalului GPU citeste 0 dupa ce i se scrie 1, dar jurnalul o marcheaza ca normala („scriere fara recitire”). Randurile noi din jurnal se opresc la secunda 609,8, adica in ultimele aproximativ 33 de secunde nu a aparut nimic nou.
+
