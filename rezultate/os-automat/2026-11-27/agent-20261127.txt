@@ -403,3 +403,15 @@ Rețeaua merge: cablu conectat la 100 Mb/s, adresa 192.168.0.151, pachetele circ
 Discurile au fost găsite: SSD-ul de 512 GB și stick-ul USB de circa 60 GB, pe care se poate scrie. Mouse-ul și tastatura merg. Cititorul de carduri e gol, dar asta nu e o eroare.
 Abateri: jurnalul nu conține erori. Totuși, la pornirea plăcii de rețea, un semnal de inițializare nu a venit, deși placa merge. Pașii pentru acest tip de placă sunt testați doar pe simulator, nu și pe acest calculator.
 
+2026-11-27 19:54 tura 1
+**Acum** nu ruleaza nicio lucrare. Calculatorul e pornit de aproape 10 minute. Reteaua merge (100 Mb/s, adresa 192.168.0.151).
+
+**Testul placii video (C-54)** s-a terminat: toti cei 17 pasi au trecut, cu 4722 scrieri. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Abateri:**
+- Sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Testul a trecut totusi.
+- Firul 5 a fost oprit fortat (cod -9).
+- O scriere pe stick-ul USB a durat 810 ms, desi in medie dureaza 3,9 ms.
+
+**Memoria:** libere aproximativ 129.700 MiB, folosit aproximativ 1 GiB. Jurnalul nu are date despre pasi de antrenare, viteza, pierderi sau temperatura.
+
