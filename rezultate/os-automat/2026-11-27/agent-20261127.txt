@@ -156,3 +156,14 @@ Nu exista erori sau avertismente.
 **Memorie:** libera aproximativ 127 GB, folosita aproximativ 424 MB. Jurnalul nu are date despre pasi, viteza, pierderi sau temperatura.
 **De urmarit:** sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Firul 5 a fost oprit fortat (cod -9). O scriere pe stick-ul USB a durat neobisnuit de mult (0,9 secunde).
 
+2026-11-27 09:23 tura 1
+**Ce ruleaza:** calculatorul a pornit acum ~3 secunde. Nu ruleaza nicio lucrare (nu exista fise in /usb/lucrari), deci nu sunt pasi, viteza sau pierderi de raportat. Temperatura nu apare in date.
+
+**Memorie:** libera aproape toata (~130,7 GB). Sistemul foloseste doar ~36 MB.
+
+**Discuri si retea:** sunt vazute SSD-ul de 512 GB si stick-ul USB (montat la /usb, cu scriere permisa). Reteaua merge pe cablu la 100 Mb/s, cu adresa 192.168.0.151.
+
+**Abateri:** nu apare nicio eroare sau avertisment. Doua notite minore la placa de retea: un semnal de initializare („LAN_INIT_DONE”) n-a venit, dar legatura a pornit oricum. In plus, pasii de pornire ai acestui model de placa sunt testati doar in simulare, nu pe acest tip de calculator. Cititorul de carduri e gol si a fost sarit, ceea ce e normal.
+
+**De stiut:** programele „agent” si „gh-ia” au cerut acces la fisierele cu cheia GitHub si cheia Claude de pe stick.
+
