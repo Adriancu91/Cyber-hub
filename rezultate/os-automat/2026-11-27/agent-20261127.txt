@@ -396,3 +396,10 @@ Nu apar erori.
 **Memorie:** libera 130344 MiB, folosita circa 424 MiB. Reteaua merge (100 Mb/s). Cea mai lunga scriere pe stick a durat 810 ms.
 Nu exista date despre pasi, viteza, pierderi sau temperatura.
 
+2026-11-27 19:43 tura 1
+Calculatorul a pornit acum 3 secunde și nu rulează nicio lucrare (dosarul de lucrări de pe stick e gol), deci nu există pași, viteză sau pierderi de raportat.
+Memorie: liberă aproape toată (circa 128 GB), folosită doar circa 35 MB. Temperatura nu apare în date.
+Rețeaua merge: cablu conectat la 100 Mb/s, adresa 192.168.0.151, pachetele circulă în ambele sensuri.
+Discurile au fost găsite: SSD-ul de 512 GB și stick-ul USB de circa 60 GB, pe care se poate scrie. Mouse-ul și tastatura merg. Cititorul de carduri e gol, dar asta nu e o eroare.
+Abateri: jurnalul nu conține erori. Totuși, la pornirea plăcii de rețea, un semnal de inițializare nu a venit, deși placa merge. Pașii pentru acest tip de placă sunt testați doar pe simulator, nu și pe acest calculator.
+
