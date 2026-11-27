@@ -1,1 +1,1 @@
-liber · terminat 2026-11-27 13:20 · următorul pas: CI P6-251 (bf0697c) verde → Release; rândul --viteza-1800 GATA DE TEST doar după „da”-ul lui Adrian (viteza maxima 1800 s aprobata); rezultatele os-487 / os-489
+ocupat · început 2026-11-27 13:41 · sarcina: Release P6-251 + P6-252 (P2zzn token32 primul simbol separat) · estimat gata: 14:50
