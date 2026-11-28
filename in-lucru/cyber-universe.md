@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 06:06 · următorul pas: rezultatele os-503 (`--pas-v8`) și os-504 (`--atentie-fwd-tc`); greutățile #513 pe stick → P6-261; PREDĂRI noi Cyber-GPU (`mm_tc_v8r`); apoi coada C-158
+ocupat · început 2026-11-28 06:13 · sarcina: rezultatele os-503/os-504 (rapoartele 06:03/06:08) + coada C-158 · estimat gata: 07:40
