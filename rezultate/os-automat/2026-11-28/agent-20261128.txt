@@ -280,3 +280,11 @@ Nu există pași, viteză, pierderi sau temperatură de raportat. În jurnal nu 
 
 **Memorie:** aproximativ 1,1 GiB folositi, aproximativ 126 GiB liberi. Nu exista date de pasi, viteza, pierderi sau temperatura.
 
+2026-11-28 17:33 tura 1
+Calculatorul tocmai a pornit (de 2 secunde) și nu rulează nicio lucrare. Nu există încă pași, viteză sau pierderi, iar temperatura nu e raportată.
+Memorie: aproape toată e liberă (circa 130 GB), sistemul folosește doar circa 35 MB.
+Rețea: funcționează pe cablu la 100 Mb/s, cu adresa 192.168.0.151, iar routerul răspunde.
+Dispozitive găsite: discul NVMe de 512 GB, stick-ul USB (montat, se poate scrie pe el), mouse-ul și tastatura. Cititorul de carduri e gol și a fost sărit, ceea ce e normal.
+De urmărit: placa de rețea a semnalat că un pas de inițializare nu a venit (LAN_INIT_DONE), deși legătura merge. Pașii ei de pornire sunt testați doar pe model, nu și pe acest calculator.
+Agentul a cerut cheile de pe stick (GitHub și Claude). Nu apare nicio eroare.
+
