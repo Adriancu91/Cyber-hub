@@ -205,3 +205,13 @@ Nicio eroare, niciun avertisment și niciun rând nou în jurnal.
 
 **Abateri:** nicio eroare si niciun avertisment, doar mesaje informative. Testul C-55 nu arata inca un rezultat, doar aceeasi bucla repetata. „Soneria” canalului (comanda prin care pornesti o lucrare pe placa video) primeste 1, dar se citeste inapoi 0. Jurnalul noteaza acest lucru ca „scriere fara recitire”, deci pare ceva asteptat.
 
+2026-11-28 11:52 tura 1
+**Acum:** nicio lucrare nu ruleaza. Calculatorul e pornit de aproximativ 37 de minute. Memoria e in regula: aproape 130 GB liberi, aproximativ 1,1 GB folositi. Reteaua merge (100 Mb/s). Nu am date despre pasi, viteza, pierderi sau temperatura.
+
+**Testul placii video (GPU):** s-a terminat si toti cei 17 pasi au trecut, cu 4722 de scrieri. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**De urmarit:**
+- Sistemul a blocat 11 scrieri pe care testul le-a cerut in afara zonei permise, toate la pasul „i8e-golden”. Blocajul e o protectie care a functionat, dar e o abatere.
+- Un proces (firul 5) a fost oprit fortat (cod -9). Jurnalul nu spune care era.
+- Stick-ul USB a avut o scriere lenta de aproape 0,9 secunde. Media a fost insa normala, 3,8 ms.
+
