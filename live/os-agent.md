@@ -1,6 +1,6 @@
 # Agentul de bord — starea live (Cyber Universe OS)
 
-**Actualizat:** 2026-11-28 10:44 (ceasul OS-ului) · tura 17 · fara abateri noi
+**Actualizat:** 2026-11-28 10:46 (ceasul OS-ului) · tura 18 · fara abateri noi
 
 ## Rezumatul lui Claude (2026-11-28 10:41; urmatorul la abatere sau la ~10 min)
 **Acum:** nu ruleaza nicio lucrare de antrenare (folderul de lucrari e gol). Calculatorul e pornit de aproximativ 32 de minute.
@@ -19,25 +19,25 @@
 ## Cifrele brute (la fiecare 2 min, fara Claude)
 ```
 $ uptime
-pornit de 2038.62 s
+pornit de 2161.22 s
 $ mem
-memorie: libera 130170 MiB, folosita 612748 KiB (heap 255628 / 340716 KiB)
+memorie: libera 130170 MiB, folosita 612748 KiB (heap 255723 / 340716 KiB)
 $ lucrare stare
 lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
   I219-LM  MAC cc:96:e5:08:b7:b5
-  pachete trimise 1484, primite 3116
+  pachete trimise 1553, primite 3373
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e3000
-  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e3000, RDBAH 00000000, RDH 0000000c, RDT 0000000b, TDH 0000000c, TDT 0000000c (pasii de pornire: log e1000)
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e3000, RDBAH 00000000, RDH 0000000d, RDT 0000000c, TDH 00000011, TDT 00000011 (pasii de pornire: log e1000)
   IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
 ```
 
 ## Ultimele randuri importante din jurnal
 ```
-[1972.570] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
-[1972.600] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
-[1972.630] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b31 => 0x00001b31
-[1972.650] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b31 <- 0x0000101f => 0x0000101f
-[1972.680] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
+[2082.080] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
+[2082.110] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[2082.140] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b31 => 0x00001b31
+[2082.460] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b31 <- 0x0000101f => 0x0000101f
+[2082.490] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
 ```
