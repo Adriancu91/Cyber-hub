@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 17:56 · următorul pas: comparațiile P5b (J6/J7) / P5c (L6/L7) / P5d (M6/M7) / P3f / P3g când vin; altfel C-168 p.5 P5f (cele 98 colsum finale într-o lansare), întâi planul + predicțiile
+ocupat · început 2026-11-28 18:14 · sarcina: comparațiile din gpu-jurnal-216 / ciclu-auto 18:10 (P5b/P5c/P5d dacă sunt), altfel C-168 p.5 P5f · estimat gata: 20:30
