@@ -215,3 +215,12 @@ Nicio eroare, niciun avertisment și niciun rând nou în jurnal.
 - Un proces (firul 5) a fost oprit fortat (cod -9). Jurnalul nu spune care era.
 - Stick-ul USB a avut o scriere lenta de aproape 0,9 secunde. Media a fost insa normala, 3,8 ms.
 
+2026-11-28 12:53 tura 1
+**Acum:** calculatorul a pornit acum 2,6 secunde. Nu ruleaza nicio lucrare (antrenament sau test), deci nu exista pasi, viteza sau pierderi de raportat. Nu am date despre temperatura.
+
+**Memorie:** libera ~130.700 MiB, folosita ~36 MiB. Pornirea completa a durat 2,9 secunde.
+
+**Ce merge:** mouse, tastatura, stick USB (montat la /usb, cu scriere), discul NVMe de 512 GB. Reteaua merge la 100 Mb/s, cu adresa 192.168.0.151.
+
+**De notat:** placa de retea a raportat la pornire „LAN_INIT_DONE nu a venit”, dar legatura functioneaza. Pasii de pornire ai acestei placi au fost testati doar pe model, nu si pe calculatorul real. Cititorul de carduri e gol (normal, nu e eroare). Programele „agent” si „gh-ia” au cerut acces la fisierele cu cheile GitHub si Claude.
+
