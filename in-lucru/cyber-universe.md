@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 02:30 · următorul pas: rezultatul os-500 (--mm-tc-v8) → vitezele Cyber-GPU → rândul --pas-v8 (os-501) GATA DE TEST; PREDĂRI noi Cyber-GPU; apoi coada C-158
+ocupat · început 2026-11-28 02:42 · sarcina: verific rezultate os-500/PREDĂRI Cyber-GPU, apoi coada C-158 · estimat gata: 04:45
