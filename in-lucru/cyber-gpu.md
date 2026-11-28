@@ -1,1 +1,1 @@
-ocupat · început 2026-11-28 03:11 · sarcina: C-168 p.4 pasul 3 (proba --atentie-fwd-tc lângă attn_fwd_tile3, H4/H5, nota pentru OS) · estimat gata: 05:00
+liber · terminat 2026-11-28 04:10 · următorul pas: comparația pasului cu attn8 + RATES_OS500 (G7) sau a probei --atentie-fwd-tc (H4, H5, nota P4a) când vin; altfel v8 cu mai puține copii de registre / proba de diagnostic (docs/C-168_OS500_V8.md §4)
