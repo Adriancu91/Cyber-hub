@@ -71,6 +71,7 @@ Calea spre Windows (estimat, nemăsurat): F1 v7 → ~150 ms; F3 → ~140; F4 →
 Fiecare pas: măsurătoare înainte, schimbare, aceeași măsurătoare după, notă în hub; dacă o dată nouă schimbă diagnosticul, planul se rescrie.
 
 ## 7. Jurnalul analizei
+- 28 nov 18:36 — os-514: 26 085 simb/s; dW măsurat corect în fereastră (v7 1,455 ≈ v8n 1,459). Toate variantele v7–v8r plafonate la ~18–22 TFLOP/s → F2 cere o înmulțire de altă construcție (nu încă o variantă a lui v8).
 - 28 nov 16:30 — **Platou ~119 ms (25 900–26 000 simb/s, 66 % din Windows).** os-512: v8r nu e ales la lot 6, GELU lipit ~0. Profil: înmulțiri 72 % (v8n ~19 TFLOP/s medie). Diagnostic actualizat: F2 (înmulțirea la formele lotului 6) e acum singura frână mare; F4 rămasă ~10 ms. Planul se reordonează: F2 înainte de restul lipirilor.
 - 28 nov 13:30 — os-508: reziduurile lipite −1 ms → 25 865 simb/s (66 % din Windows). F4 abia începută; mărunte rămase ~20 ms.
 - 28 nov 12:00 — **E1 ÎNCHISĂ: antrenarea pe datele reale în OS = oracolul PyTorch (lot 2 și 6). F3 ÎNCHISĂ: atenția înainte în pas → 25 635 simb/s la lot 6 (119,8 ms, 65 % din Windows)**, mai bine decât estimarea (127). Profil nou de luat din ciclul 11:52; rămân F2 (înmulțirile, ~58 %), F4 (mărunte ~21 ms).
