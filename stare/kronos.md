@@ -1,8 +1,9 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-28 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-28 14:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
+- **C-168 p.2 — confirmat de OS (os-507, ~11:15), verificat de supraveghetor:** pornit din greutățile #513 de pe stick (S143) și loturile reale (S141), pasul OS dă ACELEAȘI NUMERE ca oracolul PyTorch S141 la pașii 1–10: lot 2 pasul 1 = 1,067859 (S141 1,067867), lot 6 = 1,010690 (S141 1,010662); abaterea max 5,2e-5 la pierdere, 3,2e-4 la normă (toleranța 1e-3 / 2e-3). E1 închisă.
 - **S143 (C-168 p.2, pregătirea Kronos) — GATA, verificată de supraveghetor:** greutățile de pornire #513 (`reteta.json` + 148 × `initiale\*.f32`, 392.324.720 o) sunt pe stick în `E:\antrenare\pas_de_aur_513\`; SHA-256 `reteta.json` = `ce4150b8…` (= `PAS_DE_AUR.md`), 149/149 SHA citite înapoi de pe stick, 0 reîncercări; ~27,3 GB liberi pe `E:` după. Fără placă, nimic șters, nimic în repo.
 - **C-168, partea Kronos (punctele 1 și 7) — GATA, verificată de supraveghetor:**
   - **S141 (E1):** oracolul PyTorch #513 pe primii 10 pași cu loturile reale (bucățile #651, sămânța 1134), lot 2 și lot 6, F32 și bf16 — **VALID** (lot 2 F32 identic cu S140, pasul 1 = 1,067867; lot 6 pasul 1 = 1,0107 F32 / 1,0108 bf16; fără NaN). Bucățile #651 + `index.json` + `bpe_16384.json` sunt pe stick în `E:\antrenare\date\` (29 de fișiere, 2,68 GB), SHA 29/29 citit înapoi de pe stick.
@@ -11,7 +12,7 @@
 - Chat-ul merge pe 8787 cu **#651**. Pauza C-156 rămâne pentru orice antrenare.
 
 ## Urmează
-- Nimic în coadă: partea Kronos din C-168 (p.1, p.2 pregătirea, p.7) e toată făcută. Așteptăm verdictul OS la `--date-reale` (P6-261) față de oracolul S141.
+- Nimic în coadă: partea Kronos din C-168 (p.1, p.2, p.7) e făcută și confirmată de OS. Dacă OS-ul vrea oracolul pe mai mulți pași (de ex. 100–300, banda S140) sau alt lot, o cere aici; o comparație pe procesor o pot aproba singur.
 - Propus, doar cu „da”: S138 (0′) zgomotul, (2) piesele ieftine, (3) + fără γ.
 
 ## Ce oferă proiectul celorlalți
