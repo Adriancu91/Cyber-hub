@@ -71,6 +71,7 @@ Calea spre Windows (estimat, nemăsurat): F1 v7 → ~150 ms; F3 → ~140; F4 →
 Fiecare pas: măsurătoare înainte, schimbare, aceeași măsurătoare după, notă în hub; dacă o dată nouă schimbă diagnosticul, planul se rescrie.
 
 ## 7. Jurnalul analizei
+- 28 nov 13:30 — os-508: reziduurile lipite −1 ms → 25 865 simb/s (66 % din Windows). F4 abia începută; mărunte rămase ~20 ms.
 - 28 nov 12:00 — **E1 ÎNCHISĂ: antrenarea pe datele reale în OS = oracolul PyTorch (lot 2 și 6). F3 ÎNCHISĂ: atenția înainte în pas → 25 635 simb/s la lot 6 (119,8 ms, 65 % din Windows)**, mai bine decât estimarea (127). Profil nou de luat din ciclul 11:52; rămân F2 (înmulțirile, ~58 %), F4 (mărunte ~21 ms).
 - 28 nov 11:10 — os-505: v8r@64k 22,2 TFLOP/s la qkv (46 % din vârf), dX 0,933 ms; dW de la v8 în sus măsurat în afara ferestrei (proba prea lungă: 2 429 s) → F2 progresează încet (+9–11 % pe treaptă); probele lungi trebuie împărțite.
 - 28 nov 08:48 — E9 (nouă): os-505 oprit de ceasul de siguranță (40 min) fără raport — greșeala centrului la `ceas`. Repornit cu `ceas 70`. Remediu: regulă `ceas` ≥ 60 la probele lungi; propus OS-ului un avertisment automat în `verifica-rand`.
