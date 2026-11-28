@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 17:43 · următorul pas: rezultatele os-513 / os-514 (lot 2 întâi); PREDĂRI noi Cyber-GPU; apoi coada C-158
+ocupat · început 2026-11-28 18:12 · sarcina: leg PREDAREA Cyber-GPU P5d (reziduuri lipite în coada lui out/proj) în Release os-515 · estimat gata: 19:40
