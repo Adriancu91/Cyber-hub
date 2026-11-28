@@ -68,3 +68,13 @@ Memorie: 129741 MiB libera, aproximativ 1 GiB folosit. Temperatura nu apare in d
 - **Abatere minora:** placa de retea nu a trimis semnalul obisnuit de pornire ("LAN_INIT_DONE"), dar legatura merge. Pasii pentru acest tip de placa nu au fost inca testati pe calculator real, ci doar pe simulare.
 - **De retinut:** agentul si gh-ia au citit cheile de pe stick (GitHub si Claude). Cititorul de carduri e gol, ceea ce e normal, nu e o eroare.
 
+2026-11-28 07:23 tura 1
+**Acum nu ruleaza nicio lucrare.** Calculatorul e pornit de aproape 10 minute. Testul placii video (lantul C-54) s-a terminat: **toti cei 17 pasi au trecut**, cu 4722 scrieri. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Cifre:** memorie libera aproximativ 127 GiB, folosit aproximativ 962 MiB. Placa video are 8 GiB. Reteaua merge la 100 Mb/s. Temperatura nu apare in date, iar pasi, viteza si pierderi nu exista, fiindca nu ruleaza nicio antrenare.
+
+**Abateri:**
+- Sistemul a **blocat 11 scrieri** cerute in afara zonei permise, toate la pasul „i8e-golden”. Protectia a functionat, dar cererile au existat.
+- Firul 5 a fost **oprit fortat** (cod -9).
+- O scriere pe stick-ul USB a durat 890 ms, mult peste media de 3,6 ms.
+
