@@ -245,3 +245,11 @@ Nicio eroare, niciun avertisment și niciun rând nou în jurnal.
 
 **Abatere:** firul 5 a fost oprit fortat (cod -9). Separat, o scriere pe stick-ul USB a durat 824 ms, mult peste media de 3,7 ms.
 
+2026-11-28 15:48 tura 1
+Calculatorul tocmai a pornit (de 2 secunde) și nu rulează nicio lucrare: nu există pași, viteză sau pierderi de raportat.
+Memorie: aproape toată liberă (circa 128 GB), folosiți doar 36 MB. Temperatura nu apare în date.
+Toate componentele au fost găsite: discul de 512 GB, stick-ul USB de 30 GB (se poate scrie pe el), tastatura și mouse-ul. Cititorul de carduri e gol, ceea ce nu e o problemă.
+Internetul merge: cablu conectat la 100 Mb/s, adresa 192.168.0.151.
+Nu sunt erori sau avertismente. Două lucruri de reținut: un semnal de pornire al plăcii de rețea nu a venit, deși rețeaua funcționează. Iar pașii de pornire ai plăcii de rețea au fost testați doar pe simulator, nu pe acest calculator.
+Agentul și gh-ia au cerut acces la fișierele cu cheile (GitHub și Claude).
+
