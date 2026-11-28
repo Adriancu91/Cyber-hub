@@ -1,1 +1,1 @@
-ocupat · început 2026-11-28 12:14 · sarcina: C-168 p.5 P5c (GELU înainte în coada lui fc) sau comparațiile sosite · estimat gata: 13:45
+liber · terminat 2026-11-28 13:20 · următorul pas: comparațiile P3f (W1–W4) / P3g (K5–K6) / P5a / P5b când vin; altfel codul C-168 p.5 P5c (planul + L1–L7 scrise, commit 3d5d07d; întâi unealta NAK ~35 min)
