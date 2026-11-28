@@ -416,3 +416,4 @@
 - 2026-11-28 04:40 — P6-260: PREDAREA Cyber-GPU P3c (vitezele măsurate în os-500) legată în `--pas-v8`; loturile din `test-placa` rămân sintetice acum că datele reale sunt pe stick; CI pe 25 de părți (o parte tăiată la 60 min), rândul GATA DE TEST după CI verde. C-168 p.2 preluat (P6-261), așteaptă greutățile #513 pe stick.
 - 2026-11-28 05:25 — os-503 (P6-260, `--pas-v8` cu vitezele os-500) CI verde → GATA DE TEST, rândurile lot 2 + lot 6. P6-262: PREDAREA Cyber-GPU P4a (proba `--atentie-fwd-tc`) legată, SIMULARE 4 / 4 TRECE, în CI.
 - 2026-11-28 06:06 — P6-262: CI verde → **os-504 GATA DE TEST** (`test-placa --tablou-viteza --atentie-placi --atentie2 --atentie3 --atentie-fwd-tc`).
+- 2026-11-28 07:25 — os-503 rulat: lot 6 placa 140,6 ms = 21 847 simb/s (record). P6-263: PREDAREA Cyber-GPU P3d (`mm_tc_v8r`) legată, CI verde → **os-505 GATA DE TEST** (`test-placa --tablou-viteza --mm-tc --mm-tc-v6 --mm-tc-v7 --mm-tc-v8 --mm-tc-v8r --mm-tc-64k --mm-tc-dxdw`).
