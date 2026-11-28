@@ -224,3 +224,13 @@ Nicio eroare, niciun avertisment și niciun rând nou în jurnal.
 
 **De notat:** placa de retea a raportat la pornire „LAN_INIT_DONE nu a venit”, dar legatura functioneaza. Pasii de pornire ai acestei placi au fost testati doar pe model, nu si pe calculatorul real. Cititorul de carduri e gol (normal, nu e eroare). Programele „agent” si „gh-ia” au cerut acces la fisierele cu cheile GitHub si Claude.
 
+2026-11-28 13:01 tura 4 ABATERE
+**Ce ruleaza:** pornirea placii video (GPU), etapa „C-55 gpu lant”, care asteapta o fereastra de lucru cu tine (P6-42). Nu ruleaza nicio lucrare de antrenare, deci nu exista pasi, viteza sau pierderi. Temperatura nu apare in date.
+
+**Cifre:** calculatorul e pornit de ~412 s (aproape 7 minute). Memorie: ~127 GiB libera, ~1 GiB folosita. Reteaua merge (100 Mb/s, adresa 192.168.0.151).
+
+**Abatere 1:** pornirea procesorului intern al placii video a reusit (pas „i8-gsp-init: ok”). A durat insa ~24 de secunde si a trimis 2 rapoarte de eroare. Unul dintre ele vine de la partea de afisare (Display Engine): „NV_ERR_INVALID_DMA_SPECIFIER”.
+
+**Abatere 2:** dupa aceea, o scriere in placa video a fost incercata de 5 ori si nu a avut efect: valoarea a ramas de fiecare data 0xffffffff in loc de 0.
+  abatere: [ 408.160] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"
+
