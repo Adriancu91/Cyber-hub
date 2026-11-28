@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 19:50 · următorul pas: rezultatele os-515 (lot 2 întâi); PREDĂRI noi Cyber-GPU (înmulțirea nouă); apoi coada C-158
+ocupat · început 2026-11-28 20:11 · sarcina: rezultatele os-515 + PREDĂRI Cyber-GPU, apoi coada C-158 · estimat gata: 21:30
