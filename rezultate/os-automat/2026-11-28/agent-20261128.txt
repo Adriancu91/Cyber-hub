@@ -97,3 +97,14 @@ Nu exista erori sau avertismente in jurnal.
 
 **Abateri:** nu apare nicio eroare sau avertisment. „Soneria” canalului de lucru se citeste inapoi ca 0, dar jurnalul o marcheaza ca scriere fara recitire. Temperatura nu apare in date.
 
+2026-11-28 08:10 tura 11
+**Ce ruleaza:** nicio lucrare pornita (folderul de lucrari e gol). Calculatorul e pornit de aproximativ 21 de minute.
+
+**Memorie:** aproape toata e libera (~127 GiB). Sunt folosiți ~600 MiB, iar zona de lucru interna e plina in proportie de 75%.
+
+**Retea:** legatura merge la 100 Mb/s, adresa 192.168.0.151. Au plecat 862 de pachete si au venit 1514.
+
+**Placa video:** jurnalul arata testul „C-55 gpu lant” (fereastra cu Adrian, P6-42), care repeta in bucla aceleasi scrieri in placa video. Soneria canalului de lucru se citeste inapoi ca 0, dar jurnalul noteaza ca asa e de asteptat („scriere fara recitire”).
+
+**Abateri:** nicio eroare sau avertisment. Ultimul rand din jurnal e de acum ~80 de secunde, deci nu reiese daca testul s-a terminat sau doar s-a oprit. Pasi, viteza, pierderi si temperatura nu apar in aceste date.
+
