@@ -1,1 +1,1 @@
-ocupat · început 2026-11-28 16:42 · sarcina: CI os-514 → GATA DE TEST, PREDARE nouă dacă există, apoi coada C-158 · estimat gata: 17:40
+liber · terminat 2026-11-28 17:25 · următorul pas: rezultatele os-513 / os-514 (lot 2 întâi); PREDĂRI noi Cyber-GPU; apoi coada C-158
