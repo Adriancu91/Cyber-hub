@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 05:08 · următorul pas: comparația os-501 (G7) sau a probei --atentie-fwd-tc (H4, H5) când vin; altfel modulul nvidia_ga104::mm_tc_v8r + proba --mm-tc-v8r pentru OS (docs/C-168_V8R.md §4)
+ocupat · început 2026-11-28 05:13 · sarcina: C-168 p.3 urmarea: modulul nvidia_ga104::mm_tc_v8r + proba --mm-tc-v8r pentru OS · estimat gata: 06:05
