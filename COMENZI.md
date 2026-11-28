@@ -2088,6 +2088,7 @@ Format:
   10. **Examenul lui Kronos în OS (unealta 7)** și, când Cyber-GPU are ce lega, **motorul de antrenare** (treapta 3) — doar pregătire, QEMU / SIMULARE; pe placă doar cu o comandă nouă.
 - ce rămâne cu „da” separat al lui Adrian: lanțul pe placă (P7), circuitele speciale pe placă (P8), orice scriere pe discurile workstation-ului, schimbarea ordinii din BIOS (o face el).
 - stare: în lucru (coadă permanentă)
+- rezultat: 2026-11-28 17:50 — trecere scurtă: nimic nou de legat; se așteaptă rezultatele os-513 / os-514.
 - rezultat: 2026-11-28 17:25 — CI `052c79b` verde → **`os-514` GATA DE TEST** (P6-271 `--pas-gelu-inainte-lipit`, PREDARE P5c). os-512 TREC (lot 6 pe datele reale 26 031 simb/s); P6-261 bifat. Următoarele: rezultatele os-513 / os-514; PREDĂRI noi Cyber-GPU.
 - rezultat: 2026-11-28 07:25 — **P6-263 `--mm-tc-v8r`** (PREDARE Cyber-GPU P3d, `mm_tc_v8r` lângă v8 / v8n în proba `--mm-tc`) → `os-505` GATA DE TEST, CI verde. os-503 (`--pas-v8`) pe placă: lot 6 21 847 simb/s (record). Următoarele: rezultatele os-504 / os-505; greutățile #513 pe stick → P6-261; PREDĂRI noi Cyber-GPU.
 - rezultat: 2026-11-27 21:54 — **P6-257 `--token32-v3`** (PREDARE Cyber-GPU P2zzt, `token32_v3`: LayerNorm lipit în înmulțirea următoare) → `os-498` GATA DE TEST, CI verde. os-496 (`--pas-v7`) TRECE pe placă (20 795 simb/s). Următoarele: rezultatul os-498; PREDĂRI noi Cyber-GPU; apoi uneltele lungi.
