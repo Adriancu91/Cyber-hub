@@ -1,1 +1,1 @@
-ocupat · început 2026-11-28 08:11 · sarcina: C-168 p.4 pasul 4 (attn_fwd_tc legat în pasul #513, cererea os-504) · estimat gata: 09:40
+liber · terminat 2026-11-28 09:05 · următorul pas: comparația P4b (lot 2 oracolul, lot 6) / P3e / --mm-tc-v8r când vin; altfel C-168 p.5 (lipirea lansărilor mărunte) cu plan + predicții întâi
