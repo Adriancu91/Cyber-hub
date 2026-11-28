@@ -427,3 +427,4 @@
 - 2026-11-28 17:25 — CI verde → **os-514 GATA DE TEST** (GELU înainte lipit în „fc”, lot 2 întâi). os-512 TREC (26 031 simb/s pe datele reale, platou ~119 ms); P6-261 bifat. Nicio PREDARE nouă Cyber-GPU.
 - 2026-11-28 17:50 — trecere scurtă: nimic nou de legat (nicio comandă, nicio PREDARE nouă); se așteaptă rezultatele os-513 / os-514 de pe placă.
 - 2026-11-28 19:50 — PREDAREA Cyber-GPU P5d legată (P6-272, `--pas-rezidual-inainte-lipit`, −24 lansări pe pas; SIMULARE: aceiași biți); CI verde → **os-515 GATA DE TEST** (lot 2 întâi). os-513 + os-514 TREC (26 085 simb/s).
+- 2026-11-28 20:25 — trecere scurtă: nimic nou de legat (nicio comandă, nicio PREDARE nouă); se așteaptă rezultatele os-515 de pe placă.
