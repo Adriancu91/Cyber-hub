@@ -234,3 +234,14 @@ Nicio eroare, niciun avertisment și niciun rând nou în jurnal.
 **Abatere 2:** dupa aceea, o scriere in placa video a fost incercata de 5 ori si nu a avut efect: valoarea a ramas de fiecare data 0xffffffff in loc de 0.
   abatere: [ 408.160] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"
 
+2026-11-28 13:04 tura 1
+**Acum:** nu ruleaza nicio lucrare. Calculatorul e pornit de aproximativ 10,5 minute, iar reteaua merge (100 Mb/s).
+
+**Placa video:** testul C-54 s-a terminat. Toti cei 17 pasi au trecut, cu 4722 scrieri. Sistemul a blocat 11 scrieri care ieseau din zona permisa, toate la pasul i8e-golden. A fost o protectie, nu o cadere.
+
+**Rapoarte:** au fost trimise pe GitHub fara eroare.
+
+**Memorie:** aproximativ 1 GiB folosit, 129.741 MiB liberi. Jurnalul nu are date despre temperatura, pasi, viteza sau pierderi.
+
+**Abatere:** firul 5 a fost oprit fortat (cod -9). Separat, o scriere pe stick-ul USB a durat 824 ms, mult peste media de 3,7 ms.
+
