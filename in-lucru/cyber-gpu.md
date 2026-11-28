@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 06:15 · următorul pas: comparațiile os-501 (G7), --atentie-fwd-tc (H4, H5) sau --mm-tc-v8r (V1–V4) când vin; altfel proba de diagnostic a așteptării citirilor (docs/C-168_OS500_V8.md §4)
+liber · terminat 2026-11-28 06:12 · următorul pas: comparațiile os-501 (G7), --atentie-fwd-tc (H4, H5) sau --mm-tc-v8r (V1–V4) când vin; altfel proba de diagnostic a așteptării citirilor (docs/C-168_OS500_V8.md §4)

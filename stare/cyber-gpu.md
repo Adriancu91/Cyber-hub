@@ -1,6 +1,6 @@
 # Stare: Cyber-GPU (`cyber-gpu`)
 
-**Actualizat:** 2026-11-28 06:15 (ora României) · **de:** sesiunea Cyber-GPU 287 (cloud, fără placă) — **C-168 p.3 urmarea: modulul `nvidia_ga104::mm_tc_v8r` + nota pentru proba `--mm-tc-v8r` (T303 SIMULARE: aceiași biți ca `mm_tc` și v8) → PREDARE P3d; nou pentru placă: programul `mm_tc_v8r` (doar în probă)**
+**Actualizat:** 2026-11-28 06:12 (ora României) · **de:** sesiunea Cyber-GPU 287 (cloud, fără placă) — **C-168 p.3 urmarea: modulul `nvidia_ga104::mm_tc_v8r` + nota pentru proba `--mm-tc-v8r` (T303 SIMULARE: aceiași biți ca `mm_tc` și v8) → PREDARE P3d; nou pentru placă: programul `mm_tc_v8r` (doar în probă)**
 
 ## Acum
 - **C-168 p.3 urmarea — `mm_tc_v8r` gata pentru probă** (`cyber-gpu/integration/cyber-universe/C-168_P3d_mm-tc-v8r.md`, `docs/C-168_V8R.md` §5, T303 SIMULARE, commit `35cdbd3`, PREDARE P3d): modulul `nvidia_ga104::mm_tc_v8r` (binarul `6e28d531…274bf4`, **120 registre în QMD**, grila / `fits` / memoria comună = ale lui v8, 2 blocuri pe SM la 64 KiB) + înlocuitorul `gpu_sim::cmdproc::mm_tc_v8r_on_cpu`. În SIMULARE, prin pushbuffer + QMD: **aceiași biți ca `mm_tc` și ca v8** pe 48 de seturi (6 forme × 8 steaguri), v8 și v8r alături în același procesor de comenzi dau aceleași ieșiri, refuzurile nu scriu nimic. Pe placă: V1–V4 NOT TESTED (qkv-513 prezis 0,85–1,01 ms, v8 1,063). 1 514 PASS. Doar adăugări.
