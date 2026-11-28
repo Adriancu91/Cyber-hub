@@ -1,17 +1,12 @@
 # Agentul de bord — starea live (Cyber Universe OS)
 
-**Actualizat:** 2026-11-28 11:23 (ceasul OS-ului) · tura 5 · fara abateri noi
+**Actualizat:** 2026-11-28 11:25 (ceasul OS-ului) · tura 6 · fara abateri noi
 
-## Rezumatul lui Claude (2026-11-28 11:14; urmatorul la abatere sau la ~10 min)
-**Calculatorul tocmai a pornit** (de aproximativ 3 secunde). Nu ruleaza nicio lucrare, iar lista din /usb/lucrari e goala, deci nu exista pasi, viteza sau pierderi de raportat.
-
-**Memorie:** aproape toata e libera (circa 130 GB), sistemul foloseste doar circa 35 MB. Temperatura nu apare in date.
-
-**Retea:** functioneaza la 100 Mb/s, cu adresa 192.168.0.151, iar routerul raspunde.
-
-**Discuri:** gasite discul intern de 512 GB si stick-ul USB de 30 GB (montat cu scriere permisa). Mouse-ul si tastatura merg.
-
-**Abateri mici, fara erori:** la placa de retea, un semnal de pornire („LAN_INIT_DONE”) nu a venit, dar legatura merge oricum. Placa e pornita cu pasi verificati pana acum doar in simulare, nu pe acest tip de calculator. Cititorul de carduri e gol si a fost sarit, ceea ce e normal.
+## Rezumatul lui Claude (2026-11-28 11:25, acum)
+Calculatorul e pornit de aproximativ 11 minute. Acum nu ruleaza nicio lucrare (antrenare), asa ca nu exista pasi, viteza sau pierderi de raportat. Temperatura nu apare in date.
+Memorie: libera aproximativ 127 GB, folosita aproximativ 926 MB. Zona de lucru a programelor (heap) e plina in proportie de 96% (622113 din 648040 KiB).
+Reteaua functioneaza: legatura activa la 100 Mb/s, adresa 192.168.0.151, 510 pachete trimise si 937 primite.
+Jurnalul nu are randuri noi, deci nu apar erori, avertismente sau teste neterminate.
 
 ## Abateri noi
 - niciuna
@@ -19,7 +14,7 @@
 ## Cifrele brute (la fiecare 2 min, fara Claude)
 ```
 $ uptime
-pornit de 535.56 s
+pornit de 658.36 s
 $ mem
 memorie: libera 129843 MiB, folosita 947784 KiB (heap 622113 / 648040 KiB)
 $ lucrare stare
@@ -27,9 +22,9 @@ lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
   I219-LM  MAC cc:96:e5:08:b7:b5
-  pachete trimise 444, primite 773
+  pachete trimise 510, primite 937
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e3000
-  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e3000, RDBAH 00000000, RDH 00000005, RDT 00000004, TDH 0000001c, TDT 0000001c (pasii de pornire: log e1000)
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e3000, RDBAH 00000000, RDH 00000009, RDT 00000008, TDH 0000001e, TDT 0000001e (pasii de pornire: log e1000)
   IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
 ```
 
