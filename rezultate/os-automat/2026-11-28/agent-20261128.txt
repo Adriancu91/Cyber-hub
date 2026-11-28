@@ -137,3 +137,14 @@ Nu exista erori sau avertismente in jurnal.
 
 **Abateri:** nicio eroare si niciun avertisment, toate randurile sunt informative. Ultimul rand din jurnal e de la secunda 1203, deci de aproximativ 76 de secunde nu a mai aparut nimic nou.
 
+2026-11-28 10:41 tura 16
+**Acum:** nu ruleaza nicio lucrare de antrenare (folderul de lucrari e gol). Calculatorul e pornit de aproximativ 32 de minute.
+
+**Placa video:** jurnalul arata doar un test de placa video (C-55, „fereastra cu Adrian”, P6-42). Repeta aceeasi secventa de comenzi in bucla, cam o data la jumatate de secunda. Nu exista pasi, viteza, pierderi sau temperatura de raportat.
+
+**Memoria:** se folosesc circa 600 MiB, iar libera e foarte multa (aproximativ 127 GiB).
+
+**Reteaua:** functioneaza la 100 Mb/s, cu adresa 192.168.0.151.
+
+**Abateri:** nu sunt erori sau avertismente. „Soneria” placii video se citeste inapoi ca 0, dar jurnalul o noteaza ca normala („scriere fara recitire”). Ultimul rand din jurnal e de acum aproximativ 40 de secunde.
+
