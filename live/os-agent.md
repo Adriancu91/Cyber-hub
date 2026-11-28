@@ -1,6 +1,6 @@
 # Agentul de bord — starea live (Cyber Universe OS)
 
-**Actualizat:** 2026-11-28 15:53 (ceasul OS-ului) · tura 3 · fara abateri noi
+**Actualizat:** 2026-11-28 15:55 (ceasul OS-ului) · tura 4 · fara abateri noi
 
 ## Rezumatul lui Claude (2026-11-28 15:48; urmatorul la abatere sau la ~10 min)
 Calculatorul tocmai a pornit (de 2 secunde) și nu rulează nicio lucrare: nu există pași, viteză sau pierderi de raportat.
@@ -16,25 +16,22 @@ Agentul și gh-ia au cerut acces la fișierele cu cheile (GitHub și Claude).
 ## Cifrele brute (la fiecare 2 min, fara Claude)
 ```
 $ uptime
-pornit de 285.02 s
+pornit de 408.26 s
 $ mem
-memorie: libera 129714 MiB, folosita 1079280 KiB (heap 644142 / 712864 KiB)
+memorie: libera 129714 MiB, folosita 1079280 KiB (heap 12045 / 712864 KiB)
 $ lucrare stare
 lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
   I219-LM  MAC xx:xx:xx:xx:xx:xx
-  pachete trimise 330, primite 514
+  pachete trimise 1134, primite 1342
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e3000
-  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e3000, RDBAH 00000000, RDH 00000002, RDT 00000001, TDH 0000000a, TDT 0000000a (pasii de pornire: log e1000)
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e3000, RDBAH 00000000, RDH 0000001e, RDT 0000001d, TDH 0000000e, TDT 0000000e (pasii de pornire: log e1000)
   IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
 ```
 
 ## Ultimele randuri importante din jurnal
 ```
-[ 284.990] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b31 <- 0x0000101f => 0x0000101f
-[ 285.020] INFO  gpu: jurnal: bar0 w 0x001700: 0x0000101f <- 0x0001fff0 => 0x0001fff0
-[ 285.050] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
-[ 285.070] INFO  gpu: jurnal: bar0 w 0x001700: 0x0001fff0 <- 0x00001b2f => 0x00001b2f
-[ 285.100] INFO  gpu: jurnal: bar0 w 0x001700: 0x00001b2f <- 0x000010e6 => 0x000010e6
+[ 401.240] INFO  gpu: jurnal: pas I8 GSP_INIT_DONE: ok
+[ 401.260] INFO  gpu: jurnal: pas i8-gsp-init: ok
 ```
