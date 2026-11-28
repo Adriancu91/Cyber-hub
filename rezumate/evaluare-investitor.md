@@ -15,6 +15,7 @@ La fiecare nouă întrebare se adaugă un rând, cu ce s-a schimbat.
 | 2026-11-27 | **Record antrenare 15 339 simb/s** (lot 6, v5 în pas; ×1,36 într-o noapte; 39 % din Windows); înmulțirea v5 11,6 TFLOP/s (×1,41) | neschimbat | **~0,9–1,6 mil. €** (neschimbat; confirmă drumul spre paritate cu Windows) | + drumul spre ×5 ține pasul prezis; − tot fără client |
 | 2026-11-27 seara | **Record antrenare 20 795 simb/s** (lot 6, v7 în pas; 53 % din Windows; ×22 în 4 zile, de la 911) | neschimbat | **~0,9–1,6 mil. €** (neschimbat; jumătate din drumul spre Windows făcut) | + predicțiile Cyber-GPU confirmate pe placă; − tot date sintetice în OS, fără client |
 | 2026-11-28 | **Record antrenare 21 837 simb/s** (lot 6, înmulțirile alese pe formă; 56 % din Windows); comparația cinstită la scris: **×2,19** față de cea mai bună rețetă Windows (bf16, memorie de context), nu ×2,72 | neschimbat | **~0,9–1,6 mil. €** | + afirmația la scris acum de neatacat; − tot fără client |
+| 2026-11-28 prânz | **Prima antrenare pe datele reale în OS, = PyTorch** (lot 2 și 6); **record 25 635 simb/s** (65 % din Windows; ×28 în 5 zile) | neschimbat | **~1,0–1,7 mil. €** (sus: antrenarea în OS e acum reală, nu doar o probă de viteză) | + golul funcțional E1 închis; − tot fără client |
 
 Ce ar urca cel mai mult cifra: un client-pilot plătitor; demonstrația la ≥ 150 simb/s + primul calcul pe GPU; un produs clar (ex. asistent privat pe documente, în română); un cofondator tehnic sau primul angajat; Kronos comparat cinstit cu OpenLLM-Ro pe teste românești.
 
