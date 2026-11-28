@@ -128,3 +128,12 @@ Nu exista erori sau avertismente in jurnal.
 - **Retea:** functioneaza la 100 Mb/s, adresa 192.168.0.151, cu 505 pachete trimise si 899 primite.
 - **Abateri:** nu apar erori sau avertismente, toate randurile sunt informative. La fiecare ciclu, valoarea 1 scrisa la adresa 0xbb0090 se citeste inapoi ca 0, deci scrierea nu ramane. Scrierea in soneria canalului de lucru (I10) se face fara recitire, deci nu se poate confirma.
 
+2026-11-28 10:31 tura 11
+**Ce ruleaza:** nicio lucrare pornita. Calculatorul merge de aproximativ 21 de minute. Jurnalul arata doar testul placii video (nota „C-55 gpu lant: fereastra cu Adrian (P6-42)”), care repeta aceeasi serie de scrieri cam o data la jumatate de secunda.
+
+**Cifre:** pasi, viteza, pierderi si temperatura nu apar in date. Memorie folosita circa 598 MiB, libera circa 130 GiB. Heap-ul e plin cam 75% (255.721 din 340.716 KiB).
+
+**Retea:** conectata la 100 Mb/s, adresa 192.168.0.151, 914 pachete trimise si 1.612 primite.
+
+**Abateri:** nicio eroare si niciun avertisment, toate randurile sunt informative. Ultimul rand din jurnal e de la secunda 1203, deci de aproximativ 76 de secunde nu a mai aparut nimic nou.
+
