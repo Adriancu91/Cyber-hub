@@ -1,1 +1,1 @@
-ocupat · început 2026-11-28 04:11 · sarcina: C-168 p.4/§6.2 — v8 cu mai puține copii de registre în bucla K (docs/C-168_OS500_V8.md §4) · estimat gata: 05:01
+liber · terminat 2026-11-28 05:08 · următorul pas: comparația os-501 (G7) sau a probei --atentie-fwd-tc (H4, H5) când vin; altfel modulul nvidia_ga104::mm_tc_v8r + proba --mm-tc-v8r pentru OS (docs/C-168_V8R.md §4)
