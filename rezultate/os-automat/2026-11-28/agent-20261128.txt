@@ -78,3 +78,22 @@ Memorie: 129741 MiB libera, aproximativ 1 GiB folosit. Temperatura nu apare in d
 - Firul 5 a fost **oprit fortat** (cod -9).
 - O scriere pe stick-ul USB a durat 890 ms, mult peste media de 3,6 ms.
 
+2026-11-28 07:48 tura 1
+**Acum:** calculatorul a pornit acum 3 secunde. **Nu ruleaza nicio lucrare** (nicio fisa in /usb/lucrari), deci nu exista pasi, viteza sau pierderi de raportat.
+**Memoria:** libera aproximativ 128 GB, folosita aproximativ 35 MB. Temperatura nu apare in date.
+**Discuri si USB:** discul intern SK hynix 512 GB si stick-ul USB (/usb, se poate scrie pe el) sunt recunoscute. Mouse-ul si tastatura merg. Cititorul de carduri e gol, deci a fost sarit, si asta nu e o eroare.
+**Retea:** functioneaza la 100 Mb/s, cu adresa 192.168.0.151, iar routerul raspunde.
+**De retinut:** placa de retea a semnalat ca un pas de pornire nu s-a confirmat ("LAN_INIT_DONE nu a venit"). Pornirea placii a fost testata doar pe model, nu pe acest calculator. Totusi reteaua merge.
+Nu exista erori sau avertismente in jurnal.
+
+2026-11-28 08:00 tura 6
+**Acum:** nicio lucrare de antrenare nu ruleaza (lista din /usb/lucrari e goala), deci nu exista pasi, viteza sau pierderi. Calculatorul e pornit de aproximativ 11 minute (654 s).
+
+**Placa video:** ruleaza in bucla testul de proba „C-55 gpu lant” (fereastra cu Adrian, P6-42). Aceleasi scrieri se repeta cam la fiecare 0,4 secunde, iar valorile se citesc inapoi corect.
+
+**Memorie:** libera aproximativ 130 GB, folosita aproximativ 600 MB.
+
+**Retea:** conectata la 100 Mb/s, adresa 192.168.0.151. Au trecut 454 de pachete trimise si 795 primite.
+
+**Abateri:** nu apare nicio eroare sau avertisment. „Soneria” canalului de lucru se citeste inapoi ca 0, dar jurnalul o marcheaza ca scriere fara recitire. Temperatura nu apare in date.
+
