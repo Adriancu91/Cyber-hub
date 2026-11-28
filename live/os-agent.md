@@ -1,6 +1,6 @@
 # Agentul de bord — starea live (Cyber Universe OS)
 
-**Actualizat:** 2026-11-28 11:18 (ceasul OS-ului) · tura 3 · fara abateri noi
+**Actualizat:** 2026-11-28 11:21 (ceasul OS-ului) · tura 4 · fara abateri noi
 
 ## Rezumatul lui Claude (2026-11-28 11:14; urmatorul la abatere sau la ~10 min)
 **Calculatorul tocmai a pornit** (de aproximativ 3 secunde). Nu ruleaza nicio lucrare, iar lista din /usb/lucrari e goala, deci nu exista pasi, viteza sau pierderi de raportat.
@@ -19,17 +19,17 @@
 ## Cifrele brute (la fiecare 2 min, fara Claude)
 ```
 $ uptime
-pornit de 286.74 s
+pornit de 412.66 s
 $ mem
-memorie: libera 130061 MiB, folosita 723756 KiB (heap 406893 / 424448 KiB)
+memorie: libera 129843 MiB, folosita 947784 KiB (heap 622113 / 648040 KiB)
 $ lucrare stare
 lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
   I219-LM  MAC cc:96:e5:08:b7:b5
-  pachete trimise 314, primite 467
+  pachete trimise 378, primite 598
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e3000
-  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e3000, RDBAH 00000000, RDH 00000013, RDT 00000012, TDH 0000001a, TDT 0000001a (pasii de pornire: log e1000)
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e3000, RDBAH 00000000, RDH 00000016, RDT 00000015, TDH 0000001a, TDT 0000001a (pasii de pornire: log e1000)
   IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
 ```
 
