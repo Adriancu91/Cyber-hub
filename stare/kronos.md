@@ -1,8 +1,9 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-28 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-28 08:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
+- **S143 (C-168 p.2, pregătirea Kronos) — GATA, verificată de supraveghetor:** greutățile de pornire #513 (`reteta.json` + 148 × `initiale\*.f32`, 392.324.720 o) sunt pe stick în `E:\antrenare\pas_de_aur_513\`; SHA-256 `reteta.json` = `ce4150b8…` (= `PAS_DE_AUR.md`), 149/149 SHA citite înapoi de pe stick, 0 reîncercări; ~27,3 GB liberi pe `E:` după. Fără placă, nimic șters, nimic în repo.
 - **C-168, partea Kronos (punctele 1 și 7) — GATA, verificată de supraveghetor:**
   - **S141 (E1):** oracolul PyTorch #513 pe primii 10 pași cu loturile reale (bucățile #651, sămânța 1134), lot 2 și lot 6, F32 și bf16 — **VALID** (lot 2 F32 identic cu S140, pasul 1 = 1,067867; lot 6 pasul 1 = 1,0107 F32 / 1,0108 bf16; fără NaN). Bucățile #651 + `index.json` + `bpe_16384.json` sunt pe stick în `E:\antrenare\date\` (29 de fișiere, 2,68 GB), SHA 29/29 citit înapoi de pe stick.
   - **S142 (E8):** scrisul #513 în Windows, placa RTX 3070 Ti, 16 simboluri: martorul FP32 fără memorie 132,55 simb/s (valid față de 129,12); FP32 cu memoria de context 159,65; FP16 159,43; **bf16 160,05 = cea mai bună rețetă Windows** → OS 351 / 160,05 = **×2,19** (nu ×2,7). Toate scriu aceleași 16 simboluri. Cele trei variante cu memorie sunt la 0,4 % una de alta.
@@ -10,10 +11,11 @@
 - Chat-ul merge pe 8787 cu **#651**. Pauza C-156 rămâne pentru orice antrenare.
 
 ## Urmează
-- **S143 (`aprobat`, pas pregătitor C-168 p.2, la cererea OS `idei/2026-11-28-os-greutati-513-pe-stick.md`):** greutățile de pornire #513 (`reteta.json` + `initiale\`, ~392 MB, `.f32` fără antet) copiate pe stick în `E:\antrenare\pas_de_aur_513\`, cu SHA verificat înainte și citit înapoi de pe stick. Doar disc, fără placă, 07:00–23:00, cu `laborator-ocupat.txt` „OCUPAT” pe durata copierii (~10–20 min); de preferat azi, 28 nov.
-- Altfel nimic în coadă. Propus, doar cu „da”: S138 (0′) zgomotul, (2) piesele ieftine, (3) + fără γ.
+- Nimic în coadă: partea Kronos din C-168 (p.1, p.2 pregătirea, p.7) e toată făcută. Așteptăm verdictul OS la `--date-reale` (P6-261) față de oracolul S141.
+- Propus, doar cu „da”: S138 (0′) zgomotul, (2) piesele ieftine, (3) + fără γ.
 
 ## Ce oferă proiectul celorlalți
+- **PREDARE → cyber-universe (C-168 p.2):** S143 e gata — greutățile #513 în `E:\antrenare\pas_de_aur_513\` (`reteta.json` → `ordinea_tensorilor`, `fisiere` cu SHA-256 pe fiecare), exact cele din care pornește oracolul S141. Nou pentru placă: nimic (doar fișiere citite de pe stick).
 - **PREDARE → cyber-universe (C-168 p.2):** datele reale pe stick în `E:\antrenare\date\` (formatul din `integrare/kronos/FISA_ANTRENARE.md` §3) + oracolul în `integrare/kronos/ORACOL_DATE_REALE/` (`ORACOL_DATE_REALE.md` = rețeta și regula de tragere; pe fiecare rulare `rezultat.json` cu pierderea/norma pașilor 1–10, `loturi.i64` cu pozițiile ferestrelor pentru `antrenare date … --lot`). Nou pentru placă: nimic (doar date citite de pe stick).
 - **PREDARE → cyber-universe (C-168 p.7):** cifra Windows la scris = **160,05 simb/s** (bf16 + memoria de context, 16 simboluri; la 256: 159,44); tabelul, versiunile și comenzile în `integrare/kronos/VITEZA_513_WINDOWS.md` (secțiunea S142). OS-ul se compară de acum cu ea, nu cu 129,12.
 - Banda F32 vs bf16 (S140), `BANC_ANTRENARE.md`, `FISA_ANTRENARE.md`, `PAS_DE_AUR.md`, `MODEL.md`, `MODEL_651.md`, `KRONOS_V2_FISA.md`.
