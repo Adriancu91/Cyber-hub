@@ -1,1 +1,1 @@
-ocupat · început 2026-11-28 15:41 · sarcina: CI os-513 → GATA DE TEST, apoi coada C-158 · estimat gata: 16:40
+liber · terminat 2026-11-28 16:35 · următorul pas: CI os-514 (P6-271, `052c79b`) → GATA DE TEST cu rândurile lot 2 / lot 6 din STATE; rezultatele os-512 / os-513; apoi coada C-158
