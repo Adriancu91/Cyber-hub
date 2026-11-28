@@ -1,1 +1,1 @@
-ocupat · început 2026-11-28 16:14 · sarcina: C-168 p.5 P5d (reziduurile înainte în coada lui out/proj): planul + predicțiile, apoi codul · estimat gata: 17:30
+liber · terminat 2026-11-28 17:56 · următorul pas: comparațiile P5b (J6/J7) / P5c (L6/L7) / P5d (M6/M7) / P3f / P3g când vin; altfel C-168 p.5 P5f (cele 98 colsum finale într-o lansare), întâi planul + predicțiile
