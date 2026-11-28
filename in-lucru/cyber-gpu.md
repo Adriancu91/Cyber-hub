@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 02:09 · următorul pas: comparația pasului cu attn8 + RATES_OS500 (P3c, G7) când vine; altfel C-168 p.4 pasul 2: modelul attn_fwd_tc_gpu + SIMULAREA (H3, T299), docs/C-168_ATTN_FWD_TC_PLAN.md §8
+ocupat · început 2026-11-28 02:11 · sarcina: C-168 p.4 pasul 2 (modelul attn_fwd_tc_gpu + SIMULAREA H3, T299) · estimat gata: 04:30
