@@ -268,3 +268,15 @@ Memoria: liberi cam 126 GB, folosiți cam 1,2 GB. Zona de lucru internă (heap) 
 Rețeaua merge: conectat la 100 Mb/s, adresa 192.168.0.151, cu 2451 de pachete trimise și 3277 primite. Placa poate merge și mai repede, dar legătura s-a stabilit la 100 Mb/s.
 Nu există pași, viteză, pierderi sau temperatură de raportat. În jurnal nu au apărut rânduri noi, deci nicio eroare și niciun avertisment.
 
+2026-11-28 16:13 tura 1
+**Acum:** nu ruleaza nicio lucrare (lista e goala). Calculatorul e pornit de aproximativ 24 de minute, iar reteaua merge (100 Mb/s).
+
+**Testul placii video (C-54) s-a terminat:** toti cei 17 pasi au trecut, cu 4725 de scrieri. Rapoartele au fost trimise pe GitHub fara eroare.
+
+**Abateri:**
+- Sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Blocarea a functionat, iar testul a trecut oricum.
+- Firul 5 s-a oprit fortat (cod -9). Jurnalul nu spune ce era.
+- Pe stick-ul USB, o scriere a durat 886 ms. Media e 3,8 ms.
+
+**Memorie:** aproximativ 1,1 GiB folositi, aproximativ 126 GiB liberi. Nu exista date de pasi, viteza, pierderi sau temperatura.
+
