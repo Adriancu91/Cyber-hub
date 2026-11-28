@@ -115,3 +115,10 @@ Nu exista erori sau avertismente in jurnal.
 **Retea:** conectata la 100 Mb/s, adresa 192.168.0.151. Au fost trimise 1277 de pachete si primite 2211.
 **Abateri:** nicio eroare si niciun avertisment, toate randurile sunt informative. Ultimul rand din jurnal e de la secunda 1855, deci de aproape 47 de secunde nu a mai aparut nimic nou.
 
+2026-11-28 10:09 tura 1
+**Nu ruleaza nicio lucrare** (folderul /usb/lucrari e gol). Calculatorul a pornit acum cateva secunde, pornirea a durat circa 2,9 s.
+**Memoria:** libera aproape toata (~130.700 MiB), sistemul foloseste doar ~36 MiB. Pasi, viteza, pierderi si temperatura nu apar, pentru ca nu ruleaza nimic.
+**Internet:** placa de retea merge (100 Mb/s), adresa 192.168.0.151, router 192.168.0.1.
+**Discuri:** SSD-ul de 512 GB si stick-ul USB au fost gasite. Stick-ul e montat cu scriere permisa. Cititorul de carduri e gol si a fost sarit, ceea ce nu e o eroare.
+**Abateri:** nicio eroare si niciun avertisment. O singura nota la placa de retea: un semnal de pornire (LAN_INIT_DONE) nu a venit, iar pasii pentru acest model au fost testati doar in simulare. Totusi, conexiunea functioneaza.
+
