@@ -52,3 +52,10 @@
 **Retea:** placa de retea are legatura la 100 Mb/s si adresa 192.168.0.151. Routerul raspunde.
 **De retinut:** nu exista erori sau avertismente. Singura nota este ca la pornirea placii de retea un semnal de initializare nu a venit, dar legatura functioneaza. Agentul si gh-ia au citit cheile de pe stick (GitHub si Claude).
 
+2026-11-28 06:09 tura 1
+Acum nu ruleaza nicio lucrare de antrenare (calculatorul e pornit de aproape 10 minute), deci nu exista pasi, viteza sau pierderi de raportat.
+Testul placii video s-a terminat cu bine: toti cei 17 pasi au trecut (4722 scrieri), iar rapoartele au fost trimise pe GitHub fara eroare.
+Abatere: la pasul „i8e-golden” sistemul a blocat 11 scrieri cerute in afara zonei permise. Testul a trecut totusi.
+Abatere: firul 5 a fost oprit fortat (cod -9). Jurnalul nu spune de ce.
+Memorie: 129741 MiB libera, aproximativ 1 GiB folosit. Temperatura nu apare in date. Reteaua merge la 100 Mb/s.
+
