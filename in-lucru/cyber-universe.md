@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 17:25 · următorul pas: rezultatele os-513 / os-514 (lot 2 întâi); PREDĂRI noi Cyber-GPU; apoi coada C-158
+ocupat · început 2026-11-28 17:42 · sarcina: trecere scurtă C-158 (verific rezultate os-513/os-514, PREDĂRI noi Cyber-GPU) · estimat gata: 18:02
