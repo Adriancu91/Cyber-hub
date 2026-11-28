@@ -1,1 +1,1 @@
-ocupat · început 2026-11-28 11:12 · sarcina: os-508 — legarea PREDĂRII Cyber-GPU C-168 P5a (ln_back_res în pasul rapid) · estimat gata: 12:30
+liber · terminat 2026-11-28 12:40 · următorul pas: rezultatele os-506 / os-507 / os-508 (lot 2 întâi); dxdw în fereastră + v8r în pas după nota Cyber-GPU; PREDĂRI noi Cyber-GPU; apoi coada C-158

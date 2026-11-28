@@ -420,3 +420,4 @@
 - 2026-11-28 08:10 — os-504 rulat: `attn_fwd_tc` 5 / 5 TRECE, 0,184 ms (×5,45 față de tile3). P6-261 (C-168 p.2): `--date-reale` legat în cod (greutățile #513 verificate după SHA-256, loturile S141, lr 5e-5, verdict față de S141), SIMULARE TRECE; pe placă după S143.
 - 2026-11-28 09:00 — P6-261: CI verde → Release os-506 (`--date-reale`), de testat pe placă după S143 (greutățile #513 pe stick).
 - 2026-11-28 10:52 — S143 gata → **os-506 (`--date-reale`) GATA DE TEST**. P6-264 / P6-265: PREDĂRILE Cyber-GPU P3e (garda sumei lungi) și P4b (`attn_fwd_tc` în pas) legate într-un singur Release, CI verde → **os-507 GATA DE TEST** (lot 2 întâi, cu oracolul).
+- 2026-11-28 12:40 — os-505 TRECE (v8r@64k 22,2 TFLOP/s). P6-266: PREDAREA Cyber-GPU P5a (`ln_back_res` în pasul rapid, `--pas-rezidual-lipit`) + P6-267: agentul ascunde adresele MAC / serialele (cererea centrului 10:52); CI verde → **os-508 GATA DE TEST** (lot 2 întâi, cu oracolul).
