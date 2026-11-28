@@ -299,3 +299,10 @@ Agentul a cerut cheile de pe stick (GitHub și Claude). Nu apare nicio eroare.
 - La final a aparut o noua eroare de tip ASSERT de la placa video. Detaliile ei inca n-au venit.
   abatere: [ 404.820] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"
 
+2026-11-28 17:52 tura 9
+**Ce ruleaza:** nicio lucrare in coada (/usb/lucrari e gol). In jurnal ruleaza doar testul placii video „C-55 gpu lant” (fereastra cu Adrian, P6-42). Repeta acelasi ciclu de scrieri cam de 2 ori pe secunda, fara sa ajunga la un sfarsit in aceste randuri.
+
+**Cifre:** calculatorul e pornit de circa 17 minute. Memorie: aproximativ 1,2 GB folositi, aproximativ 126 GB liberi (zona interna: 243 din 796 MB). Reteaua merge la 100 Mb/s, adresa 192.168.0.151. Nu exista date despre pasi, viteza, pierderi sau temperatura.
+
+**Abateri:** nicio eroare si niciun avertisment, toate randurile sunt informative. Testul GPU pare doar ca se invarte in bucla, deci nu se vede inca un rezultat.
+
