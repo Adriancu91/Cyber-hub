@@ -26,7 +26,7 @@ $ lucrare stare
 lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
-  I219-LM  MAC cc:96:e5:08:b7:b5
+  I219-LM  MAC xx:xx:xx:xx:xx:xx
   pachete trimise 378, primite 598
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e3000
   registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e3000, RDBAH 00000000, RDH 00000016, RDT 00000015, TDH 0000001a, TDT 0000001a (pasii de pornire: log e1000)
