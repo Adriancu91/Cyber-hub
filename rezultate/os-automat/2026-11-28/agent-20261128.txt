@@ -160,3 +160,14 @@ Nu exista erori sau avertismente in jurnal.
 
 **Rapoartele** au fost trimise pe GitHub fara erori. Jurnalul complet e salvat in /usb/raport/gpu-jurnal-200.txt.
 
+2026-11-28 11:14 tura 1
+**Calculatorul tocmai a pornit** (de aproximativ 3 secunde). Nu ruleaza nicio lucrare, iar lista din /usb/lucrari e goala, deci nu exista pasi, viteza sau pierderi de raportat.
+
+**Memorie:** aproape toata e libera (circa 130 GB), sistemul foloseste doar circa 35 MB. Temperatura nu apare in date.
+
+**Retea:** functioneaza la 100 Mb/s, cu adresa 192.168.0.151, iar routerul raspunde.
+
+**Discuri:** gasite discul intern de 512 GB si stick-ul USB de 30 GB (montat cu scriere permisa). Mouse-ul si tastatura merg.
+
+**Abateri mici, fara erori:** la placa de retea, un semnal de pornire („LAN_INIT_DONE”) nu a venit, dar legatura merge oricum. Placa e pornita cu pasi verificati pana acum doar in simulare, nu pe acest tip de calculator. Cititorul de carduri e gol si a fost sarit, ceea ce e normal.
+
