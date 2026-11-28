@@ -108,3 +108,10 @@ Nu exista erori sau avertismente in jurnal.
 
 **Abateri:** nicio eroare sau avertisment. Ultimul rand din jurnal e de acum ~80 de secunde, deci nu reiese daca testul s-a terminat sau doar s-a oprit. Pasi, viteza, pierderi si temperatura nu apar in aceste date.
 
+2026-11-28 08:21 tura 16
+**Acum:** nu ruleaza nicio lucrare (lista din /usb/lucrari e goala). Calculatorul e pornit de aproximativ 32 de minute.
+**Placa video:** jurnalul arata doar scrieri repetate in registrele ei, in bucla. Sunt marcate „C-55 gpu lant: fereastra cu Adrian (P6-42)”, deci e o sesiune de test cu tine, nu o lucrare de antrenare.
+**Cifre:** pasi, viteza, pierderi si temperatura nu apar in date. Memoria e aproape toata libera (circa 127 GiB liberi, circa 600 MiB folositi).
+**Retea:** conectata la 100 Mb/s, adresa 192.168.0.151. Au fost trimise 1277 de pachete si primite 2211.
+**Abateri:** nicio eroare si niciun avertisment, toate randurile sunt informative. Ultimul rand din jurnal e de la secunda 1855, deci de aproape 47 de secunde nu a mai aparut nimic nou.
+
