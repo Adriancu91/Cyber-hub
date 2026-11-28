@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 04:40 · următorul pas: CI-ul lui c028869 (25 de părți) verde → Release-ul P6-260 GATA DE TEST (--pas-v8, vitezele os-500); greutățile #513 pe stick → P6-261 (C-168 p.2); PREDĂRI noi Cyber-GPU; apoi coada C-158
+ocupat · început 2026-11-28 04:41 · sarcina: P6-260 (CI c028869 → Release GATA DE TEST), apoi predări Cyber-GPU / coada C-158 · estimat gata: 06:11
