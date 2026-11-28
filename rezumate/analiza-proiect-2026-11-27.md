@@ -71,6 +71,7 @@ Calea spre Windows (estimat, nemăsurat): F1 v7 → ~150 ms; F3 → ~140; F4 →
 Fiecare pas: măsurătoare înainte, schimbare, aceeași măsurătoare după, notă în hub; dacă o dată nouă schimbă diagnosticul, planul se rescrie.
 
 ## 7. Jurnalul analizei
+- 28 nov 11:10 — os-505: v8r@64k 22,2 TFLOP/s la qkv (46 % din vârf), dX 0,933 ms; dW de la v8 în sus măsurat în afara ferestrei (proba prea lungă: 2 429 s) → F2 progresează încet (+9–11 % pe treaptă); probele lungi trebuie împărțite.
 - 28 nov 08:48 — E9 (nouă): os-505 oprit de ceasul de siguranță (40 min) fără raport — greșeala centrului la `ceas`. Repornit cu `ceas 70`. Remediu: regulă `ceas` ≥ 60 la probele lungi; propus OS-ului un avertisment automat în `verifica-rand`.
 - 28 nov 07:46 — **F3 confirmată pe placă: attn_fwd_tc ×5,45 la #513 (1,003 → 0,184 ms), 5/5 seturi în margine.** În pas → estimat ~127 ms (~24 000 simb/s). Recordul 21 837 confirmat la repetare (21 859).
 - 28 nov 07:10 — **os-503: alegerea pe formă (v8n/v8/v7) în pas → 21 837 simb/s la lot 6 (140,7 ms, 56 % din Windows)**, lot 2 = oracolul. E8 închisă de Kronos S142: cea mai bună rețetă Windows la scris (bf16, memoria de context) = 160,05 simb/s → noi ×2,19 (nu ×2,72). E1: oracolul pe datele reale e gata (S141), bucățile #651 pe stick; OS-ul așteaptă greutățile #513 pe stick (P6-261). F3: proba atenției înainte pe circuite (os-504) pornită.
