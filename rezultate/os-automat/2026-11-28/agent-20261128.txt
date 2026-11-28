@@ -332,3 +332,28 @@ Agentul a cerut cheile de pe stick (GitHub și Claude). Nu apare nicio eroare.
 
 Nu am date despre pasi, viteza, pierderi sau temperatura.
 
+2026-11-28 20:53 tura 1
+**Ce ruleaza:** calculatorul a pornit acum 2,3 secunde si nu are nicio lucrare in curs. Nu exista pasi, viteza sau pierderi de raportat, iar temperatura nu apare in date.
+
+**Memorie:** sunt libere aproximativ 130.700 MiB (circa 128 GB). Sistemul foloseste doar circa 35 MiB.
+
+**Retea:** placa de retea Intel functioneaza cu legatura de 100 Mb/s. Calculatorul are adresa 192.168.0.151 si a trimis si primit cate 5 pachete.
+
+**Discuri:** au fost gasite discul intern SK hynix de 512 GB, un stick USB de circa 60 GB (montat la /usb, cu scriere permisa) si mouse-ul si tastatura. Cititorul de carduri e gol, iar jurnalul spune ca asta nu e o eroare.
+
+**Abateri:** nu apare nicio eroare. Placa de retea a semnalat ca un semnal de pornire (LAN_INIT_DONE) nu a venit, dar legatura merge. Pasii ei de pornire sunt testati doar pe simulator, nu pe acest calculator. Agentul a citit fisierele cu cheile (github.token, claude.cheie), iar gh-ia a citit github.token.
+
+2026-11-28 21:01 tura 4 ABATERE
+**Ce ruleaza:** nicio lucrare de antrenare, deci nu exista pasi, viteza sau pierderi. Calculatorul e pornit de aproximativ 7 minute si lucreaza la placa video, in pasul notat „C-55, fereastra cu Adrian (P6-42)”.
+
+**Placa video:** pornirea procesorului ei intern (GSP) a reusit. Etapa „i8-gsp-init” s-a incheiat cu „ok”, dupa o asteptare de circa 23,6 secunde.
+
+**Abateri:**
+- Placa a trimis o eroare de la partea care se ocupa de ecran: „NV_ERR_INVALID_DMA_SPECIFIER” (Display Engine). In jurnal apar 2 rapoarte de diagnostic de doua feluri, dar numai acesta are detaliile scrise.
+- Dupa aceea, o scriere la registrul 0x110c00 se repeta cam o data pe secunda si nu are efect: valoarea ramane 0xffffffff, desi se incearca 0.
+
+**Memorie si retea:** libera circa 127 GB, folosita circa 1 GB. Reteaua e conectata la 100 Mb/s, cu adresa 192.168.0.151.
+
+**Temperatura:** nu apare in date.
+  abatere: [ 402.690] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"
+
