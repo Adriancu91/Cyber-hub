@@ -1,43 +1,43 @@
 # Agentul de bord — starea live (Cyber Universe OS)
 
-**Actualizat:** 2026-11-28 20:58 (ceasul OS-ului) · tura 3 · fara abateri noi
+**Actualizat:** 2026-11-28 21:01 (ceasul OS-ului) · tura 4 · ABATERE
 
-## Rezumatul lui Claude (2026-11-28 20:53; urmatorul la abatere sau la ~10 min)
-**Ce ruleaza:** calculatorul a pornit acum 2,3 secunde si nu are nicio lucrare in curs. Nu exista pasi, viteza sau pierderi de raportat, iar temperatura nu apare in date.
+## Rezumatul lui Claude (2026-11-28 21:01, acum)
+**Ce ruleaza:** nicio lucrare de antrenare, deci nu exista pasi, viteza sau pierderi. Calculatorul e pornit de aproximativ 7 minute si lucreaza la placa video, in pasul notat „C-55, fereastra cu Adrian (P6-42)”.
 
-**Memorie:** sunt libere aproximativ 130.700 MiB (circa 128 GB). Sistemul foloseste doar circa 35 MiB.
+**Placa video:** pornirea procesorului ei intern (GSP) a reusit. Etapa „i8-gsp-init” s-a incheiat cu „ok”, dupa o asteptare de circa 23,6 secunde.
 
-**Retea:** placa de retea Intel functioneaza cu legatura de 100 Mb/s. Calculatorul are adresa 192.168.0.151 si a trimis si primit cate 5 pachete.
+**Abateri:**
+- Placa a trimis o eroare de la partea care se ocupa de ecran: „NV_ERR_INVALID_DMA_SPECIFIER” (Display Engine). In jurnal apar 2 rapoarte de diagnostic de doua feluri, dar numai acesta are detaliile scrise.
+- Dupa aceea, o scriere la registrul 0x110c00 se repeta cam o data pe secunda si nu are efect: valoarea ramane 0xffffffff, desi se incearca 0.
 
-**Discuri:** au fost gasite discul intern SK hynix de 512 GB, un stick USB de circa 60 GB (montat la /usb, cu scriere permisa) si mouse-ul si tastatura. Cititorul de carduri e gol, iar jurnalul spune ca asta nu e o eroare.
+**Memorie si retea:** libera circa 127 GB, folosita circa 1 GB. Reteaua e conectata la 100 Mb/s, cu adresa 192.168.0.151.
 
-**Abateri:** nu apare nicio eroare. Placa de retea a semnalat ca un semnal de pornire (LAN_INIT_DONE) nu a venit, dar legatura merge. Pasii ei de pornire sunt testati doar pe simulator, nu pe acest calculator. Agentul a citit fisierele cu cheile (github.token, claude.cheie), iar gh-ia a citit github.token.
+**Temperatura:** nu apare in date.
 
 ## Abateri noi
-- niciuna
+- `[ 402.690] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"`
 
 ## Cifrele brute (la fiecare 2 min, fara Claude)
 ```
 $ uptime
-pornit de 286.48 s
+pornit de 409.71 s
 $ mem
-memorie: libera 129713 MiB, folosita 1079200 KiB (heap 644072 / 712864 KiB)
+memorie: libera 129713 MiB, folosita 1079200 KiB (heap 12024 / 712864 KiB)
 $ lucrare stare
 lucrarile din /usb/lucrari:
   niciuna (fisele: <nume>.txt; vezi docs/LUCRARI.md)
 $ net
   I219-LM  MAC xx:xx:xx:xx:xx:xx
-  pachete trimise 337, primite 682
+  pachete trimise 1147, primite 1618
   legatura: da, 100 Mb/s, full duplex; PHY 015400a6 (BMSR 796d); bloc DMA 0x11e3000
-  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e3000, RDBAH 00000000, RDH 0000000a, RDT 00000009, TDH 00000011, TDT 00000011 (pasii de pornire: log e1000)
+  registre: CTRL 00100240, STATUS 40080443, CTRL_EXT 815a1027, EXTCNF_CTRL 002c0089, PHY_CTRL 0004000c, FWSM 60000040, FEXTNVM 08430a02, FEXTNVM4 20000007, RCTL 04008002, TCTL 000400fa, RDBAL 011e3000, RDBAH 00000000, RDH 00000012, RDT 00000011, TDH 0000001b, TDT 0000001b (pasii de pornire: log e1000)
   IPv4 192.168.0.151  masca 255.255.255.0  ruta 192.168.0.1  DNS 192.168.0.1
 ```
 
 ## Ultimele randuri importante din jurnal
 ```
-[ 286.440] INFO  gpu: jurnal: bar0 w 0xb830a4: 0x00000000 <- 0x00000000 => 0x00000000
-[ 286.470] INFO  gpu: jurnal: bar0 w 0xb830b0: 0x00000001 <- 0x80000001 => 0x80000001
-[ 286.490] INFO  gpu: jurnal: nota: soneria canalului de lucru (I10): scriere fara recitire
-[ 286.520] INFO  gpu: jurnal: bar0 w 0xbb0090: 0x00000000 <- 0x00000001 => 0x00000000
-[ 286.540] INFO  gpu: jurnal: nota: C-55 gpu lant: fereastra cu Adrian (P6-42)
+[ 402.690] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"
+[ 404.120] INFO  gpu: jurnal: pas I8 GSP_INIT_DONE: ok
+[ 404.150] INFO  gpu: jurnal: pas i8-gsp-init: ok
 ```
