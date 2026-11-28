@@ -148,3 +148,15 @@ Nu exista erori sau avertismente in jurnal.
 
 **Abateri:** nu sunt erori sau avertismente. „Soneria” placii video se citeste inapoi ca 0, dar jurnalul o noteaza ca normala („scriere fara recitire”). Ultimul rand din jurnal e de acum aproximativ 40 de secunde.
 
+2026-11-28 10:51 tura 1
+**Acum:** nu ruleaza nicio lucrare de antrenare, deci nu exista pasi, viteza sau pierderi. Calculatorul e pornit de aproximativ 41 de minute. Memoria e aproape toata libera: se folosesc cam 424 MiB, iar libere sunt aproximativ 127 GiB. Jurnalul nu contine nicio valoare de temperatura.
+
+**Testul placii video (lantul C-54):** s-a terminat si toti cei 17 pasi au trecut, cu 9838 de scrieri. Placa are 8 GB de memorie video.
+
+**Abateri:**
+- Sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Protectia a functionat.
+- Procesul nr. 5 a fost oprit fortat (cod -9).
+- O scriere pe stickul USB a durat 816 ms. Media este de 3,7 ms.
+
+**Rapoartele** au fost trimise pe GitHub fara erori. Jurnalul complet e salvat in /usb/raport/gpu-jurnal-200.txt.
+
