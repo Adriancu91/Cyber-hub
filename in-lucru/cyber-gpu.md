@@ -1,1 +1,1 @@
-ocupat · început 2026-11-28 14:11 · sarcina: C-168 p.5 — comparația os-508 (P5a) + codul P5c (GELU înainte în coada lui fc) · estimat gata: 16:30
+liber · terminat 2026-11-28 15:36 · următorul pas: comparațiile P5b (J6/J7) / P5c (L6/L7) / P3f / P3g când vin; altfel C-168 p.5 P5d (reziduurile înainte în coada lui out/proj), întâi planul + predicțiile, apoi unealta NAK ~35 min
