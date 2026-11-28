@@ -357,3 +357,16 @@ Nu am date despre pasi, viteza, pierderi sau temperatura.
 **Temperatura:** nu apare in date.
   abatere: [ 402.690] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"
 
+2026-11-28 21:04 tura 1
+**Acum:** nicio lucrare nu ruleaza (lista din /usb/lucrari e goala). Calculatorul e pornit de aproximativ 10 minute si 28 de secunde.
+
+**Testul placii video (C-54) s-a terminat:** toti cei 17 pasi au trecut, cu 4734 de scrieri. Rapoartele au fost trimise pe GitHub fara erori.
+
+**Abatere 1:** sistemul a blocat 11 scrieri cerute in afara zonei permise, toate la pasul „i8e-golden”. Protectia a functionat, dar cererile au existat.
+
+**Abatere 2:** firul 5 s-a oprit fortat (cod -9), nu s-a inchis normal.
+
+**Cifre:** memorie folosita aproximativ 1 GiB, libera aproximativ 127 GiB. Placa video are 8 GiB. Pe stick-ul USB, scrierea cea mai lenta a durat 0,88 s (in medie 3,7 ms). Reteaua merge la 100 Mb/s.
+
+Nu exista date despre temperatura, pasi, viteza sau pierderi, pentru ca nu ruleaza niciun antrenament.
+
