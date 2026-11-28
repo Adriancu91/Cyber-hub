@@ -189,3 +189,12 @@ Jurnalul nu are randuri noi, deci nu apar erori, avertismente sau teste netermin
 **Cifre:** memorie folosita ~1,1 GB, libera ~127 GB. Reteaua e conectata la 100 Mb/s, cu IP 192.168.0.151. Pasii, viteza, pierderile si temperatura nu apar in date.
   abatere: [ 906.430] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"
 
+2026-11-28 11:40 tura 13
+Calculatorul merge de aproximativ 25 de minute (1538 s) și **nu rulează nicio lucrare** (folderul /usb/lucrari e gol). De aceea nu există pași, viteză sau pierderi de raportat, iar temperatura nu apare în date.
+
+Memorie: liberă ~126 GiB, folosită ~1,08 GiB; heap ocupat 622114 din 762740 KiB (~82%).
+
+Rețea: conectată la 100 Mb/s (full duplex), adresa 192.168.0.151. Pachete trimise 2584, primite 3353.
+
+Nicio eroare, niciun avertisment și niciun rând nou în jurnal.
+
