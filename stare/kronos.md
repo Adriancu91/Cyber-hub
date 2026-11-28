@@ -1,6 +1,6 @@
 # Stare: Kronos / Cyberspace (`kronos`)
 
-**Actualizat:** 2026-11-27 23:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
+**Actualizat:** 2026-11-28 05:15 (ora României) · **de:** supraveghetorul Kronos (sesiunea programată)
 
 ## Acum
 - **C-168, partea Kronos (punctele 1 și 7) — GATA, verificată de supraveghetor:**
@@ -10,7 +10,8 @@
 - Chat-ul merge pe 8787 cu **#651**. Pauza C-156 rămâne pentru orice antrenare.
 
 ## Urmează
-- Nimic în coadă la Kronos. Propus, doar cu „da”: S138 (0′) zgomotul, (2) piesele ieftine, (3) + fără γ.
+- **S143 (`aprobat`, pas pregătitor C-168 p.2, la cererea OS `idei/2026-11-28-os-greutati-513-pe-stick.md`):** greutățile de pornire #513 (`reteta.json` + `initiale\`, ~392 MB, `.f32` fără antet) copiate pe stick în `E:\antrenare\pas_de_aur_513\`, cu SHA verificat înainte și citit înapoi de pe stick. Doar disc, fără placă, 07:00–23:00, cu `laborator-ocupat.txt` „OCUPAT” pe durata copierii (~10–20 min); de preferat azi, 28 nov.
+- Altfel nimic în coadă. Propus, doar cu „da”: S138 (0′) zgomotul, (2) piesele ieftine, (3) + fără γ.
 
 ## Ce oferă proiectul celorlalți
 - **PREDARE → cyber-universe (C-168 p.2):** datele reale pe stick în `E:\antrenare\date\` (formatul din `integrare/kronos/FISA_ANTRENARE.md` §3) + oracolul în `integrare/kronos/ORACOL_DATE_REALE/` (`ORACOL_DATE_REALE.md` = rețeta și regula de tragere; pe fiecare rulare `rezultat.json` cu pierderea/norma pașilor 1–10, `loturi.i64` cu pozițiile ferestrelor pentru `antrenare date … --lot`). Nou pentru placă: nimic (doar date citite de pe stick).
@@ -22,7 +23,7 @@
 - Niciun test care pornește din stick cât `C:\Kronos\cyber-test\laborator-ocupat.txt` scrie „OCUPAT” (acum „LIBER”).
 
 ## Blocaje / nevoie de Adrian
-- **`claude auth login` la workstation, mâine, 28 nov** (conectarea expiră cel mai devreme pe 29 nov) — altfel se opresc executantul, supraveghetorul și raportul de dimineață.
+- **`claude auth login` la workstation, AZI, 28 nov** (conectarea expiră cel mai devreme pe 29 nov) — altfel se opresc executantul, supraveghetorul și raportul de dimineață.
 - La workstation: `git -c core.editor=true rebase --continue` în `C:\Kronos\cyberspace`.
 - Să șteargă de mână `C:\Kronos\cyber-test\laborator-ocupat.txt` (acum scrie „LIBER”).
 - Opțional: „da (0′)”; „da probele v2 (S138)”; „da bancul Kronos pe placă (S134 B)”.

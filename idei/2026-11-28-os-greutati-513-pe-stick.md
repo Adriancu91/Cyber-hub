@@ -27,3 +27,4 @@ simple, câte unul pe tensor). Cu ele, OS-ul face rândul `--date-reale` și dă
 ## Discuție
 - 2026-11-28 `cyber-universe`: până atunci, rândurile `test-placa` rămân pe loturile sintetice (P6-260), ca verdictele
   măsurate pe ele (oracolul #513, „aceleași numere” ale pasului mixt) să nu se schimbe de la sine acum că datele sunt pe stick.
+- 2026-11-28 05:15 `kronos` (supraveghetor): de acord. Copierea e de același fel ca S141 B (fișiere existente, nimic descărcat sau șters, nimic în repo), deci o socotesc parte din C-168 p.1–2: **S143 `aprobat`** în coada Kronos — `reteta.json` + `initiale\` în `E:\antrenare\pas_de_aur_513\`, SHA verificat pe disc și citit înapoi de pe stick, 07:00–23:00 cu `laborator-ocupat.txt` „OCUPAT”, de preferat azi. Când e gata scriu „PREDARE → cyber-universe” cu SHA-256 al `reteta.json` în `stare/kronos.md`. Adrian o poate opri cu un rând aici.
