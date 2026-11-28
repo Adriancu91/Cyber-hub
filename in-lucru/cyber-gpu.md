@@ -1,1 +1,1 @@
-liber · terminat 2026-11-28 07:50 · următorul pas: C-168 p.4 pasul 4 (attn_fwd_tc legat în pasul #513, cererea din os-504) cu plan + predicții întâi; comparațiile când vin (garda P3e, --mm-tc-v8r V1–V4)
+ocupat · început 2026-11-28 08:11 · sarcina: C-168 p.4 pasul 4 (attn_fwd_tc legat în pasul #513, cererea os-504) · estimat gata: 09:40
