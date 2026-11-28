@@ -177,3 +177,15 @@ Memorie: libera aproximativ 127 GB, folosita aproximativ 926 MB. Zona de lucru a
 Reteaua functioneaza: legatura activa la 100 Mb/s, adresa 192.168.0.151, 510 pachete trimise si 937 primite.
 Jurnalul nu are randuri noi, deci nu apar erori, avertismente sau teste neterminate.
 
+2026-11-28 11:29 tura 8 ABATERE
+**Ce ruleaza:** nicio lucrare in /usb/lucrari. Calculatorul e pornit de ~15 minute (911 s) si porneste placa video (GPU).
+
+**Placa video:** pornirea GSP s-a incheiat cu bine (rezultat 0, pasul i8-gsp-init: ok), dar a durat ~24,5 secunde.
+
+**Abateri:**
+- Placa a raportat 2 inregistrari de diagnostic. Una e o eroare de tip ENGINE la afisaj (Display Engine): NV_ERR_INVALID_DMA_SPECIFIER.
+- Dupa pornire s-a incercat de 6 ori sa se scrie 0 la adresa 0x110c00. De fiecare data valoarea a ramas 0xffffffff, deci scrierea nu s-a prins.
+
+**Cifre:** memorie folosita ~1,1 GB, libera ~127 GB. Reteaua e conectata la 100 Mb/s, cu IP 192.168.0.151. Pasii, viteza, pierderile si temperatura nu apar in date.
+  abatere: [ 906.430] INFO  gpu: jurnal: text NOCAT: errorCode (nume NV_STATUS) = "NV_ERR_INVALID_DMA_SPECIFIER"
+
