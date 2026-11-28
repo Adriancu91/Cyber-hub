@@ -1,1 +1,1 @@
-ocupat · început 2026-11-28 07:13 · sarcina: C-168 p.3 — comparația os-503 (G7, pasul cu v8n/v8/v7 pe formă) · estimat gata: 08:10
+liber · terminat 2026-11-28 07:50 · următorul pas: C-168 p.4 pasul 4 (attn_fwd_tc legat în pasul #513, cererea din os-504) cu plan + predicții întâi; comparațiile când vin (garda P3e, --mm-tc-v8r V1–V4)
