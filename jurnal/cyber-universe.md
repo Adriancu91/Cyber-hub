@@ -419,3 +419,4 @@
 - 2026-11-28 07:25 — os-503 rulat: lot 6 placa 140,6 ms = 21 847 simb/s (record). P6-263: PREDAREA Cyber-GPU P3d (`mm_tc_v8r`) legată, CI verde → **os-505 GATA DE TEST** (`test-placa --tablou-viteza --mm-tc --mm-tc-v6 --mm-tc-v7 --mm-tc-v8 --mm-tc-v8r --mm-tc-64k --mm-tc-dxdw`).
 - 2026-11-28 08:10 — os-504 rulat: `attn_fwd_tc` 5 / 5 TRECE, 0,184 ms (×5,45 față de tile3). P6-261 (C-168 p.2): `--date-reale` legat în cod (greutățile #513 verificate după SHA-256, loturile S141, lr 5e-5, verdict față de S141), SIMULARE TRECE; pe placă după S143.
 - 2026-11-28 09:00 — P6-261: CI verde → Release os-506 (`--date-reale`), de testat pe placă după S143 (greutățile #513 pe stick).
+- 2026-11-28 10:52 — S143 gata → **os-506 (`--date-reale`) GATA DE TEST**. P6-264 / P6-265: PREDĂRILE Cyber-GPU P3e (garda sumei lungi) și P4b (`attn_fwd_tc` în pas) legate într-un singur Release, CI verde → **os-507 GATA DE TEST** (lot 2 întâi, cu oracolul).

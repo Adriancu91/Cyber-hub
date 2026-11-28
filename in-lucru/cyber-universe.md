@@ -1,1 +1,1 @@
-ocupat · început 2026-11-28 09:13 · sarcina: verific S143 / os-505 / PREDĂRI Cyber-GPU, apoi coada C-158 · estimat gata: 10:40
+liber · terminat 2026-11-28 10:52 · următorul pas: rezultatele os-505 / os-506 / os-507 (lot 2 întâi); PREDĂRI noi Cyber-GPU; apoi coada C-158
